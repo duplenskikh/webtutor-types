@@ -1044,6 +1044,20 @@ interface IWTKnowledgePartsBaseOld {
   end_date?: XmlElem<Date>;
 }
 
+interface IWTPersonForeignBase {
+	person_fullname?(): any;
+	person_position_name?(): any;
+	person_org_name?(): any;
+	person_subdivision_name?(): any;
+	person_instance_id?(): any;
+	person_code?(): any;
+}
+
+interface IWTGroupCollaborator extends IWTPersonForeignBase {
+  collaborator_id?: XmlElem<number>;
+  collaborator_fullname?: XmlElem<string>;
+  desc?: XmlElem<string>;
+}
 
 interface IWTGroupDocumentTopElem extends IWTXmlDocumentTopElem, IWTCustomElemsBase {
   code?: XmlElem<string>;
@@ -1060,7 +1074,7 @@ interface IWTGroupDocumentTopElem extends IWTXmlDocumentTopElem, IWTCustomElemsB
   comment?: XmlElem<string>;
   desc?: XmlElem<string>;
   resource_id?: XmlElem<number>;
-
+	collaborators: XmlMultiElem<IWTGroupCollaborator>;
   dynamic_select_person?(clear: boolean): void;
   activateCourseToPersons?(obj: any): void;
   add_collaborator?(personId: number, personDocument: IWTCollaboratorDocument): void;
