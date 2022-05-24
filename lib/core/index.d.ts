@@ -850,7 +850,7 @@ declare function SetDbHostDir(dbName: string, dirUrl: string): undefined;
  * @param {string} query - строка, содержащая запрос (String).
  * @returns {Array}
 */
-declare function XQueryLocal(query: string): IWTQuery;
+declare function XQueryLocal(query: string): any;
 
 /**
  * Выполняет заданный запрос XQuery. В сетевой версии приложения запрос выполняется на сервере.
