@@ -1,11 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "module": "commonjs",
-    "strictNullChecks": true,
+    "target": "es5",
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "noEmit": true,
-    "noLib": true
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "types": [],
+    "strict": true,
+    "noLib": true,
+    "rootDir": "./lib",
+    "typeRoots": [
+      "./lib"
+    ]
   }
 }
