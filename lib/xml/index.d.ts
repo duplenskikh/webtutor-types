@@ -361,9 +361,6 @@ interface ResponseDocument extends IWTXmlDocument {
   TopElem: ResponseTopElem;
 }
 
-interface ResponseQuery extends IWTQuery {
-}
-
 interface ResponseTypeTopElem extends IWTXmlDocumentTopElem, IWTDocInfo {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -432,9 +429,6 @@ interface IWTResourceDocumentTopElem extends IWTXmlDocumentTopElem, ObjectCodeNa
 
 interface IWTResourceDocument extends IWTXmlDocument {
   TopElem: IWTResourceDocumentTopElem;
-}
-
-interface IWTResourceQuery extends IWTQuery {
 }
 
 interface RequestTopElem extends IWTXmlDocumentTopElem, IWTPersonFillingBase, IWTDocInfo, IWTCustomElemsBase {
@@ -541,13 +535,6 @@ interface IWTRemoteApplicationDocumentTopElem extends IWTXmlDocumentTopElem {
 
 interface IWTRemoteApplicationDocument extends IWTXmlDocument {
   TopElem: IWTRemoteApplicationDocumentTopElem;
-}
-
-interface IWTRemoteApplicationQuery extends IWTQuery {
-}
-
-interface IWTQuery {
-  id?: XmlElem<number>;
 }
 
 interface IWTQualificationTopElem extends IWTXmlDocumentTopElem {
@@ -755,13 +742,6 @@ interface lists extends Object {
 }
 
 declare var lists: lists;
-
-interface IWTLikeQuery extends IWTQuery {
-  id?: XmlElem<number>;
-  person_id?: XmlElem<number>;
-  person_fullname?: XmlElem<string>;
-  weight?: XmlElem<number>;
-}
 
 interface IWTLibraryMaterialDocument extends IWTXmlDocument {
   TopElem: IWTLibraryMaterialTopElem;
@@ -1083,9 +1063,6 @@ interface IWTGroupDocumentTopElem extends IWTXmlDocumentTopElem, IWTCustomElemsB
 
 interface IWTGroupDocument extends IWTXmlDocument {
   TopElem: IWTGroupDocumentTopElem;
-}
-
-interface IWTGroupQuery extends IWTQuery {
 }
 
 declare namespace global_settings {
@@ -1984,9 +1961,6 @@ interface IWTDocument extends IWTXmlDocument {
   TopElem: IWTDocumentTopElem;
 }
 
-interface IWTDocumentQuery extends IWTQuery {
-}
-
 interface IWTDocumentPersonsBasePerson {
   person_id?: XmlElem<number>;
   person_fullname?: XmlElem<string>;
@@ -2294,6 +2268,32 @@ interface IWTCompoundProgramTopElem extends IWTXmlDocumentTopElem,
   activate_program_to_person?(inputParam: Object): IResultActivateProgramToPerson;
 }
 
+interface IWTBudgetPeriodDay {
+  date?: XmlElem<Date>;
+  type?: XmlElem<string>;
+  region_id?: XmlElem<number>;
+  comment?: XmlElem<string>;
+}
+
+interface IWTBudgetPeriodTopElem extends IWTXmlDocumentTopElem,
+  IWTAdminAccessBase,
+  IWTCustomElemsBase,
+  IWTDocInfo
+{
+  code?: XmlElem<string>;
+  name?: XmlElem<string>;
+  parent_id?: XmlElem<number>;
+  start_date?: XmlElem<Date>;
+  finish_date?: XmlElem<Date>;
+  period_type?: XmlElem<string>;
+  days?: XmlMultiElem<IWTBudgetPeriodDay>;
+  comment?: XmlElem<string>;
+}
+
+interface IWTBudgetPeriodDocument extends IWTXmlDocument {
+  TopElem: IWTBudgetPeriodTopElem;
+}
+
 interface IResultActivateProgramToPerson {
   result: [{
     id: number;
@@ -2304,10 +2304,6 @@ interface IResultActivateProgramToPerson {
 
 interface IWTCompoundProgramDocument extends IWTXmlDocument {
   TopElem: IWTCompoundProgramTopElem;
-}
-
-interface IWTCompoundProgramQuery extends IWTQuery {
-  fullname?: XmlElem<string>;
 }
 
 interface IWTColumnBaseColumnCCondition {
@@ -2594,10 +2590,6 @@ interface IWTPositionTopElem extends IWTXmlDocumentTopElem, IWTFileListBase, IWT
 
 interface IWTPositionDocument extends IWTXmlDocument {
   TopElem: IWTPositionTopElem;
-}
-
-interface IWTCollaboratorQuery extends IWTQuery {
-  fullname?: XmlElem<string>;
 }
 
 interface IWTPersonFillingBase {
