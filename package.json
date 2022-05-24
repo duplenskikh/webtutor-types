@@ -1,11 +1,23 @@
 {
-  "name": "webtutor-types",
+  "name": "@umbrik/webtutor-types",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Подключение к проекту",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umbrik/webtutor-types.git"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umbrik/webtutor-types/issues"
+  },
+  "homepage": "https://github.com/umbrik/webtutor-types#readme"
 }
