@@ -463,14 +463,142 @@ interface RequestTopElem extends IWTXmlDocumentTopElem, IWTPersonFillingBase, IW
   row_key_field?: XmlElem<string>;
 }
 
-interface IWTWorkflowTopElem extends IWTDocumentTopElem {
-  id?: XmlElem<number>;
+interface IWTConditionsBase {
+  conditions?: XmlMultiElem<IWTConditionsBase>;
+  condition_eval_str?: XmlElem<string>;
+  desc_str?: XmlElem<string>;
+  has_error?: XmlElem<boolean>;
+  warning_str?: XmlElem<string>;
+  error_str?: XmlElem<string>;
+  is_false?: XmlElem<boolean>;
+  error_eval?(): void;
+}
+
+interface IWTWorkflowFieldsStatesBaseWorkflowFieldEntry {
+  value?: XmlElem<string>;
+}
+interface IWTWorkflowFieldsStatesBaseWorkflowField {
+  name?: XmlElem<string>;
+  type?: XmlElem<string>;
+  catalog?: XmlElem<string>;
+  title?: XmlElem<string>;
+  tooltip?: XmlElem<string>;
+  xquery_qual?: XmlElem<string>;
+  entries?: XmlMultiElem<IWTWorkflowFieldsStatesBaseWorkflowFieldEntry>;
+  external_value?: XmlElem<string>;
+  external_array?: XmlElem<string>;
+  field_group_id?: XmlElem<string>;
+  is_required?: XmlElem<boolean>;
+}
+
+interface IWTWorkflowFieldsStatesBaseState {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
-  actions?: XmlMultiElem<{
-    code?: XmlElem<string>;
-    name?: XmlElem<string>;
-  }>;
+  duration?: XmlElem<number>;
+  parameters?: XmlElem<string>;
+}
+
+interface IWTWorkflowFieldsStatesBase {
+  workflow_fields?: XmlMultiElem<IWTWorkflowFieldsStatesBaseWorkflowField>;
+  states?: XmlMultiElem<IWTWorkflowFieldsStatesBaseState>;
+}
+
+interface IWTWorkflowFieldGroup {
+  code?: XmlElem<string>;
+  name?: XmlElem<string>;
+  read_conditions?: IWTConditionsBase;
+  write_conditions?: IWTConditionsBase;
+}
+
+interface IWTWorkflowElemOperationBase {
+  type?: XmlElem<string>;
+	workflow_state_id?: XmlElem<string>;
+	workflow_field_id?: XmlElem<string>;
+	workflow_field_value?: XmlElem<string>;
+	request_status_id?: XmlElem<string>;
+	eval_str?: XmlElem<string>;
+	notification_id?: XmlElem<number>;
+	print_form_id?: XmlElem<number>;
+}
+
+interface IWTWorkflowElemOperationsBase {
+  operations?: XmlMultiElem<IWTWorkflowElemOperationBase>;
+}
+
+interface IWTWorkflowAction extends IWTWorkflowElemOperationsBase,
+  IWTConditionsBase,
+  IWTWorkflowElemOperationsBase
+{
+  code?: XmlElem<string>;
+  name?: XmlElem<string>;
+  is_trigger?: XmlElem<boolean>;
+}
+
+interface IWTWorkflowEscalationCourse {
+  course_id?: XmlElem<number>;
+  state_id?: XmlElem<number>;
+}
+
+interface IWTWorkflowEscalationAssessment {
+  assessment_id?: XmlElem<number>;
+  state_id?: XmlElem<number>;
+}
+
+interface IWTWorkflowEscalationPoll {
+  poll_id?: XmlElem<number>;
+  status?: XmlElem<number>;
+}
+
+interface IWTWorkflowEscalation extends IWTWorkflowElemOperationBase {
+  code?: XmlElem<string>;
+  name?: XmlElem<string>;
+  workflow_state_id?: XmlElem<string>;
+  auto_escalation?: XmlElem<boolean>;
+  auto_escalation_by_end_date?: XmlElem<boolean>;
+  auto_escalation_days?: XmlElem<number>;
+  auto_escalation_repeat?: XmlElem<boolean>;
+  escalation_eval_str?: XmlElem<string>;
+  escalation_eval_negative?: XmlElem<boolean>;
+  courses?: XmlMultiElem<IWTWorkflowEscalationCourse>;
+  assessments?: XmlMultiElem<IWTWorkflowEscalationAssessment>;
+  polls?: XmlMultiElem<IWTWorkflowEscalationPoll>;
+}
+
+interface IWTWorkflowTuneFieldTuneFieldChain {
+  name?: XmlElem<string>;
+  path?: XmlElem<string>;
+  catalog_name?: XmlElem<string>;
+  type?: XmlElem<string>;
+  is_multiple?: XmlElem<boolean>;
+  pk?: XmlElem<string>;
+  value?: XmlElem<string>;
+}
+
+interface IWTWorkflowTuneField {
+  tune_field_chain: XmlMultiElem<IWTWorkflowTuneFieldTuneFieldChain>;
+}
+
+interface IWTWorkflowTopElem extends IWTDocumentTopElem,
+  IWTConditionsBase,
+  IWTWorkflowFieldsStatesBase,
+  IWTDocInfo
+{
+  id?: XmlElem<number>;
+	code?: XmlElem<string>;
+	name?: XmlElem<string>;
+	add_conditions?: IWTConditionsBase;
+  field_groups?: XmlMultiElem<IWTWorkflowFieldGroup>;
+  actions?: XmlMultiElem<IWTWorkflowAction>;
+	use_triggers?(): boolean;
+  escalations?: XmlMultiElem<IWTWorkflowEscalation>;
+	default_state?: XmlElem<string>;
+	default_action?: XmlElem<string>;
+	auto_submit_fields?: XmlElem<boolean>;
+	comment?: XmlElem<string>;
+	destination_object_name?: XmlElem<string>;
+  tune_fields?: XmlMultiElem<IWTWorkflowTuneField>;
+	is_std?: XmlElem<boolean>;
+	run_action?(actionParam: any): void;
 }
 
 interface IWTWorkflowDocument extends IWTXmlDocument {
