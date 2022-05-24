@@ -2,7 +2,7 @@
 
 ## Подключение к проекту
 
-1. `npm i webtutor-types`
+1. `npm i @umbrik/webtutor-types`
 2. `tsconfig.json` должен быть следующего содержания:
 
 ```json
@@ -16,7 +16,7 @@
     "skipLibCheck": true,
     "noLib": true,
     "typeRoots": [
-      "./node_modules/webtutor-types/lib"
+      "./node_modules/@umbrik/webtutor-types/lib"
     ]
   }
 }
