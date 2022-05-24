@@ -9,7 +9,6 @@
     "types": [],
     "strict": true,
     "noLib": true,
-    "rootDir": "./lib",
     "typeRoots": [
       "./lib"
     ]
