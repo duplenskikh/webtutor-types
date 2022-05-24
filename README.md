@@ -2,7 +2,7 @@
 
 ## Подключение к проекту
 
-1. `npm i @umbrik/webtutor-types`
+1. `npm i @umbrik/webtutor-types --save-dev`
 2. `tsconfig.json` должен быть следующего содержания:
 
 ```json
