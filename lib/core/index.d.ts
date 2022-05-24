@@ -1927,7 +1927,7 @@ declare function RegisterCodeLibrary(arg: string): any;
  * @param {Array[any]} params (необязательный). Тип: Массив без описания структуры элементов. Массив параметров. В качестве элементов массива могут быть объекты разного типа – строки, числа, объекты, массивы… Порядок следования элементов в массиве должен соответствовать порядку параметров метода. Параметры могут быть перечислены через запятую, а весь массив - заключен в квадратные скобки. В случае, если параметры метода не предусмотрены, указывается пустой массив ([]).
  * @returns {any} result
  */
-declare function CallObjectMethod(object: Object, method: string, params?: Array<any>): void;
+declare function CallObjectMethod(object: Object, method: string, params?: Array<any>): any;
 
 /**
  * Интерпретирует содержимое страницы по правилам ASP.
