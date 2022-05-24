@@ -8,9 +8,7 @@ declare namespace tools_web {
   function is_true(value: any): boolean;
   function get_user_data(dataCode: string): void;
   function set_user_data(dataCode: string, valueParam: any, ttl?: number): void;
-  function get_object_source_url(objectType: string, objectId: number): void;
-  function convert_xss(text: string, type?: string): string;
-  function check_access(doc: IWTXmlDocumentTopElem, personId: number, personDoc?: IWTXmlDocumentTopElem, session?: Session): void;
+  function get_object_source_url(objectType: string, objectId: number, oParams?: any): any;
   function encrypt_launch_id(documentId: number, date: Date): string;
   function reg_exp_init(): any;
   function user_init(req: Request, query: Object): any;
@@ -23,7 +21,6 @@ declare namespace tools_web {
   function get_web_const(sNameParam: any, fldLngParam: any): any;
   function eval_web_column_const(sNameParam: any, fldLngParam: any): any;
   function get_web_desc(sSourceHtml: any, oUrl: any, _path?: any, Env?: any): any;
-  function get_sum_sid(sIdParam: any, iSessionIdParam: any): any;
   function check_sum_sid(sIdParam: any, sSumParam: any, iSessionIdParam: any): any;
   function custom_elems_filling(fldTarget: any, oSourceParam: any, arrCustomElemsParam: any, oParams: any): any;
   function web_custom_elems_filling(_catalog: any, _top_id: any, _source: any, _request_form: any, _value_flag: any, sCharsetParam: any, arrFields: any): any;
@@ -33,7 +30,7 @@ declare namespace tools_web {
   function get_url_protocol(_url: any): any;
   function set_url_protocol(sUrlParam: any): any;
   function get_cur_lng_name(sTextParam: any, sShortIDParam: any): any;
-  function check_access(sourceDocument: IWTXmlDocument, personDocID: number, personDoc: IWTCollaboratorDocument, Session: any): any;
+  function check_access(doc: IWTXmlDocumentTopElem, personId: number, personDoc?: IWTXmlDocumentTopElem, session?: Session): void;
   function get_web_param(listParamsTarget: any, sParamNameParam: any, sDefaultValueParam: any, bEmtyFlagParam: any): any;
   function set_web_params(listParamsTarget: any, listWvarsParam: any, bRewriteFlagParam: any, iOverrideWebTemplateIDParam: any): any;
   function write_custom_web_template(oCustomWebTemplateParam: any): any;
@@ -59,7 +56,7 @@ declare namespace tools_web {
   function insert_custom_code(iCustomWebTemplateID_PARAM: any, teCustomWebTemplate_PARAM: any, bEval_PARAM: any, bNaked_PARAM: any, iDepth_PARAM: any, aOfFldNativeParamsArr_PARAM: any, bExternalEnvelope_PARAM: any): any;
   function place_xaml(iCustomWebTemplateID_PARAM: any, teCWebTemplate_PARAM: any, oPlaceXamlParams_PARAM: any): any;
   function place_xaml_player(iCustomWebTemplatePARAM: any, curWebDesignPARAM: any, Request: any, oPlaceXamlParams_PARAM: any): any;
-  function convert_xss(sTextParam: any, sTypeParam: any): any;
+  function convert_xss(text: string, type?: string): string;
   function convert_bbcode_to_html(sMessageSource: any, objRegExp: any): any;
   function convert_html_to_bbcode(sMessageSource: any, objRegExp: any): any;
   function convert_bbtags_to_html(sMessageSource: any, objRegExp: any): any;
@@ -73,14 +70,12 @@ declare namespace tools_web {
   function get_column_width(sTypeParam: any, sModeParam: any): any;
   function get_catalog_list_arrays(oCollectionParam: any, Env: any, EnvLngCommon: any): any;
   function check_session_user(Request: any, iUserIDParam: any): any;
-  function is_true(oParam: any): any;
   function init_cur_active_web_template(Env: any, bCreateParam: any): any;
   function save_cur_active_web_template(teActiveWebTemplateDocParam: any, bFinishSaveParam: any): any;
   function get_session_lng(Session: any): any;
   function check_site_access(tePersonParam: any, oSiteParam: any): any;
   function get_resource_url(iObjectIDParam: any, Session: any): any;
   function get_custom_web_template_url(iTemplateIDParam: any): any;
-  function get_object_source_url(sCatalogTypeParam: any, iObjectIDParam: any, oParams: any): any;
   function GetTalentPoolObjectsList(iPersonIdParam: any, bAddFuncSubordinatesParam: any, bHideDissmissedParam: any, vBossTypeParam: any, iCareerReserveTypeParam: any): any;
   function GetRequiredQualificationsList(iPersonIDParam: any, sSearchListParam: any, bCatalogListParam: any): any;
   function get_recommended_materials(iPersonIDParam: any, sSearchListParam: any, bCatalogListParam: any, iRootIDParam: any): any;
@@ -88,8 +83,6 @@ declare namespace tools_web {
   function get_var_eval(sVarNamaParam: any, curVars: any, oEvalParam: any, sEvalTypeParam: any): any;
   function convert_desc_to_html(sDescParam: any): any;
   function get_user_recommended_learning(iUserIdParam: any, teUser: any): any;
-  function set_user_data(oConditionsParam: any, oValueParam: any, iDurationParam: any): any;
-  function get_user_data(oConditionsParam: any): any;
   function remove_user_data(sKeyParam: any): any;
   function obtain_text_area(iDocIDParam: any, teDocTarget: any): any;
   function get_host_name(sUrlParam: any): any;
@@ -108,13 +101,11 @@ declare namespace tools_web {
   function get_key_positions_list(iPersonIdParam: any, oStructParam: any): any;
   function url_std_content_type(sUrlParam: any): any;
   function write_url_to_response(sUrl: any, oRequestParam: any): any;
-  function encrypt_launch_id(sLaunchIDParam: any, dEndDateParam: any): any;
   function decrypt_launch_id(sLaunchIDParam: any): any;
   function get_valid_url(sUrlParam: any): any;
   function get_active_web_template_hash(sModeParam: any, sAccessLevelParam: any, sAccessRoleParam: any, sSiteIDParam: any, sWebDesignIDParam: any): any;
   function build_submatched_string(sSourceString: any, sRealString: any, sDestString: any): any;
   function get_auth_hash(sSourceParam: any): any;
-  function user_init(Request: any, oParam: any): any;
   function GetProjectManagementObjectsList(iPersonIDParam: any, arrCurLngParam: any, bAddFuncSubordinatesParam: any, bHideDissmissedParam: any, bShowProjectManagersParam: any, bOverdueParam: any, bProjectTreeParam: any, bCheckTaskSeeRightsParam: any, vBossTypeParam: any, oStructParam: any): any;
   function get_date_passed_string(dDateParam: any, sCurLngId: any): any;
   function get_date_remain_string(dDateParam: any, sCurLngId: any): any;

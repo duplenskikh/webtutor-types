@@ -659,7 +659,7 @@ interface IWTMSDialogObjectSelectTopElem extends IWTXmlDocumentTopElem {
 }
 
 interface IWTMenu {
-
+  name?: XmlElem<string>;
 }
 
 interface IWTListsObjectResourceType {
@@ -1417,7 +1417,6 @@ interface IWTEventTopElem extends IWTXmlDocumentTopElem, IWTCustomElemsBase, IWT
   get_webinar_admin_template?(): any;
   get_webinar_setting?(sSettingNameParam: any): any;
   call_webinar_system_method?(sMethodNameParam: any, oParams: any, bReloadDocument: any): any;
-  get_webinar_setting?(sSettingNameParam: any, sSettingTypeParam: any): any;
   set_webinar_setting?(sSettingNameParam: any, sSettingValueParam: any, sSettingTypeParam: any): any;
   get_webinar_url?(iUserIdParam: any, sUrl: any): any;
   get_webinar_record_url?(sCurrentHostParam: any): any;

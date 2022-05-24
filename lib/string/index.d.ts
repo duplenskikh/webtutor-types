@@ -10,7 +10,6 @@ interface String {
   repeat(number: number): string;
 }
 
-
 interface StringConstructor {
   new(value?: any): string;
   (value?: any): string;

@@ -8,7 +8,7 @@ declare namespace global_settings {
   var default_exchange_server_id: number | null;
   var settings: {
     default_web_design_id: number,
-    web_designs: Object,
+    web_designs: any,
     portal_base_url: string,
     use_personal_chat_global_policy: boolean,
     personal_chat_confirmation_required: boolean,

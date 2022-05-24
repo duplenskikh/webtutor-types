@@ -12,7 +12,7 @@ declare namespace tools {
    */
   function make_password(password: string, flag: boolean): string;
 
-  function start_agent(agentId: number, objectId: number): boolean;
+  function start_agent(agentId: number, objectId: number, _elems_id_str?: any, dDateParam?: any, sTenancyNameParam?: any): any;
 
   /**
    * Функция открывает документ и возвращает его.
@@ -24,7 +24,6 @@ declare namespace tools {
 
   function check_access(sourceDocument: IWTXmlDocument, userId: number): boolean;
   function xquery(string: string): any;
-  function common_filling(type: string, sourceDoc: any, objectId: number, objectDoc?: IWTXmlDocumentTopElem, customFlag?: boolean): void;
   function activate_course_to_person(params: any, courseId?: number, eventId?: number, personDoc?: IWTCollaboratorTopElem, educationPlanId?: number, duration?: number, startLearningDate?: Date, lastLearningDate?: Date, groupId?: number, eid?: any, skipDismissed?: boolean): number | null | IWTXmlDocument;
 
   /**
@@ -102,7 +101,7 @@ declare namespace tools {
   function is_by_group_id(groupId: number): any;
   function is_statement_date(iActivityIDParam: any, sValueParam: any, sUslParam: any): any;
   function object_filling(_type: any, _source: any, _object_id: any, _object_doc: any): any;
-  function common_filling(_type: any, _source: any, _object_id: any, _object_doc: any, _custom_flag: any): any;
+  function common_filling(type: string, sourceDoc: any, objectId: number, objectDoc?: IWTXmlDocumentTopElem, customFlag?: boolean): void;
   function common_clear(_type: any, _source: any, _ps: any): any;
   function active_learning_finish(_learning_id: any, _source?: any, _course_doc?: any): any;
   function active_test_learning_finish(_learning_id: any, _source?: any, _assessment_doc?: any, iPersonIDParam?: any, bFinishTest?: any): any;
@@ -134,10 +133,8 @@ declare namespace tools {
   function obtain_lists(_url: any, _list_name: any): any;
   function event_finish(eventId: number, eventDocument?: IWTEventDocument): any;
   function event_start(eventId: number, eventDocument: IWTEventDocument, oScreenParam: any): any;
-  function check_access(sourceTopElem: IWTXmlDocumentTopElem, _user_id: any): any;
   function get_object_form_url(sCatalogNameParam: any, bIsCatalogParam: any): any;
   function get_screen_form_url(sCatalogNameParam: any): any;
-  function new_doc_by_name(sCatalogNameParam: any, bIsCatalogParam: any): any;
   function create_package(_pak_url: any, _report_id: any, _param_source: any, sPackIDParam: any): any;
   function create_list_package(sResultUrlParam: any, fldPackage: any): any;
   function get_doc_by_key(catalog: string, key: string, value: any): any;
@@ -151,7 +148,6 @@ declare namespace tools {
   function obtain_access_roles(_url: any, _list: any): any;
   function import_course(_file: any): any;
   function process_skk(_inst_flag: any): any;
-  function make_password(PASSWORD: any, CHECK: any): any;
   function get_version(_type: any, bDateFlag: any): any;
   function get_custom_template(_catalog: string, _top_id?: any, _source?: any): any;
   function set_web_ban(_person_id: any, _status: any, _source: any, _check_admin: any): any;
@@ -169,7 +165,6 @@ declare namespace tools {
   function create_license(iLicenseId: any): any;
   function create_license_complete(sTempDirectoryUrl: any): any;
   function recovery_empty_lng_const(_lng_id: any, _source: any): any;
-  function start_agent(_agent_id: any, _element_id: any, _elems_id_str: any, dDateParam: any, sTenancyNameParam: any): any;
   function import_pwt_data_xml(_xml: any, _user_id: any, _report_id: any, _file_url: any, sUserAgentParam: any): any;
   function decript_pwt_data_str(_str: any): any;
   function update_course_parts_structure(_learning_id: any, _course_doc: any, _doc_learning: any): any;
@@ -230,7 +225,6 @@ declare namespace tools {
   function wvars_to_object(listWVarsPARAM: any): any;
   function copy_directory(sSourceDirPARAM: any, sDestDirPARAM: any): any;
   function send_event_notifications(eventId: number, _doc_event: any, send_type: any): any;
-  function object_to_text(objectPARAM: any, sFormatPARAM: any, iMaxDepthPARAM: any,): any;
   function create_object_version(oDocParam: any): any;
   function get_mandatory_learnings(iPersonIDParam: any, iObjectIDParam: any, tePersonParam: any, teObjectParam: any): any;
   function get_relative_boss_types(objectParam: any, oPersonParam: any): any;
@@ -350,7 +344,6 @@ declare namespace tools {
   function wait_script_queue(iScriptIdParam: any, bDeleteScript: any): any;
   function open_course_version(iCourseIdParam: any, sBaseUrlParam: any): any;
   function evalReplace(strEvalParam: any): any;
-  function xquery(sQueryParam: any): any;
   function get_xhttp_ini(sIniVarName: any): any;
   function resource_pic_envelope(sMode: any, vParam1: any, vParam2: any, vParam3: any, vParam4: any): any;
   function file_source_get_upload_file_url(iFileSourceIdParam: any, sFileNameParam: any): any;
