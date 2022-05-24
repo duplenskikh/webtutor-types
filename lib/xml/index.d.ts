@@ -15,7 +15,6 @@ interface XmElem<T> {
    */
   ForeignElem: any;
 
-
   OptForeignElem: any;
   Name: string;
   PrimaryKey?: XmlElem<any>;
