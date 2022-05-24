@@ -1,6 +1,6 @@
 interface ActiveXObjectConstructor {
-  new(...arg: any): any;
-  (...arg: any): any;
+  new(name: string): any;
+  (name: string): any;
 }
 
 declare var ActiveXObject: ActiveXObjectConstructor;
