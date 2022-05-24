@@ -5,6 +5,6 @@ declare namespace tools_knlg {
     start_date: Date,
     plan_start_date: Date,
     expert_id: number
-    education_plan_id: string
+    education_plan_id: number
   }): { doc_learning_task_result: any };
 }
