@@ -319,15 +319,6 @@ interface IWTSession extends Object {
   sid: number;
 }
 
-/** Объект параметров агента */
-declare var Param: Object;
-/** ID объекта над которым выполняется агент */
-declare var OBJECT_ID: number;
-/** Флаг исполнения кода на клиенте */
-declare var LdsIsClient: boolean;
-/** Флаг исполнения кода на сервере */
-declare var LdsIsServer: boolean;
-
 interface IWTServerAgentTopElem extends IWTXmlDocumentTopElem {
   id?: XmlElem<number>;
   code?: XmlElem<string>;

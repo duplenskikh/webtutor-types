@@ -48,13 +48,6 @@ type Extract<T, U> = T extends U ? T : never;
 */
 type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
 
-
-declare var Param: Object;
-declare var OBJECT_ID: number;
-declare var OBJECTS_ID_STR: string;
-declare var LdsIsClient: boolean;
-declare var OBJECTS_ID_STR: string;
-
 interface IWTCommonEventStatusType {
   id: string;
   name: string;
