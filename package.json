@@ -13,7 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/umbrik/webtutor-types.git"
   },
-  "keywords": [],
+  "keywords": [
+    "webtutor",
+    "types"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
