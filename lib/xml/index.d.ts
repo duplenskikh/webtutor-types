@@ -902,7 +902,9 @@ declare interface IWTLectorDocument extends IWTXmlDocument {
 declare interface IWTLearningTaskResultTopElem extends
   IWTXmlDocumentTopElem,
   IWTPersonFillingBase,
-  IWTFileListBase {
+  IWTFileListBase,
+  IWTCustomElemsBase
+{
   learning_task_id?: XmlElem<number>;
   learning_task_name?: XmlElem<string>;
   person_id?: XmlElem<number>;
@@ -2410,7 +2412,9 @@ interface IWTCareerReserveTask extends XmlElem<any> {
   commission_persons?: Array<IWTCareerReserveComissionPerson>;
 }
 
-interface IWTCareerReserveTopElem extends IWTXmlDocumentTopElem, IWTCustomElemsBase {
+interface IWTCareerReserveTopElem extends IWTXmlDocumentTopElem,
+  IWTCustomElemsBase
+{
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -2892,6 +2896,31 @@ interface IWTActionReportTopElem extends IWTXmlDocumentTopElem {
 
 interface IWTActionReportDocument extends IWTXmlDocument {
   TopElem: IWTActionReportTopElem;
+}
+
+interface IWTBlogEntryCommentTopElem extends IWTXmlDocumentTopElem,
+  IWTFileListBase,
+  IWTAccessDocBase,
+  IWTDocInfo,
+  IWTCustomElemsBase
+{
+  id?: XmlElem<number>;
+	create_date?: XmlElem<Date>;
+	blog_entry_id?: XmlElem<number>;
+	object_type?: XmlElem<string>;
+	object_name?: XmlElem<string>;
+	person_id?: XmlElem<number>;
+	person_fullname?: XmlElem<string>;
+	name?: XmlElem<string>;
+	parent_id?: XmlElem<number>;
+	like_id?: XmlElem<number>;
+	message?: XmlElem<string>;
+	type?: XmlElem<string>;
+	creator_name?(): string;
+}
+
+interface IWTBlogEntryCommentDocument extends IWTXmlDocument {
+  TopElem: IWTBlogEntryCommentTopElem;
 }
 
 /** 
