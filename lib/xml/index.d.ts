@@ -66,7 +66,7 @@ interface IWTXmlDocumentTopElem {
   comment?: XmlElem<string>;
   Doc: IWTXmlDocument;
   role_id?: XmlMultiElem<number>;
-  doc_info: XmlElem<IWTDocInfo>;
+  doc_info?: XmlElem<IWTDocInfo>;
   OptChild(childName: string): any;
   AssignElem(TopElem: IWTXmlDocumentTopElem): void;
   EvalPath(pathName: string): XmlElem<any> | XmlMultiElem<any> | never;
@@ -291,6 +291,7 @@ interface IWTSubdivisionGroupSubdivisions {
   subdivision_id?: XmlElem<number>;
   subdivision_name?: XmlElem<string>;
 }
+
 interface IWTSubdivisionGroupTopElem extends IWTXmlDocumentTopElem, IWTDocInfo, IWTKnowledgePartsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -303,6 +304,56 @@ interface IWTSubdivisionGroupTopElem extends IWTXmlDocumentTopElem, IWTDocInfo, 
 
 interface IWTSubdivisionGroupDocument extends IWTXmlDocument {
   TopElem: IWTSubdivisionGroupTopElem;
+}
+
+interface IWTOutstaffPeriodsBase {
+  periods?: XmlMultiElem<any>;
+  materials?: XmlMultiElem<any>;
+}
+
+interface IWTObjectCodeNameBase {
+  id?: XmlElem<number>;
+  code?: XmlElem<string>;
+  name?: XmlElem<string>;
+  resource_id?: XmlElem<number>;
+}
+
+interface IWTSubdivisionTopElem extends IWTXmlDocumentTopElem,
+  IWTObjectCodeNameBase,
+  IWTFileListBase,
+  IWTFuncManagersBase,
+  IWTKnowledgePartsBase,
+  IWTKnowledgePartsBaseOld,
+  IWTCustomElemsBase,
+  IWTDocumentPersonsBase
+{
+  org_id?: XmlElem<number>;
+  parent_object_id?: XmlElem<number>;
+  is_disbanded?: XmlElem<boolean>;
+  lng_id?: XmlElem<string>;
+  location_id?: XmlElem<string>;
+  access_time_start?: XmlElem<string>;
+  access_time_end?: XmlElem<string>;
+  show_detailed?: XmlElem<boolean>;
+  show_children?: XmlElem<boolean>;
+  place_id?: XmlElem<number>;
+  region_id?: XmlElem<number>;
+  kpi_profile_id?: XmlElem<number>;
+  bonus_profile_id?: XmlElem<number>;
+  schedule_type_id?: XmlElem<number>;
+  formed_date?: XmlElem<Date>;
+  disbanded_date?: XmlElem<Date>;
+  cost_center_id?: XmlElem<number>;
+  is_faculty?: XmlElem<boolean>;
+  outstaff?: XmlElem<IWTOutstaffPeriodsBase>;
+  desc?: XmlElem<string>;
+  comment?: XmlElem<string>;
+  doc_info?: XmlElem<IWTDocInfoBase>;
+  start_action?(): any
+}
+
+interface IWTSubdivisionDocument extends IWTXmlDocument {
+  TopElem: IWTSubdivisionTopElem;
 }
 
 interface IWTSpxmlUnibridgeConfig {
@@ -1852,9 +1903,15 @@ interface IWTDocInfoModification {
   date?: XmlElem<Date>;
 }
 
+interface IWTDocInfoBase {
+  creation?: XmlElem<IWTDocInfoCreation>;
+  modification?: XmlElem<IWTDocInfoModification>;
+  invariable?: XmlElem<boolean>;
+}
+
 interface IWTDocInfo {
-  creation?: IWTDocInfoCreation;
-  modification?: IWTDocInfoModification;
+  creation?: XmlElem<IWTDocInfoCreation>;
+  modification?: XmlElem<IWTDocInfoModification>;
   invariable?: XmlElem<boolean>;
 }
 
