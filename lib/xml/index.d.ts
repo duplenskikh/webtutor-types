@@ -652,16 +652,22 @@ interface IWTRemoteSecurityProfileDocument extends IWTXmlDocument {
   TopElem: IWTRemoteSecurityProfileTopElem;
 }
 
-interface IWTRemoteApplicationCredentials {
-  id: XmlElem<number>;
+interface IWTRemoteApplicationCredential {
+  id?: XmlElem<number>;
 }
 
-interface IWTRemoteApplicationDocumentTopElem extends IWTXmlDocumentTopElem {
-  credentials?: IWTRemoteApplicationCredentials;
+interface IWTRemoteApplicationTopElem extends IWTXmlDocumentTopElem, IWTDocInfo {
+  id?: XmlElem<number>;
+  code?: XmlElem<string>;
+  name?: XmlElem<string>;
+  app_id?: XmlElem<string>;
+  credentials?: XmlMultiElem<IWTRemoteApplicationCredential>;
+  category_id?: XmlElem<string>;
+  comment?: XmlElem<string>;
 }
 
 interface IWTRemoteApplicationDocument extends IWTXmlDocument {
-  TopElem: IWTRemoteApplicationDocumentTopElem;
+  TopElem: IWTRemoteApplicationTopElem;
 }
 
 interface IWTQualificationTopElem extends IWTXmlDocumentTopElem {
