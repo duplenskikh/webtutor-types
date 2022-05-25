@@ -216,20 +216,23 @@ interface IWTLearningSection {
   score?: XmlElem<number>;
 }
 
-interface IWTTutorTopElem extends IWTXmlDocumentTopElem, IWTPersonFillingBase, IWTFileListBase, IWTAdminAccessBase, IWTCustomElemsBase, IWTDocInfo {
+interface IWTTutorTopElem extends IWTXmlDocumentTopElem,
+  IWTPersonFillingBase,
+  IWTFileListBase,
+  IWTAdminAccessBase,
+  IWTCustomElemsBase
+{
   code?: XmlElem<string>;
   person_id?: XmlElem<number>;
   career_reserve_type_id?: XmlElem<number>;
   status?: XmlElem<string>;
   start_date?: XmlElem<Date>;
   finish_date?: XmlElem<Date>;
-
-  position_commons?: [{
-    position_common_id?: XmlElem<number>;
-  }];
-
+  position_commons?: XmlMultiElem<any>;
+  access?: XmlElem<IWTAccessDocBase>;
   desc?: XmlElem<string>;
   comment?: XmlElem<string>;
+  doc_info?: XmlElem<IWTDocInfoBase>;
 }
 
 interface IWTTutorDocument extends IWTXmlDocument {
