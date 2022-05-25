@@ -94,7 +94,7 @@ declare namespace tools {
   function add_lng(sLngUrlParam: any, bDoObtainParam: any): any;
   function get_web_str(sNameParam: any): any;
   function is_boss(iUserIDParam: any, iPersonIDParam: any): any;
-  function is_user_boss(iManagerIdParam: any, iUserIdParam: any, _catalog_names: any, vBossType: any): any;
+  function is_user_boss(managerId: number, userId: number, _catalog_names?: any, vBossType?: any): any;
   function is_self_cur_user(iUserIDParam: any): any;
   function is_boss_by_subdivision_id(_sub_id: any): any;
   function is_by_position_id(_position_id: any): any;
@@ -286,7 +286,7 @@ declare namespace tools {
   function check_sum_sid(sIdParam: any, sSumParam: any): any;
   function recommend_library_material_to_person(iPersonIDParam: any, iMaterialIDParam: any, tePersonParam: any, teMaterialParam: any, bSendNotificationParam: any, iEducationPlanID: any): any;
   function opt_date(oDateParam: any, oDefaultParam: any): any;
-  function beautify_file_size(iByteSizePARAM: any, bAddUnitPARAM: any): any;
+  function beautify_file_size(bytes: number, addUnit?: boolean): string;
   function get_ft_value(sValueParam: any): any;
   function set_tenancy_by_host(sTenancyNameParam: any): any;
   function get_agent_command_queue_xml(iServerAgentIDParam: any, sElementIDParam: any, sElemsIDParam: any, dDateParam: any, sTenancyNameParam: any): any;
