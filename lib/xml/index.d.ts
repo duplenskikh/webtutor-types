@@ -360,8 +360,31 @@ interface IWTSpxmlUnibridgeConfig {
   appSettings?: XmlMultiElem<XmlElem<any>>;
 }
 
-interface IWTSite {
-  menus: Array<IWTMenu>;
+interface IWTSiteTopElem extends IWTXmlDocumentTopElem,
+  IWTObjectCodeNameBase,
+  IWTFuncManagersBase,
+  IWTCustomElemsBase
+{
+  title?: XmlElem<string>;
+  html_header?: XmlElem<string>;
+  html_icon_href?: XmlElem<string>;
+  web_design_id?: XmlElem<number>;
+  lng_id?: XmlElem<string>;
+  owner_objects?: XmlMultiElem<any>;
+  menus?: XmlMultiElem<any>;
+  web_designs?: XmlMultiElem<any>;
+  first_unauthorized_url?: XmlElem<string>;
+  first_authorized_url?: XmlElem<string>;
+  anonym_collaborator_id?: XmlElem<number>;
+  anonymous_modes?: XmlMultiElem<any>;
+  desc?: XmlElem<string>;
+  comment?: XmlElem<string>;
+  doc_info?: XmlElem<IWTDocInfoBase>;
+  is_std?: XmlElem<boolean>;
+}
+
+interface IWTSiteDocument extends IWTXmlDocument {
+  TopElem: IWTSiteTopElem;
 }
 
 interface IWTSession extends Object {
@@ -1651,7 +1674,7 @@ interface IWTEnv {
   /**
    * Текущий сайт пользователя с которым он взаимодействует
    */
-  curSite: IWTSite;
+  curSite: IWTSiteDocument;
   /**
    * ID текущего пользователя
    */
