@@ -1251,30 +1251,79 @@ interface IWTGroupCollaborator extends IWTPersonForeignBase {
   desc?: XmlElem<string>;
 }
 
-interface IWTGroupDocumentTopElem extends IWTXmlDocumentTopElem, IWTCustomElemsBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
+interface IWTRequirementsBase {
+  requirements?: XmlMultiElem<any>;
+  certificate_types?: XmlMultiElem<any>;
+  compound_programs?: XmlMultiElem<any>;
+  education_methods?: XmlMultiElem<any>;
+  obligatory_education_amount?: XmlElem<number>;
+  education_period?: XmlElem<number>;
+  typical_development_programs?: XmlMultiElem<any>;
+  qualifications?: XmlMultiElem<any>;
+  assessments?: XmlMultiElem<any>;
+  recomended_library_materials?: XmlMultiElem<any>;
+  professional_areas?: XmlMultiElem<any>;
+  educ_type_id?: XmlElem<string>;
+  education_type_id?: XmlElem<number>;
+  age_min?: XmlElem<number>;
+  age_max?: XmlElem<number>;
+  experience_in_company?: XmlElem<number>;
+  experience_in_current_position?: XmlElem<number>;
+}
+
+interface IWTGroupTopElem extends IWTXmlDocumentTopElem,
+  IWTObjectCodeNameBase,
+  IWTEducGroupsBase,
+  IWTFuncManagersBase,
+  IWTCustomElemsBase,
+  IWTDocumentPersonsBase,
+  IWTRequirementsBase,
+  IWTKnowledgePartsBase,
+  IWTKnowledgePartsBaseOld,
+  IWTViewConditionsBase,
+  IWTPersonObjectLinksBase
+{
   show_detailed?: XmlElem<boolean>;
   is_dynamic?: XmlElem<boolean>;
   is_educ?: XmlElem<boolean>;
   is_hidden?: XmlElem<boolean>;
   allow_social_post?: XmlElem<boolean>;
-  person_num?: XmlElem<number>;
+  collaborators?: XmlMultiElem<IWTGroupCollaborator>;
+  person_num?(): any
   forum_id?: XmlElem<number>;
+  kpi_profile_id?: XmlElem<number>;
+  bonus_profile_id?: XmlElem<number>;
+  schedule_type_id?: XmlElem<number>;
   join_mode?: XmlElem<string>;
   default_request_type_id?: XmlElem<number>;
   comment?: XmlElem<string>;
+  doc_info?: XmlElem<IWTDocInfoBase>;
+  access?: XmlElem<IWTAccessDocBase>;
   desc?: XmlElem<string>;
-  resource_id?: XmlElem<number>;
-	collaborators?: XmlMultiElem<IWTGroupCollaborator>;
-  dynamic_select_person?(clear: boolean): void;
-  activateCourseToPersons?(obj: any): void;
-  add_collaborator?(personId: number, personDocument?: IWTCollaboratorDocument): void;
-  remove_collaborator?(personId: number): void;
+  dynamic_select_person?(_clear_list: any): any
+  start_action?(_item_name: any): any
+  activateCourseToPersons?(oInputParam: any): any
+  add_collaborator?(iPersonIdParam: number, docPersonParam: any): any
+  remove_collaborator?(iPersonIdParam: number): any
+  role_id?: XmlMultiElem<number>;
+}
+
+interface IWTEducGroupsBaseEducGroup {
+  group_id?: XmlElem<string>;
+  code?: XmlElem<string>;
+  name?: XmlElem<string>;
+  place_id?: XmlElem<number>;
+  conversation_id?: XmlElem<number>;
+  collaborators?: XmlMultiElem<any>;
+  lectors?: XmlMultiElem<any>;
+}
+
+interface IWTEducGroupsBase {
+  educ_groups?: XmlMultiElem<IWTEducGroupsBaseEducGroup>;
 }
 
 interface IWTGroupDocument extends IWTXmlDocument {
-  TopElem: IWTGroupDocumentTopElem;
+  TopElem: IWTGroupTopElem;
 }
 
 interface IWTGameBonusBaseGameBonus {
