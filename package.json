@@ -1,6 +1,6 @@
 {
   "name": "@umbrik/webtutor-types",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "## Подключение к проекту",
   "main": "index.js",
   "directories": {
