@@ -3093,6 +3093,7 @@ interface IWTActiveLearningPart {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   type?: XmlElem<string>;
+  last_usage_date?: XmlElem<Date>;
 }
 
 interface IWTActiveLearningTopElem extends IWTXmlDocumentTopElem, IWTPersonFillingBase, IWTAdminAccessBase, IWTDocInfo {
