@@ -444,7 +444,7 @@ declare function ArrayRange(array: any, pos: number, elemsNum: number): Array<an
  * @param {String} expression - выражение, определяющее соответствие элемента массива критерию. Вычисляется относительно элемента массива. (Bool).
  * @returns {Array|XmlElem}
 */
-declare function ArraySelect(array: any[], expression: string): any;
+declare function ArraySelect(array: any, expression: string): any;
 
 /**
  * Возвращает элемент заданного массива, содержащий минимальное значение определенного поля среди его элементов. Если массив не содержит ни одного элемента, функция возвращает undefined.
