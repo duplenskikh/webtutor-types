@@ -38,6 +38,7 @@ interface XmMultiElem<T> {
   Add(): any;
   AddChild(name?: string, type?: string): XmlElem<T>;
   ByValueExists(value: any): Boolean;
+  Child(index: number): XmlElem<T>;
   GetChildByKey(name: string): any;
   GetOptChildByKey(name: string, defaultValue?: any): any;
   ObtainChildByKey(key: string, value?: any): T;
