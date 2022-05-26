@@ -1303,7 +1303,7 @@ interface IWTGroupTopElem extends IWTXmlDocumentTopElem,
   dynamic_select_person?(_clear_list: any): any
   start_action?(_item_name: any): any
   activateCourseToPersons?(oInputParam: any): any
-  add_collaborator?(iPersonIdParam: number, docPersonParam: any): any
+  add_collaborator?(iPersonIdParam: number, docPersonParam?: any): any
   remove_collaborator?(iPersonIdParam: number): any
   role_id?: XmlMultiElem<number>;
 }
@@ -3187,6 +3187,50 @@ interface IWTBlogEntryCommentTopElem extends IWTXmlDocumentTopElem,
 
 interface IWTBlogEntryCommentDocument extends IWTXmlDocument {
   TopElem: IWTBlogEntryCommentTopElem;
+}
+
+
+interface IWTResponseTopElem extends IWTXmlDocumentTopElem,
+  IWTPersonFillingBase,
+  IWTAdminAccessBase,
+  IWTCustomElemsBase
+{
+  id?: XmlElem<number>;
+  code?: XmlElem<string>;
+  response_type_id?: XmlElem<number>;
+  type?: XmlElem<string>;
+  create_date?: XmlElem<Date>;
+  person_id?: XmlElem<number>;
+  object_id?: XmlElem<number>;
+  object_name?: XmlElem<string>;
+  object_code?: XmlElem<string>;
+  object_start_date?: XmlElem<Date>;
+  is_public?: XmlElem<boolean>;
+  comment?: XmlElem<string>;
+  doc_info?: XmlElem<IWTDocInfoBase>;
+  basic_score?: XmlElem<number>;
+  basic_desc?: XmlElem<string>;
+  calc_basic_values?(): any
+}
+
+interface IWTResponseDocument extends IWTXmlDocument {
+  TopElem: IWTResponseTopElem;
+}
+
+interface IWTResponseTypeTopElem extends IWTXmlDocumentTopElem {
+  code?: XmlElem<string>;
+  name?: XmlElem<string>;
+  object_type?: XmlElem<string>;
+  create_redirect?: XmlElem<string>;
+  basic_desc_field?: XmlElem<string>;
+  basic_score_field?: XmlElem<string>;
+  doc_info?: XmlElem<IWTDocInfoBase>;
+  comment?: XmlElem<string>;
+  disp_block?: XmlElem<any>;
+}
+
+interface IWTResponseTypeDocument extends IWTXmlDocument {
+  TopElem: IWTResponseTypeTopElem;
 }
 
 interface IWTRequestPerson extends IWTPersonFillingBase {
