@@ -71,6 +71,7 @@ interface IWTXmlDocumentTopElem {
   AssignElem(TopElem: IWTXmlDocumentTopElem): void;
   EvalPath(pathName: string): XmlElem<any> | XmlMultiElem<any> | never;
   tags?: XmlMultiElem<IWTKnowledgePartsBaseTag>;
+  access?: XmlElem<IWTAccessDocBase>;
 }
 
 interface ObjectCodeNameBase {
@@ -1486,7 +1487,7 @@ interface IWTEventSettingsBase {
   }
 }
 
-interface IWTEventTopElem extends IWTXmlDocumentTopElem, IWTCustomElemsBase, IWTKnowledgePartsBase, IWTEventSettingsBase, IWTAccessDocBase {
+interface IWTEventTopElem extends IWTXmlDocumentTopElem, IWTCustomElemsBase, IWTKnowledgePartsBase, IWTEventSettingsBase {
   /** ID мероприятия */
   id?: XmlElem<number>;
   /** Код мероприятия */
@@ -2456,7 +2457,9 @@ interface IWTCollaboratorTopElem extends IWTXmlDocumentTopElem,
   IWTKnowledgePartsBase,
   IWTKnowledgePartsBaseOld,
   IWTCustomElemsBase,
-  IWTPersonObjectLinksBase, IWTDocInfo {
+  IWTPersonObjectLinksBase,
+  IWTDocInfo
+  {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   eid?: XmlElem<string>;
@@ -2482,7 +2485,6 @@ interface IWTCollaboratorTopElem extends IWTXmlDocumentTopElem,
   request_black_list_comment?: XmlElem<string>;
   place_id?: XmlElem<number>;
   region_id?: XmlElem<number>;
-  access?: IWTAccessBase;
   cost_center_id?: XmlElem<number>;
   lng_id?: XmlElem<string>;
   location_id?: XmlElem<string>;
@@ -3166,7 +3168,6 @@ interface IWTActionReportDocument extends IWTXmlDocument {
 
 interface IWTBlogEntryCommentTopElem extends IWTXmlDocumentTopElem,
   IWTFileListBase,
-  IWTAccessDocBase,
   IWTDocInfo,
   IWTCustomElemsBase
 {
@@ -3302,8 +3303,7 @@ interface IWTRequestTopElem extends IWTXmlDocumentTopElem,
   IWTWorkflowDataBase,
   IWTDocInfo,
   IWTFileListBase,
-  IWTCustomElemsBase,
-  IWTAccessDocBase
+  IWTCustomElemsBase
 {
   id?: XmlElem<number>;
 	code?: XmlElem<string>;
