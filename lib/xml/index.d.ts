@@ -553,7 +553,7 @@ interface IWTConditionsBase {
 }
 
 interface IWTWorkflowFieldsStatesBaseWorkflowFieldEntry {
-  value?: XmlElem<string>;
+  value?: XmlElem<any>;
 }
 interface IWTWorkflowFieldsStatesBaseWorkflowField {
   name?: XmlElem<string>;
