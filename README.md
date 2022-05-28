@@ -9,14 +9,17 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "es6",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true,
+    "strict": false,
+    "noImplicitAny": true,
+    "allowJs": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "baseUrl": "src",
     "noLib": true,
     "typeRoots": [
-      "./node_modules/@umbrik/webtutor-types/lib"
+      "node_modules/@umbrik/webtutor-types/lib"
     ]
   }
 }
