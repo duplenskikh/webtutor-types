@@ -146,14 +146,14 @@ interface IWTWebVariableBaseWvar {
   value?: XmlElem<string>;
   type?: XmlElem<string>;
   catalog?: XmlElem<string>;
-  entries?: Array<IWTWebVariableBaseWvarEntry>;
+  entries?: XmlMultiElem<IWTWebVariableBaseWvarEntry>;
   description?: XmlElem<string>;
   is_modify?: XmlElem<boolean>;
   position?: XmlElem<number>;
 }
 
 interface IWTWebVariablesBase {
-  wvars?: Array<IWTWebVariableBaseWvar>;
+  wvars?: XmlMultiElem<IWTWebVariableBaseWvar>;
   wvars_selector?: XmlElem<string>;
   wvars_num?: number;
 }
@@ -303,7 +303,7 @@ interface IWTSubdivisionGroupTopElem extends IWTXmlDocumentTopElem, IWTDocInfo, 
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   is_dynamic?: XmlElem<boolean>;
-  subdivisions?: Array<IWTSubdivisionGroupSubdivisions>;
+  subdivisions?: XmlMultiElem<IWTSubdivisionGroupSubdivisions>;
   comment?: XmlElem<string>;
   desc?: XmlElem<string>;
   dynamic_select_person?(clearList?: boolean): void;
@@ -480,7 +480,7 @@ interface IWTResourceDocumentTopElem extends IWTXmlDocumentTopElem, ObjectCodeNa
   resource_type_id?: XmlElem<number>
   file_path?: XmlElem<string>;
   checksum?: XmlElem<string>;
-  links?: Array<IWTResourceLink>;
+  links?: XmlMultiElem<IWTResourceLink>;
   library_player_id?: XmlElem<number>;
   file_urls?: XmlElem<IWTResourceFileUrl>;
 
@@ -893,7 +893,7 @@ interface IWTListsCurrencyType {
   name: string;
   short_name: string;
   cent_name: string;
-  mod_names: Array<IWTListsCurrencyTypeModName>;
+  mod_names: XmlMultiElem<IWTListsCurrencyTypeModName>;
 }
 
 interface IWTListsEventForm {
@@ -924,8 +924,8 @@ interface IWTListsFact {
   name: string;
   type: number;
   catalog: string;
-  columns: Array<IWTListsFactColumn>;
-  extra_columns: Array<IWTListsFactExtraColumn>;
+  columns: XmlMultiElem<IWTListsFactColumn>;
+  extra_columns: XmlMultiElem<IWTListsFactExtraColumn>;
 }
 
 interface IWTListsProfessionalArea {
@@ -945,14 +945,14 @@ interface IWTListsExternalScript {
 }
 
 interface lists extends Object {
-  object_resource_types: Array<IWTListsObjectResourceType>;
-  currency_types: Array<IWTListsCurrencyType>;
-  event_forms: Array<IWTListsEventForm>;
-  organizational_forms: Array<IWTListsOrganizationalForm>;
-  facts: Array<IWTListsFact>;
-  professional_areas: Array<IWTListsProfessionalArea>;
-  web_requirements: Array<IWTListsWebRequirement>;
-  ext_externalscripts: Array<IWTListsExternalScript>;
+  object_resource_types: XmlMultiElem<IWTListsObjectResourceType>;
+  currency_types: XmlMultiElem<IWTListsCurrencyType>;
+  event_forms: XmlMultiElem<IWTListsEventForm>;
+  organizational_forms: XmlMultiElem<IWTListsOrganizationalForm>;
+  facts: XmlMultiElem<IWTListsFact>;
+  professional_areas: XmlMultiElem<IWTListsProfessionalArea>;
+  web_requirements: XmlMultiElem<IWTListsWebRequirement>;
+  ext_externalscripts: XmlMultiElem<IWTListsExternalScript>;
 }
 
 declare var lists: lists;
@@ -990,7 +990,7 @@ interface IWTLibraryMaterialTopElem extends IWTXmlDocumentTopElem {
   library_system_id?: XmlElem<number>;
   number?: XmlElem<string>;
   library_material_type_id?: XmlElem<number>;
-  library_material_formats?: Array<IWTLibraryMaterialFormat>;
+  library_material_formats?: XmlMultiElem<IWTLibraryMaterialFormat>;
   year?: XmlElem<number>;
   isbn?: XmlElem<string>;
   state_id?: XmlElem<number>;
@@ -1005,16 +1005,16 @@ interface IWTLibraryMaterialTopElem extends IWTXmlDocumentTopElem {
   contents?: XmlElem<string>;
   is_need_admin_approval?: XmlElem<boolean>;
   is_closed?: XmlElem<boolean>;
-  groups?: Array<IWTLibraryMaterialGroup>;
-  subscribed_persons?: Array<IWTLibraryMaterialSubscribedPerson>;
+  groups?: XmlMultiElem<IWTLibraryMaterialGroup>;
+  subscribed_persons?: XmlMultiElem<IWTLibraryMaterialSubscribedPerson>;
   external_id?: XmlElem<string>;
   default_response_type_id?: XmlElem<number>;
   mandatory_fill_response?: XmlElem<boolean>;
   old_id?: XmlElem<number>;
-  path_sections?: Array<IWTLibraryMaterialPathSection>;
+  path_sections?: XmlMultiElem<IWTLibraryMaterialPathSection>;
   comment?: XmlElem<string>;
 
-  filling_path_sections?(): Array<IWTLibraryMaterialPathSection>;
+  filling_path_sections?(): XmlMultiElem<IWTLibraryMaterialPathSection>;
 }
 
 interface IWTLearningTopElem
@@ -1080,7 +1080,7 @@ interface IWTLearningTaskTopElem extends
   finish_date?: XmlElem<Date>;
   yourself_start?: XmlElem<boolean>;
   desc?: XmlElem<string>;
-  experts?: Array<IWTLearningTaskExpert>;
+  experts?: XmlMultiElem<IWTLearningTaskExpert>;
 }
 
 interface IWTLearningTaskDocument extends IWTXmlDocument {
@@ -1197,7 +1197,7 @@ interface IWTLastAttemptTestLearningsBaseTestLearning {
 }
 
 interface IWTLastAttemptTestLearningsBase {
-  test_learnings?: Array<IWTLastAttemptTestLearningsBaseTestLearning>;
+  test_learnings?: XmlMultiElem<IWTLastAttemptTestLearningsBaseTestLearning>;
 }
 
 interface IWTKnowledgePartsBaseTag {
@@ -1337,7 +1337,7 @@ interface IWTGameBonusBaseGameBonus {
 }
 
 interface IWTGameBonusBase {
-  game_bonuss?: Array<IWTGameBonusBaseGameBonus>;
+  game_bonuss?: XmlMultiElem<IWTGameBonusBaseGameBonus>;
 }
 
 interface IWTFileBase {
@@ -1351,11 +1351,11 @@ interface IWTFileListBase {
 
 interface IWTFieldNamesBaseFieldName extends IWTFieldNamesBase {
   level?: XmlElem<number>;
-  field_names?: Array<IWTFieldNamesBaseFieldName>;
+  field_names?: XmlMultiElem<IWTFieldNamesBaseFieldName>;
 }
 
 interface IWTFieldNamesBase {
-  field_names?: Array<IWTFieldNamesBaseFieldName>;
+  field_names?: XmlMultiElem<IWTFieldNamesBaseFieldName>;
 }
 
 interface IWTEventPhaseCollaborator {
@@ -1371,7 +1371,7 @@ interface IWTEventPhase {
   finish_date: XmlElem<Date>;
   comment: XmlElem<string>;
   reserve_desc: XmlElem<string>;
-  collaborators: Array<IWTEventPhaseCollaborator>;
+  collaborators: XmlMultiElem<IWTEventPhaseCollaborator>;
 }
 interface IWTEventLearningTask {
   learning_task_id: XmlElem<number>;
@@ -1490,7 +1490,31 @@ interface IWTEventSettingsBase {
   }
 }
 
-interface IWTEventTopElem extends IWTXmlDocumentTopElem, IWTCustomElemsBase, IWTKnowledgePartsBase, IWTEventSettingsBase {
+interface IWTCatalogListBaseCatalogObject {
+  object_id?: XmlElem<number>;
+  comment?: XmlElem<string>;
+}
+
+interface IWTCatalogListBaseCatalog {
+  type?: XmlElem<string>;
+  title?: XmlElem<string>;
+  all?: XmlElem<boolean>;
+  objects?: XmlMultiElem<IWTCatalogListBaseCatalogObject>;
+}
+
+interface IWTCatalogListBase {
+  catalogs?: XmlMultiElem<IWTCatalogListBaseCatalog>;
+  catalogs_catalog_type?: XmlElem<string>;
+  catalogs_sel_all_objects?: XmlElem<boolean>;
+}
+
+interface IWTEventTopElem extends
+  IWTXmlDocumentTopElem,
+  IWTCustomElemsBase,
+  IWTKnowledgePartsBase,
+  IWTEventSettingsBase,
+  IWTCatalogListBase
+{
   /** ID мероприятия */
   id?: XmlElem<number>;
   /** Код мероприятия */
@@ -1577,13 +1601,13 @@ interface IWTEventTopElem extends IWTXmlDocumentTopElem, IWTCustomElemsBase, IWT
   contract_id?: XmlElem<number>;
   organizational_form?: XmlElem<string>;
   event_form?: XmlElem<string>;
-  event_forms?: Array<IWTEventForm>;
-  stages?: Array<IWTEventStage>;
+  event_forms?: XmlMultiElem<IWTEventForm>;
+  stages?: XmlMultiElem<IWTEventStage>;
   org_id?: XmlElem<number>;
   subdivision_id?: XmlElem<number>;
   collaborators?: XmlMultiElem<IWTEventCollaborator>;
   group_educ_group_id?: XmlElem<string>;
-  unnamed_person_by_orgs?: Array<IWTEventUnnamedPersonByOrgs>;
+  unnamed_person_by_orgs?: XmlMultiElem<IWTEventUnnamedPersonByOrgs>;
   unnamed_person_num?: XmlElem<number>;
   unnamed_person_sum?: XmlElem<number>;
   group_formed?: XmlElem<boolean>;
@@ -1593,19 +1617,19 @@ interface IWTEventTopElem extends IWTXmlDocumentTopElem, IWTCustomElemsBase, IWT
   even_preparations?: XmlMultiElem<IWTEventEvenPreparations>;
   groups?: XmlMultiElem<IWTEventGroup>;
   tutors?: XmlMultiElem<IWTEventTutor>;
-  object_resources?: Array<IWTEventObjectResource>;
+  object_resources?: XmlMultiElem<IWTEventObjectResource>;
   total_cost?: XmlElem<number>;
   total_cost_plan?: XmlElem<number>;
-  contracts?: Array<IWTEventContract>;
+  contracts?: XmlMultiElem<IWTEventContract>;
   cost_center_id?: XmlElem<number>;
   cost_center_type?: XmlElem<string>;
   default_cost_center_id?: XmlElem<number>;
   distribute_cost_type?: XmlElem<string>;
-  expense_items?: Array<IWTEventExpenseItem>;
+  expense_items?: XmlMultiElem<IWTEventExpenseItem>;
   budget_period_id?: XmlElem<number>;
-  files?: Array<IWTEventFile>;
-  library_materials?: Array<IWTEventLibraryMaterial>;
-  learning_tasks?: Array<IWTEventLearningTask>;
+  files?: XmlMultiElem<IWTEventFile>;
+  library_materials?: XmlMultiElem<IWTEventLibraryMaterial>;
+  learning_tasks?: XmlMultiElem<IWTEventLearningTask>;
   default_response_type_id?: XmlElem<number>;
   mandatory_fill_response?: XmlElem<boolean>;
   default_request_type_id?: XmlElem<number>;
@@ -1650,7 +1674,7 @@ interface IWTEventTopElem extends IWTXmlDocumentTopElem, IWTCustomElemsBase, IWT
   manager_date_start?: XmlElem<Date>;
   disp_all_assessment_plan?: XmlElem<boolean>;
   AddFile?(resourceId: number, resourceDocument?: IWTResourceDocument): void;
-  get_chat_messages?(dtLastMessageParam: string | Date): Array<any>;
+  get_chat_messages?(dtLastMessageParam: string | Date): XmlMultiElem<any>;
   send_chat_message?(sTextParam: string, sFullnameParam: string): boolean;
   set_status?(sNewStatusParam: string, bSendNotificationsParam: boolean, oScreenParam: Object): IWTEventDocument;
   send_notifications?(sSendTypeParam: string): boolean;
@@ -1773,10 +1797,10 @@ interface IWTEducationPlanProgram {
   parent_progpam_id?: XmlElem<number>
   education_method_id?: XmlElem<number>
   education_program_id?: XmlElem<number>
-  start_learning_tasks?: Array<IWTEducationPlanProgramLearningTask>;
-  start_assessments?: Array<IWTEducationPlanProgramAssessment>;
-  finish_learning_tasks?: Array<IWTEducationPlanProgramLearningTask>;
-  finish_assessments?: Array<IWTEducationPlanProgramAssessment>;
+  start_learning_tasks?: XmlMultiElem<IWTEducationPlanProgramLearningTask>;
+  start_assessments?: XmlMultiElem<IWTEducationPlanProgramAssessment>;
+  finish_learning_tasks?: XmlMultiElem<IWTEducationPlanProgramLearningTask>;
+  finish_assessments?: XmlMultiElem<IWTEducationPlanProgramAssessment>;
   finish_notifiation?: IWTEducationPlanNotification;
   start_notifiation?: IWTEducationPlanNotification;
   type?: XmlElem<string>;
@@ -1811,8 +1835,8 @@ interface IWTEducationPlanProgram {
   request_id?: XmlElem<number>;
   comment?: XmlElem<string>;
   required?: XmlElem<boolean>;
-  completed_parent_programs?: Array<IWTEducationPlanCompletedParentProgram>;
-  program_results?: Array<IWTEducationPlanProgramResult>;
+  completed_parent_programs?: XmlMultiElem<IWTEducationPlanCompletedParentProgram>;
+  program_results?: XmlMultiElem<IWTEducationPlanProgramResult>;
 }
 
 interface IWTEducationPlanTopElem extends
@@ -1868,7 +1892,7 @@ interface IWTEducationMethodDocument extends IWTXmlDocument {
 interface IWTDotnetCoreHost {
   Object?: {
     GetAssembly(libName: string): {
-      CallClassStaticMethod(className: string, methodName: string, arguments: Array<any>, single?: boolean, wait?: boolean, max_run_time?: number): any;
+      CallClassStaticMethod(className: string, methodName: string, arguments: XmlMultiElem<any>, single?: boolean, wait?: boolean, max_run_time?: number): any;
       CreateClassObject(classObject: string): any;
     };
   };
@@ -1966,7 +1990,7 @@ interface IWTDocumentPersonsBasePerson {
 }
 
 interface IWTDocumentPersonsBase {
-  document_persons?: Array<IWTDocumentPersonsBasePerson>;
+  document_persons?: XmlMultiElem<IWTDocumentPersonsBasePerson>;
 }
 
 interface IWTDocInfoCreation {
@@ -2021,7 +2045,7 @@ interface IWTCustomReportBase extends IWTCriterionBase, IWTColumnBase, IWTChartR
   categorize?: XmlElem<boolean>;
   categorize_view?: XmlElem<string>;
   categorize_hide_details?: XmlElem<boolean>;
-  aggregations?: Array<IWTCustomReportBaseAggregation>;
+  aggregations?: XmlMultiElem<IWTCustomReportBaseAggregation>;
   show_total?: XmlElem<boolean>;
   integrated_criterion_field?: XmlElem<string>;
   integrated_criterion_field_is_custom?: XmlElem<boolean>;
@@ -2056,7 +2080,7 @@ interface IWTCriterionBaseCriterion {
   option_type?: XmlElem<string>;
   and_or?: XmlElem<string>;
   is_custom_field?: XmlElem<boolean>;
-  catalog_chains?: Array<IWTCriterionBaseCriterionCatalogChain>;
+  catalog_chains?: XmlMultiElem<IWTCriterionBaseCriterionCatalogChain>;
   flag_value_filter?: XmlElem<boolean>;
   flag_is_parameter?: XmlElem<boolean>;
   flag_hierarchy?: XmlElem<number>;
@@ -2066,7 +2090,7 @@ interface IWTCriterionBaseCriterion {
 }
 
 interface IWTCriterionBase extends IWTFieldNamesBase {
-  criterions: Array<IWTCriterionBaseCriterion>;
+  criterions: XmlMultiElem<IWTCriterionBaseCriterion>;
 }
 
 interface IWTCredentialTopElem extends IWTXmlDocumentTopElem, IWTDocInfo {
@@ -2116,7 +2140,7 @@ interface IWTCoursePart {
   start_day?: XmlElem<number>;
   duration_day?: XmlElem<number>;
   activity_id?: XmlElem<number>;
-  activity_state: Array<IWTCoursePart>;
+  activity_state: XmlMultiElem<IWTCoursePart>;
   object_id?: XmlElem<number>;
   cl_module_view?: XmlElem<string>;
 }
@@ -2323,28 +2347,28 @@ interface IWTColumnBaseColumnForeignElem {
 }
 
 interface IWTColumnBaseColumn {
-  column_name?: Array<string>;
-  column_title?: Array<string>;
-  column_foreign_name?: Array<string>;
-  column_foreign_catalog_2?: Array<string>;
-  column_foreign_name_2?: Array<string>;
-  column_value?: Array<string>;
-  column_width?: Array<number>;
-  column_width_unit?: Array<string>;
-  column_color?: Array<string>;
-  column_bkcolor?: Array<string>;
-  datatype?: Array<string>;
-  flag_formula?: Array<boolean>;
-  flag_formula_post_process?: Array<boolean>;
-  flag_color?: Array<boolean>;
-  flag_visible?: Array<boolean>;
-  flag_lng?: Array<boolean>;
-  c_conditions?: Array<IWTColumnBaseColumnCCondition>;
-  foreign_elem?: Array<IWTColumnBaseColumnForeignElem>;
+  column_name?: XmlMultiElem<string>;
+  column_title?: XmlMultiElem<string>;
+  column_foreign_name?: XmlMultiElem<string>;
+  column_foreign_catalog_2?: XmlMultiElem<string>;
+  column_foreign_name_2?: XmlMultiElem<string>;
+  column_value?: XmlMultiElem<string>;
+  column_width?: XmlMultiElem<number>;
+  column_width_unit?: XmlMultiElem<string>;
+  column_color?: XmlMultiElem<string>;
+  column_bkcolor?: XmlMultiElem<string>;
+  datatype?: XmlMultiElem<string>;
+  flag_formula?: XmlMultiElem<boolean>;
+  flag_formula_post_process?: XmlMultiElem<boolean>;
+  flag_color?: XmlMultiElem<boolean>;
+  flag_visible?: XmlMultiElem<boolean>;
+  flag_lng?: XmlMultiElem<boolean>;
+  c_conditions?: XmlMultiElem<IWTColumnBaseColumnCCondition>;
+  foreign_elem?: XmlMultiElem<IWTColumnBaseColumnForeignElem>;
 }
 
 interface IWTColumnBase {
-  columns?: Array<IWTColumnBaseColumn>;
+  columns?: XmlMultiElem<IWTColumnBaseColumn>;
 }
 
 interface IWTCollaboratorChangeLog extends IWTCustomElemsBase {
@@ -2529,14 +2553,14 @@ interface IWTCollaboratorTopElem extends IWTXmlDocumentTopElem,
   row_key_field?: XmlElem<string>;
   start_action?(type: string): number;
   set_basic_position?(positionId: number): boolean;
-  get_courses?(type: string): Array<any>
-  get_tests?(type: string): Array<any>;
+  get_courses?(type: string): XmlMultiElem<any>
+  get_tests?(type: string): XmlMultiElem<any>;
   assign_course?(courseId: number, startDate: Date, endDate: Date, eventId: number): number;
   assign_test?(assessmentId: number, startDate: Date, endDate: Date, eventId: number): number;
   get_info?(): any;
-  get_events?(type: string, status: string, role: string): Array<any>;
-  get_groups?(): Array<any>;
-  get_event_results?(): Array<any>;
+  get_events?(type: string, status: string, role: string): XmlMultiElem<any>;
+  get_groups?(): XmlMultiElem<any>;
+  get_event_results?(): XmlMultiElem<any>;
   update_info?(lastname: string, firstname: string, middlename: string, address: string, phone: string, email: string, login: string, password: string): any;
   clear_subs_fields?(): undefined;
 }
@@ -2547,6 +2571,115 @@ interface IWTCollaboratorDocument extends IWTXmlDocument {
 
 interface IWTPositionCompetenceProfile {
   id?: XmlElem<number>;
+}
+
+interface IWTCompetenceExercise {
+  exercise_id?: XmlElem<number>;
+}
+
+interface IWTCompetenceTopElem extends IWTXmlDocumentTopElem,
+  IWTObjectCodeNameBase,
+  IWTKnowledgePartsBase,
+  IWTKnowledgePartsBaseOld,
+  IWTCustomElemsBase,
+  IWTFileListBase,
+  IWTAdminAccessBase
+{
+  competence_block_id?: XmlElem<number>;
+  exercises?: XmlMultiElem<IWTCompetenceExercise>;
+  positive_comment?: XmlElem<string>;
+  negative_comment?: XmlElem<string>;
+  comment?: XmlElem<string>;
+  desc?: XmlElem<string>;
+  doc_info?: XmlElem<IWTDocInfoBase>;
+  role_id?: XmlMultiElem<number>;
+}
+
+interface IWTCompetenceDocument extends IWTXmlDocument {
+  TopElem: IWTCompetenceTopElem;
+}
+
+interface IWTCompetenceBlockTopElem extends IWTXmlDocumentTopElem,
+  IWTAdminAccessBase
+{
+  code?: XmlElem<string>;
+  name?: XmlElem<string>;
+  parent_object_id?: XmlElem<number>;
+  comment?: XmlElem<string>;
+  doc_info?: XmlElem<IWTDocInfoBase>;
+}
+
+interface IWTCompetenceBlockDocument extends IWTXmlDocument {
+  TopElem: IWTCompetenceBlockTopElem;
+}
+
+interface IWTCompetenceProfileRole {
+  role_code?: XmlElem<string>;
+}
+
+interface IWTCompetenceProfileCompetence {
+  competence_id?: XmlElem<number>;
+  plan?: XmlElem<string>;
+  plan_text?: XmlElem<string>;
+  plan_value?: XmlElem<number>;
+  weight?: XmlElem<number>;
+  comment?: XmlElem<string>;
+  type?: XmlElem<string>;
+  education_methods?: XmlMultiElem<IWTCompetenceProfileEducationMethod>;
+}
+
+interface IWTCompetenceProfileEducationMethod {
+  education_method_id?: XmlElem<number>;
+}
+
+interface IWTCompetenceProfileAssessment {
+  assessment_id?: XmlElem<number>;
+  assessment_score?: XmlElem<number>;
+}
+
+interface IWTCompetenceProfilePositionCommon {
+  position_common_id?: XmlElem<number>;
+}
+
+interface IWTCompetenceProfileTopElem extends IWTXmlDocumentTopElem,
+  IWTObjectCodeNameBase,
+  IWTFileListBase,
+  IWTKnowledgePartsBase,
+  IWTKnowledgePartsBaseOld,
+  IWTCustomElemsBase,
+  IWTAdminAccessBase
+{
+  roles?: XmlMultiElem<IWTCompetenceProfileRole>;
+  competences?: XmlMultiElem<IWTCompetenceProfileCompetence>;
+  education_methods?: XmlMultiElem<IWTCompetenceProfileEducationMethod>;
+  assessments?: XmlMultiElem<IWTCompetenceProfileAssessment>;
+  access_role?: XmlElem<string>;
+  position_commons?: XmlMultiElem<IWTCompetenceProfilePositionCommon>;
+  doc_info?: XmlElem<IWTDocInfoBase>;
+  comment?: XmlElem<string>;
+  update_values?(): any
+  role_id?: XmlMultiElem<number>;
+}
+
+interface IWTCompetenceProfileDocument extends IWTXmlDocument {
+  TopElem: IWTCompetenceProfileTopElem;
+}
+interface IWTCompetenceProfileFamilyCompetenceProfile {
+  competence_profile_id?: XmlElem<number>;
+}
+
+interface IWTCompetenceProfileFamilyTopElem extends IWTXmlDocumentTopElem,
+  IWTAdminAccessBase
+{
+  code?: XmlElem<string>;
+  name?: XmlElem<string>;
+  competence_profiles?: XmlMultiElem<IWTCompetenceProfileFamilyCompetenceProfile>;
+  comment?: XmlElem<string>;
+  doc_info?: XmlElem<IWTDocInfoBase>;
+}
+
+interface IWTCompetenceProfileFamilyDocument extends IWTXmlDocument {
+  TopElem: IWTCompetenceProfileFamilyTopElem;
 }
 
 interface IWTPositionKPIProfile {
@@ -2624,19 +2757,6 @@ interface IWTCatalogListBaseCatalogObject {
   comment?: XmlElem<string>;
 }
 
-interface IWTCatalogListBaseCatalog {
-  type?: XmlElem<string>;
-  title?: XmlElem<string>;
-  all?: XmlElem<boolean>;
-  objects: Array<IWTCatalogListBaseCatalogObject>;
-}
-
-interface IWTCatalogListBase {
-  catalogs?: Array<IWTCatalogListBaseCatalog>;
-  catalogs_catalog_type?: XmlElem<string>;
-  catalogs_sel_all_objects?: XmlElem<boolean>;
-}
-
 interface IWTCareerReserveTutor {
   person_id?: XmlElem<number>;
   is_native?: XmlElem<boolean>;
@@ -2681,7 +2801,7 @@ interface IWTCareerReserveTask extends XmlElem<any> {
   type_document?: XmlElem<string>;
   link_document?: XmlElem<string>;
   forbid_task_portal_edit?: XmlElem<boolean>;
-  commission_persons?: Array<IWTCareerReserveComissionPerson>;
+  commission_persons?: XmlMultiElem<IWTCareerReserveComissionPerson>;
 }
 
 interface IWTCareerReserveTopElem extends IWTXmlDocumentTopElem,
@@ -2703,7 +2823,7 @@ interface IWTCareerReserveTopElem extends IWTXmlDocumentTopElem,
   position_common_id?: XmlElem<number>;
   staff_position_id?: XmlElem<number>;
   subdivision_id?: XmlElem<number>;
-  tutors?: Array<IWTCareerReserveTutor>;
+  tutors?: XmlMultiElem<IWTCareerReserveTutor>;
   current_competence_profile_id?: XmlElem<number>;
   target_competence_profile_id?: XmlElem<number>;
   development_plan_id?: XmlElem<number>;
@@ -2820,7 +2940,7 @@ interface IWTAnnalsObjectBase {
 }
 
 interface IWTAnnalsObjectsBase {
-  objects?: Array<IWTAnnalsObjectBase>;
+  objects?: XmlMultiElem<IWTAnnalsObjectBase>;
 }
 
 interface IWTAnnalsNumsBase {
