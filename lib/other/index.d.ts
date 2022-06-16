@@ -76,4 +76,4 @@ interface categorys extends Object {
 
 declare var categorys: categorys;
 
-declare var DefaultDb: unknown;
+declare var DefaultDb: string;

@@ -57,7 +57,7 @@ interface IWTXmlDocument {
   DocID: number;
   TopElem: IWTXmlDocumentTopElem;
   Save(): undefined;
-  BindToDb(): undefined;
+  BindToDb(databaseName?: string): undefined;
   WriteDocInfo: boolean;
 }
 
