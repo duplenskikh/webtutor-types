@@ -2461,7 +2461,8 @@ interface IWTCollaboratorTopElem extends IWTXmlDocumentTopElem,
   IWTKnowledgePartsBaseOld,
   IWTCustomElemsBase,
   IWTPersonObjectLinksBase,
-  IWTDocInfo
+  IWTDocInfo,
+  IWTAccessBase
   {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
@@ -3259,7 +3260,7 @@ interface IWTRequestWorkflowMatching {
 
 interface IWTWorkflowDataBaseWorkflowField {
   name?: XmlElem<string>;
-  value?: XmlElem<string>;
+  value?: XmlElem<unknown>;
   workflow_state?: XmlElem<string>;
 }
 
