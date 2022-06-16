@@ -33,21 +33,21 @@ interface XmMultiElem<T> {
 
    * @param {string} name - имя дочернего элемента (String). Необязательный аргумент
    * @param {string} type - тип дочернего элемента (String). Необязательный аргумент
-   * @returns {XmlElem}
+   * @returns {XmlElem<T>}
    */
-  Add(): any;
+  Add(): XmlElem<T>;
   AddChild(name?: string, type?: string): XmlElem<T>;
-  ByValueExists(value: any): Boolean;
-  Child(index: number): T;
-  GetChildByKey(name: string): any;
-  GetOptChildByKey(name: string, defaultValue?: any): any;
-  ObtainChildByKey(key: string, value?: any): T;
-  ObtainByValue(value: any): T;
-  DeleteChildren(condition: string): any;
-  DeleteChildByKey(value: any, key: string): any;
-  OptChild(name: string): XmlElem<any>;
-  AssignElem(element: any): any;
+  AssignElem(element: unknown): void;
+  ByValueExists(value: unknown): Boolean;
+  Child(index: string | number): XmlElem<T>;
   Clear(): void;
+  DeleteChildByKey(keyValue: unknown, keyName?: string): void;
+  DeleteChildren(condition: string): void;
+  GetChildByKey(keyValue: unknown, keyName?: string): XmlElem<T>;
+  GetOptChildByKey(keyValue: unknown, keyName?: string): XmlElem<T>;
+  ObtainByValue(value: any): XmlElem<T>;
+  ObtainChildByKey(keyValue: unknown, keyName?: string): XmlElem<T>;
+  OptChild(name: string): XmlElem<T>;
 }
 
 type XmlElem<T> = XmElem<T> & T;
@@ -1591,7 +1591,7 @@ interface IWTEventTopElem extends IWTXmlDocumentTopElem, IWTCustomElemsBase, IWT
   quota_subdivision?: XmlElem<number>;
   quota_person?: XmlElem<number>;
   even_preparations?: XmlMultiElem<IWTEventEvenPreparations>;
-  groups?: Array<IWTEventGroup>;
+  groups?: XmlMultiElem<IWTEventGroup>;
   tutors?: XmlMultiElem<IWTEventTutor>;
   object_resources?: Array<IWTEventObjectResource>;
   total_cost?: XmlElem<number>;
