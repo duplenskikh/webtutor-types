@@ -2,23 +2,89 @@
 declare namespace tools_web {
   /**
    * Возвращает значение true/false в завимости от передаваемого параметра
-   * @param {any} value
+   * @param {unknown} value
    * @returns {boolean}
    */
-  function is_true(value: any): boolean;
-  function get_user_data(dataCode: string): void;
-  function set_user_data(dataCode: string, valueParam: any, ttl?: number): void;
-  function get_object_source_url(objectType: string, objectId: number, oParams?: any): any;
-  function encrypt_launch_id(documentId: number, date: Date): string;
-  function reg_exp_init(): any;
-  function user_init(req: Request, query: Object): any;
-  /** Складывает два `id` */
-  function get_sum_sid(id: number, sid: number): number;
-  function put_query_string(_param_str: any, _page_name: any): any;
-  function doc_link(oAttributesParam: any): any;
-  function get_object_link(sObjectNameParam: any, iObjectIDParam: any, teObjectParam: any, iDocIDParam: any): any;
-  function get_web_str(sNameParam: any): any;
-  function get_web_const(sNameParam: any, fldLngParam: any): any;
+  function is_true(value: unknown): boolean;
+  /**
+   * Получение кэша по коду
+   * @param userDataCode Код кэша
+   */
+  function get_user_data(userDataCode: string): unknown;
+  /**
+   * Создание кэша по коду
+   * @param userDataCode Код кэша
+   * @param valueParam Payload
+   * @param ttl Время жизни кэша
+   */
+  function set_user_data(userDataCode: string, valueParam: unknown, ttl?: number): void;
+  /**
+   * Получение url ссылки объекта по Id
+   * @param catalogName Каталог объекта
+   * @param objectId Id объекта
+   * @param oParams Параметры для определения хоста/сессии/etc
+   */
+  function get_object_source_url(catalogName: string, objectId: number, oParams?: unknown): string;
+  /**
+   * Декоратор дял простого шифрования функцией StrSimpleEncrypt({objectId}_{date})
+   * @param objectId Id объекта
+   * @param date Дата
+   */
+  function encrypt_launch_id(objectId?: number, date?: Date): string;
+  /**
+   * Возврат экземпляра библиотеки regexp
+   * Global = true
+   * IgnoreCase = true
+   * MultiLine = true
+   */
+  function reg_exp_init(): unknown;
+  /**
+   * Инициализаяция пользователя
+   * @param req Объект Request
+   * @param query Параметры
+   */
+  function user_init(req: Request, query: Object): unknown;
+  /**
+   * Складывает два `id`
+   * @param objectId Id объекта
+   * @param sid Id сессии
+   */
+  function get_sum_sid(objectId: number, sid: number): number;
+  /**
+   * Формирование ссылки на страницу
+   * @param _param_str
+   * @param _page_name
+   */
+  function put_query_string(_param_str: string, _page_name: string): string;
+  /**
+   * Ссылка на раздел портала
+   * @param oAttributesParam 
+   */
+  function doc_link(oAttributesParam: unknown): string;
+  /**
+   * Формирование ссылки на объект
+   * @param sObjectNameParam 
+   * @param iObjectIDParam 
+   * @param teObjectParam 
+   * @param iDocIDParam 
+   */
+  function get_object_link(sObjectNameParam: any, iObjectIDParam: any, teObjectParam: any, iDocIDParam: any): string;
+  /**
+   * Получение текстового значения языкового параметра из curLngWeb
+   * @param sNameParam Название параметра
+   */
+  function get_web_str(sNameParam: string): string;
+  /**
+   * Получение текстового значения параметра из аргумента fldLngParam
+   * @param sNameParam Название параметра
+   * @param fldLngParam
+   */
+  function get_web_const(sNameParam: string, fldLngParam: unknown): string;
+  /**
+   * 
+   * @param sNameParam 
+   * @param fldLngParam 
+   */
   function eval_web_column_const(sNameParam: any, fldLngParam: any): any;
   function get_web_desc(sSourceHtml: any, oUrl: any, _path?: any, Env?: any): any;
   function check_sum_sid(sIdParam: any, sSumParam: any, iSessionIdParam: any): any;
