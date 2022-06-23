@@ -24,7 +24,140 @@ declare namespace tools {
 
   function check_access(sourceDocument: IWTXmlDocument, userId: number): boolean;
   function xquery(string: string): any;
-  function activate_course_to_person(params: any, courseId?: number, eventId?: number, personDoc?: IWTCollaboratorTopElem, educationPlanId?: number, duration?: number, startLearningDate?: Date, lastLearningDate?: Date, groupId?: number, eid?: any, skipDismissed?: boolean): number | null | IWTXmlDocument;
+
+
+  interface IActivateCourseToPersonParams {
+    /**
+     * Id Сотрудника
+      */
+    iPersonID: number
+    /**
+     * Id курса
+     */
+    iCourseID: number
+    /**
+     * Код записи в каталоге незаконченных электронных курсов active_learnings (необязательный),
+     */
+    sEID?: number
+    /**
+     * ID мероприятия (необязательный),
+     */
+    iEventID?: number
+    /**
+     * Карточка сотрудника (необязательный),
+     */
+    teCollaborator?: number
+    /**
+     * Карточка курса (необязательный),
+     */
+    teCourse?: number
+    /**
+     * Длительность в днях (необязательный),
+     */
+    iDuration?: number
+    /**
+     * Дата последнего обучения (необязательный),
+     */
+    dtLastLearningDate?: number
+    /**
+     * Дата начала прохождения курса (необязательный),
+     */
+    dtStartLearningDate?: number
+    /**
+     * ID плана обучения (необязательный),
+     */
+    iEducationPlanID?: number
+    /**
+     * ID группы (необязательный),
+     */
+    iGroupID?: number
+    /**
+     * Возможность комментировать (необязательный),
+     */
+    bCommenting?: number
+    /**
+     * Ведение подробного лога (журнала) курса (необязательный)
+     */
+    bLogging?: number
+    /**
+     * Не назначать уволенным (необязательный),
+     */
+    bSkipDismissed?: number
+    /**
+     * Не назначать повторно успешно прошедшим курс (с учетом даты последнего обучения) (необязательный),
+     */
+    bMissOnlySuccessLearning?: number
+    /**
+     * Карточка мероприятия (необязательный),
+     */
+    teEvent?: number
+    /**
+     * Признак самоактивации (необязательный),
+     */
+    bSelfEnrolled?: number
+    /**
+     * Комментарий назначившего (записывается в карточку незаконченного/законченного курса) (необязательный),
+     */
+    sComment?: number
+    /**
+     * Использовать прокторинг (необязательный)
+     */
+    bUseProctoring?: number
+  }
+  /**
+   * @param params Параметры назначения курса
+   * @returns Объект XMLDoc или Целое число.
+   * Если курс назначен при выполнении функции,
+   * то возвращается ссылка на вновь созданный документ обучения.
+   * Если курс был назначен ранее, но не завершен, или завершен,
+   * но не прошло еще время, указанное в атрибуте dtLastLearningDateParam,
+   * то возвращается ID карточки ранее назначенного курса (из каталога active_learning).
+   */
+  function activate_course_to_person(
+    params: IActivateCourseToPersonParams
+  ): number | null | IWTXmlDocument;
+  
+  /**
+   * @param personId Id сотрудника, которому назначается курс
+   * @param courseId Id курса, который необходимо назначить
+   * @param eventId Id мероприятия, участникам которого назначается курс
+   * @param personDoc TopElem карточки сотрудника, которому назначается курс
+   * @param educationPlanId Id плана обучения, в рамках которого назначен курс
+   * @param duration Длительность курса в днях. Определяет дату планируемого завершения
+   * @param startLearningDate Дата начала обучения. Если данный аргумент задан, то обучение невозможно будет начать раньше указанной даты
+   * @param lastLearningDate Контрольная дата завершения предыдущего обучения.
+   * Если параметр задан, то при назначении курса, проверяется,
+   * существует ли в каталоге learnings курс, завершенный после указанной даты.
+   * Если такой курс существует, то ID соответствующей записи из каталога
+   * learnings возвращается как результат работы функции.
+   * @param groupId Id группы, которой назначен курс
+   * @param eid Код записи в каталоге active_learnings.
+   * Если он указан, то при назначении курса,
+   * когда производится проверка на уже существующий активный курс
+   * данного сотрудника в каталоге active_learnings, проверяется также,
+   * что у данной записи должен быть указанный в параметре код.
+   * @param skipDismissed Аргумент, указывающий на необходимость пропускать уволенных
+   * сотрудников (true – пропускать, false –не пропускать). По умолчанию true.
+   * @returns Объект XMLDoc или Целое число.
+   * Если курс назначен при выполнении функции,
+   * то возвращается ссылка на вновь созданный документ обучения.
+   * Если курс был назначен ранее, но не завершен, или завершен,
+   * но не прошло еще время, указанное в атрибуте dtLastLearningDateParam,
+   * то возвращается ID карточки ранее назначенного курса (из каталога active_learning).
+   */
+  function activate_course_to_person(
+    personId: number | unknown,
+    courseId?: number,
+    eventId?: number,
+    personDoc?: IWTCollaboratorTopElem,
+    educationPlanId?: number,
+    duration?: number,
+    startLearningDate?: Date,
+    lastLearningDate?: Date,
+    groupId?: number,
+    eid?: any,
+    skipDismissed?: boolean
+  ): number | null | IWTXmlDocument;
 
   /**
    * Функция назначения теста пользователю
