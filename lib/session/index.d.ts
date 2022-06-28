@@ -7,7 +7,7 @@ declare interface Env {
   /**
    * Текущий сайт пользователя с которым он взаимодействует
    */
-  curSite: IWTSite;
+  curSite: IWTSiteTopElem;
   /**
    * ID текущего пользователя
    */
