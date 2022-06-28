@@ -1,5 +1,5 @@
 declare namespace Screen {
-  var Doc: IWTXmlDocument;
+  var Doc: IWTXmlDocument<any>;
   var EditMode: boolean;
   var ExposeItemBySource: string;
   var FocusItem: string;
@@ -26,7 +26,7 @@ declare namespace Screen {
   function FindOptItem(): void;
   function FindOptItemByType(): void;
   function FlashWindow(): void;
-  function ModalDlg(modalDialog: IWTXmlDocument): void;
+  function ModalDlg(modalDialog: IWTXmlDocument<any>): void;
   function MsgBox(...args: any): void;
   function Navigate(): void;
   function Print(): void;

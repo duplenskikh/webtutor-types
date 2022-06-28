@@ -1,7 +1,7 @@
 declare namespace tools {
   const dotnet_host: IWTDotnetCoreHost;
 
-  function new_doc_by_name(documentName: string, isCatalog?: boolean): IWTXmlDocument;
+  function new_doc_by_name(documentName: string, isCatalog?: boolean): IWTXmlDocument<any>;
 
   /**
    * Возвращает значение параметра, переданного в функцию, в зашифрованном виде.
@@ -20,9 +20,9 @@ declare namespace tools {
    * @param {string|number} documentId ID документа
    * @returns {IWTXmlDocument|undefined} XML документ или undefined
    */
-  function open_doc(documentId: any): IWTXmlDocument | undefined;
+  function open_doc(documentId: number): IWTXmlDocument<any> | undefined;
 
-  function check_access(sourceDocument: IWTXmlDocument, userId: number): boolean;
+  function check_access(sourceDocument: IWTXmlDocument<any>, userId: number): boolean;
   function xquery(string: string): any;
 
 
@@ -115,7 +115,7 @@ declare namespace tools {
    */
   function activate_course_to_person(
     params: IActivateCourseToPersonParams
-  ): number | null | IWTXmlDocument;
+  ): number | null | IWTActiveLearningDocument;
   
   /**
    * @param personId Id сотрудника, которому назначается курс
@@ -157,7 +157,7 @@ declare namespace tools {
     groupId?: number,
     eid?: any,
     skipDismissed?: boolean
-  ): number | null | IWTXmlDocument;
+  ): number | null | IWTActiveLearningDocument;
 
   /**
    * Функция назначения теста пользователю
@@ -179,7 +179,19 @@ declare namespace tools {
    * но не прошло еще время, указанное в атрибуте dtLastLearningDateParam,
    * то возвращается ID карточки ранее назначенного теста (из каталога active_test_learning).
    */
-  function activate_test_to_person(personId: number, assessmentId?: number, eventId?: number, personDoc?: IWTCollaboratorTopElem, assessmentDocument?: IWTXmlDocument, eventDocument?: IWTEventDocument, duration?: number, startLearningDate?: Date, lastLearningDate?: Date, groupId?: number, educationPlanId?: number, skipDismissed?: boolean): XmlElem<number> | null | IWTXmlDocument;
+  function activate_test_to_person(
+    personId: number,
+    assessmentId?: number,
+    eventId?: number,
+    personDoc?: IWTCollaboratorTopElem,
+    assessmentDocument?: IWTAssessmentDocument,
+    eventDocument?: IWTEventDocument,
+    duration?: number,
+    startLearningDate?: Date,
+    lastLearningDate?: Date,
+    groupId?: number,
+    educationPlanId?: number, skipDismissed?: boolean
+  ): XmlElem<number> | null | IWTActiveTestLearningDocument;
 
   function get_server_protocol(): string;
   function encode_course_folder(sCodeParam: string): any;
@@ -234,7 +246,7 @@ declare namespace tools {
   function is_by_group_id(groupId: number): any;
   function is_statement_date(iActivityIDParam: any, sValueParam: any, sUslParam: any): any;
   function object_filling(_type: any, _source: any, _object_id: any, _object_doc: any): any;
-  function common_filling(type: string, sourceDoc: any, objectId: number, objectDoc?: IWTXmlDocumentTopElem, customFlag?: boolean): void;
+  function common_filling(type: string, sourceDoc: any, objectId: number, objectDoc?: IWTXmlDocumentTopElem<any>, customFlag?: boolean): void;
   function common_clear(_type: any, _source: any, _ps: any): any;
   function active_learning_finish(_learning_id: any, _source?: any, _course_doc?: any): any;
   function active_test_learning_finish(_learning_id: any, _source?: any, _assessment_doc?: any, iPersonIDParam?: any, bFinishTest?: any): any;
@@ -248,7 +260,7 @@ declare namespace tools {
    * @param _flag_create_learning Назначить новую попытку?
    * @param docActiveLearning Документ активного обучения
    */
-  function active_test_learning_finish_attempt(_learning_id: number, _learning_code?: string, _assessment_doc?: IWTXmlDocument, _flag_create_learning?: boolean, docActiveLearning?: IWTXmlDocument): boolean;
+  function active_test_learning_finish_attempt(_learning_id: number, _learning_code?: string, _assessment_doc?: IWTAssessmentDocument, _flag_create_learning?: boolean, docActiveLearning?: IWTActiveLearningDocument): boolean;
 
   function core_decrypt(_core: any, _qti_path: any, _qti_text: any, _learning_doc: any): any;
   function get_annals_from_core(sSourceParam: any): any;

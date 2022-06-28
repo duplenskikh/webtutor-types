@@ -11,4 +11,4 @@ interface ThreadConstructor {
   (...arg: any): Thread;
 }
 
-declare var Thread: ThreadConstructor;
+declare const Thread: ThreadConstructor;

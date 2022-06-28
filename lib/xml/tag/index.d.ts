@@ -1,0 +1,14 @@
+interface IWTTagTopElem extends IWTAdminAccessBase {
+  code?: XmlElem<string>;
+  name?: XmlElem<string>;
+  resource_id?: XmlElem<number>;
+  require_acknowledgement?: XmlElem<boolean>;
+  experts?: XmlMultiElem<{
+    expert_id: XmlElem<number>;
+  }>;
+  access?: XmlElem<IWTAccessDocBase>;
+  comment?: XmlElem<string>;
+  role_id?: XmlMultiElem<number>;
+}
+
+type IWTTagDocument = IWTXmlDocument<IWTTagTopElem>;
