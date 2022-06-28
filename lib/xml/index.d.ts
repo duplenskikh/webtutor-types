@@ -2485,8 +2485,7 @@ interface IWTCollaboratorTopElem extends IWTXmlDocumentTopElem,
   IWTKnowledgePartsBaseOld,
   IWTCustomElemsBase,
   IWTPersonObjectLinksBase,
-  IWTDocInfo,
-  IWTAccessBase
+  IWTDocInfo
   {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
@@ -2513,6 +2512,7 @@ interface IWTCollaboratorTopElem extends IWTXmlDocumentTopElem,
   request_black_list_comment?: XmlElem<string>;
   place_id?: XmlElem<number>;
   region_id?: XmlElem<number>;
+  access?: XmlElem<IWTAccessBase>;
   cost_center_id?: XmlElem<number>;
   lng_id?: XmlElem<string>;
   location_id?: XmlElem<string>;
