@@ -10,7 +10,7 @@
     "strict": true,
     "noLib": true,
     "typeRoots": [
-      "./lib/**/*"
+      "lib"
     ]
   }
 }
