@@ -1338,25 +1338,6 @@ interface IWTPositionCompetenceProfile {
   id?: XmlElem<number>;
 }
 
-interface IWTCompetenceProfileRole {
-  role_code?: XmlElem<string>;
-}
-
-interface IWTCompetenceProfileCompetence {
-  competence_id?: XmlElem<number>;
-  plan?: XmlElem<string>;
-  plan_text?: XmlElem<string>;
-  plan_value?: XmlElem<number>;
-  weight?: XmlElem<number>;
-  comment?: XmlElem<string>;
-  type?: XmlElem<string>;
-  education_methods?: XmlMultiElem<IWTCompetenceProfileEducationMethod>;
-}
-
-interface IWTCompetenceProfileEducationMethod {
-  education_method_id?: XmlElem<number>;
-}
-
 interface IWTCompetenceProfileAssessment {
   assessment_id?: XmlElem<number>;
   assessment_score?: XmlElem<number>;
