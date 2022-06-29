@@ -1338,10 +1338,6 @@ interface IWTPositionCompetenceProfile {
   id?: XmlElem<number>;
 }
 
-interface IWTCompetenceExercise {
-  exercise_id?: XmlElem<number>;
-}
-
 interface IWTCompetenceProfileRole {
   role_code?: XmlElem<string>;
 }
