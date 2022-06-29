@@ -1,4 +1,10 @@
+interface IWTCompetenceExercise {
+  exercise_id?: XmlElem<number>;
+}
+
 interface IWTCompetenceTopElem extends IWTObjectCodeNameBase,
+  // <INHERIT TYPE="competence_scale_base"/>
+	// <INHERIT TYPE="competence_level_base"/>
   IWTKnowledgePartsBase,
   IWTKnowledgePartsBaseOld,
   IWTCustomElemsBase,
