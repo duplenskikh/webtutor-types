@@ -183,13 +183,13 @@ interface IWTWorkflowFieldGroup {
 
 interface IWTWorkflowElemOperationBase {
   type?: XmlElem<string>;
-	workflow_state_id?: XmlElem<string>;
-	workflow_field_id?: XmlElem<string>;
-	workflow_field_value?: XmlElem<string>;
-	request_status_id?: XmlElem<string>;
-	eval_str?: XmlElem<string>;
-	notification_id?: XmlElem<number>;
-	print_form_id?: XmlElem<number>;
+  workflow_state_id?: XmlElem<string>;
+  workflow_field_id?: XmlElem<string>;
+  workflow_field_value?: XmlElem<string>;
+  request_status_id?: XmlElem<string>;
+  eval_str?: XmlElem<string>;
+  notification_id?: XmlElem<number>;
+  print_form_id?: XmlElem<number>;
 }
 
 interface IWTWorkflowElemOperationsBase {
@@ -436,12 +436,78 @@ interface IWTLearningTaskExpert extends IWTPersonFillingBase {
   id?: XmlElem<string>;
 }
 
-type IWTLectorTypes = "invitee" | "collaborator"
+type IWTLectorTypes = "invitee" | "collaborator";
 
-interface IWTLearningPartBase extends IWTCoreLessonInfoBase, IWTCoreLessonBase {
+interface IWTObjectiveBaseScore {
+  raw?: XmlElem<number>;
+  max?: XmlElem<number>;
+  min?: XmlElem<number>;
+  scaled?: XmlElem<number>;
+}
+
+interface IWTObjectiveBase {
+  objective_id?: XmlElem<string>;
+  score?: XmlElem<IWTObjectiveBaseScore>;
+  status?: XmlElem<string>;
+  completion_status?: XmlElem<string>;
+  success_status?: XmlElem<string>;
+  description?: XmlElem<string>;
+}
+
+type IWTLearningObjectivesInteractionsBaseObjective = IWTObjectiveBase;
+
+interface IWTInteractionBaseObjective {
+  objective_id?: XmlElem<string>;
+}
+
+interface IWTInteractionBaseCorrectResponse {
+  pattern?: XmlElem<string>;
+}
+interface IWTInteractionBase {
+  interaction_id?: XmlElem<string>;
+  time?: XmlElem<string>;
+  objectives?: XmlMultiElem<IWTInteractionBaseObjective>;
+  type_interaction?: XmlElem<string>;
+  correct_responses?: XmlMultiElem<IWTInteractionBaseCorrectResponse>;
+  student_response?: XmlElem<string>;
+  result?: XmlElem<string>;
+  weighting?: XmlElem<string>;
+  latency?: XmlElem<string>;
+  description?: XmlElem<string>;
+}
+
+type IWTLearningObjectivesInteractionsBaseInteraction = IWTInteractionBase;
+
+interface IWTLearningObjectivesInteractionsBase {
+  objectives?: XmlMultiElem<IWTLearningObjectivesInteractionsBaseObjective>;
+  interactions?: XmlMultiElem<IWTLearningObjectivesInteractionsBaseInteraction>;
+  scoring_type?: XmlElem<string>;
+}
+
+interface IWTLearningPartBaseLog {
+  date?: XmlElem<Date>;
+  location?: XmlElem<string>;
+  type?: XmlElem<string>;
+  text?: XmlElem<string>;
+  log?: XmlElem<string>;
+  comment?: XmlElem<string>;
+}
+
+interface IWTLearningPartBaseStatement {
+  statement_id?: XmlElem<number>;
+  activity_state_id?: XmlElem<number>;
+  score?: XmlElem<number>;
+}
+
+interface IWTLearningPartBase extends IWTCoreLessonInfoBase,
+  IWTCoreLessonBase,
+  IWTLearningObjectivesInteractionsBase,
+  IWTLearningAssessmentBase,
+  IWTLastAttemptTestLearningsBaseTestLearning {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   type?: XmlElem<string>;
+  cl_module_protocol?: XmlElem<string>;
   parent_part_code?: XmlElem<string>;
   course_module_id?: XmlElem<number>;
   object_id?: XmlElem<number>;
@@ -456,19 +522,8 @@ interface IWTLearningPartBase extends IWTCoreLessonInfoBase, IWTCoreLessonBase {
   attempts_num?: XmlElem<number>;
   cur_attempt_num?: XmlElem<number>;
   use_proctoring?: XmlElem<boolean>;
-  logs?: [{
-    date?: XmlElem<Date>;
-    location?: XmlElem<string>;
-    type?: XmlElem<string>;
-    text?: XmlElem<string>;
-    log?: XmlElem<string>;
-    comment?: XmlElem<string>;
-  }];
-  statements?: [{
-    statement_id?: XmlElem<number>;
-    activity_state_id?: XmlElem<number>;
-    score?: XmlElem<number>;
-  }];
+  logs?: XmlMultiElem<IWTLearningPartBaseLog>
+  statements?: XmlMultiElem<IWTLearningPartBaseStatement>;
 }
 
 interface IWTLearningCurrentStateBase {
@@ -541,12 +596,12 @@ interface IWTKnowledgePartsBaseOld {
 }
 
 interface IWTPersonForeignBase {
-	person_fullname?(): any;
-	person_position_name?(): any;
-	person_org_name?(): any;
-	person_subdivision_name?(): any;
-	person_instance_id?(): any;
-	person_code?(): any;
+  person_fullname?(): any;
+  person_position_name?(): any;
+  person_org_name?(): any;
+  person_subdivision_name?(): any;
+  person_instance_id?(): any;
+  person_code?(): any;
 }
 
 interface IWTGroupCollaborator extends IWTPersonForeignBase {
@@ -1067,18 +1122,20 @@ interface IWTCoreLessonInfoBase {
   core_lesson_filled?: XmlElem<boolean>;
 }
 
+interface IWTCoreLessonBaseDataLesson {
+  core_vendor?: XmlElem<string>;
+  objectives_status?: XmlElem<string>;
+  evaluation?: XmlElem<string>;
+  comments?: XmlElem<string>;
+  student_data?: XmlElem<string>;
+  student_preferences?: XmlElem<string>;
+  student_demographics?: XmlElem<string>;
+}
+
 interface IWTCoreLessonBase {
   core_lesson?: XmlElem<string>;
   lesson_report?: XmlElem<string>;
-  data_lesson: {
-    core_vendor?: XmlElem<string>;
-    objectives_status?: XmlElem<string>;
-    evaluation?: XmlElem<string>;
-    comments?: XmlElem<string>;
-    student_data?: XmlElem<string>;
-    student_preferences?: XmlElem<string>;
-    student_demographics?: XmlElem<string>;
-  }
+  data_lesson: XmlElem<IWTCoreLessonBaseDataLesson>
 }
 
 interface IWTCompoundProgramProgram {
@@ -1424,11 +1481,47 @@ interface IWTAssessmentSection {
   comment?: XmlElem<string>;
 }
 
+interface IWTAnnalsObjectBaseDataAssessmentTimestamp {
+  value?: XmlElem<any>;
+}
+
+interface IWTAnnalsObjectBaseDataAssessmentLatency {
+  value?: XmlElem<any>;
+}
+
+interface IWTAnnalsObjectBaseDataAssessmentDuration {
+  value?: XmlElem<any>;
+}
+
+interface IWTAnnalsObjectBaseDataAssessment {
+  ident?: XmlElem<any>;
+  viewed?: XmlElem<any>;
+  answered?: XmlElem<any>;
+  completed?: XmlElem<any>;
+  timestamp?: XmlElem<IWTAnnalsObjectBaseDataAssessmentTimestamp>;
+  latency?: XmlElem<IWTAnnalsObjectBaseDataAssessmentLatency>;
+  duration?: XmlElem<IWTAnnalsObjectBaseDataAssessmentDuration>;
+}
+
+interface IWTAnnalsObjectBaseDataItemsListSectionitem {
+  ident?: XmlElem<any>;
+}
+
+interface IWTAnnalsObjectBaseDataItemsList {
+  sectionitem?: XmlMultiElem<IWTAnnalsObjectBaseDataItemsListSectionitem>
+}
+
+interface IWTAnnalsObjectBaseData {
+  assessment?: XmlElem<IWTAnnalsObjectBaseDataAssessment>;
+  sections?: XmlMultiElem<IWTAnnalsObjectBaseDataAssessment & IWTAnnalsObjectBaseDataItemsList>;
+}
+
 interface IWTAnnalsObjectBase {
   id?: XmlElem<any>;
   attempt_id?: XmlElem<string>;
   file?: XmlElem<string>;
   objtype?: XmlElem<string>;
+  data?: XmlElem<IWTAnnalsObjectBaseData>;
 }
 
 interface IWTAnnalsObjectsBase {
@@ -1555,18 +1648,6 @@ interface IWTNotificationTemplateMainObject extends IWTFieldNamesBaseFieldName {
   init_field_names?: Function;
 }
 
-interface IWTActiveLearningPart {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  type?: XmlElem<string>;
-  last_usage_date?: XmlElem<Date>;
-  state_id?: XmlElem<number>;
-  score?: XmlElem<number>;
-  time?: XmlElem<number>;
-  start_usage_date?: XmlElem<Date>;
-}
-
-
 interface IWTAccessBase {
   access_level?: XmlElem<number>;
   access_role?: XmlElem<string>;
@@ -1630,16 +1711,16 @@ interface IWTWorkflowDataBaseWorkflowCustomState {
 
 interface IWTWorkflowDataBase {
   workflow_id?: XmlElem<number>;
-	workflow_state?: XmlElem<string>;
-	workflow_state_name?: XmlElem<string>;
-	workflow_state_last_date?: XmlElem<Date>;
-	get_workflow_state_name?(workflowDoc: IWTWorkflowTopElem): string;
-	set_workflow_state_last_date?(param: any): void;
-	add_workflow_log_entry?(param: any): void;
-	is_workflow_init?: XmlElem<boolean>;
-	workflow_fields?: XmlMultiElem<IWTWorkflowDataBaseWorkflowField>;
-	workflow_log_entrys?: XmlMultiElem<IWTWorkflowDataBaseWorkflowLogEntry>;
-	workflow_custom_states?: XmlMultiElem<IWTWorkflowDataBaseWorkflowCustomState>;
+  workflow_state?: XmlElem<string>;
+  workflow_state_name?: XmlElem<string>;
+  workflow_state_last_date?: XmlElem<Date>;
+  get_workflow_state_name?(workflowDoc: IWTWorkflowTopElem): string;
+  set_workflow_state_last_date?(param: any): void;
+  add_workflow_log_entry?(param: any): void;
+  is_workflow_init?: XmlElem<boolean>;
+  workflow_fields?: XmlMultiElem<IWTWorkflowDataBaseWorkflowField>;
+  workflow_log_entrys?: XmlMultiElem<IWTWorkflowDataBaseWorkflowLogEntry>;
+  workflow_custom_states?: XmlMultiElem<IWTWorkflowDataBaseWorkflowCustomState>;
 }
 
 type TLists = XmlElem<{
