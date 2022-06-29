@@ -1,4 +1,3 @@
-
 interface IWTDocumentTopElem extends ObjectCodeNameBase,
   IWTCatalogListBase,
   IWTFileListBase,

@@ -1735,3 +1735,9 @@ type TLists = XmlElem<{
 }>
 
 declare const lists: TLists;
+
+interface IWTMSDispBlockBase {
+  access_block_type?: XmlElem<string>;
+  obj_title?: XmlElem<string>;
+  custom_flag?: XmlElem<boolean>;
+}

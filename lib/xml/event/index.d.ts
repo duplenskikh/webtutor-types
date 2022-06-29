@@ -1,4 +1,3 @@
-
 interface IWTEventTopElem extends IWTCustomElemsBase,
   IWTKnowledgePartsBase,
   IWTEventSettingsBase,
