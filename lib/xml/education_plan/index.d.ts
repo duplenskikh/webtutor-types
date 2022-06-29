@@ -1,4 +1,3 @@
-
 interface IWTEducationPlanTopElem extends IWTDocInfo,
   ObjectCodeNameBase,
   IWTPersonFillingBase,
