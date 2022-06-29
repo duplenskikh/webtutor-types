@@ -1455,32 +1455,6 @@ interface IWTCareerReserveTask extends XmlElem<any> {
   commission_persons?: XmlMultiElem<IWTCareerReserveComissionPerson>;
 }
 
-interface IWTAssessmentSectionItemScale {
-  scale_id?: XmlElem<string>;
-}
-
-interface IWTAssessmentSectionItem {
-  id?: XmlElem<number>;
-  title?: XmlElem<string>;
-  question_points?: XmlElem<number>;
-  scales?: XmlMultiElem<IWTAssessmentSectionItemScale>;
-}
-
-interface IWTAssessmentSection {
-  id?: XmlElem<number>;
-  code?: XmlElem<string>;
-  title?: XmlElem<string>;
-  duration?: XmlElem<number>;
-  passing_score?: XmlElem<number>;
-  display_correct_answer?: XmlElem<boolean>;
-  not_display_feedback?: XmlElem<boolean>;
-  not_disp_last_attempt?: XmlElem<boolean>;
-  feedback_wrong?: XmlElem<string>;
-  feedback_correct?: XmlElem<string>;
-  items?: XmlMultiElem<IWTAssessmentSectionItem>;
-  comment?: XmlElem<string>;
-}
-
 interface IWTAnnalsObjectBaseDataAssessmentTimestamp {
   value?: XmlElem<any>;
 }
@@ -1740,4 +1714,24 @@ interface IWTMSDispBlockBase {
   access_block_type?: XmlElem<string>;
   obj_title?: XmlElem<string>;
   custom_flag?: XmlElem<boolean>;
+}
+
+interface IWTImageBase {
+	name?: XmlElem<string>;
+	data?: XmlElem<Binary>;
+}
+
+interface IWTRubricBase {
+  candidate?: XmlElem<string>;
+  image?: XmlElem<IWTImageBase>;
+}
+
+interface IWTProctoringBaseProctoring extends IWTWebVariablesBase {
+  is_basic_variables?: XmlElem<boolean>;
+  proctoring_system_id?: XmlElem<number>;
+}
+
+interface IWTProctoringBase {
+  use_proctoring?: XmlElem<boolean>;
+  proctoring?: XmlElem<IWTProctoringBaseProctoring>;
 }
