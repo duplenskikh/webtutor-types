@@ -71,25 +71,6 @@ interface IWTWebVariablesBase {
   wvars_num?: number;
 }
 
-interface IWTViewConditionBase {
-  top_elem?: XmlElem<string>;
-  field?: XmlElem<string>;
-  title?: XmlElem<string>;
-  value?: XmlElem<string>;
-  type?: XmlElem<string>;
-  option_type?: XmlElem<string>;
-  is_custom_field?: XmlElem<boolean>;
-  and_or?: XmlElem<string>;
-  is_multiple?: XmlElem<boolean>;
-  value_multiple?: XmlMultiElem<string>;
-  bracket?: XmlElem<string>;
-}
-
-interface IWTViewConditionsBase {
-  conditions?: XmlMultiElem<IWTViewConditionBase>;
-  conditions_qual?: XmlElem<string>;
-}
-
 interface IWTLearningSection {
   id?: XmlElem<string>;
   title?: XmlElem<string>;
@@ -832,21 +813,45 @@ interface IWTDocumentAttribute extends IWTDocumentAttributesBase {
   no_disp_childs?: XmlElem<boolean>;
 }
 
-interface IWTAccessDocBase {
-  enable_anonymous_access?: XmlElem<boolean>;
-  access_level?: XmlElem<number>;
-  access_roles?: XmlMultiElem<{
-    access_role_id?: XmlElem<string>;
-  }>;
-  access_groups?: XmlMultiElem<{
-    group_id?: XmlElem<number>;
-  }>;
-  access?: IWTViewConditionsBase;
-  access_org_id?: XmlElem<number>;
-  access_site_id?: XmlElem<number>;
-  access_host_id?: XmlElem<number>;
-  web_mode_id?: XmlElem<number>;
-  operator?: XmlElem<string>;
+interface IWTAccessDocBaseAccessRole {
+  access_role_id: XmlElem<string>;
+}
+
+interface IWTAccessDocBaseAccessGroup {
+  group_id: XmlElem<string>;
+}
+
+interface IWTViewConditionsBaseConditionBase {
+  top_elem?: XmlElem<string>;
+  field?: XmlElem<string>;
+  title?: XmlElem<string>;
+  value?: XmlElem<string>;
+  type?: XmlElem<string>;
+  option_type?: XmlElem<string>;
+  is_custom_field?: XmlElem<boolean>;
+  and_or?: XmlElem<string>;
+  is_multiple?: XmlElem<boolean>;
+  value_multiple?: XmlMultiElem<string>;
+  bracket?: XmlElem<string>;
+}
+
+type TWTViewConditionsBaseConditionBase = IWTViewConditionsBaseConditionBase;
+
+interface IWTViewConditionsBase {
+  conditions?: XmlMultiElem<TWTViewConditionsBaseConditionBase>;
+  conditions_qual?: XmlElem<string>;
+}
+
+interface IWTAccessDocBase extends IWTViewConditionsBase {
+  enable_anonymous_access: XmlElem<boolean>;
+  access_level: XmlElem<number>;
+  access_roles: XmlMultiElem<IWTAccessDocBaseAccessRole>;
+  access_groups: XmlMultiElem<IWTAccessDocBaseAccessGroup>;
+  access_org_id: XmlElem<number>;
+  access_site_id: XmlElem<number>;
+  access_host_id: XmlElem<number>;
+  web_mode_id: XmlElem<number>;
+  operator: XmlElem<string>;
 }
 
 interface IWTDocumentPersonsBasePerson {
