@@ -1,5 +1,6 @@
 
-interface IWTCourseTopElem extends ObjectCodeNameBase,
+interface IWTCourseTopElem extends IWTXmlDocumentTopElem<IWTCourseDocument>,
+  ObjectCodeNameBase,
   IWTCourseSettingsBase,
   IWTFileListBase {
   desc?: XmlElem<string>;
