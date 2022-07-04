@@ -314,7 +314,7 @@ declare var ActiveXObject: ActiveXObjectConstructor;
  * @returns undefined
  * Пример: ZipCreate( 'C:\\Temp\1.zip', ['app','base','SpXml.exe'], { BaseDir: 'C:\\Program Files\\EStaff' } );
 */
-declare function ZipCreate(archivePath: string, filesArray: Array<any>, options: any): undefined;
+declare function ZipCreate(archivePath: string, filesArray: any[], options: any): undefined;
 
 /**
  * Распаковывает архив.
@@ -328,9 +328,9 @@ declare function ZipExtract(archivePath: string, destPath: string): undefined;
  * Выбирает определенное поле (атрибут) из каждого элемента массива. Возвращает новый массив той же длинны, содержащий выбранные элементы. Функция аналогична более универсальной функции ArrayExtract(), но работает быстрее.
  * @param {Array} array - исходный массив
  * @param {string} field - имя поля (String).
- * @returns {Array<any>}
+ * @returns {any[]}
 */
-declare function ArrayExtractKeys(array: any, field: string): Array<any>;
+declare function ArrayExtractKeys(array: any, field: string): any[];
 
 /**
  * Возвращает строку, полученную путем склеивания данных из элементов массива.
@@ -349,7 +349,7 @@ declare function ArrayMerge(array: any, elemExpr: string, delim: string): string
  * @param {string} fieldExpr2 - выражение, вычисляемое относительно каждого элемента массива 2 и возвращающее значение ключа для сравнения. Необязательный аргумент (String). Если аргумент не указан, используется значение самого элемента (This).
  * @returns {Array}
 */
-declare function ArrayIntersect(array1: any, array2: any, fieldExpr1: string, fieldExpr2: string): Array<any>;
+declare function ArrayIntersect(array1: any, array2: any, fieldExpr1: string, fieldExpr2: string): any[];
 
 /**
  * Возвращает первый элемент заданного массива. Если массив не содержит ни одного элемента, функция завершается с исключением.
@@ -386,7 +386,7 @@ declare function ArrayCount(array: any): number;
  * @param {Array} array - исходный массив
  * @returns {Array}
 */
-declare function ArrayDirect(array: any): Array<any>;
+declare function ArrayDirect(array: any): any[];
 
 /**
  * Выбирает определенное значение из каждого элемента массива. Возвращает новый массив той же длинны, содержащий выбранные элементы.
@@ -394,7 +394,7 @@ declare function ArrayDirect(array: any): Array<any>;
  * @param {string} fieldExpr - выражение, вычисляемое относительно каждого элемента исходного массива (String).
  * @returns {Array}
 */
-declare function ArrayExtract(array: any, fieldExpr: string): Array<any>;
+declare function ArrayExtract(array: any, fieldExpr: string): any[];
 
 /**
  * Ищет первый элемент массива с заданным значением определнного поля (ключа). Если такой элемент не найден, возвращается undefined.
@@ -436,7 +436,7 @@ declare function ArrayOptMax(array: any, elemExpr: string): any;
  * @param {number} elemsNum - количество элементов нового массива (Integer). Необязательный аргумент. Если количестов не указано, возвращаются все элементы с начальной позиции.
  * @returns {Array}
 */
-declare function ArrayRange(array: any, pos: number, elemsNum: number): Array<any>;
+declare function ArrayRange(array: any, pos: number, elemsNum: number): any[];
 
 /**
  * Выбирает элементы массива, удовлетворяющие заданному критерию.
@@ -476,7 +476,7 @@ declare function ArrayOptFindBySortedKey(array: any, keyValue: string, keyName: 
  * @param {Array} array - исходный массив
  * @returns {Array}
 */
-declare function ArraySelectAll(array: any): Array<any>;
+declare function ArraySelectAll(array: any): any[];
 
 /**
  * Возвращает массив уникальных значений элементов заданного массива.
@@ -484,15 +484,16 @@ declare function ArraySelectAll(array: any): Array<any>;
  * @param {string} fieldExpr - выражение, вычисляемое относительно каждого элемента исходного массива (String). Необязательный аргумент. Если аргумент не указан, используется значение самого элемента (This).
  * @returns {Array}
 */
-declare function ArraySelectDistinct(array: any, fieldExpr?: string): Array<any>;
+declare function ArraySelectDistinct(array: any, fieldExpr?: string): any[];
 
 /**
  * Последовательное объединение нескольких массивов в один.
  * @param {Array} array1 - массив 1
  * @param {Array} array2 - массив 2
+ * @param {Array} array3 - массив 3
  * @returns {Array}
 */
-declare function ArrayUnion(array1: any, array2: any): Array<any>;
+declare function ArrayUnion(...args: any[]): any[];
 
 /**
  * Проверяет, является ли аргумент массивом.
@@ -508,7 +509,7 @@ declare function IsArray(arg: any): boolean;
  * @param {string} keyName - имя элемента, являющегося  ключом (String).
  * @returns {Array}
 */
-declare function ArraySelectBySortedKey(array: any, keyValue: string, keyName: string): Array<any>;
+declare function ArraySelectBySortedKey(array: any, keyValue: string, keyName: string): any[];
 
 /**
  * Выбирает элементы массива, с определенным значением заданного поля (ключа) внутри элемента. Функция аналогична более универсальной функции ArraySelect(), но работает быстрее.
@@ -517,7 +518,7 @@ declare function ArraySelectBySortedKey(array: any, keyValue: string, keyName: s
  * @param {string} keyName - имя элемента, являющегося ключом (String). Необязательный аргумент. Если имя ключа не указано, используется первичный ключ.
  * @returns {Array}
 */
-declare function ArraySelectByKey(array: any, keyValue: string | number, keyName: string): Array<any>;
+declare function ArraySelectByKey(array: any, keyValue: string | number, keyName: string): any[];
 
 /**
  * Сортирует массив по заданным полям. Возвращает новый массив отсортированных значений. Функция требует нечетного чилса аргументов (не менее 3-х), для каждого нового уровня сортировки добаляется 2 новых аргумента.
@@ -529,7 +530,7 @@ declare function ArraySelectByKey(array: any, keyValue: string | number, keyName
  * ArraySort( array, 'name', '+', 'date', '-' )
 */
 
-declare function ArraySort(array: any, elemExprN: string, orderN: string, ...args: any): Array<any>;
+declare function ArraySort(array: any, elemExprN: string, orderN: string, ...args: any): any[];
 
 /**
  * Возвращает сумму значений определенного поля по всем элементам массива.
@@ -749,14 +750,14 @@ declare function GetOptForeignElem(array: any, keyVal: any): any;
  * @param {Array} arg1 - массив XML-элементов (array of objects)
  * @returns string
 */
-declare function declareElemsToStr(arg1: Array<any>): string;
+declare function declareElemsToStr(arg1: any[]): string;
 
 /**
  * Загружает строку в массив XML-элементов. Используется при обработке параметров, полученных от внешних процедур и плагинов. Смотри также declareElemsToStr .
  * @param {string} arg1 - строка (string)
  * @returns {Array}
 */
-declare function LoadElemsFromStr(arg1: string): Array<any>;
+declare function LoadElemsFromStr(arg1: string): any[];
 
 /**
  * Выдает целевой элемент массива по значению первичного ключа. Смотри так же GetOptForeignElem. Действие функции несколько отличается от функции ArrayOptFindByKey() за счет поддержки рекурсивных массивов XML-элементов. Кроме этого, в новой объектной модели функция никогда не завершается с ошибкой, если соотвевтвующей элемент не найден, а возвращает пустой псевдо-элемент (режим терпимости к незаполенным и битым ссылкам).
@@ -1022,7 +1023,7 @@ declare function StrReplace(str: string, subStr: string, newSubStr: string): str
  * @returns {Array}
  * obj = StrScan( str, '%*s/vacancy/%s.htm' ); vacancyID = obj[0];
 */
-declare function StrScan(str: string, arg: any): Array<any>;
+declare function StrScan(str: string, arg: any): any[];
 
 /**
  * Преобразует первую букву строки в заглавную.
@@ -1919,7 +1920,7 @@ declare function RegisterCodeLibrary(arg: string): any;
  * @param {Array[any]} params (необязательный). Тип: Массив без описания структуры элементов. Массив параметров. В качестве элементов массива могут быть объекты разного типа – строки, числа, объекты, массивы… Порядок следования элементов в массиве должен соответствовать порядку параметров метода. Параметры могут быть перечислены через запятую, а весь массив - заключен в квадратные скобки. В случае, если параметры метода не предусмотрены, указывается пустой массив ([]).
  * @returns {any} result
  */
-declare function CallObjectMethod(object: any, method: string, params?: Array<any>): any;
+declare function CallObjectMethod(object: any, method: string, params?: any[]): any;
 
 /**
  * Интерпретирует содержимое страницы по правилам ASP.
@@ -1978,9 +1979,9 @@ declare function ServerEval(code: string): string;
 * Выполняет код в окружении, где доступны только те объекты и переменные, которые описаны (являются свойствами) объекта param_object. Другие переменные и объекты (системные или описанные в коде, внутри которого был вызван SafeEval) недоступны.
 * См. также функцию eval.
 * @param {string} (обязательный) - Код.
-* @param {Array<any>} (необязательный) - Объект, содержащий набор свойств, определяющих окружение, в котором будет исполнятся код. Если данный аргумент не указан, то программный код исполняется в пустом окружении. Однако, обычно данный аргумент указывается.
+* @param {any[]} (необязательный) - Объект, содержащий набор свойств, определяющих окружение, в котором будет исполнятся код. Если данный аргумент не указан, то программный код исполняется в пустом окружении. Однако, обычно данный аргумент указывается.
  */
-declare function SafeEval(code: string, arguments?: Array<any>): any;
+declare function SafeEval(code: string, arguments?: any[]): any;
 
 /**
  * Выполняет код JS, который, возможно, завершится с ошибкой, с возвратом заданного значения по умолчанию в случае ошибки.
@@ -2011,7 +2012,7 @@ declare function OpenCodeLib(string: any): any;
  * @param methodName 
  * @param arguments 
  */
-declare function CallServerMethod(libraryName: string, methodName: string, arguments?: Array<any>): any;
+declare function CallServerMethod(libraryName: string, methodName: string, arguments?: any[]): any;
 
 /**
  * Возвращает тип переданного значения
