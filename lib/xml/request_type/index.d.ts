@@ -1,4 +1,3 @@
-
 interface IWTRequestTypeTopElem extends
   IWTObjectCodeNameBase,
   IWTWebVariablesBase {
