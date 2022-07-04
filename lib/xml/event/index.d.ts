@@ -1,15 +1,178 @@
-interface IWTEventTopElem extends IWTCustomElemsBase,
-  IWTKnowledgePartsBase,
-  IWTEventSettingsBase,
-  IWTCatalogListBase {
-  /** ID мероприятия */
+interface IWTEventTest {
+  class?: XmlElem<any>;
   id?: XmlElem<number>;
-  /** Код мероприятия */
-  code?: XmlElem<string>;
-  /** Название мероприятия */
+  title?: XmlElem<string>;
+  state?: XmlElem<string>;
+  start_time?: XmlElem<string>;
+  duration?: XmlElem<number>;
+}
+
+interface IWTEventRecord {
+  class?: XmlElem<string>;
+  status?: XmlElem<string>;
+  start_time?: XmlElem<string>;
+  recorder_id?: XmlElem<number>;
+  data?: XmlElem<string>;
+  width?: XmlElem<string>;
+  height?: XmlElem<string>;
+}
+
+interface IWTEventForm {
+  form_id: XmlElem<string>;
+}
+
+interface IWTEventWebinarSettings {
   name?: XmlElem<string>;
-  /** ID ресурса мероприятия */
-  resource_id?: XmlElem<number>;
+  type?: XmlElem<string>;
+  value?: XmlElem<string>;
+}
+
+interface IWTEventStage {
+  stage_id: XmlElem<number>;
+  parent_id: XmlElem<number>;
+  name: XmlElem<string>;
+  start_date: XmlElem<Date>;
+  finish_date: XmlElem<Date>;
+  is_active: XmlElem<boolean>;
+}
+
+interface IWTExpenseItem {
+  expense_item_id: XmlElem<number>;
+  sum: XmlElem<number>;
+}
+
+interface IWTEventUnnamedPersonByOrgs {
+  org_id: XmlElem<number>;
+  org_name: XmlElem<string>;
+  unnamed_person_num: XmlElem<number>;
+  collaborator_id: XmlElem<number>;
+  person_fullname: XmlElem<string>;
+}
+
+interface IWTEventCollaborator extends IWTPersonFillingBase {
+  collaborator_id: XmlElem<number>;
+  last_exist_date: XmlElem<Date>;
+  education_plan_id: XmlElem<number>;
+  request_person_id: XmlElem<number>;
+  active_test_learning_id: XmlElem<number>;
+  controller_code: XmlElem<string>;
+  webinar_url: XmlElem<string>;
+  participation_id: XmlElem<string>;
+  expense_items: XmlMultiElem<IWTExpenseItem>;
+  cost_center_id: XmlElem<number>;
+  total_sum: XmlElem<number>;
+  not_pay: XmlElem<boolean>;
+  can_use_camera: XmlElem<boolean>;
+  can_use_microphone: XmlElem<boolean>;
+  current_state: XmlElem<string>;
+  edu_group_name: XmlElem<string>;
+}
+
+interface IWTEventEvenPreparations {
+  even_preparation_id: XmlElem<string>;
+  person_id: XmlElem<number>;
+  person_fullname: XmlElem<string>;
+  plan_date: XmlElem<Date>;
+  fact_date: XmlElem<Date>;
+  status_id: XmlElem<string>;
+  comment: XmlElem<string>;
+  comment_person: XmlElem<string>;
+  webinar_url: XmlElem<string>;
+  participation_id: XmlElem<string>;
+}
+
+interface IWTEventHitt {
+  assessment_id: XmlElem<number>;
+  tutor_controller_code: XmlElem<string>;
+  instruction: XmlElem<string>;
+  auto_next_all_answer: XmlElem<boolean>;
+  auto_finish_test: XmlElem<boolean>;
+  use_activated_test: XmlElem<boolean>;
+  port_num: XmlElem<number>;
+  column_num: XmlElem<number>;
+  font_size: XmlElem<number>;
+}
+
+interface IWTEventGroup {
+  group_id: XmlElem<number>;
+}
+
+interface IWTEventTutor extends IWTPersonFillingBase {
+  collaborator_id: XmlElem<number>;
+  telephone_out: XmlElem<string>;
+  telephone_in: XmlElem<string>;
+  main: XmlElem<boolean>;
+  webinar_url: XmlElem<string>;
+  participation_id: XmlElem<string>;
+}
+
+interface IWTEventObjectResource {
+  object_resource_id: XmlElem<number>;
+}
+
+interface IWTEventContract
+  // NOT_IMPLEMENTED cost_currency_type_base
+{
+  code: XmlElem<string>;
+  date: XmlElem<Date>;
+  legal_entity_name: XmlElem<string>;
+  legal_entity_code: XmlElem<string>;
+  desc: XmlElem<string>;
+}
+
+interface IWTEventFile extends IWTFileBase {
+  presentation_id: XmlElem<number>;
+  visibility: XmlElem<string>;
+}
+
+interface IWTEventExpenseItem {
+  expense_item_id: XmlElem<number>;
+  sum: XmlElem<number>;
+  unnamed_person_sum: XmlElem<number>;
+  total_sum: XmlElem<number>;
+}
+
+interface IWTEventLibraryMaterial {
+  library_material_id: XmlElem<number>;
+}
+
+interface IWTEventLearningTask {
+  learning_task_id: XmlElem<number>;
+}
+
+interface IWTEventRegularScheduleExpenseItem {
+  expense_item_id?: XmlElem<number>;
+  sum?: XmlElem<number>;
+}
+
+interface IWTEventRegularSchedule
+  // NOT_IMPLEMENTED ms_week_schedule_base
+{
+  start_date: XmlElem<Date>;
+  finish_date: XmlElem<Date>;
+  expense_items: XmlMultiElem<IWTEventRegularScheduleExpenseItem>;
+  expense_sum?: XmlElem<number>;
+  cost_center_id?: XmlElem<number>;
+  cost_center_type?: XmlElem<string>;
+  total_cost?: XmlElem<number>;
+  phases_num?: XmlElem<number>;
+}
+
+interface IWTEventTopElem extends IWTXmlDocumentTopElem<IWTEventDocument>,
+  IWTObjectCodeNameBase,
+  // NOT_IMPLEMENTED educ_groups_base,
+  // NOT_IMPLEMENTED path_places_base,
+  // NOT_IMPLEMENTED cost_currency_type_base,
+  // NOT_IMPLEMENTED cost_centers_base,
+  // NOT_IMPLEMENTED cost_centers_base,
+  IWTLectorsBase,
+  IWTGameBonusBase,
+  // NOT_IMPLEMENTED edu_method_testing_base
+  IWTKnowledgePartsBase,
+  IWTCustomElemsBase,
+  // NOT_IMPLEMENTED custom_datas_base
+  IWTCatalogListBase,
+  IWTEventSettingsBase {
   /** Код типа мероприятия */
   type_id?: XmlElem<string>;
   /** ID типа мероприятия */
@@ -25,9 +188,6 @@ interface IWTEventTopElem extends IWTCustomElemsBase,
   place_id?: XmlElem<number>;
   /** Название места проведения мероприятия */
   place?: XmlElem<string>;
-  cost?: XmlElem<string>;
-  lectors?: XmlMultiElem<IWTEventLector>;
-  cost_type?: XmlElem<string>;
   vclass_host?: XmlElem<string>;
   use_camera_capture?: XmlElem<boolean>;
   login_with_camera_only?: XmlElem<boolean>;
@@ -44,6 +204,9 @@ interface IWTEventTopElem extends IWTCustomElemsBase,
   record_capture_rate?: XmlElem<number>;
   current_presentation_id?: XmlElem<number>;
   webinar_system_id?: XmlElem<number>;
+  test?: XmlElem<IWTEventTest>;
+  record?: XmlElem<IWTEventRecord>;
+  webinar_settings?: XmlMultiElem<IWTEventWebinarSettings>;
   use_vclass?: XmlElem<boolean>;
   vclass_setting_id?: XmlElem<number>;
   show_record?: XmlElem<boolean>;
@@ -66,6 +229,7 @@ interface IWTEventTopElem extends IWTCustomElemsBase,
   is_public?: XmlElem<boolean>;
   is_open?: XmlElem<boolean>;
   allow_guest_login?: XmlElem<boolean>;
+  guest_restrictions?: XmlElem<number>;
   is_open_case?: XmlElem<boolean>;
   public_answers?: XmlElem<boolean>;
   duration_plan?: XmlElem<number>;
@@ -102,6 +266,7 @@ interface IWTEventTopElem extends IWTCustomElemsBase,
   quota_subdivision?: XmlElem<number>;
   quota_person?: XmlElem<number>;
   even_preparations?: XmlMultiElem<IWTEventEvenPreparations>;
+  hitt: XmlElem<IWTEventHitt>;
   groups?: XmlMultiElem<IWTEventGroup>;
   tutors?: XmlMultiElem<IWTEventTutor>;
   object_resources?: XmlMultiElem<IWTEventObjectResource>;
@@ -117,6 +282,7 @@ interface IWTEventTopElem extends IWTCustomElemsBase,
   files?: XmlMultiElem<IWTEventFile>;
   library_materials?: XmlMultiElem<IWTEventLibraryMaterial>;
   learning_tasks?: XmlMultiElem<IWTEventLearningTask>;
+  AddFile?(resourceId: number, resourceDocument?: IWTResourceDocument): void;
   default_response_type_id?: XmlElem<number>;
   mandatory_fill_response?: XmlElem<boolean>;
   default_request_type_id?: XmlElem<number>;
@@ -139,9 +305,19 @@ interface IWTEventTopElem extends IWTCustomElemsBase,
   date_request_over?: XmlElem<Date>;
   date_request_rejection_over?: XmlElem<Date>;
   parent_event_id?: XmlElem<number>;
+  regular_schedule?: XmlElem<IWTEventRegularSchedule>;
+  access?: XmlElem<IWTAccessDocBase>;
   desc?: XmlElem<string>;
   comment?: XmlElem<string>;
+  doc_info?: XmlElem<IWTDocInfoBase>;
+  get_chat_messages?(dtLastMessageParam: string | Date): XmlMultiElem<any>;
+  send_chat_message?(sTextParam: string, sFullnameParam: string): boolean;
   phases?: XmlMultiElem<IWTEventPhase>;
+
+
+  cost?: XmlElem<string>;
+  lectors?: XmlMultiElem<IWTEventLector>;
+  cost_type?: XmlElem<string>;
   disp_collaborator_phase_presence?: XmlElem<boolean>;
   disp_persons_for_all?: XmlElem<boolean>;
   has_lector_appraise?: XmlElem<boolean>;
@@ -160,9 +336,6 @@ interface IWTEventTopElem extends IWTCustomElemsBase,
   manager_restype?: XmlElem<number>;
   manager_date_start?: XmlElem<Date>;
   disp_all_assessment_plan?: XmlElem<boolean>;
-  AddFile?(resourceId: number, resourceDocument?: IWTResourceDocument): void;
-  get_chat_messages?(dtLastMessageParam: string | Date): XmlMultiElem<any>;
-  send_chat_message?(sTextParam: string, sFullnameParam: string): boolean;
   set_status?(sNewStatusParam: string, bSendNotificationsParam: boolean, oScreenParam: Object): IWTEventDocument;
   send_notifications?(sSendTypeParam: string): boolean;
   create_results?(): any;
