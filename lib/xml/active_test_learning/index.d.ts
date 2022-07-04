@@ -1,4 +1,5 @@
-interface IWTActiveTestLearningTopElem extends IWTLearningAssessmentBase,
+interface IWTActiveTestLearningTopElem extends IWTXmlDocumentTopElem<IWTServerAgentDocument>,
+  IWTLearningAssessmentBase,
   IWTPersonFillingBase,
   IWTLearningCurrentStateBase,
   IWTLastAttemptTestLearningsBase {

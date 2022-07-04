@@ -1,4 +1,4 @@
-interface IWTRequestTypeTopElem extends
+interface IWTRequestTypeTopElem extends IWTXmlDocumentTopElem<IWTServerAgentDocument>,
   IWTObjectCodeNameBase,
   IWTWebVariablesBase {
   object_type?: XmlElem<string>;
