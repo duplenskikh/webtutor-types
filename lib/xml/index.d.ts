@@ -1694,3 +1694,24 @@ interface IWTProctoringBase {
   use_proctoring?: XmlElem<boolean>;
   proctoring?: XmlElem<IWTProctoringBaseProctoring>;
 }
+
+interface IWTMSPeriodityBase {
+  trigger_type?: XmlElem<string>;
+  period?: XmlElem<number>;
+  start_time?: XmlElem<string>;
+  finish_time?: XmlElem<string>;
+  all_day?: XmlElem<boolean>;
+  start_day?: XmlElem<number>;
+  start_week_day?: XmlElem<number>;
+  start_date?: XmlElem<Date>;
+  finish_date?: XmlElem<Date>;
+  last_run_date?: XmlElem<Date>;
+}
+
+interface IWTExecCodeBase {
+  code_type?: XmlElem<string>;
+  code_url?: XmlElem<string>;
+  code_text?: XmlElem<string>;
+  is_init?: XmlElem<boolean>;
+  code_temp?: XmlElem<string>;
+}
