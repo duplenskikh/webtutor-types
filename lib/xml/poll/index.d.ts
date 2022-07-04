@@ -1,5 +1,6 @@
 
-interface IWTPollTopElem extends ObjectCodeNameBase,
+interface IWTPollTopElem extends IWTXmlDocumentTopElem<IWTPollDocument>,
+  ObjectCodeNameBase,
   IWTCustomElemsBase,
   IWTAccessBase,
   IWTAdminAccessBase,

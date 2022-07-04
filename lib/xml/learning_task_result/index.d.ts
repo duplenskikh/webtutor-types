@@ -1,4 +1,5 @@
-declare interface IWTLearningTaskResultTopElem extends IWTPersonFillingBase,
+declare interface IWTLearningTaskResultTopElem extends IWTXmlDocumentTopElem<IWTLearningTaskResultDocument>,
+  IWTPersonFillingBase,
   IWTFileListBase,
   IWTCustomElemsBase {
   learning_task_id?: XmlElem<number>;
