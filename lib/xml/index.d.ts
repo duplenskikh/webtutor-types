@@ -1656,7 +1656,7 @@ interface IWTWorkflowDataBase {
   workflow_custom_states?: XmlMultiElem<IWTWorkflowDataBaseWorkflowCustomState>;
 }
 
-type TLists = XmlElem<{
+interface ILists {
   object_resource_types: XmlMultiElem<IWTListsObjectResourceType>;
   currency_types: XmlMultiElem<IWTListsCurrencyType>;
   event_forms: XmlMultiElem<IWTListsEventForm>;
@@ -1665,9 +1665,9 @@ type TLists = XmlElem<{
   professional_areas: XmlMultiElem<IWTListsProfessionalArea>;
   web_requirements: XmlMultiElem<IWTListsWebRequirement>;
   ext_externalscripts: XmlMultiElem<IWTListsExternalScript>;
-}>
+}
 
-declare const lists: TLists;
+declare const lists: XmlElem<ILists>;
 
 interface IWTMSDispBlockBase {
   access_block_type?: XmlElem<string>;
