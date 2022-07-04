@@ -1708,10 +1708,14 @@ interface IWTMSPeriodityBase {
   last_run_date?: XmlElem<Date>;
 }
 
-interface IWTExecCodeBase {
+interface IWTExecCodeBaseExecCode {
   code_type?: XmlElem<string>;
   code_url?: XmlElem<string>;
   code_text?: XmlElem<string>;
   is_init?: XmlElem<boolean>;
   code_temp?: XmlElem<string>;
+}
+
+interface IWTExecCodeBase {
+  exec_code?: XmlElem<IWTExecCodeBaseExecCode>;
 }
