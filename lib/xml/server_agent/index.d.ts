@@ -23,10 +23,10 @@ interface IWTServerAgentTopElem extends IWTMSPeriodityBase,
   run_code_url?: XmlElem<string>;
   run_code?: XmlElem<string>;
   run_agent?(
-    iObjectIDParam: any,
-    sObjectsIDsParam: any,
-    sTenancyNameParam: string,
-    dDateParam: Date
+    iObjectIDParam?: any,
+    sObjectsIDsParam?: any,
+    sTenancyNameParam?: string,
+    dDateParam?: Date
   ): boolean;
   discharge_id?: XmlElem<number>;
   user_assignment_id?: XmlElem<number>;
