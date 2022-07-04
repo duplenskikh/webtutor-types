@@ -1,5 +1,5 @@
 
-interface IWTActiveNotificationTopElem {
+interface IWTActiveNotificationTopElem extends IWTXmlDocumentTopElem<IWTServerAgentDocument> {
   notification_id?: XmlElem<number>;
   object_id?: XmlElem<number>;
   sec_object_id?: XmlElem<number>;

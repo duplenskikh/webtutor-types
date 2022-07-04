@@ -1,3 +1,2 @@
-const doc = tools.open_doc(1) as IWTXmlDocument<any>;
-
+const doc = tools.open_doc(1) as IWTServerAgentTopElem;
 doc.BindToDb();

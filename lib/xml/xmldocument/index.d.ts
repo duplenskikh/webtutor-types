@@ -8,7 +8,6 @@ interface IWTXmlDocument<T> {
 
 type IWTXmlDocumentTopElem<T> = T & {
   Name: string;
-  name?: XmlElem<string>;
   comment?: XmlElem<string>;
   Doc: IWTXmlDocument<T>;
   role_id?: XmlMultiElem<number>;
