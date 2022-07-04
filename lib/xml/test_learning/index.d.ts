@@ -1,5 +1,10 @@
 
-interface IWTTestLearningTopElem extends IWTAnnalsNumsBase, IWTAdminAccessBase, IWTDocInfo, IWTPersonFillingBase {
+interface IWTTestLearningTopElem extends IWTXmlDocumentTopElem<IWTTestLearningDocument>,
+  IWTAnnalsNumsBase,
+  IWTAdminAccessBase,
+  IWTDocInfo,
+  IWTPersonFillingBase
+{
   id?: XmlElem<number>;
   assessment_id?: XmlElem<number>;
   assessment_name?: XmlElem<string>;
