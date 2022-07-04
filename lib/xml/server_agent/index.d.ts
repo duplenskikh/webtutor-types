@@ -10,7 +10,10 @@ declare var LdsIsServer: boolean;
 
 declare var oData: any;
 
-interface IWTServerAgentTopElem {
+interface IWTServerAgentTopElem extends IWTMSPeriodityBase,
+  IWTWebVariablesBase,
+  IWTExecCodeBase,
+  IWTCustomElemsBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -31,8 +34,11 @@ interface IWTServerAgentTopElem {
   import_excel_id?: XmlElem<number>;
   exchange_server_id?: XmlElem<number>;
   is_std?: XmlElem<boolean>;
+  changed?: XmlElem<boolean>;
   comment?: XmlElem<string>;
-  converter?: XmlElem<boolean>;
+  doc_info?: XmlElem<IWTDocInfoBase>
+  converter?(): boolean;
+  role_id?: XmlMultiElem<number>;
 }
 
 type IWTServerAgentDocument = IWTXmlDocument<IWTServerAgentTopElem>;
