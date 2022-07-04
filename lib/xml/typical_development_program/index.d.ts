@@ -15,7 +15,8 @@ interface IWTTypicalDevelopmentProgramTask {
   forbid_task_portal_edit: XmlElem<boolean>;
 }
 
-interface IWTTypicalDevelopmentProgramTopElem extends IWTDocInfo,
+interface IWTTypicalDevelopmentProgramTopElem extends IWTXmlDocumentTopElem<IWTTypicalDevelopmentProgramDocument>,
+  IWTDocInfo,
   IWTCustomElemsBase {
   desc?: XmlElem<string>;
   comment?: XmlElem<string>;

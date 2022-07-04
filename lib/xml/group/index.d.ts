@@ -1,4 +1,5 @@
-interface IWTGroupTopElem extends IWTObjectCodeNameBase,
+interface IWTGroupTopElem extends IWTXmlDocumentTopElem<IWTGroupDocument>,
+  IWTObjectCodeNameBase,
   IWTEducGroupsBase,
   IWTFuncManagersBase,
   IWTCustomElemsBase,

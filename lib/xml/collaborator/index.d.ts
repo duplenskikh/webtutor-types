@@ -1,4 +1,5 @@
-interface IWTCollaboratorTopElem extends IWTPersonBase,
+interface IWTCollaboratorTopElem extends IWTXmlDocumentTopElem<IWTCollaboratorDocument>,
+  IWTPersonBase,
   IWTPassportDataBase,
   IWTFileListBase,
   IWTCustomElemsBase,
