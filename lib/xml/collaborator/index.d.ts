@@ -36,7 +36,7 @@ interface IWTCollaboratorTopElem extends IWTXmlDocumentTopElem<IWTCollaboratorDo
   request_black_list_comment?: XmlElem<string>;
   place_id?: XmlElem<number>;
   region_id?: XmlElem<number>;
-  access?: XmlElem<IWTAccessBase>;
+  access: XmlElem<IWTAccessBase>;
   cost_center_id?: XmlElem<number>;
   lng_id?: XmlElem<string>;
   location_id?: XmlElem<string>;

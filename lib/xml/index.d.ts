@@ -235,11 +235,6 @@ interface IWTRemoteSecutiryProfileMethodAccess {
   library_profile?: XmlElem<string>;
 }
 
-
-interface IWTRemoteApplicationCredential {
-  id?: XmlElem<number>;
-}
-
 interface IWTQualificationAssignmentLearning {
   learning_id?: XmlElem<number>;
 }
@@ -852,6 +847,15 @@ interface IWTAccessDocBase extends IWTViewConditionsBase {
   access_host_id: XmlElem<number>;
   web_mode_id: XmlElem<number>;
   operator: XmlElem<string>;
+}
+
+interface IWTAccessBase {
+  access_level?: XmlElem<number>;
+  access_role?: XmlElem<string>;
+  is_arm_admin?: XmlElem<boolean>;
+  web_banned?: XmlElem<boolean>;
+  user_group_id?: XmlElem<number>;
+  is_content_admin?: XmlElem<boolean>;
 }
 
 interface IWTDocumentPersonsBasePerson {
@@ -1501,15 +1505,6 @@ interface IWTNotificationNotificationSystem {
 interface IWTNotificationTemplateMainObject extends IWTFieldNamesBaseFieldName {
   catalog_name?: XmlElem<string>;
   init_field_names?: Function;
-}
-
-interface IWTAccessBase {
-  access_level?: XmlElem<number>;
-  access_role?: XmlElem<string>;
-  is_arm_admin?: XmlElem<boolean>;
-  web_banned?: XmlElem<boolean>;
-  user_group_id?: XmlElem<number>;
-  is_content_admin?: XmlElem<boolean>;
 }
 
 interface IWTWorkflowDataBaseWorkflowField {
