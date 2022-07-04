@@ -16,5 +16,4 @@ type IWTXmlDocumentTopElem<T> = T & {
   AssignElem(TopElem: IWTXmlDocumentTopElem<any>): void;
   EvalPath(pathName: string): XmlElem<any> | XmlMultiElem<any> | never;
   tags?: XmlMultiElem<IWTKnowledgePartsBaseTag>;
-  access?: XmlElem<IWTAccessDocBase>;
 }
