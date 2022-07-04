@@ -817,7 +817,6 @@ interface IWTCatalogListBase {
   catalogs_sel_all_objects?: XmlElem<boolean>;
 }
 
-
 interface IWTEnv {
   /**
    * Текущий сайт пользователя с которым он взаимодействует
