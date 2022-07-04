@@ -1,4 +1,3 @@
-
 interface IWTGroupTopElem extends IWTObjectCodeNameBase,
   IWTEducGroupsBase,
   IWTFuncManagersBase,
@@ -34,4 +33,4 @@ interface IWTGroupTopElem extends IWTObjectCodeNameBase,
   role_id?: XmlMultiElem<number>;
 }
 
-export type IWTGroupDocument = IWTXmlDocument<IWTGroupTopElem>;
+type IWTGroupDocument = IWTXmlDocument<IWTGroupTopElem>;
