@@ -1,6 +1,6 @@
 {
   "name": "@umbrik/webtutor-types",
-  "version": "3.3.3",
+  "version": "3.3.4",
   "description": "## Подключение к проекту",
   "main": "index.js",
   "directories": {
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/umbrik/webtutor-types.git"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "webtutor",
