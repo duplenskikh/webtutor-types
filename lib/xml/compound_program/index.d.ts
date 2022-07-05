@@ -1,4 +1,5 @@
-interface IWTCompoundProgramTopElem extends ObjectCodeNameBase,
+interface IWTCompoundProgramTopElem extends IWTXmlDocumentTopElem<IWTCompoundProgramTopElem>,
+  ObjectCodeNameBase,
   IWTCustomElemsBase,
   IWTLectorsBase,
   IWTFileListBase,

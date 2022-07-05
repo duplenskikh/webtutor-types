@@ -13,7 +13,7 @@ interface IWTRequestWorkflowMatching {
   is_main?: XmlElem<boolean>;
 }
 
-interface IWTRequestTopElem extends IWTXmlDocumentTopElem<IWTServerAgentDocument>,
+interface IWTRequestTopElem extends IWTXmlDocumentTopElem<IWTRequestTopElem>,
   IWTPersonFillingBase,
   IWTKnowledgePartsBase,
   IWTWorkflowDataBase,

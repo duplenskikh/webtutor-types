@@ -1,4 +1,4 @@
-interface IWTLearningTopElem extends IWTXmlDocumentTopElem<IWTLearningDocument>,
+interface IWTLearningTopElem extends IWTXmlDocumentTopElem<IWTLearningTopElem>,
   IWTPersonFillingBase,
   IWTDocInfo,
   IWTCustomElemsBase,

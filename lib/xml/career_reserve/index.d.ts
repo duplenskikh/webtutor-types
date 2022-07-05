@@ -1,4 +1,4 @@
-interface IWTCareerReserveTopElem extends IWTXmlDocumentTopElem<IWTCareerReserveDocument>,
+interface IWTCareerReserveTopElem extends IWTXmlDocumentTopElem<IWTCareerReserveTopElem>,
   IWTCustomElemsBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;

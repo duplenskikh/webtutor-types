@@ -31,7 +31,7 @@ interface IWTTypicalDevelopmentProgramTutorsBySub {
   tutors: XmlMultiElem<IWTTypicalDevelopmentProgramTutorsBySubTutor>;
 }
 
-interface IWTTypicalDevelopmentProgramTopElem extends IWTXmlDocumentTopElem<IWTTypicalDevelopmentProgramDocument>,
+interface IWTTypicalDevelopmentProgramTopElem extends IWTXmlDocumentTopElem<IWTTypicalDevelopmentProgramTopElem>,
   IWTObjectCodeNameBase,
   IWTAdminAccessBase,
   IWTFileListBase,

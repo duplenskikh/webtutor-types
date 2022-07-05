@@ -1,5 +1,5 @@
 
-interface IWTTestLearningTopElem extends IWTXmlDocumentTopElem<IWTTestLearningDocument>,
+interface IWTTestLearningTopElem extends IWTXmlDocumentTopElem<IWTTestLearningTopElem>,
   IWTAnnalsNumsBase,
   IWTAdminAccessBase,
   IWTDocInfo,

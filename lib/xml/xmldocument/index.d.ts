@@ -6,7 +6,7 @@ interface IWTXmlDocument<T> {
   WriteDocInfo: boolean;
 }
 
-type IWTXmlDocumentTopElem<T> = T & {
+interface IWTXmlDocumentTopElem<T> {
   Name: string;
   comment?: XmlElem<string>;
   Doc: IWTXmlDocument<T>;
