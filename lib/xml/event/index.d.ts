@@ -158,7 +158,7 @@ interface IWTEventRegularSchedule
   phases_num?: XmlElem<number>;
 }
 
-interface IWTEventTopElem extends IWTXmlDocumentTopElem<IWTEventDocument>,
+interface IWTEventTopElem extends IWTXmlDocumentTopElem<IWTEventTopElem>,
   IWTObjectCodeNameBase,
   // NOT_IMPLEMENTED educ_groups_base,
   // NOT_IMPLEMENTED path_places_base,
@@ -336,7 +336,13 @@ interface IWTEventTopElem extends IWTXmlDocumentTopElem<IWTEventDocument>,
   manager_restype?: XmlElem<number>;
   manager_date_start?: XmlElem<Date>;
   disp_all_assessment_plan?: XmlElem<boolean>;
-  set_status?(sNewStatusParam: string, bSendNotificationsParam: boolean, oScreenParam: Object): IWTEventDocument;
+  /**
+   * Устанавливает статус мероприятию
+   * @param { string } newStatus новый статус мероприятия
+   * @param bSendNotificationsParam 
+   * @param oScreenParam 
+   */
+  set_status?(newStatus: string, bSendNotificationsParam?: boolean, oScreenParam?: Object): void;
   send_notifications?(sSendTypeParam: string): boolean;
   create_results?(): any;
   change_tutor_list?(): any;

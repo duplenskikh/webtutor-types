@@ -10,7 +10,7 @@ declare var LdsIsServer: boolean;
 
 declare var oData: any;
 
-interface IWTServerAgentTopElem extends IWTXmlDocumentTopElem<IWTServerAgentDocument>,
+interface IWTServerAgentTopElem extends IWTXmlDocumentTopElem<IWTServerAgentTopElem>,
   IWTMSPeriodityBase,
   IWTWebVariablesBase,
   IWTExecCodeBase,

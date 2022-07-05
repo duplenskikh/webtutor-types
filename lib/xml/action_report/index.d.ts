@@ -1,4 +1,4 @@
-interface IWTActionReportTopElem extends IWTXmlDocumentTopElem<IWTServerAgentDocument> {
+interface IWTActionReportTopElem extends IWTXmlDocumentTopElem<IWTActionReportTopElem> {
   type?: XmlElem<string>;
   status?: XmlElem<string>;
   completed?: XmlElem<boolean>;

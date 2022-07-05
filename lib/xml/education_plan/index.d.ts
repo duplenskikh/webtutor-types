@@ -1,4 +1,4 @@
-interface IWTEducationPlanTopElem extends IWTXmlDocumentTopElem<IWTEducationPlanDocument>,
+interface IWTEducationPlanTopElem extends IWTXmlDocumentTopElem<IWTEducationPlanTopElem>,
   IWTDocInfo,
   ObjectCodeNameBase,
   IWTPersonFillingBase,

@@ -1,4 +1,4 @@
-interface IWTResourceTopElem extends IWTXmlDocumentTopElem<IWTResourceDocument>,
+interface IWTResourceTopElem extends IWTXmlDocumentTopElem<IWTResourceTopElem>,
   ObjectCodeNameBase,
   IWTDocInfo {
   type?: XmlElem<string>;

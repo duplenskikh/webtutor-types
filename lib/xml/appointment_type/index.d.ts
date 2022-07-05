@@ -1,4 +1,4 @@
-interface IWTAppointmentTypeTopElem extends IWTXmlDocumentTopElem<IWTServerAgentDocument>,
+interface IWTAppointmentTypeTopElem extends IWTXmlDocumentTopElem<IWTAppointmentTypeTopElem>,
   ObjectCodeNameBase,
   IWTAdminAccessBase,
   IWTDocInfo {

@@ -19,7 +19,7 @@ interface IWTView {
   result_tab_selector?: XmlElem<string>;
 }
 
-interface IWTActiveLearningTopElem extends IWTXmlDocumentTopElem<IWTServerAgentDocument>,
+interface IWTActiveLearningTopElem extends IWTXmlDocumentTopElem<IWTActiveLearningTopElem>,
   IWTPersonFillingBase,
   IWTAdminAccessBase,
   IWTDocInfo,
@@ -51,7 +51,7 @@ interface IWTActiveLearningTopElem extends IWTXmlDocumentTopElem<IWTServerAgentD
   score_sum_eval?: XmlElem<string>;
   score?: XmlElem<number>;
   calc_score?(): number;
-  state_id?(): number;
+  state_id?: XmlElem<number>;
   time?(): number;
   calc_max_end_date?(): number | null;
   no_encoding_core_lesson?: XmlElem<boolean>;

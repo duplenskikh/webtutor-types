@@ -1,5 +1,5 @@
 
-interface IWTCourseTopElem extends IWTXmlDocumentTopElem<IWTCourseDocument>,
+interface IWTCourseTopElem extends IWTXmlDocumentTopElem<IWTCourseTopElem>,
   ObjectCodeNameBase,
   IWTCourseSettingsBase,
   IWTFileListBase {
