@@ -1,5 +1,4 @@
-interface IWTCollaboratorTopElem extends IWTXmlDocumentTopElem,
-  IWTPersonBase,
+interface ICollaboratorTopElem extends IWTPersonBase,
   IWTPassportDataBase,
   IWTFileListBase,
   IWTCustomElemsBase,
@@ -89,4 +88,5 @@ interface IWTCollaboratorTopElem extends IWTXmlDocumentTopElem,
   clear_subs_fields?(): undefined;
 }
 
+type CollaboratorTopElem = ICollaboratorTopElem & IWTXmlDocumentTopElem;
 type IWTCollaboratorDocument = IWTXmlDocument;
