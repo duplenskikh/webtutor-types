@@ -22,7 +22,7 @@ declare namespace tools {
    */
   function open_doc(documentId: number): XmlDocument<any> | undefined;
 
-  function check_access(sourceDocument: XmlDocument<any>, userId: number): boolean;
+  function check_access(TopElem: XmlTopElem<any>, userId: number): boolean;
   function xquery(string: string): any;
 
 

@@ -1618,3 +1618,33 @@ interface IWTExecCodeBaseExecCode {
 interface IWTExecCodeBase {
   exec_code?: XmlElem<IWTExecCodeBaseExecCode>;
 }
+
+interface IAccessRolesAccessBlock {
+  id?: XmlElem<string>;
+  can_read?: XmlElem<boolean>;
+  can_write?: XmlElem<boolean>;
+  can_delete?: XmlElem<boolean>;
+}
+
+interface IAccessRolesFuncBlockApplication {
+  application_id?: XmlElem<number>;
+  is_enabled?: XmlElem<boolean>;
+  access_level?: XmlElem<number>;
+}
+
+interface IAccessRolesFuncBlock {
+  id?: XmlElem<string>;
+  is_enabled?: XmlElem<boolean>;
+  applications?: XmlMultiElem<IAccessRolesFuncBlockApplication>;
+}
+
+interface IAccessRoles {
+  id?: XmlElem<string>;
+  name?: XmlElem<string>;
+  access_blocs?: XmlMultiElem<IAccessRolesAccessBlock>;
+  can_edit_managers?: XmlElem<boolean>;
+  admin_configuration_id?: XmlElem<number>;
+  func_blocks?: XmlMultiElem<IAccessRolesFuncBlock>;
+}
+
+declare const access_roles: XmlMultiElem<IAccessRoles>;
