@@ -6,4 +6,4 @@ interface IWTCompetenceProfileFamilyTopElem extends IWTAdminAccessBase {
   doc_info?: XmlElem<IWTDocInfoBase>;
 }
 
-type IWTCompetenceProfileFamilyDocument = IWTXmlDocument<IWTCompetenceProfileFamilyTopElem>;
+type IWTCompetenceProfileFamilyDocument = XmlDocument<IWTCompetenceProfileFamilyTopElem>;

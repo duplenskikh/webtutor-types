@@ -28,4 +28,4 @@ interface IWTEventResultTopElem extends IWTDocInfo {
   comment?: XmlElem<string>;
 }
 
-type IWTEventResultDocument = IWTXmlDocument<IWTEventResultTopElem>;
+type IWTEventResultDocument = XmlDocument<IWTEventResultTopElem>;

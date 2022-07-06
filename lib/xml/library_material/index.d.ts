@@ -33,4 +33,4 @@ interface IWTLibraryMaterialTopElem {
   filling_path_sections?(): XmlMultiElem<IWTLibraryMaterialPathSection>;
 }
 
-type IWTLibraryMaterialDocument = IWTXmlDocument<IWTLibraryMaterialTopElem>;
+type IWTLibraryMaterialDocument = XmlDocument<IWTLibraryMaterialTopElem>;

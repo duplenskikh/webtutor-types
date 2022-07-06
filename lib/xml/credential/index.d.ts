@@ -9,4 +9,4 @@ interface IWTCredentialTopElem extends IWTDocInfo {
   comment?: XmlElem<string>;
 }
 
-type IWTCredentialDocument = IWTXmlDocument<IWTCredentialTopElem>;
+type IWTCredentialDocument = XmlDocument<IWTCredentialTopElem>;

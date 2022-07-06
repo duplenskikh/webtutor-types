@@ -17,7 +17,7 @@ interface IWTVDialogEditTextTopElem {
   is_rich?: XmlElem<boolean>;
 }
 
-type IWTVDialogEditTextDocument = IWTXmlDocument<IWTVDialogEditTextTopElem>;
+type IWTVDialogEditTextDocument = XmlDocument<IWTVDialogEditTextTopElem>;
 
 interface IWTDialogNotificationTemplateRecipient {
   recipient_type?: XmElem<string>;
@@ -44,7 +44,7 @@ interface IWTDialogNotificationTemplateTopElem {
   notification_system_id?: XmElem<number>;
 }
 
-type IWTDialogNotificationTemplate = IWTXmlDocument<IWTDialogNotificationTemplateTopElem>;
+type IWTDialogNotificationTemplate = XmlDocument<IWTDialogNotificationTemplateTopElem>;
 
 interface IWTWebVariableBaseWvarEntry {
   id?: XmlElem<string>;
@@ -303,7 +303,7 @@ interface IWTMSDialogObjectSelectTopElem {
   xquery_qual?: XmlElem<string>;
 }
 
-type IWTMSDialogObjectSelectDocument = IWTXmlDocument<IWTMSDialogObjectSelectTopElem>;
+type IWTMSDialogObjectSelectDocument = XmlDocument<IWTMSDialogObjectSelectTopElem>;
 
 interface IWTWTVDlgEditTextTopElem {
   url?: XmlElem<string>;
@@ -312,7 +312,7 @@ interface IWTWTVDlgEditTextTopElem {
   is_rich?: XmlElem<boolean>;
 }
 
-type IWTWTVDlgEditTextDocument = IWTXmlDocument<IWTWTVDlgEditTextTopElem>;
+type IWTWTVDlgEditTextDocument = XmlDocument<IWTWTVDlgEditTextTopElem>;
 
 interface IWTMenu {
   name?: XmlElem<string>;
@@ -636,7 +636,7 @@ interface IWTFileBase {
 
 interface IWTFileListBase {
   files?: XmlMultiElem<IWTFileBase>;
-  AddFile?(_file_id: number, docResourceParam: IWTResourceDocument): boolean;
+  AddFile?(_file_id: number, docResourceParam: ResourceDocument): boolean;
 }
 
 interface IWTFieldNamesBaseFieldName extends IWTFieldNamesBase {
@@ -697,7 +697,7 @@ interface IWTEnv {
   /**
    * Текущий сайт пользователя с которым он взаимодействует
    */
-  curSite: IWTSiteDocument;
+  curSite: SiteDocument;
   /**
    * ID текущего пользователя
    */
@@ -705,7 +705,7 @@ interface IWTEnv {
   /**
    * Объект пользователя
    */
-  curUser: IWTCollaboratorTopElem;
+  curUser: CollaboratorTopElem;
 }
 
 interface IWTEducationPlanProgramLearningTask {
@@ -1546,7 +1546,7 @@ interface IWTWorkflowDataBase {
   workflow_state?: XmlElem<string>;
   workflow_state_name?: XmlElem<string>;
   workflow_state_last_date?: XmlElem<Date>;
-  get_workflow_state_name?(workflowDoc: IWTWorkflowTopElem): string;
+  get_workflow_state_name?(workflowDoc: WorkflowTopElem): string;
   set_workflow_state_last_date?(param: any): void;
   add_workflow_log_entry?(param: any): void;
   is_workflow_init?: XmlElem<boolean>;

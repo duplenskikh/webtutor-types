@@ -1,8 +1,9 @@
-interface IWTLearningTopElem extends IWTXmlDocumentTopElem<IWTLearningTopElem>,
-  IWTPersonFillingBase,
-  IWTDocInfo,
-  IWTCustomElemsBase,
-  IWTAdminAccessBase {
+type LearningTopElem =
+  IWTPersonFillingBase &
+  IWTDocInfo &
+  IWTCustomElemsBase &
+  IWTAdminAccessBase &
+{
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   course_id?: XmlElem<number>;
@@ -39,4 +40,4 @@ interface IWTLearningTopElem extends IWTXmlDocumentTopElem<IWTLearningTopElem>,
   comment?: XmlElem<string>;
 }
 
-type IWTLearningDocument = IWTXmlDocument<IWTLearningTopElem>;
+type LearningDocument = XmlDocument<LearningTopElem>;

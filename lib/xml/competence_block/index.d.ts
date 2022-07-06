@@ -6,4 +6,4 @@ interface IWTCompetenceBlockTopElem extends IWTAdminAccessBase {
   doc_info?: XmlElem<IWTDocInfoBase>;
 }
 
-type IWTCompetenceBlockDocument = IWTXmlDocument<IWTCompetenceBlockTopElem>;
+type IWTCompetenceBlockDocument = XmlDocument<IWTCompetenceBlockTopElem>;

@@ -13,13 +13,14 @@ interface IWTRequestWorkflowMatching {
   is_main?: XmlElem<boolean>;
 }
 
-interface IWTRequestTopElem extends IWTXmlDocumentTopElem<IWTRequestTopElem>,
-  IWTPersonFillingBase,
-  IWTKnowledgePartsBase,
-  IWTWorkflowDataBase,
-  IWTDocInfo,
-  IWTFileListBase,
-  IWTCustomElemsBase {
+type RequestTopElem =
+  IWTPersonFillingBase &
+  IWTKnowledgePartsBase &
+  IWTWorkflowDataBase &
+  IWTDocInfo &
+  IWTFileListBase &
+  IWTCustomElemsBase &
+{
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -45,4 +46,4 @@ interface IWTRequestTopElem extends IWTXmlDocumentTopElem<IWTRequestTopElem>,
   comment?: XmlElem<string>;
 }
 
-type IWTRequestDocument = IWTXmlDocument<IWTRequestTopElem>;
+type RequestDocument = XmlDocument<RequestTopElem>;

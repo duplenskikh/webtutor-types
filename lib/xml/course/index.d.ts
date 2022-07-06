@@ -1,8 +1,8 @@
-
-interface IWTCourseTopElem extends IWTXmlDocumentTopElem<IWTCourseTopElem>,
-  ObjectCodeNameBase,
-  IWTCourseSettingsBase,
-  IWTFileListBase {
+type CourseTopElem =
+  ObjectCodeNameBase &
+  IWTCourseSettingsBase &
+  IWTFileListBase &
+{
   desc?: XmlElem<string>;
   status?: XmlElem<string>;
   win_width?: XmlElem<number>;
@@ -47,8 +47,8 @@ interface IWTCourseTopElem extends IWTXmlDocumentTopElem<IWTCourseTopElem>,
   DispScrolling?(partCode: string): boolean;
   Resizable?(partCode: string): boolean;
   get_workflow_id?(): null;
-  get_pwt_info?(source: XmlElem<any>): IWTXmlDocument<any>;
+  get_pwt_info?(source: XmlElem<any>): XmlDocument<any>;
   GetPartUrl?(partCode: string, index: number): string;
 }
 
-type IWTCourseDocument = IWTXmlDocument<IWTCourseTopElem>;
+type CourseDocument = XmlDocument<CourseTopElem>;

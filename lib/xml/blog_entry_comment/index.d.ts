@@ -17,4 +17,4 @@ interface IWTBlogEntryCommentTopElem extends
   creator_name?(): string;
 }
 
-type IWTBlogEntryCommentDocument = IWTXmlDocument<IWTBlogEntryCommentTopElem>;
+type IWTBlogEntryCommentDocument = XmlDocument<IWTBlogEntryCommentTopElem>;

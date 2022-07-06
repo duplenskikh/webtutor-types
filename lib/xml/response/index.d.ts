@@ -1,7 +1,8 @@
-
-interface IWTResponseTopElem extends IWTPersonFillingBase,
-  IWTAdminAccessBase,
-  IWTCustomElemsBase {
+type ResponseTopElem =
+  IWTPersonFillingBase &
+  IWTAdminAccessBase &
+  IWTCustomElemsBase &
+{
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   response_type_id?: XmlElem<number>;
@@ -20,4 +21,4 @@ interface IWTResponseTopElem extends IWTPersonFillingBase,
   calc_basic_values?(): any
 }
 
-type IWTResponseDocument = IWTXmlDocument<IWTResponseTopElem>;
+type ResponseDocument = XmlDocument<ResponseTopElem>;

@@ -19,11 +19,12 @@ interface IWTView {
   result_tab_selector?: XmlElem<string>;
 }
 
-interface IWTActiveLearningTopElem extends IWTXmlDocumentTopElem<IWTActiveLearningTopElem>,
-  IWTPersonFillingBase,
-  IWTAdminAccessBase,
-  IWTDocInfo,
-  IWTCustomElemsBase {
+type ActiveLearningTopElem =
+  IWTPersonFillingBase &
+  IWTAdminAccessBase &
+  IWTDocInfo &
+  IWTCustomElemsBase &
+{
   code?: XmlElem<string>;
   name?(): string;
   course_id?: XmlElem<number>;
@@ -66,4 +67,4 @@ interface IWTActiveLearningTopElem extends IWTXmlDocumentTopElem<IWTActiveLearni
   update_add_data?(): void;
 }
 
-type IWTActiveLearningDocument = IWTXmlDocument<IWTActiveLearningTopElem>;
+type ActiveLearningDocument = XmlDocument<ActiveLearningTopElem>;

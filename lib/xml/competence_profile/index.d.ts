@@ -42,4 +42,4 @@ interface IWTCompetenceProfileTopElem extends IWTObjectCodeNameBase,
   role_id?: XmlMultiElem<number>;
 }
 
-type IWTCompetenceProfileDocument = IWTXmlDocument<IWTCompetenceProfileTopElem>;
+type IWTCompetenceProfileDocument = XmlDocument<IWTCompetenceProfileTopElem>;

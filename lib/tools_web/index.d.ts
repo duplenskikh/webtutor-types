@@ -96,7 +96,7 @@ declare namespace tools_web {
   function get_url_protocol(_url: any): any;
   function set_url_protocol(sUrlParam: any): any;
   function get_cur_lng_name(sTextParam: any, sShortIDParam: any): any;
-  function check_access(doc: IWTXmlDocumentTopElem<any>, personId: number, personDoc?: IWTCollaboratorTopElem, session?: Session): boolean;
+  function check_access(doc: XmlTopElem<any>, personId: number, personDoc?: CollaboratorTopElem, session?: Session): boolean;
   function get_web_param(listParamsTarget: any, sParamNameParam: any, sDefaultValueParam: any, bEmtyFlagParam: any): any;
   function set_web_params(listParamsTarget: any, listWvarsParam: any, bRewriteFlagParam: any, iOverrideWebTemplateIDParam: any): any;
   function write_custom_web_template(oCustomWebTemplateParam: any): any;

@@ -12,4 +12,4 @@ interface IWTNotificationTemplateDocumentTopElem extends IWTCustomElemsBase, IWT
 }
 
 
-type IWTNotificationTemplateDocument = IWTXmlDocument<IWTNotificationTemplateDocumentTopElem>;
+type IWTNotificationTemplateDocument = XmlDocument<IWTNotificationTemplateDocumentTopElem>;

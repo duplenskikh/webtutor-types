@@ -24,4 +24,4 @@ interface IWTDocumentTopElem extends ObjectCodeNameBase,
   update_template?(): boolean;
 }
 
-type IWTDocument = IWTXmlDocument<IWTDocumentTopElem>;
+type IWTDocument = XmlDocument<IWTDocumentTopElem>;

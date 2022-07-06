@@ -1,7 +1,8 @@
-declare interface IWTLearningTaskResultTopElem extends IWTXmlDocumentTopElem<IWTLearningTaskResultTopElem>,
-  IWTPersonFillingBase,
-  IWTFileListBase,
-  IWTCustomElemsBase {
+type LearningTaskResultTopElem =
+  IWTPersonFillingBase &
+  IWTFileListBase &
+  IWTCustomElemsBase &
+{
   learning_task_id?: XmlElem<number>;
   learning_task_name?: XmlElem<string>;
   person_id?: XmlElem<number>;
@@ -16,4 +17,4 @@ declare interface IWTLearningTaskResultTopElem extends IWTXmlDocumentTopElem<IWT
   plan_end_date?: XmlElem<Date>;
 }
 
-type IWTLearningTaskResultDocument = IWTXmlDocument<IWTLearningTaskResultTopElem>;
+type LearningTaskResultDocument = XmlDocument<LearningTaskResultTopElem>;

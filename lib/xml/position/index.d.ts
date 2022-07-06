@@ -39,4 +39,4 @@ interface IWTPositionTopElem extends IWTFileListBase,
   comment?: XmlElem<string>;
 }
 
-type IWTPositionDocument = IWTXmlDocument<IWTPositionTopElem>;
+type IWTPositionDocument = XmlDocument<IWTPositionTopElem>;

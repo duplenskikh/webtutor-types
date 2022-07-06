@@ -1,6 +1,8 @@
-interface IWTSiteTopElem extends IWTObjectCodeNameBase,
-  IWTFuncManagersBase,
-  IWTCustomElemsBase {
+type SiteTopElem =
+  IWTObjectCodeNameBase &
+  IWTFuncManagersBase &
+  IWTCustomElemsBase &
+{
   title?: XmlElem<string>;
   html_header?: XmlElem<string>;
   html_icon_href?: XmlElem<string>;
@@ -19,4 +21,4 @@ interface IWTSiteTopElem extends IWTObjectCodeNameBase,
   is_std?: XmlElem<boolean>;
 }
 
-type IWTSiteDocument = IWTXmlDocument<IWTSiteTopElem>;
+type SiteDocument = XmlDocument<SiteTopElem>;

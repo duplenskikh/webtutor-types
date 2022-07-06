@@ -1,6 +1,7 @@
-interface IWTResourceTopElem extends IWTXmlDocumentTopElem<IWTResourceTopElem>,
-  ObjectCodeNameBase,
-  IWTDocInfo {
+type ResourceTopElem =
+  ObjectCodeNameBase &
+  IWTDocInfo &
+{
   type?: XmlElem<string>;
   status?: XmlElem<string>;
   file_name?: XmlElem<string>;
@@ -40,4 +41,4 @@ interface IWTResourceTopElem extends IWTXmlDocumentTopElem<IWTResourceTopElem>,
   guess_type?(sFileUrlParam: string): void;
 }
 
-type IWTResourceDocument = IWTXmlDocument<IWTResourceTopElem>;
+type ResourceDocument = XmlDocument<ResourceTopElem>;

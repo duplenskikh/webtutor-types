@@ -11,4 +11,4 @@ interface IWTBudgetPeriodTopElem extends IWTAdminAccessBase,
   comment?: XmlElem<string>;
 }
 
-type IWTBudgetPeriodDocument = IWTXmlDocument<IWTBudgetPeriodTopElem>;
+type IWTBudgetPeriodDocument = XmlDocument<IWTBudgetPeriodTopElem>;

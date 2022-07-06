@@ -7,4 +7,4 @@ interface IWTEducationMethodTopElem extends IWTCustomElemsBase {
   education_org_id?: XmlElem<number>;
 }
 
-type IWTEducationMethodDocument = IWTXmlDocument<IWTEducationMethodTopElem>;
+type IWTEducationMethodDocument = XmlDocument<IWTEducationMethodTopElem>;

@@ -18,4 +18,4 @@ interface IWTQualificationAssignmentTopElem extends IWTPersonFillingBase,
   comment?: XmlElem<string>;
 }
 
-type IWTQualificationAssignmentDocument = IWTXmlDocument<IWTQualificationAssignmentTopElem>;
+type IWTQualificationAssignmentDocument = XmlDocument<IWTQualificationAssignmentTopElem>;

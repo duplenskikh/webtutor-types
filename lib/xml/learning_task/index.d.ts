@@ -6,4 +6,4 @@ interface IWTLearningTaskTopElem extends ObjectCodeNameBase, IWTFileListBase {
   experts?: XmlMultiElem<IWTLearningTaskExpert>;
 }
 
-type IWTLearningTaskDocument = IWTXmlDocument<IWTLearningTaskTopElem>;
+type IWTLearningTaskDocument = XmlDocument<IWTLearningTaskTopElem>;

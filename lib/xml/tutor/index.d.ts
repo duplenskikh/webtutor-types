@@ -1,8 +1,9 @@
-
-interface IWTTutorTopElem extends IWTPersonFillingBase,
-  IWTFileListBase,
-  IWTAdminAccessBase,
-  IWTCustomElemsBase {
+type TutorTopElem =
+  IWTPersonFillingBase &
+  IWTFileListBase &
+  IWTAdminAccessBase &
+  IWTCustomElemsBase &
+{
   code?: XmlElem<string>;
   person_id?: XmlElem<number>;
   career_reserve_type_id?: XmlElem<number>;
@@ -18,4 +19,4 @@ interface IWTTutorTopElem extends IWTPersonFillingBase,
   doc_info?: XmlElem<IWTDocInfoBase>;
 }
 
-type IWTTutorDocument = IWTXmlDocument<IWTTutorTopElem>;
+type TutorDocument = XmlDocument<TutorTopElem>;

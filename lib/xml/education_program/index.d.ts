@@ -13,4 +13,4 @@ interface IWTEducationProgramTopElem extends IWTAdminAccessBase {
 	role_id?: XmlMultiElem<number>;
 }
 
-type IWTEducationProgramDocument = IWTXmlDocument<IWTEducationProgramTopElem>;
+type IWTEducationProgramDocument = XmlDocument<IWTEducationProgramTopElem>;
