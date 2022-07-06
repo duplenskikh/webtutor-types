@@ -1,4 +1,4 @@
-type ActiveNotificationTopElem = {
+interface ActiveNotificationTopElem extends XmlTopElem<ActiveNotificationDocument> {
   notification_id?: XmlElem<number>;
   object_id?: XmlElem<number>;
   sec_object_id?: XmlElem<number>;

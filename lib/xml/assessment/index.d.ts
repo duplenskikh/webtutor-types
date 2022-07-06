@@ -73,18 +73,18 @@ interface IWTAssessmentScale {
   comment?: XmlElem<string>;
 }
 
-type AssessmentTopElem =
-  IWTProctoringBase &
-  IWTCatalogListBase &
-  // <INHERIT TYPE="course_experts_base"/> &
-  IWTFileListBase &
-  IWTCustomElemsBase &
-  IWTKnowledgePartsBase &
-  IWTKnowledgePartsBaseOld &
-  IWTGameBonusBase &
-  // <INHERIT TYPE="estimation_levels_base"/> &
-  // <INHERIT TYPE="cl_localizations_base"/> &
-  IWTAdminAccessBase &
+interface AssessmentTopElem extends XmlTopElem<AssessmentDocument>,
+  IWTProctoringBase,
+  IWTCatalogListBase,
+  // <INHERIT TYPE="course_experts_base"/>,
+  IWTFileListBase,
+  IWTCustomElemsBase,
+  IWTKnowledgePartsBase,
+  IWTKnowledgePartsBaseOld,
+  IWTGameBonusBase,
+  // <INHERIT TYPE="estimation_levels_base"/>,
+  // <INHERIT TYPE="cl_localizations_base"/>,
+  IWTAdminAccessBase
 {
   id?: XmlElem<number>;
   code?: XmlElem<string>;

@@ -19,11 +19,11 @@ interface IWTView {
   result_tab_selector?: XmlElem<string>;
 }
 
-type ActiveLearningTopElem =
-  IWTPersonFillingBase &
-  IWTAdminAccessBase &
-  IWTDocInfo &
-  IWTCustomElemsBase &
+interface ActiveLearningTopElem extends XmlTopElem<ActiveLearningDocument>,
+  IWTPersonFillingBase,
+  IWTAdminAccessBase,
+  IWTDocInfo,
+  IWTCustomElemsBase
 {
   code?: XmlElem<string>;
   name?(): string;

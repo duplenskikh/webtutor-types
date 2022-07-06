@@ -1,11 +1,11 @@
-type SubdivisionTopElem =
-  IWTObjectCodeNameBase &
-  IWTFileListBase &
-  IWTFuncManagersBase &
-  IWTKnowledgePartsBase &
-  IWTKnowledgePartsBaseOld &
-  IWTCustomElemsBase &
-  IWTDocumentPersonsBase &
+interface SubdivisionTopElem extends XmlTopElem<SubdivisionDocument>,
+  IWTObjectCodeNameBase,
+  IWTFileListBase,
+  IWTFuncManagersBase,
+  IWTKnowledgePartsBase,
+  IWTKnowledgePartsBaseOld,
+  IWTCustomElemsBase,
+  IWTDocumentPersonsBase
 {
   org_id?: XmlElem<number>;
   parent_object_id?: XmlElem<number>;

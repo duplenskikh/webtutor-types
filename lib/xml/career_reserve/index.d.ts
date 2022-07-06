@@ -1,5 +1,5 @@
-type CareerReserveTopElem =
-  IWTCustomElemsBase &
+interface CareerReserveTopElem extends XmlTopElem<CareerReserveDocument>,
+  IWTCustomElemsBase
 {
   id?: XmlElem<number>;
   code?: XmlElem<string>;

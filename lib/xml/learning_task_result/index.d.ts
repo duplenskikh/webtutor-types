@@ -1,7 +1,7 @@
-type LearningTaskResultTopElem =
-  IWTPersonFillingBase &
-  IWTFileListBase &
-  IWTCustomElemsBase &
+interface LearningTaskResultTopElem extends XmlTopElem<LearningTaskResultDocument>,
+  IWTPersonFillingBase,
+  IWTFileListBase,
+  IWTCustomElemsBase
 {
   learning_task_id?: XmlElem<number>;
   learning_task_name?: XmlElem<string>;

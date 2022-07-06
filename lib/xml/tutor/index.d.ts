@@ -1,8 +1,8 @@
-type TutorTopElem =
-  IWTPersonFillingBase &
-  IWTFileListBase &
-  IWTAdminAccessBase &
-  IWTCustomElemsBase &
+interface TutorTopElem extends XmlTopElem<TutorDocument>,
+  IWTPersonFillingBase,
+  IWTFileListBase,
+  IWTAdminAccessBase,
+  IWTCustomElemsBase
 {
   code?: XmlElem<string>;
   person_id?: XmlElem<number>;

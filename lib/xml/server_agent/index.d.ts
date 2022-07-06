@@ -10,11 +10,12 @@ declare var LdsIsServer: boolean;
 
 declare var oData: any;
 
-type ServerAgentTopElem =
-  IWTMSPeriodityBase &
-  IWTWebVariablesBase &
-  IWTExecCodeBase &
-  IWTCustomElemsBase & {
+interface ServerAgentTopElem extends XmlTopElem<ServerAgentDocument>,
+  IWTMSPeriodityBase,
+  IWTWebVariablesBase,
+  IWTExecCodeBase,
+  IWTCustomElemsBase
+{
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

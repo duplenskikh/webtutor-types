@@ -1,8 +1,8 @@
-type ActiveTestLearningTopElem =
-  IWTLearningAssessmentBase &
-  IWTPersonFillingBase &
-  IWTLearningCurrentStateBase &
-  IWTLastAttemptTestLearningsBase &
+interface ActiveTestLearningTopElem extends XmlTopElem<ActiveTestLearningDocument>,
+  IWTLearningAssessmentBase,
+  IWTPersonFillingBase,
+  IWTLearningCurrentStateBase,
+  IWTLastAttemptTestLearningsBase
 {
   code?: XmlElem<string>;
   activation_code?: XmlElem<string>;

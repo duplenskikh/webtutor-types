@@ -1,6 +1,6 @@
-type RequestTypeTopElem =
-  IWTObjectCodeNameBase &
-  IWTWebVariablesBase &
+interface RequestTypeTopElem extends XmlTopElem<RequestTypeDocument>,
+  IWTObjectCodeNameBase,
+  IWTWebVariablesBase
 {
   object_type?: XmlElem<string>;
   is_group?: XmlElem<boolean>;

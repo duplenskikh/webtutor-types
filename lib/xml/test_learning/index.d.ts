@@ -1,8 +1,8 @@
-type TestLearningTopElem =
-  IWTAnnalsNumsBase &
-  IWTAdminAccessBase &
-  IWTDocInfo &
-  IWTPersonFillingBase &
+interface TestLearningTopElem extends XmlTopElem<TestLearningDocument>,
+  IWTAnnalsNumsBase,
+  IWTAdminAccessBase,
+  IWTDocInfo,
+  IWTPersonFillingBase
 {
   id?: XmlElem<number>;
   assessment_id?: XmlElem<number>;

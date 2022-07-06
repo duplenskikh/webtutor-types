@@ -1,8 +1,8 @@
-type LearningTopElem =
-  IWTPersonFillingBase &
-  IWTDocInfo &
-  IWTCustomElemsBase &
-  IWTAdminAccessBase &
+interface LearningTopElem extends XmlTopElem<LearningDocument>,
+  IWTPersonFillingBase,
+  IWTDocInfo,
+  IWTCustomElemsBase,
+  IWTAdminAccessBase
 {
   code?: XmlElem<string>;
   name?: XmlElem<string>;

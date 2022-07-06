@@ -1,7 +1,7 @@
-type AppointmentTypeTopElem =
-  ObjectCodeNameBase &
-  IWTAdminAccessBase &
-  IWTDocInfo &
+interface AppointmentTypeTopElem extends XmlTopElem<AppointmentTypeDocument>,
+  ObjectCodeNameBase,
+  IWTAdminAccessBase,
+  IWTDocInfo
 {
   comment: XmlElem<string>;
 }

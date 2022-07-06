@@ -1,11 +1,11 @@
-type PollTopElem =
-  ObjectCodeNameBase &
-  IWTCustomElemsBase &
-  IWTAccessBase &
-  IWTAdminAccessBase &
-  IWTGameBonusBase &
-  IWTKnowledgePartsBase &
-  IWTDocInfo &
+interface PollTopElem extends XmlTopElem<IWTPollDocument>,
+  ObjectCodeNameBase,
+  IWTCustomElemsBase,
+  IWTAccessBase,
+  IWTAdminAccessBase,
+  IWTGameBonusBase,
+  IWTKnowledgePartsBase,
+  IWTDocInfo
 {
   class: XmlElem<string>;
   poll_id: XmlElem<number>;

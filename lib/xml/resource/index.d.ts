@@ -1,6 +1,6 @@
-type ResourceTopElem =
-  ObjectCodeNameBase &
-  IWTDocInfo &
+interface ResourceTopElem extends XmlTopElem<ResourceDocument>,
+  ObjectCodeNameBase,
+  IWTDocInfo
 {
   type?: XmlElem<string>;
   status?: XmlElem<string>;
