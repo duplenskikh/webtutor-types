@@ -1,4 +1,7 @@
-interface IWTSubdivisionGroupTopElem extends IWTDocInfo, IWTKnowledgePartsBase {
+type SubdivisionGroupTopElem =
+  IWTDocInfo &
+  IWTKnowledgePartsBase &
+{
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   is_dynamic?: XmlElem<boolean>;
@@ -8,4 +11,4 @@ interface IWTSubdivisionGroupTopElem extends IWTDocInfo, IWTKnowledgePartsBase {
   dynamic_select_person?(clearList?: boolean): void;
 }
 
-type IWTSubdivisionGroupDocument = IWTXmlDocument<IWTSubdivisionGroupTopElem>;
+type IWTSubdivisionGroupDocument = XmlDocument<SubdivisionGroupTopElem>;

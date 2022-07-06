@@ -17,4 +17,4 @@ interface IWTLectorTopElem extends IWTPersonBase,
   lector_fullname?: XmlElem<string>;
 }
 
-type IWTLectorDocument = IWTXmlDocument<IWTLectorTopElem>;
+type IWTLectorDocument = XmlDocument<IWTLectorTopElem>;

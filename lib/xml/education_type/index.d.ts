@@ -4,4 +4,4 @@ interface IWTEducationTypeTopElem extends IWTObjectCodeNameBase, IWTAdminAccessB
   access?: XmlElem<IWTAccessDocBase>;
 }
 
-type IWTEducationTypeDocument = IWTXmlDocument<IWTEducationTypeTopElem>;
+type IWTEducationTypeDocument = XmlDocument<IWTEducationTypeTopElem>;

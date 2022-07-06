@@ -1,14 +1,15 @@
-interface IWTGroupTopElem extends IWTXmlDocumentTopElem<IWTGroupTopElem>,
-  IWTObjectCodeNameBase,
-  IWTEducGroupsBase,
-  IWTFuncManagersBase,
-  IWTCustomElemsBase,
-  IWTDocumentPersonsBase,
-  IWTRequirementsBase,
-  IWTKnowledgePartsBase,
-  IWTKnowledgePartsBaseOld,
-  IWTViewConditionsBase,
-  IWTPersonObjectLinksBase {
+type GroupTopElem =
+  IWTObjectCodeNameBase &
+  IWTEducGroupsBase &
+  IWTFuncManagersBase &
+  IWTCustomElemsBase &
+  IWTDocumentPersonsBase &
+  IWTRequirementsBase &
+  IWTKnowledgePartsBase &
+  IWTKnowledgePartsBaseOld &
+  IWTViewConditionsBase &
+  IWTPersonObjectLinksBase &
+{
   show_detailed?: XmlElem<boolean>;
   is_dynamic?: XmlElem<boolean>;
   is_educ?: XmlElem<boolean>;
@@ -34,4 +35,4 @@ interface IWTGroupTopElem extends IWTXmlDocumentTopElem<IWTGroupTopElem>,
   role_id?: XmlMultiElem<number>;
 }
 
-type IWTGroupDocument = IWTXmlDocument<IWTGroupTopElem>;
+type GroupDocument = XmlDocument<GroupTopElem>;

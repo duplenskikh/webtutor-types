@@ -1,12 +1,13 @@
-interface IWTCompoundProgramTopElem extends IWTXmlDocumentTopElem<IWTCompoundProgramTopElem>,
-  ObjectCodeNameBase,
-  IWTCustomElemsBase,
-  IWTLectorsBase,
-  IWTFileListBase,
-  IWTKnowledgePartsBase,
-  IWTDocInfo,
-  IWTAdminAccessBase,
-  IWTAccessBase {
+type CompoundProgramTopElem =
+  ObjectCodeNameBase &
+  IWTCustomElemsBase &
+  IWTLectorsBase &
+  IWTFileListBase &
+  IWTKnowledgePartsBase &
+  IWTDocInfo &
+  IWTAdminAccessBase &
+  IWTAccessBase &
+{
   desc?: XmlElem<string>;
   min_person_num?: XmlElem<number>;
   programs?: XmlElem<IWTCompoundProgramProgram>;
@@ -15,4 +16,4 @@ interface IWTCompoundProgramTopElem extends IWTXmlDocumentTopElem<IWTCompoundPro
   activate_program_to_person?(inputParam: Object): IResultActivateProgramToPerson;
 }
 
-type IWTCompoundProgramDocument = IWTXmlDocument<IWTCompoundProgramTopElem>;
+type CompoundProgramDocument = XmlDocument<CompoundProgramTopElem>;

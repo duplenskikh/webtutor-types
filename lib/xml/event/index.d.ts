@@ -158,21 +158,22 @@ interface IWTEventRegularSchedule
   phases_num?: XmlElem<number>;
 }
 
-interface IWTEventTopElem extends IWTXmlDocumentTopElem<IWTEventTopElem>,
-  IWTObjectCodeNameBase,
+type EventTopElem  =
+  IWTObjectCodeNameBase &
   // NOT_IMPLEMENTED educ_groups_base,
   // NOT_IMPLEMENTED path_places_base,
   // NOT_IMPLEMENTED cost_currency_type_base,
   // NOT_IMPLEMENTED cost_centers_base,
   // NOT_IMPLEMENTED cost_centers_base,
-  IWTLectorsBase,
-  IWTGameBonusBase,
+  IWTLectorsBase &
+  IWTGameBonusBase &
   // NOT_IMPLEMENTED edu_method_testing_base
-  IWTKnowledgePartsBase,
-  IWTCustomElemsBase,
+  IWTKnowledgePartsBase &
+  IWTCustomElemsBase &
   // NOT_IMPLEMENTED custom_datas_base
-  IWTCatalogListBase,
-  IWTEventSettingsBase {
+  IWTCatalogListBase &
+  IWTEventSettingsBase &
+{
   /** Код типа мероприятия */
   type_id?: XmlElem<string>;
   /** ID типа мероприятия */
@@ -282,7 +283,7 @@ interface IWTEventTopElem extends IWTXmlDocumentTopElem<IWTEventTopElem>,
   files?: XmlMultiElem<IWTEventFile>;
   library_materials?: XmlMultiElem<IWTEventLibraryMaterial>;
   learning_tasks?: XmlMultiElem<IWTEventLearningTask>;
-  AddFile?(resourceId: number, resourceDocument?: IWTResourceDocument): void;
+  AddFile?(resourceId: number, resourceDocument?: ResourceDocument): void;
   default_response_type_id?: XmlElem<number>;
   mandatory_fill_response?: XmlElem<boolean>;
   default_request_type_id?: XmlElem<number>;
@@ -348,7 +349,7 @@ interface IWTEventTopElem extends IWTXmlDocumentTopElem<IWTEventTopElem>,
   change_tutor_list?(): any;
   change_even_preparation_list?(): any;
   change_lector_list?(): any;
-  obtain_collaborator?(_person_id: any, _person_doc?: IWTCollaboratorTopElem): any;
+  obtain_collaborator?(_person_id: any, _person_doc?: CollaboratorTopElem): any;
   add_group?(_group_id: any): any;
   get_workflow_id?(): any;
   create_certificate?(_type_id: any, _type_doc: any): any;
@@ -379,4 +380,4 @@ interface IWTEventTopElem extends IWTXmlDocumentTopElem<IWTEventTopElem>,
   get_webinar_record_download_url?(sCurrentHostParam: any): any;
 }
 
-type IWTEventDocument = IWTXmlDocument<IWTEventTopElem>;
+type EventDocument = XmlDocument<EventTopElem>;

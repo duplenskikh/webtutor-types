@@ -1,10 +1,12 @@
-interface IWTSubdivisionTopElem extends IWTObjectCodeNameBase,
-  IWTFileListBase,
-  IWTFuncManagersBase,
-  IWTKnowledgePartsBase,
-  IWTKnowledgePartsBaseOld,
-  IWTCustomElemsBase,
-  IWTDocumentPersonsBase {
+type SubdivisionTopElem =
+  IWTObjectCodeNameBase &
+  IWTFileListBase &
+  IWTFuncManagersBase &
+  IWTKnowledgePartsBase &
+  IWTKnowledgePartsBaseOld &
+  IWTCustomElemsBase &
+  IWTDocumentPersonsBase &
+{
   org_id?: XmlElem<number>;
   parent_object_id?: XmlElem<number>;
   is_disbanded?: XmlElem<boolean>;
@@ -30,4 +32,4 @@ interface IWTSubdivisionTopElem extends IWTObjectCodeNameBase,
   start_action?(): any
 }
 
-type IWTSubdivisionDocument = IWTXmlDocument<IWTSubdivisionTopElem>;
+type SubdivisionDocument = XmlDocument<SubdivisionTopElem>;

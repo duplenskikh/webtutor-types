@@ -1,9 +1,10 @@
-interface IWTEducationPlanTopElem extends IWTXmlDocumentTopElem<IWTEducationPlanTopElem>,
-  IWTDocInfo,
-  ObjectCodeNameBase,
-  IWTPersonFillingBase,
-  IWTAdminAccessBase,
-  IWTCustomElemsBase {
+type EducationPlanTopElem =
+  IWTDocInfo &
+  ObjectCodeNameBase &
+  IWTPersonFillingBase &
+  IWTAdminAccessBase &
+  IWTCustomElemsBase &
+{
   group_id?: XmlElem<number>;
   compound_program_id?: XmlElem<number>;
   type?: XmlElem<string>;
@@ -27,7 +28,7 @@ interface IWTEducationPlanTopElem extends IWTXmlDocumentTopElem<IWTEducationPlan
   budget_period_id?: XmlElem<number>;
   assessment_appraise_id?: XmlElem<number>;
   comment?: XmlElem<string>;
-  calculateMark?(): IWTEducationPlanDocument;
+  calculateMark?(): EducationPlanDocument;
 }
 
-type IWTEducationPlanDocument = IWTXmlDocument<IWTEducationPlanTopElem>;
+type EducationPlanDocument = XmlDocument<EducationPlanTopElem>;

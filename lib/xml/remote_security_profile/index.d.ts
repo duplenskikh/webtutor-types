@@ -5,4 +5,4 @@ interface IWTRemoteSecurityProfileTopElem {
   method_access_list?: XmlMultiElem<IWTRemoteSecutiryProfileMethodAccess>
 }
 
-type IWTRemoteSecurityProfileDocument = IWTXmlDocument<IWTRemoteSecurityProfileTopElem>;
+type IWTRemoteSecurityProfileDocument = XmlDocument<IWTRemoteSecurityProfileTopElem>;

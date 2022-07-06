@@ -1,7 +1,7 @@
 declare namespace tools {
   const dotnet_host: IWTDotnetCoreHost;
 
-  function new_doc_by_name(documentName: string, isCatalog?: boolean): IWTXmlDocument<any>;
+  function new_doc_by_name(documentName: string, isCatalog?: boolean): XmlDocument<any>;
 
   /**
    * Возвращает значение параметра, переданного в функцию, в зашифрованном виде.
@@ -18,11 +18,11 @@ declare namespace tools {
    * Функция открывает документ и возвращает его.
    * Если не смогла открыть, возвращает undefined
    * @param {string|number} documentId ID документа
-   * @returns {IWTXmlDocument|undefined} XML документ или undefined
+   * @returns {XmlDocument|undefined} XML документ или undefined
    */
-  function open_doc(documentId: number): IWTXmlDocument<any> | undefined;
+  function open_doc(documentId: number): XmlDocument<any> | undefined;
 
-  function check_access(sourceDocument: IWTXmlDocument<any>, userId: number): boolean;
+  function check_access(sourceDocument: XmlDocument<any>, userId: number): boolean;
   function xquery(string: string): any;
 
 
@@ -115,7 +115,7 @@ declare namespace tools {
    */
   function activate_course_to_person(
     params: IActivateCourseToPersonParams
-  ): number | null | IWTActiveLearningDocument;
+  ): number | null | ActiveLearningDocument;
   
   /**
    * @param personId Id сотрудника, которому назначается курс
@@ -149,7 +149,7 @@ declare namespace tools {
     personId: number | unknown,
     courseId?: number,
     eventId?: number,
-    personDoc?: IWTCollaboratorTopElem,
+    personDoc?: CollaboratorTopElem,
     educationPlanId?: number,
     duration?: number,
     startLearningDate?: Date,
@@ -157,7 +157,7 @@ declare namespace tools {
     groupId?: number,
     eid?: any,
     skipDismissed?: boolean
-  ): number | null | IWTActiveLearningDocument;
+  ): number | null | ActiveLearningDocument;
 
   /**
    * Функция назначения теста пользователю
@@ -173,7 +173,7 @@ declare namespace tools {
    * @param groupId ID группы
    * @param educationPlanId ID плана обучения
    * @param skipDismissed ???
-   * @return {XmlElem<number>|null|IWTXmlDocument} Объект XMLDoc или Целое число.
+   * @return {XmlElem<number>|null|XmlDocument} Объект XMLDoc или Целое число.
    * Если тест назначен при выполнении функции, то возвращается ссылка на вновь созданный документ обучения.
    * Если тест был назначен ранее, но не завершен, или завершен,
    * но не прошло еще время, указанное в атрибуте dtLastLearningDateParam,
@@ -183,15 +183,15 @@ declare namespace tools {
     personId: number,
     assessmentId?: number,
     eventId?: number,
-    personDoc?: IWTCollaboratorTopElem,
-    assessmentDocument?: IWTAssessmentDocument,
-    eventDocument?: IWTEventDocument,
+    personDoc?: CollaboratorTopElem,
+    assessmentDocument?: AssessmentDocument,
+    eventDocument?: EventDocument,
     duration?: number,
     startLearningDate?: Date,
     lastLearningDate?: Date,
     groupId?: number,
     educationPlanId?: number, skipDismissed?: boolean
-  ): XmlElem<number> | null | IWTActiveTestLearningDocument;
+  ): XmlElem<number> | null | ActiveTestLearningDocument;
 
   function get_server_protocol(): string;
   function encode_course_folder(sCodeParam: string): any;
@@ -218,7 +218,7 @@ declare namespace tools {
   function package_process(_path: any, _type: any, _source: any, _report_id: any, _exchange_server_id: any, iDownloadPackageIDParam: any): any;
   function activate_test_to_event(_even_id: any, assessmentId: number, _doc_event: any, duration: number, startLearningDate: Date, _last_learning_date: any, sActTypeParam: any, bSkipDismissed: any): any;
   function activate_course_to_event(_even_id: any, courseId: number, _doc_event: any, duration: number, startLearningDate: Date, _last_learning_date: any): any;
-  function activate_education_program_to_person(_person_id: any, _education_program_id: any, personDocument: IWTCollaboratorDocument, _education_program_doc: any): any;
+  function activate_education_program_to_person(_person_id: any, _education_program_id: any, personDocument: CollaboratorDocument, _education_program_doc: any): any;
   function get_time_from_duration(duration: number): any;
   function get_time_from_seconds(_seconds: any): any;
   function delete_transaction(_transaction_id: any): any;
@@ -234,7 +234,7 @@ declare namespace tools {
   function random_string(_digit_num: any, _dict?: any): any;
   function import_excel_persons(sParamsXml: any): any;
   function start_import_excel_persons(Ps: any): any;
-  function get_sub_boss_by_person_id(_person_id: any, personDocument: IWTCollaboratorDocument): any;
+  function get_sub_boss_by_person_id(_person_id: any, personDocument: CollaboratorDocument): any;
   function get_main_boss_by_person_id(_person_id: any): any;
   function add_lng(sLngUrlParam: any, bDoObtainParam: any): any;
   function get_web_str(sNameParam: any): any;
@@ -246,7 +246,7 @@ declare namespace tools {
   function is_by_group_id(groupId: number): any;
   function is_statement_date(iActivityIDParam: any, sValueParam: any, sUslParam: any): any;
   function object_filling(_type: any, _source: any, _object_id: any, _object_doc: any): any;
-  function common_filling(type: string, sourceDoc: any, objectId: number, objectDoc?: IWTXmlDocumentTopElem<any>, customFlag?: boolean): void;
+  function common_filling(type: string, sourceDoc: any, objectId: number, objectDoc?: XmlTopElem<any>, customFlag?: boolean): void;
   function common_clear(_type: any, _source: any, _ps: any): any;
   function active_learning_finish(_learning_id: any, _source?: any, _course_doc?: any): any;
   function active_test_learning_finish(_learning_id: any, _source?: any, _assessment_doc?: any, iPersonIDParam?: any, bFinishTest?: any): any;
@@ -260,7 +260,7 @@ declare namespace tools {
    * @param _flag_create_learning Назначить новую попытку?
    * @param docActiveLearning Документ активного обучения
    */
-  function active_test_learning_finish_attempt(_learning_id: number, _learning_code?: string, _assessment_doc?: IWTAssessmentDocument, _flag_create_learning?: boolean, docActiveLearning?: IWTActiveLearningDocument): boolean;
+  function active_test_learning_finish_attempt(_learning_id: number, _learning_code?: string, _assessment_doc?: AssessmentDocument, _flag_create_learning?: boolean, docActiveLearning?: ActiveLearningDocument): boolean;
 
   function core_decrypt(_core: any, _qti_path: any, _qti_text: any, _learning_doc: any): any;
   function get_annals_from_core(sSourceParam: any): any;
@@ -276,8 +276,8 @@ declare namespace tools {
   function close_request(_request_id: any): any;
   function workflow_action_process(_source: any, _action_code: any, _workflow_id: any, _workflow_doc: any, _alterCurObjectID: any, dConditionProcess: any): any;
   function obtain_lists(_url: any, _list_name: any): any;
-  function event_finish(eventId: number, eventDocument?: IWTEventDocument): any;
-  function event_start(eventId: number, eventDocument: IWTEventDocument, oScreenParam: any): any;
+  function event_finish(eventId: number, eventDocument?: EventDocument): any;
+  function event_start(eventId: number, eventDocument: EventDocument, oScreenParam: any): any;
   function get_object_form_url(sCatalogNameParam: any, bIsCatalogParam: any): any;
   function get_screen_form_url(sCatalogNameParam: any): any;
   function create_package(_pak_url: any, _report_id: any, _param_source: any, sPackIDParam: any): any;
@@ -304,7 +304,7 @@ declare namespace tools {
   function update_object_versions(docVersion: any, iVersionID: any, docObject: any, iPersonID: any, tePerson: any, sComment: any): any;
   function update_adding_objects(docObject: any, iObjectID: any): any;
   function request_rejecting(iRequestID: any, docRequest: any, iPersonID: any, dSaveParam: any): any;
-  function add_person_to_event(userId: number, eventId: number, userTopElem?: IWTCollaboratorTopElem, eventDocument?: IWTEventDocument, educationPlanId?: number, requestPersonId?: number, requestId?: number): IWTEventDocument;
+  function add_person_to_event(userId: number, eventId: number, userTopElem?: CollaboratorTopElem, eventDocument?: EventDocument, educationPlanId?: number, requestPersonId?: number, requestId?: number): EventDocument;
   function del_person_from_event(_person_id: any, eventId: number, _doc_event?: any, _flag_save?: any): any;
   function encrypt_content(iCourseIDParam: any): any;
   function create_license(iLicenseId: any): any;
@@ -328,8 +328,8 @@ declare namespace tools {
   function update_document_persons(_obj_id: any, _obj_doc: any): any;
   function get_period_from_iso(_period: any): any;
   function get_notification_document(oDocumentParam: any): any;
-  function get_cost_center_id_by_person_id(_person_id: any, personDocument: IWTCollaboratorDocument): any;
-  function get_cost_center_boss_by_person_id(_person_id: any, personDocument: IWTCollaboratorDocument): any;
+  function get_cost_center_id_by_person_id(_person_id: any, personDocument: CollaboratorDocument): any;
+  function get_cost_center_boss_by_person_id(_person_id: any, personDocument: CollaboratorDocument): any;
   function get_sub_boss_by_sub_id(_sub_id: any): any;
   function get_time(_str: any, _minite_flag: any, _second_flag: any): any;
   function enable_log_web_request(_flag: any): any;
@@ -342,16 +342,16 @@ declare namespace tools {
   function get_sub_hierarchy(NODE_ID: any, NODE_CATALOG: any, NODE_PARENT_FIELD: any): any;
   function process_print_form(oFormParam: any, iTopElemParam: any, bReturnFilename: any): any;
   function get_user_boss(OBJECT: any): any;
-  function path_subs_filling(_path_subs: any, _person_id: any, personDocument: IWTCollaboratorDocument): any;
+  function path_subs_filling(_path_subs: any, _person_id: any, personDocument: CollaboratorDocument): any;
   function str_time_from_mseconds(_mseconds: any): any;
   function person_list_staff_by_person_id(_personID: any, _personDoc: any, _depth: any, _top: any, _separator: any): any;
-  function add_person_to_assessment_appraise(_person_id: any, _assessment_appraise_id: any, personDocument: IWTCollaboratorDocument, _doc_assessment_appraise: any): any;
+  function add_person_to_assessment_appraise(_person_id: any, _assessment_appraise_id: any, personDocument: CollaboratorDocument, _doc_assessment_appraise: any): any;
   function check_field_name(FIELD: any, IS_STRICT_BEGIN: any): any;
   function get_doc_type_xmds(iDocTypeIDParam: any, teDocTypeParam: any): any;
   function generate_doc_type_xmds(DOC_TOPELEM: any, DOC_ID: any): any;
   function register_doc_type(docDocTypePARAM: any, iDocIDParam: any): any;
   function create_certificate_to_event(_even_id: any, _type_id: any, _doc_event: any): any;
-  function create_certificate_to_person(_person_id: any, _type_id: any, eventId: number, personDocument: IWTCollaboratorDocument, _type_doc: any, eventDocument: IWTEventDocument): any;
+  function create_certificate_to_person(_person_id: any, _type_id: any, eventId: number, personDocument: CollaboratorDocument, _type_doc: any, eventDocument: EventDocument): any;
   function get_main_forum_entry_by_forum_entry_id(iForumEntryParam: any, teForumEntryParam: any): any;
   function assign_qualification_to_person(_person_id: any, eventId: number, _qualification_id: any, _assignment_date: any, _expiration_date: any, _qualification_test_array: any, _qualification_course_array: any, _send_mail: any, _in_process: any, bAssignTestsParam: any, bAssignCoursesParam: any, bUnconditionalAssignmentParam: any, _qualification_assignment_doc?: any, teQualification?: any, tePerson?: any, bGivePointParam?: any): any;
   function assign_qualification_to_event(_even_id: any, _doc_event: any, _qualification_id: any, _date: any): any;

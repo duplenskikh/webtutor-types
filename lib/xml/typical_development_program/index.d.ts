@@ -31,11 +31,11 @@ interface IWTTypicalDevelopmentProgramTutorsBySub {
   tutors: XmlMultiElem<IWTTypicalDevelopmentProgramTutorsBySubTutor>;
 }
 
-interface IWTTypicalDevelopmentProgramTopElem extends IWTXmlDocumentTopElem<IWTTypicalDevelopmentProgramTopElem>,
-  IWTObjectCodeNameBase,
-  IWTAdminAccessBase,
-  IWTFileListBase,
-  IWTCustomElemsBase
+type TypicalDevelopmentProgramTopElem =
+  IWTObjectCodeNameBase &
+  IWTAdminAccessBase &
+  IWTFileListBase &
+  IWTCustomElemsBase &
 {
   status: XmlElem<string>;
   desc: XmlElem<string>;
@@ -46,4 +46,4 @@ interface IWTTypicalDevelopmentProgramTopElem extends IWTXmlDocumentTopElem<IWTT
   comment: XmlElem<string>;
 }
 
-type IWTTypicalDevelopmentProgramDocument = IWTXmlDocument<IWTTypicalDevelopmentProgramTopElem>;
+type TypicalDevelopmentProgramDocument = XmlDocument<TypicalDevelopmentProgramTopElem>;

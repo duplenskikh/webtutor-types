@@ -72,4 +72,4 @@ interface IWTDocTypeTopElem extends IWTCustomElemsBase {
   role_id?: XmlMultiElem<number>;
 }
 
-type IWTDocTypeDocument = IWTXmlDocument<IWTDocTypeTopElem>;
+type IWTDocTypeDocument = XmlDocument<IWTDocTypeTopElem>;

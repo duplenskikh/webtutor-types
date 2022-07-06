@@ -1,4 +1,6 @@
-interface IWTTagTopElem extends IWTAdminAccessBase {
+type TagTopElem =
+  IWTAdminAccessBase &
+{
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   resource_id?: XmlElem<number>;
@@ -11,4 +13,4 @@ interface IWTTagTopElem extends IWTAdminAccessBase {
   role_id?: XmlMultiElem<number>;
 }
 
-type IWTTagDocument = IWTXmlDocument<IWTTagTopElem>;
+type TagDocument = XmlDocument<TagTopElem>;

@@ -1,5 +1,4 @@
-
-interface IWTActiveNotificationTopElem extends IWTXmlDocumentTopElem<IWTActiveNotificationTopElem> {
+type ActiveNotificationTopElem = {
   notification_id?: XmlElem<number>;
   object_id?: XmlElem<number>;
   sec_object_id?: XmlElem<number>;
@@ -23,4 +22,4 @@ interface IWTActiveNotificationTopElem extends IWTXmlDocumentTopElem<IWTActiveNo
   notification_system_id?: XmlElem<number>;
 }
 
-type IWTActiveNotificationDocument = IWTXmlDocument<IWTActiveNotificationTopElem>;
+type ActiveNotificationDocument = XmlDocument<ActiveNotificationTopElem>;

@@ -1,9 +1,8 @@
-
-interface IWTTestLearningTopElem extends IWTXmlDocumentTopElem<IWTTestLearningTopElem>,
-  IWTAnnalsNumsBase,
-  IWTAdminAccessBase,
-  IWTDocInfo,
-  IWTPersonFillingBase
+type TestLearningTopElem =
+  IWTAnnalsNumsBase &
+  IWTAdminAccessBase &
+  IWTDocInfo &
+  IWTPersonFillingBase &
 {
   id?: XmlElem<number>;
   assessment_id?: XmlElem<number>;
@@ -33,4 +32,4 @@ interface IWTTestLearningTopElem extends IWTXmlDocumentTopElem<IWTTestLearningTo
   use_proctoring?: XmlElem<boolean>;
 }
 
-type IWTTestLearningDocument = IWTXmlDocument<IWTTestLearningTopElem>;
+type TestLearningDocument = XmlDocument<TestLearningTopElem>;

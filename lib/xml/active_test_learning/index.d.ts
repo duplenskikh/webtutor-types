@@ -1,8 +1,9 @@
-interface IWTActiveTestLearningTopElem extends IWTXmlDocumentTopElem<IWTActiveTestLearningTopElem>,
-  IWTLearningAssessmentBase,
-  IWTPersonFillingBase,
-  IWTLearningCurrentStateBase,
-  IWTLastAttemptTestLearningsBase {
+type ActiveTestLearningTopElem =
+  IWTLearningAssessmentBase &
+  IWTPersonFillingBase &
+  IWTLearningCurrentStateBase &
+  IWTLastAttemptTestLearningsBase &
+{
   code?: XmlElem<string>;
   activation_code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -35,4 +36,4 @@ interface IWTActiveTestLearningTopElem extends IWTXmlDocumentTopElem<IWTActiveTe
   complete_test?(): number;
 }
 
-type IWTActiveTestLearningDocument = IWTXmlDocument<IWTActiveTestLearningTopElem>;
+type ActiveTestLearningDocument = XmlDocument<ActiveTestLearningTopElem>;

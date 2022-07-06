@@ -1,5 +1,6 @@
-interface IWTCareerReserveTopElem extends IWTXmlDocumentTopElem<IWTCareerReserveTopElem>,
-  IWTCustomElemsBase {
+type CareerReserveTopElem =
+  IWTCustomElemsBase &
+{
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -42,4 +43,4 @@ interface IWTCareerReserveTopElem extends IWTXmlDocumentTopElem<IWTCareerReserve
   change_tutors_list?(): void;
 }
 
-type IWTCareerReserveDocument = IWTXmlDocument<IWTCareerReserveTopElem>;
+type CareerReserveDocument = XmlDocument<CareerReserveTopElem>;

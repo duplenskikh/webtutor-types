@@ -1,15 +1,15 @@
-interface IWTXmlDocument {
+type XmlDocument<T> = {
   DocID: number;
-  TopElem: IWTXmlDocumentTopElem;
+  TopElem: XmlTopElem<T>;
   Save(): undefined;
   BindToDb(databaseName?: string): undefined;
   WriteDocInfo: boolean;
 }
 
-type IWTXmlDocumentTopElem = {
+type XmlTopElem<T> = T & {
   Name: string;
-  Doc: IWTXmlDocument;
+  Doc: XmlDocument<T>;
   OptChild(childName: string): any;
-  AssignElem(TopElem: IWTXmlDocumentTopElem): void;
+  AssignElem(TopElem: XmlTopElem<any>): void;
   EvalPath(pathName: string): XmlElem<any> | XmlMultiElem<any> | never;
 }

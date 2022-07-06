@@ -5,4 +5,4 @@ interface IWTQualificationTopElem {
   assessments?: XmlMultiElem<XmlElem<number>>
 }
 
-type IWTQualificationDocument = IWTXmlDocument<IWTQualificationTopElem>;
+type IWTQualificationDocument = XmlDocument<IWTQualificationTopElem>;

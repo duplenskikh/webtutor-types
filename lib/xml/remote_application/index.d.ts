@@ -14,4 +14,4 @@ interface IWTRemoteApplicationTopElem {
   doc_info: XmlElem<IWTDocInfoBase>;
 }
 
-type IWTRemoteApplicationDocument = IWTXmlDocument<IWTRemoteApplicationTopElem>;
+type IWTRemoteApplicationDocument = XmlDocument<IWTRemoteApplicationTopElem>;

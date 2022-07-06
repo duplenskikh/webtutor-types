@@ -1,4 +1,4 @@
-interface IWTResponseTypeTopElem {
+type ResponseTypeTopElem = {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   object_type?: XmlElem<string>;
@@ -10,4 +10,4 @@ interface IWTResponseTypeTopElem {
   disp_block?: XmlElem<any>;
 }
 
-type IWTResponseTypeDocument = IWTXmlDocument<IWTResponseTypeTopElem>;
+type ResponseTypeDocument = XmlDocument<ResponseTypeTopElem>;

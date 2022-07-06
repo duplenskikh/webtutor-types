@@ -1,6 +1,7 @@
-interface IWTRequestTypeTopElem extends IWTXmlDocumentTopElem<IWTRequestTypeTopElem>,
-  IWTObjectCodeNameBase,
-  IWTWebVariablesBase {
+type RequestTypeTopElem =
+  IWTObjectCodeNameBase &
+  IWTWebVariablesBase &
+{
   object_type?: XmlElem<string>;
   is_group?: XmlElem<boolean>;
   is_can_be_group?: XmlElem<boolean>;
@@ -28,4 +29,4 @@ interface IWTRequestTypeTopElem extends IWTXmlDocumentTopElem<IWTRequestTypeTopE
   role_id?: XmlMultiElem<number>;
 }
 
-type IWTRequestTypeDocument = IWTXmlDocument<IWTRequestTypeTopElem>;
+type RequestTypeDocument = XmlDocument<RequestTypeTopElem>;

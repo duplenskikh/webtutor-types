@@ -1,14 +1,15 @@
-interface ICollaboratorTopElem extends IWTPersonBase,
-  IWTPassportDataBase,
-  IWTFileListBase,
-  IWTCustomElemsBase,
-  IWTFuncManagersBase,
-  IWTPathSubBase,
-  IWTKnowledgePartsBase,
-  IWTKnowledgePartsBaseOld,
-  IWTCustomElemsBase,
-  IWTPersonObjectLinksBase,
-  IWTDocInfo
+type CollaboratorTopElem =
+  IWTPersonBase &
+  IWTPassportDataBase &
+  IWTFileListBase &
+  IWTCustomElemsBase &
+  IWTFuncManagersBase &
+  IWTPathSubBase &
+  IWTKnowledgePartsBase &
+  IWTKnowledgePartsBaseOld &
+  IWTCustomElemsBase &
+  IWTPersonObjectLinksBase &
+  IWTDocInfo &
 {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
@@ -88,5 +89,4 @@ interface ICollaboratorTopElem extends IWTPersonBase,
   clear_subs_fields?(): undefined;
 }
 
-type CollaboratorTopElem = ICollaboratorTopElem & IWTXmlDocumentTopElem;
-type IWTCollaboratorDocument = IWTXmlDocument;
+type CollaboratorDocument = XmlDocument<CollaboratorTopElem>;

@@ -1,4 +1,4 @@
-interface IWTActionReportTopElem {
+type ActionReportTopElem = {
   type?: XmlElem<string>;
   status?: XmlElem<string>;
   completed?: XmlElem<boolean>;
@@ -12,4 +12,4 @@ interface IWTActionReportTopElem {
   create_date?: XmlElem<Date>;
 }
 
-type IWTActionReportDocument = IWTXmlDocument<IWTActionReportTopElem>;
+type ActionReportDocument = XmlDocument<ActionReportTopElem>;
