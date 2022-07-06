@@ -158,21 +158,21 @@ interface IWTEventRegularSchedule
   phases_num?: XmlElem<number>;
 }
 
-type EventTopElem  =
-  IWTObjectCodeNameBase &
+interface EventTopElem extends XmlTopElem<EventDocument>,
+  IWTObjectCodeNameBase,
   // NOT_IMPLEMENTED educ_groups_base,
   // NOT_IMPLEMENTED path_places_base,
   // NOT_IMPLEMENTED cost_currency_type_base,
   // NOT_IMPLEMENTED cost_centers_base,
   // NOT_IMPLEMENTED cost_centers_base,
-  IWTLectorsBase &
-  IWTGameBonusBase &
+  IWTLectorsBase,
+  IWTGameBonusBase,
   // NOT_IMPLEMENTED edu_method_testing_base
-  IWTKnowledgePartsBase &
-  IWTCustomElemsBase &
+  IWTKnowledgePartsBase,
+  IWTCustomElemsBase,
   // NOT_IMPLEMENTED custom_datas_base
-  IWTCatalogListBase &
-  IWTEventSettingsBase &
+  IWTCatalogListBase,
+  IWTEventSettingsBase
 {
   /** Код типа мероприятия */
   type_id?: XmlElem<string>;

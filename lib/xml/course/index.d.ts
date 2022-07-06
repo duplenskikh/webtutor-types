@@ -1,6 +1,8 @@
 interface CourseTopElem extends XmlTopElem<CourseDocument>,
   ObjectCodeNameBase,
   IWTCourseSettingsBase,
+  IWTKnowledgePartsBase,
+  IWTKnowledgePartsBaseOld,
   IWTFileListBase
 {
   desc?: XmlElem<string>;
