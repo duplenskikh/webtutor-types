@@ -1,9 +1,9 @@
-type EducationPlanTopElem =
-  IWTDocInfo &
-  ObjectCodeNameBase &
-  IWTPersonFillingBase &
-  IWTAdminAccessBase &
-  IWTCustomElemsBase &
+interface EducationPlanTopElem extends XmlTopElem<EducationPlanDocument>,
+  IWTDocInfo,
+  ObjectCodeNameBase,
+  IWTPersonFillingBase,
+  IWTAdminAccessBase,
+  IWTCustomElemsBase
 {
   group_id?: XmlElem<number>;
   compound_program_id?: XmlElem<number>;

@@ -1,5 +1,5 @@
-type TagTopElem =
-  IWTAdminAccessBase &
+interface TagTopElem extends XmlTopElem<TagDocument>,
+  IWTAdminAccessBase
 {
   code?: XmlElem<string>;
   name?: XmlElem<string>;

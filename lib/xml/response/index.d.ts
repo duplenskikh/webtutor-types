@@ -1,7 +1,7 @@
-type ResponseTopElem =
-  IWTPersonFillingBase &
-  IWTAdminAccessBase &
-  IWTCustomElemsBase &
+interface ResponseTopElem extends XmlTopElem<ResponseDocument>,
+  IWTPersonFillingBase,
+  IWTAdminAccessBase,
+  IWTCustomElemsBase
 {
   id?: XmlElem<number>;
   code?: XmlElem<string>;

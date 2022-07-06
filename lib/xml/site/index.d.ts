@@ -1,7 +1,7 @@
-type SiteTopElem =
-  IWTObjectCodeNameBase &
-  IWTFuncManagersBase &
-  IWTCustomElemsBase &
+interface SiteTopElem extends XmlTopElem<SiteDocument>,
+  IWTObjectCodeNameBase,
+  IWTFuncManagersBase,
+  IWTCustomElemsBase
 {
   title?: XmlElem<string>;
   html_header?: XmlElem<string>;

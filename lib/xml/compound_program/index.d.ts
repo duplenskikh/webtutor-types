@@ -1,12 +1,12 @@
-type CompoundProgramTopElem =
-  ObjectCodeNameBase &
-  IWTCustomElemsBase &
-  IWTLectorsBase &
-  IWTFileListBase &
-  IWTKnowledgePartsBase &
-  IWTDocInfo &
-  IWTAdminAccessBase &
-  IWTAccessBase &
+interface CompoundProgramTopElem extends XmlTopElem<CompoundProgramDocument>,
+  ObjectCodeNameBase,
+  IWTCustomElemsBase,
+  IWTLectorsBase,
+  IWTFileListBase,
+  IWTKnowledgePartsBase,
+  IWTDocInfo,
+  IWTAdminAccessBase,
+  IWTAccessBase
 {
   desc?: XmlElem<string>;
   min_person_num?: XmlElem<number>;

@@ -1,6 +1,6 @@
-type SubdivisionGroupTopElem =
-  IWTDocInfo &
-  IWTKnowledgePartsBase &
+interface SubdivisionGroupTopElem extends XmlTopElem<IWTSubdivisionGroupDocument>,
+  IWTDocInfo,
+  IWTKnowledgePartsBase
 {
   code?: XmlElem<string>;
   name?: XmlElem<string>;

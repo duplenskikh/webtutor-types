@@ -1,4 +1,4 @@
-type ActionReportTopElem = {
+interface ActionReportTopElem extends XmlTopElem<ActionReportDocument> {
   type?: XmlElem<string>;
   status?: XmlElem<string>;
   completed?: XmlElem<boolean>;

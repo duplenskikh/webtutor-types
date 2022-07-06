@@ -1,7 +1,7 @@
-type CourseTopElem =
-  ObjectCodeNameBase &
-  IWTCourseSettingsBase &
-  IWTFileListBase &
+interface CourseTopElem extends XmlTopElem<CourseDocument>,
+  ObjectCodeNameBase,
+  IWTCourseSettingsBase,
+  IWTFileListBase
 {
   desc?: XmlElem<string>;
   status?: XmlElem<string>;

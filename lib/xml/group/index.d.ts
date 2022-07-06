@@ -1,14 +1,14 @@
-type GroupTopElem =
-  IWTObjectCodeNameBase &
-  IWTEducGroupsBase &
-  IWTFuncManagersBase &
-  IWTCustomElemsBase &
-  IWTDocumentPersonsBase &
-  IWTRequirementsBase &
-  IWTKnowledgePartsBase &
-  IWTKnowledgePartsBaseOld &
-  IWTViewConditionsBase &
-  IWTPersonObjectLinksBase &
+interface GroupTopElem extends XmlTopElem<GroupDocument>,
+  IWTObjectCodeNameBase,
+  IWTEducGroupsBase,
+  IWTFuncManagersBase,
+  IWTCustomElemsBase,
+  IWTDocumentPersonsBase,
+  IWTRequirementsBase,
+  IWTKnowledgePartsBase,
+  IWTKnowledgePartsBaseOld,
+  IWTViewConditionsBase,
+  IWTPersonObjectLinksBase
 {
   show_detailed?: XmlElem<boolean>;
   is_dynamic?: XmlElem<boolean>;

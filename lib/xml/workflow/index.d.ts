@@ -1,7 +1,7 @@
-type WorkflowTopElem =
-  IWTConditionsBase &
-  IWTWorkflowFieldsStatesBase &
-  IWTDocInfo &
+interface WorkflowTopElem extends XmlTopElem<WorkflowDocument>,
+  IWTConditionsBase,
+  IWTWorkflowFieldsStatesBase,
+  IWTDocInfo
 {
   id?: XmlElem<number>;
   code?: XmlElem<string>;

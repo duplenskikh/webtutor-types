@@ -1,4 +1,4 @@
-type ResponseTypeTopElem = {
+interface ResponseTypeTopElem extends XmlTopElem<ResponseTypeDocument> {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   object_type?: XmlElem<string>;
