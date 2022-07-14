@@ -22,7 +22,6 @@ interface IWTView {
 interface ActiveLearningTopElem extends XmlTopElem<ActiveLearningDocument>,
   IWTPersonFillingBase,
   IWTAdminAccessBase,
-  IWTDocInfo,
   IWTCustomElemsBase
 {
   code?: XmlElem<string>;
@@ -62,7 +61,6 @@ interface ActiveLearningTopElem extends XmlTopElem<ActiveLearningDocument>,
   device_disp_type?: XmlElem<string>;
   comment?: XmlElem<string>;
   doc_info?: XmlElem<IWTDocInfoBase>;
-  view?: IWTView;
   complete_course?(): number | void;
   update_add_data?(): void;
 }
