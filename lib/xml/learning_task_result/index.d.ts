@@ -15,6 +15,7 @@ interface LearningTaskResultTopElem extends XmlTopElem<LearningTaskResultDocumen
   finish_date?: XmlElem<Date>;
   plan_start_date?: XmlElem<Date>;
   plan_end_date?: XmlElem<Date>;
+  comment?: XmlElem<string>
 }
 
 type LearningTaskResultDocument = XmlDocument<LearningTaskResultTopElem>;
