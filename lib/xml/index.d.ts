@@ -1393,18 +1393,6 @@ interface IWTAnnalsNumsBase {
   question_passed_num?: XmlElem<number>;
 }
 
-interface IWTActiveNotificationSender {
-  address?: XmlElem<string>;
-  name?: XmlElem<string>;
-}
-
-interface IWTActiveNotificationRecipients {
-  address?: XmlElem<string>;
-  mobile_phone?: XmlElem<string>;
-  name?: XmlElem<string>;
-  collaborator_id?: XmlElem<number>;
-}
-
 interface IWTPollReportViewer extends IWTPersonFillingBase {
   person_id?: XmlElem<number>;
 }
@@ -1648,3 +1636,23 @@ interface IAccessRoles {
 }
 
 declare const access_roles: XmlMultiElem<IAccessRoles>;
+
+interface IWTZonesBaseZone {
+  name?: XmlElem<string>;
+  tag_id?: XmlElem<string>;
+  style?: XmlElem<string>;
+  class?: XmlElem<string>;
+  parent_zone?: XmlElem<string>;
+  is_mandatory?: XmlElem<boolean>;
+  position?: XmlElem<number>;
+}
+
+interface IWTZonesBase {
+  zones?: XmlMultiElem<IWTZonesBaseZone>;
+}
+
+interface IWTObjectTypeBase {
+  object_type?: XmlElem<string>;
+	object_id?: XmlElem<number>;
+	object_name?: XmlElem<string>;
+}
