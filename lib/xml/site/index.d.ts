@@ -1,3 +1,22 @@
+interface ISiteMenuDocument {
+  id?: XmlElem<string>;
+  document_id?: XmlElem<number>;
+  parent_document_id?: XmlElem<string>;
+  code?: XmlElem<string>;
+  name?: XmlElem<string>;
+  position?: XmlElem<number>;
+  hier_level?: XmlElem<number>;
+  hier_expanded?: XmlElem<boolean>;
+  icon_url?: XmlElem<string>;
+  class?: XmlElem<string>;
+  link_url?: XmlElem<string>;
+}
+
+interface ISiteMenu {
+  id?: XmlElem<string>;
+  name?: XmlElem<string>;
+  documents?: XmlMultiElem<ISiteMenuDocument>;
+}
 interface SiteTopElem extends XmlTopElem<SiteDocument>,
   IWTObjectCodeNameBase,
   IWTFuncManagersBase,
@@ -9,7 +28,7 @@ interface SiteTopElem extends XmlTopElem<SiteDocument>,
   web_design_id?: XmlElem<number>;
   lng_id?: XmlElem<string>;
   owner_objects?: XmlMultiElem<any>;
-  menus?: XmlMultiElem<any>;
+  menus?: XmlMultiElem<ISiteMenu>;
   web_designs?: XmlMultiElem<any>;
   first_unauthorized_url?: XmlElem<string>;
   first_authorized_url?: XmlElem<string>;

@@ -227,7 +227,56 @@ declare namespace tools {
   function pay_courses(_org_id: any, _amount: any, _comment: any): any;
   function set_account(_org_id: any, _amount: any): any;
   function personal_pay(_org_id: any, _request_id: any): any;
-  function create_notification(oTypeParam: any, iObjectIDParam: any, sTextParam?: any, iSecondObjectIDParam?: any, oObjectParam?: any, oSecondObjectParam?: any, teSourceParam?: any): any;
+
+  interface ICreateNotificationAdditionalParams {
+    recipients: string[];
+    sender_selector: string;
+    subject: string;
+    body_type: string;
+    body: string;
+    sender_email: string;
+  }
+  /**
+   * Создает новое неотправленное уведомление.
+   * В теле уведомления (шаблоне уведомления) обращение к первому параметру идет через objDocID, к документу,
+   * открываемому автоматически при вызове функции по отправке уведомления, objDoc. objDoc- это TopElem документа.
+   * Обращение ко второму параметру идет через objDocSecID, к документу, открываемому автоматически при
+   * вызове функции по отправке уведомления objDocSec. objDocSec- это TopElem документа.
+   * Если документ отрыт ранее, то для ускорения работы функции отправки уведомления, можно передать открытый
+   * документ в функцию, что позволит избежать его повторного открытия. Для этого вместо tools.create_notification( code, id1, '', id2)
+   * вызывается функция, куда передаются дополнительные параметры tools.create_notification( code, id1, '', id2, TopElem1,TopElem2 ).
+   * @param notificationIdentifier Код типа уведомления, которое будет отправляться. Если параметр пустой ('') или равен '0', то в параметр
+   * additionalParams необходимо передавать структуру, из которой будут заполняться типы получателей (recipients),
+   * тип отправителя (sender_selector), тема сообщения (subject), тип текста в теле сообщения (body_type),
+   * тело сообщения (body) и адрес отправителя (sender_email). Если oTypeParam - это реальный код типа уведомления,
+   * то типы получателей (recipients), тип отправителя (sender_selector) и адрес отправителя (sender_email) будут
+   * браться из указанного объекта. А тема сообщения (subject), тип текста в теле сообщения (body_type),
+   * тело сообщения (body) из шаблона уведомления, прикрепленного к типу сообщения с указанным в параметре кодом.
+   * Если в существующих в системе типах уведомления не найдено типа уведомления с указанным кодом,
+   * то уведомление не формируется и функция возвратит значение false.
+   * В определенных случаях в качестве данного аргумента вместо кода типа уведомления может быть указан ID открытого документа типа уведомления.
+   * @param objectId ID первого объекта (обыкновенно, по данным первого документа формируется, в частности,
+   * перечень сотрудников, которым нужно отправить сообщение. В теле уведомления (шаблоне уведомления) обращение
+   * к этому параметру идет через objDoc (например, <%=objDoc.name%>) и objDocID.
+   * @param text Аргумент, к которому можно обращаться в теле шаблона уведомления как к Text (<%=Text%>).
+   * @param secondObjectId ID второго объекта, который прикрепляется к уведомлению.
+   * В теле уведомления (шаблоне уведомления) обращение этому параметру идет через objDocSec (например, <%=objDocSec.name%>) и objDocSecID.
+   * @param objectTopElem TopElem карточки первого объекта, определяемого аргументом objectId.
+   * @param secondObjectTopElem TopElem карточки второго объекта, определяемого аргументом secondObjectId.
+   * @param additionalParams Структура, позволяющая создать собственное (пользовательское) уведомление "на лету".
+   * Из нее берутся данные о типах получателей (recipients), тип отправителя (sender_selector),
+   * тема сообщения (subject), тип текста в теле сообщения (body_type), тело сообщения (body)
+   * и адрес отправителя (sender_email)
+   */
+  function create_notification(
+    notificationIdentifier: number | string,
+    objectId: number,
+    text?: any,
+    secondObjectId?: number,
+    objectTopElem?: XmlTopElem<any>,
+    secondObjectTopElem?: XmlTopElem<any>,
+    additionalParams?: ICreateNotificationAdditionalParams
+  ): boolean;
   function create_template_notification(sTypeParam: any, iObjectIDParam: any, sSubjectParam: any, sBodyParam: any, oObjectParam?: any, teSourceParam?: any, iObjectSecondIDParam?: any): any;
   function send_notification(iActiveNotificationIDParam: any): any;
   function save_certificate(_learning_id: any): any;
