@@ -1,7 +1,7 @@
 interface TutorTopElem extends XmlTopElem<TutorDocument>,
-  IWTPersonFillingBase,
+  PersonFillingBase,
   IWTFileListBase,
-  IWTAdminAccessBase,
+  AdminAccessBase,
   IWTCustomElemsBase
 {
   code?: XmlElem<string>;
@@ -16,7 +16,7 @@ interface TutorTopElem extends XmlTopElem<TutorDocument>,
   access?: XmlElem<IWTAccessDocBase>;
   desc?: XmlElem<string>;
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
 }
 
 type TutorDocument = XmlDocument<TutorTopElem>;

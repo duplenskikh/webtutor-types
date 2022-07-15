@@ -5,7 +5,7 @@ interface CompoundProgramTopElem extends XmlTopElem<CompoundProgramDocument>,
   IWTFileListBase,
   IWTKnowledgePartsBase,
   IWTDocInfo,
-  IWTAdminAccessBase,
+  AdminAccessBase,
   IWTAccessBase
 {
   desc?: XmlElem<string>;

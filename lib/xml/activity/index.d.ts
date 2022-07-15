@@ -13,7 +13,7 @@ interface ActivityTopElem extends XmlTopElem<ActivityDocument>,
   statements_eval_url?: XmlElem<string>;
   request?: XmlElem<ActivityRequest>;
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
 }
 
 type ActivityDocument = XmlDocument<ActivityTopElem>;

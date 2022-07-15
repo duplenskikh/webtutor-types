@@ -29,14 +29,14 @@ interface IWTCompetenceProfileTopElem extends IWTObjectCodeNameBase,
   IWTKnowledgePartsBase,
   IWTKnowledgePartsBaseOld,
   IWTCustomElemsBase,
-  IWTAdminAccessBase {
+  AdminAccessBase {
   roles?: XmlMultiElem<IWTCompetenceProfileRole>;
   competences?: XmlMultiElem<IWTCompetenceProfileCompetence>;
   education_methods?: XmlMultiElem<IWTCompetenceProfileEducationMethod>;
   assessments?: XmlMultiElem<IWTCompetenceProfileAssessment>;
   access_role?: XmlElem<string>;
   position_commons?: XmlMultiElem<IWTCompetenceProfilePositionCommon>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;
   update_values?(): any
   role_id?: XmlMultiElem<number>;

@@ -49,7 +49,7 @@ interface IWTEventUnnamedPersonByOrgs {
   person_fullname: XmlElem<string>;
 }
 
-interface IWTEventCollaborator extends IWTPersonFillingBase {
+interface IWTEventCollaborator extends PersonFillingBase {
   collaborator_id: XmlElem<number>;
   last_exist_date: XmlElem<Date>;
   education_plan_id: XmlElem<number>;
@@ -97,7 +97,7 @@ interface IWTEventGroup {
   group_id: XmlElem<number>;
 }
 
-interface IWTEventTutor extends IWTPersonFillingBase {
+interface IWTEventTutor extends PersonFillingBase {
   collaborator_id: XmlElem<number>;
   telephone_out: XmlElem<string>;
   telephone_in: XmlElem<string>;
@@ -310,7 +310,7 @@ interface EventTopElem extends XmlTopElem<EventDocument>,
   access?: XmlElem<IWTAccessDocBase>;
   desc?: XmlElem<string>;
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
   get_chat_messages?(dtLastMessageParam: string | Date): XmlMultiElem<any>;
   send_chat_message?(sTextParam: string, sFullnameParam: string): boolean;
   phases?: XmlMultiElem<IWTEventPhase>;

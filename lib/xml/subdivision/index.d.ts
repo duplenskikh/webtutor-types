@@ -28,7 +28,7 @@ interface SubdivisionTopElem extends XmlTopElem<SubdivisionDocument>,
   outstaff?: XmlElem<IWTOutstaffPeriodsBase>;
   desc?: XmlElem<string>;
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
   start_action?(): any
 }
 

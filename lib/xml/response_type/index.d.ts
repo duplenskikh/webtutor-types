@@ -5,7 +5,7 @@ interface ResponseTypeTopElem extends XmlTopElem<ResponseTypeDocument> {
   create_redirect?: XmlElem<string>;
   basic_desc_field?: XmlElem<string>;
   basic_score_field?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;
   disp_block?: XmlElem<any>;
 }

@@ -1,8 +1,8 @@
 interface EducationPlanTopElem extends XmlTopElem<EducationPlanDocument>,
   IWTDocInfo,
   ObjectCodeNameBase,
-  IWTPersonFillingBase,
-  IWTAdminAccessBase,
+  PersonFillingBase,
+  AdminAccessBase,
   IWTCustomElemsBase
 {
   group_id?: XmlElem<number>;

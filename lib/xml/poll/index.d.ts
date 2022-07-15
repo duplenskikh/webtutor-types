@@ -2,7 +2,7 @@ interface PollTopElem extends XmlTopElem<IWTPollDocument>,
   ObjectCodeNameBase,
   IWTCustomElemsBase,
   IWTAccessBase,
-  IWTAdminAccessBase,
+  AdminAccessBase,
   IWTGameBonusBase,
   IWTKnowledgePartsBase,
   IWTDocInfo

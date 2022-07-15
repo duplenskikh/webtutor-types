@@ -1,6 +1,6 @@
-interface IWTEducationTypeTopElem extends IWTObjectCodeNameBase, IWTAdminAccessBase {
+interface IWTEducationTypeTopElem extends IWTObjectCodeNameBase, AdminAccessBase {
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
   access?: XmlElem<IWTAccessDocBase>;
 }
 

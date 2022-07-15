@@ -1,5 +1,5 @@
 interface LearningTaskResultTopElem extends XmlTopElem<LearningTaskResultDocument>,
-  IWTPersonFillingBase,
+  PersonFillingBase,
   IWTFileListBase,
   IWTCustomElemsBase
 {

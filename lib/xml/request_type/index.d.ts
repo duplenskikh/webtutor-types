@@ -22,7 +22,7 @@ interface RequestTypeTopElem extends XmlTopElem<RequestTypeDocument>,
   remote_action_id?: XmlElem<number>;
   access?: XmlElem<IWTAccessDocBase>;
   is_std?: XmlElem<boolean>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;
   desc?: XmlElem<string>;
   disp_block?: XmlElem<any>;

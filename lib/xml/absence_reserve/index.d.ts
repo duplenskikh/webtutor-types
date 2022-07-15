@@ -1,5 +1,5 @@
 interface AbsenceReserveTopElem extends XmlTopElem<AbsenceReserveDocument>,
-  IWTPersonFillingBase {
+  PersonFillingBase {
   id?: XmlElem<number>;
   person_id?: XmlElem<number>;
   budget_period_id?: XmlElem<number>;
@@ -7,7 +7,8 @@ interface AbsenceReserveTopElem extends XmlTopElem<AbsenceReserveDocument>,
   num_days?: XmlElem<number>;
   calculation_date?: XmlElem<Date>;
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
 }
+
 
 type AbsenceReserveDocument = XmlDocument<AbsenceReserveTopElem>;

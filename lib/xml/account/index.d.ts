@@ -1,7 +1,4 @@
-interface AccountTopElem extends XmlTopElem<AccountDocument>,
-  IWTObjectTypeBase,
-  IWTAdminAccessBase
-  {
+interface Account extends XmlTopElem<AccountDocument>, ObjectTypeBase, AdminAccessBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -10,7 +7,8 @@ interface AccountTopElem extends XmlTopElem<AccountDocument>,
   status?: XmlElem<string>;
   budget_period_id?: XmlElem<number>;
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
 }
 
-type AccountDocument = XmlDocument<AccountTopElem>;
+
+type AccountDocument = XmlDocument<Account>;

@@ -1,6 +1,6 @@
 interface AppointmentTypeTopElem extends XmlTopElem<AppointmentTypeDocument>,
   ObjectCodeNameBase,
-  IWTAdminAccessBase,
+  AdminAccessBase,
   IWTDocInfo
 {
   comment: XmlElem<string>;

@@ -1,4 +1,4 @@
-interface IWTTypicalDevelopmentProgramTaskCommissionPerson extends IWTPersonFillingBase {
+interface IWTTypicalDevelopmentProgramTaskCommissionPerson extends PersonFillingBase {
   person_id: XmlElem<number>;
 }
 
@@ -20,7 +20,7 @@ interface IWTTypicalDevelopmentProgramTask extends IWTCustomElemsBase {
   commission_persons?: XmlMultiElem<IWTTypicalDevelopmentProgramTaskCommissionPerson>;
 }
 
-interface IWTTypicalDevelopmentProgramTutorsBySubTutor extends IWTPersonFillingBase {
+interface IWTTypicalDevelopmentProgramTutorsBySubTutor extends PersonFillingBase {
   person_id: XmlElem<number>;
 }
 
@@ -33,7 +33,7 @@ interface IWTTypicalDevelopmentProgramTutorsBySub {
 
 interface TypicalDevelopmentProgramTopElem extends XmlTopElem<TypicalDevelopmentProgramDocument>,
   IWTObjectCodeNameBase,
-  IWTAdminAccessBase,
+  AdminAccessBase,
   IWTFileListBase,
   IWTCustomElemsBase
 {
@@ -42,7 +42,7 @@ interface TypicalDevelopmentProgramTopElem extends XmlTopElem<TypicalDevelopment
   tasks: XmlMultiElem<IWTTypicalDevelopmentProgramTask>;
   tutors_by_subs: XmlMultiElem<IWTTypicalDevelopmentProgramTutorsBySub>;
   role_id: XmlMultiElem<number>;
-  doc_info: XmlElem<IWTDocInfoBase>;
+  doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
 }
 

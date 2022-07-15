@@ -35,7 +35,7 @@ interface ActiveWebTemplateTopElem extends XmlTopElem<ActiveWebTemplateDocument>
   counter_template?: XmlElem<number>;
   counter_saved_template?: XmlElem<number>;
   counter_saved_return?: XmlElem<number>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
 }
 
 type ActiveWebTemplateDocument = XmlDocument<ActiveWebTemplateTopElem>;

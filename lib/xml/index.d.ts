@@ -5,7 +5,7 @@ interface ObjectCodeNameBase {
   resource_id?: XmlElem<number>;
 }
 
-interface IWTAdminAccessBase {
+interface AdminAccessBase {
   user_access_role?: XmlElem<string>;
   user_group_id?: XmlElem<number>;
 }
@@ -408,7 +408,7 @@ interface IWTLibraryMaterialPathSection {
 
 
 
-interface IWTLearningTaskExpert extends IWTPersonFillingBase {
+interface IWTLearningTaskExpert extends PersonFillingBase {
   id?: XmlElem<string>;
 }
 
@@ -883,7 +883,7 @@ interface IWTDocInfoModification {
   date?: XmlElem<Date>;
 }
 
-interface IWTDocInfoBase {
+interface DocInfoBase {
   creation?: XmlElem<IWTDocInfoCreation>;
   modification?: XmlElem<IWTDocInfoModification>;
   invariable?: XmlElem<boolean>;
@@ -1172,7 +1172,7 @@ interface IWTCollaboratorPersonalConfig {
   default_info_type?: XmlElem<string>;
 }
 
-interface IWTFuncManagersBaseFuncManager extends IWTPersonFillingBase {
+interface IWTFuncManagersBaseFuncManager extends PersonFillingBase {
   person_id?: XmlElem<number>;
   is_native?: XmlElem<boolean>;
   boss_type_id?: XmlElem<number>;
@@ -1265,7 +1265,7 @@ interface IWTPositionKPIProfile {
   period_type_id?: XmlElem<string>;
 }
 
-interface IWTPersonFillingBase {
+interface PersonFillingBase {
   person_fullname?: XmlElem<string>;
   person_position_id?: XmlElem<number>;
   person_position_name?: XmlElem<string>;
@@ -1393,7 +1393,7 @@ interface IWTAnnalsNumsBase {
   question_passed_num?: XmlElem<number>;
 }
 
-interface IWTPollReportViewer extends IWTPersonFillingBase {
+interface IWTPollReportViewer extends PersonFillingBase {
   person_id?: XmlElem<number>;
 }
 
@@ -1651,7 +1651,7 @@ interface IWTZonesBase {
   zones?: XmlMultiElem<IWTZonesBaseZone>;
 }
 
-interface IWTObjectTypeBase {
+interface ObjectTypeBase {
   object_type?: XmlElem<string>;
 	object_id?: XmlElem<number>;
 	object_name?: XmlElem<string>;

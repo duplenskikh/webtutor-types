@@ -11,7 +11,7 @@ interface RemoteApplicationTopElem extends XmlTopElem<RemoteApplicationDocument>
   access: XmlElem<IWTAccessDocBase>;
   category_id: XmlElem<string>;
   comment: XmlElem<string>;
-  doc_info: XmlElem<IWTDocInfoBase>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
 type RemoteApplicationDocument = XmlDocument<RemoteApplicationTopElem>;
