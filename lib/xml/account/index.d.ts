@@ -1,4 +1,4 @@
-interface Account extends XmlTopElem<AccountDocument>, ObjectTypeBase, AdminAccessBase {
+interface AccountTopElem extends XmlTopElem<AccountDocument>, ObjectTypeBase, AdminAccessBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -10,5 +10,4 @@ interface Account extends XmlTopElem<AccountDocument>, ObjectTypeBase, AdminAcce
   doc_info?: XmlElem<DocInfoBase>;
 }
 
-
-type AccountDocument = XmlDocument<Account>;
+type AccountDocument = XmlDocument<AccountTopElem>;

@@ -1,5 +1,4 @@
-
-interface IWTEventResultTopElem extends IWTDocInfo {
+interface EventResultTopElem extends XmlTopElem<EventResultDocument>, PersonFillingBase, ExpenseDistributionBase, FileListBase, AdminAccessBase, CustomElemsBase, CustomDatasBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   event_id?: XmlElem<number>;
@@ -25,7 +24,9 @@ interface IWTEventResultTopElem extends IWTDocInfo {
   budget_period_id?: XmlElem<number>;
   object_resource_id?: XmlElem<number>;
   certificate_id?: XmlElem<number>;
+  guest?: XmlElem<boolean>;
   comment?: XmlElem<string>;
+  doc_info?: XmlElem<DocInfoBase>;
 }
 
-type IWTEventResultDocument = XmlDocument<IWTEventResultTopElem>;
+type EventResultDocument = XmlDocument<EventResultTopElem>;

@@ -1,23 +1,23 @@
-interface IWTCompetenceExercise {
+interface CompetenceExercise {
   exercise_id?: XmlElem<number>;
 }
 
-interface IWTCompetenceTopElem extends IWTObjectCodeNameBase,
-  // <INHERIT TYPE="competence_scale_base"/>
-	// <INHERIT TYPE="competence_level_base"/>
-  IWTKnowledgePartsBase,
-  IWTKnowledgePartsBaseOld,
-  IWTCustomElemsBase,
-  IWTFileListBase,
-  AdminAccessBase {
+interface CompetenceView extends DescBase {
+  selector?: XmlElem<string>;
+  knowledge_classifier_id?: XmlElem<number>;
+  knowledge_sort_type_id?: XmlElem<string>;
+}
+
+interface CompetenceTopElem extends XmlTopElem<CompetenceDocument>, ObjectCodeNameBase, CompetenceScaleBase, CompetenceLevelBase, KnowledgePartsBase, KnowledgePartsBaseOld, CustomElemsBase, FileListBase, AdminAccessBase {
   competence_block_id?: XmlElem<number>;
-  exercises?: XmlMultiElem<IWTCompetenceExercise>;
   positive_comment?: XmlElem<string>;
   negative_comment?: XmlElem<string>;
   comment?: XmlElem<string>;
   desc?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
   role_id?: XmlMultiElem<number>;
+  exercises?: XmlMultiElem<CompetenceExercise>;
+  view?: XmlElem<CompetenceView>;
 }
 
-type IWTCompetenceDocument = XmlDocument<IWTCompetenceTopElem>;
+type CompetenceDocument = XmlDocument<CompetenceTopElem>;

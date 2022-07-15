@@ -1,9 +1,18 @@
-interface IWTCompetenceProfileFamilyTopElem extends AdminAccessBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  competence_profiles?: XmlMultiElem<IWTCompetenceProfileFamilyCompetenceProfile>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
+interface CompetenceProfileFamilyCompetenceProfile {
+  competence_profile_id?: XmlElem<number>;
 }
 
-type IWTCompetenceProfileFamilyDocument = XmlDocument<IWTCompetenceProfileFamilyTopElem>;
+interface CompetenceProfileFamilyView {
+  selector?: XmlElem<string>;
+}
+
+interface CompetenceProfileFamilyTopElem extends XmlTopElem<CompetenceProfileFamilyDocument>, AdminAccessBase {
+  code?: XmlElem<string>;
+  name?: XmlElem<string>;
+  comment?: XmlElem<string>;
+  doc_info?: XmlElem<DocInfoBase>;
+  competence_profiles?: XmlMultiElem<CompetenceProfileFamilyCompetenceProfile>;
+  view?: XmlElem<CompetenceProfileFamilyView>;
+}
+
+type CompetenceProfileFamilyDocument = XmlDocument<CompetenceProfileFamilyTopElem>;

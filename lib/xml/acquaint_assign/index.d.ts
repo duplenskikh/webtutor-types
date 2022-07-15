@@ -8,7 +8,7 @@ interface AcquaintAssignView {
   person_id?: XmlElem<number>;
 }
 
-interface AcquaintAssignTopElem {
+interface AcquaintAssignTopElem extends XmlTopElem<AcquaintAssignDocument> {
   code?: XmlElem<string>;
   object_type?: XmlElem<string>;
   object_id?: XmlElem<number>;

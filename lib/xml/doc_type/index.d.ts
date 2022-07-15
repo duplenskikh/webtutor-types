@@ -1,17 +1,18 @@
-interface IWTDocTypeSheet {
+interface DocTypeSheet {
   id?: XmlElem<string>;
   title?: XmlElem<string>;
 }
 
-interface IWTDocTypeFieldEntry {
+interface DocTypeFieldSubFieldEntriesEntry {
   value?: XmlElem<string>;
 }
 
-interface IWTDocTypeFieldSubFieldEntry {
-  value?: XmlElem<string>;
+interface DocTypeFieldSubFieldEntries {
+  entry?: XmlMultiElem<undefined>;
+  entry?: XmlElem<DocTypeFieldSubFieldEntriesEntry>;
 }
 
-interface IWTDocTypeFieldSubField {
+interface DocTypeFieldSubField {
   name?: XmlElem<string>;
   type?: XmlElem<string>;
   title?: XmlElem<string>;
@@ -20,22 +21,30 @@ interface IWTDocTypeFieldSubField {
   flag_extended?: XmlElem<boolean>;
   is_readonly?: XmlElem<boolean>;
   xquery_qual?: XmlElem<string>;
-  entries?: XmlMultiElem<IWTDocTypeFieldSubFieldEntry>;
+  entries?: XmlElem<DocTypeFieldSubFieldEntries>;
 }
 
-interface IWTDocTypeFieldControlElement {
+interface DocTypeFieldControlElement {
   type?: XmlElem<string>;
   title?: XmlElem<string>;
   action?: XmlElem<string>;
 }
 
-interface IWTDocTypeField {
+interface DocTypeFieldEntriesEntry {
+  value?: XmlElem<string>;
+}
+
+interface DocTypeFieldEntries {
+  entry?: XmlMultiElem<undefined>;
+  entry?: XmlElem<DocTypeFieldEntriesEntry>;
+}
+
+interface DocTypeField {
   name?: XmlElem<string>;
   type?: XmlElem<string>;
   title?: XmlElem<string>;
   catalog?: XmlElem<string>;
   set_value_action?: XmlElem<string>;
-  entries?: XmlMultiElem<IWTDocTypeFieldEntry>;
   sheet_id?: XmlElem<string>;
   flag_extended?: XmlElem<boolean>;
   indexed?: XmlElem<boolean>;
@@ -45,17 +54,24 @@ interface IWTDocTypeField {
   is_readonly?: XmlElem<boolean>;
   translatable?: XmlElem<boolean>;
   xquery_qual?: XmlElem<string>;
-  sub_fields?: XmlMultiElem<IWTDocTypeFieldSubField>;
-  control_elements?: XmlMultiElem<IWTDocTypeFieldControlElement>;
+  sub_fields?: XmlMultiElem<DocTypeFieldSubField>;
+  control_elements?: XmlMultiElem<DocTypeFieldControlElement>;
+  entries?: XmlElem<DocTypeFieldEntries>;
 }
 
-interface IWTDocTypeTopElem extends IWTCustomElemsBase {
+interface DocTypeDispBlock extends MsDispBlockBase {
+}
+
+interface DocTypeView extends DescBase {
+  is_edit_mode?: XmlElem<boolean>;
+  dummy_buff?: XmlElem<number>;
+}
+
+interface DocTypeTopElem extends XmlTopElem<DocTypeDocument>, CustomElemsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   category?: XmlElem<string>;
   object_name?: XmlElem<string>;
-  sheets?: XmlMultiElem<IWTDocTypeSheet>;
-  fields?: XmlMultiElem<IWTDocTypeField>;
   is_hier?: XmlElem<boolean>;
   is_crave_for_reboot?: XmlElem<boolean>;
   custom_web_template_id?: XmlElem<number>;
@@ -65,11 +81,15 @@ interface IWTDocTypeTopElem extends IWTCustomElemsBase {
   before_save_action?: XmlElem<string>;
   log?: XmlElem<string>;
   desc?: XmlElem<string>;
-  access?: XmlElem<AccessDocBase>;
-  disp_block?: XmlElem<IWTMSDispBlockBase>;
   doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;
+  disp_block?: XmlElem<MsDispBlockBase>;
   role_id?: XmlMultiElem<number>;
+  sheets?: XmlMultiElem<DocTypeSheet>;
+  fields?: XmlMultiElem<DocTypeField>;
+  access?: XmlElem<AccessDocBase>;
+  disp_block?: XmlElem<DocTypeDispBlock>;
+  view?: XmlElem<DocTypeView>;
 }
 
-type IWTDocTypeDocument = XmlDocument<IWTDocTypeTopElem>;
+type DocTypeDocument = XmlDocument<DocTypeTopElem>;

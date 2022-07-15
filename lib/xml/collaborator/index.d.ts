@@ -1,21 +1,101 @@
-interface CollaboratorTopElem extends XmlTopElem<CollaboratorDocument>,
-  IWTPersonBase,
-  IWTPassportDataBase,
-  IWTFileListBase,
-  IWTCustomElemsBase,
-  IWTFuncManagersBase,
-  IWTPathSubBase,
-  IWTKnowledgePartsBase,
-  IWTKnowledgePartsBaseOld,
-  IWTCustomElemsBase,
-  IWTPersonObjectLinksBase,
-  IWTDocInfo
-{
+interface CollaboratorChangeLog extends CustomElemsBase {
+  id?: XmlElem<string>;
+  position_id?: XmlElem<number>;
+  position_name?: XmlElem<string>;
+  position_parent_id?: XmlElem<number>;
+  position_parent_name?: XmlElem<string>;
+  org_id?: XmlElem<number>;
+  org_name?: XmlElem<string>;
+  date?: XmlElem<Date>;
+  comment?: XmlElem<string>;
+  start_date?: XmlElem<Date>;
+  finish_date?: XmlElem<Date>;
+  working_days?: XmlElem<number>;
+  working_hours?: XmlElem<number>;
+  rate?: XmlElem<number>;
+  rate_percent?: XmlElem<number>;
+}
+
+interface CollaboratorHistoryState {
+  id?: XmlElem<string>;
+  state_id?: XmlElem<string>;
+  start_date?: XmlElem<Date>;
+  finish_date?: XmlElem<Date>;
+  object_id?: XmlElem<number>;
+  object_type?: XmlElem<string>;
+  comment?: XmlElem<string>;
+}
+
+interface CollaboratorCustomParam {
+  name?: XmlElem<string>;
+  value?: XmlElem<string>;
+}
+
+interface CollaboratorPersonalConfig {
+  avatar_filename?: XmlElem<string>;
+  nick?: XmlElem<string>;
+  status?: XmlElem<string>;
+  default_info_type?: XmlElem<string>;
+}
+
+interface CollaboratorCompBenPaymentType {
+  payment_type_id?: XmlElem<number>;
+  max_value?: XmlElem<number>;
+  comment?: XmlElem<string>;
+}
+
+interface CollaboratorCompBen {
+  salary?: XmlElem<number>;
+  currency_type_id?: XmlElem<string>;
+  payment_period?: XmlElem<string>;
+  comment?: XmlElem<string>;
+  payment_types?: XmlMultiElem<CollaboratorCompBenPaymentType>;
+}
+
+interface CollaboratorLastData {
+  web_banned?: XmlElem<boolean>;
+  login?: XmlElem<string>;
+  password?: XmlElem<string>;
+  access_role?: XmlElem<string>;
+  is_arm_admin?: XmlElem<boolean>;
+  is_application_admin?: XmlElem<boolean>;
+  is_content_admin?: XmlElem<boolean>;
+  in_request_black_list?: XmlElem<boolean>;
+  position_id?: XmlElem<number>;
+  pict_url?: XmlElem<string>;
+  avatar_filename?: XmlElem<string>;
+}
+
+interface CollaboratorAccess extends AccessBase {
+}
+
+interface CollaboratorViewCard {
+  is_preview?: XmlElem<boolean>;
+}
+
+interface CollaboratorViewFilter extends AuFtFilter {
+}
+
+interface CollaboratorView extends DescBase {
+  is_admin?: XmlElem<boolean>;
+  user_id?: XmlElem<number>;
+  position_array?: XmlElem<any>;
+  position_doc_ref?: XmlElem<any>;
+  never_saved?: XmlElem<boolean>;
+  knowledge_classifier_id?: XmlElem<number>;
+  knowledge_sort_type_id?: XmlElem<string>;
+  disp_access?: XmlElem<boolean>;
+  disp_auth?: XmlElem<boolean>;
+  drop_pers_hier_entry?: XmlElem<boolean>;
+  card?: XmlElem<CollaboratorViewCard>;
+  filter?: XmlElem<CollaboratorViewFilter>;
+  get_position_array?(): any;
+}
+
+interface CollaboratorTopElem extends XmlTopElem<CollaboratorDocument>, PersonBase, PassportDataBase, FileListBase, FuncManagersBase, PathSubsBase, KnowledgePartsBase, KnowledgePartsBaseOld, CustomElemsBase, PersonObjectLinksBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   eid?: XmlElem<string>;
-  name?: XmlElem<string>;
-  fullname?(): string;
   position_id?: XmlElem<number>;
   position_name?: XmlElem<string>;
   position_parent_id?: XmlElem<number>;
@@ -36,16 +116,12 @@ interface CollaboratorTopElem extends XmlTopElem<CollaboratorDocument>,
   request_black_list_comment?: XmlElem<string>;
   place_id?: XmlElem<number>;
   region_id?: XmlElem<number>;
-  access?: XmlElem<IWTAccessBase>;
   cost_center_id?: XmlElem<number>;
   lng_id?: XmlElem<string>;
   location_id?: XmlElem<string>;
   pict_url?: XmlElem<string>;
   access_time_start?: XmlElem<string>;
   access_time_end?: XmlElem<string>;
-  /** Проверяет доступ пользователя к порталу на текущий момент */
-  is_time_access?(): boolean;
-  /** Описание */
   desc?: XmlElem<string>;
   disp_empty_fields?: XmlElem<boolean>;
   disp_personal_info?: XmlElem<boolean>;
@@ -61,32 +137,42 @@ interface CollaboratorTopElem extends XmlTopElem<CollaboratorDocument>,
   development_potential_id?: XmlElem<number>;
   efficiency_estimation_id?: XmlElem<number>;
   web_enter_date?: XmlElem<Date>;
-  category_id?: XmlMultiElem<string>;
-  change_logs?: XmlMultiElem<IWTCollaboratorChangeLog>;
   current_state?: XmlElem<string>;
-  history_states?: XmlMultiElem<IWTCollaboratorHistoryState>;
-  personal_config?: XmlElem<IWTCollaboratorPersonalConfig>;
+  doc_info?: XmlElem<DocInfoBase>;
   last_import_date?: XmlElem<Date>;
-  custom_params?: XmlMultiElem<IWTCollaboratorCustomParam>;
   level_id?: XmlElem<number>;
-  comp_ben?: XmlElem<IWTCollaboratorCompBen>;
+  grade_id?: XmlElem<number>;
   gdpr?: XmlElem<boolean>;
-  clear_cur_position?(): undefined;
+  rows?: XmlElem<any>;
   row_disp_elem?: XmlElem<string>;
   row_list_field?: XmlElem<string>;
   row_key_field?: XmlElem<string>;
-  start_action?(type: string): number;
-  set_basic_position?(positionId: number): boolean;
-  get_courses?(type: string): XmlMultiElem<any>
-  get_tests?(type: string): XmlMultiElem<any>;
-  assign_course?(courseId: number, startDate: Date, endDate: Date, eventId: number): number;
-  assign_test?(assessmentId: number, startDate: Date, endDate: Date, eventId: number): number;
+  list_variant?: XmlElem<any>;
+  access?: XmlElem<AccessBase>;
+  category_id?: XmlMultiElem<string>;
+  change_logs?: XmlMultiElem<CollaboratorChangeLog>;
+  history_states?: XmlMultiElem<CollaboratorHistoryState>;
+  custom_params?: XmlMultiElem<CollaboratorCustomParam>;
+  personal_config?: XmlElem<CollaboratorPersonalConfig>;
+  comp_ben?: XmlElem<CollaboratorCompBen>;
+  last_data?: XmlElem<CollaboratorLastData>;
+  access?: XmlElem<CollaboratorAccess>;
+  view?: XmlElem<CollaboratorView>;
+  name?(): any;
+  is_time_access?(): any;
+  clear_cur_position?(): any;
+  start_action?(): any;
+  set_basic_position?(): any;
+  get_courses?(): any;
+  get_tests?(): any;
+  assign_course?(): any;
+  assign_test?(): any;
   get_info?(): any;
-  get_events?(type: string, status: string, role: string): XmlMultiElem<any>;
-  get_groups?(): XmlMultiElem<any>;
-  get_event_results?(): XmlMultiElem<any>;
-  update_info?(lastname: string, firstname: string, middlename: string, address: string, phone: string, email: string, login: string, password: string): any;
-  clear_subs_fields?(): undefined;
+  get_events?(): any;
+  get_groups?(): any;
+  get_event_results?(): any;
+  update_info?(): any;
+  clear_subs_fields?(): any;
 }
 
 type CollaboratorDocument = XmlDocument<CollaboratorTopElem>;

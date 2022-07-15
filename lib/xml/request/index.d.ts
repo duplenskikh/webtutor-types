@@ -1,29 +1,28 @@
-interface IWTRequestPerson extends PersonFillingBase {
+interface RequestPerson extends PersonFillingBase {
   person_id?: XmlElem<number>;
 }
 
-interface IWTRequestGroup {
+interface RequestGroup {
   group_id?: XmlElem<number>;
 }
 
-interface IWTRequestWorkflowMatching {
+interface RequestWorkflowMatching {
   id?: XmlElem<string>;
   person_id?: XmlElem<number>;
   type?: XmlElem<string>;
   is_main?: XmlElem<boolean>;
 }
 
-interface RequestTopElem extends XmlTopElem<RequestDocument>,
-  PersonFillingBase,
-  IWTKnowledgePartsBase,
-  IWTWorkflowDataBase,
-  IWTDocInfo,
-  IWTFileListBase,
-  IWTCustomElemsBase
-{
+interface RequestView {
+  selector?: XmlElem<string>;
+  workflow_state?: XmlElem<string>;
+  workflow_action_result?: XmlElem<any>;
+  workflow_create_break?: XmlElem<boolean>;
+}
+
+interface RequestTopElem extends XmlTopElem<RequestDocument>, PersonFillingBase, KnowledgePartsBase, WorkflowDataBase, FileListBase, CustomElemsBase, AdminAccessBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
-  name?: XmlElem<string>;
   request_type_id?: XmlElem<number>;
   budget_period_id?: XmlElem<number>;
   type?: XmlElem<string>;
@@ -38,12 +37,22 @@ interface RequestTopElem extends XmlTopElem<RequestDocument>,
   object_start_date?: XmlElem<Date>;
   object_type?: XmlElem<string>;
   is_group?: XmlElem<boolean>;
-  persons?: XmlMultiElem<IWTRequestPerson>;
-  person_num?(): number;
-  groups?: XmlMultiElem<IWTRequestGroup>;
-  workflow_matchings?: XmlMultiElem<IWTRequestWorkflowMatching>
   workflow_matching_type?: XmlElem<string>;
+  doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;
+  list_variant?: XmlElem<any>;
+  rows?: XmlElem<any>;
+  row_disp_elem?: XmlElem<string>;
+  row_list_field?: XmlElem<string>;
+  row_key_field?: XmlElem<string>;
+  persons?: XmlMultiElem<RequestPerson>;
+  groups?: XmlMultiElem<RequestGroup>;
+  workflow_matchings?: XmlMultiElem<RequestWorkflowMatching>;
+  view?: XmlElem<RequestView>;
+  access?: XmlElem<AccessDocBase>;
+  name?(): any;
+  person_num?(): any;
+  start_action?(): any;
 }
 
 type RequestDocument = XmlDocument<RequestTopElem>;

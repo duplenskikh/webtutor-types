@@ -1,5 +1,4 @@
-interface AbsenceReserveTopElem extends XmlTopElem<AbsenceReserveDocument>,
-  PersonFillingBase {
+interface AbsenceReserveTopElem extends XmlTopElem<AbsenceReserveDocument>, PersonFillingBase {
   id?: XmlElem<number>;
   person_id?: XmlElem<number>;
   budget_period_id?: XmlElem<number>;
@@ -9,6 +8,5 @@ interface AbsenceReserveTopElem extends XmlTopElem<AbsenceReserveDocument>,
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
 }
-
 
 type AbsenceReserveDocument = XmlDocument<AbsenceReserveTopElem>;
