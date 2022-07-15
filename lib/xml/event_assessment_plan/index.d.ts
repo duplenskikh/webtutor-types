@@ -32,7 +32,7 @@ interface EventAssessmentPlanView {
   scales?: XmlMultiElem<EventAssessmentPlanViewScale>;
 }
 
-interface EventAssessmentPlanTopElem extends XmlTopElem<EventAssessmentPlanDocument>, MsPersonSdBase, SupplementaryQuestionsBase, CustomElemsBase {
+interface EventAssessmentPlanTopElem extends XmlTopElem<EventAssessmentPlanDocument>, SupplementaryQuestionsBase, CustomElemsBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   event_id?: XmlElem<number>;

@@ -50,12 +50,8 @@ interface ViewConditionBase {
   value_multiple?: XmlMultiElem<string>;
 }
 
-interface ViewConditionsBaseCondition extends ViewConditionBase {
-}
-
 interface ViewConditionsBase {
   conditions_qual?: XmlElem<string>;
-  conditions?: XmlMultiElem<ViewConditionsBaseCondition>;
 }
 
 interface PassportDataBase {
@@ -139,7 +135,6 @@ interface EssentialBase {
   okpo?: XmlElem<string>;
   ogrn?: XmlElem<string>;
   oktmo?: XmlElem<string>;
-  bank_account?: XmlMultiElem<undefined>;
   director?: XmlElem<EssentialBaseDirector>;
   chief_accountant?: XmlElem<EssentialBaseChiefAccountant>;
   bank_account?: XmlElem<EssentialBaseBankAccount>;
@@ -151,7 +146,6 @@ interface EssentialsBaseEssentials extends EssentialBase {
 }
 
 interface EssentialsBase {
-  essentials?: XmlMultiElem<undefined>;
   essentials?: XmlElem<EssentialsBaseEssentials>;
 }
 
@@ -261,7 +255,6 @@ interface GlobalSettingsBaseVclassHostsHost {
 }
 
 interface GlobalSettingsBaseVclassHosts {
-  host?: XmlMultiElem<undefined>;
   host?: XmlElem<GlobalSettingsBaseVclassHostsHost>;
 }
 
@@ -573,9 +566,6 @@ interface FileBase {
   file_id?: XmlElem<number>;
 }
 
-interface FileListBaseFile extends FileBase {
-}
-
 interface FileListBase {
   files?: XmlMultiElem<FileListBaseFile>;
   AddFile?(): any;
@@ -590,13 +580,6 @@ interface CoursePartBase {
   url?: XmlElem<string>;
   parent_part_code?: XmlElem<string>;
   visible?: XmlElem<boolean>;
-}
-
-interface CoursePartsBasePart extends CoursePartBase {
-}
-
-interface CoursePartsBase {
-  parts?: XmlMultiElem<CoursePartsBasePart>;
 }
 
 interface ImportExcelPersonsBaseColumn {
@@ -772,9 +755,6 @@ interface ConditionBase {
   cur_activity_id?: XmlElem<number>;
 }
 
-interface ConditionsBaseCondition extends ConditionBase {
-}
-
 interface ConditionsBase {
   condition_eval_str?: XmlElem<string>;
   desc_str?: XmlElem<string>;
@@ -782,7 +762,6 @@ interface ConditionsBase {
   warning_str?: XmlElem<string>;
   error_str?: XmlElem<string>;
   is_false?: XmlElem<boolean>;
-  conditions?: XmlMultiElem<ConditionsBaseCondition>;
   error_eval?(): any;
 }
 
@@ -832,9 +811,6 @@ interface ServerBase {
   recovery_empty_lng_const?: XmlElem<boolean>;
 }
 
-interface SelectServerBaseServer extends ServerBase {
-}
-
 interface SelectServerBaseInstall {
   skip_reg_page?: XmlElem<boolean>;
   reg_user_name?: XmlElem<string>;
@@ -848,7 +824,6 @@ interface SelectServerBase extends ServerBase {
   disp_select_replication_time?: XmlElem<boolean>;
   selector_type?: XmlElem<string>;
   replication_time?: XmlElem<string>;
-  servers?: XmlMultiElem<SelectServerBaseServer>;
   install?: XmlElem<SelectServerBaseInstall>;
 }
 
@@ -1037,7 +1012,6 @@ interface WorkflowFieldsStatesBaseWorkflowFieldEntriesEntry {
 }
 
 interface WorkflowFieldsStatesBaseWorkflowFieldEntries {
-  entry?: XmlMultiElem<undefined>;
   entry?: XmlElem<WorkflowFieldsStatesBaseWorkflowFieldEntriesEntry>;
 }
 
@@ -1297,7 +1271,6 @@ interface ViewAssessmentAppraiseCompetenceReportBaseBlockCompetenceStatusesStatu
 }
 
 interface ViewAssessmentAppraiseCompetenceReportBaseBlockCompetenceStatuses {
-  status?: XmlMultiElem<undefined>;
   status?: XmlElem<ViewAssessmentAppraiseCompetenceReportBaseBlockCompetenceStatusesStatus>;
 }
 
@@ -1760,19 +1733,18 @@ interface InteractionBase {
 }
 
 interface AnnalsObjectsBaseObjectDataSectionItemlistSectionitem {
-  ident?: XmlElem<Attr>;
+  ident?: XmlElem<any>;
 }
 
 interface AnnalsObjectsBaseObjectDataSectionItemlist {
-  sectionitem?: XmlMultiElem<undefined>;
   sectionitem?: XmlElem<AnnalsObjectsBaseObjectDataSectionItemlistSectionitem>;
 }
 
 interface AnnalsObjectsBaseObjectDataSection {
-  ident?: XmlElem<Attr>;
-  viewed?: XmlElem<Attr>;
-  answered?: XmlElem<Attr>;
-  completed?: XmlElem<Attr>;
+  ident?: XmlElem<any>;
+  viewed?: XmlElem<any>;
+  answered?: XmlElem<any>;
+  completed?: XmlElem<any>;
   timestamp?: XmlElem<string>;
   latency?: XmlElem<string>;
   duration?: XmlElem<string>;
@@ -1780,36 +1752,35 @@ interface AnnalsObjectsBaseObjectDataSection {
 }
 
 interface AnnalsObjectsBaseObjectDataItemAttempt {
-  timestamp?: XmlElem<Attr>;
-  timevalue?: XmlElem<Attr>;
-  latency?: XmlElem<Attr>;
-  latencyvalue?: XmlElem<Attr>;
-  status?: XmlElem<Attr>;
+  timestamp?: XmlElem<any>;
+  timevalue?: XmlElem<any>;
+  latency?: XmlElem<any>;
+  latencyvalue?: XmlElem<any>;
+  status?: XmlElem<any>;
 }
 
 interface AnnalsObjectsBaseObjectDataItemObjectivesObj {
-  id?: XmlElem<Attr>;
-  type?: XmlElem<Attr>;
-  value?: XmlElem<Attr>;
+  id?: XmlElem<any>;
+  type?: XmlElem<any>;
+  value?: XmlElem<any>;
 }
 
 interface AnnalsObjectsBaseObjectDataItemObjectives {
-  obj?: XmlMultiElem<undefined>;
   obj?: XmlElem<AnnalsObjectsBaseObjectDataItemObjectivesObj>;
 }
 
 interface AnnalsObjectsBaseObjectDataItem {
-  ident?: XmlElem<Attr>;
-  viewed?: XmlElem<Attr>;
-  answered?: XmlElem<Attr>;
-  completed?: XmlElem<Attr>;
-  status?: XmlElem<Attr>;
-  type?: XmlElem<Attr>;
-  itemnumber?: XmlElem<Attr>;
-  scoring?: XmlElem<Attr>;
-  shuffle?: XmlElem<Attr>;
-  maxnumber?: XmlElem<Attr>;
-  minnumber?: XmlElem<Attr>;
+  ident?: XmlElem<any>;
+  viewed?: XmlElem<any>;
+  answered?: XmlElem<any>;
+  completed?: XmlElem<any>;
+  status?: XmlElem<any>;
+  type?: XmlElem<any>;
+  itemnumber?: XmlElem<any>;
+  scoring?: XmlElem<any>;
+  shuffle?: XmlElem<any>;
+  maxnumber?: XmlElem<any>;
+  minnumber?: XmlElem<any>;
   timestamp?: XmlElem<string>;
   latency?: XmlElem<string>;
   duration?: XmlElem<string>;
@@ -1819,48 +1790,46 @@ interface AnnalsObjectsBaseObjectDataItem {
 }
 
 interface AnnalsObjectsBaseObjectDataObjective {
-  ident?: XmlElem<Attr>;
-  type?: XmlElem<Attr>;
-  value?: XmlElem<Attr>;
+  ident?: XmlElem<any>;
+  type?: XmlElem<any>;
+  value?: XmlElem<any>;
 }
 
 interface AnnalsObjectsBaseObjectDataAssessment {
-  ident?: XmlElem<Attr>;
-  viewed?: XmlElem<Attr>;
-  answered?: XmlElem<Attr>;
-  completed?: XmlElem<Attr>;
+  ident?: XmlElem<any>;
+  viewed?: XmlElem<any>;
+  answered?: XmlElem<any>;
+  completed?: XmlElem<any>;
   timestamp?: XmlElem<string>;
   latency?: XmlElem<string>;
   duration?: XmlElem<string>;
 }
 
 interface AnnalsObjectsBaseObjectDataActiveTask {
-  ident?: XmlElem<Attr>;
+  ident?: XmlElem<any>;
 }
 
 interface AnnalsObjectsBaseObjectDataActive {
-  screen?: XmlElem<Attr>;
+  screen?: XmlElem<any>;
   task?: XmlElem<AnnalsObjectsBaseObjectDataActiveTask>;
 }
 
 interface AnnalsObjectsBaseObjectDataSequenceScreenTask {
-  ident?: XmlElem<Attr>;
-  num?: XmlElem<Attr>;
-  layout?: XmlElem<Attr>;
-  secnum?: XmlElem<Attr>;
+  ident?: XmlElem<any>;
+  num?: XmlElem<any>;
+  layout?: XmlElem<any>;
+  secnum?: XmlElem<any>;
 }
 
 interface AnnalsObjectsBaseObjectDataSequenceScreen {
-  num?: XmlElem<Attr>;
-  type?: XmlElem<Attr>;
-  task?: XmlMultiElem<undefined>;
+  num?: XmlElem<any>;
+  type?: XmlElem<any>;
   task?: XmlElem<AnnalsObjectsBaseObjectDataSequenceScreenTask>;
 }
 
 interface AnnalsObjectsBaseObjectDataSequence {
-  type?: XmlElem<Attr>;
-  select?: XmlElem<Attr>;
-  screen?: XmlMultiElem<undefined>;
+  type?: XmlElem<any>;
+  select?: XmlElem<any>;
   screen?: XmlElem<AnnalsObjectsBaseObjectDataSequenceScreen>;
 }
 
@@ -1874,7 +1843,7 @@ interface AnnalsObjectsBaseObjectData {
 }
 
 interface AnnalsObjectsBaseObject {
-  id?: XmlElem<Attr>;
+  id?: XmlElem<any>;
   attempt_id?: XmlElem<string>;
   file?: XmlElem<string>;
   objtype?: XmlElem<string>;
@@ -1891,16 +1860,8 @@ interface AnnalsNumsBase {
   question_passed_num?: XmlElem<number>;
 }
 
-interface LearningObjectivesInteractionsBaseObjective extends ObjectiveBase {
-}
-
-interface LearningObjectivesInteractionsBaseInteraction extends InteractionBase {
-}
-
 interface LearningObjectivesInteractionsBase {
   scoring_type?: XmlElem<string>;
-  objectives?: XmlMultiElem<LearningObjectivesInteractionsBaseObjective>;
-  interactions?: XmlMultiElem<LearningObjectivesInteractionsBaseInteraction>;
 }
 
 interface CoreLessonBaseDataLesson {
@@ -1984,7 +1945,6 @@ interface WebVariablesBaseWvarEntriesEntry {
 }
 
 interface WebVariablesBaseWvarEntries {
-  entry?: XmlMultiElem<undefined>;
   entry?: XmlElem<WebVariablesBaseWvarEntriesEntry>;
 }
 
@@ -2292,7 +2252,6 @@ interface DownloadPackageLogBaseDeletedObjectsObject {
 }
 
 interface DownloadPackageLogBaseDeletedObjects {
-  object?: XmlMultiElem<undefined>;
   object?: XmlElem<DownloadPackageLogBaseDeletedObjectsObject>;
 }
 
@@ -2382,12 +2341,6 @@ interface AdminAccessCatalogBase {
   backup_object_version?: XmlElem<boolean>;
 }
 
-interface SamplePhone {
-}
-
-interface SampleString {
-}
-
 interface ObjectCodeNameBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
@@ -2425,7 +2378,6 @@ interface WebChecksBaseChecksBrowserCheck {
 }
 
 interface WebChecksBaseChecksBrowser {
-  check?: XmlMultiElem<undefined>;
   check?: XmlElem<WebChecksBaseChecksBrowserCheck>;
 }
 
@@ -2436,7 +2388,6 @@ interface WebChecksBaseChecksPluginCheck {
 }
 
 interface WebChecksBaseChecksPlugin {
-  check?: XmlMultiElem<undefined>;
   check?: XmlElem<WebChecksBaseChecksPluginCheck>;
 }
 

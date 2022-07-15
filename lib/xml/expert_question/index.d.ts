@@ -3,7 +3,7 @@ interface ExpertQuestionView extends DescBase {
   knowledge_sort_type_id?: XmlElem<string>;
 }
 
-interface ExpertQuestionTopElem extends XmlTopElem<ExpertQuestionDocument>, MsPersonSdBase, KnowledgePartsBase, KnowledgePartsBaseOld, CustomElemsBase, FileListBase {
+interface ExpertQuestionTopElem extends XmlTopElem<ExpertQuestionDocument>, KnowledgePartsBase, KnowledgePartsBaseOld, CustomElemsBase, FileListBase {
   code?: XmlElem<string>;
   question?: XmlElem<string>;
   answer?: XmlElem<string>;

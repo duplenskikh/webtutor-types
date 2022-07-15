@@ -14,11 +14,6 @@ interface WikiArticleQuestionEntriesEntry {
   is_correct?: XmlElem<boolean>;
 }
 
-interface WikiArticleQuestionEntries {
-  entry?: XmlMultiElem<undefined>;
-  entry?: XmlElem<WikiArticleQuestionEntriesEntry>;
-}
-
 interface WikiArticleQuestion {
   id?: XmlElem<string>;
   is_custom?: XmlElem<boolean>;
@@ -27,7 +22,7 @@ interface WikiArticleQuestion {
   title?: XmlElem<string>;
   correct_answer?: XmlElem<string>;
   conditions?: XmlMultiElem<WikiArticleQuestionCondition>;
-  entries?: XmlElem<WikiArticleQuestionEntries>;
+  entries?: XmlElem<WikiArticleQuestionEntriesEntry>;
 }
 
 interface WikiArticleAcquaintGroup {

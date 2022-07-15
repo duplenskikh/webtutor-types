@@ -1,10 +1,3 @@
-interface ArticleViewFilter extends AuFtFilter {
-}
-
-interface ArticleView extends DescBase {
-  filter?: XmlElem<ArticleViewFilter>;
-}
-
 interface ArticleTopElem extends XmlTopElem<ArticleDocument>, CatalogListBase, FileListBase, KnowledgePartsBase, KnowledgePartsBaseOld, AdminAccessBase, CustomElemsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -16,7 +9,6 @@ interface ArticleTopElem extends XmlTopElem<ArticleDocument>, CatalogListBase, F
   desc?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
   access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<ArticleView>;
 }
 
 type ArticleDocument = XmlDocument<ArticleTopElem>;

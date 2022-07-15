@@ -65,12 +65,6 @@ interface IWTWebVariableBaseWvar {
   position?: XmlElem<number>;
 }
 
-interface WebVariablesBase {
-  wvars?: XmlMultiElem<IWTWebVariableBaseWvar>;
-  wvars_selector?: XmlElem<string>;
-  wvars_num?: number;
-}
-
 interface IWTLearningSection {
   id?: XmlElem<string>;
   title?: XmlElem<string>;
@@ -162,7 +156,7 @@ interface IWTWorkflowFieldGroup {
   write_conditions?: IWTConditionsBase;
 }
 
-interface IWTWorkflowElemOperationBase {
+interface WorkflowElemOperationsBase {
   type?: XmlElem<string>;
   workflow_state_id?: XmlElem<string>;
   workflow_field_id?: XmlElem<string>;
@@ -174,7 +168,7 @@ interface IWTWorkflowElemOperationBase {
 }
 
 interface IWTWorkflowElemOperationsBase {
-  operations?: XmlMultiElem<IWTWorkflowElemOperationBase>;
+  operations?: XmlMultiElem<WorkflowElemOperationsBase>;
 }
 
 interface IWTWorkflowAction extends IWTWorkflowElemOperationsBase,
@@ -201,7 +195,7 @@ interface IWTWorkflowEscalationPoll {
   status?: XmlElem<number>;
 }
 
-interface IWTWorkflowEscalation extends IWTWorkflowElemOperationBase {
+interface IWTWorkflowEscalation extends WorkflowElemOperationsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   workflow_state_id?: XmlElem<string>;
@@ -634,7 +628,7 @@ interface IWTFileBase {
   file_id?: XmlElem<number>;
 }
 
-interface IWTFileListBase {
+interface FileListBaseFile {
   files?: XmlMultiElem<IWTFileBase>;
   AddFile?(_file_id: number, docResourceParam: ResourceDocument): boolean;
 }
@@ -835,18 +829,6 @@ type TWTViewConditionsBaseConditionBase = IWTViewConditionsBaseConditionBase;
 interface IWTViewConditionsBase {
   conditions?: XmlMultiElem<TWTViewConditionsBaseConditionBase>;
   conditions_qual?: XmlElem<string>;
-}
-
-interface AccessDocBase extends IWTViewConditionsBase {
-  enable_anonymous_access: XmlElem<boolean>;
-  access_level: XmlElem<number>;
-  access_roles: XmlMultiElem<IWTAccessDocBaseAccessRole>;
-  access_groups: XmlMultiElem<IWTAccessDocBaseAccessGroup>;
-  access_org_id: XmlElem<number>;
-  access_site_id: XmlElem<number>;
-  access_host_id: XmlElem<number>;
-  web_mode_id: XmlElem<number>;
-  operator: XmlElem<string>;
 }
 
 interface IWTAccessBase {

@@ -6,13 +6,6 @@ interface DnControlEventParticipant {
   student_id?: XmlElem<number>;
 }
 
-interface DnControlEventViewFilter extends AuFtFilter {
-}
-
-interface DnControlEventView extends DescBase {
-  filter?: XmlElem<DnControlEventViewFilter>;
-}
-
 interface DnControlEventTopElem extends XmlTopElem<DnControlEventDocument>, AdminAccessBase, CustomElemsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -30,7 +23,6 @@ interface DnControlEventTopElem extends XmlTopElem<DnControlEventDocument>, Admi
   doc_info?: XmlElem<DocInfoBase>;
   control_assessms?: XmlMultiElem<DnControlEventControlAssessm>;
   participants?: XmlMultiElem<DnControlEventParticipant>;
-  view?: XmlElem<DnControlEventView>;
 }
 
 type DnControlEventDocument = XmlDocument<DnControlEventTopElem>;

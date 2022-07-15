@@ -7,13 +7,6 @@ interface EstaffEventTypeEventType {
   name?: XmlElem<string>;
 }
 
-interface EstaffEventTypeViewFilter extends AuFtFilter {
-}
-
-interface EstaffEventTypeView extends DescBase {
-  filter?: XmlElem<EstaffEventTypeViewFilter>;
-}
-
 interface EstaffEventTypeTopElem extends XmlTopElem<EstaffEventTypeDocument>, WebVariablesBase, AdminAccessBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -30,7 +23,6 @@ interface EstaffEventTypeTopElem extends XmlTopElem<EstaffEventTypeDocument>, We
   doc_info?: XmlElem<DocInfoBase>;
   position_commons?: XmlMultiElem<EstaffEventTypePositionCommon>;
   event_types?: XmlMultiElem<EstaffEventTypeEventType>;
-  view?: XmlElem<EstaffEventTypeView>;
   eval_action_event_occurs?(): any;
   eval_check_event_process?(): any;
   eval_visibility_condition?(): any;

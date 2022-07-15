@@ -1,6 +1,3 @@
-interface ResponseTypeDispBlock extends MsDispBlockBase {
-}
-
 interface ResponseTypeTopElem extends XmlTopElem<ResponseTypeDocument> {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -10,9 +7,7 @@ interface ResponseTypeTopElem extends XmlTopElem<ResponseTypeDocument> {
   basic_score_field?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;
-  disp_block?: XmlElem<MsDispBlockBase>;
   role_id?: XmlMultiElem<number>;
-  disp_block?: XmlElem<ResponseTypeDispBlock>;
 }
 
 type ResponseTypeDocument = XmlDocument<ResponseTypeTopElem>;

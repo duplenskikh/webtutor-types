@@ -1,10 +1,3 @@
-interface DnAcademDebtViewFilter extends AuFtFilter {
-}
-
-interface DnAcademDebtView {
-  filter?: XmlElem<DnAcademDebtViewFilter>;
-}
-
 interface DnAcademDebtTopElem extends XmlTopElem<DnAcademDebtDocument>, AdminAccessBase, CustomElemsBase {
   code?: XmlElem<string>;
   faculty_id?: XmlElem<number>;
@@ -18,7 +11,6 @@ interface DnAcademDebtTopElem extends XmlTopElem<DnAcademDebtDocument>, AdminAcc
   latest_date?: XmlElem<Date>;
   liquid_date?: XmlElem<Date>;
   doc_info?: XmlElem<DocInfoBase>;
-  view?: XmlElem<DnAcademDebtView>;
 }
 
 type DnAcademDebtDocument = XmlDocument<DnAcademDebtTopElem>;

@@ -2,7 +2,7 @@ interface CovenantView {
   selector?: XmlElem<string>;
 }
 
-interface CovenantTopElem extends XmlTopElem<CovenantDocument>, MsPersonSdBase, CostCurrencyBase, FileListBase, AdminAccessBase, CustomElemsBase {
+interface CovenantTopElem extends XmlTopElem<CovenantDocument>, CostCurrencyBase, FileListBase, AdminAccessBase, CustomElemsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   signatory_employer_id?: XmlElem<number>;

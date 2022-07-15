@@ -11,13 +11,6 @@ interface DnScheduleScheduleElem {
   auditor_id?: XmlElem<number>;
 }
 
-interface DnScheduleViewFilter extends AuFtFilter {
-}
-
-interface DnScheduleView {
-  filter?: XmlElem<DnScheduleViewFilter>;
-}
-
 interface DnScheduleTopElem extends XmlTopElem<DnScheduleDocument>, AdminAccessBase, CustomElemsBase {
   code?: XmlElem<string>;
   faculty?: XmlElem<number>;
@@ -26,7 +19,6 @@ interface DnScheduleTopElem extends XmlTopElem<DnScheduleDocument>, AdminAccessB
   term_id?: XmlElem<number>;
   doc_info?: XmlElem<DocInfoBase>;
   schedule_elems?: XmlMultiElem<DnScheduleScheduleElem>;
-  view?: XmlElem<DnScheduleView>;
 }
 
 type DnScheduleDocument = XmlDocument<DnScheduleTopElem>;

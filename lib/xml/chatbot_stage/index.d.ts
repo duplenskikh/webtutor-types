@@ -27,7 +27,7 @@ interface ChatbotStageCommand {
   chatbot_stage_id?: XmlElem<number>;
 }
 
-interface ChatbotStageTopElem extends XmlTopElem<ChatbotStageDocument>, MsParametersBase {
+interface ChatbotStageTopElem extends XmlTopElem<ChatbotStageDocument> {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

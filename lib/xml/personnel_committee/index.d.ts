@@ -1,14 +1,6 @@
-interface PersonnelCommitteeViewFilter extends AuFtFilter {
-}
-
-interface PersonnelCommitteeViewParticipantFilter extends AuFtFilter {
-}
-
 interface PersonnelCommitteeView extends DescBase {
   participant_catalog?: XmlElem<string>;
   candidate_catalog?: XmlElem<string>;
-  filter?: XmlElem<PersonnelCommitteeViewFilter>;
-  participant_filter?: XmlElem<PersonnelCommitteeViewParticipantFilter>;
 }
 
 interface PersonnelCommitteeTopElem extends XmlTopElem<PersonnelCommitteeDocument>, FileListBase, AdminAccessBase, CustomElemsBase {

@@ -31,13 +31,8 @@ interface TypicalDevelopmentProgramTutorsBySub {
   tutors?: XmlMultiElem<TypicalDevelopmentProgramTutorsBySubTutor>;
 }
 
-interface TypicalDevelopmentProgramViewFilter extends AuFtFilter {
-}
-
 interface TypicalDevelopmentProgramView extends DescBase {
   part_index?: XmlElem<number>;
-  filter?: XmlElem<AuFtFilter>;
-  filter?: XmlElem<TypicalDevelopmentProgramViewFilter>;
 }
 
 interface TypicalDevelopmentProgramTopElem extends XmlTopElem<TypicalDevelopmentProgramDocument>, ObjectCodeNameBase, AdminAccessBase, FileListBase, CustomElemsBase {

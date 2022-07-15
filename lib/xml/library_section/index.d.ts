@@ -15,7 +15,6 @@ interface LibrarySectionTopElem extends XmlTopElem<LibrarySectionDocument>, Obje
   comment?: XmlElem<string>;
   desc?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
   administrators?: XmlMultiElem<LibrarySectionAdministrator>;
   access?: XmlElem<AccessDocBase>;
   view?: XmlElem<LibrarySectionView>;

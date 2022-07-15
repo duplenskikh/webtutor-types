@@ -88,9 +88,6 @@ interface ApplicationApplicationUnit {
   items?: XmlMultiElem<ApplicationApplicationUnitItem>;
 }
 
-interface ApplicationInstance extends WebVariablesBase {
-}
-
 interface ApplicationView extends DescBase {
   file_url?: XmlElem<string>;
   file_name?: XmlElem<string>;
@@ -129,7 +126,6 @@ interface ApplicationTopElem extends XmlTopElem<ApplicationDocument>, ObjectCode
   action_menus?: XmlMultiElem<ApplicationActionMenu>;
   application_menus?: XmlMultiElem<ApplicationApplicationMenu>;
   application_units?: XmlMultiElem<ApplicationApplicationUnit>;
-  instance?: XmlElem<ApplicationInstance>;
   view?: XmlElem<ApplicationView>;
 }
 

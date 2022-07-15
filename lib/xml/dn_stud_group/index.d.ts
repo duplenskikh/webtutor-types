@@ -2,13 +2,6 @@ interface DnStudGroupSubfaculty {
   subfac_id?: XmlElem<number>;
 }
 
-interface DnStudGroupViewFilter extends AuFtFilter {
-}
-
-interface DnStudGroupView extends DescBase {
-  filter?: XmlElem<DnStudGroupViewFilter>;
-}
-
 interface DnStudGroupTopElem extends XmlTopElem<DnStudGroupDocument>, AdminAccessBase, CustomElemsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -22,7 +15,6 @@ interface DnStudGroupTopElem extends XmlTopElem<DnStudGroupDocument>, AdminAcces
   group_size?: XmlElem<number>;
   doc_info?: XmlElem<DocInfoBase>;
   subfacultys?: XmlMultiElem<DnStudGroupSubfaculty>;
-  view?: XmlElem<DnStudGroupView>;
 }
 
 type DnStudGroupDocument = XmlDocument<DnStudGroupTopElem>;

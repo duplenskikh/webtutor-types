@@ -54,7 +54,6 @@ interface LicenseTopElem extends XmlTopElem<LicenseDocument>, ObjectCodeNameBase
   encryption_key?: XmlElem<string>;
   decryption_key?: XmlElem<string>;
   demo?: XmlElem<boolean>;
-  access?: XmlElem<AccessDocBase>;
   library_materials?: XmlMultiElem<LicenseLibraryMaterial>;
   courses?: XmlMultiElem<LicenseCourse>;
   catalogs?: XmlMultiElem<LicenseCatalog>;

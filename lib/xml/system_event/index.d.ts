@@ -16,14 +16,7 @@ interface SystemEventSection {
   actions?: XmlMultiElem<SystemEventSectionAction>;
 }
 
-interface SystemEventViewFilter extends AuFtFilter {
-}
-
-interface SystemEventView extends DescBase {
-  filter?: XmlElem<SystemEventViewFilter>;
-}
-
-interface SystemEventTopElem extends XmlTopElem<SystemEventDocument>, MsVariablesBase {
+interface SystemEventTopElem extends XmlTopElem<SystemEventDocument> {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   type?: XmlElem<string>;
@@ -37,7 +30,7 @@ interface SystemEventTopElem extends XmlTopElem<SystemEventDocument>, MsVariable
   doc_info?: XmlElem<DocInfoBase>;
   role_id?: XmlMultiElem<number>;
   sections?: XmlMultiElem<SystemEventSection>;
-  view?: XmlElem<SystemEventView>;
+  view?: XmlElem<DescBase>;
 }
 
 type SystemEventDocument = XmlDocument<SystemEventTopElem>;

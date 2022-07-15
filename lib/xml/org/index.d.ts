@@ -1,9 +1,5 @@
-interface OrgViewFilter extends AuFtFilter {
-}
-
 interface OrgView extends DescBase {
   do_update_document_persons?: XmlElem<boolean>;
-  filter?: XmlElem<OrgViewFilter>;
 }
 
 interface OrgTopElem extends XmlTopElem<OrgDocument>, OrgBase, FileListBase, FuncManagersBase, KnowledgePartsBase, KnowledgePartsBaseOld, DocumentPersonsBase, CustomElemsBase {

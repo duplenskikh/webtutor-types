@@ -32,9 +32,6 @@ interface KpiCustomData {
   columns?: XmlMultiElem<KpiCustomDataColumn>;
 }
 
-interface KpiDispBlock extends MsDispBlockBase {
-}
-
 interface KpiView extends DescBase {
   selector?: XmlElem<string>;
   flag_bad_formula?: XmlElem<boolean>;
@@ -63,15 +60,12 @@ interface KpiTopElem extends XmlTopElem<KpiDocument>, FileListBase, AdminAccessB
   comment?: XmlElem<string>;
   desc?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
-  disp_block?: XmlElem<MsDispBlockBase>;
-  access?: XmlElem<AccessDocBase>;
   role_id?: XmlMultiElem<number>;
   scales?: XmlMultiElem<KpiScale>;
   owners?: XmlMultiElem<KpiOwner>;
   responsible_persons?: XmlMultiElem<KpiResponsiblePerson>;
   responsible_groups?: XmlMultiElem<KpiResponsibleGroup>;
   custom_data?: XmlElem<KpiCustomData>;
-  disp_block?: XmlElem<KpiDispBlock>;
   access?: XmlElem<AccessDocBase>;
   view?: XmlElem<KpiView>;
 }

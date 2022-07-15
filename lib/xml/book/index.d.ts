@@ -1,10 +1,3 @@
-interface BookViewFilter extends AuFtFilter {
-}
-
-interface BookView extends DescBase {
-  filter?: XmlElem<BookViewFilter>;
-}
-
 interface BookTopElem extends XmlTopElem<BookDocument>, KnowledgePartsBase, KnowledgePartsBaseOld, AdminAccessBase, CustomElemsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -13,7 +6,6 @@ interface BookTopElem extends XmlTopElem<BookDocument>, KnowledgePartsBase, Know
   desc?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
   access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<BookView>;
 }
 
 type BookDocument = XmlDocument<BookTopElem>;

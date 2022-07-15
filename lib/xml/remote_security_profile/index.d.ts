@@ -4,7 +4,6 @@ interface RemoteSecurityProfileMethodAccessListMethodAccess {
 }
 
 interface RemoteSecurityProfileMethodAccessList {
-  method_access?: XmlMultiElem<undefined>;
   method_access?: XmlElem<RemoteSecurityProfileMethodAccessListMethodAccess>;
 }
 
@@ -15,7 +14,6 @@ interface RemoteSecurityProfileLibAccessListLibAccess {
 }
 
 interface RemoteSecurityProfileLibAccessList {
-  lib_access?: XmlMultiElem<undefined>;
   lib_access?: XmlElem<RemoteSecurityProfileLibAccessListLibAccess>;
 }
 

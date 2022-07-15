@@ -5,11 +5,10 @@ interface MobileAppConfigDocumentSubchildrenSubchild {
 }
 
 interface MobileAppConfigDocumentSubchildren {
-  subchild?: XmlMultiElem<undefined>;
   subchild?: XmlElem<MobileAppConfigDocumentSubchildrenSubchild>;
 }
 
-interface MobileAppConfigDocument {
+interface MobileAppConfigDocumentDocument {
   id?: XmlElem<number>;
   is_default?: XmlElem<boolean>;
   is_menu?: XmlElem<boolean>;
@@ -17,12 +16,6 @@ interface MobileAppConfigDocument {
   cf?: XmlElem<number>;
   hidden?: XmlElem<boolean>;
   subchildren?: XmlElem<MobileAppConfigDocumentSubchildren>;
-}
-
-interface MobileAppConfigObject extends ObjectInnerBase {
-}
-
-interface MobileAppConfigVirtobj extends ObjectInnerBase {
 }
 
 interface MobileAppConfigInfoDoc {
@@ -69,7 +62,6 @@ interface MobileAppConfigMessagingConfigElem {
 }
 
 interface MobileAppConfigMessagingConfig {
-  elem?: XmlMultiElem<undefined>;
   elem?: XmlElem<MobileAppConfigMessagingConfigElem>;
 }
 
@@ -84,12 +76,10 @@ interface MobileAppConfigViewTemplistblockTemplistItemField {
 }
 
 interface MobileAppConfigViewTemplistblockTemplistItem {
-  field?: XmlMultiElem<undefined>;
   field?: XmlElem<MobileAppConfigViewTemplistblockTemplistItemField>;
 }
 
 interface MobileAppConfigViewTemplistblockTemplist {
-  item?: XmlMultiElem<undefined>;
   item?: XmlElem<MobileAppConfigViewTemplistblockTemplistItem>;
 }
 
@@ -107,7 +97,6 @@ interface MobileAppConfigViewJoinedObjectsSelectorItem {
 }
 
 interface MobileAppConfigViewJoinedObjectsSelector {
-  item?: XmlMultiElem<undefined>;
   item?: XmlElem<MobileAppConfigViewJoinedObjectsSelectorItem>;
 }
 
@@ -136,9 +125,7 @@ interface MobileAppConfigTopElem extends XmlTopElem<MobileAppConfigDocument>, Cu
   days_credentials_update?: XmlElem<number>;
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
-  documents?: XmlMultiElem<MobileAppConfigDocument>;
-  objects?: XmlMultiElem<MobileAppConfigObject>;
-  virtobjs?: XmlMultiElem<MobileAppConfigVirtobj>;
+  documents?: XmlMultiElem<MobileAppConfigDocumentDocument>;
   info_docs?: XmlMultiElem<MobileAppConfigInfoDoc>;
   html_injections?: XmlMultiElem<MobileAppConfigHtmlInjection>;
   menu?: XmlElem<MobileAppConfigMenu>;

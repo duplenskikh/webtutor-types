@@ -1,7 +1,7 @@
 interface ChatbotTypeView extends DescBase {
 }
 
-interface ChatbotTypeTopElem extends XmlTopElem<ChatbotTypeDocument>, MsParametersBase, AdminAccessBase {
+interface ChatbotTypeTopElem extends XmlTopElem<ChatbotTypeDocument>, AdminAccessBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

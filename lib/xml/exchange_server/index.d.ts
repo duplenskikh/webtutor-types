@@ -2,11 +2,8 @@ interface ExchangeServerView {
   selector?: XmlElem<string>;
 }
 
-interface ExchangeServerDownload extends ExchangeBase {
+interface ExchangeServerDownload {
   take_dest_modification_date?: XmlElem<boolean>;
-}
-
-interface ExchangeServerUpload extends ExchangeBase {
 }
 
 interface ExchangeServerTopElem extends XmlTopElem<ExchangeServerDocument>, CustomElemsBase {
@@ -24,7 +21,6 @@ interface ExchangeServerTopElem extends XmlTopElem<ExchangeServerDocument>, Cust
   role_id?: XmlMultiElem<number>;
   view?: XmlElem<ExchangeServerView>;
   download?: XmlElem<ExchangeServerDownload>;
-  upload?: XmlElem<ExchangeServerUpload>;
 }
 
 type ExchangeServerDocument = XmlDocument<ExchangeServerTopElem>;

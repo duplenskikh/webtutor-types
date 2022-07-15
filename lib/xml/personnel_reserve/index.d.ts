@@ -30,7 +30,7 @@ interface PersonnelReserveView extends DescBase {
   talent_pool_func_managers?: XmlMultiElem<PersonnelReserveViewTalentPoolFuncManager>;
 }
 
-interface PersonnelReserveTopElem extends XmlTopElem<PersonnelReserveDocument>, MsPersonSdBase, TalentPoolFuncManagersBase, FileListBase, AdminAccessBase, CustomElemsBase {
+interface PersonnelReserveTopElem extends XmlTopElem<PersonnelReserveDocument>, TalentPoolFuncManagersBase, FileListBase, AdminAccessBase, CustomElemsBase {
   id?: XmlElem<number>;
   name?: XmlElem<string>;
   start_date?: XmlElem<Date>;

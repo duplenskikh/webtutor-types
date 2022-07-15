@@ -3,13 +3,9 @@ interface SubdivisionGroupSubdivision {
   subdivision_name?: XmlElem<string>;
 }
 
-interface SubdivisionGroupViewFilter extends AuFtFilter {
-}
-
 interface SubdivisionGroupView extends DescBase {
   knowledge_classifier_id?: XmlElem<number>;
   knowledge_sort_type_id?: XmlElem<string>;
-  filter?: XmlElem<SubdivisionGroupViewFilter>;
 }
 
 interface SubdivisionGroupTopElem extends XmlTopElem<SubdivisionGroupDocument>, ObjectCodeNameBase, KnowledgePartsBase, KnowledgePartsBaseOld, CustomElemsBase, RequirementsBase, ViewConditionsBase {

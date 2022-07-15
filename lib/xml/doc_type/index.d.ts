@@ -8,7 +8,6 @@ interface DocTypeFieldSubFieldEntriesEntry {
 }
 
 interface DocTypeFieldSubFieldEntries {
-  entry?: XmlMultiElem<undefined>;
   entry?: XmlElem<DocTypeFieldSubFieldEntriesEntry>;
 }
 
@@ -35,7 +34,6 @@ interface DocTypeFieldEntriesEntry {
 }
 
 interface DocTypeFieldEntries {
-  entry?: XmlMultiElem<undefined>;
   entry?: XmlElem<DocTypeFieldEntriesEntry>;
 }
 
@@ -59,9 +57,6 @@ interface DocTypeField {
   entries?: XmlElem<DocTypeFieldEntries>;
 }
 
-interface DocTypeDispBlock extends MsDispBlockBase {
-}
-
 interface DocTypeView extends DescBase {
   is_edit_mode?: XmlElem<boolean>;
   dummy_buff?: XmlElem<number>;
@@ -83,12 +78,10 @@ interface DocTypeTopElem extends XmlTopElem<DocTypeDocument>, CustomElemsBase {
   desc?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;
-  disp_block?: XmlElem<MsDispBlockBase>;
   role_id?: XmlMultiElem<number>;
   sheets?: XmlMultiElem<DocTypeSheet>;
   fields?: XmlMultiElem<DocTypeField>;
   access?: XmlElem<AccessDocBase>;
-  disp_block?: XmlElem<DocTypeDispBlock>;
   view?: XmlElem<DocTypeView>;
 }
 

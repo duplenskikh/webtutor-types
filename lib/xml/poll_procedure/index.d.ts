@@ -77,16 +77,6 @@ interface PollProcedureAdditional {
   poll_groups?: XmlMultiElem<PollProcedureAdditionalPollGroup>;
 }
 
-interface PollProcedurePeriodity extends MsPeriodityBase {
-}
-
-interface PollProcedureViewFilter extends AuFtFilter {
-}
-
-interface PollProcedureView extends DescBase {
-  filter?: XmlElem<PollProcedureViewFilter>;
-}
-
 interface PollProcedureTopElem extends XmlTopElem<PollProcedureDocument>, CustomElemsBase, AdminAccessBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
@@ -102,15 +92,12 @@ interface PollProcedureTopElem extends XmlTopElem<PollProcedureDocument>, Custom
   desc?: XmlElem<string>;
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
-  periodity?: XmlElem<MsPeriodityBase>;
   role_id?: XmlMultiElem<number>;
   auditorys?: XmlMultiElem<PollProcedureAuditory>;
   subdivisions?: XmlMultiElem<PollProcedureSubdivision>;
   groups?: XmlMultiElem<PollProcedureGroup>;
   polls?: XmlMultiElem<PollProcedurePoll>;
   additional?: XmlElem<PollProcedureAdditional>;
-  periodity?: XmlElem<PollProcedurePeriodity>;
-  view?: XmlElem<PollProcedureView>;
   adaptive?(): any;
   set_poll_id?(): any;
   set_question_id?(): any;

@@ -66,13 +66,8 @@ interface CompoundProgramProgram extends CostCurrencyTypeBase, CustomElemsBase {
   start_notifiation?: XmlElem<CompoundProgramProgramStartNotifiation>;
 }
 
-interface CompoundProgramViewFilter extends AuFtFilter {
-}
-
 interface CompoundProgramView extends DescBase {
   part_index?: XmlElem<number>;
-  filter?: XmlElem<AuFtFilter>;
-  filter?: XmlElem<CompoundProgramViewFilter>;
 }
 
 interface CompoundProgramTopElem extends XmlTopElem<CompoundProgramDocument>, ObjectCodeNameBase, LectorsBase, FileListBase, KnowledgePartsBase, CustomElemsBase, AdminAccessBase {
@@ -84,7 +79,6 @@ interface CompoundProgramTopElem extends XmlTopElem<CompoundProgramDocument>, Ob
   access?: XmlElem<AccessDocBase>;
   role_id?: XmlMultiElem<number>;
   programs?: XmlMultiElem<CompoundProgramProgram>;
-  access?: XmlElem<AccessDocBase>;
   view?: XmlElem<CompoundProgramView>;
   activate_program_to_person?(): any;
 }

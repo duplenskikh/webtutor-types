@@ -6,12 +6,8 @@ interface DnStudentViewEducatGroup {
   edu_group_id?: XmlElem<number>;
 }
 
-interface DnStudentViewFilter extends AuFtFilter {
-}
-
 interface DnStudentView extends DescBase {
   educat_groups?: XmlMultiElem<DnStudentViewEducatGroup>;
-  filter?: XmlElem<DnStudentViewFilter>;
 }
 
 interface DnStudentTopElem extends XmlTopElem<DnStudentDocument>, PersonBase, PassportDataBase, InsertFileBase, AdminAccessBase, CustomElemsBase {

@@ -26,7 +26,7 @@ interface DischargeTableBind {
   equal_field?: XmlElem<string>;
 }
 
-interface DischargeTable extends ExportOdbcSourceBase {
+interface DischargeTable {
   id?: XmlElem<string>;
   name?: XmlElem<string>;
   is_active?: XmlElem<boolean>;
@@ -54,7 +54,7 @@ interface DischargeView {
   check_formula?(): any;
 }
 
-interface DischargeTopElem extends XmlTopElem<DischargeDocument>, ExportOdbcSourceBase {
+interface DischargeTopElem extends XmlTopElem<DischargeDocument> {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   type?: XmlElem<string>;

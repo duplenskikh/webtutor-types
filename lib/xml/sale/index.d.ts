@@ -1,4 +1,4 @@
-interface SaleDocument {
+interface SaleDocumentDocument {
   id?: XmlElem<string>;
   name?: XmlElem<string>;
   sent_by_us?: XmlElem<boolean>;
@@ -9,9 +9,6 @@ interface SaleDocument {
   back_sent_type?: XmlElem<string>;
   back_sent_messenger_service_id?: XmlElem<number>;
   comment?: XmlElem<string>;
-}
-
-interface SaleView extends DescBase {
 }
 
 interface SaleTopElem extends XmlTopElem<SaleDocument>, FileListBase, CustomElemsBase {
@@ -32,8 +29,8 @@ interface SaleTopElem extends XmlTopElem<SaleDocument>, FileListBase, CustomElem
   desc?: XmlElem<string>;
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
-  documents?: XmlMultiElem<SaleDocument>;
-  view?: XmlElem<SaleView>;
+  documents?: XmlMultiElem<SaleDocumentDocument>;
+  view?: XmlElem<DescBase>;
 }
 
 type SaleDocument = XmlDocument<SaleTopElem>;

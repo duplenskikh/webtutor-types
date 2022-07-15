@@ -1,10 +1,3 @@
-interface LectorViewFilter extends AuFtFilter {
-}
-
-interface LectorView extends DescBase {
-  filter?: XmlElem<LectorViewFilter>;
-}
-
 interface LectorTopElem extends XmlTopElem<LectorDocument>, PersonBase, PassportDataBase, CustomElemsBase, AdminAccessBase, PathSubsBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
@@ -20,7 +13,6 @@ interface LectorTopElem extends XmlTopElem<LectorDocument>, PersonBase, Passport
   doc_info?: XmlElem<DocInfoBase>;
   role_id?: XmlMultiElem<number>;
   access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<LectorView>;
   lector_fullname?(): any;
 }
 

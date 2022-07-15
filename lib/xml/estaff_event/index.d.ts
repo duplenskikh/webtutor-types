@@ -6,14 +6,7 @@ interface EstaffEventMember extends PersonFillingBase {
   collaborator_id?: XmlElem<number>;
 }
 
-interface EstaffEventViewFilter extends AuFtFilter {
-}
-
-interface EstaffEventView extends DescBase {
-  filter?: XmlElem<EstaffEventViewFilter>;
-}
-
-interface EstaffEventTopElem extends XmlTopElem<EstaffEventDocument>, MsPersonSdBase, CatalogListBase, WebVariablesBase, DocumentPersonsBase, CustomElemsBase, AdminAccessBase {
+interface EstaffEventTopElem extends XmlTopElem<EstaffEventDocument>, CatalogListBase, WebVariablesBase, DocumentPersonsBase, CustomElemsBase, AdminAccessBase {
   vacancy_id?: XmlElem<number>;
   vacancy_name?: XmlElem<string>;
   vacancy_code?: XmlElem<string>;
@@ -33,7 +26,6 @@ interface EstaffEventTopElem extends XmlTopElem<EstaffEventDocument>, MsPersonSd
   doc_info?: XmlElem<DocInfoBase>;
   objects?: XmlMultiElem<EstaffEventObject>;
   members?: XmlMultiElem<EstaffEventMember>;
-  view?: XmlElem<EstaffEventView>;
 }
 
 type EstaffEventDocument = XmlDocument<EstaffEventTopElem>;

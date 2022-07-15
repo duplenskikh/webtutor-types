@@ -25,13 +25,6 @@ interface DnTrainMethodComplexItem {
   item_id?: XmlElem<number>;
 }
 
-interface DnTrainMethodComplexViewFilter extends AuFtFilter {
-}
-
-interface DnTrainMethodComplexView {
-  filter?: XmlElem<DnTrainMethodComplexViewFilter>;
-}
-
 interface DnTrainMethodComplexTopElem extends XmlTopElem<DnTrainMethodComplexDocument>, FileListBase, AdminAccessBase, CustomElemsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -48,7 +41,6 @@ interface DnTrainMethodComplexTopElem extends XmlTopElem<DnTrainMethodComplexDoc
   courses?: XmlMultiElem<DnTrainMethodComplexCourse>;
   assessments?: XmlMultiElem<DnTrainMethodComplexAssessment>;
   items?: XmlMultiElem<DnTrainMethodComplexItem>;
-  view?: XmlElem<DnTrainMethodComplexView>;
 }
 
 type DnTrainMethodComplexDocument = XmlDocument<DnTrainMethodComplexTopElem>;

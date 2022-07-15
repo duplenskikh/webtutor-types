@@ -27,9 +27,6 @@ interface EducationMethodViewScale {
   percent?: XmlElem<number>;
 }
 
-interface EducationMethodViewFilter extends AuFtFilter {
-}
-
 interface EducationMethodView extends DescBase {
   part_index?: XmlElem<number>;
   is_future_events?: XmlElem<boolean>;
@@ -38,9 +35,7 @@ interface EducationMethodView extends DescBase {
   knowledge_classifier_id?: XmlElem<number>;
   knowledge_sort_type_id?: XmlElem<string>;
   sort_type_id?: XmlElem<string>;
-  filter?: XmlElem<AuFtFilter>;
   scales?: XmlMultiElem<EducationMethodViewScale>;
-  filter?: XmlElem<EducationMethodViewFilter>;
 }
 
 interface EducationMethodTopElem extends XmlTopElem<EducationMethodDocument>, ProgramMethodBase, LectorsBase, CustomElemsBase, AdminAccessBase, KnowledgePartsBase, KnowledgePartsBaseOld, EduMethodTestingBase, FileListBase, ExpenseDistributionBase, GameBonusBase {

@@ -73,7 +73,7 @@ interface ResumeView extends DescBase {
   person_id?: XmlElem<number>;
 }
 
-interface ResumeTopElem extends XmlTopElem<ResumeDocument>, MsPersonSdBase, FileListBase, AdminAccessBase, CustomElemsBase {
+interface ResumeTopElem extends XmlTopElem<ResumeDocument>, FileListBase, AdminAccessBase, CustomElemsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   resource_id?: XmlElem<number>;

@@ -1,4 +1,4 @@
-interface KnowledgePartLevel extends MsConfirmationBase {
+interface KnowledgePartLevel {
   id?: XmlElem<string>;
   name?: XmlElem<string>;
   desc?: XmlElem<string>;
@@ -19,7 +19,7 @@ interface KnowledgePartView extends DescBase {
   sel_all_objects?: XmlElem<boolean>;
 }
 
-interface KnowledgePartTopElem extends XmlTopElem<KnowledgePartDocument>, MsConfirmationBase, CatalogListBase, FileListBase, CustomElemsBase, KnowledgePartsBase {
+interface KnowledgePartTopElem extends XmlTopElem<KnowledgePartDocument>, CatalogListBase, FileListBase, CustomElemsBase, KnowledgePartsBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

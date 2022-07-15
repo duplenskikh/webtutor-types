@@ -57,7 +57,7 @@ interface CareerReserveView extends DescBase, DevelopmentPlanDataBase {
   tutors?: XmlMultiElem<CareerReserveViewTutor>;
 }
 
-interface CareerReserveTopElem extends XmlTopElem<CareerReserveDocument>, MsPersonSdBase, FileListBase, AdminAccessBase, CustomElemsBase {
+interface CareerReserveTopElem extends XmlTopElem<CareerReserveDocument>, FileListBase, AdminAccessBase, CustomElemsBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   start_date?: XmlElem<Date>;

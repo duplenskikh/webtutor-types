@@ -140,7 +140,7 @@ interface EventPhase {
 }
 
 interface EventTest {
-  class?: XmlElem<Attr>;
+  class?: XmlElem<any>;
   id?: XmlElem<number>;
   title?: XmlElem<string>;
   state?: XmlElem<string>;
@@ -175,7 +175,7 @@ interface EventRegularScheduleExpenseItem {
   sum?: XmlElem<number>;
 }
 
-interface EventRegularSchedule extends MsWeekScheduleBase {
+interface EventRegularSchedule {
   start_date?: XmlElem<Date>;
   finish_date?: XmlElem<Date>;
   expense_sum?: XmlElem<number>;
@@ -244,9 +244,6 @@ interface EventViewLearningSummary {
   courses?: XmlMultiElem<EventViewLearningSummaryCourse>;
 }
 
-interface EventViewFilter extends AuFtFilter {
-}
-
 interface EventView extends DescBase {
   name?: XmlElem<string>;
   start_date?: XmlElem<Date>;
@@ -278,7 +275,6 @@ interface EventView extends DescBase {
   even_preparations?: XmlMultiElem<EventViewEvenPreparation>;
   assessment_plans?: XmlMultiElem<EventViewAssessmentPlan>;
   learning_summary?: XmlElem<EventViewLearningSummary>;
-  filter?: XmlElem<EventViewFilter>;
 }
 
 interface EventTopElem extends XmlTopElem<EventDocument>, ObjectCodeNameBase, EducGroupsBase, PathPlacesBase, CostCurrencyTypeBase, CostCentersBase, LectorsBase, GameBonusBase, EduMethodTestingBase, KnowledgePartsBase, CustomElemsBase, CustomDatasBase, CatalogListBase, AdminAccessBase, EventSettingsBase {

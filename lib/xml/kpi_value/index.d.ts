@@ -13,7 +13,6 @@ interface KpiValueCustomDataHeaderColumn {
 }
 
 interface KpiValueCustomDataHeader {
-  column?: XmlMultiElem<undefined>;
   column?: XmlElem<KpiValueCustomDataHeaderColumn>;
 }
 
@@ -26,7 +25,6 @@ interface KpiValueCustomDataDataRow {
 }
 
 interface KpiValueCustomDataData {
-  row?: XmlMultiElem<undefined>;
   row?: XmlElem<KpiValueCustomDataDataRow>;
 }
 

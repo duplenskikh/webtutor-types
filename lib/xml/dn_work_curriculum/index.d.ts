@@ -30,12 +30,8 @@ interface DnWorkCurriculumBlockElem {
   disciplines?: XmlMultiElem<DnWorkCurriculumBlockElemDiscipline>;
 }
 
-interface DnWorkCurriculumViewFilter extends AuFtFilter {
-}
-
 interface DnWorkCurriculumView {
   part_index?: XmlElem<number>;
-  filter?: XmlElem<DnWorkCurriculumViewFilter>;
 }
 
 interface DnWorkCurriculumTopElem extends XmlTopElem<DnWorkCurriculumDocument>, AdminAccessBase, CustomElemsBase {

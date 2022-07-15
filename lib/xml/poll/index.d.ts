@@ -24,12 +24,11 @@ interface PollQuestionEntriesEntry {
 }
 
 interface PollQuestionEntries {
-  entry?: XmlMultiElem<undefined>;
   entry?: XmlElem<PollQuestionEntriesEntry>;
 }
 
 interface PollQuestion extends CustomElemsBase {
-  class?: XmlElem<Attr>;
+  class?: XmlElem<any>;
   id?: XmlElem<number>;
   type?: XmlElem<string>;
   title?: XmlElem<string>;
@@ -88,13 +87,6 @@ interface PollItem {
   conditions?: XmlMultiElem<PollItemCondition>;
 }
 
-interface PollViewFilter extends AuFtFilter {
-}
-
-interface PollView extends DescBase {
-  filter?: XmlElem<PollViewFilter>;
-}
-
 interface PollTopElem extends XmlTopElem<PollDocument>, ObjectCodeNameBase, CourseExpertsBase, CustomElemsBase, AdminAccessBase, ProctoringBase, GameBonusBase, KnowledgePartsBase {
   class?: XmlElem<string>;
   poll_id?: XmlElem<number>;
@@ -110,7 +102,6 @@ interface PollTopElem extends XmlTopElem<PollDocument>, ObjectCodeNameBase, Cour
   columns_num?: XmlElem<number>;
   allow_delete_poll_result?: XmlElem<boolean>;
   complete_message?: XmlElem<string>;
-  view_templates?: XmlElem<MsViewTemplatesBase>;
   complete_massege?: XmlElem<string>;
   processing_code?: XmlElem<string>;
   desc?: XmlElem<string>;
@@ -121,7 +112,6 @@ interface PollTopElem extends XmlTopElem<PollDocument>, ObjectCodeNameBase, Cour
   questions?: XmlMultiElem<PollQuestion>;
   items?: XmlMultiElem<PollItem>;
   access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<PollView>;
   adaptive_mode?(): any;
   get_report_data?(): any;
   set_question_id?(): any;

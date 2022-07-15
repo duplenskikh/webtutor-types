@@ -170,9 +170,6 @@ interface TestProjectReport {
   percent?: XmlElem<TestProjectReportPercent>;
 }
 
-interface TestProjectViewFilter extends AuFtFilter {
-}
-
 interface TestProjectView extends DescBase {
   part_index?: XmlElem<number>;
   item_id?: XmlElem<number>;
@@ -182,7 +179,6 @@ interface TestProjectView extends DescBase {
   disp_items?: XmlElem<boolean>;
   disp_active_test_learnings?: XmlElem<boolean>;
   disp_color_settings?: XmlElem<boolean>;
-  filter?: XmlElem<TestProjectViewFilter>;
 }
 
 interface TestProjectTopElem extends XmlTopElem<TestProjectDocument>, CustomElemsBase {

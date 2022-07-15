@@ -4,7 +4,7 @@ interface ScheduleTypeScheduleDay {
   finish_time?: XmlElem<string>;
 }
 
-interface ScheduleTypeSchedule extends MsWeekScheduleBase {
+interface ScheduleTypeSchedule {
   days?: XmlMultiElem<ScheduleTypeScheduleDay>;
 }
 

@@ -3,15 +3,6 @@ interface ExternalSystemKnowledgeUrlPair {
   knowledge_part_id?: XmlElem<number>;
 }
 
-interface ExternalSystemSettingsListWebTemplateParams extends WebVariablesBase {
-}
-
-interface ExternalSystemSettingsBubbleWebTemplateParams extends WebVariablesBase {
-}
-
-interface ExternalSystemSettingsCustomWebTemplateParams extends WebVariablesBase {
-}
-
 interface ExternalSystemSettings {
   float_button_title?: XmlElem<string>;
   list_web_template_id?: XmlElem<number>;
@@ -20,9 +11,6 @@ interface ExternalSystemSettings {
   list_web_template_params?: XmlElem<WebVariablesBase>;
   bubble_web_template_params?: XmlElem<WebVariablesBase>;
   custom_web_template_params?: XmlElem<WebVariablesBase>;
-  list_web_template_params?: XmlElem<ExternalSystemSettingsListWebTemplateParams>;
-  bubble_web_template_params?: XmlElem<ExternalSystemSettingsBubbleWebTemplateParams>;
-  custom_web_template_params?: XmlElem<ExternalSystemSettingsCustomWebTemplateParams>;
 }
 
 interface ExternalSystemView {
