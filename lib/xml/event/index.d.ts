@@ -1,5 +1,146 @@
-interface IWTEventTest {
-  class?: XmlElem<any>;
+interface EventWebinarSetting {
+  name?: XmlElem<string>;
+  type?: XmlElem<string>;
+  value?: XmlElem<string>;
+}
+
+interface EventEventForm {
+  form_id?: XmlElem<string>;
+}
+
+interface EventStage {
+  stage_id?: XmlElem<number>;
+  parent_id?: XmlElem<number>;
+  name?: XmlElem<string>;
+  start_date?: XmlElem<Date>;
+  finish_date?: XmlElem<Date>;
+  is_active?: XmlElem<boolean>;
+}
+
+interface EventCollaboratorExpenseItem {
+  expense_item_id?: XmlElem<number>;
+  sum?: XmlElem<number>;
+}
+
+interface EventCollaboratorResultColumn {
+  column_name?: XmlElem<string>;
+  column_value?: XmlElem<string>;
+}
+
+interface EventCollaboratorResult {
+  id?: XmlElem<number>;
+  is_assist?: XmlElem<string>;
+  is_confirm?: XmlElem<string>;
+  is_banned?: XmlElem<string>;
+  not_participate?: XmlElem<string>;
+  score?: XmlElem<number>;
+  columns?: XmlMultiElem<EventCollaboratorResultColumn>;
+}
+
+interface EventCollaborator extends PersonFillingBase {
+  collaborator_id?: XmlElem<number>;
+  last_exist_date?: XmlElem<Date>;
+  education_plan_id?: XmlElem<number>;
+  request_person_id?: XmlElem<number>;
+  active_test_learning_id?: XmlElem<number>;
+  controller_code?: XmlElem<string>;
+  webinar_url?: XmlElem<string>;
+  participation_id?: XmlElem<string>;
+  cost_center_id?: XmlElem<number>;
+  total_sum?: XmlElem<number>;
+  not_pay?: XmlElem<boolean>;
+  can_use_camera?: XmlElem<boolean>;
+  can_use_microphone?: XmlElem<boolean>;
+  current_state?: XmlElem<string>;
+  edu_group_name?: XmlElem<string>;
+  expense_items?: XmlMultiElem<EventCollaboratorExpenseItem>;
+  result?: XmlElem<EventCollaboratorResult>;
+}
+
+interface EventUnnamedPersonByOrg {
+  org_id?: XmlElem<number>;
+  org_name?: XmlElem<string>;
+  unnamed_person_num?: XmlElem<number>;
+  collaborator_id?: XmlElem<number>;
+  person_fullname?: XmlElem<string>;
+}
+
+interface EventEvenPreparation {
+  even_preparation_id?: XmlElem<string>;
+  person_id?: XmlElem<number>;
+  person_fullname?: XmlElem<string>;
+  plan_date?: XmlElem<Date>;
+  fact_date?: XmlElem<Date>;
+  status_id?: XmlElem<string>;
+  comment?: XmlElem<string>;
+  comment_person?: XmlElem<string>;
+  webinar_url?: XmlElem<string>;
+  participation_id?: XmlElem<string>;
+}
+
+interface EventGroup {
+  group_id?: XmlElem<number>;
+}
+
+interface EventTutor extends PersonFillingBase {
+  collaborator_id?: XmlElem<number>;
+  telephone_out?: XmlElem<string>;
+  telephone_in?: XmlElem<string>;
+  main?: XmlElem<boolean>;
+  webinar_url?: XmlElem<string>;
+  participation_id?: XmlElem<string>;
+}
+
+interface EventObjectResource {
+  object_resource_id?: XmlElem<number>;
+}
+
+interface EventContract extends CostCurrencyBase {
+  code?: XmlElem<string>;
+  date?: XmlElem<Date>;
+  legal_entity_name?: XmlElem<string>;
+  legal_entity_code?: XmlElem<string>;
+  desc?: XmlElem<string>;
+}
+
+interface EventExpenseItem {
+  expense_item_id?: XmlElem<number>;
+  sum?: XmlElem<number>;
+  unnamed_person_sum?: XmlElem<number>;
+  total_sum?: XmlElem<number>;
+}
+
+interface EventFile extends FileBase {
+  presentation_id?: XmlElem<number>;
+  visibility?: XmlElem<string>;
+}
+
+interface EventLibraryMaterial {
+  library_material_id?: XmlElem<number>;
+}
+
+interface EventLearningTask {
+  learning_task_id?: XmlElem<number>;
+}
+
+interface EventPhaseCollaborator {
+  collaborator_id?: XmlElem<number>;
+  is_assist?: XmlElem<boolean>;
+}
+
+interface EventPhase {
+  id?: XmlElem<string>;
+  lector_id?: XmlElem<number>;
+  object_resource_id?: XmlElem<number>;
+  start_date?: XmlElem<Date>;
+  finish_date?: XmlElem<Date>;
+  comment?: XmlElem<string>;
+  reserve_desc?: XmlElem<string>;
+  collaborators?: XmlMultiElem<EventPhaseCollaborator>;
+}
+
+interface EventTest {
+  class?: XmlElem<Attr>;
   id?: XmlElem<number>;
   title?: XmlElem<string>;
   state?: XmlElem<string>;
@@ -7,7 +148,7 @@ interface IWTEventTest {
   duration?: XmlElem<number>;
 }
 
-interface IWTEventRecord {
+interface EventRecord {
   class?: XmlElem<string>;
   status?: XmlElem<string>;
   start_time?: XmlElem<string>;
@@ -17,177 +158,137 @@ interface IWTEventRecord {
   height?: XmlElem<string>;
 }
 
-interface IWTEventForm {
-  form_id: XmlElem<string>;
+interface EventHitt {
+  assessment_id?: XmlElem<number>;
+  tutor_controller_code?: XmlElem<string>;
+  instruction?: XmlElem<string>;
+  auto_next_all_answer?: XmlElem<boolean>;
+  auto_finish_test?: XmlElem<boolean>;
+  use_activated_test?: XmlElem<boolean>;
+  port_num?: XmlElem<number>;
+  column_num?: XmlElem<number>;
+  font_size?: XmlElem<number>;
 }
 
-interface IWTEventWebinarSettings {
-  name?: XmlElem<string>;
-  type?: XmlElem<string>;
-  value?: XmlElem<string>;
-}
-
-interface IWTEventStage {
-  stage_id: XmlElem<number>;
-  parent_id: XmlElem<number>;
-  name: XmlElem<string>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  is_active: XmlElem<boolean>;
-}
-
-interface IWTExpenseItem {
-  expense_item_id: XmlElem<number>;
-  sum: XmlElem<number>;
-}
-
-interface IWTEventUnnamedPersonByOrgs {
-  org_id: XmlElem<number>;
-  org_name: XmlElem<string>;
-  unnamed_person_num: XmlElem<number>;
-  collaborator_id: XmlElem<number>;
-  person_fullname: XmlElem<string>;
-}
-
-interface IWTEventCollaborator extends PersonFillingBase {
-  collaborator_id: XmlElem<number>;
-  last_exist_date: XmlElem<Date>;
-  education_plan_id: XmlElem<number>;
-  request_person_id: XmlElem<number>;
-  active_test_learning_id: XmlElem<number>;
-  controller_code: XmlElem<string>;
-  webinar_url: XmlElem<string>;
-  participation_id: XmlElem<string>;
-  expense_items: XmlMultiElem<IWTExpenseItem>;
-  cost_center_id: XmlElem<number>;
-  total_sum: XmlElem<number>;
-  not_pay: XmlElem<boolean>;
-  can_use_camera: XmlElem<boolean>;
-  can_use_microphone: XmlElem<boolean>;
-  current_state: XmlElem<string>;
-  edu_group_name: XmlElem<string>;
-}
-
-interface IWTEventEvenPreparations {
-  even_preparation_id: XmlElem<string>;
-  person_id: XmlElem<number>;
-  person_fullname: XmlElem<string>;
-  plan_date: XmlElem<Date>;
-  fact_date: XmlElem<Date>;
-  status_id: XmlElem<string>;
-  comment: XmlElem<string>;
-  comment_person: XmlElem<string>;
-  webinar_url: XmlElem<string>;
-  participation_id: XmlElem<string>;
-}
-
-interface IWTEventHitt {
-  assessment_id: XmlElem<number>;
-  tutor_controller_code: XmlElem<string>;
-  instruction: XmlElem<string>;
-  auto_next_all_answer: XmlElem<boolean>;
-  auto_finish_test: XmlElem<boolean>;
-  use_activated_test: XmlElem<boolean>;
-  port_num: XmlElem<number>;
-  column_num: XmlElem<number>;
-  font_size: XmlElem<number>;
-}
-
-interface IWTEventGroup {
-  group_id: XmlElem<number>;
-}
-
-interface IWTEventTutor extends PersonFillingBase {
-  collaborator_id: XmlElem<number>;
-  telephone_out: XmlElem<string>;
-  telephone_in: XmlElem<string>;
-  main: XmlElem<boolean>;
-  webinar_url: XmlElem<string>;
-  participation_id: XmlElem<string>;
-}
-
-interface IWTEventObjectResource {
-  object_resource_id: XmlElem<number>;
-}
-
-interface IWTEventContract
-  // NOT_IMPLEMENTED cost_currency_type_base
-{
-  code: XmlElem<string>;
-  date: XmlElem<Date>;
-  legal_entity_name: XmlElem<string>;
-  legal_entity_code: XmlElem<string>;
-  desc: XmlElem<string>;
-}
-
-interface IWTEventFile extends IWTFileBase {
-  presentation_id: XmlElem<number>;
-  visibility: XmlElem<string>;
-}
-
-interface IWTEventExpenseItem {
-  expense_item_id: XmlElem<number>;
-  sum: XmlElem<number>;
-  unnamed_person_sum: XmlElem<number>;
-  total_sum: XmlElem<number>;
-}
-
-interface IWTEventLibraryMaterial {
-  library_material_id: XmlElem<number>;
-}
-
-interface IWTEventLearningTask {
-  learning_task_id: XmlElem<number>;
-}
-
-interface IWTEventRegularScheduleExpenseItem {
+interface EventRegularScheduleExpenseItem {
   expense_item_id?: XmlElem<number>;
   sum?: XmlElem<number>;
 }
 
-interface IWTEventRegularSchedule
-  // NOT_IMPLEMENTED ms_week_schedule_base
-{
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  expense_items: XmlMultiElem<IWTEventRegularScheduleExpenseItem>;
+interface EventRegularSchedule extends MsWeekScheduleBase {
+  start_date?: XmlElem<Date>;
+  finish_date?: XmlElem<Date>;
   expense_sum?: XmlElem<number>;
   cost_center_id?: XmlElem<number>;
   cost_center_type?: XmlElem<string>;
   total_cost?: XmlElem<number>;
   phases_num?: XmlElem<number>;
+  expense_items?: XmlMultiElem<EventRegularScheduleExpenseItem>;
 }
 
-interface EventTopElem extends XmlTopElem<EventDocument>,
-  IWTObjectCodeNameBase,
-  // NOT_IMPLEMENTED educ_groups_base,
-  // NOT_IMPLEMENTED path_places_base,
-  // NOT_IMPLEMENTED cost_currency_type_base,
-  // NOT_IMPLEMENTED cost_centers_base,
-  // NOT_IMPLEMENTED cost_centers_base,
-  IWTLectorsBase,
-  IWTGameBonusBase,
-  // NOT_IMPLEMENTED edu_method_testing_base
-  IWTKnowledgePartsBase,
-  IWTCustomElemsBase,
-  // NOT_IMPLEMENTED custom_datas_base
-  IWTCatalogListBase,
-  IWTEventSettingsBase
-{
-  /** Код типа мероприятия */
-  type_id?: XmlElem<string>;
-  /** ID типа мероприятия */
-  event_type_id?: XmlElem<number>;
-  /** Дата начала мероприятия */
+interface EventViewCollaborator {
+  collaborator_id?: XmlElem<number>;
+}
+
+interface EventViewLector {
+  lector_id?: XmlElem<number>;
+}
+
+interface EventViewTutor {
+  collaborator_id?: XmlElem<number>;
+}
+
+interface EventViewEvenPreparation {
+  person_id?: XmlElem<number>;
+}
+
+interface EventViewAssessmentPlan {
+  assessment_plan_id?: XmlElem<number>;
+}
+
+interface EventViewLearningSummaryCollaboratorCourse {
+  course_id?: XmlElem<number>;
+  active_learning_num?: XmlElem<number>;
+  active_learning_state_id?: XmlElem<number>;
+  learning_num?: XmlElem<number>;
+  learning_state_id?: XmlElem<number>;
+}
+
+interface EventViewLearningSummaryCollaboratorResult {
+  id?: XmlElem<number>;
+  is_assist?: XmlElem<string>;
+  is_confirm?: XmlElem<string>;
+  not_participate?: XmlElem<string>;
+  score?: XmlElem<number>;
+}
+
+interface EventViewLearningSummaryCollaborator extends PersonFillingBase {
+  collaborator_id?: XmlElem<number>;
+  is_participant?: XmlElem<boolean>;
+  active_learning_state_name?: XmlElem<string>;
+  learning_num?: XmlElem<number>;
+  learning_state_name?: XmlElem<string>;
+  bk_color?: XmlElem<string>;
+  courses?: XmlMultiElem<EventViewLearningSummaryCollaboratorCourse>;
+  result?: XmlElem<EventViewLearningSummaryCollaboratorResult>;
+}
+
+interface EventViewLearningSummaryCourse {
+  course_id?: XmlElem<number>;
+}
+
+interface EventViewLearningSummary {
+  course_id?: XmlElem<number>;
+  person_filter?: XmlElem<string>;
+  collaborators?: XmlMultiElem<EventViewLearningSummaryCollaborator>;
+  courses?: XmlMultiElem<EventViewLearningSummaryCourse>;
+}
+
+interface EventViewFilter extends AuFtFilter {
+}
+
+interface EventView extends DescBase {
+  name?: XmlElem<string>;
   start_date?: XmlElem<Date>;
-  /** Дата окончания мероприятия */
   finish_date?: XmlElem<Date>;
-  /** Является ли мероприятия эталонным */
+  webinar_system_id?: XmlElem<number>;
+  status_id?: XmlElem<string>;
+  selector?: XmlElem<string>;
+  total_sum?: XmlElem<number>;
+  unnamed_person_total_sum?: XmlElem<number>;
+  is_load_results?: XmlElem<boolean>;
+  show_result_fields?: XmlElem<boolean>;
+  changed?: XmlElem<boolean>;
+  checked_fields?: XmlElem<boolean>;
+  sort_type_id?: XmlElem<string>;
+  loop_date?: XmlElem<Date>;
+  loop_index?: XmlElem<number>;
+  last_start_date?: XmlElem<Date>;
+  last_finish_date?: XmlElem<Date>;
+  last_distribute_cost_type?: XmlElem<string>;
+  last_default_event_result_type_id?: XmlElem<number>;
+  recource_selector?: XmlElem<string>;
+  recource_tab_selector?: XmlElem<string>;
+  result_array?: XmlElem<any>;
+  collaborator_array?: XmlElem<any>;
+  flag_open_org_sub_group_section?: XmlElem<boolean>;
+  collaborators?: XmlMultiElem<EventViewCollaborator>;
+  lectors?: XmlMultiElem<EventViewLector>;
+  tutors?: XmlMultiElem<EventViewTutor>;
+  even_preparations?: XmlMultiElem<EventViewEvenPreparation>;
+  assessment_plans?: XmlMultiElem<EventViewAssessmentPlan>;
+  learning_summary?: XmlElem<EventViewLearningSummary>;
+  filter?: XmlElem<EventViewFilter>;
+}
+
+interface EventTopElem extends XmlTopElem<EventDocument>, ObjectCodeNameBase, EducGroupsBase, PathPlacesBase, CostCurrencyTypeBase, CostCentersBase, LectorsBase, GameBonusBase, EduMethodTestingBase, KnowledgePartsBase, CustomElemsBase, CustomDatasBase, CatalogListBase, AdminAccessBase, EventSettingsBase {
+  type_id?: XmlElem<string>;
+  event_type_id?: XmlElem<number>;
+  start_date?: XmlElem<Date>;
+  finish_date?: XmlElem<Date>;
   is_model?: XmlElem<boolean>;
   is_room?: XmlElem<boolean>;
-  /** ID расположения мероприятия */
   place_id?: XmlElem<number>;
-  /** Название места проведения мероприятия */
   place?: XmlElem<string>;
   vclass_host?: XmlElem<string>;
   use_camera_capture?: XmlElem<boolean>;
@@ -205,9 +306,6 @@ interface EventTopElem extends XmlTopElem<EventDocument>,
   record_capture_rate?: XmlElem<number>;
   current_presentation_id?: XmlElem<number>;
   webinar_system_id?: XmlElem<number>;
-  test?: XmlElem<IWTEventTest>;
-  record?: XmlElem<IWTEventRecord>;
-  webinar_settings?: XmlMultiElem<IWTEventWebinarSettings>;
   use_vclass?: XmlElem<boolean>;
   vclass_setting_id?: XmlElem<number>;
   show_record?: XmlElem<boolean>;
@@ -239,8 +337,6 @@ interface EventTopElem extends XmlTopElem<EventDocument>,
   duration_days_fact?: XmlElem<number>;
   max_person_num?: XmlElem<number>;
   min_person_num?: XmlElem<number>;
-  person_num?(): number;
-  assist_person_num?(): number;
   course_finished?: XmlElem<number>;
   course_process?: XmlElem<number>;
   course_started?: XmlElem<number>;
@@ -253,37 +349,21 @@ interface EventTopElem extends XmlTopElem<EventDocument>,
   contract_id?: XmlElem<number>;
   organizational_form?: XmlElem<string>;
   event_form?: XmlElem<string>;
-  event_forms?: XmlMultiElem<IWTEventForm>;
-  stages?: XmlMultiElem<IWTEventStage>;
   org_id?: XmlElem<number>;
   subdivision_id?: XmlElem<number>;
-  collaborators?: XmlMultiElem<IWTEventCollaborator>;
   group_educ_group_id?: XmlElem<string>;
-  unnamed_person_by_orgs?: XmlMultiElem<IWTEventUnnamedPersonByOrgs>;
   unnamed_person_num?: XmlElem<number>;
   unnamed_person_sum?: XmlElem<number>;
   group_formed?: XmlElem<boolean>;
   quota_org?: XmlElem<number>;
   quota_subdivision?: XmlElem<number>;
   quota_person?: XmlElem<number>;
-  even_preparations?: XmlMultiElem<IWTEventEvenPreparations>;
-  hitt: XmlElem<IWTEventHitt>;
-  groups?: XmlMultiElem<IWTEventGroup>;
-  tutors?: XmlMultiElem<IWTEventTutor>;
-  object_resources?: XmlMultiElem<IWTEventObjectResource>;
   total_cost?: XmlElem<number>;
   total_cost_plan?: XmlElem<number>;
-  contracts?: XmlMultiElem<IWTEventContract>;
   cost_center_id?: XmlElem<number>;
   cost_center_type?: XmlElem<string>;
-  default_cost_center_id?: XmlElem<number>;
   distribute_cost_type?: XmlElem<string>;
-  expense_items?: XmlMultiElem<IWTEventExpenseItem>;
   budget_period_id?: XmlElem<number>;
-  files?: XmlMultiElem<IWTEventFile>;
-  library_materials?: XmlMultiElem<IWTEventLibraryMaterial>;
-  learning_tasks?: XmlMultiElem<IWTEventLearningTask>;
-  AddFile?(resourceId: number, resourceDocument?: ResourceDocument): void;
   default_response_type_id?: XmlElem<number>;
   mandatory_fill_response?: XmlElem<boolean>;
   default_request_type_id?: XmlElem<number>;
@@ -306,19 +386,9 @@ interface EventTopElem extends XmlTopElem<EventDocument>,
   date_request_over?: XmlElem<Date>;
   date_request_rejection_over?: XmlElem<Date>;
   parent_event_id?: XmlElem<number>;
-  regular_schedule?: XmlElem<IWTEventRegularSchedule>;
-  access?: XmlElem<AccessDocBase>;
   desc?: XmlElem<string>;
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
-  get_chat_messages?(dtLastMessageParam: string | Date): XmlMultiElem<any>;
-  send_chat_message?(sTextParam: string, sFullnameParam: string): boolean;
-  phases?: XmlMultiElem<IWTEventPhase>;
-
-
-  cost?: XmlElem<string>;
-  lectors?: XmlMultiElem<IWTEventLector>;
-  cost_type?: XmlElem<string>;
   disp_collaborator_phase_presence?: XmlElem<boolean>;
   disp_persons_for_all?: XmlElem<boolean>;
   has_lector_appraise?: XmlElem<boolean>;
@@ -337,47 +407,76 @@ interface EventTopElem extends XmlTopElem<EventDocument>,
   manager_restype?: XmlElem<number>;
   manager_date_start?: XmlElem<Date>;
   disp_all_assessment_plan?: XmlElem<boolean>;
-  /**
-   * Устанавливает статус мероприятию
-   * @param { string } newStatus новый статус мероприятия
-   * @param bSendNotificationsParam 
-   * @param oScreenParam 
-   */
-  set_status?(newStatus: string, bSendNotificationsParam?: boolean, oScreenParam?: Object): void;
-  send_notifications?(sSendTypeParam: string): boolean;
+  need_create_results?: XmlElem<boolean>;
+  rows?: XmlElem<any>;
+  row_disp_elem?: XmlElem<string>;
+  row_list_field?: XmlElem<string>;
+  row_key_field?: XmlElem<string>;
+  list_variant?: XmlElem<any>;
+  role_id?: XmlMultiElem<number>;
+  webinar_settings?: XmlMultiElem<EventWebinarSetting>;
+  event_forms?: XmlMultiElem<EventEventForm>;
+  stages?: XmlMultiElem<EventStage>;
+  collaborators?: XmlMultiElem<EventCollaborator>;
+  unnamed_person_by_orgs?: XmlMultiElem<EventUnnamedPersonByOrg>;
+  even_preparations?: XmlMultiElem<EventEvenPreparation>;
+  groups?: XmlMultiElem<EventGroup>;
+  tutors?: XmlMultiElem<EventTutor>;
+  object_resources?: XmlMultiElem<EventObjectResource>;
+  contracts?: XmlMultiElem<EventContract>;
+  expense_items?: XmlMultiElem<EventExpenseItem>;
+  files?: XmlMultiElem<EventFile>;
+  library_materials?: XmlMultiElem<EventLibraryMaterial>;
+  learning_tasks?: XmlMultiElem<EventLearningTask>;
+  phases?: XmlMultiElem<EventPhase>;
+  test?: XmlElem<EventTest>;
+  record?: XmlElem<EventRecord>;
+  hitt?: XmlElem<EventHitt>;
+  regular_schedule?: XmlElem<EventRegularSchedule>;
+  access?: XmlElem<AccessDocBase>;
+  view?: XmlElem<EventView>;
+  person_num?(): any;
+  assist_person_num?(): any;
+  default_cost_center_id?(): any;
+  AddFile?(): any;
+  get_chat_messages?(): any;
+  send_chat_message?(): any;
+  set_status?(): any;
+  send_notifications?(): any;
   create_results?(): any;
   change_tutor_list?(): any;
   change_even_preparation_list?(): any;
   change_lector_list?(): any;
-  obtain_collaborator?(_person_id: any, _person_doc?: CollaboratorTopElem): any;
-  add_group?(_group_id: any): any;
+  obtain_collaborator?(): any;
+  add_group?(): any;
   get_workflow_id?(): any;
-  create_certificate?(_type_id: any, _type_doc: any): any;
-  start_action?(sTypeParam: any): any;
+  create_certificate?(): any;
+  start_action?(): any;
   clear_elems?(): any;
-  activate_test?(_test_id: any, _test_doc: any, _duration: any, _start_learning_date: any, _last_learning_date: any, sActTypeParam: any, bSkipDismissed: any): any;
-  assign_qualification?(_qualification_id: any, _assignment_date: any, _expiration_date: any, _send_mail: any): any;
-  check_request_quote?(_request_id: any, _request_doc: any): any;
+  activate_test?(): any;
+  assign_qualification?(): any;
+  check_request_quote?(): any;
   create_event_phases?(): any;
   filling_event_phases?(): any;
   distribute_cost_centers?(): any;
   distribute_total_cost?(): any;
   obtain_pay_phases?(): any;
-  save_distributed_total_cost?(_result_array: any): any;
+  save_distributed_total_cost?(): any;
   calc_duration_plan?(): any;
   update_event_results?(): any;
-  addPerson?(oInputParam: any): any;
-  delPerson?(oInputParam: any): any;
-  changeTutorList?(oInputParam: any): any;
+  update_collaborator_common_filling?(): any;
+  addPerson?(): any;
+  delPerson?(): any;
+  changeTutorList?(): any;
   get_info?(): any;
-  remove_collaborator?(iPersonIdParam: any): any;
+  remove_collaborator?(): any;
   get_webinar_admin_template?(): any;
-  get_webinar_setting?(sSettingNameParam: any): any;
-  call_webinar_system_method?(sMethodNameParam: any, oParams: any, bReloadDocument: any): any;
-  set_webinar_setting?(sSettingNameParam: any, sSettingValueParam: any, sSettingTypeParam: any): any;
-  get_webinar_url?(iUserIdParam: any, sUrl: any): any;
-  get_webinar_record_url?(sCurrentHostParam: any): any;
-  get_webinar_record_download_url?(sCurrentHostParam: any): any;
+  call_webinar_system_method?(): any;
+  get_webinar_setting?(): any;
+  set_webinar_setting?(): any;
+  get_webinar_url?(): any;
+  get_webinar_record_url?(): any;
+  get_webinar_record_download_url?(): any;
 }
 
 type EventDocument = XmlDocument<EventTopElem>;

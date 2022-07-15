@@ -1,7 +1,7 @@
-interface IWTBlogEntryCommentTopElem extends
-  IWTFileListBase,
-  IWTDocInfo,
-  IWTCustomElemsBase {
+interface BlogEntryCommentView extends DescBase {
+}
+
+interface BlogEntryCommentTopElem extends XmlTopElem<BlogEntryCommentDocument>, FileListBase, CustomElemsBase {
   id?: XmlElem<number>;
   create_date?: XmlElem<Date>;
   blog_entry_id?: XmlElem<number>;
@@ -13,8 +13,11 @@ interface IWTBlogEntryCommentTopElem extends
   parent_id?: XmlElem<number>;
   like_id?: XmlElem<number>;
   message?: XmlElem<string>;
+  doc_info?: XmlElem<DocInfoBase>;
   type?: XmlElem<string>;
-  creator_name?(): string;
+  access?: XmlElem<AccessDocBase>;
+  view?: XmlElem<BlogEntryCommentView>;
+  creator_name?(): any;
 }
 
-type IWTBlogEntryCommentDocument = XmlDocument<IWTBlogEntryCommentTopElem>;
+type BlogEntryCommentDocument = XmlDocument<BlogEntryCommentTopElem>;

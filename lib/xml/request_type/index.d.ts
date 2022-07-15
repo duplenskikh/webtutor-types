@@ -1,8 +1,12 @@
-interface RequestTypeTopElem extends XmlTopElem<RequestTypeDocument>,
-  IWTObjectCodeNameBase,
-  WebVariablesBase
-{
+interface RequestTypeDispBlock extends MsDispBlockBase {
+}
+
+interface RequestTypeView extends DescBase {
+}
+
+interface RequestTypeTopElem extends XmlTopElem<RequestTypeDocument>, ObjectCodeNameBase, WebVariablesBase {
   object_type?: XmlElem<string>;
+  object_query_qual?: XmlElem<string>;
   is_group?: XmlElem<boolean>;
   is_can_be_group?: XmlElem<boolean>;
   is_can_be_add_youself?: XmlElem<boolean>;
@@ -20,13 +24,16 @@ interface RequestTypeTopElem extends XmlTopElem<RequestTypeDocument>,
   request_custom_web_template_id?: XmlElem<number>;
   reject_redirect_url?: XmlElem<string>;
   remote_action_id?: XmlElem<number>;
-  access?: XmlElem<AccessDocBase>;
   is_std?: XmlElem<boolean>;
+  changed?: XmlElem<boolean>;
   doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;
   desc?: XmlElem<string>;
-  disp_block?: XmlElem<any>;
+  disp_block?: XmlElem<MsDispBlockBase>;
   role_id?: XmlMultiElem<number>;
+  access?: XmlElem<AccessDocBase>;
+  disp_block?: XmlElem<RequestTypeDispBlock>;
+  view?: XmlElem<RequestTypeView>;
 }
 
 type RequestTypeDocument = XmlDocument<RequestTypeTopElem>;

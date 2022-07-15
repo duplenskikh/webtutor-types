@@ -1,11 +1,14 @@
-interface IWTLectorTopElem extends IWTPersonBase,
-  AdminAccessBase,
-  IWTCustomElemsBase,
-  IWTDocInfo,
-  ObjectCodeNameBase {
+interface LectorViewFilter extends AuFtFilter {
+}
+
+interface LectorView extends DescBase {
+  filter?: XmlElem<LectorViewFilter>;
+}
+
+interface LectorTopElem extends XmlTopElem<LectorDocument>, PersonBase, PassportDataBase, CustomElemsBase, AdminAccessBase, PathSubsBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
-  type?: XmlElem<IWTLectorTypes>;
+  type?: XmlElem<string>;
   resource_id?: XmlElem<number>;
   desc?: XmlElem<string>;
   person_id?: XmlElem<number>;
@@ -14,7 +17,11 @@ interface IWTLectorTopElem extends IWTPersonBase,
   person_subdivision_name?: XmlElem<string>;
   allow_publication?: XmlElem<boolean>;
   is_dismiss?: XmlElem<boolean>;
-  lector_fullname?: XmlElem<string>;
+  doc_info?: XmlElem<DocInfoBase>;
+  role_id?: XmlMultiElem<number>;
+  access?: XmlElem<AccessDocBase>;
+  view?: XmlElem<LectorView>;
+  lector_fullname?(): any;
 }
 
-type IWTLectorDocument = XmlDocument<IWTLectorTopElem>;
+type LectorDocument = XmlDocument<LectorTopElem>;

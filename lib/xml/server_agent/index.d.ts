@@ -1,21 +1,7 @@
-/** Объект параметров агента */
-declare var Param: Object;
-/** ID объекта над которым выполняется агент */
-declare var OBJECT_ID: number;
-declare var OBJECTS_ID_STR: string;
-/** Флаг исполнения кода на клиенте */
-declare var LdsIsClient: boolean;
-/** Флаг исполнения кода на сервере */
-declare var LdsIsServer: boolean;
+interface ServerAgentView {
+}
 
-declare var oData: any;
-
-interface ServerAgentTopElem extends XmlTopElem<ServerAgentDocument>,
-  IWTMSPeriodityBase,
-  WebVariablesBase,
-  IWTExecCodeBase,
-  IWTCustomElemsBase
-{
+interface ServerAgentTopElem extends XmlTopElem<ServerAgentDocument>, MsPeriodityBase, WebVariablesBase, ExecCodeBase, CustomElemsBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -24,12 +10,6 @@ interface ServerAgentTopElem extends XmlTopElem<ServerAgentDocument>,
   type?: XmlElem<string>;
   run_code_url?: XmlElem<string>;
   run_code?: XmlElem<string>;
-  run_agent?(
-    iObjectIDParam?: any,
-    sObjectsIDsParam?: any,
-    sTenancyNameParam?: string,
-    dDateParam?: Date
-  ): boolean;
   discharge_id?: XmlElem<number>;
   user_assignment_id?: XmlElem<number>;
   import_excel_person_scheme_id?: XmlElem<string>;
@@ -38,9 +18,11 @@ interface ServerAgentTopElem extends XmlTopElem<ServerAgentDocument>,
   is_std?: XmlElem<boolean>;
   changed?: XmlElem<boolean>;
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>
-  converter?(): boolean;
+  doc_info?: XmlElem<DocInfoBase>;
+  converter?: XmlElem<boolean>;
   role_id?: XmlMultiElem<number>;
+  view?: XmlElem<ServerAgentView>;
+  run_agent?(): any;
 }
 
 type ServerAgentDocument = XmlDocument<ServerAgentTopElem>;

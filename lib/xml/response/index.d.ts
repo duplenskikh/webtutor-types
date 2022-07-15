@@ -1,8 +1,4 @@
-interface ResponseTopElem extends XmlTopElem<ResponseDocument>,
-  PersonFillingBase,
-  AdminAccessBase,
-  IWTCustomElemsBase
-{
+interface ResponseTopElem extends XmlTopElem<ResponseDocument>, PersonFillingBase, AdminAccessBase, CustomElemsBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   response_type_id?: XmlElem<number>;
@@ -18,7 +14,7 @@ interface ResponseTopElem extends XmlTopElem<ResponseDocument>,
   doc_info?: XmlElem<DocInfoBase>;
   basic_score?: XmlElem<number>;
   basic_desc?: XmlElem<string>;
-  calc_basic_values?(): any
+  calc_basic_values?(): any;
 }
 
 type ResponseDocument = XmlDocument<ResponseTopElem>;

@@ -21,10 +21,15 @@ interface AcquaintQuestionCondition {
   value?: XmlElem<string>;
 }
 
-interface AcquaintQuestionEntry {
+interface AcquaintQuestionEntriesEntry {
   id?: XmlElem<string>;
   value?: XmlElem<string>;
   is_correct?: XmlElem<boolean>;
+}
+
+interface AcquaintQuestionEntries {
+  entry?: XmlMultiElem<undefined>;
+  entry?: XmlElem<AcquaintQuestionEntriesEntry>;
 }
 
 interface AcquaintQuestion {
@@ -35,15 +40,18 @@ interface AcquaintQuestion {
   title?: XmlElem<string>;
   correct_answer?: XmlElem<string>;
   conditions?: XmlMultiElem<AcquaintQuestionCondition>;
-  entries?: XmlMultiElem<AcquaintQuestionEntry>;
+  entries?: XmlElem<AcquaintQuestionEntries>;
 }
 
-interface AcquaintSelectType{
+interface AcquaintSelectType {
   select_type_id?: XmlElem<string>;
 }
 
-interface AcquaintTopElem extends XmlTopElem<AcquaintDocument>,
-  IWTViewConditionsBase {
+interface AcquaintView {
+  tab_select?: XmlElem<string>;
+}
+
+interface AcquaintTopElem extends XmlTopElem<AcquaintDocument>, ViewConditionsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   object_type?: XmlElem<string>;
@@ -51,17 +59,18 @@ interface AcquaintTopElem extends XmlTopElem<AcquaintDocument>,
   object_name?: XmlElem<string>;
   normative_date?: XmlElem<Date>;
   reacquaintance_period?: XmlElem<number>;
+  eval_code?: XmlElem<string>;
+  status?: XmlElem<boolean>;
+  comment?: XmlElem<string>;
+  doc_info?: XmlElem<DocInfoBase>;
+  role_id?: XmlMultiElem<number>;
   collaborators?: XmlMultiElem<AcquaintCollaborator>;
   assessments?: XmlMultiElem<AcquaintAssessment>;
   groups?: XmlMultiElem<AcquaintGroup>;
-  eval_code?: XmlElem<string>;
-  status?: XmlElem<boolean>;
   questions?: XmlMultiElem<AcquaintQuestion>;
   select_types?: XmlMultiElem<AcquaintSelectType>;
+  view?: XmlElem<AcquaintView>;
   access?: XmlElem<AccessDocBase>;
-  role_id?: XmlElem<number>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
 }
 
 type AcquaintDocument = XmlDocument<AcquaintTopElem>;

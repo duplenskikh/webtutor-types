@@ -1,0 +1,9 @@
+interface StatementPatternTopElem extends XmlTopElem<StatementPatternDocument> {
+  id?: XmlElem<number>;
+  path?: XmlElem<string>;
+  value?: XmlElem<string>;
+  statement_id?: XmlElem<number>;
+  doc_info?: XmlElem<DocInfoBase>;
+}
+
+type StatementPatternDocument = XmlDocument<StatementPatternTopElem>;

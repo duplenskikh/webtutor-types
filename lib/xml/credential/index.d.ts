@@ -1,4 +1,4 @@
-interface IWTCredentialTopElem extends IWTDocInfo {
+interface CredentialTopElem extends XmlTopElem<CredentialDocument> {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -7,6 +7,7 @@ interface IWTCredentialTopElem extends IWTDocInfo {
   password?: XmlElem<string>;
   remote_security_profile_id?: XmlElem<number>;
   comment?: XmlElem<string>;
+  doc_info?: XmlElem<DocInfoBase>;
 }
 
-type IWTCredentialDocument = XmlDocument<IWTCredentialTopElem>;
+type CredentialDocument = XmlDocument<CredentialTopElem>;
