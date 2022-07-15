@@ -9,7 +9,7 @@ interface IWTEducationProgramTopElem extends AdminAccessBase {
   education_methods?: XmlMultiElem<IWTEducationProgramEducationMethod>;
 	comment?: XmlElem<string>;
 	doc_info?: XmlElem<DocInfoBase>;
-	access?: XmlElem<IWTAccessDocBase>;
+	access?: XmlElem<AccessDocBase>;
 	role_id?: XmlMultiElem<number>;
 }
 

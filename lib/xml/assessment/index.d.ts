@@ -129,7 +129,7 @@ interface AssessmentTopElem extends XmlTopElem<AssessmentDocument>,
   // <schedule TITLE="const=gzh99r7he8">
   //   <INHERIT TYPE="ms_week_schedule_base"/>
   // </schedule>
-  access?: XmlElem<IWTAccessDocBase>;
+  access?: XmlElem<AccessDocBase>;
   publish_url?: XmlElem<string>;
   publish_date?: XmlElem<Date>;
   template_url?: XmlElem<string>;

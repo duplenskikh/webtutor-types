@@ -1,7 +1,7 @@
 interface IWTDocumentTopElem extends ObjectCodeNameBase,
   IWTCatalogListBase,
   IWTFileListBase,
-  IWTWebVariablesBase,
+  WebVariablesBase,
   IWTKnowledgePartsBase,
   IWTKnowledgePartsBaseOld,
   IWTGameBonusBase,

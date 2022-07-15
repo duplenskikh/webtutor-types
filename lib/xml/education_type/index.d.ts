@@ -1,7 +1,7 @@
 interface IWTEducationTypeTopElem extends IWTObjectCodeNameBase, AdminAccessBase {
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<IWTAccessDocBase>;
+  access?: XmlElem<AccessDocBase>;
 }
 
 type IWTEducationTypeDocument = XmlDocument<IWTEducationTypeTopElem>;

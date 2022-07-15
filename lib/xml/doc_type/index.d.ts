@@ -65,7 +65,7 @@ interface IWTDocTypeTopElem extends IWTCustomElemsBase {
   before_save_action?: XmlElem<string>;
   log?: XmlElem<string>;
   desc?: XmlElem<string>;
-  access?: XmlElem<IWTAccessDocBase>;
+  access?: XmlElem<AccessDocBase>;
   disp_block?: XmlElem<IWTMSDispBlockBase>;
   doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;

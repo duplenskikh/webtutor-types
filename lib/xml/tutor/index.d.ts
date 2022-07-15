@@ -13,7 +13,7 @@ interface TutorTopElem extends XmlTopElem<TutorDocument>,
   start_date?: XmlElem<Date>;
   finish_date?: XmlElem<Date>;
   position_commons?: XmlMultiElem<any>;
-  access?: XmlElem<IWTAccessDocBase>;
+  access?: XmlElem<AccessDocBase>;
   desc?: XmlElem<string>;
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
