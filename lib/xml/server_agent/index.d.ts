@@ -1,7 +1,4 @@
-interface ServerAgentView {
-}
-
-interface ServerAgentTopElem extends XmlTopElem<ServerAgentDocument>, MsPeriodityBase, WebVariablesBase, ExecCodeBase, CustomElemsBase {
+interface ServerAgentTopElem extends XmlTopElem<ServerAgentDocument>, WebVariablesBase, ExecCodeBase, CustomElemsBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -21,7 +18,6 @@ interface ServerAgentTopElem extends XmlTopElem<ServerAgentDocument>, MsPeriodit
   doc_info?: XmlElem<DocInfoBase>;
   converter?: XmlElem<boolean>;
   role_id?: XmlMultiElem<number>;
-  view?: XmlElem<ServerAgentView>;
   run_agent?(): any;
 }
 

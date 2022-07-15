@@ -22,13 +22,8 @@ interface VclassSettingProgram {
   completed_parent_programs?: XmlMultiElem<VclassSettingProgramCompletedParentProgram>;
 }
 
-interface VclassSettingViewFilter extends AuFtFilter {
-}
-
 interface VclassSettingView extends DescBase {
   part_index?: XmlElem<number>;
-  filter?: XmlElem<AuFtFilter>;
-  filter?: XmlElem<VclassSettingViewFilter>;
 }
 
 interface VclassSettingTopElem extends XmlTopElem<VclassSettingDocument>, CustomElemsBase, AdminAccessBase {

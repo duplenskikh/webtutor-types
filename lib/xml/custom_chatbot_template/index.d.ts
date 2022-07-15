@@ -6,7 +6,7 @@ interface CustomChatbotTemplateView extends DescBase {
   selector?: XmlElem<string>;
 }
 
-interface CustomChatbotTemplateTopElem extends XmlTopElem<CustomChatbotTemplateDocument>, ExecCodeBase, MsParametersBase {
+interface CustomChatbotTemplateTopElem extends XmlTopElem<CustomChatbotTemplateDocument>, ExecCodeBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

@@ -9,7 +9,6 @@ interface ActiveWebTemplateOverrideWebTemplate extends WebVariablesBase {
   cache_html?: XmlElem<string>;
   cache_vars?: XmlElem<string>;
   access?: XmlElem<AccessDocBase>;
-  access?: XmlElem<AccessDocBase>;
 }
 
 interface ActiveWebTemplateCustomWebTemplate extends WebVariablesBase, ZonesBase {

@@ -2,7 +2,7 @@ interface SubscriptionView {
   selector?: XmlElem<string>;
 }
 
-interface SubscriptionTopElem extends XmlTopElem<SubscriptionDocument>, MsPersonSdBase, CustomElemsBase, AdminAccessBase {
+interface SubscriptionTopElem extends XmlTopElem<SubscriptionDocument>, CustomElemsBase, AdminAccessBase {
   create_date?: XmlElem<Date>;
   type?: XmlElem<string>;
   document_id?: XmlElem<number>;

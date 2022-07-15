@@ -1,9 +1,3 @@
-interface RequestTypeDispBlock extends MsDispBlockBase {
-}
-
-interface RequestTypeView extends DescBase {
-}
-
 interface RequestTypeTopElem extends XmlTopElem<RequestTypeDocument>, ObjectCodeNameBase, WebVariablesBase {
   object_type?: XmlElem<string>;
   object_query_qual?: XmlElem<string>;
@@ -29,11 +23,8 @@ interface RequestTypeTopElem extends XmlTopElem<RequestTypeDocument>, ObjectCode
   doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;
   desc?: XmlElem<string>;
-  disp_block?: XmlElem<MsDispBlockBase>;
   role_id?: XmlMultiElem<number>;
   access?: XmlElem<AccessDocBase>;
-  disp_block?: XmlElem<RequestTypeDispBlock>;
-  view?: XmlElem<RequestTypeView>;
 }
 
 type RequestTypeDocument = XmlDocument<RequestTypeTopElem>;

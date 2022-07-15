@@ -10,9 +10,6 @@ interface TutorSubdivision {
   subdivision_id?: XmlElem<number>;
 }
 
-interface TutorView extends DescBase {
-}
-
 interface TutorTopElem extends XmlTopElem<TutorDocument>, PersonFillingBase, FileListBase, AdminAccessBase, CustomElemsBase {
   code?: XmlElem<string>;
   person_id?: XmlElem<number>;
@@ -27,8 +24,7 @@ interface TutorTopElem extends XmlTopElem<TutorDocument>, PersonFillingBase, Fil
   position_commons?: XmlMultiElem<TutorPositionCommon>;
   typical_development_programs?: XmlMultiElem<TutorTypicalDevelopmentProgram>;
   subdivisions?: XmlMultiElem<TutorSubdivision>;
-  access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<TutorView>;
+  view?: XmlElem<DescBase>;
 }
 
 type TutorDocument = XmlDocument<TutorTopElem>;

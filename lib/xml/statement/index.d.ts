@@ -44,20 +44,20 @@ interface StatementRequestObjectObjectDefinition {
   description?: XmlElem<string>;
 }
 
-interface StatementRequestObjectObject extends StatementObjectBase {
+interface StatementRequestObjectObject {
   id?: XmlElem<string>;
   objectType?: XmlElem<string>;
   definition?: XmlElem<StatementRequestObjectObjectDefinition>;
 }
 
-interface StatementRequestObject extends StatementObjectBase {
+interface StatementRequestObject {
   id?: XmlElem<string>;
   objectType?: XmlElem<string>;
   definition?: XmlElem<StatementRequestObjectDefinition>;
   object?: XmlElem<StatementRequestObjectObject>;
 }
 
-interface StatementRequest extends StatementObjectBase {
+interface StatementRequest {
   json_str?: XmlElem<string>;
   agent_json_str?: XmlElem<string>;
   timestamp?: XmlElem<Date>;

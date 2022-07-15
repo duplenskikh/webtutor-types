@@ -1,7 +1,4 @@
-interface WebinarSystemView extends DescBase {
-}
-
-interface WebinarSystemTopElem extends XmlTopElem<WebinarSystemDocument>, MsParametersBase, AdminAccessBase, WebVariablesBase {
+interface WebinarSystemTopElem extends XmlTopElem<WebinarSystemDocument>, AdminAccessBase, WebVariablesBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -20,7 +17,7 @@ interface WebinarSystemTopElem extends XmlTopElem<WebinarSystemDocument>, MsPara
   is_std?: XmlElem<boolean>;
   changed?: XmlElem<boolean>;
   doc_info?: XmlElem<DocInfoBase>;
-  view?: XmlElem<WebinarSystemView>;
+  view?: XmlElem<DescBase>;
   get_setting?(): any;
   get_settings?(): any;
 }

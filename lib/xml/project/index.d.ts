@@ -20,13 +20,9 @@ interface ProjectFile extends FileBase {
   visibility?: XmlElem<string>;
 }
 
-interface ProjectViewFilter extends AuFtFilter {
-}
-
 interface ProjectView extends DescBase {
   tab_selector?: XmlElem<string>;
   participant_catalog?: XmlElem<string>;
-  filter?: XmlElem<ProjectViewFilter>;
 }
 
 interface ProjectTopElem extends XmlTopElem<ProjectDocument>, CatalogListBase, AdminAccessBase, CustomElemsBase {

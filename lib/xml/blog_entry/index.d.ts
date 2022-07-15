@@ -1,10 +1,3 @@
-interface BlogEntryViewFilter extends AuFtFilter {
-}
-
-interface BlogEntryView extends DescBase {
-  filter?: XmlElem<BlogEntryViewFilter>;
-}
-
 interface BlogEntryTopElem extends XmlTopElem<BlogEntryDocument>, PersonFillingBase, FileListBase, KnowledgePartsBase, KnowledgePartsBaseOld, AdminAccessBase, GameBonusBase, CustomElemsBase {
   id?: XmlElem<number>;
   name?: XmlElem<string>;
@@ -24,7 +17,6 @@ interface BlogEntryTopElem extends XmlTopElem<BlogEntryDocument>, PersonFillingB
   comment_num?: XmlElem<number>;
   doc_info?: XmlElem<DocInfoBase>;
   access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<BlogEntryView>;
 }
 
 type BlogEntryDocument = XmlDocument<BlogEntryTopElem>;

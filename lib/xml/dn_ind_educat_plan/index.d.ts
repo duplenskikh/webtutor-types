@@ -8,13 +8,6 @@ interface DnIndEducatPlanContrlTermEvent {
   mark_max?: XmlElem<number>;
 }
 
-interface DnIndEducatPlanViewFilter extends AuFtFilter {
-}
-
-interface DnIndEducatPlanView extends DescBase {
-  filter?: XmlElem<DnIndEducatPlanViewFilter>;
-}
-
 interface DnIndEducatPlanTopElem extends XmlTopElem<DnIndEducatPlanDocument>, AdminAccessBase, CustomElemsBase {
   code?: XmlElem<string>;
   student_id?: XmlElem<number>;
@@ -27,7 +20,6 @@ interface DnIndEducatPlanTopElem extends XmlTopElem<DnIndEducatPlanDocument>, Ad
   lector_id?: XmlElem<number>;
   doc_info?: XmlElem<DocInfoBase>;
   contrl_term_events?: XmlMultiElem<DnIndEducatPlanContrlTermEvent>;
-  view?: XmlElem<DnIndEducatPlanView>;
 }
 
 type DnIndEducatPlanDocument = XmlDocument<DnIndEducatPlanTopElem>;

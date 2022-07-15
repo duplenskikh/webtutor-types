@@ -11,18 +11,6 @@ interface PayPhaseCollaborator extends PersonFillingBase {
   expense_items?: XmlMultiElem<PayPhaseCollaboratorExpenseItem>;
 }
 
-interface PayPhaseExpenseInvoice extends PayBase {
-}
-
-interface PayPhaseExpenseDraft extends PayBase {
-}
-
-interface PayPhaseExpenseAct extends PayBase {
-}
-
-interface PayPhaseExpenseInvoice2 extends PayBase {
-}
-
 interface PayPhaseExpense {
   id?: XmlElem<string>;
   currency?: XmlElem<string>;
@@ -31,10 +19,6 @@ interface PayPhaseExpense {
   exemption_nds?: XmlElem<string>;
   supplier_name?: XmlElem<string>;
   supplier_code?: XmlElem<string>;
-  invoice?: XmlElem<PayPhaseExpenseInvoice>;
-  draft?: XmlElem<PayPhaseExpenseDraft>;
-  act?: XmlElem<PayPhaseExpenseAct>;
-  invoice2?: XmlElem<PayPhaseExpenseInvoice2>;
 }
 
 interface PayPhaseViewExpense {
@@ -49,21 +33,12 @@ interface PayPhaseView {
   expenses?: XmlMultiElem<PayPhaseViewExpense>;
 }
 
-interface PayPhaseInvoice extends PayDocBase {
+interface PayPhaseInvoice {
   is_pay?: XmlElem<boolean>;
   no_nds?: XmlElem<boolean>;
 }
 
-interface PayPhaseDraft extends PayDocBase {
-}
-
-interface PayPhaseAct extends PayDocBase {
-}
-
-interface PayPhaseInvoice2 extends PayDocBase {
-}
-
-interface PayPhaseTopElem extends XmlTopElem<PayPhaseDocument>, MsEventSdBase, CostCurrencyBase, ExpenseDistributionBase, CostCentersBase, AdminAccessBase {
+interface PayPhaseTopElem extends XmlTopElem<PayPhaseDocument>, CostCurrencyBase, ExpenseDistributionBase, CostCentersBase, AdminAccessBase {
   name?: XmlElem<string>;
   budget_period_id?: XmlElem<number>;
   contract_id?: XmlElem<number>;
@@ -82,9 +57,6 @@ interface PayPhaseTopElem extends XmlTopElem<PayPhaseDocument>, MsEventSdBase, C
   expenses?: XmlMultiElem<PayPhaseExpense>;
   view?: XmlElem<PayPhaseView>;
   invoice?: XmlElem<PayPhaseInvoice>;
-  draft?: XmlElem<PayPhaseDraft>;
-  act?: XmlElem<PayPhaseAct>;
-  invoice2?: XmlElem<PayPhaseInvoice2>;
   create_name?(): any;
   distribute_cost_centers?(): any;
   distribute_payment_persons?(): any;

@@ -14,13 +14,8 @@ interface CareerReserveTypeTask {
   commission_persons?: XmlMultiElem<CareerReserveTypeTaskCommissionPerson>;
 }
 
-interface CareerReserveTypeViewFilter extends AuFtFilter {
-}
-
 interface CareerReserveTypeView extends DescBase {
   part_index?: XmlElem<number>;
-  filter?: XmlElem<AuFtFilter>;
-  filter?: XmlElem<CareerReserveTypeViewFilter>;
 }
 
 interface CareerReserveTypeTopElem extends XmlTopElem<CareerReserveTypeDocument>, ObjectCodeNameBase, TalentPoolFuncManagersBase, FileListBase, AdminAccessBase, CustomElemsBase {

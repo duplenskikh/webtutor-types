@@ -21,12 +21,6 @@ interface StatisticRecInformer {
   output_type?: XmlElem<string>;
 }
 
-interface StatisticRecLaunchSettings extends MsPeriodityBase {
-}
-
-interface StatisticRecDispBlock extends MsDispBlockBase {
-}
-
 interface StatisticRecView extends ObjectTypeBase {
   person_id?: XmlElem<number>;
   test_result_obj?: XmlElem<any>;
@@ -53,14 +47,10 @@ interface StatisticRecTopElem extends XmlTopElem<StatisticRecDocument>, ObjectCo
   doc_info?: XmlElem<DocInfoBase>;
   is_std?: XmlElem<boolean>;
   changed?: XmlElem<boolean>;
-  launch_settings?: XmlElem<MsPeriodityBase>;
-  disp_block?: XmlElem<MsDispBlockBase>;
   role_id?: XmlMultiElem<number>;
   period_types?: XmlMultiElem<StatisticRecPeriodType>;
   catalogs?: XmlMultiElem<StatisticRecCatalog>;
   informer?: XmlElem<StatisticRecInformer>;
-  launch_settings?: XmlElem<StatisticRecLaunchSettings>;
-  disp_block?: XmlElem<StatisticRecDispBlock>;
   view?: XmlElem<StatisticRecView>;
   calculate_on_server?(): any;
   calculate?(): any;

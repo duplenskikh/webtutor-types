@@ -8,12 +8,6 @@ interface CoursePartCompletedParentPart {
   part_code?: XmlElem<string>;
 }
 
-interface CoursePartView extends ViewConditionsBase {
-}
-
-interface CoursePartLaunch extends ViewConditionsBase {
-}
-
 interface CoursePart {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -47,21 +41,12 @@ interface CoursePart {
   launch?: XmlElem<ViewConditionsBase>;
   activity_states?: XmlMultiElem<CoursePartActivityState>;
   completed_parent_parts?: XmlMultiElem<CoursePartCompletedParentPart>;
-  view?: XmlElem<CoursePartView>;
-  launch?: XmlElem<CoursePartLaunch>;
-}
-
-interface CourseSchedule extends MsWeekScheduleBase {
-}
-
-interface CourseViewFilter extends AuFtFilter {
 }
 
 interface CourseView extends DescBase {
   part_index?: XmlElem<number>;
   knowledge_classifier_id?: XmlElem<number>;
   knowledge_sort_type_id?: XmlElem<string>;
-  filter?: XmlElem<CourseViewFilter>;
 }
 
 interface CourseTopElem extends XmlTopElem<CourseDocument>, ObjectCodeNameBase, EstimationLevelsBase, CourseExpertsBase, CourseSettingsBase, CatalogListBase, FileListBase, KnowledgePartsBase, KnowledgePartsBaseOld, ProctoringBase, GameBonusBase, CustomElemsBase, AdminAccessBase {
@@ -104,7 +89,6 @@ interface CourseTopElem extends XmlTopElem<CourseDocument>, ObjectCodeNameBase, 
   comment?: XmlElem<string>;
   role_id?: XmlMultiElem<number>;
   parts?: XmlMultiElem<CoursePart>;
-  schedule?: XmlElem<CourseSchedule>;
   access?: XmlElem<AccessDocBase>;
   view?: XmlElem<CourseView>;
   get_part_code?(): any;

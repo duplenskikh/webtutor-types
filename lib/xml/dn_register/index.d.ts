@@ -8,12 +8,8 @@ interface DnRegisterViewStudentMark {
   stud_id?: XmlElem<number>;
 }
 
-interface DnRegisterViewFilter extends AuFtFilter {
-}
-
 interface DnRegisterView {
   student_marks?: XmlMultiElem<DnRegisterViewStudentMark>;
-  filter?: XmlElem<DnRegisterViewFilter>;
 }
 
 interface DnRegisterTopElem extends XmlTopElem<DnRegisterDocument>, AdminAccessBase, CustomElemsBase {

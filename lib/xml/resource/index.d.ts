@@ -12,13 +12,13 @@ interface ResourceFileUrl {
 }
 
 interface ResourcePresentationSlideShapePoint {
-  class?: XmlElem<Attr>;
+  class?: XmlElem<any>;
   x?: XmlElem<string>;
   y?: XmlElem<string>;
 }
 
 interface ResourcePresentationSlideShape {
-  class?: XmlElem<Attr>;
+  class?: XmlElem<any>;
   shapeClassName?: XmlElem<string>;
   id?: XmlElem<string>;
   roomID?: XmlElem<string>;
@@ -50,7 +50,7 @@ interface ResourcePresentationSlideShape {
 }
 
 interface ResourcePresentationSlide {
-  class?: XmlElem<Attr>;
+  class?: XmlElem<any>;
   id?: XmlElem<number>;
   name?: XmlElem<string>;
   number?: XmlElem<number>;

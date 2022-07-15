@@ -4,7 +4,7 @@ interface VacancySubscriptionSuitableVacancy {
   code?: XmlElem<string>;
 }
 
-interface VacancySubscriptionTopElem extends XmlTopElem<VacancySubscriptionDocument>, MsPersonSdBase, ViewConditionsBase, AdminAccessBase {
+interface VacancySubscriptionTopElem extends XmlTopElem<VacancySubscriptionDocument>, ViewConditionsBase, AdminAccessBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   is_active?: XmlElem<boolean>;

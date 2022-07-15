@@ -28,7 +28,6 @@ interface AcquaintQuestionEntriesEntry {
 }
 
 interface AcquaintQuestionEntries {
-  entry?: XmlMultiElem<undefined>;
   entry?: XmlElem<AcquaintQuestionEntriesEntry>;
 }
 

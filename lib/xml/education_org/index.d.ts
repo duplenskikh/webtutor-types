@@ -23,13 +23,6 @@ interface EducationOrgEducationOrg {
   education_org_id?: XmlElem<number>;
 }
 
-interface EducationOrgViewFilter extends AuFtFilter {
-}
-
-interface EducationOrgView extends DescBase {
-  filter?: XmlElem<EducationOrgViewFilter>;
-}
-
 interface EducationOrgTopElem extends XmlTopElem<EducationOrgDocument>, OrgBase, LectorsBase, CustomElemsBase, AdminAccessBase, FuncManagersBase {
   is_provider_courses?: XmlElem<boolean>;
   provider_course_type_id?: XmlElem<number>;
@@ -42,8 +35,6 @@ interface EducationOrgTopElem extends XmlTopElem<EducationOrgDocument>, OrgBase,
   contacts?: XmlMultiElem<EducationOrgContact>;
   places?: XmlMultiElem<EducationOrgPlace>;
   education_orgs?: XmlMultiElem<EducationOrgEducationOrg>;
-  access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<EducationOrgView>;
 }
 
 type EducationOrgDocument = XmlDocument<EducationOrgTopElem>;

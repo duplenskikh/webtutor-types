@@ -51,7 +51,6 @@ interface ClCoursePlanTablePlanRow {
 }
 
 interface ClCoursePlanTable {
-  plan_row?: XmlMultiElem<undefined>;
   plan_row?: XmlElem<ClCoursePlanTablePlanRow>;
 }
 

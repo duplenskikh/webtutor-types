@@ -1,7 +1,4 @@
-interface ProctoringSystemView extends DescBase {
-}
-
-interface ProctoringSystemTopElem extends XmlTopElem<ProctoringSystemDocument>, MsParametersBase, AdminAccessBase, WebVariablesBase {
+interface ProctoringSystemTopElem extends XmlTopElem<ProctoringSystemDocument>, AdminAccessBase, WebVariablesBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -11,7 +8,6 @@ interface ProctoringSystemTopElem extends XmlTopElem<ProctoringSystemDocument>, 
   is_std?: XmlElem<boolean>;
   changed?: XmlElem<boolean>;
   doc_info?: XmlElem<DocInfoBase>;
-  view?: XmlElem<ProctoringSystemView>;
   get_setting?(): any;
   get_settings?(): any;
 }

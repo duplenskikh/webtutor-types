@@ -1,7 +1,7 @@
 interface KnowledgeAcquaintView extends DescBase {
 }
 
-interface KnowledgeAcquaintTopElem extends XmlTopElem<KnowledgeAcquaintDocument>, PersonFillingBase, MsConfirmationBase, FileListBase {
+interface KnowledgeAcquaintTopElem extends XmlTopElem<KnowledgeAcquaintDocument>, PersonFillingBase, FileListBase {
   code?: XmlElem<string>;
   knowledge_part_id?: XmlElem<number>;
   knowledge_part_name?: XmlElem<string>;

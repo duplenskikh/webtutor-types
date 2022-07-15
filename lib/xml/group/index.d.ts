@@ -4,13 +4,6 @@ interface GroupCollaborator extends PersonForeignBase {
   collaborator_fullname?(): any;
 }
 
-interface GroupViewFilter extends AuFtFilter {
-}
-
-interface GroupView extends DescBase {
-  filter?: XmlElem<GroupViewFilter>;
-}
-
 interface GroupTopElem extends XmlTopElem<GroupDocument>, ObjectCodeNameBase, EducGroupsBase, FuncManagersBase, CustomElemsBase, DocumentPersonsBase, RequirementsBase, KnowledgePartsBase, KnowledgePartsBaseOld, ViewConditionsBase, PersonObjectLinksBase {
   show_detailed?: XmlElem<boolean>;
   is_dynamic?: XmlElem<boolean>;
@@ -34,7 +27,6 @@ interface GroupTopElem extends XmlTopElem<GroupDocument>, ObjectCodeNameBase, Ed
   role_id?: XmlMultiElem<number>;
   collaborators?: XmlMultiElem<GroupCollaborator>;
   access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<GroupView>;
   person_num?(): any;
   dynamic_select_person?(): any;
   start_action?(): any;

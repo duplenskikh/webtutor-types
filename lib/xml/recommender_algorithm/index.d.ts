@@ -12,7 +12,7 @@ interface RecommenderAlgorithmContextAlgorithmApplication {
   catalogs?: XmlMultiElem<RecommenderAlgorithmContextAlgorithmApplicationCatalog>;
 }
 
-interface RecommenderAlgorithmTopElem extends XmlTopElem<RecommenderAlgorithmDocument>, ObjectCodeNameBase, MsPeriodityBase, WebVariablesBase {
+interface RecommenderAlgorithmTopElem extends XmlTopElem<RecommenderAlgorithmDocument>, ObjectCodeNameBase, WebVariablesBase {
   is_enabled?: XmlElem<boolean>;
   code_library_id?: XmlElem<number>;
   use_cache?: XmlElem<boolean>;

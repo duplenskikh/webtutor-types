@@ -22,7 +22,7 @@ interface ChatUser {
 }
 
 interface ChatMessage {
-  class?: XmlElem<Attr>;
+  class?: XmlElem<any>;
   id?: XmlElem<number>;
   date?: XmlElem<Date>;
   login?: XmlElem<string>;

@@ -66,14 +66,8 @@ interface CollaboratorLastData {
   avatar_filename?: XmlElem<string>;
 }
 
-interface CollaboratorAccess extends AccessBase {
-}
-
 interface CollaboratorViewCard {
   is_preview?: XmlElem<boolean>;
-}
-
-interface CollaboratorViewFilter extends AuFtFilter {
 }
 
 interface CollaboratorView extends DescBase {
@@ -88,7 +82,6 @@ interface CollaboratorView extends DescBase {
   disp_auth?: XmlElem<boolean>;
   drop_pers_hier_entry?: XmlElem<boolean>;
   card?: XmlElem<CollaboratorViewCard>;
-  filter?: XmlElem<CollaboratorViewFilter>;
   get_position_array?(): any;
 }
 
@@ -156,7 +149,6 @@ interface CollaboratorTopElem extends XmlTopElem<CollaboratorDocument>, PersonBa
   personal_config?: XmlElem<CollaboratorPersonalConfig>;
   comp_ben?: XmlElem<CollaboratorCompBen>;
   last_data?: XmlElem<CollaboratorLastData>;
-  access?: XmlElem<CollaboratorAccess>;
   view?: XmlElem<CollaboratorView>;
   name?(): any;
   is_time_access?(): any;

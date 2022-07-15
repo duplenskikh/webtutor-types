@@ -21,9 +21,6 @@ interface CustomReportView {
   path_subs?: XmlMultiElem<CustomReportViewPathSub>;
 }
 
-interface CustomReportDispBlock extends MsDispBlockBase {
-}
-
 interface CustomReportTopElem extends XmlTopElem<CustomReportDocument>, CustomReportBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
@@ -37,13 +34,10 @@ interface CustomReportTopElem extends XmlTopElem<CustomReportDocument>, CustomRe
   binding_selection?: XmlElem<number>;
   initiator_person_id?: XmlElem<number>;
   perfomance_cutoff?: XmlElem<number>;
-  disp_block?: XmlElem<MsDispBlockBase>;
   access?: XmlElem<AccessDocBase>;
   web_settings?: XmlElem<CustomReportWebSettings>;
   subscribe?: XmlElem<CustomReportSubscribe>;
   view?: XmlElem<CustomReportView>;
-  disp_block?: XmlElem<CustomReportDispBlock>;
-  access?: XmlElem<AccessDocBase>;
   build_report_v2?(): any;
   buildCustomReportQuery?(): any;
   UI_CoreModeChangeHandler?(): any;

@@ -7,7 +7,6 @@ interface BonusItemBonusesBonus {
 }
 
 interface BonusItemBonuses {
-  bonus?: XmlMultiElem<undefined>;
   bonus?: XmlElem<BonusItemBonusesBonus>;
 }
 

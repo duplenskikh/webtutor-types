@@ -51,7 +51,7 @@ interface LearningRecordSession {
   finish_date?: XmlElem<Date>;
 }
 
-interface LearningRecordTopElem extends XmlTopElem<LearningRecordDocument>, PersonFillingBase, FileListBase, AdminAccessBase, MsParametersBase {
+interface LearningRecordTopElem extends XmlTopElem<LearningRecordDocument>, PersonFillingBase, FileListBase, AdminAccessBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   object_type?: XmlElem<string>;

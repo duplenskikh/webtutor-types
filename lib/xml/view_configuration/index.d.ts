@@ -1,4 +1,4 @@
-interface ViewConfigurationTopElem extends XmlTopElem<ViewConfigurationDocument>, ObjectCodeNameBase, ViewBase, MsViewConfigurationBase {
+interface ViewConfigurationTopElem extends XmlTopElem<ViewConfigurationDocument>, ObjectCodeNameBase, ViewBase {
   catalog_name?: XmlElem<string>;
   link_name?: XmlElem<string>;
   link_selector?: XmlElem<string>;

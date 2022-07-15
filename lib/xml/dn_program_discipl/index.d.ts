@@ -33,13 +33,6 @@ interface DnProgramDisciplSpecial {
   specializations?: XmlMultiElem<DnProgramDisciplSpecialSpecialization>;
 }
 
-interface DnProgramDisciplViewFilter extends AuFtFilter {
-}
-
-interface DnProgramDisciplView extends DescBase {
-  filter?: XmlElem<DnProgramDisciplViewFilter>;
-}
-
 interface DnProgramDisciplTopElem extends XmlTopElem<DnProgramDisciplDocument>, LectorsBase, AdminAccessBase, CustomElemsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -58,7 +51,6 @@ interface DnProgramDisciplTopElem extends XmlTopElem<DnProgramDisciplDocument>, 
   disciplines?: XmlMultiElem<DnProgramDisciplDiscipline>;
   subjects?: XmlMultiElem<DnProgramDisciplSubject>;
   specials?: XmlMultiElem<DnProgramDisciplSpecial>;
-  view?: XmlElem<DnProgramDisciplView>;
 }
 
 type DnProgramDisciplDocument = XmlDocument<DnProgramDisciplTopElem>;

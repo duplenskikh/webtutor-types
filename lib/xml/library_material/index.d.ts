@@ -19,14 +19,7 @@ interface LibraryMaterialPathSection {
   parent_id?: XmlElem<number>;
 }
 
-interface LibraryMaterialViewFilter extends AuFtFilter {
-}
-
-interface LibraryMaterialView extends DescBase {
-  filter?: XmlElem<LibraryMaterialViewFilter>;
-}
-
-interface LibraryMaterialTopElem extends XmlTopElem<LibraryMaterialDocument>, ObjectCodeNameBase, UnfoldedDocumentBase, CatalogListBase, KnowledgePartsBase, KnowledgePartsBaseOld, GameBonusBase, AdminAccessBase, CustomElemsBase {
+interface LibraryMaterialTopElem extends XmlTopElem<LibraryMaterialDocument>, ObjectCodeNameBase, CatalogListBase, KnowledgePartsBase, KnowledgePartsBaseOld, GameBonusBase, AdminAccessBase, CustomElemsBase {
   author?: XmlElem<string>;
   publisher?: XmlElem<string>;
   section_id?: XmlElem<number>;
@@ -53,13 +46,11 @@ interface LibraryMaterialTopElem extends XmlTopElem<LibraryMaterialDocument>, Ob
   old_id?: XmlElem<number>;
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
   library_material_formats?: XmlMultiElem<LibraryMaterialLibraryMaterialFormat>;
   groups?: XmlMultiElem<LibraryMaterialGroup>;
   subscribed_persons?: XmlMultiElem<LibraryMaterialSubscribedPerson>;
   path_sections?: XmlMultiElem<LibraryMaterialPathSection>;
   access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<LibraryMaterialView>;
   filling_path_sections?(): any;
 }
 

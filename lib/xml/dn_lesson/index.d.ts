@@ -21,13 +21,6 @@ interface DnLessonStudent {
   student_id?: XmlElem<number>;
 }
 
-interface DnLessonViewFilter extends AuFtFilter {
-}
-
-interface DnLessonView extends DescBase {
-  filter?: XmlElem<DnLessonViewFilter>;
-}
-
 interface DnLessonTopElem extends XmlTopElem<DnLessonDocument>, FileListBase, AdminAccessBase, CustomElemsBase {
   code?: XmlElem<string>;
   faculty_id?: XmlElem<number>;
@@ -45,7 +38,6 @@ interface DnLessonTopElem extends XmlTopElem<DnLessonDocument>, FileListBase, Ad
   stud_works?: XmlMultiElem<DnLessonStudWork>;
   registr_students?: XmlMultiElem<DnLessonRegistrStudent>;
   students?: XmlMultiElem<DnLessonStudent>;
-  view?: XmlElem<DnLessonView>;
 }
 
 type DnLessonDocument = XmlDocument<DnLessonTopElem>;

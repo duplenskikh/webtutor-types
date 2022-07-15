@@ -1,7 +1,7 @@
 interface LibrarySystemView extends DescBase {
 }
 
-interface LibrarySystemTopElem extends XmlTopElem<LibrarySystemDocument>, MsParametersBase, AdminAccessBase, WebVariablesBase {
+interface LibrarySystemTopElem extends XmlTopElem<LibrarySystemDocument>, AdminAccessBase, WebVariablesBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

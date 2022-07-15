@@ -1,15 +1,8 @@
-interface SubdivisionOutstaff extends OutstaffPeriodsBase {
-}
-
-interface SubdivisionViewFilter extends AuFtFilter {
-}
-
 interface SubdivisionView extends DescBase {
   do_update_document_persons?: XmlElem<boolean>;
   knowledge_classifier_id?: XmlElem<number>;
   knowledge_sort_type_id?: XmlElem<string>;
   drop_pers_hier_entry?: XmlElem<boolean>;
-  filter?: XmlElem<SubdivisionViewFilter>;
 }
 
 interface SubdivisionTopElem extends XmlTopElem<SubdivisionDocument>, ObjectCodeNameBase, FileListBase, FuncManagersBase, KnowledgePartsBase, KnowledgePartsBaseOld, CustomElemsBase, DocumentPersonsBase {
@@ -39,7 +32,6 @@ interface SubdivisionTopElem extends XmlTopElem<SubdivisionDocument>, ObjectCode
   row_list_field?: XmlElem<string>;
   row_key_field?: XmlElem<string>;
   outstaff?: XmlElem<OutstaffPeriodsBase>;
-  outstaff?: XmlElem<SubdivisionOutstaff>;
   view?: XmlElem<SubdivisionView>;
   start_action?(): any;
 }

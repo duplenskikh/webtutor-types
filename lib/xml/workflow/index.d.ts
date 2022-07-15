@@ -1,16 +1,8 @@
-interface WorkflowFieldGroupReadConditions extends ConditionsBase {
-}
-
-interface WorkflowFieldGroupWriteConditions extends ConditionsBase {
-}
-
 interface WorkflowFieldGroup {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   read_conditions?: XmlElem<ConditionsBase>;
   write_conditions?: XmlElem<ConditionsBase>;
-  read_conditions?: XmlElem<WorkflowFieldGroupReadConditions>;
-  write_conditions?: XmlElem<WorkflowFieldGroupWriteConditions>;
 }
 
 interface WorkflowAction extends WorkflowElemOperationsBase, ConditionsBase {
@@ -59,16 +51,8 @@ interface WorkflowTuneFieldTuneFieldChain {
   value?: XmlElem<string>;
 }
 
-interface WorkflowTuneField {
-  tune_field_chain?: XmlMultiElem<undefined>;
-  tune_field_chain?: XmlElem<WorkflowTuneFieldTuneFieldChain>;
-}
-
 interface WorkflowView {
   disp_add?: XmlElem<boolean>;
-}
-
-interface WorkflowAddConditions extends ConditionsBase {
 }
 
 interface WorkflowTopElem extends XmlTopElem<WorkflowDocument>, ConditionsBase, WorkflowFieldsStatesBase {
@@ -88,9 +72,8 @@ interface WorkflowTopElem extends XmlTopElem<WorkflowDocument>, ConditionsBase, 
   field_groups?: XmlMultiElem<WorkflowFieldGroup>;
   actions?: XmlMultiElem<WorkflowAction>;
   escalations?: XmlMultiElem<WorkflowEscalation>;
-  tune_fields?: XmlMultiElem<WorkflowTuneField>;
+  tune_fields?: XmlMultiElem<WorkflowTuneFieldTuneFieldChain>;
   view?: XmlElem<WorkflowView>;
-  add_conditions?: XmlElem<WorkflowAddConditions>;
   use_triggers?(): any;
   run_action?(): any;
 }

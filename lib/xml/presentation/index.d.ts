@@ -13,7 +13,6 @@ interface PresentationTopElem extends XmlTopElem<PresentationDocument>, ObjectCo
   doc_info?: XmlElem<DocInfoBase>;
   access?: XmlElem<AccessDocBase>;
   shapes?: XmlMultiElem<PresentationShape>;
-  access?: XmlElem<AccessDocBase>;
 }
 
 type PresentationDocument = XmlDocument<PresentationTopElem>;

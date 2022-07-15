@@ -1,7 +1,7 @@
 interface NotificationSystemView extends DescBase {
 }
 
-interface NotificationSystemTopElem extends XmlTopElem<NotificationSystemDocument>, MsParametersBase, AdminAccessBase {
+interface NotificationSystemTopElem extends XmlTopElem<NotificationSystemDocument>, AdminAccessBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

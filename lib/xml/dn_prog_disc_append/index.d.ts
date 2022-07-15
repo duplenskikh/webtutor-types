@@ -1,10 +1,3 @@
-interface DnProgDiscAppendViewFilter extends AuFtFilter {
-}
-
-interface DnProgDiscAppendView {
-  filter?: XmlElem<DnProgDiscAppendViewFilter>;
-}
-
 interface DnProgDiscAppendTopElem extends XmlTopElem<DnProgDiscAppendDocument>, AdminAccessBase, CustomElemsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -15,7 +8,6 @@ interface DnProgDiscAppendTopElem extends XmlTopElem<DnProgDiscAppendDocument>, 
   educat_form_id?: XmlElem<string>;
   qualification_id?: XmlElem<number>;
   doc_info?: XmlElem<DocInfoBase>;
-  view?: XmlElem<DnProgDiscAppendView>;
 }
 
 type DnProgDiscAppendDocument = XmlDocument<DnProgDiscAppendTopElem>;

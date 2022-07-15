@@ -2,12 +2,8 @@ interface EducationProgramEducationMethod {
   education_method_id?: XmlElem<number>;
 }
 
-interface EducationProgramViewFilter extends AuFtFilter {
-}
-
 interface EducationProgramView extends DescBase {
   part_index?: XmlElem<number>;
-  filter?: XmlElem<EducationProgramViewFilter>;
 }
 
 interface EducationProgramTopElem extends XmlTopElem<EducationProgramDocument>, AdminAccessBase {

@@ -1,4 +1,4 @@
-interface OperationTopElem extends XmlTopElem<OperationDocument>, MsParametersBase, WebVariablesBase {
+interface OperationTopElem extends XmlTopElem<OperationDocument>, WebVariablesBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

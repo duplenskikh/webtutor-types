@@ -4,13 +4,6 @@ interface ExpertFaq {
   faq_answer?: XmlElem<string>;
 }
 
-interface ExpertViewFilter extends AuFtFilter {
-}
-
-interface ExpertView extends DescBase {
-  filter?: XmlElem<ExpertViewFilter>;
-}
-
 interface ExpertTopElem extends XmlTopElem<ExpertDocument>, PersonBase, CustomElemsBase, AdminAccessBase {
   code?: XmlElem<string>;
   desc?: XmlElem<string>;
@@ -23,7 +16,6 @@ interface ExpertTopElem extends XmlTopElem<ExpertDocument>, PersonBase, CustomEl
   doc_info?: XmlElem<DocInfoBase>;
   faqs?: XmlMultiElem<ExpertFaq>;
   access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<ExpertView>;
   name?(): any;
 }
 

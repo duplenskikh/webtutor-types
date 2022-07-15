@@ -6,7 +6,7 @@ interface ForumView extends DescBase {
   knowledge_sort_type_id?: XmlElem<string>;
 }
 
-interface ForumTopElem extends XmlTopElem<ForumDocument>, ObjectCodeNameBase, MsPersonSdBase, KnowledgePartsBase, KnowledgePartsBaseOld, CustomElemsBase, AdminAccessBase {
+interface ForumTopElem extends XmlTopElem<ForumDocument>, ObjectCodeNameBase, KnowledgePartsBase, KnowledgePartsBaseOld, CustomElemsBase, AdminAccessBase {
   create_date?: XmlElem<Date>;
   permit_subscription?: XmlElem<boolean>;
   closed?: XmlElem<boolean>;

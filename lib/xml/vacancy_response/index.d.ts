@@ -1,7 +1,4 @@
-interface VacancyResponseView extends DescBase {
-}
-
-interface VacancyResponseTopElem extends XmlTopElem<VacancyResponseDocument>, MsPersonSdBase, AdminAccessBase, FileListBase, CustomElemsBase {
+interface VacancyResponseTopElem extends XmlTopElem<VacancyResponseDocument>, AdminAccessBase, FileListBase, CustomElemsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   vacancy_id?: XmlElem<number>;
@@ -17,7 +14,7 @@ interface VacancyResponseTopElem extends XmlTopElem<VacancyResponseDocument>, Ms
   employer_answer?: XmlElem<string>;
   career_reserve_id?: XmlElem<number>;
   doc_info?: XmlElem<DocInfoBase>;
-  view?: XmlElem<VacancyResponseView>;
+  view?: XmlElem<DescBase>;
   set_status?(): any;
 }
 
