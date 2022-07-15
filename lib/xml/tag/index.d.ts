@@ -8,7 +8,7 @@ interface TagTopElem extends XmlTopElem<TagDocument>,
   experts?: XmlMultiElem<{
     expert_id: XmlElem<number>;
   }>;
-  access?: XmlElem<IWTAccessDocBase>;
+  access?: XmlElem<AccessDocBase>;
   comment?: XmlElem<string>;
   role_id?: XmlMultiElem<number>;
 }

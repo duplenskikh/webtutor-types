@@ -12,7 +12,7 @@ declare var oData: any;
 
 interface ServerAgentTopElem extends XmlTopElem<ServerAgentDocument>,
   IWTMSPeriodityBase,
-  IWTWebVariablesBase,
+  WebVariablesBase,
   IWTExecCodeBase,
   IWTCustomElemsBase
 {

@@ -3,7 +3,7 @@ interface ActivityRequest {
 }
 
 interface ActivityTopElem extends XmlTopElem<ActivityDocument>,
-  IWTWebVariablesBase
+  WebVariablesBase
 {
   id?: XmlElem<number>;
   code?: XmlElem<string>;

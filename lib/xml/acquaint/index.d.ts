@@ -58,7 +58,7 @@ interface AcquaintTopElem extends XmlTopElem<AcquaintDocument>,
   status?: XmlElem<boolean>;
   questions?: XmlMultiElem<AcquaintQuestion>;
   select_types?: XmlMultiElem<AcquaintSelectType>;
-  access?: XmlElem<IWTAccessDocBase>;
+  access?: XmlElem<AccessDocBase>;
   role_id?: XmlElem<number>;
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;

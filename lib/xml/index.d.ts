@@ -65,7 +65,7 @@ interface IWTWebVariableBaseWvar {
   position?: XmlElem<number>;
 }
 
-interface IWTWebVariablesBase {
+interface WebVariablesBase {
   wvars?: XmlMultiElem<IWTWebVariableBaseWvar>;
   wvars_selector?: XmlElem<string>;
   wvars_num?: number;
@@ -837,7 +837,7 @@ interface IWTViewConditionsBase {
   conditions_qual?: XmlElem<string>;
 }
 
-interface IWTAccessDocBase extends IWTViewConditionsBase {
+interface AccessDocBase extends IWTViewConditionsBase {
   enable_anonymous_access: XmlElem<boolean>;
   access_level: XmlElem<number>;
   access_roles: XmlMultiElem<IWTAccessDocBaseAccessRole>;
@@ -1572,7 +1572,7 @@ interface IWTRubricBase {
   image?: XmlElem<IWTImageBase>;
 }
 
-interface IWTProctoringBaseProctoring extends IWTWebVariablesBase {
+interface IWTProctoringBaseProctoring extends WebVariablesBase {
   is_basic_variables?: XmlElem<boolean>;
   proctoring_system_id?: XmlElem<number>;
 }
@@ -1647,7 +1647,7 @@ interface IWTZonesBaseZone {
   position?: XmlElem<number>;
 }
 
-interface IWTZonesBase {
+interface ZonesBase {
   zones?: XmlMultiElem<IWTZonesBaseZone>;
 }
 

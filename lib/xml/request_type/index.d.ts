@@ -1,6 +1,6 @@
 interface RequestTypeTopElem extends XmlTopElem<RequestTypeDocument>,
   IWTObjectCodeNameBase,
-  IWTWebVariablesBase
+  WebVariablesBase
 {
   object_type?: XmlElem<string>;
   is_group?: XmlElem<boolean>;
@@ -20,7 +20,7 @@ interface RequestTypeTopElem extends XmlTopElem<RequestTypeDocument>,
   request_custom_web_template_id?: XmlElem<number>;
   reject_redirect_url?: XmlElem<string>;
   remote_action_id?: XmlElem<number>;
-  access?: XmlElem<IWTAccessDocBase>;
+  access?: XmlElem<AccessDocBase>;
   is_std?: XmlElem<boolean>;
   doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;

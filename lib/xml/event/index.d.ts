@@ -307,7 +307,7 @@ interface EventTopElem extends XmlTopElem<EventDocument>,
   date_request_rejection_over?: XmlElem<Date>;
   parent_event_id?: XmlElem<number>;
   regular_schedule?: XmlElem<IWTEventRegularSchedule>;
-  access?: XmlElem<IWTAccessDocBase>;
+  access?: XmlElem<AccessDocBase>;
   desc?: XmlElem<string>;
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
