@@ -1,8 +1,8 @@
 interface LearningTopElem extends XmlTopElem<LearningDocument>,
-  IWTPersonFillingBase,
+  PersonFillingBase,
   IWTDocInfo,
   IWTCustomElemsBase,
-  IWTAdminAccessBase
+  AdminAccessBase
 {
   code?: XmlElem<string>;
   name?: XmlElem<string>;

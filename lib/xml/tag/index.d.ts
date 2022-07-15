@@ -1,5 +1,5 @@
 interface TagTopElem extends XmlTopElem<TagDocument>,
-  IWTAdminAccessBase
+  AdminAccessBase
 {
   code?: XmlElem<string>;
   name?: XmlElem<string>;

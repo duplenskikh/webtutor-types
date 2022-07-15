@@ -34,7 +34,7 @@ interface ActiveNotificationTopElem extends XmlTopElem<ActiveNotificationDocumen
   attachments?: XmlMultiElem<ActiveNotificationAttachment>;
   recipients?: XmlElem<ActiveNotificationRecipients>;
   notification_system_id?: XmlElem<number>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
 }
 
 type ActiveNotificationDocument = XmlDocument<ActiveNotificationTopElem>;

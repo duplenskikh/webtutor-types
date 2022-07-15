@@ -38,7 +38,7 @@ interface ServerAgentTopElem extends XmlTopElem<ServerAgentDocument>,
   is_std?: XmlElem<boolean>;
   changed?: XmlElem<boolean>;
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>
+  doc_info?: XmlElem<DocInfoBase>
   converter?(): boolean;
   role_id?: XmlMultiElem<number>;
 }

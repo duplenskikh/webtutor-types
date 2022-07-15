@@ -61,7 +61,7 @@ interface AcquaintTopElem extends XmlTopElem<AcquaintDocument>,
   access?: XmlElem<IWTAccessDocBase>;
   role_id?: XmlElem<number>;
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
 }
 
 type AcquaintDocument = XmlDocument<AcquaintTopElem>;

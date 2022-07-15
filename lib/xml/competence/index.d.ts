@@ -9,14 +9,14 @@ interface IWTCompetenceTopElem extends IWTObjectCodeNameBase,
   IWTKnowledgePartsBaseOld,
   IWTCustomElemsBase,
   IWTFileListBase,
-  IWTAdminAccessBase {
+  AdminAccessBase {
   competence_block_id?: XmlElem<number>;
   exercises?: XmlMultiElem<IWTCompetenceExercise>;
   positive_comment?: XmlElem<string>;
   negative_comment?: XmlElem<string>;
   comment?: XmlElem<string>;
   desc?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
   role_id?: XmlMultiElem<number>;
 }
 

@@ -1,7 +1,7 @@
-interface IWTQualificationAssignmentTopElem extends IWTPersonFillingBase,
+interface IWTQualificationAssignmentTopElem extends PersonFillingBase,
   IWTFileListBase,
   IWTDocInfo,
-  IWTAdminAccessBase,
+  AdminAccessBase,
   IWTCustomElemsBase {
   assignment_date?: XmlElem<Date>;
   expiration_date?: XmlElem<Date>;

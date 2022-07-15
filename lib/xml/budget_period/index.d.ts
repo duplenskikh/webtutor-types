@@ -1,4 +1,4 @@
-interface IWTBudgetPeriodTopElem extends IWTAdminAccessBase,
+interface IWTBudgetPeriodTopElem extends AdminAccessBase,
   IWTCustomElemsBase,
   IWTDocInfo {
   code?: XmlElem<string>;

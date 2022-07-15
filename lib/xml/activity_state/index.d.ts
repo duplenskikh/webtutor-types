@@ -6,7 +6,7 @@ interface ActivityStateRequest {
 }
 
 interface ActivityStateTopElem extends XmlTopElem<ActivityStateDocument>,
- IWTPersonFillingBase
+ PersonFillingBase
 {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
@@ -17,7 +17,7 @@ interface ActivityStateTopElem extends XmlTopElem<ActivityStateDocument>,
   person_id?: XmlElem<number>;
   registration?: XmlElem<string>;
   request?: XmlElem<ActivityStateRequest>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
 }
 
 type ActivityStateDocument = XmlDocument<ActivityStateTopElem>;

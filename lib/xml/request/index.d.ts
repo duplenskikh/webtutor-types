@@ -1,4 +1,4 @@
-interface IWTRequestPerson extends IWTPersonFillingBase {
+interface IWTRequestPerson extends PersonFillingBase {
   person_id?: XmlElem<number>;
 }
 
@@ -14,7 +14,7 @@ interface IWTRequestWorkflowMatching {
 }
 
 interface RequestTopElem extends XmlTopElem<RequestDocument>,
-  IWTPersonFillingBase,
+  PersonFillingBase,
   IWTKnowledgePartsBase,
   IWTWorkflowDataBase,
   IWTDocInfo,

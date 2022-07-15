@@ -3,7 +3,12 @@ interface AcquaintAssignQuestion {
   answer?: XmlElem<string>;
 }
 
-interface AcquaintAssignTopElem extends XmlTopElem<AcquaintAssignDocument> {
+interface AcquaintAssignView {
+  acquaint_id?: XmlElem<number>;
+  person_id?: XmlElem<number>;
+}
+
+interface AcquaintAssignTopElem {
   code?: XmlElem<string>;
   object_type?: XmlElem<string>;
   object_id?: XmlElem<number>;
@@ -15,9 +20,10 @@ interface AcquaintAssignTopElem extends XmlTopElem<AcquaintAssignDocument> {
   acquaint_id?: XmlElem<number>;
   state_id?: XmlElem<string>;
   attempt_num?: XmlElem<number>;
-  questions?: XmlMultiElem<AcquaintAssignQuestion>;
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
+  questions?: XmlMultiElem<AcquaintAssignQuestion>;
+  view?: XmlElem<AcquaintAssignView>;
 }
 
 type AcquaintAssignDocument = XmlDocument<AcquaintAssignTopElem>;

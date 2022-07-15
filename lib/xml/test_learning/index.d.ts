@@ -1,8 +1,8 @@
 interface TestLearningTopElem extends XmlTopElem<TestLearningDocument>,
   IWTAnnalsNumsBase,
-  IWTAdminAccessBase,
+  AdminAccessBase,
   IWTDocInfo,
-  IWTPersonFillingBase
+  PersonFillingBase
 {
   id?: XmlElem<number>;
   assessment_id?: XmlElem<number>;

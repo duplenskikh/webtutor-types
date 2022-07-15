@@ -67,7 +67,7 @@ interface IWTDocTypeTopElem extends IWTCustomElemsBase {
   desc?: XmlElem<string>;
   access?: XmlElem<IWTAccessDocBase>;
   disp_block?: XmlElem<IWTMSDispBlockBase>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;
   role_id?: XmlMultiElem<number>;
 }

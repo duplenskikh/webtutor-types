@@ -36,7 +36,7 @@ interface SiteTopElem extends XmlTopElem<SiteDocument>,
   anonymous_modes?: XmlMultiElem<any>;
   desc?: XmlElem<string>;
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
   is_std?: XmlElem<boolean>;
 }
 

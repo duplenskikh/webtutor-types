@@ -1,5 +1,5 @@
 interface IWTLectorTopElem extends IWTPersonBase,
-  IWTAdminAccessBase,
+  AdminAccessBase,
   IWTCustomElemsBase,
   IWTDocInfo,
   ObjectCodeNameBase {

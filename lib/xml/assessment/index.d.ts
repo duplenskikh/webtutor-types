@@ -84,7 +84,7 @@ interface AssessmentTopElem extends XmlTopElem<AssessmentDocument>,
   IWTGameBonusBase,
   // <INHERIT TYPE="estimation_levels_base"/>,
   // <INHERIT TYPE="cl_localizations_base"/>,
-  IWTAdminAccessBase
+  AdminAccessBase
 {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
@@ -139,7 +139,7 @@ interface AssessmentTopElem extends XmlTopElem<AssessmentDocument>,
   scales?: XmlMultiElem<IWTAssessmentScale>;
   before_finish_eval?: XmlElem<string>;
   desc?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
   get_info?(): null | Object;
   update_structure?(): boolean;
   role_id?: XmlMultiElem<number>;

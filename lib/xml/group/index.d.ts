@@ -24,7 +24,7 @@ interface GroupTopElem extends XmlTopElem<GroupDocument>,
   join_mode?: XmlElem<string>;
   default_request_type_id?: XmlElem<number>;
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
   access?: XmlElem<IWTAccessDocBase>;
   desc?: XmlElem<string>;
   dynamic_select_person?(_clear_list: any): any

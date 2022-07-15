@@ -1,6 +1,6 @@
 interface ResponseTopElem extends XmlTopElem<ResponseDocument>,
-  IWTPersonFillingBase,
-  IWTAdminAccessBase,
+  PersonFillingBase,
+  AdminAccessBase,
   IWTCustomElemsBase
 {
   id?: XmlElem<number>;
@@ -15,7 +15,7 @@ interface ResponseTopElem extends XmlTopElem<ResponseDocument>,
   object_start_date?: XmlElem<Date>;
   is_public?: XmlElem<boolean>;
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
   basic_score?: XmlElem<number>;
   basic_desc?: XmlElem<string>;
   calc_basic_values?(): any

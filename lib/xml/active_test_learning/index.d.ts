@@ -1,10 +1,10 @@
 interface ActiveTestLearningTopElem extends XmlTopElem<ActiveTestLearningDocument>,
   IWTLearningAssessmentBase,
-  IWTPersonFillingBase,
+  PersonFillingBase,
   IWTLearningCurrentStateBase,
   IWTLearningObjectivesInteractionsBase,
   IWTLastAttemptTestLearningsBase,
-  IWTAdminAccessBase,
+  AdminAccessBase,
   IWTCustomElemsBase
 {
   code?: XmlElem<string>;
@@ -39,7 +39,7 @@ interface ActiveTestLearningTopElem extends XmlTopElem<ActiveTestLearningDocumen
   no_encoding_core_lesson?: XmlElem<boolean>;
   use_proctoring?: XmlElem<boolean>;
   comment?: XmlElem<string>;
-  doc_info?: XmlElem<IWTDocInfoBase>;
+  doc_info?: XmlElem<DocInfoBase>;
   complete_test?(): number;
 }
 
