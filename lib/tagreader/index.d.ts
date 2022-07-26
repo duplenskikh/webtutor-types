@@ -60,6 +60,7 @@ interface TagReader {
 }
 
 interface TagReaderConstructor {
+    /** Содержимое в формате `HTML` или `XML`  */
     new(data: string): TagReader;
     (data: string): TagReader;
 }
