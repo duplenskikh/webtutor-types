@@ -1,4 +1,4 @@
-interface KnowledgePartDocumentLevel extends MsConfirmationBase {
+interface KnowledgePartDocumentLevel {
   id?: XmlElem<string>;
   name?: XmlElem<string>;
   desc?: XmlElem<string>;
@@ -7,7 +7,6 @@ interface KnowledgePartDocumentLevel extends MsConfirmationBase {
 }
 
 type KnowledgePartDocumentTopElem = XmlTopElem & { Doc: KnowledgePartDocument } & 
-  MsConfirmationBase &
   CatalogListBase &
   FileListBase &
   CustomElemsBase &

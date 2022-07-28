@@ -22,7 +22,6 @@ interface PersonnelReserveDocumentRecommendator extends PersonFillingBase {
 }
 
 type PersonnelReserveDocumentTopElem = XmlTopElem & { Doc: PersonnelReserveDocument } & 
-  MsPersonSdBase &
   TalentPoolFuncManagersBase &
   FileListBase &
   AdminAccessBase &

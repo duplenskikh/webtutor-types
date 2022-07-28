@@ -1,5 +1,4 @@
 type ExpertQuestionDocumentTopElem = XmlTopElem & { Doc: ExpertQuestionDocument } & 
-  MsPersonSdBase &
   KnowledgePartsBase &
   KnowledgePartsBaseOld &
   CustomElemsBase &

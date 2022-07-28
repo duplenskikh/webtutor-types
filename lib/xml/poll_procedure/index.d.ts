@@ -56,7 +56,6 @@ type PollProcedureDocumentTopElem = XmlTopElem & { Doc: PollProcedureDocument } 
   polls?: XmlMultiElem<PollProcedureDocumentPoll>;
   web_display?: XmlElem<boolean>;
   status?: XmlElem<number>;
-  periodity?: XmlElem<MsPeriodityBase>;
   complete_message?: XmlElem<string>;
   adaptive?(): unknown;
   desc?: XmlElem<string>;

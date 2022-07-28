@@ -15,8 +15,7 @@ interface SystemEventDocumentSection {
   actions?: XmlMultiElem<SystemEventDocumentSectionAction>;
 }
 
-type SystemEventDocumentTopElem = XmlTopElem & { Doc: SystemEventDocument } & 
-  MsVariablesBase & {
+type SystemEventDocumentTopElem = XmlTopElem & { Doc: SystemEventDocument } & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   type?: XmlElem<string>;

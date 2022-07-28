@@ -34,8 +34,6 @@ type StatisticRecDocumentTopElem = XmlTopElem & { Doc: StatisticRecDocument } &
   xquery_qual?: XmlElem<string>;
   catalogs?: XmlMultiElem<StatisticRecDocumentCatalog>;
   run_code?: XmlElem<string>;
-  launch_settings?: XmlElem<MsPeriodityBase>;
-  disp_block?: XmlElem<MsDispBlockBase>;
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
   is_std?: XmlElem<boolean>;

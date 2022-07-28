@@ -7,7 +7,6 @@ type ResponseTypeDocumentTopElem = XmlTopElem & { Doc: ResponseTypeDocument } & 
   basic_score_field?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;
-  disp_block?: XmlElem<MsDispBlockBase>;
   role_id?: XmlMultiElem<number>;
 }
 

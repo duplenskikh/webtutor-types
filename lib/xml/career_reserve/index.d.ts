@@ -47,7 +47,6 @@ interface CareerReserveDocumentTask extends CustomElemsBase,
 }
 
 type CareerReserveDocumentTopElem = XmlTopElem & { Doc: CareerReserveDocument } & 
-  MsPersonSdBase &
   FileListBase &
   AdminAccessBase &
   CustomElemsBase & {

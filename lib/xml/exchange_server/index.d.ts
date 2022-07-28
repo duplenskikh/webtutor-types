@@ -6,7 +6,6 @@ type ExchangeServerDocumentTopElem = XmlTopElem & { Doc: ExchangeServerDocument 
   is_active?: XmlElem<boolean>;
   update_exist_package_obj?: XmlElem<boolean>;
   auto_publish_test?: XmlElem<boolean>;
-  upload?: XmlElem<ExchangeBase>;
   last_upload_date?: XmlElem<Date>;
   last_download_date?: XmlElem<Date>;
   server_version?: XmlElem<string>;

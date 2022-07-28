@@ -3,8 +3,7 @@ interface CustomChatbotTemplateDocumentIncludeCustomChatbotTemplate {
 }
 
 type CustomChatbotTemplateDocumentTopElem = XmlTopElem & { Doc: CustomChatbotTemplateDocument } & 
-  ExecCodeBase &
-  MsParametersBase & {
+  ExecCodeBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

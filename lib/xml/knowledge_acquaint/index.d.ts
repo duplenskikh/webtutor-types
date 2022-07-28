@@ -1,6 +1,5 @@
 type KnowledgeAcquaintDocumentTopElem = XmlTopElem & { Doc: KnowledgeAcquaintDocument } & 
   PersonFillingBase &
-  MsConfirmationBase &
   FileListBase & {
   code?: XmlElem<string>;
   knowledge_part_id?: XmlElem<number>;

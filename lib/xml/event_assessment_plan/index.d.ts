@@ -19,7 +19,6 @@ interface EventAssessmentPlanDocumentCompetence extends WorkflowFieldsAssessment
 }
 
 type EventAssessmentPlanDocumentTopElem = XmlTopElem & { Doc: EventAssessmentPlanDocument } & 
-  MsPersonSdBase &
   SupplementaryQuestionsBase &
   CustomElemsBase & {
   id?: XmlElem<number>;

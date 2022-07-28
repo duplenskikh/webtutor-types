@@ -65,7 +65,6 @@ type DocTypeDocumentTopElem = XmlTopElem & { Doc: DocTypeDocument } &
   log?: XmlElem<string>;
   desc?: XmlElem<string>;
   access?: XmlElem<AccessDocBase>;
-  disp_block?: XmlElem<MsDispBlockBase>;
   doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;
   role_id?: XmlMultiElem<number>;

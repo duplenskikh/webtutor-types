@@ -34,9 +34,9 @@ interface CollaboratorDocumentCustomParam {
 type CollaboratorDocumentTopElem = XmlTopElem & { Doc: CollaboratorDocument } & 
   PersonBase &
   PassportDataBase &
-  FileListBase &
+  FileListBaseFile &
   FuncManagersBase &
-  PathSubsBase &
+  // PathSubsBase &
   KnowledgePartsBase &
   KnowledgePartsBaseOld &
   CustomElemsBase &

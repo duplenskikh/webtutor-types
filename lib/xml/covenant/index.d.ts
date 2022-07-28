@@ -1,5 +1,4 @@
 type CovenantDocumentTopElem = XmlTopElem & { Doc: CovenantDocument } & 
-  MsPersonSdBase &
   CostCurrencyBase &
   FileListBase &
   AdminAccessBase &

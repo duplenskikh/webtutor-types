@@ -1,5 +1,4 @@
 type VacancyResponseDocumentTopElem = XmlTopElem & { Doc: VacancyResponseDocument } & 
-  MsPersonSdBase &
   AdminAccessBase &
   FileListBase &
   CustomElemsBase & {

@@ -70,7 +70,6 @@ interface ResumeDocumentLng {
 }
 
 type ResumeDocumentTopElem = XmlTopElem & { Doc: ResumeDocument } & 
-  MsPersonSdBase &
   FileListBase &
   AdminAccessBase &
   CustomElemsBase & {

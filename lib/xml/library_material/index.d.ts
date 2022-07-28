@@ -21,7 +21,6 @@ interface LibraryMaterialDocumentPathSection {
 
 type LibraryMaterialDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialDocument } & 
   ObjectCodeNameBase &
-  UnfoldedDocumentBase &
   CatalogListBase &
   KnowledgePartsBase &
   KnowledgePartsBaseOld &

@@ -4,7 +4,6 @@ interface RecommenderAlgorithmDocumentCatalog {
 
 type RecommenderAlgorithmDocumentTopElem = XmlTopElem & { Doc: RecommenderAlgorithmDocument } & 
   ObjectCodeNameBase &
-  MsPeriodityBase &
   WebVariablesBase & {
   is_enabled?: XmlElem<boolean>;
   code_library_id?: XmlElem<number>;
