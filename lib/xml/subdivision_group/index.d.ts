@@ -1,6 +1,6 @@
 interface SubdivisionGroupDocumentSubdivision {
-  subdivision_id: XmlElem<number>;
-  subdivision_name: XmlElem<string>;
+  subdivision_id?: XmlElem<number>;
+  subdivision_name?: XmlElem<string>;
 }
 
 type SubdivisionGroupDocumentTopElem = XmlTopElem & { Doc: SubdivisionGroupDocument } & 
@@ -10,17 +10,17 @@ type SubdivisionGroupDocumentTopElem = XmlTopElem & { Doc: SubdivisionGroupDocum
   CustomElemsBase &
   RequirementsBase &
   ViewConditionsBase & {
-  is_dynamic: XmlElem<boolean>;
-  subdivisions: XmlMultiElem<SubdivisionGroupDocumentSubdivision>;
-  kpi_profile_id: XmlElem<number>;
-  bonus_profile_id: XmlElem<number>;
-  schedule_type_id: XmlElem<number>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  desc: XmlElem<string>;
-  dynamic_select_subdivision(): unknown;
-  dynamic_select_person(): unknown;
-  start_action(): unknown;
+  is_dynamic?: XmlElem<boolean>;
+  subdivisions?: XmlMultiElem<SubdivisionGroupDocumentSubdivision>;
+  kpi_profile_id?: XmlElem<number>;
+  bonus_profile_id?: XmlElem<number>;
+  schedule_type_id?: XmlElem<number>;
+  comment?: XmlElem<string>;
+  doc_info?: XmlElem<DocInfoBase>;
+  desc?: XmlElem<string>;
+  dynamic_select_subdivision?(): unknown;
+  dynamic_select_person?(): unknown;
+  start_action?(): unknown;
 }
 
 type SubdivisionGroupDocument = XmlDocument & { TopElem: SubdivisionGroupDocumentTopElem; };

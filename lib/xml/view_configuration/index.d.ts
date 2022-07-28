@@ -2,14 +2,14 @@ type ViewConfigurationDocumentTopElem = XmlTopElem & { Doc: ViewConfigurationDoc
   ObjectCodeNameBase &
   ViewBase &
   MsViewConfigurationBase & {
-  catalog_name: XmlElem<string>;
-  link_name: XmlElem<string>;
-  link_selector: XmlElem<string>;
-  is_std: XmlElem<boolean>;
-  changed: XmlElem<boolean>;
-  role_id: XmlMultiElem<number>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  catalog_name?: XmlElem<string>;
+  link_name?: XmlElem<string>;
+  link_selector?: XmlElem<string>;
+  is_std?: XmlElem<boolean>;
+  changed?: XmlElem<boolean>;
+  role_id?: XmlMultiElem<number>;
+  comment?: XmlElem<string>;
+  doc_info?: XmlElem<DocInfoBase>;
 }
 
 type ViewConfigurationDocument = XmlDocument & { TopElem: ViewConfigurationDocumentTopElem; };

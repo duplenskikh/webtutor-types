@@ -3,10 +3,10 @@ type ExclusionReasonDocumentTopElem = XmlTopElem & { Doc: ExclusionReasonDocumen
   FileListBase &
   CustomElemsBase &
   AdminAccessBase & {
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  access?: XmlElem<AccessDocBase>;
+  desc?: XmlElem<string>;
+  comment?: XmlElem<string>;
+  doc_info?: XmlElem<DocInfoBase>;
 }
 
 type ExclusionReasonDocument = XmlDocument & { TopElem: ExclusionReasonDocumentTopElem; };

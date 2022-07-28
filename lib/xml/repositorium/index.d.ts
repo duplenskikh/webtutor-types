@@ -1,5 +1,5 @@
 interface RepositoriumDocumentAuthor extends PersonFillingBase {
-  person_id: XmlElem<number>;
+  person_id?: XmlElem<number>;
 }
 
 type RepositoriumDocumentTopElem = XmlTopElem & { Doc: RepositoriumDocument } & 
@@ -7,11 +7,11 @@ type RepositoriumDocumentTopElem = XmlTopElem & { Doc: RepositoriumDocument } &
   FileListBase &
   AdminAccessBase &
   CustomElemsBase & {
-  parent_object_id: XmlElem<number>;
-  authors: XmlMultiElem<RepositoriumDocumentAuthor>;
-  access: XmlElem<AccessDocBase>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  parent_object_id?: XmlElem<number>;
+  authors?: XmlMultiElem<RepositoriumDocumentAuthor>;
+  access?: XmlElem<AccessDocBase>;
+  comment?: XmlElem<string>;
+  doc_info?: XmlElem<DocInfoBase>;
 }
 
 type RepositoriumDocument = XmlDocument & { TopElem: RepositoriumDocumentTopElem; };
