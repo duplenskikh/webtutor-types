@@ -1,15 +1,14 @@
-interface BenefitView extends DescBase {
+type BenefitDocumentTopElem = XmlTopElem & { Doc: BenefitDocument } & 
+  FileListBase &
+  AdminAccessBase &
+  CustomElemsBase & {
+  id: XmlElem<number>;
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  weight: XmlElem<number>;
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface BenefitTopElem extends XmlTopElem<BenefitDocument>, FileListBase, AdminAccessBase, CustomElemsBase {
-  id?: XmlElem<number>;
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  weight?: XmlElem<number>;
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  view?: XmlElem<BenefitView>;
-}
-
-type BenefitDocument = XmlDocument<BenefitTopElem>;
+type BenefitDocument = XmlDocument & { TopElem: BenefitDocumentTopElem; };

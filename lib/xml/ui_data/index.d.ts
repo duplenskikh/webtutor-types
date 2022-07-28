@@ -1,14 +1,11 @@
-interface UiDataView {
+type UiDataDocumentTopElem = XmlTopElem & { Doc: UiDataDocument } & 
+  ObjectTypeBase & {
+  id: XmlElem<number>;
+  code: XmlElem<string>;
+  name(): unknown;
+  create_date: XmlElem<Date>;
+  data: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface UiDataTopElem extends XmlTopElem<UiDataDocument>, ObjectTypeBase {
-  id?: XmlElem<number>;
-  code?: XmlElem<string>;
-  create_date?: XmlElem<Date>;
-  data?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  view?: XmlElem<UiDataView>;
-  name?(): any;
-}
-
-type UiDataDocument = XmlDocument<UiDataTopElem>;
+type UiDataDocument = XmlDocument & { TopElem: UiDataDocumentTopElem; };

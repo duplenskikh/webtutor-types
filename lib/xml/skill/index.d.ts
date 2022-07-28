@@ -1,17 +1,18 @@
-interface SkillLevel {
-  id?: XmlElem<string>;
-  name?: XmlElem<string>;
+interface SkillDocumentLevel {
+  id: XmlElem<string>;
+  name: XmlElem<string>;
 }
 
-interface SkillTopElem extends XmlTopElem<SkillDocument>, AdminAccessBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  parent_id?: XmlElem<number>;
-  skill_type_id?: XmlElem<number>;
-  use_parent_levels?: XmlElem<boolean>;
-  doc_info?: XmlElem<DocInfoBase>;
-  role_id?: XmlMultiElem<number>;
-  levels?: XmlMultiElem<SkillLevel>;
+type SkillDocumentTopElem = XmlTopElem & { Doc: SkillDocument } & 
+  AdminAccessBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  parent_id: XmlElem<number>;
+  skill_type_id: XmlElem<number>;
+  use_parent_levels: XmlElem<boolean>;
+  levels: XmlMultiElem<SkillDocumentLevel>;
+  doc_info: XmlElem<DocInfoBase>;
+  role_id: XmlMultiElem<number>;
 }
 
-type SkillDocument = XmlDocument<SkillTopElem>;
+type SkillDocument = XmlDocument & { TopElem: SkillDocumentTopElem; };

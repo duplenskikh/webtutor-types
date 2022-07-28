@@ -1,7 +1,7 @@
 declare namespace tools {
   const dotnet_host: IWTDotnetCoreHost;
 
-  function new_doc_by_name(documentName: string, isCatalog?: boolean): XmlDocument<any>;
+  function new_doc_by_name(documentName: string, isCatalog?: boolean): XmlDocument;
 
   /**
    * Возвращает значение параметра, переданного в функцию, в зашифрованном виде.
@@ -20,9 +20,9 @@ declare namespace tools {
    * @param {string|number} documentId ID документа
    * @returns {XmlDocument|undefined} XML документ или undefined
    */
-  function open_doc(documentId: number): XmlDocument<any> | undefined;
+  function open_doc(documentId: number): XmlDocument | undefined;
 
-  function check_access(TopElem: XmlTopElem<any>, userId: number): boolean;
+  function check_access(TopElem: XmlTopElem, userId: number): boolean;
   function xquery(string: string): any;
 
 
@@ -149,7 +149,7 @@ declare namespace tools {
     personId: number | unknown,
     courseId?: number,
     eventId?: number,
-    personDoc?: CollaboratorTopElem,
+    personDoc?: CollaboratorDocumentTopElem,
     educationPlanId?: number,
     duration?: number,
     startLearningDate?: Date,
@@ -183,7 +183,7 @@ declare namespace tools {
     personId: number,
     assessmentId?: number,
     eventId?: number,
-    personDoc?: CollaboratorTopElem,
+    personDoc?: CollaboratorDocumentTopElem,
     assessmentDocument?: AssessmentDocument,
     eventDocument?: EventDocument,
     duration?: number,
@@ -273,8 +273,8 @@ declare namespace tools {
     objectId: number,
     text?: any,
     secondObjectId?: number,
-    objectTopElem?: XmlTopElem<any>,
-    secondObjectTopElem?: XmlTopElem<any>,
+    objectTopElem?: XmlTopElem,
+    secondObjectTopElem?: XmlTopElem,
     additionalParams?: ICreateNotificationAdditionalParams
   ): boolean;
   function create_template_notification(sTypeParam: any, iObjectIDParam: any, sSubjectParam: any, sBodyParam: any, oObjectParam?: any, teSourceParam?: any, iObjectSecondIDParam?: any): any;
@@ -295,7 +295,7 @@ declare namespace tools {
   function is_by_group_id(groupId: number): any;
   function is_statement_date(iActivityIDParam: any, sValueParam: any, sUslParam: any): any;
   function object_filling(_type: any, _source: any, _object_id: any, _object_doc: any): any;
-  function common_filling(type: string, sourceDoc: any, objectId: number, objectDoc?: XmlTopElem<any>, customFlag?: boolean): void;
+  function common_filling(type: string, sourceDoc: any, objectId: number, objectDoc?: XmlTopElem, customFlag?: boolean): void;
   function common_clear(_type: any, _source: any, _ps: any): any;
   function active_learning_finish(_learning_id: any, _source?: any, _course_doc?: any): any;
   function active_test_learning_finish(_learning_id: any, _source?: any, _assessment_doc?: any, iPersonIDParam?: any, bFinishTest?: any): any;
@@ -353,7 +353,7 @@ declare namespace tools {
   function update_object_versions(docVersion: any, iVersionID: any, docObject: any, iPersonID: any, tePerson: any, sComment: any): any;
   function update_adding_objects(docObject: any, iObjectID: any): any;
   function request_rejecting(iRequestID: any, docRequest: any, iPersonID: any, dSaveParam: any): any;
-  function add_person_to_event(userId: number, eventId: number, userTopElem?: CollaboratorTopElem, eventDocument?: EventDocument, educationPlanId?: number, requestPersonId?: number, requestId?: number): EventDocument;
+  function add_person_to_event(userId: number, eventId: number, userTopElem?: CollaboratorDocumentTopElem, eventDocument?: EventDocument, educationPlanId?: number, requestPersonId?: number, requestId?: number): EventDocument;
   function del_person_from_event(_person_id: any, eventId: number, _doc_event?: any, _flag_save?: any): any;
   function encrypt_content(iCourseIDParam: any): any;
   function create_license(iLicenseId: any): any;

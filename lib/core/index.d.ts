@@ -1242,7 +1242,7 @@ declare function WebAppUrl(url: string): string;
  * @param {string} url - url документа (String).
  * @returns WTXmlDocument
 */
-declare function GetCachedDoc(url: string): XmlDocument<any>;
+declare function GetCachedDoc(url: string): XmlDocument;
 
 /**
  * Удаляет на сервере приложения документ с заданным url.
@@ -1297,7 +1297,7 @@ declare function MoveDoc(url: string, newUrl: string): void;
  * @param {string} options - опции открытия документа (String). Необязательный аргумент.
  * @returns {XmlDocument}
 */
-declare function FetchDoc(url: string, options: string): XmlDocument<any>;
+declare function FetchDoc(url: string, options: string): XmlDocument;
 
 /**
  * Пытается найти открытую в пользовательском интерфейсе карточку XML-документа.
@@ -1310,14 +1310,14 @@ declare function FetchDoc(url: string, options: string): XmlDocument<any>;
  * @param {string} docUrl - url XML-документа (String)
  * @returns {XmlDocument}
 */
-declare function ObtainUiDoc(docUrl: string): XmlDocument<any>;
+declare function ObtainUiDoc(docUrl: string): XmlDocument;
 
 /**
  * Загружает xml документ в кэш документов и делает его корневой элемент видимым в списке глобальных имен.
  * @param {string} docUrl - url документа (String).
  * @returns {XmlDocument}
 */
-declare function RegisterSharedDoc(docUrl: string): XmlDocument<any>;
+declare function RegisterSharedDoc(docUrl: string): XmlDocument;
 
 /**
  * Открывает XML-документ, содержащийся к строке.
@@ -1325,7 +1325,7 @@ declare function RegisterSharedDoc(docUrl: string): XmlDocument<any>;
  * @param {string} options - опции открытия документа в виде "param1='value1';param2='value2';..." (String). Необязательный аргумент. См. Опции открытия документа XML
  * @returns {XmlDocument}
 */
-declare function OpenDocFromStr(dataStr: string, options?: string): XmlDocument<any>;
+declare function OpenDocFromStr(dataStr: string, options?: string): XmlDocument;
 
 declare function LoadFileText(filePath: string): string;
 
@@ -1342,7 +1342,7 @@ declare function ObjectNameFromUrl(url: string): string;
  * @param {string} formUrl - url формы (String).
  * @returns {XmlDocument}
 */
-declare function OpenNewDoc(formUrl: string): XmlDocument<any>;
+declare function OpenNewDoc(formUrl: string): XmlDocument;
 
 /**
  * Открывает XML-документ. Возвращает объект типа XmlDoc.
@@ -1350,7 +1350,7 @@ declare function OpenNewDoc(formUrl: string): XmlDocument<any>;
  * @param {string} options - опции открытия документа в виде "param1='value1';param2='value2';..." (String). Необязательный аргумент. См. Опции открытия документа XML
  * @returns {XmlDocument}
 */
-declare function OpenDoc(url: string, options?: string): XmlDocument<any>;
+declare function OpenDoc(url: string, options?: string): XmlDocument;
 
 /**
  * Сохраняет изменения в документе, открытом при помощи функции ObtainUiDoc . Если это был документ, открытый пользователем на экране, то фукнция устанавливает аргумент метода Doc.SetChanged(true), и больше ничего не делает. Установка этого аргумента необходима, чтобы при закрытии документа  пользователю было предложено сохранить изменения. Если это был документ, открытый программой без участия пользователя, действие функции аналогично действию метода Doc.Save(). Аргумент doc - открытый документ (объект XmlDoc)

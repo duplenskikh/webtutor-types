@@ -1,18 +1,14 @@
-interface CompetenceProfileFamilyCompetenceProfile {
-  competence_profile_id?: XmlElem<number>;
+interface CompetenceProfileFamilyDocumentCompetenceProfile {
+  competence_profile_id: XmlElem<number>;
 }
 
-interface CompetenceProfileFamilyView {
-  selector?: XmlElem<string>;
+type CompetenceProfileFamilyDocumentTopElem = XmlTopElem & { Doc: CompetenceProfileFamilyDocument } & 
+  AdminAccessBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  competence_profiles: XmlMultiElem<CompetenceProfileFamilyDocumentCompetenceProfile>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface CompetenceProfileFamilyTopElem extends XmlTopElem<CompetenceProfileFamilyDocument>, AdminAccessBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  competence_profiles?: XmlMultiElem<CompetenceProfileFamilyCompetenceProfile>;
-  view?: XmlElem<CompetenceProfileFamilyView>;
-}
-
-type CompetenceProfileFamilyDocument = XmlDocument<CompetenceProfileFamilyTopElem>;
+type CompetenceProfileFamilyDocument = XmlDocument & { TopElem: CompetenceProfileFamilyDocumentTopElem; };

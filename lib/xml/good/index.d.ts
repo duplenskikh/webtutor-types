@@ -1,18 +1,21 @@
-interface GoodCost {
-  currency_type_id?: XmlElem<string>;
-  sum?: XmlElem<number>;
+interface GoodDocumentCost {
+  currency_type_id: XmlElem<string>;
+  sum: XmlElem<number>;
 }
 
-interface GoodTopElem extends XmlTopElem<GoodDocument>, ObjectCodeNameBase, FileListBase, CustomElemsBase {
-  good_type_id?: XmlElem<number>;
-  bonus_shop_cost?: XmlElem<number>;
-  delivery_type?: XmlElem<string>;
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  role_id?: XmlMultiElem<number>;
-  costs?: XmlMultiElem<GoodCost>;
-  cost_desc?(): any;
+type GoodDocumentTopElem = XmlTopElem & { Doc: GoodDocument } & 
+  ObjectCodeNameBase &
+  FileListBase &
+  CustomElemsBase & {
+  good_type_id: XmlElem<number>;
+  costs: XmlMultiElem<GoodDocumentCost>;
+  cost_desc(): unknown;
+  bonus_shop_cost(): number;
+  delivery_type: XmlElem<string>;
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  role_id: XmlMultiElem<number>;
 }
 
-type GoodDocument = XmlDocument<GoodTopElem>;
+type GoodDocument = XmlDocument & { TopElem: GoodDocumentTopElem; };

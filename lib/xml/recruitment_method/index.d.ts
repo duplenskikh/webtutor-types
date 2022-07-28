@@ -1,7 +1,9 @@
-interface RecruitmentMethodTopElem extends XmlTopElem<RecruitmentMethodDocument>, ObjectCodeNameBase, AdminAccessBase {
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
+type RecruitmentMethodDocumentTopElem = XmlTopElem & { Doc: RecruitmentMethodDocument } & 
+  ObjectCodeNameBase &
+  AdminAccessBase & {
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase>;
 }
 
-type RecruitmentMethodDocument = XmlDocument<RecruitmentMethodTopElem>;
+type RecruitmentMethodDocument = XmlDocument & { TopElem: RecruitmentMethodDocumentTopElem; };

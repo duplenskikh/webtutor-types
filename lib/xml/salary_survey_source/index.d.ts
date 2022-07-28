@@ -1,14 +1,10 @@
-interface SalarySurveySourceView extends DescBase {
+type SalarySurveySourceDocumentTopElem = XmlTopElem & { Doc: SalarySurveySourceDocument } & {
+  id: XmlElem<number>;
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface SalarySurveySourceTopElem extends XmlTopElem<SalarySurveySourceDocument> {
-  id?: XmlElem<number>;
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  view?: XmlElem<SalarySurveySourceView>;
-}
-
-type SalarySurveySourceDocument = XmlDocument<SalarySurveySourceTopElem>;
+type SalarySurveySourceDocument = XmlDocument & { TopElem: SalarySurveySourceDocumentTopElem; };

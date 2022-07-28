@@ -1,48 +1,38 @@
-interface AssessmentAppraiseMatrixTimeTableCondition {
-  field?: XmlElem<string>;
-  value?: XmlElem<string>;
-  type?: XmlElem<string>;
-  option_type?: XmlElem<string>;
-  is_custom_field?: XmlElem<boolean>;
+interface AssessmentAppraiseMatrixDocumentTimeTableCondition {
+  field: XmlElem<string>;
+  value: XmlElem<string>;
+  type: XmlElem<string>;
+  option_type: XmlElem<string>;
+  is_custom_field: XmlElem<boolean>;
 }
 
-interface AssessmentAppraiseMatrixTimeTableScheduleTarget {
-  stage?: XmlElem<number>;
-  period_id?: XmlElem<string>;
+interface AssessmentAppraiseMatrixDocumentTimeTableSchedule {
+  start_time: XmlElem<Date>;
+  end_time: XmlElem<Date>;
+}
+interface AssessmentAppraiseMatrixDocumentTimeTable {
+  conditions: XmlMultiElem<AssessmentAppraiseMatrixDocumentTimeTableCondition>;
+  schedules: XmlMultiElem<AssessmentAppraiseMatrixDocumentTimeTableSchedule>;
 }
 
-interface AssessmentAppraiseMatrixTimeTableSchedule {
-  start_time?: XmlElem<Date>;
-  end_time?: XmlElem<Date>;
-  target?: XmlElem<AssessmentAppraiseMatrixTimeTableScheduleTarget>;
+interface AssessmentAppraiseMatrixDocumentPeriod {
+  period_id: XmlElem<string>;
+  start_time: XmlElem<Date>;
+  end_time: XmlElem<Date>;
+  name: XmlElem<string>;
 }
 
-interface AssessmentAppraiseMatrixTimeTable {
-  conditions?: XmlMultiElem<AssessmentAppraiseMatrixTimeTableCondition>;
-  schedules?: XmlMultiElem<AssessmentAppraiseMatrixTimeTableSchedule>;
+type AssessmentAppraiseMatrixDocumentTopElem = XmlTopElem & { Doc: AssessmentAppraiseMatrixDocument } & 
+  FieldNamesBase &
+  AdminAccessBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  object_name: XmlElem<string>;
+  time_tables: XmlMultiElem<AssessmentAppraiseMatrixDocumentTimeTable>;
+  periods: XmlMultiElem<AssessmentAppraiseMatrixDocumentPeriod>;
+  doc_info: XmlElem<DocInfoBase>;
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
 }
 
-interface AssessmentAppraiseMatrixPeriod {
-  period_id?: XmlElem<string>;
-  start_time?: XmlElem<Date>;
-  end_time?: XmlElem<Date>;
-  name?: XmlElem<string>;
-}
-
-interface AssessmentAppraiseMatrixView extends DescBase {
-  selector?: XmlElem<string>;
-}
-
-interface AssessmentAppraiseMatrixTopElem extends XmlTopElem<AssessmentAppraiseMatrixDocument>, FieldNamesBase, AdminAccessBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  object_name?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  time_tables?: XmlMultiElem<AssessmentAppraiseMatrixTimeTable>;
-  periods?: XmlMultiElem<AssessmentAppraiseMatrixPeriod>;
-  view?: XmlElem<AssessmentAppraiseMatrixView>;
-}
-
-type AssessmentAppraiseMatrixDocument = XmlDocument<AssessmentAppraiseMatrixTopElem>;
+type AssessmentAppraiseMatrixDocument = XmlDocument & { TopElem: AssessmentAppraiseMatrixDocumentTopElem; };

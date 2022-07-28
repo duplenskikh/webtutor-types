@@ -1,15 +1,10 @@
-interface ExerciseView {
-  selector?: XmlElem<string>;
+type ExerciseDocumentTopElem = XmlTopElem & { Doc: ExerciseDocument } & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  section: XmlElem<string>;
+  comment: XmlElem<string>;
+  role_id: XmlMultiElem<number>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface ExerciseTopElem extends XmlTopElem<ExerciseDocument> {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  section?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  role_id?: XmlMultiElem<number>;
-  view?: XmlElem<ExerciseView>;
-}
-
-type ExerciseDocument = XmlDocument<ExerciseTopElem>;
+type ExerciseDocument = XmlDocument & { TopElem: ExerciseDocumentTopElem; };

@@ -1,12 +1,12 @@
-interface WorkScheduleView extends DescBase {
+type WorkScheduleDocumentTopElem = XmlTopElem & { Doc: WorkScheduleDocument } & 
+  ObjectCodeNameBase &
+  FileListBase &
+  AdminAccessBase &
+  CustomElemsBase & {
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase>;
 }
 
-interface WorkScheduleTopElem extends XmlTopElem<WorkScheduleDocument>, ObjectCodeNameBase, FileListBase, AdminAccessBase, CustomElemsBase {
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<WorkScheduleView>;
-}
-
-type WorkScheduleDocument = XmlDocument<WorkScheduleTopElem>;
+type WorkScheduleDocument = XmlDocument & { TopElem: WorkScheduleDocumentTopElem; };

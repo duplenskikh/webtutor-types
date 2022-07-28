@@ -1,13 +1,9 @@
-interface DnEducatFormView {
-  selector?: XmlElem<string>;
+type DnEducatFormDocumentTopElem = XmlTopElem & { Doc: DnEducatFormDocument } & 
+  AdminAccessBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface DnEducatFormTopElem extends XmlTopElem<DnEducatFormDocument>, AdminAccessBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  view?: XmlElem<DnEducatFormView>;
-}
-
-type DnEducatFormDocument = XmlDocument<DnEducatFormTopElem>;
+type DnEducatFormDocument = XmlDocument & { TopElem: DnEducatFormDocumentTopElem; };

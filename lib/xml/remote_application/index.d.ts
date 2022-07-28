@@ -1,17 +1,17 @@
-interface RemoteApplicationCredential {
-  id?: XmlElem<number>;
+interface RemoteApplicationDocumentCredential {
+  id: XmlElem<number>;
 }
 
-interface RemoteApplicationTopElem extends XmlTopElem<RemoteApplicationDocument> {
-  id?: XmlElem<number>;
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  app_id?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessBase>;
-  category_id?: XmlMultiElem<string>;
-  credentials?: XmlMultiElem<RemoteApplicationCredential>;
+type RemoteApplicationDocumentTopElem = XmlTopElem & { Doc: RemoteApplicationDocument } & {
+  id: XmlElem<number>;
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  app_id: XmlElem<string>;
+  credentials: XmlMultiElem<RemoteApplicationDocumentCredential>;
+  access: XmlElem<AccessBase>;
+  category_id: XmlMultiElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-type RemoteApplicationDocument = XmlDocument<RemoteApplicationTopElem>;
+type RemoteApplicationDocument = XmlDocument & { TopElem: RemoteApplicationDocumentTopElem; };

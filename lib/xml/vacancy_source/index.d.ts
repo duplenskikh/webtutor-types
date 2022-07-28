@@ -1,12 +1,12 @@
-interface VacancySourceView extends DescBase {
+type VacancySourceDocumentTopElem = XmlTopElem & { Doc: VacancySourceDocument } & 
+  ObjectCodeNameBase &
+  FileListBase &
+  AdminAccessBase &
+  CustomElemsBase & {
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase>;
 }
 
-interface VacancySourceTopElem extends XmlTopElem<VacancySourceDocument>, ObjectCodeNameBase, FileListBase, AdminAccessBase, CustomElemsBase {
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<VacancySourceView>;
-}
-
-type VacancySourceDocument = XmlDocument<VacancySourceTopElem>;
+type VacancySourceDocument = XmlDocument & { TopElem: VacancySourceDocumentTopElem; };

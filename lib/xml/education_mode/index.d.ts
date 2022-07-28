@@ -1,7 +1,9 @@
-interface EducationModeTopElem extends XmlTopElem<EducationModeDocument>, ObjectCodeNameBase, AdminAccessBase {
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
+type EducationModeDocumentTopElem = XmlTopElem & { Doc: EducationModeDocument } & 
+  ObjectCodeNameBase &
+  AdminAccessBase & {
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase>;
 }
 
-type EducationModeDocument = XmlDocument<EducationModeTopElem>;
+type EducationModeDocument = XmlDocument & { TopElem: EducationModeDocumentTopElem; };

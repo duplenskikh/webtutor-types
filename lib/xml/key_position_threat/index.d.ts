@@ -1,15 +1,14 @@
-interface KeyPositionThreatView extends DescBase {
+type KeyPositionThreatDocumentTopElem = XmlTopElem & { Doc: KeyPositionThreatDocument } & 
+  FileListBase &
+  AdminAccessBase &
+  CustomElemsBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  color: XmlElem<string>;
+  access: XmlElem<AccessDocBase>;
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface KeyPositionThreatTopElem extends XmlTopElem<KeyPositionThreatDocument>, FileListBase, AdminAccessBase, CustomElemsBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  color?: XmlElem<string>;
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<KeyPositionThreatView>;
-}
-
-type KeyPositionThreatDocument = XmlDocument<KeyPositionThreatTopElem>;
+type KeyPositionThreatDocument = XmlDocument & { TopElem: KeyPositionThreatDocumentTopElem; };

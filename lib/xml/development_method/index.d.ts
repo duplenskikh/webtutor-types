@@ -1,18 +1,15 @@
-interface DevelopmentMethodDevelopmentObject {
-  object_name?: XmlElem<string>;
+interface DevelopmentMethodDocumentDevelopmentObject {
+  object_name: XmlElem<string>;
 }
 
-interface DevelopmentMethodView {
-  selector?: XmlElem<string>;
+type DevelopmentMethodDocumentTopElem = XmlTopElem & { Doc: DevelopmentMethodDocument } & 
+  CustomElemsBase &
+  AdminAccessBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  comment: XmlElem<string>;
+  development_objects: XmlMultiElem<DevelopmentMethodDocumentDevelopmentObject>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface DevelopmentMethodTopElem extends XmlTopElem<DevelopmentMethodDocument>, CustomElemsBase, AdminAccessBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  development_objects?: XmlMultiElem<DevelopmentMethodDevelopmentObject>;
-  view?: XmlElem<DevelopmentMethodView>;
-}
-
-type DevelopmentMethodDocument = XmlDocument<DevelopmentMethodTopElem>;
+type DevelopmentMethodDocument = XmlDocument & { TopElem: DevelopmentMethodDocumentTopElem; };

@@ -1,21 +1,17 @@
-interface EducationProgramEducationMethod {
-  education_method_id?: XmlElem<number>;
+interface EducationProgramDocumentEducationMethod {
+  education_method_id: XmlElem<number>;
 }
 
-interface EducationProgramView extends DescBase {
-  part_index?: XmlElem<number>;
+type EducationProgramDocumentTopElem = XmlTopElem & { Doc: EducationProgramDocument } & 
+  AdminAccessBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  desc: XmlElem<string>;
+  education_methods: XmlMultiElem<EducationProgramDocumentEducationMethod>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase>;
+  role_id: XmlMultiElem<number>;
 }
 
-interface EducationProgramTopElem extends XmlTopElem<EducationProgramDocument>, AdminAccessBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  role_id?: XmlMultiElem<number>;
-  education_methods?: XmlMultiElem<EducationProgramEducationMethod>;
-  access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<EducationProgramView>;
-}
-
-type EducationProgramDocument = XmlDocument<EducationProgramTopElem>;
+type EducationProgramDocument = XmlDocument & { TopElem: EducationProgramDocumentTopElem; };

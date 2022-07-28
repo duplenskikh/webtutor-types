@@ -1,20 +1,19 @@
-interface VendorStateCertificateType {
-  certificate_type_id?: XmlElem<number>;
-  required_quantity?: XmlElem<number>;
+interface VendorStateDocumentCertificateType {
+  certificate_type_id: XmlElem<number>;
+  required_quantity: XmlElem<number>;
 }
 
-interface VendorStateView extends DescBase {
+type VendorStateDocumentTopElem = XmlTopElem & { Doc: VendorStateDocument } & 
+  FileListBase &
+  AdminAccessBase &
+  CustomElemsBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  education_org_id: XmlElem<number>;
+  certificate_types: XmlMultiElem<VendorStateDocumentCertificateType>;
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface VendorStateTopElem extends XmlTopElem<VendorStateDocument>, FileListBase, AdminAccessBase, CustomElemsBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  education_org_id?: XmlElem<number>;
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  certificate_types?: XmlMultiElem<VendorStateCertificateType>;
-  view?: XmlElem<VendorStateView>;
-}
-
-type VendorStateDocument = XmlDocument<VendorStateTopElem>;
+type VendorStateDocument = XmlDocument & { TopElem: VendorStateDocumentTopElem; };

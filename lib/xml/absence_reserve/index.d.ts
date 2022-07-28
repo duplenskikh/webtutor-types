@@ -1,12 +1,13 @@
-interface AbsenceReserveTopElem extends XmlTopElem<AbsenceReserveDocument>, PersonFillingBase {
-  id?: XmlElem<number>;
-  person_id?: XmlElem<number>;
-  budget_period_id?: XmlElem<number>;
-  presence_state_id?: XmlElem<number>;
-  num_days?: XmlElem<number>;
-  calculation_date?: XmlElem<Date>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
+type AbsenceReserveDocumentTopElem = XmlTopElem & { Doc: AbsenceReserveDocument } & 
+  PersonFillingBase & {
+  id: XmlElem<number>;
+  person_id: XmlElem<number>;
+  budget_period_id: XmlElem<number>;
+  presence_state_id: XmlElem<number>;
+  num_days: XmlElem<number>;
+  calculation_date: XmlElem<Date>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-type AbsenceReserveDocument = XmlDocument<AbsenceReserveTopElem>;
+type AbsenceReserveDocument = XmlDocument & { TopElem: AbsenceReserveDocumentTopElem; };

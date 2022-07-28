@@ -1,18 +1,20 @@
-interface PresentationShape {
-  id?: XmlElem<string>;
-  slide_id?: XmlElem<string>;
-  json?: XmlElem<string>;
+interface PresentationDocumentShape {
+  id: XmlElem<string>;
+  slide_id: XmlElem<string>;
+  json: XmlElem<string>;
 }
 
-interface PresentationTopElem extends XmlTopElem<PresentationDocument>, ObjectCodeNameBase, AdminAccessBase {
-  file_id?: XmlElem<number>;
-  event_id?: XmlElem<number>;
-  vclass_setting_id?: XmlElem<number>;
-  current_slide_id?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
-  shapes?: XmlMultiElem<PresentationShape>;
+type PresentationDocumentTopElem = XmlTopElem & { Doc: PresentationDocument } & 
+  ObjectCodeNameBase &
+  AdminAccessBase & {
+  access: XmlElem<AccessDocBase>;
+  file_id: XmlElem<number>;
+  event_id: XmlElem<number>;
+  vclass_setting_id: XmlElem<number>;
+  current_slide_id: XmlElem<string>;
+  shapes: XmlMultiElem<PresentationDocumentShape>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-type PresentationDocument = XmlDocument<PresentationTopElem>;
+type PresentationDocument = XmlDocument & { TopElem: PresentationDocumentTopElem; };

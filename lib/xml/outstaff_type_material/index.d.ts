@@ -1,7 +1,7 @@
-interface OutstaffTypeMaterialTopElem extends XmlTopElem<OutstaffTypeMaterialDocument> {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
+type OutstaffTypeMaterialDocumentTopElem = XmlTopElem & { Doc: OutstaffTypeMaterialDocument } & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-type OutstaffTypeMaterialDocument = XmlDocument<OutstaffTypeMaterialTopElem>;
+type OutstaffTypeMaterialDocument = XmlDocument & { TopElem: OutstaffTypeMaterialDocumentTopElem; };
