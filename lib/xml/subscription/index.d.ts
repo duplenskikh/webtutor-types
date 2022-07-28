@@ -1,5 +1,4 @@
 type SubscriptionDocumentTopElem = XmlTopElem & { Doc: SubscriptionDocument } & 
-  MsPersonSdBase &
   CustomElemsBase &
   AdminAccessBase & {
   create_date?: XmlElem<Date>;

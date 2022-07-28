@@ -1,33 +1,33 @@
-interface IWTAssessmentSectionSelectionOrderingPoint {
+interface AssessmentSectionSelectionOrderingPoint {
   point_num?: XmlElem<number>;
   item_num?: XmlElem<number>;
   item_sum_num?(): number;
   item_count?: XmlElem<number>;
 }
 
-interface IWTAssessmentSectionSelectionOrdering {
+interface AssessmentSectionSelectionOrdering {
   order?: XmlElem<string>;
   select_id?: XmlElem<string>;
   select_num?: XmlElem<number>;
-  points?: XmlMultiElem<IWTAssessmentSectionSelectionOrderingPoint>;
+  points?: XmlMultiElem<AssessmentSectionSelectionOrderingPoint>;
 }
 
-interface IWTAssessmentSectionRole {
+interface AssessmentSectionRole {
   id?: XmlElem<number>;
 }
 
-interface IWTAssessmentSectionItemScale {
+interface AssessmentSectionItemScale {
   scale_id?: XmlElem<string>;
 }
 
-interface IWTAssessmentSectionItem {
+interface AssessmentSectionItem {
   id?: XmlElem<number>;
   title?: XmlElem<string>;
   question_points?: XmlElem<number>;
-  scales?: XmlMultiElem<IWTAssessmentSectionItemScale>;
+  scales?: XmlMultiElem<AssessmentSectionItemScale>;
 }
 
-interface IWTAssessmentSection {
+interface AssessmentSection {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   title?: XmlElem<string>;
@@ -38,15 +38,15 @@ interface IWTAssessmentSection {
   not_disp_last_attempt?: XmlElem<boolean>;
   feedback_wrong?: XmlElem<string>;
   feedback_correct?: XmlElem<string>;
-  rubric?: XmlElem<IWTRubricBase>;
-  objectives?: XmlElem<IWTObjectiveBase>;
-  selection_ordering?: XmlElem<IWTAssessmentSectionSelectionOrdering>;
-  items?: XmlMultiElem<IWTAssessmentSectionItem>;
+  rubric?: XmlElem <RubricBase>;
+  objectives?: XmlElem <ObjectiveBase>;
+  selection_ordering?: XmlElem <AssessmentSectionSelectionOrdering>;
+  items?: XmlMultiElem<AssessmentSectionItem>;
   comment?: XmlElem<string>;
-  roles?: XmlMultiElem<IWTAssessmentSectionRole>;
+  roles?: XmlMultiElem<AssessmentSectionRole>;
 }
 
-interface IWTAssessmentPlayer {
+interface AssessmentPlayer {
   type?: XmlElem<string>;
   fit_screen?: XmlElem<boolean>;
   position?: XmlElem<string>;
@@ -67,21 +67,21 @@ interface IWTAssessmentPlayer {
   display_res_score?: XmlElem<boolean>;
 }
 
-interface IWTAssessmentScale {
+interface AssessmentScale {
   id?: XmlElem<string>;
   name?: XmlElem<string>;
   comment?: XmlElem<string>;
 }
 
 interface AssessmentTopElem extends XmlTopElem,
-  IWTProctoringBase,
-  IWTCatalogListBase,
+  ProctoringBase,
+  CatalogListBase,
   // <INHERIT TYPE="course_experts_base"/>,
   FileListBaseFile,
-  IWTCustomElemsBase,
-  IWTKnowledgePartsBase,
-  IWTKnowledgePartsBaseOld,
-  IWTGameBonusBase,
+  CustomElemsBase,
+  KnowledgePartsBase,
+  KnowledgePartsBaseOld,
+  GameBonusBase,
   // <INHERIT TYPE="estimation_levels_base"/>,
   // <INHERIT TYPE="cl_localizations_base"/>,
   AdminAccessBase
@@ -110,9 +110,9 @@ interface AssessmentTopElem extends XmlTopElem,
   feedback_failed?: XmlElem<string>;
   use_launch_code?: XmlElem<boolean>;
   not_sent_correct_answer?: XmlElem<boolean>;
-  rubric?: XmlElem<IWTRubricBase>;
-  objectives?: XmlElem<IWTObjectiveBase>;
-  sections?: XmlMultiElem<IWTAssessmentSection>;
+  rubric?: XmlElem <RubricBase>;
+  objectives?: XmlElem <ObjectiveBase>;
+  sections?: XmlMultiElem<AssessmentSection>;
   certificate_type_id?: XmlElem<number>;
   display_result?: XmlElem<boolean>;
   is_adaptive_test?: XmlElem<boolean>;
@@ -135,8 +135,8 @@ interface AssessmentTopElem extends XmlTopElem,
   template_url?: XmlElem<string>;
   win_width?: XmlElem<string>;
   win_height?: XmlElem<string>;
-  player?: XmlElem<IWTAssessmentPlayer>;
-  scales?: XmlMultiElem<IWTAssessmentScale>;
+  player?: XmlElem <AssessmentPlayer>;
+  scales?: XmlMultiElem<AssessmentScale>;
   before_finish_eval?: XmlElem<string>;
   desc?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;

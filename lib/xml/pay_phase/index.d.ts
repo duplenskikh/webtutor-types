@@ -17,14 +17,9 @@ interface PayPhaseDocumentExpense {
   exemption_nds?: XmlElem<string>;
   supplier_name?: XmlElem<string>;
   supplier_code?: XmlElem<string>;
-  invoice?: XmlElem<PayBase>;
-  draft?: XmlElem<PayBase>;
-  act?: XmlElem<PayBase>;
-  invoice2?: XmlElem<PayBase>;
 }
 
 type PayPhaseDocumentTopElem = XmlTopElem & { Doc: PayPhaseDocument } & 
-  MsEventSdBase &
   CostCurrencyBase &
   ExpenseDistributionBase &
   CostCentersBase &
@@ -38,9 +33,6 @@ type PayPhaseDocumentTopElem = XmlTopElem & { Doc: PayPhaseDocument } &
   unnamed_person_num?: XmlElem<number>;
   unnamed_person_sum?: XmlElem<number>;
   expenses?: XmlMultiElem<PayPhaseDocumentExpense>;
-  draft?: XmlElem<PayDocBase>;
-  act?: XmlElem<PayDocBase>;
-  invoice2?: XmlElem<PayDocBase>;
   invoice_sum?(): number;
   draft_sum?(): number;
   act_sum?(): number;

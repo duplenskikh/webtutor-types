@@ -7,7 +7,6 @@ type ObjectDataTypeDocumentTopElem = XmlTopElem & { Doc: ObjectDataTypeDocument 
   doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;
   desc?: XmlElem<string>;
-  disp_block?: XmlElem<MsDispBlockBase>;
   role_id?: XmlMultiElem<number>;
 }
 

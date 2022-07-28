@@ -10,16 +10,16 @@ interface AdminAccessBase {
   user_group_id?: XmlElem<number>;
 }
 
-interface IWTVDialogEditTextTopElem {
+interface VDialogEditTextTopElem {
   url?: XmlElem<string>;
   desc?: XmlElem<string>;
   title?: XmlElem<string>;
   is_rich?: XmlElem<boolean>;
 }
 
-type IWTVDialogEditTextDocument = XmlDocument;
+type VDialogEditTextDocument = XmlDocument;
 
-interface IWTDialogNotificationTemplateRecipient {
+interface DialogNotificationTemplateRecipient {
   recipient_type?: XmElem<string>;
   func_manager_type_id?: XmElem<number>;
   eval_str?: XmElem<string>;
@@ -27,90 +27,90 @@ interface IWTDialogNotificationTemplateRecipient {
   notification_template_id?: XmElem<number>;
 }
 
-interface IWTDialogNotificationTemplateAttachment {
+interface DialogNotificationTemplateAttachment {
   name?: XmElem<string>;
   data?: XmElem<string>;
 }
 
-interface IWTDialogNotificationTemplateTopElem {
+interface DialogNotificationTemplateTopElem {
   subject?: XmElem<string>;
   body?: XmElem<string>;
   body_type?: XmElem<string>;
   notification_template_id?: XmElem<number>;
   sender_selector?: XmElem<number>;
   sender_email?: XmElem<string>;
-  recipients?: XmMultiElem<IWTDialogNotificationTemplateRecipient>;
-  attachments?: XmMultiElem<IWTDialogNotificationTemplateAttachment>;
+  recipients?: XmMultiElem <DialogNotificationTemplateRecipient>;
+  attachments?: XmMultiElem <DialogNotificationTemplateAttachment>;
   notification_system_id?: XmElem<number>;
 }
 
-type IWTDialogNotificationTemplate = XmlDocument;
+type DialogNotificationTemplate = XmlDocument;
 
-interface IWTWebVariableBaseWvarEntry {
+interface WebVariableBaseWvarEntry {
   id?: XmlElem<string>;
   name?: XmlElem<string>;
   type?: XmlElem<string>;
   catalog?: XmlElem<string>;
 }
 
-interface IWTWebVariableBaseWvar {
+interface WebVariableBaseWvar {
   name?: XmlElem<string>;
   parent_wvar_name?: XmlElem<string>;
   value?: XmlElem<string>;
   type?: XmlElem<string>;
   catalog?: XmlElem<string>;
-  entries?: XmlMultiElem<IWTWebVariableBaseWvarEntry>;
+  entries?: XmlMultiElem<WebVariableBaseWvarEntry>;
   description?: XmlElem<string>;
   is_modify?: XmlElem<boolean>;
   position?: XmlElem<number>;
 }
 
-interface IWTLearningSection {
+interface LearningSection {
   id?: XmlElem<string>;
   title?: XmlElem<string>;
   score?: XmlElem<number>;
 }
 
-interface IWTSubdivisionGroupSubdivisions {
+interface SubdivisionGroupSubdivisions {
   subdivision_id?: XmlElem<number>;
   subdivision_name?: XmlElem<string>;
 }
 
-interface IWTOutstaffPeriodsBase {
+interface OutstaffPeriodsBase {
   periods?: XmlMultiElem<any>;
   materials?: XmlMultiElem<any>;
 }
 
-interface IWTObjectCodeNameBase {
+interface ObjectCodeNameBase {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   resource_id?: XmlElem<number>;
 }
 
-interface IWTSpxmlUnibridgeConfig {
+interface SpxmlUnibridgeConfig {
   appSettings?: XmlMultiElem<XmlElem<any>>;
 }
 
-interface IWTSession extends Object {
-  Env: IWTEnv;
+interface Session extends Object {
+  Env: Env;
   sid: number;
 }
 
-interface IWTResourceFileUrl {
+interface ResourceFileUrl {
   id?: XmlElem<string>;
   code?: XmlElem<string>;
   url?: XmlElem<string>;
 }
-interface IWTResourceLink {
+interface ResourceLink {
   object_id?: XmlElem<number>;
   object_catalog?: XmlElem<string>;
   object_name?: XmlElem<string>;
   date_modify?: XmlElem<Date>;
 }
 
-interface IWTConditionsBase {
-  conditions?: XmlMultiElem<IWTConditionsBase>;
+interface ConditionsBase {
+  conditions?: XmlMultiElem<ConditionsBase>;
   condition_eval_str?: XmlElem<string>;
   desc_str?: XmlElem<string>;
   has_error?: XmlElem<boolean>;
@@ -120,40 +120,40 @@ interface IWTConditionsBase {
   error_eval?(): void;
 }
 
-interface IWTWorkflowFieldsStatesBaseWorkflowFieldEntry {
+interface WorkflowFieldsStatesBaseWorkflowFieldEntry {
   value?: XmlElem<any>;
 }
-interface IWTWorkflowFieldsStatesBaseWorkflowField {
+interface WorkflowFieldsStatesBaseWorkflowField {
   name?: XmlElem<string>;
   type?: XmlElem<string>;
   catalog?: XmlElem<string>;
   title?: XmlElem<string>;
   tooltip?: XmlElem<string>;
   xquery_qual?: XmlElem<string>;
-  entries?: XmlMultiElem<IWTWorkflowFieldsStatesBaseWorkflowFieldEntry>;
+  entries?: XmlMultiElem<WorkflowFieldsStatesBaseWorkflowFieldEntry>;
   external_value?: XmlElem<string>;
   external_array?: XmlElem<string>;
   field_group_id?: XmlElem<string>;
   is_required?: XmlElem<boolean>;
 }
 
-interface IWTWorkflowFieldsStatesBaseState {
+interface WorkflowFieldsStatesBaseState {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   duration?: XmlElem<number>;
   parameters?: XmlElem<string>;
 }
 
-interface IWTWorkflowFieldsStatesBase {
-  workflow_fields?: XmlMultiElem<IWTWorkflowFieldsStatesBaseWorkflowField>;
-  states?: XmlMultiElem<IWTWorkflowFieldsStatesBaseState>;
+interface WorkflowFieldsStatesBase {
+  workflow_fields?: XmlMultiElem<WorkflowFieldsStatesBaseWorkflowField>;
+  states?: XmlMultiElem<WorkflowFieldsStatesBaseState>;
 }
 
-interface IWTWorkflowFieldGroup {
+interface WorkflowFieldGroup {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
-  read_conditions?: IWTConditionsBase;
-  write_conditions?: IWTConditionsBase;
+  read_conditions?: ConditionsBase;
+  write_conditions?: ConditionsBase;
 }
 
 interface WorkflowElemOperationsBase {
@@ -167,35 +167,35 @@ interface WorkflowElemOperationsBase {
   print_form_id?: XmlElem<number>;
 }
 
-interface IWTWorkflowElemOperationsBase {
+interface WorkflowElemOperationsBase {
   operations?: XmlMultiElem<WorkflowElemOperationsBase>;
 }
 
-interface IWTWorkflowAction extends IWTWorkflowElemOperationsBase,
-  IWTConditionsBase,
-  IWTWorkflowElemOperationsBase
+interface WorkflowAction extends WorkflowElemOperationsBase,
+  ConditionsBase,
+  WorkflowElemOperationsBase
 {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   is_trigger?: XmlElem<boolean>;
 }
 
-interface IWTWorkflowEscalationCourse {
+interface WorkflowEscalationCourse {
   course_id?: XmlElem<number>;
   state_id?: XmlElem<number>;
 }
 
-interface IWTWorkflowEscalationAssessment {
+interface WorkflowEscalationAssessment {
   assessment_id?: XmlElem<number>;
   state_id?: XmlElem<number>;
 }
 
-interface IWTWorkflowEscalationPoll {
+interface WorkflowEscalationPoll {
   poll_id?: XmlElem<number>;
   status?: XmlElem<number>;
 }
 
-interface IWTWorkflowEscalation extends WorkflowElemOperationsBase {
+interface WorkflowEscalation extends WorkflowElemOperationsBase {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   workflow_state_id?: XmlElem<string>;
@@ -205,12 +205,12 @@ interface IWTWorkflowEscalation extends WorkflowElemOperationsBase {
   auto_escalation_repeat?: XmlElem<boolean>;
   escalation_eval_str?: XmlElem<string>;
   escalation_eval_negative?: XmlElem<boolean>;
-  courses?: XmlMultiElem<IWTWorkflowEscalationCourse>;
-  assessments?: XmlMultiElem<IWTWorkflowEscalationAssessment>;
-  polls?: XmlMultiElem<IWTWorkflowEscalationPoll>;
+  courses?: XmlMultiElem<WorkflowEscalationCourse>;
+  assessments?: XmlMultiElem<WorkflowEscalationAssessment>;
+  polls?: XmlMultiElem<WorkflowEscalationPoll>;
 }
 
-interface IWTWorkflowTuneFieldTuneFieldChain {
+interface WorkflowTuneFieldTuneFieldChain {
   name?: XmlElem<string>;
   path?: XmlElem<string>;
   catalog_name?: XmlElem<string>;
@@ -220,28 +220,28 @@ interface IWTWorkflowTuneFieldTuneFieldChain {
   value?: XmlElem<string>;
 }
 
-interface IWTWorkflowTuneField {
-  tune_field_chain: XmlMultiElem<IWTWorkflowTuneFieldTuneFieldChain>;
+interface WorkflowTuneField {
+  tune_field_chain: XmlMultiElem<WorkflowTuneFieldTuneFieldChain>;
 }
 
-interface IWTRemoteSecutiryProfileMethodAccess {
+interface RemoteSecutiryProfileMethodAccess {
   access_block_id?: XmlElem<string>;
   library_profile?: XmlElem<string>;
 }
 
-interface IWTQualificationAssignmentLearning {
+interface QualificationAssignmentLearning {
   learning_id?: XmlElem<number>;
 }
 
-interface IWTQualificationAssignmentTestLearning {
+interface QualificationAssignmentTestLearning {
   test_learning_id?: XmlElem<number>;
 }
 
-interface IWTQualificationAssignmentEducationMethod {
+interface QualificationAssignmentEducationMethod {
   education_method_id?: XmlElem<number>;
 }
 
-interface IWTPersonNameBase {
+interface PersonNameBase {
   lastname?: XmlElem<string>;
   firstname?: XmlElem<string>;
   middlename?: XmlElem<string>;
@@ -249,7 +249,7 @@ interface IWTPersonNameBase {
   shortname?(): string;
 }
 
-interface IWTPersonBase extends IWTPersonNameBase {
+interface PersonBase extends PersonNameBase {
   sex?: XmlElem<string>;
   birth_date?: XmlElem<Date>;
   address?: XmlElem<string>;
@@ -268,7 +268,7 @@ interface IWTPersonBase extends IWTPersonNameBase {
   comment?: XmlElem<string>;
 }
 
-interface IWTPassportDataBase {
+interface PassportDataBase {
   passport_type_id?: XmlElem<string>;
   series?: XmlElem<string>;
   num?: XmlElem<string>;
@@ -280,7 +280,7 @@ declare namespace ms_tools {
   function raise_system_event_env(systemEventIdentificator: string | number, params: any): void;
 }
 
-interface IWTMSDialogObjectSelectTopElem {
+interface MSDialogObjectSelectTopElem {
   object_id?: XmlElem<number>;
   object_str?: XmlElem<string>;
   object_name?: XmlElem<string>;
@@ -297,104 +297,104 @@ interface IWTMSDialogObjectSelectTopElem {
   xquery_qual?: XmlElem<string>;
 }
 
-type IWTMSDialogObjectSelectDocument = XmlDocument;
+type MSDialogObjectSelectDocument = XmlDocument;
 
-interface IWTWTVDlgEditTextTopElem {
+interface WTVDlgEditTextTopElem {
   url?: XmlElem<string>;
   desc?: XmlElem<string>;
   title?: XmlElem<string>;
   is_rich?: XmlElem<boolean>;
 }
 
-type IWTWTVDlgEditTextDocument = XmlDocument;
+type WTVDlgEditTextDocument = XmlDocument;
 
-interface IWTMenu {
+interface Menu {
   name?: XmlElem<string>;
 }
 
-interface IWTListsObjectResourceType {
+interface ListsObjectResourceType {
   id: string;
   name: string;
 }
 
-interface IWTListsCurrencyTypeModName {
+interface ListsCurrencyTypeModName {
   id: number;
   name: string;
   cent_name: string;
 }
 
-interface IWTListsCurrencyType {
+interface ListsCurrencyType {
   id: string;
   name: string;
   short_name: string;
   cent_name: string;
-  mod_names: XmlMultiElem<IWTListsCurrencyTypeModName>;
+  mod_names: XmlMultiElem<ListsCurrencyTypeModName>;
 }
 
-interface IWTListsEventForm {
+interface ListsEventForm {
   id: string;
   name: string;
 }
 
-interface IWTListsOrganizationalForm {
+interface ListsOrganizationalForm {
   id: string;
   name: string;
 }
 
-interface IWTListsFactColumn {
+interface ListsFactColumn {
   id: string;
   name: string;
   query_name: string;
   title: string;
 }
 
-interface IWTListsFactExtraColumn {
+interface ListsFactExtraColumn {
   id: number;
   name: string;
   title: string;
 }
 
-interface IWTListsFact {
+interface ListsFact {
   id: number;
   name: string;
   type: number;
   catalog: string;
-  columns: XmlMultiElem<IWTListsFactColumn>;
-  extra_columns: XmlMultiElem<IWTListsFactExtraColumn>;
+  columns: XmlMultiElem<ListsFactColumn>;
+  extra_columns: XmlMultiElem<ListsFactExtraColumn>;
 }
 
-interface IWTListsProfessionalArea {
+interface ListsProfessionalArea {
   id: string;
   name: string;
 }
 
-interface IWTListsWebRequirement {
+interface ListsWebRequirement {
   id: string;
   name: string;
   is_std: boolean;
 }
 
-interface IWTListsExternalScript {
+interface ListsExternalScript {
   id: string;
   source_url: string;
 }
 
-interface IWTLibraryMaterialFormat {
+interface LibraryMaterialFormat {
   library_material_format_id?: XmlElem<number>;
   number?: XmlElem<number>;
 }
 
-interface IWTLibraryMaterialGroup {
+interface LibraryMaterialGroup {
   group_id?: XmlElem<number>;
   name?: XmlElem<string>;
 }
 
-interface IWTLibraryMaterialSubscribedPerson {
+interface LibraryMaterialSubscribedPerson {
   person_id?: XmlElem<number>;
   person_fullname?: XmlElem<string>;
 }
 
-interface IWTLibraryMaterialPathSection {
+interface LibraryMaterialPathSection {
   id?: XmlElem<number>;
   name?: XmlElem<string>;
   parent_id?: XmlElem<number>;
@@ -402,43 +402,43 @@ interface IWTLibraryMaterialPathSection {
 
 
 
-interface IWTLearningTaskExpert extends PersonFillingBase {
+interface LearningTaskExpert extends PersonFillingBase {
   id?: XmlElem<string>;
 }
 
-type IWTLectorTypes = "invitee" | "collaborator";
+type LectorTypes = "invitee" | "collaborator";
 
-interface IWTObjectiveBaseScore {
+interface ObjectiveBaseScore {
   raw?: XmlElem<number>;
   max?: XmlElem<number>;
   min?: XmlElem<number>;
   scaled?: XmlElem<number>;
 }
 
-interface IWTObjectiveBase {
+interface ObjectiveBase {
   objective_id?: XmlElem<string>;
-  score?: XmlElem<IWTObjectiveBaseScore>;
+  score?: XmlElem <ObjectiveBaseScore>;
   status?: XmlElem<string>;
   completion_status?: XmlElem<string>;
   success_status?: XmlElem<string>;
   description?: XmlElem<string>;
 }
 
-type IWTLearningObjectivesInteractionsBaseObjective = IWTObjectiveBase;
+type LearningObjectivesInteractionsBaseObjective = ObjectiveBase;
 
-interface IWTInteractionBaseObjective {
+interface InteractionBaseObjective {
   objective_id?: XmlElem<string>;
 }
 
-interface IWTInteractionBaseCorrectResponse {
+interface InteractionBaseCorrectResponse {
   pattern?: XmlElem<string>;
 }
-interface IWTInteractionBase {
+interface InteractionBase {
   interaction_id?: XmlElem<string>;
   time?: XmlElem<string>;
-  objectives?: XmlMultiElem<IWTInteractionBaseObjective>;
+  objectives?: XmlMultiElem<InteractionBaseObjective>;
   type_interaction?: XmlElem<string>;
-  correct_responses?: XmlMultiElem<IWTInteractionBaseCorrectResponse>;
+  correct_responses?: XmlMultiElem<InteractionBaseCorrectResponse>;
   student_response?: XmlElem<string>;
   result?: XmlElem<string>;
   weighting?: XmlElem<string>;
@@ -446,15 +446,15 @@ interface IWTInteractionBase {
   description?: XmlElem<string>;
 }
 
-type IWTLearningObjectivesInteractionsBaseInteraction = IWTInteractionBase;
+type LearningObjectivesInteractionsBaseInteraction = InteractionBase;
 
-interface IWTLearningObjectivesInteractionsBase {
-  objectives?: XmlMultiElem<IWTLearningObjectivesInteractionsBaseObjective>;
-  interactions?: XmlMultiElem<IWTLearningObjectivesInteractionsBaseInteraction>;
+interface LearningObjectivesInteractionsBase {
+  objectives?: XmlMultiElem<LearningObjectivesInteractionsBaseObjective>;
+  interactions?: XmlMultiElem<LearningObjectivesInteractionsBaseInteraction>;
   scoring_type?: XmlElem<string>;
 }
 
-interface IWTLearningPartBaseLog {
+interface LearningPartBaseLog {
   date?: XmlElem<Date>;
   location?: XmlElem<string>;
   type?: XmlElem<string>;
@@ -463,17 +463,17 @@ interface IWTLearningPartBaseLog {
   comment?: XmlElem<string>;
 }
 
-interface IWTLearningPartBaseStatement {
+interface LearningPartBaseStatement {
   statement_id?: XmlElem<number>;
   activity_state_id?: XmlElem<number>;
   score?: XmlElem<number>;
 }
 
-interface IWTLearningPartBase extends IWTCoreLessonInfoBase,
-  IWTCoreLessonBase,
-  IWTLearningObjectivesInteractionsBase,
-  IWTLearningAssessmentBase,
-  IWTLastAttemptTestLearningsBaseTestLearning {
+interface LearningPartBase extends CoreLessonInfoBase,
+  CoreLessonBase,
+  LearningObjectivesInteractionsBase,
+  LearningAssessmentBase,
+  LastAttemptTestLearningsBaseTestLearning {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   type?: XmlElem<string>;
@@ -492,17 +492,17 @@ interface IWTLearningPartBase extends IWTCoreLessonInfoBase,
   attempts_num?: XmlElem<number>;
   cur_attempt_num?: XmlElem<number>;
   use_proctoring?: XmlElem<boolean>;
-  logs?: XmlMultiElem<IWTLearningPartBaseLog>
-  statements?: XmlMultiElem<IWTLearningPartBaseStatement>;
+  logs?: XmlMultiElem<LearningPartBaseLog>
+  statements?: XmlMultiElem<LearningPartBaseStatement>;
 }
 
-interface IWTLearningCurrentStateBase {
+interface LearningCurrentStateBase {
   cur_score?: XmlElem<number>;
   cur_score_str?: XmlElem<string>;
   cur_state_id?: XmlElem<number>;
 }
 
-interface IWTLearningAssessmentBase extends IWTAnnalsObjectsBase {
+interface LearningAssessmentBase extends AnnalsObjectsBase {
   assessment_id?: XmlElem<number>;
   assessment_name?: XmlElem<string>;
   assessment_code?: XmlElem<string>;
@@ -513,7 +513,7 @@ interface IWTLearningAssessmentBase extends IWTAnnalsObjectsBase {
   is_self_enrolled?: XmlElem<boolean>;
 }
 
-interface IWTLastAttemptTestLearningsBaseTestLearning {
+interface LastAttemptTestLearningsBaseTestLearning {
   test_learning_id?: XmlElem<number>;
   state_id?: XmlElem<number>;
   score?: XmlElem<number>;
@@ -521,22 +521,22 @@ interface IWTLastAttemptTestLearningsBaseTestLearning {
   last_usage_date?: XmlElem<Date>;
 }
 
-interface IWTLastAttemptTestLearningsBase {
-  test_learnings?: XmlMultiElem<IWTLastAttemptTestLearningsBaseTestLearning>;
+interface LastAttemptTestLearningsBase {
+  test_learnings?: XmlMultiElem<LastAttemptTestLearningsBaseTestLearning>;
 }
 
-interface IWTKnowledgePartsBaseTag {
+interface KnowledgePartsBaseTag {
   tag_id: XmlElem<number>;
   tag_name: XmlElem<string>;
   desc: XmlElem<string>;
   require_acknowledgement: XmlElem<boolean>;
 }
 
-interface IWTKnowledgePartsBaseExpert {
+interface KnowledgePartsBaseExpert {
   expert_id: XmlElem<number>;
 }
 
-interface IWTKnowledgePartsBaseKnowledgePart {
+interface KnowledgePartsBaseKnowledgePart {
   knowledge_part_id: XmlElem<number>;
   knowledge_part_name: XmlElem<string>;
   knowledge_part_level_id: XmlElem<number>;
@@ -545,13 +545,13 @@ interface IWTKnowledgePartsBaseKnowledgePart {
   require_acknowledgement: XmlElem<boolean>;
 }
 
-interface IWTKnowledgePartsFieldsBase {
-  knowledge_parts?: XmlMultiElem<IWTKnowledgePartsBaseKnowledgePart>;
+interface KnowledgePartsFieldsBase {
+  knowledge_parts?: XmlMultiElem<KnowledgePartsBaseKnowledgePart>;
 }
 
-interface IWTKnowledgePartsBase extends IWTKnowledgePartsFieldsBase {
-  tags?: XmlMultiElem<IWTKnowledgePartsBaseTag>;
-  experts?: XmlMultiElem<IWTKnowledgePartsBaseExpert>;
+interface KnowledgePartsBase extends KnowledgePartsFieldsBase {
+  tags?: XmlMultiElem<KnowledgePartsBaseTag>;
+  experts?: XmlMultiElem<KnowledgePartsBaseExpert>;
   acquaint_time?: XmlElem<number>;
   previous_version_object_id?: XmlElem<number>;
   status_in_knowledge_map?: XmlElem<string>;
@@ -560,12 +560,12 @@ interface IWTKnowledgePartsBase extends IWTKnowledgePartsFieldsBase {
   view_knowledge_classifier_id?: XmlElem<number>;
 }
 
-interface IWTKnowledgePartsBaseOld {
+interface KnowledgePartsBaseOld {
   start_date?: XmlElem<Date>;
   end_date?: XmlElem<Date>;
 }
 
-interface IWTPersonForeignBase {
+interface PersonForeignBase {
   person_fullname?(): any;
   person_position_name?(): any;
   person_org_name?(): any;
@@ -574,13 +574,13 @@ interface IWTPersonForeignBase {
   person_code?(): any;
 }
 
-interface IWTGroupCollaborator extends IWTPersonForeignBase {
+interface GroupCollaborator extends PersonForeignBase {
   collaborator_id?: XmlElem<number>;
   collaborator_fullname?: XmlElem<string>;
   desc?: XmlElem<string>;
 }
 
-interface IWTRequirementsBase {
+interface RequirementsBase {
   requirements?: XmlMultiElem<any>;
   certificate_types?: XmlMultiElem<any>;
   compound_programs?: XmlMultiElem<any>;
@@ -600,7 +600,7 @@ interface IWTRequirementsBase {
   experience_in_current_position?: XmlElem<number>;
 }
 
-interface IWTEducGroupsBaseEducGroup {
+interface EducGroupsBaseEducGroup {
   group_id?: XmlElem<string>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;
@@ -610,44 +610,44 @@ interface IWTEducGroupsBaseEducGroup {
   lectors?: XmlMultiElem<any>;
 }
 
-interface IWTEducGroupsBase {
-  educ_groups?: XmlMultiElem<IWTEducGroupsBaseEducGroup>;
+interface EducGroupsBase {
+  educ_groups?: XmlMultiElem<EducGroupsBaseEducGroup>;
 }
 
-interface IWTGameBonusBaseGameBonus {
+interface GameBonusBaseGameBonus {
   id?: XmlElem<string>;
   currency_type_id?: XmlElem<string>;
   sum?: XmlElem<number>;
 }
 
-interface IWTGameBonusBase {
-  game_bonuss?: XmlMultiElem<IWTGameBonusBaseGameBonus>;
+interface GameBonusBase {
+  game_bonuss?: XmlMultiElem<GameBonusBaseGameBonus>;
 }
 
-interface IWTFileBase {
+interface FileBase {
   file_id?: XmlElem<number>;
 }
 
 interface FileListBaseFile {
-  files?: XmlMultiElem<IWTFileBase>;
+  files?: XmlMultiElem<FileBase>;
   AddFile?(_file_id: number, docResourceParam: ResourceDocument): boolean;
 }
 
-interface IWTFieldNamesBaseFieldName extends IWTFieldNamesBase {
+interface FieldNamesBaseFieldName extends FieldNamesBase {
   level?: XmlElem<number>;
-  field_names?: XmlMultiElem<IWTFieldNamesBaseFieldName>;
+  field_names?: XmlMultiElem<FieldNamesBaseFieldName>;
 }
 
-interface IWTFieldNamesBase {
-  field_names?: XmlMultiElem<IWTFieldNamesBaseFieldName>;
+interface FieldNamesBase {
+  field_names?: XmlMultiElem<FieldNamesBaseFieldName>;
 }
 
-interface IWTEventPhaseCollaborator {
+interface EventPhaseCollaborator {
   collaborator_id: XmlElem<number>;
   is_assist: XmlElem<boolean>;
 }
 
-interface IWTEventPhase {
+interface EventPhase {
   id: XmlElem<string>;
   lector_id: XmlElem<number>;
   object_resource_id: XmlElem<number>;
@@ -655,14 +655,14 @@ interface IWTEventPhase {
   finish_date: XmlElem<Date>;
   comment: XmlElem<string>;
   reserve_desc: XmlElem<string>;
-  collaborators: XmlMultiElem<IWTEventPhaseCollaborator>;
+  collaborators: XmlMultiElem<EventPhaseCollaborator>;
 }
 
-interface IWTEventLector {
+interface EventLector {
   lector_id: XmlElem<number>;
 }
 
-interface IWTEventSettingsBase {
+interface EventSettingsBase {
   event_settings?: {
     send_type?: XmlElem<string>;
     send_collaborators?: XmlElem<boolean>;
@@ -674,43 +674,28 @@ interface IWTEventSettingsBase {
   }
 }
 
-interface IWTCatalogListBaseCatalog {
+interface CatalogListBaseCatalog {
   type?: XmlElem<string>;
   title?: XmlElem<string>;
   all?: XmlElem<boolean>;
-  objects?: XmlMultiElem<IWTCatalogListBaseCatalogObject>;
+  objects?: XmlMultiElem<CatalogListBaseCatalogObject>;
 }
 
-interface IWTCatalogListBase {
-  catalogs?: XmlMultiElem<IWTCatalogListBaseCatalog>;
+interface CatalogListBase {
+  catalogs?: XmlMultiElem<CatalogListBaseCatalog>;
   catalogs_catalog_type?: XmlElem<string>;
   catalogs_sel_all_objects?: XmlElem<boolean>;
 }
 
-interface IWTEnv {
-  /**
-   * Текущий сайт пользователя с которым он взаимодействует
-   */
-  curSite: SiteDocument;
-  /**
-   * ID текущего пользователя
-   */
-  curUserID: number;
-  /**
-   * Объект пользователя
-   */
-  curUser: CollaboratorDocumentTopElem;
-}
-
-interface IWTEducationPlanProgramLearningTask {
+interface EducationPlanProgramLearningTask {
   learning_task_id?: XmlElem<number>;
 }
 
-interface IWTEducationPlanProgramAssessment {
+interface EducationPlanProgramAssessment {
   assessment_id?: XmlElem<number>;
 }
 
-interface IWTEducationPlanNotification {
+interface EducationPlanNotification {
   notification_template_id?: XmlElem<number>
   subject?: XmlElem<string>
   body?: XmlElem<string>
@@ -718,28 +703,28 @@ interface IWTEducationPlanNotification {
   edit_notification?: XmlElem<boolean>
 }
 
-interface IWTEducationPlanCompletedParentProgram {
+interface EducationPlanCompletedParentProgram {
   program_id?: XmlElem<number>;
 }
 
-interface IWTEducationPlanProgramResult {
+interface EducationPlanProgramResult {
   person_id?: XmlElem<number>
   type?: XmlElem<string>
   date?: XmlElem<Date>
 }
 
-interface IWTEducationPlanProgram {
+interface EducationPlanProgram {
   id?: XmlElem<number>
   name?: XmlElem<string>
   parent_progpam_id?: XmlElem<number>
   education_method_id?: XmlElem<number>
   education_program_id?: XmlElem<number>
-  start_learning_tasks?: XmlMultiElem<IWTEducationPlanProgramLearningTask>;
-  start_assessments?: XmlMultiElem<IWTEducationPlanProgramAssessment>;
-  finish_learning_tasks?: XmlMultiElem<IWTEducationPlanProgramLearningTask>;
-  finish_assessments?: XmlMultiElem<IWTEducationPlanProgramAssessment>;
-  finish_notifiation?: IWTEducationPlanNotification;
-  start_notifiation?: IWTEducationPlanNotification;
+  start_learning_tasks?: XmlMultiElem<EducationPlanProgramLearningTask>;
+  start_assessments?: XmlMultiElem<EducationPlanProgramAssessment>;
+  finish_learning_tasks?: XmlMultiElem<EducationPlanProgramLearningTask>;
+  finish_assessments?: XmlMultiElem<EducationPlanProgramAssessment>;
+  finish_notifiation?: EducationPlanNotification;
+  start_notifiation?: EducationPlanNotification;
   type?: XmlElem<string>;
   object_id?: XmlElem<number>;
   object_name?: XmlElem<string>;
@@ -772,11 +757,11 @@ interface IWTEducationPlanProgram {
   request_id?: XmlElem<number>;
   comment?: XmlElem<string>;
   required?: XmlElem<boolean>;
-  completed_parent_programs?: XmlMultiElem<IWTEducationPlanCompletedParentProgram>;
-  program_results?: XmlMultiElem<IWTEducationPlanProgramResult>;
+  completed_parent_programs?: XmlMultiElem<EducationPlanCompletedParentProgram>;
+  program_results?: XmlMultiElem<EducationPlanProgramResult>;
 }
 
-interface IWTDotnetCoreHost {
+interface DotnetCoreHost {
   Object?: {
     GetAssembly(libName: string): {
       CallClassStaticMethod(className: string, methodName: string, arguments: XmlMultiElem<any>, single?: boolean, wait?: boolean, max_run_time?: number): any;
@@ -785,7 +770,7 @@ interface IWTDotnetCoreHost {
   };
 }
 
-interface IWTDocumentAttributesBase {
+interface DocumentAttributesBase {
   template?: XmlElem<string>;
   position?: XmlElem<number>;
   is_link?: XmlElem<boolean>;
@@ -794,7 +779,7 @@ interface IWTDocumentAttributesBase {
   permit_subscription?: XmlElem<boolean>;
 }
 
-interface IWTDocumentAttribute extends IWTDocumentAttributesBase {
+interface DocumentAttribute extends DocumentAttributesBase {
   is_menu?: XmlElem<boolean>;
   is_main_item?: XmlElem<boolean>;
   is_news?: XmlElem<boolean>;
@@ -802,15 +787,15 @@ interface IWTDocumentAttribute extends IWTDocumentAttributesBase {
   no_disp_childs?: XmlElem<boolean>;
 }
 
-interface IWTAccessDocBaseAccessRole {
+interface AccessDocBaseAccessRole {
   access_role_id: XmlElem<string>;
 }
 
-interface IWTAccessDocBaseAccessGroup {
+interface AccessDocBaseAccessGroup {
   group_id: XmlElem<string>;
 }
 
-interface IWTViewConditionsBaseConditionBase {
+interface ViewConditionsBaseConditionBase {
   top_elem?: XmlElem<string>;
   field?: XmlElem<string>;
   title?: XmlElem<string>;
@@ -824,14 +809,14 @@ interface IWTViewConditionsBaseConditionBase {
   bracket?: XmlElem<string>;
 }
 
-type TWTViewConditionsBaseConditionBase = IWTViewConditionsBaseConditionBase;
+type TWTViewConditionsBaseConditionBase = ViewConditionsBaseConditionBase;
 
-interface IWTViewConditionsBase {
+interface ViewConditionsBase {
   conditions?: XmlMultiElem<TWTViewConditionsBaseConditionBase>;
   conditions_qual?: XmlElem<string>;
 }
 
-interface IWTAccessBase {
+interface AccessBase {
   access_level?: XmlElem<number>;
   access_role?: XmlElem<string>;
   is_arm_admin?: XmlElem<boolean>;
@@ -840,7 +825,7 @@ interface IWTAccessBase {
   is_content_admin?: XmlElem<boolean>;
 }
 
-interface IWTDocumentPersonsBasePerson {
+interface DocumentPersonsBasePerson {
   person_id?: XmlElem<number>;
   person_fullname?: XmlElem<string>;
   can_create?: XmlElem<boolean>;
@@ -848,36 +833,36 @@ interface IWTDocumentPersonsBasePerson {
   can_delete?: XmlElem<boolean>;
 }
 
-interface IWTDocumentPersonsBase {
-  document_persons?: XmlMultiElem<IWTDocumentPersonsBasePerson>;
+interface DocumentPersonsBase {
+  document_persons?: XmlMultiElem<DocumentPersonsBasePerson>;
 }
 
-interface IWTDocInfoCreation {
+interface DocInfoCreation {
   user_login?: XmlElem<string>;
   user_id?: XmlElem<number>;
   date?: XmlElem<Date>;
   app_instance_id?: XmlElem<string>;
 }
 
-interface IWTDocInfoModification {
+interface DocInfoModification {
   user_login?: XmlElem<string>;
   user_id?: XmlElem<number>;
   date?: XmlElem<Date>;
 }
 
 interface DocInfoBase {
-  creation?: XmlElem<IWTDocInfoCreation>;
-  modification?: XmlElem<IWTDocInfoModification>;
+  creation?: XmlElem <DocInfoCreation>;
+  modification?: XmlElem <DocInfoModification>;
   invariable?: XmlElem<boolean>;
 }
 
-interface IWTDocInfo {
-  creation?: XmlElem<IWTDocInfoCreation>;
-  modification?: XmlElem<IWTDocInfoModification>;
+interface DocInfo {
+  creation?: XmlElem <DocInfoCreation>;
+  modification?: XmlElem <DocInfoModification>;
   invariable?: XmlElem<boolean>;
 }
 
-interface IWTCustomReportBaseAggregation {
+interface CustomReportBaseAggregation {
   aggregate_function?: XmlElem<string>;
   aggregate_column?: XmlElem<number>;
   flag_graph?: XmlElem<boolean>;
@@ -887,7 +872,7 @@ interface IWTCustomReportBaseAggregation {
   }
 }
 
-interface IWTCustomReportBase extends IWTCriterionBase, IWTColumnBase, IWTChartReportGraphBase {
+interface CustomReportBase extends CriterionBase, ColumnBase, ChartReportGraphBase {
   object_name_type?: XmlElem<string>;
   object_name?: XmlElem<string>;
   flag_open_param_tun_section?: XmlElem<boolean>;
@@ -904,42 +889,37 @@ interface IWTCustomReportBase extends IWTCriterionBase, IWTColumnBase, IWTChartR
   categorize?: XmlElem<boolean>;
   categorize_view?: XmlElem<string>;
   categorize_hide_details?: XmlElem<boolean>;
-  aggregations?: XmlMultiElem<IWTCustomReportBaseAggregation>;
+  aggregations?: XmlMultiElem<CustomReportBaseAggregation>;
   show_total?: XmlElem<boolean>;
   integrated_criterion_field?: XmlElem<string>;
   integrated_criterion_field_is_custom?: XmlElem<boolean>;
   integrated_criterion_value?: XmlElem<string>;
 }
 
-interface IWTCustomElemsBaseCustomElem {
-  name?: XmlElem<string>;
-  value?: XmlElem<any>;
-}
-
-interface IWTCustomElemsBaseCustomReportFiction extends IWTCustomReportBase {
+interface CustomElemsBaseCustomReportFiction extends CustomReportBase {
   id?: XmlElem<number>;
   name?: XmlElem<string>;
 }
 
-interface IWTCustomElemsBase {
-  custom_elems?: XmlMultiElem<IWTCustomElemsBaseCustomElem>;
-  custom_report_fictions?: XmlMultiElem<IWTCustomElemsBaseCustomReportFiction>;
+interface CustomElemsBase {
+  custom_elems?: XmlMultiElem<CustomElemsBaseCustomElem>;
+  custom_report_fictions?: XmlMultiElem<CustomElemsBaseCustomReportFiction>;
 }
 
-interface IWTCriterionBaseCriterionCatalogChain extends IWTViewConditionsBase, IWTFieldNamesBase {
+interface CriterionBaseCriterionCatalogChain extends ViewConditionsBase, FieldNamesBase {
   catalog_name?: XmlElem<string>;
   field?: XmlElem<string>;
   scheme_id?: XmlElem<string>;
 }
 
-interface IWTCriterionBaseCriterion {
+interface CriterionBaseCriterion {
   value?: XmlElem<string>;
   column_title?: XmlElem<string>;
   type?: XmlElem<string>;
   option_type?: XmlElem<string>;
   and_or?: XmlElem<string>;
   is_custom_field?: XmlElem<boolean>;
-  catalog_chains?: XmlMultiElem<IWTCriterionBaseCriterionCatalogChain>;
+  catalog_chains?: XmlMultiElem<CriterionBaseCriterionCatalogChain>;
   flag_value_filter?: XmlElem<boolean>;
   flag_is_parameter?: XmlElem<boolean>;
   flag_hierarchy?: XmlElem<number>;
@@ -948,17 +928,17 @@ interface IWTCriterionBaseCriterion {
   close_bracket?: XmlElem<string>;
 }
 
-interface IWTCriterionBase extends IWTFieldNamesBase {
-  criterions: XmlMultiElem<IWTCriterionBaseCriterion>;
+interface CriterionBase extends FieldNamesBase {
+  criterions: XmlMultiElem<CriterionBaseCriterion>;
 }
 
-interface IWTCoursePartActivityState {
+interface CoursePartActivityState {
   activity_state_id?: XmlElem<number>;
   score?: XmlElem<number>;
   state_id?: XmlElem<number>;
 }
 
-interface IWTCoursePart {
+interface CoursePart {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   type?: XmlElem<string>;
@@ -984,17 +964,17 @@ interface IWTCoursePart {
   start_day?: XmlElem<number>;
   duration_day?: XmlElem<number>;
   activity_id?: XmlElem<number>;
-  activity_state: XmlMultiElem<IWTCoursePart>;
+  activity_state: XmlMultiElem<CoursePart>;
   object_id?: XmlElem<number>;
   cl_module_view?: XmlElem<string>;
 }
 
-interface IWTPersonExpert {
+interface PersonExpert {
   person_id?: number;
   type?: string;
 }
 
-interface IWTCourseSettingsBase {
+interface CourseSettingsBase {
   settings?: {
     open_single_module?: XmlElem<boolean>;
     open_first_module?: XmlElem<boolean>;
@@ -1004,7 +984,7 @@ interface IWTCourseSettingsBase {
   }
 }
 
-interface IWTCoreLessonInfoBase {
+interface CoreLessonInfoBase {
   learning_part_id?: XmlElem<number>;
   filing_learning_part?(bSetChangedParam: boolean): void;
   save_learning_part(bSaveParam: number): boolean;
@@ -1012,7 +992,7 @@ interface IWTCoreLessonInfoBase {
   core_lesson_filled?: XmlElem<boolean>;
 }
 
-interface IWTCoreLessonBaseDataLesson {
+interface CoreLessonBaseDataLesson {
   core_vendor?: XmlElem<string>;
   objectives_status?: XmlElem<string>;
   evaluation?: XmlElem<string>;
@@ -1022,13 +1002,13 @@ interface IWTCoreLessonBaseDataLesson {
   student_demographics?: XmlElem<string>;
 }
 
-interface IWTCoreLessonBase {
+interface CoreLessonBase {
   core_lesson?: XmlElem<string>;
   lesson_report?: XmlElem<string>;
-  data_lesson: XmlElem<IWTCoreLessonBaseDataLesson>
+  data_lesson: XmlElem <CoreLessonBaseDataLesson>
 }
 
-interface IWTCompoundProgramProgram {
+interface CompoundProgramProgram {
   id?: XmlElem<number>;
   name?: XmlElem<string>;
   parent_progpam_id?: XmlElem<number>;
@@ -1053,7 +1033,7 @@ interface IWTCompoundProgramProgram {
   comment?: XmlElem<string>;
 }
 
-interface IWTLectorsBaseLector {
+interface LectorsBaseLector {
   lector_id?: XmlElem<number>;
   hours?: XmlElem<number>;
   weekend_hours?: XmlElem<number>;
@@ -1062,12 +1042,12 @@ interface IWTLectorsBaseLector {
   comment?: XmlElem<string>;
 }
 
-interface IWTLectorsBase {
-  lectors?: XmlMultiElem<IWTLectorsBaseLector>;
+interface LectorsBase {
+  lectors?: XmlMultiElem<LectorsBaseLector>;
 }
 
 
-interface IWTBudgetPeriodDay {
+interface BudgetPeriodDay {
   date?: XmlElem<Date>;
   type?: XmlElem<string>;
   region_id?: XmlElem<number>;
@@ -1082,21 +1062,21 @@ interface IResultActivateProgramToPerson {
   }];
 }
 
-interface IWTColumnBaseColumnCCondition {
+interface ColumnBaseColumnCCondition {
   option_type?: XmlElem<string>;
   color?: XmlElem<string>;
   bkcolor?: XmlElem<string>;
   value?: XmlElem<string>;
 }
 
-interface IWTColumnBaseColumnForeignElem {
+interface ColumnBaseColumnForeignElem {
   name?: XmlElem<string>;
   catalog?: XmlElem<string>;
   is_custom?: XmlElem<boolean>;
   target?: XmlElem<string>;
 }
 
-interface IWTColumnBaseColumn {
+interface ColumnBaseColumn {
   column_name?: XmlMultiElem<string>;
   column_title?: XmlMultiElem<string>;
   column_foreign_name?: XmlMultiElem<string>;
@@ -1113,15 +1093,15 @@ interface IWTColumnBaseColumn {
   flag_color?: XmlMultiElem<boolean>;
   flag_visible?: XmlMultiElem<boolean>;
   flag_lng?: XmlMultiElem<boolean>;
-  c_conditions?: XmlMultiElem<IWTColumnBaseColumnCCondition>;
-  foreign_elem?: XmlMultiElem<IWTColumnBaseColumnForeignElem>;
+  c_conditions?: XmlMultiElem<ColumnBaseColumnCCondition>;
+  foreign_elem?: XmlMultiElem<ColumnBaseColumnForeignElem>;
 }
 
-interface IWTColumnBase {
-  columns?: XmlMultiElem<IWTColumnBaseColumn>;
+interface ColumnBase {
+  columns?: XmlMultiElem<ColumnBaseColumn>;
 }
 
-interface IWTCollaboratorChangeLog extends IWTCustomElemsBase {
+interface CollaboratorChangeLog extends CustomElemsBase {
   id?: XmlElem<string>;
   position_id?: XmlElem<number>;
   position_name?: XmlElem<string>;
@@ -1139,7 +1119,7 @@ interface IWTCollaboratorChangeLog extends IWTCustomElemsBase {
   rate_percent?: XmlElem<number>;
 }
 
-interface IWTCollaboratorHistoryState {
+interface CollaboratorHistoryState {
   id?: XmlElem<string>;
   state_id?: XmlElem<string>;
   start_date?: XmlElem<Date>;
@@ -1147,41 +1127,41 @@ interface IWTCollaboratorHistoryState {
   comment?: XmlElem<string>;
 }
 
-interface IWTCollaboratorPersonalConfig {
+interface CollaboratorPersonalConfig {
   avatar_filename?: XmlElem<string>;
   nick?: XmlElem<string>;
   status?: XmlElem<string>;
   default_info_type?: XmlElem<string>;
 }
 
-interface IWTFuncManagersBaseFuncManager extends PersonFillingBase {
+interface FuncManagersBaseFuncManager extends PersonFillingBase {
   person_id?: XmlElem<number>;
   is_native?: XmlElem<boolean>;
   boss_type_id?: XmlElem<number>;
 }
 
-interface IWTFuncManagersBase {
-  func_managers?: XmlMultiElem<IWTFuncManagersBaseFuncManager>;
+interface FuncManagersBase {
+  func_managers?: XmlMultiElem<FuncManagersBaseFuncManager>;
   obtain_func_manager_by_id?(managerId: number, bossTypeId?: number): void;
 }
 
-interface IWTPathSubBasePathSub {
+interface PathSubBasePathSub {
   id?: XmlElem<number>;
   type?: XmlElem<string>;
   name?: XmlElem<string>;
   parent_id?: XmlElem<number>;
 }
 
-interface IWTPathSubBase {
-  path_subs?: XmlMultiElem<IWTPathSubBasePathSub>;
-  filling_path_subs?(): XmlMultiElem<IWTPathSubBasePathSub>;
+interface PathSubBase {
+  path_subs?: XmlMultiElem<PathSubBasePathSub>;
+  filling_path_subs?(): XmlMultiElem<PathSubBasePathSub>;
 }
 
-interface IWTPersonObjectLinksBasePersonObjectProfile {
+interface PersonObjectLinksBasePersonObjectProfile {
   person_object_profile_id?: XmlElem<number>;
 }
 
-interface IWTPersonObjectLinksBasePersonObjectLinkObject {
+interface PersonObjectLinksBasePersonObjectLinkObject {
   object_id?: XmlElem<number>;
   object_name?: XmlElem<string>;
   can_edit?: XmlElem<boolean>;
@@ -1189,60 +1169,60 @@ interface IWTPersonObjectLinksBasePersonObjectLinkObject {
   access_level?: XmlElem<number>;
 }
 
-interface IWTPersonObjectLinksBasePersonObjectLink {
+interface PersonObjectLinksBasePersonObjectLink {
   object_catalog?: XmlElem<string>;
   all_can_create?: XmlElem<boolean>;
   amount?: XmlElem<number>;
   all_can_edit?: XmlElem<boolean>;
   all_can_delete?: XmlElem<boolean>;
-  objects?: XmlMultiElem<IWTPersonObjectLinksBasePersonObjectLinkObject>;
+  objects?: XmlMultiElem<PersonObjectLinksBasePersonObjectLinkObject>;
 }
 
-interface IWTPersonObjectLinksBase {
+interface PersonObjectLinksBase {
   pol_loaded?: XmlElem<boolean>;
   pol_changed?: XmlElem<boolean>;
-  person_object_profiles?: XmlMultiElem<IWTPersonObjectLinksBasePersonObjectProfile>;
-  person_object_links?: XmlMultiElem<IWTPersonObjectLinksBasePersonObjectLink>;
+  person_object_profiles?: XmlMultiElem<PersonObjectLinksBasePersonObjectProfile>;
+  person_object_links?: XmlMultiElem<PersonObjectLinksBasePersonObjectLink>;
 }
 
-interface IWTCollaboratorCustomParam {
+interface CollaboratorCustomParam {
   name?: XmlElem<string>;
   value?: XmlElem<string>;
 }
 
-interface IWTCollaboratorCompBenPaymentType {
+interface CollaboratorCompBenPaymentType {
   payment_type_id?: XmlElem<number>;
   max_value?: XmlElem<number>;
   comment?: XmlElem<string>;
 }
 
-interface IWTCollaboratorCompBen {
+interface CollaboratorCompBen {
   salary?: XmlElem<number>;
   currency_type_id?: XmlElem<string>;
   payment_period?: XmlElem<string>;
   comment?: XmlElem<string>;
-  payment_types?: XmlMultiElem<IWTCollaboratorCompBenPaymentType>
+  payment_types?: XmlMultiElem<CollaboratorCompBenPaymentType>
 }
 
-interface IWTPositionCompetenceProfile {
+interface PositionCompetenceProfile {
   id?: XmlElem<number>;
 }
 
-interface IWTCompetenceProfileAssessment {
+interface CompetenceProfileAssessment {
   assessment_id?: XmlElem<number>;
   assessment_score?: XmlElem<number>;
 }
 
-interface IWTCompetenceProfilePositionCommon {
+interface CompetenceProfilePositionCommon {
   position_common_id?: XmlElem<number>;
 }
 
-interface IWTCompetenceProfileFamilyCompetenceProfile {
+interface CompetenceProfileFamilyCompetenceProfile {
   competence_profile_id?: XmlElem<number>;
 }
 
 
-interface IWTPositionKPIProfile {
+interface PositionKPIProfile {
   id?: XmlElem<number>;
   period_type_id?: XmlElem<string>;
 }
@@ -1262,7 +1242,7 @@ interface PersonFillingBase {
   person_code?: XmlElem<string>;
 }
 
-interface IWTChartReportGraphBase {
+interface ChartReportGraphBase {
   disp_legend?: XmlElem<boolean>;
   chart_id?: XmlElem<string>;
   flag_showvalues?: XmlElem<boolean>;
@@ -1270,12 +1250,12 @@ interface IWTChartReportGraphBase {
   flag_open_graph_tun_section?: XmlElem<boolean>;
 }
 
-interface IWTCatalogListBaseCatalogObject {
+interface CatalogListBaseCatalogObject {
   object_id?: XmlElem<number>;
   comment?: XmlElem<string>;
 }
 
-interface IWTCareerReserveTutor {
+interface CareerReserveTutor {
   person_id?: XmlElem<number>;
   is_native?: XmlElem<boolean>;
   boss_type_id?: XmlElem<number>;
@@ -1283,13 +1263,13 @@ interface IWTCareerReserveTutor {
   comment?: XmlElem<string>;
 }
 
-interface IWTCareerReserveComissionPerson {
+interface CareerReserveComissionPerson {
   person_id?: XmlElem<number>;
   score?: XmlElem<number>;
   comment?: XmlElem<string>;
 }
 
-interface IWTCareerReserveTask extends XmlElem<any> {
+interface CareerReserveTask extends XmlElem<any> {
   id?: XmlElem<string>;
   name?: XmlElem<string>;
   type?: XmlElem<string>;
@@ -1319,67 +1299,67 @@ interface IWTCareerReserveTask extends XmlElem<any> {
   type_document?: XmlElem<string>;
   link_document?: XmlElem<string>;
   forbid_task_portal_edit?: XmlElem<boolean>;
-  commission_persons?: XmlMultiElem<IWTCareerReserveComissionPerson>;
+  commission_persons?: XmlMultiElem<CareerReserveComissionPerson>;
 }
 
-interface IWTAnnalsObjectBaseDataAssessmentTimestamp {
+interface AnnalsObjectBaseDataAssessmentTimestamp {
   value?: XmlElem<any>;
 }
 
-interface IWTAnnalsObjectBaseDataAssessmentLatency {
+interface AnnalsObjectBaseDataAssessmentLatency {
   value?: XmlElem<any>;
 }
 
-interface IWTAnnalsObjectBaseDataAssessmentDuration {
+interface AnnalsObjectBaseDataAssessmentDuration {
   value?: XmlElem<any>;
 }
 
-interface IWTAnnalsObjectBaseDataAssessment {
+interface AnnalsObjectBaseDataAssessment {
   ident?: XmlElem<any>;
   viewed?: XmlElem<any>;
   answered?: XmlElem<any>;
   completed?: XmlElem<any>;
-  timestamp?: XmlElem<IWTAnnalsObjectBaseDataAssessmentTimestamp>;
-  latency?: XmlElem<IWTAnnalsObjectBaseDataAssessmentLatency>;
-  duration?: XmlElem<IWTAnnalsObjectBaseDataAssessmentDuration>;
+  timestamp?: XmlElem <AnnalsObjectBaseDataAssessmentTimestamp>;
+  latency?: XmlElem <AnnalsObjectBaseDataAssessmentLatency>;
+  duration?: XmlElem <AnnalsObjectBaseDataAssessmentDuration>;
 }
 
-interface IWTAnnalsObjectBaseDataItemsListSectionitem {
+interface AnnalsObjectBaseDataItemsListSectionitem {
   ident?: XmlElem<any>;
 }
 
-interface IWTAnnalsObjectBaseDataItemsList {
-  sectionitem?: XmlMultiElem<IWTAnnalsObjectBaseDataItemsListSectionitem>
+interface AnnalsObjectBaseDataItemsList {
+  sectionitem?: XmlMultiElem<AnnalsObjectBaseDataItemsListSectionitem>
 }
 
-interface IWTAnnalsObjectBaseData {
-  assessment?: XmlElem<IWTAnnalsObjectBaseDataAssessment>;
-  sections?: XmlMultiElem<IWTAnnalsObjectBaseDataAssessment & IWTAnnalsObjectBaseDataItemsList>;
+interface AnnalsObjectBaseData {
+  assessment?: XmlElem <AnnalsObjectBaseDataAssessment>;
+  sections?: XmlMultiElem<AnnalsObjectBaseDataAssessment & AnnalsObjectBaseDataItemsList>;
 }
 
-interface IWTAnnalsObjectBase {
+interface AnnalsObjectBase {
   id?: XmlElem<any>;
   attempt_id?: XmlElem<string>;
   file?: XmlElem<string>;
   objtype?: XmlElem<string>;
-  data?: XmlElem<IWTAnnalsObjectBaseData>;
+  data?: XmlElem <AnnalsObjectBaseData>;
 }
 
-interface IWTAnnalsObjectsBase {
-  objects?: XmlMultiElem<IWTAnnalsObjectBase>;
+interface AnnalsObjectsBase {
+  objects?: XmlMultiElem<AnnalsObjectBase>;
 }
 
-interface IWTAnnalsNumsBase {
+interface AnnalsNumsBase {
   question_num?: XmlElem<number>;
   question_answered_num?: XmlElem<number>;
   question_passed_num?: XmlElem<number>;
 }
 
-interface IWTPollReportViewer extends PersonFillingBase {
+interface PollReportViewer extends PersonFillingBase {
   person_id?: XmlElem<number>;
 }
 
-interface IWTPollQuestionEntry {
+interface PollQuestionEntry {
   id?: XmlElem<number>;
   value?: XmlElem<string>;
   weight?: XmlElem<number>;
@@ -1387,19 +1367,19 @@ interface IWTPollQuestionEntry {
   resource_id?: XmlElem<number>;
 }
 
-interface IWTPollQuestionRowColumn {
+interface PollQuestionRowColumn {
   id?: XmlElem<number>;
   value?: XmlElem<string>;
   bg_color?: XmlElem<string>;
 }
-interface IWTPollQuestionRow {
+interface PollQuestionRow {
   id?: XmlElem<number>;
   value?: XmlElem<string>;
   bg_color?: XmlElem<string>;
-  columns?: XmlMultiElem<IWTPollQuestionRowColumn>;
+  columns?: XmlMultiElem<PollQuestionRowColumn>;
 }
 
-interface IWTPollQuestion extends IWTCustomElemsBase {
+interface PollQuestion extends CustomElemsBase {
   id?: XmlElem<number>;
   type?: XmlElem<string>;
   title?: XmlElem<string>;
@@ -1414,14 +1394,14 @@ interface IWTPollQuestion extends IWTCustomElemsBase {
   completed?: XmlElem<boolean>;
   image_id?: XmlElem<number>;
 
-  entries?: XmMultiElem<IWTPollQuestionEntry>;
-  rows?: XmMultiElem<IWTPollQuestionRow>;
+  entries?: XmMultiElem <PollQuestionEntry>;
+  rows?: XmMultiElem <PollQuestionRow>;
 
   is_current?: XmlElem<boolean>;
   catalog_entry_id?: XmlElem<number>;
 }
 
-interface IWTPollItemRowColumn {
+interface PollItemRowColumn {
   id?: XmlElem<string>;
   bg_color?: XmlElem<string>;
   question_id?: XmlElem<number>;
@@ -1429,23 +1409,23 @@ interface IWTPollItemRowColumn {
   is_title?: XmlElem<boolean>;
 }
 
-interface IWTPollItemRow {
+interface PollItemRow {
   id?: XmlElem<string>;
   bg_color?: XmlElem<string>;
   question_id?: XmlElem<number>;
   value?: XmlElem<string>;
-  columns?: XmlMultiElem<IWTPollItemRowColumn>;
+  columns?: XmlMultiElem<PollItemRowColumn>;
   is_title?(): boolean;
 }
 
-interface IWTPollItemCondition {
+interface PollItemCondition {
   id?: XmlElem<string>;
   question_id?: XmlElem<number>;
   entry_id?: XmlElem<number>;
   and_or?: XmlElem<string>;
 }
 
-interface IWTPollItem {
+interface PollItem {
   id?: XmlElem<string>;
   type?: XmlElem<string>;
   title?: XmlElem<string>;
@@ -1456,11 +1436,11 @@ interface IWTPollItem {
   preparation_time?: XmlElem<number>;
   prohibit_viewing?: XmlElem<boolean>;
   prohibit_overwriting?: XmlElem<boolean>;
-  rows?: XmlMultiElem<IWTPollItemRow>;
-  conditions?: XmlMultiElem<IWTPollItemCondition>;
+  rows?: XmlMultiElem<PollItemRow>;
+  conditions?: XmlMultiElem<PollItemCondition>;
 }
 
-interface IWTNotificationRecipient {
+interface NotificationRecipient {
   recipient_type?: XmlElem<string>;
   func_manager_type_id: number;
   eval_str?: XmlElem<string>;
@@ -1468,22 +1448,22 @@ interface IWTNotificationRecipient {
   notification_template_id?: XmlElem<number>;
 }
 
-interface IWTNotificationNotificationSystem {
+interface NotificationNotificationSystem {
   notification_system_id?: XmlElem<number>;
 }
 
-interface IWTNotificationTemplateMainObject extends IWTFieldNamesBaseFieldName {
+interface NotificationTemplateMainObject extends FieldNamesBaseFieldName {
   catalog_name?: XmlElem<string>;
   init_field_names?: Function;
 }
 
-interface IWTWorkflowDataBaseWorkflowField {
+interface WorkflowDataBaseWorkflowField {
   name?: XmlElem<string>;
   value?: XmlElem<unknown>;
   workflow_state?: XmlElem<string>;
 }
 
-interface IWTWorkflowDataBaseWorkflowLogEntry {
+interface WorkflowDataBaseWorkflowLogEntry {
   create_date?: XmlElem<Date>;
   action_id?: XmlElem<string>;
   person_id?: XmlElem<number>;
@@ -1493,7 +1473,7 @@ interface IWTWorkflowDataBaseWorkflowLogEntry {
   submited?: XmlElem<boolean>;
 }
 
-interface IWTWorkflowDataBaseWorkflowCustomStateCondition {
+interface WorkflowDataBaseWorkflowCustomStateCondition {
   type?: XmlElem<string>;
   cur_user_type?: XmlElem<string>;
   person_id?: XmlElem<number>;
@@ -1502,16 +1482,16 @@ interface IWTWorkflowDataBaseWorkflowCustomStateCondition {
   finish_bracket?: XmlElem<string>;
 }
 
-interface IWTWorkflowDataBaseWorkflowCustomState {
+interface WorkflowDataBaseWorkflowCustomState {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   next_workflow_custom_state_code?: XmlElem<string>;
   common_state_code?: XmlElem<string>;
-  conditions?: XmlMultiElem<IWTWorkflowDataBaseWorkflowCustomStateCondition>;
+  conditions?: XmlMultiElem<WorkflowDataBaseWorkflowCustomStateCondition>;
   condition_eval_str?: XmlElem<string>;
 }
 
-interface IWTWorkflowDataBase {
+interface WorkflowDataBase {
   workflow_id?: XmlElem<number>;
   workflow_state?: XmlElem<string>;
   workflow_state_name?: XmlElem<string>;
@@ -1520,51 +1500,51 @@ interface IWTWorkflowDataBase {
   set_workflow_state_last_date?(param: any): void;
   add_workflow_log_entry?(param: any): void;
   is_workflow_init?: XmlElem<boolean>;
-  workflow_fields?: XmlMultiElem<IWTWorkflowDataBaseWorkflowField>;
-  workflow_log_entrys?: XmlMultiElem<IWTWorkflowDataBaseWorkflowLogEntry>;
-  workflow_custom_states?: XmlMultiElem<IWTWorkflowDataBaseWorkflowCustomState>;
+  workflow_fields?: XmlMultiElem<WorkflowDataBaseWorkflowField>;
+  workflow_log_entrys?: XmlMultiElem<WorkflowDataBaseWorkflowLogEntry>;
+  workflow_custom_states?: XmlMultiElem<WorkflowDataBaseWorkflowCustomState>;
 }
 
 interface ILists {
-  object_resource_types: XmlMultiElem<IWTListsObjectResourceType>;
-  currency_types: XmlMultiElem<IWTListsCurrencyType>;
-  event_forms: XmlMultiElem<IWTListsEventForm>;
-  organizational_forms: XmlMultiElem<IWTListsOrganizationalForm>;
-  facts: XmlMultiElem<IWTListsFact>;
-  professional_areas: XmlMultiElem<IWTListsProfessionalArea>;
-  web_requirements: XmlMultiElem<IWTListsWebRequirement>;
-  ext_externalscripts: XmlMultiElem<IWTListsExternalScript>;
+  object_resource_types: XmlMultiElem<ListsObjectResourceType>;
+  currency_types: XmlMultiElem<ListsCurrencyType>;
+  event_forms: XmlMultiElem<ListsEventForm>;
+  organizational_forms: XmlMultiElem<ListsOrganizationalForm>;
+  facts: XmlMultiElem<ListsFact>;
+  professional_areas: XmlMultiElem<ListsProfessionalArea>;
+  web_requirements: XmlMultiElem<ListsWebRequirement>;
+  ext_externalscripts: XmlMultiElem<ListsExternalScript>;
 }
 
 declare const lists: XmlElem<ILists>;
 
-interface IWTMSDispBlockBase {
+interface MSDispBlockBase {
   access_block_type?: XmlElem<string>;
   obj_title?: XmlElem<string>;
   custom_flag?: XmlElem<boolean>;
 }
 
-interface IWTImageBase {
+interface ImageBase {
 	name?: XmlElem<string>;
 	data?: XmlElem<Binary>;
 }
 
-interface IWTRubricBase {
+interface RubricBase {
   candidate?: XmlElem<string>;
-  image?: XmlElem<IWTImageBase>;
+  image?: XmlElem <ImageBase>;
 }
 
-interface IWTProctoringBaseProctoring extends WebVariablesBase {
+interface ProctoringBaseProctoring extends WebVariablesBase {
   is_basic_variables?: XmlElem<boolean>;
   proctoring_system_id?: XmlElem<number>;
 }
 
-interface IWTProctoringBase {
+interface ProctoringBase {
   use_proctoring?: XmlElem<boolean>;
-  proctoring?: XmlElem<IWTProctoringBaseProctoring>;
+  proctoring?: XmlElem <ProctoringBaseProctoring>;
 }
 
-interface IWTMSPeriodityBase {
+interface MSPeriodityBase {
   trigger_type?: XmlElem<string>;
   period?: XmlElem<number>;
   start_time?: XmlElem<string>;
@@ -1577,7 +1557,7 @@ interface IWTMSPeriodityBase {
   last_run_date?: XmlElem<Date>;
 }
 
-interface IWTExecCodeBaseExecCode {
+interface ExecCodeBaseExecCode {
   code_type?: XmlElem<string>;
   code_url?: XmlElem<string>;
   code_text?: XmlElem<string>;
@@ -1585,8 +1565,8 @@ interface IWTExecCodeBaseExecCode {
   code_temp?: XmlElem<string>;
 }
 
-interface IWTExecCodeBase {
-  exec_code?: XmlElem<IWTExecCodeBaseExecCode>;
+interface ExecCodeBase {
+  exec_code?: XmlElem <ExecCodeBaseExecCode>;
 }
 
 interface IAccessRolesAccessBlock {
@@ -1619,7 +1599,7 @@ interface IAccessRoles {
 
 declare const access_roles: XmlMultiElem<IAccessRoles>;
 
-interface IWTZonesBaseZone {
+interface ZonesBaseZone {
   name?: XmlElem<string>;
   tag_id?: XmlElem<string>;
   style?: XmlElem<string>;
@@ -1630,7 +1610,7 @@ interface IWTZonesBaseZone {
 }
 
 interface ZonesBase {
-  zones?: XmlMultiElem<IWTZonesBaseZone>;
+  zones?: XmlMultiElem<ZonesBaseZone>;
 }
 
 interface ObjectTypeBase {

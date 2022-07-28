@@ -48,7 +48,7 @@ type Extract<T, U> = T extends U ? T : never;
 */
 type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
 
-interface IWTCommonEventStatusType {
+interface CommonEventStatusType {
   id: string;
   name: string;
   text_color: string;
@@ -56,8 +56,8 @@ interface IWTCommonEventStatusType {
 }
 
 declare interface common extends Object {
-  request_status_types: XmlMultiElem<IWTCommonEventStatusType>;
-  event_status_types: XmlMultiElem<IWTCommonEventStatusType>;
+  request_status_types: XmlMultiElem<CommonEventStatusType>;
+  event_status_types: XmlMultiElem<CommonEventStatusType>;
   learning_states: XmlMultiElem<any>;
   resource_types: XmlMultiElem<any>;
   exchange_object_types: XmlMultiElem<any>;

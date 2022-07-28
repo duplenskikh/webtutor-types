@@ -1,5 +1,4 @@
 type OperationDocumentTopElem = XmlTopElem & { Doc: OperationDocument } & 
-  MsParametersBase &
   WebVariablesBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;

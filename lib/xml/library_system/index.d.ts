@@ -1,5 +1,4 @@
 type LibrarySystemDocumentTopElem = XmlTopElem & { Doc: LibrarySystemDocument } & 
-  MsParametersBase &
   AdminAccessBase &
   WebVariablesBase & {
   id?: XmlElem<number>;

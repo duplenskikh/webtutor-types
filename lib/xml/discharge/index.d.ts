@@ -16,7 +16,7 @@ interface DischargeDocumentTableBind {
   search_field_type?: XmlElem<string>;
   equal_field?: XmlElem<string>;
 }
-interface DischargeDocumentTable extends ExportOdbcSourceBase {
+interface DischargeDocumentTable {
   id?: XmlElem<string>;
   name?: XmlElem<string>;
   is_active?: XmlElem<boolean>;
@@ -34,8 +34,7 @@ interface DischargeDocumentTable extends ExportOdbcSourceBase {
   binds?: XmlMultiElem<DischargeDocumentTableBind>;
 }
 
-type DischargeDocumentTopElem = XmlTopElem & { Doc: DischargeDocument } & 
-  ExportOdbcSourceBase & {
+type DischargeDocumentTopElem = XmlTopElem & { Doc: DischargeDocument } & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   type?: XmlElem<string>;

@@ -104,7 +104,6 @@ type PollDocumentTopElem = XmlTopElem & { Doc: PollDocument } &
   items?: XmlMultiElem<PollDocumentItem>;
   allow_delete_poll_result?: XmlElem<boolean>;
   complete_message?: XmlElem<string>;
-  view_templates?: XmlElem<MsViewTemplatesBase>;
   adaptive_mode?(): unknown;
   access?: XmlElem<AccessDocBase>;
   complete_massege?: XmlElem<string>;

@@ -9,7 +9,6 @@ type CustomReportDocumentTopElem = XmlTopElem & { Doc: CustomReportDocument } &
   source_binding_object?: XmlElem<string>;
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
-  disp_block?: XmlElem<MsDispBlockBase>;
   access?: XmlElem<AccessDocBase>;
   binding_selection?: XmlElem<number>;
   initiator_person_id?: XmlElem<number>;

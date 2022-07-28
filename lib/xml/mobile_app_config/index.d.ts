@@ -7,12 +7,6 @@ interface MobileAppConfigDocumentDocument {
   hidden?: XmlElem<boolean>;
 }
 
-interface MobileAppConfigDocumentObject extends ObjectInnerBase {
-}
-
-interface MobileAppConfigDocumentVirtobj extends ObjectInnerBase {
-}
-
 interface MobileAppConfigDocumentInfoDoc {
   id?: XmlElem<number>;
 }
@@ -29,8 +23,6 @@ type MobileAppConfigDocumentTopElem = XmlTopElem & { Doc: MobileAppConfigDocumen
   name?: XmlElem<string>;
   type?: XmlElem<string>;
   documents?: XmlMultiElem<MobileAppConfigDocumentDocument>;
-  objects?: XmlMultiElem<MobileAppConfigDocumentObject>;
-  virtobjs?: XmlMultiElem<MobileAppConfigDocumentVirtobj>;
   info_docs?: XmlMultiElem<MobileAppConfigDocumentInfoDoc>;
   display_mode?: XmlElem<number>;
   html_injections?: XmlMultiElem<MobileAppConfigDocumentHtmlInjection>;

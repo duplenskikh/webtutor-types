@@ -1,5 +1,5 @@
 declare namespace tools {
-  const dotnet_host: IWTDotnetCoreHost;
+  const dotnet_host: DotnetCoreHost;
 
   function new_doc_by_name(documentName: string, isCatalog?: boolean): XmlDocument;
 

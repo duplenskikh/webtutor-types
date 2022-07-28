@@ -4,7 +4,6 @@ interface ForumDocumentModerator extends PersonFillingBase {
 
 type ForumDocumentTopElem = XmlTopElem & { Doc: ForumDocument } & 
   ObjectCodeNameBase &
-  MsPersonSdBase &
   KnowledgePartsBase &
   KnowledgePartsBaseOld &
   CustomElemsBase &

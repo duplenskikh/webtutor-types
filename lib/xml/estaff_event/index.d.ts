@@ -7,7 +7,6 @@ interface EstaffEventDocumentMember extends PersonFillingBase {
 }
 
 type EstaffEventDocumentTopElem = XmlTopElem & { Doc: EstaffEventDocument } & 
-  MsPersonSdBase &
   CatalogListBase &
   WebVariablesBase &
   DocumentPersonsBase &

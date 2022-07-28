@@ -17,7 +17,7 @@ interface CompetenceProfileDocumentCompetenceIndicatorEducationMethod {
 interface CompetenceProfileDocumentCompetenceIndicatorDevelopmentMethod {
   development_method_id?: XmlElem<number>;
 }
-interface CompetenceProfileDocumentCompetenceIndicator extends RoleWeightsBase {
+interface CompetenceProfileDocumentCompetenceIndicator {
   indicator_id?: XmlElem<number>;
   plan?: XmlElem<string>;
   plan_text?: XmlElem<string>;
@@ -27,7 +27,7 @@ interface CompetenceProfileDocumentCompetenceIndicator extends RoleWeightsBase {
   education_methods?: XmlMultiElem<CompetenceProfileDocumentCompetenceIndicatorEducationMethod>;
   development_methods?: XmlMultiElem<CompetenceProfileDocumentCompetenceIndicatorDevelopmentMethod>;
 }
-interface CompetenceProfileDocumentCompetence extends RoleWeightsBase {
+interface CompetenceProfileDocumentCompetence {
   competence_id?: XmlElem<number>;
   plan?: XmlElem<string>;
   plan_text?: XmlElem<string>;

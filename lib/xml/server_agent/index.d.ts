@@ -1,5 +1,4 @@
 type ServerAgentDocumentTopElem = XmlTopElem & { Doc: ServerAgentDocument } & 
-  MsPeriodityBase &
   WebVariablesBase &
   ExecCodeBase &
   CustomElemsBase & {

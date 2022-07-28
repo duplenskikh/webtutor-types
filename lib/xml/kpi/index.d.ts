@@ -52,7 +52,6 @@ type KpiDocumentTopElem = XmlTopElem & { Doc: KpiDocument } &
   comment?: XmlElem<string>;
   desc?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
-  disp_block?: XmlElem<MsDispBlockBase>;
   access?: XmlElem<AccessDocBase>;
   role_id?: XmlMultiElem<number>;
 }
