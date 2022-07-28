@@ -1,16 +1,12 @@
-interface KpiGroupView {
-  selector?: XmlElem<string>;
+type KpiGroupDocumentTopElem = XmlTopElem & { Doc: KpiGroupDocument } & 
+  CustomElemsBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  workflow_id: XmlElem<number>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  is_std: XmlElem<boolean>;
+  changed: XmlElem<boolean>;
 }
 
-interface KpiGroupTopElem extends XmlTopElem<KpiGroupDocument>, CustomElemsBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  workflow_id?: XmlElem<number>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  is_std?: XmlElem<boolean>;
-  changed?: XmlElem<boolean>;
-  view?: XmlElem<KpiGroupView>;
-}
-
-type KpiGroupDocument = XmlDocument<KpiGroupTopElem>;
+type KpiGroupDocument = XmlDocument & { TopElem: KpiGroupDocumentTopElem; };

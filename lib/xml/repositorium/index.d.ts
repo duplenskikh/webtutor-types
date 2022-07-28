@@ -1,13 +1,17 @@
-interface RepositoriumAuthor extends PersonFillingBase {
-  person_id?: XmlElem<number>;
+interface RepositoriumDocumentAuthor extends PersonFillingBase {
+  person_id: XmlElem<number>;
 }
 
-interface RepositoriumTopElem extends XmlTopElem<RepositoriumDocument>, ObjectCodeNameBase, FileListBase, AdminAccessBase, CustomElemsBase {
-  parent_object_id?: XmlElem<number>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  authors?: XmlMultiElem<RepositoriumAuthor>;
-  access?: XmlElem<AccessDocBase>;
+type RepositoriumDocumentTopElem = XmlTopElem & { Doc: RepositoriumDocument } & 
+  ObjectCodeNameBase &
+  FileListBase &
+  AdminAccessBase &
+  CustomElemsBase & {
+  parent_object_id: XmlElem<number>;
+  authors: XmlMultiElem<RepositoriumDocumentAuthor>;
+  access: XmlElem<AccessDocBase>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-type RepositoriumDocument = XmlDocument<RepositoriumTopElem>;
+type RepositoriumDocument = XmlDocument & { TopElem: RepositoriumDocumentTopElem; };

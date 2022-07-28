@@ -1,24 +1,23 @@
-interface UserRecommendationObject extends ObjectTypeBase {
-  id?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  recommender_algorithm_id?: XmlElem<number>;
+interface UserRecommendationDocumentObject extends ObjectTypeBase {
+  id: XmlElem<string>;
+  comment: XmlElem<string>;
+  recommender_algorithm_id: XmlElem<number>;
 }
 
-interface UserRecommendationCalculateDate {
-  date?: XmlElem<Date>;
+interface UserRecommendationDocumentCalculateDate {
+  date: XmlElem<Date>;
 }
 
-interface UserRecommendationContextObject extends ObjectTypeBase {
+type UserRecommendationDocumentTopElem = XmlTopElem & { Doc: UserRecommendationDocument } & 
+  ObjectTypeBase &
+  CustomElemsBase & {
+  id: XmlElem<number>;
+  objects: XmlMultiElem<UserRecommendationDocumentObject>;
+  calculate_dates: XmlMultiElem<UserRecommendationDocumentCalculateDate>;
+  context_object: XmlElem<ObjectTypeBase>;
+  calc_date: XmlElem<Date>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface UserRecommendationTopElem extends XmlTopElem<UserRecommendationDocument>, ObjectTypeBase, CustomElemsBase {
-  id?: XmlElem<number>;
-  calc_date?: XmlElem<Date>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  objects?: XmlMultiElem<UserRecommendationObject>;
-  calculate_dates?: XmlMultiElem<UserRecommendationCalculateDate>;
-  context_object?: XmlElem<UserRecommendationContextObject>;
-}
-
-type UserRecommendationDocument = XmlDocument<UserRecommendationTopElem>;
+type UserRecommendationDocument = XmlDocument & { TopElem: UserRecommendationDocumentTopElem; };

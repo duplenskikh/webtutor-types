@@ -1,15 +1,17 @@
-interface DnAuditoriumObjectResource {
-  object_resource_id?: XmlElem<number>;
+interface DnAuditoriumDocumentObjectResource {
+  object_resource_id: XmlElem<number>;
 }
 
-interface DnAuditoriumTopElem extends XmlTopElem<DnAuditoriumDocument>, AdminAccessBase, CustomElemsBase {
-  code?: XmlElem<string>;
-  number_places?: XmlElem<string>;
-  place_id?: XmlElem<number>;
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  object_resources?: XmlMultiElem<DnAuditoriumObjectResource>;
+type DnAuditoriumDocumentTopElem = XmlTopElem & { Doc: DnAuditoriumDocument } & 
+  AdminAccessBase &
+  CustomElemsBase & {
+  code: XmlElem<string>;
+  number_places: XmlElem<string>;
+  place_id: XmlElem<number>;
+  desc: XmlElem<string>;
+  object_resources: XmlMultiElem<DnAuditoriumDocumentObjectResource>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-type DnAuditoriumDocument = XmlDocument<DnAuditoriumTopElem>;
+type DnAuditoriumDocument = XmlDocument & { TopElem: DnAuditoriumDocumentTopElem; };

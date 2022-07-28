@@ -17,7 +17,7 @@ interface IWTVDialogEditTextTopElem {
   is_rich?: XmlElem<boolean>;
 }
 
-type IWTVDialogEditTextDocument = XmlDocument<IWTVDialogEditTextTopElem>;
+type IWTVDialogEditTextDocument = XmlDocument;
 
 interface IWTDialogNotificationTemplateRecipient {
   recipient_type?: XmElem<string>;
@@ -44,7 +44,7 @@ interface IWTDialogNotificationTemplateTopElem {
   notification_system_id?: XmElem<number>;
 }
 
-type IWTDialogNotificationTemplate = XmlDocument<IWTDialogNotificationTemplateTopElem>;
+type IWTDialogNotificationTemplate = XmlDocument;
 
 interface IWTWebVariableBaseWvarEntry {
   id?: XmlElem<string>;
@@ -297,7 +297,7 @@ interface IWTMSDialogObjectSelectTopElem {
   xquery_qual?: XmlElem<string>;
 }
 
-type IWTMSDialogObjectSelectDocument = XmlDocument<IWTMSDialogObjectSelectTopElem>;
+type IWTMSDialogObjectSelectDocument = XmlDocument;
 
 interface IWTWTVDlgEditTextTopElem {
   url?: XmlElem<string>;
@@ -306,7 +306,7 @@ interface IWTWTVDlgEditTextTopElem {
   is_rich?: XmlElem<boolean>;
 }
 
-type IWTWTVDlgEditTextDocument = XmlDocument<IWTWTVDlgEditTextTopElem>;
+type IWTWTVDlgEditTextDocument = XmlDocument;
 
 interface IWTMenu {
   name?: XmlElem<string>;
@@ -699,7 +699,7 @@ interface IWTEnv {
   /**
    * Объект пользователя
    */
-  curUser: CollaboratorTopElem;
+  curUser: CollaboratorDocumentTopElem;
 }
 
 interface IWTEducationPlanProgramLearningTask {
@@ -1516,7 +1516,7 @@ interface IWTWorkflowDataBase {
   workflow_state?: XmlElem<string>;
   workflow_state_name?: XmlElem<string>;
   workflow_state_last_date?: XmlElem<Date>;
-  get_workflow_state_name?(workflowDoc: WorkflowTopElem): string;
+  get_workflow_state_name?(workflowDoc: WorkflowDocumentTopElem): string;
   set_workflow_state_last_date?(param: any): void;
   add_workflow_log_entry?(param: any): void;
   is_workflow_init?: XmlElem<boolean>;

@@ -1,14 +1,13 @@
-interface ReadinessLevelView extends DescBase {
+type ReadinessLevelDocumentTopElem = XmlTopElem & { Doc: ReadinessLevelDocument } & 
+  FileListBase &
+  AdminAccessBase &
+  CustomElemsBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase>;
 }
 
-interface ReadinessLevelTopElem extends XmlTopElem<ReadinessLevelDocument>, FileListBase, AdminAccessBase, CustomElemsBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<ReadinessLevelView>;
-}
-
-type ReadinessLevelDocument = XmlDocument<ReadinessLevelTopElem>;
+type ReadinessLevelDocument = XmlDocument & { TopElem: ReadinessLevelDocumentTopElem; };

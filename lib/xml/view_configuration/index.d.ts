@@ -1,12 +1,15 @@
-interface ViewConfigurationTopElem extends XmlTopElem<ViewConfigurationDocument>, ObjectCodeNameBase, ViewBase {
-  catalog_name?: XmlElem<string>;
-  link_name?: XmlElem<string>;
-  link_selector?: XmlElem<string>;
-  is_std?: XmlElem<boolean>;
-  changed?: XmlElem<boolean>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  role_id?: XmlMultiElem<number>;
+type ViewConfigurationDocumentTopElem = XmlTopElem & { Doc: ViewConfigurationDocument } & 
+  ObjectCodeNameBase &
+  ViewBase &
+  MsViewConfigurationBase & {
+  catalog_name: XmlElem<string>;
+  link_name: XmlElem<string>;
+  link_selector: XmlElem<string>;
+  is_std: XmlElem<boolean>;
+  changed: XmlElem<boolean>;
+  role_id: XmlMultiElem<number>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-type ViewConfigurationDocument = XmlDocument<ViewConfigurationTopElem>;
+type ViewConfigurationDocument = XmlDocument & { TopElem: ViewConfigurationDocumentTopElem; };

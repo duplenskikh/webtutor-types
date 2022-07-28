@@ -1,13 +1,11 @@
-interface DnSpecialView extends DescBase {
+type DnSpecialDocumentTopElem = XmlTopElem & { Doc: DnSpecialDocument } & 
+  FileListBase &
+  CustomElemsBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  facult_id: XmlElem<number>;
+  desc: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface DnSpecialTopElem extends XmlTopElem<DnSpecialDocument>, FileListBase, CustomElemsBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  facult_id?: XmlElem<number>;
-  desc?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  view?: XmlElem<DnSpecialView>;
-}
-
-type DnSpecialDocument = XmlDocument<DnSpecialTopElem>;
+type DnSpecialDocument = XmlDocument & { TopElem: DnSpecialDocumentTopElem; };

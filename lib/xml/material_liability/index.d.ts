@@ -1,7 +1,9 @@
-interface MaterialLiabilityTopElem extends XmlTopElem<MaterialLiabilityDocument>, ObjectCodeNameBase, AdminAccessBase {
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
+type MaterialLiabilityDocumentTopElem = XmlTopElem & { Doc: MaterialLiabilityDocument } & 
+  ObjectCodeNameBase &
+  AdminAccessBase & {
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase>;
 }
 
-type MaterialLiabilityDocument = XmlDocument<MaterialLiabilityTopElem>;
+type MaterialLiabilityDocument = XmlDocument & { TopElem: MaterialLiabilityDocumentTopElem; };

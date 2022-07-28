@@ -1,10 +1,12 @@
-const doc: CollaboratorDocument = (tools.open_doc(1)?.TopElem);
+const o9i856doc: CollaboratorDocument | undefined = (tools.open_doc(1));
 
-doc.BindToDb();
+doc?.BindToDb();
 
-function handlerCollaboratorTopElem(te: CollaboratorDocument) {
+function handlerCollaboratorDocumentTopElem(te: CollaboratorDocument) {
   te.TopElem.firstname?.OptScreen?.AddExternalEditor;
   return te.TopElem.firstname?.Value;
 }
 
-handlerCollaboratorTopElem(doc.TopElem.Doc);
+if (doc !== undefined) {
+  handlerCollaboratorDocumentTopElem(doc.TopElem.Doc);
+}

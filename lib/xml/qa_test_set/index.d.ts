@@ -1,14 +1,18 @@
-interface QaTestSetTest {
-  test_id?: XmlElem<number>;
+interface QaTestSetDocumentTest {
+  test_id: XmlElem<number>;
 }
 
-interface QaTestSetTopElem extends XmlTopElem<QaTestSetDocument>, ObjectCodeNameBase, QaTestParamBase, QaTestFixtureBase, QaTestAssertBase {
-  status?: XmlElem<string>;
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  role_id?: XmlMultiElem<number>;
-  tests?: XmlMultiElem<QaTestSetTest>;
+type QaTestSetDocumentTopElem = XmlTopElem & { Doc: QaTestSetDocument } & 
+  ObjectCodeNameBase &
+  QaTestParamBase &
+  QaTestFixtureBase &
+  QaTestAssertBase & {
+  status: XmlElem<string>;
+  tests: XmlMultiElem<QaTestSetDocumentTest>;
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  role_id: XmlMultiElem<number>;
 }
 
-type QaTestSetDocument = XmlDocument<QaTestSetTopElem>;
+type QaTestSetDocument = XmlDocument & { TopElem: QaTestSetDocumentTopElem; };

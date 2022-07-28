@@ -1,44 +1,28 @@
-interface ClShapeFormula {
-  expr?: XmlElem<string>;
+interface ClShapeDocumentFormula {
+  expr: XmlElem<string>;
 }
 
-interface ClShapeHandle {
-  position?: XmlElem<string>;
-  xrange?: XmlElem<string>;
-  yrange?: XmlElem<string>;
+interface ClShapeDocumentHandle {
+  position: XmlElem<string>;
+  xrange: XmlElem<string>;
+  yrange: XmlElem<string>;
 }
 
-interface ClShapeParams {
-  type?: XmlElem<string>;
-  stroked?: XmlElem<string>;
-  filled?: XmlElem<string>;
-  coordsize?: XmlElem<string>;
-  adj?: XmlElem<string>;
-  path?: XmlElem<string>;
+type ClShapeDocumentTopElem = XmlTopElem & { Doc: ClShapeDocument } & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  category: XmlElem<string>;
+  category_label: XmlElem<string>;
+  type: XmlElem<string>;
+  type_name: XmlElem<string>;
+  formulas: XmlMultiElem<ClShapeDocumentFormula>;
+  textboxrect: XmlElem<string>;
+  otherxml: XmlElem<string>;
+  handles: XmlMultiElem<ClShapeDocumentHandle>;
+  ico: XmlElem<Binary>;
+  vml: XmlElem<string>;
+  desc: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface ClShapeView {
-  selector?: XmlElem<string>;
-  ico_url?: XmlElem<string>;
-}
-
-interface ClShapeTopElem extends XmlTopElem<ClShapeDocument> {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  category?: XmlElem<string>;
-  category_label?: XmlElem<string>;
-  type?: XmlElem<string>;
-  type_name?: XmlElem<string>;
-  textboxrect?: XmlElem<string>;
-  otherxml?: XmlElem<string>;
-  ico?: XmlElem<Binary>;
-  vml?: XmlElem<string>;
-  desc?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  formulas?: XmlMultiElem<ClShapeFormula>;
-  handles?: XmlMultiElem<ClShapeHandle>;
-  params?: XmlElem<ClShapeParams>;
-  view?: XmlElem<ClShapeView>;
-}
-
-type ClShapeDocument = XmlDocument<ClShapeTopElem>;
+type ClShapeDocument = XmlDocument & { TopElem: ClShapeDocumentTopElem; };

@@ -1,18 +1,19 @@
-interface TagExpert {
-  expert_id?: XmlElem<number>;
+interface TagDocumentExpert {
+  expert_id: XmlElem<number>;
 }
 
-interface TagTopElem extends XmlTopElem<TagDocument>, AdminAccessBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  resource_id?: XmlElem<number>;
-  require_acknowledgement?: XmlElem<boolean>;
-  knowledge_part_id?: XmlElem<number>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  role_id?: XmlMultiElem<number>;
-  experts?: XmlMultiElem<TagExpert>;
-  access?: XmlElem<AccessDocBase>;
+type TagDocumentTopElem = XmlTopElem & { Doc: TagDocument } & 
+  AdminAccessBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  resource_id: XmlElem<number>;
+  require_acknowledgement: XmlElem<boolean>;
+  knowledge_part_id: XmlElem<number>;
+  experts: XmlMultiElem<TagDocumentExpert>;
+  access: XmlElem<AccessDocBase>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  role_id: XmlMultiElem<number>;
 }
 
-type TagDocument = XmlDocument<TagTopElem>;
+type TagDocument = XmlDocument & { TopElem: TagDocumentTopElem; };

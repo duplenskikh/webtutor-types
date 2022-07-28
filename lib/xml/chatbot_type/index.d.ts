@@ -1,17 +1,15 @@
-interface ChatbotTypeView extends DescBase {
+type ChatbotTypeDocumentTopElem = XmlTopElem & { Doc: ChatbotTypeDocument } & 
+  MsParametersBase &
+  AdminAccessBase & {
+  id: XmlElem<number>;
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  script_url: XmlElem<string>;
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  is_std: XmlElem<boolean>;
+  changed: XmlElem<boolean>;
 }
 
-interface ChatbotTypeTopElem extends XmlTopElem<ChatbotTypeDocument>, AdminAccessBase {
-  id?: XmlElem<number>;
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  script_url?: XmlElem<string>;
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  is_std?: XmlElem<boolean>;
-  changed?: XmlElem<boolean>;
-  view?: XmlElem<ChatbotTypeView>;
-}
-
-type ChatbotTypeDocument = XmlDocument<ChatbotTypeTopElem>;
+type ChatbotTypeDocument = XmlDocument & { TopElem: ChatbotTypeDocumentTopElem; };

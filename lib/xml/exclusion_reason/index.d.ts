@@ -1,12 +1,12 @@
-interface ExclusionReasonView extends DescBase {
+type ExclusionReasonDocumentTopElem = XmlTopElem & { Doc: ExclusionReasonDocument } & 
+  ObjectCodeNameBase &
+  FileListBase &
+  CustomElemsBase &
+  AdminAccessBase & {
+  access: XmlElem<AccessDocBase>;
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface ExclusionReasonTopElem extends XmlTopElem<ExclusionReasonDocument>, ObjectCodeNameBase, FileListBase, CustomElemsBase, AdminAccessBase {
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<ExclusionReasonView>;
-}
-
-type ExclusionReasonDocument = XmlDocument<ExclusionReasonTopElem>;
+type ExclusionReasonDocument = XmlDocument & { TopElem: ExclusionReasonDocumentTopElem; };

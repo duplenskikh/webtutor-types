@@ -1,11 +1,16 @@
-interface OutstaffProviderTopElem extends XmlTopElem<OutstaffProviderDocument>, OrgBase, AdminAccessBase, FileListBase, DocumentPersonsBase, CustomElemsBase {
-  place_id?: XmlElem<number>;
-  region_id?: XmlElem<number>;
-  collaborator_id?: XmlElem<number>;
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
+type OutstaffProviderDocumentTopElem = XmlTopElem & { Doc: OutstaffProviderDocument } & 
+  OrgBase &
+  AdminAccessBase &
+  FileListBase &
+  DocumentPersonsBase &
+  CustomElemsBase & {
+  access: XmlElem<AccessDocBase>;
+  place_id: XmlElem<number>;
+  region_id: XmlElem<number>;
+  collaborator_id: XmlElem<number>;
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-type OutstaffProviderDocument = XmlDocument<OutstaffProviderTopElem>;
+type OutstaffProviderDocument = XmlDocument & { TopElem: OutstaffProviderDocumentTopElem; };

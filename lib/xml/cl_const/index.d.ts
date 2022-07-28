@@ -1,32 +1,31 @@
-interface ClConstLocalization {
-  id?: XmlElem<number>;
-  text?: XmlElem<string>;
-  imprint?: XmlElem<string>;
+interface ClConstDocumentLocalization {
+  id: XmlElem<number>;
+  text: XmlElem<string>;
+  imprint: XmlElem<string>;
 }
 
-interface ClConstObjectTypeObject {
-  id?: XmlElem<number>;
+interface ClConstDocumentObjectTypeObject {
+  id: XmlElem<number>;
+}
+interface ClConstDocumentObjectType {
+  id: XmlElem<string>;
+  objects: XmlMultiElem<ClConstDocumentObjectTypeObject>;
 }
 
-interface ClConstObjectType {
-  id?: XmlElem<string>;
-  objects?: XmlMultiElem<ClConstObjectTypeObject>;
+interface ClConstDocumentFlag {
+  id: XmlElem<string>;
 }
 
-interface ClConstFlag {
-  id?: XmlElem<string>;
+type ClConstDocumentTopElem = XmlTopElem & { Doc: ClConstDocument } & {
+  id: XmlElem<number>;
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  localizations: XmlMultiElem<ClConstDocumentLocalization>;
+  object_types: XmlMultiElem<ClConstDocumentObjectType>;
+  flags: XmlMultiElem<ClConstDocumentFlag>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  set_value(): unknown;
 }
 
-interface ClConstTopElem extends XmlTopElem<ClConstDocument> {
-  id?: XmlElem<number>;
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  localizations?: XmlMultiElem<ClConstLocalization>;
-  object_types?: XmlMultiElem<ClConstObjectType>;
-  flags?: XmlMultiElem<ClConstFlag>;
-  set_value?(): any;
-}
-
-type ClConstDocument = XmlDocument<ClConstTopElem>;
+type ClConstDocument = XmlDocument & { TopElem: ClConstDocumentTopElem; };

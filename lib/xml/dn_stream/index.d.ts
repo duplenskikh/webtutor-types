@@ -1,12 +1,14 @@
-interface DnStreamStudGroup {
-  group_id?: XmlElem<number>;
+interface DnStreamDocumentStudGroup {
+  group_id: XmlElem<number>;
 }
 
-interface DnStreamTopElem extends XmlTopElem<DnStreamDocument>, AdminAccessBase, CustomElemsBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  stud_groups?: XmlMultiElem<DnStreamStudGroup>;
+type DnStreamDocumentTopElem = XmlTopElem & { Doc: DnStreamDocument } & 
+  AdminAccessBase &
+  CustomElemsBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  stud_groups: XmlMultiElem<DnStreamDocumentStudGroup>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-type DnStreamDocument = XmlDocument<DnStreamTopElem>;
+type DnStreamDocument = XmlDocument & { TopElem: DnStreamDocumentTopElem; };

@@ -1,15 +1,12 @@
-interface WalkthroughView {
-  selector?: XmlElem<string>;
+type WalkthroughDocumentTopElem = XmlTopElem & { Doc: WalkthroughDocument } & 
+  AdminAccessBase &
+  CustomElemsBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  external_system_id: XmlElem<number>;
+  xml: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface WalkthroughTopElem extends XmlTopElem<WalkthroughDocument>, AdminAccessBase, CustomElemsBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  external_system_id?: XmlElem<number>;
-  xml?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  view?: XmlElem<WalkthroughView>;
-}
-
-type WalkthroughDocument = XmlDocument<WalkthroughTopElem>;
+type WalkthroughDocument = XmlDocument & { TopElem: WalkthroughDocumentTopElem; };

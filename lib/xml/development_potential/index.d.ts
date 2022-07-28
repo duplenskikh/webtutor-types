@@ -1,16 +1,15 @@
-interface DevelopmentPotentialView extends DescBase {
+type DevelopmentPotentialDocumentTopElem = XmlTopElem & { Doc: DevelopmentPotentialDocument } & 
+  FileListBase &
+  AdminAccessBase &
+  CustomElemsBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase>;
+  is_std: XmlElem<boolean>;
+  changed: XmlElem<boolean>;
 }
 
-interface DevelopmentPotentialTopElem extends XmlTopElem<DevelopmentPotentialDocument>, FileListBase, AdminAccessBase, CustomElemsBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  is_std?: XmlElem<boolean>;
-  changed?: XmlElem<boolean>;
-  access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<DevelopmentPotentialView>;
-}
-
-type DevelopmentPotentialDocument = XmlDocument<DevelopmentPotentialTopElem>;
+type DevelopmentPotentialDocument = XmlDocument & { TopElem: DevelopmentPotentialDocumentTopElem; };

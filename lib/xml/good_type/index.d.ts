@@ -1,11 +1,8 @@
-interface GoodTypeView extends DescBase {
+type GoodTypeDocumentTopElem = XmlTopElem & { Doc: GoodTypeDocument } & 
+  ObjectCodeNameBase & {
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-interface GoodTypeTopElem extends XmlTopElem<GoodTypeDocument>, ObjectCodeNameBase {
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  view?: XmlElem<GoodTypeView>;
-}
-
-type GoodTypeDocument = XmlDocument<GoodTypeTopElem>;
+type GoodTypeDocument = XmlDocument & { TopElem: GoodTypeDocumentTopElem; };

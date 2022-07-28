@@ -1,9 +1,9 @@
-interface ClLocalizationTopElem extends XmlTopElem<ClLocalizationDocument> {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
+type ClLocalizationDocumentTopElem = XmlTopElem & { Doc: ClLocalizationDocument } & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  access: XmlElem<AccessDocBase>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-type ClLocalizationDocument = XmlDocument<ClLocalizationTopElem>;
+type ClLocalizationDocument = XmlDocument & { TopElem: ClLocalizationDocumentTopElem; };

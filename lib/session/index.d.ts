@@ -7,7 +7,7 @@ declare interface Env {
   /**
    * Текущий сайт пользователя с которым он взаимодействует
    */
-  curSite: SiteTopElem;
+  curSite: SiteDocumentTopElem;
   /**
    * ID текущего пользователя
    */
@@ -15,5 +15,5 @@ declare interface Env {
   /**
    * Объект пользователя
    */
-  curUser: CollaboratorTopElem;
+  curUser: CollaboratorDocumentTopElem;
 }

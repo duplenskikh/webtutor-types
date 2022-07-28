@@ -1,12 +1,12 @@
-interface CandidateStatusTypeView extends DescBase {
+type CandidateStatusTypeDocumentTopElem = XmlTopElem & { Doc: CandidateStatusTypeDocument } & 
+  ObjectCodeNameBase &
+  FileListBase &
+  AdminAccessBase &
+  CustomElemsBase & {
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase>;
 }
 
-interface CandidateStatusTypeTopElem extends XmlTopElem<CandidateStatusTypeDocument>, ObjectCodeNameBase, FileListBase, AdminAccessBase, CustomElemsBase {
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<CandidateStatusTypeView>;
-}
-
-type CandidateStatusTypeDocument = XmlDocument<CandidateStatusTypeTopElem>;
+type CandidateStatusTypeDocument = XmlDocument & { TopElem: CandidateStatusTypeDocumentTopElem; };

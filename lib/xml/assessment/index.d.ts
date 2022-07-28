@@ -73,7 +73,7 @@ interface IWTAssessmentScale {
   comment?: XmlElem<string>;
 }
 
-interface AssessmentTopElem extends XmlTopElem<AssessmentDocument>,
+interface AssessmentTopElem extends XmlTopElem,
   IWTProctoringBase,
   IWTCatalogListBase,
   // <INHERIT TYPE="course_experts_base"/>,
@@ -145,4 +145,4 @@ interface AssessmentTopElem extends XmlTopElem<AssessmentDocument>,
   role_id?: XmlMultiElem<number>;
 }
 
-type AssessmentDocument = XmlDocument<AssessmentTopElem>;
+type AssessmentDocument = XmlDocument;

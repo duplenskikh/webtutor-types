@@ -1,15 +1,15 @@
-type XmlDocument<T> = {
+interface XmlDocument {
   DocID: number;
-  TopElem: XmlTopElem<T>;
+  TopElem: XmlTopElem;
   Save(): undefined;
   BindToDb(databaseName?: string): undefined;
   WriteDocInfo: boolean;
 }
 
-type XmlTopElem<T> = T & {
+interface XmlTopElem {
   Name: string;
-  Doc: XmlDocument<T>;
+  Doc: XmlDocument;
   OptChild(childName: string): any;
-  AssignElem(TopElem: XmlTopElem<any>): void;
+  AssignElem(TopElem: XmlTopElem): void;
   EvalPath(pathName: string): XmlElem<any> | XmlMultiElem<any> | never;
 }

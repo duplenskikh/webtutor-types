@@ -1,88 +1,74 @@
-interface DocTypeSheet {
-  id?: XmlElem<string>;
-  title?: XmlElem<string>;
+interface DocTypeDocumentSheet {
+  id: XmlElem<string>;
+  title: XmlElem<string>;
 }
 
-interface DocTypeFieldSubFieldEntriesEntry {
-  value?: XmlElem<string>;
+interface DocTypeDocumentFieldEntry {
+  value: XmlElem<string>;
 }
 
-interface DocTypeFieldSubFieldEntries {
-  entry?: XmlElem<DocTypeFieldSubFieldEntriesEntry>;
+interface DocTypeDocumentFieldSubFieldEntry {
+  value: XmlElem<string>;
+}
+interface DocTypeDocumentFieldSubField {
+  name: XmlElem<string>;
+  type: XmlElem<string>;
+  title: XmlElem<string>;
+  catalog: XmlElem<string>;
+  set_value_action: XmlElem<string>;
+  flag_extended: XmlElem<boolean>;
+  is_readonly: XmlElem<boolean>;
+  xquery_qual: XmlElem<string>;
+  entries: XmlMultiElem<DocTypeDocumentFieldSubFieldEntry>;
 }
 
-interface DocTypeFieldSubField {
-  name?: XmlElem<string>;
-  type?: XmlElem<string>;
-  title?: XmlElem<string>;
-  catalog?: XmlElem<string>;
-  set_value_action?: XmlElem<string>;
-  flag_extended?: XmlElem<boolean>;
-  is_readonly?: XmlElem<boolean>;
-  xquery_qual?: XmlElem<string>;
-  entries?: XmlElem<DocTypeFieldSubFieldEntries>;
+interface DocTypeDocumentFieldControlElement {
+  type: XmlElem<string>;
+  title: XmlElem<string>;
+  action: XmlElem<string>;
+}
+interface DocTypeDocumentField {
+  name: XmlElem<string>;
+  type: XmlElem<string>;
+  title: XmlElem<string>;
+  catalog: XmlElem<string>;
+  set_value_action: XmlElem<string>;
+  entries: XmlMultiElem<DocTypeDocumentFieldEntry>;
+  sheet_id: XmlElem<string>;
+  flag_extended: XmlElem<boolean>;
+  indexed: XmlElem<boolean>;
+  in_catalog: XmlElem<boolean>;
+  hide_level: XmlElem<number>;
+  is_multiple: XmlElem<boolean>;
+  is_readonly: XmlElem<boolean>;
+  translatable: XmlElem<boolean>;
+  xquery_qual: XmlElem<string>;
+  sub_fields: XmlMultiElem<DocTypeDocumentFieldSubField>;
+  control_elements: XmlMultiElem<DocTypeDocumentFieldControlElement>;
 }
 
-interface DocTypeFieldControlElement {
-  type?: XmlElem<string>;
-  title?: XmlElem<string>;
-  action?: XmlElem<string>;
+type DocTypeDocumentTopElem = XmlTopElem & { Doc: DocTypeDocument } & 
+  CustomElemsBase & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  category: XmlElem<string>;
+  object_name: XmlElem<string>;
+  sheets: XmlMultiElem<DocTypeDocumentSheet>;
+  fields: XmlMultiElem<DocTypeDocumentField>;
+  is_hier: XmlElem<boolean>;
+  is_crave_for_reboot: XmlElem<boolean>;
+  custom_web_template_id: XmlElem<number>;
+  custom_admin_template_id: XmlElem<number>;
+  disp_name: XmlElem<string>;
+  before_init_action: XmlElem<string>;
+  before_save_action: XmlElem<string>;
+  log: XmlElem<string>;
+  desc: XmlElem<string>;
+  access: XmlElem<AccessDocBase>;
+  disp_block: XmlElem<MsDispBlockBase>;
+  doc_info: XmlElem<DocInfoBase>;
+  comment: XmlElem<string>;
+  role_id: XmlMultiElem<number>;
 }
 
-interface DocTypeFieldEntriesEntry {
-  value?: XmlElem<string>;
-}
-
-interface DocTypeFieldEntries {
-  entry?: XmlElem<DocTypeFieldEntriesEntry>;
-}
-
-interface DocTypeField {
-  name?: XmlElem<string>;
-  type?: XmlElem<string>;
-  title?: XmlElem<string>;
-  catalog?: XmlElem<string>;
-  set_value_action?: XmlElem<string>;
-  sheet_id?: XmlElem<string>;
-  flag_extended?: XmlElem<boolean>;
-  indexed?: XmlElem<boolean>;
-  in_catalog?: XmlElem<boolean>;
-  hide_level?: XmlElem<number>;
-  is_multiple?: XmlElem<boolean>;
-  is_readonly?: XmlElem<boolean>;
-  translatable?: XmlElem<boolean>;
-  xquery_qual?: XmlElem<string>;
-  sub_fields?: XmlMultiElem<DocTypeFieldSubField>;
-  control_elements?: XmlMultiElem<DocTypeFieldControlElement>;
-  entries?: XmlElem<DocTypeFieldEntries>;
-}
-
-interface DocTypeView extends DescBase {
-  is_edit_mode?: XmlElem<boolean>;
-  dummy_buff?: XmlElem<number>;
-}
-
-interface DocTypeTopElem extends XmlTopElem<DocTypeDocument>, CustomElemsBase {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  category?: XmlElem<string>;
-  object_name?: XmlElem<string>;
-  is_hier?: XmlElem<boolean>;
-  is_crave_for_reboot?: XmlElem<boolean>;
-  custom_web_template_id?: XmlElem<number>;
-  custom_admin_template_id?: XmlElem<number>;
-  disp_name?: XmlElem<string>;
-  before_init_action?: XmlElem<string>;
-  before_save_action?: XmlElem<string>;
-  log?: XmlElem<string>;
-  desc?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  comment?: XmlElem<string>;
-  role_id?: XmlMultiElem<number>;
-  sheets?: XmlMultiElem<DocTypeSheet>;
-  fields?: XmlMultiElem<DocTypeField>;
-  access?: XmlElem<AccessDocBase>;
-  view?: XmlElem<DocTypeView>;
-}
-
-type DocTypeDocument = XmlDocument<DocTypeTopElem>;
+type DocTypeDocument = XmlDocument & { TopElem: DocTypeDocumentTopElem; };

@@ -1,25 +1,20 @@
-interface BossTypeObjectType {
-  id?: XmlElem<string>;
+interface BossTypeDocumentObjectType {
+  id: XmlElem<string>;
 }
 
-interface BossTypeOperation {
-  operation_id?: XmlElem<number>;
+interface BossTypeDocumentOperation {
+  operation_id: XmlElem<number>;
 }
 
-interface BossTypeView {
-  selector?: XmlElem<string>;
+type BossTypeDocumentTopElem = XmlTopElem & { Doc: BossTypeDocument } & {
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  object_types: XmlMultiElem<BossTypeDocumentObjectType>;
+  operations: XmlMultiElem<BossTypeDocumentOperation>;
+  is_std: XmlElem<boolean>;
+  changed: XmlElem<boolean>;
+  doc_info: XmlElem<DocInfoBase>;
+  comment: XmlElem<string>;
 }
 
-interface BossTypeTopElem extends XmlTopElem<BossTypeDocument> {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  is_std?: XmlElem<boolean>;
-  changed?: XmlElem<boolean>;
-  doc_info?: XmlElem<DocInfoBase>;
-  comment?: XmlElem<string>;
-  object_types?: XmlMultiElem<BossTypeObjectType>;
-  operations?: XmlMultiElem<BossTypeOperation>;
-  view?: XmlElem<BossTypeView>;
-}
-
-type BossTypeDocument = XmlDocument<BossTypeTopElem>;
+type BossTypeDocument = XmlDocument & { TopElem: BossTypeDocumentTopElem; };
