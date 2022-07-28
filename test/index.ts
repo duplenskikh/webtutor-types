@@ -1,4 +1,4 @@
-const o9i856doc: CollaboratorDocument | undefined = (tools.open_doc(1));
+const doc: CollaboratorDocument = (tools.open_doc(1));
 
 doc?.BindToDb();
 

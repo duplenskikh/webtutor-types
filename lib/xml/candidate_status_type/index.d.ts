@@ -3,10 +3,10 @@ type CandidateStatusTypeDocumentTopElem = XmlTopElem & { Doc: CandidateStatusTyp
   FileListBase &
   AdminAccessBase &
   CustomElemsBase & {
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
+  desc?: XmlElem<string>;
+  comment?: XmlElem<string>;
+  doc_info?: XmlElem<DocInfoBase>;
+  access?: XmlElem<AccessDocBase>;
 }
 
 type CandidateStatusTypeDocument = XmlDocument & { TopElem: CandidateStatusTypeDocumentTopElem; };

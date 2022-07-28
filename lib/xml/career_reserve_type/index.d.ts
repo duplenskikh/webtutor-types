@@ -1,16 +1,16 @@
 interface CareerReserveTypeDocumentTaskCommissionPerson extends PersonFillingBase {
-  person_id: XmlElem<number>;
+  person_id?: XmlElem<number>;
 }
 interface CareerReserveTypeDocumentTask {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
-  type: XmlElem<string>;
-  due_date: XmlElem<number>;
-  desc: XmlElem<string>;
-  object_type: XmlElem<string>;
-  object_id: XmlElem<number>;
-  auto_appoint_learning: XmlElem<boolean>;
-  commission_persons: XmlMultiElem<CareerReserveTypeDocumentTaskCommissionPerson>;
+  id?: XmlElem<string>;
+  name?: XmlElem<string>;
+  type?: XmlElem<string>;
+  due_date?: XmlElem<number>;
+  desc?: XmlElem<string>;
+  object_type?: XmlElem<string>;
+  object_id?: XmlElem<number>;
+  auto_appoint_learning?: XmlElem<boolean>;
+  commission_persons?: XmlMultiElem<CareerReserveTypeDocumentTaskCommissionPerson>;
 }
 
 type CareerReserveTypeDocumentTopElem = XmlTopElem & { Doc: CareerReserveTypeDocument } & 
@@ -19,11 +19,11 @@ type CareerReserveTypeDocumentTopElem = XmlTopElem & { Doc: CareerReserveTypeDoc
   FileListBase &
   AdminAccessBase &
   CustomElemsBase & {
-  tasks: XmlMultiElem<CareerReserveTypeDocumentTask>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
+  tasks?: XmlMultiElem<CareerReserveTypeDocumentTask>;
+  desc?: XmlElem<string>;
+  comment?: XmlElem<string>;
+  doc_info?: XmlElem<DocInfoBase>;
+  access?: XmlElem<AccessDocBase>;
 }
 
 type CareerReserveTypeDocument = XmlDocument & { TopElem: CareerReserveTypeDocumentTopElem; };
