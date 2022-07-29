@@ -32,7 +32,7 @@ interface DialogNotificationTemplateAttachment {
   data?: XmElem<string>;
 }
 
-interface DialogNotificationTemplateTopElem {
+type DialogNotificationTemplateTopElem = XmlTopElem & { Doc: DialogNotificationTemplate } & {
   subject?: XmElem<string>;
   body?: XmElem<string>;
   body_type?: XmElem<string>;
@@ -44,7 +44,7 @@ interface DialogNotificationTemplateTopElem {
   notification_system_id?: XmElem<number>;
 }
 
-type DialogNotificationTemplate = XmlDocument;
+type DialogNotificationTemplate = XmlDocument & { TopElem: DialogNotificationTemplateTopElem; };
 
 interface WebVariableBaseWvarEntry {
   id?: XmlElem<string>;
