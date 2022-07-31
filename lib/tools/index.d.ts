@@ -1,7 +1,7 @@
 declare namespace tools {
   const dotnet_host: DotnetCoreHost;
 
-  function new_doc_by_name(documentName: string, isCatalog?: boolean): XmlDocument;
+  function new_doc_by_name<T = XmlDocument>(documentName: string, isCatalog?: boolean): T;
 
   /**
    * Возвращает значение параметра, переданного в функцию, в зашифрованном виде.
