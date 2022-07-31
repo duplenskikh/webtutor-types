@@ -20,7 +20,7 @@ declare namespace tools {
    * @param {string|number} documentId ID документа
    * @returns {T|undefined} XML документ или undefined
    */
-  function open_doc<T>(documentId: number): T | undefined;
+  function open_doc<T = XmlDocument>(documentId: number): T | undefined;
 
   function check_access(TopElem: XmlTopElem, userId: number): boolean;
   function xquery(string: string): any;
