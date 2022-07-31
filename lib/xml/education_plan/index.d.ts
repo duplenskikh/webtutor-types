@@ -90,7 +90,7 @@ type EducationPlanDocumentTopElem = XmlTopElem & { Doc: EducationPlanDocument } 
   mark?: XmlElem<number>;
   event_id?: XmlElem<number>;
   readiness_percent?: XmlElem<number>;
-  state_id?(): number;
+  // state_id?(): number;
   last_state_id?: XmlElem<number>;
   programs?: XmlMultiElem<EducationPlanDocumentProgram>;
   calculate_state_id?(): unknown;
