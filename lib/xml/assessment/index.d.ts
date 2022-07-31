@@ -73,19 +73,18 @@ interface AssessmentScale {
   comment?: XmlElem<string>;
 }
 
-interface AssessmentTopElem extends XmlTopElem,
-  ProctoringBase,
-  CatalogListBase,
-  // <INHERIT TYPE="course_experts_base"/>,
-  FileListBaseFile,
-  CustomElemsBase,
-  KnowledgePartsBase,
-  KnowledgePartsBaseOld,
-  GameBonusBase,
-  // <INHERIT TYPE="estimation_levels_base"/>,
-  // <INHERIT TYPE="cl_localizations_base"/>,
-  AdminAccessBase
-{
+type AssessmentDocumentTopElem = XmlTopElem & { Doc: AssessmentDocument } &
+  ProctoringBase &
+  CatalogListBase &
+  CourseExpertsBase &
+  FileListBaseFile &
+  CustomElemsBase &
+  KnowledgePartsBase &
+  KnowledgePartsBaseOld &
+  GameBonusBase &
+  EstimationLevelsBase &
+  ClLocalizationsBase &
+  AdminAccessBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   title?: XmlElem<string>;
@@ -145,4 +144,4 @@ interface AssessmentTopElem extends XmlTopElem,
   role_id?: XmlMultiElem<number>;
 }
 
-type AssessmentDocument = XmlDocument;
+type AssessmentDocument = XmlDocument & { TopElem: AssessmentDocumentTopElem };

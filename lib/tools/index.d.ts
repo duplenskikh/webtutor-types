@@ -18,9 +18,9 @@ declare namespace tools {
    * Функция открывает документ и возвращает его.
    * Если не смогла открыть, возвращает undefined
    * @param {string|number} documentId ID документа
-   * @returns {XmlDocument|undefined} XML документ или undefined
+   * @returns {T|undefined} XML документ или undefined
    */
-  function open_doc(documentId: number): XmlDocument | undefined;
+  function open_doc<T>(documentId: number): T | undefined;
 
   function check_access(TopElem: XmlTopElem, userId: number): boolean;
   function xquery(string: string): any;

@@ -1,6 +1,8 @@
-const remoteSecurityProfileDocument: RemoteSecurityProfileDocument | undefined = tools.open_doc(1);
-let methodAccess;
+const remoteSecurityProfileDocument = tools.open_doc<RemoteActionDocument>(1);
+remoteSecurityProfileDocument?.TopElem.comment.Value;
 
 if (remoteSecurityProfileDocument !== undefined) {
-  remoteSecurityProfileDocument.TopElem.method_name;
+  const rspTopElem: RemoteActionDocumentTopElem = remoteSecurityProfileDocument.TopElem;
+  rspTopElem.code.Value = "asds";
+  rspTopElem.method_name;
 }
