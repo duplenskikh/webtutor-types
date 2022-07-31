@@ -304,13 +304,15 @@ type MSDialogObjectSelectDocument = XmlDocument & {
 }
 
 interface WTVDlgEditTextTopElem {
-  url?: XmlElem<string>;
-  desc?: XmlElem<string>;
-  title?: XmlElem<string>;
-  is_rich?: XmlElem<boolean>;
+  url: XmlElem<string>;
+  desc: XmlElem<string>;
+  title: XmlElem<string>;
+  is_rich: XmlElem<boolean>;
 }
 
-type WTVDlgEditTextDocument = XmlDocument;
+type WTVDlgEditTextDocument = XmlDocument & {
+  TopElem: WTVDlgEditTextTopElem;
+};
 
 interface Menu {
   name?: XmlElem<string>;
