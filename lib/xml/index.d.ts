@@ -17,7 +17,9 @@ interface VDialogEditTextTopElem {
   is_rich?: XmlElem<boolean>;
 }
 
-type VDialogEditTextDocument = XmlDocument;
+type VDialogEditTextDocument = XmlDocument & {
+  TopElem: VDialogEditTextTopElem;
+};
 
 interface DialogNotificationTemplateRecipient {
   recipient_type?: XmElem<string>;
