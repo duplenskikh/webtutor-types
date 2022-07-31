@@ -299,7 +299,9 @@ interface MSDialogObjectSelectTopElem {
   xquery_qual?: XmlElem<string>;
 }
 
-type MSDialogObjectSelectDocument = XmlDocument;
+type MSDialogObjectSelectDocument = XmlDocument & {
+  TopElem: MSDialogObjectSelectTopElem;
+}
 
 interface WTVDlgEditTextTopElem {
   url?: XmlElem<string>;
