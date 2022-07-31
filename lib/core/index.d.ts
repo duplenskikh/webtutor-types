@@ -1350,7 +1350,7 @@ declare function OpenNewDoc(formUrl: string): XmlDocument;
  * @param {string} options - опции открытия документа в виде "param1='value1';param2='value2';..." (String). Необязательный аргумент. См. Опции открытия документа XML
  * @returns {XmlDocument}
 */
-declare function OpenDoc(url: string, options?: string): XmlDocument;
+declare function OpenDoc<T = XmlDocument>(url: string, options?: string): T;
 
 /**
  * Сохраняет изменения в документе, открытом при помощи функции ObtainUiDoc . Если это был документ, открытый пользователем на экране, то фукнция устанавливает аргумент метода Doc.SetChanged(true), и больше ничего не делает. Установка этого аргумента необходима, чтобы при закрытии документа  пользователю было предложено сохранить изменения. Если это был документ, открытый программой без участия пользователя, действие функции аналогично действию метода Doc.Save(). Аргумент doc - открытый документ (объект XmlDoc)
