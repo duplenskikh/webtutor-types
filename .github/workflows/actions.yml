@@ -1,7 +1,7 @@
 name: actions
 on: [push]
 jobs:
-  FirstAction:
+  install:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -10,8 +10,3 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: npm run lint
-  SecondAction:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ls
