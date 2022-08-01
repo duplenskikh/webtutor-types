@@ -1,7 +1,7 @@
 type SystemEventHandlerDocumentTopElem = XmlTopElem & { Doc: SystemEventHandlerDocument } & 
-  ObjectCodeNameBase &
-  ExecCodeBase &
-  WebVariablesBase & {
+ObjectCodeNameBase &
+ExecCodeBase &
+WebVariablesBase & {
   is_enabled?: XmlElem<boolean>;
   system_event_id?: XmlElem<number>;
   perfom_condition?: XmlElem<string>;

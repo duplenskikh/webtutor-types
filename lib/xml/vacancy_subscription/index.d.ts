@@ -5,8 +5,8 @@ interface VacancySubscriptionDocumentSuitableVacancy {
 }
 
 type VacancySubscriptionDocumentTopElem = XmlTopElem & { Doc: VacancySubscriptionDocument } & 
-  ViewConditionsBase &
-  AdminAccessBase & {
+ViewConditionsBase &
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   is_active?: XmlElem<boolean>;

@@ -12,8 +12,8 @@ interface ContestDocumentParticipant {
 }
 
 type ContestDocumentTopElem = XmlTopElem & { Doc: ContestDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   name?: XmlElem<string>;
   code?: XmlElem<string>;
   is_open?: XmlElem<boolean>;

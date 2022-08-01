@@ -11,7 +11,7 @@ interface NotificationDocumentNotificationSystem {
 }
 
 type NotificationDocumentTopElem = XmlTopElem & { Doc: NotificationDocument } & 
-  CustomElemsBase & {
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   recipients?: XmlMultiElem<NotificationDocumentRecipient>;

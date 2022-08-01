@@ -11,10 +11,10 @@ interface QualificationAssignmentDocumentEducationMethod {
 }
 
 type QualificationAssignmentDocumentTopElem = XmlTopElem & { Doc: QualificationAssignmentDocument } & 
-  PersonFillingBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+PersonFillingBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   assignment_date?: XmlElem<Date>;
   expiration_date?: XmlElem<Date>;
   plan_end_date?: XmlElem<Date>;

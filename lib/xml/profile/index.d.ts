@@ -1,5 +1,5 @@
 type ProfileDocumentTopElem = XmlTopElem & { Doc: ProfileDocument } & 
-  PersonFillingBase & {
+PersonFillingBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

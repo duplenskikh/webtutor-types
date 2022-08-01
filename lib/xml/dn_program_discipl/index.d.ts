@@ -32,9 +32,9 @@ interface DnProgramDisciplDocumentSpecial {
 }
 
 type DnProgramDisciplDocumentTopElem = XmlTopElem & { Doc: DnProgramDisciplDocument } & 
-  LectorsBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+LectorsBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   status_id?: XmlElem<string>;

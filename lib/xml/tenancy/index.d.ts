@@ -12,8 +12,8 @@ interface TenancyDocumentHost {
 }
 
 type TenancyDocumentTopElem = XmlTopElem & { Doc: TenancyDocument } & 
-  FileListBase &
-  CustomElemsBase & {
+FileListBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

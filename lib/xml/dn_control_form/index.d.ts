@@ -1,6 +1,6 @@
 type DnControlFormDocumentTopElem = XmlTopElem & { Doc: DnControlFormDocument } & 
-  CustomElemsBase &
-  AdminAccessBase & {
+CustomElemsBase &
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   comment?: XmlElem<string>;

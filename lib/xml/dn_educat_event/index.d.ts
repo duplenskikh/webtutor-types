@@ -1,6 +1,6 @@
 type DnEducatEventDocumentTopElem = XmlTopElem & { Doc: DnEducatEventDocument } & 
-  CustomElemsBase &
-  AdminAccessBase & {
+CustomElemsBase &
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   comment?: XmlElem<string>;

@@ -20,8 +20,8 @@ interface BlockMessageDocumentMessage extends ObjectTypeBase,
 }
 
 type BlockMessageDocumentTopElem = XmlTopElem & { Doc: BlockMessageDocument } & 
-  ObjectTypeBase &
-  CustomElemsBase & {
+ObjectTypeBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   create_date?: XmlElem<Date>;
   last_message_date?: XmlElem<Date>;

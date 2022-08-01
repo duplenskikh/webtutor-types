@@ -21,32 +21,35 @@ interface PersonnelReserveDocumentRecommendator extends PersonFillingBase {
   person_id?: XmlElem<number>;
 }
 
-type PersonnelReserveDocumentTopElem = XmlTopElem & { Doc: PersonnelReserveDocument } & 
-  TalentPoolFuncManagersBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
-  id?: XmlElem<number>;
-  name?(): string;
-  start_date?: XmlElem<Date>;
-  include_reserve_date?: XmlElem<Date>;
-  finish_date?: XmlElem<Date>;
-  status?: XmlElem<string>;
-  career_reserve_type_id?: XmlElem<number>;
-  exclusion_reason_id?: XmlElem<number>;
-  nomination_id?: XmlElem<number>;
-  development_potential_id?: XmlElem<number>;
-  efficiency_estimation_id?: XmlElem<number>;
-  tasks?: XmlMultiElem<PersonnelReserveDocumentTask>;
-  recommendators?: XmlMultiElem<PersonnelReserveDocumentRecommendator>;
-  overall_comment?: XmlElem<string>;
-  access?: XmlElem<AccessDocBase>;
-  desc?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  set_task?(): unknown;
-  change_func_managers_list?(): unknown;
-  role_id?: XmlMultiElem<number>;
+type PersonnelReserveDocumentTopElem = XmlTopElem & 
+TalentPoolFuncManagersBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
+  Doc: PersonnelReserveDocument;
+  id: XmlElem<number>;
+  name(): string;
+  start_date: XmlElem<Date>;
+  include_reserve_date: XmlElem<Date>;
+  finish_date: XmlElem<Date>;
+  status: XmlElem<string>;
+  career_reserve_type_id: XmlElem<number>;
+  exclusion_reason_id: XmlElem<number>;
+  nomination_id: XmlElem<number>;
+  development_potential_id: XmlElem<number>;
+  efficiency_estimation_id: XmlElem<number>;
+  tasks: XmlMultiElem<PersonnelReserveDocumentTask>;
+  recommendators: XmlMultiElem<PersonnelReserveDocumentRecommendator>;
+  overall_comment: XmlElem<string>;
+  access: XmlElem<AccessDocBase>;
+  desc: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  set_task(): unknown;
+  change_func_managers_list(): unknown;
+  role_id: XmlMultiElem<number>;
 }
 
-type PersonnelReserveDocument = XmlDocument & { TopElem: PersonnelReserveDocumentTopElem; };
+type PersonnelReserveDocument = XmlDocument & {
+  TopElem: PersonnelReserveDocumentTopElem;
+};

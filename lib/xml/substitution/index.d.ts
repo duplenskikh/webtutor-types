@@ -1,7 +1,7 @@
 type SubstitutionDocumentTopElem = XmlTopElem & { Doc: SubstitutionDocument } & 
-  PersonFillingBase &
-  ObjectTypeBase &
-  CustomElemsBase & {
+PersonFillingBase &
+ObjectTypeBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   status?: XmlElem<string>;

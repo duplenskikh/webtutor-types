@@ -1,8 +1,8 @@
 type SelectedResumeDocumentTopElem = XmlTopElem & { Doc: SelectedResumeDocument } & 
-  PersonFillingBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+PersonFillingBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   person_id?: XmlElem<number>;
   resume_id?: XmlElem<number>;

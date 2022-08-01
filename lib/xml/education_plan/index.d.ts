@@ -70,11 +70,11 @@ interface EducationPlanDocumentProgram extends CustomElemsBase {
 }
 
 type EducationPlanDocumentTopElem = XmlTopElem & { Doc: EducationPlanDocument } & 
-  ObjectCodeNameBase &
-  PersonFillingBase &
-  AdminAccessBase &
-  FileListBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+PersonFillingBase &
+AdminAccessBase &
+FileListBase &
+CustomElemsBase & {
   group_id?: XmlElem<number>;
   compound_program_id?: XmlElem<number>;
   type?: XmlElem<string>;

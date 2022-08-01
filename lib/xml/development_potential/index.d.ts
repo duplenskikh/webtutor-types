@@ -1,7 +1,7 @@
 type DevelopmentPotentialDocumentTopElem = XmlTopElem & { Doc: DevelopmentPotentialDocument } & 
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   desc?: XmlElem<string>;

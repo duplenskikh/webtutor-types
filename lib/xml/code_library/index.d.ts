@@ -1,7 +1,7 @@
 type CodeLibraryDocumentTopElem = XmlTopElem & { Doc: CodeLibraryDocument } & 
-  ObjectCodeNameBase &
-  ExecCodeBase &
-  WebVariablesBase & {
+ObjectCodeNameBase &
+ExecCodeBase &
+WebVariablesBase & {
   doc_info?: XmlElem<DocInfoBase>;
   comment?: XmlElem<string>;
   is_std?: XmlElem<boolean>;

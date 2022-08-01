@@ -5,9 +5,9 @@ interface ExpertDocumentFaq {
 }
 
 type ExpertDocumentTopElem = XmlTopElem & { Doc: ExpertDocument } & 
-  PersonBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+PersonBase &
+CustomElemsBase &
+AdminAccessBase & {
   name?(): unknown;
   code?: XmlElem<string>;
   desc?: XmlElem<string>;

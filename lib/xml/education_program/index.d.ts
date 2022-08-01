@@ -3,7 +3,7 @@ interface EducationProgramDocumentEducationMethod {
 }
 
 type EducationProgramDocumentTopElem = XmlTopElem & { Doc: EducationProgramDocument } & 
-  AdminAccessBase & {
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   desc?: XmlElem<string>;

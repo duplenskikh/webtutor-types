@@ -1,5 +1,5 @@
 type DnEduConditionDocumentTopElem = XmlTopElem & { Doc: DnEduConditionDocument } & 
-  AdminAccessBase & {
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   comment?: XmlElem<string>;

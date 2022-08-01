@@ -1,11 +1,11 @@
 type OrgDocumentTopElem = XmlTopElem & { Doc: OrgDocument } & 
-  OrgBase &
-  FileListBase &
-  FuncManagersBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  DocumentPersonsBase &
-  CustomElemsBase & {
+OrgBase &
+FileListBase &
+FuncManagersBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+DocumentPersonsBase &
+CustomElemsBase & {
   account_id?: XmlElem<number>;
   contract_num?: XmlElem<string>;
   access?: XmlElem<AccessDocBase>;

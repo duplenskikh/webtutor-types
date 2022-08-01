@@ -12,13 +12,13 @@ interface KeyPositionDocumentPositionName {
 }
 
 type KeyPositionDocumentTopElem = XmlTopElem & { Doc: KeyPositionDocument } & 
-  ObjectCodeNameBase &
-  PersonFillingBase &
-  ViewConditionsBase &
-  TalentPoolFuncManagersBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+PersonFillingBase &
+ViewConditionsBase &
+TalentPoolFuncManagersBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   position_id?: XmlElem<number>;
   position_name?: XmlElem<string>;
   person_id?: XmlElem<number>;

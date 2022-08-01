@@ -1,7 +1,7 @@
 type VacancyResponseDocumentTopElem = XmlTopElem & { Doc: VacancyResponseDocument } & 
-  AdminAccessBase &
-  FileListBase &
-  CustomElemsBase & {
+AdminAccessBase &
+FileListBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?(): string;
   vacancy_id?: XmlElem<number>;

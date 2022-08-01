@@ -1,7 +1,7 @@
 type ServerAgentDocumentTopElem = XmlTopElem & { Doc: ServerAgentDocument } & 
-  WebVariablesBase &
-  ExecCodeBase &
-  CustomElemsBase & {
+WebVariablesBase &
+ExecCodeBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

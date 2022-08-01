@@ -1,5 +1,5 @@
 type ActivityDocumentTopElem = XmlTopElem & { Doc: ActivityDocument } & 
-  WebVariablesBase & {
+WebVariablesBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

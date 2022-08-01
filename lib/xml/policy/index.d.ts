@@ -1,6 +1,6 @@
 type PolicyDocumentTopElem = XmlTopElem & { Doc: PolicyDocument } & 
-  PersonFillingBase &
-  FileListBase & {
+PersonFillingBase &
+FileListBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

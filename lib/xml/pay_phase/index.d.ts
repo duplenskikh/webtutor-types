@@ -20,10 +20,10 @@ interface PayPhaseDocumentExpense {
 }
 
 type PayPhaseDocumentTopElem = XmlTopElem & { Doc: PayPhaseDocument } & 
-  CostCurrencyBase &
-  ExpenseDistributionBase &
-  CostCentersBase &
-  AdminAccessBase & {
+CostCurrencyBase &
+ExpenseDistributionBase &
+CostCentersBase &
+AdminAccessBase & {
   name?: XmlElem<string>;
   budget_period_id?: XmlElem<number>;
   contract_id?: XmlElem<number>;

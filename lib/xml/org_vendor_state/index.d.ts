@@ -1,7 +1,7 @@
 type OrgVendorStateDocumentTopElem = XmlTopElem & { Doc: OrgVendorStateDocument } & 
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   vendor_status_id?: XmlElem<number>;

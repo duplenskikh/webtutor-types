@@ -20,13 +20,13 @@ interface LibraryMaterialDocumentPathSection {
 }
 
 type LibraryMaterialDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialDocument } & 
-  ObjectCodeNameBase &
-  CatalogListBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  GameBonusBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+CatalogListBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+GameBonusBase &
+AdminAccessBase &
+CustomElemsBase & {
   access?: XmlElem<AccessDocBase>;
   author?: XmlElem<string>;
   publisher?: XmlElem<string>;

@@ -1,5 +1,5 @@
 type LibraryMaterialSourceTypeDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialSourceTypeDocument } & 
-  WebVariablesBase & {
+WebVariablesBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   is_active?: XmlElem<boolean>;

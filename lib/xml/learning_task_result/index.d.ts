@@ -3,9 +3,9 @@ interface LearningTaskResultDocumentFile extends FileBase {
 }
 
 type LearningTaskResultDocumentTopElem = XmlTopElem & { Doc: LearningTaskResultDocument } & 
-  PersonFillingBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+PersonFillingBase &
+AdminAccessBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   learning_task_id?: XmlElem<number>;

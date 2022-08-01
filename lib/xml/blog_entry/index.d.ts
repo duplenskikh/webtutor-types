@@ -1,11 +1,11 @@
 type BlogEntryDocumentTopElem = XmlTopElem & { Doc: BlogEntryDocument } & 
-  PersonFillingBase &
-  FileListBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  AdminAccessBase &
-  GameBonusBase &
-  CustomElemsBase & {
+PersonFillingBase &
+FileListBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+AdminAccessBase &
+GameBonusBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   name?: XmlElem<string>;
   type?: XmlElem<string>;

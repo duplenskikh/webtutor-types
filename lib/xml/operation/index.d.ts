@@ -1,5 +1,5 @@
 type OperationDocumentTopElem = XmlTopElem & { Doc: OperationDocument } & 
-  WebVariablesBase & {
+WebVariablesBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

@@ -1,6 +1,6 @@
 type StatementDocumentTopElem = XmlTopElem & { Doc: StatementDocument } & 
-  PersonFillingBase &
-  FileListBase & {
+PersonFillingBase &
+FileListBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?(): unknown;

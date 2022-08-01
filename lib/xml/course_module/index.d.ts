@@ -1,10 +1,10 @@
 type CourseModuleDocumentTopElem = XmlTopElem & { Doc: CourseModuleDocument } & 
-  ObjectCodeNameBase &
-  WebChecksBase &
-  KnowledgePartsBase &
-  CatalogListBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+ObjectCodeNameBase &
+WebChecksBase &
+KnowledgePartsBase &
+CatalogListBase &
+CustomElemsBase &
+AdminAccessBase & {
   desc?: XmlElem<string>;
   eid?: XmlElem<string>;
   type?: XmlElem<string>;

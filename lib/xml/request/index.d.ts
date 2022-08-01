@@ -14,12 +14,12 @@ interface RequestDocumentWorkflowMatching {
 }
 
 type RequestDocumentTopElem = XmlTopElem & { Doc: RequestDocument } & 
-  PersonFillingBase &
-  KnowledgePartsBase &
-  WorkflowDataBase &
-  FileListBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+PersonFillingBase &
+KnowledgePartsBase &
+WorkflowDataBase &
+FileListBase &
+CustomElemsBase &
+AdminAccessBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?(): unknown;

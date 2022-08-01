@@ -30,10 +30,10 @@ interface TypicalDevelopmentProgramDocumentTutorsBySub {
 }
 
 type TypicalDevelopmentProgramDocumentTopElem = XmlTopElem & { Doc: TypicalDevelopmentProgramDocument } & 
-  ObjectCodeNameBase &
-  AdminAccessBase &
-  FileListBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+AdminAccessBase &
+FileListBase &
+CustomElemsBase & {
   status?: XmlElem<string>;
   desc?: XmlElem<string>;
   tasks?: XmlMultiElem<TypicalDevelopmentProgramDocumentTask>;

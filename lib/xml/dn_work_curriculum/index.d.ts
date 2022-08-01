@@ -29,8 +29,8 @@ interface DnWorkCurriculumDocumentBlockElem {
 }
 
 type DnWorkCurriculumDocumentTopElem = XmlTopElem & { Doc: DnWorkCurriculumDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   status_id?: XmlElem<string>;

@@ -1,6 +1,6 @@
 type GoodInstanceDocumentTopElem = XmlTopElem & { Doc: GoodInstanceDocument } & 
-  ObjectCodeNameBase &
-  PersonFillingBase & {
+ObjectCodeNameBase &
+PersonFillingBase & {
   status?: XmlElem<string>;
   good_id?: XmlElem<number>;
   person_id?: XmlElem<number>;

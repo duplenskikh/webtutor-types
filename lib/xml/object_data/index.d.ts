@@ -1,8 +1,8 @@
 type ObjectDataDocumentTopElem = XmlTopElem & { Doc: ObjectDataDocument } & 
-  ObjectTypeBase &
-  FileListBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+ObjectTypeBase &
+FileListBase &
+CustomElemsBase &
+AdminAccessBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?(): unknown;

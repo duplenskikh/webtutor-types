@@ -1,6 +1,6 @@
 type EventTypeDocumentTopElem = XmlTopElem & { Doc: EventTypeDocument } & 
-  CustomElemsBase &
-  AdminAccessBase & {
+CustomElemsBase &
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   custom_web_template_id?: XmlElem<number>;

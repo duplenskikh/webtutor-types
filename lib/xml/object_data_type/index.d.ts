@@ -1,5 +1,5 @@
 type ObjectDataTypeDocumentTopElem = XmlTopElem & { Doc: ObjectDataTypeDocument } & 
-  ObjectCodeNameBase & {
+ObjectCodeNameBase & {
   object_type?: XmlElem<string>;
   sec_object_type?: XmlElem<string>;
   is_std?: XmlElem<boolean>;

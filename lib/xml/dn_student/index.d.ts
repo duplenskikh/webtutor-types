@@ -3,11 +3,11 @@ interface DnStudentDocumentEducatGroup {
 }
 
 type DnStudentDocumentTopElem = XmlTopElem & { Doc: DnStudentDocument } & 
-  PersonBase &
-  PassportDataBase &
-  InsertFileBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+PersonBase &
+PassportDataBase &
+InsertFileBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   type?: XmlElem<string>;
   person_id?: XmlElem<number>;

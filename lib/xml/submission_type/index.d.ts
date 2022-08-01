@@ -17,7 +17,7 @@ interface SubmissionTypeDocumentPhase {
 }
 
 type SubmissionTypeDocumentTopElem = XmlTopElem & { Doc: SubmissionTypeDocument } & 
-  CustomElemsBase & {
+CustomElemsBase & {
   name?: XmlElem<string>;
   code?: XmlElem<string>;
   periodity_id?: XmlElem<string>;

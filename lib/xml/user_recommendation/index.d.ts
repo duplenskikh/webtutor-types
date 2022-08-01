@@ -9,8 +9,8 @@ interface UserRecommendationDocumentCalculateDate {
 }
 
 type UserRecommendationDocumentTopElem = XmlTopElem & { Doc: UserRecommendationDocument } & 
-  ObjectTypeBase &
-  CustomElemsBase & {
+ObjectTypeBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   objects?: XmlMultiElem<UserRecommendationDocumentObject>;
   calculate_dates?: XmlMultiElem<UserRecommendationDocumentCalculateDate>;

@@ -29,10 +29,10 @@ interface WikiArticleDocumentAcquaintGroup {
 }
 
 type WikiArticleDocumentTopElem = XmlTopElem & { Doc: WikiArticleDocument } & 
-  FileListBase &
-  CustomElemsBase &
-  CatalogListBase &
-  KnowledgePartsBase & {
+FileListBase &
+CustomElemsBase &
+CatalogListBase &
+KnowledgePartsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

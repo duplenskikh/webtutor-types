@@ -23,11 +23,11 @@ interface ICheckResourceDouble {
 }
 
 type ResourceDocumentTopElem = XmlTopElem &
-  ObjectCodeNameBase &
-  CustomElemsBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  GameBonusBase & {
+ObjectCodeNameBase &
+CustomElemsBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+GameBonusBase & {
   Doc: ResourceDocument;
   type: XmlElem<string>;
   status: XmlElem<string>;

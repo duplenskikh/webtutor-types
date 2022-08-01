@@ -37,10 +37,10 @@ interface ClCourseDocumentAuxConst {
 }
 
 type ClCourseDocumentTopElem = XmlTopElem & { Doc: ClCourseDocument } & 
-  ObjectCodeNameBase &
-  ClLocalizationsBase &
-  KnowledgePartsBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+ClLocalizationsBase &
+KnowledgePartsBase &
+CustomElemsBase & {
   start_date?: XmlElem<Date>;
   end_date?: XmlElem<Date>;
   state_id?: XmlElem<number>;

@@ -1,7 +1,7 @@
 type RiskPerspectiveDocumentTopElem = XmlTopElem & { Doc: RiskPerspectiveDocument } & 
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   access?: XmlElem<AccessDocBase>;

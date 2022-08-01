@@ -1,6 +1,6 @@
 type WageSystemDocumentTopElem = XmlTopElem & { Doc: WageSystemDocument } & 
-  ObjectCodeNameBase &
-  AdminAccessBase & {
+ObjectCodeNameBase &
+AdminAccessBase & {
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
   access?: XmlElem<AccessDocBase>;

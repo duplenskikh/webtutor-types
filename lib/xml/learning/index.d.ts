@@ -1,5 +1,4 @@
-interface LearningDocumentPart extends LearningPartBase {
-}
+type LearningDocumentPart = LearningPartBase
 
 interface LearningDocumentEvent {
   event_id?: XmlElem<number>;
@@ -7,9 +6,9 @@ interface LearningDocumentEvent {
 }
 
 type LearningDocumentTopElem = XmlTopElem & { Doc: LearningDocument } & 
-  PersonFillingBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+PersonFillingBase &
+CustomElemsBase &
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?(): unknown;
   course_id?: XmlElem<number>;

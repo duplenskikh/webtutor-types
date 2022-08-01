@@ -4,12 +4,12 @@ interface SubdivisionGroupDocumentSubdivision {
 }
 
 type SubdivisionGroupDocumentTopElem = XmlTopElem & { Doc: SubdivisionGroupDocument } & 
-  ObjectCodeNameBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  CustomElemsBase &
-  RequirementsBase &
-  ViewConditionsBase & {
+ObjectCodeNameBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+CustomElemsBase &
+RequirementsBase &
+ViewConditionsBase & {
   is_dynamic?: XmlElem<boolean>;
   subdivisions?: XmlMultiElem<SubdivisionGroupDocumentSubdivision>;
   kpi_profile_id?: XmlElem<number>;

@@ -4,9 +4,9 @@ interface VendorStateDocumentCertificateType {
 }
 
 type VendorStateDocumentTopElem = XmlTopElem & { Doc: VendorStateDocument } & 
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   education_org_id?: XmlElem<number>;

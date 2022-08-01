@@ -26,9 +26,9 @@ interface DnTrainMethodComplexDocumentItem {
 }
 
 type DnTrainMethodComplexDocumentTopElem = XmlTopElem & { Doc: DnTrainMethodComplexDocument } & 
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   facult_id?: XmlElem<number>;

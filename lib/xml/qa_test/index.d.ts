@@ -1,10 +1,10 @@
 type QaTestDocumentTopElem = XmlTopElem & { Doc: QaTestDocument } & 
-  ObjectCodeNameBase &
-  ExecCodeBase &
-  ObjectTypeBase &
-  QaTestParamBase &
-  QaTestFixtureBase &
-  QaTestAssertBase & {
+ObjectCodeNameBase &
+ExecCodeBase &
+ObjectTypeBase &
+QaTestParamBase &
+QaTestFixtureBase &
+QaTestAssertBase & {
   create_date?: XmlElem<Date>;
   status?: XmlElem<string>;
   type?: XmlElem<string>;

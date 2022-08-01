@@ -1,6 +1,6 @@
 type AssessmentResultRecommendDocumentTopElem = XmlTopElem & { Doc: AssessmentResultRecommendDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   type?: XmlElem<number>;

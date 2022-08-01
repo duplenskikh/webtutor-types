@@ -9,8 +9,8 @@ interface DnIndEducatPlanDocumentContrlTermEvent {
 }
 
 type DnIndEducatPlanDocumentTopElem = XmlTopElem & { Doc: DnIndEducatPlanDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   student_id?: XmlElem<number>;
   discipline_id?: XmlElem<number>;

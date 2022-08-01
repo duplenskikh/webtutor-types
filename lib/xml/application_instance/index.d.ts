@@ -1,5 +1,5 @@
 type ApplicationInstanceDocumentTopElem = XmlTopElem & { Doc: ApplicationInstanceDocument } & 
-  WebVariablesBase & {
+WebVariablesBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

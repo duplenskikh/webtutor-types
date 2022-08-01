@@ -54,13 +54,13 @@ interface CompetenceProfileDocumentPositionCommon {
 }
 
 type CompetenceProfileDocumentTopElem = XmlTopElem & { Doc: CompetenceProfileDocument } & 
-  ObjectCodeNameBase &
-  SupplementaryQuestionsBase &
-  FileListBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  CustomElemsBase &
-  AdminAccessBase & {
+ObjectCodeNameBase &
+SupplementaryQuestionsBase &
+FileListBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+CustomElemsBase &
+AdminAccessBase & {
   roles?: XmlMultiElem<CompetenceProfileDocumentRole>;
   competences?: XmlMultiElem<CompetenceProfileDocumentCompetence>;
   education_methods?: XmlMultiElem<CompetenceProfileDocumentEducationMethod>;

@@ -5,7 +5,7 @@ interface InvoiceDocumentCourse {
 }
 
 type InvoiceDocumentTopElem = XmlTopElem & { Doc: InvoiceDocument } & 
-  AdminAccessBase & {
+AdminAccessBase & {
   code?: XmlElem<string>;
   date?: XmlElem<Date>;
   is_paid?: XmlElem<boolean>;

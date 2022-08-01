@@ -1,10 +1,10 @@
 type EventResultDocumentTopElem = XmlTopElem & { Doc: EventResultDocument } & 
-  PersonFillingBase &
-  ExpenseDistributionBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase &
-  CustomDatasBase & {
+PersonFillingBase &
+ExpenseDistributionBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase &
+CustomDatasBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   event_id?: XmlElem<number>;

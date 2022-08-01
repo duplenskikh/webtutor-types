@@ -8,14 +8,14 @@ interface PositionFamilyDocumentKpiProfile {
 }
 
 type PositionFamilyDocumentTopElem = XmlTopElem & { Doc: PositionFamilyDocument } & 
-  ObjectCodeNameBase &
-  ViewConditionsBase &
-  RequirementsBase &
-  FileListBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  AdminAccessBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+ViewConditionsBase &
+RequirementsBase &
+FileListBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+AdminAccessBase &
+CustomElemsBase & {
   parent_position_family_id?: XmlElem<number>;
   subdivision_group_id?: XmlElem<number>;
   is_dynamic?: XmlElem<boolean>;

@@ -7,10 +7,10 @@ interface KnowledgePartDocumentLevel {
 }
 
 type KnowledgePartDocumentTopElem = XmlTopElem & { Doc: KnowledgePartDocument } & 
-  CatalogListBase &
-  FileListBase &
-  CustomElemsBase &
-  KnowledgePartsBase & {
+CatalogListBase &
+FileListBase &
+CustomElemsBase &
+KnowledgePartsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

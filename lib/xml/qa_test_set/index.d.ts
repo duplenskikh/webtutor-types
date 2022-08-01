@@ -3,10 +3,10 @@ interface QaTestSetDocumentTest {
 }
 
 type QaTestSetDocumentTopElem = XmlTopElem & { Doc: QaTestSetDocument } & 
-  ObjectCodeNameBase &
-  QaTestParamBase &
-  QaTestFixtureBase &
-  QaTestAssertBase & {
+ObjectCodeNameBase &
+QaTestParamBase &
+QaTestFixtureBase &
+QaTestAssertBase & {
   status?: XmlElem<string>;
   tests?: XmlMultiElem<QaTestSetDocumentTest>;
   desc?: XmlElem<string>;

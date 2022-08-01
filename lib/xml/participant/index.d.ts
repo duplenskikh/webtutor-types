@@ -5,9 +5,9 @@ interface ParticipantDocumentMark extends PersonFillingBase {
 }
 
 type ParticipantDocumentTopElem = XmlTopElem & { Doc: ParticipantDocument } & 
-  PersonFillingBase &
-  FileListBase &
-  AdminAccessBase & {
+PersonFillingBase &
+FileListBase &
+AdminAccessBase & {
   contest_id?: XmlElem<number>;
   contest_name?: XmlElem<string>;
   work_name?: XmlElem<string>;

@@ -1,6 +1,6 @@
 type ExpenseItemDocumentTopElem = XmlTopElem & { Doc: ExpenseItemDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   is_active?: XmlElem<boolean>;

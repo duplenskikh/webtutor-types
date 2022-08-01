@@ -74,17 +74,17 @@ interface AssessmentScale {
 }
 
 type AssessmentDocumentTopElem = XmlTopElem & { Doc: AssessmentDocument } &
-  ProctoringBase &
-  CatalogListBase &
-  CourseExpertsBase &
-  FileListBaseFile &
-  CustomElemsBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  GameBonusBase &
-  EstimationLevelsBase &
-  ClLocalizationsBase &
-  AdminAccessBase & {
+ProctoringBase &
+CatalogListBase &
+CourseExpertsBase &
+FileListBaseFile &
+CustomElemsBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+GameBonusBase &
+EstimationLevelsBase &
+ClLocalizationsBase &
+AdminAccessBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   title?: XmlElem<string>;

@@ -1,5 +1,5 @@
 type RestrictingCollaboratorScheduleDocumentTopElem = XmlTopElem & { Doc: RestrictingCollaboratorScheduleDocument } & 
-  PersonFillingBase & {
+PersonFillingBase & {
   id?: XmlElem<number>;
   person_id?: XmlElem<number>;
   budget_period_id?: XmlElem<number>;

@@ -84,13 +84,13 @@ interface PositionCommonDocumentLevel {
 }
 
 type PositionCommonDocumentTopElem = XmlTopElem & { Doc: PositionCommonDocument } & 
-  ObjectCodeNameBase &
-  RequirementsBase &
-  FileListBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  CustomElemsBase &
-  AdminAccessBase & {
+ObjectCodeNameBase &
+RequirementsBase &
+FileListBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+CustomElemsBase &
+AdminAccessBase & {
   min_grade?: XmlElem<number>;
   max_grade?: XmlElem<number>;
   benefit_sum?: XmlElem<number>;

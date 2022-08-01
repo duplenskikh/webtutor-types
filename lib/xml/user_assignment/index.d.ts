@@ -23,7 +23,7 @@ interface UserAssignmentDocumentYColHeader {
 }
 
 type UserAssignmentDocumentTopElem = XmlTopElem & { Doc: UserAssignmentDocument } & 
-  ViewConditionsBase & {
+ViewConditionsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   object_name?: XmlElem<string>;

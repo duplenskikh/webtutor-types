@@ -1,14 +1,14 @@
 type DocumentDocumentTopElem = XmlTopElem & { Doc: DocumentDocument } & 
-  ObjectCodeNameBase &
-  CatalogListBase &
-  FileListBase &
-  WebVariablesBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  GameBonusBase &
-  DocumentPersonsBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+ObjectCodeNameBase &
+CatalogListBase &
+FileListBase &
+WebVariablesBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+GameBonusBase &
+DocumentPersonsBase &
+CustomElemsBase &
+AdminAccessBase & {
   create_date?: XmlElem<Date>;
   parent_document_id?: XmlElem<number>;
   site_id?: XmlElem<number>;

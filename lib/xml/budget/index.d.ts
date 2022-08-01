@@ -9,10 +9,10 @@ interface BudgetDocumentTransfer {
 }
 
 type BudgetDocumentTopElem = XmlTopElem & { Doc: BudgetDocument } & 
-  CostCurrencyBase &
-  CatalogListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+CostCurrencyBase &
+CatalogListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   state?: XmlElem<string>;

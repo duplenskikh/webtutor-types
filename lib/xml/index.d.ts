@@ -1531,8 +1531,8 @@ interface MSDispBlockBase {
 }
 
 interface ImageBase {
-	name?: XmlElem<string>;
-	data?: XmlElem<Binary>;
+  name?: XmlElem<string>;
+  data?: XmlElem<Binary>;
 }
 
 interface RubricBase {
@@ -1621,8 +1621,8 @@ interface ZonesBase {
 
 interface ObjectTypeBase {
   object_type?: XmlElem<string>;
-	object_id?: XmlElem<number>;
-	object_name?: XmlElem<string>;
+  object_id?: XmlElem<number>;
+  object_name?: XmlElem<string>;
 }
 
 /** Объект параметров агента */

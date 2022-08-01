@@ -1,7 +1,7 @@
 type RecommendationDocumentTopElem = XmlTopElem & { Doc: RecommendationDocument } & 
-  FileListBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+FileListBase &
+CustomElemsBase &
+AdminAccessBase & {
   code?: XmlElem<string>;
   lastname?: XmlElem<string>;
   firstname?: XmlElem<string>;

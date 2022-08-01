@@ -1,8 +1,8 @@
 type CovenantDocumentTopElem = XmlTopElem & { Doc: CovenantDocument } & 
-  CostCurrencyBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+CostCurrencyBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   signatory_employer_id?: XmlElem<number>;

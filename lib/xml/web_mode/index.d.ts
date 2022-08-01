@@ -10,9 +10,9 @@ interface WebModeDocumentStatisticRec extends WebVariablesBase {
 }
 
 type WebModeDocumentTopElem = XmlTopElem & { Doc: WebModeDocument } & 
-  ObjectTypeBase &
-  FuncManagersBase &
-  WebVariablesBase & {
+ObjectTypeBase &
+FuncManagersBase &
+WebVariablesBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

@@ -4,8 +4,8 @@ interface ExternalSystemDocumentKnowledgeUrlPair {
 }
 
 type ExternalSystemDocumentTopElem = XmlTopElem & { Doc: ExternalSystemDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   knowledge_url_pairs?: XmlMultiElem<ExternalSystemDocumentKnowledgeUrlPair>;

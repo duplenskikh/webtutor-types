@@ -1,5 +1,5 @@
 type CustomReportDocumentTopElem = XmlTopElem & { Doc: CustomReportDocument } & 
-  CustomReportBase & {
+CustomReportBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

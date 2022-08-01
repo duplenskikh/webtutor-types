@@ -40,8 +40,8 @@ interface PollProcedureDocumentPoll {
 }
 
 type PollProcedureDocumentTopElem = XmlTopElem & { Doc: PollProcedureDocument } & 
-  CustomElemsBase &
-  AdminAccessBase & {
+CustomElemsBase &
+AdminAccessBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

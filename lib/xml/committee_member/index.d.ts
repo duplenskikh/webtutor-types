@@ -1,7 +1,7 @@
 type CommitteeMemberDocumentTopElem = XmlTopElem & { Doc: CommitteeMemberDocument } & 
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   catalog?: XmlElem<string>;

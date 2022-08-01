@@ -5,16 +5,16 @@ interface GroupDocumentCollaborator extends PersonForeignBase {
 }
 
 type GroupDocumentTopElem = XmlTopElem & { Doc: GroupDocument } & 
-  ObjectCodeNameBase &
-  EducGroupsBase &
-  FuncManagersBase &
-  CustomElemsBase &
-  DocumentPersonsBase &
-  RequirementsBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  ViewConditionsBase &
-  PersonObjectLinksBase & {
+ObjectCodeNameBase &
+EducGroupsBase &
+FuncManagersBase &
+CustomElemsBase &
+DocumentPersonsBase &
+RequirementsBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+ViewConditionsBase &
+PersonObjectLinksBase & {
   show_detailed?: XmlElem<boolean>;
   is_dynamic?: XmlElem<boolean>;
   is_educ?: XmlElem<boolean>;

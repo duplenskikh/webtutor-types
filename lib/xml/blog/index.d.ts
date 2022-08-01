@@ -4,12 +4,12 @@ interface BlogDocumentAuthor extends PersonFillingBase {
 }
 
 type BlogDocumentTopElem = XmlTopElem & { Doc: BlogDocument } & 
-  ObjectCodeNameBase &
-  WebVariablesBase &
-  PersonFillingBase &
-  KnowledgePartsBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+WebVariablesBase &
+PersonFillingBase &
+KnowledgePartsBase &
+AdminAccessBase &
+CustomElemsBase & {
   create_date?: XmlElem<Date>;
   type?: XmlElem<string>;
   channel_provider_id?: XmlElem<number>;

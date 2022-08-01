@@ -16,10 +16,10 @@ interface OutstaffOrderDocumentPeriod {
 }
 
 type OutstaffOrderDocumentTopElem = XmlTopElem & { Doc: OutstaffOrderDocument } & 
-  PersonFillingBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+PersonFillingBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?(): unknown;

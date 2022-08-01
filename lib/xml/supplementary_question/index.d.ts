@@ -3,8 +3,8 @@ interface SupplementaryQuestionDocumentSectionInstruction {
 }
 
 type SupplementaryQuestionDocumentTopElem = XmlTopElem & { Doc: SupplementaryQuestionDocument } & 
-  CompetenceScaleBase &
-  AdminAccessBase & {
+CompetenceScaleBase &
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   section?: XmlElem<string>;

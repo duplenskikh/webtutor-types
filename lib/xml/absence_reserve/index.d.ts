@@ -1,5 +1,5 @@
 type AbsenceReserveDocumentTopElem = XmlTopElem &
-  PersonFillingBase & {
+PersonFillingBase & {
   Doc: AbsenceReserveDocument;
   id: XmlElem<number>;
   person_id: XmlElem<number>;

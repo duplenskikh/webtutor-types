@@ -3,8 +3,8 @@ interface DnBlockDisciplineDocumentDiscipline {
 }
 
 type DnBlockDisciplineDocumentTopElem = XmlTopElem & { Doc: DnBlockDisciplineDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   disciplines?: XmlMultiElem<DnBlockDisciplineDocumentDiscipline>;

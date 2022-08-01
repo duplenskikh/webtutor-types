@@ -5,8 +5,8 @@ interface DnRegisterDocumentStudentMark {
 }
 
 type DnRegisterDocumentTopElem = XmlTopElem & { Doc: DnRegisterDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   control_event_id?: XmlElem<number>;
   type_id?: XmlElem<string>;

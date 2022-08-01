@@ -12,10 +12,10 @@ interface WikiBaseDocumentWikiArticleType extends FuncManagersBase {
 }
 
 type WikiBaseDocumentTopElem = XmlTopElem & { Doc: WikiBaseDocument } & 
-  FileListBase &
-  CustomElemsBase &
-  FuncManagersBase &
-  KnowledgePartsBase & {
+FileListBase &
+CustomElemsBase &
+FuncManagersBase &
+KnowledgePartsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

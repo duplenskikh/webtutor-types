@@ -30,12 +30,12 @@ interface QualificationDocumentEvalCondition {
 }
 
 type QualificationDocumentTopElem = XmlTopElem & { Doc: QualificationDocument } & 
-  ObjectCodeNameBase &
-  GameBonusBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase &
-  KnowledgePartsBase & {
+ObjectCodeNameBase &
+GameBonusBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase &
+KnowledgePartsBase & {
   join_mode?: XmlElem<string>;
   level_id?: XmlElem<number>;
   parent_id?: XmlElem<number>;

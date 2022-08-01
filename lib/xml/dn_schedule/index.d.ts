@@ -12,8 +12,8 @@ interface DnScheduleDocumentScheduleElem {
 }
 
 type DnScheduleDocumentTopElem = XmlTopElem & { Doc: DnScheduleDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   faculty?: XmlElem<number>;
   chair?: XmlElem<number>;

@@ -1,6 +1,6 @@
 type SkillTypeDocumentTopElem = XmlTopElem & { Doc: SkillTypeDocument } & 
-  ObjectCodeNameBase &
-  AdminAccessBase & {
+ObjectCodeNameBase &
+AdminAccessBase & {
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
   access?: XmlElem<AccessDocBase>;

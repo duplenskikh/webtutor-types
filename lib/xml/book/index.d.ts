@@ -1,8 +1,8 @@
 type BookDocumentTopElem = XmlTopElem & { Doc: BookDocument } & 
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  AdminAccessBase &
-  CustomElemsBase & {
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   comment?: XmlElem<string>;

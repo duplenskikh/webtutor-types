@@ -1,6 +1,6 @@
 type RequestTypeDocumentTopElem = XmlTopElem & { Doc: RequestTypeDocument } & 
-  ObjectCodeNameBase &
-  WebVariablesBase & {
+ObjectCodeNameBase &
+WebVariablesBase & {
   object_type?: XmlElem<string>;
   object_query_qual?: XmlElem<string>;
   is_group?: XmlElem<boolean>;

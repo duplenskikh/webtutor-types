@@ -43,18 +43,18 @@ interface CourseDocumentPart {
 }
 
 type CourseDocumentTopElem = XmlTopElem & { Doc: CourseDocument } & 
-  ObjectCodeNameBase &
-  EstimationLevelsBase &
-  CourseExpertsBase &
-  CourseSettingsBase &
-  CatalogListBase &
-  FileListBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  ProctoringBase &
-  GameBonusBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+ObjectCodeNameBase &
+EstimationLevelsBase &
+CourseExpertsBase &
+CourseSettingsBase &
+CatalogListBase &
+FileListBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+ProctoringBase &
+GameBonusBase &
+CustomElemsBase &
+AdminAccessBase & {
   desc?: XmlElem<string>;
   status?: XmlElem<string>;
   win_width?: XmlElem<number>;

@@ -85,10 +85,10 @@ interface ApplicationDocumentApplicationUnit {
 }
 
 type ApplicationDocumentTopElem = XmlTopElem & { Doc: ApplicationDocument } & 
-  ObjectCodeNameBase &
-  WebVariablesBase &
-  FuncManagersBase &
-  CatalogListBase & {
+ObjectCodeNameBase &
+WebVariablesBase &
+FuncManagersBase &
+CatalogListBase & {
   type?: XmlElem<string>;
   disp_type?: XmlElem<string>;
   use_instances?: XmlElem<boolean>;

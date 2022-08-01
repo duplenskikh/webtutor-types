@@ -3,10 +3,10 @@ interface ContactDocumentPollResult {
 }
 
 type ContactDocumentTopElem = XmlTopElem & { Doc: ContactDocument } & 
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase &
-  CustomDatasBase & {
+FileListBase &
+AdminAccessBase &
+CustomElemsBase &
+CustomDatasBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   project_id?: XmlElem<number>;

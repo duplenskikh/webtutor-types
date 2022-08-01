@@ -1,5 +1,5 @@
 type OverrideWebTemplateDocumentTopElem = XmlTopElem & { Doc: OverrideWebTemplateDocument } & 
-  WebVariablesBase & {
+WebVariablesBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?(): unknown;

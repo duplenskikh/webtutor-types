@@ -3,11 +3,11 @@ interface StaffPositionDocumentCompetenceProfile {
 }
 
 type StaffPositionDocumentTopElem = XmlTopElem & { Doc: StaffPositionDocument } & 
-  RequirementsBase &
-  FileListBase &
-  KnowledgePartsBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+RequirementsBase &
+FileListBase &
+KnowledgePartsBase &
+AdminAccessBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

@@ -1,10 +1,10 @@
 type ArticleDocumentTopElem = XmlTopElem & { Doc: ArticleDocument } & 
-  CatalogListBase &
-  FileListBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  AdminAccessBase &
-  CustomElemsBase & {
+CatalogListBase &
+FileListBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   parent_object_id?: XmlElem<number>;

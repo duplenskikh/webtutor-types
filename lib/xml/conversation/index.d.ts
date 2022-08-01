@@ -22,9 +22,9 @@ interface ConversationDocumentRecipient {
 }
 
 type ConversationDocumentTopElem = XmlTopElem & { Doc: ConversationDocument } & 
-  PersonFillingBase &
-  FuncManagersBase &
-  CustomElemsBase & {
+PersonFillingBase &
+FuncManagersBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

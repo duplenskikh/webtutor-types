@@ -111,20 +111,20 @@ interface EventDocumentPhase {
 }
 
 type EventDocumentTopElem = XmlTopElem & { Doc: EventDocument } & 
-  ObjectCodeNameBase &
-  EducGroupsBase &
-  PathPlacesBase &
-  CostCurrencyTypeBase &
-  CostCentersBase &
-  LectorsBase &
-  GameBonusBase &
-  EduMethodTestingBase &
-  KnowledgePartsBase &
-  CustomElemsBase &
-  CustomDatasBase &
-  CatalogListBase &
-  AdminAccessBase &
-  EventSettingsBase & {
+ObjectCodeNameBase &
+EducGroupsBase &
+PathPlacesBase &
+CostCurrencyTypeBase &
+CostCentersBase &
+LectorsBase &
+GameBonusBase &
+EduMethodTestingBase &
+KnowledgePartsBase &
+CustomElemsBase &
+CustomDatasBase &
+CatalogListBase &
+AdminAccessBase &
+EventSettingsBase & {
   type_id?: XmlElem<string>;
   event_type_id?: XmlElem<number>;
   start_date?: XmlElem<Date>;

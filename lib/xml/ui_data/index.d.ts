@@ -1,5 +1,5 @@
 type UiDataDocumentTopElem = XmlTopElem & { Doc: UiDataDocument } & 
-  ObjectTypeBase & {
+ObjectTypeBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?(): unknown;

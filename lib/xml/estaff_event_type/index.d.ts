@@ -8,8 +8,8 @@ interface EstaffEventTypeDocumentEventType {
 }
 
 type EstaffEventTypeDocumentTopElem = XmlTopElem & { Doc: EstaffEventTypeDocument } & 
-  WebVariablesBase &
-  AdminAccessBase & {
+WebVariablesBase &
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   position_commons?: XmlMultiElem<EstaffEventTypeDocumentPositionCommon>;

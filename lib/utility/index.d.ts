@@ -2,8 +2,8 @@
  * Make all properties in T optional
  */
  type Partial<T> = {
-  [P in keyof T]?: T[P];
-};
+   [P in keyof T]?: T[P];
+ };
 
 /**
 * Make all properties in T required

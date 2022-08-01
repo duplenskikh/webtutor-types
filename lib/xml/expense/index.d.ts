@@ -1,5 +1,5 @@
 type ExpenseDocumentTopElem = XmlTopElem & { Doc: ExpenseDocument } & 
-  FileListBase & {
+FileListBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   pay_stage_id?: XmlElem<number>;

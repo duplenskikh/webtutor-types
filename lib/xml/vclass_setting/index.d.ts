@@ -22,8 +22,8 @@ interface VclassSettingDocumentProgram {
 }
 
 type VclassSettingDocumentTopElem = XmlTopElem & { Doc: VclassSettingDocument } & 
-  CustomElemsBase &
-  AdminAccessBase & {
+CustomElemsBase &
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   event_id?: XmlElem<number>;

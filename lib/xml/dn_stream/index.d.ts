@@ -3,8 +3,8 @@ interface DnStreamDocumentStudGroup {
 }
 
 type DnStreamDocumentTopElem = XmlTopElem & { Doc: DnStreamDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   stud_groups?: XmlMultiElem<DnStreamDocumentStudGroup>;

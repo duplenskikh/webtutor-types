@@ -15,8 +15,8 @@ interface StatisticRecDocumentCatalog {
 }
 
 type StatisticRecDocumentTopElem = XmlTopElem & { Doc: StatisticRecDocument } & 
-  ObjectCodeNameBase &
-  WebVariablesBase & {
+ObjectCodeNameBase &
+WebVariablesBase & {
   url?: XmlElem<string>;
   is_enabled?: XmlElem<boolean>;
   auto_calc?: XmlElem<boolean>;

@@ -14,10 +14,10 @@ interface CareerPlanDocumentStage {
 }
 
 type CareerPlanDocumentTopElem = XmlTopElem & { Doc: CareerPlanDocument } & 
-  ObjectCodeNameBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   start_date?: XmlElem<Date>;
   status?: XmlElem<string>;
   budget_period_id?: XmlElem<number>;

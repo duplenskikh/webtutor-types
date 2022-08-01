@@ -1,6 +1,6 @@
 type ProviderDocumentTopElem = XmlTopElem & { Doc: ProviderDocument } & 
-  CustomElemsBase &
-  FileListBase & {
+CustomElemsBase &
+FileListBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   provider_product?: XmlElem<boolean>;

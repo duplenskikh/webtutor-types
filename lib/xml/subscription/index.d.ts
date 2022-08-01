@@ -1,6 +1,6 @@
 type SubscriptionDocumentTopElem = XmlTopElem & { Doc: SubscriptionDocument } & 
-  CustomElemsBase &
-  AdminAccessBase & {
+CustomElemsBase &
+AdminAccessBase & {
   create_date?: XmlElem<Date>;
   type?: XmlElem<string>;
   document_id?: XmlElem<number>;

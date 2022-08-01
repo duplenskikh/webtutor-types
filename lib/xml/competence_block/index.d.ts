@@ -1,5 +1,5 @@
 type CompetenceBlockDocumentTopElem = XmlTopElem & { Doc: CompetenceBlockDocument } & 
-  AdminAccessBase & {
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   parent_object_id?: XmlElem<number>;

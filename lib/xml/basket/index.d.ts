@@ -5,7 +5,7 @@ interface BasketDocumentGood {
 }
 
 type BasketDocumentTopElem = XmlTopElem & { Doc: BasketDocument } & 
-  PersonFillingBase & {
+PersonFillingBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

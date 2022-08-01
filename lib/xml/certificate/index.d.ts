@@ -1,8 +1,8 @@
 type CertificateDocumentTopElem = XmlTopElem & { Doc: CertificateDocument } & 
-  PersonFillingBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+PersonFillingBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   serial?: XmlElem<string>;
   number?: XmlElem<string>;
   type_id?: XmlElem<number>;

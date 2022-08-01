@@ -7,9 +7,9 @@ interface PollResultDocumentQuestion {
 }
 
 type PollResultDocumentTopElem = XmlTopElem & { Doc: PollResultDocument } & 
-  PersonFillingBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+PersonFillingBase &
+CustomElemsBase &
+AdminAccessBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

@@ -17,8 +17,8 @@ interface ChatbotChatDocumentAimlData {
 }
 
 type ChatbotChatDocumentTopElem = XmlTopElem & { Doc: ChatbotChatDocument } & 
-  PersonFillingBase &
-  CustomElemsBase & {
+PersonFillingBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

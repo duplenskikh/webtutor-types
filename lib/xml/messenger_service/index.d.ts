@@ -1,6 +1,6 @@
 type MessengerServiceDocumentTopElem = XmlTopElem & { Doc: MessengerServiceDocument } & 
-  CustomElemsBase &
-  FileListBase & {
+CustomElemsBase &
+FileListBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

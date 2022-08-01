@@ -8,9 +8,9 @@ interface PositionDocumentKpiProfile {
 }
 
 type PositionDocumentTopElem = XmlTopElem & { Doc: PositionDocument } & 
-  ObjectCodeNameBase &
-  FileListBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+FileListBase &
+CustomElemsBase & {
   org_id?: XmlElem<number>;
   parent_object_id?: XmlElem<number>;
   basic_collaborator_id?: XmlElem<number>;

@@ -48,7 +48,7 @@ interface DocTypeDocumentField {
 }
 
 type DocTypeDocumentTopElem = XmlTopElem & { Doc: DocTypeDocument } & 
-  CustomElemsBase & {
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   category?: XmlElem<string>;

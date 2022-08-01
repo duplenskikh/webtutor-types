@@ -10,7 +10,7 @@ interface ConversationTypeDocumentCustomState {
 }
 
 type ConversationTypeDocumentTopElem = XmlTopElem & { Doc: ConversationTypeDocument } & 
-  FuncManagersBase & {
+FuncManagersBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;
