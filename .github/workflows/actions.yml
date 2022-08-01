@@ -1,0 +1,7 @@
+name: actions
+on: [push]
+jobs:
+  FirstAction:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'test'
