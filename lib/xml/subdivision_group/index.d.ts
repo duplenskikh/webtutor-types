@@ -18,9 +18,11 @@ type SubdivisionGroupDocumentTopElem = XmlTopElem & { Doc: SubdivisionGroupDocum
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
   desc?: XmlElem<string>;
-  dynamic_select_subdivision?(): unknown;
-  dynamic_select_person?(): unknown;
+  dynamic_select_subdivision(clearList?: boolean): void;
+  dynamic_select_person(clearList: boolean): void;
   start_action?(): unknown;
 }
 
-type SubdivisionGroupDocument = XmlDocument & { TopElem: SubdivisionGroupDocumentTopElem; };
+type SubdivisionGroupDocument = XmlDocument & {
+  TopElem: SubdivisionGroupDocumentTopElem;
+};

@@ -32,11 +32,11 @@ type GroupDocumentTopElem = XmlTopElem & { Doc: GroupDocument } &
   doc_info?: XmlElem<DocInfoBase>;
   access?: XmlElem<AccessDocBase>;
   desc?: XmlElem<string>;
-  dynamic_select_person?(): unknown;
+  dynamic_select_person(clearList?: boolean): void;
   start_action?(): unknown;
   activateCourseToPersons?(): unknown;
-  add_collaborator?(): unknown;
-  remove_collaborator?(): unknown;
+  add_collaborator(collaboratorId: number, collaboratorDocument: CollaboratorDocument): GroupDocumentCollaborator;
+  remove_collaborator(collaboratorId: number): boolean;
   role_id?: XmlMultiElem<number>;
 }
 
