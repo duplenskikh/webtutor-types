@@ -1,5 +1,5 @@
 type KpiGroupDocumentTopElem = XmlTopElem & { Doc: KpiGroupDocument } & 
-  CustomElemsBase & {
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   workflow_id?: XmlElem<number>;

@@ -42,7 +42,7 @@ interface AcquaintDocumentSelectType {
 }
 
 type AcquaintDocumentTopElem = XmlTopElem & { Doc: AcquaintDocument } & 
-  ViewConditionsBase & {
+ViewConditionsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   object_type?: XmlElem<string>;

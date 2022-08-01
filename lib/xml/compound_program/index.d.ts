@@ -49,12 +49,12 @@ interface CompoundProgramDocumentProgram extends CostCurrencyTypeBase,
 }
 
 type CompoundProgramDocumentTopElem = XmlTopElem & { Doc: CompoundProgramDocument } & 
-  ObjectCodeNameBase &
-  LectorsBase &
-  FileListBase &
-  KnowledgePartsBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+ObjectCodeNameBase &
+LectorsBase &
+FileListBase &
+KnowledgePartsBase &
+CustomElemsBase &
+AdminAccessBase & {
   desc?: XmlElem<string>;
   min_person_num?: XmlElem<number>;
   allow_self_assignment?: XmlElem<boolean>;

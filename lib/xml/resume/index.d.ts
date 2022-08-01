@@ -70,9 +70,9 @@ interface ResumeDocumentLng {
 }
 
 type ResumeDocumentTopElem = XmlTopElem & { Doc: ResumeDocument } & 
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   resource_id?: XmlElem<number>;

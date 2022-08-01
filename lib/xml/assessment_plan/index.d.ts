@@ -35,10 +35,10 @@ interface AssessmentPlanDocumentCustomField {
 }
 
 type AssessmentPlanDocumentTopElem = XmlTopElem & { Doc: AssessmentPlanDocument } & 
-  WorkflowDataBase &
-  SupplementaryQuestionsBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+WorkflowDataBase &
+SupplementaryQuestionsBase &
+CustomElemsBase &
+AdminAccessBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   assessment_appraise_id?: XmlElem<number>;

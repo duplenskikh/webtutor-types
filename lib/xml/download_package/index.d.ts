@@ -1,5 +1,5 @@
 type DownloadPackageDocumentTopElem = XmlTopElem & { Doc: DownloadPackageDocument } & 
-  DownloadPackageLogBase & {
+DownloadPackageLogBase & {
   package_id?: XmlElem<string>;
   exchange_server_id?: XmlElem<number>;
   type?: XmlElem<string>;

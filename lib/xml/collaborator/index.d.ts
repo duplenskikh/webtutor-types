@@ -32,15 +32,15 @@ interface CollaboratorDocumentCustomParam {
 }
 
 type CollaboratorDocumentTopElem = XmlTopElem & { Doc: CollaboratorDocument } & 
-  PersonBase &
-  PassportDataBase &
-  FileListBaseFile &
-  FuncManagersBase &
-  // PathSubsBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  CustomElemsBase &
-  PersonObjectLinksBase & {
+PersonBase &
+PassportDataBase &
+FileListBaseFile &
+FuncManagersBase &
+// PathSubsBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+CustomElemsBase &
+PersonObjectLinksBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   eid?: XmlElem<string>;

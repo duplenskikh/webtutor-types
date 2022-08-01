@@ -11,11 +11,11 @@ interface DevelopmentPlanDocumentCustomComment {
 }
 
 type DevelopmentPlanDocumentTopElem = XmlTopElem & { Doc: DevelopmentPlanDocument } & 
-  WorkflowDataBase &
-  SupplementaryQuestionsBase &
-  DevelopmentPlanDataBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+WorkflowDataBase &
+SupplementaryQuestionsBase &
+DevelopmentPlanDataBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?(): string;
   person_id?: XmlElem<number>;

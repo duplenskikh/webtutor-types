@@ -24,11 +24,11 @@ interface EducationOrgDocumentEducationOrg {
 }
 
 type EducationOrgDocumentTopElem = XmlTopElem & { Doc: EducationOrgDocument } & 
-  OrgBase &
-  LectorsBase &
-  CustomElemsBase &
-  AdminAccessBase &
-  FuncManagersBase & {
+OrgBase &
+LectorsBase &
+CustomElemsBase &
+AdminAccessBase &
+FuncManagersBase & {
   is_provider_courses?: XmlElem<boolean>;
   provider_course_type_id?: XmlElem<number>;
   library_url?: XmlElem<string>;

@@ -1,7 +1,7 @@
 type RemoteActionDocumentTopElem = XmlTopElem & 
-  ExecCodeBase &
-  WebVariablesBase &
-  ResultFieldsBase & {
+ExecCodeBase &
+WebVariablesBase &
+ResultFieldsBase & {
   Doc: RemoteActionDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;

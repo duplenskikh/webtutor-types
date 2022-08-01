@@ -1,8 +1,8 @@
 type ContractDocumentTopElem = XmlTopElem & { Doc: ContractDocument } & 
-  CostCurrencyBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+CostCurrencyBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   date?: XmlElem<Date>;

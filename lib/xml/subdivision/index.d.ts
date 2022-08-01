@@ -1,11 +1,11 @@
 type SubdivisionDocumentTopElem = XmlTopElem & { Doc: SubdivisionDocument } & 
-  ObjectCodeNameBase &
-  FileListBase &
-  FuncManagersBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  CustomElemsBase &
-  DocumentPersonsBase & {
+ObjectCodeNameBase &
+FileListBase &
+FuncManagersBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+CustomElemsBase &
+DocumentPersonsBase & {
   org_id?: XmlElem<number>;
   parent_object_id?: XmlElem<number>;
   is_disbanded?: XmlElem<boolean>;

@@ -1,6 +1,6 @@
 type WebinarSystemDocumentTopElem = XmlTopElem & { Doc: WebinarSystemDocument } & 
-  AdminAccessBase &
-  WebVariablesBase & {
+AdminAccessBase &
+WebVariablesBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

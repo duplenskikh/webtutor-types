@@ -43,7 +43,7 @@ interface ChatDocumentMessage {
 }
 
 type ChatDocumentTopElem = XmlTopElem & { Doc: ChatDocument } & 
-  AdminAccessBase & {
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   collaborators?: XmlMultiElem<ChatDocumentCollaborator>;

@@ -1,5 +1,5 @@
 type ReprimandDocumentTopElem = XmlTopElem & { Doc: ReprimandDocument } & 
-  CustomElemsBase & {
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   reprimand_type_id?: XmlElem<number>;

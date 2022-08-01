@@ -1,8 +1,8 @@
 type ExpertQuestionDocumentTopElem = XmlTopElem & { Doc: ExpertQuestionDocument } & 
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  CustomElemsBase &
-  FileListBase & {
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+CustomElemsBase &
+FileListBase & {
   code?: XmlElem<string>;
   question?: XmlElem<string>;
   answer?: XmlElem<string>;

@@ -1,7 +1,7 @@
 type ComponentPackageDocumentTopElem = XmlTopElem & { Doc: ComponentPackageDocument } & 
-  FileListBase &
-  KnowledgePartsBase &
-  CustomElemsBase & {
+FileListBase &
+KnowledgePartsBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   comment?: XmlElem<string>;

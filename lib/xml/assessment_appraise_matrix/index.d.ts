@@ -23,8 +23,8 @@ interface AssessmentAppraiseMatrixDocumentPeriod {
 }
 
 type AssessmentAppraiseMatrixDocumentTopElem = XmlTopElem & { Doc: AssessmentAppraiseMatrixDocument } & 
-  FieldNamesBase &
-  AdminAccessBase & {
+FieldNamesBase &
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   object_name?: XmlElem<string>;

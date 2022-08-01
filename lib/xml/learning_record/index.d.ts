@@ -46,9 +46,9 @@ interface LearningRecordDocumentSession {
 }
 
 type LearningRecordDocumentTopElem = XmlTopElem & { Doc: LearningRecordDocument } & 
-  PersonFillingBase &
-  FileListBase &
-  AdminAccessBase & {
+PersonFillingBase &
+FileListBase &
+AdminAccessBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   object_type?: XmlElem<string>;

@@ -1,7 +1,7 @@
 type ResponseDocumentTopElem = XmlTopElem & { Doc: ResponseDocument } & 
-  PersonFillingBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+PersonFillingBase &
+AdminAccessBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   response_type_id?: XmlElem<number>;

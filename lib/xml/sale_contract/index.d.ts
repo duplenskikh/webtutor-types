@@ -10,9 +10,9 @@ interface SaleContractDocumentPrice {
 }
 
 type SaleContractDocumentTopElem = XmlTopElem & { Doc: SaleContractDocument } & 
-  FileListBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+FileListBase &
+CustomElemsBase &
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   state_id?: XmlElem<number>;

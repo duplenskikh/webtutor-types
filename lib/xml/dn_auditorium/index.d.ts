@@ -3,8 +3,8 @@ interface DnAuditoriumDocumentObjectResource {
 }
 
 type DnAuditoriumDocumentTopElem = XmlTopElem & { Doc: DnAuditoriumDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   number_places?: XmlElem<string>;
   place_id?: XmlElem<number>;

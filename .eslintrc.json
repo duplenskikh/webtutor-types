@@ -20,6 +20,8 @@
         "@typescript-eslint/ban-types": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "semi": ["error", "always"],
-        "quotes": ["error", "double"]
+        "quotes": ["error", "double"],
+        "indent": ["error", 2],
+        "@typescript-eslint/indent": ["error", 2]
     }
 }

@@ -9,9 +9,9 @@ interface LibraryMaterialItemDocumentChangeLog {
 }
 
 type LibraryMaterialItemDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialItemDocument } & 
-  PersonFillingBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+PersonFillingBase &
+CustomElemsBase &
+AdminAccessBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

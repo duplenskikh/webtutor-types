@@ -8,9 +8,9 @@ interface KpiValueDocumentWorkflowMatching {
 }
 
 type KpiValueDocumentTopElem = XmlTopElem & { Doc: KpiValueDocument } & 
-  WorkflowDataBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+WorkflowDataBase &
+CustomElemsBase &
+AdminAccessBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?(): string;

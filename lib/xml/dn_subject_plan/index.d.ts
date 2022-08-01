@@ -1,6 +1,6 @@
 type DnSubjectPlanDocumentTopElem = XmlTopElem & { Doc: DnSubjectPlanDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   subject?: XmlElem<string>;
   program_discipline_id?: XmlElem<number>;

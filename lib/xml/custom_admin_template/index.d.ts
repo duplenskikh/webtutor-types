@@ -1,6 +1,6 @@
 type CustomAdminTemplateDocumentTopElem = XmlTopElem & { Doc: CustomAdminTemplateDocument } & 
-  ExecCodeBase &
-  WebVariablesBase & {
+ExecCodeBase &
+WebVariablesBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

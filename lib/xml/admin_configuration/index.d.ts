@@ -21,7 +21,7 @@ interface AdminConfigurationDocumentFuncBlock {
 }
 
 type AdminConfigurationDocumentTopElem = XmlTopElem & { Doc: AdminConfigurationDocument } & 
-  ObjectCodeNameBase & {
+ObjectCodeNameBase & {
   func_blocks?: XmlMultiElem<AdminConfigurationDocumentFuncBlock>;
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;

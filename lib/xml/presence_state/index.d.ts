@@ -9,7 +9,7 @@ interface PresenceStateDocumentRequiredField {
 }
 
 type PresenceStateDocumentTopElem = XmlTopElem & { Doc: PresenceStateDocument } & 
-  CustomElemsBase & {
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

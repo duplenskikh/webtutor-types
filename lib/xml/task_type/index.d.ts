@@ -4,7 +4,7 @@ interface TaskTypeDocumentRole {
 }
 
 type TaskTypeDocumentTopElem = XmlTopElem & { Doc: TaskTypeDocument } & 
-  CustomElemsBase & {
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   workflow_id?: XmlElem<number>;

@@ -1,5 +1,5 @@
 type LibraryMaterialCommentDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialCommentDocument } & 
-  FileListBase & {
+FileListBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   is_admin_approved?: XmlElem<boolean>;

@@ -1,6 +1,6 @@
 type WalkthroughDocumentTopElem = XmlTopElem & { Doc: WalkthroughDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   external_system_id?: XmlElem<number>;

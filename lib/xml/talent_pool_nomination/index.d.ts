@@ -1,8 +1,8 @@
 type TalentPoolNominationDocumentTopElem = XmlTopElem & { Doc: TalentPoolNominationDocument } & 
-  ObjectCodeNameBase &
-  FileListBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+ObjectCodeNameBase &
+FileListBase &
+CustomElemsBase &
+AdminAccessBase & {
   access?: XmlElem<AccessDocBase>;
   desc?: XmlElem<string>;
   comment?: XmlElem<string>;

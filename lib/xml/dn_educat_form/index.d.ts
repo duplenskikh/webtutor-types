@@ -1,5 +1,5 @@
 type DnEducatFormDocumentTopElem = XmlTopElem & { Doc: DnEducatFormDocument } & 
-  AdminAccessBase & {
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   comment?: XmlElem<string>;

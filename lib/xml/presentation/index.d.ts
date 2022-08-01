@@ -5,8 +5,8 @@ interface PresentationDocumentShape {
 }
 
 type PresentationDocumentTopElem = XmlTopElem & { Doc: PresentationDocument } & 
-  ObjectCodeNameBase &
-  AdminAccessBase & {
+ObjectCodeNameBase &
+AdminAccessBase & {
   access?: XmlElem<AccessDocBase>;
   file_id?: XmlElem<number>;
   event_id?: XmlElem<number>;

@@ -41,12 +41,9 @@ interface WorkflowDocumentEscalation extends WorkflowElemOperationsBase {
   polls?: XmlMultiElem<WorkflowDocumentEscalationPoll>;
 }
 
-interface WorkflowDocumentTuneField {
-}
-
 type WorkflowDocumentTopElem = XmlTopElem & { Doc: WorkflowDocument } & 
-  ConditionsBase &
-  WorkflowFieldsStatesBase & {
+ConditionsBase &
+WorkflowFieldsStatesBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

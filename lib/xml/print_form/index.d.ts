@@ -1,5 +1,5 @@
 type PrintFormDocumentTopElem = XmlTopElem & { Doc: PrintFormDocument } & 
-  InsertFileBase & {
+InsertFileBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   type?: XmlElem<string>;

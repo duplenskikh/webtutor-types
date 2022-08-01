@@ -4,9 +4,9 @@ interface ForumEntryDocumentPrivilegeCollaborator {
 }
 
 type ForumEntryDocumentTopElem = XmlTopElem & { Doc: ForumEntryDocument } & 
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   name?: XmlElem<string>;
   create_date?: XmlElem<Date>;
   closed?: XmlElem<boolean>;

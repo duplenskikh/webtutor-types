@@ -5,14 +5,14 @@ interface TestLearningDocumentSection {
 }
 
 type TestLearningDocumentTopElem = XmlTopElem & { Doc: TestLearningDocument } & 
-  PersonFillingBase &
-  AnnalsObjectsBase &
-  AnnalsNumsBase &
-  LearningObjectivesInteractionsBase &
-  AssessmentScaleValue &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+PersonFillingBase &
+AnnalsObjectsBase &
+AnnalsNumsBase &
+LearningObjectivesInteractionsBase &
+AssessmentScaleValue &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?(): unknown;
   assessment_id?: XmlElem<number>;

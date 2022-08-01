@@ -3,7 +3,7 @@ interface CompetenceProfileFamilyDocumentCompetenceProfile {
 }
 
 type CompetenceProfileFamilyDocumentTopElem = XmlTopElem & { Doc: CompetenceProfileFamilyDocument } & 
-  AdminAccessBase & {
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   competence_profiles?: XmlMultiElem<CompetenceProfileFamilyDocumentCompetenceProfile>;

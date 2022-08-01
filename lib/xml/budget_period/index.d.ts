@@ -6,8 +6,8 @@ interface BudgetPeriodDocumentDay {
 }
 
 type BudgetPeriodDocumentTopElem = XmlTopElem & { Doc: BudgetPeriodDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   parent_id?: XmlElem<number>;

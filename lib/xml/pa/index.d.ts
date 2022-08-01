@@ -94,10 +94,10 @@ interface PaDocumentCustomComment {
 }
 
 type PaDocumentTopElem = XmlTopElem & { Doc: PaDocument } & 
-  WorkflowDataBase &
-  SupplementaryQuestionsBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+WorkflowDataBase &
+SupplementaryQuestionsBase &
+CustomElemsBase &
+AdminAccessBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?(): string;

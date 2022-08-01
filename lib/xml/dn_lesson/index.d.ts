@@ -22,9 +22,9 @@ interface DnLessonDocumentStudent {
 }
 
 type DnLessonDocumentTopElem = XmlTopElem & { Doc: DnLessonDocument } & 
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   faculty_id?: XmlElem<number>;
   chair_id?: XmlElem<number>;

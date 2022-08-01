@@ -5,7 +5,7 @@ interface LevelDocumentCurrencyType {
 }
 
 type LevelDocumentTopElem = XmlTopElem & { Doc: LevelDocument } & 
-  ObjectCodeNameBase & {
+ObjectCodeNameBase & {
   prev_level_id?: XmlElem<number>;
   currency_type_id?: XmlElem<string>;
   min_value?: XmlElem<number>;

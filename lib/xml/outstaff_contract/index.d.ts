@@ -19,9 +19,9 @@ interface OutstaffContractDocumentRegion {
 }
 
 type OutstaffContractDocumentTopElem = XmlTopElem & { Doc: OutstaffContractDocument } & 
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?(): unknown;

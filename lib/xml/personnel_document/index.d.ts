@@ -15,8 +15,8 @@ interface PersonnelDocumentDocumentSignatureFile {
 }
 
 type PersonnelDocumentDocumentTopElem = XmlTopElem & { Doc: PersonnelDocumentDocument } & 
-  PersonFillingBase &
-  CustomElemsBase & {
+PersonFillingBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

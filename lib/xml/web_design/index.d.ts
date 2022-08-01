@@ -1,5 +1,5 @@
 type WebDesignDocumentTopElem = XmlTopElem & { Doc: WebDesignDocument } & 
-  WebVariablesBase & {
+WebVariablesBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   css_custom_web_template_id?: XmlElem<number>;

@@ -6,8 +6,8 @@ interface AvailabilityPlanDocumentPeriod {
 }
 
 type AvailabilityPlanDocumentTopElem = XmlTopElem & { Doc: AvailabilityPlanDocument } & 
-  FileListBase &
-  CustomElemsBase & {
+FileListBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

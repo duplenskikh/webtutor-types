@@ -4,9 +4,9 @@ interface LibraryMaterialViewingDocumentPage {
 }
 
 type LibraryMaterialViewingDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialViewingDocument } & 
-  PersonFillingBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+PersonFillingBase &
+CustomElemsBase &
+AdminAccessBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   material_id?: XmlElem<number>;

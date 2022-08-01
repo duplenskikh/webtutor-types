@@ -80,13 +80,13 @@ interface PollDocumentItem {
 }
 
 type PollDocumentTopElem = XmlTopElem & { Doc: PollDocument } & 
-  ObjectCodeNameBase &
-  CourseExpertsBase &
-  CustomElemsBase &
-  AdminAccessBase &
-  ProctoringBase &
-  GameBonusBase &
-  KnowledgePartsBase & {
+ObjectCodeNameBase &
+CourseExpertsBase &
+CustomElemsBase &
+AdminAccessBase &
+ProctoringBase &
+GameBonusBase &
+KnowledgePartsBase & {
   class?: XmlElem<string>;
   poll_id?: XmlElem<number>;
   start_date?: XmlElem<Date>;

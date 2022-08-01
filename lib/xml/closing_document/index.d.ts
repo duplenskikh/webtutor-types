@@ -3,7 +3,7 @@ interface ClosingDocumentDocumentExpense {
 }
 
 type ClosingDocumentDocumentTopElem = XmlTopElem & { Doc: ClosingDocumentDocument } & 
-  FileListBase & {
+FileListBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   pay_stage_id?: XmlElem<number>;

@@ -1,9 +1,9 @@
 type LectorDocumentTopElem = XmlTopElem & { Doc: LectorDocument } & 
-  PersonBase &
-  PassportDataBase &
-  CustomElemsBase &
-  AdminAccessBase &
-  PathSubsBase & {
+PersonBase &
+PassportDataBase &
+CustomElemsBase &
+AdminAccessBase &
+PathSubsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   type?: XmlElem<string>;

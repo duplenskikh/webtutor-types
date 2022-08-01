@@ -1,7 +1,7 @@
 type PlaceDocumentTopElem = XmlTopElem & { Doc: PlaceDocument } & 
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   parent_id?: XmlElem<number>;

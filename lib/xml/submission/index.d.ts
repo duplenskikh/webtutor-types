@@ -1,7 +1,7 @@
 type SubmissionDocumentTopElem = XmlTopElem & { Doc: SubmissionDocument } & 
-  PersonFillingBase &
-  FileListBase &
-  CustomElemsBase & {
+PersonFillingBase &
+FileListBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   submission_type_id?: XmlElem<number>;

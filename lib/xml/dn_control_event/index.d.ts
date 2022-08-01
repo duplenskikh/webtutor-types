@@ -7,8 +7,8 @@ interface DnControlEventDocumentParticipant {
 }
 
 type DnControlEventDocumentTopElem = XmlTopElem & { Doc: DnControlEventDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   date_event?: XmlElem<Date>;

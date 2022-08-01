@@ -16,8 +16,8 @@ interface ChatbotDocumentUniversalCommand {
 }
 
 type ChatbotDocumentTopElem = XmlTopElem & { Doc: ChatbotDocument } & 
-  WebVariablesBase &
-  CustomElemsBase & {
+WebVariablesBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

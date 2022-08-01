@@ -1,6 +1,6 @@
 type LibrarySystemDocumentTopElem = XmlTopElem & { Doc: LibrarySystemDocument } & 
-  AdminAccessBase &
-  WebVariablesBase & {
+AdminAccessBase &
+WebVariablesBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

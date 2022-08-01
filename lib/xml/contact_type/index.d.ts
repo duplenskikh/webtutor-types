@@ -1,5 +1,5 @@
 type ContactTypeDocumentTopElem = XmlTopElem & { Doc: ContactTypeDocument } & 
-  AdminAccessBase & {
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   comment?: XmlElem<string>;

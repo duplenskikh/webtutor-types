@@ -3,8 +3,8 @@ interface RecommenderAlgorithmApplyingDocumentApplyDate {
 }
 
 type RecommenderAlgorithmApplyingDocumentTopElem = XmlTopElem & { Doc: RecommenderAlgorithmApplyingDocument } & 
-  PersonFillingBase &
-  CustomElemsBase & {
+PersonFillingBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   person_id?: XmlElem<number>;
   recommender_algorithm_id?: XmlElem<number>;

@@ -4,11 +4,11 @@ interface LearningTaskDocumentExpert extends PersonFillingBase {
 }
 
 type LearningTaskDocumentTopElem = XmlTopElem & { Doc: LearningTaskDocument } & 
-  ObjectCodeNameBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase &
-  KnowledgePartsKpBase & {
+ObjectCodeNameBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase &
+KnowledgePartsKpBase & {
   start_date?: XmlElem<Date>;
   finish_date?: XmlElem<Date>;
   yourself_start?: XmlElem<boolean>;

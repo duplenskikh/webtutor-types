@@ -4,7 +4,7 @@ interface SkillDocumentLevel {
 }
 
 type SkillDocumentTopElem = XmlTopElem & { Doc: SkillDocument } & 
-  AdminAccessBase & {
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   parent_id?: XmlElem<number>;

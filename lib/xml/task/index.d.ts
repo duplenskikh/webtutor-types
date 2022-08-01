@@ -24,10 +24,10 @@ interface TaskDocumentFile extends FileBase {
 }
 
 type TaskDocumentTopElem = XmlTopElem & { Doc: TaskDocument } & 
-  ObjectCodeNameBase &
-  WorkflowDataBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+WorkflowDataBase &
+AdminAccessBase &
+CustomElemsBase & {
   task_type_id?: XmlElem<number>;
   parent_task_id?: XmlElem<number>;
   translated_task_id?: XmlElem<number>;

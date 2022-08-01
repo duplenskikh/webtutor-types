@@ -5,10 +5,10 @@ interface VacancyDocumentAssessment {
 }
 
 type VacancyDocumentTopElem = XmlTopElem & { Doc: VacancyDocument } & 
-  ObjectCodeNameBase &
-  AdminAccessBase &
-  FileListBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+AdminAccessBase &
+FileListBase &
+CustomElemsBase & {
   source_id?: XmlElem<string>;
   profession_id?: XmlElem<number>;
   profession_area_id?: XmlElem<string>;

@@ -1,6 +1,6 @@
 type FactPaymentDocumentTopElem = XmlTopElem & { Doc: FactPaymentDocument } & 
-  FileListBase &
-  CustomElemsBase & {
+FileListBase &
+CustomElemsBase & {
   name?: XmlElem<string>;
   org_id?: XmlElem<number>;
   client_org_id?: XmlElem<number>;

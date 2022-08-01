@@ -1,6 +1,6 @@
 type ViewConfigurationDocumentTopElem = XmlTopElem & { Doc: ViewConfigurationDocument } & 
-  ObjectCodeNameBase &
-  ViewBase & {
+ObjectCodeNameBase &
+ViewBase & {
   catalog_name?: XmlElem<string>;
   link_name?: XmlElem<string>;
   link_selector?: XmlElem<string>;

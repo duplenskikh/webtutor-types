@@ -1,5 +1,5 @@
 type KnowledgeClassifierDocumentTopElem = XmlTopElem & { Doc: KnowledgeClassifierDocument } & 
-  CustomElemsBase & {
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

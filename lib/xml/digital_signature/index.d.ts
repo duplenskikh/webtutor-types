@@ -1,8 +1,8 @@
 type DigitalSignatureDocumentTopElem = XmlTopElem & { Doc: DigitalSignatureDocument } & 
-  PersonFillingBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+PersonFillingBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   name?(): string;
   person_id?: XmlElem<number>;
   object_type?: XmlElem<string>;

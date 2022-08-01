@@ -11,10 +11,10 @@ interface TutorDocumentSubdivision {
 }
 
 type TutorDocumentTopElem = XmlTopElem & { Doc: TutorDocument } & 
-  PersonFillingBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+PersonFillingBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   person_id?: XmlElem<number>;
   career_reserve_type_id?: XmlElem<number>;

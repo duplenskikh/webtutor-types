@@ -3,9 +3,9 @@ interface CostCenterDocumentSubdivision {
 }
 
 type CostCenterDocumentTopElem = XmlTopElem & { Doc: CostCenterDocument } & 
-  FuncManagersBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+FuncManagersBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   is_active?: XmlElem<boolean>;

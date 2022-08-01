@@ -20,9 +20,9 @@ interface ProjectDocumentFile extends FileBase {
 }
 
 type ProjectDocumentTopElem = XmlTopElem & { Doc: ProjectDocument } & 
-  CatalogListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+CatalogListBase &
+AdminAccessBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

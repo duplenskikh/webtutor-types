@@ -1,7 +1,7 @@
 type BonusProfileDocumentTopElem = XmlTopElem & { Doc: BonusProfileDocument } & 
-  WebVariablesBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+WebVariablesBase &
+CustomElemsBase &
+AdminAccessBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

@@ -1,6 +1,6 @@
 type DnSpecialDocumentTopElem = XmlTopElem & { Doc: DnSpecialDocument } & 
-  FileListBase &
-  CustomElemsBase & {
+FileListBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   facult_id?: XmlElem<number>;

@@ -4,8 +4,8 @@ interface ObjectLinkDocumentLink extends ObjectTypeBase {
 }
 
 type ObjectLinkDocumentTopElem = XmlTopElem & { Doc: ObjectLinkDocument } & 
-  ObjectTypeBase &
-  CustomElemsBase & {
+ObjectTypeBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   recommender_algorithm_id?: XmlElem<number>;
   state_id?: XmlElem<string>;

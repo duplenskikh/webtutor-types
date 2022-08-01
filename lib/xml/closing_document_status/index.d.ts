@@ -1,5 +1,5 @@
 type ClosingDocumentStatusDocumentTopElem = XmlTopElem & { Doc: ClosingDocumentStatusDocument } & 
-  CustomElemsBase & {
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

@@ -22,10 +22,10 @@ interface KpiDocumentResponsibleGroup {
 }
 
 type KpiDocumentTopElem = XmlTopElem & { Doc: KpiDocument } & 
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase &
-  KnowledgePartsBase & {
+FileListBase &
+AdminAccessBase &
+CustomElemsBase &
+KnowledgePartsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

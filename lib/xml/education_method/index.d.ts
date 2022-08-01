@@ -21,16 +21,16 @@ interface EducationMethodDocumentSimilarEducationMethod {
 }
 
 type EducationMethodDocumentTopElem = XmlTopElem & { Doc: EducationMethodDocument } & 
-  ProgramMethodBase &
-  LectorsBase &
-  CustomElemsBase &
-  AdminAccessBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  EduMethodTestingBase &
-  FileListBase &
-  ExpenseDistributionBase &
-  GameBonusBase & {
+ProgramMethodBase &
+LectorsBase &
+CustomElemsBase &
+AdminAccessBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+EduMethodTestingBase &
+FileListBase &
+ExpenseDistributionBase &
+GameBonusBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   resource_id?: XmlElem<number>;

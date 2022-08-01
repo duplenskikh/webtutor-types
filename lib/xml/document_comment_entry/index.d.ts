@@ -1,6 +1,6 @@
 type DocumentCommentEntryDocumentTopElem = XmlTopElem & { Doc: DocumentCommentEntryDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   name?: XmlElem<string>;
   create_date?: XmlElem<Date>;
   deleted?: XmlElem<boolean>;

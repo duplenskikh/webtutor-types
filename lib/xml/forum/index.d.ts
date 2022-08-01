@@ -3,11 +3,11 @@ interface ForumDocumentModerator extends PersonFillingBase {
 }
 
 type ForumDocumentTopElem = XmlTopElem & { Doc: ForumDocument } & 
-  ObjectCodeNameBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  CustomElemsBase &
-  AdminAccessBase & {
+ObjectCodeNameBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+CustomElemsBase &
+AdminAccessBase & {
   create_date?: XmlElem<Date>;
   permit_subscription?: XmlElem<boolean>;
   closed?: XmlElem<boolean>;

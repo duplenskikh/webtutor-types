@@ -12,8 +12,8 @@ interface SaleDocumentDocument {
 }
 
 type SaleDocumentTopElem = XmlTopElem & { Doc: SaleDocument } & 
-  FileListBase &
-  CustomElemsBase & {
+FileListBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   create_date?: XmlElem<Date>;

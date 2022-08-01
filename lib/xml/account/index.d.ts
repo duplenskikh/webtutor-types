@@ -1,6 +1,6 @@
 type AccountDocumentTopElem = XmlTopElem &
-  ObjectTypeBase &
-  AdminAccessBase & {
+ObjectTypeBase &
+AdminAccessBase & {
   Doc: AccountDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;

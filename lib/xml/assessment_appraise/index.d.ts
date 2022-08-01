@@ -97,9 +97,9 @@ interface AssessmentAppraiseDocumentImpersonatePerson {
 }
 
 type AssessmentAppraiseDocumentTopElem = XmlTopElem & { Doc: AssessmentAppraiseDocument } & 
-  ObjectCodeNameBase &
-  CustomElemsBase &
-  AdminAccessBase & {
+ObjectCodeNameBase &
+CustomElemsBase &
+AdminAccessBase & {
   start_date?: XmlElem<Date>;
   end_date?: XmlElem<Date>;
   status?: XmlElem<string>;

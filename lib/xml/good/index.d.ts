@@ -4,9 +4,9 @@ interface GoodDocumentCost {
 }
 
 type GoodDocumentTopElem = XmlTopElem & { Doc: GoodDocument } & 
-  ObjectCodeNameBase &
-  FileListBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+FileListBase &
+CustomElemsBase & {
   good_type_id?: XmlElem<number>;
   costs?: XmlMultiElem<GoodDocumentCost>;
   cost_desc?(): unknown;

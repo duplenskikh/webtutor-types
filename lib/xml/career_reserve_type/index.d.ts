@@ -14,11 +14,11 @@ interface CareerReserveTypeDocumentTask {
 }
 
 type CareerReserveTypeDocumentTopElem = XmlTopElem & { Doc: CareerReserveTypeDocument } & 
-  ObjectCodeNameBase &
-  TalentPoolFuncManagersBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+TalentPoolFuncManagersBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   tasks?: XmlMultiElem<CareerReserveTypeDocumentTask>;
   desc?: XmlElem<string>;
   comment?: XmlElem<string>;

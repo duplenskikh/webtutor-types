@@ -1,8 +1,8 @@
 type SuccessorDocumentTopElem = XmlTopElem & { Doc: SuccessorDocument } & 
-  PersonFillingBase &
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+PersonFillingBase &
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   name?(): string;
   key_position_id?: XmlElem<number>;

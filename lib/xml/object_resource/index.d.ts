@@ -1,7 +1,7 @@
 type ObjectResourceDocumentTopElem = XmlTopElem & { Doc: ObjectResourceDocument } & 
-  ObjectCodeNameBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+AdminAccessBase &
+CustomElemsBase & {
   type?: XmlElem<string>;
   state_id?: XmlElem<string>;
   count?: XmlElem<number>;

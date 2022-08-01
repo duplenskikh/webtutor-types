@@ -3,14 +3,14 @@ interface CompetenceDocumentExercise {
 }
 
 type CompetenceDocumentTopElem = XmlTopElem & { Doc: CompetenceDocument } & 
-  ObjectCodeNameBase &
-  CompetenceScaleBase &
-  CompetenceLevelBase &
-  KnowledgePartsBase &
-  KnowledgePartsBaseOld &
-  CustomElemsBase &
-  FileListBase &
-  AdminAccessBase & {
+ObjectCodeNameBase &
+CompetenceScaleBase &
+CompetenceLevelBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+CustomElemsBase &
+FileListBase &
+AdminAccessBase & {
   competence_block_id?: XmlElem<number>;
   exercises?: XmlMultiElem<CompetenceDocumentExercise>;
   positive_comment?: XmlElem<string>;

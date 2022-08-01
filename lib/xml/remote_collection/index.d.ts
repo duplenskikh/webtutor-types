@@ -1,7 +1,7 @@
 type RemoteCollectionDocumentTopElem = XmlTopElem & { Doc: RemoteCollectionDocument } & 
-  ExecCodeBase &
-  WebVariablesBase &
-  ResultFieldsBase & {
+ExecCodeBase &
+WebVariablesBase &
+ResultFieldsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

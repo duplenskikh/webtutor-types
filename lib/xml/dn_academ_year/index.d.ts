@@ -6,8 +6,8 @@ interface DnAcademYearDocumentPeriod {
 }
 
 type DnAcademYearDocumentTopElem = XmlTopElem & { Doc: DnAcademYearDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   start_year?: XmlElem<string>;
   end_year?: XmlElem<string>;
   name?: XmlElem<string>;

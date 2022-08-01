@@ -1,5 +1,5 @@
 type TraningOrderDocumentTopElem = XmlTopElem & { Doc: TraningOrderDocument } & 
-  CustomElemsBase & {
+CustomElemsBase & {
   number?: XmlElem<string>;
   order_type_id?: XmlElem<number>;
   date?: XmlElem<Date>;

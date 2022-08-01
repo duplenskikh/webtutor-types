@@ -1,6 +1,6 @@
 type NotificationTemplateDocumentTopElem = XmlTopElem & { Doc: NotificationTemplateDocument } & 
-  CustomElemsBase &
-  FileListBase & {
+CustomElemsBase &
+FileListBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   subject?: XmlElem<string>;

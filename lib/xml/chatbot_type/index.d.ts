@@ -1,5 +1,5 @@
 type ChatbotTypeDocumentTopElem = XmlTopElem & { Doc: ChatbotTypeDocument } & 
-  AdminAccessBase & {
+AdminAccessBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

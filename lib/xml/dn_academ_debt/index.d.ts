@@ -1,6 +1,6 @@
 type DnAcademDebtDocumentTopElem = XmlTopElem & { Doc: DnAcademDebtDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   faculty_id?: XmlElem<number>;
   chair_id?: XmlElem<number>;

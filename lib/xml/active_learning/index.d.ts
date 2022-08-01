@@ -11,9 +11,9 @@ interface ActiveLearningDocumentEvent {
 }
 
 type ActiveLearningDocumentTopElem = XmlTopElem & { Doc: ActiveLearningDocument } & 
-  PersonFillingBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+PersonFillingBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?(): unknown;
   course_id?: XmlElem<number>;

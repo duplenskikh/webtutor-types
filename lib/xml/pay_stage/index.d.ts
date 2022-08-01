@@ -1,7 +1,7 @@
 type PayStageDocumentTopElem = XmlTopElem & { Doc: PayStageDocument } & 
-  CustomElemsBase &
-  FileListBase &
-  AdminAccessBase & {
+CustomElemsBase &
+FileListBase &
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   org_id?: XmlElem<number>;

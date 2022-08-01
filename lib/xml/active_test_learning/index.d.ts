@@ -1,11 +1,11 @@
 type ActiveTestLearningDocumentTopElem = XmlTopElem & { Doc: ActiveTestLearningDocument } & 
-  LearningAssessmentBase &
-  PersonFillingBase &
-  LearningCurrentStateBase &
-  LearningObjectivesInteractionsBase &
-  LastAttemptTestLearningsBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+LearningAssessmentBase &
+PersonFillingBase &
+LearningCurrentStateBase &
+LearningObjectivesInteractionsBase &
+LastAttemptTestLearningsBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   activation_code?: XmlElem<string>;
   name?(): unknown;

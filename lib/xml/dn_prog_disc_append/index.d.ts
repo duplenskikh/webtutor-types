@@ -1,6 +1,6 @@
 type DnProgDiscAppendDocumentTopElem = XmlTopElem & { Doc: DnProgDiscAppendDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   program_discipline_id?: XmlElem<number>;

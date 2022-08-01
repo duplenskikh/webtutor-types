@@ -3,8 +3,8 @@ interface DnStudGroupDocumentSubfaculty {
 }
 
 type DnStudGroupDocumentTopElem = XmlTopElem & { Doc: DnStudGroupDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   stream_id?: XmlElem<number>;

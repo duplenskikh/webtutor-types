@@ -15,12 +15,12 @@ interface ProjectParticipantDocumentCurrentKnowledgePart {
 }
 
 type ProjectParticipantDocumentTopElem = XmlTopElem & { Doc: ProjectParticipantDocument } & 
-  PersonFillingBase &
-  FileListBase &
-  WorkflowDataBase &
-  AdminAccessBase &
-  CustomElemsBase &
-  KnowledgePartsBase & {
+PersonFillingBase &
+FileListBase &
+WorkflowDataBase &
+AdminAccessBase &
+CustomElemsBase &
+KnowledgePartsBase & {
   code?: XmlElem<string>;
   person_id?: XmlElem<number>;
   catalog?: XmlElem<string>;

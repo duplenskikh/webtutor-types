@@ -60,7 +60,7 @@ interface TestProjectDocumentVariant {
 }
 
 type TestProjectDocumentTopElem = XmlTopElem & { Doc: TestProjectDocument } & 
-  CustomElemsBase & {
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   status?: XmlElem<string>;

@@ -9,8 +9,8 @@ interface PriceDocumentServiceProvider {
 }
 
 type PriceDocumentTopElem = XmlTopElem & { Doc: PriceDocument } & 
-  FileListBase &
-  CustomElemsBase & {
+FileListBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   create_date?: XmlElem<Date>;

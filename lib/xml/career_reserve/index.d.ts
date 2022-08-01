@@ -47,10 +47,10 @@ interface CareerReserveDocumentTask extends CustomElemsBase,
 }
 
 type CareerReserveDocumentTopElem = XmlTopElem &
-  // ms_person_sd_base
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+// ms_person_sd_base
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   Doc: CareerReserveDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;

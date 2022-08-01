@@ -1,5 +1,5 @@
 type RegionDocumentTopElem = XmlTopElem & { Doc: RegionDocument } & 
-  CustomElemsBase & {
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   parent_object_id?: XmlElem<number>;

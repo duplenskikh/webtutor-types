@@ -1,6 +1,6 @@
 type ChannelProviderDocumentTopElem = XmlTopElem & { Doc: ChannelProviderDocument } & 
-  AdminAccessBase &
-  WebVariablesBase & {
+AdminAccessBase &
+WebVariablesBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

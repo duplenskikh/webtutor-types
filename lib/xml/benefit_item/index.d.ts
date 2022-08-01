@@ -1,7 +1,7 @@
 type BenefitItemDocumentTopElem = XmlTopElem & { Doc: BenefitItemDocument } & 
-  PersonFillingBase &
-  FileListBase &
-  CustomElemsBase & {
+PersonFillingBase &
+FileListBase &
+CustomElemsBase & {
   id?: XmlElem<number>;
   code?: XmlElem<string>;
   name?: XmlElem<string>;

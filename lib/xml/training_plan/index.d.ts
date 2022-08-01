@@ -48,9 +48,9 @@ interface TrainingPlanDocumentGlobalMonth {
 }
 
 type TrainingPlanDocumentTopElem = XmlTopElem & { Doc: TrainingPlanDocument } & 
-  FileListBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+FileListBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   budget_period_id?: XmlElem<number>;

@@ -1,5 +1,5 @@
 type BannerDocumentTopElem = XmlTopElem & { Doc: BannerDocument } & 
-  AdminAccessBase & {
+AdminAccessBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   type?: XmlElem<string>;

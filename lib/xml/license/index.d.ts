@@ -32,9 +32,9 @@ interface LicenseDocumentAdditionalKey {
 }
 
 type LicenseDocumentTopElem = XmlTopElem & { Doc: LicenseDocument } & 
-  ObjectCodeNameBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+ObjectCodeNameBase &
+AdminAccessBase &
+CustomElemsBase & {
   object_id?: XmlElem<number>;
   object_type?: XmlElem<string>;
   object_name?: XmlElem<string>;

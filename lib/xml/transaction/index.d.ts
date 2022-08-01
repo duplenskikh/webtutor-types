@@ -1,8 +1,8 @@
 type TransactionDocumentTopElem = XmlTopElem & { Doc: TransactionDocument } & 
-  PersonFillingBase &
-  ObjectTypeBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+PersonFillingBase &
+ObjectTypeBase &
+AdminAccessBase &
+CustomElemsBase & {
   code?: XmlElem<string>;
   date?: XmlElem<Date>;
   direction?: XmlElem<number>;

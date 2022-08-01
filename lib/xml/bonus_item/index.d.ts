@@ -1,5 +1,5 @@
 type BonusItemDocumentTopElem = XmlTopElem & { Doc: BonusItemDocument } & 
-  AdminAccessBase & {
+AdminAccessBase & {
   name?(): string;
   assessment_appraise_id?: XmlElem<number>;
   budget_period_id?: XmlElem<number>;

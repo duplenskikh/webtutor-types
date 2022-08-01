@@ -1,6 +1,6 @@
 type EducationTypeDocumentTopElem = XmlTopElem & { Doc: EducationTypeDocument } & 
-  ObjectCodeNameBase &
-  AdminAccessBase & {
+ObjectCodeNameBase &
+AdminAccessBase & {
   comment?: XmlElem<string>;
   doc_info?: XmlElem<DocInfoBase>;
   access?: XmlElem<AccessDocBase>;

@@ -7,9 +7,9 @@ interface CertificateTypeDocumentCertificateType {
 }
 
 type CertificateTypeDocumentTopElem = XmlTopElem & { Doc: CertificateTypeDocument } & 
-  CostCurrencyBase &
-  AdminAccessBase &
-  CustomElemsBase & {
+CostCurrencyBase &
+AdminAccessBase &
+CustomElemsBase & {
   name?: XmlElem<string>;
   code?: XmlElem<string>;
   education_org_id?: XmlElem<number>;

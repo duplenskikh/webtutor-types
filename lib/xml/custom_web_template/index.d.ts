@@ -3,10 +3,10 @@ interface CustomWebTemplateDocumentIncludeCustomWebTemplate {
 }
 
 type CustomWebTemplateDocumentTopElem = XmlTopElem & { Doc: CustomWebTemplateDocument } & 
-  ObjectCodeNameBase &
-  ExecCodeBase &
-  ZonesBase &
-  WebVariablesBase & {
+ObjectCodeNameBase &
+ExecCodeBase &
+ZonesBase &
+WebVariablesBase & {
   category?: XmlElem<string>;
   html?: XmlElem<string>;
   url?: XmlElem<string>;

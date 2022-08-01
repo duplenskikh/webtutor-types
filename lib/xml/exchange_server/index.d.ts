@@ -1,5 +1,5 @@
 type ExchangeServerDocumentTopElem = XmlTopElem & { Doc: ExchangeServerDocument } & 
-  CustomElemsBase & {
+CustomElemsBase & {
   code?: XmlElem<string>;
   name?: XmlElem<string>;
   server_password?: XmlElem<string>;

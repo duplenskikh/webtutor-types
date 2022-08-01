@@ -1,6 +1,6 @@
 type DnStudCentrtestResultDocumentTopElem = XmlTopElem & { Doc: DnStudCentrtestResultDocument } & 
-  AdminAccessBase &
-  CustomElemsBase & {
+AdminAccessBase &
+CustomElemsBase & {
   subject?: XmlElem<string>;
   mark?: XmlElem<number>;
   result_date?: XmlElem<Date>;
