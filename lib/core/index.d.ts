@@ -300,11 +300,6 @@ declare function SHA1Base64(str: string): string;
  * ShellExecute( 'open', 'calc.exe' ) ShellExecute( 'print', 'C:\\Temp\\xxx.doc' ) ShellExecute( 'open', 'http://www.e-staff.ru/' ) ShellExecute( 'open', 'mailto:support@e-staff.ru' )
 */
 declare function ShellExecute(action: string, target: string, args: string): undefined;
-interface ActiveXObjectConstructor {
-  new(libraryName: string): any;
-}
-
-declare var ActiveXObject: ActiveXObjectConstructor;
 
 /**
  * Создает zip архив.
