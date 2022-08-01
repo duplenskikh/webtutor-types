@@ -1,4 +1,4 @@
-
+// TODO: need ref
 declare namespace global_settings {
   var first_install: boolean;
   var branch_code: any;
