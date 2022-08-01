@@ -4,6 +4,7 @@ jobs:
   FirstAction:
     runs-on: ubuntu-latest
     steps:
+      - run: npm ci
       - run: npm run lint
   SecondAction:
     runs-on: ubuntu-latest
