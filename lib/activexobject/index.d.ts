@@ -3,4 +3,4 @@ interface ActiveXObjectConstructor {
   (name: string): any;
 }
 
-declare var ActiveXObject: ActiveXObjectConstructor;
+declare const ActiveXObject: ActiveXObjectConstructor;

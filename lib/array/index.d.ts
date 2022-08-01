@@ -43,4 +43,4 @@ interface ArrayConstructor {
   (...arg: any): Array<any>;
 }
 
-declare var Array: ArrayConstructor;
+declare const Array: ArrayConstructor;

@@ -22,21 +22,65 @@ interface Binary {
    * Поток, в который можно писать данные любыми функциями,
    * которые работают с потоками. Данные из потока попадают в объект.
    */
-  WriteStream: unknown;
+  WriteStream: Stream;
 
-  AppendBinary(): any;
-  AppendStr(): any;
-  AssignBinary(): any;
-  AssignStr(): any;
-  GetStr(): any;
-  LoadFromUrl(): any;
-  PrepareWriteSpace(): any;
-  PutToUrl(): any;
+  /**
+   * Добавляет данные из заданного бинарного объекта в текущий бинарный объект.
+   * @param binary - бинарный объект, данные из которого следует добавить.
+   */
+  AppendBinary(binary: Binary): void;
+
+  /**
+   * Добавляет в текущий бинарный объект данные из заданной строки.
+   * @param str строка (String).
+   */
+  AppendStr(string: string): void;
+
+  /**
+   * Копирует данные из заданного бинарного объекта в текущий бинарный объект.
+   * @param binary - исходный бинарный объект
+   */
+  AssignBinary(binary: Binary): void;
+
+  /**
+   * Копирует в текущий бинарный объект данные из заданной строки.
+   * @param str строка (String).
+   */
+  AssignStr(str: string): void;
+
+  /**
+   * Возвращает бинарные данные из объекта в виде строки, содержащей массив байт.
+   */
+  GetStr(): string;
+
+  /**
+   * Загружает в текущий бинарный объект данные из определенного url.
+   * @param url (String).
+   */
+  LoadFromUrl(url: string): void;
+
+  /**
+   * Сообщает текущему потоковому объекту предполагаемый объем данных,
+   * который будет в него записан последущемми функциями.
+   * Для потоковых объектов, которые это поддерживают,
+   * данная функция позволяет оптимизировать скорость записи в поток
+   * за счет предварительного резервирования памяти.
+   * В частности эту функцию рекомендуется вызывать для объекта WriteBuffStream
+   * в случае последущей записи в него данных маленькими кусочками.
+   * @param size - предполагаемый объем данных в байтах (Integer)
+   */
+  PrepareWriteSpace(size: number): void;
+
+  /**
+   * Сохраняет данные из текущего бинарного объекта в заданный url.
+   * @param url - url (String).
+   */
+  PutToUrl(url: string): void;
 }
 
 interface BinaryConstructor {
-  new(...arg: any): Array<any>;
-  (...arg: any): Array<any>;
+  new(...arg: any): Binary;
+  (...arg: any): Binary;
 }
 
-declare var Binary: BinaryConstructor;
+declare const Binary: BinaryConstructor;
