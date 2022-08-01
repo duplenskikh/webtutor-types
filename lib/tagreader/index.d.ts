@@ -63,17 +63,17 @@ interface TagReader {
      * Если атрибута с заданным именем у текущего тега нет, функция не производит никаких действий.
      * @param attrName - Имя атрибута, подлежащего удалению
      */
-    DeleteOptAttr(attrName: string): void;
+    DeleteOptAttr(attrName: string): TagReader;
     /**
      * Экспортирует в заданный поток все зарегистрированные при помощи `RegisterCompoundAttc` хранимые вложенные файлы.
      * @param destStream - Поток, в который следует экспортировать вложенные файлы
      */
-    ExportCompoundAttc(destStream: Stream): void;
+    ExportCompoundAttc(destStream: Stream): TagReader;
     /**
      * Экспортирует текущий тег (любой - именной или безымянный) в заданный поток. Тег экспортируется в каноническом виде.
      * @param destStream - Поток, в который следует передать текущий тег.
      */
-    ExportTag(destStream: Stream): void;
+    ExportTag(destStream: Stream): TagReader;
     /**
      * Возвращает значение атрибута в текущем теге, если атрибута нет - возвращает пустую строку.
      * @param attrName - Имя атрибута
@@ -98,7 +98,7 @@ interface TagReader {
      * Сбрасывает `TagRader` в начальное состояние для чтения новых данных.
      * @param data - Содержимое в формате `HTML` или `XML`
      */
-    Init(data: string): void;
+    Init(data: string): TagReader;
     /**
      * Считывает дату в различных форматах с текущей позиции. Если даты ни в одном формате в теге нет, возвращает ошибку.
      * После успешного чтения указатель смещается на конец считанной строки с датой.
@@ -110,8 +110,19 @@ interface TagReader {
     ReadHtmlGroup(): string;
     /**
      * Считывает фрагмент html текста от текущей позиции до заданного тега.
+     * @param tagName - Имя тега
      */
     ReadHtmlUntilTag(tagName: string): string;
+    /**
+     * Читает следующий тег (именной или безымянный).
+     */
+    ReadNext(): TagReader;
+    /**
+     * Считывает текст до определенного тега и возвраащет результат в виде неформатированного текста.
+     * После считывания указатель остается на начале найденного тега.
+     * @param tagName - Имя тега
+     */
+    ReadTextUntilTag(tagName: string): string;
     /**
      * Запоминает в текущем `TagReader` прикрепленный файл (`CompoundAttc`) для последующего его экспорта при помощи функции `ExportCompoundAttc`.
      * Используется при обработке `HTML`, когда одновременно с чтенеим происходит экспорт обработанных данных.
@@ -126,13 +137,13 @@ interface TagReader {
      * @param attrName - Имя атрибута
      * @param attrValue - Значение атрибута
      */
-    SetAttr(attrName: string, attrValue: string): void;
+    SetAttr(attrName: string, attrValue: string): TagReader;
     /**
      * Осуществляет поиск определенного текста (неформатированного) не разделенного тэгами. Если текст не найден, генерируется ошибка.
      * После нахождения текста указатель остается в конце текстового блока между тэгами, в котром находится найденый текст.
      * @param text - Текст, который нужно найти
      */
-    SkipToPlainText(text: string): void;
+    SkipToPlainText(text: string): TagReader;
     /**
      * Перемещает указатель на определенный тег с заданными атрибутами и оставляет указатель на начале этого тега. В случае если атрибут
      * необязателен (аргумент `isOptional` равен `true`), то возвращает true при условии, что тег найден, и `false` - если не найден. Если аргумент
