@@ -1,3 +1,5 @@
+// TODO: need ref
+
 interface CommonEventStatusType {
   id: string;
   name: string;
@@ -17,13 +19,13 @@ declare interface common extends Object {
   learning_task_status_types: XmlMultiElem<any>;
 }
 
-declare var common: common;
+declare const common: common;
 
 interface categorys extends Object {
   id: XmlElem<string>;
   name: XmlElem<string>;
 }
 
-declare var categorys: categorys;
+declare const categorys: categorys;
 
-declare var DefaultDb: string;
+declare const DefaultDb: string;
