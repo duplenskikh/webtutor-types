@@ -4,7 +4,7 @@ interface Date { }
 interface DateConstructor {
   new(value?: any): Date;
   (value?: any): Date;
-  (): string;
+  (): Date;
 }
 
-declare var Date: DateConstructor;
+declare let Date: DateConstructor;
