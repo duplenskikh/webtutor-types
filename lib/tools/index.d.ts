@@ -348,7 +348,7 @@ declare namespace tools {
    * order by $elem/Hier() return $elem/id' );
    * @param string 
    */
-  function xquery(string: string): any;
+  function xquery<T = unknown>(string: string): T;
 
   interface IActivateCourseToPersonParams {
     /**
