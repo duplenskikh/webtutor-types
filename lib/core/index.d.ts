@@ -857,7 +857,7 @@ declare function XQueryLocal(query: string): any;
  * @returns {Array}
  * lds-server - явный адрес сервера приложения, на который будт отправлен запрос (String). Используется для обмена данных между серверами. preload-foreign-data - заранее кэшировать связанные данные (Bool). Обычно используется при показе списков в пользовательском интерфейсе сетевой версии, в которых будет использовать связянные данные (ForeignElem). Пример: XQuery( 'for $elem in candidates order by $elem/fullname return $elem', 'preload-foreign-data=1' )
 */
-declare function XQuery(query: string, options?: string): any;
+declare function XQuery<T = unknown>(query: string, options?: string): T;
 
 
 /**
