@@ -1,8 +1,4 @@
-const remoteSecurityProfileDocument = tools.open_doc<RemoteActionDocument>(1);
-remoteSecurityProfileDocument?.TopElem.comment.Value;
-
-if (remoteSecurityProfileDocument !== undefined) {
-  const rspTopElem: RemoteActionDocumentTopElem = remoteSecurityProfileDocument.TopElem;
-  rspTopElem.code.Value = "asds";
-  rspTopElem.method_name;
-}
+const excelDocument = new ActiveXObject<Websoft.Office.Excel.Document>("Websoft.Office.Excel.Document");
+excelDocument.Open(UrlToFilePath("Asdasd"));
+const worksheet = excelDocument.GetWorksheet(0);
+worksheet.Cells.GetCell("as").Value;
