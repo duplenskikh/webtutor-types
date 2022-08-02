@@ -15,7 +15,7 @@ declare namespace Screen {
   function AskColor(): void;
   function AskDirectory(): void;
   function AskDirectoryPath(): void;
-  function AskFileOpen(url?: string, extPattern?: string): void;
+  function AskFileOpen(url?: string, extPattern?: string): string;
   function AskFilesOpen(): void;
   function AskFont(): void;
   function BringWindowToFront(): void;
