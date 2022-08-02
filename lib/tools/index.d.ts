@@ -1,4 +1,290 @@
 declare namespace tools {
+  /**
+   * Назначение курса участникам указанного мероприятия.
+   * @param eventId (обязательный) Тип: Целое число. ID мероприятия, для участников которого назначается курс.
+   * @param courseId (обязательный) Тип: Целое число. ID курса, который необходимо назначить.
+   * @param eventDocument (необязательный) Тип: Объект XmlDoc. Документ карточки мероприятия.
+   * @param duration (необязательный) Тип: Целое число. Длительность курса в днях.
+   * Определяет дату планируемого завершения.
+   * @param startLearningDate (необязательный) Тип: Дата. Дата начала обучения.
+   * Если данный аргумент задан, то обучение невозможно будет начать раньше указанной даты.
+   * @param testLearningDate (необязательный) Тип: Дата. Контрольная дата завершения предыдущего обучения.
+   * Если параметр задан, то при назначении курса, проверяется, существует ли в каталоге learnings курс,
+   * завершенный после указанной даты. Если такой курс существует, то соответствующая запись из каталога
+   * learnings возвращается как результат работы функции.
+   * @returns Тип: Целое число. Количество назначенных курсов.
+   */
+  function activate_course_to_event(
+    eventId: number,
+    courseId: number,
+    eventDocument?: EventDocument,
+    duration?: number,
+    startLearningDate?: Date,
+    testLearningDate?: Date
+  ): number;
+
+  /**
+   * @param personId Id сотрудника, которому назначается курс
+   * @param courseId Id курса, который необходимо назначить
+   * @param eventId Id мероприятия, участникам которого назначается курс
+   * @param personDoc TopElem карточки сотрудника, которому назначается курс
+   * @param educationPlanId Id плана обучения, в рамках которого назначен курс
+   * @param duration Длительность курса в днях. Определяет дату планируемого завершения
+   * @param startLearningDate Дата начала обучения. Если данный аргумент задан, то обучение невозможно будет начать раньше указанной даты
+   * @param lastLearningDate Контрольная дата завершения предыдущего обучения.
+   * Если параметр задан, то при назначении курса, проверяется,
+   * существует ли в каталоге learnings курс, завершенный после указанной даты.
+   * Если такой курс существует, то ID соответствующей записи из каталога
+   * learnings возвращается как результат работы функции.
+   * @param groupId Id группы, которой назначен курс
+   * @param eid Код записи в каталоге active_learnings.
+   * Если он указан, то при назначении курса,
+   * когда производится проверка на уже существующий активный курс
+   * данного сотрудника в каталоге active_learnings, проверяется также,
+   * что у данной записи должен быть указанный в параметре код.
+   * @param skipDismissed Аргумент, указывающий на необходимость пропускать уволенных
+   * сотрудников (true – пропускать, false –не пропускать). По умолчанию true.
+   * @returns Объект XMLDoc или Целое число.
+   * Если курс назначен при выполнении функции,
+   * то возвращается ссылка на вновь созданный документ обучения.
+   * Если курс был назначен ранее, но не завершен, или завершен,
+   * но не прошло еще время, указанное в атрибуте dtLastLearningDateParam,
+   * то возвращается ID карточки ранее назначенного курса (из каталога active_learning).
+   */
+  function activate_course_to_person(
+    personId: number | unknown,
+    courseId?: number,
+    eventId?: number,
+    personDoc?: CollaboratorDocumentTopElem,
+    educationPlanId?: number,
+    duration?: number,
+    startLearningDate?: Date,
+    lastLearningDate?: Date,
+    groupId?: number,
+    eid?: any,
+    skipDismissed?: boolean
+  ): number | null | ActiveLearningDocument;
+
+  /**
+   * @param params Параметры назначения курса
+   * @returns Объект XMLDoc или Целое число.
+   * Если курс назначен при выполнении функции,
+   * то возвращается ссылка на вновь созданный документ обучения.
+   * Если курс был назначен ранее, но не завершен, или завершен,
+   * но не прошло еще время, указанное в атрибуте dtLastLearningDateParam,
+   * то возвращается ID карточки ранее назначенного курса (из каталога active_learning).
+   */
+  function activate_course_to_person(
+    params: IActivateCourseToPersonParams
+  ): number | null | ActiveLearningDocument;
+
+  /**
+   * Назначение сотруднику курсов, которые указаны в учебных программах (с типом "Электронный курс"),
+   * перечисленных в наборе программ. Если в наборе учебных программ указаны учебные программы,
+   * содержащие дистанционное обучение (курсы), то эти курсы будут назначены сотруднику.
+   * @param personId - ID сотрудника, которому назначается набор учебных программ.
+   * @param educationProgramId - ID набора учебных программ
+   * @param collaboratorDocument - TopElem карточки сотрудника, которому назначается тест
+   * @param educationProgramDocumentTopElem - TopElem карточки набора учебных программ
+   * @returns Количество назначенных курсов в составе набора учебных программ
+   */
+  function activate_education_program_to_person(
+    personId: number,
+    educationProgramId: number,
+    collaboratorDocumentTopElem: CollaboratorDocumentTopElem,
+    educationProgramDocumentTopElem: EducationProgramDocumentTopElem
+  ): number;
+
+  /**
+   * Назначение теста участникам указанного мероприятия.
+   * @param eventId ID мероприятия, участникам которого назначается тест
+   * @param assessmentId ID теста, который необходимо назначить
+   * @param eventDocument Документ карточки мероприятия
+   * @param duration Длительность теста в днях. Определяет дату планируемого завершения.
+   * @param startLearningDate Дата начала обучения. Если данный аргумент задан,
+   * то обучение невозможно будет начать раньше указанной даты.
+   * @param lastLearningDate Контрольная дата завершения предыдущего обучения.
+   * Если параметр задан, то при назначении теста проверяется, существует ли в каталоге test_learnings тест,
+   * завершенный после указанной даты. Если такой тест существует, то ID соответствующей записи из
+   * каталога test_learnings возвращается как результат работы функции.
+   * @param actType Строка, указывающая, кому назначать тесты.
+   * Возможные значения:
+   * 'all' - Тесты назначаются всем участникам мероприятия (значение по умолчанию).
+   * 'post' - Тесты назначаются участникам мероприятия, у которых проставлен флаг «Присутствовал на мероприятии».
+   * @param skipDismissed Аргумент, указывающий на необходимость пропускать уволенных сотрудников
+   * (true – пропускать, false – не пропускать). По умолчанию true.
+   * @returns Количество назначенных тестов
+   */
+  function activate_test_to_event(
+    eventId: number,
+    assessmentId: number,
+    eventDocument?: EventDocument,
+    duration?: number,
+    startLearningDate?: Date,
+    lastLearningDate?: Date,
+    actType?: string,
+    skipDismissed?: boolean,
+    bUseProctoring?: boolean,
+    iProctorPreferID?: number,
+    bActivateOnlyAssist?: boolean
+  ): number;
+
+  interface IActivateTestToPersonParams {
+    /**
+     * ID collaborator
+     */
+    personId: number;
+    /**
+     * ID test
+     */
+    assessmentId: number;
+    /**
+     * ID мероприятия
+     */
+    eventId?: number;
+    /**
+     * Дата последнего обучения
+     */
+    lastLearningDate?: number;
+    /**
+     * Не назначать уволенным
+     */
+    skipDismissed?: number;
+    /**
+     * Карточка сотрудника
+     */
+    collaboratorDocumentTopElem?: CollaboratorDocumentTopElem;
+    /**
+     * Не назначать повторно успешно прошедшим тестирование (с учетом даты последнего обучения)
+     */
+    missOnlySuccessLearning?: number;
+    /**
+     * Карточка мероприятия
+     */
+    eventDocumentTopElem?: EventDocumentTopElem;
+    /**
+     * Карточка теста
+     */
+    assessmentDocumentTopElem?: number;
+    /**
+     * Длительность в днях
+     */
+    duration?: number;
+    /**
+     * Дата начала тестирования
+     */
+    startLearningDate?: Date;
+    /**
+     * ID плана обучения
+     */
+    educationPlanId?: number;
+    /**
+     * Id группы
+     */
+    groupId?: number;
+    /**
+     * Признак самоактивации
+     */
+    selfEnrolled?: boolean;
+    /**
+     * Комментарий назначившего (записывается в карточку незаконченного/законченного теста)
+     */
+    comment?: string;
+    /**
+     * Использовать прокторинг
+     */
+    useProctoring: boolean;
+  }
+
+  /**
+   * Функция назначения теста пользователю
+   * @param params Объект JavaScript (Структура параметров)
+   */
+  function activate_test_to_person(
+    params: IActivateTestToPersonParams
+  ): XmlElem<number> | null | ActiveTestLearningDocument;
+
+  /**
+   * Функция назначения теста пользователю
+   * @param personId ID пользователя
+   * @param assessmentId ID курса
+   * @param eventId ID мероприятия
+   * @param personDoc Документ пользователя
+   * @param assessmentDocument Документ теста
+   * @param eventDocument Документ мероприятия
+   * @param duration Продолжительность тестирования
+   * @param startLearningDate Дата начала тестирования
+   * @param lastLearningDate Дата окончания тестирования
+   * @param groupId ID группы
+   * @param educationPlanId ID плана обучения
+   * @param skipDismissed Аргумент, указывающий на необходимость пропускать уволенных сотрудников
+   * (true – пропускать, false – не пропускать). По умолчанию true.
+   * @return {XmlElem<number>|null|XmlDocument} Объект XMLDoc или Целое число.
+   * Если тест назначен при выполнении функции, то возвращается ссылка на вновь созданный документ обучения.
+   * Если тест был назначен ранее, но не завершен, или завершен,
+   * но не прошло еще время, указанное в атрибуте dtLastLearningDateParam,
+   * то возвращается ID карточки ранее назначенного теста (из каталога active_test_learning).
+   */
+  function activate_test_to_person(
+    personId: number,
+    assessmentId?: number,
+    eventId?: number,
+    personDoc?: CollaboratorDocumentTopElem,
+    assessmentDocument?: AssessmentDocument,
+    eventDocument?: EventDocument,
+    duration?: number,
+    startLearningDate?: Date,
+    lastLearningDate?: Date,
+    groupId?: number,
+    educationPlanId?: number,
+    skipDismissed?: boolean
+  ): XmlElem<number> | null | ActiveTestLearningDocument;
+
+  /**
+   * Функция завершает указанный активный электронный курс и создает карточку завершенного электронного курса
+   * (карточка незавершенного курса при этом удаляется).
+   * @param learningId Id активного электронного курса, который необходимо завершить
+   * @param activeLearningDocumentTopElem TopElem активного электронного курса, который необходимо завершить
+   * @param courseDocumentTopElem TopElem электронного курса, который необходимо завершить
+   * @returns Id нового завершенного курса
+   */
+  function active_learning_finish(
+    learningId: number,
+    activeLearningDocumentTopElem?: ActiveLearningDocumentTopElem,
+    courseDocumentTopElem?: CourseDocumentTopElem
+  ): number;
+
+  /**
+   * Функция завершает указанный активный тест и создает карточку завершенного теста
+   * (карточка незавершенного теста при этом не удаляется, и тест остается в списке назначенных).
+   * Если необходимо полное завершение, то карточку незавершенного теста нужно удалять дополнительно
+   * (с помощью отдельного кода вне данной функции).
+   * @param learningId Id активного теста, который необходимо завершить
+   * @param activeTestLearningDocumentTopElem TopElem активного теста, который необходимо завершить
+   * @param assessmentDocumentTopElem TopElem теста, который необходимо завершить
+   * @param iPersonIDParam 
+   * @param bFinishTest 
+   */
+  function active_test_learning_finish(
+    learningId: number,
+    activeTestLearningDocumentTopElem?: ActiveTestLearningDocumentTopElem,
+    assessmentDocumentTopElem?: AssessmentDocumentTopElem,
+    iPersonIDParam?: any,
+    bFinishTest?: any
+  ): any;
+
+
+
+
+
+
+
+
+
+
+
+
+
   const dotnet_host: DotnetCoreHost;
 
   function new_doc_by_name<T = XmlDocument>(documentName: string, isCatalog?: boolean): T;
@@ -12,7 +298,24 @@ declare namespace tools {
    */
   function make_password(password: string, flag: boolean): string;
 
-  function start_agent(agentId: number, objectId: number, _elems_id_str?: any, dDateParam?: any, sTenancyNameParam?: any): any;
+  /**
+   * Запускает системный агент на выполнение.
+   * @param agentId (int) – ID агента для запуска.
+   * @param objectId (int) необязательный – ID объекта, над которым запускается агента (например, в списке).
+   * @param objectIdsStr(string) необязательный – ID объектов разделенных «;»,
+   * над которым запускается агента (например, в списке).
+   * @param dateStart (data) необязательный – дата запуска агента, по умолчанию текущая дата.
+   * @param tenancyName(string) необязательный – код экземпляра системы в multitenant системе,
+   * в котором нужно запустить агент.
+   * @returns Возвращаемый результат – флаг да/нет (bool) успех или неуспех выполнения агента.
+   */
+  function start_agent(
+    agentId: number,
+    objectId?: number,
+    objectIdsStr?: string,
+    dateStart?: Date,
+    tenancyName?: string
+  ): any;
 
   /**
    * Функция открывает документ и возвращает его.
@@ -22,14 +325,35 @@ declare namespace tools {
    */
   function open_doc<T = XmlDocument>(documentId: number): T | undefined;
 
+  /**
+   * Проверяет разрешение на доступ к указанному объекту для указанного пользователя.
+   * Проверка идет по уровню доступа, роли доступа, группам доступа и условиям доступа,
+   * если в карточке объекта есть соответствующие настройки.
+   * @param TopElem TopElem объекта, доступ к которому нужно проверить
+   * @param userId ID сотрудника, для которого нужно проверить доступ
+   * @returns Тип: Булево. Возвращает значение, показывающее,
+   * разрешен ли сотруднику доступ к объекту (true – доступ разрешен, false – доступ запрещен).
+   */
   function check_access(TopElem: XmlTopElem, userId: number): boolean;
-  function xquery(string: string): any;
 
+  /**
+   * Оптимизированная функция выполнения длинных запросов.
+   * Ее предпочтительнее использовать, кода нужно сделать, например запрос с иерархией.
+   * И всегда использовать вместо CatalogHierSubset используя функцию IsHierChild.
+   * sQueryParam (string) –  строка для выполнения запроса.
+   * Возвращаемый результат - результат выполнения запроса XQuery по оптимизированной строке sQueryParam.
+   * @example docArray = tools.xquery( 'for $elem in documents where IsHierChild( $elem/id, ' + _main_doc.document_id + ' )
+   * order by $elem/Hier() return $elem/id' );
+   * xarrSubdivisions = tools.xquery( 'for $elem in subdivisions where IsHierChild( $elem/id, ' + iLastDepID + ' )
+   * order by $elem/Hier() return $elem/id' );
+   * @param string 
+   */
+  function xquery(string: string): any;
 
   interface IActivateCourseToPersonParams {
     /**
      * Id Сотрудника
-      */
+     */
     iPersonID: number
     /**
      * Id курса
@@ -104,94 +428,12 @@ declare namespace tools {
      */
     bUseProctoring?: number
   }
-  /**
-   * @param params Параметры назначения курса
-   * @returns Объект XMLDoc или Целое число.
-   * Если курс назначен при выполнении функции,
-   * то возвращается ссылка на вновь созданный документ обучения.
-   * Если курс был назначен ранее, но не завершен, или завершен,
-   * но не прошло еще время, указанное в атрибуте dtLastLearningDateParam,
-   * то возвращается ID карточки ранее назначенного курса (из каталога active_learning).
-   */
-  function activate_course_to_person(
-    params: IActivateCourseToPersonParams
-  ): number | null | ActiveLearningDocument;
-  
-  /**
-   * @param personId Id сотрудника, которому назначается курс
-   * @param courseId Id курса, который необходимо назначить
-   * @param eventId Id мероприятия, участникам которого назначается курс
-   * @param personDoc TopElem карточки сотрудника, которому назначается курс
-   * @param educationPlanId Id плана обучения, в рамках которого назначен курс
-   * @param duration Длительность курса в днях. Определяет дату планируемого завершения
-   * @param startLearningDate Дата начала обучения. Если данный аргумент задан, то обучение невозможно будет начать раньше указанной даты
-   * @param lastLearningDate Контрольная дата завершения предыдущего обучения.
-   * Если параметр задан, то при назначении курса, проверяется,
-   * существует ли в каталоге learnings курс, завершенный после указанной даты.
-   * Если такой курс существует, то ID соответствующей записи из каталога
-   * learnings возвращается как результат работы функции.
-   * @param groupId Id группы, которой назначен курс
-   * @param eid Код записи в каталоге active_learnings.
-   * Если он указан, то при назначении курса,
-   * когда производится проверка на уже существующий активный курс
-   * данного сотрудника в каталоге active_learnings, проверяется также,
-   * что у данной записи должен быть указанный в параметре код.
-   * @param skipDismissed Аргумент, указывающий на необходимость пропускать уволенных
-   * сотрудников (true – пропускать, false –не пропускать). По умолчанию true.
-   * @returns Объект XMLDoc или Целое число.
-   * Если курс назначен при выполнении функции,
-   * то возвращается ссылка на вновь созданный документ обучения.
-   * Если курс был назначен ранее, но не завершен, или завершен,
-   * но не прошло еще время, указанное в атрибуте dtLastLearningDateParam,
-   * то возвращается ID карточки ранее назначенного курса (из каталога active_learning).
-   */
-  function activate_course_to_person(
-    personId: number | unknown,
-    courseId?: number,
-    eventId?: number,
-    personDoc?: CollaboratorDocumentTopElem,
-    educationPlanId?: number,
-    duration?: number,
-    startLearningDate?: Date,
-    lastLearningDate?: Date,
-    groupId?: number,
-    eid?: any,
-    skipDismissed?: boolean
-  ): number | null | ActiveLearningDocument;
 
-  /**
-   * Функция назначения теста пользователю
-   * @param personId ID пользователя
-   * @param assessmentId ID курса
-   * @param eventId ID мероприятия
-   * @param personDoc Документ пользователя
-   * @param assessmentDocument Документ теста
-   * @param eventDocument Документ мероприятия
-   * @param duration Продолжительность тестирования
-   * @param startLearningDate Дата начала тестирования
-   * @param lastLearningDate Дата окончания тестирования
-   * @param groupId ID группы
-   * @param educationPlanId ID плана обучения
-   * @param skipDismissed ???
-   * @return {XmlElem<number>|null|XmlDocument} Объект XMLDoc или Целое число.
-   * Если тест назначен при выполнении функции, то возвращается ссылка на вновь созданный документ обучения.
-   * Если тест был назначен ранее, но не завершен, или завершен,
-   * но не прошло еще время, указанное в атрибуте dtLastLearningDateParam,
-   * то возвращается ID карточки ранее назначенного теста (из каталога active_test_learning).
-   */
-  function activate_test_to_person(
-    personId: number,
-    assessmentId?: number,
-    eventId?: number,
-    personDoc?: CollaboratorDocumentTopElem,
-    assessmentDocument?: AssessmentDocument,
-    eventDocument?: EventDocument,
-    duration?: number,
-    startLearningDate?: Date,
-    lastLearningDate?: Date,
-    groupId?: number,
-    educationPlanId?: number, skipDismissed?: boolean
-  ): XmlElem<number> | null | ActiveTestLearningDocument;
+
+  
+
+
+
 
   function get_server_protocol(): string;
   function encode_course_folder(sCodeParam: string): any;
@@ -216,9 +458,6 @@ declare namespace tools {
   function download_package_list(iExchangeSeverID: any): any;
   function download_package(iExchangeSeverID: any, iPackageID: any, sTempUrlParam: any, fldPackageValidParam: any): any;
   function package_process(_path: any, _type: any, _source: any, _report_id: any, _exchange_server_id: any, iDownloadPackageIDParam: any): any;
-  function activate_test_to_event(_even_id: any, assessmentId: number, _doc_event: any, duration: number, startLearningDate: Date, _last_learning_date: any, sActTypeParam: any, bSkipDismissed: any): any;
-  function activate_course_to_event(_even_id: any, courseId: number, _doc_event: any, duration: number, startLearningDate: Date, _last_learning_date: any): any;
-  function activate_education_program_to_person(_person_id: any, _education_program_id: any, personDocument: CollaboratorDocument, _education_program_doc: any): any;
   function get_time_from_duration(duration: number): any;
   function get_time_from_seconds(_seconds: any): any;
   function delete_transaction(_transaction_id: any): any;
@@ -297,8 +536,6 @@ declare namespace tools {
   function object_filling(_type: any, _source: any, _object_id: any, _object_doc: any): any;
   function common_filling(type: string, sourceDoc: any, objectId: number, objectDoc?: XmlTopElem, customFlag?: boolean): void;
   function common_clear(_type: any, _source: any, _ps: any): any;
-  function active_learning_finish(_learning_id: any, _source?: any, _course_doc?: any): any;
-  function active_test_learning_finish(_learning_id: any, _source?: any, _assessment_doc?: any, iPersonIDParam?: any, bFinishTest?: any): any;
   function active_test_learning_finish_link(activeLearningID: any, learningID: any, teLearning: any, teAssessment: any): any;
 
   /** 
@@ -331,7 +568,7 @@ declare namespace tools {
   function get_screen_form_url(sCatalogNameParam: any): any;
   function create_package(_pak_url: any, _report_id: any, _param_source: any, sPackIDParam: any): any;
   function create_list_package(sResultUrlParam: any, fldPackage: any): any;
-  function get_doc_by_key(catalog: string, key: string, value: any): any;
+  function get_doc_by_key<T>(catalog: string, key: string, value: string | number): T | null;
   function obtain_doc_by_key(sObjectNameParam: any, oKeyParam: any, oKeyValueParam: any): any;
   function get_seconds_from_duration(duration: number): any;
   function assessment_filling_from_qti(_assessment_id: any, _source: any, _qti_text: any): any;
