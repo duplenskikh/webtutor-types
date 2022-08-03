@@ -1,9 +1,12 @@
-type DnEduConditionDocumentTopElem = XmlTopElem & { Doc: DnEduConditionDocument } & 
+type DnEduConditionDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
+  Doc: DnEduConditionDocument;
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-type DnEduConditionDocument = XmlDocument & { TopElem: DnEduConditionDocumentTopElem; };
+type DnEduConditionDocument = XmlDocument & {
+  TopElem: DnEduConditionDocumentTopElem;
+};
