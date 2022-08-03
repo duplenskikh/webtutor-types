@@ -1,15 +1,18 @@
 interface DnBlockDisciplineDocumentDiscipline {
-  discipline_id?: XmlElem<number>;
+  discipline_id: XmlElem<number>;
 }
 
-type DnBlockDisciplineDocumentTopElem = XmlTopElem & { Doc: DnBlockDisciplineDocument } & 
+type DnBlockDisciplineDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  disciplines?: XmlMultiElem<DnBlockDisciplineDocumentDiscipline>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
+  Doc: DnBlockDisciplineDocument;
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  disciplines: XmlMultiElem<DnBlockDisciplineDocumentDiscipline>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-type DnBlockDisciplineDocument = XmlDocument & { TopElem: DnBlockDisciplineDocumentTopElem; };
+type DnBlockDisciplineDocument = XmlDocument & {
+  TopElem: DnBlockDisciplineDocumentTopElem;
+};
