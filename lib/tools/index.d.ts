@@ -952,7 +952,7 @@ declare namespace tools {
    * @example
    * tools.read_object(sResult);
    */
-  function read_object(string: string): Object | Array<any>;
+  function read_object<T>(string: string): T | unknown;
 
   /**
    * @summary Используется в процессе выгрузке/загрузки данных в WebTutor при интеграции с другими системами. Заменяет в строке символы определенные символы в [].
