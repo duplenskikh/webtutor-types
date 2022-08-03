@@ -11,6 +11,7 @@ interface CareerReserveDocumentTaskCommissionPerson extends PersonFillingBase {
   score: XmlElem<number>;
   comment: XmlElem<string>;
 }
+
 interface CareerReserveDocumentTask extends CustomElemsBase,
   FileListBase {
   id: XmlElem<string>;
@@ -47,14 +48,14 @@ interface CareerReserveDocumentTask extends CustomElemsBase,
 }
 
 type CareerReserveDocumentTopElem = XmlTopElem &
-// ms_person_sd_base
+MsPersonSdBase &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: CareerReserveDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   start_date: XmlElem<Date>;
   plan_readiness_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
@@ -85,4 +86,6 @@ CustomElemsBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type CareerReserveDocument = XmlDocument & { TopElem: CareerReserveDocumentTopElem; };
+type CareerReserveDocument = XmlDocument & {
+  TopElem: CareerReserveDocumentTopElem;
+};
