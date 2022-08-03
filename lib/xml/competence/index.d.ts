@@ -1,8 +1,8 @@
 interface CompetenceDocumentExercise {
-  exercise_id?: XmlElem<number>;
+  exercise_id: XmlElem<number>;
 }
 
-type CompetenceDocumentTopElem = XmlTopElem & { Doc: CompetenceDocument } & 
+type CompetenceDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 CompetenceScaleBase &
 CompetenceLevelBase &
@@ -11,14 +11,17 @@ KnowledgePartsBaseOld &
 CustomElemsBase &
 FileListBase &
 AdminAccessBase & {
-  competence_block_id?: XmlElem<number>;
-  exercises?: XmlMultiElem<CompetenceDocumentExercise>;
-  positive_comment?: XmlElem<string>;
-  negative_comment?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  desc?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  role_id?: XmlMultiElem<number>;
+  Doc: CompetenceDocument;
+  competence_block_id: XmlElem<number>;
+  exercises: XmlMultiElem<CompetenceDocumentExercise>;
+  positive_comment: XmlElem<string>;
+  negative_comment: XmlElem<string>;
+  comment: XmlElem<string>;
+  desc: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  role_id: XmlMultiElem<number>;
 }
 
-type CompetenceDocument = XmlDocument & { TopElem: CompetenceDocumentTopElem; };
+type CompetenceDocument = XmlDocument & {
+  TopElem: CompetenceDocumentTopElem;
+};
