@@ -1,9 +1,12 @@
-type CandidateSourceDocumentTopElem = XmlTopElem & { Doc: CandidateSourceDocument } & 
+type CandidateSourceDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase & {
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
+  Doc: CandidateSourceDocument;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase>;
 }
 
-type CandidateSourceDocument = XmlDocument & { TopElem: CandidateSourceDocumentTopElem; };
+type CandidateSourceDocument = XmlDocument & {
+  TopElem: CandidateSourceDocumentTopElem;
+};
