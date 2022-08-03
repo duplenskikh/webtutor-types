@@ -563,7 +563,7 @@ declare namespace tools {
   function get_screen_form_url(sCatalogNameParam: any): any;
   function create_package(_pak_url: any, _report_id: any, _param_source: any, sPackIDParam: any): any;
   function create_list_package(sResultUrlParam: any, fldPackage: any): any;
-  function get_doc_by_key<T = unknown>(catalog: string, key: string, value: string | number): T | null;
+  function get_doc_by_key<T = XmlDocument>(catalog: string, key: string, value: string | number): T | null;
   function obtain_doc_by_key(sObjectNameParam: any, oKeyParam: any, oKeyValueParam: any): any;
   function get_seconds_from_duration(duration: number): any;
   function assessment_filling_from_qti(_assessment_id: any, _source: any, _qti_text: any): any;

@@ -1,9 +1,12 @@
-type EducationModeDocumentTopElem = XmlTopElem & { Doc: EducationModeDocument } & 
+type EducationModeDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase & {
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
+  Doc: EducationModeDocument;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase>;
 }
 
-type EducationModeDocument = XmlDocument & { TopElem: EducationModeDocumentTopElem; };
+type EducationModeDocument = XmlDocument & {
+  TopElem: EducationModeDocumentTopElem;
+};

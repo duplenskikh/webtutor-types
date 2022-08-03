@@ -1,11 +1,14 @@
-type DnTermDocumentTopElem = XmlTopElem & { Doc: DnTermDocument } & 
+type DnTermDocumentTopElem = XmlTopElem &
 CustomElemsBase &
 AdminAccessBase & {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  str_term?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
+  Doc: DnTermDocument;
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  str_term: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
 }
 
-type DnTermDocument = XmlDocument & { TopElem: DnTermDocumentTopElem; };
+type DnTermDocument = XmlDocument & {
+  TopElem: DnTermDocumentTopElem;
+};
