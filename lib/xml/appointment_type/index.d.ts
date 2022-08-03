@@ -1,9 +1,12 @@
-type AppointmentTypeDocumentTopElem = XmlTopElem & { Doc: AppointmentTypeDocument } & 
+type AppointmentTypeDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase & {
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
+  Doc: AppointmentTypeDocument;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase>;
 }
 
-type AppointmentTypeDocument = XmlDocument & { TopElem: AppointmentTypeDocumentTopElem; };
+type AppointmentTypeDocument = XmlDocument & {
+  TopElem: AppointmentTypeDocumentTopElem;
+};
