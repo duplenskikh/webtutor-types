@@ -1,9 +1,12 @@
-type BudgetTypeDocumentTopElem = XmlTopElem & { Doc: BudgetTypeDocument } & 
+type BudgetTypeDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase & {
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
+  Doc: BudgetTypeDocument;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase>;
 }
 
-type BudgetTypeDocument = XmlDocument & { TopElem: BudgetTypeDocumentTopElem; };
+type BudgetTypeDocument = XmlDocument & {
+  TopElem: BudgetTypeDocumentTopElem;
+};
