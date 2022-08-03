@@ -1,11 +1,14 @@
-type ContactResultDocumentTopElem = XmlTopElem & { Doc: ContactResultDocument } & 
+type ContactResultDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  code?: XmlElem<string>;
-  name?: XmlElem<string>;
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  changed?: XmlElem<boolean>;
-  is_std?: XmlElem<boolean>;
+  Doc: ContactResultDocument;
+  code: XmlElem<string>;
+  name: XmlElem<string>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  changed: XmlElem<boolean>;
+  is_std: XmlElem<boolean>;
 }
 
-type ContactResultDocument = XmlDocument & { TopElem: ContactResultDocumentTopElem; };
+type ContactResultDocument = XmlDocument & {
+  TopElem: ContactResultDocumentTopElem;
+};
