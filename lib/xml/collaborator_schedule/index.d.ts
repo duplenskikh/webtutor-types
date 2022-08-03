@@ -9,9 +9,10 @@ interface CollaboratorScheduleDocumentPeriod extends ObjectTypeBase,
   comment: XmlElem<string>;
 }
 
-type CollaboratorScheduleDocumentTopElem = XmlTopElem & { Doc: CollaboratorScheduleDocument } & 
+type CollaboratorScheduleDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 CustomElemsBase & {
+  Doc: CollaboratorScheduleDocument;
   id: XmlElem<number>;
   person_id: XmlElem<number>;
   date: XmlElem<Date>;
