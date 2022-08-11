@@ -57,7 +57,7 @@ interface XmElem<T> {
    * Возвращает соответтвующий элемент целевого массива (описанного в атрибуте FOREIGN-ARRAY).
    * Если элемент не найден - возвращает ошибку.
    */
-  ForeignElem: unknown | void;
+  ForeignElem: any | void;
 
   /**
    * Атрибут возвращает url объекта, на который ссылается атрибут ForeignElem из текущего элемента. Целевой массив должен быть каталогом.
@@ -203,7 +203,7 @@ interface XmElem<T> {
    * (описанного в атрибуте `FOREIGN-ARRAY`).
    * Если элемент не найден - возвращает `undefined`.
    */
-  OptForeignElem: XmlElem<unknown> | XmlMultiElem<unknown> | undefined;
+  OptForeignElem: XmlElem<any> | XmlMultiElem<any> | undefined;
 
   /**
    * В случае если элемент находится в документе, открытом в экране,

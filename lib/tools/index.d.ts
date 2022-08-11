@@ -323,7 +323,7 @@ declare namespace tools {
    * @param {string|number} documentId ID документа
    * @returns {T|undefined} XML документ или undefined
    */
-  function open_doc<T = XmlDocument>(documentId: number): T | undefined;
+  function open_doc<T = any>(documentId: number): T | undefined;
 
   /**
    * Проверяет разрешение на доступ к указанному объекту для указанного пользователя.
@@ -346,9 +346,9 @@ declare namespace tools {
    * order by $elem/Hier() return $elem/id' );
    * xarrSubdivisions = tools.xquery( 'for $elem in subdivisions where IsHierChild( $elem/id, ' + iLastDepID + ' )
    * order by $elem/Hier() return $elem/id' );
-   * @param string 
+   * @param string
    */
-  function xquery<T = unknown>(string: string): T;
+  function xquery<T = any>(string: string): any;
 
   interface IActivateCourseToPersonParams {
     /**
@@ -952,7 +952,7 @@ declare namespace tools {
    * @example
    * tools.read_object(sResult);
    */
-  function read_object<T>(string: string): T | unknown;
+  function read_object<T = any>(string: string): T;
 
   /**
    * @summary Используется в процессе выгрузке/загрузки данных в WebTutor при интеграции с другими системами. Заменяет в строке символы определенные символы в [].

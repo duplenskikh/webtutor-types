@@ -2,6 +2,7 @@ interface XmMultiElem<T> {
   [index: number]: T;
   HasValue: boolean;
   Name: string;
+  length: number;
   /**
    * 
    * Добавляет дочерний элемент и возвращает указатель на него.
