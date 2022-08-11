@@ -1275,39 +1275,6 @@ interface CareerReserveComissionPerson {
   comment?: XmlElem<string>;
 }
 
-interface CareerReserveTask extends XmlElem<any> {
-  id?: XmlElem<string>;
-  name?: XmlElem<string>;
-  type?: XmlElem<string>;
-  status?: XmlElem<string>;
-  parent_task_id?: XmlElem<string>;
-  start_date?: XmlElem<Date>;
-  plan_date?: XmlElem<Date>;
-  fact_date?: XmlElem<Date>;
-  start_edit_date?: XmlElem<Date>;
-  typical_development_program_id?: XmlElem<number>;
-  tutor_id?: XmlElem<number>;
-  competence_id?: XmlElem<number>;
-  desc?: XmlElem<string>;
-  score?: XmlElem<number>;
-  person_comment?: XmlElem<string>;
-  tutor_comment?: XmlElem<string>;
-  object_type?: XmlElem<string>;
-  object_id?: XmlElem<number>;
-  active_test_learning_id?: XmlElem<number>;
-  event_id?: XmlElem<number>;
-  event_result_id?: XmlElem<number>;
-  active_learning_id?: XmlElem<number>;
-  assessment_appraise_id?: XmlElem<number>;
-  assessment_appraise_result_id?: XmlElem<number>;
-  poll_result_id?: XmlElem<number>;
-  poll_procedure_id?: XmlElem<number>;
-  type_document?: XmlElem<string>;
-  link_document?: XmlElem<string>;
-  forbid_task_portal_edit?: XmlElem<boolean>;
-  commission_persons?: XmlMultiElem<CareerReserveComissionPerson>;
-}
-
 interface AnnalsObjectBaseDataAssessmentTimestamp {
   value?: XmlElem<any>;
 }

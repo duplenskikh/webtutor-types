@@ -4,7 +4,7 @@
  * AddProperty , SetProperty , GetProperty , GetOptProperty .
  */
 interface Object {
-  [key: string]: unknown;
+  [key: string]: any;
 
   /**
    * Выдает true, если атрубут с заданным наименованием существует,
@@ -27,7 +27,7 @@ interface Object {
    * @param defaultValue - значение по умолчанию, возращаемое в случае
    * отстутвия атрибута (Any). Необязятельный аргумент. По умолчанию равен undefined.
    */
-  GetOptProperty(key: string, defaultValue?: unknown): unknown | undefined;
+  GetOptProperty(key: string, defaultValue?: unknown): any | undefined;
 
   /**
    * Выдает значение атрибута объекта. Если атрибут отсутствует, выдает ошибку.
@@ -36,7 +36,7 @@ interface Object {
    * @example AppConfig.GetProperty( 'alt-app-name' );
    * @throws {Error}
    */
-  GetProperty(key: string): unknown | never;
+  GetProperty(key: string): any | never;
 
   /**
    * Устанавливает значение атрибута объекта. Если атрубут отсутствует,

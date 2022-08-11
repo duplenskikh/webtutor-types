@@ -27,8 +27,7 @@ interface ChatbotStageDocumentCommand {
   chatbot_stage_id: XmlElem<number>;
 }
 
-type ChatbotStageDocumentTopElem = XmlTopElem &
-MsParametersBase & {
+type ChatbotStageDocumentTopElem = XmlTopElem & {
   Doc: ChatbotStageDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;

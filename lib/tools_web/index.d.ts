@@ -6,11 +6,13 @@ declare namespace tools_web {
    * @returns {boolean}
    */
   function is_true(value: unknown): boolean;
+
   /**
    * Получение кэша по коду
    * @param userDataCode Код кэша
    */
-  function get_user_data(userDataCode: string): unknown;
+  function get_user_data(userDataCode: string): null | string;
+
   /**
    * Создание кэша по коду
    * @param userDataCode Код кэша

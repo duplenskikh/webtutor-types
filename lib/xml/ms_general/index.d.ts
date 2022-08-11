@@ -1,4 +1,3 @@
-type MsGeneralDocumentTopElem = XmlTopElem & { Doc: MsGeneralDocument } & {
+interface MsPersonSdBase {
+  person_id: XmlElem<number>;
 }
-
-type MsGeneralDocument = XmlDocument & { TopElem: MsGeneralDocumentTopElem; };

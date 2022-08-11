@@ -124,9 +124,9 @@ AdminAccessBase & {
   proctoring_system_id: XmlElem<number>;
   external_type: XmlElem<string>;
   not_use_default_notification: XmlElem<boolean>;
-  view_templates: XmlElem<MsViewTemplatesBase>;
+  view_templates: XmlElem<any>;
   comment: XmlElem<string>;
-  schedule: XmlElem<MsWeekScheduleBase>;
+  schedule: XmlElem<any>;
   access: XmlElem<AccessDocBase>;
   publish_url: XmlElem<string>;
   publish_date: XmlElem<Date>;

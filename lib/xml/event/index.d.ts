@@ -273,7 +273,7 @@ EventSettingsBase & {
   manager_date_start?: XmlElem<Date>;
   disp_all_assessment_plan?: XmlElem<boolean>;
   need_create_results?: XmlElem<boolean>;
-  set_status?(): unknown;
+  set_status(status: string): unknown;
   send_notifications?(): unknown;
   create_results?(): unknown;
   change_tutor_list?(): unknown;
@@ -297,11 +297,18 @@ EventSettingsBase & {
   calc_duration_plan?(): unknown;
   update_event_results?(): unknown;
   update_collaborator_common_filling?(): unknown;
-  addPerson?(): unknown;
+  addPerson(data: {
+    iPersonID: number,
+    bDoObtain: boolean,
+    bDoFilling: boolean,
+    bDoSave: boolean,
+    bCreateEventResult: boolean,
+    bSendNotification: boolean
+  }): any;
   delPerson?(): unknown;
   changeTutorList?(): unknown;
   get_info?(): unknown;
-  remove_collaborator?(): unknown;
+  remove_collaborator(collaboratorId: number): unknown;
   get_webinar_admin_template?(): unknown;
   call_webinar_system_method?(): unknown;
   get_webinar_setting?(): unknown;

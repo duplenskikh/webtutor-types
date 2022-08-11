@@ -17,7 +17,7 @@ PathSubsBase & {
   is_dismiss?: XmlElem<boolean>;
   doc_info?: XmlElem<DocInfoBase>;
   access?: XmlElem<AccessDocBase>;
-  lector_fullname?(): unknown;
+  lector_fullname: XmlElem<string>;
   role_id?: XmlMultiElem<number>;
 }
 

@@ -57,7 +57,7 @@ WorkflowFieldsStatesBase & {
   auto_submit_fields?: XmlElem<boolean>;
   comment?: XmlElem<string>;
   destination_object_name?: XmlElem<string>;
-  tune_fields?: XmlMultiElem<WorkflowDocumentTuneField>;
+  tune_fields?: XmlMultiElem<any>;
   is_std?: XmlElem<boolean>;
   changed?: XmlElem<boolean>;
   doc_info?: XmlElem<DocInfoBase>;

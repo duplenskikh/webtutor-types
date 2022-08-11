@@ -44,7 +44,7 @@ declare function AppModuleUsed(moduleName: string): boolean;
 
  * @returns undefined
  */
-declare function Cancel(): undefined;
+declare function Cancel(): void;
 
 /**
  * Проверяет не должен ли текущий поток завершиться (обычно после прерывания его пользователем). Если да, вызывает исключение аналогично функции Cancel().
@@ -52,7 +52,7 @@ declare function Cancel(): undefined;
  * @returns undefined
  * Если поток вызывает в цикле функцию Sleep() либо любую функцию, вызывающее сетевой запрос, то вызывать функцию CheckCurThread() нет необходимости, поскольку вышеназванные функции сами проверяют запрос на отмену выполнения потока.
  */
-declare function CheckCurThread(): undefined;
+declare function CheckCurThread(): void;
 
 /**
  * Увеличивает яркость цвета, переданного в качестве аргумента.
@@ -67,7 +67,7 @@ declare function ColorNewBrightness(color: string, ratio: any): string;
 
  * @returns undefined
  */
-declare function FinishModalTask(): undefined;
+declare function FinishModalTask(): void;
 
 /**
  * Извлекает содержимое составного документа html (с вложенными файлами в формате <compound-attc/>) в файл, сохраняя все вложенные файлы относительно него.
@@ -75,7 +75,7 @@ declare function FinishModalTask(): undefined;
  * @param {string} fileUrl - url файлв (String).
  * @returns undefined
  */
-declare function ExtractCompoundHtml(html: any, fileUrl: string): undefined;
+declare function ExtractCompoundHtml(html: any, fileUrl: string): void;
 
 /**
  * Выполняет заданный код в основном потоке на следующее системное событие.  Функция помещает этот код в очередь, и на следующем системном событии он выполняется. Эта функция блокирует поток, и дожидается окончания выполнения вызванного кода. См. также EvalAsync.
@@ -91,7 +91,7 @@ declare function EvalSync(arg1: string, arg2: any): any;
  * @returns undefined
  * EnableLog( 'xquery', true )
  */
-declare function EnableLog(name: string, enable?: boolean): undefined;
+declare function EnableLog(name: string, enable?: boolean): void;
 
 /**
  * Выполняет заданный код в основном потоке на следующее системное событие. Обычно, если код выполняется в отдельном потоке, из него нельзя обращатьтся к пользовательскому интерфейсу. Если же нужно сделать, например, обновление экрана, то этот код нужно вызывать через EvalAsync. Функция помещает этот код в очередь, и на следующем системном событии он выполняется. См. также EvalSync.
@@ -122,7 +122,7 @@ declare function GetSysUserName(): string;
  * @returns undefined
  * EnableLogExt( 'web-request', 'header-str=date\turl\tquery;use-std-event-prefix=0' ) Возможные опции: life-time - период, на котрый заводится новый файла журнала ('day', 'month', 'permanent' ) (String). По умолчанию свой файл журнала заводится на каждую дату ('day') base-dir - директория, в которой будут заводиться журнал (String). По умолчанию используется директория Logs в установочной директории use-std-event-prefix - Включать в начало каждой строки журнала стандартный префикс (дата, время, ID потока) (Bool). По умолчанию true. header-str - строка заголовка, добавляемая в начало каждого нового файла журнала (String). По умолчанию строка заголовка не добавляется.
  */
-declare function EnableLogExt(name: string, options: string): undefined;
+declare function EnableLogExt(name: string, options: string): void;
 
 /**
  * Проверяет, не нажата ли какая-либо клавиша в данный момент. Обычно проверятся Ctrl или Shift.
@@ -143,7 +143,7 @@ declare function MailMessage(): XmlElem<any>;
  * @returns undefined
  * LogEvent(type, text)
  */
-declare function LogEvent(type: string, text: string): undefined;
+declare function LogEvent(type: string, text: string): void;
 
 /**
  * Создает объект типа MailMessage на основании почтового сообщения в формате MIME.
@@ -262,7 +262,7 @@ declare function ProcessExecute(path: string, cmdLine: string, options: string):
  * @returns undefined
  * SetHttpDefaultAuth(log, pass)Можно использовать только на spxml т.к. он не делает одновременных запросов по разным адресам
  */
-declare function SetHttpDefaultAuth(log: string, pass: string): undefined;
+declare function SetHttpDefaultAuth(log: string, pass: string): void;
 
 /**
  * Вычисляет hash функцию по алгоритму SHA1.
@@ -276,7 +276,7 @@ declare function SHA1(str: string): string;
  * @param {number} ticks - величина задержки в миллисекундах (Integer).
  * @returns undefined
  */
-declare function Sleep(ticks: number): undefined;
+declare function Sleep(ticks: number): void;
 
 /**
  * Записывает текст в сроку состояния в главном окне программы. Обычно используется для показа количества найденных объектов в списке.
@@ -284,7 +284,7 @@ declare function Sleep(ticks: number): undefined;
  * @returns undefined
  * StatusMsg( 'Записей в списке: ' + n );
  */
-declare function StatusMsg(msg: string): undefined;
+declare function StatusMsg(msg: string): void;
 
 /**
  * Вычисляет hash функцию по алгоритму SHA1  и возвращает строку, закодированную в Base64
@@ -301,7 +301,7 @@ declare function SHA1Base64(str: string): string;
  * @returns undefined
  * ShellExecute( 'open', 'calc.exe' ) ShellExecute( 'print', 'C:\\Temp\\xxx.doc' ) ShellExecute( 'open', 'http://www.e-staff.ru/' ) ShellExecute( 'open', 'mailto:support@e-staff.ru' )
  */
-declare function ShellExecute(action: string, target: string, args: string): undefined;
+declare function ShellExecute(action: string, target: string, args: string): void;
 
 /**
  * Создает zip архив.
@@ -311,7 +311,7 @@ declare function ShellExecute(action: string, target: string, args: string): und
  * @returns undefined
  * Пример: ZipCreate( 'C:\\Temp\1.zip', ['app','base','SpXml.exe'], { BaseDir: 'C:\\Program Files\\EStaff' } );
  */
-declare function ZipCreate(archivePath: string, filesArray: any[], options: any): undefined;
+declare function ZipCreate(archivePath: string, filesArray: any[], options: any): void;
 
 /**
  * Распаковывает архив.
@@ -319,7 +319,7 @@ declare function ZipCreate(archivePath: string, filesArray: any[], options: any)
  * @param {string} destPath - путь до папки, в которую нужно распаковать (String).
  * @returns undefined
  */
-declare function ZipExtract(archivePath: string, destPath: string): undefined;
+declare function ZipExtract(archivePath: string, destPath: string): void;
 
 /**
  * Выбирает определенное поле (атрибут) из каждого элемента массива.
@@ -329,7 +329,7 @@ declare function ZipExtract(archivePath: string, destPath: string): undefined;
  * @param {string} field - имя поля (String).
  * @returns {any[]}
  */
-declare function ArrayExtractKeys<T>(array: T[], field: string): unknown[];
+declare function ArrayExtractKeys<T = any>(array: T[], field: string): any[];
 
 /**
  * Возвращает строку, полученную путем склеивания данных из элементов массива.
@@ -356,7 +356,7 @@ declare function ArrayIntersect(array1: any, array2: any, fieldExpr1: string, fi
  * @param {Array} array - массив
  * @returns {any}
  */
-declare function ArrayFirstElem<T>(array: T[]): T | never;
+declare function ArrayFirstElem<T = any>(array: T[]): T | never;
 
 /**
  * Возвращает элемент заданного массива, содержащий максимальное
@@ -415,7 +415,7 @@ declare function ArrayOptFindByKey(array: any, keyValue: any, keyName: string): 
  * @param {string} qualExpr - выражение, определяющее соответствие элемента массива критерию. Вычисляется относительно элемента массива. (String).
  * @returns {any}
  */
-declare function ArrayOptFind(array: any, qualExpr: string): any;
+declare function ArrayOptFind<T>(array: T[] | XmlMultiElem<T>, qualExpr: string): T | undefined;
 
 /**
  * Возвращает элемент заданного массива, содержащий минимальное значение определенного поля среди его элементов. Если массив не содержит ни одного элемента, функция завершается с исключением.
@@ -448,7 +448,7 @@ declare function ArrayRange<T>(array: T[], pos: number, elemsNum: number): T[];
  * @param {String} expression - выражение, определяющее соответствие элемента массива критерию. Вычисляется относительно элемента массива. (Bool).
  * @returns {Array|XmlElem}
  */
-declare function ArraySelect<T>(array: T[], expression: string): T[];
+declare function ArraySelect<T = any>(array: T[] | XmlMultiElem<T>, expression: string): T[] | XmlMultiElem<T>;
 
 /**
  * Возвращает элемент заданного массива, содержащий минимальное значение определенного поля среди его элементов. Если массив не содержит ни одного элемента, функция возвращает undefined.
@@ -464,7 +464,8 @@ declare function ArrayOptMin<T>(array: T[], elemExpr: string): T;
  * @param {any} defaultValue - аргумент по умолчанию
  * @returns {any}
  */
-declare function ArrayOptFirstElem<T>(array: T[], defaultValue?: unknown): T | undefined | unknown;
+declare function ArrayOptFirstElem<T = any>(array: XmlMultiElem<T> | T[]): T | null;
+declare function ArrayOptFirstElem<T = any, K = any>(array: XmlMultiElem<T> | T[], defaultValue: K): T | K;
 
 /**
  * Ищет первый элемент массива с заданным значением определенного поля (ключа). Если такой элемент не найден, возвращается undefined. Предполагается, что массив предварительно отсортирован по ключевому полю по возрастанию, что значительно повышает скорость поиска по сравнению с функцией ArrayOptFindByKey(). Функцию имеет смысл использовать для частого поиска в каком-либо фиксированном справочнике большого размера, который необходимо заранее отсортировать.
@@ -522,7 +523,7 @@ declare function ArraySelectBySortedKey<T>(array: T[], value: string, name: stri
  * @param {string} name - имя элемента, являющегося ключом (String). Необязательный аргумент. Если имя ключа не указано, используется первичный ключ.
  * @returns {Array}
  */
-declare function ArraySelectByKey<T>(array: T[], value: string | number, name: string): T[];
+declare function ArraySelectByKey<T = any>(array: T[] | XmlMultiElem<T>, value: string | number, name: string): T[] | XmlMultiElem<T>;
 
 /**
  * Сортирует массив по заданным полям. Возвращает новый массив отсортированных значений. Функция требует нечетного чилса аргументов (не менее 3-х), для каждого нового уровня сортировки добаляется 2 новых аргумента.
@@ -535,7 +536,7 @@ declare function ArraySelectByKey<T>(array: T[], value: string | number, name: s
  * ArraySort( array, 'name', '+', 'date', '-' )
  */
 
-declare function ArraySort<T>(array: T[], field: string, direction: string, ...args: string[]): T[];
+declare function ArraySort<T = any>(array: T[] | XmlMultiElem<T>, field: string, direction: string, ...args: string[]): T[] | XmlMultiElem<T>;
 
 /**
  * Возвращает сумму значений определенного поля по всем элементам массива.
@@ -543,7 +544,7 @@ declare function ArraySort<T>(array: T[], field: string, direction: string, ...a
  * @param {string} expression - выражение, вычисляющее поле, по которому происходит суммирование (String).
  * @returns {number}
  */
-declare function ArraySum<T>(array: T[], expression: string): number;
+declare function ArraySum<T = any>(array: T[] | XmlMultiElem<any>, expression: string): number;
 
 /**
  * Текущая дата системы время системы
@@ -728,10 +729,11 @@ declare function WeekDay(date: Date): number;
  * @param {Date} date - Объект даты (Date).
  * @param {boolean} showTime - Включать время (Bool). Необязательный аргумент.
  * @param {boolean} showSeconds - Включать секунды во времени (Bool). Необязательный аргумент.
- * @returns {undefined}
- * StrXmlDate( Date( '26.12.2011' ) ) вернет '2011-12-26' StrXmlDate( Date( '26.12.2011 10:45' ) ) вернет '2011-12-26T10:45'
+ * @example StrXmlDate(Date("26.12.2011")) вернет "2011-12-26"
+ * @example StrXmlDate(Date("26.12.2011 10:45")) вернет "2011-12-26T10:45"
+ * @returns {string}
  */
-declare function StrXmlDate(date: Date, showTime?: boolean, showSeconds?: boolean): undefined;
+declare function StrXmlDate(date: Date, showTime?: boolean, showSeconds?: boolean): string;
 
 /**
  * Создает динамический (без привязки к форме) XML-элемент. Созданный элемент не имеет родительского элемента.
@@ -843,7 +845,7 @@ declare function FindOptCatalog(catalogName: string): any;
  * @param {any} filePackage - объект типа FilePackage, информация из которого загружается в базу данных.
  * @returns undefined
  */
-declare function SetDbFilePackage(dbName: string, filePackage: any): undefined;
+declare function SetDbFilePackage(dbName: string, filePackage: any): void;
 
 /**
  * Выдает true, если указанная база данных находится  в зашифрованном модуле (XFP - файл), и false, если не содержит.
@@ -859,7 +861,7 @@ declare function IsPackageDb(dbName: string): boolean;
  * @param {string} dirUrl - url директории (String)
  * @returns undefined
  */
-declare function SetDbHostDir(dbName: string, dirUrl: string): undefined;
+declare function SetDbHostDir(dbName: string, dirUrl: string): void;
 
 /**
  * Выполняет заданный запрос XQuery на клиентской машине. Используется для запроса данных из каталогов локальных баз данных.
@@ -875,7 +877,7 @@ declare function XQueryLocal(query: string): any;
  * @returns {Array}
  * lds-server - явный адрес сервера приложения, на который будт отправлен запрос (String). Используется для обмена данных между серверами. preload-foreign-data - заранее кэшировать связанные данные (Bool). Обычно используется при показе списков в пользовательском интерфейсе сетевой версии, в которых будет использовать связянные данные (ForeignElem). Пример: XQuery( 'for $elem in candidates order by $elem/fullname return $elem', 'preload-foreign-data=1' )
  */
-declare function XQuery<T = unknown>(query: string, options?: string): T;
+declare function XQuery<T = any>(query: string, options?: string): T;
 
 
 /**
@@ -1053,7 +1055,7 @@ declare function StrTitleCase(str: string): string;
 
  * @returns {undefined}
  */
-declare function StrWordMatchRating(): undefined;
+declare function StrWordMatchRating(): void;
 
 /**
  * Заменяет повторяющиеся последовательности символов пробела, перевода строк и табуляции в строке на одиночные пробелы.
@@ -1077,7 +1079,7 @@ declare function Trim(str: string): string;
  * @param {string} url - url (String).
  * @returns {undefined}
  */
-declare function DeleteUrl(url: string): undefined;
+declare function DeleteUrl(url: string): void;
 
 /**
  * Копирует содержимое под заданным url в новый url.
@@ -1085,7 +1087,7 @@ declare function DeleteUrl(url: string): undefined;
  * @param {string} srcUrl - url, содержимое которого копируется (String).
  * @returns {undefined}
  */
-declare function CopyUrl(destUrl: string, srcUrl: string): undefined;
+declare function CopyUrl(destUrl: string, srcUrl: string): void;
 
 /**
  * Загружает содержимое заданного url и возвращает его в виде строки, содержащей бинарные данные.
@@ -1110,7 +1112,7 @@ declare function IsAbsoluteUrlStr(url: string): boolean;
  * @param {string} dataStr - строка (String).
  * @returns {undefined}
  */
-declare function PutUrlData(url: string, dataStr: string): undefined;
+declare function PutUrlData(url: string, dataStr: string): void;
 
 /**
  * Преобразует путь файловой системы в локальный url типа file: или x-local:
@@ -1146,7 +1148,7 @@ declare function AbsoluteUrl(url: string, baseUrl: string): string;
  * @param {string} newBaseUrl - базовый url, на который нужно подменить (String).
  * @returns {undefined}
  */
-declare function AddUrlMapping(baseUrl: string, newBaseUrl: string): undefined;
+declare function AddUrlMapping(baseUrl: string, newBaseUrl: string): void;
 
 /**
  * Добавляет фрагмент пути к заданному url.
@@ -1266,7 +1268,7 @@ declare function GetCachedDoc(url: string): XmlDocument;
  * @returns undefined
  * LdsDeleteDoc( 'x-db-obj://data/candidate/042D8A4596B679/E0.xml', 'lds-server=test2.datex.ru:9000' )
  */
-declare function LdsDeleteDoc(): undefined;
+declare function LdsDeleteDoc(): void;
 
 /**
  * Выдает ID объектного документа по его url. Смотри так же ObjectDocUrl .
@@ -1282,7 +1284,7 @@ declare function ObjectIDFromUrl(url: string): number;
  * @returns undefined
  * DeleteDoc( 'x-db-obj://data/candidate/0x4DF75B9F13FE5160.xml' )
  */
-declare function DeleteDoc(url: string, permanent?: boolean): undefined;
+declare function DeleteDoc(url: string, permanent?: boolean): void;
 
 /**
  * Возвращает url объектного документа по имени базы, типа объекта и ID документа.
@@ -1372,7 +1374,7 @@ declare function OpenDoc<T = XmlDocument>(url: string, options?: string): T;
 
  * @returns undefined
  */
-declare function UpdateUiDoc(): undefined;
+declare function UpdateUiDoc(): void;
 
 /**
  * Удаляет определенные форму из кэша. Функция используется в редких случаях при изменении структур данных на лету.
@@ -1380,7 +1382,7 @@ declare function UpdateUiDoc(): undefined;
  * @returns undefined
  * DropFormsCache( '*candidate*' )
  */
-declare function DropFormsCache(urlPattern: string): undefined;
+declare function DropFormsCache(urlPattern: string): void;
 
 /**
  * Создает новый элемент формы. Созданный элемент формы не имеет родительского элемента. Функция используется в редких случаях, например для динамической генерации форм данных.
@@ -1407,7 +1409,7 @@ declare function DeleteAllFormMappings(): void;
  * @param {string} newForm - url новой формы (String)
  * @returns undefined
  */
-declare function RegisterFormMapping(formUrl: string, newForm: string): undefined;
+declare function RegisterFormMapping(formUrl: string, newForm: string): void;
 
 /**
  * Находит зарегистрированный AutoDoc (т.е пару url документа - url формы, смотри так же функцию RegisterAutoDoc ) в списке зарегистрированных автоматически документов, и возвращает ссылку на форму. Если соответствующая пара в списке отсутствует, возвращает undefined. Аргумент docUrl - url документа (string)
@@ -1436,7 +1438,7 @@ declare function RegisterFormFromStr(formUrl: string, formData: string): any;
  * @returns undefined
  * RegisterAutoDoc( 'x-local://static/global-settings.xml', 'x-app://rcr/rcr_global_settings.xmd' )
  */
-declare function RegisterAutoDoc(docUlr: string, formUrl: string): undefined;
+declare function RegisterAutoDoc(docUlr: string, formUrl: string): void;
 
 /**
  * Региструрует фрагмент (элемент) существующий формы под новым url. Новый url состоит из url формы и полного наименования элемента формы, которое включает в себя путь внутри формы от корня до этого элемента. Возвращает url новой формы. Редко используемая функция. Аргумент formUrl - url формы (String) elemPath - полное наименование элемента формы, включающее в себя путь внутри формы от корня до этого элемента (String)
@@ -1717,7 +1719,7 @@ declare function AppDirectoryPath(): string;
  * @param {string} path - путь до новой директории, или url (String).
  * @returns {undefined}
  */
-declare function CreateDirectory(path: string): undefined;
+declare function CreateDirectory(path: string): void;
 
 /**
  * Возвращает дату модификации файла.
@@ -1731,7 +1733,7 @@ declare function GetFileModDate(path: string): Date;
  * @param {string} path - путь (или url) до удаляемой директории (String).
  * @returns {undefined}
  */
-declare function DeleteDirectory(path: string): undefined;
+declare function DeleteDirectory(path: string): void;
 
 /**
  * Проверяет существует ли файл (или директория) по указанному пути.
@@ -1760,7 +1762,7 @@ declare function FileName(url: string): string;
  * @param {string} path - путь (или url) к удаляемому файлу (String).
  * @returns {undefined}
  */
-declare function DeleteFile(path: string): undefined;
+declare function DeleteFile(path: string): void;
 
 /**
  * Проверяет открыт ли файл в другом приложении.
@@ -1775,7 +1777,7 @@ declare function FileIsBusy(path: string): boolean;
  * @param {string} targetPath - путь (или url) к файлу, на который будет указывать ярлык (String).
  * @returns {undefined}
  */
-declare function CreateShellLink(linkPath: string, targetPath: string): undefined;
+declare function CreateShellLink(linkPath: string, targetPath: string): void;
 
 /**
  * Возвращает путь к одной из стандартных директорий Shell.
@@ -1811,7 +1813,7 @@ declare function LoadFileData(path: string): string;
  * @param {boolean} isRecursive - создавать всю цепочку родительских директорий, если они не существуют (Bool). Необязательный аргумент.
  * @returns {undefined}
  */
-declare function ObtainDirectory(path: string, isRecursive?: boolean): undefined;
+declare function ObtainDirectory(path: string, isRecursive?: boolean): void;
 
 /**
  * Проверяет является ли путь к файлу, переданный в качестве аргумента. Существование файла по данному пути не проверяется.
@@ -1834,7 +1836,7 @@ declare function ObtainSessionTempFile(suffix: string): string;
  * @param {string} path2 - новый путь к файлу (String).
  * @returns {undefined}
  */
-declare function MoveFile(path1: string, path2: string): undefined;
+declare function MoveFile(path1: string, path2: string): void;
 
 /**
  * Возвращает путь к родительской директории. Фактическое существование директорий не проверяется.
@@ -1862,7 +1864,7 @@ declare function UserDataDirectoryPath(): string;
  * @param {string} str - данные (String).
  * @returns {undefined}
  */
-declare function PutFileData(path: string, str: string): undefined;
+declare function PutFileData(path: string, str: string): void;
 
 /**
  * Проверяет, существует ли директория по указанному пути.
@@ -1897,7 +1899,7 @@ declare function ExtractUserError(e: any): string;
  * @param {string} code - выполняемый код JScript (String).
  * @returns undefined
  */
-declare function InPlaceEval(code: string): undefined;
+declare function InPlaceEval(code: string): void;
 
 /**
  * Интерпретирует содержимое страницы по правилам ASP.
@@ -1982,7 +1984,7 @@ declare function EvalCodeUrl(codeUrl: string, subCode: string): any;
  * @param {string} msg - строка статуса (String).
  * @returns undefined
  */
-declare function ModalTaskMsg(msg: string): undefined;
+declare function ModalTaskMsg(msg: string): void;
 
 /**
  * @param {string} code - код, который будет выполняться на сервере (String)
@@ -2013,7 +2015,7 @@ declare function OptEval(code: string, defaultVal: any): any;
  * @returns undefined
  * ModalTaskMsg( 'Импорт данных' ); for ( ... ) { ModalTaskMsg( 'Объект ' + i ); } FinishModalTask(); В часто вызываемом коробочном коде данную функцию использовать не рекомендуется, ввиду наличия более удобного для пользователя механизма методов с прогресс-индикаторами. Функцию хорошо использовать в одноразовом или редко используемом коде ввиду его простоты.
  */
-declare function StartModalTask(taskTitle: string): undefined;
+declare function StartModalTask(taskTitle: string): void;
 
 /**
  * Открывает документ либо с расширением XML, содержащий набор методов, и возвращает его корневой элемент, либо с расширением .JS, содержащий функции, возвращает псевдо-документ (псевдо-форму), содержащую те же функции. Действие этой функции похоже на действие функции EvalCodeUrl, но не тождествены ей. Если мы выполняем сторонние функции при помощи  EvalCodeUrl, то переменные из нашего кода видны внутри сторонних функций, что может привести к разрушению кода при совпадении названий переменных. OpenCodeLib лишен этого недостатка, т.к. приводит к загрузке функций из внешнего источника как независимых методов, каждый из которых выполняется в собственном окружении. Но в этом случае, в отличие от EvalCodeUrl, загружаемый js-файл не может содержать глобальных переменных, а только функции. Аргуент url - url загружаемого документа с расширением XML или JS (string).
