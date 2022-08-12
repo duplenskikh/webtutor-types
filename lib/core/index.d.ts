@@ -481,7 +481,7 @@ declare function ArrayOptFindBySortedKey(array: any, keyValue: string, keyName: 
  * @param {Array} array - исходный массив
  * @returns {Array}
  */
-declare function ArraySelectAll(array: any): any[];
+declare function ArraySelectAll<T>(array: T[] | XmlMultiElem<T>): T[];
 
 /**
  * Возвращает массив уникальных значений элементов заданного массива.
@@ -648,7 +648,7 @@ declare function StrLongDate(date: Date): string;
  * где обычная функция Date() будет вести себя по-разному на десктопной и web-версиях.
  * @returns {Date}
  */
-declare function OptDate(date: Date): Date;
+declare function OptDate(date: any): Date;
 declare function OptDate(date: Date, defaultDate: Date): Date;
 declare function OptDate(shortDateString: string): Date;
 declare function OptDate(longDateString: string): Date;
@@ -1880,7 +1880,8 @@ declare function PathIsDirectory(path: string): boolean;
  */
 declare function ReadDirectory(dirUrl: string): Array<string>;
 
-declare function OptInt(variable: any, defaultValue?: any): number | undefined;
+declare function OptInt<T = any>(variable: any, defaultValue?: T): number | T;
+declare function OptInt(variable: any): number | undefined;
 declare function OptReal(variable: any, defaultValue?: any): number | undefined;
 declare function UrlFromDocID(documentId: number, databaseName?: string): string;
 declare function EncodeJson(arg: any): string;
