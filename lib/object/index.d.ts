@@ -12,14 +12,14 @@ interface Object {
    * GetOptProperty и SetProperty.
    * @param key наименование атрибута объекта
    */
-  HasProperty(key: string): boolean;
+  HasProperty(key: string | number): boolean;
 
   /**
    * Добавляет в объект (javascript object) новый атрибут, и присваивает ему значение.
    * @param key наименование атрибута (string)
    * @param name значение атрибута (variant)
    */
-  AddProperty(key: string, name: unknown): void;
+  AddProperty(key: string | number, name: unknown): void;
 
   /**
    * Возвращает значение атрибута объекта. Если атрубут отсутствует, выдает undefined.
@@ -27,8 +27,8 @@ interface Object {
    * @param defaultValue - значение по умолчанию, возращаемое в случае
    * отстутвия атрибута (Any). Необязятельный аргумент. По умолчанию равен undefined.
    */
-  GetOptProperty<T = any>(key: string): T | undefined;
-  GetOptProperty<T = any, K = any>(key: string, defaultValue?: K): T | K;
+  GetOptProperty<T = any>(key: string | number): T | undefined;
+  GetOptProperty<T = any, K = any>(key: string | number, defaultValue?: K): T | K;
 
   /**
    * Выдает значение атрибута объекта. Если атрибут отсутствует, выдает ошибку.
@@ -37,7 +37,7 @@ interface Object {
    * @example AppConfig.GetProperty( 'alt-app-name' );
    * @throws {Error}
    */
-  GetProperty(key: string): any | never;
+  GetProperty(key: string | number): any | never;
 
   /**
    * Устанавливает значение атрибута объекта. Если атрубут отсутствует,
@@ -45,7 +45,7 @@ interface Object {
    * @param key наименование атрибута объекта.
    * @param value значение атрибута объекта.
    */
-  SetProperty(key: string, value: any): void;
+  SetProperty(key: string | number, value: any): void;
 }
 
 interface ObjectConstructor {
