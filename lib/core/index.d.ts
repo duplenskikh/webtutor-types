@@ -1880,8 +1880,8 @@ declare function PathIsDirectory(path: string): boolean;
  */
 declare function ReadDirectory(dirUrl: string): Array<string>;
 
-declare function OptInt<T = any>(variable: any, defaultValue?: T): number | T;
 declare function OptInt(variable: any): number | undefined;
+declare function OptInt<T>(variable: any, defaultValue?: T): number | T;
 declare function OptReal(variable: any, defaultValue?: any): number | undefined;
 declare function UrlFromDocID(documentId: number, databaseName?: string): string;
 declare function EncodeJson(arg: any): string;
