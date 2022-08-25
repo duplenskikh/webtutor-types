@@ -534,54 +534,6 @@ interface EducationPlanProgramResult {
   date: XmlElem<Date>
 }
 
-interface EducationPlanProgram {
-  id: XmlElem<number>
-  name: XmlElem<string>
-  parent_progpam_id: XmlElem<number>
-  education_method_id: XmlElem<number>
-  education_program_id: XmlElem<number>
-  start_learning_tasks: XmlMultiElem<EducationPlanProgramLearningTask>;
-  start_assessments: XmlMultiElem<EducationPlanProgramAssessment>;
-  finish_learning_tasks: XmlMultiElem<EducationPlanProgramLearningTask>;
-  finish_assessments: XmlMultiElem<EducationPlanProgramAssessment>;
-  finish_notifiation: EducationPlanNotification;
-  start_notifiation: EducationPlanNotification;
-  type: XmlElem<string>;
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
-  object_code: XmlElem<string>;
-  object_start_date: XmlElem<Date>;
-  catalog_name: XmlElem<string>;
-  subject: XmlElem<string>;
-  body: XmlElem<string>;
-  body_type: XmlElem<string>;
-  edit_notification: XmlElem<boolean>;
-  delay_days: XmlElem<number>;
-  days: XmlElem<number>;
-  create_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  plan_date: XmlElem<Date>;
-  result_type: XmlElem<string>
-  result_object_id: XmlElem<number>
-  result_object_name: XmlElem<string>
-  result_object_code: XmlElem<string>
-  result_object_start_date: XmlElem<Date>
-  result_object_finish_date: XmlElem<Date>
-  state_id: XmlElem<number>;
-  tutor_id: XmlElem<number>;
-  weight: XmlElem<number>;
-  readiness_percent: XmlElem<number>;
-  start_type: XmlElem<string>;
-  mark: XmlElem<number>;
-  active_learning_id: XmlElem<number>;
-  learning_id: XmlElem<number>;
-  request_id: XmlElem<number>;
-  comment: XmlElem<string>;
-  required: XmlElem<boolean>;
-  completed_parent_programs: XmlMultiElem<EducationPlanCompletedParentProgram>;
-  program_results: XmlMultiElem<EducationPlanProgramResult>;
-}
-
 interface DotnetCoreHost {
   Object: {
     GetAssembly(libName: string): {
