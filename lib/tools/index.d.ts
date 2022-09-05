@@ -448,6 +448,32 @@ declare namespace tools {
    */
   function admin_access_filling(teObjectParam: XmlTopElem): boolean;
 
+  /**
+   * Представляет результаты теста в формате XML-структуры.
+   * @param oSourceParam Элемент для разбора теста, в котором содержится либо непустое поле `lesson_report`, `objects` (массив с элементами)
+   *                     или `core_lesson`.
+   * @param sQtiPathParam Путь до файла со структурой теста в формате qti.
+   * @param sQtiTextParam Структура теста в формате qti.
+   * @param bNoSendCorrectAnswerParam Не отправлять правильный ответ.
+   * 
+   * @returns XML-структура, содержащая результаты тестирования
+   * 
+   * @example
+   * tools.annals_decrypt( Ps );
+   * TopElem.annals_variant = tools.annals_decrypt( oSource, sQtiPath );
+   * 
+   * for ( _learning in _learning_array ) {
+   *   learningDoc = OpenDoc( UrlFromDocID( _learning.id ) ).TopElem;
+   *   assessmentDoc = OpenDoc( UrlFromDocID( _learning.assessment_id ) ).TopElem;
+   *  fldAnnals = tools.annals_decrypt( learningDoc, tools.get_qti_path( assessmentDoc ) );
+   * }
+   */
+  function annals_decrypt(
+    oSourceParam: XmlElem<any>,
+    sQtiPathParam?: string,
+    sQtiTextParam?:  string,
+    bNoSendCorrectAnswerParam?: boolean
+  ): XmlDocument;
 
 
 
@@ -703,7 +729,6 @@ declare namespace tools {
   function get_annals_from_core(sSourceParam: any): any;
   function get_annals_text_from_annals(fldAnnalsParam: any): any;
   function get_qti_path(oSource: any, fldPartParam: any): any;
-  function annals_decrypt(oSourceParam: any, sQtiPathParam: any, sQtiTextParam: any, bNoSendCorrectAnswerParam: any): any;
   function report_decrypt(_source: any, _qti_path: any, _qti_text: any): any;
   function fill_annals_timings(fldTarget: any, fldSource: any): any;
   function get_data_answers(fldDataItem: any): any;
