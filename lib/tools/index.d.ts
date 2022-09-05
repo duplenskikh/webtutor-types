@@ -437,6 +437,18 @@ declare namespace tools {
     _from_obj_doc: XmlTopElem | undefined | null
   ): void;
 
+  /**
+   * Проверяет доступ к объекту на основе настроек в разделе Отображение каталогов (блок Безопасность) для текущего пользователя в Webtutor Administrator.
+   * @param teObjectParam `TopElem` объекта, к которому проверяется доступ.
+   * 
+   * @returns Возвращает значение, показывающее наличие или отсутствие доступа (`true` – доступ разрешен, `false` – доступ запрещен).
+   * 
+   * @example
+   * tools.admin_access_filling( TopElem );
+   */
+  function admin_access_filling(teObjectParam: XmlTopElem): boolean;
+
+
 
 
   const dotnet_host: DotnetCoreHost;
@@ -746,7 +758,6 @@ declare namespace tools {
   function eval_code_page_url(_url: any, _doc_id: any, _rnd_id: any): any;
   function update_filter_conditions(_source_conditions: any, _catalog_name: any, _scheme_id: any, _set_flag: any): any;
   function check_cur_user_admin_access(teObjectParam: any, curUser: any, fldAccessCalalogParam: any): any;
-  function admin_access_filling(teObjectParam: any): any;
   function build_condition_eval_str(_conditions: any, iWorkflowIDParam: any, teWorkflowParam: any): any;
   function update_document_persons(_obj_id: any, _obj_doc: any): any;
   function get_period_from_iso(_period: any): any;
