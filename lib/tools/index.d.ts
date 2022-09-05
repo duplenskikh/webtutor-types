@@ -402,6 +402,22 @@ declare namespace tools {
     dStartDate?: Date
   ): number;
 
+  /**
+   * Сдвигает указанную дату на количество секунд, заданное параметрами функции. Можно передать дни, часы, минуты и секунды для сдвига даты.
+   * Дни, часы, минуты будут пересчитаны в секунды.
+   * @param DATE_VAL Исходная дата, подлежащая изменению. Если дата не указана, то по умолчанию принимается текущая дата. 
+   * @param DAYS Количество дней, на которое нужно сдвинуть текущую дату. Если аргумент не указан, то по умолчанию принимается значение 0.
+   * @param HOURS Количество часов, на которое нужно сдвинуть текущую дату. Если аргумент не указан, то по умолчанию принимается значение 0.
+   * @param MINUTES Количество минут, на которое нужно сдвинуть текущую дату. Если аргумент не указан, то по умолчанию принимается значение 0.
+   * @param SECONDS Количество секунд, на которое нужно сдвинуть текущую дату. Если аргумент не указан, то по умолчанию принимается значение 0.
+   * 
+   * @returns Измененная дата, полученная сдвигом исходной даты на указанное количество дней, часов, минут и секунд.
+   * 
+   * @example
+   * newDate = tools.AdjustDate (null, 1); // сдвиг текущей даты на 1 сутки
+   * newDate1 = tools.AdjustDate (null, -1); // сдвиг текущей даты на 1 сутки назад
+   */
+  function AdjustDate(DATE_VAL?: Date, DAYS?: number, HOURS?: number, MINUTES?: number, SECONDS?: number): Date;
 
 
 
@@ -727,7 +743,6 @@ declare namespace tools {
   function get_field_title(_field: any, curLngWeb: any): any;
   function fill_field_names(FIELD_NAMES: any, FORM: any, ISCATALOG: any, EVALPATH: any, PRETITLE: any, CUSTOMFIELDSTYPEID: any): any;
   function DateFunc(SRC1: any, SRC2: any, EVALSTR: any, PARAM1: any, PARAM2: any, PARAM3: any): any;
-  function AdjustDate(DATE_VAL: any, DAYS: any, HOURS: any, MINUTES: any, SECONDS: any): any;
   function get_report_storage_field(sDatatype: any): any;
   function build_report_remote(REPORT_ID: any, PS: any, docReportParam: any, sLngSHORT: any, bMetaOnly: any): any;
   function get_sub_hierarchy(NODE_ID: any, NODE_CATALOG: any, NODE_PARENT_FIELD: any): any;
