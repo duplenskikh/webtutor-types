@@ -282,7 +282,7 @@ declare namespace tools {
    *                              (`true` – создавать запись завершенного теста, `false` – не создавать запись). 
    * @param docActiveLearning документ активного теста, который необходимо завершить.
    */
-   function active_test_learning_finish_attempt(
+  function active_test_learning_finish_attempt(
     _learning_id: number,
     _learning_code?: string,
     _assessment_doc?: AssessmentDocument,
