@@ -353,6 +353,20 @@ declare namespace tools {
     requestId?: number
   ): EventDocument | null;
 
+  /**
+   * Добавляет строку к событию базы, определяемому `report_id` или документом `source_doc`.
+   * @param iActionRepotrIDParam ID события базы, к которому нужно добавить строку.
+   * @param sTextParam Строка, которую нужно добавить к событию базы.
+   * @param docActionRepotrParam Документ события базы, к которому нужно добавить строку.
+   * 
+   * @returns Сохраненный документ события базы с добавленной строкой.
+   * 
+   * @example
+   * reportDoc = OpenNewDoc( 'x-local://wtv/wtv_action_report.xmd' );
+   * _report_id = reportDoc.DocID;
+   * tools.add_report( _report_id, 'Saving archive: OK.' );
+   */
+  function add_report(iActionRepotrIDParam: number, sTextParam?: string, docActionRepotrParam?: ActionReportDocument): ActionReportDocument;
 
 
 
@@ -513,7 +527,6 @@ declare namespace tools {
   function copy_url_temp_suffix(sDestUrlPARAM: any, sSourceUrlPARAM: any): any;
   function update_forum_entry(doc: any, iNewForumIDParam: any, iParentForumEntryIDParam: any): any;
   function update_document_comment_entry(doc: any, iNewPortalDocIDParam: any): any;
-  function add_report(iActionRepotrIDParam: any, sTextParam: any, docActionRepotrParam: any): any;
   function upload_data(iExchangeSeverIDParam: any, dtLimitParam: any, iExchangeObjectIDParam: any): any;
   function download_data(iExchangeSeverIDParam: any): any;
   function create_data_package(iExchangeSeverIDParam: any, _report_id: any, sPackIDParam: any, dtLimitParam: any, iExchangeObjectIDParam: any, sPrimaryKeyUserData: any): any;
