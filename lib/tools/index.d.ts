@@ -273,7 +273,22 @@ declare namespace tools {
     bFinishTest?: any
   ): any;
 
-
+  /** 
+   * Функция завершает указанную попытку для теста и создает карточку завершенного теста.
+   * @param _learning_id ID активного теста, попытку которого необходимо завершить.
+   * @param _learning_code Код раздела теста, который нужно завершить.
+   * @param _assessment_doc `TopElem` теста, который необходимо завершить.
+   * @param _flag_create_learning Возвращает значение, показывающее, создавать или не создавать запись завершенного теста
+   *                              (`true` – создавать запись завершенного теста, `false` – не создавать запись). 
+   * @param docActiveLearning документ активного теста, который необходимо завершить.
+   */
+   function active_test_learning_finish_attempt(
+    _learning_id: number,
+    _learning_code?: string,
+    _assessment_doc?: AssessmentDocument,
+    _flag_create_learning?: boolean,
+    docActiveLearning?: ActiveTestLearningDocument
+  ): boolean;
 
 
 
@@ -533,15 +548,7 @@ declare namespace tools {
   function common_clear(_type: any, _source: any, _ps: any): any;
   function active_test_learning_finish_link(activeLearningID: any, learningID: any, teLearning: any, teAssessment: any): any;
 
-  /** 
-   * Завершает попытку прохождения теста.
-   * @param _learning_id ID активного обуения
-   * @param _learning_code Код раздела активного обучения
-   * @param _assessment_doc ID теста
-   * @param _flag_create_learning Назначить новую попытку?
-   * @param docActiveLearning Документ активного обучения
-   */
-  function active_test_learning_finish_attempt(_learning_id: number, _learning_code?: string, _assessment_doc?: AssessmentDocument, _flag_create_learning?: boolean, docActiveLearning?: ActiveLearningDocument): boolean;
+
 
   function core_decrypt(_core: any, _qti_path: any, _qti_text: any, _learning_doc: any): any;
   function get_annals_from_core(sSourceParam: any): any;
