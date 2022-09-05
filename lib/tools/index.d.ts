@@ -305,6 +305,27 @@ declare namespace tools {
    */
   function add_lng(sLngUrlParam: string, bDoObtainParam?: boolean): number;
 
+  /**
+   * Функция добавляет сотрудника в список оцениваемых в процедуре оценки. Планы и анкеты при этом не создаются.
+   * @param _person_id ID сотрудника. 
+   * @param _assessment_appraise_id ID процедуры оценки, в которую нужно добавить сотрудника. 
+   * @param personDocument `TopElem` карточки сотрудника. 
+   * @param _doc_assessment_appraise Документ процедуры оценки, в которую нужно добавить сотрудника.
+   * @returns Изменённый и сохраненный документ процедуры оценки.
+   * 
+   * @example
+   * tools.add_person_to_assessment_appraise ( iPersonID, iObjectID, null, docObject );
+   */
+  function add_person_to_assessment_appraise(
+    _person_id: number,
+    _assessment_appraise_id: number,
+    personDocument?: CollaboratorDocument,
+    _doc_assessment_appraise?: AssessmentAppraiseDocument
+  ): AssessmentAppraiseDocument;
+
+
+
+
 
 
 
@@ -641,7 +662,6 @@ declare namespace tools {
   function path_subs_filling(_path_subs: any, _person_id: any, personDocument: CollaboratorDocument): any;
   function str_time_from_mseconds(_mseconds: any): any;
   function person_list_staff_by_person_id(_personID: any, _personDoc: any, _depth: any, _top: any, _separator: any): any;
-  function add_person_to_assessment_appraise(_person_id: any, _assessment_appraise_id: any, personDocument: CollaboratorDocument, _doc_assessment_appraise: any): any;
   function check_field_name(FIELD: any, IS_STRICT_BEGIN: any): any;
   function get_doc_type_xmds(iDocTypeIDParam: any, teDocTypeParam: any): any;
   function generate_doc_type_xmds(DOC_TOPELEM: any, DOC_ID: any): any;
