@@ -337,6 +337,11 @@ declare namespace tools {
    *                  сохранится в результате мероприятия сотрудника.
    * @returns Документ мероприятия, к которому добавлялся сотрудник (если сотрудник ранее не был добавлен в данное мероприятие),
    *          или `null` (если сотрудник ранее уже был добавлен).
+   * 
+   * @example
+   * docEvent = tools.add_person_to_event ( Int(sUserId), Int(sRoomId) );
+   * tools.add_person_to_event ( _source.TopElem.person_id, _source.TopElem.object_id, null, docObject );
+   * tools.add_person_to_event ( fldPersonElem.PrimaryKey, docEvent.DocID, null, docEvent, null, catRequest.PrimaryKey );
    */
   function add_person_to_event(
     userId: number,
