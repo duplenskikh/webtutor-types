@@ -419,6 +419,23 @@ declare namespace tools {
    */
   function AdjustDate(DATE_VAL?: Date, DAYS?: number, HOURS?: number, MINUTES?: number, SECONDS?: number): Date;
 
+  /**
+   * Копирует параметры доступа к объекту в другой объект.
+   * @param _to_obj_id ID объекта, в который нужно скопировать параметры доступа.
+   * @param _to_obj_doc TopElem объекта, в который нужно скопировать параметры доступа.
+   * @param _from_obj_id ID объекта, из которого нужно скопировать параметры доступа.
+   * @param _from_obj_doc TopElem объекта, из которого нужно скопировать параметры доступа.
+   * 
+   * @example
+   * tools.admin_access_copying('', docEventResult.TopElem, '', topElem);
+   * tools.admin_access_copying( null, requestDoc.TopElem, curObjectID, curObject );
+   */
+  function admin_access_copying(
+    _to_obj_id: number | undefined | null,
+    _to_obj_doc: XmlTopElem | undefined | null,
+    _from_obj_id: number | undefined | null,
+    _from_obj_doc: XmlTopElem | undefined | null
+  ): void;
 
 
 
@@ -730,7 +747,6 @@ declare namespace tools {
   function update_filter_conditions(_source_conditions: any, _catalog_name: any, _scheme_id: any, _set_flag: any): any;
   function check_cur_user_admin_access(teObjectParam: any, curUser: any, fldAccessCalalogParam: any): any;
   function admin_access_filling(teObjectParam: any): any;
-  function admin_access_copying(_to_obj_id: any, _to_obj_doc: any, _from_obj_id: any, _from_obj_doc: any): any;
   function build_condition_eval_str(_conditions: any, iWorkflowIDParam: any, teWorkflowParam: any): any;
   function update_document_persons(_obj_id: any, _obj_doc: any): any;
   function get_period_from_iso(_period: any): any;
