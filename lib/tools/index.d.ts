@@ -368,6 +368,39 @@ declare namespace tools {
    */
   function add_report(iActionRepotrIDParam: number, sTextParam?: string, docActionRepotrParam?: ActionReportDocument): ActionReportDocument;
 
+  /**
+   * Создает элемент очереди скриптов.
+   * @param sScriptParam Код для выполнения.
+   * @param sCodeParam Строка с кодом скрипта.
+   * @param bDeleteAutomaticallyParam Флаг, определяющий, нужно ли автоматически удалять код из очереди
+   *                                  (`true` – код автоматически удаляется из очереди, `false` – не удаляется).
+   * @param iDelayParam Задержка в секундах перед выполнением кода.
+   * @param dStartDate Дата старта агента
+   * 
+   * @returns ID созданного объекта.
+   * 
+   * @example
+   * iScriptId = tools.add_script_to_queue(sRegistrationScript,"mgr", true, 5);
+   * tools.add_script_to_queue(
+   *   'tools_chat.write_message( ' + XQueryLiteral( sTextMessage ) + ', ' + iObjectID + ' )',
+   *   'send_message',
+   *   true,
+   *   0
+   * );
+   * tools.add_script_to_queue(
+   *   'tools_chat.change_participants_conversation( ' + iConversationID + ', null, ' + XQueryLiteral( sAction ) + ' )',
+   *   'change_participants_conversation',
+   *   true,
+   *   0
+   * );
+   */
+  function add_script_to_queue(
+    sScriptParam: string,
+    sCodeParam: string,
+    bDeleteAutomaticallyParam: boolean,
+    iDelayParam: number,
+    dStartDate?: Date
+  ): number;
 
 
 
@@ -842,7 +875,6 @@ declare namespace tools {
   function set_thread_tenancy(sTenancyNameParam: any): any;
   function is_disable_tenancy(sHostName: any): any;
   function set_event_type_id(ftTarget: any, sEventTypeParam: any): any;
-  function add_script_to_queue(sScriptParam: any, sCodeParam: string, bDeleteAutomaticallyParam: any, iDelayParam: any, dStartDate: any): any;
   function wait_script_queue(iScriptIdParam: any, bDeleteScript: any): any;
   function open_course_version(iCourseIdParam: any, sBaseUrlParam: any): any;
   function evalReplace(strEvalParam: any): any;
