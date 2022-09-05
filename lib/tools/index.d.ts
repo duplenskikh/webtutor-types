@@ -475,7 +475,27 @@ declare namespace tools {
     bNoSendCorrectAnswerParam?: boolean
   ): XmlDocument;
 
-
+  /**
+   * Преобразует массив в строку указанного формата (`json`, `xml`).
+   * @param  _aArrayPARAM Массив, который необходимо преобразовать.
+   * @param _sFormatPARAM Формат возвращаемой строки. Возможны два значения: `json` и `xml`). По умолчанию имеет значение `xml`.
+   * @param _sNamePARAM Название корневого (`root`) тега. Значение аргумента учитывается, если формируется строка в формате XML.
+   *                    По умолчанию имеет значение `data` (корневой тег `<data></data>`).
+   * 
+   * @returns Строка, сформированная из массива.
+   * 
+   * @example
+   * tools.array_to_text(["one", "two", "three"], "json");
+   * // returns ["value":"one", "value":"two", "value":"three"]
+   * 
+   * tools.array_to_text(["one", "two", "three"], "xml");
+   * // returns <data><value>one</value></data><data><value>two</value></data><data><value>three</value></data>
+   * 
+   * tools.array_to_text(["one", "two", "three"], "xml", "d");
+   * // returns <d><value>one</value></d><d><value>two</value></d><d><value>three</value></d>
+   */
+  function array_to_text(_aArrayPARAM: Array<any>, _sFormatPARAM?: string, _sNamePARAM?: string): string;
+   
 
   const dotnet_host: DotnetCoreHost;
 
@@ -993,27 +1013,6 @@ declare namespace tools {
    * Преобразование данных (https://news.websoft.ru/_wt/wiki_base/6809298370262485009/base_wiki_article_type_id/6680054725638828770)
    * В данный раздел включены все функции библиотеки Tools, связанные с преобразованием данных, в алфавитном порядке, кроме устаревших.
    */
-
-  /**
-   * Преобразует массив в строку указанного формата (json, xml).
-   * @param  _aArrayPARAM Массив, который необходимо преобразовать.
-   * @param _sFormatPARAM Формат возвращаемой строки. Возможны два значения: `json` и `xml`). По умолчанию имеет значение `xml`.
-   * @param _sNamePARAM Название корневого (`root`) тега. Значение аргумента учитывается, если формируется строка в формате XML. По умолчанию имеет значение `data` (корневой тег `<data></data>`).
-   * @returns Строка, сформированная из массива.
-   * 
-   * @example
-   * // returns ["value":"one", "value":"two", "value":"three"]
-   * tools.array_to_text(["one", "two", "three"], "json");
-   * 
-   * @example
-   * // returns <data><value>one</value></data><data><value>two</value></data><data><value>three</value></data>
-   * tools.array_to_text(["one", "two", "three"], "xml");
-   * 
-   * @example
-   * // returns <d><value>one</value></d><d><value>two</value></d><d><value>three</value></d>
-   * tools.array_to_text(["one", "two", "three"], "xml", "d");
-   */
-  function array_to_text(_aArrayPARAM: Array<any>, _sFormatPARAM?: string, _sNamePARAM?: string): string;
 
   /**
    * Преобразует строку вида `+7-903-508-20-45` или `+7(903)508-20-45` в строку `79035082045 5082045`. Функция используется для унификации поиска по телефонным номерам.
