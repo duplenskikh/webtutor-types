@@ -290,11 +290,20 @@ declare namespace tools {
     docActiveLearning?: ActiveTestLearningDocument
   ): boolean;
 
-
-
-
-
-
+  /**
+   * Добавляет новый язык в список используемых в системе языков. Загрузка происходит из XML-файла с константами.
+   * Используется в администраторе в общих настройках, для установки новых языков или обновления существующих.
+   * @param sLngUrlParam Путь до XML-файла с константами.
+   * @param bDoObtainParam Используется при вызове функции на сервере. Если значение аргумента равно `true`, то существующие
+   *                       значения констант языка перезаписываются новыми из файла `sLngUrlParam`.
+   * @returns Количество обновленных констант.
+   * 
+   * @example
+   * tools.add_lng( _url );
+     tools.add_lng( UrlAppendPath( 'x-local://custom/', temp_doc.lngs_url ), true );
+     _num = TopElem.add_lng_items( _doc, true );
+   */
+  function add_lng(sLngUrlParam: string, bDoObtainParam?: boolean): number;
 
 
 
@@ -534,7 +543,6 @@ declare namespace tools {
   function start_import_excel_persons(Ps: any): any;
   function get_sub_boss_by_person_id(_person_id: any, personDocument: CollaboratorDocument): any;
   function get_main_boss_by_person_id(_person_id: any): any;
-  function add_lng(sLngUrlParam: any, bDoObtainParam: any): any;
   function get_web_str(sNameParam: any): any;
   function is_boss(iUserIDParam: any, iPersonIDParam: any): any;
   function is_user_boss(managerId: number, userId: number, _catalog_names?: any, vBossType?: any): any;
