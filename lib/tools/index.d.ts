@@ -323,6 +323,30 @@ declare namespace tools {
     _doc_assessment_appraise?: AssessmentAppraiseDocument
   ): AssessmentAppraiseDocument;
 
+  /**
+   * Добавляет участника в мероприятие.
+   * @param userId ID сотрудника, добавляемого в мероприятие.
+   * @param eventId ID мероприятия, в которое добавляется сотрудник.
+   * @param userTopElem `TopElem` сотрудника.
+   * @param eventDocument Документ мероприятия.
+   * @param educationPlanId ID плана обучения добавляемого сотрудника. Если аргумент указан, то ссылка на план сохранится
+   *                        в результатах мероприятия сотрудника.
+   * @param requestPersonId ID лица, подавшего заявку на добавление сотрудника в мероприятие. Если аргумент указан, то ссылка
+   *                        на лицо, подавшее заявку, сохранится в результатах мероприятия сотрудника.
+   * @param requestId ID заявки на включение сотрудника в состав участников мероприятия. Если аргумент указан, то ссылка на заявку
+   *                  сохранится в результате мероприятия сотрудника.
+   * @returns Документ мероприятия, к которому добавлялся сотрудник (если сотрудник ранее не был добавлен в данное мероприятие),
+   *          или `null` (если сотрудник ранее уже был добавлен).
+   */
+  function add_person_to_event(
+    userId: number,
+    eventId: number,
+    userTopElem?: CollaboratorDocumentTopElem,
+    eventDocument?: EventDocument,
+    educationPlanId?: number,
+    requestPersonId?: number,
+    requestId?: number
+  ): EventDocument | null;
 
 
 
@@ -621,7 +645,6 @@ declare namespace tools {
   function update_object_versions(docVersion: any, iVersionID: any, docObject: any, iPersonID: any, tePerson: any, sComment: any): any;
   function update_adding_objects(docObject: any, iObjectID: any): any;
   function request_rejecting(iRequestID: any, docRequest: any, iPersonID: any, dSaveParam: any): any;
-  function add_person_to_event(userId: number, eventId: number, userTopElem?: CollaboratorDocumentTopElem, eventDocument?: EventDocument, educationPlanId?: number, requestPersonId?: number, requestId?: number): EventDocument;
   function del_person_from_event(_person_id: any, eventId: number, _doc_event?: any, _flag_save?: any): any;
   function encrypt_content(iCourseIDParam: any): any;
   function create_license(iLicenseId: any): any;
