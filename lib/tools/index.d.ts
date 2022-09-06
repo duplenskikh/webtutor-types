@@ -273,17 +273,229 @@ declare namespace tools {
     bFinishTest?: any
   ): any;
 
+  /** 
+   * Функция завершает указанную попытку для теста и создает карточку завершенного теста.
+   * @param _learning_id ID активного теста, попытку которого необходимо завершить.
+   * @param _learning_code Код раздела теста, который нужно завершить.
+   * @param _assessment_doc `TopElem` теста, который необходимо завершить.
+   * @param _flag_create_learning Возвращает значение, показывающее, создавать или не создавать запись завершенного теста
+   *                              (`true` – создавать запись завершенного теста, `false` – не создавать запись). 
+   * @param docActiveLearning документ активного теста, который необходимо завершить.
+   */
+  function active_test_learning_finish_attempt(
+    _learning_id: number,
+    _learning_code?: string,
+    _assessment_doc?: AssessmentDocument,
+    _flag_create_learning?: boolean,
+    docActiveLearning?: ActiveTestLearningDocument
+  ): boolean;
 
+  /**
+   * Добавляет новый язык в список используемых в системе языков. Загрузка происходит из XML-файла с константами.
+   * Используется в администраторе в общих настройках, для установки новых языков или обновления существующих.
+   * @param sLngUrlParam Путь до XML-файла с константами.
+   * @param bDoObtainParam Используется при вызове функции на сервере. Если значение аргумента равно `true`, то существующие
+   *                       значения констант языка перезаписываются новыми из файла `sLngUrlParam`.
+   * @returns Количество обновленных констант.
+   * 
+   * @example
+   * tools.add_lng( _url );
+     tools.add_lng( UrlAppendPath( 'x-local://custom/', temp_doc.lngs_url ), true );
+     _num = TopElem.add_lng_items( _doc, true );
+   */
+  function add_lng(sLngUrlParam: string, bDoObtainParam?: boolean): number;
 
+  /**
+   * Функция добавляет сотрудника в список оцениваемых в процедуре оценки. Планы и анкеты при этом не создаются.
+   * @param _person_id ID сотрудника. 
+   * @param _assessment_appraise_id ID процедуры оценки, в которую нужно добавить сотрудника. 
+   * @param personDocument `TopElem` карточки сотрудника. 
+   * @param _doc_assessment_appraise Документ процедуры оценки, в которую нужно добавить сотрудника.
+   * @returns Изменённый и сохраненный документ процедуры оценки.
+   * 
+   * @example
+   * tools.add_person_to_assessment_appraise ( iPersonID, iObjectID, null, docObject );
+   */
+  function add_person_to_assessment_appraise(
+    _person_id: number,
+    _assessment_appraise_id: number,
+    personDocument?: CollaboratorDocument,
+    _doc_assessment_appraise?: AssessmentAppraiseDocument
+  ): AssessmentAppraiseDocument;
 
+  /**
+   * Добавляет участника в мероприятие.
+   * @param userId ID сотрудника, добавляемого в мероприятие.
+   * @param eventId ID мероприятия, в которое добавляется сотрудник.
+   * @param userTopElem `TopElem` сотрудника.
+   * @param eventDocument Документ мероприятия.
+   * @param educationPlanId ID плана обучения добавляемого сотрудника. Если аргумент указан, то ссылка на план сохранится
+   *                        в результатах мероприятия сотрудника.
+   * @param requestPersonId ID лица, подавшего заявку на добавление сотрудника в мероприятие. Если аргумент указан, то ссылка
+   *                        на лицо, подавшее заявку, сохранится в результатах мероприятия сотрудника.
+   * @param requestId ID заявки на включение сотрудника в состав участников мероприятия. Если аргумент указан, то ссылка на заявку
+   *                  сохранится в результате мероприятия сотрудника.
+   * @returns Документ мероприятия, к которому добавлялся сотрудник (если сотрудник ранее не был добавлен в данное мероприятие),
+   *          или `null` (если сотрудник ранее уже был добавлен).
+   * 
+   * @example
+   * docEvent = tools.add_person_to_event ( Int(sUserId), Int(sRoomId) );
+   * tools.add_person_to_event ( _source.TopElem.person_id, _source.TopElem.object_id, null, docObject );
+   * tools.add_person_to_event ( fldPersonElem.PrimaryKey, docEvent.DocID, null, docEvent, null, catRequest.PrimaryKey );
+   */
+  function add_person_to_event(
+    userId: number,
+    eventId: number,
+    userTopElem?: CollaboratorDocumentTopElem,
+    eventDocument?: EventDocument,
+    educationPlanId?: number,
+    requestPersonId?: number,
+    requestId?: number
+  ): EventDocument | null;
 
+  /**
+   * Добавляет строку к событию базы, определяемому `report_id` или документом `source_doc`.
+   * @param iActionRepotrIDParam ID события базы, к которому нужно добавить строку.
+   * @param sTextParam Строка, которую нужно добавить к событию базы.
+   * @param docActionRepotrParam Документ события базы, к которому нужно добавить строку.
+   * 
+   * @returns Сохраненный документ события базы с добавленной строкой.
+   * 
+   * @example
+   * reportDoc = OpenNewDoc( 'x-local://wtv/wtv_action_report.xmd' );
+   * _report_id = reportDoc.DocID;
+   * tools.add_report( _report_id, 'Saving archive: OK.' );
+   */
+  function add_report(iActionRepotrIDParam: number, sTextParam?: string, docActionRepotrParam?: ActionReportDocument): ActionReportDocument;
 
+  /**
+   * Создает элемент очереди скриптов.
+   * @param sScriptParam Код для выполнения.
+   * @param sCodeParam Строка с кодом скрипта.
+   * @param bDeleteAutomaticallyParam Флаг, определяющий, нужно ли автоматически удалять код из очереди
+   *                                  (`true` – код автоматически удаляется из очереди, `false` – не удаляется).
+   * @param iDelayParam Задержка в секундах перед выполнением кода.
+   * @param dStartDate Дата старта агента
+   * 
+   * @returns ID созданного объекта.
+   * 
+   * @example
+   * iScriptId = tools.add_script_to_queue(sRegistrationScript,"mgr", true, 5);
+   * tools.add_script_to_queue(
+   *   'tools_chat.write_message( ' + XQueryLiteral( sTextMessage ) + ', ' + iObjectID + ' )',
+   *   'send_message',
+   *   true,
+   *   0
+   * );
+   * tools.add_script_to_queue(
+   *   'tools_chat.change_participants_conversation( ' + iConversationID + ', null, ' + XQueryLiteral( sAction ) + ' )',
+   *   'change_participants_conversation',
+   *   true,
+   *   0
+   * );
+   */
+  function add_script_to_queue(
+    sScriptParam: string,
+    sCodeParam: string,
+    bDeleteAutomaticallyParam: boolean,
+    iDelayParam: number,
+    dStartDate?: Date
+  ): number;
 
+  /**
+   * Сдвигает указанную дату на количество секунд, заданное параметрами функции. Можно передать дни, часы, минуты и секунды для сдвига даты.
+   * Дни, часы, минуты будут пересчитаны в секунды.
+   * @param DATE_VAL Исходная дата, подлежащая изменению. Если дата не указана, то по умолчанию принимается текущая дата. 
+   * @param DAYS Количество дней, на которое нужно сдвинуть текущую дату. Если аргумент не указан, то по умолчанию принимается значение 0.
+   * @param HOURS Количество часов, на которое нужно сдвинуть текущую дату. Если аргумент не указан, то по умолчанию принимается значение 0.
+   * @param MINUTES Количество минут, на которое нужно сдвинуть текущую дату. Если аргумент не указан, то по умолчанию принимается значение 0.
+   * @param SECONDS Количество секунд, на которое нужно сдвинуть текущую дату. Если аргумент не указан, то по умолчанию принимается значение 0.
+   * 
+   * @returns Измененная дата, полученная сдвигом исходной даты на указанное количество дней, часов, минут и секунд.
+   * 
+   * @example
+   * newDate = tools.AdjustDate (null, 1); // сдвиг текущей даты на 1 сутки
+   * newDate1 = tools.AdjustDate (null, -1); // сдвиг текущей даты на 1 сутки назад
+   */
+  function AdjustDate(DATE_VAL?: Date, DAYS?: number, HOURS?: number, MINUTES?: number, SECONDS?: number): Date;
 
+  /**
+   * Копирует параметры доступа к объекту в другой объект.
+   * @param _to_obj_id ID объекта, в который нужно скопировать параметры доступа.
+   * @param _to_obj_doc TopElem объекта, в который нужно скопировать параметры доступа.
+   * @param _from_obj_id ID объекта, из которого нужно скопировать параметры доступа.
+   * @param _from_obj_doc TopElem объекта, из которого нужно скопировать параметры доступа.
+   * 
+   * @example
+   * tools.admin_access_copying('', docEventResult.TopElem, '', topElem);
+   * tools.admin_access_copying( null, requestDoc.TopElem, curObjectID, curObject );
+   */
+  function admin_access_copying(
+    _to_obj_id: number | undefined | null,
+    _to_obj_doc: XmlTopElem | undefined | null,
+    _from_obj_id: number | undefined | null,
+    _from_obj_doc: XmlTopElem | undefined | null
+  ): void;
 
+  /**
+   * Проверяет доступ к объекту на основе настроек в разделе Отображение каталогов (блок Безопасность) для текущего пользователя в Webtutor Administrator.
+   * @param teObjectParam `TopElem` объекта, к которому проверяется доступ.
+   * 
+   * @returns Возвращает значение, показывающее наличие или отсутствие доступа (`true` – доступ разрешен, `false` – доступ запрещен).
+   * 
+   * @example
+   * tools.admin_access_filling( TopElem );
+   */
+  function admin_access_filling(teObjectParam: XmlTopElem): boolean;
 
+  /**
+   * Представляет результаты теста в формате XML-структуры.
+   * @param oSourceParam Элемент для разбора теста, в котором содержится либо непустое поле `lesson_report`, `objects` (массив с элементами)
+   *                     или `core_lesson`.
+   * @param sQtiPathParam Путь до файла со структурой теста в формате qti.
+   * @param sQtiTextParam Структура теста в формате qti.
+   * @param bNoSendCorrectAnswerParam Не отправлять правильный ответ.
+   * 
+   * @returns XML-структура, содержащая результаты тестирования
+   * 
+   * @example
+   * tools.annals_decrypt( Ps );
+   * TopElem.annals_variant = tools.annals_decrypt( oSource, sQtiPath );
+   * 
+   * for ( _learning in _learning_array ) {
+   *   learningDoc = OpenDoc( UrlFromDocID( _learning.id ) ).TopElem;
+   *   assessmentDoc = OpenDoc( UrlFromDocID( _learning.assessment_id ) ).TopElem;
+   *  fldAnnals = tools.annals_decrypt( learningDoc, tools.get_qti_path( assessmentDoc ) );
+   * }
+   */
+  function annals_decrypt(
+    oSourceParam: XmlElem<any>,
+    sQtiPathParam?: string,
+    sQtiTextParam?:  string,
+    bNoSendCorrectAnswerParam?: boolean
+  ): XmlDocument;
 
-
+  /**
+   * Преобразует массив в строку указанного формата (`json`, `xml`).
+   * @param  _aArrayPARAM Массив, который необходимо преобразовать.
+   * @param _sFormatPARAM Формат возвращаемой строки. Возможны два значения: `json` и `xml`). По умолчанию имеет значение `xml`.
+   * @param _sNamePARAM Название корневого (`root`) тега. Значение аргумента учитывается, если формируется строка в формате XML.
+   *                    По умолчанию имеет значение `data` (корневой тег `<data></data>`).
+   * 
+   * @returns Строка, сформированная из массива.
+   * 
+   * @example
+   * tools.array_to_text(["one", "two", "three"], "json");
+   * // returns ["value":"one", "value":"two", "value":"three"]
+   * 
+   * tools.array_to_text(["one", "two", "three"], "xml");
+   * // returns <data><value>one</value></data><data><value>two</value></data><data><value>three</value></data>
+   * 
+   * tools.array_to_text(["one", "two", "three"], "xml", "d");
+   * // returns <d><value>one</value></d><d><value>two</value></d><d><value>three</value></d>
+   */
+  function array_to_text(_aArrayPARAM: Array<any>, _sFormatPARAM?: string, _sNamePARAM?: string): string;
+   
 
   const dotnet_host: DotnetCoreHost;
 
@@ -439,7 +651,6 @@ declare namespace tools {
   function copy_url_temp_suffix(sDestUrlPARAM: any, sSourceUrlPARAM: any): any;
   function update_forum_entry(doc: any, iNewForumIDParam: any, iParentForumEntryIDParam: any): any;
   function update_document_comment_entry(doc: any, iNewPortalDocIDParam: any): any;
-  function add_report(iActionRepotrIDParam: any, sTextParam: any, docActionRepotrParam: any): any;
   function upload_data(iExchangeSeverIDParam: any, dtLimitParam: any, iExchangeObjectIDParam: any): any;
   function download_data(iExchangeSeverIDParam: any): any;
   function create_data_package(iExchangeSeverIDParam: any, _report_id: any, sPackIDParam: any, dtLimitParam: any, iExchangeObjectIDParam: any, sPrimaryKeyUserData: any): any;
@@ -519,7 +730,6 @@ declare namespace tools {
   function start_import_excel_persons(Ps: any): any;
   function get_sub_boss_by_person_id(_person_id: any, personDocument: CollaboratorDocument): any;
   function get_main_boss_by_person_id(_person_id: any): any;
-  function add_lng(sLngUrlParam: any, bDoObtainParam: any): any;
   function get_web_str(sNameParam: any): any;
   function is_boss(iUserIDParam: any, iPersonIDParam: any): any;
   function is_user_boss(managerId: number, userId: number, _catalog_names?: any, vBossType?: any): any;
@@ -533,21 +743,12 @@ declare namespace tools {
   function common_clear(_type: any, _source: any, _ps: any): any;
   function active_test_learning_finish_link(activeLearningID: any, learningID: any, teLearning: any, teAssessment: any): any;
 
-  /** 
-   * Завершает попытку прохождения теста.
-   * @param _learning_id ID активного обуения
-   * @param _learning_code Код раздела активного обучения
-   * @param _assessment_doc ID теста
-   * @param _flag_create_learning Назначить новую попытку?
-   * @param docActiveLearning Документ активного обучения
-   */
-  function active_test_learning_finish_attempt(_learning_id: number, _learning_code?: string, _assessment_doc?: AssessmentDocument, _flag_create_learning?: boolean, docActiveLearning?: ActiveLearningDocument): boolean;
+
 
   function core_decrypt(_core: any, _qti_path: any, _qti_text: any, _learning_doc: any): any;
   function get_annals_from_core(sSourceParam: any): any;
   function get_annals_text_from_annals(fldAnnalsParam: any): any;
   function get_qti_path(oSource: any, fldPartParam: any): any;
-  function annals_decrypt(oSourceParam: any, sQtiPathParam: any, sQtiTextParam: any, bNoSendCorrectAnswerParam: any): any;
   function report_decrypt(_source: any, _qti_path: any, _qti_text: any): any;
   function fill_annals_timings(fldTarget: any, fldSource: any): any;
   function get_data_answers(fldDataItem: any): any;
@@ -585,7 +786,6 @@ declare namespace tools {
   function update_object_versions(docVersion: any, iVersionID: any, docObject: any, iPersonID: any, tePerson: any, sComment: any): any;
   function update_adding_objects(docObject: any, iObjectID: any): any;
   function request_rejecting(iRequestID: any, docRequest: any, iPersonID: any, dSaveParam: any): any;
-  function add_person_to_event(userId: number, eventId: number, userTopElem?: CollaboratorDocumentTopElem, eventDocument?: EventDocument, educationPlanId?: number, requestPersonId?: number, requestId?: number): EventDocument;
   function del_person_from_event(_person_id: any, eventId: number, _doc_event?: any, _flag_save?: any): any;
   function encrypt_content(iCourseIDParam: any): any;
   function create_license(iLicenseId: any): any;
@@ -603,8 +803,6 @@ declare namespace tools {
   function eval_code_page_url(_url: any, _doc_id: any, _rnd_id: any): any;
   function update_filter_conditions(_source_conditions: any, _catalog_name: any, _scheme_id: any, _set_flag: any): any;
   function check_cur_user_admin_access(teObjectParam: any, curUser: any, fldAccessCalalogParam: any): any;
-  function admin_access_filling(teObjectParam: any): any;
-  function admin_access_copying(_to_obj_id: any, _to_obj_doc: any, _from_obj_id: any, _from_obj_doc: any): any;
   function build_condition_eval_str(_conditions: any, iWorkflowIDParam: any, teWorkflowParam: any): any;
   function update_document_persons(_obj_id: any, _obj_doc: any): any;
   function get_period_from_iso(_period: any): any;
@@ -617,7 +815,6 @@ declare namespace tools {
   function get_field_title(_field: any, curLngWeb: any): any;
   function fill_field_names(FIELD_NAMES: any, FORM: any, ISCATALOG: any, EVALPATH: any, PRETITLE: any, CUSTOMFIELDSTYPEID: any): any;
   function DateFunc(SRC1: any, SRC2: any, EVALSTR: any, PARAM1: any, PARAM2: any, PARAM3: any): any;
-  function AdjustDate(DATE_VAL: any, DAYS: any, HOURS: any, MINUTES: any, SECONDS: any): any;
   function get_report_storage_field(sDatatype: any): any;
   function build_report_remote(REPORT_ID: any, PS: any, docReportParam: any, sLngSHORT: any, bMetaOnly: any): any;
   function get_sub_hierarchy(NODE_ID: any, NODE_CATALOG: any, NODE_PARENT_FIELD: any): any;
@@ -626,7 +823,6 @@ declare namespace tools {
   function path_subs_filling(_path_subs: any, _person_id: any, personDocument: CollaboratorDocument): any;
   function str_time_from_mseconds(_mseconds: any): any;
   function person_list_staff_by_person_id(_personID: any, _personDoc: any, _depth: any, _top: any, _separator: any): any;
-  function add_person_to_assessment_appraise(_person_id: any, _assessment_appraise_id: any, personDocument: CollaboratorDocument, _doc_assessment_appraise: any): any;
   function check_field_name(FIELD: any, IS_STRICT_BEGIN: any): any;
   function get_doc_type_xmds(iDocTypeIDParam: any, teDocTypeParam: any): any;
   function generate_doc_type_xmds(DOC_TOPELEM: any, DOC_ID: any): any;
@@ -766,7 +962,6 @@ declare namespace tools {
   function set_thread_tenancy(sTenancyNameParam: any): any;
   function is_disable_tenancy(sHostName: any): any;
   function set_event_type_id(ftTarget: any, sEventTypeParam: any): any;
-  function add_script_to_queue(sScriptParam: any, sCodeParam: string, bDeleteAutomaticallyParam: any, iDelayParam: any, dStartDate: any): any;
   function wait_script_queue(iScriptIdParam: any, bDeleteScript: any): any;
   function open_course_version(iCourseIdParam: any, sBaseUrlParam: any): any;
   function evalReplace(strEvalParam: any): any;
@@ -818,27 +1013,6 @@ declare namespace tools {
    * Преобразование данных (https://news.websoft.ru/_wt/wiki_base/6809298370262485009/base_wiki_article_type_id/6680054725638828770)
    * В данный раздел включены все функции библиотеки Tools, связанные с преобразованием данных, в алфавитном порядке, кроме устаревших.
    */
-
-  /**
-   * Преобразует массив в строку указанного формата (json, xml).
-   * @param  _aArrayPARAM Массив, который необходимо преобразовать.
-   * @param _sFormatPARAM Формат возвращаемой строки. Возможны два значения: `json` и `xml`). По умолчанию имеет значение `xml`.
-   * @param _sNamePARAM Название корневого (`root`) тега. Значение аргумента учитывается, если формируется строка в формате XML. По умолчанию имеет значение `data` (корневой тег `<data></data>`).
-   * @returns Строка, сформированная из массива.
-   * 
-   * @example
-   * // returns ["value":"one", "value":"two", "value":"three"]
-   * tools.array_to_text(["one", "two", "three"], "json");
-   * 
-   * @example
-   * // returns <data><value>one</value></data><data><value>two</value></data><data><value>three</value></data>
-   * tools.array_to_text(["one", "two", "three"], "xml");
-   * 
-   * @example
-   * // returns <d><value>one</value></d><d><value>two</value></d><d><value>three</value></d>
-   * tools.array_to_text(["one", "two", "three"], "xml", "d");
-   */
-  function array_to_text(_aArrayPARAM: Array<any>, _sFormatPARAM?: string, _sNamePARAM?: string): string;
 
   /**
    * Преобразует строку вида `+7-903-508-20-45` или `+7(903)508-20-45` в строку `79035082045 5082045`. Функция используется для унификации поиска по телефонным номерам.
