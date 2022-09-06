@@ -504,7 +504,7 @@ declare namespace tools {
    */
   function create_notification(
     notificationIdentifier: number | string,
-    objectId: number,
+    objectId: number | string,
     text?: any,
     secondObjectId?: number,
     objectTopElem?: XmlTopElem,

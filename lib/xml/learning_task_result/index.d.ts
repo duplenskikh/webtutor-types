@@ -1,4 +1,4 @@
-interface LearningTaskResultDocumentFile extends FileBase {
+interface LearningTaskResultDocumentFile extends FileListBaseFile {
   is_expert?: XmlElem<boolean>;
 }
 

@@ -544,7 +544,7 @@ interface FileActionBase {
   AddFile(): any;
 }
 
-interface FileBase {
+interface FileListBaseFile {
   file_id: XmlElem<number>;
 }
 
@@ -1026,7 +1026,7 @@ interface FuncManagersBaseFuncManager extends PersonFillingBase {
 
 interface FuncManagersBase {
   func_managers: XmlMultiElem<FuncManagersBaseFuncManager>;
-  obtain_func_manager_by_id(managerId: number, bossTypeId: number): void;
+  obtain_func_manager_by_id(managerId: number, bossTypeId?: number): void;
 }
 
 interface AdminAccessBase {

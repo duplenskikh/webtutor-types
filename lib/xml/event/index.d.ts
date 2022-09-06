@@ -83,7 +83,7 @@ interface EventDocumentExpenseItem {
   unnamed_person_sum?: XmlElem<number>;
 }
 
-interface EventDocumentFile extends FileBase {
+interface EventDocumentFile extends FileListBaseFile {
   presentation_id?: XmlElem<number>;
   visibility?: XmlElem<string>;
 }
