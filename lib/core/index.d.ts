@@ -448,7 +448,7 @@ declare function ArrayRange<T>(array: T[], pos: number, elemsNum: number): T[];
  * @param {String} expression - выражение, определяющее соответствие элемента массива критерию. Вычисляется относительно элемента массива. (Bool).
  * @returns {Array|XmlElem}
  */
-declare function ArraySelect<T = any>(array: T[] | XmlMultiElem<T>, expression: string): T[] | XmlMultiElem<T>;
+declare function ArraySelect<T>(array: T[] | XmlMultiElem<T>, expression: string): T[];
 
 /**
  * Возвращает элемент заданного массива, содержащий минимальное значение определенного поля среди его элементов. Если массив не содержит ни одного элемента, функция возвращает undefined.
@@ -523,7 +523,7 @@ declare function ArraySelectBySortedKey<T>(array: T[], value: string, name: stri
  * @param {string} name - имя элемента, являющегося ключом (String). Необязательный аргумент. Если имя ключа не указано, используется первичный ключ.
  * @returns {Array}
  */
-declare function ArraySelectByKey<T = any>(array: T[] | XmlMultiElem<T>, value: string | number, name: string): T[] | XmlMultiElem<T>;
+declare function ArraySelectByKey<T = any>(array: T[] | XmlMultiElem<T>, value: string | number, name: string): T[];
 
 /**
  * Сортирует массив по заданным полям. Возвращает новый массив отсортированных значений. Функция требует нечетного чилса аргументов (не менее 3-х), для каждого нового уровня сортировки добаляется 2 новых аргумента.
@@ -649,7 +649,7 @@ declare function StrLongDate(date: Date): string;
  * @returns {Date}
  */
 declare function OptDate(date: any): Date;
-declare function OptDate(date: Date, defaultDate: Date): Date;
+declare function OptDate<T>(date: any, defaultDate: T): Date | T;
 declare function OptDate(shortDateString: string): Date;
 declare function OptDate(longDateString: string): Date;
 declare function OptDate(year: number, month: number, day: number): Date;
@@ -1359,7 +1359,7 @@ declare function ObjectNameFromUrl(url: string): string;
  * @param {string} formUrl - url формы (String).
  * @returns {XmlDocument}
  */
-declare function OpenNewDoc(formUrl: string): XmlDocument;
+declare function OpenNewDoc<T = XmlDocument>(formUrl: string): T;
 
 /**
  * Открывает XML-документ. Возвращает объект типа XmlDoc.
