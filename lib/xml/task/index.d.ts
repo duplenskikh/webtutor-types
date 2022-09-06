@@ -19,7 +19,7 @@ interface TaskDocumentCustomField {
   value?: XmlElem<string>;
 }
 
-interface TaskDocumentFile extends FileBase {
+interface TaskDocumentFile extends FileListBaseFile {
   visibility?: XmlElem<string>;
 }
 

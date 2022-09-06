@@ -15,7 +15,7 @@ interface ProjectDocumentParticipantRole {
   participant_role_id?: XmlElem<number>;
 }
 
-interface ProjectDocumentFile extends FileBase {
+interface ProjectDocumentFile extends FileListBaseFile {
   visibility?: XmlElem<string>;
 }
 

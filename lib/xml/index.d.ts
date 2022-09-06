@@ -445,15 +445,6 @@ interface GameBonusBase {
   game_bonuss: XmlMultiElem<GameBonusBaseGameBonus>;
 }
 
-interface FileBase {
-  file_id: XmlElem<number>;
-}
-
-interface FileListBaseFile {
-  files: XmlMultiElem<FileBase>;
-  AddFile(fileId: number, docResourceParam?: ResourceDocument): boolean;
-}
-
 interface FieldNamesBaseFieldName extends FieldNamesBase {
   level: XmlElem<number>;
   field_names: XmlMultiElem<FieldNamesBaseFieldName>;
@@ -969,21 +960,6 @@ interface CompetenceProfileFamilyCompetenceProfile {
 interface PositionKPIProfile {
   id: XmlElem<number>;
   period_type_id: XmlElem<string>;
-}
-
-interface PersonFillingBase {
-  person_fullname: XmlElem<string>;
-  person_position_id: XmlElem<number>;
-  person_position_name: XmlElem<string>;
-  person_position_code: XmlElem<string>;
-  person_org_id: XmlElem<number>;
-  person_org_name: XmlElem<string>;
-  person_org_code: XmlElem<string>;
-  person_subdivision_id: XmlElem<number>;
-  person_subdivision_name: XmlElem<string>;
-  person_subdivision_code: XmlElem<string>;
-  person_instance_id: XmlElem<string>;
-  person_code: XmlElem<string>;
 }
 
 interface ChartReportGraphBase {

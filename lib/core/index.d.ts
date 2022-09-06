@@ -464,8 +464,8 @@ declare function ArrayOptMin<T>(array: T[], elemExpr: string): T;
  * @param {any} defaultValue - аргумент по умолчанию
  * @returns {any}
  */
-declare function ArrayOptFirstElem<T = any>(array: XmlMultiElem<T> | T[]): T | null;
-declare function ArrayOptFirstElem<T = any, K = any>(array: XmlMultiElem<T> | T[], defaultValue: K): T | K;
+declare function ArrayOptFirstElem<T>(array: XmlMultiElem<T> | T[]): T | undefined;
+declare function ArrayOptFirstElem<T, K = undefined>(array: XmlMultiElem<T> | T[], defaultValue: K): T | K;
 
 /**
  * Ищет первый элемент массива с заданным значением определенного поля (ключа). Если такой элемент не найден, возвращается undefined. Предполагается, что массив предварительно отсортирован по ключевому полю по возрастанию, что значительно повышает скорость поиска по сравнению с функцией ArrayOptFindByKey(). Функцию имеет смысл использовать для частого поиска в каком-либо фиксированном справочнике большого размера, который необходимо заранее отсортировать.
@@ -1666,7 +1666,7 @@ declare function UrlEncode(str: string): string;
  * @returns {string}
  * Значение типа string заключается  в кавычки, при этом существующие кавычки внутри строки маскируются по правилам SQL. Значение типа integer переводится в соответствующее строковое значение Значение типа date переводится в строку, содержающую дату в формате SQL
  */
-declare function SqlLiteral(arg: any): string;
+declare function SqlLiteral(arg: string | number | Date): string;
 
 /**
  * Преобразут объект типа Object в строку вида 'name1=value1&name2=value2&...' для использования в качестве запроса в url.
@@ -1880,9 +1880,8 @@ declare function PathIsDirectory(path: string): boolean;
  */
 declare function ReadDirectory(dirUrl: string): Array<string>;
 
-declare function OptInt(variable: any): number | undefined;
-declare function OptInt<T>(variable: any, defaultValue?: T): number | T;
-declare function OptReal(variable: any, defaultValue?: any): number | undefined;
+declare function OptInt<T, K = undefined>(variable: T, defaultValue?: K): number | K;
+declare function OptReal<T, K = undefined>(variable: T, defaultValue?: K): number | K;
 declare function UrlFromDocID(documentId: number, databaseName?: string): string;
 declare function EncodeJson(arg: any): string;
 declare function ParseJson(arg: string): any;
