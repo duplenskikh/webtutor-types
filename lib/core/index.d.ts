@@ -390,7 +390,7 @@ declare function ArrayCount(array: any): number;
  * @param {Array} array - исходный массив
  * @returns {Array}
  */
-declare function ArrayDirect(array: any): any[];
+declare function ArrayDirect<T extends { [key: number]: any }>(array: T): T;
 
 /**
  * Выбирает определенное значение из каждого элемента массива. Возвращает новый массив той же длинны, содержащий выбранные элементы.
@@ -398,7 +398,7 @@ declare function ArrayDirect(array: any): any[];
  * @param {string} fieldExpr - выражение, вычисляемое относительно каждого элемента исходного массива (String).
  * @returns {Array}
  */
-declare function ArrayExtract(array: any, fieldExpr: string): any[];
+declare function ArrayExtract(array: any, fieldExpr: string | null): any[];
 
 /**
  * Ищет первый элемент массива с заданным значением определнного поля (ключа). Если такой элемент не найден, возвращается undefined.
