@@ -1,14 +1,14 @@
 interface ResourceDocumentLink {
-  object_id?: XmlElem<number>;
-  object_catalog?: XmlElem<string>;
-  object_name?: XmlElem<string>;
-  date_modify?: XmlElem<Date>;
+  object_id: XmlElem<number>;
+  object_catalog: XmlElem<string>;
+  object_name: XmlElem<string>;
+  date_modify: XmlElem<Date>;
 }
 
 interface ResourceDocumentFileUrl {
-  id?: XmlElem<string>;
-  code?: XmlElem<string>;
-  url?: XmlElem<string>;
+  id: XmlElem<string>;
+  code: XmlElem<string>;
+  url: XmlElem<string>;
 }
 
 interface IDownloadResponse {
