@@ -495,7 +495,24 @@ declare namespace tools {
    * // returns <d><value>one</value></d><d><value>two</value></d><d><value>three</value></d>
    */
   function array_to_text(_aArrayPARAM: Array<any>, _sFormatPARAM?: string, _sNamePARAM?: string): string;
-   
+
+  /**
+   * Заполняет карточку теста и создает вопросы к нему на основе qti-описания теста.
+   * @param _assessment_id ID теста
+   * @param _source TopElem теста.
+   * @param _qti_text Структура теста в формате qti.
+   * 
+   * @example
+   * tools.assessment_filling_from_qti ( docAssessment.DocID, docAssessment.TopElem, _event.test.qti_text );
+   * _url = Screen.AskFileOpen( '', 'XML (*.xml)&#09;*.xml&#09;' + ms_tools.get_const('1d0p7epipp') + '&#09;*.*' );
+   * docAssessment = tools.obtain_doc_by_key( 'assessment', 'code', 'xxx' );
+   * tools.assessment_filling_from_qti( docAssessment.DocID, docAssessment.TopElem, LoadUrlData( _url ) );
+   */
+  function assessment_filling_from_qti(
+    _assessment_id: number | undefined,
+    _source: AssessmentDocumentTopElem | undefined,
+    _qti_text: string
+  ): void;
 
   const dotnet_host: DotnetCoreHost;
 
@@ -767,7 +784,6 @@ declare namespace tools {
   function get_doc_by_key<T = XmlDocument>(catalog: string, key: string, value: string | number): T | null;
   function obtain_doc_by_key(sObjectNameParam: any, oKeyParam: any, oKeyValueParam: any): any;
   function get_seconds_from_duration(duration: number): any;
-  function assessment_filling_from_qti(_assessment_id: any, _source: any, _qti_text: any): any;
   function submit_subscriptions(_document_id: any, documentDoc: any, iPersonIDParam: any): any;
   function create_filter_xquery(_conditions: any, _cond: any, _elem_name: any): any;
   function create_filter_javascript(_conditions: any, _first_cond: any, _elem_name: any): any;
