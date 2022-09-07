@@ -14,4 +14,6 @@ FileListBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type LibraryMaterialCommentDocument = XmlDocument & { TopElem: LibraryMaterialCommentDocumentTopElem; };
+type LibraryMaterialCommentDocument = XmlDocument & {
+  TopElem: LibraryMaterialCommentDocumentTopElem;
+};

@@ -30,4 +30,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type TutorDocument = XmlDocument & { TopElem: TutorDocumentTopElem; };
+type TutorDocument = XmlDocument & {
+  TopElem: TutorDocumentTopElem;
+};

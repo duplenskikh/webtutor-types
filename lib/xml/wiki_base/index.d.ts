@@ -32,4 +32,6 @@ KnowledgePartsBase & {
   comment: XmlElem<string>;
 }
 
-type WikiBaseDocument = XmlDocument & { TopElem: WikiBaseDocumentTopElem; };
+type WikiBaseDocument = XmlDocument & {
+  TopElem: WikiBaseDocumentTopElem;
+};

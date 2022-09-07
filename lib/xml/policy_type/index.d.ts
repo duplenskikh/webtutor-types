@@ -8,4 +8,6 @@ FileListBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type PolicyTypeDocument = XmlDocument & { TopElem: PolicyTypeDocumentTopElem; };
+type PolicyTypeDocument = XmlDocument & {
+  TopElem: PolicyTypeDocumentTopElem;
+};

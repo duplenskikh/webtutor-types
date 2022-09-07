@@ -27,4 +27,6 @@ KnowledgePartsBase & {
   knowledge_part_type_id: XmlElem<number>;
 }
 
-type KnowledgePartDocument = XmlDocument & { TopElem: KnowledgePartDocumentTopElem; };
+type KnowledgePartDocument = XmlDocument & {
+  TopElem: KnowledgePartDocumentTopElem;
+};

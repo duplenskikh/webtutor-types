@@ -319,4 +319,6 @@ EventSettingsBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type EventDocument = XmlDocument & { TopElem: EventDocumentTopElem; };
+type EventDocument = XmlDocument & {
+  TopElem: EventDocumentTopElem;
+};

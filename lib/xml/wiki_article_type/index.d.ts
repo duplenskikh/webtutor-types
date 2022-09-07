@@ -8,4 +8,6 @@ type WikiArticleTypeDocumentTopElem = XmlTopElem & { Doc: WikiArticleTypeDocumen
   comment: XmlElem<string>;
 }
 
-type WikiArticleTypeDocument = XmlDocument & { TopElem: WikiArticleTypeDocumentTopElem; };
+type WikiArticleTypeDocument = XmlDocument & {
+  TopElem: WikiArticleTypeDocumentTopElem;
+};

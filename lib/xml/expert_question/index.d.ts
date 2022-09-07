@@ -20,4 +20,6 @@ FileListBase & {
   answer_file_id: XmlElem<number>;
 }
 
-type ExpertQuestionDocument = XmlDocument & { TopElem: ExpertQuestionDocumentTopElem; };
+type ExpertQuestionDocument = XmlDocument & {
+  TopElem: ExpertQuestionDocumentTopElem;
+};

@@ -14,4 +14,6 @@ WebVariablesBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type RecommenderAlgorithmDocument = XmlDocument & { TopElem: RecommenderAlgorithmDocumentTopElem; };
+type RecommenderAlgorithmDocument = XmlDocument & {
+  TopElem: RecommenderAlgorithmDocumentTopElem;
+};

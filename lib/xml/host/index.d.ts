@@ -31,4 +31,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type HostDocument = XmlDocument & { TopElem: HostDocumentTopElem; };
+type HostDocument = XmlDocument & {
+  TopElem: HostDocumentTopElem;
+};

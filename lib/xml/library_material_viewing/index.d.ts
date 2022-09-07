@@ -25,4 +25,6 @@ AdminAccessBase & {
   finish_viewing_date: XmlElem<Date>;
 }
 
-type LibraryMaterialViewingDocument = XmlDocument & { TopElem: LibraryMaterialViewingDocumentTopElem; };
+type LibraryMaterialViewingDocument = XmlDocument & {
+  TopElem: LibraryMaterialViewingDocumentTopElem;
+};

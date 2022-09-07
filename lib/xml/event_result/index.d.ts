@@ -35,4 +35,6 @@ CustomDatasBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type EventResultDocument = XmlDocument & { TopElem: EventResultDocumentTopElem; };
+type EventResultDocument = XmlDocument & {
+  TopElem: EventResultDocumentTopElem;
+};

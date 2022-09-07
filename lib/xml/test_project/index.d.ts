@@ -84,4 +84,6 @@ CustomElemsBase & {
   set_assessment_status?(): unknown;
 }
 
-type TestProjectDocument = XmlDocument & { TopElem: TestProjectDocumentTopElem; };
+type TestProjectDocument = XmlDocument & {
+  TopElem: TestProjectDocumentTopElem;
+};

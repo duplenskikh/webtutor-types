@@ -6,4 +6,6 @@ type WorkFormDocumentTopElem = XmlTopElem & { Doc: WorkFormDocument } & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type WorkFormDocument = XmlDocument & { TopElem: WorkFormDocumentTopElem; };
+type WorkFormDocument = XmlDocument & {
+  TopElem: WorkFormDocumentTopElem;
+};

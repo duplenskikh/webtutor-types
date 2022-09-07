@@ -9,4 +9,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ExpenseItemDocument = XmlDocument & { TopElem: ExpenseItemDocumentTopElem; };
+type ExpenseItemDocument = XmlDocument & {
+  TopElem: ExpenseItemDocumentTopElem;
+};

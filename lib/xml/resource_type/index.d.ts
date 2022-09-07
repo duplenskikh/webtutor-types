@@ -6,4 +6,6 @@ ObjectCodeNameBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type ResourceTypeDocument = XmlDocument & { TopElem: ResourceTypeDocumentTopElem; };
+type ResourceTypeDocument = XmlDocument & {
+  TopElem: ResourceTypeDocumentTopElem;
+};

@@ -40,4 +40,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type OutstaffContractDocument = XmlDocument & { TopElem: OutstaffContractDocumentTopElem; };
+type OutstaffContractDocument = XmlDocument & {
+  TopElem: OutstaffContractDocumentTopElem;
+};

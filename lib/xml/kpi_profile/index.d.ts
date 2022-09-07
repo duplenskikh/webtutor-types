@@ -33,4 +33,6 @@ CustomElemsBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type KpiProfileDocument = XmlDocument & { TopElem: KpiProfileDocumentTopElem; };
+type KpiProfileDocument = XmlDocument & {
+  TopElem: KpiProfileDocumentTopElem;
+};

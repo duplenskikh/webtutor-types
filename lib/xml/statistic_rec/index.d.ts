@@ -43,4 +43,6 @@ WebVariablesBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type StatisticRecDocument = XmlDocument & { TopElem: StatisticRecDocumentTopElem; };
+type StatisticRecDocument = XmlDocument & {
+  TopElem: StatisticRecDocumentTopElem;
+};

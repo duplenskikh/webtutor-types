@@ -42,4 +42,6 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type LearningDocument = XmlDocument & { TopElem: LearningDocumentTopElem; };
+type LearningDocument = XmlDocument & {
+  TopElem: LearningDocumentTopElem;
+};

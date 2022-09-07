@@ -28,4 +28,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type IntervalScheduleDocument = XmlDocument & { TopElem: IntervalScheduleDocumentTopElem; };
+type IntervalScheduleDocument = XmlDocument & {
+  TopElem: IntervalScheduleDocumentTopElem;
+};

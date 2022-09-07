@@ -9,4 +9,6 @@ type GradeDocumentTopElem = XmlTopElem & { Doc: GradeDocument } & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type GradeDocument = XmlDocument & { TopElem: GradeDocumentTopElem; };
+type GradeDocument = XmlDocument & {
+  TopElem: GradeDocumentTopElem;
+};

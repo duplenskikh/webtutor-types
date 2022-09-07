@@ -11,4 +11,6 @@ WebVariablesBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ProviderCourseTypeDocument = XmlDocument & { TopElem: ProviderCourseTypeDocumentTopElem; };
+type ProviderCourseTypeDocument = XmlDocument & {
+  TopElem: ProviderCourseTypeDocumentTopElem;
+};

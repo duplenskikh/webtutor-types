@@ -13,4 +13,6 @@ FileListBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type PolicyDocument = XmlDocument & { TopElem: PolicyDocumentTopElem; };
+type PolicyDocument = XmlDocument & {
+  TopElem: PolicyDocumentTopElem;
+};

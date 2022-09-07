@@ -9,4 +9,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ReprimandDocument = XmlDocument & { TopElem: ReprimandDocumentTopElem; };
+type ReprimandDocument = XmlDocument & {
+  TopElem: ReprimandDocumentTopElem;
+};

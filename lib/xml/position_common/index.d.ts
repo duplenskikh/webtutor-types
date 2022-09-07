@@ -122,4 +122,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type PositionCommonDocument = XmlDocument & { TopElem: PositionCommonDocumentTopElem; };
+type PositionCommonDocument = XmlDocument & {
+  TopElem: PositionCommonDocumentTopElem;
+};

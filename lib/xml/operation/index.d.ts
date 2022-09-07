@@ -25,4 +25,6 @@ WebVariablesBase & {
   execute?(): unknown;
 }
 
-type OperationDocument = XmlDocument & { TopElem: OperationDocumentTopElem; };
+type OperationDocument = XmlDocument & {
+  TopElem: OperationDocumentTopElem;
+};

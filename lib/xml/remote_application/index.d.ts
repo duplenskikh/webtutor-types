@@ -14,4 +14,6 @@ type RemoteApplicationDocumentTopElem = XmlTopElem & { Doc: RemoteApplicationDoc
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type RemoteApplicationDocument = XmlDocument & { TopElem: RemoteApplicationDocumentTopElem; };
+type RemoteApplicationDocument = XmlDocument & {
+  TopElem: RemoteApplicationDocumentTopElem;
+};

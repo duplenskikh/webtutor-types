@@ -16,4 +16,6 @@ ObjectCodeNameBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type LevelDocument = XmlDocument & { TopElem: LevelDocumentTopElem; };
+type LevelDocument = XmlDocument & {
+  TopElem: LevelDocumentTopElem;
+};

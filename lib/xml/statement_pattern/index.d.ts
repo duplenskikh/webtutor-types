@@ -6,4 +6,6 @@ type StatementPatternDocumentTopElem = XmlTopElem & { Doc: StatementPatternDocum
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type StatementPatternDocument = XmlDocument & { TopElem: StatementPatternDocumentTopElem; };
+type StatementPatternDocument = XmlDocument & {
+  TopElem: StatementPatternDocumentTopElem;
+};

@@ -33,4 +33,6 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type VclassSettingDocument = XmlDocument & { TopElem: VclassSettingDocumentTopElem; };
+type VclassSettingDocument = XmlDocument & {
+  TopElem: VclassSettingDocumentTopElem;
+};

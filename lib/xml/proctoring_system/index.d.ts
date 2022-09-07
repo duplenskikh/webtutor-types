@@ -14,4 +14,6 @@ WebVariablesBase & {
   get_settings?(): unknown;
 }
 
-type ProctoringSystemDocument = XmlDocument & { TopElem: ProctoringSystemDocumentTopElem; };
+type ProctoringSystemDocument = XmlDocument & {
+  TopElem: ProctoringSystemDocumentTopElem;
+};

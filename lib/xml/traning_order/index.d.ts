@@ -18,4 +18,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type TraningOrderDocument = XmlDocument & { TopElem: TraningOrderDocumentTopElem; };
+type TraningOrderDocument = XmlDocument & {
+  TopElem: TraningOrderDocumentTopElem;
+};

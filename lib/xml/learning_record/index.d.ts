@@ -81,4 +81,6 @@ AdminAccessBase & {
   get_url_record?(): unknown;
 }
 
-type LearningRecordDocument = XmlDocument & { TopElem: LearningRecordDocumentTopElem; };
+type LearningRecordDocument = XmlDocument & {
+  TopElem: LearningRecordDocumentTopElem;
+};

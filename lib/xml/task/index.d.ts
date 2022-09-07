@@ -74,4 +74,6 @@ CustomElemsBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type TaskDocument = XmlDocument & { TopElem: TaskDocumentTopElem; };
+type TaskDocument = XmlDocument & {
+  TopElem: TaskDocumentTopElem;
+};

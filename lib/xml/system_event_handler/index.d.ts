@@ -13,4 +13,6 @@ WebVariablesBase & {
   last_is_enabled: XmlElem<boolean>;
 }
 
-type SystemEventHandlerDocument = XmlDocument & { TopElem: SystemEventHandlerDocumentTopElem; };
+type SystemEventHandlerDocument = XmlDocument & {
+  TopElem: SystemEventHandlerDocumentTopElem;
+};

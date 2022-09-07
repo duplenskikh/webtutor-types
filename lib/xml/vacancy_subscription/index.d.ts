@@ -18,4 +18,6 @@ AdminAccessBase & {
   refresh_suitable_vacancys?(): unknown;
 }
 
-type VacancySubscriptionDocument = XmlDocument & { TopElem: VacancySubscriptionDocumentTopElem; };
+type VacancySubscriptionDocument = XmlDocument & {
+  TopElem: VacancySubscriptionDocumentTopElem;
+};

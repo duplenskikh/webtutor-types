@@ -8,4 +8,6 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type ProfessionDocument = XmlDocument & { TopElem: ProfessionDocumentTopElem; };
+type ProfessionDocument = XmlDocument & {
+  TopElem: ProfessionDocumentTopElem;
+};

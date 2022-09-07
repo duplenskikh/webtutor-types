@@ -7,4 +7,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type RegionDocument = XmlDocument & { TopElem: RegionDocumentTopElem; };
+type RegionDocument = XmlDocument & {
+  TopElem: RegionDocumentTopElem;
+};

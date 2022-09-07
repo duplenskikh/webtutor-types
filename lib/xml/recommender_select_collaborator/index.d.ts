@@ -14,4 +14,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type RecommenderSelectCollaboratorDocument = XmlDocument & { TopElem: RecommenderSelectCollaboratorDocumentTopElem; };
+type RecommenderSelectCollaboratorDocument = XmlDocument & {
+  TopElem: RecommenderSelectCollaboratorDocumentTopElem;
+};

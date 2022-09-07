@@ -7,4 +7,6 @@ type SectionInstructionDocumentTopElem = XmlTopElem & { Doc: SectionInstructionD
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type SectionInstructionDocument = XmlDocument & { TopElem: SectionInstructionDocumentTopElem; };
+type SectionInstructionDocument = XmlDocument & {
+  TopElem: SectionInstructionDocumentTopElem;
+};

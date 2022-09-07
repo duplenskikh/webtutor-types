@@ -23,4 +23,6 @@ CustomElemsBase & {
   start_action?(): unknown;
 }
 
-type PersonnelCommitteeDocument = XmlDocument & { TopElem: PersonnelCommitteeDocumentTopElem; };
+type PersonnelCommitteeDocument = XmlDocument & {
+  TopElem: PersonnelCommitteeDocumentTopElem;
+};

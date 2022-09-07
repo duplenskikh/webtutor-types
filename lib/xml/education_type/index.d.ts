@@ -6,4 +6,6 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type EducationTypeDocument = XmlDocument & { TopElem: EducationTypeDocumentTopElem; };
+type EducationTypeDocument = XmlDocument & {
+  TopElem: EducationTypeDocumentTopElem;
+};

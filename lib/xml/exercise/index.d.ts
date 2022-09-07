@@ -7,4 +7,6 @@ type ExerciseDocumentTopElem = XmlTopElem & { Doc: ExerciseDocument } & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ExerciseDocument = XmlDocument & { TopElem: ExerciseDocumentTopElem; };
+type ExerciseDocument = XmlDocument & {
+  TopElem: ExerciseDocumentTopElem;
+};

@@ -13,4 +13,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type OutstaffProviderDocument = XmlDocument & { TopElem: OutstaffProviderDocumentTopElem; };
+type OutstaffProviderDocument = XmlDocument & {
+  TopElem: OutstaffProviderDocumentTopElem;
+};

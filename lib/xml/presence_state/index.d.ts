@@ -33,4 +33,6 @@ CustomElemsBase & {
   changed: XmlElem<boolean>;
 }
 
-type PresenceStateDocument = XmlDocument & { TopElem: PresenceStateDocumentTopElem; };
+type PresenceStateDocument = XmlDocument & {
+  TopElem: PresenceStateDocumentTopElem;
+};

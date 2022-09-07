@@ -33,4 +33,6 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type EstaffEventDocument = XmlDocument & { TopElem: EstaffEventDocumentTopElem; };
+type EstaffEventDocument = XmlDocument & {
+  TopElem: EstaffEventDocumentTopElem;
+};

@@ -12,4 +12,6 @@ PersonFillingBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ProfileDocument = XmlDocument & { TopElem: ProfileDocumentTopElem; };
+type ProfileDocument = XmlDocument & {
+  TopElem: ProfileDocumentTopElem;
+};

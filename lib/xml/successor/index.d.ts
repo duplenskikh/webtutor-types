@@ -19,4 +19,6 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type SuccessorDocument = XmlDocument & { TopElem: SuccessorDocumentTopElem; };
+type SuccessorDocument = XmlDocument & {
+  TopElem: SuccessorDocumentTopElem;
+};

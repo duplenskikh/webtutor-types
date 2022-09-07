@@ -27,4 +27,6 @@ FileListBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type StatementDocument = XmlDocument & { TopElem: StatementDocumentTopElem; };
+type StatementDocument = XmlDocument & {
+  TopElem: StatementDocumentTopElem;
+};

@@ -12,4 +12,6 @@ type LibraryPlayerDocumentTopElem = XmlTopElem & { Doc: LibraryPlayerDocument } 
   changed: XmlElem<boolean>;
 }
 
-type LibraryPlayerDocument = XmlDocument & { TopElem: LibraryPlayerDocumentTopElem; };
+type LibraryPlayerDocument = XmlDocument & {
+  TopElem: LibraryPlayerDocumentTopElem;
+};

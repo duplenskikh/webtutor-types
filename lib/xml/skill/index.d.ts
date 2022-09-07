@@ -15,4 +15,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type SkillDocument = XmlDocument & { TopElem: SkillDocumentTopElem; };
+type SkillDocument = XmlDocument & {
+  TopElem: SkillDocumentTopElem;
+};

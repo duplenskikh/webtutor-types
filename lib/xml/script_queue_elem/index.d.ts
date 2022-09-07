@@ -18,4 +18,6 @@ type ScriptQueueElemDocumentTopElem = XmlTopElem & { Doc: ScriptQueueElemDocumen
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ScriptQueueElemDocument = XmlDocument & { TopElem: ScriptQueueElemDocumentTopElem; };
+type ScriptQueueElemDocument = XmlDocument & {
+  TopElem: ScriptQueueElemDocumentTopElem;
+};

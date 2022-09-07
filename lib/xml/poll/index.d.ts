@@ -117,4 +117,6 @@ KnowledgePartsBase & {
   set_value(): unknown;
 }
 
-type PollDocument = XmlDocument & { TopElem: PollDocumentTopElem; };
+type PollDocument = XmlDocument & {
+  TopElem: PollDocumentTopElem;
+};

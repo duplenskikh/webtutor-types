@@ -10,4 +10,6 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type ReadinessLevelDocument = XmlDocument & { TopElem: ReadinessLevelDocumentTopElem; };
+type ReadinessLevelDocument = XmlDocument & {
+  TopElem: ReadinessLevelDocumentTopElem;
+};

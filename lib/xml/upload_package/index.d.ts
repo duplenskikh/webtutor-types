@@ -7,4 +7,6 @@ type UploadPackageDocumentTopElem = XmlTopElem & { Doc: UploadPackageDocument } 
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type UploadPackageDocument = XmlDocument & { TopElem: UploadPackageDocumentTopElem; };
+type UploadPackageDocument = XmlDocument & {
+  TopElem: UploadPackageDocumentTopElem;
+};

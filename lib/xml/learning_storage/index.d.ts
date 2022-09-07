@@ -17,4 +17,6 @@ type LearningStorageDocumentTopElem = XmlTopElem & { Doc: LearningStorageDocumen
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type LearningStorageDocument = XmlDocument & { TopElem: LearningStorageDocumentTopElem; };
+type LearningStorageDocument = XmlDocument & {
+  TopElem: LearningStorageDocumentTopElem;
+};

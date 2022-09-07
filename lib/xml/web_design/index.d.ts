@@ -16,4 +16,6 @@ WebVariablesBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type WebDesignDocument = XmlDocument & { TopElem: WebDesignDocumentTopElem; };
+type WebDesignDocument = XmlDocument & {
+  TopElem: WebDesignDocumentTopElem;
+};

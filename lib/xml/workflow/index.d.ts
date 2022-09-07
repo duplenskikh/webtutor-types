@@ -65,4 +65,6 @@ WorkflowFieldsStatesBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type WorkflowDocument = XmlDocument & { TopElem: WorkflowDocumentTopElem; };
+type WorkflowDocument = XmlDocument & {
+  TopElem: WorkflowDocumentTopElem;
+};

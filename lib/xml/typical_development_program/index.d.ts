@@ -43,4 +43,6 @@ CustomElemsBase & {
   comment: XmlElem<string>;
 }
 
-type TypicalDevelopmentProgramDocument = XmlDocument & { TopElem: TypicalDevelopmentProgramDocumentTopElem; };
+type TypicalDevelopmentProgramDocument = XmlDocument & {
+  TopElem: TypicalDevelopmentProgramDocumentTopElem;
+};

@@ -9,4 +9,6 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type WorkScheduleDocument = XmlDocument & { TopElem: WorkScheduleDocumentTopElem; };
+type WorkScheduleDocument = XmlDocument & {
+  TopElem: WorkScheduleDocumentTopElem;
+};

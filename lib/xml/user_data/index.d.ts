@@ -7,4 +7,6 @@ type UserDataDocumentTopElem = XmlTopElem & { Doc: UserDataDocument } & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type UserDataDocument = XmlDocument & { TopElem: UserDataDocumentTopElem; };
+type UserDataDocument = XmlDocument & {
+  TopElem: UserDataDocumentTopElem;
+};

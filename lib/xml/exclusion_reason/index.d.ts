@@ -9,4 +9,6 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ExclusionReasonDocument = XmlDocument & { TopElem: ExclusionReasonDocumentTopElem; };
+type ExclusionReasonDocument = XmlDocument & {
+  TopElem: ExclusionReasonDocumentTopElem;
+};

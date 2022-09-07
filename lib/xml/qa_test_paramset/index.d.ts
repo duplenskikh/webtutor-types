@@ -7,4 +7,6 @@ QaTestAssertBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type QaTestParamsetDocument = XmlDocument & { TopElem: QaTestParamsetDocumentTopElem; };
+type QaTestParamsetDocument = XmlDocument & {
+  TopElem: QaTestParamsetDocumentTopElem;
+};

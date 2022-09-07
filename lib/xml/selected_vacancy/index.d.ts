@@ -6,4 +6,6 @@ type SelectedVacancyDocumentTopElem = XmlTopElem & { Doc: SelectedVacancyDocumen
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type SelectedVacancyDocument = XmlDocument & { TopElem: SelectedVacancyDocumentTopElem; };
+type SelectedVacancyDocument = XmlDocument & {
+  TopElem: SelectedVacancyDocumentTopElem;
+};

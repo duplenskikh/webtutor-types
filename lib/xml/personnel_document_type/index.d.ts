@@ -19,4 +19,6 @@ type PersonnelDocumentTypeDocumentTopElem = XmlTopElem & { Doc: PersonnelDocumen
   comment: XmlElem<string>;
 }
 
-type PersonnelDocumentTypeDocument = XmlDocument & { TopElem: PersonnelDocumentTypeDocumentTopElem; };
+type PersonnelDocumentTypeDocument = XmlDocument & {
+  TopElem: PersonnelDocumentTypeDocumentTopElem;
+};

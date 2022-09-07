@@ -4,4 +4,6 @@ type OutstaffTypeMaterialDocumentTopElem = XmlTopElem & { Doc: OutstaffTypeMater
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type OutstaffTypeMaterialDocument = XmlDocument & { TopElem: OutstaffTypeMaterialDocumentTopElem; };
+type OutstaffTypeMaterialDocument = XmlDocument & {
+  TopElem: OutstaffTypeMaterialDocumentTopElem;
+};

@@ -15,4 +15,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ObjectLinkDocument = XmlDocument & { TopElem: ObjectLinkDocumentTopElem; };
+type ObjectLinkDocument = XmlDocument & {
+  TopElem: ObjectLinkDocumentTopElem;
+};

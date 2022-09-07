@@ -6,4 +6,6 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type WorkExperienceDocument = XmlDocument & { TopElem: WorkExperienceDocumentTopElem; };
+type WorkExperienceDocument = XmlDocument & {
+  TopElem: WorkExperienceDocumentTopElem;
+};

@@ -21,4 +21,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type StaffPositionMoveDocument = XmlDocument & { TopElem: StaffPositionMoveDocumentTopElem; };
+type StaffPositionMoveDocument = XmlDocument & {
+  TopElem: StaffPositionMoveDocumentTopElem;
+};

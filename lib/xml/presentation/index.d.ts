@@ -17,4 +17,6 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type PresentationDocument = XmlDocument & { TopElem: PresentationDocumentTopElem; };
+type PresentationDocument = XmlDocument & {
+  TopElem: PresentationDocumentTopElem;
+};

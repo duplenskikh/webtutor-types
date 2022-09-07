@@ -21,4 +21,6 @@ type WebRuleDocumentTopElem = XmlTopElem & { Doc: WebRuleDocument } & {
   script_validate?(): unknown;
 }
 
-type WebRuleDocument = XmlDocument & { TopElem: WebRuleDocumentTopElem; };
+type WebRuleDocument = XmlDocument & {
+  TopElem: WebRuleDocumentTopElem;
+};

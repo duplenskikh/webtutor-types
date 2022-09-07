@@ -11,4 +11,6 @@ type LikeDocumentTopElem = XmlTopElem & { Doc: LikeDocument } & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type LikeDocument = XmlDocument & { TopElem: LikeDocumentTopElem; };
+type LikeDocument = XmlDocument & {
+  TopElem: LikeDocumentTopElem;
+};

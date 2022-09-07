@@ -51,4 +51,6 @@ CustomElemsBase & {
   changed: XmlElem<boolean>;
 }
 
-type SiteDocument = XmlDocument & { TopElem: SiteDocumentTopElem; };
+type SiteDocument = XmlDocument & {
+  TopElem: SiteDocumentTopElem;
+};

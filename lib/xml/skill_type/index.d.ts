@@ -6,4 +6,6 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type SkillTypeDocument = XmlDocument & { TopElem: SkillTypeDocumentTopElem; };
+type SkillTypeDocument = XmlDocument & {
+  TopElem: SkillTypeDocumentTopElem;
+};

@@ -44,4 +44,6 @@ AdminAccessBase & {
   distribute_total_cost?(): unknown;
 }
 
-type PayPhaseDocument = XmlDocument & { TopElem: PayPhaseDocumentTopElem; };
+type PayPhaseDocument = XmlDocument & {
+  TopElem: PayPhaseDocumentTopElem;
+};

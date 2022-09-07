@@ -15,4 +15,6 @@ QaTestAssertBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type QaTestSetDocument = XmlDocument & { TopElem: QaTestSetDocumentTopElem; };
+type QaTestSetDocument = XmlDocument & {
+  TopElem: QaTestSetDocumentTopElem;
+};

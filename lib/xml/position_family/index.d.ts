@@ -30,4 +30,6 @@ CustomElemsBase & {
   dynamic_select_position_commons?(): unknown;
 }
 
-type PositionFamilyDocument = XmlDocument & { TopElem: PositionFamilyDocumentTopElem; };
+type PositionFamilyDocument = XmlDocument & {
+  TopElem: PositionFamilyDocumentTopElem;
+};

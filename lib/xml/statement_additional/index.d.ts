@@ -7,4 +7,6 @@ type StatementAdditionalDocumentTopElem = XmlTopElem & { Doc: StatementAdditiona
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type StatementAdditionalDocument = XmlDocument & { TopElem: StatementAdditionalDocumentTopElem; };
+type StatementAdditionalDocument = XmlDocument & {
+  TopElem: StatementAdditionalDocumentTopElem;
+};

@@ -18,4 +18,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type LibrarySectionDocument = XmlDocument & { TopElem: LibrarySectionDocumentTopElem; };
+type LibrarySectionDocument = XmlDocument & {
+  TopElem: LibrarySectionDocumentTopElem;
+};

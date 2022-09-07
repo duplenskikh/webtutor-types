@@ -22,4 +22,6 @@ AdminAccessBase & {
   desc: XmlElem<string>;
 }
 
-type ObjectDataDocument = XmlDocument & { TopElem: ObjectDataDocumentTopElem; };
+type ObjectDataDocument = XmlDocument & {
+  TopElem: ObjectDataDocumentTopElem;
+};

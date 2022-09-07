@@ -12,4 +12,6 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type SelectedResumeDocument = XmlDocument & { TopElem: SelectedResumeDocumentTopElem; };
+type SelectedResumeDocument = XmlDocument & {
+  TopElem: SelectedResumeDocumentTopElem;
+};

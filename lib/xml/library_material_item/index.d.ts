@@ -31,4 +31,6 @@ AdminAccessBase & {
   add_log_record?(): unknown;
 }
 
-type LibraryMaterialItemDocument = XmlDocument & { TopElem: LibraryMaterialItemDocumentTopElem; };
+type LibraryMaterialItemDocument = XmlDocument & {
+  TopElem: LibraryMaterialItemDocumentTopElem;
+};

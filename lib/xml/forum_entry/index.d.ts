@@ -27,4 +27,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ForumEntryDocument = XmlDocument & { TopElem: ForumEntryDocumentTopElem; };
+type ForumEntryDocument = XmlDocument & {
+  TopElem: ForumEntryDocumentTopElem;
+};

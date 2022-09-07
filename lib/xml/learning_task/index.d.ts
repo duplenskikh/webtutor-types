@@ -21,4 +21,6 @@ KnowledgePartsKpBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type LearningTaskDocument = XmlDocument & { TopElem: LearningTaskDocumentTopElem; };
+type LearningTaskDocument = XmlDocument & {
+  TopElem: LearningTaskDocumentTopElem;
+};

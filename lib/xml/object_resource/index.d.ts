@@ -12,4 +12,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ObjectResourceDocument = XmlDocument & { TopElem: ObjectResourceDocumentTopElem; };
+type ObjectResourceDocument = XmlDocument & {
+  TopElem: ObjectResourceDocumentTopElem;
+};

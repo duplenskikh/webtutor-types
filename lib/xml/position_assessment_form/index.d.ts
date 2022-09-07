@@ -13,4 +13,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type PositionAssessmentFormDocument = XmlDocument & { TopElem: PositionAssessmentFormDocumentTopElem; };
+type PositionAssessmentFormDocument = XmlDocument & {
+  TopElem: PositionAssessmentFormDocumentTopElem;
+};

@@ -17,4 +17,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type SalarySurveyDocument = XmlDocument & { TopElem: SalarySurveyDocumentTopElem; };
+type SalarySurveyDocument = XmlDocument & {
+  TopElem: SalarySurveyDocumentTopElem;
+};

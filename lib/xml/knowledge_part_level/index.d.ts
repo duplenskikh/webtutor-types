@@ -7,4 +7,6 @@ type KnowledgePartLevelDocumentTopElem = XmlTopElem & { Doc: KnowledgePartLevelD
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type KnowledgePartLevelDocument = XmlDocument & { TopElem: KnowledgePartLevelDocumentTopElem; };
+type KnowledgePartLevelDocument = XmlDocument & {
+  TopElem: KnowledgePartLevelDocumentTopElem;
+};

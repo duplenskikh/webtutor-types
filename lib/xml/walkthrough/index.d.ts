@@ -9,4 +9,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type WalkthroughDocument = XmlDocument & { TopElem: WalkthroughDocumentTopElem; };
+type WalkthroughDocument = XmlDocument & {
+  TopElem: WalkthroughDocumentTopElem;
+};

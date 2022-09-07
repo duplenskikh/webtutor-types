@@ -41,4 +41,6 @@ PersonObjectLinksBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type GroupDocument = XmlDocument & { TopElem: GroupDocumentTopElem; };
+type GroupDocument = XmlDocument & {
+  TopElem: GroupDocumentTopElem;
+};

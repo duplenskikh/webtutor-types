@@ -5,4 +5,6 @@ type LibraryMaterialTypeDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialTyp
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type LibraryMaterialTypeDocument = XmlDocument & { TopElem: LibraryMaterialTypeDocumentTopElem; };
+type LibraryMaterialTypeDocument = XmlDocument & {
+  TopElem: LibraryMaterialTypeDocumentTopElem;
+};

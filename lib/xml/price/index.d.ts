@@ -22,4 +22,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type PriceDocument = XmlDocument & { TopElem: PriceDocumentTopElem; };
+type PriceDocument = XmlDocument & {
+  TopElem: PriceDocumentTopElem;
+};

@@ -45,4 +45,6 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type RecruitmentPlanDocument = XmlDocument & { TopElem: RecruitmentPlanDocumentTopElem; };
+type RecruitmentPlanDocument = XmlDocument & {
+  TopElem: RecruitmentPlanDocumentTopElem;
+};

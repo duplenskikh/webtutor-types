@@ -6,4 +6,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type SaleStatusDocument = XmlDocument & { TopElem: SaleStatusDocumentTopElem; };
+type SaleStatusDocument = XmlDocument & {
+  TopElem: SaleStatusDocumentTopElem;
+};

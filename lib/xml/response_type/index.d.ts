@@ -10,4 +10,6 @@ type ResponseTypeDocumentTopElem = XmlTopElem & { Doc: ResponseTypeDocument } & 
   role_id: XmlMultiElem<number>;
 }
 
-type ResponseTypeDocument = XmlDocument & { TopElem: ResponseTypeDocumentTopElem; };
+type ResponseTypeDocument = XmlDocument & {
+  TopElem: ResponseTypeDocumentTopElem;
+};

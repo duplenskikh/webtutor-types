@@ -12,4 +12,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type NotificationSystemDocument = XmlDocument & { TopElem: NotificationSystemDocumentTopElem; };
+type NotificationSystemDocument = XmlDocument & {
+  TopElem: NotificationSystemDocumentTopElem;
+};

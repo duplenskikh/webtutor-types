@@ -9,4 +9,6 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type VacancySourceDocument = XmlDocument & { TopElem: VacancySourceDocumentTopElem; };
+type VacancySourceDocument = XmlDocument & {
+  TopElem: VacancySourceDocumentTopElem;
+};

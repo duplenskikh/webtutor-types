@@ -10,4 +10,6 @@ type VerbDocumentTopElem = XmlTopElem & { Doc: VerbDocument } & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type VerbDocument = XmlDocument & { TopElem: VerbDocumentTopElem; };
+type VerbDocument = XmlDocument & {
+  TopElem: VerbDocumentTopElem;
+};

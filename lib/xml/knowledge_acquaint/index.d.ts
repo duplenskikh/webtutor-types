@@ -22,4 +22,6 @@ FileListBase & {
   desc: XmlElem<string>;
 }
 
-type KnowledgeAcquaintDocument = XmlDocument & { TopElem: KnowledgeAcquaintDocumentTopElem; };
+type KnowledgeAcquaintDocument = XmlDocument & {
+  TopElem: KnowledgeAcquaintDocumentTopElem;
+};

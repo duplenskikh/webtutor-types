@@ -15,4 +15,6 @@ WebVariablesBase & {
   evaluate?(): unknown;
 }
 
-type LibraryMaterialSourceTypeDocument = XmlDocument & { TopElem: LibraryMaterialSourceTypeDocumentTopElem; };
+type LibraryMaterialSourceTypeDocument = XmlDocument & {
+  TopElem: LibraryMaterialSourceTypeDocumentTopElem;
+};

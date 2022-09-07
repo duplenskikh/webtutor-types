@@ -22,4 +22,6 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type ExpertDocument = XmlDocument & { TopElem: ExpertDocumentTopElem; };
+type ExpertDocument = XmlDocument & {
+  TopElem: ExpertDocumentTopElem;
+};

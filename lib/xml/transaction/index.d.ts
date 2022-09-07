@@ -15,4 +15,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type TransactionDocument = XmlDocument & { TopElem: TransactionDocumentTopElem; };
+type TransactionDocument = XmlDocument & {
+  TopElem: TransactionDocumentTopElem;
+};

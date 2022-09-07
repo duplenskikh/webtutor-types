@@ -24,4 +24,6 @@ WebVariablesBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type OverrideWebTemplateDocument = XmlDocument & { TopElem: OverrideWebTemplateDocumentTopElem; };
+type OverrideWebTemplateDocument = XmlDocument & {
+  TopElem: OverrideWebTemplateDocumentTopElem;
+};

@@ -61,4 +61,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type LibraryMaterialDocument = XmlDocument & { TopElem: LibraryMaterialDocumentTopElem; };
+type LibraryMaterialDocument = XmlDocument & {
+  TopElem: LibraryMaterialDocumentTopElem;
+};

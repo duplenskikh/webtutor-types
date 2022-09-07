@@ -10,4 +10,6 @@ InsertFileBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type PrintFormDocument = XmlDocument & { TopElem: PrintFormDocumentTopElem; };
+type PrintFormDocument = XmlDocument & {
+  TopElem: PrintFormDocumentTopElem;
+};

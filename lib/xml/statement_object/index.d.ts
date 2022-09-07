@@ -11,4 +11,6 @@ type StatementObjectDocumentTopElem = XmlTopElem & { Doc: StatementObjectDocumen
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type StatementObjectDocument = XmlDocument & { TopElem: StatementObjectDocumentTopElem; };
+type StatementObjectDocument = XmlDocument & {
+  TopElem: StatementObjectDocumentTopElem;
+};

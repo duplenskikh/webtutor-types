@@ -16,4 +16,6 @@ FileListBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type IndicatorDocument = XmlDocument & { TopElem: IndicatorDocumentTopElem; };
+type IndicatorDocument = XmlDocument & {
+  TopElem: IndicatorDocumentTopElem;
+};

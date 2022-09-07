@@ -8,4 +8,6 @@ ObjectTypeBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type UiDataDocument = XmlDocument & { TopElem: UiDataDocumentTopElem; };
+type UiDataDocument = XmlDocument & {
+  TopElem: UiDataDocumentTopElem;
+};

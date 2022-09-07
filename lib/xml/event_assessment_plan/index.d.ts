@@ -39,4 +39,6 @@ CustomElemsBase & {
   event_result_type_id: XmlElem<number>;
 }
 
-type EventAssessmentPlanDocument = XmlDocument & { TopElem: EventAssessmentPlanDocumentTopElem; };
+type EventAssessmentPlanDocument = XmlDocument & {
+  TopElem: EventAssessmentPlanDocumentTopElem;
+};

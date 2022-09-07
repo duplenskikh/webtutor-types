@@ -8,4 +8,6 @@ type ScheduleTypeDocumentTopElem = XmlTopElem & { Doc: ScheduleTypeDocument } & 
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ScheduleTypeDocument = XmlDocument & { TopElem: ScheduleTypeDocumentTopElem; };
+type ScheduleTypeDocument = XmlDocument & {
+  TopElem: ScheduleTypeDocumentTopElem;
+};

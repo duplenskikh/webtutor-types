@@ -129,4 +129,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ResumeDocument = XmlDocument & { TopElem: ResumeDocumentTopElem; };
+type ResumeDocument = XmlDocument & {
+  TopElem: ResumeDocumentTopElem;
+};
