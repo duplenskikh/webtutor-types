@@ -8,7 +8,7 @@ interface XmlDocument {
 
 interface XmlTopElem {
   [key: string]: any;
-  name?: XmlElem<string>;
+  name: XmlElem<string>;
   Name: string;
   Doc: XmlDocument;
   OptChild(childName: string): any;

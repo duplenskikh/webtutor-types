@@ -407,7 +407,7 @@ declare function ArrayExtract(array: any, fieldExpr: string | null): any[];
  * @param {string} keyName - имя элемента, являющегося ключом (String). Необязательный аргумент. Если имя ключа не указано, используется первичный ключ.
  * @returns {any}
  */
-declare function ArrayOptFindByKey(array: any, keyValue: any, keyName: string): any;
+declare function ArrayOptFindByKey<T>(array: XmlMultiElem<T> | T[], keyValue: any, keyName: string): T | undefined;
 
 /**
  * Находит первый элемент массива, удовлетворяющий заданному условию. Если элемент, удовлетворяющий условию, не найден, возвращается undefined.
@@ -536,7 +536,7 @@ declare function ArraySelectByKey<T = any>(array: T[] | XmlMultiElem<T>, value: 
  * ArraySort( array, 'name', '+', 'date', '-' )
  */
 
-declare function ArraySort<T = any>(array: T[] | XmlMultiElem<T>, field: string, direction: string, ...args: string[]): T[] | XmlMultiElem<T>;
+declare function ArraySort<T = any>(array: T[] | XmlMultiElem<T>, field: string, direction: string, ...args: string[]): T[];
 
 /**
  * Возвращает сумму значений определенного поля по всем элементам массива.

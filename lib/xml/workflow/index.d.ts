@@ -50,7 +50,7 @@ WorkflowFieldsStatesBase & {
   add_conditions: XmlElem<ConditionsBase>;
   field_groups: XmlMultiElem<WorkflowDocumentFieldGroup>;
   actions: XmlMultiElem<WorkflowDocumentAction>;
-  use_triggers?(): unknown;
+  use_triggers(): unknown;
   escalations: XmlMultiElem<WorkflowDocumentEscalation>;
   default_state: XmlElem<string>;
   default_action: XmlElem<string>;
@@ -61,7 +61,7 @@ WorkflowFieldsStatesBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-  run_action?(): unknown;
+  run_action(): unknown;
   role_id: XmlMultiElem<number>;
 }
 

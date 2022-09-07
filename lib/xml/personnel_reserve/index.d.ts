@@ -1,24 +1,24 @@
 interface PersonnelReserveDocumentTask extends FileListBase {
-  id?: XmlElem<string>;
-  name?: XmlElem<string>;
-  type?: XmlElem<string>;
-  status?: XmlElem<string>;
-  plan_date?: XmlElem<Date>;
-  fact_date?: XmlElem<Date>;
-  desc?: XmlElem<string>;
-  score?: XmlElem<number>;
-  comment?: XmlElem<string>;
-  object_type?: XmlElem<string>;
-  object_id?: XmlElem<number>;
-  active_test_learning_id?: XmlElem<number>;
-  assessment_appraise_id?: XmlElem<number>;
-  assessment_appraise_result_id?: XmlElem<number>;
-  poll_result_id?: XmlElem<number>;
-  poll_procedure_id?: XmlElem<number>;
+  id: XmlElem<string>;
+  name: XmlElem<string>;
+  type: XmlElem<string>;
+  status: XmlElem<string>;
+  plan_date: XmlElem<Date>;
+  fact_date: XmlElem<Date>;
+  desc: XmlElem<string>;
+  score: XmlElem<number>;
+  comment: XmlElem<string>;
+  object_type: XmlElem<string>;
+  object_id: XmlElem<number>;
+  active_test_learning_id: XmlElem<number>;
+  assessment_appraise_id: XmlElem<number>;
+  assessment_appraise_result_id: XmlElem<number>;
+  poll_result_id: XmlElem<number>;
+  poll_procedure_id: XmlElem<number>;
 }
 
 interface PersonnelReserveDocumentRecommendator extends PersonFillingBase {
-  person_id?: XmlElem<number>;
+  person_id: XmlElem<number>;
 }
 
 type PersonnelReserveDocumentTopElem = XmlTopElem & 

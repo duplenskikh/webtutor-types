@@ -2,9 +2,9 @@ type ProfessionCategoryDocumentTopElem = XmlTopElem & { Doc: ProfessionCategoryD
 ObjectCodeNameBase &
 AdminAccessBase &
 CustomElemsBase & {
-  comment?: XmlElem<string>;
-  doc_info?: XmlElem<DocInfoBase>;
-  access?: XmlElem<AccessDocBase>;
+  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase>;
 }
 
 type ProfessionCategoryDocument = XmlDocument & { TopElem: ProfessionCategoryDocumentTopElem; };

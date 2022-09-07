@@ -17,7 +17,7 @@ interface AssessmentSectionRole {
 }
 
 interface AssessmentSectionItemScale {
-  scale_id?: XmlElem<string>;
+  scale_id: XmlElem<string>;
 }
 
 interface AssessmentSectionItem {
