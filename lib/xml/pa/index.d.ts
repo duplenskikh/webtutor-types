@@ -147,4 +147,6 @@ AdminAccessBase & {
   load_kpi_values?(): unknown;
 }
 
-type PaDocument = XmlDocument & { TopElem: PaDocumentTopElem; };
+type PaDocument = XmlDocument & {
+  TopElem: PaDocumentTopElem;
+};

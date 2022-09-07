@@ -19,4 +19,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type FactPaymentDocument = XmlDocument & { TopElem: FactPaymentDocumentTopElem; };
+type FactPaymentDocument = XmlDocument & {
+  TopElem: FactPaymentDocumentTopElem;
+};

@@ -35,4 +35,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type TenancyDocument = XmlDocument & { TopElem: TenancyDocumentTopElem; };
+type TenancyDocument = XmlDocument & {
+  TopElem: TenancyDocumentTopElem;
+};

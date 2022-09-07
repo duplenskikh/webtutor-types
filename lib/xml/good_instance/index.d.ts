@@ -12,4 +12,6 @@ PersonFillingBase & {
   clear_status?(): unknown;
 }
 
-type GoodInstanceDocument = XmlDocument & { TopElem: GoodInstanceDocumentTopElem; };
+type GoodInstanceDocument = XmlDocument & {
+  TopElem: GoodInstanceDocumentTopElem;
+};

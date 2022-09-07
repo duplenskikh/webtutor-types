@@ -23,4 +23,6 @@ ResultFieldsBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type RemoteCollectionDocument = XmlDocument & { TopElem: RemoteCollectionDocumentTopElem; };
+type RemoteCollectionDocument = XmlDocument & {
+  TopElem: RemoteCollectionDocumentTopElem;
+};

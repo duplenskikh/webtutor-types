@@ -11,4 +11,6 @@ KnowledgePartsBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type ProjectParticipantRoleDocument = XmlDocument & { TopElem: ProjectParticipantRoleDocumentTopElem; };
+type ProjectParticipantRoleDocument = XmlDocument & {
+  TopElem: ProjectParticipantRoleDocumentTopElem;
+};

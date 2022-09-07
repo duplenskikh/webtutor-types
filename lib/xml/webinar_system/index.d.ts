@@ -23,4 +23,6 @@ WebVariablesBase & {
   get_settings?(): unknown;
 }
 
-type WebinarSystemDocument = XmlDocument & { TopElem: WebinarSystemDocumentTopElem; };
+type WebinarSystemDocument = XmlDocument & {
+  TopElem: WebinarSystemDocumentTopElem;
+};

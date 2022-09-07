@@ -20,4 +20,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type UserRecommendationDocument = XmlDocument & { TopElem: UserRecommendationDocumentTopElem; };
+type UserRecommendationDocument = XmlDocument & {
+  TopElem: UserRecommendationDocumentTopElem;
+};

@@ -17,4 +17,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type RecommenderAlgorithmApplyingDocument = XmlDocument & { TopElem: RecommenderAlgorithmApplyingDocumentTopElem; };
+type RecommenderAlgorithmApplyingDocument = XmlDocument & {
+  TopElem: RecommenderAlgorithmApplyingDocumentTopElem;
+};

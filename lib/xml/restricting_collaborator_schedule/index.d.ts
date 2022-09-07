@@ -9,4 +9,6 @@ PersonFillingBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type RestrictingCollaboratorScheduleDocument = XmlDocument & { TopElem: RestrictingCollaboratorScheduleDocumentTopElem; };
+type RestrictingCollaboratorScheduleDocument = XmlDocument & {
+  TopElem: RestrictingCollaboratorScheduleDocumentTopElem;
+};

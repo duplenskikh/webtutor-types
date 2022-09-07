@@ -6,4 +6,6 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type ProfessionalAreaTypeDocument = XmlDocument & { TopElem: ProfessionalAreaTypeDocumentTopElem; };
+type ProfessionalAreaTypeDocument = XmlDocument & {
+  TopElem: ProfessionalAreaTypeDocumentTopElem;
+};

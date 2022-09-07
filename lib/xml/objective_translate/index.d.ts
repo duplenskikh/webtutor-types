@@ -15,4 +15,6 @@ type ObjectiveTranslateDocumentTopElem = XmlTopElem & { Doc: ObjectiveTranslateD
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ObjectiveTranslateDocument = XmlDocument & { TopElem: ObjectiveTranslateDocumentTopElem; };
+type ObjectiveTranslateDocument = XmlDocument & {
+  TopElem: ObjectiveTranslateDocumentTopElem;
+};

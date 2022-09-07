@@ -8,4 +8,6 @@ type PositionCommonInstructionDocumentTopElem = XmlTopElem & { Doc: PositionComm
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type PositionCommonInstructionDocument = XmlDocument & { TopElem: PositionCommonInstructionDocumentTopElem; };
+type PositionCommonInstructionDocument = XmlDocument & {
+  TopElem: PositionCommonInstructionDocumentTopElem;
+};

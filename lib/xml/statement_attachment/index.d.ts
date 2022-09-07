@@ -10,4 +10,6 @@ type StatementAttachmentDocumentTopElem = XmlTopElem & { Doc: StatementAttachmen
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type StatementAttachmentDocument = XmlDocument & { TopElem: StatementAttachmentDocumentTopElem; };
+type StatementAttachmentDocument = XmlDocument & {
+  TopElem: StatementAttachmentDocumentTopElem;
+};

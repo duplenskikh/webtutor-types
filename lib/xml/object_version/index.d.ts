@@ -11,4 +11,6 @@ PersonFillingBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ObjectVersionDocument = XmlDocument & { TopElem: ObjectVersionDocumentTopElem; };
+type ObjectVersionDocument = XmlDocument & {
+  TopElem: ObjectVersionDocumentTopElem;
+};

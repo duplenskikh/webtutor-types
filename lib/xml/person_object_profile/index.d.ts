@@ -24,4 +24,6 @@ type PersonObjectProfileDocumentTopElem = XmlTopElem & { Doc: PersonObjectProfil
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type PersonObjectProfileDocument = XmlDocument & { TopElem: PersonObjectProfileDocumentTopElem; };
+type PersonObjectProfileDocument = XmlDocument & {
+  TopElem: PersonObjectProfileDocumentTopElem;
+};

@@ -6,4 +6,6 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type WageSystemDocument = XmlDocument & { TopElem: WageSystemDocumentTopElem; };
+type WageSystemDocument = XmlDocument & {
+  TopElem: WageSystemDocumentTopElem;
+};

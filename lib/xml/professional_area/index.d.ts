@@ -13,4 +13,6 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type ProfessionalAreaDocument = XmlDocument & { TopElem: ProfessionalAreaDocumentTopElem; };
+type ProfessionalAreaDocument = XmlDocument & {
+  TopElem: ProfessionalAreaDocumentTopElem;
+};

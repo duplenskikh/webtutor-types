@@ -6,4 +6,6 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type VacancyReasonDocument = XmlDocument & { TopElem: VacancyReasonDocumentTopElem; };
+type VacancyReasonDocument = XmlDocument & {
+  TopElem: VacancyReasonDocumentTopElem;
+};

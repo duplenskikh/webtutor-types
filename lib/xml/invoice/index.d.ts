@@ -21,4 +21,6 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type InvoiceDocument = XmlDocument & { TopElem: InvoiceDocumentTopElem; };
+type InvoiceDocument = XmlDocument & {
+  TopElem: InvoiceDocumentTopElem;
+};

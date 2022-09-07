@@ -9,4 +9,6 @@ FileListBase & {
   desc: XmlElem<string>;
 }
 
-type MessengerServiceDocument = XmlDocument & { TopElem: MessengerServiceDocumentTopElem; };
+type MessengerServiceDocument = XmlDocument & {
+  TopElem: MessengerServiceDocumentTopElem;
+};

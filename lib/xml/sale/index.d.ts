@@ -34,4 +34,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type SaleDocument = XmlDocument & { TopElem: SaleDocumentTopElem; };
+type SaleDocument = XmlDocument & {
+  TopElem: SaleDocumentTopElem;
+};

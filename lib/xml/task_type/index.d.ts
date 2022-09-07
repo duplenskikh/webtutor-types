@@ -16,4 +16,6 @@ CustomElemsBase & {
   changed: XmlElem<boolean>;
 }
 
-type TaskTypeDocument = XmlDocument & { TopElem: TaskTypeDocumentTopElem; };
+type TaskTypeDocument = XmlDocument & {
+  TopElem: TaskTypeDocumentTopElem;
+};

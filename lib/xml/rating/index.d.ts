@@ -16,4 +16,6 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type RatingDocument = XmlDocument & { TopElem: RatingDocumentTopElem; };
+type RatingDocument = XmlDocument & {
+  TopElem: RatingDocumentTopElem;
+};

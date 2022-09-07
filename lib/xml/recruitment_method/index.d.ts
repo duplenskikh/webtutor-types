@@ -6,4 +6,6 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type RecruitmentMethodDocument = XmlDocument & { TopElem: RecruitmentMethodDocumentTopElem; };
+type RecruitmentMethodDocument = XmlDocument & {
+  TopElem: RecruitmentMethodDocumentTopElem;
+};

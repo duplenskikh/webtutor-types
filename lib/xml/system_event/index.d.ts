@@ -31,4 +31,6 @@ type SystemEventDocumentTopElem = XmlTopElem & { Doc: SystemEventDocument } & {
   role_id: XmlMultiElem<number>;
 }
 
-type SystemEventDocument = XmlDocument & { TopElem: SystemEventDocumentTopElem; };
+type SystemEventDocument = XmlDocument & {
+  TopElem: SystemEventDocumentTopElem;
+};

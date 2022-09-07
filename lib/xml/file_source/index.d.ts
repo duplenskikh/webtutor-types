@@ -14,4 +14,6 @@ WebVariablesBase & {
   changed: XmlElem<boolean>;
 }
 
-type FileSourceDocument = XmlDocument & { TopElem: FileSourceDocumentTopElem; };
+type FileSourceDocument = XmlDocument & {
+  TopElem: FileSourceDocumentTopElem;
+};

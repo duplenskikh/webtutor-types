@@ -69,4 +69,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type PollProcedureDocument = XmlDocument & { TopElem: PollProcedureDocumentTopElem; };
+type PollProcedureDocument = XmlDocument & {
+  TopElem: PollProcedureDocumentTopElem;
+};

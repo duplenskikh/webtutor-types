@@ -46,4 +46,6 @@ CustomElemsBase & {
   update_stages?(): unknown;
 }
 
-type OutstaffOrderExecutionDocument = XmlDocument & { TopElem: OutstaffOrderExecutionDocumentTopElem; };
+type OutstaffOrderExecutionDocument = XmlDocument & {
+  TopElem: OutstaffOrderExecutionDocumentTopElem;
+};

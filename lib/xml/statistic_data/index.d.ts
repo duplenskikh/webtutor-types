@@ -25,4 +25,6 @@ type StatisticDataDocumentTopElem = XmlTopElem & { Doc: StatisticDataDocument } 
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type StatisticDataDocument = XmlDocument & { TopElem: StatisticDataDocumentTopElem; };
+type StatisticDataDocument = XmlDocument & {
+  TopElem: StatisticDataDocumentTopElem;
+};

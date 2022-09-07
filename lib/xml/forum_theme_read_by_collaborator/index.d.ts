@@ -5,4 +5,6 @@ type ForumThemeReadByCollaboratorDocumentTopElem = XmlTopElem & { Doc: ForumThem
   person_id: XmlElem<number>;
 }
 
-type ForumThemeReadByCollaboratorDocument = XmlDocument & { TopElem: ForumThemeReadByCollaboratorDocumentTopElem; };
+type ForumThemeReadByCollaboratorDocument = XmlDocument & {
+  TopElem: ForumThemeReadByCollaboratorDocumentTopElem;
+};

@@ -24,4 +24,6 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type PayStageDocument = XmlDocument & { TopElem: PayStageDocumentTopElem; };
+type PayStageDocument = XmlDocument & {
+  TopElem: PayStageDocumentTopElem;
+};

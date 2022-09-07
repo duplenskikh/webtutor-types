@@ -6,4 +6,6 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type MaterialLiabilityDocument = XmlDocument & { TopElem: MaterialLiabilityDocumentTopElem; };
+type MaterialLiabilityDocument = XmlDocument & {
+  TopElem: MaterialLiabilityDocumentTopElem;
+};

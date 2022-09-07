@@ -13,4 +13,6 @@ FileListBase & {
   comment: XmlElem<string>;
 }
 
-type WikiArticleCommunicationTypeDocument = XmlDocument & { TopElem: WikiArticleCommunicationTypeDocumentTopElem; };
+type WikiArticleCommunicationTypeDocument = XmlDocument & {
+  TopElem: WikiArticleCommunicationTypeDocumentTopElem;
+};

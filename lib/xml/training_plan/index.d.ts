@@ -62,4 +62,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type TrainingPlanDocument = XmlDocument & { TopElem: TrainingPlanDocumentTopElem; };
+type TrainingPlanDocument = XmlDocument & {
+  TopElem: TrainingPlanDocumentTopElem;
+};

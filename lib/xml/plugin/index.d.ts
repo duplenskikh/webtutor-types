@@ -15,4 +15,6 @@ type PluginDocumentTopElem = XmlTopElem & { Doc: PluginDocument } & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type PluginDocument = XmlDocument & { TopElem: PluginDocumentTopElem; };
+type PluginDocument = XmlDocument & {
+  TopElem: PluginDocumentTopElem;
+};

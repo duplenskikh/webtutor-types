@@ -18,4 +18,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type StaffPositionStartDocument = XmlDocument & { TopElem: StaffPositionStartDocumentTopElem; };
+type StaffPositionStartDocument = XmlDocument & {
+  TopElem: StaffPositionStartDocumentTopElem;
+};

@@ -63,4 +63,6 @@ KnowledgePartsBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type QualificationDocument = XmlDocument & { TopElem: QualificationDocumentTopElem; };
+type QualificationDocument = XmlDocument & {
+  TopElem: QualificationDocumentTopElem;
+};

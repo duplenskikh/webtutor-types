@@ -11,4 +11,6 @@ ViewBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ViewConfigurationDocument = XmlDocument & { TopElem: ViewConfigurationDocumentTopElem; };
+type ViewConfigurationDocument = XmlDocument & {
+  TopElem: ViewConfigurationDocumentTopElem;
+};

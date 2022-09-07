@@ -6,4 +6,6 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type ProjectTypeDocument = XmlDocument & { TopElem: ProjectTypeDocumentTopElem; };
+type ProjectTypeDocument = XmlDocument & {
+  TopElem: ProjectTypeDocumentTopElem;
+};

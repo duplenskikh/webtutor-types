@@ -20,4 +20,6 @@ CustomElemsBase & {
   calc_basic_values?(): unknown;
 }
 
-type ResponseDocument = XmlDocument & { TopElem: ResponseDocumentTopElem; };
+type ResponseDocument = XmlDocument & {
+  TopElem: ResponseDocumentTopElem;
+};

@@ -65,4 +65,6 @@ CustomElemsBase & {
   demo: XmlElem<boolean>;
 }
 
-type LicenseDocument = XmlDocument & { TopElem: LicenseDocumentTopElem; };
+type LicenseDocument = XmlDocument & {
+  TopElem: LicenseDocumentTopElem;
+};

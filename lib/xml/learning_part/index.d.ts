@@ -7,4 +7,6 @@ AnnalsObjectsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type LearningPartDocument = XmlDocument & { TopElem: LearningPartDocumentTopElem; };
+type LearningPartDocument = XmlDocument & {
+  TopElem: LearningPartDocumentTopElem;
+};

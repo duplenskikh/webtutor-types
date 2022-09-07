@@ -36,4 +36,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type OrderDocument = XmlDocument & { TopElem: OrderDocumentTopElem; };
+type OrderDocument = XmlDocument & {
+  TopElem: OrderDocumentTopElem;
+};

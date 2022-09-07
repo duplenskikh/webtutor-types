@@ -6,4 +6,6 @@ CustomElemsBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type SubstitutionTypeDocument = XmlDocument & { TopElem: SubstitutionTypeDocumentTopElem; };
+type SubstitutionTypeDocument = XmlDocument & {
+  TopElem: SubstitutionTypeDocumentTopElem;
+};

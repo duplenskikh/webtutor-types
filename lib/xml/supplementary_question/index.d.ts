@@ -16,4 +16,6 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type SupplementaryQuestionDocument = XmlDocument & { TopElem: SupplementaryQuestionDocumentTopElem; };
+type SupplementaryQuestionDocument = XmlDocument & {
+  TopElem: SupplementaryQuestionDocumentTopElem;
+};

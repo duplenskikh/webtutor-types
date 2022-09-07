@@ -21,4 +21,6 @@ PathSubsBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type LectorDocument = XmlDocument & { TopElem: LectorDocumentTopElem; };
+type LectorDocument = XmlDocument & {
+  TopElem: LectorDocumentTopElem;
+};

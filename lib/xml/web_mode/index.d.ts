@@ -34,4 +34,6 @@ WebVariablesBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type WebModeDocument = XmlDocument & { TopElem: WebModeDocumentTopElem; };
+type WebModeDocument = XmlDocument & {
+  TopElem: WebModeDocumentTopElem;
+};

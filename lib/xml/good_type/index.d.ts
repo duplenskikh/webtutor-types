@@ -5,4 +5,6 @@ ObjectCodeNameBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type GoodTypeDocument = XmlDocument & { TopElem: GoodTypeDocumentTopElem; };
+type GoodTypeDocument = XmlDocument & {
+  TopElem: GoodTypeDocumentTopElem;
+};

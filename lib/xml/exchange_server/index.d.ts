@@ -14,4 +14,6 @@ CustomElemsBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type ExchangeServerDocument = XmlDocument & { TopElem: ExchangeServerDocumentTopElem; };
+type ExchangeServerDocument = XmlDocument & {
+  TopElem: ExchangeServerDocumentTopElem;
+};

@@ -40,4 +40,6 @@ CustomElemsBase & {
   EvalThreat?(): unknown;
 }
 
-type KeyPositionDocument = XmlDocument & { TopElem: KeyPositionDocumentTopElem; };
+type KeyPositionDocument = XmlDocument & {
+  TopElem: KeyPositionDocumentTopElem;
+};

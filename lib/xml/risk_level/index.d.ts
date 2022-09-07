@@ -10,4 +10,6 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type RiskLevelDocument = XmlDocument & { TopElem: RiskLevelDocumentTopElem; };
+type RiskLevelDocument = XmlDocument & {
+  TopElem: RiskLevelDocumentTopElem;
+};

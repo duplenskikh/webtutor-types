@@ -12,4 +12,6 @@ type OrderTypeDocumentTopElem = XmlTopElem & { Doc: OrderTypeDocument } & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type OrderTypeDocument = XmlDocument & { TopElem: OrderTypeDocumentTopElem; };
+type OrderTypeDocument = XmlDocument & {
+  TopElem: OrderTypeDocumentTopElem;
+};

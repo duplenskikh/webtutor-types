@@ -10,4 +10,6 @@ CustomElemsBase & {
   desc: XmlElem<string>;
 }
 
-type KnowledgeClassifierDocument = XmlDocument & { TopElem: KnowledgeClassifierDocumentTopElem; };
+type KnowledgeClassifierDocument = XmlDocument & {
+  TopElem: KnowledgeClassifierDocumentTopElem;
+};

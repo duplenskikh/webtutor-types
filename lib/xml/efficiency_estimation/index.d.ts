@@ -12,4 +12,6 @@ CustomElemsBase & {
   changed: XmlElem<boolean>;
 }
 
-type EfficiencyEstimationDocument = XmlDocument & { TopElem: EfficiencyEstimationDocumentTopElem; };
+type EfficiencyEstimationDocument = XmlDocument & {
+  TopElem: EfficiencyEstimationDocumentTopElem;
+};

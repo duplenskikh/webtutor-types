@@ -31,4 +31,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type ForumDocument = XmlDocument & { TopElem: ForumDocumentTopElem; };
+type ForumDocument = XmlDocument & {
+  TopElem: ForumDocumentTopElem;
+};

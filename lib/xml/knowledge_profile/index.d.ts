@@ -16,4 +16,6 @@ type KnowledgeProfileDocumentTopElem = XmlTopElem & { Doc: KnowledgeProfileDocum
   comment: XmlElem<string>;
 }
 
-type KnowledgeProfileDocument = XmlDocument & { TopElem: KnowledgeProfileDocumentTopElem; };
+type KnowledgeProfileDocument = XmlDocument & {
+  TopElem: KnowledgeProfileDocumentTopElem;
+};

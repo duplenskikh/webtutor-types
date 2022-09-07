@@ -18,4 +18,6 @@ CustomElemsBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type GoodDocument = XmlDocument & { TopElem: GoodDocumentTopElem; };
+type GoodDocument = XmlDocument & {
+  TopElem: GoodDocumentTopElem;
+};

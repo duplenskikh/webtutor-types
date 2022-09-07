@@ -11,4 +11,6 @@ AdminAccessBase & {
   is_std: XmlElem<boolean>;
 }
 
-type EventTypeDocument = XmlDocument & { TopElem: EventTypeDocumentTopElem; };
+type EventTypeDocument = XmlDocument & {
+  TopElem: EventTypeDocumentTopElem;
+};

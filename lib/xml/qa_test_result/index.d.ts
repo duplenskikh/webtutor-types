@@ -18,4 +18,6 @@ type QaTestResultDocumentTopElem = XmlTopElem & { Doc: QaTestResultDocument } & 
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type QaTestResultDocument = XmlDocument & { TopElem: QaTestResultDocumentTopElem; };
+type QaTestResultDocument = XmlDocument & {
+  TopElem: QaTestResultDocumentTopElem;
+};

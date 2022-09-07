@@ -11,4 +11,6 @@ FileListBase & {
   desc: XmlElem<string>;
 }
 
-type ProviderDocument = XmlDocument & { TopElem: ProviderDocumentTopElem; };
+type ProviderDocument = XmlDocument & {
+  TopElem: ProviderDocumentTopElem;
+};

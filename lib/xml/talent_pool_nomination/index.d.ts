@@ -9,4 +9,6 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type TalentPoolNominationDocument = XmlDocument & { TopElem: TalentPoolNominationDocumentTopElem; };
+type TalentPoolNominationDocument = XmlDocument & {
+  TopElem: TalentPoolNominationDocumentTopElem;
+};

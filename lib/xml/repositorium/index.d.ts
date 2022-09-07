@@ -14,4 +14,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type RepositoriumDocument = XmlDocument & { TopElem: RepositoriumDocumentTopElem; };
+type RepositoriumDocument = XmlDocument & {
+  TopElem: RepositoriumDocumentTopElem;
+};

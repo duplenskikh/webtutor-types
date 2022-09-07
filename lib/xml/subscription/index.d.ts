@@ -11,4 +11,6 @@ AdminAccessBase & {
   comment: XmlElem<string>;
 }
 
-type SubscriptionDocument = XmlDocument & { TopElem: SubscriptionDocumentTopElem; };
+type SubscriptionDocument = XmlDocument & {
+  TopElem: SubscriptionDocumentTopElem;
+};

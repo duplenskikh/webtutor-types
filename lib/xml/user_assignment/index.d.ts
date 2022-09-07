@@ -46,4 +46,6 @@ ViewConditionsBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type UserAssignmentDocument = XmlDocument & { TopElem: UserAssignmentDocumentTopElem; };
+type UserAssignmentDocument = XmlDocument & {
+  TopElem: UserAssignmentDocumentTopElem;
+};

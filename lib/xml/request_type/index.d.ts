@@ -29,4 +29,6 @@ WebVariablesBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type RequestTypeDocument = XmlDocument & { TopElem: RequestTypeDocumentTopElem; };
+type RequestTypeDocument = XmlDocument & {
+  TopElem: RequestTypeDocumentTopElem;
+};

@@ -11,4 +11,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type KeyPositionThreatDocument = XmlDocument & { TopElem: KeyPositionThreatDocumentTopElem; };
+type KeyPositionThreatDocument = XmlDocument & {
+  TopElem: KeyPositionThreatDocumentTopElem;
+};

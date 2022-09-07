@@ -62,4 +62,6 @@ CustomElemsBase & {
   start_action?(): unknown;
 }
 
-type ProjectDocument = XmlDocument & { TopElem: ProjectDocumentTopElem; };
+type ProjectDocument = XmlDocument & {
+  TopElem: ProjectDocumentTopElem;
+};

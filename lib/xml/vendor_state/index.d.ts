@@ -16,4 +16,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type VendorStateDocument = XmlDocument & { TopElem: VendorStateDocumentTopElem; };
+type VendorStateDocument = XmlDocument & {
+  TopElem: VendorStateDocumentTopElem;
+};

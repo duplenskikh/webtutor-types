@@ -55,4 +55,6 @@ KnowledgePartsBase & {
   comment: XmlElem<string>;
 }
 
-type WikiArticleDocument = XmlDocument & { TopElem: WikiArticleDocumentTopElem; };
+type WikiArticleDocument = XmlDocument & {
+  TopElem: WikiArticleDocumentTopElem;
+};

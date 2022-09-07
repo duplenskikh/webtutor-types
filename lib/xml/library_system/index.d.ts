@@ -14,4 +14,6 @@ WebVariablesBase & {
   get_settings?(): unknown;
 }
 
-type LibrarySystemDocument = XmlDocument & { TopElem: LibrarySystemDocumentTopElem; };
+type LibrarySystemDocument = XmlDocument & {
+  TopElem: LibrarySystemDocumentTopElem;
+};

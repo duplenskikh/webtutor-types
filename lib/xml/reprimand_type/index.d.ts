@@ -5,4 +5,6 @@ type ReprimandTypeDocumentTopElem = XmlTopElem & { Doc: ReprimandTypeDocument } 
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ReprimandTypeDocument = XmlDocument & { TopElem: ReprimandTypeDocumentTopElem; };
+type ReprimandTypeDocument = XmlDocument & {
+  TopElem: ReprimandTypeDocumentTopElem;
+};

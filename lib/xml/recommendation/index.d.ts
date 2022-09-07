@@ -23,4 +23,6 @@ AdminAccessBase & {
   set_status?(): unknown;
 }
 
-type RecommendationDocument = XmlDocument & { TopElem: RecommendationDocumentTopElem; };
+type RecommendationDocument = XmlDocument & {
+  TopElem: RecommendationDocumentTopElem;
+};

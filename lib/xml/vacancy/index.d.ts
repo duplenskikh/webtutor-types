@@ -57,4 +57,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type VacancyDocument = XmlDocument & { TopElem: VacancyDocumentTopElem; };
+type VacancyDocument = XmlDocument & {
+  TopElem: VacancyDocumentTopElem;
+};

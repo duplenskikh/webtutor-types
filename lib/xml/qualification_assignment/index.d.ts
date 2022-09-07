@@ -31,4 +31,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type QualificationAssignmentDocument = XmlDocument & { TopElem: QualificationAssignmentDocumentTopElem; };
+type QualificationAssignmentDocument = XmlDocument & {
+  TopElem: QualificationAssignmentDocumentTopElem;
+};

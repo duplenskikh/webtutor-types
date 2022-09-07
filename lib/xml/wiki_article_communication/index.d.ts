@@ -16,4 +16,6 @@ CustomElemsBase & {
   comment: XmlElem<string>;
 }
 
-type WikiArticleCommunicationDocument = XmlDocument & { TopElem: WikiArticleCommunicationDocumentTopElem; };
+type WikiArticleCommunicationDocument = XmlDocument & {
+  TopElem: WikiArticleCommunicationDocumentTopElem;
+};

@@ -16,4 +16,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type TagDocument = XmlDocument & { TopElem: TagDocumentTopElem; };
+type TagDocument = XmlDocument & {
+  TopElem: TagDocumentTopElem;
+};

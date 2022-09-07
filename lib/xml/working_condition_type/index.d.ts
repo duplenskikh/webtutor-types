@@ -6,4 +6,6 @@ type WorkingConditionTypeDocumentTopElem = XmlTopElem & { Doc: WorkingConditionT
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type WorkingConditionTypeDocument = XmlDocument & { TopElem: WorkingConditionTypeDocumentTopElem; };
+type WorkingConditionTypeDocument = XmlDocument & {
+  TopElem: WorkingConditionTypeDocumentTopElem;
+};

@@ -34,4 +34,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type LearningTaskResultDocument = XmlDocument & { TopElem: LearningTaskResultDocumentTopElem; };
+type LearningTaskResultDocument = XmlDocument & {
+  TopElem: LearningTaskResultDocumentTopElem;
+};

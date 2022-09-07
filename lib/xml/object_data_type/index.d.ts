@@ -10,4 +10,6 @@ ObjectCodeNameBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type ObjectDataTypeDocument = XmlDocument & { TopElem: ObjectDataTypeDocumentTopElem; };
+type ObjectDataTypeDocument = XmlDocument & {
+  TopElem: ObjectDataTypeDocumentTopElem;
+};

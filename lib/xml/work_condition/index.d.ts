@@ -6,4 +6,6 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type WorkConditionDocument = XmlDocument & { TopElem: WorkConditionDocumentTopElem; };
+type WorkConditionDocument = XmlDocument & {
+  TopElem: WorkConditionDocumentTopElem;
+};

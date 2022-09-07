@@ -21,4 +21,6 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ParticipantDocument = XmlDocument & { TopElem: ParticipantDocumentTopElem; };
+type ParticipantDocument = XmlDocument & {
+  TopElem: ParticipantDocumentTopElem;
+};

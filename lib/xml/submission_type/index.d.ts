@@ -35,4 +35,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type SubmissionTypeDocument = XmlDocument & { TopElem: SubmissionTypeDocumentTopElem; };
+type SubmissionTypeDocument = XmlDocument & {
+  TopElem: SubmissionTypeDocumentTopElem;
+};

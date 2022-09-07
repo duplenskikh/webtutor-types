@@ -7,4 +7,6 @@ type PositionLevelDocumentTopElem = XmlTopElem & { Doc: PositionLevelDocument } 
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type PositionLevelDocument = XmlDocument & { TopElem: PositionLevelDocumentTopElem; };
+type PositionLevelDocument = XmlDocument & {
+  TopElem: PositionLevelDocumentTopElem;
+};

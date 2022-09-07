@@ -37,4 +37,6 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
 }
 
-type MobileAppConfigDocument = XmlDocument & { TopElem: MobileAppConfigDocumentTopElem; };
+type MobileAppConfigDocument = XmlDocument & {
+  TopElem: MobileAppConfigDocumentTopElem;
+};

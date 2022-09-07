@@ -9,4 +9,6 @@ CustomElemsBase & {
   changed: XmlElem<boolean>;
 }
 
-type KpiGroupDocument = XmlDocument & { TopElem: KpiGroupDocumentTopElem; };
+type KpiGroupDocument = XmlDocument & {
+  TopElem: KpiGroupDocumentTopElem;
+};

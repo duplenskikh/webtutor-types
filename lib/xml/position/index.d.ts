@@ -40,4 +40,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type PositionDocument = XmlDocument & { TopElem: PositionDocumentTopElem; };
+type PositionDocument = XmlDocument & {
+  TopElem: PositionDocumentTopElem;
+};

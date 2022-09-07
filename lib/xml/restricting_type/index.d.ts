@@ -24,4 +24,6 @@ type RestrictingTypeDocumentTopElem = XmlTopElem & { Doc: RestrictingTypeDocumen
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type RestrictingTypeDocument = XmlDocument & { TopElem: RestrictingTypeDocumentTopElem; };
+type RestrictingTypeDocument = XmlDocument & {
+  TopElem: RestrictingTypeDocumentTopElem;
+};

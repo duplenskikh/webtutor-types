@@ -14,4 +14,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type SubstitutionDocument = XmlDocument & { TopElem: SubstitutionDocumentTopElem; };
+type SubstitutionDocument = XmlDocument & {
+  TopElem: SubstitutionDocumentTopElem;
+};

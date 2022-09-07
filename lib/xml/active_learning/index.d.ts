@@ -56,4 +56,6 @@ CustomElemsBase & {
   update_add_data(): unknown;
 }
 
-type ActiveLearningDocument = XmlDocument & { TopElem: ActiveLearningDocumentTopElem; };
+type ActiveLearningDocument = XmlDocument & {
+  TopElem: ActiveLearningDocumentTopElem;
+};

@@ -33,4 +33,6 @@ CustomElemsBase & {
   comment: XmlElem<string>;
 }
 
-type PersonnelDocumentDocument = XmlDocument & { TopElem: PersonnelDocumentDocumentTopElem; };
+type PersonnelDocumentDocument = XmlDocument & {
+  TopElem: PersonnelDocumentDocumentTopElem;
+};

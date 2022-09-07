@@ -26,4 +26,6 @@ FileListBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ExpenseDocument = XmlDocument & { TopElem: ExpenseDocumentTopElem; };
+type ExpenseDocument = XmlDocument & {
+  TopElem: ExpenseDocumentTopElem;
+};

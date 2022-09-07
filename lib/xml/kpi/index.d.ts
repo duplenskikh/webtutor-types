@@ -56,4 +56,6 @@ KnowledgePartsBase & {
   role_id: XmlMultiElem<number>;
 }
 
-type KpiDocument = XmlDocument & { TopElem: KpiDocumentTopElem; };
+type KpiDocument = XmlDocument & {
+  TopElem: KpiDocumentTopElem;
+};

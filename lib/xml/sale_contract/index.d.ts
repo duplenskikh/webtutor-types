@@ -55,4 +55,6 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type SaleContractDocument = XmlDocument & { TopElem: SaleContractDocumentTopElem; };
+type SaleContractDocument = XmlDocument & {
+  TopElem: SaleContractDocumentTopElem;
+};

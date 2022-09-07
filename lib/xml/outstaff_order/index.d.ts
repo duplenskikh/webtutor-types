@@ -50,4 +50,6 @@ CustomElemsBase & {
   update_periods?(): unknown;
 }
 
-type OutstaffOrderDocument = XmlDocument & { TopElem: OutstaffOrderDocumentTopElem; };
+type OutstaffOrderDocument = XmlDocument & {
+  TopElem: OutstaffOrderDocumentTopElem;
+};

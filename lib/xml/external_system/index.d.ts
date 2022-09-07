@@ -14,4 +14,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ExternalSystemDocument = XmlDocument & { TopElem: ExternalSystemDocumentTopElem; };
+type ExternalSystemDocument = XmlDocument & {
+  TopElem: ExternalSystemDocumentTopElem;
+};

@@ -10,4 +10,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type RiskPerspectiveDocument = XmlDocument & { TopElem: RiskPerspectiveDocumentTopElem; };
+type RiskPerspectiveDocument = XmlDocument & {
+  TopElem: RiskPerspectiveDocumentTopElem;
+};

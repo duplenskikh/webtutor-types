@@ -12,4 +12,6 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type ScheduleDayDocument = XmlDocument & { TopElem: ScheduleDayDocumentTopElem; };
+type ScheduleDayDocument = XmlDocument & {
+  TopElem: ScheduleDayDocumentTopElem;
+};

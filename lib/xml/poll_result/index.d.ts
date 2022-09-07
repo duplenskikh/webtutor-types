@@ -29,4 +29,6 @@ AdminAccessBase & {
   update_name?(): unknown;
 }
 
-type PollResultDocument = XmlDocument & { TopElem: PollResultDocumentTopElem; };
+type PollResultDocument = XmlDocument & {
+  TopElem: PollResultDocumentTopElem;
+};

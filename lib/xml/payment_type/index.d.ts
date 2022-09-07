@@ -7,4 +7,6 @@ type PaymentTypeDocumentTopElem = XmlTopElem & { Doc: PaymentTypeDocument } & {
   doc_info: XmlElem<DocInfoBase>;
 }
 
-type PaymentTypeDocument = XmlDocument & { TopElem: PaymentTypeDocumentTopElem; };
+type PaymentTypeDocument = XmlDocument & {
+  TopElem: PaymentTypeDocumentTopElem;
+};

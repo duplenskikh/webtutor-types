@@ -20,4 +20,6 @@ CustomElemsBase & {
   set_status?(): unknown;
 }
 
-type VacancyResponseDocument = XmlDocument & { TopElem: VacancyResponseDocumentTopElem; };
+type VacancyResponseDocument = XmlDocument & {
+  TopElem: VacancyResponseDocumentTopElem;
+};

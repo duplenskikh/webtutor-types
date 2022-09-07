@@ -33,4 +33,6 @@ AdminAccessBase & {
   calc_data?(): unknown;
 }
 
-type KpiValueDocument = XmlDocument & { TopElem: KpiValueDocumentTopElem; };
+type KpiValueDocument = XmlDocument & {
+  TopElem: KpiValueDocumentTopElem;
+};
