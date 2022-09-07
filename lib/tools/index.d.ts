@@ -514,6 +514,27 @@ declare namespace tools {
     _qti_text: string
   ): void;
 
+  /**
+   * Заполняет свойства объекта получателя из соответствующих свойств объекта источника. Заполняются только те свойства,
+   * названия которых указаны в переданном в функцию массиве.
+   * @param fldTarget Объект получатель.
+   * @param fldSourceParam Объект источник.
+   * @param arrFieldNamesParam Массив строк с названиями полей для заполнения.
+   * @returns Производит заполнение свойства объекта. Возвращаемое значение отсутствует.
+   * 
+   * @example
+   * tools.assign_elems( fldCustomWebTemplate_temp, teCustomWebTemplate0666, ['use_session_cache','out_type','cwt_type','zones'] );
+   * tools.assign_elems( fldFormLogEntry, fldLogEntry, ['revision','author','date','msg'] );
+   * tools.assign_elems( teForm, tePoll, ["questions","items"] );
+   * docSite = OpenNewDoc( 'x-local://wtv/wtv_site.xmd' );
+   * docSite.BindToDb();
+   * if ( TopElem.site_id.HasValue ) {
+   *      teSite = OpenDoc( UrlFromDocID( TopElem.site_id ) ).TopElem;
+   *      tools.assign_elems( docSite.TopElem, teSite, [ 'web_design_id', 'lng_id', 'menus', 'web_designs', 'first_unauthorized_url', 'first_authorized_url', 'anonym_collaborator_id','anonymous_modes' ] );
+   * }
+   */
+  function assign_elems(fldTarget: XmlElem<any>, fldSourceParam: XmlElem<any>, arrFieldNamesParam: Array<string>): void;
+
   const dotnet_host: DotnetCoreHost;
 
   function new_doc_by_name<T = XmlDocument>(documentName: string, isCatalog?: boolean): T;
@@ -905,7 +926,6 @@ declare namespace tools {
   function get_object_relative_operations(iUserIDParam: any, iObjectIDParam: any, sCatalogNameParam: any): any;
   function check_operation_rights(arrOperationsParam: any, teCurUserParam: any, sActionParam: any): any;
   function extend_object(oObjectRecipient: any, oObjectSource: any): any;
-  function assign_elems(fldTarget: any, fldSourceParam: any, arrFieldNamesParam: any): any;
   function assign_elems_exclude(fldTarget: any, fldSourceParam: any, arrFieldNamesParam: any): any;
   function get_foreign_field(fldForeignFieldParam: any, sFieldParam: any, sErrTextParam: any): any;
   function get_user_by_login(Login: any, AuthType: any): any;
