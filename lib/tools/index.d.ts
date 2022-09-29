@@ -1,3 +1,11 @@
+type ObjectAssemblyLibraryType = "Zip" | "Image" | "ImageUtils" |
+"PdfGenerator" | "Pdf" | "Powerpoint" | "Excel" | "Word" |
+"Crypto" | "CryptoStore" | "CryptoPro" | "FileUtils" | "WebUtils" |
+"RegExp" | "DatexCore" | "UniBridgeSettings" | "HttpRequest" | "Authorization" |
+"XHTTPMiddleware" | "XHTTPMiddlewareStatic" | "FaceRecognition" | "PKeyGenerator" |
+"Code" | "RecordingClient" | "MediaPostStreamHandler" | "VideoNeuralHandler" |
+"NeuralHandlerAssembly" | "VFSStatic";
+
 declare namespace tools {
   /**
    * Назначение курса участникам указанного мероприятия.
@@ -477,7 +485,7 @@ declare namespace tools {
 
   /**
    * Преобразует массив в строку указанного формата (`json`, `xml`).
-   * @param  _aArrayPARAM Массив, который необходимо преобразовать.
+   * @param _aArrayPARAM Массив, который необходимо преобразовать.
    * @param _sFormatPARAM Формат возвращаемой строки. Возможны два значения: `json` и `xml`). По умолчанию имеет значение `xml`.
    * @param _sNamePARAM Название корневого (`root`) тега. Значение аргумента учитывается, если формируется строка в формате XML.
    *                    По умолчанию имеет значение `data` (корневой тег `<data></data>`).
@@ -535,7 +543,7 @@ declare namespace tools {
    * @param {string|number} documentId ID документа
    * @returns {T|undefined} XML документ или undefined
    */
-  function open_doc<T = any>(documentId: number): T | undefined;
+  function open_doc<T = XmlDocument>(documentId: number): T | undefined;
 
   /**
    * Проверяет разрешение на доступ к указанному объекту для указанного пользователя.
@@ -722,6 +730,7 @@ declare namespace tools {
     secondObjectTopElem?: XmlTopElem,
     additionalParams?: ICreateNotificationAdditionalParams
   ): boolean;
+
   function create_template_notification(sTypeParam: any, iObjectIDParam: any, sSubjectParam: any, sBodyParam: any, oObjectParam?: any, teSourceParam?: any, iObjectSecondIDParam?: any): any;
   function send_notification(iActiveNotificationIDParam: any): any;
   function save_certificate(_learning_id: any): any;
@@ -742,9 +751,6 @@ declare namespace tools {
   function common_filling(type: string, sourceDoc: any, objectId: number, objectDoc?: XmlTopElem, customFlag?: boolean): void;
   function common_clear(_type: any, _source: any, _ps: any): any;
   function active_test_learning_finish_link(activeLearningID: any, learningID: any, teLearning: any, teAssessment: any): any;
-
-
-
   function core_decrypt(_core: any, _qti_path: any, _qti_text: any, _learning_doc: any): any;
   function get_annals_from_core(sSourceParam: any): any;
   function get_annals_text_from_annals(fldAnnalsParam: any): any;
@@ -885,6 +891,7 @@ declare namespace tools {
    * @returns {Array<any>} Массив из каталожных записей типов функциональных руководителей (boss_types), соответствующих указанному объекту и указанному пользователю.
    */
   function get_object_relative_boss_types(iUserIDParam: number, iObjectIDParam: number): any;
+
   function get_relative_operations_by_boss_types(arrBossTypesParam: any, sCatalogNameParam?: any): any;
   function get_object_relative_operations(iUserIDParam: any, iObjectIDParam: any, sCatalogNameParam: any): any;
   function check_operation_rights(arrOperationsParam: any, teCurUserParam: any, sActionParam: any): any;
@@ -898,7 +905,7 @@ declare namespace tools {
   function get_experts_by_person_id(person_id: any): any;
   function get_object_name_field_value(oObjectParam: any): any;
   function copy_url(sDestDirPARAM: any, sSourceDirPARAM: any): any;
-  function zip_extract(sSourceDirPARAM: any, sDestDirPARAM: any): any;
+  function zip_extract(sourcePath: string, destinationPath: string): any;
   function zip_create(sArchivePathPARAM: any, sContentPathPARAM: any, sContentDirPathPARAM: any): any;
   function register_doc_types_catalog_by_serialized_str(sSerializedCatalogsToRegPARAM: any, bServerCheck: any): any;
   function register_doc_types_catalog(aCatalogsToRegPARAM: any, bServerCheck: any): any;
@@ -986,7 +993,13 @@ declare namespace tools {
   function update_content_access(idOrTE_UserPARAM: any, sCatalogPARAM: any, idOrTE_ObjectID: any, bCanEditPARAM: any, bCanDeletePARAM: any): any;
   function set_default_content(teContentPARAM: any, teSubjectPARAM: any): any;
   function set_upgrade_locked(bParam: any): any;
-  function get_object_assembly(sLibNameParam: any): any;
+
+  /**
+   * 
+   * @param libraryName название библиотеки
+   */
+  function get_object_assembly<T>(libraryName: ObjectAssemblyLibraryType): T;
+
   function create_committee_member(iObjectIDParam: any, teObjectParam: any, iPersonnelCommitteeIDParam: any, strCommitteeMemberTypeParam: any): any;
   function activate_poll_to_person(personId: any, oPollID: any, iPollProcedureID: any, iEducationPlanID: any): any;
   function delete_poll_result(oPollResultParam: any, tePollParam: any): any;
