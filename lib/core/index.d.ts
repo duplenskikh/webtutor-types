@@ -1666,7 +1666,7 @@ declare function UrlEncode(str: string): string;
  * @returns {string}
  * Значение типа string заключается  в кавычки, при этом существующие кавычки внутри строки маскируются по правилам SQL. Значение типа integer переводится в соответствующее строковое значение Значение типа date переводится в строку, содержающую дату в формате SQL
  */
-declare function SqlLiteral(arg: string | number | Date): string;
+declare function SqlLiteral(arg: string | number | Date | null): string;
 
 /**
  * Преобразут объект типа Object в строку вида 'name1=value1&name2=value2&...' для использования в качестве запроса в url.

@@ -140,7 +140,7 @@ interface XmMultiElem<T> {
    */
   DeleteChildren(qualExpr: string): void;
   GetChildByKey(keyValue: unknown, keyName?: string): XmlElem<T>;
-  GetOptChildByKey(keyValue: unknown, keyName?: string): XmlElem<T>;
+  GetOptChildByKey(keyValue: unknown, keyName?: string): XmlElem<T> | undefined;
   ObtainChildByKey(keyValue: unknown, keyName?: string): XmlElem<T>;
   OptChild(name: string): XmlElem<T>;
 }
