@@ -236,6 +236,11 @@ interface ListsExternalScript {
   source_url: string;
 }
 
+interface ListsPersonState {
+  id: XmlElem<string>;
+  name: XmlElem<string>;
+}
+
 interface LibraryMaterialFormat {
   library_material_format_id: XmlElem<number>;
   number: XmlElem<number>;
@@ -1179,14 +1184,15 @@ interface WorkflowDataBaseWorkflowCustomState {
 }
 
 interface ILists {
-  object_resource_types: XmlMultiElem<ListsObjectResourceType>;
   currency_types: XmlMultiElem<ListsCurrencyType>;
+  object_resource_types: XmlMultiElem<ListsObjectResourceType>;
   event_forms: XmlMultiElem<ListsEventForm>;
   organizational_forms: XmlMultiElem<ListsOrganizationalForm>;
-  facts: XmlMultiElem<ListsFact>;
   professional_areas: XmlMultiElem<ListsProfessionalArea>;
+  facts: XmlMultiElem<ListsFact>;
   web_requirements: XmlMultiElem<ListsWebRequirement>;
   ext_externalscripts: XmlMultiElem<ListsExternalScript>;
+  person_states: XmlMultiElem<ListsPersonState>;
 }
 
 declare const lists: XmlElem<ILists>;
