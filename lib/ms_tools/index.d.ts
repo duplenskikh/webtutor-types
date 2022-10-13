@@ -20,8 +20,7 @@ declare namespace ms_tools {
   function open_dlg_global_settings(sSelTab: any): any;
   function check_doc_screen_access(TopElem: any): any;
   function check_access_block_rights(sAccessBlocksRightoUser: any): any;
-  function obtain_shared_list_elem(sListPathsPrimaryKeyoListElem: any): any;
-  function delete_shared_list_elem(sListPathsPrimaryKey: any): any;
+  function obtain_shared_list_elem(sListPathParam: string, sPrimaryKeyParam: string, oListElemParam: any): any;
   function save_cached_doc(doc: any): any;
   function trigger_onsavedoc(Doc: any): any;
   function check_std(teObject: any): any;
