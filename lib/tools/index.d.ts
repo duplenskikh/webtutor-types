@@ -277,9 +277,9 @@ declare namespace tools {
     learningId: number,
     activeTestLearningDocumentTopElem?: ActiveTestLearningDocumentTopElem,
     assessmentDocumentTopElem?: AssessmentDocumentTopElem,
-    iPersonIDParam?: any,
+    iPersonIDParam?: number,
     bFinishTest?: any
-  ): any;
+  ): TestLearningDocument;
 
   /** 
    * Функция завершает указанную попытку для теста и создает карточку завершенного теста.
