@@ -356,7 +356,7 @@ declare function ArrayIntersect(array1: any, array2: any, fieldExpr1: string, fi
  * @param {Array} array - массив
  * @returns {any}
  */
-declare function ArrayFirstElem<T = any>(array: T[]): T | never;
+declare function ArrayFirstElem<T>(array: T[] | XmlMultiElem<T>): T | never;
 
 /**
  * Возвращает элемент заданного массива, содержащий максимальное
@@ -464,7 +464,7 @@ declare function ArrayOptMin<T>(array: T[], elemExpr: string): T;
  * @param {any} defaultValue - аргумент по умолчанию
  * @returns {any}
  */
-declare function ArrayOptFirstElem<T>(array: XmlMultiElem<T> | T[]): T | undefined;
+declare function ArrayOptFirstElem<T = unknown>(array: XmlMultiElem<T> | T[]): T | undefined;
 declare function ArrayOptFirstElem<T, K = undefined>(array: XmlMultiElem<T> | T[], defaultValue: K): T | K;
 
 /**
@@ -648,7 +648,7 @@ declare function StrLongDate(date: Date): string;
  * где обычная функция Date() будет вести себя по-разному на десктопной и web-версиях.
  * @returns {Date}
  */
-declare function OptDate(date: any): Date;
+declare function OptDate(date: any): Date | undefined;
 declare function OptDate<T>(date: any, defaultDate: T): Date | T;
 declare function OptDate(shortDateString: string): Date;
 declare function OptDate(longDateString: string): Date;
@@ -1850,7 +1850,7 @@ declare function ParentDirectory(path: string): string;
  * @param {string} path - путь до директории (String).
  * @returns {Array}
  */
-declare function ReadDirectoryByPath(path: string): Array<string>;
+declare function ReadDirectoryByPath(path: string): string[];
 
 /**
  * Возвращает путь к директории для хранении данных пользователя. По умолчанию директория совпадает с установочной, если специальными настройками не установлено иное.
@@ -1878,7 +1878,7 @@ declare function PathIsDirectory(path: string): boolean;
  * @param {string} dirUrl - url директории (String).
  * @returns {Array}
  */
-declare function ReadDirectory(dirUrl: string): Array<string>;
+declare function ReadDirectory(dirUrl: string): string[];
 
 declare function OptInt<T, K = undefined>(variable: T, defaultValue?: K): number | K;
 declare function OptReal<T, K = undefined>(variable: T, defaultValue?: K): number | K;
@@ -2045,4 +2045,5 @@ declare function DataType(entity: any): string;
   */
 declare function ObjectType(entity: any): string;
 
-declare function StrToCharCodesArray(str: string): Array<number>;
+declare function StrToCharCodesArray(str: string): number[];
+declare function StrToCharArray(str: string): string[];

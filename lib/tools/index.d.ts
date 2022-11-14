@@ -502,7 +502,7 @@ declare namespace tools {
    * tools.array_to_text(["one", "two", "three"], "xml", "d");
    * // returns <d><value>one</value></d><d><value>two</value></d><d><value>three</value></d>
    */
-  function array_to_text(_aArrayPARAM: Array<any>, _sFormatPARAM?: string, _sNamePARAM?: string): string;
+  function array_to_text(_aArrayPARAM: any[], _sFormatPARAM?: string, _sNamePARAM?: string): string;
    
 
   const dotnet_host: DotnetCoreHost;
@@ -888,7 +888,7 @@ declare namespace tools {
    * - successor (преемник);
    * - task (задача);
    * - vacancy_response (отклик на вакансию).
-   * @returns {Array<any>} Массив из каталожных записей типов функциональных руководителей (boss_types), соответствующих указанному объекту и указанному пользователю.
+   * @returns {any[]} Массив из каталожных записей типов функциональных руководителей (boss_types), соответствующих указанному объекту и указанному пользователю.
    */
   function get_object_relative_boss_types(iUserIDParam: number, iObjectIDParam: number): any;
 
@@ -1093,7 +1093,7 @@ declare namespace tools {
    * @example
    * tools.merge_text_array(_aPairs, (_sFormatPARAM == "json" ? null: _sNamePARAM), false, _sFormatPARAM);
    */
-  function merge_text_array(_aDataPARAM: Object | Array<any>, _sName?: string, _bObj?: boolean, _sFormatPARAM?: string): string;
+  function merge_text_array(_aDataPARAM: Object | any[], _sName?: string, _bObj?: boolean, _sFormatPARAM?: string): string;
 
   /**
    * 
