@@ -1,4 +1,4 @@
-interface XmMultiElem<T> {
+interface XmMultiElem<T> extends XmElem<T> {
   [index: number]: XmlElem<T>;
 
   ChildNum: number;

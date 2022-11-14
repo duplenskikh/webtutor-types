@@ -540,7 +540,7 @@ interface XmElem<T> {
    * @param keyName - имя элемента, являющегося ключом (String). Необязательный аргумент.
    * Если имя ключа не указано, используется первичный ключ.
    */
-  GetOptChildByKey(value: unknown, name?: string): XmlElem<unknown>;
+  GetOptChildByKey(keyValue: unknown, keyName?: string): XmlElem<T> | undefined;
   
   /**
    * Возвращает текстовое прдставление значения элемента.

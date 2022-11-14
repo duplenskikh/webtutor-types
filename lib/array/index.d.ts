@@ -28,7 +28,7 @@ interface Array<T> {
    * @param {...args} аргументы которые следует добавить в массив. Необязательный.
    * @returns {number}
    */
-  push(element: any, ...args: any): number;
+  push<T>(element: T, ...args: any): number;
 
   /**
    * Удаляет часть массива.
@@ -39,8 +39,8 @@ interface Array<T> {
 }
 
 interface ArrayConstructor {
-  new(...arg: any): Array<any>;
-  (...arg: any): Array<any>;
+  new(...arg: any): any[];
+  (...arg: any): any[];
 }
 
 declare const Array: ArrayConstructor;
