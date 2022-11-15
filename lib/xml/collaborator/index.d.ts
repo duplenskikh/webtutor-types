@@ -81,7 +81,7 @@ PersonObjectLinksBase & {
   code: XmlElem<string>;
   eid: XmlElem<string>;
   name(): unknown;
-  position_id: XmlElem<number>;
+  position_id: XmlElem<number, PositionDocumentTopElem>;
   position_name: XmlElem<string>;
   position_parent_id: XmlElem<number>;
   position_parent_name: XmlElem<string>;
