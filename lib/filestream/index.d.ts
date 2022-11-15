@@ -1,9 +1,13 @@
+interface IFileStreamOptions {
+  ReadCache: boolean;
+}
+
 interface FileStream {
   ReadLine(): string;
 }
 
 interface FileStreamConstructor {
-  new(value?: any): FileStream;
+  new(url: string, options?: IFileStreamOptions): FileStream;
 }
 
-declare let FileStream: FileStreamConstructor;
+declare const FileStream: FileStreamConstructor;

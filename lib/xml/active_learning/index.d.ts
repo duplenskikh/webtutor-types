@@ -16,7 +16,7 @@ AdminAccessBase &
 CustomElemsBase & {
   Doc: ActiveLearningDocument;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   course_id: XmlElem<number>;
   course_name: XmlElem<string>;
   course_code: XmlElem<string>;
@@ -41,7 +41,7 @@ CustomElemsBase & {
   max_score: XmlElem<number>;
   score_sum_eval: XmlElem<string>;
   score: XmlElem<number>;
-  calc_score(): unknown;
+  calc_score(): number;
   state_id: XmlElem<number>;
   time(): number;
   calc_max_end_date(): unknown;
@@ -52,8 +52,8 @@ CustomElemsBase & {
   device_disp_type: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  complete_course(): unknown;
-  update_add_data(): unknown;
+  complete_course(): number | undefined;
+  update_add_data(): undefined;
 }
 
 type ActiveLearningDocument = XmlDocument & {

@@ -11,7 +11,7 @@ interface XmMultiElem<T> extends XmElem<T> {
   /**
    * Возвращает массив, указанный в атрибуте FOREIGN-ARRAY текущего элемента.
    */
-  ForeignArray: unknown[];
+  ForeignArray: T[];
 
   /**
    * Возвращает true если существует хоть один соответствующий множественный элемент.
