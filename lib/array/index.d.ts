@@ -18,6 +18,7 @@ interface Array<T> {
    * Преобразование всех элементов массива в объект String и соединяет их.
    * @param delimeter разделитель между элементами (String). Не обязательный аргумент.
    * @returns {string}
+   * @example arrayobj.join(delimeter)
    */
   join(delimeter: string): string;
 

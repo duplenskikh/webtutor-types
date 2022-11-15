@@ -60,7 +60,7 @@ declare namespace tools {
    * то возвращается ID карточки ранее назначенного курса (из каталога active_learning).
    */
   function activate_course_to_person(
-    personId: number | unknown,
+    personId: number | string,
     courseId?: number,
     eventId?: number,
     personDoc?: CollaboratorDocumentTopElem,

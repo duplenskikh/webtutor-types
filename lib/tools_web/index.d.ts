@@ -2,10 +2,10 @@
 declare namespace tools_web {
   /**
    * Возвращает значение true/false в завимости от передаваемого параметра
-   * @param {unknown} value
+   * @param {T} value
    * @returns {boolean}
    */
-  function is_true(value: unknown): boolean;
+  function is_true<T>(value: T): boolean;
 
   /**
    * Получение кэша по коду
@@ -19,7 +19,7 @@ declare namespace tools_web {
    * @param valueParam Payload
    * @param ttl Время жизни кэша
    */
-  function set_user_data(userDataCode: string, valueParam: unknown, ttl?: number): void;
+  function set_user_data<T>(userDataCode: string, valueParam: T, ttl?: number): void;
   /**
    * Получение url ссылки объекта по Id
    * @param catalogName Каталог объекта

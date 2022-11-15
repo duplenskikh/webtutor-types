@@ -1,3 +1,3 @@
-const doc = tools.open_doc<CollaboratorDocument>(1);
+const a = UrlFromDocID(1);
 
-doc?.TopElem.position_id.Value;
+RegisterCodeLibrary("asd", "ASd");

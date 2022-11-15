@@ -11,7 +11,7 @@
  * чем запись в Binary, то для подобных случаем использовался
  * именно объект Binary, который потом преобразовывался в строку.
  * В настоящее время этот метод также явячется устаревшим,
- * поскольку появился отдельный объект, WriteBuffStream.
+ * поскольку появился отдельный объект, `WriteBuffStream`.
  */
 interface Binary {
   /**
@@ -28,25 +28,25 @@ interface Binary {
    * Добавляет данные из заданного бинарного объекта в текущий бинарный объект.
    * @param binary - бинарный объект, данные из которого следует добавить.
    */
-  AppendBinary(binary: Binary): void;
+  AppendBinary(binary: Binary): undefined;
 
   /**
    * Добавляет в текущий бинарный объект данные из заданной строки.
    * @param str строка (String).
    */
-  AppendStr(string: string): void;
+  AppendStr(string: string): undefined;
 
   /**
    * Копирует данные из заданного бинарного объекта в текущий бинарный объект.
    * @param binary - исходный бинарный объект
    */
-  AssignBinary(binary: Binary): void;
+  AssignBinary(binary: Binary): undefined;
 
   /**
    * Копирует в текущий бинарный объект данные из заданной строки.
    * @param str строка (String).
    */
-  AssignStr(str: string): void;
+  AssignStr(str: string): undefined;
 
   /**
    * Возвращает бинарные данные из объекта в виде строки, содержащей массив байт.
@@ -57,7 +57,7 @@ interface Binary {
    * Загружает в текущий бинарный объект данные из определенного url.
    * @param url (String).
    */
-  LoadFromUrl(url: string): void;
+  LoadFromUrl(url: string): undefined;
 
   /**
    * Сообщает текущему потоковому объекту предполагаемый объем данных,
@@ -69,13 +69,13 @@ interface Binary {
    * в случае последущей записи в него данных маленькими кусочками.
    * @param size - предполагаемый объем данных в байтах (Integer)
    */
-  PrepareWriteSpace(size: number): void;
+  PrepareWriteSpace(size: number): undefined;
 
   /**
    * Сохраняет данные из текущего бинарного объекта в заданный url.
    * @param url - url (String).
    */
-  PutToUrl(url: string): void;
+  PutToUrl(url: string): undefined;
 }
 
 interface BinaryConstructor {

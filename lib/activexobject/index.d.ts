@@ -1,6 +1,6 @@
 interface ActiveXObjectConstructor {
-  new<T = any>(name: string): T;
-  <T = any>(name: string): T;
+  new<T>(name: string): T;
+  <T>(name: string): T;
 }
 
 declare const ActiveXObject: ActiveXObjectConstructor;

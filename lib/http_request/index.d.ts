@@ -1,3 +1,9 @@
+interface IRequestAuthObject {
+  id: XmlElem<number>;
+  login: XmlElem<string>;
+  access_role_id: XmlElem<number, AccessRoleBase>;
+}
+
 /**
  * Объект Request доступен на сервере xHttp.exe при вызове кода веб-страницы.
  * Обозначает соответствующий HTTP-запрос к странице.
@@ -22,7 +28,7 @@ interface Request {
    * Возвращает объект, соответствующий пользователю авторизованного запроса
    * от клиентской части (SpXml.exe).
    */
-  AuthObject: XmlElem<unknown>;
+  AuthObject: XmlElem<IRequestAuthObject>;
 
   /**
    * Возвращает пароль пользователя авторизованного запроса (для basic-авторизации).
