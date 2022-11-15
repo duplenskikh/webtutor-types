@@ -1,4 +1,4 @@
-interface XmElem<T> {
+interface XmElem<T, ForeignElem = never> {
   /**
    * Возвращает массив названий атрибутов элемента.
    * Элемент должен быть динамическим, поскольку для статических элементов атрибуты не поддерживаются.
@@ -54,10 +54,10 @@ interface XmElem<T> {
   ForeignDispName: string;
 
   /**
-   * Возвращает соответтвующий элемент целевого массива (описанного в атрибуте FOREIGN-ARRAY).
+   * Возвращает соответствующий элемент целевого массива (описанного в атрибуте FOREIGN-ARRAY).
    * Если элемент не найден - возвращает ошибку.
    */
-  ForeignElem: any | void;
+  ForeignElem: ForeignElem | never;
 
   /**
    * Атрибут возвращает url объекта, на который ссылается атрибут ForeignElem из текущего элемента. Целевой массив должен быть каталогом.
@@ -203,7 +203,7 @@ interface XmElem<T> {
    * (описанного в атрибуте `FOREIGN-ARRAY`).
    * Если элемент не найден - возвращает `undefined`.
    */
-  OptForeignElem: XmlElem<any> | XmlMultiElem<any> | undefined;
+  OptForeignElem: ForeignElem | undefined;
 
   /**
    * В случае если элемент находится в документе, открытом в экране,
@@ -721,4 +721,4 @@ interface XmElem<T> {
   UpdateValues(): void;
 }
 
-type XmlElem<T> = XmElem<T> & T;
+type XmlElem<T, ForeignElem = never> = XmElem<T, ForeignElem> & T;
