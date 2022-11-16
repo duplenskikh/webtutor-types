@@ -836,7 +836,92 @@ declare namespace tools {
   function create_certificate_to_event(_even_id: any, _type_id: any, _doc_event: any): any;
   function create_certificate_to_person(_person_id: any, _type_id: any, eventId: number, personDocument: CollaboratorDocument, _type_doc: any, eventDocument: EventDocument): any;
   function get_main_forum_entry_by_forum_entry_id(iForumEntryParam: any, teForumEntryParam: any): any;
-  function assign_qualification_to_person(_person_id: any, eventId: number, _qualification_id: any, _assignment_date: any, _expiration_date: any, _qualification_test_array: any, _qualification_course_array: any, _send_mail: any, _in_process: any, bAssignTestsParam: any, bAssignCoursesParam: any, bUnconditionalAssignmentParam: any, _qualification_assignment_doc?: any, teQualification?: any, tePerson?: any, bGivePointParam?: any): any;
+
+  /**
+   * 
+   * @param personId id сотрудника
+   * @param eventId id мероприятия
+   * @param qualificationId id квалификации
+   * @param assignmentDate дата присвоения квалификации
+   * @param expirationDate дата истечения квалификации
+   * @param testLearnings
+   * ```
+   * массив законченных тестов сотрудника из параметра 1,
+   * которые будут записаны в карточку присвоения квалификации
+   * ```
+   * @param learnings
+   * ```
+   * массив законченных электронных курсов сотрудника из параметра 1,
+   * которые будут записаны в карточку присвоения квалификации
+   * ```
+   * @param sendMail
+   * ```
+   * числовое значение `0/1` – не отправлять/отправлять
+   * уведомление сотруднику о присвоении квалификации
+   * ```
+   * @param inProcess
+   * ```
+   * числовое значение `0/1` – не присвоена/в процессе
+   * (`in_process`, если не передан, то по умолчанию = 0)
+   * ```
+   * @param assignTests
+   * ```
+   * булевое значение назначать/не назначать тесты сотруднику
+   * присвоенной квалификации, если она в статусе `В процессе`
+   * ```
+   * @param assignCourses
+   * ```
+   * булевое значение назначать/не назначать курсы сотруднику
+   * присвоенной квалификации, если она в статусе `В процессе`
+   * ```
+   * @param unconditionalAssignment
+   * ```
+   * булевое значение, если `false` и в статусе `В процессе` и
+   * не заданы или равны `[]` параметры `6` и `7` –
+   * будет проверять прохождение всех испытаний квалификации
+   * ```
+   * @param qualificationAssignmentDocument
+   * ```
+   * документ присвоенной квалификации,
+   * меняется статус квалификации в зависимости от параметра `9`
+   * ```
+   * @param qualificationDocument
+   * ```
+   * {@link XmlTopElem} квалификации, если задан,
+   * то в коде не будет вызываться {@link OpenDoc}
+   * карточки квалификации, что ускорит работу функции
+   * ```
+   * @param collaboratorDocumentTopElem
+   * ```
+   * {@link XmlTopElem} сотрудника, передается в параметрах
+   * функции при назначении теста/курса сотруднику
+   * ```
+   * @param givePoint
+   * ```
+   * начислять баллы квалификации (вкладка `Бонус`), `true`,
+   * если присвоение происходит из контекстного меню
+   * интерфейса администратора
+   * ```
+   */
+  function assign_qualification_to_person(
+    personId: number,
+    eventId: number | undefined | null,
+    qualificationId: number,
+    assignmentDate: Date | undefined | null,
+    expirationDate: Date | undefined | null,
+    testLearnings: number[] | undefined | null,
+    learnings: number[] | undefined | null,
+    sendMail: 0 | 1,
+    inProcess: 0 | 1,
+    assignTests: boolean,
+    assignCourses: boolean,
+    unconditionalAssignment: boolean,
+    qualificationAssignmentDocument: QualificationAssignmentDocument | null,
+    qualificationDocument: QualificationDocument | undefined | null,
+    collaboratorDocumentTopElem: CollaboratorDocumentTopElem | null,
+    givePoint: boolean
+  ): null | QualificationAssignmentDocument;
+
   function assign_qualification_to_event(_even_id: any, _doc_event: any, _qualification_id: any, _date: any): any;
   function save_custom_ui_form(TEMPLATE: any): any;
   function get_custom_document_form(CATALOG_NAME: any): any;
