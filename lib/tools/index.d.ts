@@ -917,7 +917,7 @@ declare namespace tools {
     assignCourses: boolean,
     unconditionalAssignment: boolean,
     qualificationAssignmentDocument: QualificationAssignmentDocument | null,
-    qualificationDocument: QualificationDocument | undefined | null,
+    qualificationDocumentTopElem: QualificationDocumentTopElem | undefined | null,
     collaboratorDocumentTopElem: CollaboratorDocumentTopElem | null,
     givePoint: boolean
   ): null | QualificationAssignmentDocument;
