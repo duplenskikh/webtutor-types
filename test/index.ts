@@ -1,3 +1,3 @@
-const a = UrlFromDocID(1);
+const a = tools.open_doc<EducationPlanDocument>(1);
 
-RegisterCodeLibrary("asd", "ASd");
+a?.TopElem.programs[0].state_id.OptForeignElem.name.Value;
