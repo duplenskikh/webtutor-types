@@ -54,7 +54,7 @@ interface EducationPlanDocumentProgram extends CustomElemsBase {
   result_object_code: XmlElem<string>;
   result_object_start_date: XmlElem<Date>;
   result_object_finish_date: XmlElem<Date>;
-  state_id: XmlElem<number>;
+  state_id: XmlElem<number, typeof common.education_learning_states>;
   tutor_id: XmlElem<number>;
   weight: XmlElem<number>;
   readiness_percent: XmlElem<number>;
