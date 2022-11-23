@@ -217,3 +217,5 @@ interface Request {
    */
   SetWrongAuth(options: string): void;
 }
+
+declare const Request: Request;
