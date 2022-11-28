@@ -11,16 +11,16 @@ CustomElemsBase &
 AdminAccessBase & {
   code: XmlElem<string>;
   name(): unknown;
-  course_id: XmlElem<number>;
+  course_id: XmlElem<number, CourseDocumentTopElem>;
   course_name: XmlElem<string>;
   course_code: XmlElem<string>;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorDocumentTopElem>;
   person_current_state: XmlElem<string>;
-  event_id: XmlElem<number>;
+  event_id: XmlElem<number, EventDocumentTopElem>;
   event_name: XmlElem<string>;
   event_start_date: XmlElem<Date>;
-  group_id: XmlElem<number>;
-  education_plan_id: XmlElem<number>;
+  group_id: XmlElem<number, GroupDocumentTopElem>;
+  education_plan_id: XmlElem<number, EducationPlanDocumentTopElem>;
   parts: XmlMultiElem<LearningDocumentPart>;
   no_encoding_core_lesson: XmlElem<boolean>;
   time: XmlElem<number>;
@@ -34,8 +34,8 @@ AdminAccessBase & {
   max_score: XmlElem<number>;
   score: XmlElem<number>;
   text_result: XmlElem<string>;
-  state_id: XmlElem<number>;
-  active_learning_id: XmlElem<number>;
+  state_id: XmlElem<number, typeof common.learning_states>;
+  active_learning_id: XmlElem<number, ActiveLearningDocumentTopElem>;
   active_learning_deleted: XmlElem<boolean>;
   use_proctoring: XmlElem<boolean>;
   comment: XmlElem<string>;

@@ -235,17 +235,17 @@ declare namespace tools {
    */
   function activate_test_to_person(
     personId: number,
-    assessmentId?: number,
-    eventId?: number,
-    personDoc?: CollaboratorDocumentTopElem,
-    assessmentDocument?: AssessmentDocument,
-    eventDocument?: EventDocument,
-    duration?: number,
-    startLearningDate?: Date,
-    lastLearningDate?: Date,
-    groupId?: number,
-    educationPlanId?: number,
-    skipDismissed?: boolean
+    assessmentId: number | null,
+    eventId: number | null,
+    personDoc: CollaboratorDocumentTopElem | null | undefined,
+    assessmentDocument: AssessmentDocument | null,
+    eventDocument: EventDocument | null,
+    duration: number | null,
+    startLearningDate: Date | null,
+    lastLearningDate: Date | null,
+    groupId: number | null,
+    educationPlanId: number | null,
+    skipDismissed: boolean | null
   ): XmlElem<number> | null | ActiveTestLearningDocument;
 
   /**
