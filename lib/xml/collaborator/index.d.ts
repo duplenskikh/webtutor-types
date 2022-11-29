@@ -18,7 +18,7 @@ interface CollaboratorDocumentChangeLog extends CustomElemsBase {
 
 interface CollaboratorDocumentHistoryState {
   id: XmlElem<string>;
-  state_id: XmlElem<string>;
+  state_id: XmlElem<string, typeof lists.person_states>;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   object_id: XmlElem<number>;
