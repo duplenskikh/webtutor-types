@@ -574,79 +574,79 @@ declare namespace tools {
     /**
      * Id Сотрудника
      */
-    iPersonID: number
+    iPersonID: number;
     /**
      * Id курса
      */
-    iCourseID: number
+    iCourseID: number;
     /**
      * Код записи в каталоге незаконченных электронных курсов active_learnings (необязательный),
      */
-    sEID?: number
+    sEID?: string;
     /**
      * ID мероприятия (необязательный),
      */
-    iEventID?: number
+    iEventID?: number;
     /**
      * Карточка сотрудника (необязательный),
      */
-    teCollaborator?: number
+    teCollaborator?: CollaboratorDocumentTopElem;
     /**
      * Карточка курса (необязательный),
      */
-    teCourse?: number
+    teCourse?: number;
     /**
      * Длительность в днях (необязательный),
      */
-    iDuration?: number
+    iDuration?: number;
     /**
      * Дата последнего обучения (необязательный),
      */
-    dtLastLearningDate?: number
+    dtLastLearningDate?: Date;
     /**
      * Дата начала прохождения курса (необязательный),
      */
-    dtStartLearningDate?: number
+    dtStartLearningDate?: Date;
     /**
      * ID плана обучения (необязательный),
      */
-    iEducationPlanID?: number
+    iEducationPlanID?: number;
     /**
      * ID группы (необязательный),
      */
-    iGroupID?: number
+    iGroupID?: number;
     /**
      * Возможность комментировать (необязательный),
      */
-    bCommenting?: number
+    bCommenting?: boolean;
     /**
      * Ведение подробного лога (журнала) курса (необязательный)
      */
-    bLogging?: number
+    bLogging?: boolean;
     /**
      * Не назначать уволенным (необязательный),
      */
-    bSkipDismissed?: number
+    bSkipDismissed?: boolean;
     /**
      * Не назначать повторно успешно прошедшим курс (с учетом даты последнего обучения) (необязательный),
      */
-    bMissOnlySuccessLearning?: number
+    bMissOnlySuccessLearning?: boolean;
     /**
      * Карточка мероприятия (необязательный),
      */
-    teEvent?: number
+    teEvent?: EventDocumentTopElem;
     /**
      * Признак самоактивации (необязательный),
      */
-    bSelfEnrolled?: number
+    bSelfEnrolled?: boolean;
     /**
      * Комментарий назначившего (записывается в карточку незаконченного/законченного курса) (необязательный),
      */
-    sComment?: number
+    sComment?: string;
     /**
      * Использовать прокторинг (необязательный)
      */
-    bUseProctoring?: number
+    bUseProctoring?: boolean;
   }
 
 
@@ -791,7 +791,7 @@ declare namespace tools {
   function request_processing(iRequestID: any, docRequest: any): any;
   function update_object_versions(docVersion: any, iVersionID: any, docObject: any, iPersonID: any, tePerson: any, sComment: any): any;
   function update_adding_objects(docObject: any, iObjectID: any): any;
-  function request_rejecting(iRequestID: any, docRequest: any, iPersonID: any, dSaveParam: any): any;
+  function request_rejecting(objectId: number, objectDocument: RequestDocument, personId?: number, isSave?: boolean): any;
   function del_person_from_event(_person_id: any, eventId: number, _doc_event?: any, _flag_save?: any): any;
   function encrypt_content(iCourseIDParam: any): any;
   function create_license(iLicenseId: any): any;
