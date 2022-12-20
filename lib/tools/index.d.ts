@@ -594,7 +594,7 @@ declare namespace tools {
     /**
      * Карточка курса (необязательный),
      */
-    teCourse?: number;
+    teCourse: CourseDocumentTopElem;
     /**
      * Длительность в днях (необязательный),
      */

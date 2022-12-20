@@ -2307,3 +2307,11 @@ declare function ObjectType(entity: any): string;
 
 declare function StrToCharCodesArray(str: string): number[];
 declare function StrToCharArray(str: string): string[];
+
+/**
+ * Функция StrFromCharCode преобразует код символа (число) в строку, содержащую этот символ. 
+ * @param code код символа
+ */
+declare function StrFromCharCode(code: number): string;
+
+declare function SHA256(value: string): string;
