@@ -1,14 +1,14 @@
-interface Env {
+interface Env extends Object {
   /**
    * Текущий сайт пользователя с которым он взаимодействует
    */
-  curSite: SiteDocumentTopElem;
+  curSite?: SiteDocumentTopElem;
   /**
    * ID текущего пользователя
    */
-  curUserID: number;
+  curUserID?: number;
   /**
    * Объект пользователя
    */
-  curUser: CollaboratorDocumentTopElem;
+  curUser?: CollaboratorDocumentTopElem;
 }

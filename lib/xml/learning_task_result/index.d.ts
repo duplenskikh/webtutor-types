@@ -11,7 +11,7 @@ CustomElemsBase & {
   learning_task_id: XmlElem<number>;
   learning_task_name: XmlElem<string>;
   person_id: XmlElem<number>;
-  status_id: XmlElem<string>;
+  status_id: XmlElem<string, typeof common.learning_task_status_types>;
   answer: XmlElem<string>;
   expert_id: XmlElem<number>;
   event_id: XmlElem<number>;

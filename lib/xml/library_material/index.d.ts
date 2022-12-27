@@ -37,7 +37,7 @@ CustomElemsBase & {
   library_material_formats: XmlMultiElem<LibraryMaterialDocumentLibraryMaterialFormat>;
   year: XmlElem<number>;
   isbn: XmlElem<string>;
-  state_id: XmlElem<number>;
+  state_id: XmlElem<number, typeof common.learning_states>;
   file_name: XmlElem<number>;
   online_video_prepared: XmlElem<boolean>;
   use_old_format: XmlElem<boolean>;

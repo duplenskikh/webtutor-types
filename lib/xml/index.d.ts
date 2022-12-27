@@ -778,20 +778,6 @@ interface CompoundProgramProgram {
   comment: XmlElem<string>;
 }
 
-interface LectorsBaseLector {
-  lector_id: XmlElem<number>;
-  hours: XmlElem<number>;
-  weekend_hours: XmlElem<number>;
-  webinar_url: XmlElem<string>;
-  participation_id: XmlElem<string>;
-  comment: XmlElem<string>;
-}
-
-interface LectorsBase {
-  lectors: XmlMultiElem<LectorsBaseLector>;
-}
-
-
 interface BudgetPeriodDay {
   date: XmlElem<Date>;
   type: XmlElem<string>;
