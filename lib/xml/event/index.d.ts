@@ -102,7 +102,7 @@ interface EventDocumentPhaseCollaborator {
 }
 interface EventDocumentPhase {
   id: XmlElem<string>;
-  lector_id: XmlElem<number>;
+  lector_id: XmlElem<number, LectorDocumentTopElem>;
   object_resource_id: XmlElem<number>;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
@@ -280,7 +280,7 @@ EventSettingsBase & {
   change_even_preparation_list(): unknown;
   change_lector_list(): unknown;
   obtain_collaborator(): unknown;
-  add_group(): unknown;
+  add_group(groupId: number): number;
   get_workflow_id(): unknown;
   create_certificate(): unknown;
   start_action(): unknown;

@@ -49,7 +49,7 @@ interface EducationPlanDocumentProgram extends CustomElemsBase {
   finish_date: XmlElem<Date>;
   plan_date: XmlElem<Date>;
   result_type: XmlElem<string>;
-  result_object_id: XmlElem<number>;
+  result_object_id: XmlElem<number, TestLearningDocumentTopElem | LearningDocumentTopElem>;
   result_object_name: XmlElem<string>;
   result_object_code: XmlElem<string>;
   result_object_start_date: XmlElem<Date>;
