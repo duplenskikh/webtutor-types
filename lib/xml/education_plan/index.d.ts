@@ -79,7 +79,7 @@ CustomElemsBase & {
   group_id: XmlElem<number>;
   compound_program_id: XmlElem<number>;
   type: XmlElem<string>;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorDocumentTopElem>;
   object_id: XmlElem<number>;
   object_name: XmlElem<string>;
   tutor_id: XmlElem<number>;
@@ -91,7 +91,7 @@ CustomElemsBase & {
   mark: XmlElem<number>;
   event_id: XmlElem<number>;
   readiness_percent: XmlElem<number>;
-  state_id: XmlElem<number>;
+  state_id: XmlElem<number, typeof common.education_learning_states>;
   last_state_id: XmlElem<number>;
   programs: XmlMultiElem<EducationPlanDocumentProgram>;
   calculate_state_id(): unknown;
