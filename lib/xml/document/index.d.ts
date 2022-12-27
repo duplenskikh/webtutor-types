@@ -22,6 +22,7 @@ AdminAccessBase & {
   parent_document_id: XmlElem<number>;
   site_id: XmlElem<number>;
   catalog_list_desc(): string;
+  desc: XmlElem<string>;
   text_area: XmlElem<string>;
   attributes: XmlElem<DocumentDocumentAttributes>;
   web_template_type: XmlElem<string>;
