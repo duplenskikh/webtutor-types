@@ -1574,14 +1574,14 @@ interface KnowledgePartsKpBase extends KnowledgePartsFieldsBase {
 }
 
 interface KnowledgePartsBase extends KnowledgePartsFieldsBase {
+  tags: XmlMultiElem<KnowledgePartsBaseTag>;
+  experts: XmlMultiElem<KnowledgePartsBaseExpert>;
   acquaint_time: XmlElem<number>;
   previous_version_object_id: XmlElem<number>;
-  status_in_knowledge_map: XmlElem<string>;
+  status_in_knowledge_map: XmlElem<string, typeof common.status_in_knowledge_map_types>;
   kp_start_date: XmlElem<Date>;
   kp_end_date: XmlElem<Date>;
   view_knowledge_classifier_id: XmlElem<number>;
-  tags: XmlMultiElem<KnowledgePartsBaseTag>;
-  experts: XmlMultiElem<KnowledgePartsBaseExpert>;
 }
 
 interface KnowledgePartsBaseOld {

@@ -189,8 +189,8 @@ interface ListsCurrencyType {
 }
 
 interface ListsEventForm {
-  id: string;
-  name: string;
+  id: XmlElem<string>;
+  name: XmlElem<string>;
 }
 
 interface ListsOrganizationalForm {
@@ -261,8 +261,6 @@ interface LibraryMaterialPathSection {
   name: XmlElem<string>;
   parent_id: XmlElem<number>;
 }
-
-
 
 interface LearningTaskExpert extends PersonFillingBase {
   id: XmlElem<string>;
@@ -382,17 +380,6 @@ interface KnowledgePartsBaseKnowledgePart {
 
 interface KnowledgePartsFieldsBase {
   knowledge_parts: XmlMultiElem<KnowledgePartsBaseKnowledgePart>;
-}
-
-interface KnowledgePartsBase extends KnowledgePartsFieldsBase {
-  tags: XmlMultiElem<KnowledgePartsBaseTag>;
-  experts: XmlMultiElem<KnowledgePartsBaseExpert>;
-  acquaint_time: XmlElem<number>;
-  previous_version_object_id: XmlElem<number>;
-  status_in_knowledge_map: XmlElem<string>;
-  kp_start_date: XmlElem<Date>;
-  kp_end_date: XmlElem<Date>;
-  view_knowledge_classifier_id: XmlElem<number>;
 }
 
 interface KnowledgePartsBaseOld {
