@@ -1619,12 +1619,19 @@ declare function RegisterSubForm(): string;
 
 
 /**
- * Проверяет, является ли значение undefined, null либо пустой строкой. Позволяет писать универсальный код, не зная точный тип данных переданного аргумента.
- * @param {any} arg - любое значение.
+ * Проверяет, является ли значение `undefined`, `null` либо пустой строкой.
+ * Позволяет писать универсальный код, не зная точный тип данных переданного аргумента.
+ * @param {any} arg Любое значение.
  * @returns {boolean}
- * Пример: IsEmptyValue( 123 ) IsEmptyValue( '123' ) IsEmptyValue( null )
+ * @example
+ * ```
+ * IsEmptyValue(123) === false
+ * IsEmptyValue("123") === false
+ * IsEmptyValue(null) === true
+ * IsEmptyValue("") === true
+ * ```
  */
-declare function IsEmptyValue(arg: any): boolean;
+declare function IsEmptyValue(arg: unknown): arg is undefined | null | "";
 
 /**
  * Преобразует значение аргумента к целому числу.
