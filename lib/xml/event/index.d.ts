@@ -102,7 +102,7 @@ interface EventDocumentPhaseCollaborator {
 }
 interface EventDocumentPhase {
   id: XmlElem<string>;
-  lector_id: XmlElem<number, LectorDocumentTopElem>;
+  lector_id: XmlElem<number, LectorCatalogDocumentTopElem>;
   object_resource_id: XmlElem<number>;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;

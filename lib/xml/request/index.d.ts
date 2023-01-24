@@ -24,14 +24,14 @@ AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name(): unknown;
-  request_type_id: XmlElem<number, RequestTypeDocumentTopElem>;
+  request_type_id: XmlElem<number, RequestTypeCatalogDocumentTopElem>;
   budget_period_id: XmlElem<number>;
   type: XmlElem<string>;
   status_id: XmlElem<string, typeof common.request_status_types[0]>;
   create_date: XmlElem<Date>;
   close_date: XmlElem<Date>;
   plan_close_date: XmlElem<Date>;
-  person_id: XmlElem<number, CollaboratorDocumentTopElem>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   object_id: XmlElem<number>;
   object_name: XmlElem<string>;
   object_code: XmlElem<string>;
