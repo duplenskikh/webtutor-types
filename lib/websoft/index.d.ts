@@ -262,4 +262,23 @@ declare namespace Websoft {
       }
     }
   }
+
+  namespace RegExp {
+    interface IRegExpMatchesItem {
+      SubMatches(index: number): string;
+    }
+
+    interface RegExpMatches {
+      Count: number;
+      Item(index: number): IRegExpMatchesItem;
+    }
+
+    class RegExp {
+      Pattern: string;
+      Global: boolean;
+      IgnoreCase: boolean;
+      MultiLine: boolean;
+      Execute(string: string): RegExpMatches;
+    }
+  }
 }

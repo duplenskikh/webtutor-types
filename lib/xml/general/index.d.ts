@@ -545,7 +545,7 @@ interface FileActionBase {
 }
 
 interface FileListBaseFile {
-  file_id: XmlElem<number, ResourceDocumentTopElem>;
+  file_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
 }
 
 interface FileListBase {
@@ -628,7 +628,7 @@ interface ProgramMethodBase extends CostCurrencyTypeBase {
 }
 
 interface LectorsBaseLector {
-  lector_id: XmlElem<number, LectorDocumentTopElem>;
+  lector_id: XmlElem<number, LectorCatalogDocumentTopElem>;
   hours: XmlElem<number>;
   weekend_hours: XmlElem<number>;
   webinar_url: XmlElem<string>;

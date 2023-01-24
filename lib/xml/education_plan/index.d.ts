@@ -49,7 +49,7 @@ interface EducationPlanDocumentProgram extends CustomElemsBase {
   finish_date: XmlElem<Date>;
   plan_date: XmlElem<Date>;
   result_type: XmlElem<string>;
-  result_object_id: XmlElem<number, TestLearningDocumentTopElem | LearningDocumentTopElem | LearningTaskResultDocumentTopElem>;
+  result_object_id: XmlElem<number, TestLearningCatalogDocumentTopElem | LearningCatalogDocumentTopElem | LearningTaskResultCatalogDocumentTopElem>;
   result_object_name: XmlElem<string>;
   result_object_code: XmlElem<string>;
   result_object_start_date: XmlElem<Date>;
@@ -76,10 +76,10 @@ AdminAccessBase &
 FileListBase &
 CustomElemsBase & {
   Doc: EducationPlanDocument;
-  group_id: XmlElem<number, GroupDocumentTopElem>;
+  group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
   compound_program_id: XmlElem<number>;
   type: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorDocumentTopElem>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   object_id: XmlElem<number>;
   object_name: XmlElem<string>;
   tutor_id: XmlElem<number>;

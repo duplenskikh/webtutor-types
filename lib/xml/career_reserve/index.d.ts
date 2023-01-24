@@ -23,7 +23,7 @@ interface CareerReserveDocumentTask extends CustomElemsBase,
   plan_date: XmlElem<Date>;
   fact_date: XmlElem<Date>;
   start_edit_date: XmlElem<Date>;
-  typical_development_program_id: XmlElem<number, TypicalDevelopmentProgramDocumentTopElem>;
+  typical_development_program_id: XmlElem<number, TypicalDevelopmentProgramCatalogDocumentTopElem>;
   tutor_id: XmlElem<number>;
   competence_id: XmlElem<number>;
   desc: XmlElem<string>;

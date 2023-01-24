@@ -1,10 +1,10 @@
 interface CollaboratorDocumentChangeLog extends CustomElemsBase {
   id: XmlElem<string>;
-  position_id: XmlElem<number, PositionDocumentTopElem>;
+  position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
   position_name: XmlElem<string>;
-  position_parent_id: XmlElem<number, SubdivisionDocumentTopElem>;
+  position_parent_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
   position_parent_name: XmlElem<string>;
-  org_id: XmlElem<number, OrgDocumentTopElem>;
+  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
   org_name: XmlElem<string>;
   date: XmlElem<Date>;
   comment: XmlElem<string>;
@@ -81,11 +81,11 @@ PersonObjectLinksBase & {
   code: XmlElem<string>;
   eid: XmlElem<string>;
   name(): string;
-  position_id: XmlElem<number, PositionDocumentTopElem>;
+  position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
   position_name: XmlElem<string>;
-  position_parent_id: XmlElem<number, SubdivisionDocumentTopElem>;
+  position_parent_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
   position_parent_name: XmlElem<string>;
-  org_id: XmlElem<number, OrgDocumentTopElem>;
+  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
   org_name: XmlElem<string>;
   change_password: XmlElem<boolean>;
   is_candidate: XmlElem<boolean>;
@@ -99,10 +99,10 @@ PersonObjectLinksBase & {
   in_request_black_list: XmlElem<boolean>;
   request_black_list_data: XmlElem<Date>;
   request_black_list_comment: XmlElem<string>;
-  place_id: XmlElem<number, PlaceDocumentTopElem>;
-  region_id: XmlElem<number, RegionDocumentTopElem>;
+  place_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
+  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
   access: XmlElem<AccessBase>;
-  cost_center_id: XmlElem<number, CostCenterDocumentTopElem>;
+  cost_center_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
   lng_id: XmlElem<string>;
   location_id: XmlElem<string>;
   pict_url: XmlElem<string>;
@@ -121,8 +121,8 @@ PersonObjectLinksBase & {
   disp_resume: XmlElem<boolean>;
   allow_personal_chat_request: XmlElem<boolean>;
   personal_chat_confirmation_required: XmlElem<boolean>;
-  development_potential_id: XmlElem<number, DevelopmentPotentialDocumentTopElem>;
-  efficiency_estimation_id: XmlElem<number, EfficiencyEstimationDocumentTopElem>;
+  development_potential_id: XmlElem<number, DevelopmentPotentialCatalogDocumentTopElem>;
+  efficiency_estimation_id: XmlElem<number, EfficiencyEstimationCatalogDocumentTopElem>;
   web_enter_date: XmlElem<Date>;
   category_id: XmlMultiElem<string>;
   change_logs: XmlMultiElem<CollaboratorDocumentChangeLog>;
@@ -132,8 +132,8 @@ PersonObjectLinksBase & {
   doc_info: XmlElem<DocInfoBase>;
   last_import_date: XmlElem<Date>;
   custom_params: XmlMultiElem<CollaboratorDocumentCustomParam>;
-  level_id: XmlElem<number, LevelDocumentTopElem>;
-  grade_id: XmlElem<number, GradeDocumentTopElem>;
+  level_id: XmlElem<number, LevelCatalogDocumentTopElem>;
+  grade_id: XmlElem<number, GradeCatalogDocumentTopElem>;
   comp_ben: XmlElem<CollaboratorDocumentCompBen>;
   gdpr: XmlElem<boolean>;
   last_data: XmlElem<CollaboratorDocumentLastData>;
