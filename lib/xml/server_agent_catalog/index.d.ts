@@ -1,5 +1,5 @@
 type ServerAgentCatalogDocumentTopElem = XmlTopElem & { Doc: ServerAgentCatalogDocument } & 
-MsPeriodityBase & {
+MSPeriodityBase & {
   id: XmlElem<number>;
   name: XmlElem<string>;
   code: XmlElem<string>;
