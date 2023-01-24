@@ -11,7 +11,8 @@
     "noLib": true,
     "typeRoots": [
       "lib"
-    ]
+    ],
+    "outDir": "build"
   },
   "include": [
     "lib",
