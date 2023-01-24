@@ -8,7 +8,7 @@
   },
   "scripts": {
     "lint": "eslint . --ext .ts",
-    "tsc": "tsc"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
