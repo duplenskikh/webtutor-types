@@ -1,7 +1,7 @@
 name: actions
 on: [push]
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
@@ -19,4 +19,4 @@ jobs:
         run: npm run lint
 
       - name: 'Build'
-        run: npm run tsc
+        run: npm run build
