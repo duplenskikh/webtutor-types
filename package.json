@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",

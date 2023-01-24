@@ -12,5 +12,9 @@
     "typeRoots": [
       "lib"
     ]
-  }
+  },
+  "include": [
+    "lib",
+    "lib/xml"
+  ]
 }
