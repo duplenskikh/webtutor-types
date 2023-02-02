@@ -27,7 +27,20 @@ declare namespace Screen {
   function FindOptItemByType(): void;
   function FlashWindow(): void;
   function ModalDlg(modalDialog: XmlDocument): void;
-  function MsgBox(...args: any): void;
+
+  /**
+   * Выдает стандартный диалог Windows с сообщением относительно текущего экрана.
+   * @param message текст сообщения
+   * @param subject текст заголовка
+   * @param type тип диалогового окна
+   * @param titles наименование кнопок диалогового окна
+   * @example
+   * ```
+   * Screen.MsgBox(UiText.messages.operation_will_be_cancelled, UiText.messages.warning_msg_title, "question", "yes,no");
+   * Screen.MsgBox(UiText.messages.changes_require_server_restart, UiText.messages.info_msg_title, "info");
+   * ```
+   */
+  function MsgBox(message: string, subject: string, type: string, titles: string): boolean;
   function Navigate(): void;
   function Print(): void;
   function RemoveLinkedDocByUrl(): void;

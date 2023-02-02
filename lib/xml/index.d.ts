@@ -1282,3 +1282,5 @@ declare var LdsIsClient: boolean;
 declare var LdsIsServer: boolean;
 
 declare var oData: any;
+
+declare const LdsCurUserID: number;

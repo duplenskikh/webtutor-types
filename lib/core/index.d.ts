@@ -1646,7 +1646,7 @@ declare function Int(arg: any): number;
  * @param {any} arg - аргумент (Any).
  * @returns {any}
  */
-declare function RValue(arg: any): any;
+declare function RValue<T>(arg: XmlElem<T> | T): T;
 
 /**
  * Возвращает строку, содержащую аргумент в шестнадцатиричном виде (64 бита).
