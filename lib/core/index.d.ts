@@ -1460,11 +1460,15 @@ declare function DeleteDoc(url: string, permanent?: boolean): undefined;
  * Возвращает url объектного документа по имени базы, типа объекта и ID документа.
  * @param {string} dbName - наименование базы данных (String)
  * @param {string} objectType - наименование типа объекта (String)
- * @param {number} objectID - ID документа (Integer или String)
+ * @param {string | number} objectID - ID документа (Integer или String)
  * @returns string
- * ObjectDocUrl( 'data', 'person', 1238461 ) вернет 'x-db-obj://data/person/0x000000000012E5BD.xml' ObjectDocUrl( 'data', 'event_type', 'interview' ) вернет 'x-db-obj://data/event_type/interview.xml'
+ * @example
+ * ```
+ * ObjectDocUrl("data", "person", 1238461"); // "x-db-obj://data/person/0x000000000012E5BD.xml"
+ * ObjectDocUrl("data", "event_type", "interview"); // "x-db-obj://data/event_type/interview.xml"
+ * ```
  */
-declare function ObjectDocUrl(dbName: string, objectType: string, objectID: number): string;
+declare function ObjectDocUrl(dbName: string, objectType: string, objectID: string | number): string;
 
 /**
  * Перемещает XML-документ из одного url в другой url.
