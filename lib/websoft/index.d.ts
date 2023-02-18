@@ -240,7 +240,7 @@ declare namespace Websoft {
         /**
          * Создает новый лист
          */
-        AddWorksheet(): number;
+        AddWorksheet(): Worksheet;
 
         /**
          * Закрывает документ
@@ -462,7 +462,65 @@ declare namespace Websoft {
 
       class Rows {}
 
-      class Style {}
+      class Style {
+        /**
+         * Границы ячейки.
+         */
+        Borders: Borders;
+        /**
+         * Свой шаблон формата данных ячейки.
+         */
+        Custom: string;
+        /**
+         * Цвет шрифта.
+         */
+        FontColor: string;
+        /**
+         * Название шрифта.
+         */
+        FontName: string;
+        /**
+         * Размер шрифта.
+         */
+        FontSize: number;
+        /**
+         * Цвет заливки.
+         */
+        ForegroundColor: string;
+        /**
+         * Выравнивание по горизонтали. Принимает значения "Left", "Right", "Center", "Justify".
+         */
+        HorizontalAlignment: string;
+        /**
+         * Ширность шрифта.
+         */
+        IsBold: boolean;
+        /**
+         * Курсив.
+         */
+        IsItalic: boolean;
+        /**
+         * Автоперенос текста.
+         */
+        IsTextWrapped: boolean;
+        /**
+         * Номер стиля и формата в таблице. Описание можно посмотреть тут: http://www.aspose.com/docs/display/cellsnet/Setting+Display+Formats+of+Numbers+and+Dates
+         */
+        Number: number;
+        /**
+         * Выравнивание по вертикали. Принимает значения "Top", "Bottom", "Center".
+         */
+
+        /**
+         * Используется для получения последней произошедшей ошибки
+         */
+        GetError(): string;
+
+        /**
+         * Используется для получения версии компонента
+         */
+        GetVersion(): string;
+      }
 
       /**
        * Лист книги Excel
