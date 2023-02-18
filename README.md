@@ -1,6 +1,9 @@
 <h1 align="center">WTT</h1>
 <div align="center">
   Typescript types for WebSoft HCM backend language.
+  
+  [![actions](https://github.com/umbrik/webtutor-types/actions/workflows/actions.yml/badge.svg)](https://github.com/umbrik/webtutor-types/actions/workflows/actions.yml)
+  ![npm](https://img.shields.io/npm/dy/@umbrik/webtutor-types)
 </div>
 
 ## 📦 Install
