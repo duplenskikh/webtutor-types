@@ -2,7 +2,6 @@
   "name": "@umbrik/webtutor-types",
   "version": "7.47.0",
   "description": "## Подключение к проекту",
-  "main": "index.js",
   "directories": {
     "lib": "lib"
   },
