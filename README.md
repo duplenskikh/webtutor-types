@@ -1,9 +1,20 @@
-# Репозиторий с типами для WebTutor
+<h1 align="center">WTT</h1>
+<div align="center">
+  Typescript types for WebSoft HCM backend language.
+</div>
 
-## Подключение к проекту
+## 📦 Install
 
-1. `npm i @umbrik/webtutor-types --save-dev`
-2. `tsconfig.json` должен быть следующего содержания:
+```bash
+npm i @umbrik/webtutor-types -D
+```
+
+```bash
+yarn add @umbrik/webtutor-types
+```
+
+## 🔨 Setup
+`tsconfig.json` example:
 
 ```json
 {
@@ -26,8 +37,49 @@
 }
 ```
 
-## Исправления
+## ⌨️ Usage
 
-1. `git clone`
-2. Fix
-3. Pull request
+```ts
+type FuncManagerQueryResult = {
+  person_id: XmlElem<number>;
+}
+
+function getManagersByType(bossTypeCode: string = "main") {
+  const sql = `sql:
+    SELECT
+      [t0].[person_id]
+    FROM [func_managers] AS [t0]
+      INNER JOIN [boss_types] AS [t1] ON [t1].[id] = [t0].[boss_type_id]
+    WHERE [t1].[code] = ${SqlLiteral(bossTypeCode)}
+  `;
+
+  const query = ArraySelectAll(tools.xquery<FuncManagerQueryResult>(sql));
+
+  const result = [];
+  let collaboratorDocument;
+  let personId;
+
+  for (let i = 0; i < query.length; i++) {
+    personId = query[i].person_id.Value;
+    collaboratorDocument = tools.open_doc<CollaboratorDocument>(personId);
+
+    if (collaboratorDocument === undefined) {
+      alert(`Can't open collaborator document by id ${personId}`);
+      continue;
+    }
+
+    result.push({
+      personId,
+      fullname: collaboratorDocument.TopElem.fullname()
+    });
+  }
+  
+  return result;
+}
+```
+
+## 🤝 Contributing
+
+1. Clone
+2. Code
+3. PR
