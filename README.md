@@ -10,7 +10,7 @@ npm i @umbrik/webtutor-types -D
 ```
 
 ```bash
-yarn add @umbrik/webtutor-types
+yarn add @umbrik/webtutor-types -D
 ```
 
 ## 🔨 Setup
@@ -18,7 +18,9 @@ yarn add @umbrik/webtutor-types
 
 ```json
 {
+  ...
   "compilerOptions": {
+    ...
     "target": "es5",
     "module": "es6",
     "esModuleInterop": true,
@@ -33,7 +35,9 @@ yarn add @umbrik/webtutor-types
       "node_modules/@umbrik/webtutor-types/lib",
       "node_modules/@umbrik/webtutor-types/lib/xml"
     ]
+    ...
   }
+  ...
 }
 ```
 
