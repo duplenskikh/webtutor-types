@@ -1559,7 +1559,8 @@ declare function UpdateUiDoc(): undefined;
 declare function DropFormsCache(urlPattern: string): undefined;
 
 /**
- * Создает новый элемент формы. Созданный элемент формы не имеет родительского элемента. Функция используется в редких случаях, например для динамической генерации форм данных.
+ * Создает новый элемент формы. Созданный элемент формы не имеет родительского элемента.
+ * Функция используется в редких случаях, например для динамической генерации форм данных.
  * @param {string} name - имя поля XMD-формы (String)
  * @param {string} type - тип данных XMD-формы (String)
  * @returns {Object}
@@ -1567,7 +1568,10 @@ declare function DropFormsCache(urlPattern: string): undefined;
 declare function CreateFormElem(name: string, type: string): any;
 
 /**
- * Пытается найти форму в кэше загруженных форм по заданному url. Если такая форма была загружена в кэш, возвращает объект ссылка на форму, если нет - возвращает undefined. Аргумент formUrl - url формы (String)
+ * Пытается найти форму в кэше загруженных форм по заданному url.
+ * Если такая форма была загружена в кэш, возвращает объект ссылка на форму,
+ * если нет - возвращает undefined.
+ * @param {string} formUrl - url формы
  * @returns {Object}
  */
 declare function GetOptCachedForm(): any;
@@ -1579,14 +1583,18 @@ declare function DeleteAllFormMappings(): undefined;
 
 /**
  * Регистрирует отображение (mapping) одной формы в другую. Mapping - это таблица, в которой содрежит соответствия между старыми и новыми формами документов. При попытке открыть документ по старой форме, будет автоматически вызвана новая форма, на которую указывает элемент таблицы. Функция используется  вредких случаях, обычно при конвертации данных из предыддыщих версий программы.
- * @param {string} formUrl - url старой формы (String)
- * @param {string} newForm - url новой формы (String)
+ * @param {string} formUrl - url старой формы
+ * @param {string} newForm - url новой формы
  * @returns undefined
  */
 declare function RegisterFormMapping(formUrl: string, newForm: string): undefined;
 
 /**
- * Находит зарегистрированный AutoDoc (т.е пару url документа - url формы, смотри так же функцию RegisterAutoDoc ) в списке зарегистрированных автоматически документов, и возвращает ссылку на форму. Если соответствующая пара в списке отсутствует, возвращает undefined. Аргумент docUrl - url документа (string)
+ * Находит зарегистрированный AutoDoc (т.е пару url документа - url формы,
+ * смотри так же функцию RegisterAutoDoc) в списке зарегистрированных автоматически документов,
+ * и возвращает ссылку на форму.
+ * Если соответствующая пара в списке отсутствует, возвращает undefined.
+ * @param {string} docUrl - url документа
  * @returns {Object}
  */
 declare function GetOptAutoDocForm(): any;
@@ -1599,16 +1607,16 @@ declare function FetchForm(formUrl: string): undefined;
 
 /**
  * Регистрирует XML-форму, описанную в строке. Используется для программной генерации форм "на лету".
- * @param {string} formUrl - url, по которому будет зарегистрирована форма (String)
- * @param {string} formData - строка с описанием формы (String)
+ * @param {string} formUrl - url, по которому будет зарегистрирована форма
+ * @param {string} formData - строка с описанием формы
  * @returns {Object}
  */
 declare function RegisterFormFromStr(formUrl: string, formData: string): any;
 
 /**
  * Регистрирует пару (url  документа) - (url формы) для автоматически создаваемого документа. Если где-то из программы будет обращение к этому документу с попыткой его открыть, а документ еще не создан, то он будет создан по форме и открыт. Если документ на момент обращения уже будет существовать, то он будет открыт по той же форме. Используется для регистрации в программе каких-либо файлов, содержащих настройки, которых изначально нет, но при первой попытки обращения к ним она фактически созадются в базе данных.
- * @param {string} docUlr - url документа (String)
- * @param {string} formUrl - url формы (String)
+ * @param {string} docUlr - url документа
+ * @param {string} formUrl - url формы
  * @returns undefined
  * RegisterAutoDoc( 'x-local://static/global-settings.xml', 'x-app://rcr/rcr_global_settings.xmd' )
  */
