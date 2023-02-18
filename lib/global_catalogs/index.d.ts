@@ -1686,7 +1686,7 @@ export const tutors: any;
 /**
  * Типовая программа развития
  */
-export const typical_development_programs: any;
+export const typical_development_programs: TypicalDevelopmentProgramCatalogDocumentTopElem[];
 
 /**
  * Данные UI
