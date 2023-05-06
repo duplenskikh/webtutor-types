@@ -224,9 +224,41 @@ declare namespace Websoft {
         UnMerge(firstRow: number, firstColumn: number, totalRows: number, totalColumns: number): 1 | 0;
       }
 
-      class Column {}
+      class Column {
+        /**
+         * Ширина колонки.
+         */
+        Width: number;
 
-      class Columns {}
+        /**
+         * Используется для получения последней произошедшей ошибки
+         */
+        GetError(): string;
+
+        /**
+         * Используется для получения версии компонента
+         */
+        GetVersion(): string;
+      }
+
+      class Columns {
+        /**
+         * Получает {@link Columns | колонку} по указанному номеру.
+         * @param index Номер колонки
+         * 
+         */
+        GetColumn(index: number): Column;
+
+        /**
+         * Используется для получения последней произошедшей ошибки
+         */
+        GetError(): string;
+
+        /**
+         * Используется для получения версии компонента
+         */
+        GetVersion(): string;
+      }
 
       /**
        * Класс для работы с документом Microsoft Excel
