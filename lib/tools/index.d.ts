@@ -137,71 +137,73 @@ declare namespace tools {
     bActivateOnlyAssist?: boolean
   ): number;
 
-  interface IActivateTestToPersonParams {
+  type ActivateTestToPersonParams = {
     /**
      * ID collaborator
      */
-    personId: number;
+    iPersonID: number;
     /**
      * ID test
      */
-    assessmentId: number;
+    iAssessmentID: number;
     /**
      * ID мероприятия
      */
-    eventId?: number;
+    iEventID?: number;
     /**
      * Дата последнего обучения
      */
-    lastLearningDate?: number;
+    dtLastLearningDate?: number;
     /**
      * Не назначать уволенным
      */
-    skipDismissed?: number;
+    bSkipDismissed?: number;
     /**
      * Карточка сотрудника
      */
-    collaboratorDocumentTopElem?: CollaboratorDocumentTopElem;
+    teCollaborator?: CollaboratorDocumentTopElem;
     /**
      * Не назначать повторно успешно прошедшим тестирование (с учетом даты последнего обучения)
      */
-    missOnlySuccessLearning?: number;
+    bMissOnlySuccessLearning?: number;
     /**
      * Карточка мероприятия
      */
-    eventDocumentTopElem?: EventDocumentTopElem;
+    teEvent?: EventDocumentTopElem;
     /**
      * Карточка теста
      */
-    assessmentDocumentTopElem?: number;
+    teAssessment?: AssessmentDocumentTopElem;
     /**
      * Длительность в днях
      */
-    duration?: number;
+    iDuration?: number;
     /**
      * Дата начала тестирования
      */
-    startLearningDate?: Date;
+    dtStartLearningDate?: Date;
     /**
      * ID плана обучения
      */
-    educationPlanId?: number;
+    iEducationPlanID?: number;
     /**
      * Id группы
      */
-    groupId?: number;
+    iGroupID?: number;
     /**
      * Признак самоактивации
      */
-    selfEnrolled?: boolean;
+    bSelfEnrolled?: boolean;
     /**
      * Комментарий назначившего (записывается в карточку незаконченного/законченного теста)
      */
-    comment?: string;
+    sComment?: string;
     /**
      * Использовать прокторинг
      */
-    useProctoring: boolean;
+    bUseProctoring?: boolean;
+
+    iProctorPreferID?: number;
   }
 
   /**
@@ -209,7 +211,7 @@ declare namespace tools {
    * @param params Объект JavaScript (Структура параметров)
    */
   function activate_test_to_person(
-    params: IActivateTestToPersonParams
+    params: ActivateTestToPersonParams
   ): XmlElem<number> | null | ActiveTestLearningDocument;
 
   /**
@@ -236,16 +238,16 @@ declare namespace tools {
   function activate_test_to_person(
     personId: number,
     assessmentId: number | null,
-    eventId: number | null,
-    personDoc: CollaboratorDocumentTopElem | null | undefined,
-    assessmentDocument: AssessmentDocument | null,
-    eventDocument: EventDocument | null,
-    duration: number | null,
-    startLearningDate: Date | null,
-    lastLearningDate: Date | null,
-    groupId: number | null,
-    educationPlanId: number | null,
-    skipDismissed: boolean | null
+    eventId?: number,
+    personDoc?: CollaboratorDocumentTopElem,
+    assessmentDocument?: AssessmentDocumentTopElem,
+    eventDocument?: never,
+    duration?: number,
+    startLearningDate?: Date,
+    lastLearningDate?: Date,
+    groupId?: number,
+    educationPlanId?: number,
+    skipDismissed?: boolean
   ): XmlElem<number> | null | ActiveTestLearningDocument;
 
   /**
