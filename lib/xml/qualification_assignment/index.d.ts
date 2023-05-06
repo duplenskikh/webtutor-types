@@ -1,9 +1,9 @@
 interface QualificationAssignmentDocumentLearning {
-  learning_id: XmlElem<number>;
+  learning_id: XmlElem<number, LearningCatalogDocumentTopElem>;
 }
 
 interface QualificationAssignmentDocumentTestLearning {
-  test_learning_id: XmlElem<number>;
+  test_learning_id: XmlElem<number, TestLearningCatalogDocumentTopElem>;
 }
 
 interface QualificationAssignmentDocumentEducationMethod {
