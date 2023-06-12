@@ -53,7 +53,7 @@ declare function AppModuleUsed(moduleName: string): boolean;
  * Позволяет генерировать исключение, на которое не будет выдаваться ссобщение об ошибке.
  * @returns {undefined}
  */
-declare function Cancel(): undefined;
+declare function Cancel(): never;
 
 /**
  * Проверяет не должен ли текущий поток завершиться (обычно после прерывания его пользователем).
