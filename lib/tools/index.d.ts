@@ -241,13 +241,13 @@ declare namespace tools {
     eventId: number | string | null | undefined,
     personDoc: CollaboratorDocumentTopElem | null | undefined | '',
     assessmentDocument: AssessmentDocumentTopElem | null | '',
-    eventDocument: undefined | null,
-    duration: number | string | null | undefined,
-    startLearningDate: Date | string,
-    lastLearningDate: Date | string | undefined,
-    groupId: number | string | null | undefined,
-    educationPlanId: number | string | null | undefined,
-    skipDismissed: boolean | undefined | null
+    eventDocument?: null,
+    duration?: number | string | null,
+    startLearningDate?: Date | string,
+    lastLearningDate?: Date | string,
+    groupId?: number | string | null,
+    educationPlanId?: number | string | null,
+    skipDismissed?: boolean | null
   ): XmlElem<number> | null | ActiveTestLearningDocument;
 
   /**
