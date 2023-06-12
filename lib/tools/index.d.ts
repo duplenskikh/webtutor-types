@@ -71,7 +71,7 @@ declare namespace tools {
     groupId?: number,
     eid?: any,
     skipDismissed?: boolean
-  ): number | null | ActiveLearningDocument;
+  ): XmlElem<number> | null | ActiveLearningDocument;
 
   /**
    * @param params Параметры назначения курса
@@ -83,8 +83,8 @@ declare namespace tools {
    * то возвращается ID карточки ранее назначенного курса (из каталога active_learning).
    */
   function activate_course_to_person(
-    params: IActivateCourseToPersonParams
-  ): number | null | ActiveLearningDocument;
+    params: ActivateCourseToPersonObject
+  ): XmlElem<number> | null | ActiveLearningDocument;
 
   /**
    * Назначение сотруднику курсов, которые указаны в учебных программах (с типом "Электронный курс"),
@@ -237,17 +237,17 @@ declare namespace tools {
    */
   function activate_test_to_person(
     personId: number,
-    assessmentId: number | null,
-    eventId?: number,
-    personDoc?: CollaboratorDocumentTopElem,
-    assessmentDocument?: AssessmentDocumentTopElem,
-    eventDocument?: never,
-    duration?: number,
-    startLearningDate?: Date,
-    lastLearningDate?: Date,
-    groupId?: number,
-    educationPlanId?: number,
-    skipDismissed?: boolean
+    assessmentId: number | string,
+    eventId: number | string | null | undefined,
+    personDoc: CollaboratorDocumentTopElem | null | undefined | '',
+    assessmentDocument: AssessmentDocumentTopElem | null | '',
+    eventDocument: never,
+    duration: number | string | null | undefined,
+    startLearningDate: Date | string,
+    lastLearningDate: Date | string | undefined,
+    groupId: number | string | null | undefined,
+    educationPlanId: number | string | null | undefined,
+    skipDismissed: boolean | undefined | null
   ): XmlElem<number> | null | ActiveTestLearningDocument;
 
   /**
@@ -572,7 +572,7 @@ declare namespace tools {
    */
   function xquery<T = any>(string: string): T[];
 
-  interface IActivateCourseToPersonParams {
+  export type ActivateCourseToPersonObject = {
     /**
      * Id Сотрудника
      */
@@ -596,7 +596,7 @@ declare namespace tools {
     /**
      * Карточка курса (необязательный),
      */
-    teCourse: CourseDocumentTopElem;
+    teCourse?: CourseDocumentTopElem;
     /**
      * Длительность в днях (необязательный),
      */
