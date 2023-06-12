@@ -241,7 +241,7 @@ declare namespace tools {
     eventId: number | string | null | undefined,
     personDoc: CollaboratorDocumentTopElem | null | undefined | '',
     assessmentDocument: AssessmentDocumentTopElem | null | '',
-    eventDocument: never,
+    eventDocument: undefined | null,
     duration: number | string | null | undefined,
     startLearningDate: Date | string,
     lastLearningDate: Date | string | undefined,
