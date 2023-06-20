@@ -29,7 +29,7 @@ interface Array<T> {
    * @param {...args} аргументы которые следует добавить в массив. Необязательный.
    * @returns {number}
    */
-  push<T>(element: T, ...args: T[]): number;
+  push(element: T, ...args: T[]): number;
 
   /**
    * Удаляет часть массива.
