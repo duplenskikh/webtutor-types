@@ -142,9 +142,9 @@ AdminAccessBase & {
   file_name: XmlElem<string>;
   file_url: XmlElem<string>;
   index: XmlElem<number>;
-  experiment_foo?(): unknown;
-  calculate?(): unknown;
-  load_kpi_values?(): unknown;
+  experiment_foo(): unknown;
+  calculate(): unknown;
+  load_kpi_values(): unknown;
 }
 
 type PaDocument = XmlDocument & {

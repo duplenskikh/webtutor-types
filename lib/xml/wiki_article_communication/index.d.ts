@@ -3,7 +3,7 @@ FileListBase &
 CustomElemsBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name?(): unknown;
+  name(): unknown;
   resource_id: XmlElem<number>;
   wiki_article_communication_type_id: XmlElem<number>;
   wiki_article_comm_type_id: XmlElem<number>;

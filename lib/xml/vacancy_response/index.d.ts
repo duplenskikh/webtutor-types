@@ -17,7 +17,7 @@ CustomElemsBase & {
   employer_answer: XmlElem<string>;
   career_reserve_id: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-  set_status?(): unknown;
+  set_status(): unknown;
 }
 
 type VacancyResponseDocument = XmlDocument & {

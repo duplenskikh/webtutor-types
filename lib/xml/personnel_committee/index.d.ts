@@ -19,8 +19,8 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
   access: XmlElem<AccessDocBase>;
-  set_status?(): unknown;
-  start_action?(): unknown;
+  set_status(): unknown;
+  start_action(): unknown;
 }
 
 type PersonnelCommitteeDocument = XmlDocument & {

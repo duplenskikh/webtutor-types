@@ -6,7 +6,7 @@ AdminAccessBase & {
   lastname: XmlElem<string>;
   firstname: XmlElem<string>;
   middlename: XmlElem<string>;
-  fullname?(): unknown;
+  fullname(): unknown;
   phone: XmlElem<string>;
   email: XmlElem<string>;
   work_phone: XmlElem<string>;
@@ -20,7 +20,7 @@ AdminAccessBase & {
   letter_text: XmlElem<string>;
   comment_recruiter: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  set_status?(): unknown;
+  set_status(): unknown;
 }
 
 type RecommendationDocument = XmlDocument & {

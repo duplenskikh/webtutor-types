@@ -22,7 +22,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  start_action?(): unknown;
+  start_action(): unknown;
   role_id: XmlMultiElem<number>;
 }
 

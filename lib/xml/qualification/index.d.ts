@@ -51,11 +51,11 @@ KnowledgePartsBase & {
   compound_programs: XmlMultiElem<QualificationDocumentCompoundProgram>;
   qualifications: XmlMultiElem<QualificationDocumentQualification>;
   assessment_appraises: XmlMultiElem<QualificationDocumentAssessmentAppraise>;
-  allow_assign?(): unknown;
+  allow_assign(): unknown;
   eval_conditions: XmlMultiElem<QualificationDocumentEvalCondition>;
   eval_assignment_query: XmlElem<string>;
-  get_assignment_persons?(): unknown;
-  get_scaled_progress?(): unknown;
+  get_assignment_persons(): unknown;
+  get_scaled_progress(): unknown;
   access: XmlElem<AccessDocBase>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;

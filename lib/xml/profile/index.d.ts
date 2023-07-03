@@ -8,7 +8,7 @@ PersonFillingBase & {
   activity_id: XmlElem<number>;
   activity_code: XmlElem<string>;
   person_id: XmlElem<number>;
-  hash?(): unknown;
+  hash(): unknown;
   doc_info: XmlElem<DocInfoBase>;
 }
 

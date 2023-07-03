@@ -38,8 +38,8 @@ WebVariablesBase & {
   doc_info: XmlElem<DocInfoBase>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  calculate_on_server?(): unknown;
-  calculate?(): unknown;
+  calculate_on_server(): unknown;
+  calculate(): unknown;
   role_id: XmlMultiElem<number>;
 }
 

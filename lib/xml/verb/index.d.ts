@@ -4,7 +4,7 @@ type VerbDocumentTopElem = XmlTopElem & { Doc: VerbDocument } & {
   processed: XmlElem<boolean>;
   processing_code_url: XmlElem<string>;
   processing_code: XmlElem<string>;
-  code_process?(): unknown;
+  code_process(): unknown;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;

@@ -38,10 +38,10 @@ AdminAccessBase & {
   act_sum?(): number;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  create_name?(): unknown;
-  distribute_cost_centers?(): unknown;
-  distribute_payment_persons?(): unknown;
-  distribute_total_cost?(): unknown;
+  create_name(): unknown;
+  distribute_cost_centers(): unknown;
+  distribute_payment_persons(): unknown;
+  distribute_total_cost(): unknown;
 }
 
 type PayPhaseDocument = XmlDocument & {

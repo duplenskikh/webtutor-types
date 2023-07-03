@@ -1,7 +1,7 @@
 type StatisticDataDocumentTopElem = XmlTopElem & { Doc: StatisticDataDocument } & {
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name?(): unknown;
+  name(): unknown;
   statistic_rec_id: XmlElem<number>;
   budget_period_id: XmlElem<number>;
   object_type: XmlElem<string>;

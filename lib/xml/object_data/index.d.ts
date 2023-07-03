@@ -5,7 +5,7 @@ CustomElemsBase &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name?(): unknown;
+  name(): unknown;
   object_data_type_id: XmlElem<number>;
   budget_period_id: XmlElem<number>;
   status_id: XmlElem<string>;

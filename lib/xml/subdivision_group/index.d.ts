@@ -20,7 +20,7 @@ ViewConditionsBase & {
   desc: XmlElem<string>;
   dynamic_select_subdivision(clearList?: boolean): void;
   dynamic_select_person(clearList: boolean): void;
-  start_action?(): unknown;
+  start_action(): unknown;
 }
 
 type SubdivisionGroupDocument = XmlDocument & {

@@ -27,7 +27,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  dynamic_select_position_commons?(): unknown;
+  dynamic_select_position_commons(): unknown;
 }
 
 type PositionFamilyDocument = XmlDocument & {

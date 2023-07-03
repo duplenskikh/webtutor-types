@@ -41,7 +41,7 @@ interface TestProjectDocumentItem {
 interface TestProjectDocumentItemComment {
   id?(): string;
   person_id: XmlElem<number>;
-  person_fullname?(): unknown;
+  person_fullname(): unknown;
   item_id: XmlElem<number>;
   quota_correct: XmlElem<number>;
   status: XmlElem<string>;
@@ -74,14 +74,14 @@ CustomElemsBase & {
   default_quota_approved: XmlElem<number>;
   default_quota_rejected: XmlElem<number>;
   variant_counter: XmlElem<number>;
-  get_variant_counter?(): unknown;
+  get_variant_counter(): unknown;
   desc: XmlElem<string>;
   access: XmlElem<AccessDocBase>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  get_angof_avg?(): unknown;
-  pul_list_file?(): unknown;
-  set_assessment_status?(): unknown;
+  get_angof_avg(): unknown;
+  pul_list_file(): unknown;
+  set_assessment_status(): unknown;
 }
 
 type TestProjectDocument = XmlDocument & {

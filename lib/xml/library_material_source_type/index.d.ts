@@ -12,7 +12,7 @@ WebVariablesBase & {
   doc_info: XmlElem<DocInfoBase>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  evaluate?(): unknown;
+  evaluate(): unknown;
 }
 
 type LibraryMaterialSourceTypeDocument = XmlDocument & {

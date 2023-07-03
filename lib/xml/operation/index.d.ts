@@ -16,13 +16,13 @@ WebVariablesBase & {
   eval_code: XmlElem<string>;
   remote_action_id: XmlElem<number>;
   access_eval_code: XmlElem<string>;
-  use_access_eval?(): unknown;
+  use_access_eval(): unknown;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   role_id: XmlMultiElem<number>;
-  execute?(): unknown;
+  execute(): unknown;
 }
 
 type OperationDocument = XmlDocument & {

@@ -3,10 +3,10 @@ PersonFillingBase &
 FileListBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name?(): unknown;
+  name(): unknown;
   voited: XmlElem<boolean>;
   voided: XmlElem<boolean>;
-  statement_ref_id?(): unknown;
+  statement_ref_id(): unknown;
   learning_storage_id: XmlElem<number>;
   person_id: XmlElem<number>;
   activity_id: XmlElem<number>;

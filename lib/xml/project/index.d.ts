@@ -51,15 +51,15 @@ CustomElemsBase & {
   participant_types: XmlMultiElem<ProjectDocumentParticipantType>;
   participant_roles: XmlMultiElem<ProjectDocumentParticipantRole>;
   files: XmlMultiElem<ProjectDocumentFile>;
-  AddFile?(): unknown;
+  AddFile(): unknown;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
   access: XmlElem<AccessDocBase>;
-  set_status?(): unknown;
-  create_project_participant?(): unknown;
-  start_action?(): unknown;
+  set_status(): unknown;
+  create_project_participant(): unknown;
+  start_action(): unknown;
 }
 
 type ProjectDocument = XmlDocument & {
