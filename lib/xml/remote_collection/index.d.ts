@@ -17,9 +17,9 @@ ResultFieldsBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-  setPaging?(): unknown;
-  setColumnsWhiteList?(): unknown;
-  evaluate?(): unknown;
+  setPaging(): unknown;
+  setColumnsWhiteList(): unknown;
+  evaluate(): unknown;
   role_id: XmlMultiElem<number>;
 }
 

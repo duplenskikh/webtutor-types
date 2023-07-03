@@ -66,7 +66,7 @@ CustomElemsBase & {
   workflow_matching_type: XmlElem<string>;
   custom_fields: XmlMultiElem<TaskDocumentCustomField>;
   files: XmlMultiElem<TaskDocumentFile>;
-  AddFile?(): unknown;
+  AddFile(): unknown;
   access: XmlElem<AccessDocBase>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;

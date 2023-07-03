@@ -5,7 +5,7 @@ CustomElemsBase & {
   name: XmlElem<string>;
   hostname: XmlElem<string>;
   port: XmlElem<number>;
-  host?(): unknown;
+  host(): unknown;
   portal_type: XmlElem<string>;
   referer_host_path: XmlElem<string>;
   site_id: XmlElem<number>;

@@ -78,7 +78,7 @@ AdminAccessBase & {
   sessions: XmlMultiElem<LearningRecordDocumentSession>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  get_url_record?(): unknown;
+  get_url_record(): unknown;
 }
 
 type LearningRecordDocument = XmlDocument & {

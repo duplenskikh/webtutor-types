@@ -19,7 +19,7 @@ CustomElemsBase & {
   main_forum_entry_id: XmlElem<number>;
   text_area: XmlElem<string>;
   remote_ip: XmlElem<string>;
-  author_info?(): unknown;
+  author_info(): unknown;
   privilege_collaborators: XmlMultiElem<ForumEntryDocumentPrivilegeCollaborator>;
   is_moder_approved: XmlElem<boolean>;
   last_create_date: XmlElem<Date>;

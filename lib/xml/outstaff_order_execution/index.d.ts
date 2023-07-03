@@ -20,7 +20,7 @@ AdminAccessBase &
 CustomElemsBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name?(): unknown;
+  name(): unknown;
   status: XmlElem<string>;
   formed_date: XmlElem<Date>;
   paid_date: XmlElem<Date>;
@@ -43,7 +43,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  update_stages?(): unknown;
+  update_stages(): unknown;
 }
 
 type OutstaffOrderExecutionDocument = XmlDocument & {

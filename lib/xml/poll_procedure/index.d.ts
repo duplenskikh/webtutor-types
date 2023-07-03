@@ -57,15 +57,15 @@ AdminAccessBase & {
   web_display: XmlElem<boolean>;
   status: XmlElem<number>;
   complete_message: XmlElem<string>;
-  adaptive?(): unknown;
+  adaptive(): unknown;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  set_poll_id?(): unknown;
-  set_question_id?(): unknown;
-  update_poll_questionare?(): unknown;
-  get_person_poll_objs?(): unknown;
-  is_launch_person?(): unknown;
+  set_poll_id(): unknown;
+  set_question_id(): unknown;
+  update_poll_questionare(): unknown;
+  get_person_poll_objs(): unknown;
+  is_launch_person(): unknown;
   role_id: XmlMultiElem<number>;
 }
 

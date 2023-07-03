@@ -14,7 +14,7 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   code: XmlElem<string>;
-  name?(): unknown;
+  name(): unknown;
   assessment_id: XmlElem<number>;
   assessment_name: XmlElem<string>;
   assessment_code: XmlElem<string>;

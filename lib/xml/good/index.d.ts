@@ -9,7 +9,7 @@ FileListBase &
 CustomElemsBase & {
   good_type_id: XmlElem<number>;
   costs: XmlMultiElem<GoodDocumentCost>;
-  cost_desc?(): unknown;
+  cost_desc(): unknown;
   bonus_shop_cost?(): number;
   delivery_type: XmlElem<string>;
   desc: XmlElem<string>;

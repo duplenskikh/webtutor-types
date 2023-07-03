@@ -11,8 +11,8 @@ interface OutstaffOrderDocumentPeriod {
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   hours: XmlMultiElem<OutstaffOrderDocumentPeriodHour>;
-  sum_person?(): unknown;
-  sum_person_hour?(): unknown;
+  sum_person(): unknown;
+  sum_person_hour(): unknown;
 }
 
 type OutstaffOrderDocumentTopElem = XmlTopElem & { Doc: OutstaffOrderDocument } & 
@@ -22,7 +22,7 @@ AdminAccessBase &
 CustomElemsBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name?(): unknown;
+  name(): unknown;
   status: XmlElem<string>;
   formed_date: XmlElem<Date>;
   paid_date: XmlElem<Date>;
@@ -37,8 +37,8 @@ CustomElemsBase & {
   finish_date: XmlElem<Date>;
   period_type: XmlElem<string>;
   periods: XmlMultiElem<OutstaffOrderDocumentPeriod>;
-  periods_sum_person?(): unknown;
-  periods_sum_person_hour?(): unknown;
+  periods_sum_person(): unknown;
+  periods_sum_person_hour(): unknown;
   cost_hour: XmlElem<number>;
   cost_sum: XmlElem<number>;
   currency: XmlElem<string>;
@@ -47,7 +47,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  update_periods?(): unknown;
+  update_periods(): unknown;
 }
 
 type OutstaffOrderDocument = XmlDocument & {

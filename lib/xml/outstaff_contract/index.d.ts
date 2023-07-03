@@ -10,7 +10,7 @@ interface OutstaffContractDocumentRegion {
   id: XmlElem<string>;
   region_id: XmlElem<number>;
   subdivision_id: XmlElem<number>;
-  subdivision_name?(): unknown;
+  subdivision_name(): unknown;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   all_period: XmlElem<boolean>;
@@ -24,7 +24,7 @@ AdminAccessBase &
 CustomElemsBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name?(): unknown;
+  name(): unknown;
   status: XmlElem<string>;
   type_id: XmlElem<string>;
   date: XmlElem<Date>;
@@ -32,7 +32,7 @@ CustomElemsBase & {
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   outstaff_provider_id: XmlElem<number>;
-  disp_name?(): unknown;
+  disp_name(): unknown;
   regions: XmlMultiElem<OutstaffContractDocumentRegion>;
   access: XmlElem<AccessDocBase>;
   desc: XmlElem<string>;

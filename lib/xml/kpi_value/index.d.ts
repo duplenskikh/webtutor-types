@@ -29,8 +29,8 @@ AdminAccessBase & {
   workflow_matching_type: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  obtain_custom_data?(): unknown;
-  calc_data?(): unknown;
+  obtain_custom_data(): unknown;
+  calc_data(): unknown;
 }
 
 type KpiValueDocument = XmlDocument & {

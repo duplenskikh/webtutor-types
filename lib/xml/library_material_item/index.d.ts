@@ -27,8 +27,8 @@ AdminAccessBase & {
   return_plan_date: XmlElem<Date>;
   return_date: XmlElem<Date>;
   change_logs: XmlMultiElem<LibraryMaterialItemDocumentChangeLog>;
-  clear_data?(): unknown;
-  add_log_record?(): unknown;
+  clear_data(): unknown;
+  add_log_record(): unknown;
 }
 
 type LibraryMaterialItemDocument = XmlDocument & {

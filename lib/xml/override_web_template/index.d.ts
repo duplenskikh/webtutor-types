@@ -2,7 +2,7 @@ type OverrideWebTemplateDocumentTopElem = XmlTopElem & { Doc: OverrideWebTemplat
 WebVariablesBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name?(): unknown;
+  name(): unknown;
   parent_id: XmlElem<number>;
   mode: XmlElem<string>;
   mode_exception: XmlElem<string>;

@@ -23,9 +23,9 @@ AdminAccessBase & {
   run_action_event_occurs_url: XmlElem<string>;
   check_event_processing: XmlElem<string>;
   run_check_event_processing_url: XmlElem<string>;
-  eval_action_event_occurs?(): unknown;
-  eval_check_event_process?(): unknown;
-  eval_visibility_condition?(): unknown;
+  eval_action_event_occurs(): unknown;
+  eval_check_event_process(): unknown;
+  eval_visibility_condition(): unknown;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
 }

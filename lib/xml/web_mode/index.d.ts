@@ -30,7 +30,7 @@ WebVariablesBase & {
   postloading: XmlElem<boolean>;
   loading_instruction: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  use_lpapi?(): unknown;
+  use_lpapi(): unknown;
   role_id: XmlMultiElem<number>;
 }
 
