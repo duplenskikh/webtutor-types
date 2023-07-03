@@ -764,15 +764,17 @@ declare function Second(date: Date): number;
 /**
  * Преобразует дату в строку, с двухсимвольным форматом года.
  * @param {Date} date - дата, которую преобразуется (Date).
+ * @param {boolean} showTime - Включать время (Bool). По умолчанию true.
+ * @param {boolean} showSeconds - Включать секунды во времени (Bool). По умолчанию true.
  * @returns {string}
  */
-declare function StrShortDate(date: Date): string;
+declare function StrShortDate(date: Date, showTime?: boolean, showSeconds?: boolean): string;
 
 /**
  * Преобразует дату в строку в формате, используемом по умолчанию в операционной системе. Если в качестве аргумента передается null или пустая строка, функция возвращает пустую строку.
  * @param {Date} date - Объект даты (Date).
- * @param {boolean} showTime - Включать время (Bool). Необязательный аргумент.
- * @param {boolean} showSeconds - Включать секунды во времени (Bool). Необязательный аргумент.
+ * @param {boolean} showTime - Включать время (Bool). По умолчанию true.
+ * @param {boolean} showSeconds - Включать секунды во времени (Bool). По умолчанию true.
  * @returns {string}
  */
 declare function StrDate(date: Date, showTime?: boolean, showSeconds?: boolean): string;
