@@ -42,7 +42,7 @@ CustomElemsBase & {
   score_sum_eval: XmlElem<string>;
   score: XmlElem<number>;
   calc_score(): number;
-  state_id: XmlElem<number>;
+  state_id: XmlElem<number, typeof common.education_learning_states>;
   time(): number;
   calc_max_end_date(): unknown;
   no_encoding_core_lesson: XmlElem<boolean>;
