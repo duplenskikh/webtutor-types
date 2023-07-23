@@ -11,9 +11,9 @@ type PositionDocumentTopElem = XmlTopElem & { Doc: PositionDocument } &
 ObjectCodeNameBase &
 FileListBase &
 CustomElemsBase & {
-  org_id: XmlElem<number, OrgCatalogDocument>;
-  parent_object_id: XmlElem<number, SubdivisionCatalogDocument>;
-  basic_collaborator_id: XmlElem<number, CollaboratorCatalogDocument>;
+  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
+  parent_object_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  basic_collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   basic_rate: XmlElem<number>;
   is_boss: XmlElem<boolean>;
   position_date: XmlElem<Date>;
