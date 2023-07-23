@@ -25,7 +25,7 @@ CustomElemsBase & {
   event_start_date: XmlElem<Date>;
   education_plan_id: XmlElem<number>;
   group_id: XmlElem<number>;
-  state_id: XmlElem<number>;
+  state_id: XmlElem<number, typeof common.learning_states>;
   score: XmlElem<number>;
   text_result: XmlElem<string>;
   core_lesson: XmlElem<string>;

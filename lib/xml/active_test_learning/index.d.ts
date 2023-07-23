@@ -20,7 +20,7 @@ CustomElemsBase & {
   proctor_prefer_id: XmlElem<number>;
   duration: XmlElem<number>;
   attempts_num: XmlElem<number>;
-  state_id: XmlElem<number>;
+  state_id: XmlElem<number, typeof common.learning_states>;
   lesson_location: XmlElem<string>;
   score: XmlElem<number>;
   score_str: XmlElem<string>;

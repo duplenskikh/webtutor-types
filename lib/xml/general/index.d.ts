@@ -616,7 +616,7 @@ interface OrgBase extends EssentialsBase {
 
 interface ProgramMethodBase extends CostCurrencyTypeBase {
   name: XmlElem<string>;
-  type: XmlElem<string>;
+  type: XmlElem<string, typeof common.education_method_types>;
   state_id: XmlElem<string>;
   education_org_id: XmlElem<number>;
   course_id: XmlElem<number>;
