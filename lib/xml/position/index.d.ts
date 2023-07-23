@@ -26,8 +26,8 @@ CustomElemsBase & {
   kpi_profiles: XmlMultiElem<PositionDocumentKpiProfile>;
   bonus_profile_id: XmlElem<number>;
   knowledge_profile_id: XmlElem<number>;
-  position_common_id: XmlElem<number>;
-  position_common_level_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
+  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
+  position_common_level_id: XmlElem<number>;
   position_common_level_name: XmlElem<string>;
   position_family_id: XmlElem<number, PositionFamilyCatalogDocumentTopElem>;
   position_finish_date: XmlElem<Date>;
