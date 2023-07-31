@@ -1,7 +1,6 @@
 name: actions
 
 on:
-  push:
   pull_request:
     types:
       - opened
