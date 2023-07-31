@@ -1,27 +1,39 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es2021": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": "latest"
-    },
-    "plugins": [
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "no-var": "off",
-        "@typescript-eslint/ban-types": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"],
-        "indent": ["error", 2],
-        "@typescript-eslint/indent": ["error", 2]
-    }
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "no-var": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "semi": "off",
+    "@typescript-eslint/semi": "error",
+    "quotes": ["error", "double"],
+    "indent": ["error", 2],
+    "@typescript-eslint/indent": ["error", 2],
+    "space-before-function-paren": "off",
+    "@typescript-eslint/space-before-function-paren": ["error", "never"],
+    "space-in-parens": ["error", "never"],
+    "comma-spacing": ["error", {
+      "before": false,
+      "after": true
+    }],
+    "no-array-constructor": "off",
+    "@typescript-eslint/no-array-constructor": "error",
+    "no-magic-numbers": "error",
+    "@typescript-eslint/type-annotation-spacing": "error"
+  }
 }
