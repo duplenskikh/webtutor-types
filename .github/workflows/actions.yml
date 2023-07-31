@@ -18,7 +18,7 @@ jobs:
         run: npm ci
 
       - name: 'Lint'
-        run: node ./ci/lint.ts
+        run: npm run lint:stage
 
       - name: 'Build'
         run: npm run build
