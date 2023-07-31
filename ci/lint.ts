@@ -9,14 +9,12 @@ function main() {
 
   for (const file of files) {
     try {
-      execSync(`npx eslint ./${file} --rule '{"@typescript-eslint/no-explicit-any": "error"}'`);
+      execSync(`npx eslint ./${file} --rule '{"@typescript-eslint/no-explicit-any": "error"}'`, {
+        stdio: ["ignore", process.stdout, process.stderr]
+      });
     } catch (error) {
-      process.stdout.write((error as any).stdout.toString());
+      setTimeout(() => process.exit(1));
     }
-  }
-
-  if (process.stdout.bytesWritten > 0) {
-    process.exit(1);
   }
 }
 
