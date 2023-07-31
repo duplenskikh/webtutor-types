@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "types": [],
+    "strict": true,
+    "noLib": true,
+    "typeRoots": [
+      "lib"
+    ],
+    "outDir": "build"
+  },
+  "include": [
+    "lib",
+    "lib/xml"
+  ]
+}

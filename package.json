@@ -6,6 +6,7 @@
     "lib": "lib"
   },
   "scripts": {
+    "lint:stage": "ts-node ./ci/lint.ts",
     "lint": "eslint . --ext .ts",
     "build": "tsc"
   },
@@ -24,8 +25,14 @@
   },
   "homepage": "https://github.com/umbrik/webtutor-types#readme",
   "devDependencies": {
+    "@swc/cli": "^0.1.62",
+    "@types/node": "^20.4.5",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
-    "eslint": "^8.16.0"
+    "eslint": "^8.16.0",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "@swc/core": "^1.3.72"
   }
 }
