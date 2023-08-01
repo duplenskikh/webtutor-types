@@ -7,18 +7,18 @@ function main() {
 
   console.log(`Найдено измененных файлов ${files.length}`);
 
-  if (files.length > 10) {
-    try {
-      execSync("npm run lint", {
-        stdio: ["ignore", process.stdout, process.stderr]
-      });
-    } catch {
-      setTimeout(() => process.exit(1));
-    }
-  } else {
+  // if (files.length > 10) {
+  //   try {
+  //     execSync("npm run lint", {
+  //       stdio: ["ignore", process.stdout, process.stderr]
+  //     });
+  //   } catch {
+  //     setTimeout(() => process.exit(1));
+  //   }
+  // } else {
     console.log(`Измененные файлы:\n${files.join("\n")}`);
 
-    let i = 0;
+    let i = 1;
 
     for (const file of files) {
       console.log(`Обрабатывается файл ${i}`);
@@ -32,7 +32,7 @@ function main() {
         setTimeout(() => process.exit(1));
       }
     }
-  }
+  // }
 }
 
 main();
