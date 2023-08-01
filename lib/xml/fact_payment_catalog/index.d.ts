@@ -16,6 +16,6 @@ type FactPaymentCatalogDocumentTopElem = XmlTopElem & { Doc: FactPaymentCatalogD
   expense_id: XmlElem<number>;
   comment: XmlElem<string>;
   modification_date: XmlElem<Date>;
-}
+};
 
 type FactPaymentCatalogDocument = XmlDocument & { TopElem: FactPaymentCatalogDocumentTopElem; };

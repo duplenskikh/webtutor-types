@@ -12,6 +12,6 @@ PersonFillingBase & {
   conversation_id: XmlElem<number>;
   state_id: XmlElem<string>;
   person_id: XmlElem<number>;
-}
+};
 
 type ChatbotChatCatalogDocument = XmlDocument & { TopElem: ChatbotChatCatalogDocumentTopElem; };

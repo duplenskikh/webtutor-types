@@ -61,7 +61,7 @@ KnowledgePartsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type QualificationDocument = XmlDocument & {
   TopElem: QualificationDocumentTopElem;

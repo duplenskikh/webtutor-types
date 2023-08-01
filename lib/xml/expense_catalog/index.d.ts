@@ -19,6 +19,6 @@ type ExpenseCatalogDocumentTopElem = XmlTopElem & { Doc: ExpenseCatalogDocument 
   is_received: XmlElem<boolean>;
   received_date: XmlElem<Date>;
   docs_comment: XmlElem<string>;
-}
+};
 
 type ExpenseCatalogDocument = XmlDocument & { TopElem: ExpenseCatalogDocumentTopElem; };

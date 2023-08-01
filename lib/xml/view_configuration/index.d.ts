@@ -9,7 +9,7 @@ ViewBase & {
   role_id: XmlMultiElem<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ViewConfigurationDocument = XmlDocument & {
   TopElem: ViewConfigurationDocumentTopElem;

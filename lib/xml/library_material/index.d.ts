@@ -59,7 +59,7 @@ CustomElemsBase & {
   filling_path_sections(): unknown;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type LibraryMaterialDocument = XmlDocument & {
   TopElem: LibraryMaterialDocumentTopElem;

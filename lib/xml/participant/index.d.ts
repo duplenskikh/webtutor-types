@@ -19,7 +19,7 @@ AdminAccessBase & {
   rating: XmlElem<number>;
   place: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ParticipantDocument = XmlDocument & {
   TopElem: ParticipantDocumentTopElem;

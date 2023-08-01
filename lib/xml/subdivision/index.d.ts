@@ -30,7 +30,7 @@ DocumentPersonsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   start_action(): unknown;
-}
+};
 
 type SubdivisionDocument = XmlDocument & {
   TopElem: SubdivisionDocumentTopElem;

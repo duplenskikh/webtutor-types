@@ -37,7 +37,7 @@ CustomElemsBase & {
   file_name: XmlElem<string>;
   file_url: XmlElem<string>;
   event_result_type_id: XmlElem<number>;
-}
+};
 
 type EventAssessmentPlanDocument = XmlDocument & {
   TopElem: EventAssessmentPlanDocumentTopElem;

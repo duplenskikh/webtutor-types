@@ -26,6 +26,6 @@ AdminAccessBase & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   status_in_knowledge_map: XmlElem<string>;
-}
+};
 
 type LibraryMaterialCatalogDocument = XmlDocument & { TopElem: LibraryMaterialCatalogDocumentTopElem; };

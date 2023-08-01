@@ -67,7 +67,7 @@ AdminAccessBase & {
   get_person_poll_objs(): unknown;
   is_launch_person(): unknown;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type PollProcedureDocument = XmlDocument & {
   TopElem: PollProcedureDocumentTopElem;

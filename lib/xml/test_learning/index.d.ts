@@ -47,7 +47,7 @@ CustomElemsBase & {
   use_proctoring: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type TestLearningDocument = XmlDocument & {
   TopElem: TestLearningDocumentTopElem;

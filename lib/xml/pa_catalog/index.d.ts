@@ -39,6 +39,6 @@ AdminAccessBase & {
   flag_is_processed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type PaCatalogDocument = XmlDocument & { TopElem: PaCatalogDocumentTopElem; };

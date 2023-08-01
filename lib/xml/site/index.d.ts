@@ -49,7 +49,7 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-}
+};
 
 type SiteDocument = XmlDocument & {
   TopElem: SiteDocumentTopElem;

@@ -31,7 +31,7 @@ AdminAccessBase & {
   programs: XmlMultiElem<VclassSettingDocumentProgram>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type VclassSettingDocument = XmlDocument & {
   TopElem: VclassSettingDocumentTopElem;

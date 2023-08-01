@@ -25,7 +25,7 @@ CustomElemsBase & {
   last_create_date: XmlElem<Date>;
   child_num: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ForumEntryDocument = XmlDocument & {
   TopElem: ForumEntryDocumentTopElem;

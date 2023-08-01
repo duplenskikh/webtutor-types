@@ -6,6 +6,6 @@ ObjectCodeNameBase & {
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type CodeLibraryCatalogDocument = XmlDocument & { TopElem: CodeLibraryCatalogDocumentTopElem; };

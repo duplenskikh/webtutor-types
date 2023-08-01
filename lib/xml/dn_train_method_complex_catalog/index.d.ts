@@ -11,6 +11,6 @@ AdminAccessBase & {
   lector_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DnTrainMethodComplexCatalogDocument = XmlDocument & { TopElem: DnTrainMethodComplexCatalogDocumentTopElem; };

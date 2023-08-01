@@ -13,6 +13,6 @@ type OrgCatalogDocumentTopElem = XmlTopElem & { Doc: OrgCatalogDocument } & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type OrgCatalogDocument = XmlDocument & { TopElem: OrgCatalogDocumentTopElem; };

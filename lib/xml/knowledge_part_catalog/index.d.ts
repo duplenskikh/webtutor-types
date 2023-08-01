@@ -17,6 +17,6 @@ AccessDocBase & {
   knowledge_parts: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type KnowledgePartCatalogDocument = XmlDocument & { TopElem: KnowledgePartCatalogDocumentTopElem; };

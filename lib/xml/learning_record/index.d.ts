@@ -79,7 +79,7 @@ AdminAccessBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   get_url_record(): unknown;
-}
+};
 
 type LearningRecordDocument = XmlDocument & {
   TopElem: LearningRecordDocumentTopElem;

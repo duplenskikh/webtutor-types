@@ -8,6 +8,6 @@ AdminAccessBase & {
   student_fullname: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DnStudCentrtestResultCatalogDocument = XmlDocument & { TopElem: DnStudCentrtestResultCatalogDocumentTopElem; };

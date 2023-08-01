@@ -31,7 +31,7 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-}
+};
 
 type PresenceStateDocument = XmlDocument & {
   TopElem: PresenceStateDocumentTopElem;

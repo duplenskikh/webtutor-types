@@ -20,6 +20,6 @@ PersonFillingBase & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   participants_id: XmlMultiElem<number>;
-}
+};
 
 type ConversationCatalogDocument = XmlDocument & { TopElem: ConversationCatalogDocumentTopElem; };

@@ -6,6 +6,6 @@ AdminAccessBase & {
   type: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type AssessmentResultRecommendCatalogDocument = XmlDocument & { TopElem: AssessmentResultRecommendCatalogDocumentTopElem; };

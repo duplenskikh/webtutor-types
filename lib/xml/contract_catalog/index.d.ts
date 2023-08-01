@@ -13,6 +13,6 @@ AdminAccessBase & {
   files_count: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ContractCatalogDocument = XmlDocument & { TopElem: ContractCatalogDocumentTopElem; };

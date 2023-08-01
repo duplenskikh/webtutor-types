@@ -10,6 +10,6 @@ ObjectTypeBase & {
   count: XmlElem<number>;
   applying_date: XmlElem<Date>;
   creation_date: XmlElem<Date>;
-}
+};
 
 type RecommenderAlgorithmApplyingCatalogDocument = XmlDocument & { TopElem: RecommenderAlgorithmApplyingCatalogDocumentTopElem; };

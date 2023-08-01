@@ -11,6 +11,6 @@ AdminAccessBase & {
   platform: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ClCourseCatalogDocument = XmlDocument & { TopElem: ClCourseCatalogDocumentTopElem; };

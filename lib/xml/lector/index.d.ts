@@ -19,7 +19,7 @@ PathSubsBase & {
   access: XmlElem<AccessDocBase>;
   lector_fullname: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type LectorDocument = XmlDocument & {
   TopElem: LectorDocumentTopElem;

@@ -25,7 +25,7 @@ KnowledgePartsBase & {
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
   knowledge_part_type_id: XmlElem<number>;
-}
+};
 
 type KnowledgePartDocument = XmlDocument & {
   TopElem: KnowledgePartDocumentTopElem;

@@ -23,7 +23,7 @@ type StatisticDataDocumentTopElem = XmlTopElem & { Doc: StatisticDataDocument } 
   flag: XmlElem<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type StatisticDataDocument = XmlDocument & {
   TopElem: StatisticDataDocumentTopElem;

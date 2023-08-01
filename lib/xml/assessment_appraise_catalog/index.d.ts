@@ -17,6 +17,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type AssessmentAppraiseCatalogDocument = XmlDocument & { TopElem: AssessmentAppraiseCatalogDocumentTopElem; };

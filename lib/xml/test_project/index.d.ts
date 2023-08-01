@@ -82,7 +82,7 @@ CustomElemsBase & {
   get_angof_avg(): unknown;
   pul_list_file(): unknown;
   set_assessment_status(): unknown;
-}
+};
 
 type TestProjectDocument = XmlDocument & {
   TopElem: TestProjectDocumentTopElem;

@@ -7,6 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
   changed: XmlElem<boolean>;
   is_std: XmlElem<boolean>;
-}
+};
 
 type ContactResultCatalogDocument = XmlDocument & { TopElem: ContactResultCatalogDocumentTopElem; };

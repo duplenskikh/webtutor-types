@@ -9,7 +9,7 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
   changed: XmlElem<boolean>;
   is_std: XmlElem<boolean>;
-}
+};
 
 type EventTypeDocument = XmlDocument & {
   TopElem: EventTypeDocumentTopElem;

@@ -7,6 +7,6 @@ AdminAccessBase & {
   type: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type SupplementaryQuestionCatalogDocument = XmlDocument & { TopElem: SupplementaryQuestionCatalogDocumentTopElem; };

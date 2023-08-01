@@ -16,6 +16,6 @@ type SubdivisionCatalogDocumentTopElem = XmlTopElem & { Doc: SubdivisionCatalogD
   is_faculty: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type SubdivisionCatalogDocument = XmlDocument & { TopElem: SubdivisionCatalogDocumentTopElem; };

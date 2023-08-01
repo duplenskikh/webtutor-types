@@ -21,6 +21,6 @@ PersonFillingBase & {
   project_participant_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type KnowledgeAcquaintCatalogDocument = XmlDocument & { TopElem: KnowledgeAcquaintCatalogDocumentTopElem; };

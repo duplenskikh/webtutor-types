@@ -15,7 +15,7 @@ AdminAccessBase & {
   shapes: XmlMultiElem<PresentationDocumentShape>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type PresentationDocument = XmlDocument & {
   TopElem: PresentationDocumentTopElem;

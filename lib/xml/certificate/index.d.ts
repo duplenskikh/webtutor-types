@@ -20,7 +20,7 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   update_expire_date(): void;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type CertificateDocument = XmlDocument & {
   TopElem: CertificateDocumentTopElem;

@@ -19,7 +19,7 @@ KnowledgePartsKpBase & {
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type LearningTaskDocument = XmlDocument & {
   TopElem: LearningTaskDocumentTopElem;

@@ -15,6 +15,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
   tags: XmlElem<string>;
   knowledge_parts: XmlElem<string>;
-}
+};
 
 type LearningTaskCatalogDocument = XmlDocument & { TopElem: LearningTaskCatalogDocumentTopElem; };

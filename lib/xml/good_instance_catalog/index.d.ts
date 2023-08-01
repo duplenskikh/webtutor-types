@@ -8,6 +8,6 @@ type GoodInstanceCatalogDocumentTopElem = XmlTopElem & { Doc: GoodInstanceCatalo
   paid_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type GoodInstanceCatalogDocument = XmlDocument & { TopElem: GoodInstanceCatalogDocumentTopElem; };

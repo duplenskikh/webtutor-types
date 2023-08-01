@@ -17,6 +17,6 @@ AdminAccessBase & {
   status: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type SuccessorCatalogDocument = XmlDocument & { TopElem: SuccessorCatalogDocumentTopElem; };

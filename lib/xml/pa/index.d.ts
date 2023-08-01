@@ -145,7 +145,7 @@ AdminAccessBase & {
   experiment_foo(): unknown;
   calculate(): unknown;
   load_kpi_values(): unknown;
-}
+};
 
 type PaDocument = XmlDocument & {
   TopElem: PaDocumentTopElem;

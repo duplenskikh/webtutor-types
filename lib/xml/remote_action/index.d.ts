@@ -23,7 +23,7 @@ ResultFieldsBase & {
   doc_info: XmlElem<DocInfoBase>;
   evaluate(): unknown;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type RemoteActionDocument = XmlDocument & {
   TopElem: RemoteActionDocumentTopElem;

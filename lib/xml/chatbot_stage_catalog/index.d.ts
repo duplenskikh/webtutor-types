@@ -6,6 +6,6 @@ type ChatbotStageCatalogDocumentTopElem = XmlTopElem & { Doc: ChatbotStageCatalo
   chatbot_id: XmlElem<number>;
   action_type: XmlElem<string>;
   keyboard_type: XmlElem<string>;
-}
+};
 
 type ChatbotStageCatalogDocument = XmlDocument & { TopElem: ChatbotStageCatalogDocumentTopElem; };

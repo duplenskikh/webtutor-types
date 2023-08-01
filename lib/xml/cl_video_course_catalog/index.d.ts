@@ -9,6 +9,6 @@ type ClVideoCourseCatalogDocumentTopElem = XmlTopElem & { Doc: ClVideoCourseCata
   authors_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   creation_date: XmlElem<Date>;
-}
+};
 
 type ClVideoCourseCatalogDocument = XmlDocument & { TopElem: ClVideoCourseCatalogDocumentTopElem; };

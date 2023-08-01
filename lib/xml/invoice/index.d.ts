@@ -19,7 +19,7 @@ AdminAccessBase & {
   draft_date: XmlElem<Date>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type InvoiceDocument = XmlDocument & {
   TopElem: InvoiceDocumentTopElem;

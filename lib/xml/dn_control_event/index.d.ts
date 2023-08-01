@@ -26,7 +26,7 @@ CustomElemsBase & {
   stud_group_id: XmlElem<number>;
   participants: XmlMultiElem<DnControlEventDocumentParticipant>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnControlEventDocument = XmlDocument & {
   TopElem: DnControlEventDocumentTopElem;

@@ -150,7 +150,7 @@ type ClModuleDocumentTopElem = XmlTopElem & {
   export_2_scorm(): boolean;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-}
+};
 
 type ClModuleDocument = XmlDocument & {
   TopElem: ClModuleDocumentTopElem;

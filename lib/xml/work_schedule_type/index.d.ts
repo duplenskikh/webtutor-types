@@ -4,7 +4,7 @@ type WorkScheduleTypeDocumentTopElem = XmlTopElem & { Doc: WorkScheduleTypeDocum
   name: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type WorkScheduleTypeDocument = XmlDocument & {
   TopElem: WorkScheduleTypeDocumentTopElem;

@@ -54,7 +54,7 @@ KnowledgePartsBase & {
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type KpiDocument = XmlDocument & {
   TopElem: KpiDocumentTopElem;

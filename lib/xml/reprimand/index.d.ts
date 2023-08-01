@@ -7,7 +7,7 @@ CustomElemsBase & {
   date: XmlElem<Date>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ReprimandDocument = XmlDocument & {
   TopElem: ReprimandDocumentTopElem;

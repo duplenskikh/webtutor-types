@@ -31,7 +31,7 @@ AdminAccessBase & {
   estaff_event_eid: XmlElem<number>;
   members: XmlMultiElem<EstaffEventDocumentMember>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type EstaffEventDocument = XmlDocument & {
   TopElem: EstaffEventDocumentTopElem;

@@ -9,7 +9,7 @@ PersonFillingBase & {
   person_id: XmlElem<number>;
   object_xml: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ObjectVersionDocument = XmlDocument & {
   TopElem: ObjectVersionDocumentTopElem;

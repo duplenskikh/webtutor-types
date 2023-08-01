@@ -44,7 +44,7 @@ ViewConditionsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type UserAssignmentDocument = XmlDocument & {
   TopElem: UserAssignmentDocumentTopElem;

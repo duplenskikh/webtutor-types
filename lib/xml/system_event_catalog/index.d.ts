@@ -9,6 +9,6 @@ type SystemEventCatalogDocumentTopElem = XmlTopElem & { Doc: SystemEventCatalogD
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type SystemEventCatalogDocument = XmlDocument & { TopElem: SystemEventCatalogDocumentTopElem; };

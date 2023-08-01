@@ -10,6 +10,6 @@ type PersonnelDocumentTypeCatalogDocumentTopElem = XmlTopElem & { Doc: Personnel
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type PersonnelDocumentTypeCatalogDocument = XmlDocument & { TopElem: PersonnelDocumentTypeCatalogDocumentTopElem; };

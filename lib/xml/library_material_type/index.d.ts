@@ -3,7 +3,7 @@ type LibraryMaterialTypeDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialTyp
   name: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type LibraryMaterialTypeDocument = XmlDocument & {
   TopElem: LibraryMaterialTypeDocumentTopElem;

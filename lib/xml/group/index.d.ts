@@ -39,7 +39,7 @@ PersonObjectLinksBase & {
   add_collaborator(collaboratorId: number, collaboratorDocument?: CollaboratorDocument): GroupDocumentCollaborator;
   remove_collaborator(collaboratorId: number): boolean;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type GroupDocument = XmlDocument & {
   TopElem: GroupDocumentTopElem;

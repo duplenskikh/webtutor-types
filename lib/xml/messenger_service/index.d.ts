@@ -7,7 +7,7 @@ FileListBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   desc: XmlElem<string>;
-}
+};
 
 type MessengerServiceDocument = XmlDocument & {
   TopElem: MessengerServiceDocumentTopElem;

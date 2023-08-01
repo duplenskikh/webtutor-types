@@ -10,7 +10,7 @@ CustomElemsBase & {
   start_time: XmlElem<string>;
   finish_time: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ScheduleDayDocument = XmlDocument & {
   TopElem: ScheduleDayDocumentTopElem;

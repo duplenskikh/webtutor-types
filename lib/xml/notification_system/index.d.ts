@@ -10,7 +10,7 @@ AdminAccessBase & {
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type NotificationSystemDocument = XmlDocument & {
   TopElem: NotificationSystemDocumentTopElem;

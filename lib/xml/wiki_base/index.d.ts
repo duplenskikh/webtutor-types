@@ -30,7 +30,7 @@ KnowledgePartsBase & {
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type WikiBaseDocument = XmlDocument & {
   TopElem: WikiBaseDocumentTopElem;

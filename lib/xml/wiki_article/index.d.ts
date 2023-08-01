@@ -53,7 +53,7 @@ KnowledgePartsBase & {
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type WikiArticleDocument = XmlDocument & {
   TopElem: WikiArticleDocumentTopElem;

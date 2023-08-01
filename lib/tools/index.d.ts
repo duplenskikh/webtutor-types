@@ -204,7 +204,7 @@ declare namespace tools {
     bUseProctoring?: boolean;
 
     iProctorPreferID?: number;
-  }
+  };
 
   /**
    * Функция назначения теста пользователю
@@ -649,7 +649,7 @@ declare namespace tools {
      * Использовать прокторинг (необязательный)
      */
     bUseProctoring?: boolean;
-  }
+  };
 
 
   function get_server_protocol(): string;

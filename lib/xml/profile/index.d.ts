@@ -10,7 +10,7 @@ PersonFillingBase & {
   person_id: XmlElem<number>;
   hash(): unknown;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ProfileDocument = XmlDocument & {
   TopElem: ProfileDocumentTopElem;

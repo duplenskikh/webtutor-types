@@ -32,6 +32,6 @@ AdminAccessBase & {
   modification_user_id: XmlElem<number>;
   app_instance_id: XmlElem<string>;
   use_proctoring: XmlElem<boolean>;
-}
+};
 
 type ActiveLearningCatalogDocument = XmlDocument & { TopElem: ActiveLearningCatalogDocumentTopElem; };

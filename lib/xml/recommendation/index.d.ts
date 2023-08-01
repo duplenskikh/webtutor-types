@@ -21,7 +21,7 @@ AdminAccessBase & {
   comment_recruiter: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   set_status(): unknown;
-}
+};
 
 type RecommendationDocument = XmlDocument & {
   TopElem: RecommendationDocumentTopElem;

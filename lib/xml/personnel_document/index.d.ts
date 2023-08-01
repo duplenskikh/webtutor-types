@@ -31,7 +31,7 @@ CustomElemsBase & {
   signature_files: XmlMultiElem<PersonnelDocumentDocumentSignatureFile>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type PersonnelDocumentDocument = XmlDocument & {
   TopElem: PersonnelDocumentDocumentTopElem;

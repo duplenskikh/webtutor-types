@@ -45,7 +45,7 @@ CustomElemsBase & {
   assessments: XmlMultiElem<DnTrainMethodComplexDocumentAssessment>;
   items: XmlMultiElem<DnTrainMethodComplexDocumentItem>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnTrainMethodComplexDocument = XmlDocument & {
   TopElem: DnTrainMethodComplexDocumentTopElem;

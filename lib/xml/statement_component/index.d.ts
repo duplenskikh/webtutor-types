@@ -5,7 +5,7 @@ type StatementComponentDocumentTopElem = XmlTopElem & { Doc: StatementComponentD
   component_id: XmlElem<string>;
   statement_id: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type StatementComponentDocument = XmlDocument & {
   TopElem: StatementComponentDocumentTopElem;

@@ -12,6 +12,6 @@ AdminAccessBase & {
   site_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type RecruitmentEventCatalogDocument = XmlDocument & { TopElem: RecruitmentEventCatalogDocumentTopElem; };

@@ -14,7 +14,7 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type WikiArticleCommunicationDocument = XmlDocument & {
   TopElem: WikiArticleCommunicationDocumentTopElem;

@@ -7,6 +7,6 @@ type TaskTypeCatalogDocumentTopElem = XmlTopElem & { Doc: TaskTypeCatalogDocumen
   app_instance_id: XmlElem<string>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-}
+};
 
 type TaskTypeCatalogDocument = XmlDocument & { TopElem: TaskTypeCatalogDocumentTopElem; };

@@ -6,6 +6,6 @@ AdminAccessBase & {
   format_type_id: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type LibraryMaterialFormatCatalogDocument = XmlDocument & { TopElem: LibraryMaterialFormatCatalogDocumentTopElem; };

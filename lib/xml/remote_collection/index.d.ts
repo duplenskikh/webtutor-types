@@ -21,7 +21,7 @@ ResultFieldsBase & {
   setColumnsWhiteList(): unknown;
   evaluate(): unknown;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type RemoteCollectionDocument = XmlDocument & {
   TopElem: RemoteCollectionDocumentTopElem;

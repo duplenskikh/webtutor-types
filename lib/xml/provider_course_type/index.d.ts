@@ -9,7 +9,7 @@ WebVariablesBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ProviderCourseTypeDocument = XmlDocument & {
   TopElem: ProviderCourseTypeDocumentTopElem;

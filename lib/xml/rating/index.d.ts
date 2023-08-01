@@ -14,7 +14,7 @@ AdminAccessBase & {
   objects: XmlMultiElem<RatingDocumentObject>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type RatingDocument = XmlDocument & {
   TopElem: RatingDocumentTopElem;

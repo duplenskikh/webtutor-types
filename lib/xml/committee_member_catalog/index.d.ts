@@ -11,6 +11,6 @@ AdminAccessBase & {
   committee_member_type: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type CommitteeMemberCatalogDocument = XmlDocument & { TopElem: CommitteeMemberCatalogDocumentTopElem; };

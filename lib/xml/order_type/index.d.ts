@@ -10,7 +10,7 @@ type OrderTypeDocumentTopElem = XmlTopElem & { Doc: OrderTypeDocument } & {
   performer_person_id: XmlElem<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type OrderTypeDocument = XmlDocument & {
   TopElem: OrderTypeDocumentTopElem;

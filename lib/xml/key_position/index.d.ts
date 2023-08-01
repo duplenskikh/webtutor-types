@@ -38,7 +38,7 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   role_id: XmlMultiElem<number>;
   EvalThreat(): unknown;
-}
+};
 
 type KeyPositionDocument = XmlDocument & {
   TopElem: KeyPositionDocumentTopElem;

@@ -11,6 +11,6 @@ type ActivityStateCatalogDocumentTopElem = XmlTopElem & { Doc: ActivityStateCata
   registration: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ActivityStateCatalogDocument = XmlDocument & { TopElem: ActivityStateCatalogDocumentTopElem; };

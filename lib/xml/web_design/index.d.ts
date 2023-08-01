@@ -14,7 +14,7 @@ WebVariablesBase & {
   changed: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type WebDesignDocument = XmlDocument & {
   TopElem: WebDesignDocumentTopElem;

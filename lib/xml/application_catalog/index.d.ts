@@ -12,6 +12,6 @@ ObjectCodeNameBase & {
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ApplicationCatalogDocument = XmlDocument & { TopElem: ApplicationCatalogDocumentTopElem; };

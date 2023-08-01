@@ -20,7 +20,7 @@ FileListBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   desc: XmlElem<string>;
-}
+};
 
 type KnowledgeAcquaintDocument = XmlDocument & {
   TopElem: KnowledgeAcquaintDocumentTopElem;

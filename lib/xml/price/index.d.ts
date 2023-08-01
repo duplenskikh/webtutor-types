@@ -20,7 +20,7 @@ CustomElemsBase & {
   service_providers: XmlMultiElem<PriceDocumentServiceProvider>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type PriceDocument = XmlDocument & {
   TopElem: PriceDocumentTopElem;

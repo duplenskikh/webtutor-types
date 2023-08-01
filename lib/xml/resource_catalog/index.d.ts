@@ -25,6 +25,6 @@ AccessDocBase & {
   creation_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ResourceCatalogDocument = XmlDocument & { TopElem: ResourceCatalogDocumentTopElem; };

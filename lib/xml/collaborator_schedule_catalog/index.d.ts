@@ -15,6 +15,6 @@ PersonFillingBase & {
   budget_period_id: XmlElem<number>;
   rest_collaborator_schedule_id: XmlElem<number>;
   reason_comment: XmlElem<string>;
-}
+};
 
 type CollaboratorScheduleCatalogDocument = XmlDocument & { TopElem: CollaboratorScheduleCatalogDocumentTopElem; };

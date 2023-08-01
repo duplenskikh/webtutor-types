@@ -35,7 +35,7 @@ CustomElemsBase & {
   unread_recipient_id: XmlMultiElem<number>;
   doc_info: XmlElem<DocInfoBase>;
   disp_role_id: XmlMultiElem<string>;
-}
+};
 
 type BlockMessageDocument = XmlDocument & {
   TopElem: BlockMessageDocumentTopElem;

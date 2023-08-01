@@ -9,6 +9,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-}
+};
 
 type ClObjectCatalogDocument = XmlDocument & { TopElem: ClObjectCatalogDocumentTopElem; };

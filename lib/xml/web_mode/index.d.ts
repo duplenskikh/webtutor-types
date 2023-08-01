@@ -32,7 +32,7 @@ WebVariablesBase & {
   doc_info: XmlElem<DocInfoBase>;
   use_lpapi(): unknown;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type WebModeDocument = XmlDocument & {
   TopElem: WebModeDocumentTopElem;

@@ -33,6 +33,6 @@ AdminAccessBase & {
   index: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DevelopmentPlanCatalogDocument = XmlDocument & { TopElem: DevelopmentPlanCatalogDocumentTopElem; };

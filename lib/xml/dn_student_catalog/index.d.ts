@@ -27,6 +27,6 @@ AdminAccessBase & {
   file_name: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DnStudentCatalogDocument = XmlDocument & { TopElem: DnStudentCatalogDocumentTopElem; };

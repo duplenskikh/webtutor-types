@@ -8,7 +8,7 @@ InsertFileBase & {
   doc_info: XmlElem<DocInfoBase>;
   object_name: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type PrintFormDocument = XmlDocument & {
   TopElem: PrintFormDocumentTopElem;

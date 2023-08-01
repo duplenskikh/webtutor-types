@@ -15,7 +15,7 @@ CustomElemsBase & {
   apply_dates: XmlMultiElem<RecommenderAlgorithmApplyingDocumentApplyDate>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type RecommenderAlgorithmApplyingDocument = XmlDocument & {
   TopElem: RecommenderAlgorithmApplyingDocumentTopElem;

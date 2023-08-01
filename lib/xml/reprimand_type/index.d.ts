@@ -3,7 +3,7 @@ type ReprimandTypeDocumentTopElem = XmlTopElem & { Doc: ReprimandTypeDocument } 
   name: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ReprimandTypeDocument = XmlDocument & {
   TopElem: ReprimandTypeDocumentTopElem;

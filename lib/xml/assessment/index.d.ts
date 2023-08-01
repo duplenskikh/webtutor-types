@@ -141,7 +141,7 @@ AdminAccessBase & {
   get_info(): null | Object;
   update_structure(): boolean;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type AssessmentDocument = XmlDocument & {
   TopElem: AssessmentDocumentTopElem

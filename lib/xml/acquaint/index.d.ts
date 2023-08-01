@@ -62,7 +62,7 @@ ViewConditionsBase & {
   role_id: XmlMultiElem<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type AcquaintDocument = XmlDocument & {
   TopElem: AcquaintDocumentTopElem;

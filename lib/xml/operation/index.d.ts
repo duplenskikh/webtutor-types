@@ -23,7 +23,7 @@ WebVariablesBase & {
   changed: XmlElem<boolean>;
   role_id: XmlMultiElem<number>;
   execute(): unknown;
-}
+};
 
 type OperationDocument = XmlDocument & {
   TopElem: OperationDocumentTopElem;

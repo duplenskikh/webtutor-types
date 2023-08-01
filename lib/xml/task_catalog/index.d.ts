@@ -38,6 +38,6 @@ AdminAccessBase & {
   workflow_person_id: XmlMultiElem<number>;
   workflow_matching_type: XmlElem<string>;
   preparation_id: XmlMultiElem<number>;
-}
+};
 
 type TaskCatalogDocument = XmlDocument & { TopElem: TaskCatalogDocumentTopElem; };

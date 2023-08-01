@@ -29,6 +29,6 @@ PersonFillingBase & {
   start_lunch_break_time: XmlElem<string>;
   end_lunch_break_time: XmlElem<string>;
   shifts_number: XmlElem<number>;
-}
+};
 
 type WorkingConditionCatalogDocument = XmlDocument & { TopElem: WorkingConditionCatalogDocumentTopElem; };

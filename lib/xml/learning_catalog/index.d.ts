@@ -33,6 +33,6 @@ AdminAccessBase & {
   modification_user_id: XmlElem<number>;
   app_instance_id: XmlElem<string>;
   use_proctoring: XmlElem<boolean>;
-}
+};
 
 type LearningCatalogDocument = XmlDocument & { TopElem: LearningCatalogDocumentTopElem; };

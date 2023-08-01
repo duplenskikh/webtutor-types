@@ -11,7 +11,7 @@ FileListBase & {
   policy_type_id: XmlElem<number>;
   state_id: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type PolicyDocument = XmlDocument & {
   TopElem: PolicyDocumentTopElem;

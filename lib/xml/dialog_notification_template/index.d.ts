@@ -22,7 +22,7 @@ type DialogNotificationTemplateTopElem = XmlTopElem & {
   recipients: XmMultiElem <DialogNotificationTemplateRecipient>;
   attachments: XmMultiElem <DialogNotificationTemplateAttachment>;
   notification_system_id: XmElem<number>;
-}
+};
 
 type DialogNotificationTemplate = XmlDocument & {
   TopElem: DialogNotificationTemplateTopElem;

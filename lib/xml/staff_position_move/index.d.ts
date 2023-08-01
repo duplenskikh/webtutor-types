@@ -19,7 +19,7 @@ CustomElemsBase & {
   document: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type StaffPositionMoveDocument = XmlDocument & {
   TopElem: StaffPositionMoveDocumentTopElem;

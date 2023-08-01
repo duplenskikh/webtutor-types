@@ -10,6 +10,6 @@ type ObjectDataTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ObjectDataTypeCa
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ObjectDataTypeCatalogDocument = XmlDocument & { TopElem: ObjectDataTypeCatalogDocumentTopElem; };

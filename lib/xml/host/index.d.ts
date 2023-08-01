@@ -29,7 +29,7 @@ CustomElemsBase & {
   changed: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type HostDocument = XmlDocument & {
   TopElem: HostDocumentTopElem;

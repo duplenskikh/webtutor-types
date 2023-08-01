@@ -17,6 +17,6 @@ type PresenceStateCatalogDocumentTopElem = XmlTopElem & { Doc: PresenceStateCata
   is_sub_work_time: XmlElem<boolean>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-}
+};
 
 type PresenceStateCatalogDocument = XmlDocument & { TopElem: PresenceStateCatalogDocumentTopElem; };

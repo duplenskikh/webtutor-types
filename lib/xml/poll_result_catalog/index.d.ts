@@ -17,6 +17,6 @@ AdminAccessBase & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   use_proctoring: XmlElem<boolean>;
-}
+};
 
 type PollResultCatalogDocument = XmlDocument & { TopElem: PollResultCatalogDocumentTopElem; };

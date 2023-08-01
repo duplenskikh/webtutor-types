@@ -5,6 +5,6 @@ type StatementPatternCatalogDocumentTopElem = XmlTopElem & { Doc: StatementPatte
   statement_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type StatementPatternCatalogDocument = XmlDocument & { TopElem: StatementPatternCatalogDocumentTopElem; };

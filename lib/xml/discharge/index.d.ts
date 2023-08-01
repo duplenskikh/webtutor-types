@@ -60,7 +60,7 @@ ExportOdbcSourceBase & {
   tables: XmlMultiElem<DischargeDocumentTable>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DischargeDocument = XmlDocument & {
   TopElem: DischargeDocumentTopElem;

@@ -41,7 +41,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   appraise_date: XmlElem<Date>;
   index: XmlElem<number>;
-}
+};
 
 type DevelopmentPlanDocument = XmlDocument & {
   TopElem: DevelopmentPlanDocumentTopElem;

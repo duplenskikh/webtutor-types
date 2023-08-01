@@ -4,7 +4,7 @@ type LibraryMaterialFormatDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialF
   format_type_id: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type LibraryMaterialFormatDocument = XmlDocument & {
   TopElem: LibraryMaterialFormatDocumentTopElem;

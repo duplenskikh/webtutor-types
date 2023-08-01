@@ -9,6 +9,6 @@ AdminAccessBase & {
   forever: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type CertificateTypeCatalogDocument = XmlDocument & { TopElem: CertificateTypeCatalogDocumentTopElem; };

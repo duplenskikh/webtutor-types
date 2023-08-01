@@ -15,7 +15,7 @@ QaTestAssertBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type QaTestDocument = XmlDocument & {
   TopElem: QaTestDocumentTopElem;

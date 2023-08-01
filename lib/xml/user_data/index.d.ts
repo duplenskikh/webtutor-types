@@ -5,7 +5,7 @@ type UserDataDocumentTopElem = XmlTopElem & { Doc: UserDataDocument } & {
   delete_date: XmlElem<Date>;
   data: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type UserDataDocument = XmlDocument & {
   TopElem: UserDataDocumentTopElem;

@@ -8,6 +8,6 @@ AdminAccessBase & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type SkillCatalogDocument = XmlDocument & { TopElem: SkillCatalogDocumentTopElem; };

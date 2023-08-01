@@ -20,7 +20,7 @@ AdminAccessBase & {
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type CompetenceDocument = XmlDocument & {
   TopElem: CompetenceDocumentTopElem;

@@ -15,6 +15,6 @@ AdminAccessBase & {
   disp_name: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type OutstaffContractCatalogDocument = XmlDocument & { TopElem: OutstaffContractCatalogDocumentTopElem; };

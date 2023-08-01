@@ -16,6 +16,6 @@ AdminAccessBase & {
   status_id: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type CovenantCatalogDocument = XmlDocument & { TopElem: CovenantCatalogDocumentTopElem; };

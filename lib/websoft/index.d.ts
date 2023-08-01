@@ -198,6 +198,7 @@ declare namespace Websoft {
          * @param totalRows Количество строк
          * @param totalColumns Количество колонок
          */
+        // eslint-disable-next-line no-magic-numbers
         Merge(firstRow: number, firstColumn: number, totalRows: number, totalColumns: number): 1 | 0;
         
         /**
@@ -205,6 +206,7 @@ declare namespace Websoft {
          * @param columnNum Номер колонки
          * @param width Ширина (Double)
          */
+        // eslint-disable-next-line no-magic-numbers
         SetColumnWidth(columnNum: number, width: number): 1 | 0;
 
         /**
@@ -212,6 +214,7 @@ declare namespace Websoft {
          * @param rowNum Номер строки
          * @param width Ширина (Double)
          */
+        // eslint-disable-next-line no-magic-numbers
         SetRowHeight(rowNum: number, width: number): 1 | 0;
         
         /**
@@ -221,6 +224,7 @@ declare namespace Websoft {
          * @param totalRows Количество строк
          * @param totalColumns Количество колонок
          */
+        // eslint-disable-next-line no-magic-numbers
         UnMerge(firstRow: number, firstColumn: number, totalRows: number, totalColumns: number): 1 | 0;
       }
 
@@ -277,11 +281,13 @@ declare namespace Websoft {
         /**
          * Закрывает документ
          */
+        // eslint-disable-next-line no-magic-numbers
         Close(): 0 | 1;
 
         /**
          * Создает книгу Excel
          */
+        // eslint-disable-next-line no-magic-numbers
         CreateWorkBook(): 0 | 1;
 
         /**
@@ -306,6 +312,7 @@ declare namespace Websoft {
          * @param resourcesDirectoryName Название папки с ресурсами (изображения, стили и т.д.)
          * 
          */
+        // eslint-disable-next-line no-magic-numbers
         LoadHtmlFile(filePath: string, resourcesDirectoryName: string): 0 | 1;
 
         /**
@@ -314,17 +321,20 @@ declare namespace Websoft {
          * @param resourcesDirectoryName Название папки с ресурсами (изображения, стили и т.д.)
          * 
          */
+        // eslint-disable-next-line no-magic-numbers
         LoadHtmlString(htmlText: string, resourcesDirectoryName: string): 0 | 1;
 
         /**
          * Открывает файл Microsoft Excel
          * @param filePath Путь до файла
          */
+        // eslint-disable-next-line no-magic-numbers
         Open(filePath: string): 1 | 0;
 
         /**
          * Сохраняет текущий документ
          */
+        // eslint-disable-next-line no-magic-numbers
         Save(): 1 | 0;
 
         /**
@@ -333,6 +343,7 @@ declare namespace Websoft {
          * Доступные форматы: CSV, ODS, TIFF, SVG, PDF, MHTML, HTML
          * @param newPath Путь сохранения, включая имя файла
          */
+        // eslint-disable-next-line no-magic-numbers
         SaveAs(newPath: string): 1 | 0;
       }
 

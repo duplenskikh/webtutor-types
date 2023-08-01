@@ -15,7 +15,7 @@ CustomElemsBase & {
   duration: XmlElem<number>;
   description: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type TimeEntryDocument = XmlDocument & {
   TopElem: TimeEntryDocumentTopElem;

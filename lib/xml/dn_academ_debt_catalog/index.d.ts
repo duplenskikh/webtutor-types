@@ -14,6 +14,6 @@ AdminAccessBase & {
   liquid_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DnAcademDebtCatalogDocument = XmlDocument & { TopElem: DnAcademDebtCatalogDocumentTopElem; };

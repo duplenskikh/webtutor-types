@@ -8,7 +8,7 @@ type DeviceRegDocumentTopElem = XmlTopElem & {
   mobile_app_config_id: XmlElem<number>;
   person_id: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DeviceRegDocument = XmlDocument & {
   TopElem: DeviceRegDocumentTopElem;

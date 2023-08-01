@@ -20,7 +20,7 @@ AdminAccessBase & {
   faqs: XmlMultiElem<ExpertDocumentFaq>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-}
+};
 
 type ExpertDocument = XmlDocument & {
   TopElem: ExpertDocumentTopElem;

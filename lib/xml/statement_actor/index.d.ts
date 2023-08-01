@@ -10,7 +10,7 @@ type StatementActorDocumentTopElem = XmlTopElem & { Doc: StatementActorDocument 
   account_home_page: XmlElem<string>;
   account_name: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type StatementActorDocument = XmlDocument & {
   TopElem: StatementActorDocumentTopElem;

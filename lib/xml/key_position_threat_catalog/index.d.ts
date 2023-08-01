@@ -6,6 +6,6 @@ AdminAccessBase & {
   color: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type KeyPositionThreatCatalogDocument = XmlDocument & { TopElem: KeyPositionThreatCatalogDocumentTopElem; };

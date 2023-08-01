@@ -9,7 +9,7 @@ FileListBase & {
   role_id: XmlMultiElem<number>;
   doc_info: XmlElem<DocInfoBase>;
   desc: XmlElem<string>;
-}
+};
 
 type ProviderDocument = XmlDocument & {
   TopElem: ProviderDocumentTopElem;

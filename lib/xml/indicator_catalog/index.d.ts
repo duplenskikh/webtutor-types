@@ -11,6 +11,6 @@ AdminAccessBase & {
   tags: XmlElem<string>;
   experts: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type IndicatorCatalogDocument = XmlDocument & { TopElem: IndicatorCatalogDocumentTopElem; };

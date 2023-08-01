@@ -15,6 +15,6 @@ PersonFillingBase & {
   implemented: XmlElem<boolean>;
   selected_date: XmlElem<Date>;
   implemented_date: XmlElem<Date>;
-}
+};
 
 type RecommenderSelectCollaboratorCatalogDocument = XmlDocument & { TopElem: RecommenderSelectCollaboratorCatalogDocumentTopElem; };

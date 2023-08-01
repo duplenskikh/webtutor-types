@@ -12,6 +12,6 @@ AccessDocBase & {
   experts: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type WikiBaseCatalogDocument = XmlDocument & { TopElem: WikiBaseCatalogDocumentTopElem; };

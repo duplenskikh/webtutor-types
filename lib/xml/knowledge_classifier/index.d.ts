@@ -8,7 +8,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   access: XmlElem<AccessDocBase>;
   desc: XmlElem<string>;
-}
+};
 
 type KnowledgeClassifierDocument = XmlDocument & {
   TopElem: KnowledgeClassifierDocumentTopElem;

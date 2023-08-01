@@ -79,7 +79,7 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   module_href_get(): void;
   export_2_scorm(): void;
-}
+};
 
 type ClCourseDocument = XmlDocument & {
   TopElem: ClCourseDocumentTopElem;

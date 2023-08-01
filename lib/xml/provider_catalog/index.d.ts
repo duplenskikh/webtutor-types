@@ -7,6 +7,6 @@ type ProviderCatalogDocumentTopElem = XmlTopElem & { Doc: ProviderCatalogDocumen
   dimension_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ProviderCatalogDocument = XmlDocument & { TopElem: ProviderCatalogDocumentTopElem; };

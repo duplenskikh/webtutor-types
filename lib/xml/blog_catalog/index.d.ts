@@ -19,6 +19,6 @@ AdminAccessBase & {
   knowledge_parts: XmlElem<string>;
   tags: XmlElem<string>;
   experts: XmlElem<string>;
-}
+};
 
 type BlogCatalogDocument = XmlDocument & { TopElem: BlogCatalogDocumentTopElem; };

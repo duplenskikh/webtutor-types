@@ -25,7 +25,7 @@ CustomDatasBase & {
   doc_info: XmlElem<DocInfoBase>;
   poll_results: XmlMultiElem<ContactDocumentPollResult>;
   desc: XmlElem<string>;
-}
+};
 
 type ContactDocument = XmlDocument & {
   TopElem: ContactDocumentTopElem;

@@ -15,6 +15,6 @@ AdminAccessBase & {
   is_public: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ResponseCatalogDocument = XmlDocument & { TopElem: ResponseCatalogDocumentTopElem; };

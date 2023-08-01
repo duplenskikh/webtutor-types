@@ -12,7 +12,7 @@ FileListBase & {
   is_closed: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type LibraryMaterialCommentDocument = XmlDocument & {
   TopElem: LibraryMaterialCommentDocumentTopElem;

@@ -16,6 +16,6 @@ AdminAccessBase & {
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ClModuleCatalogDocument = XmlDocument & { TopElem: ClModuleCatalogDocumentTopElem; };

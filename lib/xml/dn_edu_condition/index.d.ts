@@ -5,7 +5,7 @@ AdminAccessBase & {
   name: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnEduConditionDocument = XmlDocument & {
   TopElem: DnEduConditionDocumentTopElem;

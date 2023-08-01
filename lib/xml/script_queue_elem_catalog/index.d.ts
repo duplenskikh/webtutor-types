@@ -15,6 +15,6 @@ type ScriptQueueElemCatalogDocumentTopElem = XmlTopElem & { Doc: ScriptQueueElem
   create_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ScriptQueueElemCatalogDocument = XmlDocument & { TopElem: ScriptQueueElemCatalogDocumentTopElem; };

@@ -11,7 +11,7 @@ FileListBase & {
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type WikiArticleCommunicationTypeDocument = XmlDocument & {
   TopElem: WikiArticleCommunicationTypeDocumentTopElem;

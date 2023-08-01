@@ -27,7 +27,7 @@ WebVariablesBase & {
   comment: XmlElem<string>;
   desc: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type RequestTypeDocument = XmlDocument & {
   TopElem: RequestTypeDocumentTopElem;

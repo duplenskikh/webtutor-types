@@ -23,7 +23,7 @@ AdminAccessBase & {
   start_viewing_date: XmlElem<Date>;
   last_viewing_date: XmlElem<Date>;
   finish_viewing_date: XmlElem<Date>;
-}
+};
 
 type LibraryMaterialViewingDocument = XmlDocument & {
   TopElem: LibraryMaterialViewingDocumentTopElem;

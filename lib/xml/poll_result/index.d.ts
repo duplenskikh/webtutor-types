@@ -27,7 +27,7 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
   use_proctoring: XmlElem<boolean>;
   update_name(): unknown;
-}
+};
 
 type PollResultDocument = XmlDocument & {
   TopElem: PollResultDocumentTopElem;

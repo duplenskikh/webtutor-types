@@ -6,6 +6,6 @@ AdminAccessBase & {
   external_system_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type WalkthroughCatalogDocument = XmlDocument & { TopElem: WalkthroughCatalogDocumentTopElem; };

@@ -22,7 +22,7 @@ CustomElemsBase & {
   term_id: XmlElem<number>;
   schedule_elems: XmlMultiElem<DnScheduleDocumentScheduleElem>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnScheduleDocument = XmlDocument & {
   TopElem: DnScheduleDocumentTopElem;

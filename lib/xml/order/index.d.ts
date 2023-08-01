@@ -34,7 +34,7 @@ CustomElemsBase & {
   paid_date: XmlElem<Date>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type OrderDocument = XmlDocument & {
   TopElem: OrderDocumentTopElem;

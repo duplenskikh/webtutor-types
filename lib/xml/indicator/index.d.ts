@@ -14,7 +14,7 @@ FileListBase & {
   negative_comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type IndicatorDocument = XmlDocument & {
   TopElem: IndicatorDocumentTopElem;

@@ -16,6 +16,6 @@ AdminAccessBase & {
   experts: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type QualificationCatalogDocument = XmlDocument & { TopElem: QualificationCatalogDocumentTopElem; };

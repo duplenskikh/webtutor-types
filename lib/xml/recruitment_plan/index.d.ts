@@ -43,7 +43,7 @@ AdminAccessBase & {
   coordinators: XmlMultiElem<RecruitmentPlanDocumentCoordinator>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-}
+};
 
 type RecruitmentPlanDocument = XmlDocument & {
   TopElem: RecruitmentPlanDocumentTopElem;

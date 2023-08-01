@@ -12,7 +12,7 @@ CustomElemsBase & {
   allow_receive_data: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type ExchangeServerDocument = XmlDocument & {
   TopElem: ExchangeServerDocumentTopElem;

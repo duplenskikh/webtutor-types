@@ -11,6 +11,6 @@ AdminAccessBase & {
   recertification_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type OrgVendorStateCatalogDocument = XmlDocument & { TopElem: OrgVendorStateCatalogDocumentTopElem; };

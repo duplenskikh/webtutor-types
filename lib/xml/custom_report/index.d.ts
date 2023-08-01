@@ -40,7 +40,7 @@ CustomReportBase & {
   UI_CoreModeChangeHandler(value: number): void;
   UI_CoreObjectChangeHandler(fieldSource: XmlElem<unknown>, value: unknown): boolean;
   SetModeSelector(mode: number): void;
-}
+};
 
 type CustomReportDocument = XmlDocument & {
   TopElem: CustomReportDocumentTopElem;

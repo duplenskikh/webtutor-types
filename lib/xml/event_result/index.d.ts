@@ -33,7 +33,7 @@ CustomDatasBase & {
   guest: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type EventResultDocument = XmlDocument & {
   TopElem: EventResultDocumentTopElem;

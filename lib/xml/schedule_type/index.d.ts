@@ -6,7 +6,7 @@ type ScheduleTypeDocumentTopElem = XmlTopElem & { Doc: ScheduleTypeDocument } & 
   is_shedule: XmlElem<boolean>;
   library_url: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ScheduleTypeDocument = XmlDocument & {
   TopElem: ScheduleTypeDocumentTopElem;

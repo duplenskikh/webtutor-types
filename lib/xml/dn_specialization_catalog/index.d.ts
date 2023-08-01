@@ -5,6 +5,6 @@ type DnSpecializationCatalogDocumentTopElem = XmlTopElem & { Doc: DnSpecializati
   speciality_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DnSpecializationCatalogDocument = XmlDocument & { TopElem: DnSpecializationCatalogDocumentTopElem; };

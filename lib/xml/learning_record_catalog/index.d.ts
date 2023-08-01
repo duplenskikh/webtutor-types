@@ -29,6 +29,6 @@ AdminAccessBase & {
   is_prefer_proctor: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type LearningRecordCatalogDocument = XmlDocument & { TopElem: LearningRecordCatalogDocumentTopElem; };

@@ -42,7 +42,7 @@ AdminAccessBase & {
   distribute_cost_centers(): unknown;
   distribute_payment_persons(): unknown;
   distribute_total_cost(): unknown;
-}
+};
 
 type PayPhaseDocument = XmlDocument & {
   TopElem: PayPhaseDocumentTopElem;

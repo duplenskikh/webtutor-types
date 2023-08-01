@@ -5,6 +5,6 @@ ObjectTypeBase & {
   name: XmlElem<string>;
   create_date: XmlElem<Date>;
   data: XmlElem<string>;
-}
+};
 
 type UiDataCatalogDocument = XmlDocument & { TopElem: UiDataCatalogDocumentTopElem; };

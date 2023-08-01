@@ -9,6 +9,6 @@ ObjectTypeBase & {
   recipient_id: XmlMultiElem<number>;
   unread_recipient_id: XmlMultiElem<number>;
   disp_role_id: XmlMultiElem<string>;
-}
+};
 
 type BlockMessageCatalogDocument = XmlDocument & { TopElem: BlockMessageCatalogDocumentTopElem; };

@@ -18,7 +18,7 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   text_area: XmlElem<string>;
   load_file(): number | void;
-}
+};
 
 type ComponentPackageDocument = XmlDocument & {
   TopElem: ComponentPackageDocumentTopElem;

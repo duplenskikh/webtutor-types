@@ -12,6 +12,6 @@ AdminAccessBase & {
   experts: XmlElem<string>;
   exercises: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type CompetenceCatalogDocument = XmlDocument & { TopElem: CompetenceCatalogDocumentTopElem; };

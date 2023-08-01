@@ -5,6 +5,6 @@ PersonFillingBase & {
   budget_period_id: XmlElem<number>;
   restriction_type_id: XmlElem<number>;
   state_id: XmlElem<string>;
-}
+};
 
 type RestrictingCollaboratorScheduleCatalogDocument = XmlDocument & { TopElem: RestrictingCollaboratorScheduleCatalogDocumentTopElem; };

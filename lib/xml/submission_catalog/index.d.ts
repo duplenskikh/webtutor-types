@@ -11,6 +11,6 @@ PersonFillingBase & {
   phase_id: XmlElem<number>;
   status_id: XmlElem<string>;
   person_id: XmlElem<number>;
-}
+};
 
 type SubmissionCatalogDocument = XmlDocument & { TopElem: SubmissionCatalogDocumentTopElem; };

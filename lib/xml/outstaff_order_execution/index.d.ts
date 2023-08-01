@@ -44,7 +44,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   update_stages(): unknown;
-}
+};
 
 type OutstaffOrderExecutionDocument = XmlDocument & {
   TopElem: OutstaffOrderExecutionDocumentTopElem;

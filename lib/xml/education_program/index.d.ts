@@ -12,7 +12,7 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type EducationProgramDocument = XmlDocument & {
   TopElem: EducationProgramDocumentTopElem;

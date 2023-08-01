@@ -33,7 +33,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type SubmissionTypeDocument = XmlDocument & {
   TopElem: SubmissionTypeDocumentTopElem;

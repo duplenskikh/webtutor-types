@@ -22,6 +22,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
   is_autoclosing: XmlElem<boolean>;
   autoclosing_period: XmlElem<number>;
-}
+};
 
 type PayStageCatalogDocument = XmlDocument & { TopElem: PayStageCatalogDocumentTopElem; };

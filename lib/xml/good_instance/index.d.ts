@@ -10,7 +10,7 @@ PersonFillingBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   clear_status(): unknown;
-}
+};
 
 type GoodInstanceDocument = XmlDocument & {
   TopElem: GoodInstanceDocumentTopElem;

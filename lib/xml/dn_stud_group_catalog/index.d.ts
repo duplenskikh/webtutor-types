@@ -13,6 +13,6 @@ AdminAccessBase & {
   group_size: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DnStudGroupCatalogDocument = XmlDocument & { TopElem: DnStudGroupCatalogDocumentTopElem; };

@@ -7,7 +7,7 @@ WebVariablesBase & {
   status: XmlElem<string>;
   application_id: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ApplicationInstanceDocument = XmlDocument & {
   TopElem: ApplicationInstanceDocumentTopElem;

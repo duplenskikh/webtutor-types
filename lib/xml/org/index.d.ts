@@ -24,7 +24,7 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   start_action(): unknown;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type OrgDocument = XmlDocument & {
   TopElem: OrgDocumentTopElem;

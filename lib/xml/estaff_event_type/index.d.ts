@@ -28,7 +28,7 @@ AdminAccessBase & {
   eval_visibility_condition(): unknown;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type EstaffEventTypeDocument = XmlDocument & {
   TopElem: EstaffEventTypeDocumentTopElem;

@@ -74,7 +74,8 @@ interface IActivateProgramToPersonObject {
 
 interface IActivateProgramToPersonResultResult {
   id: number;
-  error: 1;
+  // eslint-disable-next-line no-magic-numbers
+  error: 1 | 0;
   text: string;
 }
 
@@ -101,7 +102,7 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
   role_id: XmlMultiElem<number>;
   activate_program_to_person(object: IActivateProgramToPersonObject): IActivateProgramToPersonResult;
-}
+};
 
 type CompoundProgramDocument = XmlDocument & {
   TopElem: CompoundProgramDocumentTopElem;

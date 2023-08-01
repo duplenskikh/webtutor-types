@@ -14,7 +14,7 @@ AdminAccessBase & {
   is_requered: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type SupplementaryQuestionDocument = XmlDocument & {
   TopElem: SupplementaryQuestionDocumentTopElem;

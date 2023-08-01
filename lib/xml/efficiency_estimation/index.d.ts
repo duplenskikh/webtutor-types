@@ -10,7 +10,7 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-}
+};
 
 type EfficiencyEstimationDocument = XmlDocument & {
   TopElem: EfficiencyEstimationDocumentTopElem;

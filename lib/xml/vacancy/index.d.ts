@@ -55,7 +55,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type VacancyDocument = XmlDocument & {
   TopElem: VacancyDocumentTopElem;

@@ -8,6 +8,6 @@ AdminAccessBase & {
   place_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ObjectResourceCatalogDocument = XmlDocument & { TopElem: ObjectResourceCatalogDocumentTopElem; };

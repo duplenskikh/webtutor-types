@@ -17,8 +17,8 @@ type RemoteSecurityProfileDocumentTopElem = XmlTopElem & {
   lib_access_list: XmlMultiElem<RemoteSecurityProfileDocumentLibAccessList>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type RemoteSecurityProfileDocument = XmlDocument & {
   TopElem: RemoteSecurityProfileDocumentTopElem;
-}
+};

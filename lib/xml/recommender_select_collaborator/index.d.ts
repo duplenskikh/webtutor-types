@@ -12,7 +12,7 @@ CustomElemsBase & {
   implemented_date: XmlElem<Date>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type RecommenderSelectCollaboratorDocument = XmlDocument & {
   TopElem: RecommenderSelectCollaboratorDocumentTopElem;

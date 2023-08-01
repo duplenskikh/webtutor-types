@@ -4,7 +4,7 @@ ObjectCodeNameBase & {
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
   access: XmlElem<AccessDocBase>;
-}
+};
 
 type ResourceTypeDocument = XmlDocument & {
   TopElem: ResourceTypeDocumentTopElem;

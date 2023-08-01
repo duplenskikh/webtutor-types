@@ -41,7 +41,7 @@ WebVariablesBase & {
   calculate_on_server(): unknown;
   calculate(): unknown;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type StatisticRecDocument = XmlDocument & {
   TopElem: StatisticRecDocumentTopElem;

@@ -29,7 +29,7 @@ CustomElemsBase & {
   competence_profiles: XmlMultiElem<StaffPositionDocumentCompetenceProfile>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type StaffPositionDocument = XmlDocument & {
   TopElem: StaffPositionDocumentTopElem;

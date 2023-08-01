@@ -11,7 +11,7 @@ CustomElemsBase & {
   grade_id: XmlElem<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type PositionAssessmentFormDocument = XmlDocument & {
   TopElem: PositionAssessmentFormDocumentTopElem;

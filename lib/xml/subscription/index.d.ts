@@ -9,7 +9,7 @@ AdminAccessBase & {
   date_last_action: XmlElem<Date>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type SubscriptionDocument = XmlDocument & {
   TopElem: SubscriptionDocumentTopElem;

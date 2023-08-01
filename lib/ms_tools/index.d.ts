@@ -25,7 +25,7 @@ declare namespace ms_tools {
   function save_cached_doc(doc: any): any;
   function trigger_onsavedoc(Doc: any): any;
   function check_std(teObject: any): any;
-  function list_edit_open_select(oListo: any ,oTarget: any): any;
+  function list_edit_open_select(oListo: any, oTarget: any): any;
   function get_columns_array_by_field(fldChild: any, arrColumns: any): any;
   function server_tenancy_on_init(TopElem: any, sTenancyName: any): any;
   function server_tenancy_on_app_init(TopElem: any): any;
@@ -37,7 +37,7 @@ declare namespace ms_tools {
   function assign_qualifications_to_objects(sTaskIDsType: any, sObjectIDs: any): any;
   function activate_to_objects(sTaskIDsTypesObjectIDs: any, o: any): any;
   function check_task(sTaskIDoRetTarget: any, Request: any): any;
-  function init_task(o: any,iDelay: any): any;
+  function init_task(o: any, iDelay: any): any;
   function init_task_data(teTaskInfo: any, iDelay: any): any;
   function start_task(sTaskIDsMethodNameoMethod: any): any;
   function start_task_data(sTaskIDsMethodNameoMethod: any): any;
@@ -89,7 +89,7 @@ declare namespace ms_tools {
   function convert_exec_code(fldExecTarget: any, fldUrlTarget: any, fldTextTarget: any): any;
   function foreign_elem_title(fldSource: any, sFieldNamesDefauldText: any): any;
   function calculate_statistic_rec_obj(iStatisticRecIDiObjectIDiPersonID: any): any;
-  function evaluate_remote_collection_obj(oRemoteCollectioniObjectIDiPersonIDoCollection: any,iStartPos: any, iPageSize: any): any;
+  function evaluate_remote_collection_obj(oRemoteCollectioniObjectIDiPersonIDoCollection: any, iStartPos: any, iPageSize: any): any;
   function eval_menu_remote_action(oList: any, ListElemAction: any, oScreen: any): any;
   function eval_remote_action(oRemoteActionIDofldTopElemoScreensDispType: any): any;
   function get_remote_actions_by_cur_application(sCatalogName: any): any;

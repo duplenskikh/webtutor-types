@@ -32,7 +32,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type LearningTaskResultDocument = XmlDocument & {
   TopElem: LearningTaskResultDocumentTopElem;

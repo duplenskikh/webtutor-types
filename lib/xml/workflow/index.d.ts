@@ -63,7 +63,7 @@ WorkflowFieldsStatesBase & {
   doc_info: XmlElem<DocInfoBase>;
   run_action(): unknown;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type WorkflowDocument = XmlDocument & {
   TopElem: WorkflowDocumentTopElem;

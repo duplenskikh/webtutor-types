@@ -9,6 +9,6 @@ AdminAccessBase & {
   period_type: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type BudgetPeriodCatalogDocument = XmlDocument & { TopElem: BudgetPeriodCatalogDocumentTopElem; };

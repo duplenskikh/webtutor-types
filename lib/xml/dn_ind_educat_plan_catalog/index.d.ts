@@ -11,6 +11,6 @@ type DnIndEducatPlanCatalogDocumentTopElem = XmlTopElem & { Doc: DnIndEducatPlan
   lector_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DnIndEducatPlanCatalogDocument = XmlDocument & { TopElem: DnIndEducatPlanCatalogDocumentTopElem; };

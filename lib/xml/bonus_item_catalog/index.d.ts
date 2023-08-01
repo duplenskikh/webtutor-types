@@ -8,6 +8,6 @@ AdminAccessBase & {
   period_start: XmlElem<Date>;
   period_end: XmlElem<Date>;
   result: XmlElem<number>;
-}
+};
 
 type BonusItemCatalogDocument = XmlDocument & { TopElem: BonusItemCatalogDocumentTopElem; };

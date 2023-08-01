@@ -12,7 +12,7 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type RepositoriumDocument = XmlDocument & {
   TopElem: RepositoriumDocumentTopElem;

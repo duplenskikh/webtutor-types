@@ -12,7 +12,7 @@ CustomElemsBase & {
   anonymous_user_id: XmlElem<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ExternalSystemDocument = XmlDocument & {
   TopElem: ExternalSystemDocumentTopElem;

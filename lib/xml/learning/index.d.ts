@@ -1,4 +1,4 @@
-type LearningDocumentPart = LearningPartBase
+type LearningDocumentPart = LearningPartBase;
 
 interface LearningDocumentEvent {
   event_id: XmlElem<number>;
@@ -40,7 +40,7 @@ AdminAccessBase & {
   use_proctoring: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type LearningDocument = XmlDocument & {
   TopElem: LearningDocumentTopElem;

@@ -20,7 +20,7 @@ CustomElemsBase & {
   stud_group_id: XmlElem<number>;
   student_marks: XmlMultiElem<DnRegisterDocumentStudentMark>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnRegisterDocument = XmlDocument & {
   TopElem: DnRegisterDocumentTopElem;

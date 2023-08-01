@@ -29,7 +29,7 @@ AdminAccessBase & {
   change_logs: XmlMultiElem<LibraryMaterialItemDocumentChangeLog>;
   clear_data(): unknown;
   add_log_record(): unknown;
-}
+};
 
 type LibraryMaterialItemDocument = XmlDocument & {
   TopElem: LibraryMaterialItemDocumentTopElem;

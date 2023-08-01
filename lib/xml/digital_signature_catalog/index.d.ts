@@ -15,6 +15,6 @@ AdminAccessBase & {
   custom_web_template_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DigitalSignatureCatalogDocument = XmlDocument & { TopElem: DigitalSignatureCatalogDocumentTopElem; };

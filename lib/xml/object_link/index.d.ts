@@ -13,7 +13,7 @@ CustomElemsBase & {
   calc_date: XmlElem<Date>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ObjectLinkDocument = XmlDocument & {
   TopElem: ObjectLinkDocumentTopElem;

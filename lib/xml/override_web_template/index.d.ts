@@ -22,7 +22,7 @@ WebVariablesBase & {
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type OverrideWebTemplateDocument = XmlDocument & {
   TopElem: OverrideWebTemplateDocumentTopElem;

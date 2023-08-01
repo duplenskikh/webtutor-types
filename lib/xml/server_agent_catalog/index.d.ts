@@ -11,6 +11,6 @@ MSPeriodityBase & {
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ServerAgentCatalogDocument = XmlDocument & { TopElem: ServerAgentCatalogDocumentTopElem; };

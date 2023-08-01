@@ -5,7 +5,7 @@ CustomElemsBase & {
   parent_object_id: XmlElem<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type RegionDocument = XmlDocument & {
   TopElem: RegionDocumentTopElem;
