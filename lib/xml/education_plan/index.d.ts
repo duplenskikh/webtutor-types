@@ -102,7 +102,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   getEducationPlanAccess(): unknown;
   calculateMark(): unknown;
-}
+};
 
 type EducationPlanDocument = XmlDocument & {
   TopElem: EducationPlanDocumentTopElem;

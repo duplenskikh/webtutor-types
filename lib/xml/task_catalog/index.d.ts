@@ -1,4 +1,4 @@
-type TaskCatalogDocumentTopElem = XmlTopElem & { Doc: TaskCatalogDocument } & 
+type TaskCatalogDocumentTopElem = XmlTopElem & { Doc: TaskCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -38,6 +38,6 @@ AdminAccessBase & {
   workflow_person_id: XmlMultiElem<number>;
   workflow_matching_type: XmlElem<string>;
   preparation_id: XmlMultiElem<number>;
-}
+};
 
 type TaskCatalogDocument = XmlDocument & { TopElem: TaskCatalogDocumentTopElem; };

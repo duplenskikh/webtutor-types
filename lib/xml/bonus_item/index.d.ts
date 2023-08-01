@@ -20,7 +20,7 @@ AdminAccessBase & {
   calc_result(): void;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type BonusItemDocument = XmlDocument & {
   TopElem: BonusItemDocumentTopElem;

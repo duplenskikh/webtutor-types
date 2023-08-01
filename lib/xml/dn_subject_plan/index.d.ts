@@ -9,7 +9,7 @@ CustomElemsBase & {
   educat_event_id: XmlElem<number>;
   hours: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnSubjectPlanDocument = XmlDocument & {
   TopElem: DnSubjectPlanDocumentTopElem;

@@ -6,6 +6,6 @@ type KnowledgeProfileCatalogDocumentTopElem = XmlTopElem & { Doc: KnowledgeProfi
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   knowledge_parts: XmlElem<string>;
-}
+};
 
 type KnowledgeProfileCatalogDocument = XmlDocument & { TopElem: KnowledgeProfileCatalogDocumentTopElem; };

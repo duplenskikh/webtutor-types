@@ -5,6 +5,6 @@ type DischargeCatalogDocumentTopElem = XmlTopElem & { Doc: DischargeCatalogDocum
   type: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DischargeCatalogDocument = XmlDocument & { TopElem: DischargeCatalogDocumentTopElem; };

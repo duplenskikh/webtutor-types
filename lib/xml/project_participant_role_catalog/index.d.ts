@@ -10,6 +10,6 @@ type ProjectParticipantRoleCatalogDocumentTopElem = XmlTopElem & { Doc: ProjectP
   experts: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ProjectParticipantRoleCatalogDocument = XmlDocument & { TopElem: ProjectParticipantRoleCatalogDocumentTopElem; };

@@ -16,7 +16,7 @@ interface MobileAppConfigDocumentHtmlInjection {
   html: XmlElem<string>;
 }
 
-type MobileAppConfigDocumentTopElem = XmlTopElem & { Doc: MobileAppConfigDocument } & 
+type MobileAppConfigDocumentTopElem = XmlTopElem & { Doc: MobileAppConfigDocument } &
 CustomElemsBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -35,7 +35,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-}
+};
 
 type MobileAppConfigDocument = XmlDocument & {
   TopElem: MobileAppConfigDocumentTopElem;

@@ -14,7 +14,7 @@ WebVariablesBase & {
   request: XmlElem<ActivityDocumentRequest>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ActivityDocument = XmlDocument & {
   TopElem: ActivityDocumentTopElem;

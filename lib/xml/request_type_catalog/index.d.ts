@@ -12,6 +12,6 @@ type RequestTypeCatalogDocumentTopElem = XmlTopElem & { Doc: RequestTypeCatalogD
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type RequestTypeCatalogDocument = XmlDocument & { TopElem: RequestTypeCatalogDocumentTopElem; };

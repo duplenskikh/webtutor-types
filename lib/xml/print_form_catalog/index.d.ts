@@ -8,6 +8,6 @@ type PrintFormCatalogDocumentTopElem = XmlTopElem & { Doc: PrintFormCatalogDocum
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type PrintFormCatalogDocument = XmlDocument & { TopElem: PrintFormCatalogDocumentTopElem; };

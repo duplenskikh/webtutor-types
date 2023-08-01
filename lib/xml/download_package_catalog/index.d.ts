@@ -6,6 +6,6 @@ type DownloadPackageCatalogDocumentTopElem = XmlTopElem & { Doc: DownloadPackage
   status: XmlElem<string>;
   package_date: XmlElem<Date>;
   create_date: XmlElem<Date>;
-}
+};
 
 type DownloadPackageCatalogDocument = XmlDocument & { TopElem: DownloadPackageCatalogDocumentTopElem; };

@@ -16,7 +16,7 @@ type ScriptQueueElemDocumentTopElem = XmlTopElem & { Doc: ScriptQueueElemDocumen
   changed: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ScriptQueueElemDocument = XmlDocument & {
   TopElem: ScriptQueueElemDocumentTopElem;

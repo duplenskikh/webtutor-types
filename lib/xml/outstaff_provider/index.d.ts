@@ -1,4 +1,4 @@
-type OutstaffProviderDocumentTopElem = XmlTopElem & { Doc: OutstaffProviderDocument } & 
+type OutstaffProviderDocumentTopElem = XmlTopElem & { Doc: OutstaffProviderDocument } &
 OrgBase &
 AdminAccessBase &
 FileListBase &
@@ -11,7 +11,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type OutstaffProviderDocument = XmlDocument & {
   TopElem: OutstaffProviderDocumentTopElem;

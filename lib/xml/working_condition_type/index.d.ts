@@ -4,7 +4,7 @@ type WorkingConditionTypeDocumentTopElem = XmlTopElem & { Doc: WorkingConditionT
   name: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type WorkingConditionTypeDocument = XmlDocument & {
   TopElem: WorkingConditionTypeDocumentTopElem;

@@ -33,7 +33,7 @@ ObjectCodeNameBase & {
   changed: XmlElem<boolean>;
   is_std: XmlElem<boolean>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type AdminConfigurationDocument = XmlDocument & {
   TopElem: AdminConfigurationDocumentTopElem;

@@ -1,4 +1,4 @@
-type ActiveLearningCatalogDocumentTopElem = XmlTopElem & { Doc: ActiveLearningCatalogDocument } & 
+type ActiveLearningCatalogDocumentTopElem = XmlTopElem & { Doc: ActiveLearningCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -32,6 +32,6 @@ AdminAccessBase & {
   modification_user_id: XmlElem<number>;
   app_instance_id: XmlElem<string>;
   use_proctoring: XmlElem<boolean>;
-}
+};
 
 type ActiveLearningCatalogDocument = XmlDocument & { TopElem: ActiveLearningCatalogDocumentTopElem; };

@@ -7,6 +7,6 @@ type AdminConfigurationCatalogDocumentTopElem = XmlTopElem & { Doc: AdminConfigu
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type AdminConfigurationCatalogDocument = XmlDocument & { TopElem: AdminConfigurationCatalogDocumentTopElem; };

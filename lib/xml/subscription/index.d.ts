@@ -1,4 +1,4 @@
-type SubscriptionDocumentTopElem = XmlTopElem & { Doc: SubscriptionDocument } & 
+type SubscriptionDocumentTopElem = XmlTopElem & { Doc: SubscriptionDocument } &
 CustomElemsBase &
 AdminAccessBase & {
   create_date: XmlElem<Date>;
@@ -9,7 +9,7 @@ AdminAccessBase & {
   date_last_action: XmlElem<Date>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type SubscriptionDocument = XmlDocument & {
   TopElem: SubscriptionDocumentTopElem;

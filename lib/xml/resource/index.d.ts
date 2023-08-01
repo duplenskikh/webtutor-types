@@ -66,7 +66,7 @@ GameBonusBase & {
   obtain_link(source?: XmlTopElem): null | void;
   guess_type(fileUrl: string): void;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type ResourceDocument = XmlDocument & {
   TopElem: ResourceDocumentTopElem;

@@ -8,6 +8,6 @@ type CodingCatalogDocumentTopElem = XmlTopElem & { Doc: CodingCatalogDocument } 
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type CodingCatalogDocument = XmlDocument & { TopElem: CodingCatalogDocumentTopElem; };

@@ -1,4 +1,4 @@
-type TypicalDevelopmentProgramCatalogDocumentTopElem = XmlTopElem & { Doc: TypicalDevelopmentProgramCatalogDocument } & 
+type TypicalDevelopmentProgramCatalogDocumentTopElem = XmlTopElem & { Doc: TypicalDevelopmentProgramCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -9,6 +9,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type TypicalDevelopmentProgramCatalogDocument = XmlDocument & { TopElem: TypicalDevelopmentProgramCatalogDocumentTopElem; };

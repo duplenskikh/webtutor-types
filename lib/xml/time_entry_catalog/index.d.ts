@@ -12,6 +12,6 @@ type TimeEntryCatalogDocumentTopElem = XmlTopElem & { Doc: TimeEntryCatalogDocum
   end_date: XmlElem<Date>;
   duration: XmlElem<number>;
   description: XmlElem<string>;
-}
+};
 
 type TimeEntryCatalogDocument = XmlDocument & { TopElem: TimeEntryCatalogDocumentTopElem; };

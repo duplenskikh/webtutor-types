@@ -1,4 +1,4 @@
-type PersonnelCommitteeDocumentTopElem = XmlTopElem & { Doc: PersonnelCommitteeDocument } & 
+type PersonnelCommitteeDocumentTopElem = XmlTopElem & { Doc: PersonnelCommitteeDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
@@ -21,7 +21,7 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   set_status(): unknown;
   start_action(): unknown;
-}
+};
 
 type PersonnelCommitteeDocument = XmlDocument & {
   TopElem: PersonnelCommitteeDocumentTopElem;

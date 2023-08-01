@@ -13,7 +13,7 @@ WebVariablesBase & {
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
   provider_do(): unknown;
-}
+};
 
 type ChannelProviderDocument = XmlDocument & {
   TopElem: ChannelProviderDocumentTopElem;

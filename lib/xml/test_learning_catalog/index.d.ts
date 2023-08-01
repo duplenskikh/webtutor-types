@@ -1,4 +1,4 @@
-type TestLearningCatalogDocumentTopElem = XmlTopElem & { Doc: TestLearningCatalogDocument } & 
+type TestLearningCatalogDocumentTopElem = XmlTopElem & { Doc: TestLearningCatalogDocument } &
 AnnalsNumsBase &
 AdminAccessBase & {
   id: XmlElem<number>;
@@ -32,6 +32,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
   is_self_enrolled: XmlElem<boolean>;
   use_proctoring: XmlElem<boolean>;
-}
+};
 
 type TestLearningCatalogDocument = XmlDocument & { TopElem: TestLearningCatalogDocumentTopElem; };

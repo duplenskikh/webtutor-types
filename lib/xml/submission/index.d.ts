@@ -1,4 +1,4 @@
-type SubmissionDocumentTopElem = XmlTopElem & { Doc: SubmissionDocument } & 
+type SubmissionDocumentTopElem = XmlTopElem & { Doc: SubmissionDocument } &
 PersonFillingBase &
 FileListBase &
 CustomElemsBase & {
@@ -17,7 +17,7 @@ CustomElemsBase & {
   phase_id: XmlElem<number>;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type SubmissionDocument = XmlDocument & {
   TopElem: SubmissionDocumentTopElem;

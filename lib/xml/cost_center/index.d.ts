@@ -14,7 +14,7 @@ CustomElemsBase & {
   subdivisions: XmlMultiElem<CostCenterDocumentSubdivision>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type CostCenterDocument = XmlDocument & {
   TopElem: CostCenterDocumentTopElem;

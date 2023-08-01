@@ -1,4 +1,4 @@
-type StaffPositionFinishCatalogDocumentTopElem = XmlTopElem & { Doc: StaffPositionFinishCatalogDocument } & 
+type StaffPositionFinishCatalogDocumentTopElem = XmlTopElem & { Doc: StaffPositionFinishCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -12,6 +12,6 @@ AdminAccessBase & {
   position_finish_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type StaffPositionFinishCatalogDocument = XmlDocument & { TopElem: StaffPositionFinishCatalogDocumentTopElem; };

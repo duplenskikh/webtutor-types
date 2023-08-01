@@ -5,6 +5,6 @@ type QaTestParamsetCatalogDocumentTopElem = XmlTopElem & { Doc: QaTestParamsetCa
   status: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type QaTestParamsetCatalogDocument = XmlDocument & { TopElem: QaTestParamsetCatalogDocumentTopElem; };

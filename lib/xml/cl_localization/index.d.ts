@@ -5,7 +5,7 @@ type ClLocalizationDocumentTopElem = XmlTopElem & {
   access: XmlElem<AccessDocBase>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ClLocalizationDocument = XmlDocument & {
   TopElem: ClLocalizationDocumentTopElem;

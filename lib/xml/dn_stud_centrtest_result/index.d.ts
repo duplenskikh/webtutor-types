@@ -9,7 +9,7 @@ CustomElemsBase & {
   student_fullname: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnStudCentrtestResultDocument = XmlDocument & {
   TopElem: DnStudCentrtestResultDocumentTopElem;

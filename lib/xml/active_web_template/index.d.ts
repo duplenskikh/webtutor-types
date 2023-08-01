@@ -36,7 +36,7 @@ type ActiveWebTemplateDocumentTopElem = XmlTopElem & {
   counter_template: XmlElem<number>;
   counter_saved_template: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ActiveWebTemplateDocument = XmlDocument & {
   TopElem: ActiveWebTemplateDocumentTopElem;

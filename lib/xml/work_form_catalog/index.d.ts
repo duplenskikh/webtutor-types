@@ -2,6 +2,6 @@ type WorkFormCatalogDocumentTopElem = XmlTopElem & { Doc: WorkFormCatalogDocumen
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-}
+};
 
 type WorkFormCatalogDocument = XmlDocument & { TopElem: WorkFormCatalogDocumentTopElem; };

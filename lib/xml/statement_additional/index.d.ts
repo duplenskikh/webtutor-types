@@ -5,7 +5,7 @@ type StatementAdditionalDocumentTopElem = XmlTopElem & { Doc: StatementAdditiona
   value: XmlElem<string>;
   statement_id: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type StatementAdditionalDocument = XmlDocument & {
   TopElem: StatementAdditionalDocumentTopElem;

@@ -1,4 +1,4 @@
-type IndicatorDocumentTopElem = XmlTopElem & { Doc: IndicatorDocument } & 
+type IndicatorDocumentTopElem = XmlTopElem & { Doc: IndicatorDocument } &
 ObjectCodeNameBase &
 CompetenceScaleBase &
 CompetenceLevelBase &
@@ -14,7 +14,7 @@ FileListBase & {
   negative_comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type IndicatorDocument = XmlDocument & {
   TopElem: IndicatorDocumentTopElem;

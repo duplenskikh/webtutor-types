@@ -1,4 +1,4 @@
-type ChatbotChatCatalogDocumentTopElem = XmlTopElem & { Doc: ChatbotChatCatalogDocument } & 
+type ChatbotChatCatalogDocumentTopElem = XmlTopElem & { Doc: ChatbotChatCatalogDocument } &
 PersonFillingBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -12,6 +12,6 @@ PersonFillingBase & {
   conversation_id: XmlElem<number>;
   state_id: XmlElem<string>;
   person_id: XmlElem<number>;
-}
+};
 
 type ChatbotChatCatalogDocument = XmlDocument & { TopElem: ChatbotChatCatalogDocumentTopElem; };

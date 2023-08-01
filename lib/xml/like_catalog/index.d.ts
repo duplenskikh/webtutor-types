@@ -10,6 +10,6 @@ type LikeCatalogDocumentTopElem = XmlTopElem & { Doc: LikeCatalogDocument } & {
   create_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type LikeCatalogDocument = XmlDocument & { TopElem: LikeCatalogDocumentTopElem; };

@@ -1,4 +1,4 @@
-type RecommenderAlgorithmCatalogDocumentTopElem = XmlTopElem & { Doc: RecommenderAlgorithmCatalogDocument } & 
+type RecommenderAlgorithmCatalogDocumentTopElem = XmlTopElem & { Doc: RecommenderAlgorithmCatalogDocument } &
 MSPeriodityBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -10,6 +10,6 @@ MSPeriodityBase & {
   is_object_type: XmlElem<boolean>;
   use_cache: XmlElem<boolean>;
   cache_time: XmlElem<number>;
-}
+};
 
 type RecommenderAlgorithmCatalogDocument = XmlDocument & { TopElem: RecommenderAlgorithmCatalogDocumentTopElem; };

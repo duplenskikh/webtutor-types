@@ -29,7 +29,7 @@ interface QualificationDocumentEvalCondition {
   max_value: XmlElem<number>;
 }
 
-type QualificationDocumentTopElem = XmlTopElem & { Doc: QualificationDocument } & 
+type QualificationDocumentTopElem = XmlTopElem & { Doc: QualificationDocument } &
 ObjectCodeNameBase &
 GameBonusBase &
 FileListBase &
@@ -61,7 +61,7 @@ KnowledgePartsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type QualificationDocument = XmlDocument & {
   TopElem: QualificationDocumentTopElem;

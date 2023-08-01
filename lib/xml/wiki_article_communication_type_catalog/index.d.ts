@@ -8,6 +8,6 @@ type WikiArticleCommunicationTypeCatalogDocumentTopElem = XmlTopElem & { Doc: Wi
   child_wiki_article_type_id: XmlElem<number>;
   is_mandatory: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
-}
+};
 
 type WikiArticleCommunicationTypeCatalogDocument = XmlDocument & { TopElem: WikiArticleCommunicationTypeCatalogDocumentTopElem; };

@@ -1,4 +1,4 @@
-type TransactionDocumentTopElem = XmlTopElem & { Doc: TransactionDocument } & 
+type TransactionDocumentTopElem = XmlTopElem & { Doc: TransactionDocument } &
 PersonFillingBase &
 ObjectTypeBase &
 AdminAccessBase &
@@ -13,7 +13,7 @@ CustomElemsBase & {
   objects: XmlMultiElem<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type TransactionDocument = XmlDocument & {
   TopElem: TransactionDocumentTopElem;

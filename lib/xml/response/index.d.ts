@@ -1,4 +1,4 @@
-type ResponseDocumentTopElem = XmlTopElem & { Doc: ResponseDocument } & 
+type ResponseDocumentTopElem = XmlTopElem & { Doc: ResponseDocument } &
 PersonFillingBase &
 AdminAccessBase &
 CustomElemsBase & {
@@ -18,7 +18,7 @@ CustomElemsBase & {
   basic_score: XmlElem<number>;
   basic_desc: XmlElem<string>;
   calc_basic_values(): unknown;
-}
+};
 
 type ResponseDocument = XmlDocument & {
   TopElem: ResponseDocumentTopElem;

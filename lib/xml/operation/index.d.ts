@@ -1,4 +1,4 @@
-type OperationDocumentTopElem = XmlTopElem & { Doc: OperationDocument } & 
+type OperationDocumentTopElem = XmlTopElem & { Doc: OperationDocument } &
 WebVariablesBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -23,7 +23,7 @@ WebVariablesBase & {
   changed: XmlElem<boolean>;
   role_id: XmlMultiElem<number>;
   execute(): unknown;
-}
+};
 
 type OperationDocument = XmlDocument & {
   TopElem: OperationDocumentTopElem;

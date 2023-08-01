@@ -21,7 +21,7 @@ FuncManagersBase & {
   open_script: XmlElem<string>;
   additional_info_script: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ConversationTypeDocument = XmlDocument & {
   TopElem: ConversationTypeDocumentTopElem;

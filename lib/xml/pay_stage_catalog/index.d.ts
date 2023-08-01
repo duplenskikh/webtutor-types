@@ -1,4 +1,4 @@
-type PayStageCatalogDocumentTopElem = XmlTopElem & { Doc: PayStageCatalogDocument } & 
+type PayStageCatalogDocumentTopElem = XmlTopElem & { Doc: PayStageCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -22,6 +22,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
   is_autoclosing: XmlElem<boolean>;
   autoclosing_period: XmlElem<number>;
-}
+};
 
 type PayStageCatalogDocument = XmlDocument & { TopElem: PayStageCatalogDocumentTopElem; };

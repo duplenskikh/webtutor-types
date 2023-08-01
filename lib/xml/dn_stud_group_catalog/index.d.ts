@@ -1,4 +1,4 @@
-type DnStudGroupCatalogDocumentTopElem = XmlTopElem & { Doc: DnStudGroupCatalogDocument } & 
+type DnStudGroupCatalogDocumentTopElem = XmlTopElem & { Doc: DnStudGroupCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -13,6 +13,6 @@ AdminAccessBase & {
   group_size: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DnStudGroupCatalogDocument = XmlDocument & { TopElem: DnStudGroupCatalogDocumentTopElem; };

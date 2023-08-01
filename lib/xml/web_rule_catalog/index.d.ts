@@ -16,6 +16,6 @@ type WebRuleCatalogDocumentTopElem = XmlTopElem & { Doc: WebRuleCatalogDocument 
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
-}
+};
 
 type WebRuleCatalogDocument = XmlDocument & { TopElem: WebRuleCatalogDocumentTopElem; };

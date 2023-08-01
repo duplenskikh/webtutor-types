@@ -107,7 +107,7 @@ AdminAccessBase & {
   GetPartUrl(partCode: string, partIndex: number): string;
   get_info(): unknown[];
   role_id: XmlMultiElem<number>;
-}
+};
 
 type CourseDocument = XmlDocument & {
   TopElem: CourseDocumentTopElem;

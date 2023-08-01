@@ -13,6 +13,6 @@ type PaymentCatalogDocumentTopElem = XmlTopElem & { Doc: PaymentCatalogDocument 
   budget_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type PaymentCatalogDocument = XmlDocument & { TopElem: PaymentCatalogDocumentTopElem; };

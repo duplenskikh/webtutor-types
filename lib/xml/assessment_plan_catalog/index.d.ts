@@ -1,4 +1,4 @@
-type AssessmentPlanCatalogDocumentTopElem = XmlTopElem & { Doc: AssessmentPlanCatalogDocument } & 
+type AssessmentPlanCatalogDocumentTopElem = XmlTopElem & { Doc: AssessmentPlanCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -34,6 +34,6 @@ AdminAccessBase & {
   period_end: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type AssessmentPlanCatalogDocument = XmlDocument & { TopElem: AssessmentPlanCatalogDocumentTopElem; };

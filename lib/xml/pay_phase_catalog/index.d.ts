@@ -1,4 +1,4 @@
-type PayPhaseCatalogDocumentTopElem = XmlTopElem & { Doc: PayPhaseCatalogDocument } & 
+type PayPhaseCatalogDocumentTopElem = XmlTopElem & { Doc: PayPhaseCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   name: XmlElem<string>;
@@ -11,6 +11,6 @@ AdminAccessBase & {
   act_sum: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type PayPhaseCatalogDocument = XmlDocument & { TopElem: PayPhaseCatalogDocumentTopElem; };

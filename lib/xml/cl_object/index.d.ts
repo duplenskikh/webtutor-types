@@ -29,7 +29,7 @@ type ClObjectDocumentTopElem = XmlTopElem & {
   doc_info: XmlElem<DocInfoBase>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-}
+};
 
 type ClObjectDocument = XmlDocument & {
   TopElem: ClObjectDocumentTopElem;

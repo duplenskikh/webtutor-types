@@ -40,7 +40,7 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   add_participant(personId: number, perticipantTopElem?: CollaboratorDocumentTopElem): void;
   calculate_rating(): void;
-}
+};
 
 type ContestDocument = XmlDocument & {
   TopElem: ContestDocumentTopElem;

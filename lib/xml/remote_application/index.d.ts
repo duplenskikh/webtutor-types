@@ -12,7 +12,7 @@ type RemoteApplicationDocumentTopElem = XmlTopElem & { Doc: RemoteApplicationDoc
   category_id: XmlMultiElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type RemoteApplicationDocument = XmlDocument & {
   TopElem: RemoteApplicationDocumentTopElem;

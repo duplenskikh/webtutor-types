@@ -30,7 +30,7 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type CareerPlanDocument = XmlDocument & {
   TopElem: CareerPlanDocumentTopElem;

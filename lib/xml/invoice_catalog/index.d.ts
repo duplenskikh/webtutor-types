@@ -1,4 +1,4 @@
-type InvoiceCatalogDocumentTopElem = XmlTopElem & { Doc: InvoiceCatalogDocument } & 
+type InvoiceCatalogDocumentTopElem = XmlTopElem & { Doc: InvoiceCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -9,6 +9,6 @@ AdminAccessBase & {
   request_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type InvoiceCatalogDocument = XmlDocument & { TopElem: InvoiceCatalogDocumentTopElem; };

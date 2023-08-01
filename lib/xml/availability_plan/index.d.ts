@@ -22,7 +22,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type AvailabilityPlanDocument = XmlDocument & {
   TopElem: AvailabilityPlanDocumentTopElem;

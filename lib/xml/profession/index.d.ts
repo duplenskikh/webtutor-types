@@ -1,4 +1,4 @@
-type ProfessionDocumentTopElem = XmlTopElem & { Doc: ProfessionDocument } & 
+type ProfessionDocumentTopElem = XmlTopElem & { Doc: ProfessionDocument } &
 ObjectCodeNameBase &
 AdminAccessBase &
 CustomElemsBase & {
@@ -6,7 +6,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-}
+};
 
 type ProfessionDocument = XmlDocument & {
   TopElem: ProfessionDocumentTopElem;

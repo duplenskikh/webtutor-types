@@ -12,7 +12,7 @@ type CodingDocumentTopElem = XmlTopElem & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   obtain_code(): string;
-}
+};
 
 type CodingDocument = XmlDocument & {
   TopElem: CodingDocumentTopElem;

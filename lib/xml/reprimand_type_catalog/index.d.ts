@@ -3,6 +3,6 @@ type ReprimandTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ReprimandTypeCata
   code: XmlElem<string>;
   name: XmlElem<string>;
   modification_date: XmlElem<Date>;
-}
+};
 
 type ReprimandTypeCatalogDocument = XmlDocument & { TopElem: ReprimandTypeCatalogDocumentTopElem; };

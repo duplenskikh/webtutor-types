@@ -1,4 +1,4 @@
-type IntervalScheduleCatalogDocumentTopElem = XmlTopElem & { Doc: IntervalScheduleCatalogDocument } & 
+type IntervalScheduleCatalogDocumentTopElem = XmlTopElem & { Doc: IntervalScheduleCatalogDocument } &
 PersonFillingBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -16,6 +16,6 @@ PersonFillingBase & {
   change_finish_date: XmlElem<Date>;
   workflow_person_id: XmlMultiElem<number>;
   workflow_matching_type: XmlElem<string>;
-}
+};
 
 type IntervalScheduleCatalogDocument = XmlDocument & { TopElem: IntervalScheduleCatalogDocumentTopElem; };

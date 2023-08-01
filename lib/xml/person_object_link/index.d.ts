@@ -20,7 +20,7 @@ type PersonObjectLinkDocumentTopElem = XmlTopElem & { Doc: PersonObjectLinkDocum
   all_can_delete: XmlElem<boolean>;
   objects: XmlMultiElem<PersonObjectLinkDocumentObject>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type PersonObjectLinkDocument = XmlDocument & {
   TopElem: PersonObjectLinkDocumentTopElem;

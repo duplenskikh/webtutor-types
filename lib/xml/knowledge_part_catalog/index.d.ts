@@ -1,4 +1,4 @@
-type KnowledgePartCatalogDocumentTopElem = XmlTopElem & { Doc: KnowledgePartCatalogDocument } & 
+type KnowledgePartCatalogDocumentTopElem = XmlTopElem & { Doc: KnowledgePartCatalogDocument } &
 AccessDocBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -17,6 +17,6 @@ AccessDocBase & {
   knowledge_parts: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type KnowledgePartCatalogDocument = XmlDocument & { TopElem: KnowledgePartCatalogDocumentTopElem; };

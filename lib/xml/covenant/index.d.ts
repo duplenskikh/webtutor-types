@@ -23,7 +23,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   status_id: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type CovenantDocument = XmlDocument & {
   TopElem: CovenantDocumentTopElem;

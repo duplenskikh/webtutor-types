@@ -22,7 +22,7 @@ interface UserAssignmentDocumentYColHeader {
   y_row_option_type: XmlElem<string>;
 }
 
-type UserAssignmentDocumentTopElem = XmlTopElem & { Doc: UserAssignmentDocument } & 
+type UserAssignmentDocumentTopElem = XmlTopElem & { Doc: UserAssignmentDocument } &
 ViewConditionsBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -44,7 +44,7 @@ ViewConditionsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type UserAssignmentDocument = XmlDocument & {
   TopElem: UserAssignmentDocumentTopElem;

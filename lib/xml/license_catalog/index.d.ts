@@ -18,6 +18,6 @@ type LicenseCatalogDocumentTopElem = XmlTopElem & { Doc: LicenseCatalogDocument 
   users_num: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type LicenseCatalogDocument = XmlDocument & { TopElem: LicenseCatalogDocumentTopElem; };

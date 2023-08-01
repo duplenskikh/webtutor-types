@@ -21,7 +21,7 @@ interface RecruitmentPlanDocumentCoordinator extends PersonFillingBase {
   comment: XmlElem<string>;
 }
 
-type RecruitmentPlanDocumentTopElem = XmlTopElem & { Doc: RecruitmentPlanDocument } & 
+type RecruitmentPlanDocumentTopElem = XmlTopElem & { Doc: RecruitmentPlanDocument } &
 FileListBase &
 CustomElemsBase &
 AdminAccessBase & {
@@ -43,7 +43,7 @@ AdminAccessBase & {
   coordinators: XmlMultiElem<RecruitmentPlanDocumentCoordinator>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-}
+};
 
 type RecruitmentPlanDocument = XmlDocument & {
   TopElem: RecruitmentPlanDocumentTopElem;

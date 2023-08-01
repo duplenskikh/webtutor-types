@@ -22,7 +22,7 @@ type RestrictingTypeDocumentTopElem = XmlTopElem & { Doc: RestrictingTypeDocumen
   restrictings: XmlMultiElem<RestrictingTypeDocumentRestricting>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type RestrictingTypeDocument = XmlDocument & {
   TopElem: RestrictingTypeDocumentTopElem;

@@ -9,7 +9,7 @@ type ProfilingRecordDocumentTopElem = XmlTopElem & { Doc: ProfilingRecordDocumen
   template_id: XmlElem<number>;
   parent_template_type: XmlElem<string>;
   parent_template_id: XmlElem<number>;
-}
+};
 
 type ProfilingRecordDocument = XmlDocument & {
   TopElem: ProfilingRecordDocumentTopElem;

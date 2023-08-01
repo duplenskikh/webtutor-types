@@ -27,7 +27,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type BudgetDocument = XmlDocument & {
   TopElem: BudgetDocumentTopElem;

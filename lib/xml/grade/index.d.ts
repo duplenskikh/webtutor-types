@@ -7,7 +7,7 @@ type GradeDocumentTopElem = XmlTopElem & { Doc: GradeDocument } & {
   currency: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type GradeDocument = XmlDocument & {
   TopElem: GradeDocumentTopElem;

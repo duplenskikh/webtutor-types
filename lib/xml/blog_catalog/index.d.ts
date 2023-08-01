@@ -1,4 +1,4 @@
-type BlogCatalogDocumentTopElem = XmlTopElem & { Doc: BlogCatalogDocument } & 
+type BlogCatalogDocumentTopElem = XmlTopElem & { Doc: BlogCatalogDocument } &
 PersonFillingBase &
 AdminAccessBase & {
   id: XmlElem<number>;
@@ -19,6 +19,6 @@ AdminAccessBase & {
   knowledge_parts: XmlElem<string>;
   tags: XmlElem<string>;
   experts: XmlElem<string>;
-}
+};
 
 type BlogCatalogDocument = XmlDocument & { TopElem: BlogCatalogDocumentTopElem; };

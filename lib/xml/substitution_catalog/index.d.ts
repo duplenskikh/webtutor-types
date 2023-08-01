@@ -1,4 +1,4 @@
-type SubstitutionCatalogDocumentTopElem = XmlTopElem & { Doc: SubstitutionCatalogDocument } & 
+type SubstitutionCatalogDocumentTopElem = XmlTopElem & { Doc: SubstitutionCatalogDocument } &
 ObjectTypeBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -12,6 +12,6 @@ ObjectTypeBase & {
   finish_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type SubstitutionCatalogDocument = XmlDocument & { TopElem: SubstitutionCatalogDocumentTopElem; };

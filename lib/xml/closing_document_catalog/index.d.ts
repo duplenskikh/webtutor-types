@@ -16,6 +16,6 @@ type ClosingDocumentCatalogDocumentTopElem = XmlTopElem & { Doc: ClosingDocument
   receiving_status_id: XmlElem<number>;
   received_date: XmlElem<Date>;
   docs_comment: XmlElem<string>;
-}
+};
 
 type ClosingDocumentCatalogDocument = XmlDocument & { TopElem: ClosingDocumentCatalogDocumentTopElem; };

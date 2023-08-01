@@ -14,7 +14,7 @@ declare function CheckPamMd5(str: string, arg: string): boolean;
  * Возвращает false, если нет (буфер пуст или его содержимое не того формата).
  * Обычно формат 'text/plain' или 'text/html'.
  * @param {string} arg1 - наименование формата.
- * @param {any} boolean - 
+ * @param {any} boolean -
  */
 declare function ClipboardFormatAvailable(arg1: string, boolean: any): any;
 
@@ -81,7 +81,7 @@ declare function FinishModalTask(): undefined;
 
 /**
  * Извлекает содержимое составного документа html (с вложенными файлами в формате <compound-attc/>) в файл, сохраняя все вложенные файлы относительно него.
- * @param {any} html - 
+ * @param {any} html -
  * @param {string} fileUrl - url файлв.
  * @returns undefined
  */
@@ -1757,6 +1757,7 @@ declare function StrInt(arg: number, digitsNum?: number, addGroupDelim?: boolean
  * TextInt(121, 1) == "сто двадцать одна"
  * ```
  */
+// eslint-disable-next-line no-magic-numbers
 declare function TextInt(arg: number, gender: 0 | 1): string;
 
 /**
@@ -2299,7 +2300,7 @@ declare function StartModalTask(taskTitle: string): undefined;
  * содержащий функции, возвращает псевдо-документ (псевдо-форму),
  * содержащую те же функции. Действие этой функции похоже
  * на действие функции {@link EvalCodeUrl}, но не тождествены ей.
- * Если мы выполняем сторонние функции при помощи 
+ * Если мы выполняем сторонние функции при помощи
  * {@link EvalCodeUrl}, то переменные из нашего кода видны внутри сторонних функций,
  * что может привести к разрушению кода при совпадении названий переменных.
  * {@link OpenCodeLib} лишен этого недостатка, т.к. приводит к загрузке функций
@@ -2314,9 +2315,9 @@ declare function OpenCodeLib(url: string): any;
 
 /**
  *
- * @param libraryName 
- * @param methodName 
- * @param arguments 
+ * @param libraryName
+ * @param methodName
+ * @param arguments
  */
 declare function CallServerMethod(libraryName: string, methodName: string, arguments?: any[]): any;
 
@@ -2338,7 +2339,7 @@ declare function StrToCharCodesArray(str: string): number[];
 declare function StrToCharArray(str: string): string[];
 
 /**
- * Функция StrFromCharCode преобразует код символа (число) в строку, содержащую этот символ. 
+ * Функция StrFromCharCode преобразует код символа (число) в строку, содержащую этот символ.
  * @param code код символа
  */
 declare function StrFromCharCode(code: number): string;

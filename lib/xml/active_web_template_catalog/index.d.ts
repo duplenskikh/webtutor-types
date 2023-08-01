@@ -9,6 +9,6 @@ type ActiveWebTemplateCatalogDocumentTopElem = XmlTopElem & { Doc: ActiveWebTemp
   hash: XmlElem<string>;
   creation_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
-}
+};
 
 type ActiveWebTemplateCatalogDocument = XmlDocument & { TopElem: ActiveWebTemplateCatalogDocumentTopElem; };

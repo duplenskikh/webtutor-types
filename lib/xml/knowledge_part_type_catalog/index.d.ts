@@ -4,6 +4,6 @@ type KnowledgePartTypeCatalogDocumentTopElem = XmlTopElem & { Doc: KnowledgePart
   name: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type KnowledgePartTypeCatalogDocument = XmlDocument & { TopElem: KnowledgePartTypeCatalogDocumentTopElem; };

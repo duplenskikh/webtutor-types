@@ -1,4 +1,4 @@
-type RequestTypeDocumentTopElem = XmlTopElem & { Doc: RequestTypeDocument } & 
+type RequestTypeDocumentTopElem = XmlTopElem & { Doc: RequestTypeDocument } &
 ObjectCodeNameBase &
 WebVariablesBase & {
   object_type: XmlElem<string>;
@@ -27,7 +27,7 @@ WebVariablesBase & {
   comment: XmlElem<string>;
   desc: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type RequestTypeDocument = XmlDocument & {
   TopElem: RequestTypeDocumentTopElem;

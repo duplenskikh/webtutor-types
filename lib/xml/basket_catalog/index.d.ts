@@ -7,6 +7,6 @@ type BasketCatalogDocumentTopElem = XmlTopElem & { Doc: BasketCatalogDocument } 
   currency_type_id: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type BasketCatalogDocument = XmlDocument & { TopElem: BasketCatalogDocumentTopElem; };

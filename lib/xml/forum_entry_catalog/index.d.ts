@@ -1,4 +1,4 @@
-type ForumEntryCatalogDocumentTopElem = XmlTopElem & { Doc: ForumEntryCatalogDocument } & 
+type ForumEntryCatalogDocumentTopElem = XmlTopElem & { Doc: ForumEntryCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   name: XmlElem<string>;
@@ -18,6 +18,6 @@ AdminAccessBase & {
   remote_ip: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ForumEntryCatalogDocument = XmlDocument & { TopElem: ForumEntryCatalogDocumentTopElem; };

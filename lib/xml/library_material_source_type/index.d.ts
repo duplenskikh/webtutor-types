@@ -1,4 +1,4 @@
-type LibraryMaterialSourceTypeDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialSourceTypeDocument } & 
+type LibraryMaterialSourceTypeDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialSourceTypeDocument } &
 WebVariablesBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -13,7 +13,7 @@ WebVariablesBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   evaluate(): unknown;
-}
+};
 
 type LibraryMaterialSourceTypeDocument = XmlDocument & {
   TopElem: LibraryMaterialSourceTypeDocumentTopElem;

@@ -11,7 +11,7 @@ AdminAccessBase & {
   comment: XmlElem<string>;
   development_objects: XmlMultiElem<DevelopmentMethodDocumentDevelopmentObject>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DevelopmentMethodDocument = XmlDocument & {
   TopElem: DevelopmentMethodDocumentTopElem;

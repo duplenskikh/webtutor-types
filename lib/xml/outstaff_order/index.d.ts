@@ -15,7 +15,7 @@ interface OutstaffOrderDocumentPeriod {
   sum_person_hour(): unknown;
 }
 
-type OutstaffOrderDocumentTopElem = XmlTopElem & { Doc: OutstaffOrderDocument } & 
+type OutstaffOrderDocumentTopElem = XmlTopElem & { Doc: OutstaffOrderDocument } &
 PersonFillingBase &
 FileListBase &
 AdminAccessBase &
@@ -48,7 +48,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   update_periods(): unknown;
-}
+};
 
 type OutstaffOrderDocument = XmlDocument & {
   TopElem: OutstaffOrderDocumentTopElem;

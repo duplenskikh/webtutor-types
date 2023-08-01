@@ -1,4 +1,4 @@
-type ObjectVersionDocumentTopElem = XmlTopElem & { Doc: ObjectVersionDocument } & 
+type ObjectVersionDocumentTopElem = XmlTopElem & { Doc: ObjectVersionDocument } &
 PersonFillingBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -9,7 +9,7 @@ PersonFillingBase & {
   person_id: XmlElem<number>;
   object_xml: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ObjectVersionDocument = XmlDocument & {
   TopElem: ObjectVersionDocumentTopElem;

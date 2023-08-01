@@ -21,7 +21,7 @@ CustomElemsBase & {
   certificate_types: XmlMultiElem<CertificateTypeDocumentCertificateType>;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type CertificateTypeDocument = XmlDocument & {
   TopElem: CertificateTypeDocumentTopElem;

@@ -28,7 +28,7 @@ FileListBase & {
   docs_comment: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ClosingDocumentDocument = XmlDocument & {
   TopElem: ClosingDocumentDocumentTopElem;

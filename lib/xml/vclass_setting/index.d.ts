@@ -21,7 +21,7 @@ interface VclassSettingDocumentProgram {
   completed_parent_programs: XmlMultiElem<VclassSettingDocumentProgramCompletedParentProgram>;
 }
 
-type VclassSettingDocumentTopElem = XmlTopElem & { Doc: VclassSettingDocument } & 
+type VclassSettingDocumentTopElem = XmlTopElem & { Doc: VclassSettingDocument } &
 CustomElemsBase &
 AdminAccessBase & {
   code: XmlElem<string>;
@@ -31,7 +31,7 @@ AdminAccessBase & {
   programs: XmlMultiElem<VclassSettingDocumentProgram>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type VclassSettingDocument = XmlDocument & {
   TopElem: VclassSettingDocumentTopElem;

@@ -7,7 +7,7 @@ interface EstaffEventTypeDocumentEventType {
   name: XmlElem<string>;
 }
 
-type EstaffEventTypeDocumentTopElem = XmlTopElem & { Doc: EstaffEventTypeDocument } & 
+type EstaffEventTypeDocumentTopElem = XmlTopElem & { Doc: EstaffEventTypeDocument } &
 WebVariablesBase &
 AdminAccessBase & {
   code: XmlElem<string>;
@@ -28,7 +28,7 @@ AdminAccessBase & {
   eval_visibility_condition(): unknown;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type EstaffEventTypeDocument = XmlDocument & {
   TopElem: EstaffEventTypeDocumentTopElem;

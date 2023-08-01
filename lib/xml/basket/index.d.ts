@@ -15,7 +15,7 @@ PersonFillingBase & {
   currency_type_id: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type BasketDocument = XmlDocument & {
   TopElem: BasketDocumentTopElem;

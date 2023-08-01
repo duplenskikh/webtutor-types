@@ -1,4 +1,4 @@
-type StaffPositionFinishDocumentTopElem = XmlTopElem & { Doc: StaffPositionFinishDocument } & 
+type StaffPositionFinishDocumentTopElem = XmlTopElem & { Doc: StaffPositionFinishDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
@@ -16,7 +16,7 @@ CustomElemsBase & {
   document: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type StaffPositionFinishDocument = XmlDocument & {
   TopElem: StaffPositionFinishDocumentTopElem;

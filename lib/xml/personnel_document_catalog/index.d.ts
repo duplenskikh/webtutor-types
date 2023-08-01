@@ -1,4 +1,4 @@
-type PersonnelDocumentCatalogDocumentTopElem = XmlTopElem & { Doc: PersonnelDocumentCatalogDocument } & 
+type PersonnelDocumentCatalogDocumentTopElem = XmlTopElem & { Doc: PersonnelDocumentCatalogDocument } &
 PersonFillingBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -10,6 +10,6 @@ PersonFillingBase & {
   personnel_document_type_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type PersonnelDocumentCatalogDocument = XmlDocument & { TopElem: PersonnelDocumentCatalogDocumentTopElem; };

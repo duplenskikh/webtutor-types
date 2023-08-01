@@ -41,7 +41,7 @@ FuncManagersBase & {
   places: XmlMultiElem<EducationOrgDocumentPlace>;
   education_orgs: XmlMultiElem<EducationOrgDocumentEducationOrg>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type EducationOrgDocument = XmlDocument & {
   TopElem: EducationOrgDocumentTopElem;

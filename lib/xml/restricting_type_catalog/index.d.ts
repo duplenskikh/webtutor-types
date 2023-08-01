@@ -5,6 +5,6 @@ type RestrictingTypeCatalogDocumentTopElem = XmlTopElem & { Doc: RestrictingType
   object_name: XmlElem<string>;
   period_type_id: XmlElem<string>;
   state_id: XmlElem<string>;
-}
+};
 
 type RestrictingTypeCatalogDocument = XmlDocument & { TopElem: RestrictingTypeCatalogDocumentTopElem; };

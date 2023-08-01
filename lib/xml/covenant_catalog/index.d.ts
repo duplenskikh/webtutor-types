@@ -1,4 +1,4 @@
-type CovenantCatalogDocumentTopElem = XmlTopElem & { Doc: CovenantCatalogDocument } & 
+type CovenantCatalogDocumentTopElem = XmlTopElem & { Doc: CovenantCatalogDocument } &
 CostCurrencyBase &
 AdminAccessBase & {
   id: XmlElem<number>;
@@ -16,6 +16,6 @@ AdminAccessBase & {
   status_id: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type CovenantCatalogDocument = XmlDocument & { TopElem: CovenantCatalogDocumentTopElem; };

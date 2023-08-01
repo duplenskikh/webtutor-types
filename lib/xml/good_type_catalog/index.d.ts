@@ -4,6 +4,6 @@ type GoodTypeCatalogDocumentTopElem = XmlTopElem & { Doc: GoodTypeCatalogDocumen
   name: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type GoodTypeCatalogDocument = XmlDocument & { TopElem: GoodTypeCatalogDocumentTopElem; };

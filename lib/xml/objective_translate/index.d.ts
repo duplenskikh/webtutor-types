@@ -13,7 +13,7 @@ type ObjectiveTranslateDocumentTopElem = XmlTopElem & { Doc: ObjectiveTranslateD
   recipient_pa_id: XmlElem<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ObjectiveTranslateDocument = XmlDocument & {
   TopElem: ObjectiveTranslateDocumentTopElem;

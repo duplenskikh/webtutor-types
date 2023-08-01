@@ -10,7 +10,7 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-}
+};
 
 type ChatbotTypeDocument = XmlDocument & {
   TopElem: ChatbotTypeDocumentTopElem;

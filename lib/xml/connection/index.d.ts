@@ -13,7 +13,7 @@ type ConnectionDocumentTopElem = XmlTopElem & {
   unauthorized: XmlElem<boolean>;
   host_path: XmlElem<string>;
   get_info(): unknown[];
-}
+};
 
 type ConnectionDocument = XmlDocument & {
   TopElem: ConnectionDocumentTopElem;

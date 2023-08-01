@@ -1,4 +1,4 @@
-type VacancyResponseDocumentTopElem = XmlTopElem & { Doc: VacancyResponseDocument } & 
+type VacancyResponseDocumentTopElem = XmlTopElem & { Doc: VacancyResponseDocument } &
 AdminAccessBase &
 FileListBase &
 CustomElemsBase & {
@@ -18,7 +18,7 @@ CustomElemsBase & {
   career_reserve_id: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
   set_status(): unknown;
-}
+};
 
 type VacancyResponseDocument = XmlDocument & {
   TopElem: VacancyResponseDocumentTopElem;

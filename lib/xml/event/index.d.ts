@@ -110,7 +110,7 @@ interface EventDocumentPhase {
   collaborators: XmlMultiElem<EventDocumentPhaseCollaborator>;
 }
 
-type EventDocumentTopElem = XmlTopElem & { Doc: EventDocument } & 
+type EventDocumentTopElem = XmlTopElem & { Doc: EventDocument } &
 ObjectCodeNameBase &
 EducGroupsBase &
 PathPlacesBase &
@@ -317,7 +317,7 @@ EventSettingsBase & {
   get_webinar_record_url(): unknown;
   get_webinar_record_download_url(): unknown;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type EventDocument = XmlDocument & {
   TopElem: EventDocumentTopElem;

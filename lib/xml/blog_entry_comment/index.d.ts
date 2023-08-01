@@ -17,7 +17,7 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   type: XmlElem<string>;
   creator_name(): string;
-}
+};
 
 type BlogEntryCommentDocument = XmlDocument & {
   TopElem: BlogEntryCommentDocumentTopElem;

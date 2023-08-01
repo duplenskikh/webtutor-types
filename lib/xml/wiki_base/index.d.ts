@@ -11,7 +11,7 @@ interface WikiBaseDocumentWikiArticleType extends FuncManagersBase {
   all_managers_can_confirm: XmlElem<boolean>;
 }
 
-type WikiBaseDocumentTopElem = XmlTopElem & { Doc: WikiBaseDocument } & 
+type WikiBaseDocumentTopElem = XmlTopElem & { Doc: WikiBaseDocument } &
 FileListBase &
 CustomElemsBase &
 FuncManagersBase &
@@ -30,7 +30,7 @@ KnowledgePartsBase & {
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type WikiBaseDocument = XmlDocument & {
   TopElem: WikiBaseDocumentTopElem;

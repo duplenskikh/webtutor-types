@@ -9,7 +9,7 @@ interface SaleContractDocumentPrice {
   price_id: XmlElem<number>;
 }
 
-type SaleContractDocumentTopElem = XmlTopElem & { Doc: SaleContractDocument } & 
+type SaleContractDocumentTopElem = XmlTopElem & { Doc: SaleContractDocument } &
 FileListBase &
 CustomElemsBase &
 AdminAccessBase & {
@@ -53,7 +53,7 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type SaleContractDocument = XmlDocument & {
   TopElem: SaleContractDocumentTopElem;

@@ -18,7 +18,7 @@ PersonFillingBase & {
   registration: XmlElem<string>;
   request: XmlElem<ActivityStateDocumentRequest>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ActivityStateDocument = XmlDocument & {
   TopElem: ActivityStateDocumentTopElem;
