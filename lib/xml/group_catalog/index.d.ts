@@ -1,4 +1,4 @@
-type GroupCatalogDocumentTopElem = XmlTopElem & { Doc: GroupCatalogDocument } & 
+type GroupCatalogDocumentTopElem = XmlTopElem & { Doc: GroupCatalogDocument } &
 AccessDocBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

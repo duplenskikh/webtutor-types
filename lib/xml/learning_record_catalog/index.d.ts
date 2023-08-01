@@ -1,4 +1,4 @@
-type LearningRecordCatalogDocumentTopElem = XmlTopElem & { Doc: LearningRecordCatalogDocument } & 
+type LearningRecordCatalogDocumentTopElem = XmlTopElem & { Doc: LearningRecordCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

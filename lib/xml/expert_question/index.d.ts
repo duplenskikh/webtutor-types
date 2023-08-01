@@ -1,4 +1,4 @@
-type ExpertQuestionDocumentTopElem = XmlTopElem & { Doc: ExpertQuestionDocument } & 
+type ExpertQuestionDocumentTopElem = XmlTopElem & { Doc: ExpertQuestionDocument } &
 KnowledgePartsBase &
 KnowledgePartsBaseOld &
 CustomElemsBase &

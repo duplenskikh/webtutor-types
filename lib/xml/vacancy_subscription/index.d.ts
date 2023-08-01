@@ -4,7 +4,7 @@ interface VacancySubscriptionDocumentSuitableVacancy {
   code: XmlElem<string>;
 }
 
-type VacancySubscriptionDocumentTopElem = XmlTopElem & { Doc: VacancySubscriptionDocument } & 
+type VacancySubscriptionDocumentTopElem = XmlTopElem & { Doc: VacancySubscriptionDocument } &
 ViewConditionsBase &
 AdminAccessBase & {
   code: XmlElem<string>;

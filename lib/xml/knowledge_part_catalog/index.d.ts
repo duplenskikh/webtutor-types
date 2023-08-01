@@ -1,4 +1,4 @@
-type KnowledgePartCatalogDocumentTopElem = XmlTopElem & { Doc: KnowledgePartCatalogDocument } & 
+type KnowledgePartCatalogDocumentTopElem = XmlTopElem & { Doc: KnowledgePartCatalogDocument } &
 AccessDocBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

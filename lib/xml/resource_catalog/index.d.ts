@@ -1,4 +1,4 @@
-type ResourceCatalogDocumentTopElem = XmlTopElem & { Doc: ResourceCatalogDocument } & 
+type ResourceCatalogDocumentTopElem = XmlTopElem & { Doc: ResourceCatalogDocument } &
 AccessDocBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

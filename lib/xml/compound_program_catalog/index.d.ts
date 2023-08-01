@@ -1,4 +1,4 @@
-type CompoundProgramCatalogDocumentTopElem = XmlTopElem & { Doc: CompoundProgramCatalogDocument } & 
+type CompoundProgramCatalogDocumentTopElem = XmlTopElem & { Doc: CompoundProgramCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

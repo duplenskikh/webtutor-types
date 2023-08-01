@@ -1,4 +1,4 @@
-type EventTypeDocumentTopElem = XmlTopElem & { Doc: EventTypeDocument } & 
+type EventTypeDocumentTopElem = XmlTopElem & { Doc: EventTypeDocument } &
 CustomElemsBase &
 AdminAccessBase & {
   code: XmlElem<string>;

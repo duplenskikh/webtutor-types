@@ -3,7 +3,7 @@ interface SubdivisionGroupDocumentSubdivision {
   subdivision_name: XmlElem<string>;
 }
 
-type SubdivisionGroupDocumentTopElem = XmlTopElem & { Doc: SubdivisionGroupDocument } & 
+type SubdivisionGroupDocumentTopElem = XmlTopElem & { Doc: SubdivisionGroupDocument } &
 ObjectCodeNameBase &
 KnowledgePartsBase &
 KnowledgePartsBaseOld &

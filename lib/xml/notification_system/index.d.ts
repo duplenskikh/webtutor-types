@@ -1,4 +1,4 @@
-type NotificationSystemDocumentTopElem = XmlTopElem & { Doc: NotificationSystemDocument } & 
+type NotificationSystemDocumentTopElem = XmlTopElem & { Doc: NotificationSystemDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

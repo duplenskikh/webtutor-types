@@ -1,4 +1,4 @@
-type ResourceTypeDocumentTopElem = XmlTopElem & { Doc: ResourceTypeDocument } & 
+type ResourceTypeDocumentTopElem = XmlTopElem & { Doc: ResourceTypeDocument } &
 ObjectCodeNameBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;

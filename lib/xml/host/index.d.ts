@@ -1,4 +1,4 @@
-type HostDocumentTopElem = XmlTopElem & { Doc: HostDocument } & 
+type HostDocumentTopElem = XmlTopElem & { Doc: HostDocument } &
 CustomElemsBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

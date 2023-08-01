@@ -1,4 +1,4 @@
-type PresentationCatalogDocumentTopElem = XmlTopElem & { Doc: PresentationCatalogDocument } & 
+type PresentationCatalogDocumentTopElem = XmlTopElem & { Doc: PresentationCatalogDocument } &
 ObjectCodeNameBase & {
   file_id: XmlElem<number>;
   event_id: XmlElem<number>;

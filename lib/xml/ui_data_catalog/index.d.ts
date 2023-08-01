@@ -1,4 +1,4 @@
-type UiDataCatalogDocumentTopElem = XmlTopElem & { Doc: UiDataCatalogDocument } & 
+type UiDataCatalogDocumentTopElem = XmlTopElem & { Doc: UiDataCatalogDocument } &
 ObjectTypeBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

@@ -1,4 +1,4 @@
-type ClSlideCatalogDocumentTopElem = XmlTopElem & { Doc: ClSlideCatalogDocument } & 
+type ClSlideCatalogDocumentTopElem = XmlTopElem & { Doc: ClSlideCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

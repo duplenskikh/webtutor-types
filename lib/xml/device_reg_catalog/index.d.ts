@@ -1,4 +1,4 @@
-type DeviceRegCatalogDocumentTopElem = XmlTopElem & { Doc: DeviceRegCatalogDocument } & 
+type DeviceRegCatalogDocumentTopElem = XmlTopElem & { Doc: DeviceRegCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

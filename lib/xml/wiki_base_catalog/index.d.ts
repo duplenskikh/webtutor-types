@@ -1,4 +1,4 @@
-type WikiBaseCatalogDocumentTopElem = XmlTopElem & { Doc: WikiBaseCatalogDocument } & 
+type WikiBaseCatalogDocumentTopElem = XmlTopElem & { Doc: WikiBaseCatalogDocument } &
 AccessDocBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

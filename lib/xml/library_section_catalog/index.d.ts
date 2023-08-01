@@ -1,4 +1,4 @@
-type LibrarySectionCatalogDocumentTopElem = XmlTopElem & { Doc: LibrarySectionCatalogDocument } & 
+type LibrarySectionCatalogDocumentTopElem = XmlTopElem & { Doc: LibrarySectionCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

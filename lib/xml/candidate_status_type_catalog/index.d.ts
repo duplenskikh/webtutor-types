@@ -1,4 +1,4 @@
-type CandidateStatusTypeCatalogDocumentTopElem = XmlTopElem & { Doc: CandidateStatusTypeCatalogDocument } & 
+type CandidateStatusTypeCatalogDocumentTopElem = XmlTopElem & { Doc: CandidateStatusTypeCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

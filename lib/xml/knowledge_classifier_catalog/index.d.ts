@@ -1,4 +1,4 @@
-type KnowledgeClassifierCatalogDocumentTopElem = XmlTopElem & { Doc: KnowledgeClassifierCatalogDocument } & 
+type KnowledgeClassifierCatalogDocumentTopElem = XmlTopElem & { Doc: KnowledgeClassifierCatalogDocument } &
 AccessDocBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

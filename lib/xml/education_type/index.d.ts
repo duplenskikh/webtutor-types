@@ -1,4 +1,4 @@
-type EducationTypeDocumentTopElem = XmlTopElem & { Doc: EducationTypeDocument } & 
+type EducationTypeDocumentTopElem = XmlTopElem & { Doc: EducationTypeDocument } &
 ObjectCodeNameBase &
 AdminAccessBase & {
   comment: XmlElem<string>;

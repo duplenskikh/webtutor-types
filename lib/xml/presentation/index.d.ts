@@ -4,7 +4,7 @@ interface PresentationDocumentShape {
   json: XmlElem<string>;
 }
 
-type PresentationDocumentTopElem = XmlTopElem & { Doc: PresentationDocument } & 
+type PresentationDocumentTopElem = XmlTopElem & { Doc: PresentationDocument } &
 ObjectCodeNameBase &
 AdminAccessBase & {
   access: XmlElem<AccessDocBase>;

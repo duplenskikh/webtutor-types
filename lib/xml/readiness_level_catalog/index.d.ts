@@ -1,4 +1,4 @@
-type ReadinessLevelCatalogDocumentTopElem = XmlTopElem & { Doc: ReadinessLevelCatalogDocument } & 
+type ReadinessLevelCatalogDocumentTopElem = XmlTopElem & { Doc: ReadinessLevelCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

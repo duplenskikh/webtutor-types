@@ -1,4 +1,4 @@
-type MessengerServiceDocumentTopElem = XmlTopElem & { Doc: MessengerServiceDocument } & 
+type MessengerServiceDocumentTopElem = XmlTopElem & { Doc: MessengerServiceDocument } &
 CustomElemsBase &
 FileListBase & {
   id: XmlElem<number>;

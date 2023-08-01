@@ -1,4 +1,4 @@
-type RiskPerspectiveCatalogDocumentTopElem = XmlTopElem & { Doc: RiskPerspectiveCatalogDocument } & 
+type RiskPerspectiveCatalogDocumentTopElem = XmlTopElem & { Doc: RiskPerspectiveCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

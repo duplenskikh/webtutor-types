@@ -1,4 +1,4 @@
-type ProviderDocumentTopElem = XmlTopElem & { Doc: ProviderDocument } & 
+type ProviderDocumentTopElem = XmlTopElem & { Doc: ProviderDocument } &
 CustomElemsBase &
 FileListBase & {
   code: XmlElem<string>;

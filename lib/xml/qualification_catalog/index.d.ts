@@ -1,4 +1,4 @@
-type QualificationCatalogDocumentTopElem = XmlTopElem & { Doc: QualificationCatalogDocument } & 
+type QualificationCatalogDocumentTopElem = XmlTopElem & { Doc: QualificationCatalogDocument } &
 AccessDocBase &
 AdminAccessBase & {
   id: XmlElem<number>;

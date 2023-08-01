@@ -1,4 +1,4 @@
-type IndicatorDocumentTopElem = XmlTopElem & { Doc: IndicatorDocument } & 
+type IndicatorDocumentTopElem = XmlTopElem & { Doc: IndicatorDocument } &
 ObjectCodeNameBase &
 CompetenceScaleBase &
 CompetenceLevelBase &

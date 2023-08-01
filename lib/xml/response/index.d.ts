@@ -1,4 +1,4 @@
-type ResponseDocumentTopElem = XmlTopElem & { Doc: ResponseDocument } & 
+type ResponseDocumentTopElem = XmlTopElem & { Doc: ResponseDocument } &
 PersonFillingBase &
 AdminAccessBase &
 CustomElemsBase & {

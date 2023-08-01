@@ -17,10 +17,10 @@ declare namespace tools_web {
 
   /**
    * Формирование ссылки на объект
-   * @param objectName 
-   * @param objectId 
-   * @param objectTopElem 
-   * @param docId 
+   * @param objectName
+   * @param objectId
+   * @param objectTopElem
+   * @param docId
    */
   function get_object_link(
     objectName: string,
@@ -43,9 +43,9 @@ declare namespace tools_web {
   function get_web_const(sNameParam: string, fldLngParam: unknown): string;
 
   /**
-   * 
-   * @param sNameParam 
-   * @param fldLngParam 
+   *
+   * @param sNameParam
+   * @param fldLngParam
    */
   function eval_web_column_const(sNameParam: any, fldLngParam: any): any;
 
@@ -239,7 +239,7 @@ declare namespace tools_web {
   function GetVacancyResponseStatus(obVacancyResponseParam: any, iVacancyResponseIDParam: any, curLngCommonParam: any): any;
   function html_decode(sParam: any): any;
   function html_to_imput_value(sParam: any): any;
-  
+
   const content_types: any;
 
   function get_app_ui(): any;
@@ -271,7 +271,7 @@ declare namespace tools_web {
   function set_override_web_params(curParamsTarget: any, catOverrideWebTemplateParam: any): any;
   function access_exists(fldAccessParam: any): any;
   function str_period_date(dtParam: any, curLngWeb: any): any;
-  
+
   const enabled_web_rules_date: Date;
   const enabled_web_rules_obj: any;
 

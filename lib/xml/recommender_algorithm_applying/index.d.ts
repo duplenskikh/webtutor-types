@@ -2,7 +2,7 @@ interface RecommenderAlgorithmApplyingDocumentApplyDate {
   date: XmlElem<Date>;
 }
 
-type RecommenderAlgorithmApplyingDocumentTopElem = XmlTopElem & { Doc: RecommenderAlgorithmApplyingDocument } & 
+type RecommenderAlgorithmApplyingDocumentTopElem = XmlTopElem & { Doc: RecommenderAlgorithmApplyingDocument } &
 PersonFillingBase &
 CustomElemsBase & {
   id: XmlElem<number>;

@@ -1,4 +1,4 @@
-type WorkModeDocumentTopElem = XmlTopElem & { Doc: WorkModeDocument } & 
+type WorkModeDocumentTopElem = XmlTopElem & { Doc: WorkModeDocument } &
 ObjectCodeNameBase &
 AdminAccessBase & {
   comment: XmlElem<string>;

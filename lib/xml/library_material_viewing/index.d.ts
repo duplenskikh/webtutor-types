@@ -3,7 +3,7 @@ interface LibraryMaterialViewingDocumentPage {
   viewed: XmlElem<boolean>;
 }
 
-type LibraryMaterialViewingDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialViewingDocument } & 
+type LibraryMaterialViewingDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialViewingDocument } &
 PersonFillingBase &
 CustomElemsBase &
 AdminAccessBase & {

@@ -1,4 +1,4 @@
-type WalkthroughCatalogDocumentTopElem = XmlTopElem & { Doc: WalkthroughCatalogDocument } & 
+type WalkthroughCatalogDocumentTopElem = XmlTopElem & { Doc: WalkthroughCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

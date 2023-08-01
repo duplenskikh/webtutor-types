@@ -1,4 +1,4 @@
-type ProfessionalAreaCatalogDocumentTopElem = XmlTopElem & { Doc: ProfessionalAreaCatalogDocument } & 
+type ProfessionalAreaCatalogDocumentTopElem = XmlTopElem & { Doc: ProfessionalAreaCatalogDocument } &
 ObjectCodeNameBase &
 AdminAccessBase & {
   parent_id: XmlElem<number>;

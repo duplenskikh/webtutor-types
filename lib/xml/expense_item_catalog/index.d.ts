@@ -1,4 +1,4 @@
-type ExpenseItemCatalogDocumentTopElem = XmlTopElem & { Doc: ExpenseItemCatalogDocument } & 
+type ExpenseItemCatalogDocumentTopElem = XmlTopElem & { Doc: ExpenseItemCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

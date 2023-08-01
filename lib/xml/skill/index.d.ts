@@ -3,7 +3,7 @@ interface SkillDocumentLevel {
   name: XmlElem<string>;
 }
 
-type SkillDocumentTopElem = XmlTopElem & { Doc: SkillDocument } & 
+type SkillDocumentTopElem = XmlTopElem & { Doc: SkillDocument } &
 AdminAccessBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;

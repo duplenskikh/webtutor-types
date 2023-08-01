@@ -1,4 +1,4 @@
-type PayStageDocumentTopElem = XmlTopElem & { Doc: PayStageDocument } & 
+type PayStageDocumentTopElem = XmlTopElem & { Doc: PayStageDocument } &
 CustomElemsBase &
 FileListBase &
 AdminAccessBase & {

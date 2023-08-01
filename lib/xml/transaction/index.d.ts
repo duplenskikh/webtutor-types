@@ -1,4 +1,4 @@
-type TransactionDocumentTopElem = XmlTopElem & { Doc: TransactionDocument } & 
+type TransactionDocumentTopElem = XmlTopElem & { Doc: TransactionDocument } &
 PersonFillingBase &
 ObjectTypeBase &
 AdminAccessBase &

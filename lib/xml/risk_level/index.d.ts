@@ -1,4 +1,4 @@
-type RiskLevelDocumentTopElem = XmlTopElem & { Doc: RiskLevelDocument } & 
+type RiskLevelDocumentTopElem = XmlTopElem & { Doc: RiskLevelDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {

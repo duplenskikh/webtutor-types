@@ -6,7 +6,7 @@ interface EstaffEventDocumentMember extends PersonFillingBase {
   collaborator_id: XmlElem<number>;
 }
 
-type EstaffEventDocumentTopElem = XmlTopElem & { Doc: EstaffEventDocument } & 
+type EstaffEventDocumentTopElem = XmlTopElem & { Doc: EstaffEventDocument } &
 CatalogListBase &
 WebVariablesBase &
 DocumentPersonsBase &

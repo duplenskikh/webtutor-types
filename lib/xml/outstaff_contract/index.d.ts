@@ -18,7 +18,7 @@ interface OutstaffContractDocumentRegion {
   materials: XmlMultiElem<OutstaffContractDocumentRegionMaterial>;
 }
 
-type OutstaffContractDocumentTopElem = XmlTopElem & { Doc: OutstaffContractDocument } & 
+type OutstaffContractDocumentTopElem = XmlTopElem & { Doc: OutstaffContractDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {

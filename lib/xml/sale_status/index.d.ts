@@ -1,4 +1,4 @@
-type SaleStatusDocumentTopElem = XmlTopElem & { Doc: SaleStatusDocument } & 
+type SaleStatusDocumentTopElem = XmlTopElem & { Doc: SaleStatusDocument } &
 CustomElemsBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;

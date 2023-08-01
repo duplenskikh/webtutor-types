@@ -2,7 +2,7 @@ interface QaTestSetDocumentTest {
   test_id: XmlElem<number>;
 }
 
-type QaTestSetDocumentTopElem = XmlTopElem & { Doc: QaTestSetDocument } & 
+type QaTestSetDocumentTopElem = XmlTopElem & { Doc: QaTestSetDocument } &
 ObjectCodeNameBase &
 QaTestParamBase &
 QaTestFixtureBase &

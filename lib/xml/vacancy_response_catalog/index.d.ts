@@ -1,4 +1,4 @@
-type VacancyResponseCatalogDocumentTopElem = XmlTopElem & { Doc: VacancyResponseCatalogDocument } & 
+type VacancyResponseCatalogDocumentTopElem = XmlTopElem & { Doc: VacancyResponseCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

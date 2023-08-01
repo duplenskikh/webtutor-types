@@ -1,4 +1,4 @@
-type PolicyDocumentTopElem = XmlTopElem & { Doc: PolicyDocument } & 
+type PolicyDocumentTopElem = XmlTopElem & { Doc: PolicyDocument } &
 PersonFillingBase &
 FileListBase & {
   id: XmlElem<number>;

@@ -21,7 +21,7 @@ interface VclassSettingDocumentProgram {
   completed_parent_programs: XmlMultiElem<VclassSettingDocumentProgramCompletedParentProgram>;
 }
 
-type VclassSettingDocumentTopElem = XmlTopElem & { Doc: VclassSettingDocument } & 
+type VclassSettingDocumentTopElem = XmlTopElem & { Doc: VclassSettingDocument } &
 CustomElemsBase &
 AdminAccessBase & {
   code: XmlElem<string>;

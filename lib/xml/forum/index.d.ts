@@ -2,7 +2,7 @@ interface ForumDocumentModerator extends PersonFillingBase {
   moderator_id: XmlElem<number>;
 }
 
-type ForumDocumentTopElem = XmlTopElem & { Doc: ForumDocument } & 
+type ForumDocumentTopElem = XmlTopElem & { Doc: ForumDocument } &
 ObjectCodeNameBase &
 KnowledgePartsBase &
 KnowledgePartsBaseOld &

@@ -1,4 +1,4 @@
-type ProfessionalAreaDocumentTopElem = XmlTopElem & { Doc: ProfessionalAreaDocument } & 
+type ProfessionalAreaDocumentTopElem = XmlTopElem & { Doc: ProfessionalAreaDocument } &
 ObjectCodeNameBase &
 FileListBase &
 AdminAccessBase &

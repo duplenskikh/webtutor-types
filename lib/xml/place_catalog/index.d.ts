@@ -1,4 +1,4 @@
-type PlaceCatalogDocumentTopElem = XmlTopElem & { Doc: PlaceCatalogDocument } & 
+type PlaceCatalogDocumentTopElem = XmlTopElem & { Doc: PlaceCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

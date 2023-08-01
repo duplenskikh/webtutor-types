@@ -28,7 +28,7 @@ interface SiteDocumentAnonymousMode {
   mode: XmlElem<string>;
 }
 
-type SiteDocumentTopElem = XmlTopElem & { Doc: SiteDocument } & 
+type SiteDocumentTopElem = XmlTopElem & { Doc: SiteDocument } &
 ObjectCodeNameBase &
 FuncManagersBase &
 CustomElemsBase & {

@@ -1,4 +1,4 @@
-type AssessmentResultRecommendCatalogDocumentTopElem = XmlTopElem & { Doc: AssessmentResultRecommendCatalogDocument } & 
+type AssessmentResultRecommendCatalogDocumentTopElem = XmlTopElem & { Doc: AssessmentResultRecommendCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

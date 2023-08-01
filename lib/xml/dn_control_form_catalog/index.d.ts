@@ -1,4 +1,4 @@
-type DnControlFormCatalogDocumentTopElem = XmlTopElem & { Doc: DnControlFormCatalogDocument } & 
+type DnControlFormCatalogDocumentTopElem = XmlTopElem & { Doc: DnControlFormCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

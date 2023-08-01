@@ -1,4 +1,4 @@
-type ParticipantCatalogDocumentTopElem = XmlTopElem & { Doc: ParticipantCatalogDocument } & 
+type ParticipantCatalogDocumentTopElem = XmlTopElem & { Doc: ParticipantCatalogDocument } &
 PersonFillingBase &
 AdminAccessBase & {
   id: XmlElem<number>;

@@ -3,7 +3,7 @@ interface VendorStateDocumentCertificateType {
   required_quantity: XmlElem<number>;
 }
 
-type VendorStateDocumentTopElem = XmlTopElem & { Doc: VendorStateDocument } & 
+type VendorStateDocumentTopElem = XmlTopElem & { Doc: VendorStateDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {

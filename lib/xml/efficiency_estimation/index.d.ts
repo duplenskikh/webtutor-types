@@ -1,4 +1,4 @@
-type EfficiencyEstimationDocumentTopElem = XmlTopElem & { Doc: EfficiencyEstimationDocument } & 
+type EfficiencyEstimationDocumentTopElem = XmlTopElem & { Doc: EfficiencyEstimationDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {

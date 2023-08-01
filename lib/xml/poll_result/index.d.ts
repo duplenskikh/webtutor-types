@@ -6,7 +6,7 @@ interface PollResultDocumentQuestion {
   read_only: XmlElem<boolean>;
 }
 
-type PollResultDocumentTopElem = XmlTopElem & { Doc: PollResultDocument } & 
+type PollResultDocumentTopElem = XmlTopElem & { Doc: PollResultDocument } &
 PersonFillingBase &
 CustomElemsBase &
 AdminAccessBase & {

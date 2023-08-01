@@ -1,4 +1,4 @@
-type OutstaffOrderCatalogDocumentTopElem = XmlTopElem & { Doc: OutstaffOrderCatalogDocument } & 
+type OutstaffOrderCatalogDocumentTopElem = XmlTopElem & { Doc: OutstaffOrderCatalogDocument } &
 AccessDocBase &
 AdminAccessBase & {
   id: XmlElem<number>;

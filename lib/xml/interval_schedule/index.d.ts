@@ -8,7 +8,7 @@ interface IntervalScheduleDocumentCustomField {
   value: XmlElem<string>;
 }
 
-type IntervalScheduleDocumentTopElem = XmlTopElem & { Doc: IntervalScheduleDocument } & 
+type IntervalScheduleDocumentTopElem = XmlTopElem & { Doc: IntervalScheduleDocument } &
 PersonFillingBase &
 WorkflowDataBase &
 FileListBase &

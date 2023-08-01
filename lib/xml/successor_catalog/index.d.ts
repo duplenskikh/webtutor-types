@@ -1,4 +1,4 @@
-type SuccessorCatalogDocumentTopElem = XmlTopElem & { Doc: SuccessorCatalogDocument } & 
+type SuccessorCatalogDocumentTopElem = XmlTopElem & { Doc: SuccessorCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

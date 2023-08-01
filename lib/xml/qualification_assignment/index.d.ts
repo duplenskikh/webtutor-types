@@ -10,7 +10,7 @@ interface QualificationAssignmentDocumentEducationMethod {
   education_method_id: XmlElem<number>;
 }
 
-type QualificationAssignmentDocumentTopElem = XmlTopElem & { Doc: QualificationAssignmentDocument } & 
+type QualificationAssignmentDocumentTopElem = XmlTopElem & { Doc: QualificationAssignmentDocument } &
 PersonFillingBase &
 FileListBase &
 AdminAccessBase &

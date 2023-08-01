@@ -1,4 +1,4 @@
-type IndicatorCatalogDocumentTopElem = XmlTopElem & { Doc: IndicatorCatalogDocument } & 
+type IndicatorCatalogDocumentTopElem = XmlTopElem & { Doc: IndicatorCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   competence_id: XmlElem<number>;

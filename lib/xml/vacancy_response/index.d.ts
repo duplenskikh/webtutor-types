@@ -1,4 +1,4 @@
-type VacancyResponseDocumentTopElem = XmlTopElem & { Doc: VacancyResponseDocument } & 
+type VacancyResponseDocumentTopElem = XmlTopElem & { Doc: VacancyResponseDocument } &
 AdminAccessBase &
 FileListBase &
 CustomElemsBase & {

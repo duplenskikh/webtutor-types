@@ -1,4 +1,4 @@
-type SubstitutionCatalogDocumentTopElem = XmlTopElem & { Doc: SubstitutionCatalogDocument } & 
+type SubstitutionCatalogDocumentTopElem = XmlTopElem & { Doc: SubstitutionCatalogDocument } &
 ObjectTypeBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

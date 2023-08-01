@@ -1,4 +1,4 @@
-type StaffPositionFinishCatalogDocumentTopElem = XmlTopElem & { Doc: StaffPositionFinishCatalogDocument } & 
+type StaffPositionFinishCatalogDocumentTopElem = XmlTopElem & { Doc: StaffPositionFinishCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

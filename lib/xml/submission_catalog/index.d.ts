@@ -1,4 +1,4 @@
-type SubmissionCatalogDocumentTopElem = XmlTopElem & { Doc: SubmissionCatalogDocument } & 
+type SubmissionCatalogDocumentTopElem = XmlTopElem & { Doc: SubmissionCatalogDocument } &
 PersonFillingBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

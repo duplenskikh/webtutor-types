@@ -1,4 +1,4 @@
-type ScheduleDayDocumentTopElem = XmlTopElem & { Doc: ScheduleDayDocument } & 
+type ScheduleDayDocumentTopElem = XmlTopElem & { Doc: ScheduleDayDocument } &
 CustomElemsBase & {
   id: XmlElem<number>;
   schedule_type_id: XmlElem<number>;

@@ -1,4 +1,4 @@
-type BannerCatalogDocumentTopElem = XmlTopElem & { Doc: BannerCatalogDocument } & 
+type BannerCatalogDocumentTopElem = XmlTopElem & { Doc: BannerCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

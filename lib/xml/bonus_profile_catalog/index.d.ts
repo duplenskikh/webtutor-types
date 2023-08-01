@@ -1,4 +1,4 @@
-type BonusProfileCatalogDocumentTopElem = XmlTopElem & { Doc: BonusProfileCatalogDocument } & 
+type BonusProfileCatalogDocumentTopElem = XmlTopElem & { Doc: BonusProfileCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

@@ -1,4 +1,4 @@
-type DnAcademDebtCatalogDocumentTopElem = XmlTopElem & { Doc: DnAcademDebtCatalogDocument } & 
+type DnAcademDebtCatalogDocumentTopElem = XmlTopElem & { Doc: DnAcademDebtCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

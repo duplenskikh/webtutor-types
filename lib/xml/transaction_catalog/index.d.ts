@@ -1,4 +1,4 @@
-type TransactionCatalogDocumentTopElem = XmlTopElem & { Doc: TransactionCatalogDocument } & 
+type TransactionCatalogDocumentTopElem = XmlTopElem & { Doc: TransactionCatalogDocument } &
 ObjectTypeBase &
 AdminAccessBase & {
   id: XmlElem<number>;

@@ -3,7 +3,7 @@ interface LearningTaskDocumentExpert extends PersonFillingBase {
   person_id: XmlElem<number>;
 }
 
-type LearningTaskDocumentTopElem = XmlTopElem & { Doc: LearningTaskDocument } & 
+type LearningTaskDocumentTopElem = XmlTopElem & { Doc: LearningTaskDocument } &
 ObjectCodeNameBase &
 FileListBase &
 AdminAccessBase &

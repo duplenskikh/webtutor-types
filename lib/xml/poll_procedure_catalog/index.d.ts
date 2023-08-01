@@ -1,4 +1,4 @@
-type PollProcedureCatalogDocumentTopElem = XmlTopElem & { Doc: PollProcedureCatalogDocument } & 
+type PollProcedureCatalogDocumentTopElem = XmlTopElem & { Doc: PollProcedureCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

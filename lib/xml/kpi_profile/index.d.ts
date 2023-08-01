@@ -17,7 +17,7 @@ interface KpiProfileDocumentProject extends WorkflowFieldsAssessmentBase {
   comment: XmlElem<string>;
 }
 
-type KpiProfileDocumentTopElem = XmlTopElem & { Doc: KpiProfileDocument } & 
+type KpiProfileDocumentTopElem = XmlTopElem & { Doc: KpiProfileDocument } &
 FileListBase &
 KnowledgePartsBase &
 AdminAccessBase &

@@ -1,4 +1,4 @@
-type ExclusionReasonDocumentTopElem = XmlTopElem & { Doc: ExclusionReasonDocument } & 
+type ExclusionReasonDocumentTopElem = XmlTopElem & { Doc: ExclusionReasonDocument } &
 ObjectCodeNameBase &
 FileListBase &
 CustomElemsBase &

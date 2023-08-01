@@ -6,7 +6,7 @@ interface KnowledgePartDocumentLevel {
   confirmation_type: XmlElem<string>;
 }
 
-type KnowledgePartDocumentTopElem = XmlTopElem & { Doc: KnowledgePartDocument } & 
+type KnowledgePartDocumentTopElem = XmlTopElem & { Doc: KnowledgePartDocument } &
 CatalogListBase &
 FileListBase &
 CustomElemsBase &

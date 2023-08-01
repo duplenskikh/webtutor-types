@@ -3,7 +3,7 @@ interface GoodDocumentCost {
   sum: XmlElem<number>;
 }
 
-type GoodDocumentTopElem = XmlTopElem & { Doc: GoodDocument } & 
+type GoodDocumentTopElem = XmlTopElem & { Doc: GoodDocument } &
 ObjectCodeNameBase &
 FileListBase &
 CustomElemsBase & {

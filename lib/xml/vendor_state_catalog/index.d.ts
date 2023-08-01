@@ -1,4 +1,4 @@
-type VendorStateCatalogDocumentTopElem = XmlTopElem & { Doc: VendorStateCatalogDocument } & 
+type VendorStateCatalogDocumentTopElem = XmlTopElem & { Doc: VendorStateCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

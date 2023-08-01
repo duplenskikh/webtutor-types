@@ -1,4 +1,4 @@
-type DnTrainMethodComplexCatalogDocumentTopElem = XmlTopElem & { Doc: DnTrainMethodComplexCatalogDocument } & 
+type DnTrainMethodComplexCatalogDocumentTopElem = XmlTopElem & { Doc: DnTrainMethodComplexCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

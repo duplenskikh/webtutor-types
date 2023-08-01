@@ -1,4 +1,4 @@
-type EventTypeCatalogDocumentTopElem = XmlTopElem & { Doc: EventTypeCatalogDocument } & 
+type EventTypeCatalogDocumentTopElem = XmlTopElem & { Doc: EventTypeCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

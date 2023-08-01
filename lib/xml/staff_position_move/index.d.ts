@@ -1,4 +1,4 @@
-type StaffPositionMoveDocumentTopElem = XmlTopElem & { Doc: StaffPositionMoveDocument } & 
+type StaffPositionMoveDocumentTopElem = XmlTopElem & { Doc: StaffPositionMoveDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {

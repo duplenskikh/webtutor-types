@@ -1,4 +1,4 @@
-type WageSystemCatalogDocumentTopElem = XmlTopElem & { Doc: WageSystemCatalogDocument } & 
+type WageSystemCatalogDocumentTopElem = XmlTopElem & { Doc: WageSystemCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

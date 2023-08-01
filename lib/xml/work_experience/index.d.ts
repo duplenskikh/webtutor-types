@@ -1,4 +1,4 @@
-type WorkExperienceDocumentTopElem = XmlTopElem & { Doc: WorkExperienceDocument } & 
+type WorkExperienceDocumentTopElem = XmlTopElem & { Doc: WorkExperienceDocument } &
 ObjectCodeNameBase &
 AdminAccessBase & {
   comment: XmlElem<string>;

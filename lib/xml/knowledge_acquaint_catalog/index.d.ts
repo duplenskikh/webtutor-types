@@ -1,4 +1,4 @@
-type KnowledgeAcquaintCatalogDocumentTopElem = XmlTopElem & { Doc: KnowledgeAcquaintCatalogDocument } & 
+type KnowledgeAcquaintCatalogDocumentTopElem = XmlTopElem & { Doc: KnowledgeAcquaintCatalogDocument } &
 PersonFillingBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

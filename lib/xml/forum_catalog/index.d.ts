@@ -1,4 +1,4 @@
-type ForumCatalogDocumentTopElem = XmlTopElem & { Doc: ForumCatalogDocument } & 
+type ForumCatalogDocumentTopElem = XmlTopElem & { Doc: ForumCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   name: XmlElem<string>;

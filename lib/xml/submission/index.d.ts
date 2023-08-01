@@ -1,4 +1,4 @@
-type SubmissionDocumentTopElem = XmlTopElem & { Doc: SubmissionDocument } & 
+type SubmissionDocumentTopElem = XmlTopElem & { Doc: SubmissionDocument } &
 PersonFillingBase &
 FileListBase &
 CustomElemsBase & {

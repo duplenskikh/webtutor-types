@@ -59,7 +59,7 @@ interface TestProjectDocumentVariant {
   max_score: XmlElem<number>;
 }
 
-type TestProjectDocumentTopElem = XmlTopElem & { Doc: TestProjectDocument } & 
+type TestProjectDocumentTopElem = XmlTopElem & { Doc: TestProjectDocument } &
 CustomElemsBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;

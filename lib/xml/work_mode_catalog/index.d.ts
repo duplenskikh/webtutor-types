@@ -1,4 +1,4 @@
-type WorkModeCatalogDocumentTopElem = XmlTopElem & { Doc: WorkModeCatalogDocument } & 
+type WorkModeCatalogDocumentTopElem = XmlTopElem & { Doc: WorkModeCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

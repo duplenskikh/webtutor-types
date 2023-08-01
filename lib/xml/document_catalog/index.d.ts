@@ -1,4 +1,4 @@
-type DocumentCatalogDocumentTopElem = XmlTopElem & { Doc: DocumentCatalogDocument } & 
+type DocumentCatalogDocumentTopElem = XmlTopElem & { Doc: DocumentCatalogDocument } &
 DocumentAttributesBase &
 AccessDocBase &
 AdminAccessBase & {

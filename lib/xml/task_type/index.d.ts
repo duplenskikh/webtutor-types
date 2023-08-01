@@ -3,7 +3,7 @@ interface TaskTypeDocumentRole {
   name: XmlElem<string>;
 }
 
-type TaskTypeDocumentTopElem = XmlTopElem & { Doc: TaskTypeDocument } & 
+type TaskTypeDocumentTopElem = XmlTopElem & { Doc: TaskTypeDocument } &
 CustomElemsBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;

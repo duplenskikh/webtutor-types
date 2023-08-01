@@ -1,4 +1,4 @@
-type ActiveTestLearningCatalogDocumentTopElem = XmlTopElem & { Doc: ActiveTestLearningCatalogDocument } & 
+type ActiveTestLearningCatalogDocumentTopElem = XmlTopElem & { Doc: ActiveTestLearningCatalogDocument } &
 AnnalsNumsBase &
 AdminAccessBase & {
   id: XmlElem<number>;

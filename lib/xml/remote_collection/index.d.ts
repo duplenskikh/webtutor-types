@@ -1,4 +1,4 @@
-type RemoteCollectionDocumentTopElem = XmlTopElem & { Doc: RemoteCollectionDocument } & 
+type RemoteCollectionDocumentTopElem = XmlTopElem & { Doc: RemoteCollectionDocument } &
 ExecCodeBase &
 WebVariablesBase &
 ResultFieldsBase & {

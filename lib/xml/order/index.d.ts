@@ -18,7 +18,7 @@ interface OrderDocumentGood {
   add_good_instance(): unknown;
 }
 
-type OrderDocumentTopElem = XmlTopElem & { Doc: OrderDocument } & 
+type OrderDocumentTopElem = XmlTopElem & { Doc: OrderDocument } &
 PersonFillingBase &
 FileListBase &
 CustomElemsBase & {

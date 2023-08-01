@@ -9,7 +9,7 @@ interface SaleContractDocumentPrice {
   price_id: XmlElem<number>;
 }
 
-type SaleContractDocumentTopElem = XmlTopElem & { Doc: SaleContractDocument } & 
+type SaleContractDocumentTopElem = XmlTopElem & { Doc: SaleContractDocument } &
 FileListBase &
 CustomElemsBase &
 AdminAccessBase & {

@@ -1,4 +1,4 @@
-type MaterialLiabilityCatalogDocumentTopElem = XmlTopElem & { Doc: MaterialLiabilityCatalogDocument } & 
+type MaterialLiabilityCatalogDocumentTopElem = XmlTopElem & { Doc: MaterialLiabilityCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

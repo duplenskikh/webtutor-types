@@ -1,4 +1,4 @@
-type CodeLibraryCatalogDocumentTopElem = XmlTopElem & { Doc: CodeLibraryCatalogDocument } & 
+type CodeLibraryCatalogDocumentTopElem = XmlTopElem & { Doc: CodeLibraryCatalogDocument } &
 ObjectCodeNameBase & {
   code_type: XmlElem<string>;
   is_std: XmlElem<boolean>;

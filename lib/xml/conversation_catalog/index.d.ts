@@ -1,4 +1,4 @@
-type ConversationCatalogDocumentTopElem = XmlTopElem & { Doc: ConversationCatalogDocument } & 
+type ConversationCatalogDocumentTopElem = XmlTopElem & { Doc: ConversationCatalogDocument } &
 PersonFillingBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

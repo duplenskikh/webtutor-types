@@ -2,7 +2,7 @@ interface StaffPositionDocumentCompetenceProfile {
   id: XmlElem<number>;
 }
 
-type StaffPositionDocumentTopElem = XmlTopElem & { Doc: StaffPositionDocument } & 
+type StaffPositionDocumentTopElem = XmlTopElem & { Doc: StaffPositionDocument } &
 RequirementsBase &
 FileListBase &
 KnowledgePartsBase &

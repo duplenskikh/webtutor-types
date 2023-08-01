@@ -3,7 +3,7 @@ interface RatingDocumentObject {
   object_name: XmlElem<string>;
 }
 
-type RatingDocumentTopElem = XmlTopElem & { Doc: RatingDocument } & 
+type RatingDocumentTopElem = XmlTopElem & { Doc: RatingDocument } &
 AdminAccessBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;

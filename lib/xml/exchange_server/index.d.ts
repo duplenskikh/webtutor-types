@@ -1,4 +1,4 @@
-type ExchangeServerDocumentTopElem = XmlTopElem & { Doc: ExchangeServerDocument } & 
+type ExchangeServerDocumentTopElem = XmlTopElem & { Doc: ExchangeServerDocument } &
 CustomElemsBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;

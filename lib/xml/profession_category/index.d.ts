@@ -1,4 +1,4 @@
-type ProfessionCategoryDocumentTopElem = XmlTopElem & { Doc: ProfessionCategoryDocument } & 
+type ProfessionCategoryDocumentTopElem = XmlTopElem & { Doc: ProfessionCategoryDocument } &
 ObjectCodeNameBase &
 AdminAccessBase &
 CustomElemsBase & {

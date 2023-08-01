@@ -4,7 +4,7 @@ interface ParticipantDocumentMark extends PersonFillingBase {
   desc: XmlElem<string>;
 }
 
-type ParticipantDocumentTopElem = XmlTopElem & { Doc: ParticipantDocument } & 
+type ParticipantDocumentTopElem = XmlTopElem & { Doc: ParticipantDocument } &
 PersonFillingBase &
 FileListBase &
 AdminAccessBase & {

@@ -1,4 +1,4 @@
-type DnBlockDisciplineCatalogDocumentTopElem = XmlTopElem & { Doc: DnBlockDisciplineCatalogDocument } & 
+type DnBlockDisciplineCatalogDocumentTopElem = XmlTopElem & { Doc: DnBlockDisciplineCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

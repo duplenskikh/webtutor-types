@@ -1,4 +1,4 @@
-type SystemEventHandlerCatalogDocumentTopElem = XmlTopElem & { Doc: SystemEventHandlerCatalogDocument } & 
+type SystemEventHandlerCatalogDocumentTopElem = XmlTopElem & { Doc: SystemEventHandlerCatalogDocument } &
 ObjectCodeNameBase & {
   is_enabled: XmlElem<boolean>;
   code_type: XmlElem<string>;

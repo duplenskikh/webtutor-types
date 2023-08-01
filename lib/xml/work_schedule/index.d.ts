@@ -1,4 +1,4 @@
-type WorkScheduleDocumentTopElem = XmlTopElem & { Doc: WorkScheduleDocument } & 
+type WorkScheduleDocumentTopElem = XmlTopElem & { Doc: WorkScheduleDocument } &
 ObjectCodeNameBase &
 FileListBase &
 AdminAccessBase &

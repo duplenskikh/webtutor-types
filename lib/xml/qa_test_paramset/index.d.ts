@@ -1,4 +1,4 @@
-type QaTestParamsetDocumentTopElem = XmlTopElem & { Doc: QaTestParamsetDocument } & 
+type QaTestParamsetDocumentTopElem = XmlTopElem & { Doc: QaTestParamsetDocument } &
 ObjectCodeNameBase &
 QaTestParamBase &
 QaTestAssertBase & {

@@ -1,4 +1,4 @@
-type PositionAssessmentFormDocumentTopElem = XmlTopElem & { Doc: PositionAssessmentFormDocument } & 
+type PositionAssessmentFormDocumentTopElem = XmlTopElem & { Doc: PositionAssessmentFormDocument } &
 SupplementaryQuestionsBase &
 CustomElemsBase & {
   code: XmlElem<string>;

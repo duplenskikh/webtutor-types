@@ -1,4 +1,4 @@
-type SuccessorDocumentTopElem = XmlTopElem & { Doc: SuccessorDocument } & 
+type SuccessorDocumentTopElem = XmlTopElem & { Doc: SuccessorDocument } &
 PersonFillingBase &
 FileListBase &
 AdminAccessBase &

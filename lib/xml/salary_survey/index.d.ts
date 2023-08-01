@@ -1,4 +1,4 @@
-type SalarySurveyDocumentTopElem = XmlTopElem & { Doc: SalarySurveyDocument } & 
+type SalarySurveyDocumentTopElem = XmlTopElem & { Doc: SalarySurveyDocument } &
 CustomElemsBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

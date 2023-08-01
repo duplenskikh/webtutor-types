@@ -1,4 +1,4 @@
-type AbsenceReserveCatalogDocumentTopElem = XmlTopElem & { Doc: AbsenceReserveCatalogDocument } & 
+type AbsenceReserveCatalogDocumentTopElem = XmlTopElem & { Doc: AbsenceReserveCatalogDocument } &
 PersonFillingBase & {
   id: XmlElem<number>;
   person_id: XmlElem<number>;

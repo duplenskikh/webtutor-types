@@ -1,4 +1,4 @@
-type TimeEntryDocumentTopElem = XmlTopElem & { Doc: TimeEntryDocument } & 
+type TimeEntryDocumentTopElem = XmlTopElem & { Doc: TimeEntryDocument } &
 PersonFillingBase &
 FileListBase &
 CustomElemsBase & {

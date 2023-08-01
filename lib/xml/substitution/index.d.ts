@@ -1,4 +1,4 @@
-type SubstitutionDocumentTopElem = XmlTopElem & { Doc: SubstitutionDocument } & 
+type SubstitutionDocumentTopElem = XmlTopElem & { Doc: SubstitutionDocument } &
 PersonFillingBase &
 ObjectTypeBase &
 CustomElemsBase & {

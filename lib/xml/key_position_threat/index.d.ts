@@ -1,4 +1,4 @@
-type KeyPositionThreatDocumentTopElem = XmlTopElem & { Doc: KeyPositionThreatDocument } & 
+type KeyPositionThreatDocumentTopElem = XmlTopElem & { Doc: KeyPositionThreatDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {

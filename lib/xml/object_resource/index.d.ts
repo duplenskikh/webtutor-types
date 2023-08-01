@@ -1,4 +1,4 @@
-type ObjectResourceDocumentTopElem = XmlTopElem & { Doc: ObjectResourceDocument } & 
+type ObjectResourceDocumentTopElem = XmlTopElem & { Doc: ObjectResourceDocument } &
 ObjectCodeNameBase &
 AdminAccessBase &
 CustomElemsBase & {

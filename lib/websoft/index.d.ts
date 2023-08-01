@@ -13,7 +13,7 @@ declare namespace Websoft {
          * Цвет границы
          */
         Color: string;
-        
+
         /**
          * Стиль границы
          */
@@ -61,7 +61,7 @@ declare namespace Websoft {
           | "Vertical"
           | "Horizontal"
         ): Border;
-        
+
         /**
          * Используется для получения последней произошедшей ошибки
          */
@@ -71,12 +71,12 @@ declare namespace Websoft {
          * Используется для получения версии компонента
          */
         GetVersion(): string;
-        
+
         /**
          * Устанавливает стиль границ ячейки.
          */
         SetColor(color: string): void;
-        
+
         /**
          * Устанавливает стиль границ ячейки
          */
@@ -200,7 +200,7 @@ declare namespace Websoft {
          */
         // eslint-disable-next-line no-magic-numbers
         Merge(firstRow: number, firstColumn: number, totalRows: number, totalColumns: number): 1 | 0;
-        
+
         /**
          * Устанавливает ширину колонки
          * @param columnNum Номер колонки
@@ -216,7 +216,7 @@ declare namespace Websoft {
          */
         // eslint-disable-next-line no-magic-numbers
         SetRowHeight(rowNum: number, width: number): 1 | 0;
-        
+
         /**
          * Разъединяет указанные ячейки
          * @param firstRow Номер строки
@@ -249,7 +249,7 @@ declare namespace Websoft {
         /**
          * Получает {@link Columns | колонку} по указанному номеру.
          * @param index Номер колонки
-         * 
+         *
          */
         GetColumn(index: number): Column;
 
@@ -310,7 +310,7 @@ declare namespace Websoft {
          * Загружает данные в формате HTML из указанного файла
          * @param filePath Путь до файла в формате HTML
          * @param resourcesDirectoryName Название папки с ресурсами (изображения, стили и т.д.)
-         * 
+         *
          */
         // eslint-disable-next-line no-magic-numbers
         LoadHtmlFile(filePath: string, resourcesDirectoryName: string): 0 | 1;
@@ -319,7 +319,7 @@ declare namespace Websoft {
          * Загружает данные в формате HTML из строки
          * @param htmlText Переменная, содержащаю строку в формате HTML
          * @param resourcesDirectoryName Название папки с ресурсами (изображения, стили и т.д.)
-         * 
+         *
          */
         // eslint-disable-next-line no-magic-numbers
         LoadHtmlString(htmlText: string, resourcesDirectoryName: string): 0 | 1;
@@ -354,12 +354,12 @@ declare namespace Websoft {
          * Адаптировать содержимое по высоте под указанное количество страниц.
          */
         FitToPagesTall: number;
-        
+
         /**
          * Адаптировать содержимое по ширине под указанное количество страниц.
          */
         FitToPagesWide: number;
-        
+
         /**
          * Ориентация страницы. Допустимые значения: "Landscape" или "Portrait".
          */

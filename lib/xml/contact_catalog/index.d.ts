@@ -1,4 +1,4 @@
-type ContactCatalogDocumentTopElem = XmlTopElem & { Doc: ContactCatalogDocument } & 
+type ContactCatalogDocumentTopElem = XmlTopElem & { Doc: ContactCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

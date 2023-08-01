@@ -1,4 +1,4 @@
-type DnRegisterCatalogDocumentTopElem = XmlTopElem & { Doc: DnRegisterCatalogDocument } & 
+type DnRegisterCatalogDocumentTopElem = XmlTopElem & { Doc: DnRegisterCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

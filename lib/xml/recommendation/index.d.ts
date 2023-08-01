@@ -1,4 +1,4 @@
-type RecommendationDocumentTopElem = XmlTopElem & { Doc: RecommendationDocument } & 
+type RecommendationDocumentTopElem = XmlTopElem & { Doc: RecommendationDocument } &
 FileListBase &
 CustomElemsBase &
 AdminAccessBase & {

@@ -1,4 +1,4 @@
-type RiskLevelCatalogDocumentTopElem = XmlTopElem & { Doc: RiskLevelCatalogDocument } & 
+type RiskLevelCatalogDocumentTopElem = XmlTopElem & { Doc: RiskLevelCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

@@ -1,4 +1,4 @@
-type SupplementaryQuestionCatalogDocumentTopElem = XmlTopElem & { Doc: SupplementaryQuestionCatalogDocument } & 
+type SupplementaryQuestionCatalogDocumentTopElem = XmlTopElem & { Doc: SupplementaryQuestionCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

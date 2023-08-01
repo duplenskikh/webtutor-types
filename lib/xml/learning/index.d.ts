@@ -5,7 +5,7 @@ interface LearningDocumentEvent {
   score: XmlElem<number>;
 }
 
-type LearningDocumentTopElem = XmlTopElem & { Doc: LearningDocument } & 
+type LearningDocumentTopElem = XmlTopElem & { Doc: LearningDocument } &
 PersonFillingBase &
 CustomElemsBase &
 AdminAccessBase & {

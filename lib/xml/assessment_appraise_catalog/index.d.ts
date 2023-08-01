@@ -1,4 +1,4 @@
-type AssessmentAppraiseCatalogDocumentTopElem = XmlTopElem & { Doc: AssessmentAppraiseCatalogDocument } & 
+type AssessmentAppraiseCatalogDocumentTopElem = XmlTopElem & { Doc: AssessmentAppraiseCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

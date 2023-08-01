@@ -1,4 +1,4 @@
-type ObjectVersionDocumentTopElem = XmlTopElem & { Doc: ObjectVersionDocument } & 
+type ObjectVersionDocumentTopElem = XmlTopElem & { Doc: ObjectVersionDocument } &
 PersonFillingBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;

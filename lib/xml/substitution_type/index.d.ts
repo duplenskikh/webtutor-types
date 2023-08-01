@@ -1,4 +1,4 @@
-type SubstitutionTypeDocumentTopElem = XmlTopElem & { Doc: SubstitutionTypeDocument } & 
+type SubstitutionTypeDocumentTopElem = XmlTopElem & { Doc: SubstitutionTypeDocument } &
 ObjectCodeNameBase &
 CustomElemsBase & {
   comment: XmlElem<string>;

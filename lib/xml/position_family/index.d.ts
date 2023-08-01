@@ -7,7 +7,7 @@ interface PositionFamilyDocumentKpiProfile {
   period_type_id: XmlElem<string>;
 }
 
-type PositionFamilyDocumentTopElem = XmlTopElem & { Doc: PositionFamilyDocument } & 
+type PositionFamilyDocumentTopElem = XmlTopElem & { Doc: PositionFamilyDocument } &
 ObjectCodeNameBase &
 ViewConditionsBase &
 RequirementsBase &

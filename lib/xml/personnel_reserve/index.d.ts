@@ -21,7 +21,7 @@ interface PersonnelReserveDocumentRecommendator extends PersonFillingBase {
   person_id: XmlElem<number>;
 }
 
-type PersonnelReserveDocumentTopElem = XmlTopElem & 
+type PersonnelReserveDocumentTopElem = XmlTopElem &
 TalentPoolFuncManagersBase &
 FileListBase &
 AdminAccessBase &

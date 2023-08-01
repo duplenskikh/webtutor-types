@@ -1,4 +1,4 @@
-type EventResultDocumentTopElem = XmlTopElem & { Doc: EventResultDocument } & 
+type EventResultDocumentTopElem = XmlTopElem & { Doc: EventResultDocument } &
 PersonFillingBase &
 ExpenseDistributionBase &
 FileListBase &

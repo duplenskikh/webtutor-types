@@ -1,4 +1,4 @@
-type ProviderCourseTypeDocumentTopElem = XmlTopElem & { Doc: ProviderCourseTypeDocument } & 
+type ProviderCourseTypeDocumentTopElem = XmlTopElem & { Doc: ProviderCourseTypeDocument } &
 AdminAccessBase &
 WebVariablesBase & {
   id: XmlElem<number>;

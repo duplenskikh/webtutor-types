@@ -1,4 +1,4 @@
-type SkillTypeCatalogDocumentTopElem = XmlTopElem & { Doc: SkillTypeCatalogDocument } & 
+type SkillTypeCatalogDocumentTopElem = XmlTopElem & { Doc: SkillTypeCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

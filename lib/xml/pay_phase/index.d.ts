@@ -19,7 +19,7 @@ interface PayPhaseDocumentExpense {
   supplier_code: XmlElem<string>;
 }
 
-type PayPhaseDocumentTopElem = XmlTopElem & { Doc: PayPhaseDocument } & 
+type PayPhaseDocumentTopElem = XmlTopElem & { Doc: PayPhaseDocument } &
 CostCurrencyBase &
 ExpenseDistributionBase &
 CostCentersBase &

@@ -272,8 +272,8 @@ declare namespace tools {
    * @param learningId Id активного теста, который необходимо завершить
    * @param activeTestLearningDocumentTopElem TopElem активного теста, который необходимо завершить
    * @param assessmentDocumentTopElem TopElem теста, который необходимо завершить
-   * @param iPersonIDParam 
-   * @param bFinishTest 
+   * @param iPersonIDParam
+   * @param bFinishTest
    */
   function active_test_learning_finish(
     learningId: number,
@@ -283,13 +283,13 @@ declare namespace tools {
     bFinishTest?: any
   ): TestLearningDocument;
 
-  /** 
+  /**
    * Функция завершает указанную попытку для теста и создает карточку завершенного теста.
    * @param _learning_id ID активного теста, попытку которого необходимо завершить.
    * @param _learning_code Код раздела теста, который нужно завершить.
    * @param _assessment_doc `TopElem` теста, который необходимо завершить.
    * @param _flag_create_learning Возвращает значение, показывающее, создавать или не создавать запись завершенного теста
-   *                              (`true` – создавать запись завершенного теста, `false` – не создавать запись). 
+   *                              (`true` – создавать запись завершенного теста, `false` – не создавать запись).
    * @param docActiveLearning документ активного теста, который необходимо завершить.
    */
   function active_test_learning_finish_attempt(
@@ -307,7 +307,7 @@ declare namespace tools {
    * @param bDoObtainParam Используется при вызове функции на сервере. Если значение аргумента равно `true`, то существующие
    *                       значения констант языка перезаписываются новыми из файла `sLngUrlParam`.
    * @returns Количество обновленных констант.
-   * 
+   *
    * @example
    * tools.add_lng( _url );
      tools.add_lng( UrlAppendPath( 'x-local://custom/', temp_doc.lngs_url ), true );
@@ -317,12 +317,12 @@ declare namespace tools {
 
   /**
    * Функция добавляет сотрудника в список оцениваемых в процедуре оценки. Планы и анкеты при этом не создаются.
-   * @param _person_id ID сотрудника. 
-   * @param _assessment_appraise_id ID процедуры оценки, в которую нужно добавить сотрудника. 
-   * @param personDocument `TopElem` карточки сотрудника. 
+   * @param _person_id ID сотрудника.
+   * @param _assessment_appraise_id ID процедуры оценки, в которую нужно добавить сотрудника.
+   * @param personDocument `TopElem` карточки сотрудника.
    * @param _doc_assessment_appraise Документ процедуры оценки, в которую нужно добавить сотрудника.
    * @returns Изменённый и сохраненный документ процедуры оценки.
-   * 
+   *
    * @example
    * tools.add_person_to_assessment_appraise ( iPersonID, iObjectID, null, docObject );
    */
@@ -347,7 +347,7 @@ declare namespace tools {
    *                  сохранится в результате мероприятия сотрудника.
    * @returns Документ мероприятия, к которому добавлялся сотрудник (если сотрудник ранее не был добавлен в данное мероприятие),
    *          или `null` (если сотрудник ранее уже был добавлен).
-   * 
+   *
    * @example
    * docEvent = tools.add_person_to_event ( Int(sUserId), Int(sRoomId) );
    * tools.add_person_to_event ( _source.TopElem.person_id, _source.TopElem.object_id, null, docObject );
@@ -368,9 +368,9 @@ declare namespace tools {
    * @param iActionRepotrIDParam ID события базы, к которому нужно добавить строку.
    * @param sTextParam Строка, которую нужно добавить к событию базы.
    * @param docActionRepotrParam Документ события базы, к которому нужно добавить строку.
-   * 
+   *
    * @returns Сохраненный документ события базы с добавленной строкой.
-   * 
+   *
    * @example
    * reportDoc = OpenNewDoc( 'x-local://wtv/wtv_action_report.xmd' );
    * _report_id = reportDoc.DocID;
@@ -386,9 +386,9 @@ declare namespace tools {
    *                                  (`true` – код автоматически удаляется из очереди, `false` – не удаляется).
    * @param iDelayParam Задержка в секундах перед выполнением кода.
    * @param dStartDate Дата старта агента
-   * 
+   *
    * @returns ID созданного объекта.
-   * 
+   *
    * @example
    * iScriptId = tools.add_script_to_queue(sRegistrationScript,"mgr", true, 5);
    * tools.add_script_to_queue(
@@ -415,14 +415,14 @@ declare namespace tools {
   /**
    * Сдвигает указанную дату на количество секунд, заданное параметрами функции. Можно передать дни, часы, минуты и секунды для сдвига даты.
    * Дни, часы, минуты будут пересчитаны в секунды.
-   * @param DATE_VAL Исходная дата, подлежащая изменению. Если дата не указана, то по умолчанию принимается текущая дата. 
+   * @param DATE_VAL Исходная дата, подлежащая изменению. Если дата не указана, то по умолчанию принимается текущая дата.
    * @param DAYS Количество дней, на которое нужно сдвинуть текущую дату. Если аргумент не указан, то по умолчанию принимается значение 0.
    * @param HOURS Количество часов, на которое нужно сдвинуть текущую дату. Если аргумент не указан, то по умолчанию принимается значение 0.
    * @param MINUTES Количество минут, на которое нужно сдвинуть текущую дату. Если аргумент не указан, то по умолчанию принимается значение 0.
    * @param SECONDS Количество секунд, на которое нужно сдвинуть текущую дату. Если аргумент не указан, то по умолчанию принимается значение 0.
-   * 
+   *
    * @returns Измененная дата, полученная сдвигом исходной даты на указанное количество дней, часов, минут и секунд.
-   * 
+   *
    * @example
    * newDate = tools.AdjustDate (null, 1); // сдвиг текущей даты на 1 сутки
    * newDate1 = tools.AdjustDate (null, -1); // сдвиг текущей даты на 1 сутки назад
@@ -435,7 +435,7 @@ declare namespace tools {
    * @param _to_obj_doc TopElem объекта, в который нужно скопировать параметры доступа.
    * @param _from_obj_id ID объекта, из которого нужно скопировать параметры доступа.
    * @param _from_obj_doc TopElem объекта, из которого нужно скопировать параметры доступа.
-   * 
+   *
    * @example
    * tools.admin_access_copying('', docEventResult.TopElem, '', topElem);
    * tools.admin_access_copying( null, requestDoc.TopElem, curObjectID, curObject );
@@ -450,9 +450,9 @@ declare namespace tools {
   /**
    * Проверяет доступ к объекту на основе настроек в разделе Отображение каталогов (блок Безопасность) для текущего пользователя в Webtutor Administrator.
    * @param teObjectParam `TopElem` объекта, к которому проверяется доступ.
-   * 
+   *
    * @returns Возвращает значение, показывающее наличие или отсутствие доступа (`true` – доступ разрешен, `false` – доступ запрещен).
-   * 
+   *
    * @example
    * tools.admin_access_filling( TopElem );
    */
@@ -465,13 +465,13 @@ declare namespace tools {
    * @param sQtiPathParam Путь до файла со структурой теста в формате qti.
    * @param sQtiTextParam Структура теста в формате qti.
    * @param bNoSendCorrectAnswerParam Не отправлять правильный ответ.
-   * 
+   *
    * @returns XML-структура, содержащая результаты тестирования
-   * 
+   *
    * @example
    * tools.annals_decrypt( Ps );
    * TopElem.annals_variant = tools.annals_decrypt( oSource, sQtiPath );
-   * 
+   *
    * for ( _learning in _learning_array ) {
    *   learningDoc = OpenDoc( UrlFromDocID( _learning.id ) ).TopElem;
    *   assessmentDoc = OpenDoc( UrlFromDocID( _learning.assessment_id ) ).TopElem;
@@ -491,21 +491,21 @@ declare namespace tools {
    * @param _sFormatPARAM Формат возвращаемой строки. Возможны два значения: `json` и `xml`). По умолчанию имеет значение `xml`.
    * @param _sNamePARAM Название корневого (`root`) тега. Значение аргумента учитывается, если формируется строка в формате XML.
    *                    По умолчанию имеет значение `data` (корневой тег `<data></data>`).
-   * 
+   *
    * @returns Строка, сформированная из массива.
-   * 
+   *
    * @example
    * tools.array_to_text(["one", "two", "three"], "json");
    * // returns ["value":"one", "value":"two", "value":"three"]
-   * 
+   *
    * tools.array_to_text(["one", "two", "three"], "xml");
    * // returns <data><value>one</value></data><data><value>two</value></data><data><value>three</value></data>
-   * 
+   *
    * tools.array_to_text(["one", "two", "three"], "xml", "d");
    * // returns <d><value>one</value></d><d><value>two</value></d><d><value>three</value></d>
    */
   function array_to_text(_aArrayPARAM: any[], _sFormatPARAM?: string, _sNamePARAM?: string): string;
-   
+
 
   const dotnet_host: DotnetCoreHost;
 
@@ -840,7 +840,7 @@ declare namespace tools {
   function get_main_forum_entry_by_forum_entry_id(iForumEntryParam: any, teForumEntryParam: any): any;
 
   /**
-   * 
+   *
    * @param personId id сотрудника
    * @param eventId id мероприятия
    * @param qualificationId id квалификации
@@ -1082,7 +1082,7 @@ declare namespace tools {
   function set_upgrade_locked(bParam: any): any;
 
   /**
-   * 
+   *
    * @param libraryName название библиотеки
    */
   function get_object_assembly<T>(libraryName: ObjectAssemblyLibraryType): T;
@@ -1118,18 +1118,18 @@ declare namespace tools {
    * Преобразует строку вида `+7-903-508-20-45` или `+7(903)508-20-45` в строку `79035082045 5082045`. Функция используется для унификации поиска по телефонным номерам.
    * @param strPhoneParam Исходная строка для преобразования.
    * @returns Преобразованная строка или значение `null`, если произошла ошибка.
-   * 
+   *
    * @example
    * // returns 79035082045 5082045
    * tools.build_phone("+7-903-508-20-45");
    */
   function build_phone(strPhoneParam: string): string | null;
 
-  /** 
+  /**
    * Заменяет в строке пробел, «(» , «)», «+» и «-» на пустую сроку, а символы «,» и «;» - на пробел.
    * @param strPhoneParam Исходная строка для преобразования.
    * @returns Преобразованная строка или значение `null`, если произошла ошибка.
-   * 
+   *
    * @example
    * // returns 79035082045
    * tools.build_simple_phone("+7-903-508-20-45");
@@ -1138,16 +1138,16 @@ declare namespace tools {
 
   /**
    * Функция выявляет домен и логин почтового адреса из электронного сообщения в стандарте X.400 и возвращает строку вида login@domainтекст_письма.
-   * @param _x40_email Строка электронного сообщения в стандарте X.400, из которого выделяется домен и логин электронного адреса. 
-   * @param _end_mail Строковое выражение, содержащее текст письма, который будет добавлен к login@domain. 
+   * @param _x40_email Строка электронного сообщения в стандарте X.400, из которого выделяется домен и логин электронного адреса.
+   * @param _end_mail Строковое выражение, содержащее текст письма, который будет добавлен к login@domain.
    * @returns Строковое выражение вида login@domainтекст_письма.
    */
   function convert_email_from_x40(_x40_email: string, _end_mail: string): string;
 
   /**
    * Прообразовывает содержание строки для сохранения в теге <desc> ... </desc>. Предназначено для преобразования тегов и ссылок на файлы в описании
-   * @param _desc Строка для преобразования. 
-   * @param _temp_dir Строчное выражение пути до папки с файлами, указанными в теге. 
+   * @param _desc Строка для преобразования.
+   * @param _temp_dir Строчное выражение пути до папки с файлами, указанными в теге.
    * @returns Преобразованная строка. Результат действия функции.
    */
   function desc_cleanup(_desc: string, _temp_dir?: string): string;
@@ -1155,14 +1155,14 @@ declare namespace tools {
   /**
    * @summary Преобразовывает html-файл, переданный в функцию, в файл в формате pdf и сохраняет его по указанному пути.
    * @description Преобразовывает html-файл, переданный в функцию, в файл в формате pdf и сохраняет его по указанному пути.
-   * Примечание – Если указанный файл уже существует в файловой системе, то он перезаписывается без выдачи предупреждения. 
+   * Примечание – Если указанный файл уже существует в файловой системе, то он перезаписывается без выдачи предупреждения.
    * Если файл открыт в другой программе, то выдается ошибка с прерыванием выполняемого кода: «Процесс не может получить доступ к файлу…,
    * так как этот файл используется другим процессом.»
    * @param sHtmlText Строка с html для преобразования.
    * @param sResourcesDirPath Путь до папки с ресурсами (изображения, стили и т.д.), которые используются в html. При отсутствии таких ресурсов указывается пустая строка ('').
    * @param sOutFilePath Путь до файла, в который будет сохранен полученный файл pdf.
    * @returns Возвращает значение `true`, если преобразование завершилось успешно, или `false` - в противном случае.
-   * 
+   *
    * @example
    * // returns true
    * tools.html_to_pdf(_str, "", UrlToFilePath(_filename));
@@ -1176,23 +1176,23 @@ declare namespace tools {
    * @param { boolean } [_bObj=false] флаг true – преобразуется объект, false – преобразуется массив.
    * @param { string } [_sFormatPARAM=xml] по умолчанию XML. Возможны два значения (json, xml). Задает формат возвращаемой строки.
    * @returns строка, полученная из массива или объекта
-   * 
+   *
    * @example
    * tools.merge_text_array(_aPairs, (_sFormatPARAM == "json" ? null: _sNamePARAM), false, _sFormatPARAM);
    */
   function merge_text_array(_aDataPARAM: Object | any[], _sName?: string, _bObj?: boolean, _sFormatPARAM?: string): string;
 
   /**
-   * 
+   *
    * @param arg объект для преобразования.
    * @param { string }[formatType=xml] по умолчанию XML. Возможны два значения (json, xml). Задает формат возвращаемой строки.
    * @param { number } [maxDepth=0] по умолчанию 0. Глубина дочерних свойств объекта, до которой можно спускаться. Должна быть не больше 5.
    * @param { stirng } [_sName=null] Параметр указывает название тега (для XML), в который будут заключены данные, полученные из _vObjectPARAM. По умолчанию <value></value>.
    * @returns строка, полученная из объекта.
-   * 
-   * @example 
+   *
+   * @example
    * tools.object_to_text(RESULT,'json')
-   * 
+   *
    * @example
    * tools.object_to_text(_vValue, _sFormatPARAM, iDepth + 1, _sName);
    */
@@ -1209,7 +1209,7 @@ declare namespace tools {
    * Возвращает сроку с тегами XML, полученную из строки, переданной в параметрах функции. Предполагается, что в функцию передается файл со значениями параметров, потому в результирующей строке будут представлены название параметра и его значение
    * @param sFileText строка для разбора.
    * @returns строка с тегами XML.
-   * 
+   *
    * @example
    * tools.open_str_win_ini(LoadUrlText(sUrlParam));
    */
@@ -1219,10 +1219,10 @@ declare namespace tools {
    * Преобразует строку в объект. Например, строку в формате json в объект. Или строку, содержащую XML, в объект.
    * @param string строка в формате json или строка, содержащая XML.
    * @returns Возвращаемый результат – полученный объекта (object).
-   * 
+   *
    * @example
    * tools.read_object(call_method("getSaveFileUrl", oParam, "json"));
-   * 
+   *
    * @example
    * tools.read_object(sResult);
    */
@@ -1244,9 +1244,9 @@ declare namespace tools {
    * ```
    * @param _str стока для преобразования.
    * @param _date дата, данные из которой берутся для замены символов в строке, по умолчанию текущая дата и время.
-   * 
+   *
    * @example
-   * tools.replace_temlate_tags(_source.db_path); 
+   * tools.replace_temlate_tags(_source.db_path);
    */
   function replace_temlate_tags(_str: string, _date?: Date): string;
 
@@ -1254,7 +1254,7 @@ declare namespace tools {
    * Преобразует в строку числовой параметр функции. Если параметр отрицательный, то строка будет начинаться со знака «-».
    * @param iNumberParam число для преобразования в строку.
    * @returns строка
-   * 
+   *
    * @example
    * tools.str_negative_number(TopElem.weight);
    */

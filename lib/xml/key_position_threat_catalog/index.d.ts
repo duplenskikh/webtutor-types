@@ -1,4 +1,4 @@
-type KeyPositionThreatCatalogDocumentTopElem = XmlTopElem & { Doc: KeyPositionThreatCatalogDocument } & 
+type KeyPositionThreatCatalogDocumentTopElem = XmlTopElem & { Doc: KeyPositionThreatCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

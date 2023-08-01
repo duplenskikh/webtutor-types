@@ -10,7 +10,7 @@ interface TutorDocumentSubdivision {
   subdivision_id: XmlElem<number>;
 }
 
-type TutorDocumentTopElem = XmlTopElem & 
+type TutorDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 FileListBase &
 AdminAccessBase &

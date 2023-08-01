@@ -1,4 +1,4 @@
-type BudgetPeriodCatalogDocumentTopElem = XmlTopElem & { Doc: BudgetPeriodCatalogDocument } & 
+type BudgetPeriodCatalogDocumentTopElem = XmlTopElem & { Doc: BudgetPeriodCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

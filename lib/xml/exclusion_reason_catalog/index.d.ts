@@ -1,4 +1,4 @@
-type ExclusionReasonCatalogDocumentTopElem = XmlTopElem & { Doc: ExclusionReasonCatalogDocument } & 
+type ExclusionReasonCatalogDocumentTopElem = XmlTopElem & { Doc: ExclusionReasonCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

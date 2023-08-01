@@ -1,4 +1,4 @@
-type CareerReserveTypeCatalogDocumentTopElem = XmlTopElem & { Doc: CareerReserveTypeCatalogDocument } & 
+type CareerReserveTypeCatalogDocumentTopElem = XmlTopElem & { Doc: CareerReserveTypeCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

@@ -1,4 +1,4 @@
-type DnEduConditionCatalogDocumentTopElem = XmlTopElem & { Doc: DnEduConditionCatalogDocument } & 
+type DnEduConditionCatalogDocumentTopElem = XmlTopElem & { Doc: DnEduConditionCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

@@ -1,4 +1,4 @@
-type VacancySourceDocumentTopElem = XmlTopElem & { Doc: VacancySourceDocument } & 
+type VacancySourceDocumentTopElem = XmlTopElem & { Doc: VacancySourceDocument } &
 ObjectCodeNameBase &
 FileListBase &
 AdminAccessBase &

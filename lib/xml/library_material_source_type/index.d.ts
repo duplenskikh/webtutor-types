@@ -1,4 +1,4 @@
-type LibraryMaterialSourceTypeDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialSourceTypeDocument } & 
+type LibraryMaterialSourceTypeDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialSourceTypeDocument } &
 WebVariablesBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;

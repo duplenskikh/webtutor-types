@@ -1,4 +1,4 @@
-type PaymentDocumentTopElem = XmlTopElem & { Doc: PaymentDocument } & 
+type PaymentDocumentTopElem = XmlTopElem & { Doc: PaymentDocument } &
 PersonFillingBase &
 ObjectTypeBase &
 CustomElemsBase & {

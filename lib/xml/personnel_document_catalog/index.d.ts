@@ -1,4 +1,4 @@
-type PersonnelDocumentCatalogDocumentTopElem = XmlTopElem & { Doc: PersonnelDocumentCatalogDocument } & 
+type PersonnelDocumentCatalogDocumentTopElem = XmlTopElem & { Doc: PersonnelDocumentCatalogDocument } &
 PersonFillingBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

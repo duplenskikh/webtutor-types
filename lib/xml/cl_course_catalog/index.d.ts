@@ -1,4 +1,4 @@
-type ClCourseCatalogDocumentTopElem = XmlTopElem & { Doc: ClCourseCatalogDocument } & 
+type ClCourseCatalogDocumentTopElem = XmlTopElem & { Doc: ClCourseCatalogDocument } &
 AccessDocBase &
 AdminAccessBase & {
   id: XmlElem<number>;

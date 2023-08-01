@@ -1,4 +1,4 @@
-type EducationTypeCatalogDocumentTopElem = XmlTopElem & { Doc: EducationTypeCatalogDocument } & 
+type EducationTypeCatalogDocumentTopElem = XmlTopElem & { Doc: EducationTypeCatalogDocument } &
 ObjectCodeNameBase &
 AdminAccessBase & {
   modification_date: XmlElem<Date>;

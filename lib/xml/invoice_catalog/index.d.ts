@@ -1,4 +1,4 @@
-type InvoiceCatalogDocumentTopElem = XmlTopElem & { Doc: InvoiceCatalogDocument } & 
+type InvoiceCatalogDocumentTopElem = XmlTopElem & { Doc: InvoiceCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

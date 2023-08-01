@@ -1,4 +1,4 @@
-type RemoteActionDocumentTopElem = XmlTopElem & 
+type RemoteActionDocumentTopElem = XmlTopElem &
 ExecCodeBase &
 WebVariablesBase &
 ResultFieldsBase & {

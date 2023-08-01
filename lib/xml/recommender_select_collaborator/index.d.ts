@@ -1,4 +1,4 @@
-type RecommenderSelectCollaboratorDocumentTopElem = XmlTopElem & { Doc: RecommenderSelectCollaboratorDocument } & 
+type RecommenderSelectCollaboratorDocumentTopElem = XmlTopElem & { Doc: RecommenderSelectCollaboratorDocument } &
 PersonFillingBase &
 CustomElemsBase & {
   id: XmlElem<number>;

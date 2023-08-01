@@ -1,4 +1,4 @@
-type DnStreamCatalogDocumentTopElem = XmlTopElem & { Doc: DnStreamCatalogDocument } & 
+type DnStreamCatalogDocumentTopElem = XmlTopElem & { Doc: DnStreamCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

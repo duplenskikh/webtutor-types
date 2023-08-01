@@ -1,4 +1,4 @@
-type PaCatalogDocumentTopElem = XmlTopElem & { Doc: PaCatalogDocument } & 
+type PaCatalogDocumentTopElem = XmlTopElem & { Doc: PaCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

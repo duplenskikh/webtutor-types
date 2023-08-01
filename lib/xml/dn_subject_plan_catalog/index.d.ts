@@ -1,4 +1,4 @@
-type DnSubjectPlanCatalogDocumentTopElem = XmlTopElem & { Doc: DnSubjectPlanCatalogDocument } & 
+type DnSubjectPlanCatalogDocumentTopElem = XmlTopElem & { Doc: DnSubjectPlanCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

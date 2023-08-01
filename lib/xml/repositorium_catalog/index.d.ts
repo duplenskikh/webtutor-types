@@ -1,4 +1,4 @@
-type RepositoriumCatalogDocumentTopElem = XmlTopElem & { Doc: RepositoriumCatalogDocument } & 
+type RepositoriumCatalogDocumentTopElem = XmlTopElem & { Doc: RepositoriumCatalogDocument } &
 AccessDocBase &
 AdminAccessBase & {
   id: XmlElem<number>;

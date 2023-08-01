@@ -1,4 +1,4 @@
-type KpiCatalogDocumentTopElem = XmlTopElem & { Doc: KpiCatalogDocument } & 
+type KpiCatalogDocumentTopElem = XmlTopElem & { Doc: KpiCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   parent_object_id: XmlElem<number>;

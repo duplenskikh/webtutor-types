@@ -1,4 +1,4 @@
-type SelectedResumeDocumentTopElem = XmlTopElem & { Doc: SelectedResumeDocument } & 
+type SelectedResumeDocumentTopElem = XmlTopElem & { Doc: SelectedResumeDocument } &
 PersonFillingBase &
 FileListBase &
 AdminAccessBase &

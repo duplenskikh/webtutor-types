@@ -1,4 +1,4 @@
-type IntervalScheduleCatalogDocumentTopElem = XmlTopElem & { Doc: IntervalScheduleCatalogDocument } & 
+type IntervalScheduleCatalogDocumentTopElem = XmlTopElem & { Doc: IntervalScheduleCatalogDocument } &
 PersonFillingBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

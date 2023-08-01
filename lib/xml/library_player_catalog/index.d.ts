@@ -1,4 +1,4 @@
-type LibraryPlayerCatalogDocumentTopElem = XmlTopElem & { Doc: LibraryPlayerCatalogDocument } & 
+type LibraryPlayerCatalogDocumentTopElem = XmlTopElem & { Doc: LibraryPlayerCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

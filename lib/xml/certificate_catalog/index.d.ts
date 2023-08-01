@@ -1,4 +1,4 @@
-type CertificateCatalogDocumentTopElem = XmlTopElem & { Doc: CertificateCatalogDocument } & 
+type CertificateCatalogDocumentTopElem = XmlTopElem & { Doc: CertificateCatalogDocument } &
 PersonFillingBase &
 AdminAccessBase & {
   id: XmlElem<number>;

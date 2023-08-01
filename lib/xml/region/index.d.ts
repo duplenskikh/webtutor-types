@@ -1,4 +1,4 @@
-type RegionDocumentTopElem = XmlTopElem & { Doc: RegionDocument } & 
+type RegionDocumentTopElem = XmlTopElem & { Doc: RegionDocument } &
 CustomElemsBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;

@@ -8,7 +8,7 @@ interface LibraryMaterialItemDocumentChangeLog {
   date: XmlElem<Date>;
 }
 
-type LibraryMaterialItemDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialItemDocument } & 
+type LibraryMaterialItemDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialItemDocument } &
 PersonFillingBase &
 CustomElemsBase &
 AdminAccessBase & {

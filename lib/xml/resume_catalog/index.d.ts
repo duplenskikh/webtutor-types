@@ -1,4 +1,4 @@
-type ResumeCatalogDocumentTopElem = XmlTopElem & { Doc: ResumeCatalogDocument } & 
+type ResumeCatalogDocumentTopElem = XmlTopElem & { Doc: ResumeCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

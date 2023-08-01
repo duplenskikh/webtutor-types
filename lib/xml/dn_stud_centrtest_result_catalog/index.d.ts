@@ -1,4 +1,4 @@
-type DnStudCentrtestResultCatalogDocumentTopElem = XmlTopElem & { Doc: DnStudCentrtestResultCatalogDocument } & 
+type DnStudCentrtestResultCatalogDocumentTopElem = XmlTopElem & { Doc: DnStudCentrtestResultCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   subject: XmlElem<string>;

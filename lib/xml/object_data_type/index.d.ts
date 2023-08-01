@@ -1,4 +1,4 @@
-type ObjectDataTypeDocumentTopElem = XmlTopElem & { Doc: ObjectDataTypeDocument } & 
+type ObjectDataTypeDocumentTopElem = XmlTopElem & { Doc: ObjectDataTypeDocument } &
 ObjectCodeNameBase & {
   object_type: XmlElem<string>;
   sec_object_type: XmlElem<string>;

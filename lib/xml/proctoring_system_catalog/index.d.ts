@@ -1,4 +1,4 @@
-type ProctoringSystemCatalogDocumentTopElem = XmlTopElem & { Doc: ProctoringSystemCatalogDocument } & 
+type ProctoringSystemCatalogDocumentTopElem = XmlTopElem & { Doc: ProctoringSystemCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

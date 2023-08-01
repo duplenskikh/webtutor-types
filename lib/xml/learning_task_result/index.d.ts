@@ -2,7 +2,7 @@ interface LearningTaskResultDocumentFile extends FileListBaseFile {
   is_expert: XmlElem<boolean>;
 }
 
-type LearningTaskResultDocumentTopElem = XmlTopElem & { Doc: LearningTaskResultDocument } & 
+type LearningTaskResultDocumentTopElem = XmlTopElem & { Doc: LearningTaskResultDocument } &
 PersonFillingBase &
 AdminAccessBase &
 CustomElemsBase & {

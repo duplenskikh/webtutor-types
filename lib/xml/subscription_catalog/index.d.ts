@@ -1,4 +1,4 @@
-type SubscriptionCatalogDocumentTopElem = XmlTopElem & { Doc: SubscriptionCatalogDocument } & 
+type SubscriptionCatalogDocumentTopElem = XmlTopElem & { Doc: SubscriptionCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   type: XmlElem<string>;

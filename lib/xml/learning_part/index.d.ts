@@ -1,4 +1,4 @@
-type LearningPartDocumentTopElem = XmlTopElem & { Doc: LearningPartDocument } & 
+type LearningPartDocumentTopElem = XmlTopElem & { Doc: LearningPartDocument } &
 CoreLessonBase &
 AnnalsObjectsBase & {
   code: XmlElem<string>;

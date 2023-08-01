@@ -28,8 +28,8 @@ interface Stream {
   BufStream(): BufStream;
   /**
    * Конструктор объекта FileStream, позволяющего читать данные из файла на диске.
-   * @param filePath - Путь к файлу (или url) 
-   * 
+   * @param filePath - Путь к файлу (или url)
+   *
    * @example
    * fileStream = new FileStream( 'C:\\Temp\\xxx.txt' );
    * while ( true )

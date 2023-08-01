@@ -16,7 +16,7 @@ interface SubmissionTypeDocumentPhase {
   collect_state: XmlElem<string>;
 }
 
-type SubmissionTypeDocumentTopElem = XmlTopElem & { Doc: SubmissionTypeDocument } & 
+type SubmissionTypeDocumentTopElem = XmlTopElem & { Doc: SubmissionTypeDocument } &
 CustomElemsBase & {
   name: XmlElem<string>;
   code: XmlElem<string>;

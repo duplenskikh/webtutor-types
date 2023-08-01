@@ -1,4 +1,4 @@
-type LibrarySystemDocumentTopElem = XmlTopElem & { Doc: LibrarySystemDocument } & 
+type LibrarySystemDocumentTopElem = XmlTopElem & { Doc: LibrarySystemDocument } &
 AdminAccessBase &
 WebVariablesBase & {
   id: XmlElem<number>;

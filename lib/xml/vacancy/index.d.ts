@@ -4,7 +4,7 @@ interface VacancyDocumentAssessment {
   assessment_code: XmlElem<string>;
 }
 
-type VacancyDocumentTopElem = XmlTopElem & { Doc: VacancyDocument } & 
+type VacancyDocumentTopElem = XmlTopElem & { Doc: VacancyDocument } &
 ObjectCodeNameBase &
 AdminAccessBase &
 FileListBase &

@@ -1,4 +1,4 @@
-type ProjectParticipantRoleDocumentTopElem = XmlTopElem & { Doc: ProjectParticipantRoleDocument } & 
+type ProjectParticipantRoleDocumentTopElem = XmlTopElem & { Doc: ProjectParticipantRoleDocument } &
 ObjectCodeNameBase &
 FileListBase &
 AdminAccessBase &

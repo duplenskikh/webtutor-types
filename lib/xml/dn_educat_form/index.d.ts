@@ -1,4 +1,4 @@
-type DnEducatFormDocumentTopElem = XmlTopElem & 
+type DnEducatFormDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   Doc: DnEducatFormDocument;
   code: XmlElem<string>;

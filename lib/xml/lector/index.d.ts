@@ -1,4 +1,4 @@
-type LectorDocumentTopElem = XmlTopElem & { Doc: LectorDocument } & 
+type LectorDocumentTopElem = XmlTopElem & { Doc: LectorDocument } &
 PersonBase &
 PassportDataBase &
 CustomElemsBase &

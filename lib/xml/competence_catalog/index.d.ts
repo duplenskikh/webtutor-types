@@ -1,4 +1,4 @@
-type CompetenceCatalogDocumentTopElem = XmlTopElem & { Doc: CompetenceCatalogDocument } & 
+type CompetenceCatalogDocumentTopElem = XmlTopElem & { Doc: CompetenceCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   parent_id: XmlElem<number>;

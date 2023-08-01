@@ -1,4 +1,4 @@
-type WebDesignDocumentTopElem = XmlTopElem & { Doc: WebDesignDocument } & 
+type WebDesignDocumentTopElem = XmlTopElem & { Doc: WebDesignDocument } &
 WebVariablesBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;

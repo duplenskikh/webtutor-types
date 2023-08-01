@@ -1,4 +1,4 @@
-type OrgDocumentTopElem = XmlTopElem & { Doc: OrgDocument } & 
+type OrgDocumentTopElem = XmlTopElem & { Doc: OrgDocument } &
 OrgBase &
 FileListBase &
 FuncManagersBase &

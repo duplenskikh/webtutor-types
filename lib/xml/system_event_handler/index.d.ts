@@ -1,4 +1,4 @@
-type SystemEventHandlerDocumentTopElem = XmlTopElem & { Doc: SystemEventHandlerDocument } & 
+type SystemEventHandlerDocumentTopElem = XmlTopElem & { Doc: SystemEventHandlerDocument } &
 ObjectCodeNameBase &
 ExecCodeBase &
 WebVariablesBase & {

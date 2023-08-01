@@ -1,4 +1,4 @@
-type ApplicationCatalogDocumentTopElem = XmlTopElem & { Doc: ApplicationCatalogDocument } & 
+type ApplicationCatalogDocumentTopElem = XmlTopElem & { Doc: ApplicationCatalogDocument } &
 ObjectCodeNameBase & {
   type: XmlElem<string>;
   list_xms_url: XmlElem<string>;

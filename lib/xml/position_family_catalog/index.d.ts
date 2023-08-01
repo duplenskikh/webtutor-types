@@ -1,4 +1,4 @@
-type PositionFamilyCatalogDocumentTopElem = XmlTopElem & { Doc: PositionFamilyCatalogDocument } & 
+type PositionFamilyCatalogDocumentTopElem = XmlTopElem & { Doc: PositionFamilyCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

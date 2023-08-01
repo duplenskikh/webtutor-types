@@ -1,4 +1,4 @@
-type VacancyTypeDocumentTopElem = XmlTopElem & { Doc: VacancyTypeDocument } & 
+type VacancyTypeDocumentTopElem = XmlTopElem & { Doc: VacancyTypeDocument } &
 ObjectCodeNameBase &
 AdminAccessBase & {
   comment: XmlElem<string>;

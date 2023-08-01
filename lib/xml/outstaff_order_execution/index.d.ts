@@ -13,7 +13,7 @@ interface OutstaffOrderExecutionDocumentStage extends CostCurrencyBase,
   comment: XmlElem<string>;
 }
 
-type OutstaffOrderExecutionDocumentTopElem = XmlTopElem & { Doc: OutstaffOrderExecutionDocument } & 
+type OutstaffOrderExecutionDocumentTopElem = XmlTopElem & { Doc: OutstaffOrderExecutionDocument } &
 PersonFillingBase &
 FileListBase &
 AdminAccessBase &

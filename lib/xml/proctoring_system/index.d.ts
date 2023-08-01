@@ -1,4 +1,4 @@
-type ProctoringSystemDocumentTopElem = XmlTopElem & { Doc: ProctoringSystemDocument } & 
+type ProctoringSystemDocumentTopElem = XmlTopElem & { Doc: ProctoringSystemDocument } &
 AdminAccessBase &
 WebVariablesBase & {
   id: XmlElem<number>;

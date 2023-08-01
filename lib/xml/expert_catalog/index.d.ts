@@ -1,4 +1,4 @@
-type ExpertCatalogDocumentTopElem = XmlTopElem & { Doc: ExpertCatalogDocument } & 
+type ExpertCatalogDocumentTopElem = XmlTopElem & { Doc: ExpertCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   name: XmlElem<string>;

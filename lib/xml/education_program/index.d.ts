@@ -2,7 +2,7 @@ interface EducationProgramDocumentEducationMethod {
   education_method_id: XmlElem<number>;
 }
 
-type EducationProgramDocumentTopElem = XmlTopElem & { Doc: EducationProgramDocument } & 
+type EducationProgramDocumentTopElem = XmlTopElem & { Doc: EducationProgramDocument } &
 AdminAccessBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;

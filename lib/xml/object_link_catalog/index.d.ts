@@ -1,4 +1,4 @@
-type ObjectLinkCatalogDocumentTopElem = XmlTopElem & { Doc: ObjectLinkCatalogDocument } & 
+type ObjectLinkCatalogDocumentTopElem = XmlTopElem & { Doc: ObjectLinkCatalogDocument } &
 ObjectTypeBase & {
   id: XmlElem<number>;
   recommender_algorithm_id: XmlElem<number>;

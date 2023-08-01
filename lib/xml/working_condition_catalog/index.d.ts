@@ -1,4 +1,4 @@
-type WorkingConditionCatalogDocumentTopElem = XmlTopElem & { Doc: WorkingConditionCatalogDocument } & 
+type WorkingConditionCatalogDocumentTopElem = XmlTopElem & { Doc: WorkingConditionCatalogDocument } &
 PersonFillingBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

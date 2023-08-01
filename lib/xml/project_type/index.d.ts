@@ -1,4 +1,4 @@
-type ProjectTypeDocumentTopElem = XmlTopElem & { Doc: ProjectTypeDocument } & 
+type ProjectTypeDocumentTopElem = XmlTopElem & { Doc: ProjectTypeDocument } &
 ObjectCodeNameBase &
 AdminAccessBase & {
   comment: XmlElem<string>;

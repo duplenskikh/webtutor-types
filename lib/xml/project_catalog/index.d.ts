@@ -1,4 +1,4 @@
-type ProjectCatalogDocumentTopElem = XmlTopElem & { Doc: ProjectCatalogDocument } & 
+type ProjectCatalogDocumentTopElem = XmlTopElem & { Doc: ProjectCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

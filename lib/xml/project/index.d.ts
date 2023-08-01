@@ -19,7 +19,7 @@ interface ProjectDocumentFile extends FileListBaseFile {
   visibility: XmlElem<string>;
 }
 
-type ProjectDocumentTopElem = XmlTopElem & { Doc: ProjectDocument } & 
+type ProjectDocumentTopElem = XmlTopElem & { Doc: ProjectDocument } &
 CatalogListBase &
 AdminAccessBase &
 CustomElemsBase & {

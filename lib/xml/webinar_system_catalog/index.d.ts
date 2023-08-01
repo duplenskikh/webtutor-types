@@ -1,4 +1,4 @@
-type WebinarSystemCatalogDocumentTopElem = XmlTopElem & { Doc: WebinarSystemCatalogDocument } & 
+type WebinarSystemCatalogDocumentTopElem = XmlTopElem & { Doc: WebinarSystemCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

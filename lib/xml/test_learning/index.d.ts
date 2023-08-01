@@ -4,7 +4,7 @@ interface TestLearningDocumentSection {
   score: XmlElem<number>;
 }
 
-type TestLearningDocumentTopElem = XmlTopElem & { Doc: TestLearningDocument } & 
+type TestLearningDocumentTopElem = XmlTopElem & { Doc: TestLearningDocument } &
 PersonFillingBase &
 AnnalsObjectsBase &
 AnnalsNumsBase &

@@ -1,4 +1,4 @@
-type ExternalSystemCatalogDocumentTopElem = XmlTopElem & { Doc: ExternalSystemCatalogDocument } & 
+type ExternalSystemCatalogDocumentTopElem = XmlTopElem & { Doc: ExternalSystemCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

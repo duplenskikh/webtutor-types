@@ -3,7 +3,7 @@ interface ObjectLinkDocumentLink extends ObjectTypeBase {
   comment: XmlElem<string>;
 }
 
-type ObjectLinkDocumentTopElem = XmlTopElem & { Doc: ObjectLinkDocument } & 
+type ObjectLinkDocumentTopElem = XmlTopElem & { Doc: ObjectLinkDocument } &
 ObjectTypeBase &
 CustomElemsBase & {
   id: XmlElem<number>;

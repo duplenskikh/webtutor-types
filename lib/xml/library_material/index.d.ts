@@ -19,7 +19,7 @@ interface LibraryMaterialDocumentPathSection {
   parent_id: XmlElem<number>;
 }
 
-type LibraryMaterialDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialDocument } & 
+type LibraryMaterialDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialDocument } &
 ObjectCodeNameBase &
 CatalogListBase &
 KnowledgePartsBase &

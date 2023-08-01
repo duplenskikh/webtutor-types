@@ -1,4 +1,4 @@
-type DigitalSignatureCatalogDocumentTopElem = XmlTopElem & { Doc: DigitalSignatureCatalogDocument } & 
+type DigitalSignatureCatalogDocumentTopElem = XmlTopElem & { Doc: DigitalSignatureCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

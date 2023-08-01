@@ -1,4 +1,4 @@
-type RiskPerspectiveDocumentTopElem = XmlTopElem & { Doc: RiskPerspectiveDocument } & 
+type RiskPerspectiveDocumentTopElem = XmlTopElem & { Doc: RiskPerspectiveDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {

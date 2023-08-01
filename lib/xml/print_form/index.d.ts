@@ -1,4 +1,4 @@
-type PrintFormDocumentTopElem = XmlTopElem & { Doc: PrintFormDocument } & 
+type PrintFormDocumentTopElem = XmlTopElem & { Doc: PrintFormDocument } &
 InsertFileBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;

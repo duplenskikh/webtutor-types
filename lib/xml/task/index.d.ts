@@ -23,7 +23,7 @@ interface TaskDocumentFile extends FileListBaseFile {
   visibility: XmlElem<string>;
 }
 
-type TaskDocumentTopElem = XmlTopElem & { Doc: TaskDocument } & 
+type TaskDocumentTopElem = XmlTopElem & { Doc: TaskDocument } &
 ObjectCodeNameBase &
 WorkflowDataBase &
 AdminAccessBase &

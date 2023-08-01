@@ -1,4 +1,4 @@
-type PersonalDataProcessingConsentCatalogDocumentTopElem = XmlTopElem & { Doc: PersonalDataProcessingConsentCatalogDocument } & 
+type PersonalDataProcessingConsentCatalogDocumentTopElem = XmlTopElem & { Doc: PersonalDataProcessingConsentCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   person_id: XmlElem<number>;

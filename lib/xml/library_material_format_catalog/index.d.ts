@@ -1,4 +1,4 @@
-type LibraryMaterialFormatCatalogDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialFormatCatalogDocument } & 
+type LibraryMaterialFormatCatalogDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialFormatCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

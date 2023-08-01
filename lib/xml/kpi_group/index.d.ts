@@ -1,4 +1,4 @@
-type KpiGroupDocumentTopElem = XmlTopElem & { Doc: KpiGroupDocument } & 
+type KpiGroupDocumentTopElem = XmlTopElem & { Doc: KpiGroupDocument } &
 CustomElemsBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;

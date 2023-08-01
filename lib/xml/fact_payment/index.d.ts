@@ -1,4 +1,4 @@
-type FactPaymentDocumentTopElem = XmlTopElem & { Doc: FactPaymentDocument } & 
+type FactPaymentDocumentTopElem = XmlTopElem & { Doc: FactPaymentDocument } &
 FileListBase &
 CustomElemsBase & {
   name: XmlElem<string>;

@@ -14,7 +14,7 @@ interface ProjectParticipantDocumentCurrentKnowledgePart {
   comment: XmlElem<string>;
 }
 
-type ProjectParticipantDocumentTopElem = XmlTopElem & { Doc: ProjectParticipantDocument } & 
+type ProjectParticipantDocumentTopElem = XmlTopElem & { Doc: ProjectParticipantDocument } &
 PersonFillingBase &
 FileListBase &
 WorkflowDataBase &

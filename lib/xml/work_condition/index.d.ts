@@ -1,4 +1,4 @@
-type WorkConditionDocumentTopElem = XmlTopElem & { Doc: WorkConditionDocument } & 
+type WorkConditionDocumentTopElem = XmlTopElem & { Doc: WorkConditionDocument } &
 ObjectCodeNameBase &
 AdminAccessBase & {
   comment: XmlElem<string>;

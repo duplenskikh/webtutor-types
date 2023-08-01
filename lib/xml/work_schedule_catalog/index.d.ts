@@ -1,4 +1,4 @@
-type WorkScheduleCatalogDocumentTopElem = XmlTopElem & { Doc: WorkScheduleCatalogDocument } & 
+type WorkScheduleCatalogDocumentTopElem = XmlTopElem & { Doc: WorkScheduleCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

@@ -1,4 +1,4 @@
-type ReprimandDocumentTopElem = XmlTopElem & { Doc: ReprimandDocument } & 
+type ReprimandDocumentTopElem = XmlTopElem & { Doc: ReprimandDocument } &
 CustomElemsBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;

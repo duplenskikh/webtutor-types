@@ -8,7 +8,7 @@ interface Object {
 
   /**
    * Выдает true, если атрубут с заданным наименованием существует,
-   * и false - если не существует. Смотри также GetOptProperty, 
+   * и false - если не существует. Смотри также GetOptProperty,
    * GetOptProperty и SetProperty.
    * @param key наименование атрибута объекта
    */

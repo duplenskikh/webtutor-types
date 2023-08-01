@@ -1,4 +1,4 @@
-type AppointmentTypeCatalogDocumentTopElem = XmlTopElem & { Doc: AppointmentTypeCatalogDocument } & 
+type AppointmentTypeCatalogDocumentTopElem = XmlTopElem & { Doc: AppointmentTypeCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

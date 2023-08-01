@@ -1,4 +1,4 @@
-type TutorCatalogDocumentTopElem = XmlTopElem & { Doc: TutorCatalogDocument } & 
+type TutorCatalogDocumentTopElem = XmlTopElem & { Doc: TutorCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

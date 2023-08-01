@@ -1,4 +1,4 @@
-type ChannelProviderCatalogDocumentTopElem = XmlTopElem & { Doc: ChannelProviderCatalogDocument } & 
+type ChannelProviderCatalogDocumentTopElem = XmlTopElem & { Doc: ChannelProviderCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

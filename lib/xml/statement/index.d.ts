@@ -1,4 +1,4 @@
-type StatementDocumentTopElem = XmlTopElem & { Doc: StatementDocument } & 
+type StatementDocumentTopElem = XmlTopElem & { Doc: StatementDocument } &
 PersonFillingBase &
 FileListBase & {
   id: XmlElem<number>;

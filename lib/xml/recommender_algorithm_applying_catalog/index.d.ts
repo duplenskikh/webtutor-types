@@ -1,4 +1,4 @@
-type RecommenderAlgorithmApplyingCatalogDocumentTopElem = XmlTopElem & { Doc: RecommenderAlgorithmApplyingCatalogDocument } & 
+type RecommenderAlgorithmApplyingCatalogDocumentTopElem = XmlTopElem & { Doc: RecommenderAlgorithmApplyingCatalogDocument } &
 PersonFillingBase &
 ObjectTypeBase & {
   id: XmlElem<number>;

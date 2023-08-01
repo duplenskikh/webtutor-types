@@ -1,4 +1,4 @@
-type OrgVendorStateDocumentTopElem = XmlTopElem & { Doc: OrgVendorStateDocument } & 
+type OrgVendorStateDocumentTopElem = XmlTopElem & { Doc: OrgVendorStateDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {

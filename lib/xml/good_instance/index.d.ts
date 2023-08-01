@@ -1,4 +1,4 @@
-type GoodInstanceDocumentTopElem = XmlTopElem & { Doc: GoodInstanceDocument } & 
+type GoodInstanceDocumentTopElem = XmlTopElem & { Doc: GoodInstanceDocument } &
 ObjectCodeNameBase &
 PersonFillingBase & {
   status: XmlElem<string>;

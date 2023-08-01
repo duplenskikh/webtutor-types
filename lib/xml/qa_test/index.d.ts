@@ -1,4 +1,4 @@
-type QaTestDocumentTopElem = XmlTopElem & { Doc: QaTestDocument } & 
+type QaTestDocumentTopElem = XmlTopElem & { Doc: QaTestDocument } &
 ObjectCodeNameBase &
 ExecCodeBase &
 ObjectTypeBase &

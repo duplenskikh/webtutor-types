@@ -1,4 +1,4 @@
-type ObjectDataDocumentTopElem = XmlTopElem & { Doc: ObjectDataDocument } & 
+type ObjectDataDocumentTopElem = XmlTopElem & { Doc: ObjectDataDocument } &
 ObjectTypeBase &
 FileListBase &
 CustomElemsBase &

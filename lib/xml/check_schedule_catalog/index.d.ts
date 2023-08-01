@@ -1,4 +1,4 @@
-type CheckScheduleCatalogDocumentTopElem = XmlTopElem & { Doc: CheckScheduleCatalogDocument } & 
+type CheckScheduleCatalogDocumentTopElem = XmlTopElem & { Doc: CheckScheduleCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

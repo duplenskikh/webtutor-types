@@ -1,4 +1,4 @@
-type ReadinessLevelDocumentTopElem = XmlTopElem & { Doc: ReadinessLevelDocument } & 
+type ReadinessLevelDocumentTopElem = XmlTopElem & { Doc: ReadinessLevelDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {

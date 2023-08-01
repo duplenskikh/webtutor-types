@@ -1,4 +1,4 @@
-type ObjectResourceCatalogDocumentTopElem = XmlTopElem & { Doc: ObjectResourceCatalogDocument } & 
+type ObjectResourceCatalogDocumentTopElem = XmlTopElem & { Doc: ObjectResourceCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

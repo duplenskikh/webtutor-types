@@ -1,4 +1,4 @@
-type EfficiencyEstimationCatalogDocumentTopElem = XmlTopElem & { Doc: EfficiencyEstimationCatalogDocument } & 
+type EfficiencyEstimationCatalogDocumentTopElem = XmlTopElem & { Doc: EfficiencyEstimationCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;

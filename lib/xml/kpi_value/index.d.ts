@@ -7,7 +7,7 @@ interface KpiValueDocumentWorkflowMatching {
   person_id: XmlElem<number>;
 }
 
-type KpiValueDocumentTopElem = XmlTopElem & { Doc: KpiValueDocument } & 
+type KpiValueDocumentTopElem = XmlTopElem & { Doc: KpiValueDocument } &
 WorkflowDataBase &
 CustomElemsBase &
 AdminAccessBase & {
