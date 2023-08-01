@@ -73,7 +73,7 @@ AdminAccessBase & {
   budget_period_id: XmlElem<number>;
   period_start: XmlElem<Date>;
   period_end: XmlElem<Date>;
-}
+};
 
 type AssessmentPlanDocument = XmlDocument & {
   TopElem: AssessmentPlanDocumentTopElem;

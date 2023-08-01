@@ -16,7 +16,7 @@ type QaTestResultDocumentTopElem = XmlTopElem & { Doc: QaTestResultDocument } & 
   error_code: XmlElem<number>;
   log_records: XmlMultiElem<QaTestResultDocumentLogRecord>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type QaTestResultDocument = XmlDocument & {
   TopElem: QaTestResultDocumentTopElem;

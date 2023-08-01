@@ -11,6 +11,6 @@ type OrderTypeCatalogDocumentTopElem = XmlTopElem & { Doc: OrderTypeCatalogDocum
   default_flag: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type OrderTypeCatalogDocument = XmlDocument & { TopElem: OrderTypeCatalogDocumentTopElem; };

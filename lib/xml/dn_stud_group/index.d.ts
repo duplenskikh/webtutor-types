@@ -18,7 +18,7 @@ CustomElemsBase & {
   subfacultys: XmlMultiElem<DnStudGroupDocumentSubfaculty>;
   group_size: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnStudGroupDocument = XmlDocument & {
   TopElem: DnStudGroupDocumentTopElem;

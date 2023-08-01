@@ -1,4 +1,4 @@
-type VacancySourceDocumentTopElem = XmlTopElem & { Doc: VacancySourceDocument } & 
+type VacancySourceDocumentTopElem = XmlTopElem & { Doc: VacancySourceDocument } &
 ObjectCodeNameBase &
 FileListBase &
 AdminAccessBase &
@@ -7,7 +7,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-}
+};
 
 type VacancySourceDocument = XmlDocument & {
   TopElem: VacancySourceDocumentTopElem;

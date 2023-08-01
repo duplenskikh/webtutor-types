@@ -1,4 +1,4 @@
-type ProjectParticipantCatalogDocumentTopElem = XmlTopElem & { Doc: ProjectParticipantCatalogDocument } & 
+type ProjectParticipantCatalogDocumentTopElem = XmlTopElem & { Doc: ProjectParticipantCatalogDocument } &
 PersonFillingBase &
 AdminAccessBase & {
   id: XmlElem<number>;
@@ -26,6 +26,6 @@ AdminAccessBase & {
   knowledge_parts: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ProjectParticipantCatalogDocument = XmlDocument & { TopElem: ProjectParticipantCatalogDocumentTopElem; };

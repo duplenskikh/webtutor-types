@@ -5,6 +5,6 @@ type RegionCatalogDocumentTopElem = XmlTopElem & { Doc: RegionCatalogDocument } 
   parent_object_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type RegionCatalogDocument = XmlDocument & { TopElem: RegionCatalogDocumentTopElem; };

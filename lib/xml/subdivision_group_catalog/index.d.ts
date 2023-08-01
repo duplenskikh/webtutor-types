@@ -10,6 +10,6 @@ type SubdivisionGroupCatalogDocumentTopElem = XmlTopElem & { Doc: SubdivisionGro
   knowledge_parts: XmlElem<string>;
   tags: XmlElem<string>;
   experts: XmlElem<string>;
-}
+};
 
 type SubdivisionGroupCatalogDocument = XmlDocument & { TopElem: SubdivisionGroupCatalogDocumentTopElem; };

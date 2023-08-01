@@ -1,4 +1,4 @@
-type PlaceCatalogDocumentTopElem = XmlTopElem & { Doc: PlaceCatalogDocument } & 
+type PlaceCatalogDocumentTopElem = XmlTopElem & { Doc: PlaceCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -8,6 +8,6 @@ AdminAccessBase & {
   timezone_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type PlaceCatalogDocument = XmlDocument & { TopElem: PlaceCatalogDocumentTopElem; };

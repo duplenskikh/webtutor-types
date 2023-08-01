@@ -1,4 +1,4 @@
-type ProjectParticipantRoleDocumentTopElem = XmlTopElem & { Doc: ProjectParticipantRoleDocument } & 
+type ProjectParticipantRoleDocumentTopElem = XmlTopElem & { Doc: ProjectParticipantRoleDocument } &
 ObjectCodeNameBase &
 FileListBase &
 AdminAccessBase &
@@ -9,7 +9,7 @@ KnowledgePartsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-}
+};
 
 type ProjectParticipantRoleDocument = XmlDocument & {
   TopElem: ProjectParticipantRoleDocumentTopElem;

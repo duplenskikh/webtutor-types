@@ -1,4 +1,4 @@
-type EventResultCatalogDocumentTopElem = XmlTopElem & { Doc: EventResultCatalogDocument } & 
+type EventResultCatalogDocumentTopElem = XmlTopElem & { Doc: EventResultCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -29,6 +29,6 @@ AdminAccessBase & {
   certificate_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type EventResultCatalogDocument = XmlDocument & { TopElem: EventResultCatalogDocumentTopElem; };

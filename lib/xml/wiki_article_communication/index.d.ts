@@ -1,4 +1,4 @@
-type WikiArticleCommunicationDocumentTopElem = XmlTopElem & { Doc: WikiArticleCommunicationDocument } & 
+type WikiArticleCommunicationDocumentTopElem = XmlTopElem & { Doc: WikiArticleCommunicationDocument } &
 FileListBase &
 CustomElemsBase & {
   id: XmlElem<number>;
@@ -14,7 +14,7 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type WikiArticleCommunicationDocument = XmlDocument & {
   TopElem: WikiArticleCommunicationDocumentTopElem;

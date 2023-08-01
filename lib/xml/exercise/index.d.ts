@@ -5,7 +5,7 @@ type ExerciseDocumentTopElem = XmlTopElem & { Doc: ExerciseDocument } & {
   comment: XmlElem<string>;
   role_id: XmlMultiElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ExerciseDocument = XmlDocument & {
   TopElem: ExerciseDocumentTopElem;

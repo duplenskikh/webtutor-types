@@ -24,6 +24,6 @@ type StatisticRecCatalogDocumentTopElem = XmlTopElem & { Doc: StatisticRecCatalo
   access_block_type: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type StatisticRecCatalogDocument = XmlDocument & { TopElem: StatisticRecCatalogDocumentTopElem; };

@@ -54,7 +54,7 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   complete_course(): number | undefined;
   update_add_data(): undefined;
-}
+};
 
 type ActiveLearningDocument = XmlDocument & {
   TopElem: ActiveLearningDocumentTopElem;

@@ -11,6 +11,6 @@ type TenancyCatalogDocumentTopElem = XmlTopElem & { Doc: TenancyCatalogDocument 
   last_usage_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type TenancyCatalogDocument = XmlDocument & { TopElem: TenancyCatalogDocumentTopElem; };

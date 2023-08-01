@@ -1,4 +1,4 @@
-type ProviderCourseTypeDocumentTopElem = XmlTopElem & { Doc: ProviderCourseTypeDocument } & 
+type ProviderCourseTypeDocumentTopElem = XmlTopElem & { Doc: ProviderCourseTypeDocument } &
 AdminAccessBase &
 WebVariablesBase & {
   id: XmlElem<number>;
@@ -9,7 +9,7 @@ WebVariablesBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ProviderCourseTypeDocument = XmlDocument & {
   TopElem: ProviderCourseTypeDocumentTopElem;

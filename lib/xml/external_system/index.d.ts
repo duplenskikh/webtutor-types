@@ -3,7 +3,7 @@ interface ExternalSystemDocumentKnowledgeUrlPair {
   knowledge_part_id: XmlElem<number>;
 }
 
-type ExternalSystemDocumentTopElem = XmlTopElem & { Doc: ExternalSystemDocument } & 
+type ExternalSystemDocumentTopElem = XmlTopElem & { Doc: ExternalSystemDocument } &
 AdminAccessBase &
 CustomElemsBase & {
   code: XmlElem<string>;
@@ -12,7 +12,7 @@ CustomElemsBase & {
   anonymous_user_id: XmlElem<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ExternalSystemDocument = XmlDocument & {
   TopElem: ExternalSystemDocumentTopElem;

@@ -10,6 +10,6 @@ type PositionAssessmentFormCatalogDocumentTopElem = XmlTopElem & { Doc: Position
   grade_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type PositionAssessmentFormCatalogDocument = XmlDocument & { TopElem: PositionAssessmentFormCatalogDocumentTopElem; };

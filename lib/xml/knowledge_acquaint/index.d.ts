@@ -1,4 +1,4 @@
-type KnowledgeAcquaintDocumentTopElem = XmlTopElem & { Doc: KnowledgeAcquaintDocument } & 
+type KnowledgeAcquaintDocumentTopElem = XmlTopElem & { Doc: KnowledgeAcquaintDocument } &
 PersonFillingBase &
 FileListBase & {
   code: XmlElem<string>;
@@ -20,7 +20,7 @@ FileListBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   desc: XmlElem<string>;
-}
+};
 
 type KnowledgeAcquaintDocument = XmlDocument & {
   TopElem: KnowledgeAcquaintDocumentTopElem;

@@ -1,4 +1,4 @@
-type SelectedResumeCatalogDocumentTopElem = XmlTopElem & { Doc: SelectedResumeCatalogDocument } & 
+type SelectedResumeCatalogDocumentTopElem = XmlTopElem & { Doc: SelectedResumeCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -7,6 +7,6 @@ AdminAccessBase & {
   resume_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type SelectedResumeCatalogDocument = XmlDocument & { TopElem: SelectedResumeCatalogDocumentTopElem; };

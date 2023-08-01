@@ -29,8 +29,8 @@ interface String {
 
   /**
    * Создание строки из кода символа.
-   * @param substring 
-   * @param startPosition 
+   * @param substring
+   * @param startPosition
    */
   fromCharCode(code: number): string;
 
@@ -92,7 +92,7 @@ interface String {
 
   /**
    * Перевод текста в нижний регистр
-   * Рекомендуется использовать аналогичную функцию StrLowerCase().    
+   * Рекомендуется использовать аналогичную функцию StrLowerCase().
    */
   toLowerCase(): string;
 }

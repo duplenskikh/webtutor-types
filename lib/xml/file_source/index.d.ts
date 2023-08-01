@@ -1,4 +1,4 @@
-type FileSourceDocumentTopElem = XmlTopElem & { Doc: FileSourceDocument } & 
+type FileSourceDocumentTopElem = XmlTopElem & { Doc: FileSourceDocument } &
 WebVariablesBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -12,7 +12,7 @@ WebVariablesBase & {
   doc_info: XmlElem<DocInfoBase>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-}
+};
 
 type FileSourceDocument = XmlDocument & {
   TopElem: FileSourceDocumentTopElem;

@@ -5,7 +5,7 @@ type KnowledgePartLevelDocumentTopElem = XmlTopElem & { Doc: KnowledgePartLevelD
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type KnowledgePartLevelDocument = XmlDocument & {
   TopElem: KnowledgePartLevelDocumentTopElem;

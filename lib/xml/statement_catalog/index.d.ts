@@ -37,6 +37,6 @@ type StatementCatalogDocumentTopElem = XmlTopElem & { Doc: StatementCatalogDocum
   result_duration: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type StatementCatalogDocument = XmlDocument & { TopElem: StatementCatalogDocumentTopElem; };

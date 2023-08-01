@@ -47,7 +47,7 @@ interface TrainingPlanDocumentGlobalMonth {
   global_month_year: XmlElem<number>;
 }
 
-type TrainingPlanDocumentTopElem = XmlTopElem & { Doc: TrainingPlanDocument } & 
+type TrainingPlanDocumentTopElem = XmlTopElem & { Doc: TrainingPlanDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
@@ -60,7 +60,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type TrainingPlanDocument = XmlDocument & {
   TopElem: TrainingPlanDocumentTopElem;

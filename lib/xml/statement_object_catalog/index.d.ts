@@ -10,6 +10,6 @@ type StatementObjectCatalogDocumentTopElem = XmlTopElem & { Doc: StatementObject
   context_activity_type: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type StatementObjectCatalogDocument = XmlDocument & { TopElem: StatementObjectCatalogDocumentTopElem; };

@@ -1,4 +1,4 @@
-type LibraryMaterialCommentDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialCommentDocument } & 
+type LibraryMaterialCommentDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialCommentDocument } &
 FileListBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -12,7 +12,7 @@ FileListBase & {
   is_closed: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type LibraryMaterialCommentDocument = XmlDocument & {
   TopElem: LibraryMaterialCommentDocumentTopElem;

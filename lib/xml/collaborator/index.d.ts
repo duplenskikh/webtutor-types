@@ -169,7 +169,7 @@ PersonObjectLinksBase & {
     password: string
   ): unknown[] | void;
   clear_subs_fields(): void;
-}
+};
 
 type CollaboratorDocument = XmlDocument & {
   TopElem: CollaboratorDocumentTopElem;

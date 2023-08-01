@@ -29,7 +29,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type NotificationDocument = XmlDocument & {
   TopElem: NotificationDocumentTopElem;

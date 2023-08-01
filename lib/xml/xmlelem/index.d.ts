@@ -68,7 +68,7 @@ interface XmElem<T, ForeignElem = never> {
    * эквивалентна `UrlFromDocID(person.org_id)`
    */
   ForeignObjectUrl: string;
-  
+
   /**
    * Атрибут аналогичен `ForeignObjectUrl`, но, в случае, если от целевого объекта
    * могут существовать наследуемые объекты, пытается найти
@@ -80,7 +80,7 @@ interface XmElem<T, ForeignElem = never> {
    * если целевой объект является кандидатом.
    */
   ForeignPrimaryObjectUrl: string;
-  
+
   /**
    * Возвращает ссылку на форму, по которой был открыт документ.
    * Если документ открыт без формы, возвращается ошибка.
@@ -283,7 +283,7 @@ interface XmElem<T, ForeignElem = never> {
    * Возвращает тип данных элемента: `'string'`, `'integer'` и т.д.
    */
   Type: string;
-  
+
   /**
    * Означает, что текущий элемент будет сохраняться не как обычный `XML-элемент`,
    * а как `CData`. Этот атрибут может быть использован, например,
@@ -301,7 +301,7 @@ interface XmElem<T, ForeignElem = never> {
    * Пример `entries.AddChild().Value = 10;`
    */
   Value: T;
-  
+
   /**
    * Возвращает содержимое текущего элемента, включая дочерние элементы, если они есть,
    * в виде строки в формате `XML`.
@@ -505,7 +505,7 @@ interface XmElem<T, ForeignElem = never> {
    * с разделением имен узлов точками (String).
    */
   EvalPath(path: string): XmlElem<unknown>;
-  
+
   /**
    * Проверяет, существует ли в форме текущего элемента дочерний элемент с таким именем,
    * не являющийся методом.
@@ -541,7 +541,7 @@ interface XmElem<T, ForeignElem = never> {
    * Если имя ключа не указано, используется первичный ключ.
    */
   GetOptChildByKey(keyValue: unknown, keyName?: string): XmlElem<T> | undefined;
-  
+
   /**
    * Возвращает текстовое прдставление значения элемента.
    */

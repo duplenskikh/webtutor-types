@@ -21,7 +21,7 @@ interface KpiDocumentResponsibleGroup {
   boss_type_id: XmlElem<number>;
 }
 
-type KpiDocumentTopElem = XmlTopElem & { Doc: KpiDocument } & 
+type KpiDocumentTopElem = XmlTopElem & { Doc: KpiDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase &
@@ -54,7 +54,7 @@ KnowledgePartsBase & {
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type KpiDocument = XmlDocument & {
   TopElem: KpiDocumentTopElem;

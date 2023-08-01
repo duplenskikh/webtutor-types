@@ -1,4 +1,4 @@
-type RequestCatalogDocumentTopElem = XmlTopElem & { Doc: RequestCatalogDocument } & 
+type RequestCatalogDocumentTopElem = XmlTopElem & { Doc: RequestCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -27,6 +27,6 @@ AdminAccessBase & {
   experts: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type RequestCatalogDocument = XmlDocument & { TopElem: RequestCatalogDocumentTopElem; };

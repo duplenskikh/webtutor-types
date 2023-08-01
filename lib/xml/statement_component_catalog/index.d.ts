@@ -6,6 +6,6 @@ type StatementComponentCatalogDocumentTopElem = XmlTopElem & { Doc: StatementCom
   statement_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type StatementComponentCatalogDocument = XmlDocument & { TopElem: StatementComponentCatalogDocumentTopElem; };

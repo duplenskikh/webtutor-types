@@ -1,4 +1,4 @@
-type GroupCatalogDocumentTopElem = XmlTopElem & { Doc: GroupCatalogDocument } & 
+type GroupCatalogDocumentTopElem = XmlTopElem & { Doc: GroupCatalogDocument } &
 AccessDocBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -18,6 +18,6 @@ AccessDocBase & {
   tag_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type GroupCatalogDocument = XmlDocument & { TopElem: GroupCatalogDocumentTopElem; };

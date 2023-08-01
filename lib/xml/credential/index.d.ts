@@ -9,7 +9,7 @@ type CredentialDocumentTopElem = XmlTopElem & {
   remote_security_profile_id: XmlElem<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type CredentialDocument = XmlDocument & {
   TopElem: CredentialDocumentTopElem;

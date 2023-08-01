@@ -12,7 +12,7 @@ WebVariablesBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type CheckScheduleDocument = XmlDocument & {
   TopElem: CheckScheduleDocumentTopElem;

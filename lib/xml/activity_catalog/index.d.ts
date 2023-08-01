@@ -5,6 +5,6 @@ type ActivityCatalogDocumentTopElem = XmlTopElem & { Doc: ActivityCatalogDocumen
   is_eval: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ActivityCatalogDocument = XmlDocument & { TopElem: ActivityCatalogDocumentTopElem; };

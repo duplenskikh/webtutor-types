@@ -8,7 +8,7 @@ interface PriceDocumentServiceProvider {
   comment: XmlElem<string>;
 }
 
-type PriceDocumentTopElem = XmlTopElem & { Doc: PriceDocument } & 
+type PriceDocumentTopElem = XmlTopElem & { Doc: PriceDocument } &
 FileListBase &
 CustomElemsBase & {
   code: XmlElem<string>;
@@ -20,7 +20,7 @@ CustomElemsBase & {
   service_providers: XmlMultiElem<PriceDocumentServiceProvider>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type PriceDocument = XmlDocument & {
   TopElem: PriceDocumentTopElem;

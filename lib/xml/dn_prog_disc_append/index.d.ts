@@ -11,7 +11,7 @@ CustomElemsBase & {
   educat_form_id: XmlElem<string>;
   qualification_id: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnProgDiscAppendDocument = XmlDocument & {
   TopElem: DnProgDiscAppendDocumentTopElem;

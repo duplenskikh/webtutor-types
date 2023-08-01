@@ -14,6 +14,6 @@ type TraningOrderCatalogDocumentTopElem = XmlTopElem & { Doc: TraningOrderCatalo
   status: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type TraningOrderCatalogDocument = XmlDocument & { TopElem: TraningOrderCatalogDocumentTopElem; };

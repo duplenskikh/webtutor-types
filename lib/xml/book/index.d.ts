@@ -11,7 +11,7 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type BookDocument = XmlDocument & {
   TopElem: BookDocumentTopElem;

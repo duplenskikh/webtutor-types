@@ -27,6 +27,6 @@ type ObjectClaimCatalogDocumentTopElem = XmlTopElem & { Doc: ObjectClaimCatalogD
   data_str: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ObjectClaimCatalogDocument = XmlDocument & { TopElem: ObjectClaimCatalogDocumentTopElem; };

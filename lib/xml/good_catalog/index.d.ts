@@ -9,6 +9,6 @@ type GoodCatalogDocumentTopElem = XmlTopElem & { Doc: GoodCatalogDocument } & {
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type GoodCatalogDocument = XmlDocument & { TopElem: GoodCatalogDocumentTopElem; };

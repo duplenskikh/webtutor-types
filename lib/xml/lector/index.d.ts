@@ -1,4 +1,4 @@
-type LectorDocumentTopElem = XmlTopElem & { Doc: LectorDocument } & 
+type LectorDocumentTopElem = XmlTopElem & { Doc: LectorDocument } &
 PersonBase &
 PassportDataBase &
 CustomElemsBase &
@@ -19,7 +19,7 @@ PathSubsBase & {
   access: XmlElem<AccessDocBase>;
   lector_fullname: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type LectorDocument = XmlDocument & {
   TopElem: LectorDocumentTopElem;

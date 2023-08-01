@@ -2,6 +2,6 @@ type WorkingConditionTypeCatalogDocumentTopElem = XmlTopElem & { Doc: WorkingCon
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-}
+};
 
 type WorkingConditionTypeCatalogDocument = XmlDocument & { TopElem: WorkingConditionTypeCatalogDocumentTopElem; };

@@ -13,7 +13,7 @@ CustomElemsBase & {
   object_resources: XmlMultiElem<DnAuditoriumDocumentObjectResource>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnAuditoriumDocument = XmlDocument & {
   TopElem: DnAuditoriumDocumentTopElem;

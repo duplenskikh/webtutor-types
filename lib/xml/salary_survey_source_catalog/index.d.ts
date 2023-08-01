@@ -4,6 +4,6 @@ type SalarySurveySourceCatalogDocumentTopElem = XmlTopElem & { Doc: SalarySurvey
   name: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type SalarySurveySourceCatalogDocument = XmlDocument & { TopElem: SalarySurveySourceCatalogDocumentTopElem; };

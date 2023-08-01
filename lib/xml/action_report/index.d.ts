@@ -11,7 +11,7 @@ type ActionReportDocumentTopElem = XmlTopElem & {
   data_file_url: XmlElem<string>;
   server_version: XmlElem<string>;
   create_date: XmlElem<Date>;
-}
+};
 
 type ActionReportDocument = XmlDocument & {
   TopElem: ActionReportDocumentTopElem;

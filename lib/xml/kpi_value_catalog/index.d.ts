@@ -20,6 +20,6 @@ type KpiValueCatalogDocumentTopElem = XmlTopElem & { Doc: KpiValueCatalogDocumen
   workflow_matching_type: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type KpiValueCatalogDocument = XmlDocument & { TopElem: KpiValueCatalogDocumentTopElem; };

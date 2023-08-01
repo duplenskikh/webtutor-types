@@ -6,6 +6,6 @@ type QaTestSetCatalogDocumentTopElem = XmlTopElem & { Doc: QaTestSetCatalogDocum
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type QaTestSetCatalogDocument = XmlDocument & { TopElem: QaTestSetCatalogDocumentTopElem; };

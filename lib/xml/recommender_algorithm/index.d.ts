@@ -2,7 +2,7 @@ interface RecommenderAlgorithmDocumentCatalog {
   catalog_name: XmlElem<string>;
 }
 
-type RecommenderAlgorithmDocumentTopElem = XmlTopElem & { Doc: RecommenderAlgorithmDocument } & 
+type RecommenderAlgorithmDocumentTopElem = XmlTopElem & { Doc: RecommenderAlgorithmDocument } &
 ObjectCodeNameBase &
 WebVariablesBase & {
   is_enabled: XmlElem<boolean>;
@@ -12,7 +12,7 @@ WebVariablesBase & {
   cache_time: XmlElem<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type RecommenderAlgorithmDocument = XmlDocument & {
   TopElem: RecommenderAlgorithmDocumentTopElem;

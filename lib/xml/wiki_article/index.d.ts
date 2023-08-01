@@ -28,7 +28,7 @@ interface WikiArticleDocumentAcquaintGroup {
   group_id: XmlElem<number>;
 }
 
-type WikiArticleDocumentTopElem = XmlTopElem & { Doc: WikiArticleDocument } & 
+type WikiArticleDocumentTopElem = XmlTopElem & { Doc: WikiArticleDocument } &
 FileListBase &
 CustomElemsBase &
 CatalogListBase &
@@ -53,7 +53,7 @@ KnowledgePartsBase & {
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type WikiArticleDocument = XmlDocument & {
   TopElem: WikiArticleDocumentTopElem;

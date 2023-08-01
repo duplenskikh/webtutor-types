@@ -25,7 +25,7 @@ CustomElemsBase & {
   comment_num: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-}
+};
 
 type BlogEntryDocument = XmlDocument & {
   TopElem: BlogEntryDocumentTopElem;

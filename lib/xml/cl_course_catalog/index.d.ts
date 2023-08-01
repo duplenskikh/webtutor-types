@@ -1,4 +1,4 @@
-type ClCourseCatalogDocumentTopElem = XmlTopElem & { Doc: ClCourseCatalogDocument } & 
+type ClCourseCatalogDocumentTopElem = XmlTopElem & { Doc: ClCourseCatalogDocument } &
 AccessDocBase &
 AdminAccessBase & {
   id: XmlElem<number>;
@@ -11,6 +11,6 @@ AdminAccessBase & {
   platform: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ClCourseCatalogDocument = XmlDocument & { TopElem: ClCourseCatalogDocumentTopElem; };

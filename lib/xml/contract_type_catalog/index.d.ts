@@ -8,6 +8,6 @@ type ContractTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ContractTypeCatalo
   default_flag: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ContractTypeCatalogDocument = XmlDocument & { TopElem: ContractTypeCatalogDocumentTopElem; };

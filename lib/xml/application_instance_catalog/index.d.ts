@@ -6,6 +6,6 @@ type ApplicationInstanceCatalogDocumentTopElem = XmlTopElem & { Doc: Application
   application_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ApplicationInstanceCatalogDocument = XmlDocument & { TopElem: ApplicationInstanceCatalogDocumentTopElem; };

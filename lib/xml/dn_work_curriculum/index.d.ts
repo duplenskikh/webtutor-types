@@ -49,7 +49,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   block_elems: XmlMultiElem<DnWorkCurriculumDocumentBlockElem>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnWorkCurriculumDocument = XmlDocument & {
   TopElem: DnWorkCurriculumDocumentTopElem;

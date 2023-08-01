@@ -22,7 +22,7 @@ type PersonObjectProfileDocumentTopElem = XmlTopElem & { Doc: PersonObjectProfil
   person_object_links: XmlMultiElem<PersonObjectProfileDocumentPersonObjectLink>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type PersonObjectProfileDocument = XmlDocument & {
   TopElem: PersonObjectProfileDocumentTopElem;

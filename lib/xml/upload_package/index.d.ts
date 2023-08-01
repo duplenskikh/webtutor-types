@@ -5,7 +5,7 @@ type UploadPackageDocumentTopElem = XmlTopElem & { Doc: UploadPackageDocument } 
   package_date: XmlElem<Date>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type UploadPackageDocument = XmlDocument & {
   TopElem: UploadPackageDocumentTopElem;

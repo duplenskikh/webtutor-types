@@ -29,7 +29,7 @@ interface TypicalDevelopmentProgramDocumentTutorsBySub {
   tutors: XmlMultiElem<TypicalDevelopmentProgramDocumentTutorsBySubTutor>;
 }
 
-type TypicalDevelopmentProgramDocumentTopElem = XmlTopElem & { Doc: TypicalDevelopmentProgramDocument } & 
+type TypicalDevelopmentProgramDocumentTopElem = XmlTopElem & { Doc: TypicalDevelopmentProgramDocument } &
 ObjectCodeNameBase &
 AdminAccessBase &
 FileListBase &
@@ -41,7 +41,7 @@ CustomElemsBase & {
   role_id: XmlMultiElem<number>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type TypicalDevelopmentProgramDocument = XmlDocument & {
   TopElem: TypicalDevelopmentProgramDocumentTopElem;

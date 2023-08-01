@@ -4,7 +4,7 @@ interface ExpertDocumentFaq {
   faq_answer: XmlElem<string>;
 }
 
-type ExpertDocumentTopElem = XmlTopElem & { Doc: ExpertDocument } & 
+type ExpertDocumentTopElem = XmlTopElem & { Doc: ExpertDocument } &
 PersonBase &
 CustomElemsBase &
 AdminAccessBase & {
@@ -20,7 +20,7 @@ AdminAccessBase & {
   faqs: XmlMultiElem<ExpertDocumentFaq>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-}
+};
 
 type ExpertDocument = XmlDocument & {
   TopElem: ExpertDocumentTopElem;

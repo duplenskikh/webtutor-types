@@ -6,7 +6,7 @@ type PositionCommonInstructionDocumentTopElem = XmlTopElem & { Doc: PositionComm
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type PositionCommonInstructionDocument = XmlDocument & {
   TopElem: PositionCommonInstructionDocumentTopElem;

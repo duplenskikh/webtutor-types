@@ -3,7 +3,7 @@ type ForumThemeReadByCollaboratorDocumentTopElem = XmlTopElem & { Doc: ForumThem
   forum_theme_id: XmlElem<number>;
   date: XmlElem<Date>;
   person_id: XmlElem<number>;
-}
+};
 
 type ForumThemeReadByCollaboratorDocument = XmlDocument & {
   TopElem: ForumThemeReadByCollaboratorDocumentTopElem;

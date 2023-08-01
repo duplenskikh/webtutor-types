@@ -9,6 +9,6 @@ type PositionCommonInstructionCatalogDocumentTopElem = XmlTopElem & { Doc: Posit
   desc: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type PositionCommonInstructionCatalogDocument = XmlDocument & { TopElem: PositionCommonInstructionCatalogDocumentTopElem; };

@@ -1,4 +1,4 @@
-type ProfessionalAreaDocumentTopElem = XmlTopElem & { Doc: ProfessionalAreaDocument } & 
+type ProfessionalAreaDocumentTopElem = XmlTopElem & { Doc: ProfessionalAreaDocument } &
 ObjectCodeNameBase &
 FileListBase &
 AdminAccessBase &
@@ -11,7 +11,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-}
+};
 
 type ProfessionalAreaDocument = XmlDocument & {
   TopElem: ProfessionalAreaDocumentTopElem;

@@ -1,4 +1,4 @@
-type RecommenderSelectCollaboratorCatalogDocumentTopElem = XmlTopElem & { Doc: RecommenderSelectCollaboratorCatalogDocument } & 
+type RecommenderSelectCollaboratorCatalogDocumentTopElem = XmlTopElem & { Doc: RecommenderSelectCollaboratorCatalogDocument } &
 PersonFillingBase & {
   id: XmlElem<number>;
   person_id: XmlElem<number>;
@@ -15,6 +15,6 @@ PersonFillingBase & {
   implemented: XmlElem<boolean>;
   selected_date: XmlElem<Date>;
   implemented_date: XmlElem<Date>;
-}
+};
 
 type RecommenderSelectCollaboratorCatalogDocument = XmlDocument & { TopElem: RecommenderSelectCollaboratorCatalogDocumentTopElem; };

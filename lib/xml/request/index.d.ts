@@ -27,7 +27,7 @@ AdminAccessBase & {
   request_type_id: XmlElem<number, RequestTypeCatalogDocumentTopElem>;
   budget_period_id: XmlElem<number>;
   type: XmlElem<string>;
-  status_id: XmlElem<string, typeof common.request_status_types[0]>;
+  status_id: XmlElem<string, typeof common.request_status_types>;
   create_date: XmlElem<Date>;
   close_date: XmlElem<Date>;
   plan_close_date: XmlElem<Date>;
@@ -47,7 +47,7 @@ AdminAccessBase & {
   comment: XmlElem<string>;
   access: XmlElem<AccessDocBase>;
   start_action(): unknown;
-}
+};
 
 type RequestDocument = XmlDocument & {
   TopElem: RequestDocumentTopElem;

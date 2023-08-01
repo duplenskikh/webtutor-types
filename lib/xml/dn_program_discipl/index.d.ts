@@ -54,7 +54,7 @@ CustomElemsBase & {
   subjects: XmlMultiElem<DnProgramDisciplDocumentSubject>;
   specials: XmlMultiElem<DnProgramDisciplDocumentSpecial>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnProgramDisciplDocument = XmlDocument & {
   TopElem: DnProgramDisciplDocumentTopElem;

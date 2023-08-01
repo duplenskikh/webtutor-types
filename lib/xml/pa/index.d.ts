@@ -93,7 +93,7 @@ interface PaDocumentCustomComment {
   comment_date: XmlElem<Date>;
 }
 
-type PaDocumentTopElem = XmlTopElem & { Doc: PaDocument } & 
+type PaDocumentTopElem = XmlTopElem & { Doc: PaDocument } &
 WorkflowDataBase &
 SupplementaryQuestionsBase &
 CustomElemsBase &
@@ -145,7 +145,7 @@ AdminAccessBase & {
   experiment_foo(): unknown;
   calculate(): unknown;
   load_kpi_values(): unknown;
-}
+};
 
 type PaDocument = XmlDocument & {
   TopElem: PaDocumentTopElem;

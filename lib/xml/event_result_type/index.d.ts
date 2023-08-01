@@ -4,7 +4,7 @@ type EventResultTypeDocumentTopElem = XmlTopElem & { Doc: EventResultTypeDocumen
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type EventResultTypeDocument = XmlDocument & {
   TopElem: EventResultTypeDocumentTopElem;

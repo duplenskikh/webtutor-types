@@ -2,6 +2,6 @@ type ContractStateCatalogDocumentTopElem = XmlTopElem & { Doc: ContractStateCata
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-}
+};
 
 type ContractStateCatalogDocument = XmlDocument & { TopElem: ContractStateCatalogDocumentTopElem; };

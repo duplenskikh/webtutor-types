@@ -34,7 +34,7 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type CourseModuleDocument = XmlDocument & {
   TopElem: CourseModuleDocumentTopElem;

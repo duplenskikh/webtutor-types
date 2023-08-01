@@ -1,4 +1,4 @@
-type ApplicationCatalogDocumentTopElem = XmlTopElem & { Doc: ApplicationCatalogDocument } & 
+type ApplicationCatalogDocumentTopElem = XmlTopElem & { Doc: ApplicationCatalogDocument } &
 ObjectCodeNameBase & {
   type: XmlElem<string>;
   list_xms_url: XmlElem<string>;
@@ -12,6 +12,6 @@ ObjectCodeNameBase & {
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ApplicationCatalogDocument = XmlDocument & { TopElem: ApplicationCatalogDocumentTopElem; };

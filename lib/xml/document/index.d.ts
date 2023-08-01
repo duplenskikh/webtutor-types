@@ -37,7 +37,7 @@ AdminAccessBase & {
   set_template(templateType?: string): void;
   set_default_template(): boolean;
   update_template(): boolean;
-}
+};
 
 type DocumentDocument = XmlDocument & {
   TopElem: DocumentDocumentTopElem;

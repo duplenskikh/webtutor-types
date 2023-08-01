@@ -1,4 +1,4 @@
-type EducationMethodCatalogDocumentTopElem = XmlTopElem & { Doc: EducationMethodCatalogDocument } & 
+type EducationMethodCatalogDocumentTopElem = XmlTopElem & { Doc: EducationMethodCatalogDocument } &
 CostCurrencyTypeBase &
 AdminAccessBase & {
   id: XmlElem<number>;
@@ -22,6 +22,6 @@ AdminAccessBase & {
   event_form: XmlElem<string>;
   event_type_id: XmlElem<number>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type EducationMethodCatalogDocument = XmlDocument & { TopElem: EducationMethodCatalogDocumentTopElem; };

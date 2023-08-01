@@ -1,4 +1,4 @@
-type TimeEntryDocumentTopElem = XmlTopElem & { Doc: TimeEntryDocument } & 
+type TimeEntryDocumentTopElem = XmlTopElem & { Doc: TimeEntryDocument } &
 PersonFillingBase &
 FileListBase &
 CustomElemsBase & {
@@ -15,7 +15,7 @@ CustomElemsBase & {
   duration: XmlElem<number>;
   description: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type TimeEntryDocument = XmlDocument & {
   TopElem: TimeEntryDocumentTopElem;

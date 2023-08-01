@@ -1,4 +1,4 @@
-type RatingCatalogDocumentTopElem = XmlTopElem & { Doc: RatingCatalogDocument } & 
+type RatingCatalogDocumentTopElem = XmlTopElem & { Doc: RatingCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -11,6 +11,6 @@ AdminAccessBase & {
   status: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type RatingCatalogDocument = XmlDocument & { TopElem: RatingCatalogDocumentTopElem; };

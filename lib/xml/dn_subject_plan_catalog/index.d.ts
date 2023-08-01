@@ -1,4 +1,4 @@
-type DnSubjectPlanCatalogDocumentTopElem = XmlTopElem & { Doc: DnSubjectPlanCatalogDocument } & 
+type DnSubjectPlanCatalogDocumentTopElem = XmlTopElem & { Doc: DnSubjectPlanCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -9,6 +9,6 @@ AdminAccessBase & {
   hours: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DnSubjectPlanCatalogDocument = XmlDocument & { TopElem: DnSubjectPlanCatalogDocumentTopElem; };

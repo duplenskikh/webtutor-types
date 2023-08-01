@@ -6,7 +6,7 @@ type WikiArticleTypeDocumentTopElem = XmlTopElem & { Doc: WikiArticleTypeDocumen
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
   comment: XmlElem<string>;
-}
+};
 
 type WikiArticleTypeDocument = XmlDocument & {
   TopElem: WikiArticleTypeDocumentTopElem;

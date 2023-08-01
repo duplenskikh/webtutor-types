@@ -31,7 +31,7 @@ interface LicenseDocumentAdditionalKey {
   private_key: XmlElem<string>;
 }
 
-type LicenseDocumentTopElem = XmlTopElem & { Doc: LicenseDocument } & 
+type LicenseDocumentTopElem = XmlTopElem & { Doc: LicenseDocument } &
 ObjectCodeNameBase &
 AdminAccessBase &
 CustomElemsBase & {
@@ -63,7 +63,7 @@ CustomElemsBase & {
   encryption_key: XmlElem<string>;
   decryption_key: XmlElem<string>;
   demo: XmlElem<boolean>;
-}
+};
 
 type LicenseDocument = XmlDocument & {
   TopElem: LicenseDocumentTopElem;

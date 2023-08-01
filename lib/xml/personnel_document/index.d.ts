@@ -14,7 +14,7 @@ interface PersonnelDocumentDocumentSignatureFile {
   size: XmlElem<number>;
 }
 
-type PersonnelDocumentDocumentTopElem = XmlTopElem & { Doc: PersonnelDocumentDocument } & 
+type PersonnelDocumentDocumentTopElem = XmlTopElem & { Doc: PersonnelDocumentDocument } &
 PersonFillingBase &
 CustomElemsBase & {
   id: XmlElem<number>;
@@ -31,7 +31,7 @@ CustomElemsBase & {
   signature_files: XmlMultiElem<PersonnelDocumentDocumentSignatureFile>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type PersonnelDocumentDocument = XmlDocument & {
   TopElem: PersonnelDocumentDocumentTopElem;

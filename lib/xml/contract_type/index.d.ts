@@ -8,7 +8,7 @@ type ContractTypeDocumentTopElem = XmlTopElem & {
   default_flag: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ContractTypeDocument = XmlDocument & {
   TopElem: ContractTypeDocumentTopElem;

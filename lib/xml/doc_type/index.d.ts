@@ -71,7 +71,7 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type DocTypeDocument = XmlDocument & {
   TopElem: DocTypeDocumentTopElem;

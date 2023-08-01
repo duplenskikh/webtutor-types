@@ -1,4 +1,4 @@
-type ChatCatalogDocumentTopElem = XmlTopElem & { Doc: ChatCatalogDocument } & 
+type ChatCatalogDocumentTopElem = XmlTopElem & { Doc: ChatCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   name: XmlElem<string>;
@@ -9,6 +9,6 @@ AdminAccessBase & {
   conversation_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ChatCatalogDocument = XmlDocument & { TopElem: ChatCatalogDocumentTopElem; };

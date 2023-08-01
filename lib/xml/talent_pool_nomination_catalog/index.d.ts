@@ -1,4 +1,4 @@
-type TalentPoolNominationCatalogDocumentTopElem = XmlTopElem & { Doc: TalentPoolNominationCatalogDocument } & 
+type TalentPoolNominationCatalogDocumentTopElem = XmlTopElem & { Doc: TalentPoolNominationCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -6,6 +6,6 @@ AdminAccessBase & {
   resource_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type TalentPoolNominationCatalogDocument = XmlDocument & { TopElem: TalentPoolNominationCatalogDocumentTopElem; };

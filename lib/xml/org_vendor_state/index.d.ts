@@ -1,4 +1,4 @@
-type OrgVendorStateDocumentTopElem = XmlTopElem & { Doc: OrgVendorStateDocument } & 
+type OrgVendorStateDocumentTopElem = XmlTopElem & { Doc: OrgVendorStateDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
@@ -13,7 +13,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type OrgVendorStateDocument = XmlDocument & {
   TopElem: OrgVendorStateDocumentTopElem;

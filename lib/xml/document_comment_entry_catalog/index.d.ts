@@ -1,4 +1,4 @@
-type DocumentCommentEntryCatalogDocumentTopElem = XmlTopElem & { Doc: DocumentCommentEntryCatalogDocument } & 
+type DocumentCommentEntryCatalogDocumentTopElem = XmlTopElem & { Doc: DocumentCommentEntryCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   name: XmlElem<string>;
@@ -14,6 +14,6 @@ AdminAccessBase & {
   child_num: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DocumentCommentEntryCatalogDocument = XmlDocument & { TopElem: DocumentCommentEntryCatalogDocumentTopElem; };

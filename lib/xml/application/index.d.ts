@@ -123,7 +123,7 @@ CatalogListBase & {
   application_units: XmlMultiElem<ApplicationDocumentApplicationUnit>;
   role_id: XmlMultiElem<number>;
   web_mode_id: XmlMultiElem<number>;
-}
+};
 
 type ApplicationDocument = XmlDocument & {
   TopElem: ApplicationDocumentTopElem;

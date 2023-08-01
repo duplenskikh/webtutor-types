@@ -2,7 +2,7 @@ interface LibrarySectionDocumentAdministrator extends PersonFillingBase {
   person_id: XmlElem<number>;
 }
 
-type LibrarySectionDocumentTopElem = XmlTopElem & { Doc: LibrarySectionDocument } & 
+type LibrarySectionDocumentTopElem = XmlTopElem & { Doc: LibrarySectionDocument } &
 ObjectCodeNameBase &
 AdminAccessBase &
 CustomElemsBase & {
@@ -16,7 +16,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type LibrarySectionDocument = XmlDocument & {
   TopElem: LibrarySectionDocumentTopElem;

@@ -48,6 +48,6 @@ type CollaboratorCatalogDocumentTopElem = XmlTopElem & { Doc: CollaboratorCatalo
   efficiency_estimation_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type CollaboratorCatalogDocument = XmlDocument & { TopElem: CollaboratorCatalogDocumentTopElem; };

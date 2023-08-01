@@ -7,7 +7,7 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
   changed: XmlElem<boolean>;
   is_std: XmlElem<boolean>;
-}
+};
 
 type ContactTypeDocument = XmlDocument & {
   TopElem: ContactTypeDocumentTopElem;

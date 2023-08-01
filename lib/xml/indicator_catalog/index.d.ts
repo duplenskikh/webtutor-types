@@ -1,4 +1,4 @@
-type IndicatorCatalogDocumentTopElem = XmlTopElem & { Doc: IndicatorCatalogDocument } & 
+type IndicatorCatalogDocumentTopElem = XmlTopElem & { Doc: IndicatorCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   competence_id: XmlElem<number>;
@@ -11,6 +11,6 @@ AdminAccessBase & {
   tags: XmlElem<string>;
   experts: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type IndicatorCatalogDocument = XmlDocument & { TopElem: IndicatorCatalogDocumentTopElem; };

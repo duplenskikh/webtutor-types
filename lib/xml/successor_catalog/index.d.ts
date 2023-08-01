@@ -1,4 +1,4 @@
-type SuccessorCatalogDocumentTopElem = XmlTopElem & { Doc: SuccessorCatalogDocument } & 
+type SuccessorCatalogDocumentTopElem = XmlTopElem & { Doc: SuccessorCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -17,6 +17,6 @@ AdminAccessBase & {
   status: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type SuccessorCatalogDocument = XmlDocument & { TopElem: SuccessorCatalogDocumentTopElem; };

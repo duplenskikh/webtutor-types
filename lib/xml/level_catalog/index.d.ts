@@ -8,6 +8,6 @@ type LevelCatalogDocumentTopElem = XmlTopElem & { Doc: LevelCatalogDocument } & 
   max_value: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type LevelCatalogDocument = XmlDocument & { TopElem: LevelCatalogDocumentTopElem; };

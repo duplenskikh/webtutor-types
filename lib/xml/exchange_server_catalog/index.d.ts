@@ -9,6 +9,6 @@ type ExchangeServerCatalogDocumentTopElem = XmlTopElem & { Doc: ExchangeServerCa
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ExchangeServerCatalogDocument = XmlDocument & { TopElem: ExchangeServerCatalogDocumentTopElem; };

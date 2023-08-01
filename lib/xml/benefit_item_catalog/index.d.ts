@@ -10,6 +10,6 @@ type BenefitItemCatalogDocumentTopElem = XmlTopElem & { Doc: BenefitItemCatalogD
   benefit_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type BenefitItemCatalogDocument = XmlDocument & { TopElem: BenefitItemCatalogDocumentTopElem; };

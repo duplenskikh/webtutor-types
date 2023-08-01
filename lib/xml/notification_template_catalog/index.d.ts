@@ -7,6 +7,6 @@ type NotificationTemplateCatalogDocumentTopElem = XmlTopElem & { Doc: Notificati
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type NotificationTemplateCatalogDocument = XmlDocument & { TopElem: NotificationTemplateCatalogDocumentTopElem; };

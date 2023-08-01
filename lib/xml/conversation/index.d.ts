@@ -46,7 +46,7 @@ CustomElemsBase & {
   recipients: XmlMultiElem<ConversationDocumentRecipient>;
   doc_info: XmlElem<DocInfoBase>;
   participants_id: XmlMultiElem<number>;
-}
+};
 
 type ConversationDocument = XmlDocument & {
   TopElem: ConversationDocumentTopElem;

@@ -19,7 +19,7 @@ type WebRuleDocumentTopElem = XmlTopElem & { Doc: WebRuleDocument } & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   script_validate(): unknown;
-}
+};
 
 type WebRuleDocument = XmlDocument & {
   TopElem: WebRuleDocumentTopElem;

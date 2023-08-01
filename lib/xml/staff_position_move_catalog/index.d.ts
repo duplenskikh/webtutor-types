@@ -1,4 +1,4 @@
-type StaffPositionMoveCatalogDocumentTopElem = XmlTopElem & { Doc: StaffPositionMoveCatalogDocument } & 
+type StaffPositionMoveCatalogDocumentTopElem = XmlTopElem & { Doc: StaffPositionMoveCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -12,6 +12,6 @@ AdminAccessBase & {
   move_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type StaffPositionMoveCatalogDocument = XmlDocument & { TopElem: StaffPositionMoveCatalogDocumentTopElem; };

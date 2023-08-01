@@ -34,7 +34,7 @@ type ClShapeDocumentTopElem = XmlTopElem & {
   vml: XmlElem<string>;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ClShapeDocument = XmlDocument & {
   TopElem: ClShapeDocumentTopElem;

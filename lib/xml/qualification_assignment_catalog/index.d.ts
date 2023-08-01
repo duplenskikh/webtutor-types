@@ -1,4 +1,4 @@
-type QualificationAssignmentCatalogDocumentTopElem = XmlTopElem & { Doc: QualificationAssignmentCatalogDocument } & 
+type QualificationAssignmentCatalogDocumentTopElem = XmlTopElem & { Doc: QualificationAssignmentCatalogDocument } &
 PersonFillingBase &
 AdminAccessBase & {
   id: XmlElem<number>;
@@ -11,6 +11,6 @@ AdminAccessBase & {
   event_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type QualificationAssignmentCatalogDocument = XmlDocument & { TopElem: QualificationAssignmentCatalogDocumentTopElem; };

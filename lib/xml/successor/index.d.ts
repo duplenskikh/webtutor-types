@@ -1,4 +1,4 @@
-type SuccessorDocumentTopElem = XmlTopElem & { Doc: SuccessorDocument } & 
+type SuccessorDocumentTopElem = XmlTopElem & { Doc: SuccessorDocument } &
 PersonFillingBase &
 FileListBase &
 AdminAccessBase &
@@ -17,7 +17,7 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-}
+};
 
 type SuccessorDocument = XmlDocument & {
   TopElem: SuccessorDocumentTopElem;

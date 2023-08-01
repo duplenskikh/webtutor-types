@@ -4,6 +4,6 @@ type CredentialCatalogDocumentTopElem = XmlTopElem & { Doc: CredentialCatalogDoc
   name: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type CredentialCatalogDocument = XmlDocument & { TopElem: CredentialCatalogDocumentTopElem; };

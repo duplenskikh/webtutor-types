@@ -8,7 +8,7 @@ type VerbDocumentTopElem = XmlTopElem & { Doc: VerbDocument } & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type VerbDocument = XmlDocument & {
   TopElem: VerbDocumentTopElem;

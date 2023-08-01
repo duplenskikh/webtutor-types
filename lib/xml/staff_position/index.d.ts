@@ -2,7 +2,7 @@ interface StaffPositionDocumentCompetenceProfile {
   id: XmlElem<number>;
 }
 
-type StaffPositionDocumentTopElem = XmlTopElem & { Doc: StaffPositionDocument } & 
+type StaffPositionDocumentTopElem = XmlTopElem & { Doc: StaffPositionDocument } &
 RequirementsBase &
 FileListBase &
 KnowledgePartsBase &
@@ -29,7 +29,7 @@ CustomElemsBase & {
   competence_profiles: XmlMultiElem<StaffPositionDocumentCompetenceProfile>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type StaffPositionDocument = XmlDocument & {
   TopElem: StaffPositionDocumentTopElem;

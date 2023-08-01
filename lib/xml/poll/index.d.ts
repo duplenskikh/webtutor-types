@@ -79,7 +79,7 @@ interface PollDocumentItem {
   conditions: XmlMultiElem<PollDocumentItemCondition>;
 }
 
-type PollDocumentTopElem = XmlTopElem & { Doc: PollDocument } & 
+type PollDocumentTopElem = XmlTopElem & { Doc: PollDocument } &
 ObjectCodeNameBase &
 CourseExpertsBase &
 CustomElemsBase &
@@ -115,7 +115,7 @@ KnowledgePartsBase & {
   get_report_data(): unknown;
   set_question_id(): unknown;
   set_value(): unknown;
-}
+};
 
 type PollDocument = XmlDocument & {
   TopElem: PollDocumentTopElem;

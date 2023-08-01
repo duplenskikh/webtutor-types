@@ -9,7 +9,7 @@ PersonFillingBase & {
   calculation_date: XmlElem<Date>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type AbsenceReserveDocument = XmlDocument & {
   TopElem: AbsenceReserveDocumentTopElem;

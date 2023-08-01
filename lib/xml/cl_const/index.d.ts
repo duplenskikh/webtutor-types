@@ -27,7 +27,7 @@ type ClConstDocumentTopElem = XmlTopElem & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   set_value(logId: number, value: null | undefined | string): boolean;
-}
+};
 
 type ClConstDocument = XmlDocument & {
   TopElem: ClConstDocumentTopElem;

@@ -83,7 +83,7 @@ interface PositionCommonDocumentLevel {
   qualifications: XmlMultiElem<PositionCommonDocumentLevelQualification>;
 }
 
-type PositionCommonDocumentTopElem = XmlTopElem & { Doc: PositionCommonDocument } & 
+type PositionCommonDocumentTopElem = XmlTopElem & { Doc: PositionCommonDocument } &
 ObjectCodeNameBase &
 RequirementsBase &
 FileListBase &
@@ -120,7 +120,7 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type PositionCommonDocument = XmlDocument & {
   TopElem: PositionCommonDocumentTopElem;

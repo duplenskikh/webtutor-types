@@ -12,6 +12,6 @@ type ConnectionCatalogDocumentTopElem = XmlTopElem & { Doc: ConnectionCatalogDoc
   delete_date: XmlElem<Date>;
   unauthorized: XmlElem<boolean>;
   host_path: XmlElem<string>;
-}
+};
 
 type ConnectionCatalogDocument = XmlDocument & { TopElem: ConnectionCatalogDocumentTopElem; };

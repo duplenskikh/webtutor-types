@@ -39,7 +39,7 @@ CustomElemsBase & {
   aiml_datas: XmlMultiElem<ChatbotChatDocumentAimlData>;
   last_message_id: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ChatbotChatDocument = XmlDocument & {
   TopElem: ChatbotChatDocumentTopElem;

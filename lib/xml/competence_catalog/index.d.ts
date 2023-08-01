@@ -1,4 +1,4 @@
-type CompetenceCatalogDocumentTopElem = XmlTopElem & { Doc: CompetenceCatalogDocument } & 
+type CompetenceCatalogDocumentTopElem = XmlTopElem & { Doc: CompetenceCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   parent_id: XmlElem<number>;
@@ -12,6 +12,6 @@ AdminAccessBase & {
   experts: XmlElem<string>;
   exercises: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type CompetenceCatalogDocument = XmlDocument & { TopElem: CompetenceCatalogDocumentTopElem; };

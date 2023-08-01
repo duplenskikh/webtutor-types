@@ -19,7 +19,7 @@ ExecCodeBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type CustomChatbotTemplateDocument = XmlDocument & {
   TopElem: CustomChatbotTemplateDocumentTopElem;

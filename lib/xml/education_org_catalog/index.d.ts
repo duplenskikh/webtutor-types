@@ -1,4 +1,4 @@
-type EducationOrgCatalogDocumentTopElem = XmlTopElem & { Doc: EducationOrgCatalogDocument } & 
+type EducationOrgCatalogDocumentTopElem = XmlTopElem & { Doc: EducationOrgCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -15,6 +15,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type EducationOrgCatalogDocument = XmlDocument & { TopElem: EducationOrgCatalogDocumentTopElem; };

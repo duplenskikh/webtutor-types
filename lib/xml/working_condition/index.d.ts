@@ -51,7 +51,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type WorkingConditionDocument = XmlDocument & {
   TopElem: WorkingConditionDocumentTopElem;

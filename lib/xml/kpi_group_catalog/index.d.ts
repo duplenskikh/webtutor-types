@@ -7,6 +7,6 @@ type KpiGroupCatalogDocumentTopElem = XmlTopElem & { Doc: KpiGroupCatalogDocumen
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type KpiGroupCatalogDocument = XmlDocument & { TopElem: KpiGroupCatalogDocumentTopElem; };

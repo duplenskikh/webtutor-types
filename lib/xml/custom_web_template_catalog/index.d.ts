@@ -1,4 +1,4 @@
-type CustomWebTemplateCatalogDocumentTopElem = XmlTopElem & { Doc: CustomWebTemplateCatalogDocument } & 
+type CustomWebTemplateCatalogDocumentTopElem = XmlTopElem & { Doc: CustomWebTemplateCatalogDocument } &
 ObjectCodeNameBase &
 AccessDocBase & {
   category: XmlElem<string>;
@@ -12,6 +12,6 @@ AccessDocBase & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type CustomWebTemplateCatalogDocument = XmlDocument & { TopElem: CustomWebTemplateCatalogDocumentTopElem; };
