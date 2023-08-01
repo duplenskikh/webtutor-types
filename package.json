@@ -8,6 +8,7 @@
   "scripts": {
     "lint:stage": "ts-node ./ci/lint.ts",
     "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
     "build": "tsc -p lib/tsconfig.json"
   },
   "repository": {
@@ -30,6 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
     "eslint": "^8.16.0",
+    "eslint-plugin-jsdoc": "^46.4.5",
     "ts-node": "^10.9.1"
   },
   "dependencies": {
