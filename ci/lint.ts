@@ -9,7 +9,7 @@ function main() {
 
   if (files.length > 10) {
     try {
-      execSync("npx eslint *.d.ts", {
+      execSync("npm run lint", {
         stdio: ["ignore", process.stdout, process.stderr]
       });
     } catch {
