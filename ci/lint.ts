@@ -7,15 +7,15 @@ function main() {
 
   console.log(`Найдено измененных файлов ${files.length}`);
 
-  // if (files.length > 10) {
-  //   try {
-  //     execSync("npm run lint", {
-  //       stdio: ["ignore", process.stdout, process.stderr]
-  //     });
-  //   } catch {
-  //     setTimeout(() => process.exit(1));
-  //   }
-  // } else {
+  if (files.length > 10) {
+    try {
+      execSync("npm run lint", {
+        stdio: ["ignore", process.stdout, process.stderr]
+      });
+    } catch {
+      setTimeout(() => process.exit(1));
+    }
+  } else {
     console.log(`Измененные файлы:\n${files.join("\n")}`);
 
     let i = 1;
@@ -25,14 +25,14 @@ function main() {
       i++;
 
       try {
-        execSync(`npx eslint ./${file} --rule '{"@typescript-eslint/no-explicit-any": "error"}'`, {
+        execSync(`npx eslint ./${file} -c ./lib/.eslintrc.json --rule '{"@typescript-eslint/no-explicit-any": "error"}'`, {
           stdio: ["ignore", process.stdout, process.stderr]
         });
       } catch {
         setTimeout(() => process.exit(1));
       }
     }
-  // }
+  }
 }
 
 main();
