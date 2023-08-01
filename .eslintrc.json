@@ -13,7 +13,8 @@
     "ecmaVersion": "latest"
   },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "jsdoc"
   ],
   "rules": {
     "no-var": "off",
@@ -36,6 +37,27 @@
     "no-magic-numbers": "error",
     "@typescript-eslint/type-annotation-spacing": "error",
     "@typescript-eslint/array-type": "error",
-    "no-trailing-spaces": "error"
+    "no-trailing-spaces": "error",
+    "jsdoc/check-alignment": "error",
+    "jsdoc/check-indentation": "error",
+    "jsdoc/check-param-names": "error",
+    "jsdoc/check-property-names": "error",
+    "jsdoc/check-types": "error",
+    "jsdoc/no-blank-block-descriptions": "error",
+    "jsdoc/no-multi-asterisks": "error",
+    "jsdoc/no-types": "error",
+    "jsdoc/require-asterisk-prefix": "error",
+    "jsdoc/require-description": "error",
+    "jsdoc/require-description-complete-sentence": "error",
+    "jsdoc/require-example": "error",
+    "jsdoc/require-hyphen-before-param-description": "error",
+    "jsdoc/require-jsdoc": "error",
+    "jsdoc/require-param": "error",
+    "jsdoc/require-param-description": "error",
+    "jsdoc/require-param-name": "error",
+    "jsdoc/require-param-type": "error",
+    "jsdoc/require-returns": "error",
+    "jsdoc/require-returns-description": "error",
+    "jsdoc/require-returns-type": "error"
   }
 }
