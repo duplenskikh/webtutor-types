@@ -10,22 +10,9 @@ declare namespace tools_ass {
   function steal_competence_mark_from_tests(personId: number, competence: CompetenceDocumentTopElem): null | number;
   function development_2_education(sDevelopmentPlanIdParam: number, sBudgetPeriodIdParam: number): boolean;
   function check_access_matrix(accessMatrixId: number, personId: number): undefined | AssessmentAppraiseMatrixDocumentTimeTableScheduleTarget;
-
-  /**
-  * Функция устанавливает значение полю анкеты
-  */
   function change_pa_values(assessmentPlan: AssessmentPlanDocumentTopElem, status: unknown, fields: string, fVals: string): boolean;
-  /**
-  * Поместить комментарий для данного участника
-  */
   function place_pa_comment(paId: number, userId: number, phase: undefined | string, comment: string): boolean;
-  /**
-  * Функция ставит/убирает метку о том, что текущий эксперт утвердил/отклонил оценку
-  */
   function custom_expert_approval(expertPersonId: number, curAssessmentPlan: AssessmentPlanDocumentTopElem, status: string, flagApprove: boolean | "flush", paId?: number | undefined): boolean;
-  /**
-  * Функция ставит/убирает метку о том, что текущий период считается пройденным
-  */
   // eslint-disable-next-line no-magic-numbers
   function lock_period(assessmentPlan: AssessmentPlanDocument, periodPersonId: number, isDone: 1 | 0): boolean;
   function spawn_new_version(assessmentPlan: AssessmentPlanDocument, fields: string, fVals: string, status: string | undefined): void;
