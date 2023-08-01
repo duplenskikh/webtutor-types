@@ -9,11 +9,10 @@
     "types": [],
     "strict": true,
     "noLib": true,
-    "typeRoots": [
-    ],
     "outDir": "../build"
   },
   "include": [
-    "**/*"
+    "**/*.d.ts",
+    ".eslintrc.json"
   ]
 }

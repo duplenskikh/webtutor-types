@@ -10,7 +10,9 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": "latest"
+    "ecmaVersion": "latest",
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "lib"
   },
   "plugins": [
     "@typescript-eslint",
@@ -19,7 +21,7 @@
   "rules": {
     "no-var": "off",
     "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-explicit-any": "error",
     "semi": "off",
     "@typescript-eslint/semi": "error",
     "quotes": ["error", "double"],
@@ -45,19 +47,14 @@
     "jsdoc/check-types": "error",
     "jsdoc/no-blank-block-descriptions": "error",
     "jsdoc/no-multi-asterisks": "error",
-    "jsdoc/no-types": "error",
     "jsdoc/require-asterisk-prefix": "error",
     "jsdoc/require-description": "error",
     "jsdoc/require-description-complete-sentence": "error",
-    "jsdoc/require-example": "error",
     "jsdoc/require-hyphen-before-param-description": "error",
     "jsdoc/require-jsdoc": "error",
     "jsdoc/require-param": "error",
     "jsdoc/require-param-description": "error",
     "jsdoc/require-param-name": "error",
-    "jsdoc/require-param-type": "error",
-    "jsdoc/require-returns": "error",
-    "jsdoc/require-returns-description": "error",
-    "jsdoc/require-returns-type": "error"
+    "jsdoc/require-param-type": "error"
   }
 }
