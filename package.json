@@ -8,7 +8,7 @@
   "scripts": {
     "lint:stage": "ts-node ./ci/lint.ts",
     "lint": "eslint . --ext .ts",
-    "build": "tsc"
+    "build": "tsc -p lib/tsconfig.json"
   },
   "repository": {
     "type": "git",
