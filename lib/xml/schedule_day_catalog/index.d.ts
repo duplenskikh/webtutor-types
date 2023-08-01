@@ -8,6 +8,6 @@ type ScheduleDayCatalogDocumentTopElem = XmlTopElem & { Doc: ScheduleDayCatalogD
   date: XmlElem<Date>;
   start_time: XmlElem<string>;
   finish_time: XmlElem<string>;
-}
+};
 
 type ScheduleDayCatalogDocument = XmlDocument & { TopElem: ScheduleDayCatalogDocumentTopElem; };

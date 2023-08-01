@@ -51,7 +51,7 @@ GameBonusBase & {
   similar_education_methods: XmlMultiElem<EducationMethodDocumentSimilarEducationMethod>;
   get_workflow_id(): number;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type EducationMethodDocument = XmlDocument & {
   TopElem: EducationMethodDocumentTopElem;

@@ -6,6 +6,6 @@ type VclassSettingCatalogDocumentTopElem = XmlTopElem & { Doc: VclassSettingCata
   conversation_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type VclassSettingCatalogDocument = XmlDocument & { TopElem: VclassSettingCatalogDocumentTopElem; };

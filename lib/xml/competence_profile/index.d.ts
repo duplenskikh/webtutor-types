@@ -83,7 +83,7 @@ AdminAccessBase & {
   comment: XmlElem<string>;
   update_values(): void;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type CompetenceProfileDocument = XmlDocument & {
   TopElem: CompetenceProfileDocumentTopElem;

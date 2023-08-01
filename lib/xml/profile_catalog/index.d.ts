@@ -10,6 +10,6 @@ type ProfileCatalogDocumentTopElem = XmlTopElem & { Doc: ProfileCatalogDocument 
   hash: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ProfileCatalogDocument = XmlDocument & { TopElem: ProfileCatalogDocumentTopElem; };

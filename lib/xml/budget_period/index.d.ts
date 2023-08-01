@@ -18,7 +18,7 @@ CustomElemsBase & {
   days: XmlMultiElem<BudgetPeriodDocumentDay>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type BudgetPeriodDocument = XmlDocument & {
   TopElem: BudgetPeriodDocumentTopElem;

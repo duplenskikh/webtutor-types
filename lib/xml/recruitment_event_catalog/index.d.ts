@@ -1,4 +1,4 @@
-type RecruitmentEventCatalogDocumentTopElem = XmlTopElem & { Doc: RecruitmentEventCatalogDocument } & 
+type RecruitmentEventCatalogDocumentTopElem = XmlTopElem & { Doc: RecruitmentEventCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   person_id: XmlElem<number>;
@@ -12,6 +12,6 @@ AdminAccessBase & {
   site_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type RecruitmentEventCatalogDocument = XmlDocument & { TopElem: RecruitmentEventCatalogDocumentTopElem; };

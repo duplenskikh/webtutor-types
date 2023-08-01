@@ -1,4 +1,4 @@
-type ExpenseDocumentTopElem = XmlTopElem & { Doc: ExpenseDocument } & 
+type ExpenseDocumentTopElem = XmlTopElem & { Doc: ExpenseDocument } &
 FileListBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -24,7 +24,7 @@ FileListBase & {
   docs_comment: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ExpenseDocument = XmlDocument & {
   TopElem: ExpenseDocumentTopElem;

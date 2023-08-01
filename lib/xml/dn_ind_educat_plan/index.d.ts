@@ -23,7 +23,7 @@ CustomElemsBase & {
   lector_id: XmlElem<number>;
   contrl_term_events: XmlMultiElem<DnIndEducatPlanDocumentContrlTermEvent>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnIndEducatPlanDocument = XmlDocument & {
   TopElem: DnIndEducatPlanDocumentTopElem;

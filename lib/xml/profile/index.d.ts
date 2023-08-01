@@ -1,4 +1,4 @@
-type ProfileDocumentTopElem = XmlTopElem & { Doc: ProfileDocument } & 
+type ProfileDocumentTopElem = XmlTopElem & { Doc: ProfileDocument } &
 PersonFillingBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -10,7 +10,7 @@ PersonFillingBase & {
   person_id: XmlElem<number>;
   hash(): unknown;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ProfileDocument = XmlDocument & {
   TopElem: ProfileDocumentTopElem;

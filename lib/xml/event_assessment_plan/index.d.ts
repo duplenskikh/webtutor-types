@@ -18,7 +18,7 @@ interface EventAssessmentPlanDocumentCompetence extends WorkflowFieldsAssessment
   indicators: XmlMultiElem<EventAssessmentPlanDocumentCompetenceIndicator>;
 }
 
-type EventAssessmentPlanDocumentTopElem = XmlTopElem & { Doc: EventAssessmentPlanDocument } & 
+type EventAssessmentPlanDocumentTopElem = XmlTopElem & { Doc: EventAssessmentPlanDocument } &
 SupplementaryQuestionsBase &
 CustomElemsBase & {
   id: XmlElem<number>;
@@ -37,7 +37,7 @@ CustomElemsBase & {
   file_name: XmlElem<string>;
   file_url: XmlElem<string>;
   event_result_type_id: XmlElem<number>;
-}
+};
 
 type EventAssessmentPlanDocument = XmlDocument & {
   TopElem: EventAssessmentPlanDocumentTopElem;

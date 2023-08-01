@@ -8,7 +8,7 @@ interface IntervalScheduleDocumentCustomField {
   value: XmlElem<string>;
 }
 
-type IntervalScheduleDocumentTopElem = XmlTopElem & { Doc: IntervalScheduleDocument } & 
+type IntervalScheduleDocumentTopElem = XmlTopElem & { Doc: IntervalScheduleDocument } &
 PersonFillingBase &
 WorkflowDataBase &
 FileListBase &
@@ -26,7 +26,7 @@ CustomElemsBase & {
   custom_fields: XmlMultiElem<IntervalScheduleDocumentCustomField>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type IntervalScheduleDocument = XmlDocument & {
   TopElem: IntervalScheduleDocumentTopElem;

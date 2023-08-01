@@ -12,6 +12,6 @@ type QaTestResultCatalogDocumentTopElem = XmlTopElem & { Doc: QaTestResultCatalo
   duration: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type QaTestResultCatalogDocument = XmlDocument & { TopElem: QaTestResultCatalogDocumentTopElem; };

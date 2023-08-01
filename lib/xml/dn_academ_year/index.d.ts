@@ -17,7 +17,7 @@ CustomElemsBase & {
   str_years: XmlElem<string>;
   periods: XmlMultiElem<DnAcademYearDocumentPeriod>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnAcademYearDocument = XmlDocument & {
   TopElem: DnAcademYearDocumentTopElem;

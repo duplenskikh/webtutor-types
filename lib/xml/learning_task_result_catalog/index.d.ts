@@ -1,4 +1,4 @@
-type LearningTaskResultCatalogDocumentTopElem = XmlTopElem & { Doc: LearningTaskResultCatalogDocument } & 
+type LearningTaskResultCatalogDocumentTopElem = XmlTopElem & { Doc: LearningTaskResultCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -22,6 +22,6 @@ AdminAccessBase & {
   active_learning_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type LearningTaskResultCatalogDocument = XmlDocument & { TopElem: LearningTaskResultCatalogDocumentTopElem; };

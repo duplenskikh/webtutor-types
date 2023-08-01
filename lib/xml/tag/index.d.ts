@@ -2,7 +2,7 @@ interface TagDocumentExpert {
   expert_id: XmlElem<number>;
 }
 
-type TagDocumentTopElem = XmlTopElem & { Doc: TagDocument } & 
+type TagDocumentTopElem = XmlTopElem & { Doc: TagDocument } &
 AdminAccessBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -14,7 +14,7 @@ AdminAccessBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type TagDocument = XmlDocument & {
   TopElem: TagDocumentTopElem;

@@ -1,4 +1,4 @@
-type DnTrainMethodComplexCatalogDocumentTopElem = XmlTopElem & { Doc: DnTrainMethodComplexCatalogDocument } & 
+type DnTrainMethodComplexCatalogDocumentTopElem = XmlTopElem & { Doc: DnTrainMethodComplexCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -11,6 +11,6 @@ AdminAccessBase & {
   lector_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DnTrainMethodComplexCatalogDocument = XmlDocument & { TopElem: DnTrainMethodComplexCatalogDocumentTopElem; };

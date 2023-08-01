@@ -100,7 +100,7 @@ type ClVideoCourseDocumentTopElem = XmlTopElem & {
   fragments: XmlMultiElem<ClVideoCourseDocumentFragment>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type ClVideoCourseDocument = XmlDocument & {
   TopElem: ClVideoCourseDocumentTopElem;

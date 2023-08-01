@@ -18,7 +18,7 @@ AdminAccessBase & {
   evaluate_pa(): IBonusProfileEvaluatePaResult;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type BonusProfileDocument = XmlDocument & {
   TopElem: BonusProfileDocumentTopElem;

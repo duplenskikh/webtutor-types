@@ -1,4 +1,4 @@
-type BonusItemCatalogDocumentTopElem = XmlTopElem & { Doc: BonusItemCatalogDocument } & 
+type BonusItemCatalogDocumentTopElem = XmlTopElem & { Doc: BonusItemCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   name: XmlElem<string>;
@@ -8,6 +8,6 @@ AdminAccessBase & {
   period_start: XmlElem<Date>;
   period_end: XmlElem<Date>;
   result: XmlElem<number>;
-}
+};
 
 type BonusItemCatalogDocument = XmlDocument & { TopElem: BonusItemCatalogDocumentTopElem; };

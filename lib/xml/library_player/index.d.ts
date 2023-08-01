@@ -10,7 +10,7 @@ type LibraryPlayerDocumentTopElem = XmlTopElem & { Doc: LibraryPlayerDocument } 
   doc_info: XmlElem<DocInfoBase>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-}
+};
 
 type LibraryPlayerDocument = XmlDocument & {
   TopElem: LibraryPlayerDocumentTopElem;

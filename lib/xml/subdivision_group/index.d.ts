@@ -3,7 +3,7 @@ interface SubdivisionGroupDocumentSubdivision {
   subdivision_name: XmlElem<string>;
 }
 
-type SubdivisionGroupDocumentTopElem = XmlTopElem & { Doc: SubdivisionGroupDocument } & 
+type SubdivisionGroupDocumentTopElem = XmlTopElem & { Doc: SubdivisionGroupDocument } &
 ObjectCodeNameBase &
 KnowledgePartsBase &
 KnowledgePartsBaseOld &
@@ -21,7 +21,7 @@ ViewConditionsBase & {
   dynamic_select_subdivision(clearList?: boolean): void;
   dynamic_select_person(clearList: boolean): void;
   start_action(): unknown;
-}
+};
 
 type SubdivisionGroupDocument = XmlDocument & {
   TopElem: SubdivisionGroupDocumentTopElem;

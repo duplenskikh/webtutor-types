@@ -10,6 +10,6 @@ type CustomReportCatalogDocumentTopElem = XmlTopElem & { Doc: CustomReportCatalo
   subscription: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type CustomReportCatalogDocument = XmlDocument & { TopElem: CustomReportCatalogDocumentTopElem; };

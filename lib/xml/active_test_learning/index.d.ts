@@ -42,7 +42,7 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   calc_max_end_date(): Date | null;
   complete_test(): number;
-}
+};
 
 type ActiveTestLearningDocument = XmlDocument & {
   TopElem: ActiveTestLearningDocumentTopElem;

@@ -1,4 +1,4 @@
-type ClSlideCatalogDocumentTopElem = XmlTopElem & { Doc: ClSlideCatalogDocument } & 
+type ClSlideCatalogDocumentTopElem = XmlTopElem & { Doc: ClSlideCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -17,6 +17,6 @@ AdminAccessBase & {
   stamp: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ClSlideCatalogDocument = XmlDocument & { TopElem: ClSlideCatalogDocumentTopElem; };

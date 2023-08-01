@@ -1,4 +1,4 @@
-type ClModuleCatalogDocumentTopElem = XmlTopElem & { Doc: ClModuleCatalogDocument } & 
+type ClModuleCatalogDocumentTopElem = XmlTopElem & { Doc: ClModuleCatalogDocument } &
 AccessDocBase &
 AdminAccessBase & {
   id: XmlElem<number>;
@@ -16,6 +16,6 @@ AdminAccessBase & {
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ClModuleCatalogDocument = XmlDocument & { TopElem: ClModuleCatalogDocumentTopElem; };

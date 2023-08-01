@@ -1,4 +1,4 @@
-type BlockMessageCatalogDocumentTopElem = XmlTopElem & { Doc: BlockMessageCatalogDocument } & 
+type BlockMessageCatalogDocumentTopElem = XmlTopElem & { Doc: BlockMessageCatalogDocument } &
 ObjectTypeBase & {
   id: XmlElem<number>;
   create_date: XmlElem<Date>;
@@ -9,6 +9,6 @@ ObjectTypeBase & {
   recipient_id: XmlMultiElem<number>;
   unread_recipient_id: XmlMultiElem<number>;
   disp_role_id: XmlMultiElem<string>;
-}
+};
 
 type BlockMessageCatalogDocument = XmlDocument & { TopElem: BlockMessageCatalogDocumentTopElem; };

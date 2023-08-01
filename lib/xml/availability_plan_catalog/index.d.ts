@@ -8,6 +8,6 @@ type AvailabilityPlanCatalogDocumentTopElem = XmlTopElem & { Doc: AvailabilityPl
   finish_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type AvailabilityPlanCatalogDocument = XmlDocument & { TopElem: AvailabilityPlanCatalogDocumentTopElem; };

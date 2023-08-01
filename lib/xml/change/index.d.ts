@@ -10,7 +10,7 @@ type ChangeDocumentTopElem = XmlTopElem & {
   comment: XmlElem<string>;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ChangeDocument = XmlDocument & {
   TopElem: ChangeDocumentTopElem;

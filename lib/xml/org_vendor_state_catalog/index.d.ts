@@ -1,4 +1,4 @@
-type OrgVendorStateCatalogDocumentTopElem = XmlTopElem & { Doc: OrgVendorStateCatalogDocument } & 
+type OrgVendorStateCatalogDocumentTopElem = XmlTopElem & { Doc: OrgVendorStateCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -11,6 +11,6 @@ AdminAccessBase & {
   recertification_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type OrgVendorStateCatalogDocument = XmlDocument & { TopElem: OrgVendorStateCatalogDocumentTopElem; };

@@ -1,4 +1,4 @@
-type TransactionCatalogDocumentTopElem = XmlTopElem & { Doc: TransactionCatalogDocument } & 
+type TransactionCatalogDocumentTopElem = XmlTopElem & { Doc: TransactionCatalogDocument } &
 ObjectTypeBase &
 AdminAccessBase & {
   id: XmlElem<number>;
@@ -13,6 +13,6 @@ AdminAccessBase & {
   objects: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type TransactionCatalogDocument = XmlDocument & { TopElem: TransactionCatalogDocumentTopElem; };

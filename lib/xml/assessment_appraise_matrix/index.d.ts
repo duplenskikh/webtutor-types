@@ -41,7 +41,7 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
-}
+};
 
 type AssessmentAppraiseMatrixDocument = XmlDocument & {
   TopElem: AssessmentAppraiseMatrixDocumentTopElem;

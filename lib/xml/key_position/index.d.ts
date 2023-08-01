@@ -11,7 +11,7 @@ interface KeyPositionDocumentPositionName {
   name: XmlElem<string>;
 }
 
-type KeyPositionDocumentTopElem = XmlTopElem & { Doc: KeyPositionDocument } & 
+type KeyPositionDocumentTopElem = XmlTopElem & { Doc: KeyPositionDocument } &
 ObjectCodeNameBase &
 PersonFillingBase &
 ViewConditionsBase &
@@ -38,7 +38,7 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   role_id: XmlMultiElem<number>;
   EvalThreat(): unknown;
-}
+};
 
 type KeyPositionDocument = XmlDocument & {
   TopElem: KeyPositionDocumentTopElem;

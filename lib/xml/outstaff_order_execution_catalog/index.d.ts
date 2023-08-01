@@ -1,4 +1,4 @@
-type OutstaffOrderExecutionCatalogDocumentTopElem = XmlTopElem & { Doc: OutstaffOrderExecutionCatalogDocument } & 
+type OutstaffOrderExecutionCatalogDocumentTopElem = XmlTopElem & { Doc: OutstaffOrderExecutionCatalogDocument } &
 AccessDocBase &
 AdminAccessBase & {
   id: XmlElem<number>;
@@ -21,6 +21,6 @@ AdminAccessBase & {
   finish_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type OutstaffOrderExecutionCatalogDocument = XmlDocument & { TopElem: OutstaffOrderExecutionCatalogDocumentTopElem; };

@@ -1,4 +1,4 @@
-type ContestCatalogDocumentTopElem = XmlTopElem & { Doc: ContestCatalogDocument } & 
+type ContestCatalogDocumentTopElem = XmlTopElem & { Doc: ContestCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   name: XmlElem<string>;
@@ -10,6 +10,6 @@ AdminAccessBase & {
   estimation_id: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ContestCatalogDocument = XmlDocument & { TopElem: ContestCatalogDocumentTopElem; };

@@ -1,4 +1,4 @@
-type ResponseCatalogDocumentTopElem = XmlTopElem & { Doc: ResponseCatalogDocument } & 
+type ResponseCatalogDocumentTopElem = XmlTopElem & { Doc: ResponseCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -15,6 +15,6 @@ AdminAccessBase & {
   is_public: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ResponseCatalogDocument = XmlDocument & { TopElem: ResponseCatalogDocumentTopElem; };

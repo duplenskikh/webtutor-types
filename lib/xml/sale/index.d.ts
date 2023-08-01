@@ -11,7 +11,7 @@ interface SaleDocumentDocument {
   comment: XmlElem<string>;
 }
 
-type SaleDocumentTopElem = XmlTopElem & { Doc: SaleDocument } & 
+type SaleDocumentTopElem = XmlTopElem & { Doc: SaleDocument } &
 FileListBase &
 CustomElemsBase & {
   code: XmlElem<string>;
@@ -32,7 +32,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type SaleDocument = XmlDocument & {
   TopElem: SaleDocumentTopElem;

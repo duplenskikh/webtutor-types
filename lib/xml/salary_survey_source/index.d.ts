@@ -5,7 +5,7 @@ type SalarySurveySourceDocumentTopElem = XmlTopElem & { Doc: SalarySurveySourceD
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type SalarySurveySourceDocument = XmlDocument & {
   TopElem: SalarySurveySourceDocumentTopElem;

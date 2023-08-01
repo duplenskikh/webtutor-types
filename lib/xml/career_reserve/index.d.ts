@@ -84,7 +84,7 @@ CustomElemsBase & {
   set_task(task: CareerReserveDocumentTask, typicalDevelopmentProgramId: number, parentTaskId: string): string;
   change_tutors_list(): void;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type CareerReserveDocument = XmlDocument & {
   TopElem: CareerReserveDocumentTopElem;

@@ -10,6 +10,6 @@ type WorkflowCatalogDocumentTopElem = XmlTopElem & { Doc: WorkflowCatalogDocumen
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type WorkflowCatalogDocument = XmlDocument & { TopElem: WorkflowCatalogDocumentTopElem; };

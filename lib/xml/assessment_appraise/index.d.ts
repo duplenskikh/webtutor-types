@@ -168,7 +168,7 @@ AdminAccessBase & {
   player: XmlElem<number>;
   impersonate_persons: XmlMultiElem<AssessmentAppraiseDocumentImpersonatePerson>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type AssessmentAppraiseDocument = XmlDocument & {
   TopElem: AssessmentAppraiseDocumentTopElem;

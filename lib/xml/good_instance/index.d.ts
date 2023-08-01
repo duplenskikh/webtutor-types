@@ -1,4 +1,4 @@
-type GoodInstanceDocumentTopElem = XmlTopElem & { Doc: GoodInstanceDocument } & 
+type GoodInstanceDocumentTopElem = XmlTopElem & { Doc: GoodInstanceDocument } &
 ObjectCodeNameBase &
 PersonFillingBase & {
   status: XmlElem<string>;
@@ -10,7 +10,7 @@ PersonFillingBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   clear_status(): unknown;
-}
+};
 
 type GoodInstanceDocument = XmlDocument & {
   TopElem: GoodInstanceDocumentTopElem;

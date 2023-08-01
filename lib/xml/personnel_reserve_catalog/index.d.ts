@@ -1,4 +1,4 @@
-type PersonnelReserveCatalogDocumentTopElem = XmlTopElem & { Doc: PersonnelReserveCatalogDocument } & 
+type PersonnelReserveCatalogDocumentTopElem = XmlTopElem & { Doc: PersonnelReserveCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   name: XmlElem<string>;
@@ -17,6 +17,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type PersonnelReserveCatalogDocument = XmlDocument & { TopElem: PersonnelReserveCatalogDocumentTopElem; };

@@ -52,7 +52,7 @@ type ChatbotStageDocumentTopElem = XmlTopElem & {
   command_eval_str: XmlElem<string>;
   commands: XmlMultiElem<ChatbotStageDocumentCommand>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ChatbotStageDocument = XmlDocument & {
   TopElem: ChatbotStageDocumentTopElem;

@@ -1,4 +1,4 @@
-type NotificationTemplateDocumentTopElem = XmlTopElem & 
+type NotificationTemplateDocumentTopElem = XmlTopElem &
 CustomElemsBase &
 FileListBase & {
   Doc: NotificationTemplateDocument;
@@ -13,7 +13,7 @@ FileListBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type NotificationTemplateDocument = XmlDocument & {
   TopElem: NotificationTemplateDocumentTopElem;

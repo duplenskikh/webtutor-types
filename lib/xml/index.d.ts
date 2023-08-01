@@ -152,7 +152,7 @@ interface MSDialogObjectSelectTopElem {
 
 type MSDialogObjectSelectDocument = XmlDocument & {
   TopElem: MSDialogObjectSelectTopElem;
-}
+};
 
 interface WTVDlgEditTextTopElem {
   url: XmlElem<string>;

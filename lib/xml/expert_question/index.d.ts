@@ -1,4 +1,4 @@
-type ExpertQuestionDocumentTopElem = XmlTopElem & { Doc: ExpertQuestionDocument } & 
+type ExpertQuestionDocumentTopElem = XmlTopElem & { Doc: ExpertQuestionDocument } &
 KnowledgePartsBase &
 KnowledgePartsBaseOld &
 CustomElemsBase &
@@ -18,7 +18,7 @@ FileListBase & {
   doc_info: XmlElem<DocInfoBase>;
   question_file_id: XmlElem<number>;
   answer_file_id: XmlElem<number>;
-}
+};
 
 type ExpertQuestionDocument = XmlDocument & {
   TopElem: ExpertQuestionDocumentTopElem;

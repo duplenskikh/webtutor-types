@@ -19,6 +19,6 @@ type WikiArticleCatalogDocumentTopElem = XmlTopElem & { Doc: WikiArticleCatalogD
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   access_group_ids: XmlMultiElem<number>;
-}
+};
 
 type WikiArticleCatalogDocument = XmlDocument & { TopElem: WikiArticleCatalogDocumentTopElem; };

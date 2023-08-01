@@ -42,7 +42,7 @@ CustomElemsBase & {
   registr_students: XmlMultiElem<DnLessonDocumentRegistrStudent>;
   students: XmlMultiElem<DnLessonDocumentStudent>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnLessonDocument = XmlDocument & {
   TopElem: DnLessonDocumentTopElem;

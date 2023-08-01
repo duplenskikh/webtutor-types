@@ -6,6 +6,6 @@ type WebDesignCatalogDocumentTopElem = XmlTopElem & { Doc: WebDesignCatalogDocum
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type WebDesignCatalogDocument = XmlDocument & { TopElem: WebDesignCatalogDocumentTopElem; };

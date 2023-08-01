@@ -8,6 +8,6 @@ type ActionReportCatalogDocumentTopElem = XmlTopElem & { Doc: ActionReportCatalo
   data_file_url: XmlElem<string>;
   last_upload_date: XmlElem<Date>;
   create_date: XmlElem<Date>;
-}
+};
 
 type ActionReportCatalogDocument = XmlDocument & { TopElem: ActionReportCatalogDocumentTopElem; };

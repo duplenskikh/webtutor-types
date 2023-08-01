@@ -4,7 +4,7 @@ interface LevelDocumentCurrencyType {
   max_value: XmlElem<number>;
 }
 
-type LevelDocumentTopElem = XmlTopElem & { Doc: LevelDocument } & 
+type LevelDocumentTopElem = XmlTopElem & { Doc: LevelDocument } &
 ObjectCodeNameBase & {
   prev_level_id: XmlElem<number>;
   currency_type_id: XmlElem<string>;
@@ -14,7 +14,7 @@ ObjectCodeNameBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type LevelDocument = XmlDocument & {
   TopElem: LevelDocumentTopElem;

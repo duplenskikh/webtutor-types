@@ -1,4 +1,4 @@
-type ObjectDataDocumentTopElem = XmlTopElem & { Doc: ObjectDataDocument } & 
+type ObjectDataDocumentTopElem = XmlTopElem & { Doc: ObjectDataDocument } &
 ObjectTypeBase &
 FileListBase &
 CustomElemsBase &
@@ -20,7 +20,7 @@ AdminAccessBase & {
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
   desc: XmlElem<string>;
-}
+};
 
 type ObjectDataDocument = XmlDocument & {
   TopElem: ObjectDataDocumentTopElem;

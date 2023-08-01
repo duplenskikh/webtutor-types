@@ -10,6 +10,6 @@ type LibraryMaterialSourceTypeCatalogDocumentTopElem = XmlTopElem & { Doc: Libra
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type LibraryMaterialSourceTypeCatalogDocument = XmlDocument & { TopElem: LibraryMaterialSourceTypeCatalogDocumentTopElem; };

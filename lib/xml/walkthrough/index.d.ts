@@ -1,4 +1,4 @@
-type WalkthroughDocumentTopElem = XmlTopElem & { Doc: WalkthroughDocument } & 
+type WalkthroughDocumentTopElem = XmlTopElem & { Doc: WalkthroughDocument } &
 AdminAccessBase &
 CustomElemsBase & {
   code: XmlElem<string>;
@@ -7,7 +7,7 @@ CustomElemsBase & {
   xml: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type WalkthroughDocument = XmlDocument & {
   TopElem: WalkthroughDocumentTopElem;

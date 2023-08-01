@@ -12,6 +12,6 @@ type PolicyCatalogDocumentTopElem = XmlTopElem & { Doc: PolicyCatalogDocument } 
   number: XmlElem<string>;
   policy_type_id: XmlElem<number>;
   state_id: XmlElem<string>;
-}
+};
 
 type PolicyCatalogDocument = XmlDocument & { TopElem: PolicyCatalogDocumentTopElem; };

@@ -8,7 +8,7 @@ type ResponseTypeDocumentTopElem = XmlTopElem & { Doc: ResponseTypeDocument } & 
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type ResponseTypeDocument = XmlDocument & {
   TopElem: ResponseTypeDocumentTopElem;

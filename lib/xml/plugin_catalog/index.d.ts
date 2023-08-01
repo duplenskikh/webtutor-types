@@ -6,6 +6,6 @@ type PluginCatalogDocumentTopElem = XmlTopElem & { Doc: PluginCatalogDocument } 
   plugin_id: XmlElem<string>;
   version: XmlElem<number>;
   modification_date: XmlElem<Date>;
-}
+};
 
 type PluginCatalogDocument = XmlDocument & { TopElem: PluginCatalogDocumentTopElem; };

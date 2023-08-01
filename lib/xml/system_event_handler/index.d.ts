@@ -1,4 +1,4 @@
-type SystemEventHandlerDocumentTopElem = XmlTopElem & { Doc: SystemEventHandlerDocument } & 
+type SystemEventHandlerDocumentTopElem = XmlTopElem & { Doc: SystemEventHandlerDocument } &
 ObjectCodeNameBase &
 ExecCodeBase &
 WebVariablesBase & {
@@ -11,7 +11,7 @@ WebVariablesBase & {
   changed: XmlElem<boolean>;
   last_system_event_id: XmlElem<number>;
   last_is_enabled: XmlElem<boolean>;
-}
+};
 
 type SystemEventHandlerDocument = XmlDocument & {
   TopElem: SystemEventHandlerDocumentTopElem;

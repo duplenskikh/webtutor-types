@@ -8,7 +8,7 @@ WebVariablesBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type CodeLibraryDocument = XmlDocument & {
   TopElem: CodeLibraryDocumentTopElem;

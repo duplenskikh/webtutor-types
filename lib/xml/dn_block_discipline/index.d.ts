@@ -11,7 +11,7 @@ CustomElemsBase & {
   disciplines: XmlMultiElem<DnBlockDisciplineDocumentDiscipline>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnBlockDisciplineDocument = XmlDocument & {
   TopElem: DnBlockDisciplineDocumentTopElem;

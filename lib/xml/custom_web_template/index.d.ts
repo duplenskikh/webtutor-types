@@ -30,7 +30,7 @@ WebVariablesBase & {
   changed: XmlElem<boolean>;
   is_enabled: XmlElem<boolean>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type CustomWebTemplateDocument = XmlDocument & {
   TopElem: CustomWebTemplateDocumentTopElem;

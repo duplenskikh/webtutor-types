@@ -1,4 +1,4 @@
-type TraningOrderDocumentTopElem = XmlTopElem & { Doc: TraningOrderDocument } & 
+type TraningOrderDocumentTopElem = XmlTopElem & { Doc: TraningOrderDocument } &
 CustomElemsBase & {
   number: XmlElem<string>;
   order_type_id: XmlElem<number>;
@@ -16,7 +16,7 @@ CustomElemsBase & {
   performer_person_id: XmlElem<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type TraningOrderDocument = XmlDocument & {
   TopElem: TraningOrderDocumentTopElem;

@@ -4,7 +4,7 @@ type ContractStateDocumentTopElem = XmlTopElem & {
   code: XmlElem<string>;
   name: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ContractStateDocument = XmlDocument & {
   TopElem: ContractStateDocumentTopElem;

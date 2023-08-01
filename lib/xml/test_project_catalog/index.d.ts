@@ -5,6 +5,6 @@ type TestProjectCatalogDocumentTopElem = XmlTopElem & { Doc: TestProjectCatalogD
   status: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type TestProjectCatalogDocument = XmlDocument & { TopElem: TestProjectCatalogDocumentTopElem; };

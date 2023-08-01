@@ -1,4 +1,4 @@
-type PlaceDocumentTopElem = XmlTopElem & { Doc: PlaceDocument } & 
+type PlaceDocumentTopElem = XmlTopElem & { Doc: PlaceDocument } &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
@@ -11,7 +11,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type PlaceDocument = XmlDocument & {
   TopElem: PlaceDocumentTopElem;

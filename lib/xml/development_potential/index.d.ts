@@ -11,7 +11,7 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-}
+};
 
 type DevelopmentPotentialDocument = XmlDocument & {
   TopElem: DevelopmentPotentialDocumentTopElem;

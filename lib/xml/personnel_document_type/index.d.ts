@@ -17,7 +17,7 @@ type PersonnelDocumentTypeDocumentTopElem = XmlTopElem & { Doc: PersonnelDocumen
   role_id: XmlMultiElem<number>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type PersonnelDocumentTypeDocument = XmlDocument & {
   TopElem: PersonnelDocumentTypeDocumentTopElem;

@@ -18,7 +18,7 @@ interface OrderDocumentGood {
   add_good_instance(): unknown;
 }
 
-type OrderDocumentTopElem = XmlTopElem & { Doc: OrderDocument } & 
+type OrderDocumentTopElem = XmlTopElem & { Doc: OrderDocument } &
 PersonFillingBase &
 FileListBase &
 CustomElemsBase & {
@@ -34,7 +34,7 @@ CustomElemsBase & {
   paid_date: XmlElem<Date>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type OrderDocument = XmlDocument & {
   TopElem: OrderDocumentTopElem;

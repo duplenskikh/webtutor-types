@@ -10,6 +10,6 @@ type SiteCatalogDocumentTopElem = XmlTopElem & { Doc: SiteCatalogDocument } & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   owner_object: XmlMultiElem<number>;
-}
+};
 
 type SiteCatalogDocument = XmlDocument & { TopElem: SiteCatalogDocumentTopElem; };

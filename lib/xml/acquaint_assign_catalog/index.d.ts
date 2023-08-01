@@ -12,6 +12,6 @@ type AcquaintAssignCatalogDocumentTopElem = XmlTopElem & { Doc: AcquaintAssignCa
   state_id: XmlElem<string>;
   attempt_num: XmlElem<number>;
   modification_date: XmlElem<Date>;
-}
+};
 
 type AcquaintAssignCatalogDocument = XmlDocument & { TopElem: AcquaintAssignCatalogDocumentTopElem; };

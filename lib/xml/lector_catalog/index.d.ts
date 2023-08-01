@@ -1,4 +1,4 @@
-type LectorCatalogDocumentTopElem = XmlTopElem & { Doc: LectorCatalogDocument } & 
+type LectorCatalogDocumentTopElem = XmlTopElem & { Doc: LectorCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -14,6 +14,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type LectorCatalogDocument = XmlDocument & { TopElem: LectorCatalogDocumentTopElem; };

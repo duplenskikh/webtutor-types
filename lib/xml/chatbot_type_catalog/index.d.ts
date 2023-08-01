@@ -5,6 +5,6 @@ type ChatbotTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ChatbotTypeCatalogD
   script_url: XmlElem<string>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-}
+};
 
 type ChatbotTypeCatalogDocument = XmlDocument & { TopElem: ChatbotTypeCatalogDocumentTopElem; };

@@ -6,6 +6,6 @@ type SectionInstructionCatalogDocumentTopElem = XmlTopElem & { Doc: SectionInstr
   parent_object_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type SectionInstructionCatalogDocument = XmlDocument & { TopElem: SectionInstructionCatalogDocumentTopElem; };

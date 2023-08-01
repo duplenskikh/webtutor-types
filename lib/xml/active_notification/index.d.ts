@@ -36,7 +36,7 @@ type ActiveNotificationDocumentTopElem = XmlTopElem & {
   recipients: XmlMultiElem<ActiveNotificationDocumentRecipient>;
   notification_system_id: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ActiveNotificationDocument = XmlDocument & {
   TopElem: ActiveNotificationDocumentTopElem;

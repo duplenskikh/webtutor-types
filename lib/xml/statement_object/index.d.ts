@@ -9,7 +9,7 @@ type StatementObjectDocumentTopElem = XmlTopElem & { Doc: StatementObjectDocumen
   definition_interaction_type: XmlElem<string>;
   context_activity_type: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type StatementObjectDocument = XmlDocument & {
   TopElem: StatementObjectDocumentTopElem;

@@ -10,7 +10,7 @@ AdminAccessBase & {
   competence_profiles: XmlMultiElem<CompetenceProfileFamilyDocumentCompetenceProfile>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type CompetenceProfileFamilyDocument = XmlDocument & {
   TopElem: CompetenceProfileFamilyDocumentTopElem;

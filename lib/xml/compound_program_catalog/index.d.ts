@@ -1,4 +1,4 @@
-type CompoundProgramCatalogDocumentTopElem = XmlTopElem & { Doc: CompoundProgramCatalogDocument } & 
+type CompoundProgramCatalogDocumentTopElem = XmlTopElem & { Doc: CompoundProgramCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -12,6 +12,6 @@ AdminAccessBase & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   objects_id: XmlMultiElem<number>;
-}
+};
 
 type CompoundProgramCatalogDocument = XmlDocument & { TopElem: CompoundProgramCatalogDocumentTopElem; };

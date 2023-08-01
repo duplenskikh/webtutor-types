@@ -81,7 +81,7 @@ type ClSlideDocumentTopElem = XmlTopElem & {
   desc: XmlElem<string>;
   stamp: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ClSlideDocument = XmlDocument & {
   TopElem: ClSlideDocumentTopElem;

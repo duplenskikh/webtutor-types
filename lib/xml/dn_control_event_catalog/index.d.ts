@@ -1,4 +1,4 @@
-type DnControlEventCatalogDocumentTopElem = XmlTopElem & { Doc: DnControlEventCatalogDocument } & 
+type DnControlEventCatalogDocumentTopElem = XmlTopElem & { Doc: DnControlEventCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -15,6 +15,6 @@ AdminAccessBase & {
   stud_group_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type DnControlEventCatalogDocument = XmlDocument & { TopElem: DnControlEventCatalogDocumentTopElem; };

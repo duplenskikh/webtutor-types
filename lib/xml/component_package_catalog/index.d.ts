@@ -13,6 +13,6 @@ type ComponentPackageCatalogDocumentTopElem = XmlTopElem & { Doc: ComponentPacka
   knowledge_parts: XmlElem<string>;
   tags: XmlElem<string>;
   experts: XmlElem<string>;
-}
+};
 
 type ComponentPackageCatalogDocument = XmlDocument & { TopElem: ComponentPackageCatalogDocumentTopElem; };

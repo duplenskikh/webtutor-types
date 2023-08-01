@@ -1,4 +1,4 @@
-type LearningRecordCatalogDocumentTopElem = XmlTopElem & { Doc: LearningRecordCatalogDocument } & 
+type LearningRecordCatalogDocumentTopElem = XmlTopElem & { Doc: LearningRecordCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -29,6 +29,6 @@ AdminAccessBase & {
   is_prefer_proctor: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type LearningRecordCatalogDocument = XmlDocument & { TopElem: LearningRecordCatalogDocumentTopElem; };

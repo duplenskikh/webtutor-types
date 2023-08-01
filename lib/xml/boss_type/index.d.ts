@@ -16,7 +16,7 @@ type BossTypeDocumentTopElem = XmlTopElem & {
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type BossTypeDocument = XmlDocument & {
   TopElem: BossTypeDocumentTopElem;

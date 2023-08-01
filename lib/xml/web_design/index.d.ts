@@ -1,4 +1,4 @@
-type WebDesignDocumentTopElem = XmlTopElem & { Doc: WebDesignDocument } & 
+type WebDesignDocumentTopElem = XmlTopElem & { Doc: WebDesignDocument } &
 WebVariablesBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -14,7 +14,7 @@ WebVariablesBase & {
   changed: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type WebDesignDocument = XmlDocument & {
   TopElem: WebDesignDocumentTopElem;

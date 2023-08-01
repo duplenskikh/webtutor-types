@@ -3,6 +3,6 @@ type WikiArticleTypeCatalogDocumentTopElem = XmlTopElem & { Doc: WikiArticleType
   code: XmlElem<string>;
   name: XmlElem<string>;
   resource_id: XmlElem<number>;
-}
+};
 
 type WikiArticleTypeCatalogDocument = XmlDocument & { TopElem: WikiArticleTypeCatalogDocumentTopElem; };

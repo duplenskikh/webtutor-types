@@ -10,7 +10,7 @@ interface QualificationAssignmentDocumentEducationMethod {
   education_method_id: XmlElem<number>;
 }
 
-type QualificationAssignmentDocumentTopElem = XmlTopElem & { Doc: QualificationAssignmentDocument } & 
+type QualificationAssignmentDocumentTopElem = XmlTopElem & { Doc: QualificationAssignmentDocument } &
 PersonFillingBase &
 FileListBase &
 AdminAccessBase &
@@ -29,7 +29,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type QualificationAssignmentDocument = XmlDocument & {
   TopElem: QualificationAssignmentDocumentTopElem;

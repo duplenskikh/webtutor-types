@@ -19,7 +19,7 @@ interface LibraryMaterialDocumentPathSection {
   parent_id: XmlElem<number>;
 }
 
-type LibraryMaterialDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialDocument } & 
+type LibraryMaterialDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialDocument } &
 ObjectCodeNameBase &
 CatalogListBase &
 KnowledgePartsBase &
@@ -59,7 +59,7 @@ CustomElemsBase & {
   filling_path_sections(): unknown;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type LibraryMaterialDocument = XmlDocument & {
   TopElem: LibraryMaterialDocumentTopElem;

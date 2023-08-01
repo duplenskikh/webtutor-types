@@ -4,7 +4,7 @@ interface InvoiceDocumentCourse {
   units_num: XmlElem<number>;
 }
 
-type InvoiceDocumentTopElem = XmlTopElem & { Doc: InvoiceDocument } & 
+type InvoiceDocumentTopElem = XmlTopElem & { Doc: InvoiceDocument } &
 AdminAccessBase & {
   code: XmlElem<string>;
   date: XmlElem<Date>;
@@ -19,7 +19,7 @@ AdminAccessBase & {
   draft_date: XmlElem<Date>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type InvoiceDocument = XmlDocument & {
   TopElem: InvoiceDocumentTopElem;

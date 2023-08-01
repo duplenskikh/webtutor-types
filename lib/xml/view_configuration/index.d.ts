@@ -1,4 +1,4 @@
-type ViewConfigurationDocumentTopElem = XmlTopElem & { Doc: ViewConfigurationDocument } & 
+type ViewConfigurationDocumentTopElem = XmlTopElem & { Doc: ViewConfigurationDocument } &
 ObjectCodeNameBase &
 ViewBase & {
   catalog_name: XmlElem<string>;
@@ -9,7 +9,7 @@ ViewBase & {
   role_id: XmlMultiElem<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type ViewConfigurationDocument = XmlDocument & {
   TopElem: ViewConfigurationDocumentTopElem;

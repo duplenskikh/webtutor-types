@@ -9,7 +9,7 @@ type LikeDocumentTopElem = XmlTopElem & { Doc: LikeDocument } & {
   create_date: XmlElem<Date>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type LikeDocument = XmlDocument & {
   TopElem: LikeDocumentTopElem;

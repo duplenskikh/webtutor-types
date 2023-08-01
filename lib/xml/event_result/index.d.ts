@@ -1,4 +1,4 @@
-type EventResultDocumentTopElem = XmlTopElem & { Doc: EventResultDocument } & 
+type EventResultDocumentTopElem = XmlTopElem & { Doc: EventResultDocument } &
 PersonFillingBase &
 ExpenseDistributionBase &
 FileListBase &
@@ -33,7 +33,7 @@ CustomDatasBase & {
   guest: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type EventResultDocument = XmlDocument & {
   TopElem: EventResultDocumentTopElem;

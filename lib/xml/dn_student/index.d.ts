@@ -44,7 +44,7 @@ CustomElemsBase & {
   subject: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   dn_student_fullname(): string;
-}
+};
 
 type DnStudentDocument = XmlDocument & {
   TopElem: DnStudentDocumentTopElem;

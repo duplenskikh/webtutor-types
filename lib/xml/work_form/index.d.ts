@@ -4,7 +4,7 @@ type WorkFormDocumentTopElem = XmlTopElem & { Doc: WorkFormDocument } & {
   name: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type WorkFormDocument = XmlDocument & {
   TopElem: WorkFormDocumentTopElem;

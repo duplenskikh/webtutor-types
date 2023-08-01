@@ -10,6 +10,6 @@ type PersonObjectLinkCatalogDocumentTopElem = XmlTopElem & { Doc: PersonObjectLi
   all_can_edit: XmlElem<boolean>;
   all_can_delete: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
-}
+};
 
 type PersonObjectLinkCatalogDocument = XmlDocument & { TopElem: PersonObjectLinkCatalogDocumentTopElem; };

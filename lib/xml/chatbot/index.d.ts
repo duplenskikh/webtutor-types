@@ -37,7 +37,7 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-}
+};
 
 type ChatbotDocument = XmlDocument & {
   TopElem: ChatbotDocumentTopElem;

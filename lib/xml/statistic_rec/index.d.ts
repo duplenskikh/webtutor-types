@@ -14,7 +14,7 @@ interface StatisticRecDocumentCatalog {
   enabled: XmlElem<boolean>;
 }
 
-type StatisticRecDocumentTopElem = XmlTopElem & { Doc: StatisticRecDocument } & 
+type StatisticRecDocumentTopElem = XmlTopElem & { Doc: StatisticRecDocument } &
 ObjectCodeNameBase &
 WebVariablesBase & {
   url: XmlElem<string>;
@@ -41,7 +41,7 @@ WebVariablesBase & {
   calculate_on_server(): unknown;
   calculate(): unknown;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type StatisticRecDocument = XmlDocument & {
   TopElem: StatisticRecDocumentTopElem;

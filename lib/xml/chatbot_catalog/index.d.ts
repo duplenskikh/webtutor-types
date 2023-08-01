@@ -7,6 +7,6 @@ type ChatbotCatalogDocumentTopElem = XmlTopElem & { Doc: ChatbotCatalogDocument 
   modification_date: XmlElem<Date>;
   create_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type ChatbotCatalogDocument = XmlDocument & { TopElem: ChatbotCatalogDocumentTopElem; };

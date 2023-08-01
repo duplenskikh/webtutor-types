@@ -1,4 +1,4 @@
-type SaleCatalogDocumentTopElem = XmlTopElem & { Doc: SaleCatalogDocument } & 
+type SaleCatalogDocumentTopElem = XmlTopElem & { Doc: SaleCatalogDocument } &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -17,6 +17,6 @@ AdminAccessBase & {
   currency_type_id: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-}
+};
 
 type SaleCatalogDocument = XmlDocument & { TopElem: SaleCatalogDocumentTopElem; };

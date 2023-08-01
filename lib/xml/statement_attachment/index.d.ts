@@ -8,7 +8,7 @@ type StatementAttachmentDocumentTopElem = XmlTopElem & { Doc: StatementAttachmen
   file_url: XmlElem<string>;
   statement_id: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type StatementAttachmentDocument = XmlDocument & {
   TopElem: StatementAttachmentDocumentTopElem;

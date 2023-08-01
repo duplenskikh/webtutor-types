@@ -31,7 +31,7 @@ CustomElemsBase & {
   reason_comment: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type CollaboratorScheduleDocument = XmlDocument & {
   TopElem: CollaboratorScheduleDocumentTopElem;

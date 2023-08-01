@@ -29,7 +29,7 @@ type SystemEventDocumentTopElem = XmlTopElem & { Doc: SystemEventDocument } & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElem<number>;
-}
+};
 
 type SystemEventDocument = XmlDocument & {
   TopElem: SystemEventDocumentTopElem;

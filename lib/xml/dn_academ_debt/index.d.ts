@@ -14,7 +14,7 @@ CustomElemsBase & {
   latest_date: XmlElem<Date>;
   liquid_date: XmlElem<Date>;
   doc_info: XmlElem<DocInfoBase>;
-}
+};
 
 type DnAcademDebtDocument = XmlDocument & {
   TopElem: DnAcademDebtDocumentTopElem;
