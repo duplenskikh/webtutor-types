@@ -81,7 +81,7 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   get_linked_position_common_id(): XmlElem<number> | undefined;
   assign_typical_program(typicalDevelopmentProgramId: number): void;
-  set_task(task: CareerReserveDocumentTask, typicalDevelopmentProgramId: number, parentTaskId: string): string;
+  set_task(task: TypicalDevelopmentProgramDocumentTask, typicalDevelopmentProgramId: number, parentTaskId: string): string;
   change_tutors_list(): void;
   role_id: XmlMultiElem<number>;
 };
