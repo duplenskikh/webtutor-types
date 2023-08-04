@@ -12,8 +12,8 @@ interface PersonNameBase {
   lastname: XmlElem<string>;
   firstname: XmlElem<string>;
   middlename: XmlElem<string>;
-  fullname(): any;
-  shortname(): any;
+  fullname(): string;
+  shortname(): string;
 }
 
 interface DocInfoBaseCreation {
@@ -538,10 +538,10 @@ interface InsertFileBase {
 }
 
 interface FileActionBase {
-  AssignFile(): any;
-  DeleteFile(): any;
-  SaveFile(): any;
-  AddFile(): any;
+  AssignFile(fileUrl: string, source: XmlTopElem, params?: Object): void;
+  DeleteFile(source: XmlTopElem): void;
+  SaveFile(fileUrl: string): void;
+  AddFile(fileId: number, source: XmlTopElem | null | undefined): void;
 }
 
 interface FileListBaseFile {
@@ -550,7 +550,7 @@ interface FileListBaseFile {
 
 interface FileListBase {
   files: XmlMultiElem<FileListBaseFile>;
-  AddFile(): any;
+  AddFile(fileId: number, resourceParameter: ResourceDocument | null | ""): true;
 }
 
 interface CoursePartBase {
@@ -619,7 +619,7 @@ interface ProgramMethodBase extends CostCurrencyTypeBase {
   type: XmlElem<string, typeof common.education_method_types>;
   state_id: XmlElem<string>;
   education_org_id: XmlElem<number>;
-  course_id: XmlElem<number>;
+  course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
   duration: XmlElem<number>;
   duration_days: XmlElem<number>;
   person_num: XmlElem<number>;
@@ -702,6 +702,22 @@ interface WorkflowDataBaseWorkflowCustomState {
   conditions: XmlMultiElem<WorkflowDataBaseWorkflowCustomStateCondition>;
 }
 
+interface SetWorkflowStateLastDateParams {
+  workflow: WorkflowDocumentTopElem | undefined | null;
+  workflow_state: string | null | undefined;
+  state_duration: string | null | undefined | number;
+  finish_date: string | null | undefined | Date;
+  start_date: string | null | undefined | Date;
+}
+
+interface AddWorkflowLogEntryParams {
+  finish_state: string | null | undefined;
+  begin_state: string | null | undefined;
+  person_id: string | null | undefined | number;
+  person_fullname: string | null | undefined;
+  action_id: string | null | undefined;
+}
+
 interface WorkflowDataBase {
   workflow_id: XmlElem<number>;
   workflow_state: XmlElem<string>;
@@ -712,8 +728,8 @@ interface WorkflowDataBase {
   workflow_log_entrys: XmlMultiElem<WorkflowDataBaseWorkflowLogEntry>;
   workflow_custom_states: XmlMultiElem<WorkflowDataBaseWorkflowCustomState>;
   get_workflow_state_name(workflowDoc: WorkflowDocumentTopElem): string;
-  set_workflow_state_last_date(param: any): void;
-  add_workflow_log_entry(param: any): void;
+  set_workflow_state_last_date(param: null | undefined | "" | SetWorkflowStateLastDateParams): void;
+  add_workflow_log_entry(param: null | undefined | "" | AddWorkflowLogEntryParams): void;
 }
 
 interface ConditionBase {
@@ -743,7 +759,7 @@ interface ConditionsBase {
   warning_str: XmlElem<string>;
   error_str: XmlElem<string>;
   is_false: XmlElem<boolean>;
-  error_eval(): any;
+  error_eval(): void;
 }
 
 interface PersonFillingBase {
@@ -762,12 +778,12 @@ interface PersonFillingBase {
 }
 
 interface PersonForeignBase {
-  person_fullname(): any;
-  person_position_name(): any;
-  person_org_name(): any;
-  person_subdivision_name(): any;
-  person_instance_id(): any;
-  person_code(): any;
+  person_fullname(): XmlElem<string>;
+  person_position_name(): XmlElem<string>;
+  person_org_name(): XmlElem<string>;
+  person_subdivision_name(): XmlElem<string>;
+  person_instance_id(): XmlElem<string>;
+  person_code(): XmlElem<string>;
 }
 
 interface ServerBase {
@@ -830,7 +846,7 @@ interface ViewColumnsBaseColumn {
   bk_color: XmlElem<string>;
   text_color: XmlElem<string>;
   tile_items: XmlMultiElem<ViewColumnsBaseColumnTileItem>;
-  order_field(): any;
+  order_field(): string;
 }
 
 interface ViewColumnsBase {
@@ -871,7 +887,7 @@ interface ExpenseDistributionBaseExpenseItem {
 
 interface ExpenseDistributionBase {
   expense_items: XmlMultiElem<ExpenseDistributionBaseExpenseItem>;
-  expense_item_sum(): any;
+  expense_item_sum(): number;
 }
 
 interface ExchangeListsBaseObjectResourceType {
@@ -1055,7 +1071,7 @@ interface PathSubsBasePathSub {
 
 interface PathSubsBase {
   path_subs: XmlMultiElem<PathSubsBasePathSub>;
-  filling_path_subs(): any;
+  filling_path_subs(): XmlMultiElem<PathSubsBasePathSub>;
 }
 
 interface AssessmentScaleValueScale {
@@ -1107,24 +1123,24 @@ interface LastAttemptTestLearningsBase {
 
 interface DescBaseDesc {
   id: XmlElem<string>;
-  variant: XmlElem<any>;
+  variant: XmlElem<unknown>;
   desc_temp: XmlElem<string>;
   desc_temp_dir: XmlElem<string>;
   desc_updated: XmlElem<boolean>;
   desc_show: XmlElem<boolean>;
   desc_field_name: XmlElem<string>;
-  desc_cleanup(): any;
-  desc_startup(): any;
-  desc_update_hyper_object(): any;
-  desc_save(): any;
-  desc_destroy(): any;
+  desc_cleanup(): void;
+  desc_startup(source: string): void;
+  desc_update_hyper_object(): void;
+  desc_save(): void;
+  desc_destroy(): void;
 }
 
 interface DescBase {
   descs: XmlMultiElem<DescBaseDesc>;
-  desc_update_hyper_object(): any;
-  desc_save(): any;
-  get_desc(): any;
+  desc_update_hyper_object(): void;
+  desc_save(descOffParam: boolean): void;
+  get_desc(): XmlElem<DescBaseDesc>;
 }
 
 interface AccessBlockBaseStructureItemItemItem {
@@ -1408,7 +1424,7 @@ interface FieldNameBase {
   name: XmlElem<string>;
   title: XmlElem<string>;
   type: XmlElem<string>;
-  foreign_array: XmlElem<any>;
+  foreign_array: XmlElem<unknown>;
   foreign_catalog: XmlElem<string>;
   value_int: XmlElem<number>;
   is_custom_field: XmlElem<boolean>;
@@ -1511,6 +1527,17 @@ interface CustomReportBaseSort {
   asc: XmlElem<boolean>;
 }
 
+interface ExtractVolativeDataResult {
+  c: unknown[];
+  iv: unknown;
+  exid: null;
+  sort: number;
+  dir: boolean;
+  chart: number;
+  // eslint-disable-next-line no-magic-numbers
+  _chsh: string | 0;
+}
+
 interface CustomReportBase extends CriterionBase, ColumnBase, ChartReportGraphBase {
   object_name_type: XmlElem<string>;
   object_name: XmlElem<string>;
@@ -1519,7 +1546,7 @@ interface CustomReportBase extends CriterionBase, ColumnBase, ChartReportGraphBa
   custom_x: XmlElem<string>;
   show_table: XmlElem<boolean>;
   show_chart: XmlElem<boolean>;
-  report_result: XmlElem<any>;
+  report_result: XmlElem<unknown>;
   report_result_date: XmlElem<Date>;
   report_result_author: XmlElem<string>;
   performance_launch_time: XmlElem<Date>;
@@ -1535,10 +1562,11 @@ interface CustomReportBase extends CriterionBase, ColumnBase, ChartReportGraphBa
   aggregations: XmlMultiElem<CustomReportBaseAggregation>;
   view_temp: XmlElem<CustomReportBaseViewTemp>;
   sort: XmlElem<CustomReportBaseSort>;
-  get_report_data(): any;
-  get_crit_hash(): any;
-  extractVolatileData(): any;
-  condenseVolatileData(): any;
+  get_report_data(reportId: number, userId: number): XmlTopElem;
+  // eslint-disable-next-line no-magic-numbers
+  get_crit_hash(): string | 0;
+  extractVolatileData(): ExtractVolativeDataResult;
+  condenseVolatileData(param: ExtractVolativeDataResult): void;
 }
 
 interface KnowledgePartsFieldsBaseKnowledgePart {
@@ -1591,7 +1619,7 @@ interface KnowledgePartsBaseOld {
 
 interface CustomElemsBaseCustomElem {
   name: XmlElem<string>;
-  value: XmlElem<any>;
+  value: XmlElem<string>;
 }
 
 interface CustomElemsBaseCustomReportFiction extends CustomReportBase {
@@ -1647,7 +1675,7 @@ interface TableDataBaseExtended {
   tab_selector_type: XmlElem<string>;
   excel_file_url: XmlElem<string>;
   data: XmlElem<TableDataBase>;
-  fnGetFile(): any;
+  fnGetFile(fileId: number): string;
 }
 
 interface ObjectiveBase {
@@ -1670,7 +1698,7 @@ interface InteractionBase {
 }
 
 interface AnnalsObjectsBaseObjectDataSectionItemlistSectionitem {
-  ident: XmlElem<any>;
+  ident: XmlElem<unknown>;
 }
 
 interface AnnalsObjectsBaseObjectDataSectionItemlist {
@@ -1678,10 +1706,10 @@ interface AnnalsObjectsBaseObjectDataSectionItemlist {
 }
 
 interface AnnalsObjectsBaseObjectDataSection {
-  ident: XmlElem<any>;
-  viewed: XmlElem<any>;
-  answered: XmlElem<any>;
-  completed: XmlElem<any>;
+  ident: XmlElem<unknown>;
+  viewed: XmlElem<unknown>;
+  answered: XmlElem<unknown>;
+  completed: XmlElem<unknown>;
   timestamp: XmlElem<string>;
   latency: XmlElem<string>;
   duration: XmlElem<string>;
@@ -1689,17 +1717,17 @@ interface AnnalsObjectsBaseObjectDataSection {
 }
 
 interface AnnalsObjectsBaseObjectDataItemAttempt {
-  timestamp: XmlElem<any>;
-  timevalue: XmlElem<any>;
-  latency: XmlElem<any>;
-  latencyvalue: XmlElem<any>;
-  status: XmlElem<any>;
+  timestamp: XmlElem<unknown>;
+  timevalue: XmlElem<unknown>;
+  latency: XmlElem<unknown>;
+  latencyvalue: XmlElem<unknown>;
+  status: XmlElem<unknown>;
 }
 
 interface AnnalsObjectsBaseObjectDataItemObjectivesObj {
-  id: XmlElem<any>;
-  type: XmlElem<any>;
-  value: XmlElem<any>;
+  id: XmlElem<unknown>;
+  type: XmlElem<unknown>;
+  value: XmlElem<unknown>;
 }
 
 interface AnnalsObjectsBaseObjectDataItemObjectives {
@@ -1707,17 +1735,17 @@ interface AnnalsObjectsBaseObjectDataItemObjectives {
 }
 
 interface AnnalsObjectsBaseObjectDataItem {
-  ident: XmlElem<any>;
-  viewed: XmlElem<any>;
-  answered: XmlElem<any>;
-  completed: XmlElem<any>;
-  status: XmlElem<any>;
-  type: XmlElem<any>;
-  itemnumber: XmlElem<any>;
-  scoring: XmlElem<any>;
-  shuffle: XmlElem<any>;
-  maxnumber: XmlElem<any>;
-  minnumber: XmlElem<any>;
+  ident: XmlElem<unknown>;
+  viewed: XmlElem<unknown>;
+  answered: XmlElem<unknown>;
+  completed: XmlElem<unknown>;
+  status: XmlElem<unknown>;
+  type: XmlElem<unknown>;
+  itemnumber: XmlElem<unknown>;
+  scoring: XmlElem<unknown>;
+  shuffle: XmlElem<unknown>;
+  maxnumber: XmlElem<unknown>;
+  minnumber: XmlElem<unknown>;
   timestamp: XmlElem<string>;
   latency: XmlElem<string>;
   duration: XmlElem<string>;
@@ -1727,46 +1755,46 @@ interface AnnalsObjectsBaseObjectDataItem {
 }
 
 interface AnnalsObjectsBaseObjectDataObjective {
-  ident: XmlElem<any>;
-  type: XmlElem<any>;
-  value: XmlElem<any>;
+  ident: XmlElem<unknown>;
+  type: XmlElem<unknown>;
+  value: XmlElem<unknown>;
 }
 
 interface AnnalsObjectsBaseObjectDataAssessment {
-  ident: XmlElem<any>;
-  viewed: XmlElem<any>;
-  answered: XmlElem<any>;
-  completed: XmlElem<any>;
+  ident: XmlElem<unknown>;
+  viewed: XmlElem<unknown>;
+  answered: XmlElem<unknown>;
+  completed: XmlElem<unknown>;
   timestamp: XmlElem<string>;
   latency: XmlElem<string>;
   duration: XmlElem<string>;
 }
 
 interface AnnalsObjectsBaseObjectDataActiveTask {
-  ident: XmlElem<any>;
+  ident: XmlElem<unknown>;
 }
 
 interface AnnalsObjectsBaseObjectDataActive {
-  screen: XmlElem<any>;
+  screen: XmlElem<unknown>;
   task: XmlElem<AnnalsObjectsBaseObjectDataActiveTask>;
 }
 
 interface AnnalsObjectsBaseObjectDataSequenceScreenTask {
-  ident: XmlElem<any>;
-  num: XmlElem<any>;
-  layout: XmlElem<any>;
-  secnum: XmlElem<any>;
+  ident: XmlElem<unknown>;
+  num: XmlElem<unknown>;
+  layout: XmlElem<unknown>;
+  secnum: XmlElem<unknown>;
 }
 
 interface AnnalsObjectsBaseObjectDataSequenceScreen {
-  num: XmlElem<any>;
-  type: XmlElem<any>;
+  num: XmlElem<unknown>;
+  type: XmlElem<unknown>;
   task: XmlElem<AnnalsObjectsBaseObjectDataSequenceScreenTask>;
 }
 
 interface AnnalsObjectsBaseObjectDataSequence {
-  type: XmlElem<any>;
-  select: XmlElem<any>;
+  type: XmlElem<unknown>;
+  select: XmlElem<unknown>;
   screen: XmlElem<AnnalsObjectsBaseObjectDataSequenceScreen>;
 }
 
@@ -1780,7 +1808,7 @@ interface AnnalsObjectsBaseObjectData {
 }
 
 interface AnnalsObjectsBaseObject {
-  id: XmlElem<any>;
+  id: XmlElem<unknown>;
   attempt_id: XmlElem<string>;
   file: XmlElem<string>;
   objtype: XmlElem<string>;
@@ -1816,7 +1844,7 @@ interface CoreLessonInfoBase {
   learning_part_id: XmlElem<number>;
   core_lesson_changed: XmlElem<boolean>;
   core_lesson_filled: XmlElem<boolean>;
-  filing_learning_part(): any;
+  filing_learning_part(setChangedParam: boolean): void;
 }
 
 interface LearningAssessmentBase extends AnnalsObjectsBase {
@@ -1908,7 +1936,7 @@ interface WebVariablesBaseWvar {
 interface WebVariablesBase {
   wvars_selector: XmlElem<string>;
   wvars: XmlMultiElem<WebVariablesBaseWvar>;
-  wvars_num(): any;
+  wvars_num(): number;
 }
 
 interface EducGroupsBaseEducGroupCollaborator extends PersonFillingBase {
@@ -1958,7 +1986,7 @@ interface CostCentersBaseCostCenter {
   cost_center_id: XmlElem<number>;
   person_num: XmlElem<number>;
   expense_items: XmlMultiElem<CostCentersBaseCostCenterExpenseItem>;
-  sum(): any;
+  sum(): number;
 }
 
 interface CostCentersBase {
@@ -2116,7 +2144,7 @@ interface PathPlacesBasePathPlace {
 interface PathPlacesBase {
   old_id: XmlElem<number>;
   path_places: XmlMultiElem<PathPlacesBasePathPlace>;
-  filling_path_places(): any;
+  filling_path_places(): XmlMultiElem<PathPlacesBasePathPlace>;
 }
 
 interface DownloadPackageBase {
@@ -2226,7 +2254,7 @@ interface TalentPoolFuncManagersBaseTalentPoolFuncManager extends PersonFillingB
 
 interface TalentPoolFuncManagersBase {
   talent_pool_func_managers: XmlMultiElem<TalentPoolFuncManagersBaseTalentPoolFuncManager>;
-  obtain_talent_pool_func_manager_by_id(): any;
+  obtain_talent_pool_func_manager_by_id(personId: number, isNative: boolean): void;
 }
 
 interface SocialObjectAccessBase {
@@ -2319,8 +2347,8 @@ interface CustomDatasBaseCustomData {
 
 interface CustomDatasBase {
   custom_datas: XmlMultiElem<CustomDatasBaseCustomData>;
-  get_custom_data(): any;
-  set_custom_data(): any;
+  get_custom_data(name: string): null | string;
+  set_custom_data(name: string, value: string): true;
 }
 
 interface SelectLearningOptionBase {
@@ -2547,12 +2575,12 @@ interface SubdivisionGroupSubdivisions {
 }
 
 interface OutstaffPeriodsBase {
-  periods: XmlMultiElem<any>;
-  materials: XmlMultiElem<any>;
+  periods: XmlMultiElem<OutstaffPeriodsBasePeriod>;
+  materials: XmlMultiElem<OutstaffPeriodsBaseMaterial>;
 }
 
 interface SpxmlUnibridgeConfig {
-  appSettings: XmlMultiElem<XmlElem<any>>;
+  appSettings: XmlMultiElem<XmlElem<unknown>>;
 }
 
 interface Session extends Object {

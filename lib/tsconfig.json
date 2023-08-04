@@ -9,6 +9,7 @@
     "types": [],
     "strict": true,
     "noLib": true,
+    "noEmit": true,
     "outDir": "../build"
   },
   "include": [

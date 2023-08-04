@@ -8,7 +8,6 @@ interface Thread {
    * Объект типа Object, используемый для хранения произвольных параметров.
    * Обычно параметры устанавливаются перед запуском потока, после чего код,
    * выполняемый в потоке, использует их.
-   *
    * Параметр не является thread-safe, поэтому код, запускающий поток,
    * не должен обращаться к ним после запуска потока.
    */
@@ -16,26 +15,30 @@ interface Thread {
 
   /**
    * Запускает выполнения потока из заданного кода.
-   * @param code строка, содержащая код (String).
-   * @xample
-   * thread = new Thread;
-   * thread.EvalCode( 'lib_backup.run_backup()' );
+   * @param {string} code - Строка, содержащая код.
+   * @example
+   * ```
+   * const thread = new Thread;
+   * thread.EvalCode("lib_backup.run_backup()");
+   * ```
    */
   EvalCode(code: string): void;
 
   /**
-   * Запускает выполнения потока из кода, загруженного из заданного url.
-   * @param url url, содержащий код (String).
+   * Запускает выполнения потока из кода, загруженного из заданного `URL`.
+   * @param {string} url - `URL`, содержащий код.
    * @example
-   * thread = new Thread;
-   * thread.EvalCodeUrl( 'rcr_agent.js' );
+   * ```
+   * const thread = new Thread;
+   * thread.EvalCodeUrl("rcr_agent.js");
+   * ```
    */
-  EvalCodeUrl(url: string): any;
+  EvalCodeUrl(url: string): unknown;
 }
 
 interface ThreadConstructor {
-  new(...arg: any): Thread;
-  (...arg: any): Thread;
+  new(): Thread;
+  (): Thread;
 }
 
 /**
