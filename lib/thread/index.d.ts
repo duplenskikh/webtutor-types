@@ -17,7 +17,7 @@ interface Thread {
   /**
    * Запускает выполнения потока из заданного кода.
    * @param code строка, содержащая код (String).
-   * @xample
+   * @example
    * thread = new Thread;
    * thread.EvalCode( 'lib_backup.run_backup()' );
    */

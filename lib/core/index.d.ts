@@ -4,7 +4,7 @@
  * @param {string} arg - Контрольная сумма.
  * @returns {boolean}
  * ```
- * @xample
+ * @example
  * CheckPamMd5(str,arg)
  * ```
  */
@@ -1299,7 +1299,7 @@ declare function LoadUrlText(url: string): string;
  * Существование объекта под указанным url не проверяется.
  * @param {string} url - Строка с URL.
  * @returns {boolean}
- * @xample
+ * @example
  * ```
  * IsAbsoluteUrlStr("http://www.ya.ru/search.htm") === true
  * ```
@@ -1323,7 +1323,7 @@ declare function PutUrlData(url: string, dataStr: string): undefined;
  * @param {string} path - Путь файловой системы.
  * @param {string} baseUrl - Базовый `URL`, к схеме которого будет приводиться путь.
  * @returns {string}
- * @xample
+ * @example
  * ```
  * FilePathToUrl("C:\\Temp\\1.htm") == "file:///C:/Temp/1.htm"
  * ```
