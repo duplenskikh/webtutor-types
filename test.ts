@@ -1,13 +1,13 @@
-/* eslint-disable no-magic-numbers */
-const doc = tools.open_doc<CollaboratorDocument>(1);
 
-// doc?.TopElem.name.LoadDataFromUrl():
-// doc?.TopElem.name.LoadData();
+function main() {
+  const doc = tools.open_doc<CareerReserveDocument>(1);
+  const activity = ArrayOptFind(doc?.TopElem.tasks!, "some_expression");
 
-// CallObjectMethod()
-// declareElemsToStr();
+  const str = "hello";
 
-// tools.replace_temlate_tags()
+  if (IsArray(str)) {
+    return str;
+  }
 
-
-tools.create_notification("code", 1, doc);
+  return str;
+}
