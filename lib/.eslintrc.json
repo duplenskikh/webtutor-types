@@ -21,7 +21,7 @@
   "rules": {
     "no-var": "off",
     "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-explicit-any": "error",
     "semi": "off",
     "@typescript-eslint/semi": "error",
     "quotes": ["error", "double"],
