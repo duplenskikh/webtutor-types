@@ -620,7 +620,7 @@ declare function IsArray<T>(value: unknown): value is T[];
  * @param {string} name - Имя элемента, являющегося  ключом.
  * @returns {Array}
  */
-declare function ArraySelectBySortedKey<T>(array: T[], value: string, name: string): T[];
+declare function ArraySelectBySortedKey<T>(array: T, value: string, name: string): T;
 
 /**
  * Выбирает элементы массива, с определенным значением заданного поля (ключа) внутри элемента. Функция аналогична более универсальной функции ArraySelect(), но работает быстрее.
@@ -629,7 +629,7 @@ declare function ArraySelectBySortedKey<T>(array: T[], value: string, name: stri
  * @param {string} name - Имя элемента, являющегося ключом. Необязательный аргумент. Если имя ключа не указано, используется первичный ключ.
  * @returns {Array}
  */
-declare function ArraySelectByKey<T>(array: T, value: string | number, name: string): T extends XmMultiElem<infer U> ? T : T[];
+declare function ArraySelectByKey<T>(array: T, value: string | number, name: string): T;
 
 /**
  * Сортирует массив по заданным полям. Возвращает новый массив отсортированных значений. Функция требует нечетного чилса аргументов (не менее 3-х), для каждого нового уровня сортировки добаляется 2 новых аргумента.
@@ -642,7 +642,7 @@ declare function ArraySelectByKey<T>(array: T, value: string | number, name: str
  * ArraySort( array, 'name', '+', 'date', '-' ).
  */
 
-declare function ArraySort<T>(array: T, field: string, direction: string, ...args: string[]): T[];
+declare function ArraySort<T>(array: T, field: string, direction: string, ...args: string[]): T;
 
 /**
  * Возвращает сумму значений определенного поля по всем элементам массива.
