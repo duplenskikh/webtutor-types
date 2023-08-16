@@ -629,7 +629,7 @@ declare function ArraySelectBySortedKey<T>(array: T[], value: string, name: stri
  * @param {string} name - Имя элемента, являющегося ключом. Необязательный аргумент. Если имя ключа не указано, используется первичный ключ.
  * @returns {Array}
  */
-declare function ArraySelectByKey<T>(array: T, value: string | number, name: string): T[];
+declare function ArraySelectByKey<T>(array: T, value: string | number, name: string): T extends XmMultiElem<infer U> ? T : T[];
 
 /**
  * Сортирует массив по заданным полям. Возвращает новый массив отсортированных значений. Функция требует нечетного чилса аргументов (не менее 3-х), для каждого нового уровня сортировки добаляется 2 новых аргумента.
