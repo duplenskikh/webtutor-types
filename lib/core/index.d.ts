@@ -423,7 +423,7 @@ declare function ArrayMerge<T>(array: T[] | XmlMultiElem<T>, elemExpr: string, d
  * @param {string} [fieldExpr2] - Выражение, вычисляемое относительно каждого элемента массива 2 и возвращающее значение ключа для сравнения. Необязательный аргумент. Если аргумент не указан, используется значение самого элемента (This).
  * @returns {Array}
  */
-declare function ArrayIntersect<T, K>(array1: T[] | XmlMultiElem<T> , array2: K[] | XmlMultiElem<K>, fieldExpr1?: string, fieldExpr2?: string): T[];
+declare function ArrayIntersect<T, K>(array1: T[] | XmlMultiElem<T>, array2: K[] | XmlMultiElem<K>, fieldExpr1?: string, fieldExpr2?: string): T[];
 
 /**
  * Возвращает первый элемент заданного массива. Если массив не содержит ни одного элемента,
