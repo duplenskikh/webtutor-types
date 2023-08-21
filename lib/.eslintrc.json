@@ -22,6 +22,7 @@
     "no-var": "off",
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-unused-vars": "error",
     "semi": "off",
     "@typescript-eslint/semi": "error",
     "quotes": ["error", "double"],
