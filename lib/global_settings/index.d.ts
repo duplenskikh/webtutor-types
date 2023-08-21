@@ -1,14 +1,14 @@
 // TODO: need ref
 declare namespace global_settings {
   var first_install: boolean;
-  var branch_code: any;
+  var branch_code: unknown;
   var skk_code: string;
   var old_skk_code: string;
   var smtp_server: string;
   var default_exchange_server_id: number | null;
   var settings: {
     default_web_design_id: number,
-    web_designs: any,
+    web_designs: unknown,
     portal_base_url: string,
     use_personal_chat_global_policy: boolean,
     personal_chat_confirmation_required: boolean,
@@ -20,7 +20,7 @@ declare namespace global_settings {
     login_domen_sensitive: boolean,
     use_auth_session: boolean,
     auth_session_life_time: number,
-    template_cache_type: any,
+    template_cache_type: unknown,
     use_web_rules: true,
     web_rules: {
       exclude_path_list: string
@@ -31,17 +31,17 @@ declare namespace global_settings {
     disp_wellcome_screen: boolean,
     disp_anonymous_polls: boolean,
     check_user_required_fields: boolean,
-    required_fields: any,
+    required_fields: unknown,
     web_api_settings: {
       use_api: boolean,
       access_person_id: number,
       allowed_ip: string,
-      filters: any
+      filters: unknown
     },
     mobile: {
       document_reader: {
         menu_code: string,
-        days_credentials_update: any,
+        days_credentials_update: unknown,
         use_favorites: boolean,
         use_search: boolean,
         confirmation: string,
@@ -52,12 +52,12 @@ declare namespace global_settings {
     default_contact_type_id: number,
     default_contact_result_id: number,
     allow_self_register: boolean,
-    self_register_group_id: any,
+    self_register_group_id: unknown,
     web_banned_self_register: boolean,
     self_register_disp_custom_elems: boolean,
     self_register_disp_subs: boolean,
-    self_register_org_id: any,
-    self_register_subdivision_id: any,
+    self_register_org_id: unknown,
+    self_register_subdivision_id: unknown,
     self_register_position_name: string,
     self_register_use_position_commons: boolean,
     eval_post_registration_script: boolean,
@@ -66,12 +66,12 @@ declare namespace global_settings {
     prev_registration_script: string,
     script_create_login: boolean,
     script_create_password: boolean,
-    vclass_hosts: any,
+    vclass_hosts: unknown,
     library: {
       options: {
         ignore_before_first: boolean
       },
-      cut_markers: any
+      cut_markers: unknown
     },
     save_exchange_data_files: boolean,
     auto_exchange_data: boolean,
@@ -93,7 +93,7 @@ declare namespace global_settings {
     default_cost_center_id: number,
     default_expense_item_id: number,
     cost_center_priority: string,
-    timezone_id: any,
+    timezone_id: unknown,
     auto_select_status_edu_plan: boolean,
     soft_kill_before_regenerate: boolean,
     check_wf_access_assessment: boolean,
@@ -110,7 +110,7 @@ declare namespace global_settings {
       send_attempt_num: number
     },
     default_lng: string,
-    lngs: any,
+    lngs: unknown,
     recruitment: {
       default_request_type_id: number,
       estaff_server_url: string,
@@ -120,7 +120,7 @@ declare namespace global_settings {
     },
     delete_unused_resource: boolean,
     admin_not_auth: boolean,
-    default_event_result_type_id: any,
+    default_event_result_type_id: unknown,
     disp_log_web_request: boolean,
     log_web_request_rec_unloged: boolean,
     web_request_logging_str: string,
@@ -154,7 +154,7 @@ declare namespace global_settings {
     },
     key_position_threat_script: string,
     ppm_matrix: {
-      rows: any
+      rows: unknown
     },
     statistics: {
       calculate_statistics: boolean,
@@ -173,9 +173,9 @@ declare namespace global_settings {
     default_webinar_system_id: number,
     lds_url_pattern: string,
     outstaff: {
-      periods: any,
-      materials: any,
-      outstaff_boss_types: any,
+      periods: unknown,
+      materials: unknown,
+      outstaff_boss_types: unknown,
       boss_type_id: number
     },
     send_learning_additional_info: boolean,
@@ -194,7 +194,7 @@ declare namespace global_settings {
         use_custom_project_task_status: boolean,
         use_custom_project_task_icon: boolean
       },
-      project_task_status_types: any,
+      project_task_status_types: unknown,
       project_task_icon_script: string
     },
     server_agent_time_start: boolean,
@@ -204,15 +204,15 @@ declare namespace global_settings {
       access_setting: string
     },
     knowlcntrl: {
-      default_expert_id: any
+      default_expert_id: unknown
     },
     brute_password_check: boolean,
-    brute_password_count: any,
-    brute_password_period: any,
+    brute_password_count: unknown,
+    brute_password_period: unknown,
     lds: {
       brute_password_check: boolean,
-      brute_password_count: any,
-      brute_password_period: any
+      brute_password_count: unknown,
+      brute_password_period: unknown
     },
     design_vscode_save_default: string,
     design_vscode_access: string;

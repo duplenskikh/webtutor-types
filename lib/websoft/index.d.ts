@@ -1,21 +1,21 @@
 declare namespace Websoft {
   namespace Office {
     /**
-     * Библиотека для работы с документами Microsoft Office Excel
+     * Библиотека для работы с документами Microsoft Office Excel.
      */
     namespace Excel {
 
       /**
-       * Описание границы ячейки
+       * Описание границы ячейки.
        */
       class Border {
         /**
-         * Цвет границы
+         * Цвет границы.
          */
         Color: string;
 
         /**
-         * Стиль границы
+         * Стиль границы.
          */
         LineStyle: "None"
         | "DashDot"
@@ -33,12 +33,12 @@ declare namespace Websoft {
         | "Thin";
 
         /**
-         * Используется для получения последней произошедшей ошибки
+         * Используется для получения последней произошедшей ошибки.
          */
         GetError(): string;
 
         /**
-         * Используется для получения версии компонента
+         * Используется для получения версии компонента.
          */
         GetVersion(): string;
       }
@@ -49,7 +49,7 @@ declare namespace Websoft {
       class Borders {
         /**
          * Получает описание границы указанного типа.
-         * @param string borderType
+         * @param string - BorderType.
          */
         GetBorder(
           borderType: "LeftBorder"
@@ -63,12 +63,12 @@ declare namespace Websoft {
         ): Border;
 
         /**
-         * Используется для получения последней произошедшей ошибки
+         * Используется для получения последней произошедшей ошибки.
          */
         GetError(): string;
 
         /**
-         * Используется для получения версии компонента
+         * Используется для получения версии компонента.
          */
         GetVersion(): string;
 
@@ -78,7 +78,7 @@ declare namespace Websoft {
         SetColor(color: string): void;
 
         /**
-         * Устанавливает стиль границ ячейки
+         * Устанавливает стиль границ ячейки.
          */
         SetStyle(
           borderType: "None"
@@ -100,44 +100,44 @@ declare namespace Websoft {
 
       class Cell {
         /**
-         * Формула
+         * Формула.
          */
         Formula: string;
         /**
-         * Значение в формате HTML
+         * Значение в формате HTML.
          */
         HtmlString: string;
         /**
-         * Является ли ячейка объединенной с другими
+         * Является ли ячейка объединенной с другими.
          */
         readonly IsMerged: boolean;
         /**
-         * Количество картинок в ячейке
+         * Количество картинок в ячейке.
          */
         readonly PicturesCount: number;
         /**
-         * Стиль ячейки
+         * Стиль ячейки.
          */
         readonly Style: Style;
         /**
-         * Значение ячейки
+         * Значение ячейки.
          */
         Value: string;
 
         /**
-         * Используется для получения последней произошедшей ошибки
-         * @returns Текст последней произошедшей ошибки
+         * Используется для получения последней произошедшей ошибки.
+         * @returns Текст последней произошедшей ошибки.
          */
         GetError(): string;
         /**
-         * Получить картинку
-         * @param System.Int32 Порядковый номер изображения
-         * @returns Изображение
+         * Получить картинку.
+         * @param System.Int32 - Порядковый номер изображения.
+         * @returns Изображение.
          */
         GetPicture(index: number): Drawing.Picture;
         /**
-         * Используется для получения версии компонента
-         * @returns Версия компонента
+         * Используется для получения версии компонента.
+         * @returns Версия компонента.
          */
         GetVersion(): string;
       }
@@ -158,71 +158,71 @@ declare namespace Websoft {
         Rows: Rows;
 
         /**
-         * Выбирает диапазон ячеек для массового управления
-         * @param rangeCells Диапазон ячеек в формате "A1:B9"
+         * Выбирает диапазон ячеек для массового управления.
+         * @param rangeCells - Диапазон ячеек в формате "A1:B9".
          */
         CreateRange(rangeCells: string): Range;
 
         /**
-         * Получает ячейку по указанному расположению
-         * @param cellName Расположение
+         * Получает ячейку по указанному расположению.
+         * @param cellName - Расположение.
          */
         GetCell(cellName: string): Cell;
 
         /**
-         * Используется для получения последней произошедшей ошибки
+         * Используется для получения последней произошедшей ошибки.
          */
         GetError(): string;
 
         /**
-         * Используется для получения версии компонента
+         * Используется для получения версии компонента.
          */
         GetVersion(): string;
 
         /**
-         * Скрывает колонку
-         * @param number Номер колонки
+         * Скрывает колонку.
+         * @param number - Номер колонки.
          */
         HideColumn(number: number): void;
 
         /**
-         * Скрывает строку
-         * @param number Номер строки
+         * Скрывает строку.
+         * @param number - Номер строки.
          */
         HideRow(number: number): void;
 
         /**
-         * Объединяет указанные ячейки
-         * @param firstRow Номер строки
-         * @param firstColumn Номер колонки
-         * @param totalRows Количество строк
-         * @param totalColumns Количество колонок
+         * Объединяет указанные ячейки.
+         * @param firstRow - Номер строки.
+         * @param firstColumn - Номер колонки.
+         * @param totalRows - Количество строк.
+         * @param totalColumns - Количество колонок.
          */
         // eslint-disable-next-line no-magic-numbers
         Merge(firstRow: number, firstColumn: number, totalRows: number, totalColumns: number): 1 | 0;
 
         /**
-         * Устанавливает ширину колонки
-         * @param columnNum Номер колонки
-         * @param width Ширина (Double)
+         * Устанавливает ширину колонки.
+         * @param columnNum - Номер колонки.
+         * @param width - Ширина (Double).
          */
         // eslint-disable-next-line no-magic-numbers
         SetColumnWidth(columnNum: number, width: number): 1 | 0;
 
         /**
-         * Устанавливает ширину строки
-         * @param rowNum Номер строки
-         * @param width Ширина (Double)
+         * Устанавливает ширину строки.
+         * @param rowNum - Номер строки.
+         * @param width - Ширина (Double).
          */
         // eslint-disable-next-line no-magic-numbers
         SetRowHeight(rowNum: number, width: number): 1 | 0;
 
         /**
-         * Разъединяет указанные ячейки
-         * @param firstRow Номер строки
-         * @param firstColumn Номер колонки
-         * @param totalRows Количество строк
-         * @param totalColumns Количество колонок
+         * Разъединяет указанные ячейки.
+         * @param firstRow - Номер строки.
+         * @param firstColumn - Номер колонки.
+         * @param totalRows - Количество строк.
+         * @param totalColumns - Количество колонок.
          */
         // eslint-disable-next-line no-magic-numbers
         UnMerge(firstRow: number, firstColumn: number, totalRows: number, totalColumns: number): 1 | 0;
@@ -235,12 +235,12 @@ declare namespace Websoft {
         Width: number;
 
         /**
-         * Используется для получения последней произошедшей ошибки
+         * Используется для получения последней произошедшей ошибки.
          */
         GetError(): string;
 
         /**
-         * Используется для получения версии компонента
+         * Используется для получения версии компонента.
          */
         GetVersion(): string;
       }
@@ -248,91 +248,91 @@ declare namespace Websoft {
       class Columns {
         /**
          * Получает {@link Columns | колонку} по указанному номеру.
-         * @param index Номер колонки
+         * @param index - Номер колонки.
          *
          */
         GetColumn(index: number): Column;
 
         /**
-         * Используется для получения последней произошедшей ошибки
+         * Используется для получения последней произошедшей ошибки.
          */
         GetError(): string;
 
         /**
-         * Используется для получения версии компонента
+         * Используется для получения версии компонента.
          */
         GetVersion(): string;
       }
 
       /**
-       * Класс для работы с документом Microsoft Excel
+       * Класс для работы с документом Microsoft Excel.
        */
       class Document {
         /**
-         * Количество страниц
+         * Количество страниц.
          */
         readonly WorkSheetsCount: number;
 
         /**
-         * Создает новый лист
+         * Создает новый лист.
          */
         AddWorksheet(): Worksheet;
 
         /**
-         * Закрывает документ
+         * Закрывает документ.
          */
         // eslint-disable-next-line no-magic-numbers
         Close(): 0 | 1;
 
         /**
-         * Создает книгу Excel
+         * Создает книгу Excel.
          */
         // eslint-disable-next-line no-magic-numbers
         CreateWorkBook(): 0 | 1;
 
         /**
-         * Используется для получения последней произошедшей ошибки
+         * Используется для получения последней произошедшей ошибки.
          */
         GetError(): string;
 
         /**
-         * Используется для получения версии компонента
+         * Используется для получения версии компонента.
          */
         GetVersion(): string;
 
         /**
-         * Получает значение листа по номеру
-         * @param index Порядковый номер листа
+         * Получает значение листа по номеру.
+         * @param index - Порядковый номер листа.
          */
         GetWorksheet(index: number): Worksheet;
 
         /**
-         * Загружает данные в формате HTML из указанного файла
-         * @param filePath Путь до файла в формате HTML
-         * @param resourcesDirectoryName Название папки с ресурсами (изображения, стили и т.д.)
+         * Загружает данные в формате HTML из указанного файла.
+         * @param filePath - Путь до файла в формате HTML.
+         * @param resourcesDirectoryName - Название папки с ресурсами (изображения, стили и т.д.).
          *
          */
         // eslint-disable-next-line no-magic-numbers
         LoadHtmlFile(filePath: string, resourcesDirectoryName: string): 0 | 1;
 
         /**
-         * Загружает данные в формате HTML из строки
-         * @param htmlText Переменная, содержащаю строку в формате HTML
-         * @param resourcesDirectoryName Название папки с ресурсами (изображения, стили и т.д.)
+         * Загружает данные в формате HTML из строки.
+         * @param htmlText - Переменная, содержащаю строку в формате HTML.
+         * @param resourcesDirectoryName - Название папки с ресурсами (изображения, стили и т.д.).
          *
          */
         // eslint-disable-next-line no-magic-numbers
         LoadHtmlString(htmlText: string, resourcesDirectoryName: string): 0 | 1;
 
         /**
-         * Открывает файл Microsoft Excel
-         * @param filePath Путь до файла
+         * Открывает файл Microsoft Excel.
+         * @param filePath - Путь до файла.
          */
         // eslint-disable-next-line no-magic-numbers
         Open(filePath: string): 1 | 0;
 
         /**
-         * Сохраняет текущий документ
+         * Сохраняет текущий документ.
          */
         // eslint-disable-next-line no-magic-numbers
         Save(): 1 | 0;
@@ -340,8 +340,8 @@ declare namespace Websoft {
         /**
          * Сохраняет документ по указанному пути.
          * Формат определяется по расширению имени файла в пути сохранения.
-         * Доступные форматы: CSV, ODS, TIFF, SVG, PDF, MHTML, HTML
-         * @param newPath Путь сохранения, включая имя файла
+         * Доступные форматы: CSV, ODS, TIFF, SVG, PDF, MHTML, HTML.
+         * @param newPath - Путь сохранения, включая имя файла.
          */
         // eslint-disable-next-line no-magic-numbers
         SaveAs(newPath: string): 1 | 0;
@@ -366,7 +366,7 @@ declare namespace Websoft {
         Orientation: "Landscape" | "Portrait";
 
         /**
-         * Размер страницы для печати
+         * Размер страницы для печати.
          */
         PaperSize: "PaperLetter"
         | "PaperLetterSmall"
@@ -488,13 +488,13 @@ declare namespace Websoft {
         | "PaperBusinessCard";
 
         /**
-         * Используется для получения последней произошедшей ошибки
-         * @returns Текст последней произошедшей ошибки
+         * Используется для получения последней произошедшей ошибки.
+         * @returns Текст последней произошедшей ошибки.
          */
         GetError(): string;
         /**
-         * Используется для получения версии компонента
-         * @returns Версия компонента
+         * Используется для получения версии компонента.
+         * @returns Версия компонента.
          */
         GetVersion(): string;
       }
@@ -547,7 +547,7 @@ declare namespace Websoft {
          */
         IsTextWrapped: boolean;
         /**
-         * Номер стиля и формата в таблице. Описание можно посмотреть тут: http://www.aspose.com/docs/display/cellsnet/Setting+Display+Formats+of+Numbers+and+Dates
+         * Номер стиля и формата в таблице. Описание можно посмотреть тут: http://www.aspose.com/docs/display/cellsnet/Setting+Display+Formats+of+Numbers+and+Dates.
          */
         Number: number;
         /**
@@ -555,53 +555,53 @@ declare namespace Websoft {
          */
 
         /**
-         * Используется для получения последней произошедшей ошибки
+         * Используется для получения последней произошедшей ошибки.
          */
         GetError(): string;
 
         /**
-         * Используется для получения версии компонента
+         * Используется для получения версии компонента.
          */
         GetVersion(): string;
       }
 
       /**
-       * Лист книги Excel
+       * Лист книги Excel.
        */
       class Worksheet {
         /**
-         * Свойство для управления ячейками листа
+         * Свойство для управления ячейками листа.
          */
         Cells: Cells;
 
         /**
-         * Наборы графиков
+         * Наборы графиков.
          */
         Charts: ChartsCollection;
 
         /**
-         * Название листа
+         * Название листа.
          */
         Name: string;
 
         /**
-         * Параметры страницы
+         * Параметры страницы.
          */
         PageSetup: PageSetup;
 
         /**
-         * Набор изображений листа
+         * Набор изображений листа.
          */
         Pictures: Pictures;
 
         /**
-         * Создает новый набор графиков
+         * Создает новый набор графиков.
          * @deprecated
-         * @param chartType Тип графика
-         * @param left Позиция по горизонтали
-         * @param top Позиция по вертикали
-         * @param width Ширинf
-         * @param height Высота
+         * @param chartType - Тип графика.
+         * @param left - Позиция по горизонтали.
+         * @param top - Позиция по вертикали.
+         * @param width - Ширинf.
+         * @param height - Высота.
          */
         AddChart(
           chartType: string,
@@ -613,18 +613,18 @@ declare namespace Websoft {
 
         /**
          * Получает ячейку по указанному расположению
-         * (устаревшее, вместо данной функции нужно использовать Cells.GetCell())
-         * @param cellName Расположение
+         * (устаревшее, вместо данной функции нужно использовать Cells.GetCell()).
+         * @param cellName - Расположение.
          */
         GetCell(cellName: string): Cell;
 
         /**
-         * Используется для получения последней произошедшей ошибки
+         * Используется для получения последней произошедшей ошибки.
          */
         GetError(): string;
 
         /**
-         * Используется для получения версии компонента
+         * Используется для получения версии компонента.
          */
         GetVersion(): string;
       }

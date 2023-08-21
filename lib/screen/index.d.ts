@@ -30,10 +30,10 @@ declare namespace Screen {
 
   /**
    * Выдает стандартный диалог Windows с сообщением относительно текущего экрана.
-   * @param message текст сообщения
-   * @param subject текст заголовка
-   * @param type тип диалогового окна
-   * @param titles наименование кнопок диалогового окна
+   * @param {string} message - Текст сообщения.
+   * @param {string} subject - Текст заголовка.
+   * @param {string} type - Тип диалогового окна.
+   * @param {string} titles - Наименование кнопок диалогового окна.
    * @example
    * ```
    * Screen.MsgBox(UiText.messages.operation_will_be_cancelled, UiText.messages.warning_msg_title, "question", "yes,no");

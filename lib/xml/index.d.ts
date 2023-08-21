@@ -130,7 +130,7 @@ interface PassportDataBase {
 }
 
 declare namespace ms_tools {
-  function raise_system_event_env(systemEventIdentificator: string | number, params: any): void;
+  function raise_system_event_env(systemEventIdentificator: string | number, params: unknown): void;
 }
 
 interface MSDialogObjectSelectTopElem {
@@ -394,17 +394,17 @@ interface GroupCollaborator extends PersonForeignBase {
 }
 
 interface RequirementsBase {
-  requirements: XmlMultiElem<any>;
-  certificate_types: XmlMultiElem<any>;
-  compound_programs: XmlMultiElem<any>;
-  education_methods: XmlMultiElem<any>;
+  requirements: XmlMultiElem<unknown>;
+  certificate_types: XmlMultiElem<unknown>;
+  compound_programs: XmlMultiElem<unknown>;
+  education_methods: XmlMultiElem<unknown>;
   obligatory_education_amount: XmlElem<number>;
   education_period: XmlElem<number>;
-  typical_development_programs: XmlMultiElem<any>;
-  qualifications: XmlMultiElem<any>;
-  assessments: XmlMultiElem<any>;
-  recomended_library_materials: XmlMultiElem<any>;
-  professional_areas: XmlMultiElem<any>;
+  typical_development_programs: XmlMultiElem<unknown>;
+  qualifications: XmlMultiElem<unknown>;
+  assessments: XmlMultiElem<unknown>;
+  recomended_library_materials: XmlMultiElem<unknown>;
+  professional_areas: XmlMultiElem<unknown>;
   educ_type_id: XmlElem<string>;
   education_type_id: XmlElem<number>;
   age_min: XmlElem<number>;
@@ -419,8 +419,8 @@ interface EducGroupsBaseEducGroup {
   name: XmlElem<string>;
   place_id: XmlElem<number>;
   conversation_id: XmlElem<number>;
-  collaborators: XmlMultiElem<any>;
-  lectors: XmlMultiElem<any>;
+  collaborators: XmlMultiElem<unknown>;
+  lectors: XmlMultiElem<unknown>;
 }
 
 interface EducGroupsBase {
@@ -520,7 +520,7 @@ interface EducationPlanProgramResult {
 interface DotnetCoreHost {
   Object: {
     GetAssembly(libName: string): {
-      CallClassStaticMethod(className: string, methodName: string, arguments: XmlMultiElem<any>, single?: boolean, wait?: boolean, max_run_time?: number): any;
+      CallClassStaticMethod(className: string, methodName: string, arguments: XmlMultiElem<unknown>, single?: boolean, wait?: boolean, max_run_time?: number): unknown;
       CreateClassObject<T>(classObject: string): T;
     };
   };
@@ -968,29 +968,29 @@ interface CareerReserveComissionPerson {
 }
 
 interface AnnalsObjectBaseDataAssessmentTimestamp {
-  value: XmlElem<any>;
+  value: XmlElem<unknown>;
 }
 
 interface AnnalsObjectBaseDataAssessmentLatency {
-  value: XmlElem<any>;
+  value: XmlElem<unknown>;
 }
 
 interface AnnalsObjectBaseDataAssessmentDuration {
-  value: XmlElem<any>;
+  value: XmlElem<unknown>;
 }
 
 interface AnnalsObjectBaseDataAssessment {
-  ident: XmlElem<any>;
-  viewed: XmlElem<any>;
-  answered: XmlElem<any>;
-  completed: XmlElem<any>;
+  ident: XmlElem<unknown>;
+  viewed: XmlElem<unknown>;
+  answered: XmlElem<unknown>;
+  completed: XmlElem<unknown>;
   timestamp: XmlElem <AnnalsObjectBaseDataAssessmentTimestamp>;
   latency: XmlElem <AnnalsObjectBaseDataAssessmentLatency>;
   duration: XmlElem <AnnalsObjectBaseDataAssessmentDuration>;
 }
 
 interface AnnalsObjectBaseDataItemsListSectionitem {
-  ident: XmlElem<any>;
+  ident: XmlElem<unknown>;
 }
 
 interface AnnalsObjectBaseDataItemsList {
@@ -1003,7 +1003,7 @@ interface AnnalsObjectBaseData {
 }
 
 interface AnnalsObjectBase {
-  id: XmlElem<any>;
+  id: XmlElem<unknown>;
   attempt_id: XmlElem<string>;
   file: XmlElem<string>;
   objtype: XmlElem<string>;
@@ -1271,16 +1271,24 @@ interface ObjectTypeBase {
   object_name: XmlElem<string>;
 }
 
-/** Объект параметров агента */
+/**
+ * Объект параметров агента.
+ */
 declare var Param: Object;
-/** ID объекта над которым выполняется агент */
+/**
+ * ID объекта над которым выполняется агент.
+ */
 declare var OBJECT_ID: number;
 declare var OBJECTS_ID_STR: string;
-/** Флаг исполнения кода на клиенте */
+/**
+ * Флаг исполнения кода на клиенте.
+ */
 declare var LdsIsClient: boolean;
-/** Флаг исполнения кода на сервере */
+/**
+ * Флаг исполнения кода на сервере.
+ */
 declare var LdsIsServer: boolean;
 
-declare var oData: any;
+declare var oData: unknown;
 
 declare const LdsCurUserID: number;
