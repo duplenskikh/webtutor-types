@@ -13,12 +13,12 @@ interface Stream {
   ReadLine(): string;
   /**
    * Записывает содержимое бинарного объекта в поток.
-   * @param binaryObj - Бинарный объект
+   * @param binaryObj - Бинарный объект.
    */
   WriteBinary(binaryObj: Binary): string;
   /**
    * Записывает содержимое строки в поток.
-   * @param str - Строка
+   * @param str - Строка.
    */
   WriteStr(str: string): void;
   /**
@@ -28,7 +28,7 @@ interface Stream {
   BufStream(): BufStream;
   /**
    * Конструктор объекта FileStream, позволяющего читать данные из файла на диске.
-   * @param filePath - Путь к файлу (или url)
+   * @param filePath - Путь к файлу (или url).
    *
    * @example
    * fileStream = new FileStream( 'C:\\Temp\\xxx.txt' );

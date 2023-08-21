@@ -1,13 +1,13 @@
 interface Math {
   /**
    * Округление значения числового выражения к ближайшему целому.
-   * @param number - число, округляемое до ближайшего целого (Real).
+   * @param number - Число, округляемое до ближайшего целого (Real).
    */
   round(number: number): number;
 
   /**
    * Возвращает квадратный корень числа .
-   * @param number числовое выражение (Real).
+   * @param number - Числовое выражение (Real).
    */
   sqrt(number: number): number;
 

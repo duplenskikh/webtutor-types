@@ -30,7 +30,7 @@ CustomReportBase & {
   subscribe: XmlElem<CustomReportDocumentSubscribe>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  disp_block: XmlElem<any>;
+  disp_block: XmlElem<unknown>;
   access: XmlElem<AccessDocBase>;
   binding_selection: XmlElem<number>;
   initiator_person_id: XmlElem<number>;
