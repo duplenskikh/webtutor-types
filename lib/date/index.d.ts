@@ -2,8 +2,8 @@
 interface Date { }
 
 interface DateConstructor {
-  new(value?: any): Date;
-  (value?: any): Date;
+  new(value?: unknown): Date;
+  (value?: unknown): Date;
   (): Date;
 }
 

@@ -1,1849 +1,1849 @@
 /**
- * Резерв на отсутствие
+ * Резерв на отсутствие.
  */
-export const absence_reserves: any;
+export const absence_reserves: AbsenceReserveCatalogDocument[];
 
 /**
- * Билинговый счет
+ * Билинговый счет.
  */
-export const accounts: any;
+export const accounts: AccountCatalogDocument[];
 
 /**
- * Ознакомление
+ * Ознакомление.
  */
-export const acquaints: any;
+export const acquaints: AcquaintCatalogDocument[];
 
 /**
- * Назначенное ознакомление
+ * Назначенное ознакомление.
  */
-export const acquaint_assigns: any;
+export const acquaint_assigns: AcquaintAssignCatalogDocument[];
 
 /**
- * Событие базы
+ * Событие базы.
  */
-export const action_reports: any;
+export const action_reports: ActionReportCatalogDocument[];
 
 /**
- * Незаконченный электронный курс
+ * Незаконченный электронный курс.
  */
-export const active_learnings: any;
+export const active_learnings: ActiveLearningCatalogDocument[];
 
 /**
- * Неотправленное уведомление
+ * Неотправленное уведомление.
  */
-export const active_notifications: any;
+export const active_notifications: ActiveNotificationCatalogDocument[];
 
 /**
- * Незаконченный тест
+ * Незаконченный тест.
  */
-export const active_test_learnings: any;
+export const active_test_learnings: ActiveTestLearningCatalogDocument[];
 
 /**
- * Текущая сессия портала
+ * Текущая сессия портала.
  */
-export const active_web_templates: any;
+export const active_web_templates: ActiveWebTemplateCatalogDocument[];
 
 /**
- * Учебная активность
+ * Учебная активность.
  */
-export const activitys: any;
+export const activitys: ActivityCatalogDocument[];
 
 /**
- * Статус учебной активности
+ * Статус учебной активности.
  */
-export const activity_states: any;
+export const activity_states: ActivityStateCatalogDocument[];
 
 /**
- * Конфигурация
+ * Конфигурация.
  */
-export const admin_configurations: any;
+export const admin_configurations: AdminConfigurationCatalogDocument[];
 
 /**
- * Приложение
+ * Приложение.
  */
-export const applications: any;
+export const applications: ApplicationCatalogDocument[];
 
 /**
- * Процесс приложения
+ * Процесс приложения.
  */
-export const application_instances: any;
+export const application_instances: ApplicationInstanceCatalogDocument[];
 
 /**
- * Тип назначения
+ * Тип назначения.
  */
-export const appointment_types: any;
+export const appointment_types: AppointmentTypeCatalogDocument[];
 
 /**
- * Статья
+ * Статья.
  */
-export const articles: any;
+export const articles: ArticleCatalogDocument[];
 
 /**
- * Тест
+ * Тест.
  */
-export const assessments: any;
+export const assessments: unknown[]; // AssessmentCatalogDocument[];
 
 /**
- * Процедура оценки
+ * Процедура оценки.
  */
-export const assessment_appraises: any;
+export const assessment_appraises: AssessmentAppraiseCatalogDocument[];
 
 /**
- * Матрица ответственности
+ * Матрица ответственности.
  */
-export const assessment_appraise_matrixs: any;
+export const assessment_appraise_matrixs: AssessmentAppraiseMatrixCatalogDocument[];
 
 /**
- * План оценки
+ * План оценки.
  */
-export const assessment_plans: any;
+export const assessment_plans: AssessmentPlanCatalogDocument[];
 
 /**
- * Рекомендации по результатам оценки
+ * Рекомендации по результатам оценки.
  */
-export const assessment_result_recommends: any;
+export const assessment_result_recommends: AssessmentResultRecommendCatalogDocument[];
 
 /**
- * План доступности
+ * План доступности.
  */
-export const availability_plans: any;
+export const availability_plans: AvailabilityPlanCatalogDocument[];
 
 /**
- * Баннер
+ * Баннер.
  */
-export const banners: any;
+export const banners: BannerCatalogDocument[];
 
 /**
- * Корзина
+ * Корзина.
  */
-export const baskets: any;
+export const baskets: BasketCatalogDocument[];
 
 /**
- * Тип привилегий
+ * Тип привилегий.
  */
-export const benefits: any;
+export const benefits: BenefitCatalogDocument[];
 
 /**
- * Привилегия
+ * Привилегия.
  */
-export const benefit_items: any;
+export const benefit_items: BenefitItemCatalogDocument[];
 
 /**
- * Блоки сообщений
+ * Блоки сообщений.
  */
-export const block_messages: any;
+export const block_messages: BlockMessageCatalogDocument[];
 
 /**
- * Блог
+ * Блог.
  */
-export const blogs: any;
+export const blogs: BlogCatalogDocument[];
 
 /**
- * Сообщение блога
+ * Сообщение блога.
  */
-export const blog_entrys: any;
+export const blog_entrys: BlogEntryCatalogDocument[];
 
 /**
- * Коментарий сообщения блога
+ * Коментарий сообщения блога.
  */
-export const blog_entry_comments: any;
+export const blog_entry_comments: BlogEntryCommentCatalogDocument[];
 
 /**
- * Результат премирования
+ * Результат премирования.
  */
-export const bonus_items: any;
+export const bonus_items: BonusItemCatalogDocument[];
 
 /**
- * Профиль премирования
+ * Профиль премирования.
  */
-export const bonus_profiles: any;
+export const bonus_profiles: BonusProfileCatalogDocument[];
 
 /**
- * Книга
+ * Книга.
  */
-export const books: any;
+export const books: BookCatalogDocument[];
 
 /**
- * Тип руководителя
+ * Тип руководителя.
  */
-export const boss_types: any;
+export const boss_types: BossTypeCatalogDocument[];
 
 /**
- * Бюджет
+ * Бюджет.
  */
-export const budgets: any;
+export const budgets: BudgetCatalogDocument[];
 
 /**
- * Бюджетный период
+ * Бюджетный период.
  */
-export const budget_periods: any;
+export const budget_periods: BudgetPeriodCatalogDocument[];
 
 /**
- * Тип бюджета
+ * Тип бюджета.
  */
-export const budget_types: any;
+export const budget_types: BudgetTypeCatalogDocument[];
 
 /**
- * Источник кандидатов
+ * Источник кандидатов.
  */
-export const candidate_sources: any;
+export const candidate_sources: CandidateSourceCatalogDocument[];
 
 /**
- * Статус кандидата
+ * Статус кандидата.
  */
-export const candidate_status_types: any;
+export const candidate_status_types: CandidateStatusTypeCatalogDocument[];
 
 /**
- * Карьерный план
+ * Карьерный план.
  */
-export const career_plans: any;
+export const career_plans: CareerPlanCatalogDocument[];
 
 /**
- * Развитие карьеры
+ * Развитие карьеры.
  */
-export const career_reserves: any;
+export const career_reserves: CareerReserveCatalogDocument[];
 
 /**
- * Тип кадрового резерва
+ * Тип кадрового резерва.
  */
-export const career_reserve_types: any;
+export const career_reserve_types: CareerReserveTypeCatalogDocument[];
 
 /**
- * Сертификат
+ * Сертификат.
  */
-export const certificates: any;
+export const certificates: CertificateCatalogDocument[];
 
 /**
- * Тип сертификата
+ * Тип сертификата.
  */
-export const certificate_types: any;
+export const certificate_types: CertificateTypeCatalogDocument[];
 
 /**
- * Изменение
+ * Изменение.
  */
-export const changes: any;
+export const changes: ChangeCatalogDocument[];
 
 /**
- * Чат
+ * Чат.
  */
-export const chats: any;
+export const chats: ChatCatalogDocument[];
 
 /**
- * Чат-бот
+ * Чат-бот.
  */
-export const chatbots: any;
+export const chatbots: ChatbotCatalogDocument[];
 
 /**
- * Чат
+ * Чат.
  */
-export const chatbot_chats: any;
+export const chatbot_chats: ChatbotChatCatalogDocument[];
 
 /**
- * Этап чат-бота
+ * Этап чат-бота.
  */
-export const chatbot_stages: any;
+export const chatbot_stages: ChatbotStageCatalogDocument[];
 
 /**
- * Тип чат-бота
+ * Тип чат-бота.
  */
-export const chatbot_types: any;
+export const chatbot_types: ChatbotTypeCatalogDocument[];
 
 /**
- * Проверка графика
+ * Проверка графика.
  */
-export const check_schedules: any;
+export const check_schedules: CheckScheduleCatalogDocument[];
 
 /**
- * Константа
+ * Константа.
  */
-export const cl_consts: any;
+export const cl_consts: ClConstCatalogDocument[];
 
 /**
- * Курс CourseLab
+ * Курс CourseLab.
  */
-export const cl_courses: any;
+export const cl_courses: ClCourseCatalogDocument[];
 
 /**
- * Локализация
+ * Локализация.
  */
-export const cl_localizations: any;
+export const cl_localizations: ClLocalizationCatalogDocument[];
 
 /**
- * Модуль CourseLab
+ * Модуль CourseLab.
  */
-export const cl_modules: any;
+export const cl_modules: ClModuleCatalogDocument[];
 
 /**
- * Объект CourseLab
+ * Объект CourseLab.
  */
-export const cl_objects: any;
+export const cl_objects: ClObjectCatalogDocument[];
 
 /**
- * Автофигура CourseLab
+ * Автофигура CourseLab.
  */
-export const cl_shapes: any;
+export const cl_shapes: ClShapeCatalogDocument[];
 
 /**
- * Слайд CourseLab
+ * Слайд CourseLab.
  */
-export const cl_slides: any;
+export const cl_slides: ClSlideCatalogDocument[];
 
 /**
- * Закрывающий документ
+ * Закрывающий документ.
  */
-export const closing_documents: any;
+export const closing_documents: ClosingDocumentCatalogDocument[];
 
 /**
- * Библиотека программного кода
+ * Библиотека программного кода.
  */
-export const code_librarys: any;
+export const code_librarys: CodeLibraryCatalogDocument[];
 
 /**
- * Нумератор
+ * Нумератор.
  */
-export const codings: any;
+export const codings: CodingCatalogDocument[];
 
 /**
- * Сотрудник
+ * Сотрудник.
  */
-export const collaborators: any;
+export const collaborators: CollaboratorCatalogDocument[];
 
 /**
- * График сотрудника
+ * График сотрудника.
  */
-export const collaborator_schedules: any;
+export const collaborator_schedules: CollaboratorScheduleCatalogDocument[];
 
 /**
- * Участник кадрового комитета
+ * Участник кадрового комитета.
  */
-export const committee_members: any;
+export const committee_members: CommitteeMemberCatalogDocument[];
 
 /**
- * Компетенция
+ * Компетенция.
  */
-export const competences: any;
+export const competences: CompetenceCatalogDocument[];
 
 /**
- * Блоки компетенций
+ * Блоки компетенций.
  */
-export const competence_blocks: any;
+export const competence_blocks: CompetenceBlockCatalogDocument[];
 
 /**
- * Профиль компетенций
+ * Профиль компетенций.
  */
-export const competence_profiles: any;
+export const competence_profiles: CompetenceProfileCatalogDocument[];
 
 /**
- * Семейство профилей
+ * Семейство профилей.
  */
-export const competence_profile_familys: any;
+export const competence_profile_familys: CompetenceProfileFamilyCatalogDocument[];
 
 /**
- * Полезные компоненты софта
+ * Полезные компоненты софта.
  */
-export const component_packages: any;
+export const component_packages: ComponentPackageCatalogDocument[];
 
 /**
- * Модульная программа
+ * Модульная программа.
  */
-export const compound_programs: any;
+export const compound_programs: CompoundProgramCatalogDocument[];
 
 /**
- * Сессия обучения
+ * Сессия обучения.
  */
-export const connections: any;
+export const connections: ConnectionCatalogDocument[];
 
 /**
- * Контакты
+ * Контакты.
  */
-export const contacts: any;
+export const contacts: ContactCatalogDocument[];
 
 /**
- * Результат контакта
+ * Результат контакта.
  */
-export const contact_results: any;
+export const contact_results: ContactResultCatalogDocument[];
 
 /**
- * Тип контакта
+ * Тип контакта.
  */
-export const contact_types: any;
+export const contact_types: ContactTypeCatalogDocument[];
 
 /**
- * Конкурс
+ * Конкурс.
  */
-export const contests: any;
+export const contests: ContestCatalogDocument[];
 
 /**
- * Договор
+ * Договор.
  */
-export const contracts: any;
+export const contracts: ContractCatalogDocument[];
 
 /**
- * Статус договора
+ * Статус договора.
  */
-export const contract_states: any;
+export const contract_states: ContractStateCatalogDocument[];
 
 /**
- * Тип договора
+ * Тип договора.
  */
-export const contract_types: any;
+export const contract_types: ContractTypeCatalogDocument[];
 
 /**
- * Разговоры
+ * Разговоры.
  */
-export const conversations: any;
+export const conversations: ConversationCatalogDocument[];
 
 /**
- * Типы разговоров
+ * Типы разговоров.
  */
-export const conversation_types: any;
+export const conversation_types: ConversationTypeCatalogDocument[];
 
 /**
- * Центр затрат
+ * Центр затрат.
  */
-export const cost_centers: any;
+export const cost_centers: CostCenterCatalogDocument[];
 
 /**
- * Электронный курс
+ * Электронный курс.
  */
-export const courses: any;
+export const courses: CourseCatalogDocument[];
 
 /**
- * Учебный модуль
+ * Учебный модуль.
  */
-export const course_modules: any;
+export const course_modules: CourseModuleCatalogDocument[];
 
 /**
- * Ученический договор
+ * Ученический договор.
  */
-export const covenants: any;
+export const covenants: CovenantCatalogDocument[];
 
 /**
- * Удостоверение
+ * Удостоверение.
  */
-export const credentials: any;
+export const credentials: CredentialCatalogDocument[];
 
 /**
- * Шаблон клиенсткой части
+ * Шаблон клиенсткой части.
  */
-export const custom_admin_templates: any;
+export const custom_admin_templates: CustomAdminTemplateCatalogDocument[];
 
 /**
- * Настраиваемый шаблон для чат-ботов
+ * Настраиваемый шаблон для чат-ботов.
  */
-export const custom_chatbot_templates: any;
+export const custom_chatbot_templates: CustomChatbotTemplateCatalogDocument[];
 
 /**
- * Настраиваемый отчет
+ * Настраиваемый отчет.
  */
-export const custom_reports: any;
+export const custom_reports: CustomReportCatalogDocument[];
 
 /**
- * Настраиваемый Web-шаблон
+ * Настраиваемый Web-шаблон.
  */
-export const custom_web_templates: any;
+export const custom_web_templates: CustomWebTemplateCatalogDocument[];
 
 /**
- * Группа Web-шаблонов
+ * Группа Web-шаблонов.
  */
-export const custom_web_template_groups: any;
+export const custom_web_template_groups: CustomWebTemplateGroupCatalogDocument[];
 
 /**
- * Способ развития
+ * Способ развития.
  */
-export const development_methods: any;
+export const development_methods: DevelopmentMethodCatalogDocument[];
 
 /**
- * План развития
+ * План развития.
  */
-export const development_plans: any;
+export const development_plans: DevelopmentPlanCatalogDocument[];
 
 /**
- * Потенциал развития
+ * Потенциал развития.
  */
-export const development_potentials: any;
+export const development_potentials: DevelopmentPotentialCatalogDocument[];
 
 /**
- * Подключенное устройство
+ * Подключенное устройство.
  */
-export const device_regs: any;
+export const device_regs: DeviceRegCatalogDocument[];
 
 /**
- * Электронно-цифровая подпись
+ * Электронно-цифровая подпись.
  */
-export const digital_signatures: any;
+export const digital_signatures: DigitalSignatureCatalogDocument[];
 
 /**
- * Размерность
+ * Размерность.
  */
-export const dimensions: any;
+export const dimensions: DimensionCatalogDocument[];
 
 /**
- * Выгрузки из базы
+ * Выгрузки из базы.
  */
-export const discharges: any;
+export const discharges: DischargeCatalogDocument[];
 
 /**
- * Академическая задолженность
+ * Академическая задолженность.
  */
-export const dn_academ_debts: any;
+export const dn_academ_debts: DnAcademDebtCatalogDocument[];
 
 /**
- * Учебный год
+ * Учебный год.
  */
-export const dn_academ_years: any;
+export const dn_academ_years: DnAcademYearCatalogDocument[];
 
 /**
- * Аудитория
+ * Аудитория.
  */
-export const dn_auditoriums: any;
+export const dn_auditoriums: DnAuditoriumCatalogDocument[];
 
 /**
- * Блок дисциплин
+ * Блок дисциплин.
  */
-export const dn_block_disciplines: any;
+export const dn_block_disciplines: DnBlockDisciplineCatalogDocument[];
 
 /**
- * Контрольное мероприятие
+ * Контрольное мероприятие.
  */
-export const dn_control_events: any;
+export const dn_control_events: DnControlEventCatalogDocument[];
 
 /**
- * Форма контроля
+ * Форма контроля.
  */
-export const dn_control_forms: any;
+export const dn_control_forms: DnControlFormCatalogDocument[];
 
 /**
- * Дисциплина
+ * Дисциплина.
  */
-export const dn_disciplines: any;
+export const dn_disciplines: DnDisciplineCatalogDocument[];
 
 /**
- * Условие обучения
+ * Условие обучения.
  */
-export const dn_edu_conditions: any;
+export const dn_edu_conditions: DnEduConditionCatalogDocument[];
 
 /**
- * Форма проведения учебного мероприятия
+ * Форма проведения учебного мероприятия.
  */
-export const dn_educat_events: any;
+export const dn_educat_events: DnEducatEventCatalogDocument[];
 
 /**
- * Форма обучения
+ * Форма обучения.
  */
-export const dn_educat_forms: any;
+export const dn_educat_forms: DnEducatFormCatalogDocument[];
 
 /**
- * Индивидуальный план обучения
+ * Индивидуальный план обучения.
  */
-export const dn_ind_educat_plans: any;
+export const dn_ind_educat_plans: DnIndEducatPlanCatalogDocument[];
 
 /**
- * Занятие
+ * Занятие.
  */
-export const dn_lessons: any;
+export const dn_lessons: DnLessonCatalogDocument[];
 
 /**
- * Приложение к программе дисциплины
+ * Приложение к программе дисциплины.
  */
-export const dn_prog_disc_appends: any;
+export const dn_prog_disc_appends: DnProgDiscAppendCatalogDocument[];
 
 /**
- * Программа дисциплины
+ * Программа дисциплины.
  */
-export const dn_program_discipls: any;
+export const dn_program_discipls: DnProgramDisciplCatalogDocument[];
 
 /**
- * Ведомость
+ * Ведомость.
  */
-export const dn_registers: any;
+export const dn_registers: DnRegisterCatalogDocument[];
 
 /**
- * Расписание
+ * Расписание.
  */
-export const dn_schedules: any;
+export const dn_schedules: DnScheduleCatalogDocument[];
 
 /**
- * Специальность
+ * Специальность.
  */
-export const dn_specials: any;
+export const dn_specials: DnSpecialCatalogDocument[];
 
 /**
- * Специализация
+ * Специализация.
  */
-export const dn_specializations: any;
+export const dn_specializations: DnSpecializationCatalogDocument[];
 
 /**
- * Поток
+ * Поток.
  */
-export const dn_streams: any;
+export const dn_streams: DnStreamCatalogDocument[];
 
 /**
- * Результат ЕГЭ
+ * Результат ЕГЭ.
  */
-export const dn_stud_centrtest_results: any;
+export const dn_stud_centrtest_results: DnStudCentrtestResultCatalogDocument[];
 
 /**
- * Учебная группа
+ * Учебная группа.
  */
-export const dn_stud_groups: any;
+export const dn_stud_groups: DnStudGroupCatalogDocument[];
 
 /**
- * Студент
+ * Студент.
  */
-export const dn_students: any;
+export const dn_students: DnStudentCatalogDocument[];
 
 /**
- * Тематический план
+ * Тематический план.
  */
-export const dn_subject_plans: any;
+export const dn_subject_plans: DnSubjectPlanCatalogDocument[];
 
 /**
- * Семестр
+ * Семестр.
  */
-export const dn_terms: any;
+export const dn_terms: DnTermCatalogDocument[];
 
 /**
- * Учебно-методический комплекс
+ * Учебно-методический комплекс.
  */
-export const dn_train_method_complexs: any;
+export const dn_train_method_complexs: DnTrainMethodComplexCatalogDocument[];
 
 /**
- * Учебный план
+ * Учебный план.
  */
-export const dn_work_curriculums: any;
+export const dn_work_curriculums: DnWorkCurriculumCatalogDocument[];
 
 /**
- * Тип документов
+ * Тип документов.
  */
-export const doc_types: any;
+export const doc_types: DocTypeCatalogDocument[];
 
 /**
- * Раздел портала
+ * Раздел портала.
  */
-export const documents: any;
+export const documents: DocumentCatalogDocument[];
 
 /**
- * Комментарии к документу портала
+ * Комментарии к документу портала.
  */
-export const document_comment_entrys: any;
+export const document_comment_entrys: DocumentCommentEntryCatalogDocument[];
 
 /**
- * Скаченный пакет данных
+ * Скаченный пакет данных.
  */
-export const download_packages: any;
+export const download_packages: DownloadPackageCatalogDocument[];
 
 /**
- * Форма обучения
+ * Форма обучения.
  */
-export const education_forms: any;
+export const education_forms: EducationFormCatalogDocument[];
 
 /**
- * Учебная программа
+ * Учебная программа.
  */
-export const education_methods: any;
+export const education_methods: EducationMethodCatalogDocument[];
 
 /**
- * Способ получения образования
+ * Способ получения образования.
  */
-export const education_modes: any;
+export const education_modes: EducationModeCatalogDocument[];
 
 /**
- * Обучающая организация
+ * Обучающая организация.
  */
-export const education_orgs: any;
+export const education_orgs: EducationOrgCatalogDocument[];
 
 /**
- * План обучения
+ * План обучения.
  */
-export const education_plans: any;
+export const education_plans: EducationPlanCatalogDocument[];
 
 /**
- * Набор программ
+ * Набор программ.
  */
-export const education_programs: any;
+export const education_programs: EducationProgramCatalogDocument[];
 
 /**
- * Тип образования
+ * Тип образования.
  */
-export const education_types: any;
+export const education_types: EducationTypeCatalogDocument[];
 
 /**
- * Оценка эффективности
+ * Оценка эффективности.
  */
-export const efficiency_estimations: any;
+export const efficiency_estimations: EfficiencyEstimationCatalogDocument[];
 
 /**
- * Обработка события E-Staff
+ * Обработка события E-Staff.
  */
-export const estaff_events: any;
+export const estaff_events: EstaffEventCatalogDocument[];
 
 /**
- * Тип события E-Staff
+ * Тип события E-Staff.
  */
-export const estaff_event_types: any;
+export const estaff_event_types: EstaffEventTypeCatalogDocument[];
 
 /**
- * Мероприятие
+ * Мероприятие.
  */
-export const events: any;
+export const events: EventCatalogDocument[];
 
 /**
- * Оценка по мероприятию
+ * Оценка по мероприятию.
  */
-export const event_assessment_plans: any;
+export const event_assessment_plans: EventAssessmentPlanCatalogDocument[];
 
 /**
- * Результат мероприятия
+ * Результат мероприятия.
  */
-export const event_results: any;
+export const event_results: EventResultCatalogDocument[];
 
 /**
- * Тип результата мероприятия
+ * Тип результата мероприятия.
  */
-export const event_result_types: any;
+export const event_result_types: EventResultTypeCatalogDocument[];
 
 /**
- * Тип мероприятия
+ * Тип мероприятия.
  */
-export const event_types: any;
+export const event_types: EventTypeCatalogDocument[];
 
 /**
- * Сервер обмена данными
+ * Сервер обмена данными.
  */
-export const exchange_servers: any;
+export const exchange_servers: ExchangeServerCatalogDocument[];
 
 /**
- * Основание для исключения
+ * Основание для исключения.
  */
-export const exclusion_reasons: any;
+export const exclusion_reasons: ExclusionReasonCatalogDocument[];
 
 /**
- * Упражнение
+ * Упражнение.
  */
-export const exercises: any;
+export const exercises: ExerciseCatalogDocument[];
 
 /**
- * Счет
+ * Счет.
  */
-export const expenses: any;
+export const expenses: ExpenseCatalogDocument[];
 
 /**
- * Статья затрат
+ * Статья затрат.
  */
-export const expense_items: any;
+export const expense_items: ExpenseItemCatalogDocument[];
 
 /**
- * Эксперт
+ * Эксперт.
  */
-export const experts: any;
+export const experts: ExpertCatalogDocument[];
 
 /**
- * Вопрос эксперту
+ * Вопрос эксперту.
  */
-export const expert_questions: any;
+export const expert_questions: ExpertQuestionCatalogDocument[];
 
 /**
- * Внешняя система
+ * Внешняя система.
  */
-export const external_systems: any;
+export const external_systems: ExternalSystemCatalogDocument[];
 
 /**
- * Факт оплаты
+ * Факт оплаты.
  */
-export const fact_payments: any;
+export const fact_payments: FactPaymentCatalogDocument[];
 
 /**
- * Источники файлов
+ * Источники файлов.
  */
-export const file_sources: any;
+export const file_sources: FileSourceCatalogDocument[];
 
 /**
- * Форум
+ * Форум.
  */
-export const forums: any;
+export const forums: ForumCatalogDocument[];
 
 /**
- * Статья форума
+ * Статья форума.
  */
-export const forum_entrys: any;
+export const forum_entrys: ForumEntryCatalogDocument[];
 
 /**
- * Прочтение темы сотрудником
+ * Прочтение темы сотрудником.
  */
-export const forum_theme_read_by_collaborators: any;
+export const forum_theme_read_by_collaborators: ForumThemeReadByCollaboratorCatalogDocument[];
 
 /**
- * Товар
+ * Товар.
  */
-export const goods: any;
+export const goods: GoodCatalogDocument[];
 
 /**
- * Экземпляр товара
+ * Экземпляр товара.
  */
-export const good_instances: any;
+export const good_instances: GoodInstanceCatalogDocument[];
 
 /**
- * Тип товаров
+ * Тип товаров.
  */
-export const good_types: any;
+export const good_types: GoodTypeCatalogDocument[];
 
 /**
- * Грейд
+ * Грейд.
  */
-export const grades: any;
+export const grades: GradeCatalogDocument[];
 
 /**
- * Группа
+ * Группа.
  */
-export const groups: any;
+export const groups: GroupCatalogDocument[];
 
 /**
- * Узел
+ * Узел.
  */
-export const hosts: any;
+export const hosts: HostCatalogDocument[];
 
 /**
- * Индикатор
+ * Индикатор.
  */
-export const indicators: any;
+export const indicators: IndicatorCatalogDocument[];
 
 /**
- * Оплата
+ * Оплата.
  */
-export const invoices: any;
+export const invoices: InvoiceCatalogDocument[];
 
 /**
- * Вопрос
+ * Вопрос.
  */
-export const items: any;
+export const items: SiteCatalogDocument[];
 
 /**
- * Ключевая должность
+ * Ключевая должность.
  */
-export const key_positions: any;
+export const key_positions: KeyPositionCatalogDocument[];
 
 /**
- * Угроза ключевой должности
+ * Угроза ключевой должности.
  */
-export const key_position_threats: any;
+export const key_position_threats: KeyPositionThreatCatalogDocument[];
 
 /**
- * Классификатор знаний
+ * Классификатор знаний.
  */
-export const knowledge_classifiers: any;
+export const knowledge_classifiers: KnowledgeClassifierCatalogDocument[];
 
 /**
- * Значение карты знаний
+ * Значение карты знаний.
  */
-export const knowledge_parts: any;
+export const knowledge_parts: KnowledgePartCatalogDocument[];
 
 /**
- * Категория значения карты знаний
+ * Категория значения карты знаний.
  */
-export const knowledge_part_levels: any;
+export const knowledge_part_levels: KnowledgePartLevelCatalogDocument[];
 
 /**
- * Тип значение карты знаний
+ * Тип значение карты знаний.
  */
-export const knowledge_part_types: any;
+export const knowledge_part_types: KnowledgePartTypeCatalogDocument[];
 
 /**
- * Профиль знаний
+ * Профиль знаний.
  */
-export const knowledge_profiles: any;
+export const knowledge_profiles: KnowledgeProfileCatalogDocument[];
 
 /**
- * KPI
+ * KPI.
  */
-export const kpis: any;
+export const kpis: KpiCatalogDocument[];
 
 /**
- * Профиль KPI
+ * Профиль KPI.
  */
-export const kpi_profiles: any;
+export const kpi_profiles: KpiProfileCatalogDocument[];
 
 /**
- * Значение KPI
+ * Значение KPI.
  */
-export const kpi_values: any;
+export const kpi_values: KpiValueCatalogDocument[];
 
 /**
- * Законченный электронный курс
+ * Законченный электронный курс.
  */
-export const learnings: any;
+export const learnings: LearningCatalogDocument[];
 
 /**
- * Раздел курс
+ * Раздел курс.
  */
-export const learning_parts: any;
+export const learning_parts: LearningPartCatalogDocument[];
 
 /**
- * Запись тестирования
+ * Запись тестирования.
  */
-export const learning_records: any;
+export const learning_records: LearningRecordCatalogDocument[];
 
 /**
- * Хранилище учебных записей
+ * Хранилище учебных записей.
  */
-export const learning_storages: any;
+export const learning_storages: LearningStorageCatalogDocument[];
 
 /**
- * Задание
+ * Задание.
  */
-export const learning_tasks: any;
+export const learning_tasks: LearningTaskCatalogDocument[];
 
 /**
- * Выполненное задание
+ * Выполненное задание.
  */
-export const learning_task_results: any;
+export const learning_task_results: LearningTaskResultCatalogDocument[];
 
 /**
- * Преподаватель
+ * Преподаватель.
  */
-export const lectors: any;
+export const lectors: LectorCatalogDocument[];
 
 /**
- * Уровень
+ * Уровень.
  */
-export const levels: any;
+export const levels: LevelCatalogDocument[];
 
 /**
- * Материал библиотеки
+ * Материал библиотеки.
  */
-export const library_materials: any;
+export const library_materials: LibraryMaterialCatalogDocument[];
 
 /**
- * Отзыв о материале
+ * Отзыв о материале.
  */
-export const library_material_comments: any;
+export const library_material_comments: LibraryMaterialCommentCatalogDocument[];
 
 /**
- * Формат материала
+ * Формат материала.
  */
-export const library_material_formats: any;
+export const library_material_formats: LibraryMaterialFormatCatalogDocument[];
 
 /**
- * Экземпляр материала библиотеки
+ * Экземпляр материала библиотеки.
  */
-export const library_material_items: any;
+export const library_material_items: LibraryMaterialItemCatalogDocument[];
 
 /**
- * Тип входных данных
+ * Тип входных данных.
  */
-export const library_material_source_types: any;
+export const library_material_source_types: LibraryMaterialSourceTypeCatalogDocument[];
 
 /**
- * Вид материала
+ * Вид материала.
  */
-export const library_material_types: any;
+export const library_material_types: LibraryMaterialTypeCatalogDocument[];
 
 /**
- * Просмотр материала библиотеки
+ * Просмотр материала библиотеки.
  */
-export const library_material_viewings: any;
+export const library_material_viewings: LibraryMaterialViewingCatalogDocument[];
 
 /**
- * Проигрыватель
+ * Проигрыватель.
  */
-export const library_players: any;
+export const library_players: LibraryPlayerCatalogDocument[];
 
 /**
- * Раздел библиотеки
+ * Раздел библиотеки.
  */
-export const library_sections: any;
+export const library_sections: LibrarySectionCatalogDocument[];
 
 /**
- * Система библиотек
+ * Система библиотек.
  */
-export const library_systems: any;
+export const library_systems: LibrarySystemCatalogDocument[];
 
 /**
- * Лицензия библиотеки
+ * Лицензия библиотеки.
  */
-export const licenses: any;
+export const licenses: LicenseCatalogDocument[];
 
 /**
- * Like
+ * Like.
  */
-export const likes: any;
+export const likes: LikeCatalogDocument[];
 
 /**
- * Материальная ответственность
+ * Материальная ответственность.
  */
-export const material_liabilitys: any;
+export const material_liabilitys: MaterialLiabilityCatalogDocument[];
 
 /**
- * Курьерская служба
+ * Курьерская служба.
  */
-export const messenger_services: any;
+export const messenger_services: MessengerServiceCatalogDocument[];
 
 /**
- * Настройки мобильного приложения
+ * Настройки мобильного приложения.
  */
-export const mobile_app_configs: any;
+export const mobile_app_configs: MobileAppConfigCatalogDocument[];
 
 /**
- * Тип уведомления
+ * Тип уведомления.
  */
-export const notifications: any;
+export const notifications: NotificationCatalogDocument[];
 
 /**
- * Система уведомлений
+ * Система уведомлений.
  */
-export const notification_systems: any;
+export const notification_systems: NotificationSystemCatalogDocument[];
 
 /**
- * Шаблон уведомления
+ * Шаблон уведомления.
  */
-export const notification_templates: any;
+export const notification_templates: NotificationTemplateCatalogDocument[];
 
 /**
- * Данные объектов
+ * Данные объектов.
  */
-export const object_datas: any;
+export const object_datas: ObjectDataCatalogDocument[];
 
 /**
- * Тип данных объектов
+ * Тип данных объектов.
  */
-export const object_data_types: any;
+export const object_data_types: ObjectDataTypeCatalogDocument[];
 
 /**
- * Связи между объектами
+ * Связи между объектами.
  */
-export const object_links: any;
+export const object_links: ObjectLinkCatalogDocument[];
 
 /**
- * Оборудование
+ * Оборудование.
  */
-export const object_resources: any;
+export const object_resources: ObjectResourceCatalogDocument[];
 
 /**
- * Версия объекта
+ * Версия объекта.
  */
-export const object_versions: any;
+export const object_versions: ObjectVersionCatalogDocument[];
 
 /**
- * Трансляция цели
+ * Трансляция цели.
  */
-export const objective_translates: any;
+export const objective_translates: ObjectiveTranslateCatalogDocument[];
 
 /**
- * Операция
+ * Операция.
  */
-export const operations: any;
+export const operations: OperationCatalogDocument[];
 
 /**
- * Заказ
+ * Заказ.
  */
-export const orders: any;
+export const orders: OrderCatalogDocument[];
 
 /**
- * Установки для приказов по умолчанию
+ * Установки для приказов по умолчанию.
  */
-export const order_types: any;
+export const order_types: OrderTypeCatalogDocument[];
 
 /**
- * Организация
+ * Организация.
  */
-export const orgs: any;
+export const orgs: OrgCatalogDocument[];
 
 /**
- * Статус организации у вендора
+ * Статус организации у вендора.
  */
-export const org_vendor_states: any;
+export const org_vendor_states: OrgVendorStateCatalogDocument[];
 
 /**
- * Дополнительные работы
+ * Дополнительные работы.
  */
-export const outstaff_additional_works: any;
+export const outstaff_additional_works: OutstaffAdditionalWorkCatalogDocument[];
 
 /**
- * Контракт на временный персонал
+ * Контракт на временный персонал.
  */
-export const outstaff_contracts: any;
+export const outstaff_contracts: OutstaffContractCatalogDocument[];
 
 /**
- * Заказ на временный персонал
+ * Заказ на временный персонал.
  */
-export const outstaff_orders: any;
+export const outstaff_orders: OutstaffOrderCatalogDocument[];
 
 /**
- * Исполнение заказа на временный персонал
+ * Исполнение заказа на временный персонал.
  */
-export const outstaff_order_executions: any;
+export const outstaff_order_executions: OutstaffOrderExecutionCatalogDocument[];
 
 /**
- * Провайдер временного персонала
+ * Провайдер временного персонала.
  */
-export const outstaff_providers: any;
+export const outstaff_providers: OutstaffProviderCatalogDocument[];
 
 /**
- * Тип расходных материалов
+ * Тип расходных материалов.
  */
-export const outstaff_type_materials: any;
+export const outstaff_type_materials: OutstaffTypeMaterialCatalogDocument[];
 
 /**
- * Элемент шаблона
+ * Элемент шаблона.
  */
-export const override_web_templates: any;
+export const override_web_templates: OverrideWebTemplateCatalogDocument[];
 
 /**
- * Анкета
+ * Анкета.
  */
-export const pas: any;
+export const pas: PaCatalogDocument[];
 
 /**
- * Участник конкурса
+ * Участник конкурса.
  */
-export const participants: any;
+export const participants: ParticipantCatalogDocument[];
 
 /**
- * Этап оплаты
+ * Этап оплаты.
  */
-export const pay_phases: any;
+export const pay_phases: PayPhaseCatalogDocument[];
 
 /**
- * Этап договора
+ * Этап договора.
  */
-export const pay_stages: any;
+export const pay_stages: PayStageCatalogDocument[];
 
 /**
- * Выплата сотруднику
+ * Выплата сотруднику.
  */
-export const payments: any;
+export const payments: PaymentCatalogDocument[];
 
 /**
- * Тип выплат
+ * Тип выплат.
  */
-export const payment_types: any;
+export const payment_types: PaymentTypeCatalogDocument[];
 
 /**
- * Контент сотрудника
+ * Контент сотрудника.
  */
-export const person_object_links: any;
+export const person_object_links: PersonObjectLinkCatalogDocument[];
 
 /**
- * Профиль редактирования контента
+ * Профиль редактирования контента.
  */
-export const person_object_profiles: any;
+export const person_object_profiles: PersonObjectProfileCatalogDocument[];
 
 /**
- * Кадровый комитет
+ * Кадровый комитет.
  */
-export const personnel_committees: any;
+export const personnel_committees: PersonnelCommitteeCatalogDocument[];
 
 /**
- * Кадровый резерв
+ * Кадровый резерв.
  */
-export const personnel_reserves: any;
+export const personnel_reserves: PersonnelReserveCatalogDocument[];
 
 /**
- * Расположение
+ * Расположение.
  */
-export const places: any;
+export const places: PlaceCatalogDocument[];
 
 /**
- * Плагин
+ * Плагин.
  */
-export const plugins: any;
+export const plugins: PluginCatalogDocument[];
 
 /**
- * Полис
+ * Полис.
  */
-export const policys: any;
+export const policys: PolicyCatalogDocument[];
 
 /**
- * Тип полиса
+ * Тип полиса.
  */
-export const policy_types: any;
+export const policy_types: PolicyTypeCatalogDocument[];
 
 /**
- * Опрос
+ * Опрос.
  */
-export const polls: any;
+export const polls: PollCatalogDocument[];
 
 /**
- * Процедура опроса
+ * Процедура опроса.
  */
-export const poll_procedures: any;
+export const poll_procedures: PollProcedureCatalogDocument[];
 
 /**
- * Результат опроса
+ * Результат опроса.
  */
-export const poll_results: any;
+export const poll_results: PollResultCatalogDocument[];
 
 /**
- * Должность
+ * Должность.
  */
-export const positions: any;
+export const positions: PositionCatalogDocument[];
 
 /**
- * Оценка должностей
+ * Оценка должностей.
  */
-export const position_assessment_forms: any;
+export const position_assessment_forms: PositionAssessmentFormCatalogDocument[];
 
 /**
- * Типовая должность
+ * Типовая должность.
  */
-export const position_commons: any;
+export const position_commons: PositionCommonCatalogDocument[];
 
 /**
- * Должностная инструкция
+ * Должностная инструкция.
  */
-export const position_common_instructions: any;
+export const position_common_instructions: PositionCommonInstructionCatalogDocument[];
 
 /**
- * Семейство должностей
+ * Семейство должностей.
  */
-export const position_familys: any;
+export const position_familys: PositionFamilyCatalogDocument[];
 
 /**
- * Уровень должности
+ * Уровень должности.
  */
-export const position_levels: any;
+export const position_levels: PositionLevelCatalogDocument[];
 
 /**
- * Тип присутствия/отсутствия
+ * Тип присутствия/отсутствия.
  */
-export const presence_states: any;
+export const presence_states: PresenceStateCatalogDocument[];
 
 /**
- * Презентация
+ * Презентация.
  */
-export const presentations: any;
+export const presentations: PresentationCatalogDocument[];
 
 /**
- * Прайс
+ * Прайс.
  */
-export const prices: any;
+export const prices: PriceCatalogDocument[];
 
 /**
- * Печатная форма
+ * Печатная форма.
  */
-export const print_forms: any;
+export const print_forms: PrintFormCatalogDocument[];
 
 /**
- * Система прокторинга
+ * Система прокторинга.
  */
-export const proctoring_systems: any;
+export const proctoring_systems: ProctoringSystemCatalogDocument[];
 
 /**
- * Профессия
+ * Профессия.
  */
-export const professions: any;
+export const professions: ProfessionCatalogDocument[];
 
 /**
- * Разряд профессии
+ * Разряд профессии.
  */
-export const profession_categorys: any;
+export const profession_categorys: ProfessionCategoryCatalogDocument[];
 
 /**
- * Профессиональная область
+ * Профессиональная область.
  */
-export const professional_areas: any;
+export const professional_areas: ProfessionalAreaCatalogDocument[];
 
 /**
- * Тип профессиональной области
+ * Тип профессиональной области.
  */
-export const professional_area_types: any;
+export const professional_area_types: ProfessionalAreaTypeCatalogDocument[];
 
 /**
- * Профиль
+ * Профиль.
  */
-export const profiles: any;
+export const profiles: ProfileCatalogDocument[];
 
 /**
- * Profiling record
+ * Profiling record.
  */
-export const profiling_records: any;
+export const profiling_records: ProfilingRecordCatalogDocument[];
 
 /**
- * Проект
+ * Проект.
  */
-export const projects: any;
+export const projects: ProjectCatalogDocument[];
 
 /**
- * Участник проекта
+ * Участник проекта.
  */
-export const project_participants: any;
+export const project_participants: ProjectParticipantCatalogDocument[];
 
 /**
- * Продукт/услуга
+ * Продукт/услуга.
  */
-export const providers: any;
+export const providers: ProviderCatalogDocument[];
 
 /**
- * Тип провайдера курсов
+ * Тип провайдера курсов.
  */
-export const provider_course_types: any;
+export const provider_course_types: ProviderCourseTypeCatalogDocument[];
 
 /**
- * Тест программного кода
+ * Тест программного кода.
  */
-export const qa_tests: any;
+export const qa_tests: QaTestCatalogDocument[];
 
 /**
- * Набор параметров тестов программного кода
+ * Набор параметров тестов программного кода.
  */
-export const qa_test_paramsets: any;
+export const qa_test_paramsets: QaTestParamsetCatalogDocument[];
 
 /**
- * Результат выполнения теста программного кода
+ * Результат выполнения теста программного кода.
  */
-export const qa_test_results: any;
+export const qa_test_results: QaTestResultCatalogDocument[];
 
 /**
- * Набор тестов программного кода
+ * Набор тестов программного кода.
  */
-export const qa_test_sets: any;
+export const qa_test_sets: QaTestSetCatalogDocument[];
 
 /**
- * Квалификация
+ * Квалификация.
  */
-export const qualifications: any;
+export const qualifications: QualificationCatalogDocument[];
 
 /**
- * Присвоение квалификации
+ * Присвоение квалификации.
  */
-export const qualification_assignments: any;
+export const qualification_assignments: QualificationAssignmentCatalogDocument[];
 
 /**
- * Рейтинг
+ * Рейтинг.
  */
-export const ratings: any;
+export const ratings: RatingCatalogDocument[];
 
 /**
- * Уровень готовности
+ * Уровень готовности.
  */
-export const readiness_levels: any;
+export const readiness_levels: ReadinessLevelCatalogDocument[];
 
 /**
- * Рекомендация на вакансию
+ * Рекомендация на вакансию.
  */
-export const recommendations: any;
+export const recommendations: RecommendationCatalogDocument[];
 
 /**
- * Рекомендательный алгоритм
+ * Рекомендательный алгоритм.
  */
-export const recommender_algorithms: any;
+export const recommender_algorithms: RecommenderAlgorithmCatalogDocument[];
 
 /**
- * Применение рекомендательного алгоритма
+ * Применение рекомендательного алгоритма.
  */
-export const recommender_algorithm_applyings: any;
+export const recommender_algorithm_applyings: RecommenderAlgorithmApplyingCatalogDocument[];
 
 /**
- * Выбор пользователя по рекомендации
+ * Выбор пользователя по рекомендации.
  */
-export const recommender_select_collaborators: any;
+export const recommender_select_collaborators: RecommenderSelectCollaboratorCatalogDocument[];
 
 /**
- * Способ подбора
+ * Способ подбора.
  */
-export const recruitment_methods: any;
+export const recruitment_methods: RecruitmentMethodCatalogDocument[];
 
 /**
- * План подбора
+ * План подбора.
  */
-export const recruitment_plans: any;
+export const recruitment_plans: RecruitmentPlanCatalogDocument[];
 
 /**
- * Регион
+ * Регион.
  */
-export const regions: any;
+export const regions: RegionCatalogDocument[];
 
 /**
- * Удаленное действие
+ * Удаленное действие.
  */
-export const remote_actions: any;
+export const remote_actions: RemoteActionCatalogDocument[];
 
 /**
- * Внешнее приложение API
+ * Внешнее приложение API.
  */
-export const remote_applications: any;
+export const remote_applications: RemoteApplicationCatalogDocument[];
 
 /**
- * Выборка
+ * Выборка.
  */
-export const remote_collections: any;
+export const remote_collections: RemoteCollectionCatalogDocument[];
 
 /**
- * Профиль безопасности
+ * Профиль безопасности.
  */
-export const remote_security_profiles: any;
+export const remote_security_profiles: RemoteSecurityProfileCatalogDocument[];
 
 /**
- * Репозиторий
+ * Репозиторий.
  */
-export const repositoriums: any;
+export const repositoriums: RepositoriumCatalogDocument[];
 
 /**
- * Дисциплинарное взыскание
+ * Дисциплинарное взыскание.
  */
-export const reprimands: any;
+export const reprimands: ReprimandCatalogDocument[];
 
 /**
- * Тип взыскания
+ * Тип взыскания.
  */
-export const reprimand_types: any;
+export const reprimand_types: ReprimandTypeCatalogDocument[];
 
 /**
- * Заявка
+ * Заявка.
  */
-export const requests: any;
+export const requests: RequestCatalogDocument[];
 
 /**
- * Тип заявки
+ * Тип заявки.
  */
-export const request_types: any;
+export const request_types: RequestTypeCatalogDocument[];
 
 /**
- * Ресурс базы
+ * Ресурс базы.
  */
-export const resources: any;
+export const resources: ResourceCatalogDocument[];
 
 /**
- * Тип ресурса базы
+ * Тип ресурса базы.
  */
-export const resource_types: any;
+export const resource_types: ResourceTypeCatalogDocument[];
 
 /**
- * Отзыв
+ * Отзыв.
  */
-export const responses: any;
+export const responses: ResponseCatalogDocument[];
 
 /**
- * Тип отзыва
+ * Тип отзыва.
  */
-export const response_types: any;
+export const response_types: ResponseTypeCatalogDocument[];
 
 /**
- * Ограничение графика сотрудника
+ * Ограничение графика сотрудника.
  */
-export const restricting_collaborator_schedules: any;
+export const restricting_collaborator_schedules: RestrictingCollaboratorScheduleCatalogDocument[];
 
 /**
- * Тип ограничения
+ * Тип ограничения.
  */
-export const restricting_types: any;
+export const restricting_types: RestrictingTypeCatalogDocument[];
 
 /**
- * Резюме
+ * Резюме.
  */
-export const resumes: any;
+export const resumes: ResumeCatalogDocument[];
 
 /**
- * Фактор риска
+ * Фактор риска.
  */
-export const risk_levels: any;
+export const risk_levels: RiskLevelCatalogDocument[];
 
 /**
- * Уровень риска
+ * Уровень риска.
  */
-export const risk_perspectives: any;
+export const risk_perspectives: RiskPerspectiveCatalogDocument[];
 
 /**
- * Категория
+ * Категория.
  */
-export const roles: any;
+export const roles: ProfileCatalogDocument[];
 
 /**
- * Обзор зарплат
+ * Обзор зарплат.
  */
-export const salary_surveys: any;
+export const salary_surveys: SalarySurveyCatalogDocument[];
 
 /**
- * Источник обзоров зарплат
+ * Источник обзоров зарплат.
  */
-export const salary_survey_sources: any;
+export const salary_survey_sources: SalarySurveySourceCatalogDocument[];
 
 /**
- * Продажи
+ * Продажи.
  */
-export const sales: any;
+export const sales: SaleCatalogDocument[];
 
 /**
- * Договор
+ * Договор.
  */
-export const sale_contracts: any;
+export const sale_contracts: SaleContractCatalogDocument[];
 
 /**
- * Тип договора
+ * Тип договора.
  */
-export const sale_contract_types: any;
+export const sale_contract_types: SaleContractTypeCatalogDocument[];
 
 /**
- * Статус продажи
+ * Статус продажи.
  */
-export const sale_statuss: any;
+export const sale_statuss: SaleStatusCatalogDocument[];
 
 /**
- * График
+ * График.
  */
-export const schedule_days: any;
+export const schedule_days: ScheduleDayCatalogDocument[];
 
 /**
- * Тип графика
+ * Тип графика.
  */
-export const schedule_types: any;
+export const schedule_types: ScheduleTypeCatalogDocument[];
 
 /**
- * Очередь скриптов
+ * Очередь скриптов.
  */
-export const script_queue_elems: any;
+export const script_queue_elems: ScriptQueueElemCatalogDocument[];
 
 /**
- * Раздел инструкции
+ * Раздел инструкции.
  */
-export const section_instructions: any;
+export const section_instructions: SectionInstructionCatalogDocument[];
 
 /**
- * Отобранное резюме
+ * Отобранное резюме.
  */
-export const selected_resumes: any;
+export const selected_resumes: SelectedResumeCatalogDocument[];
 
 /**
- * Избранная вакансия
+ * Избранная вакансия.
  */
-export const selected_vacancys: any;
+export const selected_vacancys: SelectedVacancyCatalogDocument[];
 
 /**
- * Агент сервера
+ * Агент сервера.
  */
-export const server_agents: any;
+export const server_agents: ServerAgentCatalogDocument[];
 
 /**
- * Сайт
+ * Сайт.
  */
-export const sites: any;
+export const sites: SiteCatalogDocument[];
 
 /**
- * Навык
+ * Навык.
  */
-export const skills: any;
+export const skills: SkillCatalogDocument[];
 
 /**
- * Тип навыка
+ * Тип навыка.
  */
-export const skill_types: any;
+export const skill_types: SkillTypeCatalogDocument[];
 
 /**
- * Позиция штатного расписания
+ * Позиция штатного расписания.
  */
-export const staff_positions: any;
+export const staff_positions: StaffPositionCatalogDocument[];
 
 /**
- * Увольнение
+ * Увольнение.
  */
-export const staff_position_finishs: any;
+export const staff_position_finishs: StaffPositionFinishCatalogDocument[];
 
 /**
- * Кадровое перемещение
+ * Кадровое перемещение.
  */
-export const staff_position_moves: any;
+export const staff_position_moves: StaffPositionMoveCatalogDocument[];
 
 /**
- * Прием на работу
+ * Прием на работу.
  */
-export const staff_position_starts: any;
+export const staff_position_starts: StaffPositionStartCatalogDocument[];
 
 /**
- * Сообщение учебной активности
+ * Сообщение учебной активности.
  */
-export const statements: any;
+export const statements: StatementCatalogDocument[];
 
 /**
- * Значение показателя
+ * Значение показателя.
  */
-export const statistic_datas: any;
+export const statistic_datas: StatisticDataCatalogDocument[];
 
 /**
- * Показатель
+ * Показатель.
  */
-export const statistic_recs: any;
+export const statistic_recs: StatisticRecCatalogDocument[];
 
 /**
- * Подразделение
+ * Подразделение.
  */
-export const subdivisions: any;
+export const subdivisions: SubdivisionCatalogDocument[];
 
 /**
- * Группа подразделений
+ * Группа подразделений.
  */
-export const subdivision_groups: any;
+export const subdivision_groups: SubdivisionGroupCatalogDocument[];
 
 /**
- * Отчетная форма
+ * Отчетная форма.
  */
-export const submissions: any;
+export const submissions: SubmissionCatalogDocument[];
 
 /**
- * Тип отчетной формы
+ * Тип отчетной формы.
  */
-export const submission_types: any;
+export const submission_types: SubmissionTypeCatalogDocument[];
 
 /**
- * Подписка
+ * Подписка.
  */
-export const subscriptions: any;
+export const subscriptions: SubscriptionCatalogDocument[];
 
 /**
- * Замещение
+ * Замещение.
  */
-export const substitutions: any;
+export const substitutions: SubstitutionCatalogDocument[];
 
 /**
- * Тип замещения
+ * Тип замещения.
  */
-export const substitution_types: any;
+export const substitution_types: SubstitutionTypeCatalogDocument[];
 
 /**
- * Преемник
+ * Преемник.
  */
-export const successors: any;
+export const successors: SuccessorCatalogDocument[];
 
 /**
- * Дополнительный вопрос
+ * Дополнительный вопрос.
  */
-export const supplementary_questions: any;
+export const supplementary_questions: SupplementaryQuestionCatalogDocument[];
 
 /**
- * Системные события
+ * Системные события.
  */
-export const system_events: any;
+export const system_events: SystemEventCatalogDocument[];
 
 /**
- * Обработчик системных событий
+ * Обработчик системных событий.
  */
-export const system_event_handlers: any;
+export const system_event_handlers: SystemEventHandlerCatalogDocument[];
 
 /**
- * Тег
+ * Тег.
  */
-export const tags: any;
+export const tags: TagCatalogDocument[];
 
 /**
- * Способ выдвижения в резерв
+ * Способ выдвижения в резерв.
  */
-export const talent_pool_nominations: any;
+export const talent_pool_nominations: TalentPoolNominationCatalogDocument[];
 
 /**
- * Задача
+ * Задача.
  */
-export const tasks: any;
+export const tasks: TaskCatalogDocument[];
 
 /**
- * Тип задачи
+ * Тип задачи.
  */
-export const task_types: any;
+export const task_types: TaskTypeCatalogDocument[];
 
 /**
- * Экземпляр
+ * Экземпляр.
  */
-export const tenancys: any;
+export const tenancys: TenancyCatalogDocument[];
 
 /**
- * Законченный тест
+ * Законченный тест.
  */
-export const test_learnings: any;
+export const test_learnings: TestLearningCatalogDocument[];
 
 /**
- * Проект теста
+ * Проект теста.
  */
-export const test_projects: any;
+export const test_projects: TestProjectCatalogDocument[];
 
 /**
- * Система тестирования
+ * Система тестирования.
  */
-export const testing_systems: any;
+export const testing_systems: WebinarSystemCatalogDocument[];
 
 /**
- * Учет времени по работам
+ * Учет времени по работам.
  */
-export const time_entrys: any;
+export const time_entrys: TimeEntryCatalogDocument[];
 
 /**
- * План мероприятий
+ * План мероприятий.
  */
-export const training_plans: any;
+export const training_plans: TrainingPlanCatalogDocument[];
 
 /**
- * Приказ на обучение
+ * Приказ на обучение.
  */
-export const traning_orders: any;
+export const traning_orders: TraningOrderCatalogDocument[];
 
 /**
- * Транзакция
+ * Транзакция.
  */
-export const transactions: any;
+export const transactions: TransactionCatalogDocument[];
 
 /**
- * Наставник
+ * Наставник.
  */
-export const tutors: any;
+export const tutors: TutorCatalogDocument[];
 
 /**
- * Типовая программа развития
+ * Типовая программа развития.
  */
-export const typical_development_programs: TypicalDevelopmentProgramCatalogDocumentTopElem[];
+export const typical_development_programs: TypicalDevelopmentProgramCatalogDocument[];
 
 /**
- * Данные UI
+ * Данные UI.
  */
-export const ui_datas: any;
+export const ui_datas: UiDataCatalogDocument[];
 
 /**
- * Пакет данных
+ * Пакет данных.
  */
-export const upload_packages: any;
+export const upload_packages: UploadPackageCatalogDocument[];
 
 /**
- * Назначения для пользователей
+ * Назначения для пользователей.
  */
-export const user_assignments: any;
+export const user_assignments: UserAssignmentCatalogDocument[];
 
 /**
- * Пользовательские данные
+ * Пользовательские данные.
  */
-export const user_datas: any;
+export const user_datas: UserDataCatalogDocument[];
 
 /**
- * Рекомендации для пользователя
+ * Рекомендации для пользователя.
  */
-export const user_recommendations: any;
+export const user_recommendations: UserRecommendationCatalogDocument[];
 
 /**
- * Вакансия
+ * Вакансия.
  */
-export const vacancys: any;
+export const vacancys: VacancyCatalogDocument[];
 
 /**
- * Причина вакансии
+ * Причина вакансии.
  */
-export const vacancy_reasons: any;
+export const vacancy_reasons: VacancyReasonCatalogDocument[];
 
 /**
- * Отклик на вакансию
+ * Отклик на вакансию.
  */
-export const vacancy_responses: any;
+export const vacancy_responses: VacancyResponseCatalogDocument[];
 
 /**
- * Источник вакансии
+ * Источник вакансии.
  */
-export const vacancy_sources: any;
+export const vacancy_sources: VacancySourceCatalogDocument[];
 
 /**
- * Подписка на вакансии
+ * Подписка на вакансии.
  */
-export const vacancy_subscriptions: any;
+export const vacancy_subscriptions: VacancySubscriptionCatalogDocument[];
 
 /**
- * Тип вакансий
+ * Тип вакансий.
  */
-export const vacancy_types: any;
+export const vacancy_types: VacancyTypeCatalogDocument[];
 
 /**
- * Виртуальный класс
+ * Виртуальный класс.
  */
-export const vclass_settings: any;
+export const vclass_settings: VclassSettingCatalogDocument[];
 
 /**
- * Статус вендора
+ * Статус вендора.
  */
-export const vendor_states: any;
+export const vendor_states: VendorStateCatalogDocument[];
 
 /**
- * Действие
+ * Действие.
  */
-export const verbs: any;
+export const verbs: VerbCatalogDocument[];
 
 /**
- * Представление
+ * Представление.
  */
-export const view_configurations: any;
+export const view_configurations: ViewConfigurationCatalogDocument[];
 
 /**
- * Система оплаты труда
+ * Система оплаты труда.
  */
-export const wage_systems: any;
+export const wage_systems: WageSystemCatalogDocument[];
 
 /**
- * Пошаговое прохождение
+ * Пошаговое прохождение.
  */
-export const walkthroughs: any;
+export const walkthroughs: WalkthroughCatalogDocument[];
 
 /**
- * Дизайн портала
+ * Дизайн портала.
  */
-export const web_designs: any;
+export const web_designs: WebDesignCatalogDocument[];
 
 /**
- * Тип страницы
+ * Тип страницы.
  */
-export const web_modes: any;
+export const web_modes: WebModeCatalogDocument[];
 
 /**
- * Правило
+ * Правило.
  */
-export const web_rules: any;
+export const web_rules: WebRuleCatalogDocument[];
 
 /**
- * Система вебинаров
+ * Система вебинаров.
  */
-export const webinar_systems: any;
+export const webinar_systems: WebinarSystemCatalogDocument[];
 
 /**
- * Wiki статья
+ * Wiki статья.
  */
-export const wiki_articles: any;
+export const wiki_articles: WikiArticleCatalogDocument[];
 
 /**
- * Связь wiki статьи
+ * Связь wiki статьи.
  */
-export const wiki_article_communications: any;
+export const wiki_article_communications: WikiArticleCommunicationCatalogDocument[];
 
 /**
- * Тип связи
+ * Тип связи.
  */
-export const wiki_article_communication_types: any;
+export const wiki_article_communication_types: WikiArticleCommunicationTypeCatalogDocument[];
 
 /**
- * Тип wiki статьи
+ * Тип wiki статьи.
  */
-export const wiki_article_types: any;
+export const wiki_article_types: WikiArticleTypeCatalogDocument[];
 
 /**
- * Wiki база
+ * Wiki база.
  */
-export const wiki_bases: any;
+export const wiki_bases: WikiBaseCatalogDocument[];
 
 /**
- * Условия труда
+ * Условия труда.
  */
-export const work_conditions: any;
+export const work_conditions: WorkConditionCatalogDocument[];
 
 /**
- * Опыт работы
+ * Опыт работы.
  */
-export const work_experiences: any;
+export const work_experiences: WorkExperienceCatalogDocument[];
 
 /**
- * Режим работы
+ * Режим работы.
  */
-export const work_modes: any;
+export const work_modes: WorkModeCatalogDocument[];
 
 /**
- * График работы
+ * График работы.
  */
-export const work_schedules: any;
+export const work_schedules: WorkScheduleCatalogDocument[];
 
 /**
- * Тип документооборота
+ * Тип документооборота.
  */
-export const workflows: any;
+export const workflows: WorkflowCatalogDocument[];
 
 /**
  *
  */
-export const tagged_objects: any;
+export const tagged_objects: unknown[]; // TaggedObjectCatalogDocument[];

@@ -26,25 +26,25 @@ interface Binary {
 
   /**
    * Добавляет данные из заданного бинарного объекта в текущий бинарный объект.
-   * @param binary - бинарный объект, данные из которого следует добавить.
+   * @param binary - Бинарный объект, данные из которого следует добавить.
    */
   AppendBinary(binary: Binary): undefined;
 
   /**
    * Добавляет в текущий бинарный объект данные из заданной строки.
-   * @param str строка (String).
+   * @param str - Строка (String).
    */
   AppendStr(string: string): undefined;
 
   /**
    * Копирует данные из заданного бинарного объекта в текущий бинарный объект.
-   * @param binary - исходный бинарный объект
+   * @param binary - Исходный бинарный объект.
    */
   AssignBinary(binary: Binary): undefined;
 
   /**
    * Копирует в текущий бинарный объект данные из заданной строки.
-   * @param str строка (String).
+   * @param str - Строка (String).
    */
   AssignStr(str: string): undefined;
 
@@ -55,7 +55,7 @@ interface Binary {
 
   /**
    * Загружает в текущий бинарный объект данные из определенного url.
-   * @param url (String).
+   * @param url - (String).
    */
   LoadFromUrl(url: string): undefined;
 
@@ -67,20 +67,20 @@ interface Binary {
    * за счет предварительного резервирования памяти.
    * В частности эту функцию рекомендуется вызывать для объекта WriteBuffStream
    * в случае последущей записи в него данных маленькими кусочками.
-   * @param size - предполагаемый объем данных в байтах (Integer)
+   * @param size - Предполагаемый объем данных в байтах (Integer).
    */
   PrepareWriteSpace(size: number): undefined;
 
   /**
    * Сохраняет данные из текущего бинарного объекта в заданный url.
-   * @param url - url (String).
+   * @param url - Url (String).
    */
   PutToUrl(url: string): undefined;
 }
 
 interface BinaryConstructor {
-  new(...arg: any): Binary;
-  (...arg: any): Binary;
+  new(...arg: unknown[]): Binary;
+  (...arg: unknown[]): Binary;
 }
 
 declare const Binary: BinaryConstructor;
