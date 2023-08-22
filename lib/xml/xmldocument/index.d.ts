@@ -117,7 +117,7 @@ interface XmlDocument {
   /**
    * Если свойство имеет значение false (по умолчанию),
    * то при сохранении документов будет использована сокращенная форма записи,
-   * т.е. поля документа, не содержащие значений, экспортироваться не будут.
+   * т.е. Поля документа, не содержащие значений, экспортироваться не будут.
    * Это необходимо для сокращения размера документа.
    * Однако, при выгрузке (экспорте) документов обычно требуется сохранять документы в полном формате,
    * для чего данному атрибуту следует присвоить значение true.
@@ -171,15 +171,15 @@ interface XmlDocument {
    * В новой объектной модели используется метод DefaultDb.OpenNewObjectDoc(),
    * который сразу и создает новый объектный документ, и присваивает ему id и url.
    * Также в новой объектной модели используется метод BindToDbObjectType().
-   * @param {string} databaseName - имя базы. Не обязательный аргумент.
+   * @param {string} databaseName - Имя базы. Не обязательный аргумент.
    */
   BindToDb(databaseName?: string): undefined;
 
   /**
    * Преобразует документ (как правило, вновь созданный) в объектный
-   * с присвоением нового id (и соответственно url)
-   * @param {string} dbName - имя базы
-   * @param {string} objectType - тип объекта
+   * с присвоением нового id (и соответственно url).
+   * @param {string} dbName - Имя базы.
+   * @param {string} objectType - Тип объекта.
    * @example
    * ```
    * doc = OpenNewDoc("x-app://rcr/rcr_candidate.xmd");
@@ -193,11 +193,11 @@ interface XmlDocument {
    * В отличие от обычного объекта Thread,
    * этот метод позволяет более удобно работать с потоками.
    * Созданный поток получает документ в качестве базового указателя This.
-   * Т.е. можно создать документ с набором полей, содержащих какие-либо методы.
+   * Т.е. Можно создать документ с набором полей, содержащих какие-либо методы.
    * На основании этого документа можно запустить поток,
    * который будет видеть по умолчанию все поля этого документа.
    * По завершении потока этот документ автоматически освободится.
-   * @param {string} code - строка, содержащая код
+   * @param {string} code - Строка, содержащая код.
    * @example
    * ```
    * doc = OpenNewDoc("rcr_publich_vacancy.xmd");
@@ -212,7 +212,7 @@ interface XmlDocument {
   /**
    * Находит в документе элемент внешнего хранения с заданным внешним ID.
    * Если элемент не найден, возвращается undefined.
-   * @param {number} extID - внешний ID элемента
+   * @param {number} extID - Внешний ID элемента.
    */
   FindExtDataElemByFieldID(): XmlElem<number>;
 
@@ -225,7 +225,7 @@ interface XmlDocument {
    * Сохраняет документ.
    * Если аргумент не указан, то сохраняет документ под существующим url.
    * Если аргумент указан, устаналиват url документа и сохраняет его.
-   * @param {string} documentUrl - url, под которым должен быть сохранен документ
+   * @param {string} documentUrl - Url, под которым должен быть сохранен документ.
    */
   Save(documentUrl?: string): undefined;
   // SaveToLds(): unknown;
@@ -243,8 +243,8 @@ interface XmlTopElem {
   name: XmlElem<string>;
   Name: string;
   Doc: XmlDocument;
-  OptChild(childName: string): any;
+  OptChild(childName: string): unknown;
   AssignElem(TopElem: XmlTopElem): void;
-  EvalPath(pathName: string): XmlElem<any> | XmlMultiElem<any> | never;
+  EvalPath(pathName: string): unknown;
   role_id: XmlMultiElem<number>;
 }

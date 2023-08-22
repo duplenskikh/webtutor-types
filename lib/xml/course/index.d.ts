@@ -93,7 +93,7 @@ AdminAccessBase & {
   pwt_disp: XmlElem<boolean>;
   import_type: XmlElem<string>;
   education_org_id: XmlElem<number>;
-  schedule: XmlElem<any>;
+  schedule: XmlElem<unknown>;
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;

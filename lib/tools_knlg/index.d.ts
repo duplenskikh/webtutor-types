@@ -6,5 +6,5 @@ declare namespace tools_knlg {
     plan_start_date: Date,
     expert_id: number
     education_plan_id: number
-  }): { doc_learning_task_result: any };
+  }): { doc_learning_task_result: unknown };
 }

@@ -9,9 +9,9 @@ interface ErrorConstructor {
 }
 
 /**
- * @param {string} str - строка с текстом ошибки (String).
- * @returns string
- * UserError(str)
-*/
+ * @param {string} str - Строка с текстом ошибки (String).
+ * @returns String
+ * UserError(str).
+ */
 declare let Error: ErrorConstructor;
 declare let UserError: ErrorConstructor;

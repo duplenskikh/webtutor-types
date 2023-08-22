@@ -304,7 +304,7 @@ EventSettingsBase & {
     bDoSave: boolean,
     bCreateEventResult: boolean,
     bSendNotification: boolean
-  }): any;
+  }): unknown;
   delPerson(): unknown;
   changeTutorList(): unknown;
   get_info(): unknown;

@@ -112,7 +112,7 @@ interface Request {
    * Если в коде Web-страницы объект Session доступен через глобальную
    * переменную с таким же именем, то, например, внутри OnWebRequest()
    * единственный способ получить ссылку на этот объект - это обратиться
-   * через Request.Session
+   * через Request.Session.
    */
   Session: Session;
 
@@ -147,9 +147,9 @@ interface Request {
 
   /**
    * Добавляет или заменяет поле заголовка HTTP-ответа. Если заголовок уже был отправлен, метод возвращает ошибку.
-   * @param {string} fieldName - имя поля (String).
-   * @param {string} fieldValue - значение поля (String).
-   * @param {boolean} replaceExisting - заменить существующее (Boolean).
+   * @param {string} fieldName - Имя поля (String).
+   * @param {string} fieldValue - Значение поля (String).
+   * @param {boolean} replaceExisting - Заменить существующее (Boolean).
    * Заменить значение существующего поля с таким же именем, если есть.
    * Необязательный аргумент, по умолчанию равен true.
    */
@@ -165,10 +165,10 @@ interface Request {
    * Выполняет код указанного фрагмента Web-страницы с записью результата
    * в текущий HTTP-ответ. Метод используется для включений фрагментов,
    * общих для различных видов страниц.
-   * @param {string} path - путь к включаемому фрагменту (String).
+   * @param {string} path - Путь к включаемому фрагменту (String).
    * Если указан относительный путь (что как правило и делается),
    * путь считается относительно родительской к текущей странице директории.
-   * @param {boolean} allowSubCancel - разрешать завершение код с отменой (Bool).
+   * @param {boolean} allowSubCancel - Разрешать завершение код с отменой (Bool).
    * Если true, то в случае, если код фрагмента завершается исключением типа Cancel(),
    * метод все равно завершается успешно. Необязательный аргумент,
    * по умолчанию равен false. Используется, для удобства завершения фрагментов
@@ -186,22 +186,22 @@ interface Request {
   /**
    * Вызывает отправку статуса HTTP 301 "Object Moved" (постоянное перенаправление).
    * Если заголовок уже был отправлен, метод возвращает ошибку.
-   * @param {string} redirectUrl - url, на которое происходит перенаправление (String).
+   * @param {string} redirectUrl - Url, на которое происходит перенаправление (String).
    */
   PermanentRedirect(redirectUrl: string): void;
 
   /**
    * Вызывает отправку статуса HTTP 302 "Object Moved" (перенаправление).
    * Если заголовок уже был отправлен, метод возвращает ошибку.
-   * @param {string} redirectUrl - url, на которое происходит перенаправление (String).
+   * @param {string} redirectUrl - Url, на которое происходит перенаправление (String).
    */
   Redirect(redirectUrl: string): void;
 
   /**
    * Возвращает статус HTTP-ответа. Если заголовок уже был отправлен,
    * метод возвращает ошибку.
-   * @param {number} statusCode - трехзначный код статуса (Integer).
-   * @param {string} statusDesc - наименование статуса (String).
+   * @param {number} statusCode - Трехзначный код статуса (Integer).
+   * @param {string} statusDesc - Наименование статуса (String).
    * @example Request.SetRespStatus( 500, 'Invalid server state' );
    */
   SetRespStatus(statusCode: number, statusDesc: string): void;
@@ -212,7 +212,7 @@ interface Request {
    * Код Web-страницы обычно вызывает данный метод, если Request.AuthLogin
    * возвращает пустую строку, либо указаны неверные авторизационные данные.
    * Если заголовок уже был отправлен, метод возвращает ошибку.
-   * @param {string} options - список опций вида 'name1=value1;name2=value2;...' (String).
+   * @param {string} options - Список опций вида 'name1=value1;name2=value2;...' (String).
    * Допустимые значения: basic=1, ntlm=1 - разрешенные виды авторизации.
    */
   SetWrongAuth(options: string): void;

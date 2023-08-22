@@ -12,7 +12,7 @@ interface Response {
    * Атрибут доступен как на чтение так и на запись.
    * Содержит значение заголовка "Content-Type" ответа на текущий запрос. HTTP.
    * Если заголовок уже был отправлен, попытка изменения атрибута возвращает ошибку.
-   * @returns string
+   * @returns String.
    */
   ContentType: string;
 
@@ -51,9 +51,9 @@ interface Response {
    * Более старый эквивалент метода AddRespHeader() объекта Request.
    * Добавляет или заменяет поле заголовка HTTP-ответа.
    * Если заголовок уже был отправлен, метод возвращает ошибку.
-   * @param {string} fieldName - имя поля (String).
-   * @param {string} fieldValue - значение поля (String).
-   * @param {boolean} replaceExisting - заменить существующее (Boolean).
+   * @param {string} fieldName - Имя поля (String).
+   * @param {string} fieldValue - Значение поля (String).
+   * @param {boolean} replaceExisting - Заменить существующее (Boolean).
    * Заменить значение существующего поля с таким же именем, если есть.
    * Необязательный аргумент, по умолчанию равен true.
    */
@@ -67,14 +67,14 @@ interface Response {
    * исключением типа Cancel(), в противном случае метод не производит никаких действий.
    * Метод обычно используется для скриптов, возвращающих файлы,
    * хранящиеся вне файловой системы, например внутри базы данных приложения.
-   * @param {Date} date - дата последнего изменения файла (Date).
+   * @param {Date} date - Дата последнего изменения файла (Date).
    */
   CheckModified(date: Date): void;
 
   /**
    * Отправляет содержимое файла, как если бы файл был запрошен напрямую.
    * При этом отправляется правильный Content-Type и Last-Modified.
-   * @param {string} filePath - путь к файлу или url файла (String).
+   * @param {string} filePath - Путь к файлу или url файла (String).
    */
   HandleStaticFile(filePath: string): void;
 
@@ -82,7 +82,7 @@ interface Response {
    * Более старый эквивалент метода Redirect() объекта Request.
    * Вызывает отправку статуса HTTP 302 "Object Moved" (перенаправление).
    * Если заголовок уже был отправлен, метод возвращает ошибку.
-   * @param {string} redirectUrl - url, на которое происходит перенаправление (String).
+   * @param {string} redirectUrl - Url, на которое происходит перенаправление (String).
    */
   Redirect(redirectUrl: string): void;
 
@@ -90,9 +90,9 @@ interface Response {
    * Более старый эквивалент метода SetRespStatus() объекта Request.
    * Возвращает статус HTTP-ответа. Если заголовок уже был отправлен,
    * метод возвращает ошибку.
-   * @param {number} statusCode - трехзначный код статуса (Integer).
-   * @param {string} statusDesc - наименование статуса (String).
-   * Response.SetRespStatus( 500, 'Invalid server state' );
+   * @param {number} statusCode - Трехзначный код статуса (Integer).
+   * @param {string} statusDesc - Наименование статуса (String).
+   * Response.SetRespStatus( 500, 'Invalid server state' );.
    */
   SetRespStatus(statusCode: number, statusDesc: string): void;
 
@@ -103,7 +103,7 @@ interface Response {
    * Код Web-страницы обычно вызывает данный метод, если Request.AuthLogin
    * возвращает пустую строку, либо указаны неверные авторизационные данные.
    * Если заголовок уже был отправлен, метод возвращает ошибку.
-   * @param {string} options - список опций вида 'name1=value1;name2=value2;...' (String).
+   * @param {string} options - Список опций вида 'name1=value1;name2=value2;...' (String).
    * Допустимые значения: basic=1, ntlm=1 - разрешенные виды авторизации.
    */
   SetWrongAuth(options: string): void;
@@ -113,8 +113,8 @@ interface Response {
    * Содержимое предварительно накапливается в буфере,
    * либо немедленно отправляется в сеть в зависимости от значение атрибута WriteMode.
    * Именно в это метод транслируется конструкция вида <%=xxx%> в ASP-подобных страницах.
-   * @param {string} str - строка с данными (String).
-   * @param {boolean} encode - маскировать передаваемые данные по правилам HTML (Bool).
+   * @param {string} str - Строка с данными (String).
+   * @param {boolean} encode - Маскировать передаваемые данные по правилам HTML (Bool).
    * Необязательный атрибут, по умолчанию false.
    */
   Write(str: string, encode?: boolean): void;
@@ -126,7 +126,7 @@ interface Response {
    * Данный метод используется редко по сравнению с методом Write(),
    * особенно после того, как объекты XmlElem типа "string" и "binary"
    * стали вести себя одинаково.
-   * @param {string|Binary} data - объект типа XmlElem типа "string" и "binary",
+   * @param {string|Binary} data - Объект типа XmlElem типа "string" и "binary",
    * либо объект типа Binary (Object).
    */
   WriteBinary(data: XmlElem<string> | Binary): void;
