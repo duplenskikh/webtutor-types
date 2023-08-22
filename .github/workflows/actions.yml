@@ -7,21 +7,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: 'Checkout'
+      - name: Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: '0'
+          fetch-depth: 0
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
-      - name: 'Install'
+      - name: Install
         run: npm ci
 
-      - name: 'Lint'
+      - name: Lint
         run: npm run lint:stage
 
-      - name: 'Build'
+      - name: Lint
+        run: npm run test
+
+      - name: Build
         run: npm run build
