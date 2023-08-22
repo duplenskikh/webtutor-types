@@ -608,10 +608,10 @@ declare function ArrayUnion(...args: unknown[]): unknown[];
 
 /**
  * Проверяет, является ли аргумент массивом.
- * @param {T} value - Аргумент.
+ * @param {unknown} value - Аргумент.
  * @returns {boolean}
  */
-declare function IsArray<T>(value: T): T extends readonly (infer P)[] | XmMultiElem<infer U> ? true : false;
+declare function IsArray(value: unknown): value is unknown[] | XmlMultiElem<unknown>;
 
 /**
  * Выбирает элементы массива, с определенным значением  заданного поля (ключа) внутри элемента. Массив должен быть предварительно отсортирован по возрастанию значения ключа, что делает эту функцию существенно быстрее по сравнению с ArraySelectByKey().
