@@ -463,7 +463,7 @@ declare function ArrayFind<T>(array: XmlMultiElem<T>, qualExpr: string): XmlElem
  * @param {Array} array - Массив.
  * @returns {number}
  */
-declare function ArrayCount<T>(array: T): number;
+declare function ArrayCount<T>(array: T[]): number;
 
 /**
  * Преобразует заданный массив к массиву с прямым индексированием.
