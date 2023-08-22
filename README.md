@@ -85,6 +85,11 @@ function getManagersByType(bossTypeCode: string = "main") {
 }
 ```
 
+## 🔨 Tests
+
+This repo supports tests for types.  
+You can check [the docs](https://github.com/ai/check-dts#writing-negative-test) for a better understanding.
+
 ## 🤝 Contributing
 
 1. Clone
