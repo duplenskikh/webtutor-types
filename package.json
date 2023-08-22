@@ -9,7 +9,8 @@
     "lint:stage": "ts-node ./ci/lint.ts",
     "lint": "eslint -c ./lib/.eslintrc.json lib",
     "lint:fix": "eslint -c ./lib/.eslintrc.json lib --fix",
-    "build": "tsc -p lib/tsconfig.json"
+    "build": "tsc -p lib/tsconfig.json",
+    "test": "check-dts"
   },
   "repository": {
     "type": "git",
@@ -27,12 +28,13 @@
   "homepage": "https://github.com/umbrik/webtutor-types#readme",
   "devDependencies": {
     "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.3.72",
     "@types/node": "^20.4.5",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
+    "check-dts": "^0.7.2",
     "eslint": "^8.16.0",
     "eslint-plugin-jsdoc": "^46.4.5",
-    "ts-node": "^10.9.1",
-    "@swc/core": "^1.3.72"
+    "ts-node": "^10.9.1"
   }
 }
