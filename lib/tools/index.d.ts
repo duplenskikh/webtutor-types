@@ -808,7 +808,30 @@ declare namespace tools {
   function get_direct_sub_person_ids(iUserId: unknown): unknown;
   function get_sub_person_ids_by_subdivision_id(_subdivision_id: unknown, sConditionsParam: unknown): unknown;
   function get_sub_persons_by_subdivision_id(_subdivision_id: unknown, sConditionsParam: unknown): unknown;
-  function get_sub_person_ids_by_func_manager_id(_manager_id: unknown, _catalog_names: unknown, vBossType: unknown, iLimitParam: unknown, sSearchParam: unknown): unknown;
+
+  /**
+   * Возвращает массив ID подчинённых сотрудников (как непосредственных, так и подчинённых подчиненных) указанного сотрудника.
+   * @param {number} managerId - ID сотрудника, для которого производится поиск подчиненных.
+   * @param {string | null} catalogNames - Можно передать любой набор из следующих каталогов (collaborator, group, org, position, subdivision), разделенных запятой;
+   * native – поиск подчиненных только непосредственного руководителя по должности;
+   * not_native – поиск подчиненных руководителя любого типа: группы, сотрудника, подразделения, организации.
+   * Тогда поиск будет происходить только среди объектов указанных каталогов.
+   * @param {boolean | number } bossType - Тип руководителя.
+   * Допустимые значения:
+   * - true – поиск только непосредственного руководителя;
+   * - false - поиск только функционального руководителя без признака Непосредственный.
+   * - ID типа руководителя. Если передать ID нужного типа руководителя, то будет осуществлен поиск подчинённых сотрудников только для руководителей указанного типа.
+   * @param {number} limit - Максимальное количество подчиненных для поиска.
+   * Указывается в случае, когда массив подчиненных руководителя высокого уровня является очень большим и процесс поиска может быть достаточно долгим.
+   * Если будет найдено больше записей, чем указанно, то будет возвращено только указанное количество, а процесс поиска будет остановлен.
+   * @param {string} fullnameContains - Символы, которые должны содержать ФИО подчиненных сотрудников.
+   * @example
+   * ```
+   * var curSubPersonIDsByManagerIDSearch = tools.get_sub_person_ids_by_func_manager_id(curUserID, null, null, null, search_fullname);
+   * ```
+   */
+  function get_sub_person_ids_by_func_manager_id(managerId: number, catalogNames?: string | null, bossType?: boolean | number | null, limit?: number | null, fullnameContains?: string): number[];
+
   function get_sub_persons_by_func_manager_id(iManagerIDParam: unknown, sCatalogNamesParam: unknown, vBossType: unknown): unknown;
   function get_all_subs_by_func_manager_id(_manager_id: unknown): unknown;
   function eval_code_page_url(_url: unknown, _doc_id: unknown, _rnd_id: unknown): unknown;
