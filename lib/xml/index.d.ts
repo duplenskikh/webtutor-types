@@ -1292,3 +1292,5 @@ declare var LdsIsServer: boolean;
 declare var oData: unknown;
 
 declare const LdsCurUserID: number;
+
+declare const curParams: Object;
