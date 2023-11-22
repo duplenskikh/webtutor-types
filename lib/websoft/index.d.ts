@@ -701,21 +701,39 @@ declare namespace Websoft {
   }
 
   namespace RegExp {
-    interface IRegExpMatchesItem {
+    class Match {
+      Default: string;
+      FirstIndex: number;
+      Length: number;
+      Value: string;
+      SubMatches(): SubMatches;
       SubMatches(index: number): string;
+      ToString(): string;
     }
 
-    interface RegExpMatches {
+    class MatchCollection {
       Count: number;
-      Item(index: number): IRegExpMatchesItem;
+      Item(index: number): Match;
     }
 
     class RegExp {
-      Pattern: string;
       Global: boolean;
       IgnoreCase: boolean;
       MultiLine: boolean;
-      Execute(string: string): RegExpMatches;
+      Pattern: string;
+      Execute(source: string): MatchCollection;
+      Execute(source: string, pattern: string): MatchCollection;
+      /**
+       * Используется для получения версии компонента.
+       */
+      GetVersion(): string;
+      IsMatch(source: string): boolean;
+      Replace(source: string, repl: string): string;
+    }
+
+    class SubMatches {
+      Count: number;
+      Item(index: number): string;
     }
   }
 }
