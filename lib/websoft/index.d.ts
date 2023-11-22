@@ -122,7 +122,7 @@ declare namespace Websoft {
         /**
          * Значение ячейки.
          */
-        Value: string;
+        Value: string | number | boolean | null;
 
         /**
          * Используется для получения последней произошедшей ошибки.
@@ -347,7 +347,24 @@ declare namespace Websoft {
         SaveAs(newPath: string): 1 | 0;
       }
 
-      class Font {}
+      class Font {
+        Color: string;
+        IsBold: boolean;
+        IsItalic: boolean;
+        Name: string;
+        Size: number;
+
+        /**
+         * Используется для получения последней произошедшей ошибки.
+         * @returns Текст последней произошедшей ошибки.
+         */
+        GetError(): string;
+        /**
+         * Используется для получения версии компонента.
+         * @returns Версия компонента.
+         */
+        GetVersion(): string;
+      }
 
       class PageSetup {
         /**
@@ -499,11 +516,53 @@ declare namespace Websoft {
         GetVersion(): string;
       }
 
-      class Range {}
+      class Range {
+        CopyDataTo(str: string): Range;
+        CopyStyleTo(str: string): Range;
+        CopyTo(str: string): Range;
+        CopyValueTo(str: string): Range;
 
-      class Row {}
+        /**
+         * Используется для получения последней произошедшей ошибки.
+         * @returns Текст последней произошедшей ошибки.
+         */
+        GetError(): string;
+        /**
+         * Используется для получения версии компонента.
+         * @returns Версия компонента.
+         */
+        GetVersion(): string;
+      }
 
-      class Rows {}
+      class Row {
+        Height: number;
+
+        /**
+         * Используется для получения последней произошедшей ошибки.
+         * @returns Текст последней произошедшей ошибки.
+         */
+        GetError(): string;
+        /**
+         * Используется для получения версии компонента.
+         * @returns Версия компонента.
+         */
+        GetVersion(): string;
+      }
+
+      class Rows {
+        GetRow(index: number): Row;
+
+        /**
+         * Используется для получения последней произошедшей ошибки.
+         * @returns Текст последней произошедшей ошибки.
+         */
+        GetError(): string;
+        /**
+         * Используется для получения версии компонента.
+         * @returns Версия компонента.
+         */
+        GetVersion(): string;
+      }
 
       class Style {
         /**
