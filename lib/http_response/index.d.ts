@@ -87,7 +87,7 @@ interface Response {
   Redirect(redirectUrl: string): void;
 
   /**
-   * Более старый эквивалент метода SetRespStatus() объекта Request.
+   * Более старый эквивалент метода {@link SetRespStatus}() объекта Request.
    * Возвращает статус HTTP-ответа. Если заголовок уже был отправлен,
    * метод возвращает ошибку.
    * @param {number} statusCode - Трехзначный код статуса (Integer).
@@ -97,7 +97,7 @@ interface Response {
   SetRespStatus(statusCode: number, statusDesc: string): void;
 
   /**
-   * Более старый эквивалент метода SetWrongAuth() объекта Request.
+   * Более старый эквивалент метода {@link SetWrongAuth()} объекта Request.
    * Используется для проверки авторизации внутри Web-страницы.
    * Вызывает отправку статуса HTTP 401 "Authorization required".
    * Код Web-страницы обычно вызывает данный метод, если Request.AuthLogin
@@ -111,13 +111,13 @@ interface Response {
   /**
    * Записывает содержимое строки в тело HTTP-ответа.
    * Содержимое предварительно накапливается в буфере,
-   * либо немедленно отправляется в сеть в зависимости от значение атрибута WriteMode.
+   * либо немедленно отправляется в сеть в зависимости от значение атрибута {@link WriteMode}.
    * Именно в это метод транслируется конструкция вида <%=xxx%> в ASP-подобных страницах.
-   * @param {string} str - Строка с данными (String).
+   * @param {string | number | null | undefined | boolean | Date} payload - Строка с данными (String).
    * @param {boolean} encode - Маскировать передаваемые данные по правилам HTML (Bool).
    * Необязательный атрибут, по умолчанию false.
    */
-  Write(str: string, encode?: boolean): void;
+  Write(payload: string | number | null | undefined | boolean | Date, encode?: boolean): void;
 
   /**
    * Записывает содержимое бинарного объекта в тело HTTP-ответа.
