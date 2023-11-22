@@ -12,23 +12,23 @@ interface CompetenceProfileDocumentRole {
 }
 
 interface CompetenceProfileDocumentCompetenceEducationMethod {
-  education_method_id: XmlElem<number>;
+  education_method_id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
 }
 
 interface CompetenceProfileDocumentCompetenceDevelopmentMethod {
-  development_method_id: XmlElem<number>;
+  development_method_id: XmlElem<number, DevelopmentMethodCatalogDocumentTopElem>;
 }
 
 interface CompetenceProfileDocumentCompetenceIndicatorEducationMethod {
-  education_method_id: XmlElem<number>;
+  education_method_id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
 }
 
 interface CompetenceProfileDocumentCompetenceIndicatorDevelopmentMethod {
-  development_method_id: XmlElem<number>;
+  development_method_id: XmlElem<number, DevelopmentMethodCatalogDocumentTopElem>;
 }
 
 interface CompetenceProfileDocumentCompetenceIndicator extends RoleWeightsBase {
-  indicator_id: XmlElem<number>;
+  indicator_id: XmlElem<number, IndicatorCatalogDocumentTopElem>;
   plan: XmlElem<string>;
   plan_text: XmlElem<string>;
   plan_value: XmlElem<number>;
@@ -39,7 +39,7 @@ interface CompetenceProfileDocumentCompetenceIndicator extends RoleWeightsBase {
 }
 
 interface CompetenceProfileDocumentCompetence extends RoleWeightsBase {
-  competence_id: XmlElem<number>;
+  competence_id: XmlElem<number, CompetenceCatalogDocumentTopElem>;
   plan: XmlElem<string>;
   plan_text: XmlElem<string>;
   plan_value: XmlElem<number>;
