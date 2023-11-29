@@ -1,14 +1,17 @@
 
 declare namespace tools_web {
-  function put_query_string(_param_str: string, _page_name: string): string;
+  function put_query_string(str: string, name: string): string;
 
+  /**
+   * Путь до wt/web директории сервера.
+   */
   function web_url(): string;
 
   /**
    * Ссылка на раздел портала.
-   * @param {object} oAttributesParam - Параметры.
+   * @param {object} attr - Параметры.
    */
-  function doc_link(oAttributesParam: Object): string;
+  function doc_link(attr: Object): string;
 
   function get_object_link(
     objectName: string,
@@ -159,9 +162,24 @@ declare namespace tools_web {
   function get_tracking_url(fldLocationParam: unknown, curHostPath: unknown): unknown;
   function create_resource_from_attacment(oAttachmentParam: unknown, iPersonIDParam: unknown, tePersonParam: unknown): unknown;
   function get_key_positions_list(iPersonIdParam: unknown, oStructParam: unknown): unknown;
-  function url_std_content_type(sUrlParam: unknown): unknown;
+
+  /**
+   * Формирует content-type из Url файла.
+   * @param {string} url - Url файла.
+   */
+  function url_std_content_type(url: string): string;
+
+  /**
+   * Возвращает DOTNETCORE-VFS=='1' из AppConfig.
+   */
   function is_vfs(): boolean;
-  function write_url_to_response(sUrl: unknown, oRequestParam: unknown): unknown;
+
+  /**
+   * Отправка файла в response stream.
+   * @param {string} url - Url файла.
+   * @param {Request} req - Объект запроса Request.
+   */
+  function write_url_to_response(url: string, req: Request): void;
 
   /**
    * Декоратор дял простого шифрования функцией StrSimpleEncrypt({objectId}_{date}).
@@ -271,5 +289,5 @@ declare namespace tools_web {
   function get_md5_id(hash: string): unknown;
   function check_object(xmCurObject: unknown, sType: string): unknown;
   function check_redirect_url(sUrlParam: string): unknown;
-  function check_web_rule_by_url(sUrlParam: string, Request: Request): unknown;
+  function check_web_rule_by_url(url: string, Request: Request): boolean;
 }
