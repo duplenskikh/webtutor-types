@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 declare namespace Websoft {
 
   class WebsoftBaseClass {
@@ -173,7 +174,6 @@ declare namespace Websoft {
          * @param totalRows - Количество строк.
          * @param totalColumns - Количество колонок.
          */
-        // eslint-disable-next-line no-magic-numbers
         Merge(firstRow: number, firstColumn: number, totalRows: number, totalColumns: number): 1 | 0;
 
         /**
@@ -181,7 +181,6 @@ declare namespace Websoft {
          * @param columnNum - Номер колонки.
          * @param width - Ширина (Double).
          */
-        // eslint-disable-next-line no-magic-numbers
         SetColumnWidth(columnNum: number, width: number): 1 | 0;
 
         /**
@@ -189,7 +188,6 @@ declare namespace Websoft {
          * @param rowNum - Номер строки.
          * @param width - Ширина (Double).
          */
-        // eslint-disable-next-line no-magic-numbers
         SetRowHeight(rowNum: number, width: number): 1 | 0;
 
         /**
@@ -199,7 +197,6 @@ declare namespace Websoft {
          * @param totalRows - Количество строк.
          * @param totalColumns - Количество колонок.
          */
-        // eslint-disable-next-line no-magic-numbers
         UnMerge(firstRow: number, firstColumn: number, totalRows: number, totalColumns: number): 1 | 0;
       }
 
@@ -236,13 +233,11 @@ declare namespace Websoft {
         /**
          * Закрывает документ.
          */
-        // eslint-disable-next-line no-magic-numbers
         Close(): 0 | 1;
 
         /**
          * Создает книгу Excel.
          */
-        // eslint-disable-next-line no-magic-numbers
         CreateWorkBook(): 0 | 1;
 
         /**
@@ -257,7 +252,6 @@ declare namespace Websoft {
          * @param resourcesDirectoryName - Название папки с ресурсами (изображения, стили и т.д.).
          *
          */
-        // eslint-disable-next-line no-magic-numbers
         LoadHtmlFile(filePath: string, resourcesDirectoryName: string): 0 | 1;
 
         /**
@@ -266,20 +260,17 @@ declare namespace Websoft {
          * @param resourcesDirectoryName - Название папки с ресурсами (изображения, стили и т.д.).
          *
          */
-        // eslint-disable-next-line no-magic-numbers
         LoadHtmlString(htmlText: string, resourcesDirectoryName: string): 0 | 1;
 
         /**
          * Открывает файл Microsoft Excel.
          * @param filePath - Путь до файла.
          */
-        // eslint-disable-next-line no-magic-numbers
         Open(filePath: string): 1 | 0;
 
         /**
          * Сохраняет текущий документ.
          */
-        // eslint-disable-next-line no-magic-numbers
         Save(): 1 | 0;
 
         /**
@@ -288,7 +279,6 @@ declare namespace Websoft {
          * Доступные форматы: CSV, ODS, TIFF, SVG, PDF, MHTML, HTML.
          * @param newPath - Путь сохранения, включая имя файла.
          */
-        // eslint-disable-next-line no-magic-numbers
         SaveAs(newPath: string): 1 | 0;
       }
 
@@ -730,7 +720,6 @@ declare namespace Websoft {
            * Сохраняет набор графиков в виде изображения.
            * Формат изображения определяется по расширению в имени файла.
            */
-          // eslint-disable-next-line no-magic-numbers
           ToImage(path: string): 1 | 0;
         }
 
@@ -1061,9 +1050,7 @@ declare namespace Websoft {
             color: string,
             degree: number,
             style: "DiagonalDown" | "DiagonalUp" | "FromCorner" | "Horizontal" | "Vertical" | "Unknown",
-            // eslint-disable-next-line no-magic-numbers
             variant: 1 | 2 | 3 | 4
-          // eslint-disable-next-line no-magic-numbers
           ): 1 | 0;
 
           /**
@@ -1077,9 +1064,7 @@ declare namespace Websoft {
             color: string,
             degree: number,
             style: "FromCenter",
-            // eslint-disable-next-line no-magic-numbers
             variant: 1 | 2
-          // eslint-disable-next-line no-magic-numbers
           ): 1 | 0;
 
           /**
@@ -1097,9 +1082,7 @@ declare namespace Websoft {
             color2: string,
             transparency2: number,
             style: "DiagonalDown" | "DiagonalUp" | "FromCorner" | "Horizontal" | "Vertical" | "Unknown",
-            // eslint-disable-next-line no-magic-numbers
             variant: 1 | 2 | 3 | 4
-            // eslint-disable-next-line no-magic-numbers
           ): 1 | 0;
 
           /**
@@ -1117,9 +1100,7 @@ declare namespace Websoft {
             color2: string,
             transparency2: number,
             style: "FromCenter",
-            // eslint-disable-next-line no-magic-numbers
             variant: 1 | 2
-            // eslint-disable-next-line no-magic-numbers
           ): 1 | 0;
         }
 
@@ -1177,7 +1158,6 @@ declare namespace Websoft {
            * Сохраняет изображение по указанному пути.
            * @param filePath - Путь сохранения.
            */
-          // eslint-disable-next-line no-magic-numbers
           SaveAs(filePath: string): 1 | 0;
         }
 
@@ -1224,6 +1204,105 @@ declare namespace Websoft {
     }
   }
 
+  namespace Zip {
+    class Zip {
+      CharSet: string;
+
+      Compression: number;
+
+      /**
+       * Уровень сжатия. Принимает значения от 0 до 9.
+       */
+      CompressionLevel: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+
+      /**
+       * Добавляет в архив содержимое указанной директории.
+       * @param path - Путь до директории с файлами.
+       */
+      AddDirectory(path: string): 1 | 0;
+
+      /**
+       * Добавляет содержимое указанной директории в директорию внутри архива.
+       * @param path - Путь до директории с файлами.
+       * @param pathInArchive - Путь до директории внутри архива.
+       */
+      AddDirectoryToPath(path: string, pathInArchive: string): 1 | 0;
+
+      /**
+       * Добавляет в архив файл, расположенный по указанному пути.
+       * @param path - Путь до файла.
+       */
+      AddFile(path: string): 1 | 0;
+
+      /**
+       * Добавляет в архив файлы, расположенные по указанной маске пути.
+       * @param path - Путь до файлов, добавляемых в архив. Представляет собой путь до папки и маску имени файлов.
+       */
+      AddFiles(path: string): 1 | 0;
+
+      /**
+       * Добавляет указанные файлы в директорию внутри архива.
+       * @param path - Путь до файлов, добавляемых в архив. Может использовать путь до директории с файлами либо маску.
+       * @param pathInArchive - Директория внутри архива, куда будут добавлены файлы.
+       */
+      AddFilesToPath(path: string, pathInArchive: string): 1 | 0;
+
+      /**
+       * Закрывает архив и обнуляет все ссылки на файл.
+       */
+      Close(): void;
+
+      /**
+       * Создает новый Zip-архив по указанному пути.
+       * @param filePath - Путь до файла.
+       */
+      CreateArchive(filePath: string): 1 | 0;
+
+      /**
+       * Извлекает данные из архива по указанному пути.
+       * @param outputPath - Путь до директории для распаковки.
+       */
+      Extract(outputPath: string): 1 | 0;
+
+      /**
+       * Извлекает указанные файлы из архива.
+       * @param filesPath - Маска имени файлов.
+       * @param directoryInArchive - Директория внутри архива, из которой следует извлекать файлы. Для извлечения даных из корня выставляется пустой строкой.
+       * @param outputPath - Путь до директории для распаковки.
+       */
+      ExtractFiles(
+        filesPath: string,
+        directoryInArchive: string,
+        outputPath: string
+      ): 1 | 0;
+
+      /**
+       * Открывает Zip-архив по указанному пути.
+       * @param filePath - Путь до файла.
+       */
+      OpenArchive(filePath: string): 1 | 0;
+
+      OpenArchive(filePath: string, access: System.IO.FileAccess): number;
+
+      /**
+       * Открывает Zip-архив по указанному пути. Если файл не существует, создается новый файл.
+       * @param filePath - Путь до файла.
+       */
+      OpenOrCreate(filePath: string): 1 | 0;
+
+      /**
+       * Формирует и сохраняет архив.
+       */
+      Save(): 1 | 0;
+
+      /**
+       * Устанавливает уровень сжатия.
+       * @param compressionLevel
+       */
+      SetCompressionLevel(compressionLevel: number): 1 | 0;
+    }
+  }
+
   namespace RegExp {
     class Match {
       Default: string;
@@ -1254,6 +1333,16 @@ declare namespace Websoft {
     class SubMatches {
       Count: number;
       Item(index: number): string;
+    }
+  }
+}
+
+declare namespace System {
+  namespace IO {
+    enum FileAccess {
+      Read = 1,
+      ReadWrite = 3,
+      Write = 2
     }
   }
 }
