@@ -1,5 +1,5 @@
 interface AssessmentPlanDocumentAssessmentResultRecommend {
-  assessment_result_recommend_id: XmlElem<number>;
+  assessment_result_recommend_id: XmlElem<number, AssessmentResultRecommendCatalogDocumentTopElem>;
   assessment_result_recommend_name: XmlElem<string>;
 }
 
@@ -10,22 +10,22 @@ interface AssessmentPlanDocumentAppraisedPeriod {
 }
 
 interface AssessmentPlanDocumentCustomComment {
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   workflow_state: XmlElem<string>;
   comment: XmlElem<string>;
   comment_date: XmlElem<Date>;
 }
 
 interface AssessmentPlanDocumentCustomExpert {
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_type: XmlElem<number>;
   is_done: XmlElem<boolean>;
   responsible: XmlElem<boolean>;
 }
 
 interface AssessmentPlanDocumentExpert {
-  person_id: XmlElem<number>;
-  status: XmlElem<string>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  status: XmlElem<string, typeof common.assessment_appraise_participants>;
   is_custom: XmlElem<boolean>;
 }
 
@@ -42,21 +42,21 @@ AdminAccessBase & {
   Doc: AssessmentPlanDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  assessment_appraise_id: XmlElem<number>;
-  person_id: XmlElem<number>;
-  expert_person_id: XmlElem<number>;
-  boss_id: XmlElem<number>;
+  assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  expert_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  boss_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   department_id: XmlElem<number>;
   department_name: XmlElem<string>;
   flag_appraise_department: XmlElem<boolean>;
   assessment_object_type: XmlElem<string>;
-  assessment_appraise_type: XmlElem<string>;
-  status: XmlElem<string>;
+  assessment_appraise_type: XmlElem<string, typeof common.assessment_appraise_types>;
+  status: XmlElem<string, typeof common.assessment_appraise_participants>;
   is_done: XmlElem<boolean>;
   integral_mark: XmlElem<number>;
   flag_is_processed: XmlElem<boolean>;
   assessment_result_recommends: XmlMultiElem<AssessmentPlanDocumentAssessmentResultRecommend>;
-  assessment_appraise_matrix_id: XmlElem<number>;
+  assessment_appraise_matrix_id: XmlElem<number, AssessmentAppraiseMatrixCatalogDocumentTopElem>;
   appraised_periods: XmlMultiElem<AssessmentPlanDocumentAppraisedPeriod>;
   custom_comments: XmlMultiElem<AssessmentPlanDocumentCustomComment>;
   custom_experts: XmlMultiElem<AssessmentPlanDocumentCustomExpert>;
@@ -70,7 +70,7 @@ AdminAccessBase & {
   index: XmlElem<number>;
   start_date: XmlElem<Date>;
   end_date: XmlElem<Date>;
-  budget_period_id: XmlElem<number>;
+  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
   period_start: XmlElem<Date>;
   period_end: XmlElem<Date>;
 };
