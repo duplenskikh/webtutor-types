@@ -1,4 +1,19 @@
 declare namespace Websoft {
+
+  class WebsoftBaseClass {
+    /**
+     * Используется для получения последней произошедшей ошибки.
+     * @returns Текст последней произошедшей ошибки.
+     */
+    GetError(): string;
+
+    /**
+     * Используется для получения версии компонента.
+     * @returns Версия компонента.
+     */
+    GetVersion(): string;
+  }
+
   namespace Office {
     /**
      * Библиотека для работы с документами Microsoft Office Excel.
@@ -8,7 +23,7 @@ declare namespace Websoft {
       /**
        * Описание границы ячейки.
        */
-      class Border {
+      class Border extends WebsoftBaseClass {
         /**
          * Цвет границы.
          */
@@ -31,22 +46,12 @@ declare namespace Websoft {
         | "SlantedDashDot"
         | "Thick"
         | "Thin";
-
-        /**
-         * Используется для получения последней произошедшей ошибки.
-         */
-        GetError(): string;
-
-        /**
-         * Используется для получения версии компонента.
-         */
-        GetVersion(): string;
       }
 
       /**
        * Класс для работы с границами ячейки.
        */
-      class Borders {
+      class Borders extends WebsoftBaseClass {
         /**
          * Получает описание границы указанного типа.
          * @param string - BorderType.
@@ -61,16 +66,6 @@ declare namespace Websoft {
           | "Vertical"
           | "Horizontal"
         ): Border;
-
-        /**
-         * Используется для получения последней произошедшей ошибки.
-         */
-        GetError(): string;
-
-        /**
-         * Используется для получения версии компонента.
-         */
-        GetVersion(): string;
 
         /**
          * Устанавливает стиль границ ячейки.
@@ -98,7 +93,7 @@ declare namespace Websoft {
         ): void;
       }
 
-      class Cell {
+      class Cell extends WebsoftBaseClass {
         /**
          * Формула.
          */
@@ -125,24 +120,14 @@ declare namespace Websoft {
         Value: string | number | boolean | null;
 
         /**
-         * Используется для получения последней произошедшей ошибки.
-         * @returns Текст последней произошедшей ошибки.
-         */
-        GetError(): string;
-        /**
          * Получить картинку.
          * @param System.Int32 - Порядковый номер изображения.
          * @returns Изображение.
          */
         GetPicture(index: number): Drawing.Picture;
-        /**
-         * Используется для получения версии компонента.
-         * @returns Версия компонента.
-         */
-        GetVersion(): string;
       }
 
-      class Cells {
+      class Cells extends WebsoftBaseClass {
         /**
          * Колонки.
          */
@@ -151,7 +136,7 @@ declare namespace Websoft {
          * Настройка потребления памяти. Принимает значения "MemoryPreference" или "Normal".
          * Значение "MemoryPreference" применяется при записи в документ большого количества данных.
          */
-        MemorySetting: string;
+        MemorySetting: "MemoryPreference" | "Normal";
         /**
          * Строки.
          */
@@ -168,16 +153,6 @@ declare namespace Websoft {
          * @param cellName - Расположение.
          */
         GetCell(cellName: string): Cell;
-
-        /**
-         * Используется для получения последней произошедшей ошибки.
-         */
-        GetError(): string;
-
-        /**
-         * Используется для получения версии компонента.
-         */
-        GetVersion(): string;
 
         /**
          * Скрывает колонку.
@@ -228,46 +203,26 @@ declare namespace Websoft {
         UnMerge(firstRow: number, firstColumn: number, totalRows: number, totalColumns: number): 1 | 0;
       }
 
-      class Column {
+      class Column extends WebsoftBaseClass {
         /**
          * Ширина колонки.
          */
         Width: number;
-
-        /**
-         * Используется для получения последней произошедшей ошибки.
-         */
-        GetError(): string;
-
-        /**
-         * Используется для получения версии компонента.
-         */
-        GetVersion(): string;
       }
 
-      class Columns {
+      class Columns extends WebsoftBaseClass {
         /**
          * Получает {@link Columns | колонку} по указанному номеру.
          * @param index - Номер колонки.
          *
          */
         GetColumn(index: number): Column;
-
-        /**
-         * Используется для получения последней произошедшей ошибки.
-         */
-        GetError(): string;
-
-        /**
-         * Используется для получения версии компонента.
-         */
-        GetVersion(): string;
       }
 
       /**
        * Класс для работы с документом Microsoft Excel.
        */
-      class Document {
+      class Document extends WebsoftBaseClass {
         /**
          * Количество страниц.
          */
@@ -289,16 +244,6 @@ declare namespace Websoft {
          */
         // eslint-disable-next-line no-magic-numbers
         CreateWorkBook(): 0 | 1;
-
-        /**
-         * Используется для получения последней произошедшей ошибки.
-         */
-        GetError(): string;
-
-        /**
-         * Используется для получения версии компонента.
-         */
-        GetVersion(): string;
 
         /**
          * Получает значение листа по номеру.
@@ -347,26 +292,15 @@ declare namespace Websoft {
         SaveAs(newPath: string): 1 | 0;
       }
 
-      class Font {
+      class Font extends WebsoftBaseClass {
         Color: string;
         IsBold: boolean;
         IsItalic: boolean;
         Name: string;
         Size: number;
-
-        /**
-         * Используется для получения последней произошедшей ошибки.
-         * @returns Текст последней произошедшей ошибки.
-         */
-        GetError(): string;
-        /**
-         * Используется для получения версии компонента.
-         * @returns Версия компонента.
-         */
-        GetVersion(): string;
       }
 
-      class PageSetup {
+      class PageSetup extends WebsoftBaseClass {
         /**
          * Адаптировать содержимое по высоте под указанное количество страниц.
          */
@@ -503,131 +437,89 @@ declare namespace Websoft {
         | "PaperPRCEnvelope10Rotated"
         | "PaperB3"
         | "PaperBusinessCard";
-
-        /**
-         * Используется для получения последней произошедшей ошибки.
-         * @returns Текст последней произошедшей ошибки.
-         */
-        GetError(): string;
-        /**
-         * Используется для получения версии компонента.
-         * @returns Версия компонента.
-         */
-        GetVersion(): string;
       }
 
-      class Range {
+      class Range extends WebsoftBaseClass {
         CopyDataTo(str: string): Range;
         CopyStyleTo(str: string): Range;
         CopyTo(str: string): Range;
         CopyValueTo(str: string): Range;
-
-        /**
-         * Используется для получения последней произошедшей ошибки.
-         * @returns Текст последней произошедшей ошибки.
-         */
-        GetError(): string;
-        /**
-         * Используется для получения версии компонента.
-         * @returns Версия компонента.
-         */
-        GetVersion(): string;
       }
 
-      class Row {
+      class Row extends WebsoftBaseClass {
         Height: number;
-
-        /**
-         * Используется для получения последней произошедшей ошибки.
-         * @returns Текст последней произошедшей ошибки.
-         */
-        GetError(): string;
-        /**
-         * Используется для получения версии компонента.
-         * @returns Версия компонента.
-         */
-        GetVersion(): string;
       }
 
-      class Rows {
+      class Rows extends WebsoftBaseClass {
         GetRow(index: number): Row;
-
-        /**
-         * Используется для получения последней произошедшей ошибки.
-         * @returns Текст последней произошедшей ошибки.
-         */
-        GetError(): string;
-        /**
-         * Используется для получения версии компонента.
-         * @returns Версия компонента.
-         */
-        GetVersion(): string;
       }
 
-      class Style {
+      class Style extends WebsoftBaseClass {
         /**
          * Границы ячейки.
          */
         Borders: Borders;
+
         /**
          * Свой шаблон формата данных ячейки.
          */
         Custom: string;
+
         /**
          * Цвет шрифта.
          */
         FontColor: string;
+
         /**
          * Название шрифта.
          */
         FontName: string;
+
         /**
          * Размер шрифта.
          */
         FontSize: number;
+
         /**
          * Цвет заливки.
          */
         ForegroundColor: string;
+
         /**
          * Выравнивание по горизонтали. Принимает значения "Left", "Right", "Center", "Justify".
          */
-        HorizontalAlignment: string;
+        HorizontalAlignment: "Left" | "Right" | "Center" | "Justify";
+
         /**
          * Ширность шрифта.
          */
         IsBold: boolean;
+
         /**
          * Курсив.
          */
         IsItalic: boolean;
+
         /**
          * Автоперенос текста.
          */
         IsTextWrapped: boolean;
+
         /**
          * Номер стиля и формата в таблице. Описание можно посмотреть тут: http://www.aspose.com/docs/display/cellsnet/Setting+Display+Formats+of+Numbers+and+Dates.
          */
         Number: number;
+
         /**
          * Выравнивание по вертикали. Принимает значения "Top", "Bottom", "Center".
          */
-
-        /**
-         * Используется для получения последней произошедшей ошибки.
-         */
-        GetError(): string;
-
-        /**
-         * Используется для получения версии компонента.
-         */
-        GetVersion(): string;
+        VerticalAlignment: "Top" | "Bottom" | "Center";
       }
 
       /**
        * Лист книги Excel.
        */
-      class Worksheet {
+      class Worksheet extends WebsoftBaseClass {
         /**
          * Свойство для управления ячейками листа.
          */
@@ -636,7 +528,8 @@ declare namespace Websoft {
         /**
          * Наборы графиков.
          */
-        Charts: ChartsCollection;
+        Charts: Websoft.Office.Excel.Charts.ChartsCollection;
+
 
         /**
          * Название листа.
@@ -651,7 +544,7 @@ declare namespace Websoft {
         /**
          * Набор изображений листа.
          */
-        Pictures: Pictures;
+        Pictures: Websoft.Office.Excel.Drawing.Pictures;
 
         /**
          * Создает новый набор графиков.
@@ -668,7 +561,7 @@ declare namespace Websoft {
           top: number,
           width: number,
           height: number
-        ): Chart;
+        ): Websoft.Office.Excel.Charts.Chart;
 
         /**
          * Получает ячейку по указанному расположению
@@ -676,26 +569,657 @@ declare namespace Websoft {
          * @param cellName - Расположение.
          */
         GetCell(cellName: string): Cell;
-
-        /**
-         * Используется для получения последней произошедшей ошибки.
-         */
-        GetError(): string;
-
-        /**
-         * Используется для получения версии компонента.
-         */
-        GetVersion(): string;
       }
 
-      class ChartsCollection {}
+      namespace Charts {
+        class Axis extends WebsoftBaseClass {
+          /**
+           * Область.
+           */
+          readonly Area: Websoft.Office.Excel.Drawing.Area;
 
-      class Pictures {}
+          /**
+           * Положение вертикальной оси между делениями.
+           */
+          AxisBetweenCategories: boolean;
 
-      class Chart {}
+          /**
+           * Линия.
+           */
+          readonly AxisLine: Websoft.Office.Excel.Drawing.Line;
+
+          /**
+           * Номер категории пересечения вертикальной оси.
+           */
+          CrossAtt: number;
+
+          /**
+           * Тип пересечения вертикальной оси. Принимает значения "Automatic", "Maximum", "Custom".
+           */
+          CrossType: "Automatic" | "Maximum" | "Custom";
+
+          /**
+           * Основные деления.
+           */
+          MajorUnit: number;
+
+          /**
+           * Максимальное значение.
+           */
+          MaxValue: Object;
+
+          /**
+           * Промежуточные деления.
+           */
+          MinorUnit: number;
+
+          /**
+           * Минимальное значение.
+           */
+          MinValue: Object;
+
+          /**
+           * Положение подписей. Принимает значения "High", "Low", "NextToAxis", "None".
+           */
+          TickLabelPosition: "High" | "Low" | "NextToAxis" | "None";
+
+          /**
+           * Подписи к координатам.
+           */
+          readonly TickLabels: TickLabels;
+
+          /**
+           * Заголовок оси.
+           */
+          readonly Title: Websoft.Office.Excel.Charts.Title;
+        }
+
+        class Chart extends WebsoftBaseClass {
+          /**
+           * @deprecated
+           * Цвет фона.
+           * Рекомендуется использовать поля ChartArea.Area.BackgroundColor и PlotArea.Area.BackgroundColor.
+           */
+          BackgroundColor: string;
+
+          /**
+           * Ось X.
+           */
+          readonly CategoryAxis: Axis;
+
+          /**
+           * Данные категории (оси X для некоторых графиков).
+           * Может устанавливаться в виде диапазона ячеек ("A1:B4") или набора данных ("{10,40,80}").
+           * Важно! Этот параметр должен выставляться после добавления всех необходимых графиков к набору.
+           */
+          CategoryData: string;
+
+          /**
+           * Область диаграммы.
+           */
+          readonly ChartArea: ChartArea;
+
+          /**
+           * Таблица с данными.
+           */
+          readonly ChartDataTable: ChartDataTable;
+
+          /**
+           * Цвет фона области графика.
+           */
+          GridBackgroundColor: string;
+
+          /**
+           * Расположение легенды. Принимает значения "Top", "Left", "Right", "Bottom".
+           */
+          LegendPosition: "Top" | "Left" | "Right" | "Botton";
+
+          /**
+           * Область построения.
+           */
+          readonly PlotArea: PlotArea;
+
+          /**
+           * Показывать линии категории.
+           */
+          ShowCategoryGriglines: boolean;
+
+          /**
+           * Показывать таблицу с данными.
+           */
+          ShowDataTable: boolean;
+
+          /**
+           * Показывать легенду.
+           */
+          ShowLegend: boolean;
+
+          /**
+           * Показывать линии значений.
+           */
+          ShowValuesGriglines: boolean;
+          /**
+           * Заголовок.
+           */
+          readonly Title: Title;
+
+          /**
+           * Ось Y.
+           */
+          readonly ValueAxis: Axis;
+
+          /**
+           * Добавляет график.
+           * @param chartType - Тип графика.
+           * @param source - Источник данных.
+           * @param isVertical - Следует ли строить график из диапазона значений ячеек по строкам или по столбцам.
+           */
+          AddSeries(
+            chartType: string,
+            source: string,
+            isVertical: boolean
+          ): Series;
+
+          /**
+           * Возвращает данные картинки в формате Base64.
+           * @param imageFormat - Формат изображения (png, jpg и т.д.).
+           */
+          GetImageInBase64String(imageFormat: string): string;
+
+          /**
+           * Сохраняет набор графиков в виде изображения.
+           * Формат изображения определяется по расширению в имени файла.
+           */
+          // eslint-disable-next-line no-magic-numbers
+          ToImage(path: string): 1 | 0;
+        }
+
+        class ChartArea extends WebsoftBaseClass {
+          /**
+           * Область.
+           */
+          readonly Area: Websoft.Office.Excel.Drawing.Area;
+          /**
+           * Граница.
+           */
+          readonly Border: Websoft.Office.Excel.Drawing.Line;
+          /**
+           * Высота.
+           */
+          Height: number;
+          /**
+           * Ширина.
+           */
+          Width: number;
+        }
+
+        class ChartDataTable extends WebsoftBaseClass {
+          /**
+           * Показывать горизонтальные границы.
+           */
+          HasBorderHorizontal: boolean;
+
+          /**
+           * Показывать внешние границы.
+           */
+          HasBorderOutline: boolean;
+
+          /**
+           * Показывать вертикальные границы.
+           */
+          HasBorderVertical: boolean;
+
+          /**
+           * Показывать значения легенды.
+           */
+          ShowLegendKey: boolean;
+        }
+
+        class ChartsCollection extends WebsoftBaseClass {
+          /**
+           * Количество наборов графиков в документе.
+           */
+          readonly Count: number;
+
+          /**
+           * Создает новый набор графиков.
+           * @param chartType - Тип графика.
+           * @param upperLeftRow - Номер левой верхней строки.
+           * @param upperLeftColumn - Номер левой верхней колонки.
+           * @param lowerRightRow - Номер нижней правой строки.
+           * @param lowerRightColumn - Номер нижней правой колонки.
+           */
+          Add(
+            chartType: string,
+            upperLeftRow: number,
+            upperLeftColumn: number,
+            lowerRightRow: number,
+            lowerRightColumn: number
+          ): Chart;
+
+          /**
+           * Создает новый набор графиков.
+           * @param chartType - Тип графика.
+           * @param left - Позиция по горизонтали.
+           * @param top - Позиция по вертикали.
+           * @param width - Ширина.
+           * @param height - Высота.
+           */
+          AddFloatingChart(
+            chartType: string,
+            left: number,
+            top: number,
+            width: number,
+            height: number
+          ): Chart;
+        }
+
+        class DataLabels extends WebsoftBaseClass {
+          /**
+           * Шрифт подписей значений.
+           */
+          readonly Font: Font;
+
+          /**
+           * Формат данных. Например, "0.00%" для указания значения в процентах.
+           */
+          NumberFormat: string;
+
+          /**
+           * Расположение.
+           * Принимает значения "Center", "InsideBase", "OutsideEnd", "Above", "Below", "Left", "Right", "BestFit", "Moved".
+           * Разные значения доступны для разных типов графиков.
+           */
+          Position: "Center" | "InsideBase" | "OutsideEnd" | "Above" | "Below" | "Left" | "Right" | "BestFit" | "Moved";
+
+          /**
+           * Показывать название.
+           */
+          ShowSeriesName: boolean;
+
+          /**
+           * Показывать значение.
+           */
+          ShowValue: boolean;
+        }
+
+        class PlotArea extends WebsoftBaseClass {
+          /**
+           * Область.
+           */
+          readonly Area: Websoft.Office.Excel.Drawing.Area;
+
+          /**
+           * Граница.
+           */
+          readonly Border: Websoft.Office.Excel.Drawing.Line;
+
+          /**
+           * Высота.
+           */
+          Height: number;
+
+          /**
+           * Ширина.
+           */
+          Width: number;
+        }
+
+        class Series extends WebsoftBaseClass {
+          /**
+           * Область.
+           */
+          readonly Area: Websoft.Office.Excel.Drawing.Area;
+
+          /**
+           * Граница.
+           */
+          readonly Border: Websoft.Office.Excel.Drawing.Line;
+
+          /**
+           * Линии графика.
+           */
+          readonly DataLabels: DataLabels;
+
+          /**
+           * @deprecated
+           * Цвет графика. Устаревшее. Рекомендуется использовать {@link Area.ForegroundColor}.
+           */
+          ForegroundColor: string;
+
+          /**
+           * Название графика.
+           */
+          Name: string;
+
+          /**
+           * Использовать сглаживание графика (только для линейного типа).
+           */
+          Smooth: boolean;
+
+          /**
+           * Значения по оси X.
+           */
+          XValues: string;
+
+          /**
+           * Добавляет линию тренда.
+           * @param type - Тип линии тренда.
+           */
+          AddTrendLine(type: string): Trendline;
+        }
+
+        class TickLabels extends WebsoftBaseClass {
+          /**
+           * Шрифт подписей.
+           */
+          readonly Font: Font;
+
+          /**
+           * Формат данных. Например, "0.00%" для указания значения в процентах.
+           */
+          NumberFormat: string;
+
+          /**
+           * Угол поворота.
+           */
+          RotationAngle: number;
+
+          /**
+           * Направление текста. Принимает значения "Context", "LeftToRight", "RightToLeft".
+           */
+          TextDirection: "Context" | "LeftToRight" | "RightToLeft";
+        }
+
+        class Title extends WebsoftBaseClass {
+          /**
+           * Размер текста заголовка.
+           */
+          FontSize: number;
+
+          /**
+           * Является ли заголовок жирным.
+           */
+          IsBold: boolean;
+
+          /**
+           * Видимость заголовка.
+           */
+          IsVisible: boolean;
+
+          /**
+           * Угол поворота.
+           */
+          RotationAngle: number;
+
+          /**
+           * Текст заголовка.
+           */
+          Text: string;
+        }
+
+        class Trendline extends WebsoftBaseClass {
+          /**
+           * Прогноз назад (количество периодов).
+           */
+          Backward: number;
+
+          /**
+           * Цвет линии.
+           */
+          Color: string;
+
+          /**
+           * Показывать уравнение на диаграмме.
+           */
+          DisplayEquation: boolean;
+
+          /**
+           * Поместить на диаграмму величину достоверности аппроксимации (R^2).
+           */
+          DisplayRSquared: boolean;
+
+          /**
+           * Прогноз вперед (количество периодов).
+           */
+          Forward: number;
+
+          /**
+           * Название графика.
+           */
+          Name: string;
+
+          /**
+           * Толщина линии в point.
+           */
+          WeightPt: number;
+
+          /**
+           * Толщина линии в пикселях.
+           */
+          WeightPx: number;
+        }
+      }
 
       namespace Drawing {
-        class Picture {}
+        class Area extends WebsoftBaseClass {
+          /**
+           * Цвет фона.
+           */
+          BackgroundColor: string;
+
+          /**
+           * Стиль заливки заливки.
+           */
+          readonly FillFormat: FillFormat;
+
+          /**
+           * Цвет заливки.
+           */
+          ForegroundColor: string;
+
+          /**
+           * Прозрачность. Принимает значения от 0.0 до 1.0.
+           */
+          Transparency: number;
+        }
+
+        class FillFormat extends WebsoftBaseClass {
+          /**
+           * Цвет заливки 1.
+           */
+          readonly GradientColor1: string;
+
+          /**
+           * Цвет заливки 2.
+           */
+          readonly GradientColor2: string;
+
+          /**
+           * Угол градиента.
+           */
+          readonly GradientDegree: number;
+
+          /**
+           * Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
+           */
+          GradientStyle: "DiagonalDown" | "DiagonalUp" | "FromCenter" | "FromCorner" | "Horizontal" | "Vertical" | "Unknown";
+
+          /**
+           * Тип заливки.
+           */
+          Type: string;
+
+          /**
+           * Устанавливает градиентную заливку с одним цветом.
+           * @param color - Цвет.
+           * @param degree - Угол.
+           * @param style - Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
+           * @param variant - Вариации градиента. Может принимать значения от 1 до 4 в зависимости от типа градиента. Если стиль градиента "FromCenter", значения могут быть только 1 или 2.
+           */
+          SetOneColorGradient(
+            color: string,
+            degree: number,
+            style: "DiagonalDown" | "DiagonalUp" | "FromCorner" | "Horizontal" | "Vertical" | "Unknown",
+            // eslint-disable-next-line no-magic-numbers
+            variant: 1 | 2 | 3 | 4
+          // eslint-disable-next-line no-magic-numbers
+          ): 1 | 0;
+
+          /**
+           * Устанавливает градиентную заливку с одним цветом.
+           * @param color - Цвет.
+           * @param degree - Угол.
+           * @param style - Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
+           * @param variant - Вариации градиента. Может принимать значения от 1 до 4 в зависимости от типа градиента. Если стиль градиента "FromCenter", значения могут быть только 1 или 2.
+           */
+          SetOneColorGradient(
+            color: string,
+            degree: number,
+            style: "FromCenter",
+            // eslint-disable-next-line no-magic-numbers
+            variant: 1 | 2
+          // eslint-disable-next-line no-magic-numbers
+          ): 1 | 0;
+
+          /**
+           * Устанавливает градиентную заливку с двумя цветами.
+           * @param color1 - Первый цвет.
+           * @param transparency1 - Прозрачность первого цвета.
+           * @param color2 - Второй цвет.
+           * @param transparency2 - Прозрачность второго цвета.
+           * @param style - Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
+           * @param variant - Вариации градиента. Может принимать значения от 1 до 4 в зависимости от типа градиента. Если стиль градиента "FromCenter", значения могут быть только 1 или 2.
+           */
+          SetTwoColorGradient(
+            color1: string,
+            transparency1: number,
+            color2: string,
+            transparency2: number,
+            style: "DiagonalDown" | "DiagonalUp" | "FromCorner" | "Horizontal" | "Vertical" | "Unknown",
+            // eslint-disable-next-line no-magic-numbers
+            variant: 1 | 2 | 3 | 4
+            // eslint-disable-next-line no-magic-numbers
+          ): 1 | 0;
+
+          /**
+           * Устанавливает градиентную заливку с двумя цветами.
+           * @param color1 - Первый цвет.
+           * @param transparency1 - Прозрачность первого цвета.
+           * @param color2 - Второй цвет.
+           * @param transparency2 - Прозрачность второго цвета.
+           * @param style - Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
+           * @param variant - Вариации градиента. Может принимать значения от 1 до 4 в зависимости от типа градиента. Если стиль градиента "FromCenter", значения могут быть только 1 или 2.
+           */
+          SetTwoColorGradient(
+            color1: string,
+            transparency1: number,
+            color2: string,
+            transparency2: number,
+            style: "FromCenter",
+            // eslint-disable-next-line no-magic-numbers
+            variant: 1 | 2
+            // eslint-disable-next-line no-magic-numbers
+          ): 1 | 0;
+        }
+
+        class Line extends WebsoftBaseClass {
+          /**
+           * Цвет.
+           */
+          Color: string;
+
+          /**
+           * Видимость.
+           */
+          IsVisible: boolean;
+
+          /**
+           * Стиль линии.
+           * Принимает одно из следующих значений: "Solid", "Dash", "Dot", "DashDot", "DashDotDot", "DarkGray", "MediumGray", "LightGray".
+           */
+          Style: "Solid" | "Dash" | "Dot" | "DashDot" | "DashDotDot" | "DarkGray" | "MediumGray" | "LightGray";
+
+          /**
+           * Уровень прозрачности линии. Принимает значение от 0 (непрозрачная) до 1 (полностью прозрачная).
+           */
+          Transparency: number;
+
+          /**
+           * Толщина в поинтах.
+           */
+          WeightPt: number;
+
+          /**
+           * Толщина в пикселях.
+           */
+          WeightPx: number;
+        }
+
+        class Picture extends WebsoftBaseClass {
+          /**
+           * Высота картинки.
+           */
+          Height: number;
+
+          /**
+           * Ширина картинки.
+           */
+          Width: number;
+
+          /**
+           * Возвращает данные картинки в формате Base64.
+           * @param imageFormat - Формат изображения (png, jpg и т.д.).
+           */
+          GetBase64String(imageFormat: string): string;
+
+          /**
+           * Сохраняет изображение по указанному пути.
+           * @param filePath - Путь сохранения.
+           */
+          // eslint-disable-next-line no-magic-numbers
+          SaveAs(filePath: string): 1 | 0;
+        }
+
+        class Pictures extends WebsoftBaseClass {
+          /**
+           * Добавляет в документ изображение без привязки размеров к ячейкам.
+           * @param filePath - Путь до файла.
+           * @param upperLeftRow - Номер верхней левой строки.
+           * @param upperLeftColumn - Номер верхней левой колонки.
+           * @param widthScale - Масштабирование по ширине (в процентах).
+           * @param heightScale - Масштабирование по высоте (в процентах).
+           */
+          AddAbsolute(
+            filePath: string,
+            upperLeftRow: number,
+            upperLeftColumn: number,
+            widthScale: number,
+            heightScale: number
+          ): Picture;
+
+          /**
+           * Добавляет в документ изображение с привязкой размеров к ячейкам.
+           * @param filePath - Путь до файла.
+           * @param upperLeftRow - Номер верхней левой строки.
+           * @param upperLeftColumn - Номер верхней левой колонки.
+           * @param lowerRightRow - Номер нижней правой строки.
+           * @param lowerRightColumn - Номер нижней правой колонки.
+           */
+          AddRelative(
+            filePath: string,
+            upperLeftRow: number,
+            upperLeftColumn: number,
+            lowerRightRow: number,
+            lowerRightColumn: number
+          ): Picture;
+
+          /**
+           * Получает изображение по индексу.
+           * @param index - Индекс в наборе изображений листа.
+           */
+          Get(index: number): Picture;
+        }
       }
     }
   }
@@ -716,17 +1240,13 @@ declare namespace Websoft {
       Item(index: number): Match;
     }
 
-    class RegExp {
+    class RegExp extends WebsoftBaseClass {
       Global: boolean;
       IgnoreCase: boolean;
       MultiLine: boolean;
       Pattern: string;
       Execute(source: string): MatchCollection;
       Execute(source: string, pattern: string): MatchCollection;
-      /**
-       * Используется для получения версии компонента.
-       */
-      GetVersion(): string;
       IsMatch(source: string): boolean;
       Replace(source: string, repl: string): string;
     }
