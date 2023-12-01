@@ -1619,7 +1619,7 @@ interface KnowledgePartsBaseOld {
 
 interface CustomElemsBaseCustomElem {
   name: XmlElem<string>;
-  value: XmlElem<string>;
+  value: XmlElem<string | number | undefined | Date | null | boolean>;
 }
 
 interface CustomElemsBaseCustomReportFiction extends CustomReportBase {
