@@ -633,11 +633,6 @@ interface CustomElemsBaseCustomReportFiction extends CustomReportBase {
   name: XmlElem<string>;
 }
 
-interface CustomElemsBase {
-  custom_elems: XmlMultiElem<CustomElemsBaseCustomElem>;
-  custom_report_fictions: XmlMultiElem<CustomElemsBaseCustomReportFiction>;
-}
-
 interface CriterionBaseCriterionCatalogChain extends ViewConditionsBase, FieldNamesBase {
   catalog_name: XmlElem<string>;
   field: XmlElem<string>;
