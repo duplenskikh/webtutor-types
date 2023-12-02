@@ -165,6 +165,36 @@ type WTVDlgEditTextDocument = XmlDocument & {
   TopElem: WTVDlgEditTextTopElem;
 };
 
+type WTVDlgNotificationTemplateRecipient = {
+  recipient_type: XmlElem<string, typeof common.recipient_types>;
+  func_manager_type_id: XmlElem<number>;
+  eval_str: XmlElem<string>;
+  eval_ids_str: XmlElem<string>;
+  notification_template_id: XmlElem<number, NotificationTemplateCatalogDocumentTopElem>
+};
+
+type WTVDlgNotificationTemplateAttachment = {
+  name: XmlElem<string>;
+  data: XmlElem<Binary>;
+};
+
+type WTVDlgNotificationTemplateDocumentTopElem = XmlTopElem & {
+  subject: XmlElem<string>;
+  body: XmlElem<string>;
+  body_type: XmlElem<string>;
+  notification_template_id: XmlElem<number, NotificationTemplateCatalogDocumentTopElem>;
+  sender_selector: XmlElem<number>;
+  sender_email: XmlElem<string>;
+  can_close: XmlElem<boolean>;
+  recipients: XmlMultiElem<WTVDlgNotificationTemplateRecipient>;
+  attachments: XmlMultiElem<WTVDlgNotificationTemplateAttachment>;
+  notification_system_id: XmlElem<number>;
+};
+
+type WTVDlgNotificationTemplateDocument = XmlDocument & {
+  TopElem: WTVDlgNotificationTemplateDocumentTopElem;
+};
+
 interface Menu {
   name: XmlElem<string>;
 }
@@ -367,19 +397,6 @@ interface KnowledgePartsBaseTag {
 
 interface KnowledgePartsBaseExpert {
   expert_id: XmlElem<number>;
-}
-
-interface KnowledgePartsBaseKnowledgePart {
-  knowledge_part_id: XmlElem<number>;
-  knowledge_part_name: XmlElem<string>;
-  knowledge_part_level_id: XmlElem<number>;
-  full_path: XmlElem<string>;
-  desc: XmlElem<string>;
-  require_acknowledgement: XmlElem<boolean>;
-}
-
-interface KnowledgePartsFieldsBase {
-  knowledge_parts: XmlMultiElem<KnowledgePartsBaseKnowledgePart>;
 }
 
 interface KnowledgePartsBaseOld {

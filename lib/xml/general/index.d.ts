@@ -1591,6 +1591,19 @@ interface KnowledgePartsKpBaseTag {
   require_acknowledgement: XmlElem<boolean>;
 }
 
+interface KnowledgePartsBaseKnowledgePart {
+  knowledge_part_id: XmlElem<number>;
+  knowledge_part_name: XmlElem<string>;
+  knowledge_part_level_id: XmlElem<number>;
+  full_path: XmlElem<string>;
+  desc: XmlElem<string>;
+  require_acknowledgement: XmlElem<boolean>;
+}
+
+interface KnowledgePartsFieldsBase {
+  knowledge_parts: XmlMultiElem<KnowledgePartsBaseKnowledgePart>;
+}
+
 interface KnowledgePartsKpBase extends KnowledgePartsFieldsBase {
   acquaint_time: XmlElem<number>;
   previous_version_object_id: XmlElem<number>;
