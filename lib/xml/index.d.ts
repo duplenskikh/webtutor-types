@@ -178,7 +178,7 @@ type WTVDlgNotificationTemplateAttachment = {
   data: XmlElem<Binary>;
 };
 
-type WTVDlgNotificationTemplateDocumentTopElem = XmlTopElem & {
+type WTVDlgNotificationTemplateDocumentTopElem = {
   subject: XmlElem<string>;
   body: XmlElem<string>;
   body_type: XmlElem<string>;
@@ -191,7 +191,7 @@ type WTVDlgNotificationTemplateDocumentTopElem = XmlTopElem & {
   notification_system_id: XmlElem<number>;
 };
 
-type WTVDlgNotificationTemplateDocument = XmlDocument & {
+type WTVDlgNotificationTemplateDocument = {
   TopElem: WTVDlgNotificationTemplateDocumentTopElem;
 };
 
