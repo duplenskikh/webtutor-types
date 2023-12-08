@@ -8,9 +8,6 @@
 
 ## 📦 Install
 
-
-With GitHub, I usually insert a blockquote.
-
 > **_NOTE:_** This libary works only with `typescript<=4.4.4`
 
 ```bash
