@@ -2094,10 +2094,10 @@ declare function IsDirectory(path: string): boolean;
 
 /**
  * Возвращает url для временного файла.
- * @param {string} suffix - Требуемый суффикс имени файла. Необязательный аргумент.
+ * @param {string} [suffix] - Требуемый суффикс имени файла. Необязательный аргумент.
  * @returns {string}
  */
-declare function ObtainTempFile(suffix: string): string;
+declare function ObtainTempFile(suffix?: string): string;
 
 /**
  * Загружает содержимое файла по заданному пути, результат возвращается в виде строки, содержащей бинарные данные.
@@ -2124,10 +2124,10 @@ declare function IsAbsoluteFilePath(path: string): boolean;
 
 /**
  * Возвращает url для временного файла, который будет автоматически удален при следующем запуске приложения.
- * @param {string} suffix - Требуемый суффикс имени файла. Необязательный аргумент.
+ * @param {string} [suffix] - Требуемый суффикс имени файла. Необязательный аргумент.
  * @returns {string}
  */
-declare function ObtainSessionTempFile(suffix: string): string;
+declare function ObtainSessionTempFile(suffix?: string): string;
 
 /**
  * Перемещает или переименовывает файл.
