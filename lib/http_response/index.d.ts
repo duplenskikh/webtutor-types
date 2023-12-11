@@ -113,11 +113,11 @@ interface Response {
    * Содержимое предварительно накапливается в буфере,
    * либо немедленно отправляется в сеть в зависимости от значение атрибута {@link WriteMode}.
    * Именно в это метод транслируется конструкция вида <%=xxx%> в ASP-подобных страницах.
-   * @param {string | number | null | undefined | boolean | Date} payload - Строка с данными (String).
+   * @param {T} payload - Строка с данными (String).
    * @param {boolean} encode - Маскировать передаваемые данные по правилам HTML (Bool).
    * Необязательный атрибут, по умолчанию false.
    */
-  Write(payload: string | number | null | undefined | boolean | Date, encode?: boolean): void;
+  Write<T>(payload: T, encode?: boolean): void;
 
   /**
    * Записывает содержимое бинарного объекта в тело HTTP-ответа.
