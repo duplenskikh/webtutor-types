@@ -575,10 +575,11 @@ declare function ArrayOptFindBySortedKey<T>(array: T, value: string, name: strin
  * Функция, как правило, используется в двух случаях: 1.
  * Для сложной либо многократной обработки (особенно с прямым индексированием) "медленных" массивов, таких как результаты XQuery 2.
  * Когда в цикле, осуществляющем проход по массиву, происходит выборочное удаление его элементов.
- * @param {T[]} array - Исходный массив.
+ * @param {T} array - Исходный массив.
  * @returns {Array}
  */
-declare function ArraySelectAll<T>(array: T[]): T[];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare function ArraySelectAll<T>(array: T[]): T extends any[] ? T[] : T[];
 
 /**
  * Возвращает массив, содержащий все элементы исходного массива в виде стандартного массива Array.
@@ -592,12 +593,12 @@ declare function ArraySelectAll<T>(array: XmlMultiElem<T>): T[];
 
 /**
  * Возвращает массив уникальных значений элементов заданного массива.
- * @param {T[]} array - Исходный массив.
+ * @param {T} array - Исходный массив.
  * @param {string} fieldExpr - Выражение, вычисляемое относительно каждого элемента исходного массива,
  * Если аргумент не указан, используется значение самого элемента `This`.
- * @returns {T[]}
+ * @returns {T}
  */
-declare function ArraySelectDistinct<T>(array: T[], fieldExpr?: string): T[];
+declare function ArraySelectDistinct<T>(array: T[], fieldExpr?: string): T;
 
 /**
  * Последовательное объединение нескольких массивов в один.
@@ -611,7 +612,8 @@ declare function ArrayUnion<T>(...args: T[]): T;
  * @param {T} value - Аргумент.
  * @returns {boolean}
  */
-declare function IsArray<T>(value: unknown): value is T[];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare function IsArray(value: unknown): value is any[];
 
 /**
  * Выбирает элементы массива, с определенным значением  заданного поля (ключа) внутри элемента. Массив должен быть предварительно отсортирован по возрастанию значения ключа, что делает эту функцию существенно быстрее по сравнению с ArraySelectByKey().
@@ -620,7 +622,7 @@ declare function IsArray<T>(value: unknown): value is T[];
  * @param {string} name - Имя элемента, являющегося  ключом.
  * @returns {Array}
  */
-declare function ArraySelectBySortedKey<T, K>(array: T, value: string, name: K): T;
+declare function ArraySelectBySortedKey<T, K>(array: T, value: K, name: string): T;
 
 /**
  * Выбирает элементы массива, с определенным значением заданного поля (ключа) внутри элемента. Функция аналогична более универсальной функции ArraySelect(), но работает быстрее.
@@ -629,7 +631,7 @@ declare function ArraySelectBySortedKey<T, K>(array: T, value: string, name: K):
  * @param {string} name - Имя элемента, являющегося ключом. Необязательный аргумент. Если имя ключа не указано, используется первичный ключ.
  * @returns {Array}
  */
-declare function ArraySelectByKey<T, K>(array: T, value: string | number, name: K): T;
+declare function ArraySelectByKey<T, K>(array: T, value: K, name: string): T;
 
 /**
  * Сортирует массив по заданным полям. Возвращает новый массив отсортированных значений. Функция требует нечетного чилса аргументов (не менее 3-х), для каждого нового уровня сортировки добаляется 2 новых аргумента.
@@ -642,7 +644,7 @@ declare function ArraySelectByKey<T, K>(array: T, value: string | number, name: 
  * ArraySort( array, 'name', '+', 'date', '-' ).
  */
 
-declare function ArraySort<T>(array: T, field: string, direction: string, ...args: string[]): T[];
+declare function ArraySort<T>(array: T, field: string, direction: string, ...args: string[]): T;
 
 /**
  * Возвращает сумму значений определенного поля по всем элементам массива.
