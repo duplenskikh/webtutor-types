@@ -15,6 +15,41 @@ declare namespace Websoft {
     GetVersion(): string;
   }
 
+  namespace CryptoPro {
+    class CryptoProPrime {
+      CloseStore(): boolean;
+      GetX509CertificateByThumbprint(thumbprint: string, validOnly?: boolean, hasPrivateKey?: boolean): boolean;
+      OpenStore(store?: number, flags?: number): boolean;
+      ssl_cms_sign(messageData: string): string;
+    }
+  }
+
+  namespace CryptoStore {
+    class CryptoStore {
+      Close(): boolean;
+      DecryptString(message: string, fOAEP: boolean): string;
+      DecryptStringAES(message: string, key: string, IV?: string): string;
+      EmbedSignatureToSignedMsgData(messageData: string, mimeHeader: string): string;
+      EmbedSignatureToSignedMsgDataWithEncrypt(messageData: string, recipCert: string, mimeHeader: string): string;
+      EncryptString(message: string, fOAEP?: boolean): string;
+      EncryptStringAES(message: string, key: string, IV?: string): string;
+      ExtractAlternativeMimeDataFromSigned(messageData: string): [string, string, string, string];
+      GenerateKey(): string;
+      GetDecryptedMsgData(messageData: string): string;
+      GetEncryptedMsgData(messageData: string, fileName: string, attachment: Binary, recipCert: string, mimeHeader: string): string;
+      GetLastError(): number;
+      GetLastErrorMessage(): string;
+      GetMsgData(messageData: string, fileName: string, attachment: Binary, mimeHeader: string): string;
+      GetSelectedCertAttribute(name: string): string;
+      GetSignedEncryptedMsgData(messageData: string, fileName: string, attachment: Binary, recipCert: string, mimeHeader: string): string;
+      GetSignedMsgData(messageData: string, fileName: string, attachment: Binary, mimeHeader: string): string;
+      isCertificateSelected(): boolean;
+      Open(store: number, storeName: string, flags: number): boolean;
+      SelectCertificate(recipCert: string): boolean;
+      SelectCertificateByThumbprint(thumbprint: string, validOnly?: boolean, hasPrivateKey?: boolean): boolean;
+    }
+  }
+
   namespace Office {
     /**
      * Библиотека для работы с документами Microsoft Office Excel.
@@ -1333,6 +1368,57 @@ declare namespace Websoft {
     class SubMatches {
       Count: number;
       Item(index: number): string;
+    }
+  }
+
+  namespace Utils {
+    class Crypto {
+      /**
+       * Используется для получения последней произошедшей ошибки.
+       * @returns Текст последней произошедшей ошибки.
+       */
+      GetError(): string;
+
+      HMAC_SHA1(message: string, secret: string): string;
+      HMAC_SHA256(message: string, secret: string): string;
+    }
+
+    class FileUtils {
+      /**
+       * Используется для получения последней произошедшей ошибки.
+       * @returns Текст последней произошедшей ошибки.
+       */
+      GetError(): string;
+
+      GetEncoding(filePath: string): string;
+    }
+
+    class ServiceData {
+      Data: {
+        [key: string]: string;
+      };
+
+      Keys: string[];
+      Name: string;
+      Values: string[];
+    }
+
+    class UUID {
+      getUUID(): string;
+    }
+
+    class WebUtils {
+      IsError: boolean;
+
+      /**
+       * Используется для получения последней произошедшей ошибки.
+       * @returns Текст последней произошедшей ошибки.
+       */
+      GetError(): string;
+
+      QrGen(text: string, filePath: string): string;
+      ResolveUrlDns(url: string, allowIPV6?: boolean, defaultValue?: string, mask?: string): string;
+      WildCardToRegular(value: string): string;
     }
   }
 }
