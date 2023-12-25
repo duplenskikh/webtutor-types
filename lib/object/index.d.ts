@@ -32,7 +32,7 @@ interface Object {
 
   /**
    * Выдает значение атрибута объекта. Если атрибут отсутствует, выдает ошибку.
-   * Смотри также GetOptProperty() и SetProperty.
+   * Смотри также {@link GetOptProperty}() и SetProperty.
    * @param key - Наименование атрибута объекта.
    * @example AppConfig.GetProperty( 'alt-app-name' );
    * @throws {Error}
@@ -41,7 +41,7 @@ interface Object {
 
   /**
    * Устанавливает значение атрибута объекта. Если атрубут отсутствует,
-   * добавляет его. Смотри также GetOptProperty() и GetProperty.
+   * добавляет его. Смотри также {@link GetOptProperty}() и GetProperty.
    * @param key - Наименование атрибута объекта.
    * @param value - Значение атрибута объекта.
    */

@@ -2145,7 +2145,7 @@ declare namespace tools {
    * [hh] и [h] меняется на часы из даты.
    * [mimi] и [mi] меняется на минуты из даты.
    * [ss] и [s] меняется на секунды из даты.
-   * [AppDirectoryPath] меняется на функцию AppDirectoryPath().
+   * [AppDirectoryPath] меняется на функцию {@link AppDirectoryPath}().
    * ```
    * @param {string} _str - Стока для преобразования.
    * @param {Date} _date - Дата, данные из которой берутся для замены символов в строке,
