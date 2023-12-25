@@ -3,9 +3,6 @@
  * Обычно используется для анализа содержимого формы.
  */
 interface XmlFormElem {
-  /**
-   * @experimental
-   */
   AllowHide: unknown;
 
   /**
@@ -213,9 +210,9 @@ interface XmlFormElem {
   Child(name: string | number): XmlFormElem | never;
 
   /**
-   * @overload
    * Возвращает дочерний элемент по индексу.
    * Если элемента с заданным именем нет, выдает ошибку.
+   * @overload
    * @param {number} name - Индекс дочернего элемента.
    * Смотрите также {@link OptChild}.
    */

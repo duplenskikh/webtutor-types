@@ -2,7 +2,7 @@
  * Проверяет строку на соответствие контрольной сумме, вычисленной по алгоритму PamMd5.
  * @param {string} str - Проверяемая строка.
  * @param {string} arg - Контрольная сумма.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  * ```
  * @example
  * CheckPamMd5(str,arg)
@@ -15,13 +15,14 @@ declare function CheckPamMd5(str: string, arg: string): boolean;
  * Возвращает false, если нет (буфер пуст или его содержимое не того формата).
  * Обычно формат `text/plain` или `text/html`.
  * @param {string} format - Наименование формата.
+ * @returns {boolean} Результат.
  */
 declare function ClipboardFormatAvailable(format: string): boolean;
 
 /**
  * Вычисляет контрольную сумму по алгоритму CRC.
  * @param {string} arg - Строка, содержащая массив байт.
- * @returns Number.
+ * @returns {number} Контрольная сумма.
  */
 declare function CRC(arg: string): number;
 
@@ -30,7 +31,7 @@ declare function CRC(arg: string): number;
  * На сервере сообщение записывается в журнал 'xhttp',
  * на рабочем месте - в виде всплывающего окна (MgBox).
  * @param {T} val - Значение.
- * @returns {T}
+ * @returns {T} Значение.
  * @example
  * ```
  * LoadUrlData(alert(url));
@@ -46,7 +47,7 @@ declare function alert<T>(val: T): T;
  * при запуске исполнимого файла. Функция используется, например, в ядре программы,
  * если необходимо по-разному его настраивать для работы с различными подключаемыми модулями.
  * @param {string} moduleName - Наименование модуля.
- * @returns Boolean
+ * @returns {boolean} Результат.
  * AppModuleUsed( 'module_datex' );.
  */
 declare function AppModuleUsed(moduleName: string): boolean;
@@ -54,17 +55,15 @@ declare function AppModuleUsed(moduleName: string): boolean;
 /**
  * Вызывает исключение специального типа, аналогичное нажатию кнопки "Cancel" пользователями.
  * Позволяет генерировать исключение, на которое не будет выдаваться ссобщение об ошибке.
- * @returns {undefined}
  */
 declare function Cancel(): never;
 
 /**
  * Проверяет не должен ли текущий поток завершиться (обычно после прерывания его пользователем).
  * Если да, вызывает исключение аналогично функции {@link Cancel}().
- *
- * @returns Undefined
- * Если поток вызывает в цикле функцию {@link Sleep}() либо любую функцию, вызывающее сетевой запрос,
- * то вызывать функцию {@link CheckCurThread}() нет необходимости, поскольку вышеназванные функции
+ * @returns {undefined} Если поток вызывает в цикле функцию {@link Sleep}(),
+ * либо любую функцию, вызывающее сетевой запрос, то вызывать функцию
+ * {@link CheckCurThread}() нет необходимости, поскольку вышеназванные функции
  * сами проверяют запрос на отмену выполнения потока.
  */
 declare function CheckCurThread(): undefined;
@@ -73,15 +72,13 @@ declare function CheckCurThread(): undefined;
  * Увеличивает яркость цвета, переданного в качестве аргумента.
  * @param {string} color - Цвет в формате RGB.
  * @param {number} ratio - Действительное число обозначающее на сколько увеличивается/уменьшается яркость.
- * @returns String.
+ * @returns {string} - Результат.
  */
 declare function ColorNewBrightness(color: string, ratio: number): string;
 
 /**
  * Сигнализирует о завершении длительного процесса с упрощенным индикатором,
  * начатым при помощи функции {@link StartModalTask}().
- *
- * @returns Undefined.
  */
 declare function FinishModalTask(): undefined;
 
@@ -91,7 +88,6 @@ declare function FinishModalTask(): undefined;
  * сохраняя все вложенные файлы относительно него.
  * @param {any} html - Составной html.
  * @param {string} fileUrl - Url файлв.
- * @returns Undefined.
  */
 declare function ExtractCompoundHtml(html: string, fileUrl: string): undefined;
 
@@ -109,7 +105,6 @@ declare function EvalSync<T>(code: string, args: T): void;
  * Включает/выключает заданный журнал.
  * @param {string} name - Название журнала.
  * @param {boolean} enable - Включить/выключить (Bool). Необязятельный аргумент. По умолчанию true.
- * @returns Undefined
  * EnableLog( 'xquery', true ).
  */
 declare function EnableLog(name: string, enable?: boolean): undefined;
@@ -128,15 +123,14 @@ declare function EvalAsync<T>(code: string, args: T): void;
 /**
  * Возвращает значение системной переменной окружения.
  * @param {string} name - Имя переменной.
- * @returns String
+ * @returns {string} Значение.
  * GetSysEnvironmentVariable( 'windir' );.
  */
 declare function GetSysEnvironmentVariable(name: string): string;
 
 /**
  * Возвращает имя пользователя операционной системы под которым выполняется текущий процесс.
- *
- * @returns String.
+ * @returns {string} Результат.
  */
 declare function GetSysUserName(): string;
 
@@ -164,13 +158,14 @@ declare function EnableLogExt(name: string, options?: string): undefined;
 /**
  * Проверяет, не нажата ли какая-либо клавиша в данный момент. Обычно проверятся Ctrl или Shift.
  * @param {number} arg1 - Код клавиши.
+ * @returns {boolean} Результат.
  */
 declare function IsKeyPressed(arg1: number): boolean;
 
 /**
  * Конструктор объекта MailMessage, предназначенной для хранения E-mail - сообщения.
  * Объект строится по форме x-app://app/sx_mail_message.xmd и является обычным объектом типа XmlElem.
- * @returns XmlElem.
+ * @returns {XmlElem<unknown>} Результат.
  */
 declare function MailMessage(): XmlElem<unknown>;
 
@@ -178,29 +173,31 @@ declare function MailMessage(): XmlElem<unknown>;
  * Делает запись в файл лога определенного типа.
  * @param {string} type - Тип лога.
  * @param {string} text - Текст.
- * @returns Undefined
+ * @example
+ * ```
  * LogEvent(type, text).
+ * ```
  */
 declare function LogEvent(type: string, text: string): undefined;
 
 /**
  * Создает объект типа MailMessage на основании почтового сообщения в формате MIME.
  * @param {string} mimeData - Почтовое сообщение в формате MIME.
- * @returns XmlElem.
+ * @returns {XmlElem<unknown>} Результат.
  */
 declare function MailMessageFromMimeStr(mimeData: string): XmlElem<unknown>;
 
 /**
  * Вычисляет контрольную сумму по алгоритму Md5 и возвращает результат в бинарном формате (массив байт).
  * @param {string} data - Строка, содержащая массив байт.
- * @returns String.
+ * @returns {string} Контрольная сумма.
  */
 declare function Md5(data: string): string;
 
 /**
  * Возвращает тип склонения существительного в русском языке для заданного числа.
  * @param {number} num - Число .
- * @returns Number
+ * @returns {number} Результат.
  * IntModType(num)Возвращает тип склонения существительного в русском языке
  * (0,1,2) для заданного числа. (0 - "штук", 1 - "штука", 2 - "штуки").
  */
@@ -210,7 +207,7 @@ declare function IntModType(num: number): number;
  * Максимальное значение из нескольких аргументов.
  * @param {number} number - Число 1.
  * @param {number[]} numbers - Числа.
- * @returns Number
+ * @returns {number} Результат.
  * Max(arg1,arg2...)Возвращает максимальное значение из нескольких аргументов.
  */
 declare function Max(number: number, ...numbers: number[]): number;
@@ -223,17 +220,17 @@ declare function Max(number: number, ...numbers: number[]): number;
  * @param {string} headers - Список дополнительных полей заголовка http-запроса
  * в соответствующем формате (имя:значение перевод строки).
  * Необязательный аргумент. Список также может содержать дополнительные опции.
- * @returns WTHttpResponse.
+ * Среди списка дополнительных полей заголовка возможно использование следующих опций,
+ * которые обрабатываются отдельно и не попадают в передаваемый заголовок:
+ * Ignore-Errors - Игнорировать наличие кода ошибки HTTP в ответе.
+ * Если указана эта опция, код ошибки можно получить через атрибут RespCode возвращаемого объекта.
+ * По умолчанию функция завершается с ошибкой в случае получения кода ошибки по HTTP.
+ * Auto-Redirect - Автоматически следовать редиректам HTTP 303, HTTP 304. По умолчанию true.
+ * @returns {HttpResponse} Объект ответа.
  * @example
  * ```
  * HttpRequest("http://reg.datex-soft.com/")
- * ```
- * @example
- * ```
  * HttpRequest("http://reg.datex-soft.com/login.htm", "post", UrlEncodeQuery({ login: "xxx", password: "xxx" }))
- * ```
- * @example
- * ```
  * HttpRequest(
  *   "http://reg.datex-soft.com/login.htm",
  *   "post",
@@ -241,13 +238,6 @@ declare function Max(number: number, ...numbers: number[]): number;
  *   "Content-type: text/xml\nIgnore-Errors: 1\n"
  * )
  * ```
- * Среди списка дополнительных полей заголовка возможно использование следующих опций,
- * которые обрабатываются отдельно и не попадают в передаваемый заголовок:
- * Ignore-Errors - Игнорировать наличие кода ошибки HTTP в ответе.
- * Если указана эта опция, код ошибки можно получить через атрибут RespCode возвращаемого объекта.
- * По умолчанию функция завершается с ошибкой в случае получения кода ошибки по HTTP.
- * Auto-Redirect - Автоматически следовать редиректам HTTP 303, HTTP 304. По умолчанию true.
- * @link http://docs.datex.ru/article.htm?id=5620276892448878634
  */
 declare function HttpRequest(url: string, method?: string, body?: string, headers?: string): HttpResponse;
 
@@ -255,7 +245,7 @@ declare function HttpRequest(url: string, method?: string, body?: string, header
  * Возвращает минимальное значение из нескольких аргументов.
  * @param {number} number - Число.
  * @param {number[]} numbers - Числа.
- * @returns {number}
+ * @returns {number} Результат.
  * @example
  * ```
  * Min(2, 5, 10, 15) === 2;
@@ -268,14 +258,14 @@ declare function Min(number: number, ...numbers: number[]): number;
  * @param {string} lastname - Фамилия.
  * @param {string} firstname - Имя.
  * @param {string} [middlename] - Отчество.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function PersonShortName(lastname: string, firstname: string, middlename: string): string;
 
 /**
  * Вычисляет контрольную сумму по алгоритму PamMd5.
  * @param {string} arg - Строка, содержащая массив байт.
- * @returns String.
+ * @returns {string} Результат.
  */
 declare function PamMd5(arg: string): string;
 
@@ -284,14 +274,14 @@ declare function PamMd5(arg: string): string;
  * @param {string} color1 - Цвет в формате RGB.
  * @param {string} color2 - Цвет в формате RGB.
  * @param {number} arg - Пропорции (Real). В случае его отсутствия цвета будут смешаны в пропорции 1 к 1.
- * @returns String.
+ * @returns {string} Результат.
  */
 declare function MixColors(color1: string, color2: string, arg?: number): string;
 
 /**
  * Вычисляет контрольную сумму по алгоритму Md5 и возвращает результат в виде HEX-строки.
  * @param {string} data - Строка, содержащая массив байт.
- * @returns String.
+ * @returns {string} Результат.
  */
 declare function Md5Hex(data: string): string;
 
@@ -299,7 +289,7 @@ declare function Md5Hex(data: string): string;
  * Возвращает случайное целое число в заданном диапазоне.
  * @param {number} minVal - Нижняя граница диапазона.
  * @param {number} maxVal - Верхняя граница диапазона.
- * @returns Number.
+ * @returns {number} Результат.
  */
 declare function Random(minVal: number, maxVal: number): number;
 
@@ -323,7 +313,7 @@ declare function SendMailMessage(arg1: XmlElem<unknown>): void;
  * @param {string} path - Путь к исполняемому файлу, или имя исполняемого файла.
  * @param {string} cmdLine - Аргументы командной строки. Не бязательный аргумент.
  * @param {string} options - Набор опций через ";", в виде "имя опции=значение; ...". Необязательный аргумент.
- * @returns {number}
+ * @returns {number} Результат.
  * @example
  * ```
  * ProcessExecute(
@@ -347,7 +337,7 @@ declare function SetHttpDefaultAuth(log: string, pass: string): undefined;
 /**
  * Вычисляет hash функцию по алгоритму SHA1.
  * @param {string} str - Строка, содержащая массив байт.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function SHA1(str: string): string;
 
@@ -370,7 +360,7 @@ declare function StatusMsg(msg: string): undefined;
 /**
  * Вычисляет hash функцию по алгоритму SHA1  и возвращает строку, закодированную в Base64.
  * @param {string} str - Строка, содержащая массив байт.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function SHA1Base64(str: string): string;
 
@@ -426,7 +416,7 @@ declare function ZipExtract(archivePath: string, destPath: string): undefined;
  * Функция аналогична более универсальной функции {@link ArrayExtract}(), но работает быстрее.
  * @param {Array} array - Исходный массив.
  * @param {string} field - Имя поля.
- * @returns {any[]}
+ * @returns {any[]} Результат.
  */
 declare function ArrayExtractKeys<T>(array: T[], field: string): unknown[];
 
@@ -435,7 +425,7 @@ declare function ArrayExtractKeys<T>(array: T[], field: string): unknown[];
  * @param {Array} array - Массив.
  * @param {string} elemExpr - Выражение, вычисляющее значение, используемое для склейки, относительно элемента массива.
  * @param {string} delim - Строка-разделитель. Необязательный аргумент.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function ArrayMerge<T>(array: T[], elemExpr: string, delim: string): string;
 
@@ -450,7 +440,7 @@ declare function ArrayMerge<T>(array: T[], elemExpr: string, delim: string): str
  * @param {string} fieldExpr2 - Выражение, вычисляемое относительно каждого элемента массива 2
  * и возвращающее значение ключа для сравнения. Необязательный аргумент.
  * Если аргумент не указан, используется значение самого элемента (This).
- * @returns {Array}
+ * @returns {Array} - Результат.
  */
 declare function ArrayIntersect<T, K>(array1: T[], array2: K[], fieldExpr1: string, fieldExpr2: string): (T | K)[];
 
@@ -458,7 +448,7 @@ declare function ArrayIntersect<T, K>(array1: T[], array2: K[], fieldExpr1: stri
  * Возвращает первый элемент заданного массива. Если массив не содержит ни одного элемента,
  * функция завершается с исключением.
  * @param {Array} array - Массив.
- * @returns {any}
+ * @returns {any} Результат.
  */
 declare function ArrayFirstElem<T>(array: T[] | XmlMultiElem<T>): T | never;
 
@@ -467,7 +457,7 @@ declare function ArrayFirstElem<T>(array: T[] | XmlMultiElem<T>): T | never;
  * Если массив не содержит ни одного элемента, функция завершается с исключением.
  * @param {Array} array - Массив.
  * @param {string} expression - Выражение (строка), вычисляющее значение поля относительно элемента массива.
- * @returns {any}
+ * @returns {any} Результат.
  */
 declare function ArrayMax<T>(array: T[], expression: string): T;
 
@@ -477,7 +467,7 @@ declare function ArrayMax<T>(array: T[], expression: string): T;
  * @param {T[]} array - Массив.
  * @param {string} qualExpr - Выражение, определяющее соответствие элемента массива критерию.
  * Вычисляется относительно элемента массива..
- * @returns {T}
+ * @returns {T} Результат.
  */
 declare function ArrayFind<T>(array: T[], qualExpr: string): T;
 
@@ -486,7 +476,7 @@ declare function ArrayFind<T>(array: T[], qualExpr: string): T;
  * для сложных массивов (например результатов XQuery) вызов этой функции может повлечь за собой обращение к серверу
  * либо другую длительную по времени операцию, поэтому не следует использовать данную функцию внутри циклов.
  * @param {Array} array - Массив.
- * @returns {number}
+ * @returns {number} Результат.
  */
 declare function ArrayCount<T>(array: T): number;
 
@@ -496,7 +486,7 @@ declare function ArrayCount<T>(array: T): number;
  * В противном случае функция работает аналогично {@link ArraySelectAll}() и возвращает массив типа Array,
  * содержащий копию исходного массива.
  * @param {Array} array - Исходный массив.
- * @returns {Array}
+ * @returns {Array} - Результат.
  */
 declare function ArrayDirect<T>(array: T): T;
 
@@ -505,7 +495,7 @@ declare function ArrayDirect<T>(array: T): T;
  * Возвращает новый массив той же длинны, содержащий выбранные элементы.
  * @param {Array} array - Исходный массив.
  * @param {string} fieldExpr - Выражение, вычисляемое относительно каждого элемента исходного массива.
- * @returns {Array}
+ * @returns {Array} - Результат.
  */
 declare function ArrayExtract<T>(array: T[], fieldExpr: string | null): T[];
 
@@ -515,7 +505,7 @@ declare function ArrayExtract<T>(array: T[], fieldExpr: string | null): T[];
  * @param {Array} array - Массив.
  * @param {K} value - Значение ключа.
  * @param {string} name - Имя элемента, являющегося ключом. Если имя ключа не указано, используется первичный ключ.
- * @returns {any}
+ * @returns {any} Результат.
  */
 declare function ArrayOptFindByKey<T, K>(array: XmlMultiElem<T> | T[], value: K, name?: string): T | undefined;
 
@@ -525,7 +515,7 @@ declare function ArrayOptFindByKey<T, K>(array: XmlMultiElem<T> | T[], value: K,
  * @param {Array} array - Массив.
  * @param {string} qualExpr - Выражение, определяющее соответствие элемента массива критерию.
  * Вычисляется относительно элемента массива..
- * @returns {any}
+ * @returns {any} Результат.
  */
 declare function ArrayOptFind<T>(array: T[], qualExpr: string): T | undefined;
 declare function ArrayOptFind<T>(xmlMultiElem: XmlMultiElem<T>, qualExpr: string): XmlElem<T> | undefined;
@@ -535,7 +525,7 @@ declare function ArrayOptFind<T>(xmlMultiElem: XmlMultiElem<T>, qualExpr: string
  * Если массив не содержит ни одного элемента, функция завершается с исключением.
  * @param {Array} array - Массив.
  * @param {string} elemExpr - Выражение (строка), вычисляющее значение поля относительно элемента массива.
- * @returns {any}
+ * @returns {any} Результат.
  */
 declare function ArrayMin<T>(array: T[], elemExpr: string): T;
 
@@ -544,7 +534,7 @@ declare function ArrayMin<T>(array: T[], elemExpr: string): T;
  * Если массив не содержит ни одного элемента, функция возвращает undefined.
  * @param {Array} array - Массив.
  * @param {string} elemExpr - Выражение (строка), вычисляющее значение поля относительно элемента массива.
- * @returns {any}
+ * @returns {any} Результат.
  */
 declare function ArrayOptMax<T>(array: T[], elemExpr: string): T;
 
@@ -555,7 +545,7 @@ declare function ArrayOptMax<T>(array: T[], elemExpr: string): T;
  * @param {number} pos - Начальная позиция.
  * @param {number} elemsNum - Количество элементов нового массива. Необязательный аргумент.
  * Если количестов не указано, возвращаются все элементы с начальной позиции.
- * @returns {Array}
+ * @returns {Array} - Результат.
  */
 declare function ArrayRange<T>(array: T[], pos: number, elemsNum: number): T[];
 
@@ -564,7 +554,7 @@ declare function ArrayRange<T>(array: T[], pos: number, elemsNum: number): T[];
  * @param {T} array - Массив.
  * @param {string} expression - Выражение, определяющее соответствие элемента массива критерию.
  * Вычисляется относительно элемента массива. (Bool).
- * @returns {Array|XmlElem}
+ * @returns {Array|XmlElem} Результат.
  */
 declare function ArraySelect<T>(array: T[], expression: string): T[];
 declare function ArraySelect<T>(array: XmlMultiElem<T>, expression: string): T[];
@@ -574,7 +564,7 @@ declare function ArraySelect<T>(array: XmlMultiElem<T>, expression: string): T[]
  * Если массив не содержит ни одного элемента, функция возвращает undefined.
  * @param {Array} array - Массив.
  * @param {string} elemExpr - Выражение (строка), вычисляющее значение поля относительно элемента массива.
- * @returns {any}
+ * @returns {any} Результат.
  */
 declare function ArrayOptMin<T>(array: T[], elemExpr: string): T;
 
@@ -582,7 +572,7 @@ declare function ArrayOptMin<T>(array: T[], elemExpr: string): T;
  * Возвращает первый элемент заданного массива.
  * Если массив не содержит ни одного элемента, функция возвращает `undefined`.
  * @param {Array} array - Массив.
- * @returns {T | K | undefined}
+ * @returns {T | K | undefined} Результат.
  */
 declare function ArrayOptFirstElem<T = unknown>(array: XmlMultiElem<T> | T[]): T | undefined;
 
@@ -591,7 +581,7 @@ declare function ArrayOptFirstElem<T = unknown>(array: XmlMultiElem<T> | T[]): T
  * Если массив не содержит ни одного элемента, функция возвращает второй аргумент.
  * @param {Array} array - Массив.
  * @param {K} defaultValue - Значение по умолчанию.
- * @returns {T | K | undefined}
+ * @returns {T | K | undefined} Результат.
  */
 declare function ArrayOptFirstElem<T, K = undefined>(array: XmlMultiElem<T> | T[], defaultValue: K): T | K;
 
@@ -605,7 +595,7 @@ declare function ArrayOptFirstElem<T, K = undefined>(array: XmlMultiElem<T> | T[
  * @param {T} array - Массив.
  * @param {string} value - Значение ключа.
  * @param {string} name - Имя элемента, являющегося ключом, если имя ключа не указано, то используется первичный ключ.
- * @returns {any}
+ * @returns {any} Результат.
  */
 declare function ArrayOptFindBySortedKey<T>(array: T, value: string, name: string): unknown;
 
@@ -616,7 +606,7 @@ declare function ArrayOptFindBySortedKey<T>(array: T, value: string, name: strin
  * таких как результаты XQuery 2.
  * Когда в цикле, осуществляющем проход по массиву, происходит выборочное удаление его элементов.
  * @param {T} array - Исходный массив.
- * @returns {Array}
+ * @returns {Array} - Результат.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare function ArraySelectAll<T>(array: T[]): T extends any[] ? T[] : T[];
@@ -628,7 +618,7 @@ declare function ArraySelectAll<T>(array: T[]): T extends any[] ? T[] : T[];
  * таких как результаты {@link XQuery}
  * 2. Когда в цикле, осуществляющем проход по массиву, происходит выборочное удаление его элементов.
  * @param {XmlMultiElem<T>} array - Исходный массив.
- * @returns {Array}
+ * @returns {Array} - Результат.
  */
 declare function ArraySelectAll<T>(array: XmlMultiElem<T>): T[];
 
@@ -637,21 +627,21 @@ declare function ArraySelectAll<T>(array: XmlMultiElem<T>): T[];
  * @param {T} array - Исходный массив.
  * @param {string} fieldExpr - Выражение, вычисляемое относительно каждого элемента исходного массива,
  * Если аргумент не указан, используется значение самого элемента `This`.
- * @returns {T}
+ * @returns {T} Результат.
  */
 declare function ArraySelectDistinct<T>(array: T[], fieldExpr?: string): T;
 
 /**
  * Последовательное объединение нескольких массивов в один.
  * @param {T[]} args - Массивы.
- * @returns {T[]}
+ * @returns {T[]} - Результат.
  */
 declare function ArrayUnion<T>(...args: T[]): T;
 
 /**
  * Проверяет, является ли аргумент массивом.
  * @param {T} value - Аргумент.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare function IsArray(value: unknown): value is any[];
@@ -663,7 +653,7 @@ declare function IsArray(value: unknown): value is any[];
  * @param {Array} array - Массив.
  * @param {string} value - Значение ключа.
  * @param {string} name - Имя элемента, являющегося  ключом.
- * @returns {Array}
+ * @returns {Array} - Результат.
  */
 declare function ArraySelectBySortedKey<T, K>(array: T, value: K, name: string): T;
 
@@ -674,7 +664,7 @@ declare function ArraySelectBySortedKey<T, K>(array: T, value: K, name: string):
  * @param {string} value - Значение ключа.
  * @param {string} name - Имя элемента, являющегося ключом. Необязательный аргумент.
  * Если имя ключа не указано, используется первичный ключ.
- * @returns {Array}
+ * @returns {Array} - Результат.
  */
 declare function ArraySelectByKey<T, K>(array: T, value: K, name: string): T;
 
@@ -687,7 +677,7 @@ declare function ArraySelectByKey<T, K>(array: T, value: K, name: string): T;
  * по которым осуществляется сортировка.
  * @param {string} [direction] - Направление сортировки ('+' или '-').
  * @param {string} args
- * @returns {Array}
+ * @returns {Array} Результат.
  * @example
  * ```
  * ArraySort(array, "name", "+", "date", "-");
@@ -700,7 +690,7 @@ declare function ArraySort<T>(array: T, field: string, direction: string, ...arg
  * Возвращает сумму значений определенного поля по всем элементам массива.
  * @param {Array} array - Массив.
  * @param {string} expression - Выражение, вычисляющее поле, по которому происходит суммирование.
- * @returns {number}
+ * @returns {number} Результат.
  */
 declare function ArraySum<T>(array: T, expression: string): number;
 
@@ -716,13 +706,13 @@ declare const CurDate: Date;
  * @param {number} hour - Час. Необязательный аргумент.
  * @param {number} minute - Минута. Необязательный аргумент.
  * @param {number} second - Секунда. Необязательный аргумент.
- * @returns {Date}
+ * @returns {Date} - Дата.
  */
 declare function DateNewTime(date: Date, hour?: number, minute?: number, second?: number): Date;
 
 /**
  * Возвращает время в милисекундах, прошедшее с момента запуска операционной системы.
- * @returns {number}
+ * @returns {number} Результат.
  */
 declare function GetCurTicks(): number;
 
@@ -730,7 +720,7 @@ declare function GetCurTicks(): number;
  * Возвращает разницу между 2-мя датами в секундах. Если первая дата меньше второй, разница будет отрицательным числом.
  * @param {Date} date1 - Дата 1.
  * @param {Date} date2 - Дата 2.
- * @returns {number}
+ * @returns {number} Результат.
  */
 declare function DateDiff(date1: Date, date2: Date): number;
 
@@ -738,49 +728,49 @@ declare function DateDiff(date1: Date, date2: Date): number;
  * Сдвигает дату на указанное число секунд. Если значение второго аргумента отрицательное, дата сдвигается назад.
  * @param {Date} date - Заданная дата.
  * @param {number} seconds - Сдвиг в секундах.
- * @returns {Date}
+ * @returns {Date} - Дата.
  */
 declare function DateOffset(date: Date, seconds: number): Date;
 
 /**
  * Возвращает количество секунд, прошедших с 1970 года до заданной даты.
  * @param {Date} date - Дата.
- * @returns {number}
+ * @returns {number} Результат.
  */
 declare function DateToRawSeconds(date: Date): number;
 
 /**
  * Возвращает значение часа для заданной даты. Если дата не содержит времени, возращается undefined.
  * @param {Date} date - Дата.
- * @returns {number}
+ * @returns {number} Результат.
  */
 declare function Hour(date: Date): number;
 
 /**
  * Возвращает значение дня (1-31) для заданной даты.
  * @param {Date} date - Дата.
- * @returns {number}
+ * @returns {number} Результат.
  */
 declare function Day(date: Date): number;
 
 /**
  * Возвращает значение минуты для заданной даты. Если дата не содержит времени, возращается undefined.
  * @param {Date} date - Дата.
- * @returns {number}
+ * @returns {number} Результат.
  */
 declare function Minute(date: Date): number;
 
 /**
  * Возвращает номер месяца (1-12) для заданной даты.
  * @param {Date} date - Дата.
- * @returns {number}
+ * @returns {number} Результат.
  */
 declare function Month(date: Date): number;
 
 /**
  * Пребразует дату в формат MIME.
  * @param {Date} Date - Дата.
- * @returns {string}
+ * @returns {string} Результат.
  * @example StrMimeDate(Date("26.12.2011 10:45")) == 'Mon, 26 Dec 2011 10:45:00 +0400'
  */
 declare function StrMimeDate(Date: Date): string;
@@ -789,7 +779,7 @@ declare function StrMimeDate(Date: Date): string;
  * Преобразует дату в строку в "длинном" формате (со словесным написанием месяца).
  * Если в качестве аргумента передается null или пустая строка, функция возвращает пустую строку.
  * @param {Date} date - Дата.
- * @returns {string}
+ * @returns {string} Результат.
  * @example StrLongDate(Date("26.12.2011")) == "26 декабря 2011 г."
  */
 declare function StrLongDate(date: Date): string;
@@ -809,7 +799,7 @@ declare function StrLongDate(date: Date): string;
  * OptDate(2019, 04, 20, 12, 30);
  * OptDate(2019, 04, 20, 12, 30, 0);
  * ```
- * @returns {Date}
+ * @returns {Date} - Дата.
  */
 declare function OptDate(date: string | Date | null | undefined | number | boolean): Date | undefined;
 declare function OptDate<T>(date: string | Date | null | undefined | number | boolean, defaultDate: T): Date | T;
@@ -823,21 +813,21 @@ declare function OptDate(year: number, month: number, day: number, hour: number,
  * Преобразует строку с датой в большинсве изветных форматов в дату.
  * В отличие от функции {@link Date}() понимает дату со словесным указанием месяца, например '1 ноября 2011 года'.
  * @param {string} date - Строка с датой.
- * @returns {Date}
+ * @returns {Date} - Дата.
  */
 declare function ParseDate(date: string): Date;
 
 /**
  * Преобразует количество секунд, прошедших с 1970 года в дату.
  * @param {number} seconds - Количество секунд.
- * @returns {Date}
+ * @returns {Date} - Дата.
  */
 declare function RawSecondsToDate(seconds: number): Date;
 
 /**
  * Возвращает значение секунд для заданной даты. Если дата не содержит значения секунд, возращается undefined.
  * @param {Date} date - Дата.
- * @returns {number}
+ * @returns {number} Результат.
  */
 declare function Second(date: Date): number;
 
@@ -846,7 +836,7 @@ declare function Second(date: Date): number;
  * @param {Date} date - Дата, которую преобразуется.
  * @param {boolean} showTime - Включать время (Bool). По умолчанию true.
  * @param {boolean} showSeconds - Включать секунды во времени (Bool). По умолчанию true.
- * @returns {string}
+ * @returns {string} Строка с датой.
  */
 declare function StrShortDate(date: Date, showTime?: boolean, showSeconds?: boolean): string;
 
@@ -856,21 +846,21 @@ declare function StrShortDate(date: Date, showTime?: boolean, showSeconds?: bool
  * @param {Date} date - Объект даты.
  * @param {boolean} showTime - Включать время (Bool). По умолчанию true.
  * @param {boolean} showSeconds - Включать секунды во времени (Bool). По умолчанию true.
- * @returns {string}
+ * @returns {string} Строка с датой.
  */
 declare function StrDate(date: Date, showTime?: boolean, showSeconds?: boolean): string;
 
 /**
  * Преобразует дату из универсального часового пояса в текущий часовой пояс.
  * @param {Date} date - Дата.
- * @returns {Date}
+ * @returns {Date} - Дата.
  */
 declare function UtcToLocalDate(date: Date): Date;
 
 /**
  * Преобразует значение времени внутри даты в строку. Если время не содержится внутри даты, возвращается пустая строка.
  * @param {Date} date - Дата.
- * @returns {string}
+ * @returns {string} Дата.
  * @example StrTime(Date("26.12.2011 10:45")) == "10:45"
  */
 declare function StrTime(date: Date): string;
@@ -878,14 +868,14 @@ declare function StrTime(date: Date): string;
 /**
  * Возвращает значение года для заданной даты.
  * @param {Date} date - Дата.
- * @returns {number}
+ * @returns {number} - Год.
  */
 declare function Year(date: Date): number;
 
 /**
  * Возвращает номер дня недели для заданной даты. (0 - Воскресенье, 1 - Понедельник и т.д.).
  * @param {Date} date - Дата.
- * @returns {number}
+ * @returns {number} - День недели.
  */
 declare function WeekDay(date: Date): number;
 
@@ -894,13 +884,12 @@ declare function WeekDay(date: Date): number;
  * @param {Date} date - Объект даты.
  * @param {boolean} showTime - Включать время (Bool). Необязательный аргумент.
  * @param {boolean} showSeconds - Включать секунды во времени (Bool). Необязательный аргумент.
+ * @returns {string} Строка с датой.
  * @example
- * ```StrXmlDate(Date("26.12.2011")) == "2011-12-26"
  * ```
- * @example
- * ```StrXmlDate(Date("26.12.2011 10:45")) == "2011-12-26T10:45"
+ * StrXmlDate(Date("26.12.2011")) == "2011-12-26"
+ * StrXmlDate(Date("26.12.2011 10:45")) == "2011-12-26T10:45"
  * ```
- * @returns {string}
  */
 declare function StrXmlDate(date: Date, showTime?: boolean, showSeconds?: boolean): string;
 
@@ -908,7 +897,7 @@ declare function StrXmlDate(date: Date, showTime?: boolean, showSeconds?: boolea
  * Создает динамический (без привязки к форме) XML-элемент. Созданный элемент не имеет родительского элемента.
  * @param {string} name - Имя элемента.
  * @param {string} type - Тип данных XML-элемента.
- * @returns XmlElem<unknown>.
+ * @returns {XmlElem<unknown>} Динамический элемент.
  * @example CreateDynamicElem("elem_count", "integer");
  */
 declare function CreateDynamicElem(name: string, type: string): XmlElem<unknown>;
@@ -919,7 +908,7 @@ declare function CreateDynamicElem(name: string, type: string): XmlElem<unknown>
  * (как альтернатива javascript object), а так же для формирования XML для внешнего использования.
  * @param {string} formUrl - Url xmd-файла, в котором находится форма.
  * @param {string} elemPath - Пусть к фрагменту формы.
- * @returns XmlElem<unknown>.
+ * @returns {XmlElem<unknown>} Элемент.
  * @example CreateElem("//base2/base2_user.xmd", "user");
  */
 declare function CreateElem(formUrl: string, elemPath: string): XmlElem<unknown>;
@@ -932,7 +921,7 @@ declare function CreateElem(formUrl: string, elemPath: string): XmlElem<unknown>
  * за счет поддержки рекурсивных массивов XML-элементов.
  * @param {T} array - Массив объектов.
  * @param {K} value - Значение ключевого элемента (any).
- * @returns Any.
+ * @returns {unknown} Результат.
  * @example GetOptForeignElem(event_types, "interview");
  */
 declare function GetOptForeignElem<T, K>(array: T, value: K): unknown;
@@ -943,7 +932,7 @@ declare function GetOptForeignElem<T, K>(array: T, value: K): unknown;
  * другие внешние процедуры.
  * Смотри так же {@link LoadElemsFromStr}.
  * @param {T} arg1 - Массив XML-элементов (array of objects).
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function declareElemsToStr<T>(arg1: T): string;
 
@@ -953,7 +942,7 @@ declare function declareElemsToStr<T>(arg1: T): string;
  * полученных от внешних процедур и плагинов.
  * Смотри также {@link declareElemsToStr}.
  * @param {string} arg1 - Строка.
- * @returns {Array}
+ * @returns {Array} - Результат.
  */
 declare function LoadElemsFromStr(arg1: string): unknown[];
 
@@ -979,7 +968,7 @@ declare function GetForeignElem<T, K>(array: T, value: K): XmlElem<unknown>;
  * Смотри так же {@link GetOptForeignElem} и {@link GetForeignElem}.
  * В текущей реализации массив может быть только каталогом.
  * @param {T} array - Массив элементов.
- * @returns {XmlElem<unknown>}
+ * @returns {XmlElem<unknown>} Результат.
  */
 declare function GetFailedForeignElem<T>(array: T): XmlElem<unknown>;
 
@@ -988,7 +977,7 @@ declare function GetFailedForeignElem<T>(array: T): XmlElem<unknown>;
  * Открывает базу данных и помещает ее в список открытых баз.
  * Если база уже открыта, возвращается ссылка на открытую базу из списка.
  * @param {string} name - Наименование базы данных.
- * @returns {XmlDatabase}
+ * @returns {XmlDatabase} XmlDatabase.
  */
 declare function FetchDb(name: string): unknown;
 
@@ -998,7 +987,7 @@ declare function FetchDb(name: string): unknown;
  * Функция по историческим причнам называется не совсем корректно.
  * Ее ближайший эквивалент - {@link FindOptCatalog} имеет правильное название.
  * @param {string} name - Наименование каталога базы данных.
- * @returns {object}
+ * @returns {object} Результат.
  * @example
  * ```
  * const catalog = FindSharedCatalog("events");
@@ -1013,7 +1002,7 @@ declare function FindSharedCatalog(name: string): Object;
  * или обмена данными между несколькими серверами приложений.
  * @param {string} url - Url.
  * @param {string} options - Опции, необязательный аргумент.
- * @returns {string}
+ * @returns {string} Результат.
  * @example LoadUrlData("x-local://shared/xxx.xml", "lds-server=test2.datex.ru:9000");
  */
 declare function LoadLdsUrlData(url: string, options?: string): string;
@@ -1023,7 +1012,7 @@ declare function LoadLdsUrlData(url: string, options?: string): string;
  * выдает полный путь до зашифрованного модуля базы данных (XFP - файл).
  * Функция не проверяет фактическое существование файла по указанному пути.
  * @param {string} moduleName - Наименование базы данных.
- * @returns {string}
+ * @returns {string} Результат.
  * @example GetDbFilePath("app2") == "С:\Program files\EStaff\app2.xfp";
  */
 declare function GetDbFilePath(moduleName: string): string;
@@ -1033,7 +1022,7 @@ declare function GetDbFilePath(moduleName: string): string;
  * Фактически функция преобразует имя существительное множественного числа
  * в имя существительное единственного числа по правилам английского языка.
  * @param {string} catalogName - Название каталога.
- * @returns {string}
+ * @returns {string} Результат.
  * @example CatalogNameToObjectName("candidates") == "candidate";
  */
 declare function CatalogNameToObjectName(catalogName: string): string;
@@ -1042,7 +1031,7 @@ declare function CatalogNameToObjectName(catalogName: string): string;
  * Ищет каталог по имени во всех используемых базах данных.
  * Если не находит - возврашает undefined.
  * @param {string} catalogName - Наименование каталога базы данных.
- * @returns {object}
+ * @returns {object} Результат.
  * @example
  * ```
  * const catalog = FindOptCatalog("events");
@@ -1068,7 +1057,7 @@ declare function SetDbFilePackage(dbName: string, filePackage: Object): undefine
  * Выдает true, если указанная база данных находится
  * в зашифрованном модуле (XFP - файл), и false, если не содержит.
  * @param {string} dbName - Наименование базы данных.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  * @example IsPackageDb("app2")
  */
 declare function IsPackageDb(dbName: string): boolean;
@@ -1088,7 +1077,7 @@ declare function SetDbHostDir(dbName: string, dirUrl: string): undefined;
  * Выполняет заданный запрос XQuery на клиентской машине.
  * Используется для запроса данных из каталогов локальных баз данных.
  * @param {string} query - Строка, содержащая запрос.
- * @returns {Array}
+ * @returns {Array} - Результат.
  */
 declare function XQueryLocal<T>(query: string): T;
 
@@ -1101,7 +1090,7 @@ declare function XQueryLocal<T>(query: string): T;
  * в которых будет использовать связянные данные (ForeignElem).
  * @param {string} query - Строка, содержащая запрос.
  * @param {string} options - Набор опций. Необязательный аргумент.
- * @returns {Array}
+ * @returns {Array} Результат.
  * @example
  * ```
  * XQuery("for $elem in candidates order by $elem/fullname return $elem", "preload-foreign-data=1");
@@ -1113,7 +1102,7 @@ declare function XQuery<T>(query: string, options?: string): T[];
 /**
  * Переводит все символы строки в нижний регистр.
  * @param {string} str - Строка, которую необходимо преобразовать.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * StrLowerCase(str);
@@ -1128,7 +1117,7 @@ declare function StrLowerCase(str: string): string;
  * возвращается str.
  * @param {string} str - Строка.
  * @param {number} length - Длина строки.
- * @returns {string}
+ * @returns {string} Результат.
  * @example StrLeftRange(str, length)
  */
 declare function StrLeftRange(str: string, length: number): string;
@@ -1139,7 +1128,7 @@ declare function StrLeftRange(str: string, length: number): string;
  * В отличие от StrLeftRange возвращает не биты, а именно символы.
  * @param {string} str - Строка.
  * @param {number} length - Длина строки.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * StrLeftCharRange(str, length);
@@ -1150,7 +1139,7 @@ declare function StrLeftCharRange(str: string, length: number): string;
 /**
  * Проверяет состоит ли строка только из цифр или латинских символов.
  * @param {string} str - Проверяемая строка.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  * @example StrIsAlphaNum(str);
  */
 declare function StrIsAlphaNum(str: string): boolean;
@@ -1162,7 +1151,7 @@ declare function StrIsAlphaNum(str: string): boolean;
  * Для определения количества символов в строке
  * необходимо использовать функцию StrCharCount.
  * @param {string} str - Строка.
- * @returns {number}
+ * @returns {number} Результат.
  */
 declare function StrLen(str: string): number;
 
@@ -1171,7 +1160,7 @@ declare function StrLen(str: string): number;
  * @param {string} str - Строка, в которой ищут.
  * @param {string} subStr - Подстрока, которую ищут.
  * @param {boolean} ignoreCase - Не учитывать регистр.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  * StrBegins(str, subStr, ignoreCase).
  */
 declare function StrBegins(str: string, subStr: string, ignoreCase?: boolean): boolean;
@@ -1181,7 +1170,7 @@ declare function StrBegins(str: string, subStr: string, ignoreCase?: boolean): b
  * @param {string} str - Строка, в которой ищут.
  * @param {string} subStr - Подстрока, которую ищут.
  * @param {boolean} ignoreCase - Не учитывать регистр.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  * StrContains(str, subStr, ignoreCase).
  */
 declare function StrContains(str: string, subStr: string, ignoreCase?: boolean): boolean;
@@ -1191,7 +1180,7 @@ declare function StrContains(str: string, subStr: string, ignoreCase?: boolean):
  * @param {string} str - Строка, в которой ищут.
  * @param {string} subStr - Подстрока, которую ищут.
  * @param {boolean} ignoreCase - Не учитывать регистр.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  * StrEnds(str, subStr, ignoreCase).
  */
 declare function StrEnds(str: string, subStr: string, ignoreCase?: boolean): boolean;
@@ -1199,7 +1188,7 @@ declare function StrEnds(str: string, subStr: string, ignoreCase?: boolean): boo
 /**
  * Возвращает количество символов в строке.
  * @param {string} str - Строка.
- * @returns {number}
+ * @returns {number} Результат.
  */
 declare function StrCharCount(str: string): number;
 
@@ -1208,7 +1197,7 @@ declare function StrCharCount(str: string): number;
  * Маски перечисляются через запятую вторым аргументом.
  * @param {string} str - Строка, в которой ищут.
  * @param {string} pattern - Шаблоны поиска, разделенные запятой.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  * @example StrMatchesMultiPattern(str, "aaa*bbb,ccc*ddd*eee");
  */
 declare function StrMatchesMultiPattern(str: string, pattern: string): boolean;
@@ -1218,7 +1207,7 @@ declare function StrMatchesMultiPattern(str: string, pattern: string): boolean;
  * @param {string} str - Исходная строка.
  * @param {string} subStr - Исходная подстрока.
  * @param {string} newSubStr - Новая подстрока.
- * @returns {string}
+ * @returns {string} Результат.
  * @example StrReplaceOne(str1, str2);
  */
 declare function StrReplaceOne(str: string, subStr: string, newSubStr: string): string;
@@ -1227,7 +1216,7 @@ declare function StrReplaceOne(str: string, subStr: string, newSubStr: string): 
  * Возвращает часть строки, начиная с указанной позиции до конца строки.
  * @param {string} str - Строка.
  * @param {number} pos - Позиция.
- * @returns {string}
+ * @returns {string} Результат.
  * @example StrRightRangePos(str, pos);
  */
 declare function StrRightRangePos(str: string, pos: number): string;
@@ -1236,7 +1225,7 @@ declare function StrRightRangePos(str: string, pos: number): string;
  * Проверяет, удовлетворяет ли строка маске поиска, использующей симолы '*'.
  * @param {string} str - Строка.
  * @param {string} mask - Маска.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  * StrMatchesPattern( str, 'aaa*bbb' ).
  */
 declare function StrMatchesPattern(str: string, mask: string): boolean;
@@ -1254,7 +1243,7 @@ declare function StrUpperCase(str: string): string;
  * @param {string} str - Строка.
  * @param {number} pos1 - Начальная позиция.
  * @param {number} pos2 - Конечная позиция.
- * @returns {string}
+ * @returns {string} Результат.
  * @example StrRangePos(str, pos1, pos2);
  */
 declare function StrRangePos(str: string, pos1: number, pos2: number): string;
@@ -1272,7 +1261,7 @@ declare function StrNonTitleCase(str: string): string;
  * @param {string} str - Исходная строка.
  * @param {string} subStr - Исходная подстрока.
  * @param {string} newSubStr - Новая подстрока.
- * @returns {string}
+ * @returns {string} Результат.
  * @example StrReplace(str, subStr, newSubStr);
  */
 declare function StrReplace(str: string, subStr: string, newSubStr: string): string;
@@ -1282,7 +1271,7 @@ declare function StrReplace(str: string, subStr: string, newSubStr: string): str
  * Шаблоны могут содержать элементы: %s - вхождение подстроки (возращаемое) %*s - вхождение подстроки (невозвращаемое).
  * @param {string} str - Строка.
  * @param {any} arg - Шаблон.
- * @returns {Array}
+ * @returns {Array} Результат.
  * @example
  * ```
  * const obj = StrScan(str, "%*s/vacancy/%s.htm");
@@ -1294,13 +1283,12 @@ declare function StrScan(str: string, arg: string): string[];
 /**
  * Преобразует первую букву строки в заглавную.
  * @param {string} str - Строка, которую нужно преобразовать.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function StrTitleCase(str: string): string;
 
 /**
  * Экспериментальная.
- * @experimental
  * @returns {undefined}
  */
 declare function StrWordMatchRating(): undefined;
@@ -1309,7 +1297,7 @@ declare function StrWordMatchRating(): undefined;
  * Заменяет повторяющиеся последовательности символов пробела,
  * перевода строк и табуляции в строке на одиночные пробелы.
  * @param {string} str - Исходная строка.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function UnifySpaces(str: string): string;
 
@@ -1342,7 +1330,7 @@ declare function CopyUrl(destUrl: string, srcUrl: string): undefined;
  * и возвращает его в виде строки,
  * содержащей бинарные данные.
  * @param {string} url - Url.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function LoadUrlData(url: string): string;
 
@@ -1352,7 +1340,7 @@ declare function LoadUrlText(url: string): string;
  * Проверяет является ли строка абсолютным URL.
  * Существование объекта под указанным url не проверяется.
  * @param {string} url - Строка с URL.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  * @example
  * ```
  * IsAbsoluteUrlStr("http://www.ya.ru/search.htm") === true
@@ -1376,7 +1364,7 @@ declare function PutUrlData(url: string, dataStr: string): undefined;
  * Преобразует путь файловой системы в локальный `URL` типа `file:` или `x-local:`.
  * @param {string} path - Путь файловой системы.
  * @param {string} baseUrl - Базовый `URL`, к схеме которого будет приводиться путь.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * FilePathToUrl("C:\\Temp\\1.htm") == "file:///C:/Temp/1.htm"
@@ -1391,7 +1379,7 @@ declare function FilePathToUrl(path: string, baseUrl?: string): string;
  * @param {string} url - Url.
  * @param {string} suffix1 - Расширение, которое нужно заменить.
  * @param {string} suffix2 - Расширение, на которое нужно заменить.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * ReplaceUrlPathSuffix(
@@ -1409,7 +1397,7 @@ declare function ReplaceUrlPathSuffix(url: string, suffix1: string, suffix2: str
  * @param {string} url - Относительный url.
  * @param {string} [baseUrl] - Базовый абсолютный url, относительно которого считается относительный url.
  * Если аргумент не указан, в качестве базового url используется родительский url файла, содержащий выполняемый код.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * AbsoluteUrl("zz/1.htm", "x-local://data/static") == "x-local://data/static/zz/1.htm"
@@ -1435,7 +1423,7 @@ declare function AddUrlMapping(baseUrl: string, newBaseUrl: string): undefined;
  * Добавляет фрагмент пути к заданному url.
  * @param {string} url - Url.
  * @param {string} addPath - Добавляемый путь.
- * @returns {string}
+ * @returns {string} Результат.
  * @example UrlAppendPath("http://www.lin.ru/service", "z/1.htm") == "http://www.lin.ru/service/z/1.htm"
  */
 declare function UrlAppendPath(url: string, addPath: string): string;
@@ -1443,7 +1431,7 @@ declare function UrlAppendPath(url: string, addPath: string): string;
 /**
  * Извлекает url родительской директории из заданного url.
  * @param {string} url - Url.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * UrlParent("http://news.websoft.ru/db/kb/0939DD37D1C5F9B8C3257403003E8F4F/tree.html?query=xxx");
@@ -1454,7 +1442,7 @@ declare function UrlParent(url: string): string;
 /**
  * Извлекает имя файла из заданного url.
  * @param {string} url - Url.
- * @returns {string}
+ * @returns {string} Результат.
  * @example UrlHost("http://news.websoft.ru/db/kb/0939DD37D1C5F9B8C3257403003E8F4F/tree.html?query=xxx") == "tree.html"
  */
 declare function UrlFileName(url: string): string;
@@ -1462,14 +1450,14 @@ declare function UrlFileName(url: string): string;
 /**
  * Определяет размер файла в байтах по локальному url, переданному в качестве аргумента.
  * @param {string} url - Локальный url типа file: или x-local:.
- * @returns {number}
+ * @returns {number} Результат.
  */
 declare function UrlFileSize(url: string): number;
 
 /**
  * Извлекает из url, переданного в качестве аргумента, строку запроса в исходном виде.
  * @param {string} url - Url.
- * @returns {string}
+ * @returns {string} Результат.
  * @example UrlHost("http://news.websoft.ru/db/kb/0939DD37D1C5F9B8C3257403003E8F4F/tree.html?query=xxx") == "query=xxx"
  */
 declare function UrlParam(url: string): string;
@@ -1477,14 +1465,14 @@ declare function UrlParam(url: string): string;
 /**
  * Возвращает дату изменения файла, находящегося по локальному пути типа file: или x-local:.
  * @param {string} url - Url.
- * @returns {Date}
+ * @returns {Date} - Дата.
  */
 declare function UrlModDate(url: string): Date;
 
 /**
  * Возвращает хост из переданного в качестве аргумента URL.
  * @param {string} url - Url.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * UrlHost("http://news.websoft.ru/db/kb/0939DD37D1C5F9B8C3257403003E8F4F/tree.html?query=xxx"); // "news.websoft.ru"
@@ -1495,7 +1483,7 @@ declare function UrlHost(url: string): string;
 /**
  * Извлекает из URL, переданного в качестве аргумента, путь.
  * @param {string} url - Url.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * UrlPath("http://news.websoft.ru/db/kb/0939DD37D1C5F9B8C3257403003E8F4F/tree.html");
@@ -1515,7 +1503,7 @@ declare function UrlPathSuffix(url: string): string;
 /**
  * Извлекает из URL, переданного в качестве аргумента, параметры запроса с разбивкой их на пары "имя - значение".
  * @param {string} url - Url.
- * @returns {object}
+ * @returns {object} Результат.
  * @example
  * ```
  * const obj = UrlQuery("http://news.websoft.ru/en?x=1&y=2&z=3");
@@ -1546,7 +1534,7 @@ declare function UrlSchema(url: string): string;
  * Для десктоп-версии осуществляется преобразование в url схемы "file",
  * а для веб-версии - в специальный серверный запрос.
  * @param {string} url - Url.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function WebAppUrl(url: string): string;
 
@@ -1555,7 +1543,7 @@ declare function WebAppUrl(url: string): string;
  * Возвращает документ с заданным url из кэша.
  * Если документ с заданным url в кэше отсутствует, функция завершается с ошибкой.
  * @param {string} url - Url документа.
- * @returns WTXmlDocument.
+ * @returns {WTXmlDocument} XmlDocument.
  */
 declare function GetCachedDoc(url: string): XmlDocument;
 
@@ -1563,7 +1551,6 @@ declare function GetCachedDoc(url: string): XmlDocument;
  * Удаляет на сервере приложения документ с заданным url.
  * Используется в специализированном коде, предназначенном для синхронизации баз данных или обмена данными между базами.
  * Аргуметы: docUrl - url документа (String) options - опции, необязательный аргумент (String).
- * @returns Undefined
  * LdsDeleteDoc( 'x-db-obj://data/candidate/042D8A4596B679/E0.xml', 'lds-server=test2.datex.ru:9000' ).
  */
 declare function LdsDeleteDoc(): undefined;
@@ -1571,7 +1558,7 @@ declare function LdsDeleteDoc(): undefined;
 /**
  * Выдает Id объектного документа по его url. Смотри так же ObjectDocUrl .
  * @param {string} url - Url объекта.
- * @returns Number.
+ * @returns {number} Результат.
  */
 declare function ObjectIDFromUrl(url: string): number;
 
@@ -1579,7 +1566,6 @@ declare function ObjectIDFromUrl(url: string): number;
  * Удаляет документ с заданным url.
  * @param {string} url - Url документа.
  * @param {boolean} permanent - Удалить мимо корзины. По умолчанию - false.
- * @returns Undefined
  * DeleteDoc( 'x-db-obj://data/candidate/0x4DF75B9F13FE5160.xml' ).
  */
 declare function DeleteDoc(url: string, permanent?: boolean): undefined;
@@ -1589,7 +1575,7 @@ declare function DeleteDoc(url: string, permanent?: boolean): undefined;
  * @param {string} dbName - Наименование базы данных.
  * @param {string} objectType - Наименование типа объекта.
  * @param {string | number} objectID - Id документа (Integer или String).
- * @returns String.
+ * @returns {string} Результат.
  * @example
  * ```
  * ObjectDocUrl("data", "person", 1238461"); // "x-db-obj://data/person/0x000000000012E5BD.xml"
@@ -1614,7 +1600,7 @@ declare function MoveDoc(url: string, newUrl: string): undefined;
  * Если документ с заданным url уже находится в кэше, возвращается уже загруженный в кэш документ.
  * @param {string} url - Url документа.
  * @param {string} options - Опции открытия документа. Необязательный аргумент.
- * @returns {XmlDocument}
+ * @returns {XmlDocument} XmlDocument.
  */
 declare function FetchDoc(url: string, options: string): XmlDocument;
 
@@ -1627,14 +1613,14 @@ declare function FetchDoc(url: string, options: string): XmlDocument;
  * Если документ был открыт пользователем на экране, то при выполнении функции UpdateUiDoc
  * документ будет изменен прямо на экране, если открытого документа небыло - то документ будет просто сохранен.
  * @param {string} docUrl - Url XML-документа.
- * @returns {XmlDocument}
+ * @returns {XmlDocument} XmlDocument.
  */
 declare function ObtainUiDoc(docUrl: string): XmlDocument;
 
 /**
  * Загружает xml документ в кэш документов и делает его корневой элемент видимым в списке глобальных имен.
  * @param {string} docUrl - Url документа.
- * @returns {XmlDocument}
+ * @returns {XmlDocument} XmlDocument.
  */
 declare function RegisterSharedDoc(docUrl: string): XmlDocument;
 
@@ -1643,7 +1629,7 @@ declare function RegisterSharedDoc(docUrl: string): XmlDocument;
  * @param {string} dataStr - Строка, содержащая данные открываемого документа.
  * @param {string} [options] - Опции открытия документа в виде "param1='value1';param2='value2';...".
  * См. Опции открытия документа XML.
- * @returns {XmlDocument}
+ * @returns {XmlDocument} XmlDocument.
  */
 declare function OpenDocFromStr(dataStr: string, options?: string): XmlDocument;
 
@@ -1652,7 +1638,7 @@ declare function LoadFileText(filePath: string): string;
 /**
  * Выдает наименование типа объекта по его url. Смотри так же ObjectDocUrl и ObjectIDFromUrl .
  * @param {string} url - Url объекта.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * ObjectNameFromUrl("x-db-obj://data/person/0x000000000012E5BD.xml"); // 'person'
@@ -1664,7 +1650,7 @@ declare function ObjectNameFromUrl(url: string): string;
 /**
  * Создает новый XML-документ по заданной форме.
  * @param {string} formUrl - Url формы.
- * @returns {XmlDocument}
+ * @returns {XmlDocument} XmlDocument.
  */
 declare function OpenNewDoc<T = XmlDocument>(formUrl: string): T;
 
@@ -1673,7 +1659,7 @@ declare function OpenNewDoc<T = XmlDocument>(formUrl: string): T;
  * @param {string} url - Url документа.
  * @param {string} [options] - Опции открытия документа в виде "param1='value1';param2='value2';...".
  * См. Опции открытия документа XML.
- * @returns {XmlDocument}
+ * @returns {XmlDocument} XmlDocument.
  */
 declare function OpenDoc<T = XmlDocument>(url: string, options?: string): T;
 
@@ -1686,15 +1672,12 @@ declare function OpenDoc<T = XmlDocument>(url: string, options?: string): T;
  * Если это был документ, открытый программой без участия пользователя,
  * действие функции аналогично действию метода Doc.Save().
  * Аргумент doc - открытый документ (объект XmlDoc).
- *
- * @returns Undefined.
  */
 declare function UpdateUiDoc(): undefined;
 
 /**
  * Удаляет определенные форму из кэша. Функция используется в редких случаях при изменении структур данных на лету.
  * @param {string} urlPattern - Маска `URL` формы (т.е. `XMD`-файла).
- * @returns Undefined
  * DropFormsCache( '*candidate*' ).
  */
 declare function DropFormsCache(urlPattern: string): undefined;
@@ -1704,7 +1687,7 @@ declare function DropFormsCache(urlPattern: string): undefined;
  * Функция используется в редких случаях, например для динамической генерации форм данных.
  * @param {string} name - Имя поля `XMD`-формы.
  * @param {string} type - Тип данных `XMD`-формы.
- * @returns {XmlForm}
+ * @returns {XmlForm} XmlForm.
  */
 declare function CreateFormElem(name: string, type: string): XmlFormElem;
 
@@ -1712,7 +1695,7 @@ declare function CreateFormElem(name: string, type: string): XmlFormElem;
  * Пытается найти форму в кэше загруженных форм по заданному `URL`.
  * Если такая форма была загружена в кэш, возвращает объект ссылка на форму, если нет - возвращает undefined.
  * @param {string} url - `URL` формы.
- * @returns {XmlForm}
+ * @returns {XmlForm} XmlForm.
  */
 declare function GetOptCachedForm(url: string): XmlForm;
 
@@ -1730,7 +1713,6 @@ declare function DeleteAllFormMappings(): undefined;
  * обычно при конвертации данных из предыддыщих версий программы.
  * @param {string} formUrl - `URL` старой формы.
  * @param {string} newForm - `URL` новой формы.
- * @returns Undefined.
  */
 declare function RegisterFormMapping(formUrl: string, newForm: string): undefined;
 
@@ -1740,7 +1722,7 @@ declare function RegisterFormMapping(formUrl: string, newForm: string): undefine
  * и возвращает ссылку на форму.
  * Если соответствующая пара в списке отсутствует, возвращает undefined.
  * @param {string} documentUrl - `URL` документа.
- * @returns {XmlForm}
+ * @returns {XmlForm} XmlForm.
  */
 declare function GetOptAutoDocForm(documentUrl: string): XmlForm;
 
@@ -1754,7 +1736,7 @@ declare function FetchForm(formUrl: string): undefined;
  * Регистрирует XML-форму, описанную в строке. Используется для программной генерации форм "на лету".
  * @param {string} formUrl - `URL`, по которому будет зарегистрирована форма.
  * @param {string} formData - Строка с описанием формы.
- * @returns {XmlForm}
+ * @returns {XmlForm} XmlForm.
  */
 declare function RegisterFormFromStr(formUrl: string, formData: string): XmlForm;
 
@@ -1784,7 +1766,7 @@ declare function RegisterAutoDoc(documentUrl: string, formUrl: string): undefine
  * @param {string} formUrl - `URL` формы.
  * @param {string} formPath - Полное наименование элемента формы,
  * включающее в себя путь внутри формы от корня до этого элемента.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * RegisterSubForm("base3_events.xmd", "events.event");
@@ -1797,7 +1779,7 @@ declare function RegisterSubForm(formUrl: string, formPath: string): string;
  * Проверяет, является ли значение `undefined`, `null` либо пустой строкой.
  * Позволяет писать универсальный код, не зная точный тип данных переданного аргумента.
  * @param {any} arg - Любое значение.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  * @example
  * ```
  * IsEmptyValue(123) === false
@@ -1811,7 +1793,7 @@ declare function IsEmptyValue(arg: unknown): arg is undefined | null | "";
 /**
  * Преобразует значение аргумента к целому числу.
  * @param {number} value - Целое число, вещественное число или строка, содержащая число.
- * @returns {number}
+ * @returns {number} Результат.
  * Пример: Int( 123 ) Int( '123' ) Int( 123.45 ).
  */
 declare function Int(value: string | number): number;
@@ -1820,7 +1802,7 @@ declare function Int(value: string | number): number;
  * Возвращает скалярное значение аргумента, если в качестве аргумента передан объект.
  * Если передано скалярное значение, возращается оно же.
  * @param {any} value - Аргумент (Any).
- * @returns {any}
+ * @returns {any} Результат.
  */
 declare function RValue<T>(value: XmlElem<T> | T): T;
 
@@ -1837,7 +1819,7 @@ declare function StrHexInt(num: number): string;
  * @param {number} value - Вещественный аргумент.
  * @param {number} pricision - Максимальное число знаков после запятой. По умолчанию 6.
  * @param {boolean} addGroupDelim - Разделять тысячные разряды пробелами.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * StrReal(90154.249); // "90154.249"
@@ -1850,7 +1832,7 @@ declare function StrReal(value: number, pricision?: number, addGroupDelim?: bool
 /**
  * Преобразует значение аргумента к вещественному числу.
  * @param {string | number} value - Целое число, вещественное число или строка, содержащая вещественное число.
- * @returns {number}
+ * @returns {number} Результат.
  * Пример: Real( 12.6 ) Real( '12.6' ).
  */
 declare function Real(value: string | number): number;
@@ -1869,7 +1851,7 @@ declare function StrHexColor(color: string): string;
  * @param {number} arg - Целочисленный аргумент.
  * @param {number} [digitsNum] - Минимальное число символов в строке.
  * @param {boolean} addGroupDelim - Разделять тысячные разряды пробелами.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function StrIntZero(arg: number, digitsNum: number, addGroupDelim: boolean): string;
 
@@ -1878,7 +1860,7 @@ declare function StrIntZero(arg: number, digitsNum: number, addGroupDelim: boole
  * @param {number} arg - Вещественный аргумент (Real).
  * @param {number} precision - Число символов в дробной части числа. Недостающие символы компенсируются нулями.
  * @param {boolean} addGroupDelim - Разделять тысячные разряды пробелами.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * StrRealFixed(90154.2) == "90154.20";
@@ -1893,7 +1875,7 @@ declare function StrRealFixed(arg: number, precision?: number, addGroupDelim?: b
  * @param {number} [digitsNum] - Минимальное число символов в строке.
  * Недостающие символы компенсируются нулями перед числом.
  * @param {boolean} addGroupDelim - Разделять тысячные разряды пробелами (Bool). Необязательный аргумент.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * StrInt(11500) == '11500'
@@ -1913,7 +1895,7 @@ declare function StrInt(arg: number, digitsNum?: number, addGroupDelim?: boolean
  * Преобразует целое число в словесное строковое представление. Только для русского языка.
  * @param {number} arg - Числовой аргумент.
  * @param {0|1} gender - Род (0 - мужской, 1 - женский). Необязательный аргумент.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * TextInt(121) == "сто двадцать один"
@@ -1928,6 +1910,7 @@ declare function TextInt(arg: number, gender: 0 | 1): string;
 
 /**
  * Возвращает уникальный Id.
+ * @returns {number} Id.
  */
 declare function UniqueID(): number;
 declare function ParseHeaderPairs(string: string): Object;
@@ -1937,14 +1920,14 @@ declare function ParseHeaderPairs(string: string): Object;
  * Кодирует строку, содержащую текст, для использования внутри HTML.
  * В результате символы & и < заменяются на &amp; и &lt;, соответственно, а переводы строк - на <br/>.
  * @param {string} str - Строка.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function HtmlEncode(str: string): string;
 
 /**
  * Декодирует данные из формата Base64. Данные возвращаются в виде строки, которая может содержать бинарные данные.
  * @param {string} str - Строка в Base64.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function Base64Decode(str: string): string;
 
@@ -1952,14 +1935,14 @@ declare function Base64Decode(str: string): string;
  * Переводит строку из кодировки, используемой  в программе по умолчанию, в заданную кодировку.
  * @param {string} str - Строка.
  * @param {string} charset - Имя кодировки, в которую нужно перевести строку.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function EncodeCharset(str: string, charset: string): string;
 
 /**
  * Преобразует строку, содержащую HTML, в простой текст.
  * @param {string} html - Строка, содержащая HTML.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function HtmlToPlainText(html: string): string;
 
@@ -1977,21 +1960,21 @@ declare function HexData(arg: string): string;
  * в отличие от последней, {@link HtmlEncodeDoc}() формирует завершенный HTML-документ,
  * содержащий теги <html>, <body> и др.
  * @param {string} str - Str.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function HtmlEncodeDoc(str: string): string;
 
 /**
  * Формирует тело http запроса для последующей отправки методом POST в формате multipart/form-data.
  * @param {object} obj - Объект, содержащий атрибуты и их значения (Object).
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function MultipartFormEncode(obj: Object): string;
 
 /**
  * Кодирует строку в формат Base64.
  * @param {string} str - Строка. Может содержать бинарные данные.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function Base64Encode(str: string): string;
 
@@ -1999,35 +1982,35 @@ declare function Base64Encode(str: string): string;
  * Переводит строку из заданной кодировки в кодировку, используемой в программе по умолчанию.
  * @param {string} str - Строка, которую нужно перевести.
  * @param {string} charset - Название кодировки, в которую нужно перевести строку.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function DecodeCharset(str: string, charset: string): string;
 
 /**
  * Кодирует обычный текст в формат rtf.
  * @param {string} str - Строка, которую нужно преобразовать.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function RtfEncode(str: string): string;
 
 /**
  * Шифрует строку простым встроенным алгоритмом шифрования.
  * @param {string} str - Шифруемая строка.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function StrSimpleEncrypt(str: string): string;
 
 /**
  * Переводит текст в формате rtf в обычный текст.
  * @param {string} str - Текст в формате rtf.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function RtfToPlainText(str: string): string;
 
 /**
  * Дешифрует строку, зашифрованную простым встроенным алгоритмом.
  * @param {string} str - Дешифруемая строка.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function StrSimpleDecrypt(str: string): string;
 
@@ -2070,7 +2053,7 @@ declare function SqlLiteral(arg: string | number | Date | null): string;
  * Преобразут объект типа Object в строку вида 'name1=value1&name2=value2&...'
  * для использования в качестве запроса в url.
  * @param {object} obj - Объект, содержащий список значений (Object).
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function UrlEncodeQuery(obj: Object): string;
 
@@ -2079,7 +2062,7 @@ declare function UrlEncodeQuery(obj: Object): string;
  * В результате действия функции символы перевода строки, табуляции,
  * символы & и < и двойные кавычки маскируются последовательностями &#10;, &#09;, &lt;, &amp; и &quot;.
  * @param {string} str - Аргумент.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function XmlAttrEncode(str: string): string;
 
@@ -2088,7 +2071,7 @@ declare function XmlAttrEncode(str: string): string;
  * для использования в качестве запроса в url.
  * @param {object} obj - Объект, содержащий список значений (Object).
  * @param {string} charset - Целевая кодировка. Необязательный аргумент.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function UrlEncodeQueryExt(obj: Object, charset: string): string;
 
@@ -2116,7 +2099,7 @@ declare function XQueryLiteral(arg: string | number | Date): string;
 
 /**
  * Возвращает путь к директории, из которой запущено приложение.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function AppDirectoryPath(): string;
 
@@ -2130,7 +2113,7 @@ declare function CreateDirectory(path: string): undefined;
 /**
  * Возвращает дату модификации файла.
  * @param {string} path - Путь (или url) к файлу.
- * @returns {Date}
+ * @returns {Date} - Дата.
  */
 declare function GetFileModDate(path: string): Date;
 
@@ -2144,14 +2127,14 @@ declare function DeleteDirectory(path: string): undefined;
 /**
  * Проверяет существует ли файл (или директория) по указанному пути.
  * @param {string} path - Путь к файлу.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  */
 declare function FilePathExists(path: string): boolean;
 
 /**
  * Проверяет существует ли файл (или директория) по указанному url.
  * @param {string} url - Url файла.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  */
 declare function UrlExists(url: string): boolean;
 
@@ -2173,7 +2156,7 @@ declare function DeleteFile(path: string): undefined;
 /**
  * Проверяет открыт ли файл в другом приложении.
  * @param {string} path - Путь (или url) к файлу.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  */
 declare function FileIsBusy(path: string): boolean;
 
@@ -2195,21 +2178,21 @@ declare function GetShellFolderPath(): string;
 /**
  * Проверяет, является ли указанный путь (или url) директорией.
  * @param {string} path - Путь (или url).
- * @returns {boolean}
+ * @returns {boolean} Результат.
  */
 declare function IsDirectory(path: string): boolean;
 
 /**
  * Возвращает url для временного файла.
  * @param {string} [suffix] - Требуемый суффикс имени файла. Необязательный аргумент.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function ObtainTempFile(suffix?: string): string;
 
 /**
  * Загружает содержимое файла по заданному пути, результат возвращается в виде строки, содержащей бинарные данные.
  * @param {string} path - Путь к файлу.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function LoadFileData(path: string): string;
 
@@ -2225,7 +2208,7 @@ declare function ObtainDirectory(path: string, isRecursive?: boolean): undefined
  * Проверяет является ли путь к файлу, переданный в качестве аргумента.
  * Существование файла по данному пути не проверяется.
  * @param {string} path - Путь к файлу.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  * IsAbsoluteFilePath( 'c:\temp\1.ddd' ) вернет true IsAbsoluteFilePath( 'temp\1.ddd' ) вернет false.
  */
 declare function IsAbsoluteFilePath(path: string): boolean;
@@ -2233,7 +2216,7 @@ declare function IsAbsoluteFilePath(path: string): boolean;
 /**
  * Возвращает url для временного файла, который будет автоматически удален при следующем запуске приложения.
  * @param {string} [suffix] - Требуемый суффикс имени файла. Необязательный аргумент.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function ObtainSessionTempFile(suffix?: string): string;
 
@@ -2248,7 +2231,7 @@ declare function MoveFile(path1: string, path2: string): undefined;
 /**
  * Возвращает путь к родительской директории. Фактическое существование директорий не проверяется.
  * @param {string} path - Путь к исходной директории.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function ParentDirectory(path: string): string;
 
@@ -2256,14 +2239,14 @@ declare function ParentDirectory(path: string): string;
  * Возвращает массив, содержащий список файлов и вложенных директорий внутри указанной директории.
  * Каждый элемент массива будет содержать полный путь ко вложенному файлу или директории.
  * @param {string} path - Путь до директории.
- * @returns {Array}
+ * @returns {Array} - Результат.
  */
 declare function ReadDirectoryByPath(path: string): string[];
 
 /**
  * Возвращает путь к директории для хранении данных пользователя.
  * По умолчанию директория совпадает с установочной, если специальными настройками не установлено иное.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function UserDataDirectoryPath(): string;
 
@@ -2278,7 +2261,7 @@ declare function PutFileData(path: string, str: string): undefined;
 /**
  * Проверяет, существует ли директория по указанному пути.
  * @param {string} path - Путь до директории.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  */
 declare function PathIsDirectory(path: string): boolean;
 
@@ -2286,7 +2269,7 @@ declare function PathIsDirectory(path: string): boolean;
  * Возвращает массив, содержащий список файлов и вложенных директорий внутри указанной директории.
  * Каждый элемент массива будет содержать `URL` вложенного файла или директории.
  * @param {string} dirUrl - Url директории.
- * @returns {Array}
+ * @returns {Array} - Результат.
  */
 declare function ReadDirectory(dirUrl: string): string[];
 
@@ -2299,6 +2282,7 @@ declare function OptReal<T, K = undefined>(variable: T, defaultValue?: K): numbe
  * Устаревшая функция, используемая в старой объектной модели.
  * @param {number} documentId - Id документа.
  * @param {string} databaseName - Имя базы.
+ * @returns {string} Результат.
  */
 declare function UrlFromDocID(documentId: number, databaseName?: string): string;
 
@@ -2309,7 +2293,7 @@ declare function ParseJson<T>(arg: string): T;
  * Извлекает из объекта типа {@link Error} пользовательскую часть сообщения об ошибке.
  * Если объект не содержит выделенно пользовательской части, возвращается полное описание ошибки.
  * @param {Error | string} error - Ошибка.
- * @returns {string}
+ * @returns {string} Результат.
  * @example
  * ```
  * try {
@@ -2325,7 +2309,6 @@ declare function ExtractUserError(error: Error | string): string;
  * Выполняет код JScript в текущем окружении. В отличие от функции {@link eval} выполяняет код на том же уровне
  * (переменные, объявленные внутри кода, будут видны снаружи), и не позволяет возвращать значение.
  * @param {string} code - Выполняемый код JScript.
- * @returns Undefined.
  */
 declare function InPlaceEval(code: string): undefined;
 
@@ -2333,8 +2316,8 @@ declare function InPlaceEval(code: string): undefined;
  * Интерпретирует содержимое страницы по правилам ASP.
  * @param {string} pageUrl - Url, содержащий текст активной страницы.
  * @param {string} options - Опции. Необязательный аргумент.
- * @returns String
- * strict-errors - завершать функцию  с ошибкой, если таковая возникнет при обработке страницы (Bool).
+ * @returns {string} Результат.
+ * Значение strict-errors - завершать функцию с ошибкой, если таковая возникнет при обработке страницы (Bool).
  * По умолчанию, в случае возникновения ошибки ее текст добавляется к результату, а функция возвращается без ошибки.
  */
 declare function EvalCodePageUrl(pageUrl: string, options?: string): string;
@@ -2344,8 +2327,8 @@ declare function EvalCodePageUrl(pageUrl: string, options?: string): string;
  * @param {any} value - Аргумент (Any).
  * @param {any} quoteChar - Символ, используемый в качестве кавычки (допусимые значения: одинарная или двойная кавычка).
  * Необязательный аргумент. По умолчанию используется одинарная кавычка.
- * @returns String
- * null Значение типа string заключается в кавычки,
+ * @returns {string} Результат.
+ * Значение null Значение типа string заключается в кавычки,
  * при этом существующие кавычки внутри строки маскируются по правилам JScript.
  * Значение типа integer или real переводится в соответствующее строковое значение.
  * Значение типа bool переводится в строку 'true' или 'false'.
@@ -2382,14 +2365,14 @@ declare function CallObjectMethod<T>(object: Object, method: string, params?: T)
  * @param {string} pageData - Строка, содержащая текст страницы.
  * @param {boolean} [raiseErrors] - Завершать функцию  с ошибкой, если такаовая возникнет при обработке страницы (Bool).
  * По умолчанию, в случае возникновения ошибки ее текст добавляется к результату, а функция возвращается без ошибки.
- * @returns String.
+ * @returns {string} Результат.
  */
 declare function EvalCodePage(pageData: string, raiseErrors?: boolean): string;
 
 /**
  * Проверяет, является ли заданный объект типа Error ошибкой отменой операции .
  * @param {any} e - Объект типа Error.
- * @returns {boolean}
+ * @returns {boolean} Результат.
  * @example
  * ```
  * try {
@@ -2406,7 +2389,7 @@ declare function IsCancelError<T>(e: T): boolean;
  * в отличие от нее выполяняет код на отдельном уровне (переменные, объявленные внутри кода, не будут видны снаружи).
  * См. Также `InPlaceEval`.
  * @param {string} code - Выполняемый код JScript.
- * @returns
+ * @returns {unknown} Результат.
  */
 declare function eval(code: string): unknown;
 
@@ -2419,6 +2402,7 @@ declare function eval(code: string): unknown;
  * Не следует выполянть внтури кртической секции код, который может занять
  * продолжительное время (обращения к диску, сети и д.р.).
  * @param {string} codeString - Объект String, содержащий допустимый код JScript.
+ * @returns {unknown} Результат.
  * @example
  * ```
  * EvalCs("global_agents.agent_completed = true");
@@ -2451,7 +2435,7 @@ declare function ModalTaskMsg(msg: string): undefined;
  * Результат может быть только в виде строки.
  * Если эта функция вызывается на однопользовательской локальной версии программы, она полность аналогична функции eval.
  * @param {string} code - Код, который будет выполняться на сервере.
- * @returns String.
+ * @returns {string} Результат.
  */
 declare function ServerEval(code: string): string;
 
@@ -2464,6 +2448,7 @@ declare function ServerEval(code: string): string;
  * @param {unknown[]} args - Объект, содержащий набор свойств, определяющих окружение, в котором будет исполнятся код.
  * Если данный аргумент не указан, то программный код исполняется в пустом окружении.
  * Однако, обычно данный аргумент указывается.
+ * @returns {unknown} Результат.
  */
 declare function SafeEval(code: string, args?: unknown[]): unknown;
 
@@ -2473,7 +2458,7 @@ declare function SafeEval(code: string, args?: unknown[]): unknown;
  * @param {string} code - Код JScript.
  * @param {any} defaultValue - Значение, возвращаемое в случае ошибки
  * Если аргумент не указан, а код завершается с ошибкой, возвращается undefined.
- * @returns {T | undefined}
+ * @returns {T | undefined} Результат.
  * @example
  * ```
  * OptEval("doc.TopElem.xxx", "");
@@ -2485,7 +2470,6 @@ declare function OptEval<T>(code: string, defaultValue?: T): T | undefined;
  * Обозначает запуск длительного фрагмент кода с упрощенной индикацией пользователю.
  * Прогресс выполнения будет обозначаться путем перидического вызова функции {@link ModalTaskMsg}.
  * @param {string} taskTitle - Название задачи для пользователя.
- * @returns Undefined.
  * @example
  * ```
  * ModalTaskMsg("Импорт данных");
@@ -2515,7 +2499,7 @@ declare function StartModalTask(taskTitle: string): undefined;
  * {@link EvalCodeUrl}, загружаемый js-файл не может содержать глобальных
  * переменных, а только функции.
  * @param {string} url - Url загружаемого документа с расширением XML или JS.
- * @returns {XmlDocument}
+ * @returns {XmlDocument} XmlDocument.
  */
 declare function OpenCodeLib(url: string): XmlDocument;
 
@@ -2531,20 +2515,21 @@ declare function OpenCodeLib(url: string): XmlDocument;
  * @param {string} methodName - Имя метода.
  * @param {unknown[]} arguments - Стандартный массив значений аргументов,
  * либо стандартный объект, содержащий значения аргументов.
+ * @returns {unknown} Результат.
  */
 declare function CallServerMethod(libraryName: string, methodName: string, arguments?: unknown[]): unknown;
 
 /**
  * Возвращает тип переданного значения.
  * @param {T} entity - Проверяемое значение.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function DataType<T>(entity: T): string;
 
 /**
  * Возвращает тип переданного значения.
  * @param {T} entity - Проверяемое значение.
- * @returns {string}
+ * @returns {string} Результат.
  */
 declare function ObjectType<T>(entity: T): string;
 
@@ -2554,6 +2539,7 @@ declare function StrToCharArray(str: string): string[];
 /**
  * Функция StrFromCharCode преобразует код символа (число) в строку, содержащую этот символ.
  * @param {number} code - Код символа.
+ * @returns {string} Результат.
  */
 declare function StrFromCharCode(code: number): string;
 

@@ -1,6 +1,32 @@
 /* eslint-disable no-magic-numbers */
 declare namespace Websoft {
 
+  type Interfaces = {
+    "Authorization": Authorization.Authorization,
+    "Crypto": Utils.Crypto,
+    "CryptoPro": CryptoPro.CryptoProPrime,
+    "CryptoStore": CryptoStore.CryptoStore,
+    "Excel": Office.Excel.Document,
+    // "FaceRecognition": OpenCV.FaceRecognition,
+    "FileUtils": Utils.FileUtils,
+    // "HttpRequest": HttpRequest.HttpRequest,
+    // "Image": Imaging.Image,
+    // "ImageUtils": Imaging.ImageUtils,
+    // "MediaPostStreamHandler": MediaHandler.MediaPostStreamHandler,
+    // "Pdf": Office.Pdf.Document,
+    // "PdfGenerator": Office.Pdf.Generator,
+    // "PKeyGenerator": PKeyGenerator.PKeyGenerator,
+    // "Powerpoint": Office.Powerpoint.Presentation,
+    // "RecordingClient": Recording.Client,
+    "RegExp": RegExp.RegExp,
+    // "UniBridgeSettings": spxml.unibridge.UniBridgeSettings,
+    // "VideoNeuralHandler": VideoNeuralHandler.VideoNeuralHandler,
+    // "Word": Office.Word.Document,
+    "WebUtils": Utils.WebUtils,
+    // "XHTTPMiddleware": XHTTP.Middleware,
+    "Zip": Zip.Zip,
+  };
+
   class WebsoftBaseClass {
     /**
      * Используется для получения последней произошедшей ошибки.
@@ -13,6 +39,86 @@ declare namespace Websoft {
      * @returns Версия компонента.
      */
     GetVersion(): string;
+  }
+
+  namespace Authorization {
+    interface IObjectArray {
+      GetNext(): boolean;
+      GetName(): string;
+      GetValue(name: string): object;
+      IsEnabled(): boolean;
+      GetStringValue(name: string): string;
+      Token(): string;
+    }
+    class Authorization {
+      ValidateLDAP(
+        ldap_server: string,
+        ldap_container: string,
+        username: string,
+        password: string,
+        context_options: number,
+        context_type: number
+      ): boolean;
+      ValidateLDAPRequestNovell(
+        ldap_server: string,
+        ldap_container: string,
+        username: string,
+        password: string,
+        auth_type: number,
+        ProtocolVersion: number,
+        ssl: boolean
+      ): boolean;
+      ValidateLDAPRequest(
+        ldap_server: string,
+        ldap_container: string,
+        username: string,
+        password: string,
+        auth_type: number,
+        ProtocolVersion: number,
+        ssl: boolean
+      ): boolean;
+      GetValidateLDAPWithAttributes(
+        ldap_server: string,
+        ldap_container: string,
+        username: string,
+        password: string,
+        properties: string,
+        context_options: number,
+        context_type: number
+      ): [string, object];
+      ValidateLDAPWithAttributes(
+        ldap_server: string,
+        ldap_container: string,
+        username: string,
+        password: string,
+        properties: string,
+        context_options: number,
+        context_type: number
+      ): IObjectArray;
+      GetValidateADALWithTokenAttributes(
+        ad_server_tenant: string,
+        ad_clientid: string,
+        resourceId: string,
+        token: string,
+        properties: string,
+        stsDiscoveryEndPoint: string
+      ): [string, object];
+      ValidateADALWithTokenAttributes(
+        ad_server_tenant: string,
+        ad_clientid: string,
+        resourceId: string,
+        token: string,
+        properties: string,
+        stsDiscoveryEndPoint: string
+      ): IObjectArray;
+    }
+  }
+
+  namespace Code {
+    class BufferedConsoleStream { }
+    class JsonExtensions { }
+    class wsft { }
+    class WTConsole { }
   }
 
   namespace CryptoPro {
@@ -29,15 +135,15 @@ declare namespace Websoft {
       Close(): boolean;
       DecryptString(message: string, fOAEP: boolean): string;
       DecryptStringAES(message: string, key: string, IV?: string): string;
-      EmbedSignatureToSignedMsgData(messageData: string, mimeHeader: string): string;
-      EmbedSignatureToSignedMsgDataWithEncrypt(messageData: string, recipCert: string, mimeHeader: string): string;
+      EmbedSignatureToSignedMsgData(message: string, mimeHeader: string): string;
+      EmbedSignatureToSignedMsgDataWithEncrypt(message: string, recipCert: string, mimeHeader: string): string;
       EncryptString(message: string, fOAEP?: boolean): string;
       EncryptStringAES(message: string, key: string, IV?: string): string;
-      ExtractAlternativeMimeDataFromSigned(messageData: string): [string, string, string, string];
+      ExtractAlternativeMimeDataFromSigned(message: string): [string, string, string, string];
       GenerateKey(): string;
-      GetDecryptedMsgData(messageData: string): string;
+      GetDecryptedMsgData(message: string): string;
       GetEncryptedMsgData(
-        messageData: string,
+        message: string,
         fileName: string,
         attachment: Binary,
         recipCert: string,
@@ -45,16 +151,16 @@ declare namespace Websoft {
       ): string;
       GetLastError(): number;
       GetLastErrorMessage(): string;
-      GetMsgData(messageData: string, fileName: string, attachment: Binary, mimeHeader: string): string;
+      GetMsgData(message: string, fileName: string, attachment: Binary, mimeHeader: string): string;
       GetSelectedCertAttribute(name: string): string;
       GetSignedEncryptedMsgData(
-        messageData: string,
+        message: string,
         fileName: string,
         attachment: Binary,
         recipCert: string,
         mimeHeader: string
       ): string;
-      GetSignedMsgData(messageData: string, fileName: string, attachment: Binary, mimeHeader: string): string;
+      GetSignedMsgData(message: string, fileName: string, attachment: Binary, mimeHeader: string): string;
       isCertificateSelected(): boolean;
       Open(store: number, storeName: string, flags: number): boolean;
       SelectCertificate(recipCert: string): boolean;
@@ -258,7 +364,6 @@ declare namespace Websoft {
         /**
          * Получает {@link Columns | колонку} по указанному номеру.
          * @param index - Номер колонки.
-         *
          */
         GetColumn(index: number): Column;
       }
@@ -297,7 +402,6 @@ declare namespace Websoft {
          * Загружает данные в формате HTML из указанного файла.
          * @param filePath - Путь до файла в формате HTML.
          * @param resourcesDirectoryName - Название папки с ресурсами (изображения, стили и т.д.).
-         *
          */
         LoadHtmlFile(filePath: string, resourcesDirectoryName: string): 0 | 1;
 
@@ -305,7 +409,6 @@ declare namespace Websoft {
          * Загружает данные в формате HTML из строки.
          * @param htmlText - Переменная, содержащаю строку в формате HTML.
          * @param resourcesDirectoryName - Название папки с ресурсами (изображения, стили и т.д.).
-         *
          */
         LoadHtmlString(htmlText: string, resourcesDirectoryName: string): 0 | 1;
 

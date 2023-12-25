@@ -34,6 +34,7 @@ declare namespace Screen {
    * @param {string} subject - Текст заголовка.
    * @param {string} type - Тип диалогового окна.
    * @param {string} titles - Наименование кнопок диалогового окна.
+   * @returns {boolean} Результат.
    * @example
    * ```
    * Screen.MsgBox(
@@ -50,6 +51,7 @@ declare namespace Screen {
    * ```
    */
   function MsgBox(message: string, subject: string, type: string, titles: string): boolean;
+
   function Navigate(): void;
   function Print(): void;
   function RemoveLinkedDocByUrl(): void;

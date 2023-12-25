@@ -4,12 +4,14 @@ declare namespace tools_web {
 
   /**
    * Путь до wt/web директории сервера.
+   * @returns {string} Путь.
    */
   function web_url(): string;
 
   /**
    * Ссылка на раздел портала.
    * @param {object} attr - Параметры.
+   * @returns {string} Ссылка на документ.
    */
   function doc_link(attr: Object): string;
 
@@ -23,6 +25,7 @@ declare namespace tools_web {
   /**
    * Получение текстового значения языкового параметра из curLngWeb.
    * @param {string} name - Название параметра.
+   * @returns {string} Значение языкового параметра.
    */
   function get_web_str(name: string): string;
   function get_web_const(sNameParam: string, fldLngParam: unknown): string;
@@ -33,6 +36,7 @@ declare namespace tools_web {
    * Складывает два `id`.
    * @param {number} objectId - Id объекта.
    * @param {number} sid - Id сессии.
+   * @returns {number} Сумма Id объекта и Id сессии.
    */
   function get_sum_sid(objectId: number, sid: number): number;
 
@@ -171,8 +175,9 @@ declare namespace tools_web {
    * Global = true
    * IgnoreCase = true
    * MultiLine = true.
+   * @returns {Websoft.RegExp.RegExp} Экземпляр библиотеки.
    */
-  function reg_exp_init(): unknown;
+  function reg_exp_init(): Websoft.RegExp.RegExp;
 
   function convert_bbcode_to_html(sMessageSource: unknown, objRegExp: unknown): unknown;
   function convert_html_to_bbcode(sMessageSource: unknown, objRegExp: unknown): unknown;
@@ -193,7 +198,7 @@ declare namespace tools_web {
   /**
    * Возвращает значение true/false в завимости от передаваемого параметра.
    * @param {T} value - Параметр.
-   * @returns {boolean}
+   * @returns {boolean} Значение аргумента в булевом представлении.
    */
   function is_true<T>(value: T): boolean;
 
@@ -210,6 +215,7 @@ declare namespace tools_web {
    * @param {string} catalogName - Каталог объекта.
    * @param {number} objectId - Id объекта.
    * @param {unknown} oParams - Параметры для определения хоста/сессии/etc.
+   * @returns {string} Url.
    */
   function get_object_source_url(catalogName: string, objectId: number, oParams?: unknown): string;
 
@@ -257,6 +263,7 @@ declare namespace tools_web {
   /**
    * Получение кэша по коду.
    * @param {string} userDataCode - Код кэша.
+   * @returns {string|null} Значение кэша.
    */
   function get_user_data(userDataCode: string): null | string;
 
@@ -291,11 +298,13 @@ declare namespace tools_web {
   /**
    * Формирует content-type из Url файла.
    * @param {string} url - Url файла.
+   * @returns {string} Content-Type значение.
    */
   function url_std_content_type(url: string): string;
 
   /**
    * Возвращает DOTNETCORE-VFS=='1' из AppConfig.
+   * @returns {boolean} DOTNETCORE-VFS=='1'.
    */
   function is_vfs(): boolean;
 
@@ -307,9 +316,10 @@ declare namespace tools_web {
   function write_url_to_response(url: string, req: Request): void;
 
   /**
-   * Декоратор дял простого шифрования функцией StrSimpleEncrypt({objectId}_{date}).
+   * Декоратор для простого шифрования функцией StrSimpleEncrypt({objectId}_{date}).
    * @param {number} objectId - Id объекта.
    * @param {Date} date - Дата.
+   * @returns {string} Значение StrSimpleEncrypt({objectId}_{date}).
    */
   function encrypt_launch_id(objectId?: number, date?: Date): string;
 
@@ -342,6 +352,7 @@ declare namespace tools_web {
    * Инициализаяция пользователя.
    * @param {Request} req - Объект Request.
    * @param {object} query - Параметры.
+   * @returns {IToolsWebUserInit} Результат инициализации пользователя из запроса.
    */
   function user_init(req: Request, query: Object): IToolsWebUserInit;
 
