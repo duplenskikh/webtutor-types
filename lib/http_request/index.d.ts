@@ -147,9 +147,9 @@ interface Request {
 
   /**
    * Добавляет или заменяет поле заголовка HTTP-ответа. Если заголовок уже был отправлен, метод возвращает ошибку.
-   * @param {string} fieldName - Имя поля (String).
-   * @param {string} fieldValue - Значение поля (String).
-   * @param {boolean} replaceExisting - Заменить существующее (Boolean).
+   * @param {string} fieldName - Имя поля.
+   * @param {string} fieldValue - Значение поля.
+   * @param {boolean} replaceExisting - Заменить существующее.
    * Заменить значение существующего поля с таким же именем, если есть.
    * Необязательный аргумент, по умолчанию равен true.
    */
@@ -165,7 +165,7 @@ interface Request {
    * Выполняет код указанного фрагмента Web-страницы с записью результата
    * в текущий HTTP-ответ. Метод используется для включений фрагментов,
    * общих для различных видов страниц.
-   * @param {string} path - Путь к включаемому фрагменту (String).
+   * @param {string} path - Путь к включаемому фрагменту.
    * Если указан относительный путь (что как правило и делается),
    * путь считается относительно родительской к текущей странице директории.
    * @param {boolean} allowSubCancel - Разрешать завершение код с отменой (Bool).
@@ -186,22 +186,22 @@ interface Request {
   /**
    * Вызывает отправку статуса HTTP 301 "Object Moved" (постоянное перенаправление).
    * Если заголовок уже был отправлен, метод возвращает ошибку.
-   * @param {string} redirectUrl - Url, на которое происходит перенаправление (String).
+   * @param {string} redirectUrl - Url, на которое происходит перенаправление.
    */
   PermanentRedirect(redirectUrl: string): void;
 
   /**
    * Вызывает отправку статуса HTTP 302 "Object Moved" (перенаправление).
    * Если заголовок уже был отправлен, метод возвращает ошибку.
-   * @param {string} redirectUrl - Url, на которое происходит перенаправление (String).
+   * @param {string} redirectUrl - Url, на которое происходит перенаправление.
    */
   Redirect(redirectUrl: string): void;
 
   /**
    * Возвращает статус HTTP-ответа. Если заголовок уже был отправлен,
    * метод возвращает ошибку.
-   * @param {number} statusCode - Трехзначный код статуса (Integer).
-   * @param {string} statusDesc - Наименование статуса (String).
+   * @param {number} statusCode - Трехзначный код статуса.
+   * @param {string} statusDesc - Наименование статуса.
    * @example Request.SetRespStatus( 500, 'Invalid server state' );
    */
   SetRespStatus(statusCode: number, statusDesc: string): void;
@@ -212,7 +212,7 @@ interface Request {
    * Код Web-страницы обычно вызывает данный метод, если Request.AuthLogin
    * возвращает пустую строку, либо указаны неверные авторизационные данные.
    * Если заголовок уже был отправлен, метод возвращает ошибку.
-   * @param {string} options - Список опций вида 'name1=value1;name2=value2;...' (String).
+   * @param {string} options - Список опций вида 'name1=value1;name2=value2;...'.
    * Допустимые значения: basic=1, ntlm=1 - разрешенные виды авторизации.
    */
   SetWrongAuth(options: string): void;

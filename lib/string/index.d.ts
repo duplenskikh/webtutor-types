@@ -10,20 +10,20 @@ interface String {
    * содержимое добавленной части строки неопределено.
    * Метод обычно используется для передачи возвращаемых строковых аргументов
    * в методы DllWrapper.
-   * @param newLen - Новая длинна строки в байтах (Integer).
+   * @param {number} newLen - Новая длинна строки в байтах.
    */
   Allocate(newLen: number): void;
 
   /**
    * Возвращает символ с указанной позиции в виде односимвольной строки.
    * Если указать index превышающий количество символов в строке, возвратит пустую строку.
-   * @param index - Номер позиции в строке (Integer).
+   * @param {number} index - Номер позиции в строке.
    */
   charAt(index: number): string;
 
   /**
    * Возвращает код указанного символа.
-   * @param index - Отсчитаваемый с нуля индекс для символа (Integer).
+   * @param {number} index - Отсчитаваемый с нуля индекс для символа.
    */
   charCodeAt(index: number): number;
 
@@ -37,8 +37,8 @@ interface String {
   /**
    * Поиск первого месторасположения подстроки в пределах объекта String.
    * Если подстрока не найдена, возвращается -1.
-   * @param substring - Подстрока для поиска (String).
-   * @param startPosition - Целое значение, указывающее индекс начала поиска (Integer).
+   * @param {string} substring - Подстрока для поиска.
+   * @param {number} startPosition - Целое значение, указывающее индекс начала поиска.
    * Необязательный аргумент.
    */
   indexOf(substring: string, startPosition?: number): number;
@@ -46,23 +46,23 @@ interface String {
   /**
    * Поиск последнего местонахождения подстроки в пределах объекта String.
    * Если подстрока не найдена, возвращается -1.
-   * @param substring - Подстрока для поиска (String).
-   * @param startPosition - Целое число, указывающее на индекс для начала поиска (Integer).
+   * @param {string} substring - Подстрока для поиска.
+   * @param {number} startPosition - Целое число, указывающее на индекс для начала поиска.
    * Необязательный аргумент.
    */
   lastIndexOf(substring: string, startPosition?: number): number;
 
   /**
    * Возвращает фрагмент строки.
-   * @param start - Индекс начала указанной части строки (Integer).
-   * @param end - Индекс конца указанной части строки (Integer). Необязательный аргумент.
+   * @param {number} start - Индекс начала указанной части строки.
+   * @param {number} end - Индекс конца указанной части строки. Необязательный аргумент.
    * Рекомендуется использовать аналогичные функции {@link StrRangePos}() и {@link StrLeftRange}().
    */
   slice(start: number, end?: number): string;
 
   /**
    * Разделяет строку на массив строк.
-   * @param separator - Строка, которая показывает, где делить (String).
+   * @param {string} separator - Строка, которая показывает, где делить.
    */
   split(separator: string): string[];
 
@@ -85,8 +85,8 @@ interface String {
 
   /**
    * Возвращает подстроку, начинающуюся с указанного месторасположения и имеющую указанную длину.
-   * @param start - Начальное положение в строке (Integer).
-   * @param length - Количество символов в возвращаемой строке (Integer). Необязательный аргумент.
+   * @param {number} start - Начальное положение в строке.
+   * @param {number} length - Количество символов в возвращаемой строке. Необязательный аргумент.
    * Рекомендуется использовать аналогичную функцию {@link StrRightRangePos}().
    */
   substr(start: number, length?: number): string;

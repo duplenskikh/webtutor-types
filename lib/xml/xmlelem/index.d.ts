@@ -541,7 +541,7 @@ interface XmElem<T, ForeignElem = never> {
    * Если дочерний элемент не найден, возвращает ошибку.
    * Смотри также {@link GetOptChildByKey}.
    * @param {K} value - Значение ключа.
-   * @param {string} name - Имя элемента, являющегося ключом (String). Необязательный аргумент.
+   * @param {string} name - Имя элемента, являющегося ключом. Необязательный аргумент.
    * Если имя ключа не указано, используется первичный ключ.
    */
   GetChildByKey<K>(value: K, name?: string): XmlElem<unknown>;
@@ -550,7 +550,7 @@ interface XmElem<T, ForeignElem = never> {
    * Возвращает дочерний элемент с заданным значением ключевого поля.
    * Если дочерний элемент не найден, возвращает undefined.
    * @param {K} value - Значение ключа.
-   * @param {string} name - Имя элемента, являющегося ключом (String). Необязательный аргумент.
+   * @param {string} name - Имя элемента, являющегося ключом. Необязательный аргумент.
    * Если имя ключа не указано, используется первичный ключ.
    */
   GetOptChildByKey<K>(value: K, name?: string): XmlElem<T> | undefined;

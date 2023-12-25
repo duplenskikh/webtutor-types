@@ -51,9 +51,9 @@ interface Response {
    * Более старый эквивалент метода {@link AddRespHeader}() объекта Request.
    * Добавляет или заменяет поле заголовка HTTP-ответа.
    * Если заголовок уже был отправлен, метод возвращает ошибку.
-   * @param {string} fieldName - Имя поля (String).
-   * @param {string} fieldValue - Значение поля (String).
-   * @param {boolean} replaceExisting - Заменить существующее (Boolean).
+   * @param {string} fieldName - Имя поля.
+   * @param {string} fieldValue - Значение поля.
+   * @param {boolean} replaceExisting - Заменить существующее.
    * Заменить значение существующего поля с таким же именем, если есть.
    * Необязательный аргумент, по умолчанию равен true.
    */
@@ -67,14 +67,14 @@ interface Response {
    * исключением типа {@link Cancel}(), в противном случае метод не производит никаких действий.
    * Метод обычно используется для скриптов, возвращающих файлы,
    * хранящиеся вне файловой системы, например внутри базы данных приложения.
-   * @param {Date} date - Дата последнего изменения файла (Date).
+   * @param {Date} date - Дата последнего изменения файла.
    */
   CheckModified(date: Date): void;
 
   /**
    * Отправляет содержимое файла, как если бы файл был запрошен напрямую.
    * При этом отправляется правильный Content-Type и Last-Modified.
-   * @param {string} filePath - Путь к файлу или url файла (String).
+   * @param {string} filePath - Путь к файлу или url файла.
    */
   HandleStaticFile(filePath: string): void;
 
@@ -82,7 +82,7 @@ interface Response {
    * Более старый эквивалент метода {@link Redirect}() объекта Request.
    * Вызывает отправку статуса HTTP 302 "Object Moved" (перенаправление).
    * Если заголовок уже был отправлен, метод возвращает ошибку.
-   * @param {string} redirectUrl - Url, на которое происходит перенаправление (String).
+   * @param {string} redirectUrl - Url, на которое происходит перенаправление.
    */
   Redirect(redirectUrl: string): void;
 
@@ -90,8 +90,8 @@ interface Response {
    * Более старый эквивалент метода {@link SetRespStatus}() объекта {@link Request}.
    * Возвращает статус HTTP-ответа. Если заголовок уже был отправлен,
    * метод возвращает ошибку.
-   * @param {number} statusCode - Трехзначный код статуса (Integer).
-   * @param {string} statusDesc - Наименование статуса (String).
+   * @param {number} statusCode - Трехзначный код статуса.
+   * @param {string} statusDesc - Наименование статуса.
    * Response.SetRespStatus( 500, 'Invalid server state' );.
    */
   SetRespStatus(statusCode: number, statusDesc: string): void;
@@ -103,7 +103,7 @@ interface Response {
    * Код Web-страницы обычно вызывает данный метод, если Request.AuthLogin
    * возвращает пустую строку, либо указаны неверные авторизационные данные.
    * Если заголовок уже был отправлен, метод возвращает ошибку.
-   * @param {string} options - Список опций вида 'name1=value1;name2=value2;...' (String).
+   * @param {string} options - Список опций вида 'name1=value1;name2=value2;...'.
    * Допустимые значения: basic=1, ntlm=1 - разрешенные виды авторизации.
    */
   SetWrongAuth(options: string): void;
@@ -113,7 +113,7 @@ interface Response {
    * Содержимое предварительно накапливается в буфере,
    * либо немедленно отправляется в сеть в зависимости от значение атрибута {@link WriteMode}.
    * Именно в это метод транслируется конструкция вида <%=xxx%> в ASP-подобных страницах.
-   * @param {T} payload - Строка с данными (String).
+   * @param {string} {T} payload - Строка с данными.
    * @param {boolean} encode - Маскировать передаваемые данные по правилам HTML (Bool).
    * Необязательный атрибут, по умолчанию false.
    */

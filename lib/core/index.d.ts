@@ -45,7 +45,7 @@ declare function alert<T>(val: T): T;
  * наименование подключаемого модуля считывается из файла первичных настроек
  * при запуске исполнимого файла. Функция используется, например, в ядре программы,
  * если необходимо по-разному его настраивать для работы с различными подключаемыми модулями.
- * @param {string} moduleName - Наименование модуля (String).
+ * @param {string} moduleName - Наименование модуля.
  * @returns Boolean
  * AppModuleUsed( 'module_datex' );.
  */
@@ -185,7 +185,7 @@ declare function LogEvent(type: string, text: string): undefined;
 
 /**
  * Создает объект типа MailMessage на основании почтового сообщения в формате MIME.
- * @param {string} mimeData - Почтовое сообщение в формате MIME (String).
+ * @param {string} mimeData - Почтовое сообщение в формате MIME.
  * @returns XmlElem.
  */
 declare function MailMessageFromMimeStr(mimeData: string): XmlElem<unknown>;
@@ -199,7 +199,7 @@ declare function Md5(data: string): string;
 
 /**
  * Возвращает тип склонения существительного в русском языке для заданного числа.
- * @param {number} num - Число  (Integer).
+ * @param {number} num - Число .
  * @returns Number
  * IntModType(num)Возвращает тип склонения существительного в русском языке
  * (0,1,2) для заданного числа. (0 - "штук", 1 - "штука", 2 - "штуки").
@@ -267,7 +267,7 @@ declare function Min(number: number, ...numbers: number[]): number;
  * Возвращает Полное имя человека в виде "Фамилия И.О.".
  * @param {string} lastname - Фамилия.
  * @param {string} firstname - Имя.
- * @param {string} middlename - Отчество. Не обязательный аргумент.
+ * @param {string} [middlename] - Отчество.
  * @returns {string}
  */
 declare function PersonShortName(lastname: string, firstname: string, middlename: string): string;
@@ -297,8 +297,8 @@ declare function Md5Hex(data: string): string;
 
 /**
  * Возвращает случайное целое число в заданном диапазоне.
- * @param {number} minVal - Нижняя граница диапазона (Integer).
- * @param {number} maxVal - Верхняя граница диапазона (Integer).
+ * @param {number} minVal - Нижняя граница диапазона.
+ * @param {number} maxVal - Верхняя граница диапазона.
  * @returns Number.
  */
 declare function Random(minVal: number, maxVal: number): number;
@@ -353,7 +353,7 @@ declare function SHA1(str: string): string;
 
 /**
  * Создает временную задержку, не загружая процессор.
- * @param {number} ticks - Величина задержки в миллисекундах (Integer).
+ * @param {number} ticks - Величина задержки в миллисекундах.
  * @returns {undefined}
  */
 declare function Sleep(ticks: number): undefined;
@@ -552,8 +552,8 @@ declare function ArrayOptMax<T>(array: T[], elemExpr: string): T;
  * Возвращает фрагмент массива с определенной позиции. Данная функция как правило используется
  * для реализации постраничного простомотра (paging) результатов запроса XQuery.
  * @param {Array} array - Исходный массив.
- * @param {number} pos - Начальная позиция (Integer).
- * @param {number} elemsNum - Количество элементов нового массива (Integer). Необязательный аргумент.
+ * @param {number} pos - Начальная позиция.
+ * @param {number} elemsNum - Количество элементов нового массива. Необязательный аргумент.
  * Если количестов не указано, возвращаются все элементы с начальной позиции.
  * @returns {Array}
  */
@@ -685,7 +685,7 @@ declare function ArraySelectByKey<T, K>(array: T, value: K, name: string): T;
  * @param {Array} array - Массив.
  * @param {string} field - Выражение, вычисляющее значение полей относительно элемента массива,
  * по которым осуществляется сортировка.
- * @param {string} direction - Направление сортировки ('+' или '-'). Не обязательный аргумент.
+ * @param {string} [direction] - Направление сортировки ('+' или '-')
  * @param {string} args
  * @returns {Array}
  * ArraySort( array, 'name', '+', 'date', '-' ).
@@ -709,10 +709,10 @@ declare const CurDate: Date;
 /**
  * Изменяет значение времени в заданной дате. Возвращает измененную дату.
  * Если указан только первый аргумент, функция возвращает дату без времени.
- * @param {Date} date - Дата (Date).
- * @param {number} hour - Час (Integer). Необязательный аргумент.
- * @param {number} minute - Минута (Integer). Необязательный аргумент.
- * @param {number} second - Секунда (Integer). Необязательный аргумент.
+ * @param {Date} date - Дата.
+ * @param {number} hour - Час. Необязательный аргумент.
+ * @param {number} minute - Минута. Необязательный аргумент.
+ * @param {number} second - Секунда. Необязательный аргумент.
  * @returns {Date}
  */
 declare function DateNewTime(date: Date, hour?: number, minute?: number, second?: number): Date;
@@ -725,58 +725,58 @@ declare function GetCurTicks(): number;
 
 /**
  * Возвращает разницу между 2-мя датами в секундах. Если первая дата меньше второй, разница будет отрицательным числом.
- * @param {Date} date1 - Дата 1 (Date).
- * @param {Date} date2 - Дата 2 (Date).
+ * @param {Date} date1 - Дата 1.
+ * @param {Date} date2 - Дата 2.
  * @returns {number}
  */
 declare function DateDiff(date1: Date, date2: Date): number;
 
 /**
  * Сдвигает дату на указанное число секунд. Если значение второго аргумента отрицательное, дата сдвигается назад.
- * @param {Date} date - Заданная дата (Date).
- * @param {number} seconds - Сдвиг в секундах (Integer).
+ * @param {Date} date - Заданная дата.
+ * @param {number} seconds - Сдвиг в секундах.
  * @returns {Date}
  */
 declare function DateOffset(date: Date, seconds: number): Date;
 
 /**
  * Возвращает количество секунд, прошедших с 1970 года до заданной даты.
- * @param {Date} date - Дата (Date).
+ * @param {Date} date - Дата.
  * @returns {number}
  */
 declare function DateToRawSeconds(date: Date): number;
 
 /**
  * Возвращает значение часа для заданной даты. Если дата не содержит времени, возращается undefined.
- * @param {Date} date - Дата (Date).
+ * @param {Date} date - Дата.
  * @returns {number}
  */
 declare function Hour(date: Date): number;
 
 /**
  * Возвращает значение дня (1-31) для заданной даты.
- * @param {Date} date - Дата (Date).
+ * @param {Date} date - Дата.
  * @returns {number}
  */
 declare function Day(date: Date): number;
 
 /**
  * Возвращает значение минуты для заданной даты. Если дата не содержит времени, возращается undefined.
- * @param {Date} date - Дата (Date).
+ * @param {Date} date - Дата.
  * @returns {number}
  */
 declare function Minute(date: Date): number;
 
 /**
  * Возвращает номер месяца (1-12) для заданной даты.
- * @param {Date} date - Дата (Date).
+ * @param {Date} date - Дата.
  * @returns {number}
  */
 declare function Month(date: Date): number;
 
 /**
  * Пребразует дату в формат MIME.
- * @param {Date} Date - Дата (Date).
+ * @param {Date} Date - Дата.
  * @returns {string}
  * @example StrMimeDate(Date("26.12.2011 10:45")) == 'Mon, 26 Dec 2011 10:45:00 +0400'
  */
@@ -785,7 +785,7 @@ declare function StrMimeDate(Date: Date): string;
 /**
  * Преобразует дату в строку в "длинном" формате (со словесным написанием месяца).
  * Если в качестве аргумента передается null или пустая строка, функция возвращает пустую строку.
- * @param {Date} date - Дата (Date).
+ * @param {Date} date - Дата.
  * @returns {string}
  * @example StrLongDate(Date("26.12.2011")) == "26 декабря 2011 г."
  */
@@ -826,21 +826,21 @@ declare function ParseDate(date: string): Date;
 
 /**
  * Преобразует количество секунд, прошедших с 1970 года в дату.
- * @param {number} seconds - Количество секунд (Integer).
+ * @param {number} seconds - Количество секунд.
  * @returns {Date}
  */
 declare function RawSecondsToDate(seconds: number): Date;
 
 /**
  * Возвращает значение секунд для заданной даты. Если дата не содержит значения секунд, возращается undefined.
- * @param {Date} date - Дата (Date).
+ * @param {Date} date - Дата.
  * @returns {number}
  */
 declare function Second(date: Date): number;
 
 /**
  * Преобразует дату в строку, с двухсимвольным форматом года.
- * @param {Date} date - Дата, которую преобразуется (Date).
+ * @param {Date} date - Дата, которую преобразуется.
  * @param {boolean} showTime - Включать время (Bool). По умолчанию true.
  * @param {boolean} showSeconds - Включать секунды во времени (Bool). По умолчанию true.
  * @returns {string}
@@ -850,7 +850,7 @@ declare function StrShortDate(date: Date, showTime?: boolean, showSeconds?: bool
 /**
  * Преобразует дату в строку в формате, используемом по умолчанию в операционной системе.
  * Если в качестве аргумента передается null или пустая строка, функция возвращает пустую строку.
- * @param {Date} date - Объект даты (Date).
+ * @param {Date} date - Объект даты.
  * @param {boolean} showTime - Включать время (Bool). По умолчанию true.
  * @param {boolean} showSeconds - Включать секунды во времени (Bool). По умолчанию true.
  * @returns {string}
@@ -859,14 +859,14 @@ declare function StrDate(date: Date, showTime?: boolean, showSeconds?: boolean):
 
 /**
  * Преобразует дату из универсального часового пояса в текущий часовой пояс.
- * @param {Date} date - Дата (Date).
+ * @param {Date} date - Дата.
  * @returns {Date}
  */
 declare function UtcToLocalDate(date: Date): Date;
 
 /**
  * Преобразует значение времени внутри даты в строку. Если время не содержится внутри даты, возвращается пустая строка.
- * @param {Date} date - Дата (Date).
+ * @param {Date} date - Дата.
  * @returns {string}
  * @example StrTime(Date("26.12.2011 10:45")) == "10:45"
  */
@@ -874,21 +874,21 @@ declare function StrTime(date: Date): string;
 
 /**
  * Возвращает значение года для заданной даты.
- * @param {Date} date - Дата (Date).
+ * @param {Date} date - Дата.
  * @returns {number}
  */
 declare function Year(date: Date): number;
 
 /**
  * Возвращает номер дня недели для заданной даты. (0 - Воскресенье, 1 - Понедельник и т.д.).
- * @param {Date} date - Дата (Date).
+ * @param {Date} date - Дата.
  * @returns {number}
  */
 declare function WeekDay(date: Date): number;
 
 /**
  * Преобразует дату в строку в формате, используемом в XML. Данный формат не зависит от региональных настроек в системе.
- * @param {Date} date - Объект даты (Date).
+ * @param {Date} date - Объект даты.
  * @param {boolean} showTime - Включать время (Bool). Необязательный аргумент.
  * @param {boolean} showSeconds - Включать секунды во времени (Bool). Необязательный аргумент.
  * @example
@@ -903,8 +903,8 @@ declare function StrXmlDate(date: Date, showTime?: boolean, showSeconds?: boolea
 
 /**
  * Создает динамический (без привязки к форме) XML-элемент. Созданный элемент не имеет родительского элемента.
- * @param {string} name - Имя элемента (String).
- * @param {string} type - Тип данных XML-элемента (String).
+ * @param {string} name - Имя элемента.
+ * @param {string} type - Тип данных XML-элемента.
  * @returns XmlElem<unknown>.
  * @example CreateDynamicElem("elem_count", "integer");
  */
@@ -914,8 +914,8 @@ declare function CreateDynamicElem(name: string, type: string): XmlElem<unknown>
  * Создает XML-элемент заданному по фрагменту формы. Созданный элемент не имеет родительского элемента.
  * Функция используется для управления сложными структурами в оперативной памяти компьютера
  * (как альтернатива javascript object), а так же для формирования XML для внешнего использования.
- * @param {string} formUrl - Url xmd-файла, в котором находится форма (String).
- * @param {string} elemPath - Пусть к фрагменту формы (String).
+ * @param {string} formUrl - Url xmd-файла, в котором находится форма.
+ * @param {string} elemPath - Пусть к фрагменту формы.
  * @returns XmlElem<unknown>.
  * @example CreateElem("//base2/base2_user.xmd", "user");
  */
@@ -949,7 +949,7 @@ declare function declareElemsToStr<T>(arg1: T): string;
  * Используется при обработке параметров,
  * полученных от внешних процедур и плагинов.
  * Смотри также {@link declareElemsToStr}.
- * @param {string} arg1 - Строка (string).
+ * @param {string} arg1 - Строка.
  * @returns {Array}
  */
 declare function LoadElemsFromStr(arg1: string): unknown[];
@@ -994,7 +994,7 @@ declare function FetchDb(name: string): unknown;
  * Если не находит - выдает ошибку.
  * Функция по историческим причнам называется не совсем корректно.
  * Ее ближайший эквивалент - {@link FindOptCatalog} имеет правильное название.
- * @param {string} name - Наименование каталога базы данных (String).
+ * @param {string} name - Наименование каталога базы данных.
  * @returns {object}
  * @example
  * ```
@@ -1223,7 +1223,7 @@ declare function StrReplaceOne(str: string, subStr: string, newSubStr: string): 
 /**
  * Возвращает часть строки, начиная с указанной позиции до конца строки.
  * @param {string} str - Строка.
- * @param {number} pos - Позиция (Integer).
+ * @param {number} pos - Позиция.
  * @returns {string}
  * @example StrRightRangePos(str, pos);
  */
@@ -1249,8 +1249,8 @@ declare function StrUpperCase(str: string): string;
 /**
  * Возвращает часть строки по заданным позициям.
  * @param {string} str - Строка.
- * @param {number} pos1 - Начальная позиция (Integer).
- * @param {number} pos2 - Конечная позиция (Integer).
+ * @param {number} pos1 - Начальная позиция.
+ * @param {number} pos2 - Конечная позиция.
  * @returns {string}
  * @example StrRangePos(str, pos1, pos2);
  */
@@ -1567,7 +1567,7 @@ declare function LdsDeleteDoc(): undefined;
 
 /**
  * Выдает ID объектного документа по его url. Смотри так же ObjectDocUrl .
- * @param {string} url - Url объекта (string).
+ * @param {string} url - Url объекта.
  * @returns Number.
  */
 declare function ObjectIDFromUrl(url: string): number;
@@ -1583,8 +1583,8 @@ declare function DeleteDoc(url: string, permanent?: boolean): undefined;
 
 /**
  * Возвращает url объектного документа по имени базы, типа объекта и ID документа.
- * @param {string} dbName - Наименование базы данных (String).
- * @param {string} objectType - Наименование типа объекта (String).
+ * @param {string} dbName - Наименование базы данных.
+ * @param {string} objectType - Наименование типа объекта.
  * @param {string | number} objectID - ID документа (Integer или String).
  * @returns String.
  * @example
@@ -1601,8 +1601,8 @@ declare function ObjectDocUrl(dbName: string, objectType: string, objectID: stri
  * выполнением стандартных свойств OnSave, OnBeforeSave и т.д.
  * Документ сначала пересохраняется по новому url, затем удаляется из предыдущей.
  * Редко используемая функция.
- * @param {string} url - Url существующего документа (String).
- * @param {string} newUrl - Новый url документа (String).
+ * @param {string} url - Url существующего документа.
+ * @param {string} newUrl - Новый url документа.
  */
 declare function MoveDoc(url: string, newUrl: string): undefined;
 
@@ -1623,7 +1623,7 @@ declare function FetchDoc(url: string, options: string): XmlDocument;
  * функцию UpdateUiDoc (а не вызвать метод Doc.Save, как при открытии документа при помощи OpenDoc).
  * Если документ был открыт пользователем на экране, то при выполнении функции UpdateUiDoc
  * документ будет изменен прямо на экране, если открытого документа небыло - то документ будет просто сохранен.
- * @param {string} docUrl - Url XML-документа (String).
+ * @param {string} docUrl - Url XML-документа.
  * @returns {XmlDocument}
  */
 declare function ObtainUiDoc(docUrl: string): XmlDocument;
@@ -1648,7 +1648,7 @@ declare function LoadFileText(filePath: string): string;
 
 /**
  * Выдает наименование типа объекта по его url. Смотри так же ObjectDocUrl и ObjectIDFromUrl .
- * @param {string} url - Url объекта (string).
+ * @param {string} url - Url объекта.
  * @returns {string}
  * @example
  * ```
@@ -1823,7 +1823,7 @@ declare function RValue<T>(value: XmlElem<T> | T): T;
 
 /**
  * Возвращает строку, содержащую аргумент в шестнадцатиричном виде (64 бита).
- * @param {number} num - Число, которую нужно преобразовать (Integer).
+ * @param {number} num - Число, которую нужно преобразовать.
  * @returns {string}
  * StrHexInt( 1000 ) вернет '00000000000003E8'.
  */
@@ -1862,8 +1862,8 @@ declare function StrHexColor(color: string): string;
 
 /**
  * Если значение целочисленного аргумента = 0 преобразует его в "-", иначе в строку (аналогично функции {@link StrInt}()).
- * @param {number} arg - Целочисленный аргумент (Integer).
- * @param {number} digitsNum - Минимальное число символов в строке (Integer). Не обязательный аргумент.
+ * @param {number} arg - Целочисленный аргумент.
+ * @param {number} [digitsNum] - Минимальное число символов в строке.
  * @param {boolean} addGroupDelim - Разделять тысячные разряды пробелами.
  * @returns {string}
  */
@@ -1885,8 +1885,8 @@ declare function StrRealFixed(arg: number, precision?: number, addGroupDelim?: b
 
 /**
  * Преобразует целочисленный аргумент в строку.
- * @param {number} arg - Целочисленный аргумент (Integer).
- * @param {number} [digitsNum] - Минимальное число символов в строке (Integer).
+ * @param {number} arg - Целочисленный аргумент.
+ * @param {number} [digitsNum] - Минимальное число символов в строке.
  * Недостающие символы компенсируются нулями перед числом.
  * @param {boolean} addGroupDelim - Разделять тысячные разряды пробелами (Bool). Необязательный аргумент.
  * @returns {string}
@@ -1907,7 +1907,7 @@ declare function StrInt(arg: number, digitsNum?: number, addGroupDelim?: boolean
 
 /**
  * Преобразует целое число в словесное строковое представление. Только для русского языка.
- * @param {number} arg - Числовой аргумент (Integer).
+ * @param {number} arg - Числовой аргумент.
  * @param {0|1} gender - Род (0 - мужской, 1 - женский). Необязательный аргумент.
  * @returns {string}
  * @example
@@ -2446,7 +2446,7 @@ declare function ModalTaskMsg(msg: string): undefined;
  * Выполняет заданный код на сервере, и возвращает результат.
  * Результат может быть только в виде строки.
  * Если эта функция вызывается на однопользовательской локальной версии программы, она полность аналогична функции eval.
- * @param {string} code - Код, который будет выполняться на сервере (String).
+ * @param {string} code - Код, который будет выполняться на сервере.
  * @returns String.
  */
 declare function ServerEval(code: string): string;

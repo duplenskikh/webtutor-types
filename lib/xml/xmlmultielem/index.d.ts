@@ -177,7 +177,7 @@ interface XmMultiElem<T> extends XmElem<T> {
    * Если дочерний элемент не найден, возвращает ошибку.
    * Смотри также {@link GetOptChildByKey}.
    * @param {K} keyValue - Значение ключа.
-   * @param {string} keyName - Имя элемента, являющегося ключом (String). Необязательный аргумент.
+   * @param {string} keyName - Имя элемента, являющегося ключом. Необязательный аргумент.
    * Если имя ключа не указано, используется первичный ключ.
    */
   GetChildByKey<K>(value: K, name?: string): XmlElem<unknown>;

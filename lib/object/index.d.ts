@@ -16,7 +16,7 @@ interface Object {
 
   /**
    * Добавляет в объект (javascript object) новый атрибут, и присваивает ему значение.
-   * @param key - Наименование атрибута (string).
+   * @param {string} key - Наименование атрибута.
    * @param name - Значение атрибута (variant).
    */
   AddProperty(key: string | number, name: unknown): void;

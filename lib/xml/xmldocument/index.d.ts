@@ -171,7 +171,7 @@ interface XmlDocument {
    * В новой объектной модели используется метод DefaultDb.OpenNewObjectDoc(),
    * который сразу и создает новый объектный документ, и присваивает ему id и url.
    * Также в новой объектной модели используется метод {@link BindToDbObjectType}().
-   * @param {string} databaseName - Имя базы. Не обязательный аргумент.
+   * @param {string} [databaseName] - Имя базы.
    */
   BindToDb(databaseName?: string): undefined;
 

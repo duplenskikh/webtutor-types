@@ -32,7 +32,7 @@ interface Binary {
 
   /**
    * Добавляет в текущий бинарный объект данные из заданной строки.
-   * @param str - Строка (String).
+   * @param {string} str - Строка.
    */
   AppendStr(string: string): undefined;
 
@@ -44,7 +44,7 @@ interface Binary {
 
   /**
    * Копирует в текущий бинарный объект данные из заданной строки.
-   * @param str - Строка (String).
+   * @param {string} str - Строка.
    */
   AssignStr(str: string): undefined;
 
@@ -67,13 +67,13 @@ interface Binary {
    * за счет предварительного резервирования памяти.
    * В частности эту функцию рекомендуется вызывать для объекта WriteBuffStream
    * в случае последущей записи в него данных маленькими кусочками.
-   * @param size - Предполагаемый объем данных в байтах (Integer).
+   * @param {number} size - Предполагаемый объем данных в байтах.
    */
   PrepareWriteSpace(size: number): undefined;
 
   /**
    * Сохраняет данные из текущего бинарного объекта в заданный url.
-   * @param url - Url (String).
+   * @param {string} url - Url.
    */
   PutToUrl(url: string): undefined;
 }

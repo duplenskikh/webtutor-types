@@ -9,7 +9,7 @@ interface ErrorConstructor {
 }
 
 /**
- * @param {string} str - Строка с текстом ошибки (String).
+ * @param {string} str - Строка с текстом ошибки.
  * @returns String
  * UserError(str).
  */
