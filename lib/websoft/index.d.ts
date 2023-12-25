@@ -36,12 +36,24 @@ declare namespace Websoft {
       ExtractAlternativeMimeDataFromSigned(messageData: string): [string, string, string, string];
       GenerateKey(): string;
       GetDecryptedMsgData(messageData: string): string;
-      GetEncryptedMsgData(messageData: string, fileName: string, attachment: Binary, recipCert: string, mimeHeader: string): string;
+      GetEncryptedMsgData(
+        messageData: string,
+        fileName: string,
+        attachment: Binary,
+        recipCert: string,
+        mimeHeader: string
+      ): string;
       GetLastError(): number;
       GetLastErrorMessage(): string;
       GetMsgData(messageData: string, fileName: string, attachment: Binary, mimeHeader: string): string;
       GetSelectedCertAttribute(name: string): string;
-      GetSignedEncryptedMsgData(messageData: string, fileName: string, attachment: Binary, recipCert: string, mimeHeader: string): string;
+      GetSignedEncryptedMsgData(
+        messageData: string,
+        fileName: string,
+        attachment: Binary,
+        recipCert: string,
+        mimeHeader: string
+      ): string;
       GetSignedMsgData(messageData: string, fileName: string, attachment: Binary, mimeHeader: string): string;
       isCertificateSelected(): boolean;
       Open(store: number, storeName: string, flags: number): boolean;
@@ -531,7 +543,8 @@ declare namespace Websoft {
         IsTextWrapped: boolean;
 
         /**
-         * Номер стиля и формата в таблице. Описание можно посмотреть тут: http://www.aspose.com/docs/display/cellsnet/Setting+Display+Formats+of+Numbers+and+Dates.
+         * Номер стиля и формата в таблице.
+         * Описание: http://www.aspose.com/docs/display/cellsnet/Setting+Display+Formats+of+Numbers+and+Dates.
          */
         Number: number;
 
@@ -850,9 +863,7 @@ declare namespace Websoft {
           NumberFormat: string;
 
           /**
-           * Расположение.
-           * Принимает значения "Center", "InsideBase", "OutsideEnd", "Above", "Below", "Left", "Right", "BestFit", "Moved".
-           * Разные значения доступны для разных типов графиков.
+           * Расположение. Разные значения доступны для разных типов графиков.
            */
           Position: "Center" | "InsideBase" | "OutsideEnd" | "Above" | "Below" | "Left" | "Right" | "BestFit" | "Moved";
 
@@ -1065,9 +1076,15 @@ declare namespace Websoft {
           readonly GradientDegree: number;
 
           /**
-           * Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
+           * Стиль градиента.
            */
-          GradientStyle: "DiagonalDown" | "DiagonalUp" | "FromCenter" | "FromCorner" | "Horizontal" | "Vertical" | "Unknown";
+          GradientStyle: "DiagonalDown"
+          | "DiagonalUp"
+          | "FromCenter"
+          | "FromCorner"
+          | "Horizontal"
+          | "Vertical"
+          | "Unknown";
 
           /**
            * Тип заливки.
@@ -1078,44 +1095,26 @@ declare namespace Websoft {
            * Устанавливает градиентную заливку с одним цветом.
            * @param color - Цвет.
            * @param degree - Угол.
-           * @param style - Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
-           * @param variant - Вариации градиента. Может принимать значения от 1 до 4 в зависимости от типа градиента. Если стиль градиента "FromCenter", значения могут быть только 1 или 2.
+           * @param style - Стиль градиента.
+           * @param variant - Вариации градиента.
            */
           SetOneColorGradient(
             color: string,
             degree: number,
-            style: "DiagonalDown" | "DiagonalUp" | "FromCorner" | "Horizontal" | "Vertical" | "Unknown",
-            variant: 1 | 2 | 3 | 4
+            style: "FromCorner",
+            variant: 1 | 2
           ): 1 | 0;
 
           /**
            * Устанавливает градиентную заливку с одним цветом.
            * @param color - Цвет.
            * @param degree - Угол.
-           * @param style - Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
-           * @param variant - Вариации градиента. Может принимать значения от 1 до 4 в зависимости от типа градиента. Если стиль градиента "FromCenter", значения могут быть только 1 или 2.
+           * @param style - Стиль градиента.
+           * @param variant - Вариации градиента.
            */
           SetOneColorGradient(
             color: string,
             degree: number,
-            style: "FromCenter",
-            variant: 1 | 2
-          ): 1 | 0;
-
-          /**
-           * Устанавливает градиентную заливку с двумя цветами.
-           * @param color1 - Первый цвет.
-           * @param transparency1 - Прозрачность первого цвета.
-           * @param color2 - Второй цвет.
-           * @param transparency2 - Прозрачность второго цвета.
-           * @param style - Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
-           * @param variant - Вариации градиента. Может принимать значения от 1 до 4 в зависимости от типа градиента. Если стиль градиента "FromCenter", значения могут быть только 1 или 2.
-           */
-          SetTwoColorGradient(
-            color1: string,
-            transparency1: number,
-            color2: string,
-            transparency2: number,
             style: "DiagonalDown" | "DiagonalUp" | "FromCorner" | "Horizontal" | "Vertical" | "Unknown",
             variant: 1 | 2 | 3 | 4
           ): 1 | 0;
@@ -1126,8 +1125,8 @@ declare namespace Websoft {
            * @param transparency1 - Прозрачность первого цвета.
            * @param color2 - Второй цвет.
            * @param transparency2 - Прозрачность второго цвета.
-           * @param style - Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
-           * @param variant - Вариации градиента. Может принимать значения от 1 до 4 в зависимости от типа градиента. Если стиль градиента "FromCenter", значения могут быть только 1 или 2.
+           * @param style - Стиль градиента.
+           * @param variant - Вариации градиента.
            */
           SetTwoColorGradient(
             color1: string,
@@ -1136,6 +1135,24 @@ declare namespace Websoft {
             transparency2: number,
             style: "FromCenter",
             variant: 1 | 2
+          ): 1 | 0;
+
+          /**
+           * Устанавливает градиентную заливку с двумя цветами.
+           * @param color1 - Первый цвет.
+           * @param transparency1 - Прозрачность первого цвета.
+           * @param color2 - Второй цвет.
+           * @param transparency2 - Прозрачность второго цвета.
+           * @param style - Стиль градиента.
+           * @param variant - Вариации градиента.
+           */
+          SetTwoColorGradient(
+            color1: string,
+            transparency1: number,
+            color2: string,
+            transparency2: number,
+            style: "DiagonalDown" | "DiagonalUp" | "FromCorner" | "Horizontal" | "Vertical" | "Unknown",
+            variant: 1 | 2 | 3 | 4
           ): 1 | 0;
         }
 
@@ -1152,7 +1169,6 @@ declare namespace Websoft {
 
           /**
            * Стиль линии.
-           * Принимает одно из следующих значений: "Solid", "Dash", "Dot", "DashDot", "DashDotDot", "DarkGray", "MediumGray", "LightGray".
            */
           Style: "Solid" | "Dash" | "Dot" | "DashDot" | "DashDotDot" | "DarkGray" | "MediumGray" | "LightGray";
 
@@ -1302,7 +1318,8 @@ declare namespace Websoft {
       /**
        * Извлекает указанные файлы из архива.
        * @param filesPath - Маска имени файлов.
-       * @param directoryInArchive - Директория внутри архива, из которой следует извлекать файлы. Для извлечения даных из корня выставляется пустой строкой.
+       * @param directoryInArchive - Директория внутри архива, из которой следует извлекать файлы.
+       * Для извлечения даных из корня выставляется пустой строкой.
        * @param outputPath - Путь до директории для распаковки.
        */
       ExtractFiles(
