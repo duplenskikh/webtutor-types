@@ -147,7 +147,7 @@ declare function GetSysUserName(): string;
  * По умолчанию свой файл журнала заводится на каждую дату ("day") `base-dir` - директория,
  * в которой будут заводиться журнал.
  * По умолчанию используется директория `Logs` в установочной директории `use-std-event-prefix` - включать в начало
- * каждой строки журнала стандартный префикс (дата, время, ID потока) `boolean`.
+ * каждой строки журнала стандартный префикс (дата, время, Id потока) `boolean`.
  * По умолчанию `true`.
  * `header-str` - строка заголовка, добавляемая в начало каждого нового файла журнала.
  * По умолчанию строка заголовка не добавляется.
@@ -579,16 +579,16 @@ declare function ArraySelect<T>(array: XmlMultiElem<T>, expression: string): T[]
 declare function ArrayOptMin<T>(array: T[], elemExpr: string): T;
 
 /**
- * Возвращает первый элемент заданного массива. Если массив не содержит ни одного элемента,
- * функция возвращает `undefined`.
+ * Возвращает первый элемент заданного массива.
+ * Если массив не содержит ни одного элемента, функция возвращает `undefined`.
  * @param {Array} array - Массив.
  * @returns {T | K | undefined}
  */
 declare function ArrayOptFirstElem<T = unknown>(array: XmlMultiElem<T> | T[]): T | undefined;
 
 /**
- * Возвращает первый элемент заданного массива, если массив не содержит ни одного элемента,
- * функция возвращает второй аргумент.
+ * Возвращает первый элемент заданного массива.
+ * Если массив не содержит ни одного элемента, функция возвращает второй аргумент.
  * @param {Array} array - Массив.
  * @param {K} defaultValue - Значение по умолчанию.
  * @returns {T | K | undefined}
@@ -1569,7 +1569,7 @@ declare function GetCachedDoc(url: string): XmlDocument;
 declare function LdsDeleteDoc(): undefined;
 
 /**
- * Выдает ID объектного документа по его url. Смотри так же ObjectDocUrl .
+ * Выдает Id объектного документа по его url. Смотри так же ObjectDocUrl .
  * @param {string} url - Url объекта.
  * @returns Number.
  */
@@ -1585,10 +1585,10 @@ declare function ObjectIDFromUrl(url: string): number;
 declare function DeleteDoc(url: string, permanent?: boolean): undefined;
 
 /**
- * Возвращает url объектного документа по имени базы, типа объекта и ID документа.
+ * Возвращает url объектного документа по имени базы, типа объекта и Id документа.
  * @param {string} dbName - Наименование базы данных.
  * @param {string} objectType - Наименование типа объекта.
- * @param {string | number} objectID - ID документа (Integer или String).
+ * @param {string | number} objectID - Id документа (Integer или String).
  * @returns String.
  * @example
  * ```
@@ -1927,7 +1927,7 @@ declare function StrInt(arg: number, digitsNum?: number, addGroupDelim?: boolean
 declare function TextInt(arg: number, gender: 0 | 1): string;
 
 /**
- * Возвращает уникальный ID.
+ * Возвращает уникальный Id.
  */
 declare function UniqueID(): number;
 declare function ParseHeaderPairs(string: string): Object;

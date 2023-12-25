@@ -4,7 +4,7 @@ interface Env extends Object {
    */
   curSite?: SiteDocumentTopElem;
   /**
-   * ID текущего пользователя.
+   * Id текущего пользователя.
    */
   curUserID?: number;
   /**

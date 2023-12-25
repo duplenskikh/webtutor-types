@@ -1295,7 +1295,7 @@ interface ObjectTypeBase {
  */
 declare var Param: Object;
 /**
- * ID объекта над которым выполняется агент.
+ * Id объекта над которым выполняется агент.
  */
 declare var OBJECT_ID: number;
 declare var OBJECTS_ID_STR: string;
