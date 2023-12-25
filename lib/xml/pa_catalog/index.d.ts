@@ -41,4 +41,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type PaCatalogDocument = XmlDocument & { TopElem: PaCatalogDocumentTopElem; };
+type PaCatalogDocument = XmlDocument & {
+  TopElem: PaCatalogDocumentTopElem;
+};

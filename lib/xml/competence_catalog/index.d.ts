@@ -14,4 +14,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
 };
 
-type CompetenceCatalogDocument = XmlDocument & { TopElem: CompetenceCatalogDocumentTopElem; };
+type CompetenceCatalogDocument = XmlDocument & {
+  TopElem: CompetenceCatalogDocumentTopElem;
+};

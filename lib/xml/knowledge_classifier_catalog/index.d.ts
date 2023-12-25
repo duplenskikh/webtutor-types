@@ -8,4 +8,6 @@ AccessDocBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type KnowledgeClassifierCatalogDocument = XmlDocument & { TopElem: KnowledgeClassifierCatalogDocumentTopElem; };
+type KnowledgeClassifierCatalogDocument = XmlDocument & {
+  TopElem: KnowledgeClassifierCatalogDocumentTopElem;
+};

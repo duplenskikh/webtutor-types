@@ -10,4 +10,6 @@ type AvailabilityPlanCatalogDocumentTopElem = XmlTopElem & { Doc: AvailabilityPl
   app_instance_id: XmlElem<string>;
 };
 
-type AvailabilityPlanCatalogDocument = XmlDocument & { TopElem: AvailabilityPlanCatalogDocumentTopElem; };
+type AvailabilityPlanCatalogDocument = XmlDocument & {
+  TopElem: AvailabilityPlanCatalogDocumentTopElem;
+};

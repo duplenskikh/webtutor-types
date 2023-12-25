@@ -9,4 +9,6 @@ type ViewConfigurationCatalogDocumentTopElem = XmlTopElem & { Doc: ViewConfigura
   app_instance_id: XmlElem<string>;
 };
 
-type ViewConfigurationCatalogDocument = XmlDocument & { TopElem: ViewConfigurationCatalogDocumentTopElem; };
+type ViewConfigurationCatalogDocument = XmlDocument & {
+  TopElem: ViewConfigurationCatalogDocumentTopElem;
+};

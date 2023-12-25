@@ -14,4 +14,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type SubscriptionCatalogDocument = XmlDocument & { TopElem: SubscriptionCatalogDocumentTopElem; };
+type SubscriptionCatalogDocument = XmlDocument & {
+  TopElem: SubscriptionCatalogDocumentTopElem;
+};

@@ -8,4 +8,6 @@ type KnowledgeProfileCatalogDocumentTopElem = XmlTopElem & { Doc: KnowledgeProfi
   knowledge_parts: XmlElem<string>;
 };
 
-type KnowledgeProfileCatalogDocument = XmlDocument & { TopElem: KnowledgeProfileCatalogDocumentTopElem; };
+type KnowledgeProfileCatalogDocument = XmlDocument & {
+  TopElem: KnowledgeProfileCatalogDocumentTopElem;
+};

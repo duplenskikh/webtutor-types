@@ -21,4 +21,6 @@ type PositionCommonCatalogDocumentTopElem = XmlTopElem & { Doc: PositionCommonCa
   role_id: XmlMultiElem<number>;
 };
 
-type PositionCommonCatalogDocument = XmlDocument & { TopElem: PositionCommonCatalogDocumentTopElem; };
+type PositionCommonCatalogDocument = XmlDocument & {
+  TopElem: PositionCommonCatalogDocumentTopElem;
+};

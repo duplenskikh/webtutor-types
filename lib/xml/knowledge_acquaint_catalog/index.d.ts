@@ -23,4 +23,6 @@ PersonFillingBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type KnowledgeAcquaintCatalogDocument = XmlDocument & { TopElem: KnowledgeAcquaintCatalogDocumentTopElem; };
+type KnowledgeAcquaintCatalogDocument = XmlDocument & {
+  TopElem: KnowledgeAcquaintCatalogDocumentTopElem;
+};

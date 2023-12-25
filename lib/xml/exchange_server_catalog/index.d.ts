@@ -11,4 +11,6 @@ type ExchangeServerCatalogDocumentTopElem = XmlTopElem & { Doc: ExchangeServerCa
   app_instance_id: XmlElem<string>;
 };
 
-type ExchangeServerCatalogDocument = XmlDocument & { TopElem: ExchangeServerCatalogDocumentTopElem; };
+type ExchangeServerCatalogDocument = XmlDocument & {
+  TopElem: ExchangeServerCatalogDocumentTopElem;
+};

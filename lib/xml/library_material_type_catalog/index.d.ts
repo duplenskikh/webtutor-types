@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type LibraryMaterialTypeCatalogDocument = XmlDocument & { TopElem: LibraryMaterialTypeCatalogDocumentTopElem; };
+type LibraryMaterialTypeCatalogDocument = XmlDocument & {
+  TopElem: LibraryMaterialTypeCatalogDocumentTopElem;
+};

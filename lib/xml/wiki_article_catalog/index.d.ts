@@ -21,4 +21,6 @@ type WikiArticleCatalogDocumentTopElem = XmlTopElem & { Doc: WikiArticleCatalogD
   access_group_ids: XmlMultiElem<number>;
 };
 
-type WikiArticleCatalogDocument = XmlDocument & { TopElem: WikiArticleCatalogDocumentTopElem; };
+type WikiArticleCatalogDocument = XmlDocument & {
+  TopElem: WikiArticleCatalogDocumentTopElem;
+};

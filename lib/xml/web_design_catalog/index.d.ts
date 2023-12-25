@@ -8,4 +8,6 @@ type WebDesignCatalogDocumentTopElem = XmlTopElem & { Doc: WebDesignCatalogDocum
   app_instance_id: XmlElem<string>;
 };
 
-type WebDesignCatalogDocument = XmlDocument & { TopElem: WebDesignCatalogDocumentTopElem; };
+type WebDesignCatalogDocument = XmlDocument & {
+  TopElem: WebDesignCatalogDocumentTopElem;
+};

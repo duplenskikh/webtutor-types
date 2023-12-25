@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type DnControlFormCatalogDocument = XmlDocument & { TopElem: DnControlFormCatalogDocumentTopElem; };
+type DnControlFormCatalogDocument = XmlDocument & {
+  TopElem: DnControlFormCatalogDocumentTopElem;
+};

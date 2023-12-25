@@ -6,4 +6,6 @@ ObjectTypeBase & {
   context_object_name: XmlElem<string>;
 };
 
-type UserRecommendationCatalogDocument = XmlDocument & { TopElem: UserRecommendationCatalogDocumentTopElem; };
+type UserRecommendationCatalogDocument = XmlDocument & {
+  TopElem: UserRecommendationCatalogDocumentTopElem;
+};

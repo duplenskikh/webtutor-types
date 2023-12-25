@@ -14,4 +14,6 @@ type RequestTypeCatalogDocumentTopElem = XmlTopElem & { Doc: RequestTypeCatalogD
   app_instance_id: XmlElem<string>;
 };
 
-type RequestTypeCatalogDocument = XmlDocument & { TopElem: RequestTypeCatalogDocumentTopElem; };
+type RequestTypeCatalogDocument = XmlDocument & {
+  TopElem: RequestTypeCatalogDocumentTopElem;
+};

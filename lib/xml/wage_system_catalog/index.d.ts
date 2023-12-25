@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type WageSystemCatalogDocument = XmlDocument & { TopElem: WageSystemCatalogDocumentTopElem; };
+type WageSystemCatalogDocument = XmlDocument & {
+  TopElem: WageSystemCatalogDocumentTopElem;
+};

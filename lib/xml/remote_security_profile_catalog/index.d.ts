@@ -5,4 +5,6 @@ type RemoteSecurityProfileCatalogDocumentTopElem = XmlTopElem & { Doc: RemoteSec
   modification_date: XmlElem<Date>;
 };
 
-type RemoteSecurityProfileCatalogDocument = XmlDocument & { TopElem: RemoteSecurityProfileCatalogDocumentTopElem; };
+type RemoteSecurityProfileCatalogDocument = XmlDocument & {
+  TopElem: RemoteSecurityProfileCatalogDocumentTopElem;
+};

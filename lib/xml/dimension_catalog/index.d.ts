@@ -4,4 +4,6 @@ type DimensionCatalogDocumentTopElem = XmlTopElem & { Doc: DimensionCatalogDocum
   name: XmlElem<string>;
 };
 
-type DimensionCatalogDocument = XmlDocument & { TopElem: DimensionCatalogDocumentTopElem; };
+type DimensionCatalogDocument = XmlDocument & {
+  TopElem: DimensionCatalogDocumentTopElem;
+};

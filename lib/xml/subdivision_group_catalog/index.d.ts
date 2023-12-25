@@ -12,4 +12,6 @@ type SubdivisionGroupCatalogDocumentTopElem = XmlTopElem & { Doc: SubdivisionGro
   experts: XmlElem<string>;
 };
 
-type SubdivisionGroupCatalogDocument = XmlDocument & { TopElem: SubdivisionGroupCatalogDocumentTopElem; };
+type SubdivisionGroupCatalogDocument = XmlDocument & {
+  TopElem: SubdivisionGroupCatalogDocumentTopElem;
+};

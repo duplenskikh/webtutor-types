@@ -11,4 +11,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type InvoiceCatalogDocument = XmlDocument & { TopElem: InvoiceCatalogDocumentTopElem; };
+type InvoiceCatalogDocument = XmlDocument & {
+  TopElem: InvoiceCatalogDocumentTopElem;
+};

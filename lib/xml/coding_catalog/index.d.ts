@@ -10,4 +10,6 @@ type CodingCatalogDocumentTopElem = XmlTopElem & { Doc: CodingCatalogDocument } 
   app_instance_id: XmlElem<string>;
 };
 
-type CodingCatalogDocument = XmlDocument & { TopElem: CodingCatalogDocumentTopElem; };
+type CodingCatalogDocument = XmlDocument & {
+  TopElem: CodingCatalogDocumentTopElem;
+};

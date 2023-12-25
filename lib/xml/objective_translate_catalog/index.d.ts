@@ -16,4 +16,6 @@ type ObjectiveTranslateCatalogDocumentTopElem = XmlTopElem & { Doc: ObjectiveTra
   app_instance_id: XmlElem<string>;
 };
 
-type ObjectiveTranslateCatalogDocument = XmlDocument & { TopElem: ObjectiveTranslateCatalogDocumentTopElem; };
+type ObjectiveTranslateCatalogDocument = XmlDocument & {
+  TopElem: ObjectiveTranslateCatalogDocumentTopElem;
+};

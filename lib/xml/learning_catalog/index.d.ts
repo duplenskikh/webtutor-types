@@ -35,4 +35,6 @@ AdminAccessBase & {
   use_proctoring: XmlElem<boolean>;
 };
 
-type LearningCatalogDocument = XmlDocument & { TopElem: LearningCatalogDocumentTopElem; };
+type LearningCatalogDocument = XmlDocument & {
+  TopElem: LearningCatalogDocumentTopElem;
+};

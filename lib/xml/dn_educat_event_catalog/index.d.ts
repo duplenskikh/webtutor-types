@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type DnEducatEventCatalogDocument = XmlDocument & { TopElem: DnEducatEventCatalogDocumentTopElem; };
+type DnEducatEventCatalogDocument = XmlDocument & {
+  TopElem: DnEducatEventCatalogDocumentTopElem;
+};

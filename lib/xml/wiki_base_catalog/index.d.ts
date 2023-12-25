@@ -14,4 +14,6 @@ AccessDocBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type WikiBaseCatalogDocument = XmlDocument & { TopElem: WikiBaseCatalogDocumentTopElem; };
+type WikiBaseCatalogDocument = XmlDocument & {
+  TopElem: WikiBaseCatalogDocumentTopElem;
+};

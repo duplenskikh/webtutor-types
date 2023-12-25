@@ -1,4 +1,5 @@
-type AcquaintAssignCatalogDocumentTopElem = XmlTopElem & { Doc: AcquaintAssignCatalogDocument } & {
+type AcquaintAssignCatalogDocumentTopElem = XmlTopElem & {
+  Doc: AcquaintAssignCatalogDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   object_id: XmlElem<number>;
@@ -14,4 +15,6 @@ type AcquaintAssignCatalogDocumentTopElem = XmlTopElem & { Doc: AcquaintAssignCa
   modification_date: XmlElem<Date>;
 };
 
-type AcquaintAssignCatalogDocument = XmlDocument & { TopElem: AcquaintAssignCatalogDocumentTopElem; };
+type AcquaintAssignCatalogDocument = XmlDocument & {
+  TopElem: AcquaintAssignCatalogDocumentTopElem;
+};

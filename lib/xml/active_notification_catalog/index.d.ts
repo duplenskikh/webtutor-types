@@ -12,4 +12,6 @@ type ActiveNotificationCatalogDocumentTopElem = XmlTopElem & { Doc: ActiveNotifi
   send_counter: XmlElem<number>;
 };
 
-type ActiveNotificationCatalogDocument = XmlDocument & { TopElem: ActiveNotificationCatalogDocumentTopElem; };
+type ActiveNotificationCatalogDocument = XmlDocument & {
+  TopElem: ActiveNotificationCatalogDocumentTopElem;
+};

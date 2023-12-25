@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type RiskPerspectiveCatalogDocument = XmlDocument & { TopElem: RiskPerspectiveCatalogDocumentTopElem; };
+type RiskPerspectiveCatalogDocument = XmlDocument & {
+  TopElem: RiskPerspectiveCatalogDocumentTopElem;
+};

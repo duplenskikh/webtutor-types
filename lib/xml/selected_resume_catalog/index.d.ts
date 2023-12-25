@@ -9,4 +9,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type SelectedResumeCatalogDocument = XmlDocument & { TopElem: SelectedResumeCatalogDocumentTopElem; };
+type SelectedResumeCatalogDocument = XmlDocument & {
+  TopElem: SelectedResumeCatalogDocumentTopElem;
+};

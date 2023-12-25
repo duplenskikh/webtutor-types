@@ -7,4 +7,6 @@ type UploadPackageCatalogDocumentTopElem = XmlTopElem & { Doc: UploadPackageCata
   comment: XmlElem<string>;
 };
 
-type UploadPackageCatalogDocument = XmlDocument & { TopElem: UploadPackageCatalogDocumentTopElem; };
+type UploadPackageCatalogDocument = XmlDocument & {
+  TopElem: UploadPackageCatalogDocumentTopElem;
+};

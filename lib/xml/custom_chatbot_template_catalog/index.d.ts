@@ -11,4 +11,6 @@ type CustomChatbotTemplateCatalogDocumentTopElem = XmlTopElem & { Doc: CustomCha
   role_id: XmlMultiElem<number>;
 };
 
-type CustomChatbotTemplateCatalogDocument = XmlDocument & { TopElem: CustomChatbotTemplateCatalogDocumentTopElem; };
+type CustomChatbotTemplateCatalogDocument = XmlDocument & {
+  TopElem: CustomChatbotTemplateCatalogDocumentTopElem;
+};

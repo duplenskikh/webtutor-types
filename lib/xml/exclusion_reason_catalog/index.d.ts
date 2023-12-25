@@ -8,4 +8,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ExclusionReasonCatalogDocument = XmlDocument & { TopElem: ExclusionReasonCatalogDocumentTopElem; };
+type ExclusionReasonCatalogDocument = XmlDocument & {
+  TopElem: ExclusionReasonCatalogDocumentTopElem;
+};

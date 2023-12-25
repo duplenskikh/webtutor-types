@@ -14,4 +14,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type StaffPositionStartCatalogDocument = XmlDocument & { TopElem: StaffPositionStartCatalogDocumentTopElem; };
+type StaffPositionStartCatalogDocument = XmlDocument & {
+  TopElem: StaffPositionStartCatalogDocumentTopElem;
+};

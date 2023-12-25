@@ -24,4 +24,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
 };
 
-type EducationMethodCatalogDocument = XmlDocument & { TopElem: EducationMethodCatalogDocumentTopElem; };
+type EducationMethodCatalogDocument = XmlDocument & {
+  TopElem: EducationMethodCatalogDocumentTopElem;
+};

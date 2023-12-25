@@ -7,4 +7,6 @@ type ActivityCatalogDocumentTopElem = XmlTopElem & { Doc: ActivityCatalogDocumen
   app_instance_id: XmlElem<string>;
 };
 
-type ActivityCatalogDocument = XmlDocument & { TopElem: ActivityCatalogDocumentTopElem; };
+type ActivityCatalogDocument = XmlDocument & {
+  TopElem: ActivityCatalogDocumentTopElem;
+};

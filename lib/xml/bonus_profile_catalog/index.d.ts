@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type BonusProfileCatalogDocument = XmlDocument & { TopElem: BonusProfileCatalogDocumentTopElem; };
+type BonusProfileCatalogDocument = XmlDocument & {
+  TopElem: BonusProfileCatalogDocumentTopElem;
+};

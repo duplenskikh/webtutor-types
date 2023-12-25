@@ -17,4 +17,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type DnControlEventCatalogDocument = XmlDocument & { TopElem: DnControlEventCatalogDocumentTopElem; };
+type DnControlEventCatalogDocument = XmlDocument & {
+  TopElem: DnControlEventCatalogDocumentTopElem;
+};

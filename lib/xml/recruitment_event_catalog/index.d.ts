@@ -14,4 +14,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type RecruitmentEventCatalogDocument = XmlDocument & { TopElem: RecruitmentEventCatalogDocumentTopElem; };
+type RecruitmentEventCatalogDocument = XmlDocument & {
+  TopElem: RecruitmentEventCatalogDocumentTopElem;
+};

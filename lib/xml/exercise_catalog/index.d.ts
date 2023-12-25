@@ -6,4 +6,6 @@ type ExerciseCatalogDocumentTopElem = XmlTopElem & { Doc: ExerciseCatalogDocumen
   modification_date: XmlElem<Date>;
 };
 
-type ExerciseCatalogDocument = XmlDocument & { TopElem: ExerciseCatalogDocumentTopElem; };
+type ExerciseCatalogDocument = XmlDocument & {
+  TopElem: ExerciseCatalogDocumentTopElem;
+};

@@ -12,4 +12,6 @@ type ProjectParticipantRoleCatalogDocumentTopElem = XmlTopElem & { Doc: ProjectP
   app_instance_id: XmlElem<string>;
 };
 
-type ProjectParticipantRoleCatalogDocument = XmlDocument & { TopElem: ProjectParticipantRoleCatalogDocumentTopElem; };
+type ProjectParticipantRoleCatalogDocument = XmlDocument & {
+  TopElem: ProjectParticipantRoleCatalogDocumentTopElem;
+};

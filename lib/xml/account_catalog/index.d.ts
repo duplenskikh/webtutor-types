@@ -1,5 +1,6 @@
-type AccountCatalogDocumentTopElem = XmlTopElem & { Doc: AccountCatalogDocument } &
+type AccountCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
+  Doc: AccountCatalogDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -13,4 +14,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type AccountCatalogDocument = XmlDocument & { TopElem: AccountCatalogDocumentTopElem; };
+type AccountCatalogDocument = XmlDocument & {
+  TopElem: AccountCatalogDocumentTopElem;
+};

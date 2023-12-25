@@ -537,7 +537,14 @@ interface EducationPlanProgramResult {
 interface DotnetCoreHost {
   Object: {
     GetAssembly(libName: string): {
-      CallClassStaticMethod(className: string, methodName: string, arguments: XmlMultiElem<unknown>, single?: boolean, wait?: boolean, max_run_time?: number): unknown;
+      CallClassStaticMethod(
+        className: string,
+        methodName: string,
+        arguments: XmlMultiElem<unknown>,
+        single?: boolean,
+        wait?: boolean,
+        max_run_time?: number
+      ): unknown;
       CreateClassObject<T>(classObject: string): T;
     };
   };

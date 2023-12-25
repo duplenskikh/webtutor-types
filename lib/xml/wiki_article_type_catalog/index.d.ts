@@ -5,4 +5,6 @@ type WikiArticleTypeCatalogDocumentTopElem = XmlTopElem & { Doc: WikiArticleType
   resource_id: XmlElem<number>;
 };
 
-type WikiArticleTypeCatalogDocument = XmlDocument & { TopElem: WikiArticleTypeCatalogDocumentTopElem; };
+type WikiArticleTypeCatalogDocument = XmlDocument & {
+  TopElem: WikiArticleTypeCatalogDocumentTopElem;
+};

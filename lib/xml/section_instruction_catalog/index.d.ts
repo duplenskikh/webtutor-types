@@ -8,4 +8,6 @@ type SectionInstructionCatalogDocumentTopElem = XmlTopElem & { Doc: SectionInstr
   app_instance_id: XmlElem<string>;
 };
 
-type SectionInstructionCatalogDocument = XmlDocument & { TopElem: SectionInstructionCatalogDocumentTopElem; };
+type SectionInstructionCatalogDocument = XmlDocument & {
+  TopElem: SectionInstructionCatalogDocumentTopElem;
+};

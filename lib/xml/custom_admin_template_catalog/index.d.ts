@@ -11,4 +11,6 @@ type CustomAdminTemplateCatalogDocumentTopElem = XmlTopElem & { Doc: CustomAdmin
   app_instance_id: XmlElem<string>;
 };
 
-type CustomAdminTemplateCatalogDocument = XmlDocument & { TopElem: CustomAdminTemplateCatalogDocumentTopElem; };
+type CustomAdminTemplateCatalogDocument = XmlDocument & {
+  TopElem: CustomAdminTemplateCatalogDocumentTopElem;
+};

@@ -9,4 +9,6 @@ type ProviderCatalogDocumentTopElem = XmlTopElem & { Doc: ProviderCatalogDocumen
   app_instance_id: XmlElem<string>;
 };
 
-type ProviderCatalogDocument = XmlDocument & { TopElem: ProviderCatalogDocumentTopElem; };
+type ProviderCatalogDocument = XmlDocument & {
+  TopElem: ProviderCatalogDocumentTopElem;
+};

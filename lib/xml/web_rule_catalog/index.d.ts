@@ -18,4 +18,6 @@ type WebRuleCatalogDocumentTopElem = XmlTopElem & { Doc: WebRuleCatalogDocument 
   modification_date: XmlElem<Date>;
 };
 
-type WebRuleCatalogDocument = XmlDocument & { TopElem: WebRuleCatalogDocumentTopElem; };
+type WebRuleCatalogDocument = XmlDocument & {
+  TopElem: WebRuleCatalogDocumentTopElem;
+};

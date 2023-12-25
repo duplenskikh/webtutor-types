@@ -10,4 +10,6 @@ type SelectedVacancyCatalogDocumentTopElem = XmlTopElem & { Doc: SelectedVacancy
   app_instance_id: XmlElem<string>;
 };
 
-type SelectedVacancyCatalogDocument = XmlDocument & { TopElem: SelectedVacancyCatalogDocumentTopElem; };
+type SelectedVacancyCatalogDocument = XmlDocument & {
+  TopElem: SelectedVacancyCatalogDocumentTopElem;
+};

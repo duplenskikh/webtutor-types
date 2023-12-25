@@ -31,4 +31,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type EventResultCatalogDocument = XmlDocument & { TopElem: EventResultCatalogDocumentTopElem; };
+type EventResultCatalogDocument = XmlDocument & {
+  TopElem: EventResultCatalogDocumentTopElem;
+};

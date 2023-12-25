@@ -13,4 +13,6 @@ MSPeriodityBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ServerAgentCatalogDocument = XmlDocument & { TopElem: ServerAgentCatalogDocumentTopElem; };
+type ServerAgentCatalogDocument = XmlDocument & {
+  TopElem: ServerAgentCatalogDocumentTopElem;
+};

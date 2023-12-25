@@ -15,4 +15,6 @@ type PaymentCatalogDocumentTopElem = XmlTopElem & { Doc: PaymentCatalogDocument 
   app_instance_id: XmlElem<string>;
 };
 
-type PaymentCatalogDocument = XmlDocument & { TopElem: PaymentCatalogDocumentTopElem; };
+type PaymentCatalogDocument = XmlDocument & {
+  TopElem: PaymentCatalogDocumentTopElem;
+};

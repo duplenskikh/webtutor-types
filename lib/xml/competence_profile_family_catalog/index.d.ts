@@ -8,4 +8,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type CompetenceProfileFamilyCatalogDocument = XmlDocument & { TopElem: CompetenceProfileFamilyCatalogDocumentTopElem; };
+type CompetenceProfileFamilyCatalogDocument = XmlDocument & {
+  TopElem: CompetenceProfileFamilyCatalogDocumentTopElem;
+};

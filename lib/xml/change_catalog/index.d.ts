@@ -9,4 +9,6 @@ type ChangeCatalogDocumentTopElem = XmlTopElem & { Doc: ChangeCatalogDocument } 
   app_instance_id: XmlElem<string>;
 };
 
-type ChangeCatalogDocument = XmlDocument & { TopElem: ChangeCatalogDocumentTopElem; };
+type ChangeCatalogDocument = XmlDocument & {
+  TopElem: ChangeCatalogDocumentTopElem;
+};

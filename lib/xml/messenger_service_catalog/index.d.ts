@@ -6,4 +6,6 @@ type MessengerServiceCatalogDocumentTopElem = XmlTopElem & { Doc: MessengerServi
   app_instance_id: XmlElem<string>;
 };
 
-type MessengerServiceCatalogDocument = XmlDocument & { TopElem: MessengerServiceCatalogDocumentTopElem; };
+type MessengerServiceCatalogDocument = XmlDocument & {
+  TopElem: MessengerServiceCatalogDocumentTopElem;
+};

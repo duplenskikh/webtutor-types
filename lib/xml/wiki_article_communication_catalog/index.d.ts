@@ -1,4 +1,5 @@
-type WikiArticleCommunicationCatalogDocumentTopElem = XmlTopElem & { Doc: WikiArticleCommunicationCatalogDocument } & {
+type WikiArticleCommunicationCatalogDocumentTopElem = XmlTopElem & {
+  Doc: WikiArticleCommunicationCatalogDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -10,4 +11,6 @@ type WikiArticleCommunicationCatalogDocumentTopElem = XmlTopElem & { Doc: WikiAr
   modification_date: XmlElem<Date>;
 };
 
-type WikiArticleCommunicationCatalogDocument = XmlDocument & { TopElem: WikiArticleCommunicationCatalogDocumentTopElem; };
+type WikiArticleCommunicationCatalogDocument = XmlDocument & {
+  TopElem: WikiArticleCommunicationCatalogDocumentTopElem;
+};

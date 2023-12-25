@@ -14,4 +14,6 @@ ObjectCodeNameBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ApplicationCatalogDocument = XmlDocument & { TopElem: ApplicationCatalogDocumentTopElem; };
+type ApplicationCatalogDocument = XmlDocument & {
+  TopElem: ApplicationCatalogDocumentTopElem;
+};

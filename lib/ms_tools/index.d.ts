@@ -3,7 +3,12 @@ declare namespace ms_tools {
   function get_url_from_catalog(sCatalogNameiID: string): unknown;
   function view_open_doc(sCatalogNameiIDTopElem: string): unknown;
   function view_delete_doc(_catalog_name: string): unknown;
-  function raise_system_event(_code: string, _system_eventID: unknown, _objectDocID: unknown, _objectDoc: unknown): unknown;
+  function raise_system_event(
+    _code: string,
+    _system_eventID: unknown,
+    _objectDocID: unknown,
+    _objectDoc: unknown
+  ): unknown;
   function raise_system_event_env(oSystemEventIDoc: unknown): unknown;
   function notes_verify_password(_clear_password: unknown, _hash_password: unknown): unknown;
   function set_ui_lng(_ui_lng_id: unknown): unknown;
@@ -33,7 +38,12 @@ declare namespace ms_tools {
   function set_next_coding(teObjectTarget: unknown): unknown;
   function ask_options_activate_objects_to_persons(sTypearrValues: unknown): unknown;
   function ask_options_activate_qualifications_to_persons(bAssignment: unknown): unknown;
-  function activate_objects_to_persons(sTaskIDsType: unknown, sObjectIDs: unknown, sPersonIDs: unknown, o: unknown): unknown;
+  function activate_objects_to_persons(
+    sTaskIDsType: unknown,
+    sObjectIDs: unknown,
+    sPersonIDs: unknown,
+    o: unknown
+  ): unknown;
   function assign_qualifications_to_objects(sTaskIDsType: unknown, sObjectIDs: unknown): unknown;
   function activate_to_objects(sTaskIDsTypesObjectIDs: unknown, o: unknown): unknown;
   function check_task(sTaskIDoRetTarget: unknown, Request: unknown): unknown;
@@ -62,7 +72,11 @@ declare namespace ms_tools {
   function check_access_blocks_by_catalog_name(sAccessBlockssCatalogNamesCan: unknown): unknown;
   function check_cur_user_access_blocks_by_catalog_name(sCatalogNamesCan: unknown): unknown;
   function check_cur_user_access_blocks(sAccessBlocsCan: unknown): unknown;
-  function check_cur_user_access_applications_by_catalog_name(sCatalogNamecurUser: unknown, oContentAccess: unknown, sCanElem: unknown): unknown;
+  function check_cur_user_access_applications_by_catalog_name(
+    sCatalogNamecurUser: unknown,
+    oContentAccess: unknown,
+    sCanElem: unknown
+  ): unknown;
   function get_admin_init_server_data(): unknown;
   function enable_logs_server(): unknown;
   function validate_blog_entry_comments(oObject: unknown): unknown;
@@ -89,12 +103,21 @@ declare namespace ms_tools {
   function convert_exec_code(fldExecTarget: unknown, fldUrlTarget: unknown, fldTextTarget: unknown): unknown;
   function foreign_elem_title(fldSource: unknown, sFieldNamesDefauldText: unknown): unknown;
   function calculate_statistic_rec_obj(iStatisticRecIDiObjectIDiPersonID: unknown): unknown;
-  function evaluate_remote_collection_obj(oRemoteCollectioniObjectIDiPersonIDoCollection: unknown, iStartPos: unknown, iPageSize: unknown): unknown;
+  function evaluate_remote_collection_obj(
+    oRemoteCollectioniObjectIDiPersonIDoCollection: unknown,
+    iStartPos: unknown,
+    iPageSize: unknown
+  ): unknown;
   function eval_menu_remote_action(oList: unknown, ListElemAction: unknown, oScreen: unknown): unknown;
   function eval_remote_action(oRemoteActionIDofldTopElemoScreensDispType: unknown): unknown;
   function get_remote_actions_by_cur_application(sCatalogName: unknown): unknown;
   function get_element_property(oElem: unknown, sPropertyName: unknown, sAltPropertyName: unknown): unknown;
-  function disp_application_view_configuration(teApplicationsViewConfigurationIDsElemType: unknown, oMenuElem: unknown, bNoTab: unknown, bOnlyUrl: unknown): unknown;
+  function disp_application_view_configuration(
+    teApplicationsViewConfigurationIDsElemType: unknown,
+    oMenuElem: unknown,
+    bNoTab: unknown,
+    bOnlyUrl: unknown
+  ): unknown;
   function disp_application_complex_block(sBlockIDbNoTab: unknown, bOnlyUrl: unknown): unknown;
   function update_access_blocks_doc_types(fldAccessBlocks: unknown): unknown;
 }

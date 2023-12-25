@@ -26,4 +26,6 @@ AdminAccessBase & {
   experts: XmlElem<string>;
 };
 
-type DocumentCatalogDocument = XmlDocument & { TopElem: DocumentCatalogDocumentTopElem; };
+type DocumentCatalogDocument = XmlDocument & {
+  TopElem: DocumentCatalogDocumentTopElem;
+};

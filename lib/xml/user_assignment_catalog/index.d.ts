@@ -8,4 +8,6 @@ type UserAssignmentCatalogDocumentTopElem = XmlTopElem & { Doc: UserAssignmentCa
   app_instance_id: XmlElem<string>;
 };
 
-type UserAssignmentCatalogDocument = XmlDocument & { TopElem: UserAssignmentCatalogDocumentTopElem; };
+type UserAssignmentCatalogDocument = XmlDocument & {
+  TopElem: UserAssignmentCatalogDocumentTopElem;
+};

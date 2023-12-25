@@ -16,4 +16,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type PollProcedureCatalogDocument = XmlDocument & { TopElem: PollProcedureCatalogDocumentTopElem; };
+type PollProcedureCatalogDocument = XmlDocument & {
+  TopElem: PollProcedureCatalogDocumentTopElem;
+};

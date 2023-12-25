@@ -13,4 +13,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
 };
 
-type IndicatorCatalogDocument = XmlDocument & { TopElem: IndicatorCatalogDocumentTopElem; };
+type IndicatorCatalogDocument = XmlDocument & {
+  TopElem: IndicatorCatalogDocumentTopElem;
+};

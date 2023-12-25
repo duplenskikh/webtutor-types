@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type AppointmentTypeCatalogDocument = XmlDocument & { TopElem: AppointmentTypeCatalogDocumentTopElem; };
+type AppointmentTypeCatalogDocument = XmlDocument & {
+  TopElem: AppointmentTypeCatalogDocumentTopElem;
+};

@@ -18,4 +18,6 @@ PersonFillingBase & {
   workflow_matching_type: XmlElem<string>;
 };
 
-type IntervalScheduleCatalogDocument = XmlDocument & { TopElem: IntervalScheduleCatalogDocumentTopElem; };
+type IntervalScheduleCatalogDocument = XmlDocument & {
+  TopElem: IntervalScheduleCatalogDocumentTopElem;
+};

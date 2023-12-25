@@ -14,4 +14,6 @@ AdminAccessBase & {
   objects_id: XmlMultiElem<number>;
 };
 
-type CompoundProgramCatalogDocument = XmlDocument & { TopElem: CompoundProgramCatalogDocumentTopElem; };
+type CompoundProgramCatalogDocument = XmlDocument & {
+  TopElem: CompoundProgramCatalogDocumentTopElem;
+};

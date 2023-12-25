@@ -7,4 +7,6 @@ type LearningPartCatalogDocumentTopElem = XmlTopElem & { Doc: LearningPartCatalo
   app_instance_id: XmlElem<string>;
 };
 
-type LearningPartCatalogDocument = XmlDocument & { TopElem: LearningPartCatalogDocumentTopElem; };
+type LearningPartCatalogDocument = XmlDocument & {
+  TopElem: LearningPartCatalogDocumentTopElem;
+};

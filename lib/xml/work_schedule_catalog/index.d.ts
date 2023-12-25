@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type WorkScheduleCatalogDocument = XmlDocument & { TopElem: WorkScheduleCatalogDocumentTopElem; };
+type WorkScheduleCatalogDocument = XmlDocument & {
+  TopElem: WorkScheduleCatalogDocumentTopElem;
+};

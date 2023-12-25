@@ -9,4 +9,6 @@ AdminAccessBase & {
   education_methods_id: XmlMultiElem<number>;
 };
 
-type EducationProgramCatalogDocument = XmlDocument & { TopElem: EducationProgramCatalogDocumentTopElem; };
+type EducationProgramCatalogDocument = XmlDocument & {
+  TopElem: EducationProgramCatalogDocumentTopElem;
+};

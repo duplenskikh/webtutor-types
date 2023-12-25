@@ -27,6 +27,7 @@
     "@typescript-eslint/semi": "error",
     "quotes": ["error", "double"],
     "indent": ["error", 2],
+    "max-len": ["error", { "code": 120 }],
     "@typescript-eslint/indent": ["error", 2],
     "space-before-function-paren": "off",
     "@typescript-eslint/space-before-function-paren": ["error", "never"],

@@ -10,4 +10,6 @@ type NotificationCatalogDocumentTopElem = XmlTopElem & { Doc: NotificationCatalo
   app_instance_id: XmlElem<string>;
 };
 
-type NotificationCatalogDocument = XmlDocument & { TopElem: NotificationCatalogDocumentTopElem; };
+type NotificationCatalogDocument = XmlDocument & {
+  TopElem: NotificationCatalogDocumentTopElem;
+};

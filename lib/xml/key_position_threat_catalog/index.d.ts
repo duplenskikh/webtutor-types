@@ -8,4 +8,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type KeyPositionThreatCatalogDocument = XmlDocument & { TopElem: KeyPositionThreatCatalogDocumentTopElem; };
+type KeyPositionThreatCatalogDocument = XmlDocument & {
+  TopElem: KeyPositionThreatCatalogDocumentTopElem;
+};

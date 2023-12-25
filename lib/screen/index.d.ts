@@ -36,8 +36,17 @@ declare namespace Screen {
    * @param {string} titles - Наименование кнопок диалогового окна.
    * @example
    * ```
-   * Screen.MsgBox(UiText.messages.operation_will_be_cancelled, UiText.messages.warning_msg_title, "question", "yes,no");
-   * Screen.MsgBox(UiText.messages.changes_require_server_restart, UiText.messages.info_msg_title, "info");
+   * Screen.MsgBox(
+   *   UiText.messages.operation_will_be_cancelled,
+   *   UiText.messages.warning_msg_title,
+   *   "question",
+   *   "yes,no"
+   * );
+   * Screen.MsgBox(
+   *   UiText.messages.changes_require_server_restart,
+   *   UiText.messages.info_msg_title,
+   *   "info"
+   * );
    * ```
    */
   function MsgBox(message: string, subject: string, type: string, titles: string): boolean;

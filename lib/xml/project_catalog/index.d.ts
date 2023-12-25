@@ -28,4 +28,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
 };
 
-type ProjectCatalogDocument = XmlDocument & { TopElem: ProjectCatalogDocumentTopElem; };
+type ProjectCatalogDocument = XmlDocument & {
+  TopElem: ProjectCatalogDocumentTopElem;
+};

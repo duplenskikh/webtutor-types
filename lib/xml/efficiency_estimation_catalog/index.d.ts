@@ -9,4 +9,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type EfficiencyEstimationCatalogDocument = XmlDocument & { TopElem: EfficiencyEstimationCatalogDocumentTopElem; };
+type EfficiencyEstimationCatalogDocument = XmlDocument & {
+  TopElem: EfficiencyEstimationCatalogDocumentTopElem;
+};

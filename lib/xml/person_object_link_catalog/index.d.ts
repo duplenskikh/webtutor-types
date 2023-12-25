@@ -12,4 +12,6 @@ type PersonObjectLinkCatalogDocumentTopElem = XmlTopElem & { Doc: PersonObjectLi
   modification_date: XmlElem<Date>;
 };
 
-type PersonObjectLinkCatalogDocument = XmlDocument & { TopElem: PersonObjectLinkCatalogDocumentTopElem; };
+type PersonObjectLinkCatalogDocument = XmlDocument & {
+  TopElem: PersonObjectLinkCatalogDocumentTopElem;
+};

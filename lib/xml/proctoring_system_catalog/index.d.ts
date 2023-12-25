@@ -9,4 +9,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ProctoringSystemCatalogDocument = XmlDocument & { TopElem: ProctoringSystemCatalogDocumentTopElem; };
+type ProctoringSystemCatalogDocument = XmlDocument & {
+  TopElem: ProctoringSystemCatalogDocumentTopElem;
+};

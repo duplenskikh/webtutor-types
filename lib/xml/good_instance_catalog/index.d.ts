@@ -10,4 +10,6 @@ type GoodInstanceCatalogDocumentTopElem = XmlTopElem & { Doc: GoodInstanceCatalo
   app_instance_id: XmlElem<string>;
 };
 
-type GoodInstanceCatalogDocument = XmlDocument & { TopElem: GoodInstanceCatalogDocumentTopElem; };
+type GoodInstanceCatalogDocument = XmlDocument & {
+  TopElem: GoodInstanceCatalogDocumentTopElem;
+};

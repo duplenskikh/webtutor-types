@@ -11,4 +11,6 @@ AdminAccessBase & {
   changed: XmlElem<boolean>;
 };
 
-type ClObjectCatalogDocument = XmlDocument & { TopElem: ClObjectCatalogDocumentTopElem; };
+type ClObjectCatalogDocument = XmlDocument & {
+  TopElem: ClObjectCatalogDocumentTopElem;
+};

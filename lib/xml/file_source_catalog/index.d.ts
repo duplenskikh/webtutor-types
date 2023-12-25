@@ -12,4 +12,6 @@ AccessDocBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type FileSourceCatalogDocument = XmlDocument & { TopElem: FileSourceCatalogDocumentTopElem; };
+type FileSourceCatalogDocument = XmlDocument & {
+  TopElem: FileSourceCatalogDocumentTopElem;
+};

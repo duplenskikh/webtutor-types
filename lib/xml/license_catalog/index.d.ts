@@ -20,4 +20,6 @@ type LicenseCatalogDocumentTopElem = XmlTopElem & { Doc: LicenseCatalogDocument 
   app_instance_id: XmlElem<string>;
 };
 
-type LicenseCatalogDocument = XmlDocument & { TopElem: LicenseCatalogDocumentTopElem; };
+type LicenseCatalogDocument = XmlDocument & {
+  TopElem: LicenseCatalogDocumentTopElem;
+};

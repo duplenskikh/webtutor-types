@@ -6,4 +6,6 @@ type ClConstCatalogDocumentTopElem = XmlTopElem & { Doc: ClConstCatalogDocument 
   object_id: XmlMultiElem<number>;
 };
 
-type ClConstCatalogDocument = XmlDocument & { TopElem: ClConstCatalogDocumentTopElem; };
+type ClConstCatalogDocument = XmlDocument & {
+  TopElem: ClConstCatalogDocumentTopElem;
+};

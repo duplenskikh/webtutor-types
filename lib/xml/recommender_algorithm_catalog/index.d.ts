@@ -12,4 +12,6 @@ MSPeriodityBase & {
   cache_time: XmlElem<number>;
 };
 
-type RecommenderAlgorithmCatalogDocument = XmlDocument & { TopElem: RecommenderAlgorithmCatalogDocumentTopElem; };
+type RecommenderAlgorithmCatalogDocument = XmlDocument & {
+  TopElem: RecommenderAlgorithmCatalogDocumentTopElem;
+};

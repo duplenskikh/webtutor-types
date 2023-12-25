@@ -18,4 +18,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type QualificationCatalogDocument = XmlDocument & { TopElem: QualificationCatalogDocumentTopElem; };
+type QualificationCatalogDocument = XmlDocument & {
+  TopElem: QualificationCatalogDocumentTopElem;
+};

@@ -6,4 +6,6 @@ type PersonObjectProfileCatalogDocumentTopElem = XmlTopElem & { Doc: PersonObjec
   modification_date: XmlElem<Date>;
 };
 
-type PersonObjectProfileCatalogDocument = XmlDocument & { TopElem: PersonObjectProfileCatalogDocumentTopElem; };
+type PersonObjectProfileCatalogDocument = XmlDocument & {
+  TopElem: PersonObjectProfileCatalogDocumentTopElem;
+};

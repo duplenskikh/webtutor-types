@@ -22,4 +22,6 @@ type StatisticDataCatalogDocumentTopElem = XmlTopElem & { Doc: StatisticDataCata
   app_instance_id: XmlElem<string>;
 };
 
-type StatisticDataCatalogDocument = XmlDocument & { TopElem: StatisticDataCatalogDocumentTopElem; };
+type StatisticDataCatalogDocument = XmlDocument & {
+  TopElem: StatisticDataCatalogDocumentTopElem;
+};

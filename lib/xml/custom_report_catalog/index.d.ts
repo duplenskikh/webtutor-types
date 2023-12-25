@@ -12,4 +12,6 @@ type CustomReportCatalogDocumentTopElem = XmlTopElem & { Doc: CustomReportCatalo
   app_instance_id: XmlElem<string>;
 };
 
-type CustomReportCatalogDocument = XmlDocument & { TopElem: CustomReportCatalogDocumentTopElem; };
+type CustomReportCatalogDocument = XmlDocument & {
+  TopElem: CustomReportCatalogDocumentTopElem;
+};

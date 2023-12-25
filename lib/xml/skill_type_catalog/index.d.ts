@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type SkillTypeCatalogDocument = XmlDocument & { TopElem: SkillTypeCatalogDocumentTopElem; };
+type SkillTypeCatalogDocument = XmlDocument & {
+  TopElem: SkillTypeCatalogDocumentTopElem;
+};

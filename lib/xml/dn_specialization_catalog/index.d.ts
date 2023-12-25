@@ -7,4 +7,6 @@ type DnSpecializationCatalogDocumentTopElem = XmlTopElem & { Doc: DnSpecializati
   app_instance_id: XmlElem<string>;
 };
 
-type DnSpecializationCatalogDocument = XmlDocument & { TopElem: DnSpecializationCatalogDocumentTopElem; };
+type DnSpecializationCatalogDocument = XmlDocument & {
+  TopElem: DnSpecializationCatalogDocumentTopElem;
+};

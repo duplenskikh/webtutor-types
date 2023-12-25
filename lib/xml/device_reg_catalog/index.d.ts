@@ -10,4 +10,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type DeviceRegCatalogDocument = XmlDocument & { TopElem: DeviceRegCatalogDocumentTopElem; };
+type DeviceRegCatalogDocument = XmlDocument & {
+  TopElem: DeviceRegCatalogDocumentTopElem;
+};

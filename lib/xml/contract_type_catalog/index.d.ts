@@ -10,4 +10,6 @@ type ContractTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ContractTypeCatalo
   app_instance_id: XmlElem<string>;
 };
 
-type ContractTypeCatalogDocument = XmlDocument & { TopElem: ContractTypeCatalogDocumentTopElem; };
+type ContractTypeCatalogDocument = XmlDocument & {
+  TopElem: ContractTypeCatalogDocumentTopElem;
+};

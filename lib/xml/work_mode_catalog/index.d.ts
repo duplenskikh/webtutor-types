@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type WorkModeCatalogDocument = XmlDocument & { TopElem: WorkModeCatalogDocumentTopElem; };
+type WorkModeCatalogDocument = XmlDocument & {
+  TopElem: WorkModeCatalogDocumentTopElem;
+};

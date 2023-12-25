@@ -19,4 +19,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type AssessmentAppraiseCatalogDocument = XmlDocument & { TopElem: AssessmentAppraiseCatalogDocumentTopElem; };
+type AssessmentAppraiseCatalogDocument = XmlDocument & {
+  TopElem: AssessmentAppraiseCatalogDocumentTopElem;
+};

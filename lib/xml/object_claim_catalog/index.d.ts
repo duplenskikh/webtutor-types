@@ -29,4 +29,6 @@ type ObjectClaimCatalogDocumentTopElem = XmlTopElem & { Doc: ObjectClaimCatalogD
   app_instance_id: XmlElem<string>;
 };
 
-type ObjectClaimCatalogDocument = XmlDocument & { TopElem: ObjectClaimCatalogDocumentTopElem; };
+type ObjectClaimCatalogDocument = XmlDocument & {
+  TopElem: ObjectClaimCatalogDocumentTopElem;
+};
