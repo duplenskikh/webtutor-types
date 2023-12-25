@@ -685,10 +685,13 @@ declare function ArraySelectByKey<T, K>(array: T, value: K, name: string): T;
  * @param {Array} array - Массив.
  * @param {string} field - Выражение, вычисляющее значение полей относительно элемента массива,
  * по которым осуществляется сортировка.
- * @param {string} [direction] - Направление сортировки ('+' или '-')
+ * @param {string} [direction] - Направление сортировки ('+' или '-').
  * @param {string} args
  * @returns {Array}
- * ArraySort( array, 'name', '+', 'date', '-' ).
+ * @example
+ * ```
+ * ArraySort(array, "name", "+", "date", "-");
+ * ```
  */
 
 declare function ArraySort<T>(array: T, field: string, direction: string, ...args: string[]): T;
@@ -1861,7 +1864,8 @@ declare function Real(value: string | number): number;
 declare function StrHexColor(color: string): string;
 
 /**
- * Если значение целочисленного аргумента = 0 преобразует его в "-", иначе в строку (аналогично функции {@link StrInt}()).
+ * Если значение целочисленного аргумента = 0 преобразует его в "-",
+ * иначе в строку (аналогично функции {@link StrInt}()).
  * @param {number} arg - Целочисленный аргумент.
  * @param {number} [digitsNum] - Минимальное число символов в строке.
  * @param {boolean} addGroupDelim - Разделять тысячные разряды пробелами.
