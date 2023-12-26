@@ -29,6 +29,8 @@ yarn add @umbrik/webtutor-types -D
 
 Пример:
 
+![image](https://github.com/HCM-guru/webtutor-types/assets/693254/aefa6c12-4479-4cab-a7e8-c29d880358b7)
+
 ```json
 {
   "compilerOptions": {
