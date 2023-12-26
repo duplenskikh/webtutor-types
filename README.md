@@ -27,9 +27,7 @@ yarn add @umbrik/webtutor-types -D
 
 Для разработки в WT обязательно неоходимо отключить все остальные библиотеки с помощью `noLib` и добавить типы в `typeRoots`.
 
-Пример:
-
-![image](https://github.com/HCM-guru/webtutor-types/assets/693254/aefa6c12-4479-4cab-a7e8-c29d880358b7)
+Пример конфига:
 
 ```json
 {
@@ -53,6 +51,8 @@ yarn add @umbrik/webtutor-types -D
 ```
 
 ## ⌨️ Пример использования
+
+![image](https://github.com/HCM-guru/webtutor-types/assets/693254/aefa6c12-4479-4cab-a7e8-c29d880358b7)
 
 ```ts
 type FuncManagerQueryResult = {
