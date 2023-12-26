@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type MaterialLiabilityCatalogDocument = XmlDocument & { TopElem: MaterialLiabilityCatalogDocumentTopElem; };
+type MaterialLiabilityCatalogDocument = XmlDocument & {
+  TopElem: MaterialLiabilityCatalogDocumentTopElem;
+};

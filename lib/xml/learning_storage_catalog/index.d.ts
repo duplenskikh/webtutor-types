@@ -9,4 +9,6 @@ type LearningStorageCatalogDocumentTopElem = XmlTopElem & { Doc: LearningStorage
   app_instance_id: XmlElem<string>;
 };
 
-type LearningStorageCatalogDocument = XmlDocument & { TopElem: LearningStorageCatalogDocumentTopElem; };
+type LearningStorageCatalogDocument = XmlDocument & {
+  TopElem: LearningStorageCatalogDocumentTopElem;
+};

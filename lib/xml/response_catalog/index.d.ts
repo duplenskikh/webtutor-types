@@ -17,4 +17,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ResponseCatalogDocument = XmlDocument & { TopElem: ResponseCatalogDocumentTopElem; };
+type ResponseCatalogDocument = XmlDocument & {
+  TopElem: ResponseCatalogDocumentTopElem;
+};

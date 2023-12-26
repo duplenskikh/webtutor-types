@@ -7,4 +7,6 @@ type TestProjectCatalogDocumentTopElem = XmlTopElem & { Doc: TestProjectCatalogD
   app_instance_id: XmlElem<string>;
 };
 
-type TestProjectCatalogDocument = XmlDocument & { TopElem: TestProjectCatalogDocumentTopElem; };
+type TestProjectCatalogDocument = XmlDocument & {
+  TopElem: TestProjectCatalogDocumentTopElem;
+};

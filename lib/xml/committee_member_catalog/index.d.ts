@@ -13,4 +13,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type CommitteeMemberCatalogDocument = XmlDocument & { TopElem: CommitteeMemberCatalogDocumentTopElem; };
+type CommitteeMemberCatalogDocument = XmlDocument & {
+  TopElem: CommitteeMemberCatalogDocumentTopElem;
+};

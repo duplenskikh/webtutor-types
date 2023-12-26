@@ -9,4 +9,6 @@ ObjectCodeNameBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type SystemEventHandlerCatalogDocument = XmlDocument & { TopElem: SystemEventHandlerCatalogDocumentTopElem; };
+type SystemEventHandlerCatalogDocument = XmlDocument & {
+  TopElem: SystemEventHandlerCatalogDocumentTopElem;
+};

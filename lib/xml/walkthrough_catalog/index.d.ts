@@ -8,4 +8,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type WalkthroughCatalogDocument = XmlDocument & { TopElem: WalkthroughCatalogDocumentTopElem; };
+type WalkthroughCatalogDocument = XmlDocument & {
+  TopElem: WalkthroughCatalogDocumentTopElem;
+};

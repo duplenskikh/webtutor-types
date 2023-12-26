@@ -1,6 +1,7 @@
-type RecommenderAlgorithmApplyingCatalogDocumentTopElem = XmlTopElem & { Doc: RecommenderAlgorithmApplyingCatalogDocument } &
+type RecommenderAlgorithmApplyingCatalogDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 ObjectTypeBase & {
+  Doc: RecommenderAlgorithmApplyingCatalogDocument;
   id: XmlElem<number>;
   person_id: XmlElem<number>;
   recommender_algorithm_id: XmlElem<number>;
@@ -12,4 +13,6 @@ ObjectTypeBase & {
   creation_date: XmlElem<Date>;
 };
 
-type RecommenderAlgorithmApplyingCatalogDocument = XmlDocument & { TopElem: RecommenderAlgorithmApplyingCatalogDocumentTopElem; };
+type RecommenderAlgorithmApplyingCatalogDocument = XmlDocument & {
+  TopElem: RecommenderAlgorithmApplyingCatalogDocumentTopElem;
+};

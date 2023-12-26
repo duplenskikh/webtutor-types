@@ -1886,7 +1886,11 @@ interface LearningPartBaseStatement {
   score: XmlElem<number>;
 }
 
-interface LearningPartBase extends CoreLessonInfoBase, CoreLessonBase, LearningObjectivesInteractionsBase, LearningAssessmentBase, LastAttemptTestLearningsBase {
+interface LearningPartBase extends CoreLessonInfoBase,
+  CoreLessonBase,
+  LearningObjectivesInteractionsBase,
+  LearningAssessmentBase,
+  LastAttemptTestLearningsBase {
   code: XmlElem<string>;
   name: XmlElem<string>;
   type: XmlElem<string>;
@@ -2562,18 +2566,6 @@ interface WebVariableBaseWvarEntry {
   name: XmlElem<string>;
   type: XmlElem<string>;
   catalog: XmlElem<string>;
-}
-
-interface WebVariableBaseWvar {
-  name: XmlElem<string>;
-  parent_wvar_name: XmlElem<string>;
-  value: XmlElem<string>;
-  type: XmlElem<string>;
-  catalog: XmlElem<string>;
-  entries: XmlMultiElem<WebVariableBaseWvarEntry>;
-  description: XmlElem<string>;
-  is_modify: XmlElem<boolean>;
-  position: XmlElem<number>;
 }
 
 interface LearningSection {

@@ -4,4 +4,6 @@ type WorkFormCatalogDocumentTopElem = XmlTopElem & { Doc: WorkFormCatalogDocumen
   name: XmlElem<string>;
 };
 
-type WorkFormCatalogDocument = XmlDocument & { TopElem: WorkFormCatalogDocumentTopElem; };
+type WorkFormCatalogDocument = XmlDocument & {
+  TopElem: WorkFormCatalogDocumentTopElem;
+};

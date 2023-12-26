@@ -12,4 +12,6 @@ PersonFillingBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type PersonnelDocumentCatalogDocument = XmlDocument & { TopElem: PersonnelDocumentCatalogDocumentTopElem; };
+type PersonnelDocumentCatalogDocument = XmlDocument & {
+  TopElem: PersonnelDocumentCatalogDocumentTopElem;
+};

@@ -28,4 +28,6 @@ AdminAccessBase & {
   status_in_knowledge_map: XmlElem<string>;
 };
 
-type LibraryMaterialCatalogDocument = XmlDocument & { TopElem: LibraryMaterialCatalogDocumentTopElem; };
+type LibraryMaterialCatalogDocument = XmlDocument & {
+  TopElem: LibraryMaterialCatalogDocumentTopElem;
+};

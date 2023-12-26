@@ -8,4 +8,6 @@ type DownloadPackageCatalogDocumentTopElem = XmlTopElem & { Doc: DownloadPackage
   create_date: XmlElem<Date>;
 };
 
-type DownloadPackageCatalogDocument = XmlDocument & { TopElem: DownloadPackageCatalogDocumentTopElem; };
+type DownloadPackageCatalogDocument = XmlDocument & {
+  TopElem: DownloadPackageCatalogDocumentTopElem;
+};

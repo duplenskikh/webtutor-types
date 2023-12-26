@@ -8,4 +8,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type TalentPoolNominationCatalogDocument = XmlDocument & { TopElem: TalentPoolNominationCatalogDocumentTopElem; };
+type TalentPoolNominationCatalogDocument = XmlDocument & {
+  TopElem: TalentPoolNominationCatalogDocumentTopElem;
+};

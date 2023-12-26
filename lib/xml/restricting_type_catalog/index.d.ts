@@ -7,4 +7,6 @@ type RestrictingTypeCatalogDocumentTopElem = XmlTopElem & { Doc: RestrictingType
   state_id: XmlElem<string>;
 };
 
-type RestrictingTypeCatalogDocument = XmlDocument & { TopElem: RestrictingTypeCatalogDocumentTopElem; };
+type RestrictingTypeCatalogDocument = XmlDocument & {
+  TopElem: RestrictingTypeCatalogDocumentTopElem;
+};

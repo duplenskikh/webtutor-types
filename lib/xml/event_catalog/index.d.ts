@@ -49,4 +49,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type EventCatalogDocument = XmlDocument & { TopElem: EventCatalogDocumentTopElem; };
+type EventCatalogDocument = XmlDocument & {
+  TopElem: EventCatalogDocumentTopElem;
+};

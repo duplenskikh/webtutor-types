@@ -17,4 +17,6 @@ type ScriptQueueElemCatalogDocumentTopElem = XmlTopElem & { Doc: ScriptQueueElem
   app_instance_id: XmlElem<string>;
 };
 
-type ScriptQueueElemCatalogDocument = XmlDocument & { TopElem: ScriptQueueElemCatalogDocumentTopElem; };
+type ScriptQueueElemCatalogDocument = XmlDocument & {
+  TopElem: ScriptQueueElemCatalogDocumentTopElem;
+};

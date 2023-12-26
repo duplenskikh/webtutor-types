@@ -11,4 +11,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ChatCatalogDocument = XmlDocument & { TopElem: ChatCatalogDocumentTopElem; };
+type ChatCatalogDocument = XmlDocument & {
+  TopElem: ChatCatalogDocumentTopElem;
+};

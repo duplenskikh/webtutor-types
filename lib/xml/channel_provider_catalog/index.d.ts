@@ -9,4 +9,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ChannelProviderCatalogDocument = XmlDocument & { TopElem: ChannelProviderCatalogDocumentTopElem; };
+type ChannelProviderCatalogDocument = XmlDocument & {
+  TopElem: ChannelProviderCatalogDocumentTopElem;
+};

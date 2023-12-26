@@ -14,4 +14,6 @@ type ConnectionCatalogDocumentTopElem = XmlTopElem & { Doc: ConnectionCatalogDoc
   host_path: XmlElem<string>;
 };
 
-type ConnectionCatalogDocument = XmlDocument & { TopElem: ConnectionCatalogDocumentTopElem; };
+type ConnectionCatalogDocument = XmlDocument & {
+  TopElem: ConnectionCatalogDocumentTopElem;
+};

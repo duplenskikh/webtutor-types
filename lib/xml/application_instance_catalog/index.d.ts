@@ -8,4 +8,6 @@ type ApplicationInstanceCatalogDocumentTopElem = XmlTopElem & { Doc: Application
   app_instance_id: XmlElem<string>;
 };
 
-type ApplicationInstanceCatalogDocument = XmlDocument & { TopElem: ApplicationInstanceCatalogDocumentTopElem; };
+type ApplicationInstanceCatalogDocument = XmlDocument & {
+  TopElem: ApplicationInstanceCatalogDocumentTopElem;
+};

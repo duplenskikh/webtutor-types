@@ -20,4 +20,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ForumEntryCatalogDocument = XmlDocument & { TopElem: ForumEntryCatalogDocumentTopElem; };
+type ForumEntryCatalogDocument = XmlDocument & {
+  TopElem: ForumEntryCatalogDocumentTopElem;
+};

@@ -9,4 +9,6 @@ type ChatbotCatalogDocumentTopElem = XmlTopElem & { Doc: ChatbotCatalogDocument 
   app_instance_id: XmlElem<string>;
 };
 
-type ChatbotCatalogDocument = XmlDocument & { TopElem: ChatbotCatalogDocumentTopElem; };
+type ChatbotCatalogDocument = XmlDocument & {
+  TopElem: ChatbotCatalogDocumentTopElem;
+};

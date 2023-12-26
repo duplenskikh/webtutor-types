@@ -11,4 +11,6 @@ type StatementAttachmentCatalogDocumentTopElem = XmlTopElem & { Doc: StatementAt
   app_instance_id: XmlElem<string>;
 };
 
-type StatementAttachmentCatalogDocument = XmlDocument & { TopElem: StatementAttachmentCatalogDocumentTopElem; };
+type StatementAttachmentCatalogDocument = XmlDocument & {
+  TopElem: StatementAttachmentCatalogDocumentTopElem;
+};

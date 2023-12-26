@@ -12,4 +12,6 @@ AdminAccessBase & {
   changed: XmlElem<boolean>;
 };
 
-type LibraryPlayerCatalogDocument = XmlDocument & { TopElem: LibraryPlayerCatalogDocumentTopElem; };
+type LibraryPlayerCatalogDocument = XmlDocument & {
+  TopElem: LibraryPlayerCatalogDocumentTopElem;
+};

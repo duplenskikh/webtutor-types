@@ -20,4 +20,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
 };
 
-type KeyPositionCatalogDocument = XmlDocument & { TopElem: KeyPositionCatalogDocumentTopElem; };
+type KeyPositionCatalogDocument = XmlDocument & {
+  TopElem: KeyPositionCatalogDocumentTopElem;
+};

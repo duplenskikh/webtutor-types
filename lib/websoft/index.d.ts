@@ -1,6 +1,32 @@
 /* eslint-disable no-magic-numbers */
 declare namespace Websoft {
 
+  type Interfaces = {
+    "Authorization": Authorization.Authorization,
+    "Crypto": Utils.Crypto,
+    "CryptoPro": CryptoPro.CryptoProPrime,
+    "CryptoStore": CryptoStore.CryptoStore,
+    "Excel": Office.Excel.Document,
+    // "FaceRecognition": OpenCV.FaceRecognition,
+    "FileUtils": Utils.FileUtils,
+    // "HttpRequest": HttpRequest.HttpRequest,
+    // "Image": Imaging.Image,
+    // "ImageUtils": Imaging.ImageUtils,
+    // "MediaPostStreamHandler": MediaHandler.MediaPostStreamHandler,
+    // "Pdf": Office.Pdf.Document,
+    // "PdfGenerator": Office.Pdf.Generator,
+    // "PKeyGenerator": PKeyGenerator.PKeyGenerator,
+    // "Powerpoint": Office.Powerpoint.Presentation,
+    // "RecordingClient": Recording.Client,
+    "RegExp": RegExp.RegExp,
+    // "UniBridgeSettings": spxml.unibridge.UniBridgeSettings,
+    // "VideoNeuralHandler": VideoNeuralHandler.VideoNeuralHandler,
+    // "Word": Office.Word.Document,
+    "WebUtils": Utils.WebUtils,
+    // "XHTTPMiddleware": XHTTP.Middleware,
+    "Zip": Zip.Zip,
+  };
+
   class WebsoftBaseClass {
     /**
      * Используется для получения последней произошедшей ошибки.
@@ -13,6 +39,86 @@ declare namespace Websoft {
      * @returns Версия компонента.
      */
     GetVersion(): string;
+  }
+
+  namespace Authorization {
+    interface IObjectArray {
+      GetNext(): boolean;
+      GetName(): string;
+      GetValue(name: string): object;
+      IsEnabled(): boolean;
+      GetStringValue(name: string): string;
+      Token(): string;
+    }
+    class Authorization {
+      ValidateLDAP(
+        ldap_server: string,
+        ldap_container: string,
+        username: string,
+        password: string,
+        context_options: number,
+        context_type: number
+      ): boolean;
+      ValidateLDAPRequestNovell(
+        ldap_server: string,
+        ldap_container: string,
+        username: string,
+        password: string,
+        auth_type: number,
+        ProtocolVersion: number,
+        ssl: boolean
+      ): boolean;
+      ValidateLDAPRequest(
+        ldap_server: string,
+        ldap_container: string,
+        username: string,
+        password: string,
+        auth_type: number,
+        ProtocolVersion: number,
+        ssl: boolean
+      ): boolean;
+      GetValidateLDAPWithAttributes(
+        ldap_server: string,
+        ldap_container: string,
+        username: string,
+        password: string,
+        properties: string,
+        context_options: number,
+        context_type: number
+      ): [string, object];
+      ValidateLDAPWithAttributes(
+        ldap_server: string,
+        ldap_container: string,
+        username: string,
+        password: string,
+        properties: string,
+        context_options: number,
+        context_type: number
+      ): IObjectArray;
+      GetValidateADALWithTokenAttributes(
+        ad_server_tenant: string,
+        ad_clientid: string,
+        resourceId: string,
+        token: string,
+        properties: string,
+        stsDiscoveryEndPoint: string
+      ): [string, object];
+      ValidateADALWithTokenAttributes(
+        ad_server_tenant: string,
+        ad_clientid: string,
+        resourceId: string,
+        token: string,
+        properties: string,
+        stsDiscoveryEndPoint: string
+      ): IObjectArray;
+    }
+  }
+
+  namespace Code {
+    class BufferedConsoleStream { }
+    class JsonExtensions { }
+    class wsft { }
+    class WTConsole { }
   }
 
   namespace CryptoPro {
@@ -29,20 +135,32 @@ declare namespace Websoft {
       Close(): boolean;
       DecryptString(message: string, fOAEP: boolean): string;
       DecryptStringAES(message: string, key: string, IV?: string): string;
-      EmbedSignatureToSignedMsgData(messageData: string, mimeHeader: string): string;
-      EmbedSignatureToSignedMsgDataWithEncrypt(messageData: string, recipCert: string, mimeHeader: string): string;
+      EmbedSignatureToSignedMsgData(message: string, mimeHeader: string): string;
+      EmbedSignatureToSignedMsgDataWithEncrypt(message: string, recipCert: string, mimeHeader: string): string;
       EncryptString(message: string, fOAEP?: boolean): string;
       EncryptStringAES(message: string, key: string, IV?: string): string;
-      ExtractAlternativeMimeDataFromSigned(messageData: string): [string, string, string, string];
+      ExtractAlternativeMimeDataFromSigned(message: string): [string, string, string, string];
       GenerateKey(): string;
-      GetDecryptedMsgData(messageData: string): string;
-      GetEncryptedMsgData(messageData: string, fileName: string, attachment: Binary, recipCert: string, mimeHeader: string): string;
+      GetDecryptedMsgData(message: string): string;
+      GetEncryptedMsgData(
+        message: string,
+        fileName: string,
+        attachment: Binary,
+        recipCert: string,
+        mimeHeader: string
+      ): string;
       GetLastError(): number;
       GetLastErrorMessage(): string;
-      GetMsgData(messageData: string, fileName: string, attachment: Binary, mimeHeader: string): string;
+      GetMsgData(message: string, fileName: string, attachment: Binary, mimeHeader: string): string;
       GetSelectedCertAttribute(name: string): string;
-      GetSignedEncryptedMsgData(messageData: string, fileName: string, attachment: Binary, recipCert: string, mimeHeader: string): string;
-      GetSignedMsgData(messageData: string, fileName: string, attachment: Binary, mimeHeader: string): string;
+      GetSignedEncryptedMsgData(
+        message: string,
+        fileName: string,
+        attachment: Binary,
+        recipCert: string,
+        mimeHeader: string
+      ): string;
+      GetSignedMsgData(message: string, fileName: string, attachment: Binary, mimeHeader: string): string;
       isCertificateSelected(): boolean;
       Open(store: number, storeName: string, flags: number): boolean;
       SelectCertificate(recipCert: string): boolean;
@@ -246,7 +364,6 @@ declare namespace Websoft {
         /**
          * Получает {@link Columns | колонку} по указанному номеру.
          * @param index - Номер колонки.
-         *
          */
         GetColumn(index: number): Column;
       }
@@ -285,7 +402,6 @@ declare namespace Websoft {
          * Загружает данные в формате HTML из указанного файла.
          * @param filePath - Путь до файла в формате HTML.
          * @param resourcesDirectoryName - Название папки с ресурсами (изображения, стили и т.д.).
-         *
          */
         LoadHtmlFile(filePath: string, resourcesDirectoryName: string): 0 | 1;
 
@@ -293,7 +409,6 @@ declare namespace Websoft {
          * Загружает данные в формате HTML из строки.
          * @param htmlText - Переменная, содержащаю строку в формате HTML.
          * @param resourcesDirectoryName - Название папки с ресурсами (изображения, стили и т.д.).
-         *
          */
         LoadHtmlString(htmlText: string, resourcesDirectoryName: string): 0 | 1;
 
@@ -531,7 +646,8 @@ declare namespace Websoft {
         IsTextWrapped: boolean;
 
         /**
-         * Номер стиля и формата в таблице. Описание можно посмотреть тут: http://www.aspose.com/docs/display/cellsnet/Setting+Display+Formats+of+Numbers+and+Dates.
+         * Номер стиля и формата в таблице.
+         * Описание: http://www.aspose.com/docs/display/cellsnet/Setting+Display+Formats+of+Numbers+and+Dates.
          */
         Number: number;
 
@@ -850,9 +966,7 @@ declare namespace Websoft {
           NumberFormat: string;
 
           /**
-           * Расположение.
-           * Принимает значения "Center", "InsideBase", "OutsideEnd", "Above", "Below", "Left", "Right", "BestFit", "Moved".
-           * Разные значения доступны для разных типов графиков.
+           * Расположение. Разные значения доступны для разных типов графиков.
            */
           Position: "Center" | "InsideBase" | "OutsideEnd" | "Above" | "Below" | "Left" | "Right" | "BestFit" | "Moved";
 
@@ -1065,9 +1179,15 @@ declare namespace Websoft {
           readonly GradientDegree: number;
 
           /**
-           * Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
+           * Стиль градиента.
            */
-          GradientStyle: "DiagonalDown" | "DiagonalUp" | "FromCenter" | "FromCorner" | "Horizontal" | "Vertical" | "Unknown";
+          GradientStyle: "DiagonalDown"
+          | "DiagonalUp"
+          | "FromCenter"
+          | "FromCorner"
+          | "Horizontal"
+          | "Vertical"
+          | "Unknown";
 
           /**
            * Тип заливки.
@@ -1078,44 +1198,26 @@ declare namespace Websoft {
            * Устанавливает градиентную заливку с одним цветом.
            * @param color - Цвет.
            * @param degree - Угол.
-           * @param style - Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
-           * @param variant - Вариации градиента. Может принимать значения от 1 до 4 в зависимости от типа градиента. Если стиль градиента "FromCenter", значения могут быть только 1 или 2.
+           * @param style - Стиль градиента.
+           * @param variant - Вариации градиента.
            */
           SetOneColorGradient(
             color: string,
             degree: number,
-            style: "DiagonalDown" | "DiagonalUp" | "FromCorner" | "Horizontal" | "Vertical" | "Unknown",
-            variant: 1 | 2 | 3 | 4
+            style: "FromCorner",
+            variant: 1 | 2
           ): 1 | 0;
 
           /**
            * Устанавливает градиентную заливку с одним цветом.
            * @param color - Цвет.
            * @param degree - Угол.
-           * @param style - Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
-           * @param variant - Вариации градиента. Может принимать значения от 1 до 4 в зависимости от типа градиента. Если стиль градиента "FromCenter", значения могут быть только 1 или 2.
+           * @param style - Стиль градиента.
+           * @param variant - Вариации градиента.
            */
           SetOneColorGradient(
             color: string,
             degree: number,
-            style: "FromCenter",
-            variant: 1 | 2
-          ): 1 | 0;
-
-          /**
-           * Устанавливает градиентную заливку с двумя цветами.
-           * @param color1 - Первый цвет.
-           * @param transparency1 - Прозрачность первого цвета.
-           * @param color2 - Второй цвет.
-           * @param transparency2 - Прозрачность второго цвета.
-           * @param style - Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
-           * @param variant - Вариации градиента. Может принимать значения от 1 до 4 в зависимости от типа градиента. Если стиль градиента "FromCenter", значения могут быть только 1 или 2.
-           */
-          SetTwoColorGradient(
-            color1: string,
-            transparency1: number,
-            color2: string,
-            transparency2: number,
             style: "DiagonalDown" | "DiagonalUp" | "FromCorner" | "Horizontal" | "Vertical" | "Unknown",
             variant: 1 | 2 | 3 | 4
           ): 1 | 0;
@@ -1126,8 +1228,8 @@ declare namespace Websoft {
            * @param transparency1 - Прозрачность первого цвета.
            * @param color2 - Второй цвет.
            * @param transparency2 - Прозрачность второго цвета.
-           * @param style - Стиль градиента. Может принимать следующие значения: "DiagonalDown", "DiagonalUp", "FromCenter", "FromCorner", "Horizontal", "Vertical", "Unknown".
-           * @param variant - Вариации градиента. Может принимать значения от 1 до 4 в зависимости от типа градиента. Если стиль градиента "FromCenter", значения могут быть только 1 или 2.
+           * @param style - Стиль градиента.
+           * @param variant - Вариации градиента.
            */
           SetTwoColorGradient(
             color1: string,
@@ -1136,6 +1238,24 @@ declare namespace Websoft {
             transparency2: number,
             style: "FromCenter",
             variant: 1 | 2
+          ): 1 | 0;
+
+          /**
+           * Устанавливает градиентную заливку с двумя цветами.
+           * @param color1 - Первый цвет.
+           * @param transparency1 - Прозрачность первого цвета.
+           * @param color2 - Второй цвет.
+           * @param transparency2 - Прозрачность второго цвета.
+           * @param style - Стиль градиента.
+           * @param variant - Вариации градиента.
+           */
+          SetTwoColorGradient(
+            color1: string,
+            transparency1: number,
+            color2: string,
+            transparency2: number,
+            style: "DiagonalDown" | "DiagonalUp" | "FromCorner" | "Horizontal" | "Vertical" | "Unknown",
+            variant: 1 | 2 | 3 | 4
           ): 1 | 0;
         }
 
@@ -1152,7 +1272,6 @@ declare namespace Websoft {
 
           /**
            * Стиль линии.
-           * Принимает одно из следующих значений: "Solid", "Dash", "Dot", "DashDot", "DashDotDot", "DarkGray", "MediumGray", "LightGray".
            */
           Style: "Solid" | "Dash" | "Dot" | "DashDot" | "DashDotDot" | "DarkGray" | "MediumGray" | "LightGray";
 
@@ -1302,7 +1421,8 @@ declare namespace Websoft {
       /**
        * Извлекает указанные файлы из архива.
        * @param filesPath - Маска имени файлов.
-       * @param directoryInArchive - Директория внутри архива, из которой следует извлекать файлы. Для извлечения даных из корня выставляется пустой строкой.
+       * @param directoryInArchive - Директория внутри архива, из которой следует извлекать файлы.
+       * Для извлечения даных из корня выставляется пустой строкой.
        * @param outputPath - Путь до директории для распаковки.
        */
       ExtractFiles(

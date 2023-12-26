@@ -56,7 +56,8 @@ interface XmMultiElem<T> extends XmElem<T> {
   Parent: XmlTopElem | never;
 
   /**
-   * Возвращает константу на языке {@link XQuery} в виде последовательности из значений соответствующих множественных элементов.
+   * Возвращает константу на языке {@link XQuery} в виде последовательности
+   * из значений соответствующих множественных элементов.
    */
   XQueryLiteral: string;
 
@@ -146,7 +147,8 @@ interface XmMultiElem<T> extends XmElem<T> {
 
   /**
    * Удаляет все дочерние элементы, удовлетворяющие заданому условию.
-   * @param {string} expression - Строка, содержащая выражение/условие, вычисляемое относительно каждого значения элемента.
+   * @param {string} expression - Строка, содержащая выражение/условие,
+   * вычисляемое относительно каждого значения элемента.
    * Если выражение не указано, удаляются все дочерние элементы.
    */
   DeleteChildren(expression: string): void;
@@ -175,7 +177,7 @@ interface XmMultiElem<T> extends XmElem<T> {
    * Если дочерний элемент не найден, возвращает ошибку.
    * Смотри также {@link GetOptChildByKey}.
    * @param {K} keyValue - Значение ключа.
-   * @param {string} keyName - Имя элемента, являющегося ключом (String). Необязательный аргумент.
+   * @param {string} keyName - Имя элемента, являющегося ключом. Необязательный аргумент.
    * Если имя ключа не указано, используется первичный ключ.
    */
   GetChildByKey<K>(value: K, name?: string): XmlElem<unknown>;

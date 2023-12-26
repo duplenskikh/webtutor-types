@@ -10,4 +10,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type RepositoriumCatalogDocument = XmlDocument & { TopElem: RepositoriumCatalogDocumentTopElem; };
+type RepositoriumCatalogDocument = XmlDocument & {
+  TopElem: RepositoriumCatalogDocumentTopElem;
+};

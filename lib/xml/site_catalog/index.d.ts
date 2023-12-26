@@ -12,4 +12,6 @@ type SiteCatalogDocumentTopElem = XmlTopElem & { Doc: SiteCatalogDocument } & {
   owner_object: XmlMultiElem<number>;
 };
 
-type SiteCatalogDocument = XmlDocument & { TopElem: SiteCatalogDocumentTopElem; };
+type SiteCatalogDocument = XmlDocument & {
+  TopElem: SiteCatalogDocumentTopElem;
+};

@@ -19,4 +19,6 @@ AdminAccessBase & {
   use_proctoring: XmlElem<boolean>;
 };
 
-type PollResultCatalogDocument = XmlDocument & { TopElem: PollResultCatalogDocumentTopElem; };
+type PollResultCatalogDocument = XmlDocument & {
+  TopElem: PollResultCatalogDocumentTopElem;
+};

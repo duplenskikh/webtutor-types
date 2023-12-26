@@ -7,4 +7,6 @@ type MobileAppConfigCatalogDocumentTopElem = XmlTopElem & { Doc: MobileAppConfig
   modification_date: XmlElem<Date>;
 };
 
-type MobileAppConfigCatalogDocument = XmlDocument & { TopElem: MobileAppConfigCatalogDocumentTopElem; };
+type MobileAppConfigCatalogDocument = XmlDocument & {
+  TopElem: MobileAppConfigCatalogDocumentTopElem;
+};

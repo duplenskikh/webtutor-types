@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type CandidateStatusTypeCatalogDocument = XmlDocument & { TopElem: CandidateStatusTypeCatalogDocumentTopElem; };
+type CandidateStatusTypeCatalogDocument = XmlDocument & {
+  TopElem: CandidateStatusTypeCatalogDocumentTopElem;
+};

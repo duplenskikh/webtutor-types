@@ -10,4 +10,6 @@ type PrintFormCatalogDocumentTopElem = XmlTopElem & { Doc: PrintFormCatalogDocum
   app_instance_id: XmlElem<string>;
 };
 
-type PrintFormCatalogDocument = XmlDocument & { TopElem: PrintFormCatalogDocumentTopElem; };
+type PrintFormCatalogDocument = XmlDocument & {
+  TopElem: PrintFormCatalogDocumentTopElem;
+};

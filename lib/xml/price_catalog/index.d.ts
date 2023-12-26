@@ -10,4 +10,6 @@ AdminAccessBase & {
   modification_date: XmlElem<Date>;
 };
 
-type PriceCatalogDocument = XmlDocument & { TopElem: PriceCatalogDocumentTopElem; };
+type PriceCatalogDocument = XmlDocument & {
+  TopElem: PriceCatalogDocumentTopElem;
+};

@@ -537,7 +537,14 @@ interface EducationPlanProgramResult {
 interface DotnetCoreHost {
   Object: {
     GetAssembly(libName: string): {
-      CallClassStaticMethod(className: string, methodName: string, arguments: XmlMultiElem<unknown>, single?: boolean, wait?: boolean, max_run_time?: number): unknown;
+      CallClassStaticMethod(
+        className: string,
+        methodName: string,
+        arguments: XmlMultiElem<unknown>,
+        single?: boolean,
+        wait?: boolean,
+        max_run_time?: number
+      ): unknown;
       CreateClassObject<T>(classObject: string): T;
     };
   };
@@ -1288,7 +1295,7 @@ interface ObjectTypeBase {
  */
 declare var Param: Object;
 /**
- * ID объекта над которым выполняется агент.
+ * Id объекта над которым выполняется агент.
  */
 declare var OBJECT_ID: number;
 declare var OBJECTS_ID_STR: string;

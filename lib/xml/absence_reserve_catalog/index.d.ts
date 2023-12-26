@@ -1,5 +1,6 @@
-type AbsenceReserveCatalogDocumentTopElem = XmlTopElem & { Doc: AbsenceReserveCatalogDocument } &
+type AbsenceReserveCatalogDocumentTopElem = XmlTopElem &
 PersonFillingBase & {
+  Doc: AbsenceReserveCatalogDocument;
   id: XmlElem<number>;
   person_id: XmlElem<number>;
   budget_period_id: XmlElem<number>;
@@ -8,4 +9,6 @@ PersonFillingBase & {
   calculation_date: XmlElem<Date>;
 };
 
-type AbsenceReserveCatalogDocument = XmlDocument & { TopElem: AbsenceReserveCatalogDocumentTopElem; };
+type AbsenceReserveCatalogDocument = XmlDocument & {
+  TopElem: AbsenceReserveCatalogDocumentTopElem;
+};

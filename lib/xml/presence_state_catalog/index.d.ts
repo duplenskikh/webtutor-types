@@ -19,4 +19,6 @@ type PresenceStateCatalogDocumentTopElem = XmlTopElem & { Doc: PresenceStateCata
   changed: XmlElem<boolean>;
 };
 
-type PresenceStateCatalogDocument = XmlDocument & { TopElem: PresenceStateCatalogDocumentTopElem; };
+type PresenceStateCatalogDocument = XmlDocument & {
+  TopElem: PresenceStateCatalogDocumentTopElem;
+};

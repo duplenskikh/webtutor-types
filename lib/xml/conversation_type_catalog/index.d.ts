@@ -7,4 +7,6 @@ type ConversationTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ConversationTy
   use_additional_info_script: XmlElem<boolean>;
 };
 
-type ConversationTypeCatalogDocument = XmlDocument & { TopElem: ConversationTypeCatalogDocumentTopElem; };
+type ConversationTypeCatalogDocument = XmlDocument & {
+  TopElem: ConversationTypeCatalogDocumentTopElem;
+};

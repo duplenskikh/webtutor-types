@@ -20,4 +20,6 @@ AdminAccessBase & {
   experts: XmlElem<string>;
 };
 
-type KpiCatalogDocument = XmlDocument & { TopElem: KpiCatalogDocumentTopElem; };
+type KpiCatalogDocument = XmlDocument & {
+  TopElem: KpiCatalogDocumentTopElem;
+};

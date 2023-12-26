@@ -4,4 +4,6 @@ type SalaryPaymentTypeCatalogDocumentTopElem = XmlTopElem & { Doc: SalaryPayment
   name: XmlElem<string>;
 };
 
-type SalaryPaymentTypeCatalogDocument = XmlDocument & { TopElem: SalaryPaymentTypeCatalogDocumentTopElem; };
+type SalaryPaymentTypeCatalogDocument = XmlDocument & {
+  TopElem: SalaryPaymentTypeCatalogDocumentTopElem;
+};

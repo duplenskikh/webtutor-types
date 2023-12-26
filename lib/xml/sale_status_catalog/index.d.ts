@@ -6,4 +6,6 @@ type SaleStatusCatalogDocumentTopElem = XmlTopElem & { Doc: SaleStatusCatalogDoc
   app_instance_id: XmlElem<string>;
 };
 
-type SaleStatusCatalogDocument = XmlDocument & { TopElem: SaleStatusCatalogDocumentTopElem; };
+type SaleStatusCatalogDocument = XmlDocument & {
+  TopElem: SaleStatusCatalogDocumentTopElem;
+};

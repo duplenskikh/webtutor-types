@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type VacancyReasonCatalogDocument = XmlDocument & { TopElem: VacancyReasonCatalogDocumentTopElem; };
+type VacancyReasonCatalogDocument = XmlDocument & {
+  TopElem: VacancyReasonCatalogDocumentTopElem;
+};

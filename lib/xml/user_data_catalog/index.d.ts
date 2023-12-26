@@ -9,4 +9,6 @@ type UserDataCatalogDocumentTopElem = XmlTopElem & { Doc: UserDataCatalogDocumen
   modification_user_id: XmlElem<number>;
 };
 
-type UserDataCatalogDocument = XmlDocument & { TopElem: UserDataCatalogDocumentTopElem; };
+type UserDataCatalogDocument = XmlDocument & {
+  TopElem: UserDataCatalogDocumentTopElem;
+};

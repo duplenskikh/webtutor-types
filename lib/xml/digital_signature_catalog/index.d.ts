@@ -17,4 +17,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type DigitalSignatureCatalogDocument = XmlDocument & { TopElem: DigitalSignatureCatalogDocumentTopElem; };
+type DigitalSignatureCatalogDocument = XmlDocument & {
+  TopElem: DigitalSignatureCatalogDocumentTopElem;
+};

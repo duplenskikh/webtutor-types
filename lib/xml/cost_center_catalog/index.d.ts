@@ -9,4 +9,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type CostCenterCatalogDocument = XmlDocument & { TopElem: CostCenterCatalogDocumentTopElem; };
+type CostCenterCatalogDocument = XmlDocument & {
+  TopElem: CostCenterCatalogDocumentTopElem;
+};

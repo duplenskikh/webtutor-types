@@ -14,4 +14,6 @@ PersonFillingBase & {
   person_id: XmlElem<number>;
 };
 
-type ChatbotChatCatalogDocument = XmlDocument & { TopElem: ChatbotChatCatalogDocumentTopElem; };
+type ChatbotChatCatalogDocument = XmlDocument & {
+  TopElem: ChatbotChatCatalogDocumentTopElem;
+};

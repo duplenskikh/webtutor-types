@@ -10,4 +10,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type NotificationSystemCatalogDocument = XmlDocument & { TopElem: NotificationSystemCatalogDocumentTopElem; };
+type NotificationSystemCatalogDocument = XmlDocument & {
+  TopElem: NotificationSystemCatalogDocumentTopElem;
+};

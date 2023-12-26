@@ -8,4 +8,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type DnAuditoriumCatalogDocument = XmlDocument & { TopElem: DnAuditoriumCatalogDocumentTopElem; };
+type DnAuditoriumCatalogDocument = XmlDocument & {
+  TopElem: DnAuditoriumCatalogDocumentTopElem;
+};

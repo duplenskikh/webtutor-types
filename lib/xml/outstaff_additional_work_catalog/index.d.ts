@@ -6,4 +6,6 @@ type OutstaffAdditionalWorkCatalogDocumentTopElem = XmlTopElem & { Doc: Outstaff
   app_instance_id: XmlElem<string>;
 };
 
-type OutstaffAdditionalWorkCatalogDocument = XmlDocument & { TopElem: OutstaffAdditionalWorkCatalogDocumentTopElem; };
+type OutstaffAdditionalWorkCatalogDocument = XmlDocument & {
+  TopElem: OutstaffAdditionalWorkCatalogDocumentTopElem;
+};

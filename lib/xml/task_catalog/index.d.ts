@@ -40,4 +40,6 @@ AdminAccessBase & {
   preparation_id: XmlMultiElem<number>;
 };
 
-type TaskCatalogDocument = XmlDocument & { TopElem: TaskCatalogDocumentTopElem; };
+type TaskCatalogDocument = XmlDocument & {
+  TopElem: TaskCatalogDocumentTopElem;
+};

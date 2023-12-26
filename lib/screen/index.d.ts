@@ -34,13 +34,24 @@ declare namespace Screen {
    * @param {string} subject - Текст заголовка.
    * @param {string} type - Тип диалогового окна.
    * @param {string} titles - Наименование кнопок диалогового окна.
+   * @returns {boolean} Результат.
    * @example
    * ```
-   * Screen.MsgBox(UiText.messages.operation_will_be_cancelled, UiText.messages.warning_msg_title, "question", "yes,no");
-   * Screen.MsgBox(UiText.messages.changes_require_server_restart, UiText.messages.info_msg_title, "info");
+   * Screen.MsgBox(
+   *   UiText.messages.operation_will_be_cancelled,
+   *   UiText.messages.warning_msg_title,
+   *   "question",
+   *   "yes,no"
+   * );
+   * Screen.MsgBox(
+   *   UiText.messages.changes_require_server_restart,
+   *   UiText.messages.info_msg_title,
+   *   "info"
+   * );
    * ```
    */
   function MsgBox(message: string, subject: string, type: string, titles: string): boolean;
+
   function Navigate(): void;
   function Print(): void;
   function RemoveLinkedDocByUrl(): void;

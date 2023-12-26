@@ -1,4 +1,5 @@
-type AcquaintCatalogDocumentTopElem = XmlTopElem & { Doc: AcquaintCatalogDocument } & {
+type AcquaintCatalogDocumentTopElem = XmlTopElem & {
+  Doc: AcquaintCatalogDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -17,4 +18,6 @@ type AcquaintCatalogDocumentTopElem = XmlTopElem & { Doc: AcquaintCatalogDocumen
   app_instance_id: XmlElem<string>;
 };
 
-type AcquaintCatalogDocument = XmlDocument & { TopElem: AcquaintCatalogDocumentTopElem; };
+type AcquaintCatalogDocument = XmlDocument & {
+  TopElem: AcquaintCatalogDocumentTopElem;
+};

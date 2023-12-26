@@ -8,4 +8,6 @@ type StatementComponentCatalogDocumentTopElem = XmlTopElem & { Doc: StatementCom
   app_instance_id: XmlElem<string>;
 };
 
-type StatementComponentCatalogDocument = XmlDocument & { TopElem: StatementComponentCatalogDocumentTopElem; };
+type StatementComponentCatalogDocument = XmlDocument & {
+  TopElem: StatementComponentCatalogDocumentTopElem;
+};

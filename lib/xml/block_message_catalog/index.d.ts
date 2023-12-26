@@ -11,4 +11,6 @@ ObjectTypeBase & {
   disp_role_id: XmlMultiElem<string>;
 };
 
-type BlockMessageCatalogDocument = XmlDocument & { TopElem: BlockMessageCatalogDocumentTopElem; };
+type BlockMessageCatalogDocument = XmlDocument & {
+  TopElem: BlockMessageCatalogDocumentTopElem;
+};

@@ -18,4 +18,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
 };
 
-type CertificateCatalogDocument = XmlDocument & { TopElem: CertificateCatalogDocumentTopElem; };
+type CertificateCatalogDocument = XmlDocument & {
+  TopElem: CertificateCatalogDocumentTopElem;
+};

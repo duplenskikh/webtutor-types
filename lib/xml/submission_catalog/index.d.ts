@@ -13,4 +13,6 @@ PersonFillingBase & {
   person_id: XmlElem<number>;
 };
 
-type SubmissionCatalogDocument = XmlDocument & { TopElem: SubmissionCatalogDocumentTopElem; };
+type SubmissionCatalogDocument = XmlDocument & {
+  TopElem: SubmissionCatalogDocumentTopElem;
+};

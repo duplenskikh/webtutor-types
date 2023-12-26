@@ -9,4 +9,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type CareerReserveTypeCatalogDocument = XmlDocument & { TopElem: CareerReserveTypeCatalogDocumentTopElem; };
+type CareerReserveTypeCatalogDocument = XmlDocument & {
+  TopElem: CareerReserveTypeCatalogDocumentTopElem;
+};

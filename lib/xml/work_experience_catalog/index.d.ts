@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type WorkExperienceCatalogDocument = XmlDocument & { TopElem: WorkExperienceCatalogDocumentTopElem; };
+type WorkExperienceCatalogDocument = XmlDocument & {
+  TopElem: WorkExperienceCatalogDocumentTopElem;
+};

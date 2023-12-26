@@ -9,4 +9,6 @@ type BasketCatalogDocumentTopElem = XmlTopElem & { Doc: BasketCatalogDocument } 
   app_instance_id: XmlElem<string>;
 };
 
-type BasketCatalogDocument = XmlDocument & { TopElem: BasketCatalogDocumentTopElem; };
+type BasketCatalogDocument = XmlDocument & {
+  TopElem: BasketCatalogDocumentTopElem;
+};

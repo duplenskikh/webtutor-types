@@ -11,4 +11,6 @@ type CareerPlanCatalogDocumentTopElem = XmlTopElem & { Doc: CareerPlanCatalogDoc
   role_id: XmlMultiElem<number>;
 };
 
-type CareerPlanCatalogDocument = XmlDocument & { TopElem: CareerPlanCatalogDocumentTopElem; };
+type CareerPlanCatalogDocument = XmlDocument & {
+  TopElem: CareerPlanCatalogDocumentTopElem;
+};

@@ -9,4 +9,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type VendorStateCatalogDocument = XmlDocument & { TopElem: VendorStateCatalogDocumentTopElem; };
+type VendorStateCatalogDocument = XmlDocument & {
+  TopElem: VendorStateCatalogDocumentTopElem;
+};

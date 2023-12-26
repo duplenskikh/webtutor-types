@@ -17,4 +17,6 @@ PersonFillingBase & {
   reason_comment: XmlElem<string>;
 };
 
-type CollaboratorScheduleCatalogDocument = XmlDocument & { TopElem: CollaboratorScheduleCatalogDocumentTopElem; };
+type CollaboratorScheduleCatalogDocument = XmlDocument & {
+  TopElem: CollaboratorScheduleCatalogDocumentTopElem;
+};

@@ -7,4 +7,6 @@ ObjectTypeBase & {
   data: XmlElem<string>;
 };
 
-type UiDataCatalogDocument = XmlDocument & { TopElem: UiDataCatalogDocumentTopElem; };
+type UiDataCatalogDocument = XmlDocument & {
+  TopElem: UiDataCatalogDocumentTopElem;
+};

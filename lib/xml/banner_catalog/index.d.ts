@@ -14,4 +14,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type BannerCatalogDocument = XmlDocument & { TopElem: BannerCatalogDocumentTopElem; };
+type BannerCatalogDocument = XmlDocument & {
+  TopElem: BannerCatalogDocumentTopElem;
+};

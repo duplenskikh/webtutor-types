@@ -39,4 +39,6 @@ type StatementCatalogDocumentTopElem = XmlTopElem & { Doc: StatementCatalogDocum
   app_instance_id: XmlElem<string>;
 };
 
-type StatementCatalogDocument = XmlDocument & { TopElem: StatementCatalogDocumentTopElem; };
+type StatementCatalogDocument = XmlDocument & {
+  TopElem: StatementCatalogDocumentTopElem;
+};

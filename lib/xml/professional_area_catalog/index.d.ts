@@ -10,4 +10,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ProfessionalAreaCatalogDocument = XmlDocument & { TopElem: ProfessionalAreaCatalogDocumentTopElem; };
+type ProfessionalAreaCatalogDocument = XmlDocument & {
+  TopElem: ProfessionalAreaCatalogDocumentTopElem;
+};

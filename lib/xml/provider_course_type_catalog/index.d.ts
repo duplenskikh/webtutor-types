@@ -10,4 +10,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ProviderCourseTypeCatalogDocument = XmlDocument & { TopElem: ProviderCourseTypeCatalogDocumentTopElem; };
+type ProviderCourseTypeCatalogDocument = XmlDocument & {
+  TopElem: ProviderCourseTypeCatalogDocumentTopElem;
+};

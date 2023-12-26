@@ -6,4 +6,6 @@ ObjectTypeBase & {
   calc_date: XmlElem<Date>;
 };
 
-type ObjectLinkCatalogDocument = XmlDocument & { TopElem: ObjectLinkCatalogDocumentTopElem; };
+type ObjectLinkCatalogDocument = XmlDocument & {
+  TopElem: ObjectLinkCatalogDocumentTopElem;
+};

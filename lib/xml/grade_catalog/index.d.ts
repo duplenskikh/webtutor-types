@@ -6,4 +6,6 @@ type GradeCatalogDocumentTopElem = XmlTopElem & { Doc: GradeCatalogDocument } & 
   modification_date: XmlElem<Date>;
 };
 
-type GradeCatalogDocument = XmlDocument & { TopElem: GradeCatalogDocumentTopElem; };
+type GradeCatalogDocument = XmlDocument & {
+  TopElem: GradeCatalogDocumentTopElem;
+};

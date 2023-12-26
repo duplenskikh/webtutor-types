@@ -14,4 +14,6 @@ type ObjectVersionCatalogDocumentTopElem = XmlTopElem & { Doc: ObjectVersionCata
   app_instance_id: XmlElem<string>;
 };
 
-type ObjectVersionCatalogDocument = XmlDocument & { TopElem: ObjectVersionCatalogDocumentTopElem; };
+type ObjectVersionCatalogDocument = XmlDocument & {
+  TopElem: ObjectVersionCatalogDocumentTopElem;
+};

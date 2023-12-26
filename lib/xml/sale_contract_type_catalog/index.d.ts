@@ -6,4 +6,6 @@ type SaleContractTypeCatalogDocumentTopElem = XmlTopElem & { Doc: SaleContractTy
   app_instance_id: XmlElem<string>;
 };
 
-type SaleContractTypeCatalogDocument = XmlDocument & { TopElem: SaleContractTypeCatalogDocumentTopElem; };
+type SaleContractTypeCatalogDocument = XmlDocument & {
+  TopElem: SaleContractTypeCatalogDocumentTopElem;
+};

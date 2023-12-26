@@ -7,4 +7,6 @@ type DischargeCatalogDocumentTopElem = XmlTopElem & { Doc: DischargeCatalogDocum
   app_instance_id: XmlElem<string>;
 };
 
-type DischargeCatalogDocument = XmlDocument & { TopElem: DischargeCatalogDocumentTopElem; };
+type DischargeCatalogDocument = XmlDocument & {
+  TopElem: DischargeCatalogDocumentTopElem;
+};

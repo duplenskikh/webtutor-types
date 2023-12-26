@@ -7,4 +7,6 @@ type ChatbotTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ChatbotTypeCatalogD
   changed: XmlElem<boolean>;
 };
 
-type ChatbotTypeCatalogDocument = XmlDocument & { TopElem: ChatbotTypeCatalogDocumentTopElem; };
+type ChatbotTypeCatalogDocument = XmlDocument & {
+  TopElem: ChatbotTypeCatalogDocumentTopElem;
+};

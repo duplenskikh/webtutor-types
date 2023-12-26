@@ -8,4 +8,6 @@ type QaTestSetCatalogDocumentTopElem = XmlTopElem & { Doc: QaTestSetCatalogDocum
   app_instance_id: XmlElem<string>;
 };
 
-type QaTestSetCatalogDocument = XmlDocument & { TopElem: QaTestSetCatalogDocumentTopElem; };
+type QaTestSetCatalogDocument = XmlDocument & {
+  TopElem: QaTestSetCatalogDocumentTopElem;
+};

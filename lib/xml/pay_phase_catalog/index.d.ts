@@ -13,4 +13,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type PayPhaseCatalogDocument = XmlDocument & { TopElem: PayPhaseCatalogDocumentTopElem; };
+type PayPhaseCatalogDocument = XmlDocument & {
+  TopElem: PayPhaseCatalogDocumentTopElem;
+};

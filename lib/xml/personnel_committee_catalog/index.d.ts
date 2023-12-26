@@ -17,4 +17,6 @@ AdminAccessBase & {
   role_id: XmlMultiElem<number>;
 };
 
-type PersonnelCommitteeCatalogDocument = XmlDocument & { TopElem: PersonnelCommitteeCatalogDocumentTopElem; };
+type PersonnelCommitteeCatalogDocument = XmlDocument & {
+  TopElem: PersonnelCommitteeCatalogDocumentTopElem;
+};

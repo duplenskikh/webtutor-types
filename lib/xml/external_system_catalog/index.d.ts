@@ -8,4 +8,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ExternalSystemCatalogDocument = XmlDocument & { TopElem: ExternalSystemCatalogDocumentTopElem; };
+type ExternalSystemCatalogDocument = XmlDocument & {
+  TopElem: ExternalSystemCatalogDocumentTopElem;
+};

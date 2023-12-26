@@ -24,4 +24,6 @@ type PositionCatalogDocumentTopElem = XmlTopElem & { Doc: PositionCatalogDocumen
   app_instance_id: XmlElem<string>;
 };
 
-type PositionCatalogDocument = XmlDocument & { TopElem: PositionCatalogDocumentTopElem; };
+type PositionCatalogDocument = XmlDocument & {
+  TopElem: PositionCatalogDocumentTopElem;
+};

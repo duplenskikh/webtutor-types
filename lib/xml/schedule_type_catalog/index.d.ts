@@ -6,4 +6,6 @@ type ScheduleTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ScheduleTypeCatalo
   is_shedule: XmlElem<boolean>;
 };
 
-type ScheduleTypeCatalogDocument = XmlDocument & { TopElem: ScheduleTypeCatalogDocumentTopElem; };
+type ScheduleTypeCatalogDocument = XmlDocument & {
+  TopElem: ScheduleTypeCatalogDocumentTopElem;
+};

@@ -1,5 +1,6 @@
-type TypicalDevelopmentProgramCatalogDocumentTopElem = XmlTopElem & { Doc: TypicalDevelopmentProgramCatalogDocument } &
+type TypicalDevelopmentProgramCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
+  Doc: TypicalDevelopmentProgramCatalogDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -11,4 +12,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type TypicalDevelopmentProgramCatalogDocument = XmlDocument & { TopElem: TypicalDevelopmentProgramCatalogDocumentTopElem; };
+type TypicalDevelopmentProgramCatalogDocument = XmlDocument & {
+  TopElem: TypicalDevelopmentProgramCatalogDocumentTopElem;
+};

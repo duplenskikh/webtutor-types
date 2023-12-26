@@ -11,4 +11,6 @@ type BossTypeCatalogDocumentTopElem = XmlTopElem & { Doc: BossTypeCatalogDocumen
   operation_id: XmlMultiElem<string>;
 };
 
-type BossTypeCatalogDocument = XmlDocument & { TopElem: BossTypeCatalogDocumentTopElem; };
+type BossTypeCatalogDocument = XmlDocument & {
+  TopElem: BossTypeCatalogDocumentTopElem;
+};

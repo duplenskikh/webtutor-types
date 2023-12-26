@@ -12,4 +12,6 @@ type PersonnelDocumentTypeCatalogDocumentTopElem = XmlTopElem & { Doc: Personnel
   role_id: XmlMultiElem<number>;
 };
 
-type PersonnelDocumentTypeCatalogDocument = XmlDocument & { TopElem: PersonnelDocumentTypeCatalogDocumentTopElem; };
+type PersonnelDocumentTypeCatalogDocument = XmlDocument & {
+  TopElem: PersonnelDocumentTypeCatalogDocumentTopElem;
+};

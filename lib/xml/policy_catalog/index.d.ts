@@ -14,4 +14,6 @@ type PolicyCatalogDocumentTopElem = XmlTopElem & { Doc: PolicyCatalogDocument } 
   state_id: XmlElem<string>;
 };
 
-type PolicyCatalogDocument = XmlDocument & { TopElem: PolicyCatalogDocumentTopElem; };
+type PolicyCatalogDocument = XmlDocument & {
+  TopElem: PolicyCatalogDocumentTopElem;
+};
