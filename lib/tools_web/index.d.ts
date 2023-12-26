@@ -1,4 +1,3 @@
-
 declare namespace tools_web {
   function put_query_string(str: string, name: string): string;
 
@@ -13,7 +12,7 @@ declare namespace tools_web {
    * @param {object} attr - Параметры.
    * @returns {string} Ссылка на документ.
    */
-  function doc_link(attr: Object): string;
+  function doc_link(attr: DocumentDocumentTopElem["attributes"]): string;
 
   function get_object_link(
     objectName: string,
@@ -28,8 +27,11 @@ declare namespace tools_web {
    * @returns {string} Значение языкового параметра.
    */
   function get_web_str(name: string): string;
+
   function get_web_const(sNameParam: string, fldLngParam: unknown): string;
+
   function eval_web_column_const(sNameParam: unknown, fldLngParam: unknown): unknown;
+
   function get_web_desc(sSourceHtml: unknown, oUrl: unknown, _path?: unknown, Env?: unknown): unknown;
 
   /**
