@@ -2397,32 +2397,225 @@ declare namespace tools {
     workflowDocumentTopElem?: WorkflowDocumentTopElem
   ): string;
 
-  function update_document_persons(_obj_id: unknown, _obj_doc: unknown): unknown;
-  function get_period_from_iso(_period: unknown): unknown;
-  function get_notification_document(oDocumentParam: unknown): unknown;
-  function get_cost_center_id_by_person_id(_personId: number, personDocument: CollaboratorDocument): unknown;
-  function get_cost_center_boss_by_person_id(_personId: number, personDocument: CollaboratorDocument): unknown;
-  function get_sub_boss_by_sub_id(_sub_id: unknown): unknown;
-  function get_time(_str: unknown, _minite_flag: unknown, _second_flag: unknown): unknown;
-  function enable_log_web_request(_flag: unknown): unknown;
-  function get_field_title(_field: unknown, curLngWeb: unknown): unknown;
-  function fill_field_names(
-    FIELD_NAMES: unknown,
-    FORM: unknown,
-    ISCATALOG: unknown,
-    EVALPATH: unknown,
-    PRETITLE: unknown,
-    CUSTOMFIELDSTYPEID: unknown
+  /**
+   * Используется для обновления данных по редактированию разделов на закладке
+   * «Редактирование разделов» в администраторе в разделе портала.
+   * Обновления происходят во всех дочерних элементов портала.
+   * @param {number} objectId - ID измененного документа.
+   * @param {T} topElem - TopElem измененного документа.
+   * @returns {number} Количество изменённых дочерних элементов.
+   */
+  function update_document_persons<T extends XmlTopElem>(objectId: number, topElem: T): number;
+
+  /**
+   * Возвращает продолжительность периода времени в миллисекундах,
+   * преобразованную из XML-тега period.
+   * Время в теге задано в формате P5Y2M10DT15H30M45S по ГОСТ ИСО 8601-2001.
+   * Используется для разбора результатов курса.
+   * @param {string} period - Строка с указанием продолжительности периода времени вида "P5Y2M10DT15H30M45S".
+   * Примечание. "P5Y2M10DT15H30M45S" – пример обозначения периода времени по ГОСТ ИСО 8601-2001 СИБИД.
+   * Представление дат и времени. Общие требования (п. 4.3-4.4).
+   * Условные обозначения:
+   * P (period) – период времени;
+   * Y (years) – количество лет (5Y – 5 лет);
+   * M (months) – количество месяцев (2M – 2 месяца);
+   * D (days) – количество дней (10D – 10 дней);
+   * T (time) – время в пределах суток;
+   * H (hours) – количество часов (от 0 до 23) (15H – 15 часов);
+   * M (minutes) – количество минут (от 0 до 59) (30M – 30 минут);
+   * S (seconds) – количество секунд (от 0 до 59) (45S – 45 секунд).
+   * @returns {number} Длительность в миллисекундах.
+   */
+  function get_period_from_iso(period: string): number;
+
+  /**
+   * Возвращает ID самого верхнего иерархии документа портала, на который разрешена подписка,
+   * относительно текущего документа.
+   * Используется для отправки сообщений об изменении документа портала.
+   * @param {number} documentId - ID документа для которого происходит поиск документов верхнего уровня.
+   * @returns {number | null} ID самого верхнего иерархии документа портала,
+   * на который разрешена подписка, относительно текущего документа или Null если такой документ не найден.
+   */
+  function get_notification_document(documentId: number | DocumentDocument): number | null;
+
+  /**
+   * Возвращает ID самого верхнего иерархии документа портала, на который разрешена подписка,
+   * относительно текущего документа.
+   * Используется для отправки сообщений об изменении документа портала.
+   * @param {DocumentDocumentTopElem} topElem - TopElem документа для которого происходит поиск
+   * документов верхнего уровня.
+   * @returns {number | null} ID самого верхнего иерархии документа портала,
+   * на который разрешена подписка, относительно текущего документа или Null если такой документ не найден.
+   */
+  function get_notification_document(topElem: DocumentDocument): number | null;
+
+  /**
+   * Функция возвращает ID центра затрат сотрудника, указанного в качестве аргумента.
+   * Если такой центр затрат не найден, то функция возвращает ID центра затрат,
+   * указанного в общих настройках.
+   * @param {number} personId - ID сотрудника, для которого производится поиск центра затрат.
+   * @param {CollaboratorDocumentTopElem} [personDocumentTopElem] - TopElem сотрудника,
+   * для которого производится поиск центра затрат.
+   * @returns {number} ID центра затрат указанного сотрудника.
+   * Если центр затрат не найден, то возвращает ID центра затрат, указанного в общих настройках.
+   */
+  function get_cost_center_id_by_person_id(
+    personId: number,
+    personDocumentTopElem?: CollaboratorDocumentTopElem
+  ): number;
+
+  /**
+   * Возвращает массив руководителей (руководителей по должности) центра затрат указанного сотрудника.
+   * Если указанные руководители не найдены, то возвращается пустой массив.
+   * @param {number} personId - ID сотрудника, для которого производится поиск руководителей центра затрат.
+   * @param {CollaboratorDocumentTopElem} [personDocumentTopElem] - TopElem сотрудника,
+   * для которого производится поиск руководителей центра затрат.
+   * @returns {CollaboratorCatalogDocument[]} Массив каталожных записей сотрудников,
+   * являющихся руководителями центра затрат указанного сотрудника.
+   */
+  function get_cost_center_boss_by_person_id(
+    personId: number,
+    personDocumentTopElem: CollaboratorDocumentTopElem
+  ): CollaboratorCatalogDocument[];
+
+  /**
+   * Возвращает массив руководителей (руководителей по должности) центра затрат указанного сотрудника.
+   * Если указанные руководители не найдены, то возвращается пустой массив.
+   * @param {number} subdivisionId - ID подразделения, для которого происходит поиск руководителей.
+   * @returns {number} Массив ID руководителей (руководителей по должности) указанного подразделения.
+   * @example
+   * ```
+   * // Пусть в системе имеется подразделение «IT отдел»
+   * // Находим программно подразделение «IT отдел» с помощью функции tools.get_doc_by_key
+   * oSub = tools.get_doc_by_key ( 'subdivision', 'name', 'IT отдел' );
+   * // на экран выводится информация об отобранном подразделении
+   * alert("Найдено подразделение " + oSub.TopElem.name + " с идентификационным номером " + oSub.TopElem.id);
+   * arrBoss = tools.get_sub_boss_by_sub_id ( oSub.TopElem.id );
+   * alert ( ArrayCount (arrBoss) ); // возвращает количество элементов массива
+   * str = "Руководители подразделения " + oSub.TopElem.name + ": \n";
+   * for (elem in arrBoss) // выводит информацию об элементах массива
+   * {
+   *      // Находим руководителя по его ID с помощью функции tools.get_doc_by_key
+   *      iCollab_id = elem;
+   *      oCollab = tools.get_doc_by_key ( 'collaborator', 'id', iCollab_id );
+   *      str = str + ' - ' + oCollab.TopElem.fullname + '\n';
+   * }
+   * alert ( str );
+   * ```
+   */
+  function get_sub_boss_by_sub_id(subdivisionId: number): number[];
+
+  /**
+   * Функция разработана для проверки данных времени в строке, полученной из внешнего источника.
+   * Возвращает строку со временем (часами и/или минутами и/или секундами) из строки времени,
+   * разделенной символами «:». Принимается строка вида '23:58:56'.
+   * Если строка будет некорректной – например, вида '33:58:56', функция возвращает значение null.
+   * Если в исходной строке передается неполное значение времени
+   * (без указания количества минут или секунд), то в зависимости от значения аргументов
+   * minite_flag и second_flag функция дополняет время значением ':00' или возвращает значение null.
+   * @deprecated
+   * @param {string} value - Исходная строка для разбора.
+   * @param {boolean} [checkMinutes=false] - Указывает на необходимость проверки наличия минут в исходной строке.
+   * Например, если в исходной строке имеется значение '23', а minite_flag = true,
+   * то функция выдаст значение null, а при minite_flag = false – значение '23:00'.
+   * @param {boolean} [checkSeconds=false] - Указывает на необходимость проверки наличия секунд в исходной строке.
+   * @returns {string | null} Строка с откорректированным значением времени или значение null.
+   */
+  function get_time(value: string, checkMinutes: boolean, checkSeconds: boolean): string;
+
+  /**
+   * Включает или выключает журнал веб-запросов.
+   * @param {boolean} isEnable - Включить (true) / выключить (false) журнал веб-запросов.
+   */
+  function enable_log_web_request(isEnable: boolean): void;
+
+  /**
+   * Возвращает название поле из тега TITLE xmd или xml формы для указанного языка.
+   * Если в теге есть «const=», то производится поиск значения указанного после «=» среди констант языка.
+   * Если в константах значение не найдено, то возвращается, то, что указано после «const=».
+   * Если «const=» не указано, то возвращается значение тега TITLE.
+   * @param {T} field - Объект, представляющий собой XML поле, для которого нужно взять название.
+   * @param {K} curLngWeb - Текущий язык, если не указан, берется язык пользовательского интерфейса
+   * в администраторе. При вызове на портале параметр обязателен.
+   * @returns {string} Название поле из тега TITLE xmd или xml формы для указанного языка.
+   */
+  function get_field_title<T extends XmlElem<unknown, unknown>, K extends XmlElem<unknown, unknown>>(
+    field: T,
+    curLngWeb?: K
   ): unknown;
+
+  /**
+   * Заполняет структуру полей (из объекта или из каталога) для использования в формах выбора условий.
+   * Применяется в диалогах построения фильтров, настраиваемых отчетах и т.д.
+   * @param {XmlElem<FieldNamesBase>} fieldNames - Структура полей.
+   * @param {T} form - Форма источника (объект или каталог), из которой нужно заполнить данные.
+   * @param {boolean} [isCatalog=true] - Аргумент, определяющий тип источника (объект или каталог)
+   * (true – в качестве источника используется каталог, false – в качестве источника используется объект).
+   * @param {K} [evalPath] - XML-элемент в структуре field_names внутри элемента, который нужно заполнять.
+   * Задается в случае, если нужно заполнить один из дочерних элементов field_names,
+   * вложенных в элемент первого уровня field_names.
+   * @param {string} [prefix] - Префикс, который добавляется к названию полей в источнике form
+   * при заполнении структуры field_names. Атрибут передается, если нужно, например,
+   * заполнить значения по ключу данными типа multiple из дочернего элемента источника form.
+   */
+  function fill_field_names<
+    T extends XmlElem<unknown, unknown>,
+    K extends XmlElem<unknown, unknown>,
+  >(
+    fieldNames: XmlElem<FieldNamesBase>,
+    form: T,
+    isCatalog?: boolean,
+    evalPath?: K,
+    prefix?: string
+  ): void;
+
+  /**
+   * Возвращает результат выполнения функции eval, определяемый формулой evalstr и
+   * другими атрибутами вызова функции.
+   * @param {Date} [SRC1=Date()] - Поле-источник для передачи даты в формулу evalstr.
+   * Если в качестве данного аргумента будет передана пустая строка (''),
+   * то результатом будут текущие дата и время.
+   * @param {Date} [SRC2=Date()] - Второе поле-источник для передачи даты в формулу evalstr.
+   * Если в качестве данного аргумента будет передана пустая строка (''),
+   * то результатом будут текущие дата и время.
+   * @param {string} EVALSTR - Строковое выражение формулы, выполняемой в функции eval.
+   * @param {string} PARAM1 - Атрибут, в который можно записать промежуточное значение,
+   * а потом вызвать его в другом месте с помощью выражения @1.
+   * В составе данного атрибута можно также использовать источники src1 и src2 в форме выражений #1 и #2,
+   * соответственно.
+   * @param {string} PARAM2 - Атрибут, в который можно записать промежуточное значение,
+   * а потом вызвать его в другом месте с помощью выражения @2.
+   * В составе данного атрибута можно использовать источники src1 и src2 в форме выражений #1 и #2,
+   * соответственно.
+   * @param {string} PARAM3 - Атрибут, в который можно записать промежуточное значение,
+   * а потом вызвать его в другом месте с помощью выражения @3.
+   * В составе данного атрибута можно использовать источники src1 и src2 в форме выражений #1 и #2,
+   * соответственно.
+   * @returns {string} Результат выполнения формулы, заданной атрибутом evalstr.
+   */
   function DateFunc(
-    SRC1: unknown,
-    SRC2: unknown,
-    EVALSTR: unknown,
-    PARAM1: unknown,
-    PARAM2: unknown,
-    PARAM3: unknown
-  ): unknown;
-  function get_report_storage_field(sDatatype: unknown): unknown;
+    SRC1: Date,
+    SRC2: Date,
+    EVALSTR: string,
+    PARAM1: string,
+    PARAM2: string,
+    PARAM3: string
+  ): string;
+
+  /**
+   * Используется в настраиваемых отчетах для возврата названия тега,
+   * в котором хранится значение по типу данных этого значения.
+   * Начение затем может быть показано пользователю в ячейке отчета.
+   * @param {string} type - Тип данных.
+   * @returns {string} Название тега, в котором хранится значение указанного типа.
+   * Предусмотрены следующие возвращаемые значения:
+   * - "vi" – для значения аргумента "integer";
+   * - "vn" – для значения аргумента "real";
+   * - "vd" – для значения аргумента "date";
+   * - "vb" – для значения аргумента "bool";
+   * - "vs" – для значений аргумента, отличных от допустимых.
+   */
+  function get_report_storage_field(type: "integer" | "real" | "date" | "bool"): string;
 
   /**
    * Запускает построение настраиваемого отчета.
