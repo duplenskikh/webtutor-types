@@ -31,4 +31,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type LearningRecordCatalogDocument = XmlDocument & { TopElem: LearningRecordCatalogDocumentTopElem; };
+type LearningRecordCatalogDocument = XmlDocument & {
+  TopElem: LearningRecordCatalogDocumentTopElem;
+};

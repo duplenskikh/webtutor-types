@@ -15,4 +15,6 @@ type ComponentPackageCatalogDocumentTopElem = XmlTopElem & { Doc: ComponentPacka
   experts: XmlElem<string>;
 };
 
-type ComponentPackageCatalogDocument = XmlDocument & { TopElem: ComponentPackageCatalogDocumentTopElem; };
+type ComponentPackageCatalogDocument = XmlDocument & {
+  TopElem: ComponentPackageCatalogDocumentTopElem;
+};

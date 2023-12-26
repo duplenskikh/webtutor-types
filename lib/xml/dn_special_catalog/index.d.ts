@@ -7,4 +7,6 @@ type DnSpecialCatalogDocumentTopElem = XmlTopElem & { Doc: DnSpecialCatalogDocum
   app_instance_id: XmlElem<string>;
 };
 
-type DnSpecialCatalogDocument = XmlDocument & { TopElem: DnSpecialCatalogDocumentTopElem; };
+type DnSpecialCatalogDocument = XmlDocument & {
+  TopElem: DnSpecialCatalogDocumentTopElem;
+};

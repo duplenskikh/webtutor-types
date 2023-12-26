@@ -15,4 +15,6 @@ type WebModeCatalogDocumentTopElem = XmlTopElem & { Doc: WebModeCatalogDocument 
   role_id: XmlMultiElem<number>;
 };
 
-type WebModeCatalogDocument = XmlDocument & { TopElem: WebModeCatalogDocumentTopElem; };
+type WebModeCatalogDocument = XmlDocument & {
+  TopElem: WebModeCatalogDocumentTopElem;
+};

@@ -24,4 +24,6 @@ AdminAccessBase & {
   autoclosing_period: XmlElem<number>;
 };
 
-type PayStageCatalogDocument = XmlDocument & { TopElem: PayStageCatalogDocumentTopElem; };
+type PayStageCatalogDocument = XmlDocument & {
+  TopElem: PayStageCatalogDocumentTopElem;
+};

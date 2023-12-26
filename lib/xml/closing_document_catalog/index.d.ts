@@ -18,4 +18,6 @@ type ClosingDocumentCatalogDocumentTopElem = XmlTopElem & { Doc: ClosingDocument
   docs_comment: XmlElem<string>;
 };
 
-type ClosingDocumentCatalogDocument = XmlDocument & { TopElem: ClosingDocumentCatalogDocumentTopElem; };
+type ClosingDocumentCatalogDocument = XmlDocument & {
+  TopElem: ClosingDocumentCatalogDocumentTopElem;
+};

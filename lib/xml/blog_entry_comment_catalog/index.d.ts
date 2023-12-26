@@ -14,4 +14,6 @@ type BlogEntryCommentCatalogDocumentTopElem = XmlTopElem & { Doc: BlogEntryComme
   app_instance_id: XmlElem<string>;
 };
 
-type BlogEntryCommentCatalogDocument = XmlDocument & { TopElem: BlogEntryCommentCatalogDocumentTopElem; };
+type BlogEntryCommentCatalogDocument = XmlDocument & {
+  TopElem: BlogEntryCommentCatalogDocumentTopElem;
+};

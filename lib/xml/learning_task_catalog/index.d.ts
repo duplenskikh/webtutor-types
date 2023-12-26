@@ -17,4 +17,6 @@ AdminAccessBase & {
   knowledge_parts: XmlElem<string>;
 };
 
-type LearningTaskCatalogDocument = XmlDocument & { TopElem: LearningTaskCatalogDocumentTopElem; };
+type LearningTaskCatalogDocument = XmlDocument & {
+  TopElem: LearningTaskCatalogDocumentTopElem;
+};

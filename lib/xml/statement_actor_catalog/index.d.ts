@@ -13,4 +13,6 @@ type StatementActorCatalogDocumentTopElem = XmlTopElem & { Doc: StatementActorCa
   app_instance_id: XmlElem<string>;
 };
 
-type StatementActorCatalogDocument = XmlDocument & { TopElem: StatementActorCatalogDocumentTopElem; };
+type StatementActorCatalogDocument = XmlDocument & {
+  TopElem: StatementActorCatalogDocumentTopElem;
+};

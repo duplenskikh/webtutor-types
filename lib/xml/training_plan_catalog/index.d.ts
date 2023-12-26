@@ -8,4 +8,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type TrainingPlanCatalogDocument = XmlDocument & { TopElem: TrainingPlanCatalogDocumentTopElem; };
+type TrainingPlanCatalogDocument = XmlDocument & {
+  TopElem: TrainingPlanCatalogDocumentTopElem;
+};

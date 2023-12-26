@@ -11,4 +11,6 @@ type SystemEventCatalogDocumentTopElem = XmlTopElem & { Doc: SystemEventCatalogD
   app_instance_id: XmlElem<string>;
 };
 
-type SystemEventCatalogDocument = XmlDocument & { TopElem: SystemEventCatalogDocumentTopElem; };
+type SystemEventCatalogDocument = XmlDocument & {
+  TopElem: SystemEventCatalogDocumentTopElem;
+};

@@ -8,4 +8,6 @@ type VclassSettingCatalogDocumentTopElem = XmlTopElem & { Doc: VclassSettingCata
   app_instance_id: XmlElem<string>;
 };
 
-type VclassSettingCatalogDocument = XmlDocument & { TopElem: VclassSettingCatalogDocumentTopElem; };
+type VclassSettingCatalogDocument = XmlDocument & {
+  TopElem: VclassSettingCatalogDocumentTopElem;
+};

@@ -17,4 +17,6 @@ AdminAccessBase & {
   experts: XmlElem<string>;
 };
 
-type PollCatalogDocument = XmlDocument & { TopElem: PollCatalogDocumentTopElem; };
+type PollCatalogDocument = XmlDocument & {
+  TopElem: PollCatalogDocumentTopElem;
+};

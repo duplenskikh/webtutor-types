@@ -20,4 +20,6 @@ type OperationCatalogDocumentTopElem = XmlTopElem & { Doc: OperationCatalogDocum
   app_instance_id: XmlElem<string>;
 };
 
-type OperationCatalogDocument = XmlDocument & { TopElem: OperationCatalogDocumentTopElem; };
+type OperationCatalogDocument = XmlDocument & {
+  TopElem: OperationCatalogDocumentTopElem;
+};

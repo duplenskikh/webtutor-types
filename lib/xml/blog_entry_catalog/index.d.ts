@@ -21,4 +21,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type BlogEntryCatalogDocument = XmlDocument & { TopElem: BlogEntryCatalogDocumentTopElem; };
+type BlogEntryCatalogDocument = XmlDocument & {
+  TopElem: BlogEntryCatalogDocumentTopElem;
+};

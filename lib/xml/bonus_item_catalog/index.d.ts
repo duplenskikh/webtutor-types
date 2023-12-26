@@ -10,4 +10,6 @@ AdminAccessBase & {
   result: XmlElem<number>;
 };
 
-type BonusItemCatalogDocument = XmlDocument & { TopElem: BonusItemCatalogDocumentTopElem; };
+type BonusItemCatalogDocument = XmlDocument & {
+  TopElem: BonusItemCatalogDocumentTopElem;
+};

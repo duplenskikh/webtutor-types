@@ -13,4 +13,6 @@ type RemoteCollectionCatalogDocumentTopElem = XmlTopElem & { Doc: RemoteCollecti
   app_instance_id: XmlElem<string>;
 };
 
-type RemoteCollectionCatalogDocument = XmlDocument & { TopElem: RemoteCollectionCatalogDocumentTopElem; };
+type RemoteCollectionCatalogDocument = XmlDocument & {
+  TopElem: RemoteCollectionCatalogDocumentTopElem;
+};

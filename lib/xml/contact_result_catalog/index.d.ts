@@ -9,4 +9,6 @@ AdminAccessBase & {
   is_std: XmlElem<boolean>;
 };
 
-type ContactResultCatalogDocument = XmlDocument & { TopElem: ContactResultCatalogDocumentTopElem; };
+type ContactResultCatalogDocument = XmlDocument & {
+  TopElem: ContactResultCatalogDocumentTopElem;
+};

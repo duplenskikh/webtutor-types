@@ -19,4 +19,6 @@ AccessDocBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type KnowledgePartCatalogDocument = XmlDocument & { TopElem: KnowledgePartCatalogDocumentTopElem; };
+type KnowledgePartCatalogDocument = XmlDocument & {
+  TopElem: KnowledgePartCatalogDocumentTopElem;
+};

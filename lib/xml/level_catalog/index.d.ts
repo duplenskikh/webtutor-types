@@ -10,4 +10,6 @@ type LevelCatalogDocumentTopElem = XmlTopElem & { Doc: LevelCatalogDocument } & 
   app_instance_id: XmlElem<string>;
 };
 
-type LevelCatalogDocument = XmlDocument & { TopElem: LevelCatalogDocumentTopElem; };
+type LevelCatalogDocument = XmlDocument & {
+  TopElem: LevelCatalogDocumentTopElem;
+};

@@ -11,4 +11,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type CheckScheduleCatalogDocument = XmlDocument & { TopElem: CheckScheduleCatalogDocumentTopElem; };
+type CheckScheduleCatalogDocument = XmlDocument & {
+  TopElem: CheckScheduleCatalogDocumentTopElem;
+};

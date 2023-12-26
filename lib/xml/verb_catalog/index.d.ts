@@ -9,4 +9,6 @@ type VerbCatalogDocumentTopElem = XmlTopElem & { Doc: VerbCatalogDocument } & {
   app_instance_id: XmlElem<string>;
 };
 
-type VerbCatalogDocument = XmlDocument & { TopElem: VerbCatalogDocumentTopElem; };
+type VerbCatalogDocument = XmlDocument & {
+  TopElem: VerbCatalogDocumentTopElem;
+};

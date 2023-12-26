@@ -7,4 +7,6 @@ type EventResultTypeCatalogDocumentTopElem = XmlTopElem & { Doc: EventResultType
   app_instance_id: XmlElem<string>;
 };
 
-type EventResultTypeCatalogDocument = XmlDocument & { TopElem: EventResultTypeCatalogDocumentTopElem; };
+type EventResultTypeCatalogDocument = XmlDocument & {
+  TopElem: EventResultTypeCatalogDocumentTopElem;
+};

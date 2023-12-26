@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type DnDisciplineBlockCatalogDocument = XmlDocument & { TopElem: DnDisciplineBlockCatalogDocumentTopElem; };
+type DnDisciplineBlockCatalogDocument = XmlDocument & {
+  TopElem: DnDisciplineBlockCatalogDocumentTopElem;
+};

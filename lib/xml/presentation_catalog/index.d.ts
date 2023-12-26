@@ -6,4 +6,6 @@ ObjectCodeNameBase & {
   modification_date: XmlElem<Date>;
 };
 
-type PresentationCatalogDocument = XmlDocument & { TopElem: PresentationCatalogDocumentTopElem; };
+type PresentationCatalogDocument = XmlDocument & {
+  TopElem: PresentationCatalogDocumentTopElem;
+};

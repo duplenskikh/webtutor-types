@@ -1,4 +1,5 @@
-type ActionReportCatalogDocumentTopElem = XmlTopElem & { Doc: ActionReportCatalogDocument } & {
+type ActionReportCatalogDocumentTopElem = XmlTopElem & {
+  Doc: ActionReportCatalogDocument;
   id: XmlElem<number>;
   type: XmlElem<string>;
   status: XmlElem<string>;
@@ -10,4 +11,6 @@ type ActionReportCatalogDocumentTopElem = XmlTopElem & { Doc: ActionReportCatalo
   create_date: XmlElem<Date>;
 };
 
-type ActionReportCatalogDocument = XmlDocument & { TopElem: ActionReportCatalogDocumentTopElem; };
+type ActionReportCatalogDocument = XmlDocument & {
+  TopElem: ActionReportCatalogDocumentTopElem;
+};

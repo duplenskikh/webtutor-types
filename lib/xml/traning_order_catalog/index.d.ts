@@ -16,4 +16,6 @@ type TraningOrderCatalogDocumentTopElem = XmlTopElem & { Doc: TraningOrderCatalo
   app_instance_id: XmlElem<string>;
 };
 
-type TraningOrderCatalogDocument = XmlDocument & { TopElem: TraningOrderCatalogDocumentTopElem; };
+type TraningOrderCatalogDocument = XmlDocument & {
+  TopElem: TraningOrderCatalogDocumentTopElem;
+};

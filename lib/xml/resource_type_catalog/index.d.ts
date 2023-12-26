@@ -7,4 +7,6 @@ type ResourceTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ResourceTypeCatalo
   role_id: XmlMultiElem<number>;
 };
 
-type ResourceTypeCatalogDocument = XmlDocument & { TopElem: ResourceTypeCatalogDocumentTopElem; };
+type ResourceTypeCatalogDocument = XmlDocument & {
+  TopElem: ResourceTypeCatalogDocumentTopElem;
+};

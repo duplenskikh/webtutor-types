@@ -12,4 +12,6 @@ type WorkflowCatalogDocumentTopElem = XmlTopElem & { Doc: WorkflowCatalogDocumen
   app_instance_id: XmlElem<string>;
 };
 
-type WorkflowCatalogDocument = XmlDocument & { TopElem: WorkflowCatalogDocumentTopElem; };
+type WorkflowCatalogDocument = XmlDocument & {
+  TopElem: WorkflowCatalogDocumentTopElem;
+};

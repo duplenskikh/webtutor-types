@@ -9,4 +9,6 @@ type KpiGroupCatalogDocumentTopElem = XmlTopElem & { Doc: KpiGroupCatalogDocumen
   app_instance_id: XmlElem<string>;
 };
 
-type KpiGroupCatalogDocument = XmlDocument & { TopElem: KpiGroupCatalogDocumentTopElem; };
+type KpiGroupCatalogDocument = XmlDocument & {
+  TopElem: KpiGroupCatalogDocumentTopElem;
+};

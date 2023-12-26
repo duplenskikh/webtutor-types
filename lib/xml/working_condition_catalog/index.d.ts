@@ -31,4 +31,6 @@ PersonFillingBase & {
   shifts_number: XmlElem<number>;
 };
 
-type WorkingConditionCatalogDocument = XmlDocument & { TopElem: WorkingConditionCatalogDocumentTopElem; };
+type WorkingConditionCatalogDocument = XmlDocument & {
+  TopElem: WorkingConditionCatalogDocumentTopElem;
+};

@@ -1,4 +1,5 @@
-type LibraryMaterialSourceTypeCatalogDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialSourceTypeCatalogDocument } & {
+type LibraryMaterialSourceTypeCatalogDocumentTopElem = XmlTopElem & {
+  Doc: LibraryMaterialSourceTypeCatalogDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -12,4 +13,6 @@ type LibraryMaterialSourceTypeCatalogDocumentTopElem = XmlTopElem & { Doc: Libra
   app_instance_id: XmlElem<string>;
 };
 
-type LibraryMaterialSourceTypeCatalogDocument = XmlDocument & { TopElem: LibraryMaterialSourceTypeCatalogDocumentTopElem; };
+type LibraryMaterialSourceTypeCatalogDocument = XmlDocument & {
+  TopElem: LibraryMaterialSourceTypeCatalogDocumentTopElem;
+};

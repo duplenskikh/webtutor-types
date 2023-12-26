@@ -29,7 +29,7 @@ interface Stream {
   /**
    * Конструктор объекта FileStream, позволяющего читать данные из файла на диске.
    * @param filePath - Путь к файлу (или url).
-   *
+   * @returns {FileStream}
    * @example
    * fileStream = new FileStream( 'C:\\Temp\\xxx.txt' );
    * while ( true )

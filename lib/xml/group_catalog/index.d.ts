@@ -20,4 +20,6 @@ AccessDocBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type GroupCatalogDocument = XmlDocument & { TopElem: GroupCatalogDocumentTopElem; };
+type GroupCatalogDocument = XmlDocument & {
+  TopElem: GroupCatalogDocumentTopElem;
+};

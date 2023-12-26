@@ -7,4 +7,6 @@ type CustomWebTemplateGroupCatalogDocumentTopElem = XmlTopElem & { Doc: CustomWe
   app_instance_id: XmlElem<string>;
 };
 
-type CustomWebTemplateGroupCatalogDocument = XmlDocument & { TopElem: CustomWebTemplateGroupCatalogDocumentTopElem; };
+type CustomWebTemplateGroupCatalogDocument = XmlDocument & {
+  TopElem: CustomWebTemplateGroupCatalogDocumentTopElem;
+};

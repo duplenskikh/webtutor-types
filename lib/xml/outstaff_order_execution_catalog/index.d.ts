@@ -23,4 +23,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type OutstaffOrderExecutionCatalogDocument = XmlDocument & { TopElem: OutstaffOrderExecutionCatalogDocumentTopElem; };
+type OutstaffOrderExecutionCatalogDocument = XmlDocument & {
+  TopElem: OutstaffOrderExecutionCatalogDocumentTopElem;
+};

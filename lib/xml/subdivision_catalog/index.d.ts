@@ -18,4 +18,6 @@ type SubdivisionCatalogDocumentTopElem = XmlTopElem & { Doc: SubdivisionCatalogD
   app_instance_id: XmlElem<string>;
 };
 
-type SubdivisionCatalogDocument = XmlDocument & { TopElem: SubdivisionCatalogDocumentTopElem; };
+type SubdivisionCatalogDocument = XmlDocument & {
+  TopElem: SubdivisionCatalogDocumentTopElem;
+};

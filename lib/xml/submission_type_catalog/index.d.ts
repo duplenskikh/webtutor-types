@@ -5,4 +5,6 @@ type SubmissionTypeCatalogDocumentTopElem = XmlTopElem & { Doc: SubmissionTypeCa
   periodity_id: XmlElem<string>;
 };
 
-type SubmissionTypeCatalogDocument = XmlDocument & { TopElem: SubmissionTypeCatalogDocumentTopElem; };
+type SubmissionTypeCatalogDocument = XmlDocument & {
+  TopElem: SubmissionTypeCatalogDocumentTopElem;
+};

@@ -21,4 +21,6 @@ type ExpenseCatalogDocumentTopElem = XmlTopElem & { Doc: ExpenseCatalogDocument 
   docs_comment: XmlElem<string>;
 };
 
-type ExpenseCatalogDocument = XmlDocument & { TopElem: ExpenseCatalogDocumentTopElem; };
+type ExpenseCatalogDocument = XmlDocument & {
+  TopElem: ExpenseCatalogDocumentTopElem;
+};

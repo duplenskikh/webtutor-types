@@ -13,4 +13,6 @@ type OrderCatalogDocumentTopElem = XmlTopElem & { Doc: OrderCatalogDocument } & 
   app_instance_id: XmlElem<string>;
 };
 
-type OrderCatalogDocument = XmlDocument & { TopElem: OrderCatalogDocumentTopElem; };
+type OrderCatalogDocument = XmlDocument & {
+  TopElem: OrderCatalogDocumentTopElem;
+};

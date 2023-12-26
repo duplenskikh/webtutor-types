@@ -8,4 +8,6 @@ ObjectCodeNameBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type CodeLibraryCatalogDocument = XmlDocument & { TopElem: CodeLibraryCatalogDocumentTopElem; };
+type CodeLibraryCatalogDocument = XmlDocument & {
+  TopElem: CodeLibraryCatalogDocumentTopElem;
+};

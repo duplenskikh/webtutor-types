@@ -18,4 +18,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type CovenantCatalogDocument = XmlDocument & { TopElem: CovenantCatalogDocumentTopElem; };
+type CovenantCatalogDocument = XmlDocument & {
+  TopElem: CovenantCatalogDocumentTopElem;
+};

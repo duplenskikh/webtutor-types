@@ -12,4 +12,6 @@ type PositionAssessmentFormCatalogDocumentTopElem = XmlTopElem & { Doc: Position
   app_instance_id: XmlElem<string>;
 };
 
-type PositionAssessmentFormCatalogDocument = XmlDocument & { TopElem: PositionAssessmentFormCatalogDocumentTopElem; };
+type PositionAssessmentFormCatalogDocument = XmlDocument & {
+  TopElem: PositionAssessmentFormCatalogDocumentTopElem;
+};

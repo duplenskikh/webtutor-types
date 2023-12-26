@@ -8,4 +8,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type CompetenceBlockCatalogDocument = XmlDocument & { TopElem: CompetenceBlockCatalogDocumentTopElem; };
+type CompetenceBlockCatalogDocument = XmlDocument & {
+  TopElem: CompetenceBlockCatalogDocumentTopElem;
+};

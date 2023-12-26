@@ -13,4 +13,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type KpiProfileCatalogDocument = XmlDocument & { TopElem: KpiProfileCatalogDocumentTopElem; };
+type KpiProfileCatalogDocument = XmlDocument & {
+  TopElem: KpiProfileCatalogDocumentTopElem;
+};

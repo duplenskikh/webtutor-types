@@ -15,4 +15,6 @@ type OrgCatalogDocumentTopElem = XmlTopElem & { Doc: OrgCatalogDocument } & {
   role_id: XmlMultiElem<number>;
 };
 
-type OrgCatalogDocument = XmlDocument & { TopElem: OrgCatalogDocumentTopElem; };
+type OrgCatalogDocument = XmlDocument & {
+  TopElem: OrgCatalogDocumentTopElem;
+};

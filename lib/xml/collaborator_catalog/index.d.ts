@@ -50,4 +50,6 @@ type CollaboratorCatalogDocumentTopElem = XmlTopElem & { Doc: CollaboratorCatalo
   app_instance_id: XmlElem<string>;
 };
 
-type CollaboratorCatalogDocument = XmlDocument & { TopElem: CollaboratorCatalogDocumentTopElem; };
+type CollaboratorCatalogDocument = XmlDocument & {
+  TopElem: CollaboratorCatalogDocumentTopElem;
+};

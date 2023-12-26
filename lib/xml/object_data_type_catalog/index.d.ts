@@ -12,4 +12,6 @@ type ObjectDataTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ObjectDataTypeCa
   app_instance_id: XmlElem<string>;
 };
 
-type ObjectDataTypeCatalogDocument = XmlDocument & { TopElem: ObjectDataTypeCatalogDocumentTopElem; };
+type ObjectDataTypeCatalogDocument = XmlDocument & {
+  TopElem: ObjectDataTypeCatalogDocumentTopElem;
+};

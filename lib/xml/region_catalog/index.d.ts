@@ -7,4 +7,6 @@ type RegionCatalogDocumentTopElem = XmlTopElem & { Doc: RegionCatalogDocument } 
   app_instance_id: XmlElem<string>;
 };
 
-type RegionCatalogDocument = XmlDocument & { TopElem: RegionCatalogDocumentTopElem; };
+type RegionCatalogDocument = XmlDocument & {
+  TopElem: RegionCatalogDocumentTopElem;
+};

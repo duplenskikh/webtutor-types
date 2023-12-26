@@ -14,4 +14,6 @@ type HostCatalogDocumentTopElem = XmlTopElem & { Doc: HostCatalogDocument } & {
   app_instance_id: XmlElem<string>;
 };
 
-type HostCatalogDocument = XmlDocument & { TopElem: HostCatalogDocumentTopElem; };
+type HostCatalogDocument = XmlDocument & {
+  TopElem: HostCatalogDocumentTopElem;
+};

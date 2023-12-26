@@ -11,4 +11,6 @@ type ResponseTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ResponseTypeCatalo
   app_instance_id: XmlElem<string>;
 };
 
-type ResponseTypeCatalogDocument = XmlDocument & { TopElem: ResponseTypeCatalogDocumentTopElem; };
+type ResponseTypeCatalogDocument = XmlDocument & {
+  TopElem: ResponseTypeCatalogDocumentTopElem;
+};

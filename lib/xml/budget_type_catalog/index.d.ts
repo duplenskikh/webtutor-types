@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type BudgetTypeCatalogDocument = XmlDocument & { TopElem: BudgetTypeCatalogDocumentTopElem; };
+type BudgetTypeCatalogDocument = XmlDocument & {
+  TopElem: BudgetTypeCatalogDocumentTopElem;
+};

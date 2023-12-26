@@ -18,4 +18,6 @@ type OverrideWebTemplateCatalogDocumentTopElem = XmlTopElem & { Doc: OverrideWeb
   app_instance_id: XmlElem<string>;
 };
 
-type OverrideWebTemplateCatalogDocument = XmlDocument & { TopElem: OverrideWebTemplateCatalogDocumentTopElem; };
+type OverrideWebTemplateCatalogDocument = XmlDocument & {
+  TopElem: OverrideWebTemplateCatalogDocumentTopElem;
+};

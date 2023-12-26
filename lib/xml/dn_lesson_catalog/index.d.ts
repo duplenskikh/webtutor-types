@@ -15,4 +15,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type DnLessonCatalogDocument = XmlDocument & { TopElem: DnLessonCatalogDocumentTopElem; };
+type DnLessonCatalogDocument = XmlDocument & {
+  TopElem: DnLessonCatalogDocumentTopElem;
+};

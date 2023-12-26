@@ -21,4 +21,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type VacancyResponseCatalogDocument = XmlDocument & { TopElem: VacancyResponseCatalogDocumentTopElem; };
+type VacancyResponseCatalogDocument = XmlDocument & {
+  TopElem: VacancyResponseCatalogDocumentTopElem;
+};

@@ -12,4 +12,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type EstaffEventTypeCatalogDocument = XmlDocument & { TopElem: EstaffEventTypeCatalogDocumentTopElem; };
+type EstaffEventTypeCatalogDocument = XmlDocument & {
+  TopElem: EstaffEventTypeCatalogDocumentTopElem;
+};

@@ -5,4 +5,6 @@ type PolicyTypeCatalogDocumentTopElem = XmlTopElem & { Doc: PolicyTypeCatalogDoc
   provider: XmlElem<string>;
 };
 
-type PolicyTypeCatalogDocument = XmlDocument & { TopElem: PolicyTypeCatalogDocumentTopElem; };
+type PolicyTypeCatalogDocument = XmlDocument & {
+  TopElem: PolicyTypeCatalogDocumentTopElem;
+};

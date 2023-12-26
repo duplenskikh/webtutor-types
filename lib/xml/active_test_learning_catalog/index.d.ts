@@ -34,4 +34,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ActiveTestLearningCatalogDocument = XmlDocument & { TopElem: ActiveTestLearningCatalogDocumentTopElem; };
+type ActiveTestLearningCatalogDocument = XmlDocument & {
+  TopElem: ActiveTestLearningCatalogDocumentTopElem;
+};

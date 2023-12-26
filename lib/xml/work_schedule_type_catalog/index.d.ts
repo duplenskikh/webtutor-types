@@ -4,4 +4,6 @@ type WorkScheduleTypeCatalogDocumentTopElem = XmlTopElem & { Doc: WorkScheduleTy
   name: XmlElem<string>;
 };
 
-type WorkScheduleTypeCatalogDocument = XmlDocument & { TopElem: WorkScheduleTypeCatalogDocumentTopElem; };
+type WorkScheduleTypeCatalogDocument = XmlDocument & {
+  TopElem: WorkScheduleTypeCatalogDocumentTopElem;
+};

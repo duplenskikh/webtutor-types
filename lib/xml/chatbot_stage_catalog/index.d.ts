@@ -8,4 +8,6 @@ type ChatbotStageCatalogDocumentTopElem = XmlTopElem & { Doc: ChatbotStageCatalo
   keyboard_type: XmlElem<string>;
 };
 
-type ChatbotStageCatalogDocument = XmlDocument & { TopElem: ChatbotStageCatalogDocumentTopElem; };
+type ChatbotStageCatalogDocument = XmlDocument & {
+  TopElem: ChatbotStageCatalogDocumentTopElem;
+};

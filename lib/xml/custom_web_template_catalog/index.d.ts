@@ -14,4 +14,6 @@ AccessDocBase & {
   role_id: XmlMultiElem<number>;
 };
 
-type CustomWebTemplateCatalogDocument = XmlDocument & { TopElem: CustomWebTemplateCatalogDocumentTopElem; };
+type CustomWebTemplateCatalogDocument = XmlDocument & {
+  TopElem: CustomWebTemplateCatalogDocumentTopElem;
+};

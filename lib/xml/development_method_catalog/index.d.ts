@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type DevelopmentMethodCatalogDocument = XmlDocument & { TopElem: DevelopmentMethodCatalogDocumentTopElem; };
+type DevelopmentMethodCatalogDocument = XmlDocument & {
+  TopElem: DevelopmentMethodCatalogDocumentTopElem;
+};

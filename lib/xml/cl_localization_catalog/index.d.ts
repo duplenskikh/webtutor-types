@@ -4,4 +4,6 @@ type ClLocalizationCatalogDocumentTopElem = XmlTopElem & { Doc: ClLocalizationCa
   name: XmlElem<string>;
 };
 
-type ClLocalizationCatalogDocument = XmlDocument & { TopElem: ClLocalizationCatalogDocumentTopElem; };
+type ClLocalizationCatalogDocument = XmlDocument & {
+  TopElem: ClLocalizationCatalogDocumentTopElem;
+};

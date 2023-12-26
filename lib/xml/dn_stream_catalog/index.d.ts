@@ -7,4 +7,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type DnStreamCatalogDocument = XmlDocument & { TopElem: DnStreamCatalogDocumentTopElem; };
+type DnStreamCatalogDocument = XmlDocument & {
+  TopElem: DnStreamCatalogDocumentTopElem;
+};

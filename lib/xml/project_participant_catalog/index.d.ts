@@ -28,4 +28,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ProjectParticipantCatalogDocument = XmlDocument & { TopElem: ProjectParticipantCatalogDocumentTopElem; };
+type ProjectParticipantCatalogDocument = XmlDocument & {
+  TopElem: ProjectParticipantCatalogDocumentTopElem;
+};

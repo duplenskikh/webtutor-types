@@ -16,4 +16,6 @@ type SalarySurveyCatalogDocumentTopElem = XmlTopElem & { Doc: SalarySurveyCatalo
   app_instance_id: XmlElem<string>;
 };
 
-type SalarySurveyCatalogDocument = XmlDocument & { TopElem: SalarySurveyCatalogDocumentTopElem; };
+type SalarySurveyCatalogDocument = XmlDocument & {
+  TopElem: SalarySurveyCatalogDocumentTopElem;
+};

@@ -18,4 +18,6 @@ type FactPaymentCatalogDocumentTopElem = XmlTopElem & { Doc: FactPaymentCatalogD
   modification_date: XmlElem<Date>;
 };
 
-type FactPaymentCatalogDocument = XmlDocument & { TopElem: FactPaymentCatalogDocumentTopElem; };
+type FactPaymentCatalogDocument = XmlDocument & {
+  TopElem: FactPaymentCatalogDocumentTopElem;
+};

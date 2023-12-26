@@ -22,4 +22,6 @@ PersonFillingBase & {
   participants_id: XmlMultiElem<number>;
 };
 
-type ConversationCatalogDocument = XmlDocument & { TopElem: ConversationCatalogDocumentTopElem; };
+type ConversationCatalogDocument = XmlDocument & {
+  TopElem: ConversationCatalogDocumentTopElem;
+};

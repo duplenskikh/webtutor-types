@@ -17,4 +17,6 @@ type EventAssessmentPlanCatalogDocumentTopElem = XmlTopElem & { Doc: EventAssess
   app_instance_id: XmlElem<string>;
 };
 
-type EventAssessmentPlanCatalogDocument = XmlDocument & { TopElem: EventAssessmentPlanCatalogDocumentTopElem; };
+type EventAssessmentPlanCatalogDocument = XmlDocument & {
+  TopElem: EventAssessmentPlanCatalogDocumentTopElem;
+};

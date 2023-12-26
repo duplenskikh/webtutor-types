@@ -49,3 +49,14 @@ type Extract<T, U> = T extends U ? T : never;
  * Construct a type with the properties of T except for those in type K.
  */
 type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
+
+/**
+ * Obtain the return type of a function type.
+ */
+type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
+
+/**
+ * Obtain the return type of a constructor function type.
+ */
+// eslint-disable-next-line max-len
+type InstanceType<T extends abstract new (...args: any) => any> = T extends abstract new (...args: any) => infer R ? R : any;

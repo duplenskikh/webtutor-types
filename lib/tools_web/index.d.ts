@@ -4,12 +4,14 @@ declare namespace tools_web {
 
   /**
    * Путь до wt/web директории сервера.
+   * @returns {string} Путь.
    */
   function web_url(): string;
 
   /**
    * Ссылка на раздел портала.
    * @param {object} attr - Параметры.
+   * @returns {string} Ссылка на документ.
    */
   function doc_link(attr: Object): string;
 
@@ -23,6 +25,7 @@ declare namespace tools_web {
   /**
    * Получение текстового значения языкового параметра из curLngWeb.
    * @param {string} name - Название параметра.
+   * @returns {string} Значение языкового параметра.
    */
   function get_web_str(name: string): string;
   function get_web_const(sNameParam: string, fldLngParam: unknown): string;
@@ -33,45 +36,138 @@ declare namespace tools_web {
    * Складывает два `id`.
    * @param {number} objectId - Id объекта.
    * @param {number} sid - Id сессии.
+   * @returns {number} Сумма Id объекта и Id сессии.
    */
   function get_sum_sid(objectId: number, sid: number): number;
 
   function check_sum_sid(sIdParam: unknown, sSumParam: unknown, iSessionIdParam: unknown): unknown;
 
-  function custom_elems_filling(fldTarget: unknown, oSourceParam: unknown, arrCustomElemsParam: unknown, oParams: unknown): unknown;
-  function web_custom_elems_filling(_catalog: unknown, _top_id: unknown, _source: unknown, _request_form: unknown, _value_flag: unknown, sCharsetParam: unknown, arrFields: unknown): unknown;
-  function update_object_from_context(docObjectParam: unknown, oContextParam: unknown, arrFieldNamesParam: unknown, sPrefixParam: unknown): unknown;
+  function custom_elems_filling(
+    fldTarget: unknown,
+    oSourceParam: unknown,
+    arrCustomElemsParam: unknown,
+    Params: unknown): unknown;
+  function web_custom_elems_filling(
+    _catalog: unknown,
+    _top_id: unknown,
+    _source: unknown,
+    request_form: unknown,
+    _value_flag: unknown,
+    sCharsetParam: unknown,
+    arrFields: unknown
+  ): unknown;
+  function update_object_from_context(
+    docObjectParam: unknown,
+    oContextParam: unknown,
+    arrFieldNamesParam: unknown,
+    PrefixParam: unknown
+  ): unknown;
   function get_query_string_from_url(sUrlParam: unknown, _flag: unknown, _params: unknown): unknown;
   function get_query_string(_flag: unknown, _params: unknown): unknown;
   function get_url_protocol(_url: unknown): unknown;
   function set_url_protocol(sUrlParam: unknown): unknown;
   function get_cur_lng_name(sTextParam: unknown, sShortIDParam: unknown): unknown;
-  function check_access(doc: XmlTopElem, personId: number, personDoc?: CollaboratorDocumentTopElem, session?: Session): boolean;
-  function get_web_param(listParamsTarget: unknown, sParamNameParam: unknown, sDefaultValueParam: unknown, bEmtyFlagParam: unknown): unknown;
-  function set_web_params(listParamsTarget: unknown, listWvarsParam: unknown, bRewriteFlagParam: unknown, iOverrideWebTemplateIDParam: unknown): unknown;
+  function check_access(
+    doc: XmlTopElem,
+    personId: number,
+    personDoc?: CollaboratorDocumentTopElem,
+    ession?: Session
+  ): boolean;
+  function get_web_param(
+    listParamsTarget: unknown,
+    sParamNameParam: unknown,
+    sDefaultValueParam: unknown,
+    EmtyFlagParam: unknown
+  ): unknown;
+  function set_web_params(
+    listParamsTarget: unknown,
+    listWvarsParam: unknown,
+    bRewriteFlagParam: unknown,
+    OverrideWebTemplateIDParam: unknown
+  ): unknown;
   function write_custom_web_template(oCustomWebTemplateParam: unknown): unknown;
-  function get_override_web_template(iOverrideWebTemplateIDParam: unknown, Session: unknown, curUserID: unknown, curUser: unknown, curAnonymousAccess: unknown, teActiveWebTemplateParam: unknown, bAddingParam: unknown): unknown;
-  function get_override_web_templates(Session: unknown, oZoneParam: unknown, curActiveWebTemplate: unknown, bAddWebTemplate: unknown): unknown;
+  function get_override_web_template(
+    iOverrideWebTemplateIDParam: unknown,
+    Session: unknown,
+    curUserID: unknown,
+    urUser: unknown,
+    curAnonymousAccess: unknown,
+    teActiveWebTemplateParam: unknown,
+    bAddingParam: unknown
+  ): unknown;
+  function get_override_web_templates(
+    Session: unknown,
+    oZoneParam: unknown,
+    curActiveWebTemplate: unknown,
+    AddWebTemplate: unknown
+  ): unknown;
   function place_zone(sZoneParam: unknown): unknown;
   function place_override_web_template(iOverrideWebTemplateIDParam: unknown): unknown;
   function get_operation_script(OPERATION_ID: unknown, S_SCRIPT_TYPE: unknown, O_PARAMS: unknown): unknown;
   function eval_operation_script(OPERATION_ID: unknown, S_SCRIPT_TYPE: unknown, O_PARAMS: unknown): unknown;
   function is_moderator_forum(iForumIDParam: unknown, iUserIDParam: unknown, teForumParam: unknown): unknown;
-  function is_privilege_collaborator(iForumEntryIDParam: unknown, teUserParam: unknown, iUserIDParam: unknown, teForumEntryParam: unknown): unknown;
+  function is_privilege_collaborator(
+    iForumEntryIDParam: unknown,
+    teUserParam: unknown,
+    iUserIDParam: unknown,
+    eForumEntryParam: unknown
+  ): unknown;
   function is_forum_readed(_forum_id: unknown, _user_id: unknown): unknown;
-  function check_forum_entry_access(catForumEntryParam: unknown, teUserParam: unknown, iUserIDParam: unknown, teForumParam: unknown): unknown;
+  function check_forum_entry_access(
+    catForumEntryParam: unknown,
+    teUserParam: unknown,
+    iUserIDParam: unknown,
+    eForumParam: unknown
+  ): unknown;
   function remove_forum_entry(iForumEntryIDParam: unknown): unknown;
   function close_forum_entry(iForumEntryIDParam: unknown): unknown;
   function draw_calendar(_object_name: unknown, _object_value: unknown, format: unknown): unknown;
   function web_files_process(_source_files_doc: unknown): unknown;
   function convert_xhttp_res(_text_area: unknown, _source_desc: unknown): unknown;
-  function get_my_person_object_link_card(CATALOG: unknown, USER_ID: unknown, DOC_HIMSELF: unknown, MAKE_NEW_ON_ABSENCE: unknown): unknown;
-  function get_person_object_info(sCatalogPARAM: unknown, iUserIDPARAM: unknown, teUserPARAM: unknown): unknown;
-  function set_person_object_info(sCatalogPARAM: unknown, iUserIDPARAM: unknown, teUserPARAM: unknown, aObjectsMetaPARAM: unknown): unknown;
+  function get_my_person_object_link_card(
+    CATALOG: unknown,
+    USER_ID:
+    unknown,
+    DOC_HIMSELF: unknown,
+    MAKE_NEW_ON_ABSENCE: unknown
+  ): unknown;
+  function get_person_object_info(
+    sCatalogPARAM: unknown,
+    iUserIDPARAM:
+    unknown,
+    teUserPARAM: unknown
+  ): unknown;
+  function set_person_object_info(
+    sCatalogPARAM: unknown,
+    iUserIDPARAM:
+    unknown,
+    teUserPARAM: unknown,
+    aObjectsMetaPARAM: unknown
+  ): unknown;
   function get_object_owners(iObjectIDPARAM: unknown, sCatalog: unknown): unknown;
-  function insert_custom_code(iCustomWebTemplateID_PARAM: unknown, teCustomWebTemplate_PARAM: unknown, bEval_PARAM: unknown, bNaked_PARAM: unknown, iDepth_PARAM: unknown, aOfFldNativeParamsArr_PARAM: unknown, bExternalEnvelope_PARAM: unknown): unknown;
-  function place_xaml(iCustomWebTemplateID_PARAM: unknown, teCWebTemplate_PARAM: unknown, oPlaceXamlParams_PARAM: unknown): unknown;
-  function place_xaml_player(iCustomWebTemplatePARAM: unknown, curWebDesignPARAM: unknown, Request: unknown, oPlaceXamlParams_PARAM: unknown): unknown;
+  function insert_custom_code(
+    iCustomWebTemplateID_PARAM: unknown,
+    teCustomWebTemplate_PARAM:
+    unknown,
+    bEval_PARAM: unknown,
+    bNaked_PARAM: unknown,
+    iDepth_PARAM: unknown,
+    aOfFldNativeParamsArr_PARAM: unknown,
+    bExternalEnvelope_PARAM: unknown
+  ): unknown;
+  function place_xaml(
+    iCustomWebTemplateID_PARAM: unknown,
+    teCWebTemplate_PARAM:
+    unknown,
+    oPlaceXamlParams_PARAM: unknown
+  ): unknown;
+  function place_xaml_player(
+    iCustomWebTemplatePARAM: unknown,
+    curWebDesignPARAM:
+    unknown,
+    Request: unknown,
+    oPlaceXamlParams_PARAM: unknown
+  ): unknown;
   function convert_xss(text: string, type?: string): string;
 
   /**
@@ -79,8 +175,9 @@ declare namespace tools_web {
    * Global = true
    * IgnoreCase = true
    * MultiLine = true.
+   * @returns {Websoft.RegExp.RegExp} Экземпляр библиотеки.
    */
-  function reg_exp_init(): unknown;
+  function reg_exp_init(): Websoft.RegExp.RegExp;
 
   function convert_bbcode_to_html(sMessageSource: unknown, objRegExp: unknown): unknown;
   function convert_html_to_bbcode(sMessageSource: unknown, objRegExp: unknown): unknown;
@@ -101,7 +198,7 @@ declare namespace tools_web {
   /**
    * Возвращает значение true/false в завимости от передаваемого параметра.
    * @param {T} value - Параметр.
-   * @returns {boolean}
+   * @returns {boolean} Значение аргумента в булевом представлении.
    */
   function is_true<T>(value: T): boolean;
 
@@ -118,14 +215,40 @@ declare namespace tools_web {
    * @param {string} catalogName - Каталог объекта.
    * @param {number} objectId - Id объекта.
    * @param {unknown} oParams - Параметры для определения хоста/сессии/etc.
+   * @returns {string} Url.
    */
   function get_object_source_url(catalogName: string, objectId: number, oParams?: unknown): string;
 
-  function GetTalentPoolObjectsList(iPersonIdParam: unknown, bAddFuncSubordinatesParam: unknown, bHideDissmissedParam: unknown, vBossTypeParam: unknown, iCareerReserveTypeParam: unknown): unknown;
-  function GetRequiredQualificationsList(iPersonIDParam: unknown, sSearchListParam: unknown, bCatalogListParam: unknown): unknown;
-  function get_recommended_materials(iPersonIDParam: unknown, sSearchListParam: unknown, bCatalogListParam: unknown, iRootIDParam: unknown): unknown;
-  function set_var_eval(sVarNamaParam: unknown, curVars: unknown, oEvalParam: unknown, sEvalTypeParam: unknown): unknown;
-  function get_var_eval(sVarNamaParam: unknown, curVars: unknown, oEvalParam: unknown, sEvalTypeParam: unknown): unknown;
+  function GetTalentPoolObjectsList(
+    iPersonIdParam: unknown,
+    bAddFuncSubordinatesParam: unknown,
+    bHideDissmissedParam: unknown,
+    vBossTypeParam: unknown,
+    iCareerReserveTypeParam: unknown
+  ): unknown;
+  function GetRequiredQualificationsList(
+    iPersonIDParam: unknown,
+    sSearchListParam: unknown,
+    bCatalogListParam: unknown
+  ): unknown;
+  function get_recommended_materials(
+    iPersonIDParam: unknown,
+    sSearchListParam: unknown,
+    bCatalogListParam: unknown,
+    iRootIDParam: unknown
+  ): unknown;
+  function set_var_eval(
+    sVarNamaParam: unknown,
+    curVars: unknown,
+    oEvalParam: unknown,
+    sEvalTypeParam: unknown
+  ): unknown;
+  function get_var_eval(
+    sVarNamaParam: unknown,
+    curVars: unknown,
+    oEvalParam: unknown,
+    sEvalTypeParam: unknown
+  ): unknown;
   function convert_desc_to_html(sDescParam: unknown): unknown;
   function get_user_recommended_learning(iUserIdParam: unknown, teUser: unknown): unknown;
 
@@ -140,6 +263,7 @@ declare namespace tools_web {
   /**
    * Получение кэша по коду.
    * @param {string} userDataCode - Код кэша.
+   * @returns {string|null} Значение кэша.
    */
   function get_user_data(userDataCode: string): null | string;
 
@@ -157,20 +281,30 @@ declare namespace tools_web {
   function save_cur_object_doc(docObjectParam: unknown, oEnvParam: unknown): unknown;
   function build_query_url(sUrlPARAM: unknown, sHostAndPathPARAM: unknown): unknown;
   function build_relative_url(sUrlPARAM: unknown): unknown;
-  function set_modified_response_status(oRequestTarget: unknown, sUrlParam: unknown, dtLastModifiedParam: unknown): unknown;
+  function set_modified_response_status(
+    oRequestTarget: unknown,
+    sUrlParam: unknown,
+    dtLastModifiedParam: unknown
+  ): unknown;
   function str_utc_mime_date(dtDateParam: unknown): unknown;
   function get_tracking_url(fldLocationParam: unknown, curHostPath: unknown): unknown;
-  function create_resource_from_attacment(oAttachmentParam: unknown, iPersonIDParam: unknown, tePersonParam: unknown): unknown;
+  function create_resource_from_attacment(
+    oAttachmentParam: unknown,
+    iPersonIDParam: unknown,
+    tePersonParam: unknown
+  ): unknown;
   function get_key_positions_list(iPersonIdParam: unknown, oStructParam: unknown): unknown;
 
   /**
    * Формирует content-type из Url файла.
    * @param {string} url - Url файла.
+   * @returns {string} Content-Type значение.
    */
   function url_std_content_type(url: string): string;
 
   /**
    * Возвращает DOTNETCORE-VFS=='1' из AppConfig.
+   * @returns {boolean} DOTNETCORE-VFS=='1'.
    */
   function is_vfs(): boolean;
 
@@ -182,15 +316,22 @@ declare namespace tools_web {
   function write_url_to_response(url: string, req: Request): void;
 
   /**
-   * Декоратор дял простого шифрования функцией StrSimpleEncrypt({objectId}_{date}).
+   * Декоратор для простого шифрования функцией StrSimpleEncrypt({objectId}_{date}).
    * @param {number} objectId - Id объекта.
    * @param {Date} date - Дата.
+   * @returns {string} Значение StrSimpleEncrypt({objectId}_{date}).
    */
   function encrypt_launch_id(objectId?: number, date?: Date): string;
 
   function decrypt_launch_id(sLaunchIDParam: unknown): unknown;
   function get_valid_url(sUrlParam: unknown): unknown;
-  function get_active_web_template_hash(sModeParam: unknown, sAccessLevelParam: unknown, sAccessRoleParam: unknown, sSiteIDParam: unknown, sWebDesignIDParam: unknown): unknown;
+  function get_active_web_template_hash(
+    sModeParam: unknown,
+    sAccessLevelParam: unknown,
+    sAccessRoleParam: unknown,
+    sSiteIDParam: unknown,
+    sWebDesignIDParam: unknown
+  ): unknown;
   function build_submatched_string(sSourceString: unknown, sRealString: unknown, sDestString: unknown): unknown;
   function get_auth_hash(sSourceParam: unknown): unknown;
   function set_cookie_auth(req: Request, curHost: HostDocumentTopElem, authParam: Object): unknown;
@@ -211,11 +352,28 @@ declare namespace tools_web {
    * Инициализаяция пользователя.
    * @param {Request} req - Объект Request.
    * @param {object} query - Параметры.
+   * @returns {IToolsWebUserInit} Результат инициализации пользователя из запроса.
    */
   function user_init(req: Request, query: Object): IToolsWebUserInit;
 
-  function GetProjectManagementObjectsList(iPersonIDParam: unknown, arrCurLngParam: unknown, bAddFuncSubordinatesParam: unknown, bHideDissmissedParam: unknown, bShowProjectManagersParam: unknown, bOverdueParam: unknown, bProjectTreeParam: unknown, bCheckTaskSeeRightsParam: unknown, vBossTypeParam: unknown, oStructParam: unknown): unknown;
-  function CheckRelativeFileVisibility(fldFileParam: unknown, userId: number, objectId: number, objectTopElem: XmlTopElem): unknown;
+  function GetProjectManagementObjectsList(
+    iPersonIDParam: unknown,
+    arrCurLngParam: unknown,
+    bAddFuncSubordinatesParam: unknown,
+    bHideDissmissedParam: unknown,
+    bShowProjectManagersParam: unknown,
+    bOverdueParam: unknown,
+    bProjectTreeParam: unknown,
+    bCheckTaskSeeRightsParam: unknown,
+    vBossTypeParam: unknown,
+    oStructParam: unknown
+  ): unknown;
+  function CheckRelativeFileVisibility(
+    fldFileParam: unknown,
+    userId: number,
+    objectId: number,
+    objectTopElem: XmlTopElem
+  ): unknown;
   function get_date_passed_string(dDateParam: unknown, sCurLngId: unknown): unknown;
   function get_date_remain_string(dDateParam: unknown, sCurLngId: unknown): unknown;
   function get_host_obj(Request: unknown): unknown;
@@ -229,7 +387,11 @@ declare namespace tools_web {
   function get_profiling_statistic_rec_id(): unknown;
   function start_profiling_record(oParams: unknown): unknown;
   function finish_profiling_record(sID: unknown): unknown;
-  function GetVacancyResponseStatus(obVacancyResponseParam: unknown, iVacancyResponseIDParam: unknown, curLngCommonParam: unknown): unknown;
+  function GetVacancyResponseStatus(
+    obVacancyResponseParam: unknown,
+    iVacancyResponseIDParam: unknown,
+    curLngCommonParam: unknown
+  ): unknown;
   function html_decode(sParam: unknown): unknown;
   function html_to_imput_value(sParam: unknown): unknown;
 
@@ -242,18 +404,58 @@ declare namespace tools_web {
   function str_file_size(iSizeParam: unknown, bDispDefaultParam: unknown): unknown;
   function get_base_url_path(oEnvParam: unknown): unknown;
   function set_base_url_path(sUrlParam: unknown, oEnvParam: unknown): unknown;
-  function get_menu_items(sMenuCodeParam: unknown, iLevelsToShowParam: unknown, bShowDescParam: unknown, iCacheTimeParam: unknown): unknown;
+  function get_menu_items(
+    sMenuCodeParam: unknown,
+    iLevelsToShowParam: unknown,
+    bShowDescParam: unknown,
+    iCacheTimeParam: unknown
+  ): unknown;
   function get_secid(iSessionIdParam: unknown): unknown;
   function check_secid(sSumParam: unknown, iSessionIdParam: unknown): unknown;
   function clear_person_pict_cache(iPersonIDParam: unknown): unknown;
   function get_item_objectives_value(fldItemParam: unknown): unknown;
   function obtain_item_objectives_value(fldTarget: unknown, rValueParam: unknown, sActionParam: unknown): unknown;
-  function send_message(vApplication: unknown, sMessagePARAM: unknown, sDomainPARAM: unknown, aUserPARAM: unknown, oOptionsPARAM: unknown): unknown;
+  function send_message(
+    vApplication: unknown,
+    sMessagePARAM: unknown,
+    sDomainPARAM: unknown,
+    aUserPARAM: unknown,
+    oOptionsPARAM: unknown
+  ): unknown;
   function replace_condition_operators(oConditionsParam: unknown, iValueParam: unknown): unknown;
   function get_header_obj(sHeaderParam: unknown): unknown;
   function get_multipart_array(Request: unknown): unknown;
-  function get_game_rating(curUser: unknown, bCheckLevel: unknown, sCurrencyTypeID: unknown, bAllLevel: unknown, bDispSub: unknown, iSubDepth: unknown, iGrpColl: unknown, oPaging: unknown, curUserID: unknown, bRange: unknown, iAmntCollsRating: unknown, sGap: unknown, bSamePlace: unknown, bShowTopRating: unknown): unknown;
-  function get_game_rating_all(bAllLevel: unknown, bCheckLevel: unknown, iLevelID: number, bDispSub: unknown, iSubdivID: number, iSubdivNum: number, sCurrencyTypeID: unknown, iGrpColl: number, oPaging: Object, bRange: boolean, iAmntCollsRating: number, bSamePlace: boolean, bShowTopRating: boolean): unknown;
+  function get_game_rating(
+    curUser: unknown,
+    bCheckLevel: unknown,
+    sCurrencyTypeID: unknown,
+    bAllLevel: unknown,
+    bDispSub: unknown,
+    iSubDepth: unknown,
+    iGrpColl: unknown,
+    oPaging: unknown,
+    curUserID: unknown,
+    bRange: unknown,
+    iAmntCollsRating: unknown,
+    sGap: unknown,
+    bSamePlace: unknown,
+    bShowTopRating: unknown
+  ): unknown;
+  function get_game_rating_all(
+    bAllLevel: unknown,
+    bCheckLevel: unknown,
+    iLevelID: number,
+    bDispSub: unknown,
+    iSubdivID: number,
+    iSubdivNum: number,
+    sCurrencyTypeID: unknown,
+    iGrpColl: number,
+    oPaging: Object,
+    bRange: boolean,
+    iAmntCollsRating: number,
+    bSamePlace: boolean,
+    bShowTopRating: boolean
+  ): unknown;
   function get_timezone(iObjectId: unknown, catObject: unknown, bReturnNull: unknown): unknown;
   function get_timezone_date(dDate: unknown, catTimeZone1: unknown, catTimeZone2: unknown): unknown;
   function get_class_for_status(sStatus: unknown): unknown;

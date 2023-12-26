@@ -13,4 +13,6 @@ type TenancyCatalogDocumentTopElem = XmlTopElem & { Doc: TenancyCatalogDocument 
   app_instance_id: XmlElem<string>;
 };
 
-type TenancyCatalogDocument = XmlDocument & { TopElem: TenancyCatalogDocumentTopElem; };
+type TenancyCatalogDocument = XmlDocument & {
+  TopElem: TenancyCatalogDocumentTopElem;
+};

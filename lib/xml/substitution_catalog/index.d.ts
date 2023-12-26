@@ -14,4 +14,6 @@ ObjectTypeBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type SubstitutionCatalogDocument = XmlDocument & { TopElem: SubstitutionCatalogDocumentTopElem; };
+type SubstitutionCatalogDocument = XmlDocument & {
+  TopElem: SubstitutionCatalogDocumentTopElem;
+};

@@ -9,4 +9,6 @@ type TaskTypeCatalogDocumentTopElem = XmlTopElem & { Doc: TaskTypeCatalogDocumen
   changed: XmlElem<boolean>;
 };
 
-type TaskTypeCatalogDocument = XmlDocument & { TopElem: TaskTypeCatalogDocumentTopElem; };
+type TaskTypeCatalogDocument = XmlDocument & {
+  TopElem: TaskTypeCatalogDocumentTopElem;
+};

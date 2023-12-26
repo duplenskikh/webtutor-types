@@ -12,4 +12,6 @@ type ProfileCatalogDocumentTopElem = XmlTopElem & { Doc: ProfileCatalogDocument 
   app_instance_id: XmlElem<string>;
 };
 
-type ProfileCatalogDocument = XmlDocument & { TopElem: ProfileCatalogDocumentTopElem; };
+type ProfileCatalogDocument = XmlDocument & {
+  TopElem: ProfileCatalogDocumentTopElem;
+};

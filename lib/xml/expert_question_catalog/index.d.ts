@@ -19,4 +19,6 @@ type ExpertQuestionCatalogDocumentTopElem = XmlTopElem & { Doc: ExpertQuestionCa
   app_instance_id: XmlElem<string>;
 };
 
-type ExpertQuestionCatalogDocument = XmlDocument & { TopElem: ExpertQuestionCatalogDocumentTopElem; };
+type ExpertQuestionCatalogDocument = XmlDocument & {
+  TopElem: ExpertQuestionCatalogDocumentTopElem;
+};

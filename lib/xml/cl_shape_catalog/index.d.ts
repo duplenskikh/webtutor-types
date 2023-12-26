@@ -11,4 +11,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ClShapeCatalogDocument = XmlDocument & { TopElem: ClShapeCatalogDocumentTopElem; };
+type ClShapeCatalogDocument = XmlDocument & {
+  TopElem: ClShapeCatalogDocumentTopElem;
+};

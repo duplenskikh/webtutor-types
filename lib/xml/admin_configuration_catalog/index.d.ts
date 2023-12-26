@@ -9,4 +9,6 @@ type AdminConfigurationCatalogDocumentTopElem = XmlTopElem & { Doc: AdminConfigu
   app_instance_id: XmlElem<string>;
 };
 
-type AdminConfigurationCatalogDocument = XmlDocument & { TopElem: AdminConfigurationCatalogDocumentTopElem; };
+type AdminConfigurationCatalogDocument = XmlDocument & {
+  TopElem: AdminConfigurationCatalogDocumentTopElem;
+};

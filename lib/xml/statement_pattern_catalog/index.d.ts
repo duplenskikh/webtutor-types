@@ -7,4 +7,6 @@ type StatementPatternCatalogDocumentTopElem = XmlTopElem & { Doc: StatementPatte
   app_instance_id: XmlElem<string>;
 };
 
-type StatementPatternCatalogDocument = XmlDocument & { TopElem: StatementPatternCatalogDocumentTopElem; };
+type StatementPatternCatalogDocument = XmlDocument & {
+  TopElem: StatementPatternCatalogDocumentTopElem;
+};

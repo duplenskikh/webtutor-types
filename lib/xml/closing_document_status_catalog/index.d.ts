@@ -6,4 +6,6 @@ type ClosingDocumentStatusCatalogDocumentTopElem = XmlTopElem & { Doc: ClosingDo
   app_instance_id: XmlElem<string>;
 };
 
-type ClosingDocumentStatusCatalogDocument = XmlDocument & { TopElem: ClosingDocumentStatusCatalogDocumentTopElem; };
+type ClosingDocumentStatusCatalogDocument = XmlDocument & {
+  TopElem: ClosingDocumentStatusCatalogDocumentTopElem;
+};

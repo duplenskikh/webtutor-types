@@ -9,4 +9,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type SupplementaryQuestionCatalogDocument = XmlDocument & { TopElem: SupplementaryQuestionCatalogDocumentTopElem; };
+type SupplementaryQuestionCatalogDocument = XmlDocument & {
+  TopElem: SupplementaryQuestionCatalogDocumentTopElem;
+};

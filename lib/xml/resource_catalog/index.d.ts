@@ -27,4 +27,6 @@ AccessDocBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type ResourceCatalogDocument = XmlDocument & { TopElem: ResourceCatalogDocumentTopElem; };
+type ResourceCatalogDocument = XmlDocument & {
+  TopElem: ResourceCatalogDocumentTopElem;
+};

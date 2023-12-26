@@ -11,4 +11,6 @@ type ClVideoCourseCatalogDocumentTopElem = XmlTopElem & { Doc: ClVideoCourseCata
   creation_date: XmlElem<Date>;
 };
 
-type ClVideoCourseCatalogDocument = XmlDocument & { TopElem: ClVideoCourseCatalogDocumentTopElem; };
+type ClVideoCourseCatalogDocument = XmlDocument & {
+  TopElem: ClVideoCourseCatalogDocumentTopElem;
+};

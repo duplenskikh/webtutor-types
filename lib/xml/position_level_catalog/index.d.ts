@@ -6,4 +6,6 @@ type PositionLevelCatalogDocumentTopElem = XmlTopElem & { Doc: PositionLevelCata
   app_instance_id: XmlElem<string>;
 };
 
-type PositionLevelCatalogDocument = XmlDocument & { TopElem: PositionLevelCatalogDocumentTopElem; };
+type PositionLevelCatalogDocument = XmlDocument & {
+  TopElem: PositionLevelCatalogDocumentTopElem;
+};

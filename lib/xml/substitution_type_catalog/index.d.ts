@@ -7,4 +7,6 @@ type SubstitutionTypeCatalogDocumentTopElem = XmlTopElem & { Doc: SubstitutionTy
   role_id: XmlMultiElem<number>;
 };
 
-type SubstitutionTypeCatalogDocument = XmlDocument & { TopElem: SubstitutionTypeCatalogDocumentTopElem; };
+type SubstitutionTypeCatalogDocument = XmlDocument & {
+  TopElem: SubstitutionTypeCatalogDocumentTopElem;
+};

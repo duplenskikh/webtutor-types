@@ -8,4 +8,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type AssessmentResultRecommendCatalogDocument = XmlDocument & { TopElem: AssessmentResultRecommendCatalogDocumentTopElem; };
+type AssessmentResultRecommendCatalogDocument = XmlDocument & {
+  TopElem: AssessmentResultRecommendCatalogDocumentTopElem;
+};

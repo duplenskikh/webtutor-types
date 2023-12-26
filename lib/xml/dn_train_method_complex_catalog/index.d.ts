@@ -13,4 +13,6 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
 };
 
-type DnTrainMethodComplexCatalogDocument = XmlDocument & { TopElem: DnTrainMethodComplexCatalogDocumentTopElem; };
+type DnTrainMethodComplexCatalogDocument = XmlDocument & {
+  TopElem: DnTrainMethodComplexCatalogDocumentTopElem;
+};

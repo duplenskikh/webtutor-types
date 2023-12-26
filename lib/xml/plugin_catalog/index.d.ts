@@ -8,4 +8,6 @@ type PluginCatalogDocumentTopElem = XmlTopElem & { Doc: PluginCatalogDocument } 
   modification_date: XmlElem<Date>;
 };
 
-type PluginCatalogDocument = XmlDocument & { TopElem: PluginCatalogDocumentTopElem; };
+type PluginCatalogDocument = XmlDocument & {
+  TopElem: PluginCatalogDocumentTopElem;
+};

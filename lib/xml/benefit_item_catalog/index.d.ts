@@ -12,4 +12,6 @@ type BenefitItemCatalogDocumentTopElem = XmlTopElem & { Doc: BenefitItemCatalogD
   app_instance_id: XmlElem<string>;
 };
 
-type BenefitItemCatalogDocument = XmlDocument & { TopElem: BenefitItemCatalogDocumentTopElem; };
+type BenefitItemCatalogDocument = XmlDocument & {
+  TopElem: BenefitItemCatalogDocumentTopElem;
+};

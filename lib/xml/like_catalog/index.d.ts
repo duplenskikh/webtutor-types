@@ -12,4 +12,6 @@ type LikeCatalogDocumentTopElem = XmlTopElem & { Doc: LikeCatalogDocument } & {
   app_instance_id: XmlElem<string>;
 };
 
-type LikeCatalogDocument = XmlDocument & { TopElem: LikeCatalogDocumentTopElem; };
+type LikeCatalogDocument = XmlDocument & {
+  TopElem: LikeCatalogDocumentTopElem;
+};
