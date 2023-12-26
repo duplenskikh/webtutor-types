@@ -2568,18 +2568,6 @@ interface WebVariableBaseWvarEntry {
   catalog: XmlElem<string>;
 }
 
-interface WebVariableBaseWvar {
-  name: XmlElem<string>;
-  parent_wvar_name: XmlElem<string>;
-  value: XmlElem<string>;
-  type: XmlElem<string>;
-  catalog: XmlElem<string>;
-  entries: XmlMultiElem<WebVariableBaseWvarEntry>;
-  description: XmlElem<string>;
-  is_modify: XmlElem<boolean>;
-  position: XmlElem<number>;
-}
-
 interface LearningSection {
   id: XmlElem<string>;
   title: XmlElem<string>;

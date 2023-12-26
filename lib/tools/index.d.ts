@@ -2646,32 +2646,172 @@ declare namespace tools {
     metaOnly?: boolean
   ): TaskInfoBase | null;
 
-  function get_sub_hierarchy(NODE_ID: unknown, NODE_CATALOG: unknown, NODE_PARENT_FIELD: unknown): unknown;
-  function process_print_form(oFormParam: unknown, iTopElemParam: unknown, bReturnFilename: unknown): unknown;
+  /**
+   * Возвращает массив каталожных записей всех дочерних объектов указанного объекта,включая его самого.
+   * @param {number} NODE_ID - ID объекта, для которого происходит поиск дочерних объектов.
+   * @param {string} NODE_CATALOG - Название каталога без `s` на конце, в котором производится поиск.
+   * @param {string} NODE_PARENT_FIELD - Название поля, в котором указывается ID родительского элемента.
+   * По умолчанию parent_object_id.
+   * Если название данного поля отличается от принятого по умолчанию,
+   * это название обязательно нужно указать.
+   * @returns {XmlTopElem[]} Массив каталожных записей всех дочерних объектов указанного объекта,
+   * включая его самого.
+   */
+  function get_sub_hierarchy(
+    NODE_ID: number,
+    NODE_CATALOG: string,
+    NODE_PARENT_FIELD: string
+  ): XmlTopElem[];
+
+  /**
+   * Возвращает сформированный на основе кода печатной формы текст печатной формы.
+   * @param {number} formParam - ID печатной формы.
+   * @returns {string} Текст печатной формы.
+   */
+  function process_print_form(formParam: number): string;
+
   function get_user_boss(OBJECT: unknown): unknown;
-  function path_subs_filling(_path_subs: unknown, _personId: number, personDocument: CollaboratorDocument): unknown;
-  function str_time_from_mseconds(_mseconds: unknown): unknown;
-  function person_list_staff_by_person_id(
-    _personID: unknown,
-    _personDoc: unknown,
-    _depth: unknown,
-    _top: unknown,
-    _separator: unknown
+
+  /**
+   * Функция, которая заполняет структуру path_subs в карточке преподавателя,
+   * для отображения пути штатного расписания на основе карточки сотрудника
+   * для внутренних преподавателей.
+   * @param {PathSubBase["path_subs"]} pathSubsElement - Xml структура.
+   * @param {number} personId - ID сотрудника.
+   * @param {CollaboratorDocument} personDocument - TopElem сотрудника.
+   * @returns {PathSubBase["path_subs"]} Заполненная структура {@link PathSubBase["path_subs"]}.
+   */
+  function path_subs_filling(
+    pathSubsElement: PathSubBase["path_subs"],
+    personId: number,
+    personDocument: CollaboratorDocument
   ): unknown;
-  function check_field_name(FIELD: unknown, IS_STRICT_BEGIN: unknown): unknown;
-  function get_doc_type_xmds(iDocTypeIDParam: unknown, teDocTypeParam: unknown): unknown;
-  function generate_doc_type_xmds(DOC_TOPELEM: unknown, DOC_ID: unknown): unknown;
-  function register_doc_type(docDocTypePARAM: unknown, iDocIDParam: unknown): unknown;
-  function create_certificate_to_event(_even_id: unknown, _type_id: unknown, _doc_event: unknown): unknown;
+
+  /**
+   * Функция возвращает строку вида «часы:минуты:секунды.миллисекунды»,
+   * полученную из параметра функции (миллисекунды).
+   * Миллисекунды после «.» в результирующей строке передаются,
+   * если их значение больше нуля.
+   * @param {number} ms - Количество миллисекунд.
+   * @returns {string} Строку вида «часы:минуты:секунды.миллисекунды».
+   */
+  function str_time_from_mseconds(ms: number): string;
+
+  /**
+   * Функция возвращает строку с полным штатным расписанием (без должности).
+   * Штатное расписание разделено указанным в параметрах функции разделителем.
+   * @param {number} personId - ID сотрудника.
+   * @param {CollaboratorDocumentTopElem} personDocumentTopElem - TopElem сотрудника.
+   * @param {number} [depth=0] - Глубина штатного расписания, число, показывающее длину цепочки штатного расписания.
+   * Если 0, то показывается полная цепочка штатного расписания.
+   * @param {string} [top=0] - Параметр направления показа штатного расписания.
+   * Если 0, то штатное расписание рассчитывается 'сверху', то есть от организации.
+   * Если 1, то штатное расписание рассчитывается 'снизу', то есть от должности сотрудника.
+   * Если в параметре _depth задано 0 (полная цепочка),
+   * то параметр направления не учитывается - полная цепочка всегда строится "сверху", от организации.
+   * @param {string} [separator=" -> "] - Если указана пустая строка "",
+   * по умолчанию используется разделитель "" -> "".
+   * @returns {string} Строка с полным штатным расписанием (без должности).
+   */
+  function person_list_staff_by_person_id(
+    personId: number,
+    personDocumentTopElem: CollaboratorDocumentTopElem,
+    depth: number,
+    top: string,
+    separator: string
+  ): string;
+
+  /**
+   * Проверяет, что переданная строка не пустая и не содержит русские буквы
+   * или недопустимые в названии теги XML-символы.
+   * Функция используется для проверки правильности названия полей,
+   * создаваемых пользователем в интерфейсе (настраиваемые поля, настраиваемые типы документов).
+   * @param {string} field - Строковое выражение с названием поля (то, что содержится в поле name, а не title).
+   * @param {boolean} [isStrictBegin=false] - Аргумент, определяющий выполнение проверки на наличие русских букв
+   * или недопустимых в названии тегов XML-символов (true – указанная проверка производится,
+   * false – указанная проверка не производится).
+   * @returns {boolean} Возвращает значение, показывающее,
+   * прошла ли строка указанную проверку (true – проверка пройдена успешно, false – проверка не пройдена).
+   */
+  function check_field_name(field: string, isStrictBegin: boolean): boolean;
+
+  /**
+   * На основе указанного типа настраиваемого документа создает объект,
+   * содержащий в своих полях строковое описание XMD-формы документа и XMD-формы каталога,
+   * а также поле, по которому строится иерархия данного документа.
+   * @param {number} docTypeId - ID типа настраиваемого документа.
+   * @param {DocTypeDocumentTopElem} docTypeTopElem - TopElem типа настраиваемого документа.
+   * @returns {object} Объект, содержащий в поле object_form_str строковое описание XMD-формы документа,
+   * в поле catalog_form_str описание XMD-формы каталога, а также поле hier_field,
+   * по которому строится иерархия данного документа.
+   */
+  function get_doc_type_xmds(docTypeId: number, docTypeTopElem: DocTypeDocumentTopElem): object;
+
+  /**
+   * Проверяется возможность создания настраиваемого документа указанного типа,
+   * после чего можно будет создать XMD-форму документа и XMD-форму каталога.
+   * При вызове функции из интерфейса администратора будут выводиться всплывающие сообщения об ошибках.
+   * @param {DocTypeDocumentTopElem} topElem - TopElem типа настраиваемого документа.
+   * @param {number} documentId - ID типа настраиваемого документа.
+   * @returns {boolean} Возвращает значение true, если можно создать настраиваемый
+   * документ указанного типа, или false - в противном случае.
+   */
+  function generate_doc_type_xmds(topElem: DocTypeDocumentTopElem, documentId: number): boolean;
+
+  /**
+   * На основе указанного типа настраиваемого документа регистрирует в базе объект
+   * по XMD форме документа и XMD форме каталога.
+   * После вызова функции объекты настраиваемого типа документа доступны в базе.
+   * @param {DocTypeDocument} docTypeDocument - Doc типа настраиваемого документа.
+   * @param {number} documentId - ID типа настраиваемого документа.
+   * @returns {object} Объект (object) содержащий следующие поля success
+   * (успешная или неуспешная регистрация нового объекта базы),
+   * object_form_url (url до XMD формы документа),
+   * catalog_form_url (url до XMD формы каталога),
+   * catalog_form_hash (Hash XMD формы каталога),
+   * catalog (названия нового типа документов).
+   */
+  function register_doc_type(docTypeDocument: DocTypeDocument, documentId: number): object;
+
+  /**
+   * Создает сертификаты указанного типа для всех участников указанного мероприятия.
+   * @param {number} eventId - ID мероприятия.
+   * @param {number} typeId - ID типа сертификата.
+   * @param {EventDocument} eventDocument - Документ мероприятия.
+   * @returns {number} Количество созданных сертификатов.
+   */
+  function create_certificate_to_event(eventId: number, typeId: number, eventDocument: EventDocument): number;
+
+  /**
+   * Создает сертификаты указанного типа для указанного сотрудника.
+   * Если указано мероприятие, то сертификат привязывается к указанному мероприятию.
+   * @param {number} personId - ID сотрудника.
+   * @param {number} typeId - ID типа сертификата.
+   * @param {number} eventId - ID мероприятия.
+   * @param {CollaboratorDocumentTopElem} personDocument - TopElem сотрудника.
+   * @param {CertificateTypeDocumentTopElem} certificateTypeTopElem - TopElem типа сертификата.
+   * @param {EventDocument} eventDocument - TopElem мероприятия.
+   * @returns {CertificateDocument} Документ созданного сертификата.
+   */
   function create_certificate_to_person(
-    _personId: number,
-    _type_id: unknown,
+    personId: number,
+    typeId: number,
     eventId: number,
     personDocument: CollaboratorDocument,
-    _type_doc: unknown,
+    certificateTypeTopElem: CertificateTypeDocumentTopElem,
     eventDocument: EventDocument
-  ): unknown;
-  function get_main_forum_entry_by_forum_entry_id(iForumEntryParam: unknown, teForumEntryParam: unknown): unknown;
+  ): CertificateDocument;
+
+  /**
+   * Возвращает ID самой верхней в иерархии родительской статьи форума.
+   * @param {number} forumEntryId - ID статьи форума.
+   * @param {ForumEntryDocumentTopElem} forumEntryTopElem - TopElem статьи форума.
+   * @returns {number} ID самой верхней в иерархии родительской статьи форума.
+   */
+  function get_main_forum_entry_by_forum_entry_id(
+    forumEntryId: number,
+    forumEntryTopElem: ForumEntryDocumentTopElem
+  ): number;
 
   /**
    * Назначение квалификации.
@@ -2738,43 +2878,240 @@ declare namespace tools {
     date: Date
   ): number;
 
-  function save_custom_ui_form(TEMPLATE: unknown): unknown;
-  function get_custom_document_form(CATALOG_NAME: unknown): unknown;
+  /**
+   * Создает xms форму пользовательского интерфейса.
+   * @param {number|XmlTopElem} template - ID или TopElem объекта пользовательский интерфейс.
+   * @returns {boolean} Флаг true – создание успешно завершено, false создание неуспешно.
+   */
+  function save_custom_ui_form(template: number | XmlTopElem): boolean;
+
+  /**
+   * Возвращает XMS-форму (экранную форму) для каталога (указанного в качестве аргумента),
+   * создаваемого из типа настраиваемого документа.
+   * Если для данного типа документа создан свой пользовательский интерфейс,
+   * то документ откроется с использованием этого интерфейса.
+   * В противном случае документ откроется с использованием формы по умолчанию.
+   * @param {string} catalogName - Название каталога, создаваемого из типа настраиваемого документа.
+   * @returns {Screen} XMS-форма в формате SPXML-SCREEN для каталога, создаваемого из типа настраиваемого документа.
+   */
+  function get_custom_document_form(catalogName: string): typeof Screen;
+
   function get_custom_document_data_form_url(sCatalogNameParam: unknown): unknown;
+
+  /**
+   * Функция возвращает строку с полным путем из родительских элементов карты знаний (значений)
+   * без классификатора. Путь разделен указанным в параметрах функции разделителем.
+   * @param {number} knowledgePartId - ID значения, для которого нужно найти пусть.
+   * @param {KnowledgePartDocumentTopElem} knowledgePartTopElem - TopElem значения, для которого нужно найти пусть.
+   * @param {number} [depth=0] - Глубина пути, число, показывающее длину цепочки в пути.
+   * Если 0, то показывается полная цепочка пути.
+   * @param {number} [top=1] - Параметр направления показа пути.
+   * Если 1, то путь рассчитывается "сверху", то есть от классификатора.
+   * Если 0, то путь рассчитывается "снизу", то есть от текущего значения.
+   * @param {string} separator - Разделитель. Если указана пустая строка "",
+   * по умолчанию используется разделитель " -> ".
+   * @returns {string} Строка полным путем из родительских элементов карты знаний (значений) без классификатора.
+   */
   function knowledge_part_path_by_knowledge_part_id(
-    _knowledge_partID: unknown,
-    _knowledge_partDoc: unknown,
-    _depth: unknown,
-    _top: unknown,
-    _separator: unknown
-  ): unknown;
+    knowledgePartId: number,
+    knowledgePartTopElem: KnowledgePartDocumentTopElem,
+    depth: number,
+    top: number,
+    separator: string
+  ): string;
+
   function get_func_manager_substitution(arrFuncManagerParam: unknown, oParams: unknown): unknown;
-  function get_uni_user_bosses(objectParam: unknown, oParams: unknown): unknown;
-  function get_uni_user_boss(objectParam: unknown, oParams: unknown): unknown;
-  function workflow_escalation_process(
-    _source: unknown,
-    _escalation_code: unknown,
-    _workflow_id: unknown,
-    _workflow_doc: unknown,
-    _alterCurObjectID: unknown
-  ): unknown;
-  function get_user_comp_profiles(objectParam: unknown): unknown;
+
+  /**
+   * Возвращает массив ID или список каталожных записей сотрудников,
+   * являющихся непосредственными (фактическими) руководителями указанного объекта
+   * (организации, подразделения, сотрудника) по должности либо функциональными
+   * руководителями из карточки объекта или вышестоящего подразделения,
+   * организации (если они определены для данного типа объекта).
+   * Для сотрудника также учитываются функциональные руководители групп,
+   * в которые данный сотрудник включен.
+   * @param {object} objectParam - Либо ID объекта, либо Doc объекта,
+   * либо TopElem объекта, для которого идет поиск руководителей.
+   * @returns {number[]} Массив ID или список каталожных записей руководителей указанного объекта.
+   */
+  function get_uni_user_bosses(objectParam: object): number[];
+
+  /**
+   * Возвращает каталожную запись сотрудника, являющегося непосредственным (фактическим)
+   * руководителем указанного объекта (организации, подразделения, сотрудника)
+   * по должности либо функциональным руководителем из карточки объекта или вышестоящего подразделения,
+   * организации (если они определены для данного типа объекта).
+   * Для сотрудника также учитывается функциональные руководители групп,
+   * в которые данный сотрудник включен.
+   * По сути возвращается первый руководитель из массива, полученного из функции
+   * tools.get_uni_user_bosses.
+   * @param {number | XmlTopElem} objectParam - Либо ID объекта, либо Doc объекта,
+   * либо TopElem объекта, для которого идет поиск руководителей.
+   * @returns {XmlDocument} Каталожная запись руководителя указанного объекта.
+   */
+  function get_uni_user_boss(objectParam: number | XmlTopElem): XmlDocument;
+
+  /**
+   * Вызов эскалации по документообороту.
+   * @param {T} source - Документ объекта, относительно которого вызывается действие.
+   * @param {string} escalationCode - Код эскалации документооборота.
+   * @param {number} workflowId - ID документооборота.
+   * @param {WorkflowDocumentTopElem} workflowTopElem - TopElem документооборота.
+   * @param {number} alterObjectId - Если эскалация документооборота, это печать печатной формы,
+   * то можно передать в этот параметр ID объекта, который будет передаваться в печатную форму
+   * как object_id.
+   * @returns {true} Флаг всегда true.
+   */
+  function workflow_escalation_process<T extends XmlDocument>(
+    source: T,
+    escalationCode: string,
+    workflowId: number,
+    workflowTopElem: WorkflowDocumentTopElem,
+    alterObjectId: number
+  ): true;
+
+  /**
+   * Возвращает список каталожных записей из профилей компетенции указанного сотрудника.
+   * Данные собираются из кодов профилей, указанных в должности сотрудника,
+   * и из профиля компетенции, указанного в должности сотрудника.
+   * Если в должности сотрудника не найдены профили компетенции,
+   * то берется профиль из типовой должности, привязанной к должности сотрудника
+   * (если такая связь имеется).
+   * @param {number|object|XmlTopElem} objectParam - ID сотрудника, либо документ сотрудника,
+   * либо TopElem сотрудника.
+   * @returns {number[]} Список каталожных записей из профилей компетенции, указанного сотрудника.
+   */
+  function get_user_comp_profiles(objectParam: number | object| XmlTopElem): number[];
+
   function get_package_log(sUrlPackageParam: unknown, oParam: unknown): unknown;
-  function package_log_filling(fldPackageTarget: unknown, fldSourceParam: unknown): unknown;
-  function wvars_to_script(listWVarsPARAM: unknown, bWarily: unknown): unknown;
-  function wvars_to_object(listWVarsPARAM: unknown): unknown;
-  function copy_directory(sSourceDirPARAM: unknown, sDestDirPARAM: unknown): unknown;
-  function send_event_notifications(eventId: number, _doc_event: unknown, send_type: unknown): unknown;
-  function create_object_version(oDocParam: unknown): unknown;
+
+  /**
+   * Заполняет пакет данными из пакета источника.
+   * Возвращает количество обработанных объектов в пакете.
+   * @param {DownloadPackageLogBase} packageTargetTopElem - TopElem пакета, в который нужно копировать данные.
+   * @param {DownloadPackageLogBase} packageSourceTopElem - TopElem пакета, из которого нужно копировать данные.
+   * @returns {number} Количество скопированных элементов.
+   */
+  function package_log_filling(
+    packageTargetTopElem: DownloadPackageLogBase,
+    packageSourceTopElem: DownloadPackageLogBase
+  ): number;
+
+  /**
+   * Функция, которая формирует строку на основе переменных элемента шаблона, шаблона документа,
+   * удаленного действия, выгрузки и т.д.
+   * Эту строку затем используют в выражении типа eval вместе с кодом элемента шаблона,
+   * шаблона документа, удаленного действия, выгрузки и т.д. Таким образом,
+   * инициализируются переменные нужного типа и им присваиваются значения,
+   * которые затем видны в коде элемента шаблона, шаблона документа, удаленного действия, выгрузки и т.д.
+   * @param {WebVariablesBaseWvar} listWVars - Структура описывающая переменные вида.
+   * @param {boolean} warily - Необязательный по умолчанию false.
+   * Если передается true, то при вычислении первоначального значение переменной,
+   * код будет помещен в `try { } catch { }`. То есть если произойдет ошибка вычисления,
+   * то код не прервет свое выполнение, а переменной будет присвоено значение
+   * по умолчанию соответствующего типа.
+   * @returns {string} Строка, полученная на основе переменных элемента шаблона,
+   * шаблона документа, удаленного действия, выгрузки и т.д..
+   */
+  function wvars_to_script(listWVars: WebVariablesBaseWvar, warily: boolean): string;
+
+  /**
+   * Функция, которая формирует объект на основе переменных элемента шаблона, шаблона документа,
+   * удаленного действия, выгрузки и т.д. Объект будет иметь следующий вид.
+   * Свойство(property) это название переменной. Значение свойства это value переменной,
+   * как оно заполнено в структуре параметров (listWVarsPARAM).
+   * @param {WebVariablesBaseWvar} listWVars - Cтруктура описывающая переменные вида.
+   * @returns {object} Объект, полученный на основе переменных элемента шаблона,
+   * шаблона документа, удаленного действия, выгрузки и т.д.
+   */
+  function wvars_to_object(listWVars: WebVariablesBaseWvar): object;
+
+  /**
+   * Копирует папку с файлами, включая все подпапки из указанного источника в указанный приемник.
+   * Если приемник не существует, то он создается по указанному адресу.
+   * @param {string} sourceDirectory - Путь до папки источника.
+   * @param {string} destinationDirectory - Путь до папки приемника.
+   * @returns {boolean} Возвращает значение true, если операция завершилась успешно
+   * (копирование выполнено), или false - в противном случае (копирование не выполнено).
+   */
+  function copy_directory(sourceDirectory: string, destinationDirectory: string): boolean;
+
+  /**
+   * Отправляет уведомления участникам мероприятия (участникам мероприятия, руководителям участников,
+   * преподавателям, ответственным за проведения, ответственным за подготовку) в соответствии с настройками
+   * мероприятия и типом отправки (всем участникам, новым участникам, тем участникам, кому не было отправлено).
+   * @param {number} eventId - ID мероприятия.
+   * @param {EventDocument} eventDocument - Документ карточки мероприятия.
+   * @param {string} [sendType="all"] - Задает способ отправки уведомления для участников мероприятия
+   * (руководители участников, преподаватели, ответственные за проведения, ответственные за подготовку
+   * не учитываются в этом параметре).
+   * Значения all - отправка всем участникам,
+   * new - отправка новым участникам,
+   * not_send отправка тем участникам, кому не было отправлено.
+   * @returns {true} Флаг true – в любом случае.
+   */
+  function send_event_notifications(eventId: number, eventDocument: EventDocument, sendType?: string): true;
+
+  /**
+   * Сохраняет версию объекта каталога, для которого проставлен флаг сохранения версий в администраторе.
+   * При этом создается объект в каталоге «Версии объектов» (Системное администрирование – Версии объектов).
+   * @param {XmlDocument} xmlDocument - Документ объекта, версия которого сохраняется.
+   * @returns {void} Сохраняет версию объекта каталога. Возвращаемое значение отсутствует.
+   */
+  function create_object_version(xmlDocument: XmlDocument): void;
+
+  /**
+   * Возвращает массив из обязательных обучений сотрудника, в которые входит переданный объект.
+   * Обязательные обучения указываются в требованиях к следящим объектам сотрудника должность,
+   * типовая должность, группа подразделений, семейство должностей, группа.
+   * @param {number} personId - ID сотрудника.
+   * @param {number} objectId - Id объекта обучения.
+   * @param {CollaboratorDocumentTopElem} personTopElem - Элемент {@link XmlTopElem} сотрудника.
+   * @param {XmlTopElem} objectTopElem - Элемент {@link XmlTopElem} объекта обучения.
+   * @returns {unknown} Массив из обязательных обучений сотрудника, в которые входит переданный объект.
+   */
   function get_mandatory_learnings(
-    iPersonIDParam: unknown,
-    iObjectIDParam: unknown,
-    tePersonParam: unknown,
-    teObjectParam: unknown
+    personId: number,
+    objectId: number,
+    personTopElem: CollaboratorDocumentTopElem,
+    objectTopElem: XmlTopElem
   ): unknown;
-  function get_relative_boss_types(objectParam: unknown, oPersonParam: unknown): unknown;
-  function get_relative_operations(oManagerParam: unknown): unknown;
-  function check_relative_operation(oManagerParam: unknown, oOperationParam: unknown): unknown;
+
+  /**
+   * Возвращает массив каталожных записей функциональных руководителей.
+   * Отбираются те функциональные руководители, где объект (например, сотрудник),
+   * переданный в качестве первого параметра, является руководителем объекта
+   * (сотрудника/сотрудников, подразделений, организаций, групп), переданного во втором параметре.
+   * Для объектов должность, группа, подразделение, организация, сотрудник руководитель может быть любого типа.
+   * @param {number|XmlDocument|XmlTopElem} object - ID объекта, либо Doc объекта, либо TopElem объекта,
+   * для которого идет поиск руководителей относительно объекта, переданного во втором параметре.
+   * @param {number|unknown[]} personParameter - ID сотрудника, для которого ищется руководитель,
+   * либо массив элементов (сотрудников, подразделений, организаций, групп).
+   * @returns {unknow[]} Массив каталожных записей функциональных руководителей.
+   */
+  function get_relative_boss_types(
+    object: number | XmlDocument | XmlTopElem,
+    personParameter: number|unknown[]
+  ): unknown[];
+
+  /**
+   * Возвращает массив каталожных записей операций, определяемых типами руководителей
+   * из массива функциональных руководителей, который передается в функцию.
+   * Возвращает объединение операций, доступных отдельному типу руководителя.
+   * @param {FuncManagersBaseFuncManager[]} manager - Массив каталожных записей функциональных руководителей.
+   * @returns {OperationCatalogDocumentTopElem[]} - Массив каталожных записей операций.
+   */
+  function get_relative_operations(manager: unknown): OperationCatalogDocumentTopElem[];
+
+  /**
+   * Проверяет, входит ли указанная операция в состав массива операций, определяемых типами руководителей
+   * из массива функциональных руководителей, который передается в функцию.
+   * @param {FuncManagersBaseFuncManager[]} manager - Массив каталожных записей функциональных руководителей.
+   * @param {string|number} operation - ID операции или код действия (action), привязанного к операции.
+   * @returns {boolean} Возвращает значение, показывающее, входит ли указанная операция в массив операций
+   * (true – операция входит в массив операций, false – операция не входит в массив операций).
+   */
+  function check_relative_operation(manager: unknown, operation: string|number): boolean;
 
   /**
    * Возвращает массив из каталожных записей типов функциональных руководителей (boss_types),
