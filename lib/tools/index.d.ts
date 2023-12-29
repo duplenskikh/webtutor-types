@@ -1490,7 +1490,7 @@ declare namespace tools {
    * В качестве источника данных используется TopElem соответствующего документа.
    * Приемником может быть элемент любого уровня в xml-структуре, содержащий нужные поля.
    * В зависимости от типа источника заполняются разные поля в приемнике.
-   * Примечание - Функция  не предназначена для копирования однотипных объектов.
+   * Примечание - Функция не предназначена для копирования однотипных объектов.
    * Она может быть использована для заполнения некоторого набора стандартных полей объекта
    * одного типа в зависимости от полей объекта другого типа,
    * а основе которого создан первый объект
@@ -3258,10 +3258,10 @@ declare namespace tools {
    * @param {U} defaultValue - Значение по умолчанию.
    * @returns {T[K]["Value"] | U} Значение.
    */
-  function get_foreign_field<T extends XmlTopElem, K extends string, U>(
+  function get_foreign_field<T extends XmlTopElem, K extends keyof T, U>(
     field: T,
     name: K,
-    defaultValue: U
+    defaultValue?: U
   ): K extends keyof T ? (T[K] extends XmlElem<unknown, unknown> ? T[K]["Value"] : U) : U;
 
   /**

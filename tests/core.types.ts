@@ -146,3 +146,5 @@ IsArray(testPrimitivesArray);
 IsArray(testArrayOfObjects);
 IsArray(xmlDocumentForTesting.TopElem.tasks);
 IsArray(1);
+
+var result = MailMessage();

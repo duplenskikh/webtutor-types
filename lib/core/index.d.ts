@@ -3,8 +3,8 @@
  * @param {string} str - Проверяемая строка.
  * @param {string} arg - Контрольная сумма.
  * @returns {boolean} Результат.
- * ```
  * @example
+ * ```
  * CheckPamMd5(str,arg)
  * ```
  */
@@ -29,7 +29,7 @@ declare function CRC(arg: string): number;
 /**
  * Выдает сообщение, содержащее значение параметра.
  * На сервере сообщение записывается в журнал 'xhttp',
- * на рабочем месте - в виде всплывающего окна (MgBox).
+ * на рабочем месте - в виде всплывающего окна {@link MsgBox}.
  * @param {T} val - Значение.
  * @returns {T} Значение.
  * @example
@@ -47,8 +47,11 @@ declare function alert<T>(val: T): T;
  * при запуске исполнимого файла. Функция используется, например, в ядре программы,
  * если необходимо по-разному его настраивать для работы с различными подключаемыми модулями.
  * @param {string} moduleName - Наименование модуля.
+ * @example
+ * ```
+ * AppModuleUsed("module_datex");
+ * ```
  * @returns {boolean} Результат.
- * AppModuleUsed( 'module_datex' );.
  */
 declare function AppModuleUsed(moduleName: string): boolean;
 
@@ -104,8 +107,11 @@ declare function EvalSync<T>(code: string, args: T): void;
 /**
  * Включает/выключает заданный журнал.
  * @param {string} name - Название журнала.
- * @param {boolean} enable - Включить/выключить (Bool). Необязательный аргумент. По умолчанию true.
- * EnableLog( 'xquery', true ).
+ * @param {boolean} [enable=true] - Включить/выключить (Bool).
+ * @example
+ * ```
+ * EnableLog("xquery", true);
+ * ```
  */
 declare function EnableLog(name: string, enable?: boolean): undefined;
 
@@ -156,7 +162,8 @@ declare function GetSysUserName(): string;
 declare function EnableLogExt(name: string, options?: string): undefined;
 
 /**
- * Проверяет, не нажата ли какая-либо клавиша в данный момент. Обычно проверятся Ctrl или Shift.
+ * Проверяет, не нажата ли какая-либо клавиша в данный момент.
+ * Обычно проверятся Ctrl или Shift.
  * @param {number} arg1 - Код клавиши.
  * @returns {boolean} Результат.
  */
@@ -165,9 +172,9 @@ declare function IsKeyPressed(arg1: number): boolean;
 /**
  * Конструктор объекта MailMessage, предназначенной для хранения E-mail - сообщения.
  * Объект строится по форме x-app://app/sx_mail_message.xmd и является обычным объектом типа XmlElem.
- * @returns {XmlElem<unknown>} Результат.
+ * @returns {MailMessage} Результат.
  */
-declare function MailMessage(): XmlElem<unknown>;
+declare function MailMessage(): MailMessage;
 
 /**
  * Делает запись в файл лога определенного типа.
@@ -183,9 +190,9 @@ declare function LogEvent(type: string, text: string): undefined;
 /**
  * Создает объект типа MailMessage на основании почтового сообщения в формате MIME.
  * @param {string} mimeData - Почтовое сообщение в формате MIME.
- * @returns {XmlElem<unknown>} Результат.
+ * @returns {MailMessage} Результат.
  */
-declare function MailMessageFromMimeStr(mimeData: string): XmlElem<unknown>;
+declare function MailMessageFromMimeStr(mimeData: string): MailMessage;
 
 /**
  * Вычисляет контрольную сумму по алгоритму Md5 и возвращает результат в бинарном формате (массив байт).
@@ -196,10 +203,11 @@ declare function Md5(data: string): string;
 
 /**
  * Возвращает тип склонения существительного в русском языке для заданного числа.
- * @param {number} num - Число .
- * @returns {number} Результат.
- * IntModType(num)Возвращает тип склонения существительного в русском языке
- * (0,1,2) для заданного числа. (0 - "штук", 1 - "штука", 2 - "штуки").
+ * @param {number} num - Число.
+ * @returns {number} Возвращает тип склонения существительного в русском языке (0,1,2) для заданного числа:
+ * 0 - "штук";
+ * 1 - "штука";
+ * 2 - "штуки".
  */
 declare function IntModType(num: number): number;
 
@@ -207,16 +215,15 @@ declare function IntModType(num: number): number;
  * Максимальное значение из нескольких аргументов.
  * @param {number} number - Число 1.
  * @param {number[]} numbers - Числа.
- * @returns {number} Результат.
- * Max(arg1,arg2...)Возвращает максимальное значение из нескольких аргументов.
+ * @returns {number} Возвращает максимальное значение из нескольких аргументов.
  */
 declare function Max(number: number, ...numbers: number[]): number;
 
 /**
  * Выполняет HTTP-запрос.
  * @param {string} url - Url.
- * @param {string} method - Метод ('get', 'post'). Необязательный аргумент. По умолчанию 'get'.
- * @param {string} body - Тело запроса. Необязательный аргумент.
+ * @param {string} [method="get"] - Метод `get` или `post`.
+ * @param {string} [body] - Тело запроса.
  * @param {string} headers - Список дополнительных полей заголовка http-запроса
  * в соответствующем формате (имя:значение перевод строки).
  * Необязательный аргумент. Список также может содержать дополнительные опции.
@@ -255,12 +262,12 @@ declare function Min(number: number, ...numbers: number[]): number;
 
 /**
  * Возвращает Полное имя человека в виде "Фамилия И.О.".
- * @param {string} lastName - Фамилия.
+ * @param {string} lastname - Фамилия.
  * @param {string} firstname - Имя.
- * @param {string} [middleName] - Отчество.
+ * @param {string} [middlename] - Отчество.
  * @returns {string} Результат.
  */
-declare function PersonShortName(lastName: string, firstname: string, middleName: string): string;
+declare function PersonShortName(lastname: string, firstname: string, middlename?: string): string;
 
 /**
  * Вычисляет контрольную сумму по алгоритму PamMd5.
@@ -273,7 +280,7 @@ declare function PamMd5(arg: string): string;
  * Смешивает два цвета в заданной пропорции.
  * @param {string} color1 - Цвет в формате RGB.
  * @param {string} color2 - Цвет в формате RGB.
- * @param {number} arg - Пропорции (Real). В случае его отсутствия цвета будут смешаны в пропорции 1 к 1.
+ * @param {number} [arg] - Пропорции. В случае его отсутствия цвета будут смешаны в пропорции 1 к 1.
  * @returns {string} Результат.
  */
 declare function MixColors(color1: string, color2: string, arg?: number): string;
@@ -295,10 +302,11 @@ declare function Random(minVal: number, maxVal: number): number;
 
 /**
  * Вызывает отправку почтового сообщения через тот способ, который был выбран в настройках, как правило - Simple MAPI.
- * В качестве параметра передается объект, созданный функцией MailMessage.
- * @param {any} arg1 - Объект, созданный при помощи функции MailMessage (Object SpXml).
+ * В качестве параметра передается объект, созданный функцией {@link MailMessage}.
+ * @param {ReturnType<typeof MailMessage>} arg1 - Объект, созданный при помощи функции
+ * {@link MailMessage} (Object SpXml).
  */
-declare function SendMailMessage(arg1: XmlElem<unknown>): void;
+declare function SendMailMessage(arg1: ReturnType<typeof MailMessage>): void;
 
 /**
  * Вызывает выполнение процесса.
@@ -311,8 +319,8 @@ declare function SendMailMessage(arg1: XmlElem<unknown>): void;
  * `hidden` - запуск без пользовательского интерфейса `boolean`
  * (рекомендуется включать, если функция вызывается с сервера).
  * @param {string} path - Путь к исполняемому файлу, или имя исполняемого файла.
- * @param {string} cmdLine - Аргументы командной строки. Необязательный аргумент.
- * @param {string} options - Набор опций через ";", в виде "имя опции=значение; ...". Необязательный аргумент.
+ * @param {string} [cmdLine] - Аргументы командной строки.
+ * @param {string} [options] - Набор опций через ";", в виде "имя опции=значение; ...".
  * @returns {number} Результат.
  * @example
  * ```
@@ -352,13 +360,16 @@ declare function Sleep(ticks: number): undefined;
  * Записывает текст в сроку состояния в главном окне программы.
  * Обычно используется для показа количества найденных объектов в списке.
  * @param {string} msg - Строка.
+ * @example
+ * ```
+ * StatusMsg("Записей в списке: " + n);
+ * ```
  * @returns {undefined}
- * StatusMsg( 'Записей в списке: ' + n );.
  */
 declare function StatusMsg(msg: string): undefined;
 
 /**
- * Вычисляет hash функцию по алгоритму SHA1  и возвращает строку, закодированную в Base64.
+ * Вычисляет hash функцию по алгоритму SHA1 и возвращает строку, закодированную в Base64.
  * @param {string} str - Строка, содержащая массив байт.
  * @returns {string} Результат.
  */
@@ -393,7 +404,7 @@ declare function ShellExecute(action: string, target: string, args?: string): un
  * Создает zip архив.
  * @param {string} archivePath - Путь (или url) к создаваемому архиву.
  * @param {Array} filesArray - Массив, содержащий список файлов или папок, которые нужно заархивировать (Array).
- * @param {any} options - Объект с параметрами (Object). Необязательный аргумент.
+ * @param {any} [options] - Объект с параметрами (Object).
  * @returns {undefined}
  * @example
  * ```
@@ -424,7 +435,7 @@ declare function ArrayExtractKeys<T>(array: T[] | XmlMultiElem<T>, field: string
  * Возвращает строку, полученную путем склеивания данных из элементов массива.
  * @param {Array} array - Массив.
  * @param {string} elemExpr - Выражение, вычисляющее значение, используемое для склейки, относительно элемента массива.
- * @param {string} delim - Строка-разделитель. Необязательный аргумент.
+ * @param {string} [delim] - Строка-разделитель.
  * @returns {string} Результат.
  */
 declare function ArrayMerge<T>(array: T[] | XmlMultiElem<T>, elemExpr: string, delim: string): string;
@@ -551,9 +562,9 @@ declare function ArrayOptMax<T>(array: XmlMultiElem<T>, elemExpr: string): XmlEl
  * для реализации постраничного просмотра (paging) результатов запроса XQuery.
  * @param {Array} array - Исходный массив.
  * @param {number} pos - Начальная позиция.
- * @param {number} elemsNum - Количество элементов нового массива. Необязательный аргумент.
+ * @param {number} [elemsNum] - Количество элементов нового массива.
  * Если количество не указано, возвращаются все элементы с начальной позиции.
- * @returns {T[] | XmlElem<T>} - Результат.
+ * @returns {Array} - Результат.
  */
 declare function ArrayRange<T>(array: T[], pos: number, elemsNum?: number): T[];
 declare function ArrayRange<T>(array: XmlMultiElem<T>, pos: number, elemsNum?: number): XmlElem<T>[];
@@ -675,8 +686,8 @@ declare function ArraySelectBySortedKey<T>(array: XmlMultiElem<T>, value: string
  * Выбирает элементы массива, с определенным значением заданного поля (ключа) внутри элемента.
  * Функция аналогична более универсальной функции {@link ArraySelect}(), но работает быстрее.
  * @param {Array} array - Массив.
- * @param {string | number} value - Значение ключа.
- * @param {string} name - Имя элемента, являющегося ключом. Необязательный аргумент.
+ * @param {string} value - Значение ключа.
+ * @param {string} [name] - Имя элемента, являющегося ключом.
  * Если имя ключа не указано, используется первичный ключ.
  * @returns {T[] | XmlElem<T>[]} - Результат.
  */
@@ -719,9 +730,9 @@ declare const CurDate: Date;
  * Изменяет значение времени в заданной дате. Возвращает измененную дату.
  * Если указан только первый аргумент, функция возвращает дату без времени.
  * @param {Date} date - Дата.
- * @param {number} hour - Час. Необязательный аргумент.
- * @param {number} minute - Минута. Необязательный аргумент.
- * @param {number} second - Секунда. Необязательный аргумент.
+ * @param {number} [hour] - Час.
+ * @param {number} [minute] - Минута.
+ * @param {number} [second] - Секунда.
  * @returns {Date} - Дата.
  */
 declare function DateNewTime(date: Date, hour?: number, minute?: number, second?: number): Date;
@@ -898,8 +909,8 @@ declare function WeekDay(date: Date): number;
 /**
  * Преобразует дату в строку в формате, используемом в XML. Данный формат не зависит от региональных настроек в системе.
  * @param {Date} date - Объект даты.
- * @param {boolean} showTime - Включать время (Bool). Необязательный аргумент.
- * @param {boolean} showSeconds - Включать секунды во времени (Bool). Необязательный аргумент.
+ * @param {boolean} [showTime] - Включать время (Bool).
+ * @param {boolean} [showSeconds] - Включать секунды во времени (Bool).
  * @returns {string} Строка с датой.
  * @example
  * ```
@@ -1017,7 +1028,7 @@ declare function FindSharedCatalog(name: string): Object;
  * Используется как правило для синхронизации данных
  * или обмена данными между несколькими серверами приложений.
  * @param {string} url - Url.
- * @param {string} options - Опции, необязательный аргумент.
+ * @param {string} [options] - Опции.
  * @returns {string} Результат.
  * @example LoadUrlData("x-local://shared/xxx.xml", "lds-server=test2.datex.ru:9000");
  */
@@ -1105,7 +1116,7 @@ declare function XQueryLocal<T>(query: string): T;
  * Обычно используется при показе списков в пользовательском интерфейсе сетевой версии,
  * в которых будет использовать связанные данные (ForeignElem).
  * @param {string} query - Строка, содержащая запрос.
- * @param {string} options - Набор опций. Необязательный аргумент.
+ * @param {string} [options] - Набор опций.
  * @returns {Array} Результат.
  * @example
  * ```
@@ -1615,7 +1626,7 @@ declare function MoveDoc(url: string, newUrl: string): undefined;
  * Открывает XML-документ и помещает его в кэш документов.
  * Если документ с заданным url уже находится в кэше, возвращается уже загруженный в кэш документ.
  * @param {string} url - Url документа.
- * @param {string} options - Опции открытия документа. Необязательный аргумент.
+ * @param {string} [options] - Опции открытия документа.
  * @returns {XmlDocument} XmlDocument.
  */
 declare function FetchDoc(url: string, options: string): XmlDocument;
@@ -1873,7 +1884,7 @@ declare function StrIntZero(arg: number, digitsNum: number, addGroupDelim: boole
 
 /**
  * Преобразует вещественный аргумент в строку.
- * @param {number} arg - Вещественный аргумент (Real).
+ * @param {number} arg - Вещественный аргумент.
  * @param {number} precision - Число символов в дробной части числа. Недостающие символы компенсируются нулями.
  * @param {boolean} addGroupDelim - Разделять тысячные разряды пробелами.
  * @returns {string} Результат.
@@ -1890,7 +1901,7 @@ declare function StrRealFixed(arg: number, precision?: number, addGroupDelim?: b
  * @param {number} arg - Целочисленный аргумент.
  * @param {number} [digitsNum] - Минимальное число символов в строке.
  * Недостающие символы компенсируются нулями перед числом.
- * @param {boolean} addGroupDelim - Разделять тысячные разряды пробелами (Bool). Необязательный аргумент.
+ * @param {boolean} [addGroupDelim] - Разделять тысячные разряды пробелами (Bool).
  * @returns {string} Результат.
  * @example
  * ```
@@ -1908,16 +1919,14 @@ declare function StrRealFixed(arg: number, precision?: number, addGroupDelim?: b
 declare function StrInt(arg: number, digitsNum?: number, addGroupDelim?: boolean): string;
 
 /**
- * Преобразует целое число в словесное строковое представление. Только для русского языка.
+ * Преобразует целое число в словесное строковое представление.
+ * Только для русского языка.
  * @param {number} arg - Числовой аргумент.
- * @param {0|1} gender - Род (0 - мужской, 1 - женский). Необязательный аргумент.
+ * @param {0|1} [gender] - Род (0 - мужской, 1] - женский).
  * @returns {string} Результат.
  * @example
  * ```
  * TextInt(121) == "сто двадцать один"
- * ```
- * @example
- * ```
  * TextInt(121, 1) == "сто двадцать одна"
  * ```
  */
@@ -2086,7 +2095,7 @@ declare function XmlAttrEncode(str: string): string;
  * Преобразует объект типа Object в строку вида 'name1=value1&name2=value2&...'
  * для использования в качестве запроса в url.
  * @param {object} obj - Объект, содержащий список значений (Object).
- * @param {string} charset - Целевая кодировка. Необязательный аргумент.
+ * @param {string} [charset] - Целевая кодировка.
  * @returns {string} Результат.
  */
 declare function UrlEncodeQueryExt(obj: Object, charset: string): string;
@@ -2200,7 +2209,7 @@ declare function IsDirectory(path: string): boolean;
 
 /**
  * Возвращает url для временного файла.
- * @param {string} [suffix] - Требуемый суффикс имени файла. Необязательный аргумент.
+ * @param {string} [suffix] - Требуемый суффикс имени файла.
  * @returns {string} Результат.
  */
 declare function ObtainTempFile(suffix?: string): string;
@@ -2231,7 +2240,7 @@ declare function IsAbsoluteFilePath(path: string): boolean;
 
 /**
  * Возвращает url для временного файла, который будет автоматически удален при следующем запуске приложения.
- * @param {string} [suffix] - Требуемый суффикс имени файла. Необязательный аргумент.
+ * @param {string} [suffix] - Требуемый суффикс имени файла.
  * @returns {string} Результат.
  */
 declare function ObtainSessionTempFile(suffix?: string): string;
@@ -2331,7 +2340,7 @@ declare function InPlaceEval(code: string): undefined;
 /**
  * Интерпретирует содержимое страницы по правилам ASP.
  * @param {string} pageUrl - Url, содержащий текст активной страницы.
- * @param {string} options - Опции. Необязательный аргумент.
+ * @param {string} [options] - Опции.
  * @returns {string} Результат.
  * Значение strict-errors - завершать функцию с ошибкой, если таковая возникнет при обработке страницы (Bool).
  * По умолчанию, в случае возникновения ошибки ее текст добавляется к результату, а функция возвращается без ошибки.

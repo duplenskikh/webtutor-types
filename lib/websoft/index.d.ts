@@ -1356,6 +1356,64 @@ declare namespace Websoft {
         }
       }
     }
+
+    /**
+     * Библиотека для работы с документами в формате Microsoft Word.
+     */
+    namespace Word {
+      class Document extends WebsoftBaseClass {
+        /**
+         * Получить список закладок.
+         * @returns {string} Имена закладок разделенные символом ";".
+         */
+        GetBookmarks(): string;
+
+        /**
+         * Получить текст закладки по ее имени.
+         * @param {string} bookmark - Имя закладки.
+         * @returns {string} Текст закладки.
+         */
+        GetBookmarkText(bookmark: string): string;
+
+        /**
+         * Открывает файл в формате Microsoft Word.
+         * @param {string} filepath - Путь до файла.
+         * @returns {number} 1 - успешно, 0 - ошибка.
+         */
+        Open(filepath: string): 0 | 1;
+
+        /**
+         * Сохраняет текущий документ.
+         * @returns {number} 1 - успешно, 0 - ошибка.
+         */
+        Save(): 0 | 1;
+
+        /**
+         * Сохраняет документ по указанному пути.
+         * Формат определяется по расширению имени файла в пути сохранения.
+         * Доступные форматы: DOC, DOCX, PDF, XPS, JPEG, PNG, SVG, BMP, ODT, MHTML, HTML, RTF, WML, TXT, EPUB.
+         * @param {string} filepath - Путь до файла.
+         * @returns {number} 1 - успешно, 0 - ошибка.
+         */
+        SaveAs(filepath: string): 0 | 1;
+
+        /**
+         * Установить текст закладки в формате HTML.
+         * @param {string} bookmark - Имя закладки.
+         * @param {string} value - Устанавливаемое значение.
+         * @returns {number} 1 - успешно, 0 - ошибка.
+         */
+        SetBookmarkHtml(bookmark: string, value: string): 0 | 1;
+
+        /**
+         * Установить текст закладки.
+         * @param {string} bookmark - Имя закладки.
+         * @param {string} value - Устанавливаемое значение.
+         * @returns {number} 1 - успешно, 0 - ошибка.
+         */
+        SetBookmarkText(bookmark: string, value: string): string;
+      }
+    }
   }
 
   namespace Zip {
