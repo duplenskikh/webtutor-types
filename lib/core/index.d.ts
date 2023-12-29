@@ -453,8 +453,18 @@ declare function ArrayMerge<T>(array: T[] | XmlMultiElem<T>, elemExpr: string, d
  * Если аргумент не указан, используется значение самого элемента (This).
  * @returns {T[] | XmlElem<T>[]} - Результат.
  */
-declare function ArrayIntersect<T, K>(array1: T[], array2: K[] | XmlMultiElem<K>, fieldExpr1?: string, fieldExpr2?: string): T[];
-declare function ArrayIntersect<T, K>(array1: XmlMultiElem<T>, array2: K[] | XmlMultiElem<K>, fieldExpr1?: string, fieldExpr2?: string): XmlElem<T>[];
+declare function ArrayIntersect<T, K>(
+  array1: T[],
+  array2: K[] | XmlMultiElem<K>,
+  fieldExpr1?: string,
+  fieldExpr2?: string
+): T[];
+declare function ArrayIntersect<T, K>(
+  array1: XmlMultiElem<T>,
+  array2: K[] | XmlMultiElem<K>,
+  fieldExpr1?: string,
+  fieldExpr2?: string
+): XmlElem<T>[];
 
 /**
  * Возвращает первый элемент заданного массива. Если массив не содержит ни одного элемента,
@@ -680,7 +690,12 @@ declare function IsArray(value: unknown): value is unknown[] | XmlMultiElem<unkn
  * @returns {T[] | XmlElem<T>[]} - Результат.
  */
 declare function ArraySelectBySortedKey<T>(array: T[], value: string | number, name: string, ignoreCase?: boolean): T[];
-declare function ArraySelectBySortedKey<T>(array: XmlMultiElem<T>, value: string | number, name: string, ignoreCase?: boolean): XmlElem<T>[];
+declare function ArraySelectBySortedKey<T>(
+  array: XmlMultiElem<T>,
+  value: string | number,
+  name: string,
+  ignoreCase?: boolean
+): XmlElem<T>[];
 
 /**
  * Выбирает элементы массива, с определенным значением заданного поля (ключа) внутри элемента.
@@ -711,7 +726,12 @@ declare function ArraySelectByKey<T>(array: T[] | XmlMultiElem<T>, value: string
  */
 
 declare function ArraySort<T>(array: T[], expression: string, direction?: string, ...args: string[]): T[];
-declare function ArraySort<T>(array: XmlMultiElem<T>, expression: string, direction?: string, ...args: string[]): XmlElem<T>[];
+declare function ArraySort<T>(
+  array: XmlMultiElem<T>,
+  expression: string,
+  direction?: string,
+  ...args: string[]
+): XmlElem<T>[];
 
 /**
  * Возвращает сумму значений определенного поля по всем элементам массива.
@@ -2350,7 +2370,8 @@ declare function EvalCodePageUrl(pageUrl: string, options?: string): string;
 /**
  * Кодирует аргумент как константу JScript. Используется для генерации выражений.
  * @param {any} value - Аргумент (Any).
- * @param {any} quoteChar - Символ, используемый в качестве кавычки (допустимые значения: одинарная или двойная кавычка).
+ * @param {any} quoteChar - Символ, используемый в качестве кавычки
+ * (допустимые значения: одинарная или двойная кавычка).
  * Необязательный аргумент. По умолчанию используется одинарная кавычка.
  * @returns {string} Результат.
  * Значение null Значение типа string заключается в кавычки,
@@ -2458,7 +2479,8 @@ declare function ModalTaskMsg(msg: string): undefined;
 /**
  * Выполняет заданный код на сервере, и возвращает результат.
  * Результат может быть только в виде строки.
- * Если эта функция вызывается на однопользовательской локальной версии программы, она полностью аналогична функции eval.
+ * Если эта функция вызывается на однопользовательской локальной версии программы,
+ * она полностью аналогична функции eval.
  * @param {string} code - Код, который будет выполняться на сервере.
  * @returns {string} Результат.
  */
