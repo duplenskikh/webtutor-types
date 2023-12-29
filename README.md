@@ -1,14 +1,18 @@
-<h1 align="center">WTT</h1>
+<h1 align="center">WT Types</h1>
 <div align="center">
-  Typescript types for WebSoft HCM backend language.
+  Typescript типы для WebSoft HCM.
   
   [![actions](https://github.com/umbrik/webtutor-types/actions/workflows/actions.yml/badge.svg)](https://github.com/umbrik/webtutor-types/actions/workflows/actions.yml)
   ![npm](https://img.shields.io/npm/dy/@umbrik/webtutor-types)
 </div>
 
-## 📦 Install
+## Зачем?
 
-> **_NOTE:_** This libary works only with `typescript<=4.4.4`
+Для чего вообще необходимы типы ts? Для того, чтобы допускать меньше ошибок.
+
+## 📦 Установка
+
+> **_Важно:_** типы работают только с `typescript<=4.4.4`
 
 ```bash
 npm i @umbrik/webtutor-types -D
@@ -18,8 +22,12 @@ npm i @umbrik/webtutor-types -D
 yarn add @umbrik/webtutor-types -D
 ```
 
-## 🔨 Setup
-`tsconfig.json` example:
+## 🔨 Настройка
+Типы подключаются в `tsconfig.json`.
+
+Для разработки в WT обязательно неоходимо отключить все остальные библиотеки с помощью `noLib` и добавить типы в `typeRoots`.
+
+Пример конфига:
 
 ```json
 {
@@ -42,7 +50,9 @@ yarn add @umbrik/webtutor-types -D
 }
 ```
 
-## ⌨️ Usage
+## ⌨️ Пример использования
+
+![image](https://github.com/HCM-guru/webtutor-types/assets/693254/aefa6c12-4479-4cab-a7e8-c29d880358b7)
 
 ```ts
 type FuncManagerQueryResult = {
@@ -83,10 +93,11 @@ function getManagersByType(bossTypeCode: string = "main") {
 }
 ```
 
-## 🔨 Tests
+## 🔨 Тестирование
 
-This repo supports tests for types.  
-You can check [the docs](https://github.com/ai/check-dts#writing-negative-test) for a better understanding.
+В репозитории есть базовое тестирования для типов.
+
+Можно руководствоваться [документацией](https://github.com/ai/check-dts#writing-negative-test) для написания тестов.
 
 ## 🤝 Contributing
 
