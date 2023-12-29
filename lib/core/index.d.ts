@@ -416,9 +416,9 @@ declare function ZipExtract(archivePath: string, destPath: string): undefined;
  * Функция аналогична более универсальной функции {@link ArrayExtract}(), но работает быстрее.
  * @param {Array} array - Исходный массив.
  * @param {string} field - Имя поля.
- * @returns {any[]} Результат.
+ * @returns {unknown[]} Результат.
  */
-declare function ArrayExtractKeys<T>(array: T[], field: string): unknown[];
+declare function ArrayExtractKeys<T>(array: T[] | XmlMultiElem<T>, field: string): unknown[];
 
 /**
  * Возвращает строку, полученную путем склеивания данных из элементов массива.
@@ -427,39 +427,42 @@ declare function ArrayExtractKeys<T>(array: T[], field: string): unknown[];
  * @param {string} delim - Строка-разделитель. Необязательный аргумент.
  * @returns {string} Результат.
  */
-declare function ArrayMerge<T>(array: T[], elemExpr: string, delim: string): string;
+declare function ArrayMerge<T>(array: T[] | XmlMultiElem<T>, elemExpr: string, delim: string): string;
 
 /**
  * Возвращает массив, содержащий элементы массива 1,
  * у которых значение ключевого поля совпадает хотя бы в с одним элементом массива 2.
  * @param {Array} array1 - Массив 1.
  * @param {Array} array2 - Массив 2.
- * @param {string} fieldExpr1 - Выражение, вычисляемое относительно каждого элемента массива 1
+ * @param {string} [fieldExpr1] - Выражение, вычисляемое относительно каждого элемента массива 1
  * и возвращающее значение ключа для сравнения. Необязательный аргумент.
  * Если аргумент не указан, используется значение самого элемента (This).
- * @param {string} fieldExpr2 - Выражение, вычисляемое относительно каждого элемента массива 2
+ * @param {string} [fieldExpr2] - Выражение, вычисляемое относительно каждого элемента массива 2
  * и возвращающее значение ключа для сравнения. Необязательный аргумент.
  * Если аргумент не указан, используется значение самого элемента (This).
- * @returns {Array} - Результат.
+ * @returns {T[] | XmlElem<T>[]} - Результат.
  */
-declare function ArrayIntersect<T, K>(array1: T[], array2: K[], fieldExpr1: string, fieldExpr2: string): (T | K)[];
+declare function ArrayIntersect<T, K>(array1: T[], array2: K[] | XmlMultiElem<K>, fieldExpr1?: string, fieldExpr2?: string): T[];
+declare function ArrayIntersect<T, K>(array1: XmlMultiElem<T>, array2: K[] | XmlMultiElem<K>, fieldExpr1?: string, fieldExpr2?: string): XmlElem<T>[];
 
 /**
  * Возвращает первый элемент заданного массива. Если массив не содержит ни одного элемента,
  * функция завершается с исключением.
  * @param {Array} array - Массив.
- * @returns {any} Результат.
+ * @returns {T | XmlElem<T> | never} Результат.
  */
-declare function ArrayFirstElem<T>(array: T[] | XmlMultiElem<T>): T | never;
+declare function ArrayFirstElem<T>(array: T[]): T | never;
+declare function ArrayFirstElem<T>(array: XmlMultiElem<T>): XmlElem<T> | never;
 
 /**
  * Возвращает элемент заданного массива, содержащий максимальное значение определенного поля среди его элементов.
  * Если массив не содержит ни одного элемента, функция завершается с исключением.
  * @param {Array} array - Массив.
  * @param {string} expression - Выражение (строка), вычисляющее значение поля относительно элемента массива.
- * @returns {any} Результат.
+ * @returns {T | XmlElem<T>} Результат.
  */
 declare function ArrayMax<T>(array: T[], expression: string): T;
+declare function ArrayMax<T>(array: XmlMultiElem<T>, expression: string): XmlElem<T>;
 
 /**
  * Находит первый элемент массива, удовлетворяющий заданному условию.
@@ -467,9 +470,10 @@ declare function ArrayMax<T>(array: T[], expression: string): T;
  * @param {T[]} array - Массив.
  * @param {string} qualExpr - Выражение, определяющее соответствие элемента массива критерию.
  * Вычисляется относительно элемента массива..
- * @returns {T} Результат.
+ * @returns {T[] | XmlElem<T> | never} Результат.
  */
-declare function ArrayFind<T>(array: T[], qualExpr: string): T;
+declare function ArrayFind<T>(array: T[], qualExpr: string): T | never;
+declare function ArrayFind<T>(array: XmlMultiElem<T>, qualExpr: string): XmlElem<T> | never;
 
 /**
  * Возвращает число элементов массива. Для массивов прямого доступа функция срабатывает мгновенно,
@@ -478,7 +482,7 @@ declare function ArrayFind<T>(array: T[], qualExpr: string): T;
  * @param {Array} array - Массив.
  * @returns {number} Результат.
  */
-declare function ArrayCount<T>(array: T): number;
+declare function ArrayCount<T>(array: T[] | XmlMultiElem<T>): number;
 
 /**
  * Преобразует заданный массив к массиву с прямым индексированием.
@@ -488,7 +492,7 @@ declare function ArrayCount<T>(array: T): number;
  * @param {Array} array - Исходный массив.
  * @returns {Array} - Результат.
  */
-declare function ArrayDirect<T>(array: T): T;
+declare function ArrayDirect<T>(array: T[]): T[];
 
 /**
  * Выбирает определенное значение из каждого элемента массива.
@@ -497,7 +501,7 @@ declare function ArrayDirect<T>(array: T): T;
  * @param {string} fieldExpr - Выражение, вычисляемое относительно каждого элемента исходного массива.
  * @returns {Array} - Результат.
  */
-declare function ArrayExtract<T>(array: T[], fieldExpr: string | null): T[];
+declare function ArrayExtract<T>(array: T[] | XmlMultiElem<T>, fieldExpr: string | null): unknown[];
 
 /**
  * Ищет первый элемент массива с заданным значением определенного поля (ключа).
@@ -505,9 +509,10 @@ declare function ArrayExtract<T>(array: T[], fieldExpr: string | null): T[];
  * @param {Array} array - Массив.
  * @param {K} value - Значение ключа.
  * @param {string} name - Имя элемента, являющегося ключом. Если имя ключа не указано, используется первичный ключ.
- * @returns {any} Результат.
+ * @returns {T | XmlElem<T> | undefined} Результат.
  */
-declare function ArrayOptFindByKey<T, K>(array: XmlMultiElem<T> | T[], value: K, name?: string): T | undefined;
+declare function ArrayOptFindByKey<T, K>(array: T[], value: K, name?: string): T | undefined;
+declare function ArrayOptFindByKey<T, K>(array: XmlMultiElem<T>, value: K, name?: string): XmlElem<T> | undefined;
 
 /**
  * Находит первый элемент массива, удовлетворяющий заданному условию.
@@ -515,28 +520,31 @@ declare function ArrayOptFindByKey<T, K>(array: XmlMultiElem<T> | T[], value: K,
  * @param {Array} array - Массив.
  * @param {string} qualExpr - Выражение, определяющее соответствие элемента массива критерию.
  * Вычисляется относительно элемента массива..
- * @returns {any} Результат.
+ * @returns {T | XmlElem<T> | undefined} Результат.
  */
 declare function ArrayOptFind<T>(array: T[], qualExpr: string): T | undefined;
-declare function ArrayOptFind<T>(xmlMultiElem: XmlMultiElem<T>, qualExpr: string): XmlElem<T> | undefined;
+declare function ArrayOptFind<T>(array: XmlMultiElem<T>, qualExpr: string): XmlElem<T> | undefined;
 
 /**
  * Возвращает элемент заданного массива, содержащий минимальное значение определенного поля среди его элементов.
  * Если массив не содержит ни одного элемента, функция завершается с исключением.
- * @param {Array} array - Массив.
+ * @template {Array} T
+ * @param {T} array - Массив.
  * @param {string} elemExpr - Выражение (строка), вычисляющее значение поля относительно элемента массива.
- * @returns {any} Результат.
+ * @returns {T | XmlElem<T>} Результат.
  */
 declare function ArrayMin<T>(array: T[], elemExpr: string): T;
+declare function ArrayMin<T>(array: XmlMultiElem<T>, elemExpr: string): XmlElem<T>;
 
 /**
  * Возвращает элемент заданного массива, содержащий максимальное значение определенного поля среди его элементов.
  * Если массив не содержит ни одного элемента, функция возвращает undefined.
  * @param {Array} array - Массив.
  * @param {string} elemExpr - Выражение (строка), вычисляющее значение поля относительно элемента массива.
- * @returns {any} Результат.
+ * @returns {T | XmlElem<T> | undefined} Результат.
  */
-declare function ArrayOptMax<T>(array: T[], elemExpr: string): T;
+declare function ArrayOptMax<T>(array: T[], elemExpr: string): T | undefined;
+declare function ArrayOptMax<T>(array: XmlMultiElem<T>, elemExpr: string): XmlElem<T> | undefined;
 
 /**
  * Возвращает фрагмент массива с определенной позиции. Данная функция как правило используется
@@ -545,45 +553,49 @@ declare function ArrayOptMax<T>(array: T[], elemExpr: string): T;
  * @param {number} pos - Начальная позиция.
  * @param {number} elemsNum - Количество элементов нового массива. Необязательный аргумент.
  * Если количество не указано, возвращаются все элементы с начальной позиции.
- * @returns {Array} - Результат.
+ * @returns {T[] | XmlElem<T>} - Результат.
  */
-declare function ArrayRange<T>(array: T[], pos: number, elemsNum: number): T[];
+declare function ArrayRange<T>(array: T[], pos: number, elemsNum?: number): T[];
+declare function ArrayRange<T>(array: XmlMultiElem<T>, pos: number, elemsNum?: number): XmlElem<T>[];
 
 /**
  * Выбирает элементы массива, удовлетворяющие заданному критерию.
- * @param {T} array - Массив.
+ * @param {Array} array - Массив.
  * @param {string} expression - Выражение, определяющее соответствие элемента массива критерию.
  * Вычисляется относительно элемента массива. (Bool).
- * @returns {Array|XmlElem} Результат.
+ * @returns {T[] | XmlElem<T>[]} Результат.
  */
 declare function ArraySelect<T>(array: T[], expression: string): T[];
-declare function ArraySelect<T>(array: XmlMultiElem<T>, expression: string): T[];
+declare function ArraySelect<T>(array: XmlMultiElem<T>, expression: string): XmlElem<T>[];
 
 /**
  * Возвращает элемент заданного массива, содержащий минимальное значение определенного поля среди его элементов.
  * Если массив не содержит ни одного элемента, функция возвращает undefined.
  * @param {Array} array - Массив.
  * @param {string} elemExpr - Выражение (строка), вычисляющее значение поля относительно элемента массива.
- * @returns {any} Результат.
+ * @returns {T | XmlElem<T> | undefined} Результат.
  */
-declare function ArrayOptMin<T>(array: T[], elemExpr: string): T;
+declare function ArrayOptMin<T>(array: T[], elemExpr: string): T | undefined;
+declare function ArrayOptMin<T>(array: XmlMultiElem<T>, elemExpr: string): XmlElem<T> | undefined;
 
 /**
  * Возвращает первый элемент заданного массива.
  * Если массив не содержит ни одного элемента, функция возвращает `undefined`.
  * @param {Array} array - Массив.
- * @returns {T | K | undefined} Результат.
+ * @returns {T | XmlElem<T> | undefined} Результат.
  */
-declare function ArrayOptFirstElem<T = unknown>(array: XmlMultiElem<T> | T[]): T | undefined;
+declare function ArrayOptFirstElem<T>(array: T[]): T | undefined;
+declare function ArrayOptFirstElem<T>(array: XmlMultiElem<T>): XmlElem<T> | undefined;
 
 /**
  * Возвращает первый элемент заданного массива.
  * Если массив не содержит ни одного элемента, функция возвращает второй аргумент.
  * @param {Array} array - Массив.
  * @param {K} defaultValue - Значение по умолчанию.
- * @returns {T | K | undefined} Результат.
+ * @returns {T | XmlElem<T> | K } Результат.
  */
-declare function ArrayOptFirstElem<T, K = undefined>(array: XmlMultiElem<T> | T[], defaultValue: K): T | K;
+declare function ArrayOptFirstElem<T, K = undefined>(array: T[], defaultValue: K): T | K;
+declare function ArrayOptFirstElem<T, K = undefined>(array: XmlMultiElem<T>, defaultValue: K): XmlElem<T> | K;
 
 /**
  * Ищет первый элемент массива с заданным значением определенного поля (ключа).
@@ -593,11 +605,12 @@ declare function ArrayOptFirstElem<T, K = undefined>(array: XmlMultiElem<T> | T[
  * Функцию имеет смысл использовать для частого поиска в каком-либо фиксированном справочнике большого размера,
  * который необходимо заранее отсортировать.
  * @param {T} array - Массив.
- * @param {string} value - Значение ключа.
- * @param {string} name - Имя элемента, являющегося ключом, если имя ключа не указано, то используется первичный ключ.
- * @returns {any} Результат.
+ * @param {K} value - Значение ключа.
+ * @param {string} [name] - Имя элемента, являющегося ключом, если имя ключа не указано, то используется первичный ключ.
+ * @returns {T | XmlElem<T> | undefined} Результат.
  */
-declare function ArrayOptFindBySortedKey<T>(array: T, value: string, name: string): unknown;
+declare function ArrayOptFindBySortedKey<T, K>(array: T[], value: K, name?: string): T | undefined;
+declare function ArrayOptFindBySortedKey<T, K>(array: XmlMultiElem<T>, value: K, name?: string): XmlElem<T> | undefined;
 
 /**
  * Возвращает массив, содержащий все элементы исходного массива в виде стандартного массива Array.
@@ -608,8 +621,7 @@ declare function ArrayOptFindBySortedKey<T>(array: T, value: string, name: strin
  * @param {T} array - Исходный массив.
  * @returns {Array} - Результат.
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare function ArraySelectAll<T>(array: T[]): T extends any[] ? T[] : T[];
+declare function ArraySelectAll<T>(array: T[]): T[];
 
 /**
  * Возвращает массив, содержащий все элементы исходного массива в виде стандартного массива Array.
@@ -618,55 +630,58 @@ declare function ArraySelectAll<T>(array: T[]): T extends any[] ? T[] : T[];
  * таких как результаты {@link XQuery}
  * 2. Когда в цикле, осуществляющем проход по массиву, происходит выборочное удаление его элементов.
  * @param {XmlMultiElem<T>} array - Исходный массив.
- * @returns {Array} - Результат.
+ * @returns {XmlElem<T>[]} - Результат.
  */
-declare function ArraySelectAll<T>(array: XmlMultiElem<T>): T[];
+declare function ArraySelectAll<T>(array: XmlMultiElem<T>): XmlElem<T>[];
 
 /**
  * Возвращает массив уникальных значений элементов заданного массива.
  * @param {T} array - Исходный массив.
- * @param {string} fieldExpr - Выражение, вычисляемое относительно каждого элемента исходного массива,
+ * @param {string} [fieldExpr] - Выражение, вычисляемое относительно каждого элемента исходного массива,
  * Если аргумент не указан, используется значение самого элемента `This`.
- * @returns {T} Результат.
+ * @returns {T[] | XmlElem<T>[]} Результат.
  */
-declare function ArraySelectDistinct<T>(array: T[], fieldExpr?: string): T;
+declare function ArraySelectDistinct<T>(array: T[], fieldExpr?: string): T[];
+declare function ArraySelectDistinct<T>(array: XmlMultiElem<T>, fieldExpr?: string): XmlElem<T>[];
 
 /**
  * Последовательное объединение нескольких массивов в один.
- * @param {T[]} args - Массивы.
- * @returns {T[]} - Результат.
+ * @param {unknown[]} args - Массивы.
+ * @returns {unknown[]} - Результат.
  */
-declare function ArrayUnion<T>(...args: T[]): T;
+declare function ArrayUnion(...args: unknown[]): unknown[];
 
 /**
  * Проверяет, является ли аргумент массивом.
- * @param {T} value - Аргумент.
+ * @param {unknown} value - Аргумент.
  * @returns {boolean} Результат.
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare function IsArray(value: unknown): value is any[];
+declare function IsArray(value: unknown): value is unknown[] | XmlMultiElem<unknown>;
 
 /**
  * Выбирает элементы массива, с определенным значением  заданного поля (ключа) внутри элемента.
  * Массив должен быть предварительно отсортирован по возрастанию значения ключа,
  * что делает эту функцию существенно быстрее по сравнению с {@link ArraySelectByKey}().
  * @param {Array} array - Массив.
- * @param {string} value - Значение ключа.
+ * @param {string | number} value - Значение ключа.
  * @param {string} name - Имя элемента, являющегося  ключом.
- * @returns {Array} - Результат.
+ * @param {boolean} [ignoreCase] - Игнорировать регистр (для массивов, содержащих строки).
+ * @returns {T[] | XmlElem<T>[]} - Результат.
  */
-declare function ArraySelectBySortedKey<T, K>(array: T, value: K, name: string): T;
+declare function ArraySelectBySortedKey<T>(array: T[], value: string | number, name: string, ignoreCase?: boolean): T[];
+declare function ArraySelectBySortedKey<T>(array: XmlMultiElem<T>, value: string | number, name: string, ignoreCase?: boolean): XmlElem<T>[];
 
 /**
  * Выбирает элементы массива, с определенным значением заданного поля (ключа) внутри элемента.
  * Функция аналогична более универсальной функции {@link ArraySelect}(), но работает быстрее.
  * @param {Array} array - Массив.
- * @param {string} value - Значение ключа.
+ * @param {string | number} value - Значение ключа.
  * @param {string} name - Имя элемента, являющегося ключом. Необязательный аргумент.
  * Если имя ключа не указано, используется первичный ключ.
- * @returns {Array} - Результат.
+ * @returns {T[] | XmlElem<T>[]} - Результат.
  */
-declare function ArraySelectByKey<T, K>(array: T, value: K, name: string): T;
+declare function ArraySelectByKey<T>(array: T[], value: string | number, name: string): T[];
+declare function ArraySelectByKey<T>(array: T[] | XmlMultiElem<T>, value: string | number, name: string): XmlElem<T>[];
 
 /**
  * Сортирует массив по заданным полям. Возвращает новый массив отсортированных значений.
@@ -677,14 +692,15 @@ declare function ArraySelectByKey<T, K>(array: T, value: K, name: string): T;
  * по которым осуществляется сортировка.
  * @param {string} [direction] - Направление сортировки ('+' или '-').
  * @param {string} args
- * @returns {Array} Результат.
+ * @returns {T[] | XmlElem<T>[]} Результат.
  * @example
  * ```
  * ArraySort(array, "name", "+", "date", "-");
  * ```
  */
 
-declare function ArraySort<T>(array: T, field: string, direction: string, ...args: string[]): T;
+declare function ArraySort<T>(array: T[], expression: string, direction?: string, ...args: string[]): T[];
+declare function ArraySort<T>(array: XmlMultiElem<T>, expression: string, direction?: string, ...args: string[]): XmlElem<T>[];
 
 /**
  * Возвращает сумму значений определенного поля по всем элементам массива.
@@ -692,7 +708,7 @@ declare function ArraySort<T>(array: T, field: string, direction: string, ...arg
  * @param {string} expression - Выражение, вычисляющее поле, по которому происходит суммирование.
  * @returns {number} Результат.
  */
-declare function ArraySum<T>(array: T, expression: string): number;
+declare function ArraySum<T>(array: T[] | XmlMultiElem<T>, expression: string): number;
 
 /**
  * Текущая дата системы время системы.
