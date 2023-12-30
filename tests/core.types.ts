@@ -8,6 +8,7 @@ ArrayCount(xmlDocumentForTesting.TopElem.tasks);
 
 ArrayDirect(testPrimitivesArray);
 ArrayDirect(testArrayOfObjects);
+ArrayDirect(xmlDocumentForTesting.TopElem.tasks);
 
 ArrayExtract(testPrimitivesArray, "This");
 ArrayExtract(testArrayOfObjects, "This.option1");
@@ -31,7 +32,8 @@ arrayFirstElemXmlResultData.OptChild("testValue");
 
 ArrayIntersect(testPrimitivesArray, testArrayOfObjects);
 ArrayIntersect(testArrayOfObjects, testPrimitivesArray, "This.option1");
-const arrayIntersectXmlResultData = ArrayIntersect(xmlDocumentForTesting.TopElem.tasks, testArrayOfObjects, "This.name", "This.option1");
+ArrayIntersect(ArrayDirect(xmlDocumentForTesting.TopElem.tasks), testArrayOfObjects, "This.name", "This.option1");
+const arrayIntersectXmlResultData = ArrayIntersect(xmlDocumentForTesting.TopElem.tasks, xmlDocumentForTesting.TopElem.tasks, "This.name", "This.option1");
 // проверка на то что мы получаем XmlElem, к которому можем обратиться
 arrayIntersectXmlResultData[0].OptChild("testValue");
 
