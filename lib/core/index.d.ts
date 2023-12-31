@@ -900,7 +900,7 @@ declare function ArraySelectByKey<T>(array: T[] | XmlMultiElem<T>, value: string
  * @param {string} expression - Выражение, вычисляющее значение полей относительно элемента массива,
  * по которым осуществляется сортировка.
  * @param {string} [direction] - Направление сортировки ('+' или '-').
- * @param {string} args - Набор дополнительных аргументов для сортировки
+ * @param {string} args - Набор дополнительных аргументов для сортировки.
  * @returns {T[]} Результат.
  * @example
  * ```
@@ -916,7 +916,7 @@ declare function ArraySort<T>(array: T[], expression: string, direction?: string
  * @param {string} expression - Выражение, вычисляющее значение полей относительно элемента массива,
  * по которым осуществляется сортировка.
  * @param {string} [direction] - Направление сортировки ('+' или '-').
- * @param {string} args - Набор дополнительных аргументов для сортировки
+ * @param {string} args - Набор дополнительных аргументов для сортировки.
  * @returns {XmlElem<T>[]} Результат.
  * @example
  * ```
