@@ -518,7 +518,7 @@ declare function ArrayFirstElem<T extends XmlMultiElem<unknown>>(array: T): T[0]
  * Если массив не содержит ни одного элемента, функция завершается с исключением.
  * @param {Array} array - Массив.
  * @param {string} expression - Выражение (строка), вычисляющее значение поля относительно элемента массива.
- * @returns {T } Результат.
+ * @returns {T} Результат.
  */
 declare function ArrayMax<T>(array: T[], expression: string): T;
 /**
@@ -751,7 +751,7 @@ declare function ArrayOptFirstElem<T>(array: XmlMultiElem<T>): XmlElem<T> | unde
  * Если массив не содержит ни одного элемента, функция возвращает второй аргумент.
  * @param {Array} array - Массив.
  * @param {K} defaultValue - Значение по умолчанию.
- * @returns {T | K } Результат.
+ * @returns {T | K} Результат.
  */
 declare function ArrayOptFirstElem<T, K = undefined>(array: T[], defaultValue: K): T | K;
 /**
@@ -759,7 +759,7 @@ declare function ArrayOptFirstElem<T, K = undefined>(array: T[], defaultValue: K
  * Если массив не содержит ни одного элемента, функция возвращает второй аргумент.
  * @param {XmlMultiElem<T>} array - Массив.
  * @param {K} defaultValue - Значение по умолчанию.
- * @returns {XmlElem<T> | K } Результат.
+ * @returns {XmlElem<T> | K} Результат.
  */
 declare function ArrayOptFirstElem<T, K = undefined>(array: XmlMultiElem<T>, defaultValue: K): XmlElem<T> | K;
 
@@ -1896,7 +1896,16 @@ declare function RegisterSharedDoc(docUrl: string): XmlDocument;
  */
 declare function OpenDocFromStr(dataStr: string, options?: string): XmlDocument;
 
-declare function LoadFileText(filePath: string): string;
+/**
+ * Загружает содержимое файла с заданным путем с учетом наличия BOM.
+ * Если файл начинается на UTF-16 BOM, происходи конвертация из UTF-16 в текущую кодировку (UTF-8).
+ * Если файл начинается на UTF-8 BOM, возвращается содержимое файла после BOM.
+ * Если BOM в файле отсутствует, происходит конвертация из однобайтовой кодировки по умолчанию
+ * (например Windows-1251) в текущую (UTF-8).
+ * @param {string} filepath - Путь до файла.
+ * @returns {string} Содержимое файла.
+ */
+declare function LoadFileText(filepath: string): string;
 
 /**
  * Выдает наименование типа объекта по его url. Смотри так же ObjectDocUrl и ObjectIDFromUrl .
@@ -2037,7 +2046,6 @@ declare function RegisterAutoDoc(documentUrl: string, formUrl: string): undefine
  */
 declare function RegisterSubForm(formUrl: string, formPath: string): string;
 
-
 /**
  * Проверяет, является ли значение `undefined`, `null` либо пустой строкой.
  * Позволяет писать универсальный код, не зная точный тип данных переданного аргумента.
@@ -2057,23 +2065,31 @@ declare function IsEmptyValue(arg: unknown): arg is undefined | null | "";
  * Преобразует значение аргумента к целому числу.
  * @param {number} value - Целое число, вещественное число или строка, содержащая число.
  * @returns {number} Результат.
- * Пример: Int( 123 ) Int( '123' ) Int( 123.45 ).
+ * @example
+ * ```
+ * Int(123);
+ * Int("123");
+ * Int(123.45);
+ * ```
  */
 declare function Int(value: string | number): number;
 
 /**
  * Возвращает скалярное значение аргумента, если в качестве аргумента передан объект.
  * Если передано скалярное значение, возвращается оно же.
- * @param {any} value - Аргумент (Any).
- * @returns {any} Результат.
+ * @param {XmlElem<T> | T} value - Аргумент (Any).
+ * @returns {T} Результат.
  */
 declare function RValue<T>(value: XmlElem<T> | T): T;
 
 /**
  * Возвращает строку, содержащую аргумент в шестнадцатеричном виде (64 бита).
  * @param {number} num - Число, которую нужно преобразовать.
- * @returns {string}
- * StrHexInt( 1000 ) вернет '00000000000003E8'.
+ * @returns {string} - Строка.
+ * @example
+ * ```
+ * StrHexInt(1000); // "00000000000003E8"
+ * ```
  */
 declare function StrHexInt(num: number): string;
 
@@ -2096,15 +2112,22 @@ declare function StrReal(value: number, precision?: number, addGroupDelim?: bool
  * Преобразует значение аргумента к вещественному числу.
  * @param {string | number} value - Целое число, вещественное число или строка, содержащая вещественное число.
  * @returns {number} Результат.
- * Пример: Real( 12.6 ) Real( '12.6' ).
+ * @example
+ * ```
+ * Real(12.6);
+ * Real("12.6");
+ * ```
  */
 declare function Real(value: string | number): number;
 
 /**
  * Преобразует 10 обозначение цвета (RGB) в  шестнадцатеричное, принятое в формате html.
  * @param {string} color - 10 обозначение цвета .
- * @returns {string}
- * Пример: StrHexColor( '128,128,128' ) вернет '808080'.
+ * @returns {string} Результат.
+ * @example
+ * ```
+ * StrHexColor("128,128,128"); // "808080"
+ * ```
  */
 declare function StrHexColor(color: string): string;
 
@@ -2142,13 +2165,7 @@ declare function StrRealFixed(arg: number, precision?: number, addGroupDelim?: b
  * @example
  * ```
  * StrInt(11500) == '11500'
- * ```
- * @example
- * ```
  * StrInt(11500, 6) == '011500'
- * ```
- * @example
- * ```
  * StrInt(11500, 0, true) == '11 500'
  * ```
  */
@@ -2534,8 +2551,24 @@ declare function PathIsDirectory(path: string): boolean;
  */
 declare function ReadDirectory(dirUrl: string): string[];
 
-declare function OptInt<T, K = undefined>(variable: T, defaultValue?: K): number | K;
-declare function OptReal<T, K = undefined>(variable: T, defaultValue?: K): number | K;
+/**
+ * Преобразует значение аргумента к целому числу.
+ * Если преобразование выполнить невозможно, возвращает undefined, либо defaultVal, если оно указано.
+ * @param {T} value - Целое число, вещественное число или строка, содержащая число.
+ * @param {K} [defaultValue] - Значение по умолчанию.
+ * @returns {number | K} - Результат.
+ */
+declare function OptInt<T, K = undefined>(value: T, defaultValue?: K): number | K;
+
+/**
+ * Преобразует значение аргумента к вещественному числу.
+ * Если аргумент не может быть преобразован к вещественному числу,
+ * функция возвращает undefined, либо defaultVal, если оно указано.
+ * @param {T} value - Целое число, вещественное число или строка, содержащая вещественное число.
+ * @param {K} [defaultValue] - Значение по умолчанию.
+ * @returns {number | K} - Результат.
+ */
+declare function OptReal<T, K = undefined>(value: T, defaultValue?: K): number | K;
 
 /**
  * Возвращает `URL` объектного документа с заданным id.
@@ -2547,8 +2580,40 @@ declare function OptReal<T, K = undefined>(variable: T, defaultValue?: K): numbe
  */
 declare function UrlFromDocID(documentId: number, databaseName?: string): string;
 
-declare function EncodeJson<T>(arg: T): string;
-declare function ParseJson<T>(arg: string): T;
+type EncodeJsonOptions = {
+  /** @type форматирование с отступами и переводами строк. */
+  PrettyFormat: boolean;
+  /** @type Экспортировать целые числа, значение которых больше 0x7FFFFFFF, в виде строковой константы в кавычках. */
+  ExportLargeIntegersAsStrings: boolean;
+};
+
+/**
+ * Преобразует базовый объект, массив, либо скалярное значение в строку в формате JSON.
+ * Функция работает аналогично функции JSON.stringify() в JavaScript,
+ * однако второй аргумент представляет из себя набор опций.
+ * @param {T} value - Значение.
+ * @param {EncodeJsonOptions} [options] - Базовый объект, содержащий набор опций.
+ * @returns {string} Сериализованный объект.
+ */
+declare function EncodeJson<T>(value: T, options?: EncodeJsonOptions): string;
+
+type ParseJsonOptions = {
+  StrictMode: boolean;
+};
+
+/**
+ * Преобразует строку, содержащую JSON, в базовый объект, массив, либо скалярное значение.
+ * Функция работает аналогично функции JSON.parse() в JavaScript,
+ * однако второй аргумент представляет из себя набор опций.
+ * Также ParseJson() менее требовательна к формату,
+ * и по умолчанию обрабатывает строки не только в формате JSON,
+ * но и JavaScript literal, разрешая в том числе любые типы кавычек,
+ * а также значения undefined.
+ * @param {string} value - Строка.
+ * @param {ParseJsonOptions} [options] - Опции.
+ * @returns {T} JSON объект.
+ */
+declare function ParseJson<T>(value: string, options?: ParseJsonOptions): T;
 
 /**
  * Извлекает из объекта типа {@link Error} пользовательскую часть сообщения об ошибке.
@@ -2796,7 +2861,20 @@ declare function DataType<T>(entity: T): string;
  */
 declare function ObjectType<T>(entity: T): string;
 
+/**
+ * Разбивает сроку на одиночные символы.
+ * Возвращает массив кодов каждого символа в UTF-16.
+ * @param {string} str - Строка.
+ * @returns {number[]} Массив кодов символов.
+ */
 declare function StrToCharCodesArray(str: string): number[];
+
+/**
+ * Разбивает сроку на одиночные символы.
+ * Возвращает массив строк, каждая из которых содержит одиночный символ.
+ * @param {string} str - Строка.
+ * @returns {string[]} Массив символов.
+ */
 declare function StrToCharArray(str: string): string[];
 
 /**
@@ -2806,4 +2884,10 @@ declare function StrToCharArray(str: string): string[];
  */
 declare function StrFromCharCode(code: number): string;
 
+/**
+ * Вычисляет контрольную сумму (64 бита) по алгоритму SHA256.
+ * Возвращает бинарную строку длиной 32 байта.
+ * @param {string} value - Строка (интерпретируется как массив байт).
+ * @returns {string} Бинарная строка.
+ */
 declare function SHA256(value: string): string;
