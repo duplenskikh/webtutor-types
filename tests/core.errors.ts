@@ -3,22 +3,22 @@ import {arrayFunctionsNegativeTestNumberValue, arrayFunctionsNegativeTestStringV
 // THROWS Argument of type 'number' is not assignable to parameter of type 'string'.
 ClipboardFormatAvailable(1);
 
-// THROWS Argument of type '"testString"' is not assignable to parameter of type '"testString"[] | XmlMultiElem<"testString">'.
+// THROWS No overload matches this call.
 ArrayCount(arrayFunctionsNegativeTestStringValue);
 
-// THROWS Argument of type 'string' is not assignable to parameter of type 'unknown[]'.
+// THROWS No overload matches this call.
 ArrayDirect(arrayFunctionsNegativeTestStringValue);
 
-// THROWS Argument of type '"testString"' is not assignable to parameter of type '"testString"[] | XmlMultiElem<"testString">'
+// THROWS No overload matches this call.
 ArrayExtract(arrayFunctionsNegativeTestStringValue, "This");
-// THROWS Argument of type '1234' is not assignable to parameter of type '1234[] | XmlMultiElem<1234>'.
+// THROWS No overload matches this call.
 ArrayExtract(arrayFunctionsNegativeTestNumberValue, "This.option1");
 
-// THROWS Argument of type '"testString"' is not assignable to parameter of type '"testString"[] | XmlMultiElem<"testString">'
+// THROWS No overload matches this call.
 ArrayExtractKeys(arrayFunctionsNegativeTestStringValue, "This");
-// THROWS Argument of type '1234' is not assignable to parameter of type '1234[] | XmlMultiElem<1234>'.
+// THROWS No overload matches this call.
 ArrayExtractKeys(arrayFunctionsNegativeTestNumberValue, "This.option1");
-// THROWS Argument of type 'XmElem<string, never> & string & (() => string)' is not assignable to parameter of type '(XmElem<string, never> & string & (() => string))[] | XmlMultiElem<XmElem<string, never> & string & (() => string)>'.
+// THROWS No overload matches this call.
 ArrayExtractKeys(xmlDocumentForTesting.TopElem.name, "This.name");
 
 // THROWS No overload matches this call.
@@ -49,11 +49,11 @@ ArrayMax(arrayFunctionsNegativeTestNumberValue, "This.option1");
 // THROWS No overload matches this call.
 ArrayMax(xmlDocumentForTesting, "This.plan_date");
 
-// THROWS Argument of type '"testString"' is not assignable to parameter of type '"testString"[] | XmlMultiElem<"testString">'.
+// THROWS No overload matches this call.
 ArrayMerge(arrayFunctionsNegativeTestStringValue, "This", ";");
-// THROWS Argument of type '1234' is not assignable to parameter of type '1234[] | XmlMultiElem<1234>'.
+// THROWS No overload matches this call.
 ArrayMerge(arrayFunctionsNegativeTestNumberValue, "This.option1", ";");
-// THROWS Argument of type 'number' is not assignable to parameter of type 'number[] | XmlMultiElem<number>'.
+// THROWS No overload matches this call.
 ArrayMerge(xmlDocumentForTesting.DocID, "This.plan_date", ";");
 
 // THROWS No overload matches this call.
@@ -152,9 +152,9 @@ ArraySort(arrayFunctionsNegativeTestStringValue, "This", "-");
 ArraySort(arrayFunctionsNegativeTestNumberValue, "option1", "-");
 ArraySort(xmlDocumentForTesting.TopElem.person_id.ForeignElem, "name", "+");
 
-// THROWS Argument of type '"testString"' is not assignable to parameter of type '"testString"[] | XmlMultiElem<"testString">'.
+// THROWS No overload matches this call.
 ArraySum(arrayFunctionsNegativeTestStringValue, "This");
-// THROWS Argument of type '1234' is not assignable to parameter of type '1234[] | XmlMultiElem<1234>'.
+// THROWS No overload matches this call.
 ArraySum(arrayFunctionsNegativeTestNumberValue, "option1");
-// THROWS Argument of type 'XmElem<number, never> & number & MsPersonSdInnerBase' is not assignable to parameter of type 'XmlMultiElem<XmElem<number, never> & number & MsPersonSdInnerBase> | (XmElem<number, never> & number & MsPersonSdInnerBase)[]'.
+// THROWS No overload matches this call.
 ArraySum(xmlDocumentForTesting.TopElem.person_id, "id");
