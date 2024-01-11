@@ -47,4 +47,5 @@ interface StreamConstructor {
   (): Stream;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 declare const Stream: StreamConstructor;

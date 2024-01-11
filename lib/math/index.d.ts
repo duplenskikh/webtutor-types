@@ -14,4 +14,5 @@ interface Math {
   ceil(number: number): number;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 declare const Math: Math;

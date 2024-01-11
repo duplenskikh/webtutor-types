@@ -9,4 +9,5 @@ interface BufStreamConstructor {
   new(): BufStream;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 declare let BufStream: BufStreamConstructor;

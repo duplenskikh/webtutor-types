@@ -7,4 +7,5 @@ interface DateConstructor {
   (): Date;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 declare let Date: DateConstructor;

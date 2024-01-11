@@ -54,4 +54,5 @@ interface ObjectConstructor {
   (): Object;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 declare const Object: ObjectConstructor;

@@ -207,4 +207,5 @@ interface TagReaderConstructor {
   (data: string): TagReader;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 declare const TagReader: TagReaderConstructor;

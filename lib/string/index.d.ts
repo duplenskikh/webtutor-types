@@ -104,4 +104,5 @@ interface StringConstructor {
   fromCharCode(charCode: number): string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 declare const String: StringConstructor;

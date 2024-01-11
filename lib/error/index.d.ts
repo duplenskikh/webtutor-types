@@ -13,5 +13,6 @@ interface ErrorConstructor {
  * @returns String
  * UserError(str).
  */
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 declare let Error: ErrorConstructor;
 declare let UserError: ErrorConstructor;
