@@ -47,4 +47,5 @@ interface ThreadConstructor {
  * поскольку существует более удобный способ запyска потока через метод {@link EvalThread}()
  * объекта XmlDoc, предлагающий концепцию класса, содержажего атрибуты и методы.
  */
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 declare const Thread: ThreadConstructor;

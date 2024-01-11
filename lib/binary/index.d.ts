@@ -83,4 +83,5 @@ interface BinaryConstructor {
   (...arg: unknown[]): Binary;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 declare const Binary: BinaryConstructor;
