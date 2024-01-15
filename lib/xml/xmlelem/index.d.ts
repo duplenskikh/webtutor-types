@@ -660,7 +660,7 @@ interface XmElem<T, ForeignElem = never> {
    * Смотри также метод {@link Child}.
    * @param {string} name - Имя дочернего элемента.
    */
-  OptChild(name: string): XmlElem<unknown>;
+  OptChild<K extends keyof T>(this: T, name: K): T[K] | undefined;
 
   /**
    * Метод находит (среди дочерних элементов текущего элемента) элемент, имеющий атрибут с заданным именем,
