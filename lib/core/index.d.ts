@@ -2891,3 +2891,14 @@ declare function StrFromCharCode(code: number): string;
  * @returns {string} Бинарная строка.
  */
 declare function SHA256(value: string): string;
+
+/**
+ * Преобразует целочисленный аргумент в строку.
+ * Используется в том числе для того что бы вывести отрицательное число.
+ * @param {number} value - Целочисленный аргумент.
+ * @param {number} [digitsNum] - Минимальное число символов в строке. Необязательный аргумент.
+ * Недостающие символы компенсируются нулями перед числом.
+ * @param {boolean} [addGroupDelim] - Флаг, разделять тысячные разряды пробелами или нет.
+ * @returns {string} Результат преобразования.
+ */
+declare function StrSignedInt(value: number, digitsNum?: number, addGroupDelim?: boolean): string;
