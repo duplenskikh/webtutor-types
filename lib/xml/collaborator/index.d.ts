@@ -66,16 +66,8 @@ interface CollaboratorDocumentLastData {
   avatar_filename: XmlElem<string>;
 }
 
-type CollaboratorDocumentTopElem = XmlTopElem &
-PersonBase &
-PassportDataBase &
-FileListBaseFile &
-FuncManagersBase &
-PathSubsBase &
-KnowledgePartsBase &
-KnowledgePartsBaseOld &
-CustomElemsBase &
-PersonObjectLinksBase & {
+// eslint-disable-next-line max-len
+declare class CollaboratorDocumentTopElem extends XmlTopElem<CollaboratorDocument> implements PersonBase, PassportDataBase, FileListBaseFile, FuncManagersBase, PathSubsBase, KnowledgePartsBase, KnowledgePartsBaseOld, CustomElemsBase, PersonObjectLinksBase {
   Doc: CollaboratorDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -171,6 +163,4 @@ PersonObjectLinksBase & {
   clear_subs_fields(): void;
 };
 
-type CollaboratorDocument = XmlDocument & {
-  TopElem: CollaboratorDocumentTopElem;
-};
+declare class CollaboratorDocument extends XmlDocument<CollaboratorDocumentTopElem> {}

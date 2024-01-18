@@ -1806,9 +1806,9 @@ declare function WebAppUrl(url: string): string;
  * Возвращает документ с заданным url из кэша.
  * Если документ с заданным url в кэше отсутствует, функция завершается с ошибкой.
  * @param {string} url - Url документа.
- * @returns {WTXmlDocument} XmlDocument.
+ * @returns {T} XmlDocument.
  */
-declare function GetCachedDoc(url: string): XmlDocument;
+declare function GetCachedDoc<T extends XmlDocument<unknown>>(url: string): T;
 
 /**
  * Удаляет на сервере приложения документ с заданным url.
@@ -1863,9 +1863,9 @@ declare function MoveDoc(url: string, newUrl: string): undefined;
  * Если документ с заданным url уже находится в кэше, возвращается уже загруженный в кэш документ.
  * @param {string} url - Url документа.
  * @param {string} [options] - Опции открытия документа.
- * @returns {XmlDocument} XmlDocument.
+ * @returns {T} XmlDocument.
  */
-declare function FetchDoc(url: string, options: string): XmlDocument;
+declare function FetchDoc<T extends XmlDocument<unknown>>(url: string, options: string): T;
 
 /**
  * Пытается найти открытую в пользовательском интерфейсе карточку XML-документа.
@@ -1876,25 +1876,25 @@ declare function FetchDoc(url: string, options: string): XmlDocument;
  * Если документ был открыт пользователем на экране, то при выполнении функции UpdateUiDoc
  * документ будет изменен прямо на экране, если открытого документа не было - то документ будет просто сохранен.
  * @param {string} docUrl - Url XML-документа.
- * @returns {XmlDocument} XmlDocument.
+ * @returns {T} XmlDocument.
  */
-declare function ObtainUiDoc(docUrl: string): XmlDocument;
+declare function ObtainUiDoc<T extends XmlDocument<unknown>>(docUrl: string): T;
 
 /**
  * Загружает xml документ в кэш документов и делает его корневой элемент видимым в списке глобальных имен.
  * @param {string} docUrl - Url документа.
- * @returns {XmlDocument} XmlDocument.
+ * @returns {T} XmlDocument.
  */
-declare function RegisterSharedDoc(docUrl: string): XmlDocument;
+declare function RegisterSharedDoc<T extends XmlDocument<unknown>>(docUrl: string): T;
 
 /**
  * Открывает XML-документ, содержащийся к строке.
  * @param {string} dataStr - Строка, содержащая данные открываемого документа.
  * @param {string} [options] - Опции открытия документа в виде "param1='value1';param2='value2';...".
  * См. Опции открытия документа XML.
- * @returns {XmlDocument} XmlDocument.
+ * @returns {T} XmlDocument.
  */
-declare function OpenDocFromStr(dataStr: string, options?: string): XmlDocument;
+declare function OpenDocFromStr<T extends XmlDocument<unknown>>(dataStr: string, options?: string): T;
 
 /**
  * Загружает содержимое файла с заданным путем с учетом наличия BOM.
@@ -1924,7 +1924,7 @@ declare function ObjectNameFromUrl(url: string): string;
  * @param {string} formUrl - Url формы.
  * @returns {XmlDocument} XmlDocument.
  */
-declare function OpenNewDoc<T = XmlDocument>(formUrl: string): T;
+declare function OpenNewDoc<T extends XmlDocument<unknown>>(formUrl: string): T;
 
 /**
  * Открывает XML-документ. Возвращает объект типа XmlDoc.
@@ -1933,7 +1933,7 @@ declare function OpenNewDoc<T = XmlDocument>(formUrl: string): T;
  * См. Опции открытия документа XML.
  * @returns {XmlDocument} XmlDocument.
  */
-declare function OpenDoc<T = XmlDocument>(url: string, options?: string): T;
+declare function OpenDoc<T extends XmlDocument<unknown>>(url: string, options?: string): T;
 
 /**
  * Сохраняет изменения в документе, открытом при помощи функции ObtainUiDoc.
@@ -2827,9 +2827,9 @@ declare function StartModalTask(taskTitle: string): undefined;
  * {@link EvalCodeUrl}, загружаемый js-файл не может содержать глобальных
  * переменных, а только функции.
  * @param {string} url - Url загружаемого документа с расширением XML или JS.
- * @returns {XmlDocument} XmlDocument.
+ * @returns {T} XmlDocument.
  */
-declare function OpenCodeLib(url: string): XmlDocument;
+declare function OpenCodeLib<T extends XmlDocument<unknown>>(url: string): T;
 
 /**
  * Вызывает метод (функцию) библиотеки на сервере приложения.

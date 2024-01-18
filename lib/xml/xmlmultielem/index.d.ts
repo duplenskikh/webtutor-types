@@ -9,7 +9,7 @@ interface XmMultiElem<T> extends XmElem<T> {
   /**
    * Возвращает документ, к которому относится данный объект.
    */
-  Doc: XmlDocument;
+  Doc: XmlDocument<unknown>;
 
   /**
    * Возвращает массив, указанный в атрибуте `FOREIGN-ARRAY` текущего элемента.
