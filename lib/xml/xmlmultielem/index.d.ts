@@ -1,5 +1,5 @@
-interface XmMultiElem<T, ForeignElem = never, Document = never> extends XmElem<T, ForeignElem, Document> {
-  [index: number]: XmlElem<T, ForeignElem, Document>;
+interface XmMultiElem<T extends object, ForeignElem = never, Document = never> extends XmElem<T, ForeignElem, Document> {
+  [index: number]: XmlElem<T, ForeignElem, Document> & toXmlElem<T, Document>;
 
   /**
    * Возвращает количество дочерних элементов.

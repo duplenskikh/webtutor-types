@@ -7,10 +7,10 @@ type InferXmlElemForeignElem<T> = T extends XmlElem<unknown, infer P, unknown> ?
 
 type toXmlElem<T extends object, Document = never> = {
   [Property in keyof T]:
-  T[Property] extends XmlElem<unknown, unknown, unknown>
-  ? XmlElem<InferXmlElemFirst<T[Property]>, InferXmlElemForeignElem<T[Property]>, Document>
-  : T[Property] extends XmlMultiElem<unknown, unknown, unknown>
+  T[Property] extends XmlMultiElem<unknown, unknown, unknown>
   ? XmlMultiElem<InferXmlElemFirst<T[Property]>, InferXmlElemForeignElem<T[Property]>, Document>
+  : T[Property] extends XmlElem<unknown, unknown, unknown>
+  ? XmlElem<InferXmlElemFirst<T[Property]>, InferXmlElemForeignElem<T[Property]>, Document>
   : T[Property];
 };
 

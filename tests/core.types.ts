@@ -150,5 +150,6 @@ IsArray(xmlDocumentForTesting.TopElem.tasks);
 IsArray(1);
 
 var workflowDoc: WorkflowDocument = tools.open_doc(1)!;
-workflowDoc.TopElem.Doc.TopElem.role_id.Doc.TopElem
+var a = workflowDoc.TopElem.Doc.TopElem.escalations[0];
+a.
 var result = MailMessage();
