@@ -151,7 +151,10 @@ IsArray(1);
 
 var workflowDoc: WorkflowDocument = tools.open_doc(1)!;
 var testChaining = workflowDoc.TopElem.Doc.TopElem.escalations[0].assessments[0].assessment_id;
-var childXmlElem = workflowDoc.TopElem.Child("changed").Doc;
+var childXmlElem = workflowDoc.TopElem.Child("changed");
+childXmlElem.Value;
+
 var childXmlMultiElem = workflowDoc.TopElem.Child("escalations");
+childXmlMultiElem[0].type;
 
 var result = MailMessage();

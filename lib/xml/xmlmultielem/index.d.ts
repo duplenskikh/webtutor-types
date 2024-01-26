@@ -1,5 +1,7 @@
-interface XmMultiElem<T extends object, ForeignElem = never, Document = never> extends XmElem<T, ForeignElem, Document> {
-  [index: number]: XmlElem<T, ForeignElem, Document> & toXmlElem<T, Document>;
+interface XmMultiElem<T, ForeignElem = never, Document = never> extends XmElem<T, ForeignElem, Document> {
+  [index: number]: T extends object
+  ? XmlElem<T, ForeignElem, Document> & toXmlElem<T, Document>
+  : XmlElem<T, ForeignElem, Document>;
 
   /**
    * Возвращает количество дочерних элементов.
@@ -225,4 +227,4 @@ interface XmMultiElem<T extends object, ForeignElem = never, Document = never> e
 }
 
 
-type XmlMultiElem<T = unknown, ForeignElem = never, Document = never> = XmMultiElem<T, ForeignElem, Document>;
+type XmlMultiElem<T, ForeignElem = never, Document = never> = XmMultiElem<T, ForeignElem, Document>;

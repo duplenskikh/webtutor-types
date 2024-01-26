@@ -1163,7 +1163,7 @@ declare function StrXmlDate(date: Date, showTime?: boolean, showSeconds?: boolea
  * @returns {XmlElem<unknown>} Динамический элемент.
  * @example CreateDynamicElem("elem_count", "integer");
  */
-declare function CreateDynamicElem(name: string, type: string): XmlElem<unknown>;
+declare function CreateDynamicElem<T = unknown>(name: string, type: string): XmlElem<T>;
 
 /**
  * Создает XML-элемент заданному по фрагменту формы. Созданный элемент не имеет родительского элемента.
