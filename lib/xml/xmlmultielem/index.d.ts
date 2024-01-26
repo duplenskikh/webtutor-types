@@ -94,7 +94,7 @@ interface XmMultiElem<T extends object, ForeignElem = never, Document = never> e
    * присваивются значения только по совпадающим полям.
    * @param {XmlElem<K>} element - Присваиваемый элемент.
    */
-  AssignElem<K>(element: K ): void;
+  AssignElem<K>(element: K): void;
 
   /**
    * Проверяет существует ли соответствующий множественный элемент с заданным значением.

@@ -390,7 +390,11 @@ type XmElem<T = unknown, ForeignElem = never, Document = never> = {
    * Смотри также методы {@link OptChild} и {@link EvalPath}.
    * @param {string} name - Имя дочернего элемента.
    */
-  Child(name: string): XmlElem<T> | never;
+  Child<
+    K extends keyof OnlyProperties<T, XmlElem<unknown> | XmlMultiElem<unknown>>,
+    R = InferredXmlType<T[K], Document>
+  >
+    (name: K): R;
 
   /**
    * Возвращает дочерний элемент по индексу.
@@ -399,7 +403,7 @@ type XmElem<T = unknown, ForeignElem = never, Document = never> = {
    * @param {index} index - Индекс дочернего элемента.
    */
   Child(index: number): XmlElem<T> | never;
-
+  //Child<index: number, R = XmlElem<T> | XmlMultiElem<T>>(name: K): R;
   /**
    * Проверяет, существует ли дочерний элемент с заданным значением ключевого поля.
    * Смотри также {@link ChildByKeyExistsRec}.

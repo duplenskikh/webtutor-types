@@ -26,6 +26,7 @@ interface WorkflowDocumentEscalationPoll {
   poll_id: XmlElem<number>;
   status: XmlElem<number>;
 }
+
 interface WorkflowDocumentEscalation extends WorkflowElemOperationsBase {
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -41,29 +42,29 @@ interface WorkflowDocumentEscalation extends WorkflowElemOperationsBase {
   polls: XmlMultiElem<WorkflowDocumentEscalationPoll>;
 }
 
-type WorkflowDocumentTopElem =  &
-ConditionsBase &
-WorkflowFieldsStatesBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  add_conditions: XmlElem<ConditionsBase>;
-  field_groups: XmlMultiElem<WorkflowDocumentFieldGroup>;
-  actions: XmlMultiElem<WorkflowDocumentAction>;
-  use_triggers(): unknown;
-  escalations: XmlMultiElem<WorkflowDocumentEscalation>;
-  default_state: XmlElem<string>;
-  default_action: XmlElem<string>;
-  auto_submit_fields: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  destination_object_name: XmlElem<string>;
-  tune_fields: XmlMultiElem<unknown>;
-  is_std: XmlElem<boolean>;
-  changed: XmlElem<boolean>;
-  doc_info: XmlElem<DocInfoBase>;
-  run_action(): unknown;
-  role_id: XmlMultiElem<number>;
-};
+type WorkflowDocumentTopElem = &
+  ConditionsBase &
+  WorkflowFieldsStatesBase & {
+    id: XmlElem<number>;
+    code: XmlElem<string>;
+    name: XmlElem<string>;
+    add_conditions: XmlElem<ConditionsBase>;
+    field_groups: XmlMultiElem<WorkflowDocumentFieldGroup>;
+    actions: XmlMultiElem<WorkflowDocumentAction>;
+    use_triggers(): unknown;
+    escalations: XmlMultiElem<WorkflowDocumentEscalation>;
+    default_state: XmlElem<string>;
+    default_action: XmlElem<string>;
+    auto_submit_fields: XmlElem<boolean>;
+    comment: XmlElem<string>;
+    destination_object_name: XmlElem<string>;
+    tune_fields: XmlMultiElem<unknown>;
+    is_std: XmlElem<boolean>;
+    changed: XmlElem<boolean>;
+    doc_info: XmlElem<DocInfoBase>;
+    run_action(): unknown;
+    role_id: XmlMultiElem<number>;
+  };
 
 
 type _WorkflowDocumentTopElem = {

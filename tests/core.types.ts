@@ -1,4 +1,4 @@
-import {testArrayOfObjects, testPrimitivesArray, xmlDocumentForTesting} from "./mocks/arrayFunctions";
+import { testArrayOfObjects, testPrimitivesArray, xmlDocumentForTesting } from "./mocks/arrayFunctions";
 
 CheckPamMd5("source_string", "checksum");
 
@@ -77,7 +77,7 @@ const arrayOptFirstElemXmlResultData = ArrayOptFirstElem(xmlDocumentForTesting.T
 // проверка на то что мы получаем XmlElem, к которому можем обратиться
 arrayOptFirstElemXmlResultData?.OptChild("testValue");
 const arrayOptFirstElemXmlResultDataDefaultValue = ArrayOptFirstElem(xmlDocumentForTesting.TopElem.tasks, "testValue");
-if(arrayOptFirstElemXmlResultDataDefaultValue !== "testValue"){
+if (arrayOptFirstElemXmlResultDataDefaultValue !== "testValue") {
   // если нам вернулось не значение по умолчанию то должен быть XmlElem
   arrayOptFirstElemXmlResultDataDefaultValue?.OptChild("testValue");
 }
@@ -150,6 +150,8 @@ IsArray(xmlDocumentForTesting.TopElem.tasks);
 IsArray(1);
 
 var workflowDoc: WorkflowDocument = tools.open_doc(1)!;
-var a = workflowDoc.TopElem.Doc.TopElem.escalations[0];
-a.
+var testChaining = workflowDoc.TopElem.Doc.TopElem.escalations[0].assessments[0].assessment_id;
+var childXmlElem = workflowDoc.TopElem.Child("changed").Doc;
+var childXmlMultiElem = workflowDoc.TopElem.Child("escalations");
+
 var result = MailMessage();
