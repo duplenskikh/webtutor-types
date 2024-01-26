@@ -149,4 +149,6 @@ IsArray(testArrayOfObjects);
 IsArray(xmlDocumentForTesting.TopElem.tasks);
 IsArray(1);
 
+var workflowDoc: WorkflowDocument = tools.open_doc(1)!;
+workflowDoc.TopElem.Doc.TopElem.role_id.Doc.TopElem
 var result = MailMessage();

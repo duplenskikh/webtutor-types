@@ -1,4 +1,4 @@
-interface XmElem<T, ForeignElem = never> {
+type XmElem<T = unknown, ForeignElem = never, Document = never> = {
   /**
    * Возвращает массив названий атрибутов элемента.
    * Элемент должен быть динамическим, поскольку для статических элементов атрибуты не поддерживаются.
@@ -21,7 +21,7 @@ interface XmElem<T, ForeignElem = never> {
    * Возвращает документ, в состав которого входит текущий элемент.
    * Если документа нет - возвращает ошибку.
    */
-  Doc: XmlDocument | never;
+  Doc: Document;
 
   /**
    * Возвращает основное отображаемое значение элемента для внешнего использования,
@@ -200,7 +200,7 @@ interface XmElem<T, ForeignElem = never> {
    * Возвращает документ, в состав которого входит текущий элемент.
    * Если элемента не относится к документу - возвращает `undefined`.
    */
-  OptDoc: XmlDocument | undefined;
+  OptDoc: Document | undefined;
 
   /**
    * Возвращает соответствующий элемент целевого массива, описанного в атрибуте `FOREIGN-ARRAY`.
@@ -736,4 +736,4 @@ interface XmElem<T, ForeignElem = never> {
   UpdateValues(): void;
 }
 
-type XmlElem<T, ForeignElem = never> = XmElem<T, ForeignElem> & T;
+type XmlElem<T = unknown, ForeignElem = never, Document = never> = XmElem<T, ForeignElem, Document>;

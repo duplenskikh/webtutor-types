@@ -1,5 +1,5 @@
-interface XmMultiElem<T> extends XmElem<T> {
-  [index: number]: XmlElem<T>;
+interface XmMultiElem<T, ForeignElem = never, Document = never> extends XmElem<T, ForeignElem, Document> {
+  [index: number]: XmlElem<T, ForeignElem, Document>;
 
   /**
    * Возвращает количество дочерних элементов.
@@ -9,7 +9,7 @@ interface XmMultiElem<T> extends XmElem<T> {
   /**
    * Возвращает документ, к которому относится данный объект.
    */
-  Doc: XmlDocument;
+  Doc: Document;
 
   /**
    * Возвращает массив, указанный в атрибуте `FOREIGN-ARRAY` текущего элемента.
@@ -53,7 +53,7 @@ interface XmMultiElem<T> extends XmElem<T> {
   /**
    * Возвращает родительский элемент текущего элемента.
    */
-  Parent: XmlTopElem | never;
+  Parent: unknown | never;
 
   /**
    * Возвращает константу на языке {@link XQuery} в виде последовательности
@@ -94,7 +94,7 @@ interface XmMultiElem<T> extends XmElem<T> {
    * присваивются значения только по совпадающим полям.
    * @param {XmlElem<K>} element - Присваиваемый элемент.
    */
-  AssignElem<K>(element: XmlElem<K>): void;
+  AssignElem<K>(element: K ): void;
 
   /**
    * Проверяет существует ли соответствующий множественный элемент с заданным значением.
@@ -224,4 +224,5 @@ interface XmMultiElem<T> extends XmElem<T> {
   OptChild(name: string): XmlElem<T>;
 }
 
-type XmlMultiElem<T> = XmMultiElem<T> & T;
+
+type XmlMultiElem<T = unknown, ForeignElem = never, Document = never> = XmMultiElem<T, ForeignElem, Document>;

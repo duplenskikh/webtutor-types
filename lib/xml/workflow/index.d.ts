@@ -41,7 +41,7 @@ interface WorkflowDocumentEscalation extends WorkflowElemOperationsBase {
   polls: XmlMultiElem<WorkflowDocumentEscalationPoll>;
 }
 
-type WorkflowDocumentTopElem = XmlTopElem & { Doc: WorkflowDocument } &
+type WorkflowDocumentTopElem =  &
 ConditionsBase &
 WorkflowFieldsStatesBase & {
   id: XmlElem<number>;
@@ -65,6 +65,9 @@ WorkflowFieldsStatesBase & {
   role_id: XmlMultiElem<number>;
 };
 
-type WorkflowDocument = XmlDocument & {
-  TopElem: WorkflowDocumentTopElem;
+
+type _WorkflowDocumentTopElem = {
+  TopElem: XmlTopElem<WorkflowDocumentTopElem, WorkflowDocument>;
 };
+
+type WorkflowDocument = XmlDocument<_WorkflowDocumentTopElem>;
