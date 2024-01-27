@@ -152,7 +152,7 @@ IsArray(1);
 var workflowDoc: WorkflowDocument = tools.open_doc(1)!;
 
 // Проверка чейнинга
-workflowDoc.TopElem.Doc.TopElem.escalations[0].assessments[0].assessment_id;
+workflowDoc.TopElem.Doc.TopElem.escalations[0].Doc.TopElem.escalations[0].assessments[0].assessment_id;
 
 //Проверка получения значений через Child
 var childXmlElem = workflowDoc.TopElem.Child("changed");
