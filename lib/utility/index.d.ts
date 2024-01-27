@@ -62,19 +62,9 @@ type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => i
 // eslint-disable-next-line max-len
 type InstanceType<T extends abstract new (...args: any) => any> = T extends abstract new (...args: any) => infer R ? R : any;
 
-
 /**
  * From T, pick a set of properties whose keys has type K.
  */
 type OnlyProperties<T, K> = {
   [P in keyof T as T[P] extends K ? P : never]: T[P];
 };
-
-/**
- * From T, pick a set of properties whose keys has type K.
- */
-type InferredXmlType<T, Document = unknown> = T extends XmlMultiElem<unknown>
-  ? XmlMultiElem<InferXmlElemFirst<T>, InferXmlElemForeignElem<T>, Document>
-  : T extends XmlElem<unknown>
-  ? XmlElem<InferXmlElemFirst<T>, InferXmlElemForeignElem<T>, Document>
-  : T | never;

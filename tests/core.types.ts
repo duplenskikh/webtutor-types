@@ -150,11 +150,21 @@ IsArray(xmlDocumentForTesting.TopElem.tasks);
 IsArray(1);
 
 var workflowDoc: WorkflowDocument = tools.open_doc(1)!;
-var testChaining = workflowDoc.TopElem.Doc.TopElem.escalations[0].assessments[0].assessment_id;
+
+// Проверка чейнинга
+workflowDoc.TopElem.Doc.TopElem.escalations[0].assessments[0].assessment_id;
+
+//Проверка получения значений через Child
 var childXmlElem = workflowDoc.TopElem.Child("changed");
 childXmlElem.Value;
 
 var childXmlMultiElem = workflowDoc.TopElem.Child("escalations");
-childXmlMultiElem[0].type;
+childXmlMultiElem[0].type.Value;
+
+//Проверка ссылок на родителя
+childXmlElem.Parent;
+childXmlMultiElem[0].Parent;
+workflowDoc.TopElem.Parent;
+workflowDoc.TopElem.warning_str.Parent;
 
 var result = MailMessage();

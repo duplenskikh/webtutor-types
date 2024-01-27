@@ -1,7 +1,8 @@
-interface XmMultiElem<T, ForeignElem = never, Document = never> extends XmElem<T, ForeignElem, Document> {
+interface XmMultiElem<T, ForeignElem = never, Document = never, Parent = never> extends XmElem<T, ForeignElem, Document, Parent> {
+  // Если значения является вложенной структурой данных, до дополнительно делаем инъекцию ссылок
   [index: number]: T extends object
-  ? XmlElem<T, ForeignElem, Document> & toXmlElem<T, Document>
-  : XmlElem<T, ForeignElem, Document>;
+  ? XmlElem<T, ForeignElem, Document, Parent> & toInjectedXmlElem<T, Document, Parent>
+  : XmlElem<T, ForeignElem, Document, Parent>;
 
   /**
    * Возвращает количество дочерних элементов.
@@ -12,11 +13,6 @@ interface XmMultiElem<T, ForeignElem = never, Document = never> extends XmElem<T
    * Возвращает документ, к которому относится данный объект.
    */
   Doc: Document;
-
-  /**
-   * Возвращает массив, указанный в атрибуте `FOREIGN-ARRAY` текущего элемента.
-   */
-  ForeignArray: T[];
 
   /**
    * Возвращает `true` если существует хоть один соответствующий множественный элемент.
@@ -51,11 +47,6 @@ interface XmMultiElem<T, ForeignElem = never, Document = never> extends XmElem<T
    * Возвращает имя соответствующего множественного элемента.
    */
   Name: string;
-
-  /**
-   * Возвращает родительский элемент текущего элемента.
-   */
-  Parent: unknown | never;
 
   /**
    * Возвращает константу на языке {@link XQuery} в виде последовательности
@@ -227,4 +218,4 @@ interface XmMultiElem<T, ForeignElem = never, Document = never> extends XmElem<T
 }
 
 
-type XmlMultiElem<T, ForeignElem = never, Document = never> = XmMultiElem<T, ForeignElem, Document>;
+type XmlMultiElem<T, ForeignElem = never, Document = never, Parent = never> = XmMultiElem<T, ForeignElem, Document, Parent>;

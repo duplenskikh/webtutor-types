@@ -1,4 +1,30 @@
-type XmElem<T = unknown, ForeignElem = never, Document = never> = {
+
+
+/**
+ * Выводит тип, по иерархии типов от XmlMultiElem до XmlElem.
+ * Также, позволяет вложить в поля документа ссылки на сам документ и родителя.
+ */
+type InjectDocumentAndParent<T, Document = unknown, Parent = never> = T extends XmlMultiElem<unknown>
+  ? XmlMultiElem<InferXmlElemValue<T>, InferXmlElemForeignElem<T>, Document, Parent>
+  : T extends XmlElem<unknown>
+  ? XmlElem<InferXmlElemValue<T>, InferXmlElemForeignElem<T>, Document, Parent>
+  : T | never;
+
+// Выводит тип дженерика переданного значения из XmlElem
+type InferXmlElemValue<T> = T extends XmlElem<infer P, unknown, unknown, unknown> ? P : never;
+
+// Выводит тип дженерика ForeignElem из XmlElem
+type InferXmlElemForeignElem<T> = T extends XmlElem<unknown, infer P, unknown, unknown> ? P : never;
+
+// Выводит тип дженерика Parent из XmlElem
+type InferXmlElemParent<T> = T extends XmlElem<unknown, unknown, unknown, infer P> ? P : never;
+
+//Делает для всех полей инъекцию ссылками на документы и на родителя
+type toInjectedXmlElem<T extends object, Document = never, Parent = never> = {
+  [Property in keyof T]: InjectDocumentAndParent<T[Property], Document, Parent>;
+};
+
+type XmElem<T = unknown, ForeignElem = never, Document = never, Parent = never> = {
   /**
    * Возвращает массив названий атрибутов элемента.
    * Элемент должен быть динамическим, поскольку для статических элементов атрибуты не поддерживаются.
@@ -35,7 +61,7 @@ type XmElem<T = unknown, ForeignElem = never, Document = never> = {
    * Возвращает целевой массив (вычисляет выражение, описанное в атрибуте `FOREIGN-ARRAY`).
    * Если атрибут `FOREIGN-ARRAY` в форме элемент не описан, возвращается ошибка.
    */
-  ForeignArray: unknown[];
+  ForeignArray: ForeignElem extends never ? never : ForeignElem[];
 
   /**
    * Возвращает значение атрибута `FOREIGN-ARRAY` в том виде,
@@ -218,7 +244,7 @@ type XmElem<T = unknown, ForeignElem = never, Document = never> = {
    * Возвращает родительский элемент текущего элемента, если таковой есть.
    * Если родительского элемента нет, возвращает ошибку.
    */
-  Parent: unknown | never;
+  Parent: Parent;
 
   /**
    * Возвращает предыдущий относительно текущего элемент в списке дочерних элементов родительского элемента.
@@ -392,7 +418,7 @@ type XmElem<T = unknown, ForeignElem = never, Document = never> = {
    */
   Child<
     K extends keyof OnlyProperties<T, XmlElem<unknown> | XmlMultiElem<unknown>>,
-    R = InferredXmlType<T[K], Document>
+    R = InjectDocumentAndParent<T[K], Document>
   >
     (name: K): R;
 
@@ -740,4 +766,4 @@ type XmElem<T = unknown, ForeignElem = never, Document = never> = {
   UpdateValues(): void;
 }
 
-type XmlElem<T = unknown, ForeignElem = never, Document = never> = XmElem<T, ForeignElem, Document>;
+type XmlElem<T = unknown, ForeignElem = never, Document = never, Parent = never> = XmElem<T, ForeignElem, Document, Parent>;
