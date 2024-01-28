@@ -1,23 +1,29 @@
-
+//type FormElemNode = XmlMultiElem<unknown, unknown, unknown, unknown> | XmlElem<unknown, unknown, unknown, unknown> | Function;
 
 /**
  * Выводит тип, по иерархии типов от XmlMultiElem до XmlElem.
  * Также, позволяет вложить в поля документа ссылки на сам документ и родителя.
  */
 type InjectDocumentAndParent<T, Document = unknown, Parent = never> = T extends XmlMultiElem<unknown>
-  ? XmlMultiElem<InferXmlElemValue<T>, InferXmlElemForeignElem<T>, Document, Parent>
+  ? XmlMultiElem<InferXmlMultiElem<T>, InferXmlMultiElemForeignElem<T>, Document, Parent>
   : T extends XmlElem<unknown>
   ? XmlElem<InferXmlElemValue<T>, InferXmlElemForeignElem<T>, Document, Parent>
   : T | never;
 
 // Выводит тип дженерика переданного значения из XmlElem
 type InferXmlElemValue<T> = T extends XmlElem<infer P, unknown, unknown, unknown> ? P : never;
+// Выводит тип дженерика переданного значения из XmlMultiElem
+type InferXmlMultiElem<T> = T extends XmlMultiElem<infer P, unknown, unknown, unknown> ? P : never;
 
 // Выводит тип дженерика ForeignElem из XmlElem
 type InferXmlElemForeignElem<T> = T extends XmlElem<unknown, infer P, unknown, unknown> ? P : never;
+// Выводит тип дженерика ForeignElem из XmlMultiElem
+type InferXmlMultiElemForeignElem<T> = T extends XmlMultiElem<infer P, unknown, unknown, unknown> ? P : never;
 
 // Выводит тип дженерика Parent из XmlElem
 type InferXmlElemParent<T> = T extends XmlElem<unknown, unknown, unknown, infer P> ? P : never;
+// Выводит тип дженерика Parent из XmlMultiElem
+type InferXmlMultiElemParent<T> = T extends XmlMultiElem<unknown, unknown, unknown, infer P> ? P : never;
 
 //Делает для всех полей инъекцию ссылками на документы и на родителя
 type toInjectedXmlElem<T extends object, Document = never, Parent = never> = {
@@ -766,4 +772,6 @@ type XmElem<T = unknown, ForeignElem = never, Document = never, Parent = never> 
   UpdateValues(): void;
 }
 
-type XmlElem<T = unknown, ForeignElem = never, Document = never, Parent = never> = XmElem<T, ForeignElem, Document, Parent>;
+type XmlElem<T = unknown, ForeignElem = never, Document = never, Parent = never> = T extends object
+  ? XmElem<T, ForeignElem, Document, Parent> & toInjectedXmlElem<T, Document, Parent>
+  : XmElem<T, ForeignElem, Document, Parent>;

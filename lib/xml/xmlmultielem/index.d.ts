@@ -1,8 +1,6 @@
 interface XmMultiElem<T, ForeignElem = never, Document = never, Parent = never> extends XmElem<T, ForeignElem, Document, Parent> {
   // Если значения является вложенной структурой данных, до дополнительно делаем инъекцию ссылок
-  [index: number]: T extends object
-  ? XmlElem<T, ForeignElem, Document, Parent> & toInjectedXmlElem<T, Document, Parent>
-  : XmlElem<T, ForeignElem, Document, Parent>;
+  [index: number]: XmlElem<T, ForeignElem, Document, Parent>;
 
   /**
    * Возвращает количество дочерних элементов.
@@ -216,6 +214,5 @@ interface XmMultiElem<T, ForeignElem = never, Document = never, Parent = never> 
    */
   OptChild(name: string): XmlElem<T>;
 }
-
 
 type XmlMultiElem<T, ForeignElem = never, Document = never, Parent = never> = XmMultiElem<T, ForeignElem, Document, Parent>;
