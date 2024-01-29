@@ -2,7 +2,9 @@ type XmlTopElemBase = {
   TopElem: object;
 };
 
-type XmlTopElem<TopElem extends object, Document = never> = XmlElem<TopElem, never, Document, Document>;
+type XmlTopElem<TopElem extends object, Document = never> = XmlElem<TopElem, never, Document, Document> & {
+  IsTopElem: true;
+};
 
 type XmlDocumentBase = {
   /**

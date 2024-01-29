@@ -22,13 +22,9 @@ type InferXmlMultiElemForeignElem<T> = T extends XmlMultiElem<infer P, unknown, 
 
 // Выводит тип дженерика Parent из XmlElem
 type InferXmlElemParent<T> = T extends XmlElem<unknown, unknown, unknown, infer P> ? P : never;
+
 // Выводит тип дженерика Parent из XmlMultiElem
 type InferXmlMultiElemParent<T> = T extends XmlMultiElem<unknown, unknown, unknown, infer P> ? P : never;
-
-//Делает для всех полей инъекцию ссылками на документы и на родителя
-type toInjectedXmlElem<T extends object, Document = never, Parent = never> = {
-  [Property in keyof T]: InjectDocumentAndParent<T[Property], Document, Parent>;
-};
 
 type XmElem<T = unknown, ForeignElem = never, Document = never, Parent = never> = {
   /**
@@ -772,6 +768,11 @@ type XmElem<T = unknown, ForeignElem = never, Document = never, Parent = never> 
   UpdateValues(): void;
 }
 
-type XmlElem<T = unknown, ForeignElem = never, Document = never, Parent = never> = T extends object
-  ? XmElem<T, ForeignElem, Document, Parent> & toInjectedXmlElem<T, Document, Parent>
+type XmlElem<T = unknown, ForeignElem = never, Document = never, Parent = never> =
+  //Проверяем - является ли тип T - примитивом или вложенной структурой
+  T extends object
+  ? XmElem<T, ForeignElem, Document, Parent> & {
+    //Делаем для всех полей вложенной структуры инъекцию ссылками на документ и на родителя
+    [Property in keyof T]: InjectDocumentAndParent<T[Property], Document, Parent>;
+  }
   : XmElem<T, ForeignElem, Document, Parent>;
