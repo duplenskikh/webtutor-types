@@ -62,7 +62,7 @@ WorkflowFieldsStatesBase & {
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
   run_action(): unknown;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
 }>;
 
 type WorkflowDocument = XmlDocument<WorkflowDocumentTopElem>;

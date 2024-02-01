@@ -16,7 +16,7 @@ if (collaborator !== undefined) {
   if (collaborator.TopElem.position_id.OptForeignElem !== undefined) {
     collaborator.TopElem.position_id.OptForeignElem.id.Value;
 
-    collaborator.TopElem.position_id.Doc.TopElem.position_id.Doc.TopElem.position_id.OptForeignElem?.id.Doc.DocID;
+    collaborator.TopElem.position_id.Doc.TopElem.position_id.Doc.TopElem.position_id.OptForeignElem!.position_date.Value;
 
     var topelem = collaborator.TopElem;
     topelem.change_logs[0].working_days.Doc.TopElem.Name;
@@ -34,7 +34,7 @@ if (workflowDoc !== undefined) {
   workflowDoc.TopElem.is_std.Doc.TopElem.doc_info.creation.date.Doc.TopElem.doc_info.creation.Doc.TopElem.doc_info.creation.user_id.Value;
 
   // Проверка LastSavedData
-  workflowDoc.LastSavedData.role_id.Value;
+  workflowDoc.LastSavedData.role_id.ByValueExists(1000);
 
   //Проверка получения значений через Child
   var childXmlElem = workflowDoc.TopElem.Child("has_error");

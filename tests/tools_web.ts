@@ -6,5 +6,5 @@ var collaboratorDocument = tools.open_doc<CollaboratorDocument>(1);
 if (collaboratorDocument !== undefined) {
   collaboratorDocument.TopElem.Doc.TopElem.position_name.Value;
   tools_web.check_access(collaboratorDocument, 1);
-  collaboratorDocument.TopElem.Doc.TopElem.position_name.Doc.TopElem.
+  collaboratorDocument.TopElem.Doc.TopElem.position_name.Doc.TopElem.tags[0].Doc.TopElem.password.Value;
 }

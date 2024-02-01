@@ -1,8 +1,8 @@
 type XmlElem<T, F = never, P = never, D = never> = {
   [K in keyof T]: T[K] extends XmlElem<infer _T, infer _F, infer _P, infer _D>
-    ? XmlElem<_T, F | _F, P | _P, _D | D>
+    ? XmlElem<_T, _F, P | _P, D | _D>
     : T[K] extends XmlMultiElem<infer _T, infer _F, infer _P, infer _D>
-      ? XmlMultiElem<_T, _F, P | _P, _D | D>
+      ? XmlMultiElem<_T, _F, _P | P, D | _D>
       : T[K];
 } & {
   /**
@@ -64,7 +64,7 @@ type XmlElem<T, F = never, P = never, D = never> = {
    * Возвращает соответствующий элемент целевого массива (описанного в атрибуте `FOREIGN-ARRAY`).
    * Если элемент не найден - возвращает ошибку.
    */
-  // ForeignElem: ForeignElem | never;
+  ForeignElem: F | never;
 
   /**
    * Атрибут возвращает `URL` объекта, на который ссылается атрибут ForeignElem из текущего элемента.
@@ -541,7 +541,7 @@ type XmlElem<T, F = never, P = never, D = never> = {
    * @param {string} name - Имя атрибута.
    * @param {string} value - Значение атрибута.
    */
-  GetChildByAttrValue(name: string, value: unknown): XmlElem<unknown, F, P, D>;
+  GetChildByAttrValue<K>(name: string, value: K): XmlElem<T, F, P, D>;
 
   /**
    * Возвращает дочерний элемент с заданным значением ключевого поля.
@@ -551,7 +551,7 @@ type XmlElem<T, F = never, P = never, D = never> = {
    * @param {string} name - Имя элемента, являющегося ключом. Необязательный аргумент.
    * Если имя ключа не указано, используется первичный ключ.
    */
-  GetChildByKey<K>(value: K, name?: string): XmlElem<unknown, F, P, D>;
+  GetChildByKey<K>(value: K, name?: string): XmlElem<T, F, P, D>;
 
   /**
    * Возвращает дочерний элемент с заданным значением ключевого поля.
@@ -600,7 +600,7 @@ type XmlElem<T, F = never, P = never, D = never> = {
     index: number,
     name?: string,
     type?: string
-  ): XmlElem<unknown, F, P, D>;
+  ): XmlElem<T, F, P, D>;
 
   /**
    * Загружает значение элемента и его дочерних элементов из `URL`, содержащего данные в формате `XML`.
