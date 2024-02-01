@@ -14,10 +14,10 @@ declare namespace tools_web {
    */
   function doc_link(attr: DocumentDocumentTopElem["attributes"]): string;
 
-  function get_object_link<T>(
+  function get_object_link(
     objectName: string,
     objectId: number,
-    objectTopElem: T,
+    objectTopElem: XmlTopElem,
     docId: number
   ): string;
 
@@ -69,8 +69,8 @@ declare namespace tools_web {
   function get_url_protocol(_url: unknown): unknown;
   function set_url_protocol(sUrlParam: unknown): unknown;
   function get_cur_lng_name(sTextParam: unknown, sShortIDParam: unknown): unknown;
-  function check_access<T extends XmlDocument<unknown>>(
-    doc: T,
+  function check_access(
+    doc: XmlTopElem,
     personId: number,
     personDoc?: CollaboratorDocumentTopElem,
     ession?: Session
@@ -370,11 +370,11 @@ declare namespace tools_web {
     vBossTypeParam: unknown,
     oStructParam: unknown
   ): unknown;
-  function CheckRelativeFileVisibility<T extends XmlTopElem<unknown>>(
+  function CheckRelativeFileVisibility(
     fldFileParam: unknown,
     userId: number,
     objectId: number,
-    objectTopElem: T
+    objectTopElem: XmlTopElem
   ): unknown;
   function get_date_passed_string(dDateParam: unknown, sCurLngId: unknown): unknown;
   function get_date_remain_string(dDateParam: unknown, sCurLngId: unknown): unknown;
