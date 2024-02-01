@@ -1,4 +1,4 @@
-type PositionCatalogDocumentTopElem = XmlTopElem & { Doc: PositionCatalogDocument } & {
+type PositionCatalogDocumentForm = {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -24,6 +24,5 @@ type PositionCatalogDocumentTopElem = XmlTopElem & { Doc: PositionCatalogDocumen
   app_instance_id: XmlElem<string>;
 };
 
-type PositionCatalogDocument = XmlDocument & {
-  TopElem: PositionCatalogDocumentTopElem;
-};
+type PositionCatalogDocumentTopElem = XmlTopElem<CollaboratorDocumentForm>;
+type PositionCatalogDocument = XmlDocument<PositionCatalogDocumentTopElem>;

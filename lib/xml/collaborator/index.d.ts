@@ -18,7 +18,7 @@ interface CollaboratorDocumentChangeLog extends CustomElemsBase {
 
 interface CollaboratorDocumentHistoryState {
   id: XmlElem<string>;
-  state_id: XmlElem<string, typeof lists.person_states>;
+  // state_id: XmlElem<string, typeof lists.person_states>;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   object_id: XmlElem<number>;
@@ -67,8 +67,17 @@ interface CollaboratorDocumentLastData {
 }
 
 // eslint-disable-next-line max-len
-declare class CollaboratorDocumentTopElem extends XmlTopElem<CollaboratorDocument> implements PersonBase, PassportDataBase, FileListBaseFile, FuncManagersBase, PathSubsBase, KnowledgePartsBase, KnowledgePartsBaseOld, CustomElemsBase, PersonObjectLinksBase {
-  Doc: CollaboratorDocument;
+type CollaboratorDocumentTopElem = XmlElem<
+PersonBase &
+PassportDataBase &
+FileListBaseFile &
+FuncManagersBase &
+PathSubsBase &
+KnowledgePartsBase &
+KnowledgePartsBaseOld &
+CustomElemsBase &
+PersonObjectLinksBase &
+{
   id: XmlElem<number>;
   code: XmlElem<string>;
   eid: XmlElem<string>;
@@ -161,6 +170,6 @@ declare class CollaboratorDocumentTopElem extends XmlTopElem<CollaboratorDocumen
     password: string
   ): unknown[] | void;
   clear_subs_fields(): void;
-};
+}>;
 
-declare class CollaboratorDocument extends XmlDocument<CollaboratorDocumentTopElem> {}
+type CollaboratorDocument = XmlDocument<CollaboratorDocumentTopElem>;

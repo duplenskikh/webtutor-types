@@ -1,4 +1,4 @@
-type XmlDocument<T> = {
+type XmlDocument<TopElem> = {
   /**
    * Если атрибут имеет значение true, это означает,
    * что при выходе из системы или при остановке сервера документы,
@@ -54,7 +54,9 @@ type XmlDocument<T> = {
    * атрибут вернет пустой корневой элемент, созданный по той же форме,
    * что и текущий документ.
    */
-  LastSavedData: XmlDocument<T>;
+  LastSavedData: TopElem extends XmlElem<infer T, infer F, infer P, infer D>
+    ? XmlElem<T, F, P, D | XmlDocument<TopElem>>
+    : never;
 
   /**
    * Флаг, обозначающий, что документ был только что создан, и еще ни разу не сохранялся.
@@ -105,7 +107,9 @@ type XmlDocument<T> = {
    * Так же к можно обратиться к корневому элементу,
    * используя его имя, но TopElem - более универсальный способ.
    */
-  TopElem: T;
+  TopElem: TopElem extends XmlElem<infer T, infer F, infer P, infer D>
+    ? XmlElem<T, F, P | TopElem, D | XmlDocument<TopElem>>
+    : never;
 
   /**
    * Возвращает url документа.
@@ -237,14 +241,4 @@ type XmlDocument<T> = {
   // SubElem(): unknown;
   // TopOrChildElem(): unknown;
   // UpdateValues(): unknown;
-};
-
-type XmlTopElem<D> = {
-  name: XmlElem<string>;
-  Name: string;
-  Doc: D;
-  OptChild(childName: string): unknown;
-  AssignElem<T extends XmlTopElem<unknown>>(TopElem: T): void;
-  EvalPath(pathName: string): unknown;
-  role_id: XmlMultiElem<number>;
 };
