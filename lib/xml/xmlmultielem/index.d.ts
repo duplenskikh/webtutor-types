@@ -1,5 +1,5 @@
-type XmlMultiElem<T, P = never, D = never> = {
-  [index: number]: XmlElem<T, unknown, P, D>;
+type XmlMultiElem<T, F = never, P = never, D = never> = {
+  [index: number]: XmlElem<T, F, P, D>;
   /**
    * Возвращает количество дочерних элементов.
    */
@@ -13,7 +13,7 @@ type XmlMultiElem<T, P = never, D = never> = {
   /**
    * Возвращает массив, указанный в атрибуте `FOREIGN-ARRAY` текущего элемента.
    */
-  ForeignArray: T[];
+  ForeignArray: F[];
 
   /**
    * Возвращает `true` если существует хоть один соответствующий множественный элемент.
@@ -34,7 +34,7 @@ type XmlMultiElem<T, P = never, D = never> = {
    * const array = candidate.location_id.Instances;
    * ```
    */
-  Instances: T[];
+  Instances: F[];
 
   /**
    * Всегда возвращает `false`.

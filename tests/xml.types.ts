@@ -23,6 +23,8 @@ if (collaborator !== undefined) {
   }
 
   collaborator.TopElem.position_id.Value;
+
+  collaborator.TopElem.fullname();
 }
 
 var workflowDoc = tools.open_doc<WorkflowDocument>(1);

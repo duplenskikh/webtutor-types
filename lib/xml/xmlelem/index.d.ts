@@ -1,9 +1,9 @@
 type XmlElem<T, F = never, P = never, D = never> = {
   [K in keyof T]: T[K] extends XmlElem<infer _T, infer _F, infer _P, infer _D>
     ? XmlElem<_T, F | _F, P | _P, _D | D>
-    : T[K] extends XmlMultiElem<infer _T, infer _P, infer _D>
-      ? XmlMultiElem<_T, P | _P, _D | D>
-      : never;
+    : T[K] extends XmlMultiElem<infer _T, infer _F, infer _P, infer _D>
+      ? XmlMultiElem<_T, _F, P | _P, _D | D>
+      : T[K];
 } & {
   /**
    * Возвращает массив названий атрибутов элемента.
