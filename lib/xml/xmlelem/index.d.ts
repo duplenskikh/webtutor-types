@@ -1,8 +1,8 @@
 type XmlElem<T, F = never, P = never, D = never> = {
   [K in keyof T]: T[K] extends XmlElem<infer _T, infer _F, infer _P, infer _D>
-    ? XmlElem<_T, _F, P | _P, D | _D>
+    ? XmlElem<_T, _F, _P | P, _D | D>
     : T[K] extends XmlMultiElem<infer _T, infer _F, infer _P, infer _D>
-      ? XmlMultiElem<_T, _F, _P | P, D | _D>
+      ? XmlMultiElem<_T, _F, _P | P, _D | D>
       : T[K];
 } & {
   /**
