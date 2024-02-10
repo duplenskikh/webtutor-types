@@ -875,22 +875,28 @@ declare function ArraySelectBySortedKey<T>(
  * Выбирает элементы массива, с определенным значением заданного поля (ключа) внутри элемента.
  * Функция аналогична более универсальной функции {@link ArraySelect}(), но работает быстрее.
  * @param {T[]} array - Массив.
- * @param {string} value - Значение ключа.
- * @param {string} [name] - Имя элемента, являющегося ключом.
- * Если имя ключа не указано, используется первичный ключ.
+ * @param {boolean | string | number} value - Значение ключа.
+ * @param {string} [name] - Имя элемента, являющегося ключом. Если имя ключа не указано, используется первичный ключ.
  * @returns {T[]} - Результат.
  */
-declare function ArraySelectByKey<T>(array: T[], value: string | number, name: string): T[];
+declare function ArraySelectByKey<T>(
+  array: T[],
+  value: boolean | string | number,
+  name?: string
+): T[];
 /**
  * Выбирает элементы массива, с определенным значением заданного поля (ключа) внутри элемента.
  * Функция аналогична более универсальной функции {@link ArraySelect}(), но работает быстрее.
  * @param {XmlMultiElem<T>} array - Массив.
- * @param {string} value - Значение ключа.
- * @param {string} [name] - Имя элемента, являющегося ключом.
- * Если имя ключа не указано, используется первичный ключ.
+ * @param {boolean | string | number} value - Значение ключа.
+ * @param {string} [name] - Имя элемента, являющегося ключом. Если имя ключа не указано, используется первичный ключ.
  * @returns {XmlElem<T>[]} - Результат.
  */
-declare function ArraySelectByKey<T>(array: T[] | XmlMultiElem<T>, value: string | number, name: string): XmlElem<T>[];
+declare function ArraySelectByKey<T>(
+  array: XmlMultiElem<T>,
+  value: boolean | string | number,
+  name?: string
+): XmlElem<T>[];
 
 /**
  * Сортирует массив по заданным полям. Возвращает новый массив отсортированных значений.
