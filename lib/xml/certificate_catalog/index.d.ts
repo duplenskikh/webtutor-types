@@ -1,4 +1,4 @@
-type CertificateCatalogDocumentTopElem = XmlTopElem & { Doc: CertificateCatalogDocument } &
+type CertificateCatalogTopElem = XmlElem<
 PersonFillingBase &
 AdminAccessBase & {
   id: XmlElem<number>;
@@ -16,8 +16,4 @@ AdminAccessBase & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   role_id: XmlMultiElem<number>;
-};
-
-type CertificateCatalogDocument = XmlDocument & {
-  TopElem: CertificateCatalogDocumentTopElem;
-};
+}>;

@@ -211,7 +211,7 @@ export const career_reserve_types: CareerReserveTypeCatalogDocument[];
 /**
  * Сертификат.
  */
-export const certificates: CertificateCatalogDocument[];
+export const certificates: CertificateCatalogTopElem[];
 
 /**
  * Тип сертификата.
