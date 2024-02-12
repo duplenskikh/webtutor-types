@@ -1,6 +1,6 @@
 {
   "name": "@umbrik/webtutor-types",
-  "version": "7.66.2",
+  "version": "7.67.0",
   "description": "## Подключение к проекту",
   "directories": {
     "lib": "lib"
