@@ -40,7 +40,7 @@ GameBonusBase & {
   default_request_type_id: XmlElem<number, RequestCatalogDocumentTopElem>;
   default_response_type_id: XmlElem<number, ResponseTypeCatalogDocumentTopElem>;
   mandatory_fill_response: XmlElem<boolean>;
-  certificate_type_id: XmlElem<number, CertificateCatalogDocumentTopElem>;
+  certificate_type_id: XmlElem<number, CertificateCatalogTopElem>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
