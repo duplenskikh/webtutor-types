@@ -799,7 +799,7 @@ declare namespace tools {
    */
   function array_to_text(_aArrayPARAM: unknown[], format?: string, rootName?: string): string;
 
-  const dotnet_host: DotnetCoreHost;
+  const dotnet_host: DotnetCoreHost | null;
 
   /**
    * Создает новый объект в указанном каталоге.
@@ -1701,7 +1701,7 @@ declare namespace tools {
    * @param {XmlElem<AnnalsObjectsBase>} annals - Данные для преобразования.
    * @returns {string} Строка в формате XML со стандартным заголовком. Результат действия функции.
    */
-  function get_annals_text_from_annals(annals: XmlElem<AnnalsObjectsBase>): string;
+  function get_annals_text_from_annals(annals: XmlElem<AnnalsObjectsBase["objects"]>): string;
 
   /**
    * Возвращает путь до файла со структурой теста/курса в формате qti.
@@ -1735,10 +1735,10 @@ declare namespace tools {
    * false – нужно записывать правильный ответ).
    */
   function fill_annals_text(
-    annals: XmlElem<AnnalsObjectBase>,
+    annals: XmlElem<AnnalsObjectsBase["objects"]>,
     fileQtiPath: string,
     qtiStructire: string,
-    annalsSource: XmlElem<AnnalsObjectBase>,
+    annalsSource: XmlElem<AnnalsObjectsBase["objects"]>,
     noSendCorrectAnswer: boolean
   ): void;
 
@@ -1918,13 +1918,13 @@ declare namespace tools {
    * @param {number} documentId - Id объекта, для рассылки изменений.
    * @param {XmlTopElem} documentDoc - TopElem объекта.
    * @param {number} personId - Id сотрудника, которому нужно отправить сообщение.
-   * @returns {SubscriptionCatalogDocument[]} Массив каталожных записей с подписками, по которым произошла рассылка.
+   * @returns {SubscriptionCatalogDocumentTopElem[]} Массив каталожных записей с подписками, по которым произошла рассылка.
    */
   function submit_subscriptions(
     documentId: number,
     documentDoc: XmlTopElem,
     personId: number
-  ): SubscriptionCatalogDocument[];
+  ): SubscriptionCatalogDocumentTopElem[];
 
   /**
    * Создает строку условий для использования в выражении where в запросе XQuery на основе
@@ -2082,8 +2082,8 @@ declare namespace tools {
    */
   function disp_block_filling_by_source(
     source: XmlTopElem,
-    dispBlock: MSDispBlockBase,
-    dispObjectBlocks: IAccessBlockType,
+    dispBlock: MsDispBlockBase,
+    dispObjectBlocks: AccessBlockBase,
     sourceId: number
   ): void;
 
@@ -2093,12 +2093,12 @@ declare namespace tools {
    * типов заявок и типов отзывов в нужных разделах администратора WebTutor с использованием функции
    * {@link disp_block_filling_by_source}.
    * @param {XmlTopElem} source - TopElem объекта, который нужно отобразить в блоке.
-   * @param {MSDispBlockBase} dispBlock - XML-структура.
+   * @param {MsDispBlockBase} dispBlock - XML-структура.
    * Если в качестве атрибута disp_block передать пустую XML-структуру (<disp_block> </disp_block>),
    * то список объектов будет удален из описания соответствующего раздела.
    * @returns {void} Возвращаемое значение отсутствует.
    */
-  function disp_block_filling(source: XmlTopElem, dispBlock: MSDispBlockBase): void;
+  function disp_block_filling(source: XmlTopElem, dispBlock: MsDispBlockBase): void;
 
   function get_order_query(sOrderParam: unknown, sDirParam: unknown): unknown;
 
@@ -2277,10 +2277,10 @@ declare namespace tools {
   /**
    * Возвращает массив Id сотрудников, состоящий из непосредственных подчиненных указанного сотрудника.
    * @param {number} userId - Id сотрудника, для которого идет поиск подчиненных.
-   * @returns {CollaboratorCatalogDocument[]} Массив каталожных записей сотрудников,
+   * @returns {CollaboratorCatalogDocumentTopElem[]} Массив каталожных записей сотрудников,
    * состоящий из непосредственных подчиненных указанного сотрудника.
    */
-  function get_direct_sub_person_ids(userId: number): CollaboratorCatalogDocument[];
+  function get_direct_sub_person_ids(userId: number): CollaboratorCatalogDocumentTopElem[];
 
   /**
    * Возвращает массив Id сотрудников указанного подразделения и дочерних подразделений.
@@ -2357,22 +2357,22 @@ declare namespace tools {
    * - Id типа руководителя.
    * Если передать Id нужного типа руководителя, то будет осуществлен поиск подчинённых
    * сотрудников только для руководителей указанного типа.
-   * @returns {CollaboratorCatalogDocument[]} Массив каталожных записей подчинённых сотрудников.
+   * @returns {CollaboratorCatalogDocumentTopElem[]} Массив каталожных записей подчинённых сотрудников.
    */
   function get_sub_persons_by_func_manager_id(
     managerId: number,
     catalogNames: string,
     bossType: boolean | number
-  ): CollaboratorCatalogDocument[];
+  ): CollaboratorCatalogDocumentTopElem[];
 
   /**
    * Возвращает массив каталожных записей подчинённых подразделений
    * (как непосредственных, так и дочерних) для указанного сотрудника.
    * Сотрудник может быть руководителем любого типа.
    * @param {number} managerId - Id сотрудника, для которого нужно найти подчиненные ему подразделения.
-   * @returns {CollaboratorCatalogDocument[]} Массив каталожных записей подчинённых подразделений.
+   * @returns {CollaboratorCatalogDocumentTopElem[]} Массив каталожных записей подчинённых подразделений.
    */
-  function get_all_subs_by_func_manager_id(managerId: number): CollaboratorCatalogDocument[];
+  function get_all_subs_by_func_manager_id(managerId: number): CollaboratorCatalogDocumentTopElem[];
 
   /**
    * Выполняет функцию eval указанного в параметрах функции файла.
@@ -2502,13 +2502,13 @@ declare namespace tools {
    * @param {number} personId - Id сотрудника, для которого производится поиск руководителей центра затрат.
    * @param {CollaboratorDocumentTopElem} [personDocumentTopElem] - TopElem сотрудника,
    * для которого производится поиск руководителей центра затрат.
-   * @returns {CollaboratorCatalogDocument[]} Массив каталожных записей сотрудников,
+   * @returns {CollaboratorCatalogDocumentTopElem[]} Массив каталожных записей сотрудников,
    * являющихся руководителями центра затрат указанного сотрудника.
    */
   function get_cost_center_boss_by_person_id(
     personId: number,
     personDocumentTopElem: CollaboratorDocumentTopElem
-  ): CollaboratorCatalogDocument[];
+  ): CollaboratorCatalogDocumentTopElem[];
 
   /**
    * Возвращает массив руководителей (руководителей по должности) центра затрат указанного сотрудника.
@@ -2714,7 +2714,7 @@ declare namespace tools {
    * @returns {PathSubBase["path_subs"]} Заполненная структура {@link PathSubBase["path_subs"]}.
    */
   function path_subs_filling(
-    pathSubsElement: PathSubBase["path_subs"],
+    pathSubsElement: PathSubsBase["path_subs"],
     personId: number,
     personDocument: CollaboratorDocument
   ): unknown;
@@ -3272,7 +3272,7 @@ declare namespace tools {
    * @returns {CollaboratorCatalogDocument | undefined} Каталожная запись сотрудника или undefined,
    * если сотрудник не найден.
    */
-  function get_user_by_login(login: string, authType: "ntlm" | string): CollaboratorCatalogDocument | undefined;
+  function get_user_by_login(login: string, authType: "ntlm" | string): CollaboratorCatalogDocumentTopElem | undefined;
 
   /**
    * Разрешает установки даты сохранения (не modification_date) для объектов каталога
@@ -3286,9 +3286,9 @@ declare namespace tools {
    * Возвращает массив из каталожных записей значений карты знаний из карточки сотрудника
    * и профиля значений карты знаний из должности сотрудника.
    * @param {number} personId - Id сотрудника.
-   * @returns {KnowledgePartCatalogDocument[]} Массив из каталожных записей значений карты знаний.
+   * @returns {KnowledgePartCatalogDocumentTopElem[]} Массив из каталожных записей значений карты знаний.
    */
-  function get_knowledge_parts_by_person_id(personId: number): KnowledgePartCatalogDocument[];
+  function get_knowledge_parts_by_person_id(personId: number): KnowledgePartCatalogDocumentTopElem[];
 
   /**
    * Возвращает массив из каталожных записей экспертов, определенных в значениях карты знаний
@@ -3296,9 +3296,9 @@ declare namespace tools {
    * Значения карты знаний получают из карточки сотрудника и профиля значений карты знаний
    * из должности сотрудника.
    * @param {number} personId - Id сотрудника.
-   * @returns {ExpertCatalogDocument[]} Массив из каталожных записей экспертов.
+   * @returns {ExpertCatalogDocumentTopElem[]} Массив из каталожных записей экспертов.
    */
-  function get_experts_by_person_id(personId: number): ExpertCatalogDocument[];
+  function get_experts_by_person_id(personId: number): ExpertCatalogDocumentTopElem[];
 
   /**
    * Возвращает название объекта из поля, которое его содержит.
