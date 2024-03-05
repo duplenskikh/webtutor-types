@@ -1,4 +1,4 @@
-type ObjectClaimCatalogDocumentTopElem = XmlTopElem & { Doc: ObjectClaimCatalogDocument } & {
+type ObjectClaimCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -20,15 +20,16 @@ type ObjectClaimCatalogDocumentTopElem = XmlTopElem & { Doc: ObjectClaimCatalogD
   delete: XmlElem<boolean>;
   list: XmlElem<boolean>;
   execute: XmlElem<boolean>;
+  access_level: XmlElem<number>;
   value: XmlElem<string>;
   is_active: XmlElem<boolean>;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
+  is_manual: XmlElem<boolean>;
   data_str: XmlElem<string>;
+  is_std: XmlElem<boolean>;
+  changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type ObjectClaimCatalogDocument = XmlDocument & {
-  TopElem: ObjectClaimCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

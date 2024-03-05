@@ -1,9 +1,10 @@
-type KnowledgeClassifierDocumentTopElem = XmlTopElem & { Doc: KnowledgeClassifierDocument } &
+type KnowledgeClassifierDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
+  Doc: KnowledgeClassifierDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  resource_id: XmlElem<number>;
+  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
   access: XmlElem<AccessDocBase>;

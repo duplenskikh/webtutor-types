@@ -1,8 +1,9 @@
-type KpiGroupDocumentTopElem = XmlTopElem & { Doc: KpiGroupDocument } &
+type KpiGroupDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
+  Doc: KpiGroupDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  workflow_id: XmlElem<number>;
+  workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   is_std: XmlElem<boolean>;

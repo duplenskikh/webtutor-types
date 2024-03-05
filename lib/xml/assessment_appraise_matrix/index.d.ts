@@ -2,12 +2,12 @@ interface AssessmentAppraiseMatrixDocumentTimeTableCondition {
   field: XmlElem<string>;
   value: XmlElem<string>;
   type: XmlElem<string>;
-  option_type: XmlElem<string>;
+  option_type: XmlElem<string, typeof common.all_option_types>;
   is_custom_field: XmlElem<boolean>;
 }
 
 interface AssessmentAppraiseMatrixDocumentTimeTableScheduleTarget {
-  stage: XmlElem<number>;
+  stage: XmlElem<number, typeof common.assessment_stages>;
   period_id: XmlElem<string>;
 }
 

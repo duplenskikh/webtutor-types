@@ -1,4 +1,4 @@
-type UserDataCatalogDocumentTopElem = XmlTopElem & { Doc: UserDataCatalogDocument } & {
+type UserDataCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   name: XmlElem<string>;
   code: XmlElem<string>;
@@ -7,8 +7,5 @@ type UserDataCatalogDocumentTopElem = XmlTopElem & { Doc: UserDataCatalogDocumen
   creation_user_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   modification_user_id: XmlElem<number>;
-};
-
-type UserDataCatalogDocument = XmlDocument & {
-  TopElem: UserDataCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

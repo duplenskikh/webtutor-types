@@ -1,14 +1,14 @@
-type LearningTaskResultCatalogDocumentTopElem = XmlTopElem & { Doc: LearningTaskResultCatalogDocument } &
+type LearningTaskResultCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
-  learning_task_id: XmlElem<number>;
+  learning_task_id: XmlElem<number, LearningTaskCatalogDocumentTopElem>;
   learning_task_name: XmlElem<string>;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
-  expert_id: XmlElem<number>;
-  event_id: XmlElem<number>;
-  status_id: XmlElem<string>;
+  expert_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
+  status_id: XmlElem<string, typeof common.learning_task_status_types>;
   mark: XmlElem<number>;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
@@ -18,12 +18,9 @@ AdminAccessBase & {
   plan_end_date: XmlElem<Date>;
   duration: XmlElem<number>;
   expired: XmlElem<boolean>;
-  education_plan_id: XmlElem<number>;
-  active_learning_id: XmlElem<number>;
+  education_plan_id: XmlElem<number, EducationPlanCatalogDocumentTopElem>;
+  active_learning_id: XmlElem<number, ActiveLearningCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type LearningTaskResultCatalogDocument = XmlDocument & {
-  TopElem: LearningTaskResultCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

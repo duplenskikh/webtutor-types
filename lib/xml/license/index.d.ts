@@ -1,23 +1,23 @@
 interface LicenseDocumentLibraryMaterial {
-  library_material_id: XmlElem<number>;
+  library_material_id: XmlElem<number, LibraryMaterialCatalogDocumentTopElem>;
 }
 
 interface LicenseDocumentCourse {
-  course_id: XmlElem<number>;
+  course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
 }
 
 interface LicenseDocumentCatalog {
-  name: XmlElem<string>;
+  name: XmlElem<string, typeof common.exchange_object_types>;
   max_records_num: XmlElem<number>;
 }
 
 interface LicenseDocumentAccessBlockType {
-  id: XmlElem<string>;
+  id: XmlElem<string, typeof common.access_block_types>;
 }
 
 interface LicenseDocumentGenerate {
   date: XmlElem<Date>;
-  user_id: XmlElem<number>;
+  user_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   user_fullname: XmlElem<string>;
 }
 
@@ -31,12 +31,13 @@ interface LicenseDocumentAdditionalKey {
   private_key: XmlElem<string>;
 }
 
-type LicenseDocumentTopElem = XmlTopElem & { Doc: LicenseDocument } &
+type LicenseDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: LicenseDocument;
   object_id: XmlElem<number>;
-  object_type: XmlElem<string>;
+  object_type: XmlElem<string, typeof common.exchange_object_types>;
   object_name: XmlElem<string>;
   license_type: XmlElem<string>;
   domain_name: XmlElem<string>;
@@ -45,8 +46,8 @@ CustomElemsBase & {
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   is_temporary: XmlElem<boolean>;
-  status_id: XmlElem<string>;
-  sale_contract_id: XmlElem<number>;
+  status_id: XmlElem<string, typeof common.status_in_knowledge_map_types>;
+  sale_contract_id: XmlElem<number, SaleContractCatalogDocumentTopElem>;
   inventory: XmlElem<boolean>;
   maintaince_date: XmlElem<Date>;
   users_num: XmlElem<number>;

@@ -3,7 +3,7 @@ AdminAccessBase & {
   Doc: CompetenceBlockDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  parent_object_id: XmlElem<number>;
+  parent_object_id: XmlElem<number, CompetenceBlockCatalogDocumentTopElem>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
 };

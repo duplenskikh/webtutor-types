@@ -1,7 +1,13 @@
+interface NotificationTemplateDocumentMainObject extends FieldNamesBase {
+  catalog_name: XmlElem<string, typeof common.exchange_object_types>;
+  init_field_names(): unknown;
+}
+
 type NotificationTemplateDocumentTopElem = XmlTopElem &
 CustomElemsBase &
 FileListBase & {
   Doc: NotificationTemplateDocument;
+  id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   subject: XmlElem<string>;
@@ -9,10 +15,11 @@ FileListBase & {
   body_type: XmlElem<string>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  add_text_to_edit(): unknown;
+  main_object: XmlElem<NotificationTemplateDocumentMainObject>;
+  add_text_to_edit(oScreenParam: unknown, sTextParam: string, dFieldParam: Date): unknown;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type NotificationTemplateDocument = XmlDocument & {

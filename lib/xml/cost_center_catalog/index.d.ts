@@ -1,14 +1,11 @@
-type CostCenterCatalogDocumentTopElem = XmlTopElem & { Doc: CostCenterCatalogDocument } &
+type CostCenterCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   is_active: XmlElem<boolean>;
-  parent_id: XmlElem<number>;
+  parent_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type CostCenterCatalogDocument = XmlDocument & {
-  TopElem: CostCenterCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

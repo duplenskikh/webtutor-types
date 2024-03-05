@@ -1,6 +1,8 @@
-type LibrarySystemDocumentTopElem = XmlTopElem & { Doc: LibrarySystemDocument } &
+type LibrarySystemDocumentTopElem = XmlTopElem &
+MsParametersBase &
 AdminAccessBase &
 WebVariablesBase & {
+  Doc: LibrarySystemDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -10,7 +12,7 @@ WebVariablesBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-  get_setting(): unknown;
+  get_setting(sSettingNameParam: string): unknown;
   get_settings(): unknown;
 };
 

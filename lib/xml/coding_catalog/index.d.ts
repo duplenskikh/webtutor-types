@@ -1,15 +1,12 @@
-type CodingCatalogDocumentTopElem = XmlTopElem & { Doc: CodingCatalogDocument } & {
+type CodingCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  catalog_name: XmlElem<string>;
+  catalog_name: XmlElem<string, typeof common.exchange_object_types>;
   next_index: XmlElem<number>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type CodingCatalogDocument = XmlDocument & {
-  TopElem: CodingCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

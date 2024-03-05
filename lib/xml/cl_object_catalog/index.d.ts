@@ -1,4 +1,4 @@
-type ClObjectCatalogDocumentTopElem = XmlTopElem & { Doc: ClObjectCatalogDocument } &
+type ClObjectCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -9,8 +9,5 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-};
-
-type ClObjectCatalogDocument = XmlDocument & {
-  TopElem: ClObjectCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

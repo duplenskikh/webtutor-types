@@ -1,14 +1,16 @@
-type WikiArticleCommunicationDocumentTopElem = XmlTopElem & { Doc: WikiArticleCommunicationDocument } &
+type WikiArticleCommunicationDocumentTopElem = XmlTopElem &
 FileListBase &
 CustomElemsBase & {
+  Doc: WikiArticleCommunicationDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name(): unknown;
-  resource_id: XmlElem<number>;
-  wiki_article_communication_type_id: XmlElem<number>;
-  wiki_article_comm_type_id: XmlElem<number>;
-  base_wiki_article_id: XmlElem<number>;
-  child_wiki_article_id: XmlElem<number>;
+  name_value: XmlElem<string>;
+  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
+  wiki_article_communication_type_id: XmlElem<number, WikiArticleCommunicationTypeCatalogDocumentTopElem>;
+  wiki_article_comm_type_id: XmlElem<number, WikiArticleCommunicationTypeCatalogDocumentTopElem>;
+  base_wiki_article_id: XmlElem<number, WikiArticleCatalogDocumentTopElem>;
+  child_wiki_article_id: XmlElem<number, WikiArticleCatalogDocumentTopElem>;
   position: XmlElem<number>;
   text_area: XmlElem<string>;
   access: XmlElem<AccessDocBase>;

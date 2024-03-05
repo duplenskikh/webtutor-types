@@ -1,4 +1,4 @@
-type BannerCatalogDocumentTopElem = XmlTopElem & { Doc: BannerCatalogDocument } &
+type BannerCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -9,11 +9,8 @@ AdminAccessBase & {
   url: XmlElem<string>;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type BannerCatalogDocument = XmlDocument & {
-  TopElem: BannerCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

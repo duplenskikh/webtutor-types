@@ -6,14 +6,15 @@ interface PersonObjectLinkDocumentObject {
   access_level: XmlElem<number>;
 }
 
-type PersonObjectLinkDocumentTopElem = XmlTopElem & { Doc: PersonObjectLinkDocument } & {
+type PersonObjectLinkDocumentTopElem = XmlTopElem & {
+  Doc: PersonObjectLinkDocument;
   code: XmlElem<string>;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
   subject_id: XmlElem<number>;
-  subject_type: XmlElem<string>;
-  object_catalog: XmlElem<string>;
-  title?(): string;
+  subject_type: XmlElem<string, typeof common.exchange_object_types>;
+  object_catalog: XmlElem<string, typeof common.exchange_object_types>;
+  title(): unknown;
   all_can_create: XmlElem<boolean>;
   amount: XmlElem<number>;
   all_can_edit: XmlElem<boolean>;

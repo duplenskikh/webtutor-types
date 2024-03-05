@@ -1,8 +1,8 @@
-type StatisticDataCatalogDocumentTopElem = XmlTopElem & { Doc: StatisticDataCatalogDocument } & {
+type StatisticDataCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
-  statistic_rec_id: XmlElem<number>;
-  budget_period_id: XmlElem<number>;
-  object_type: XmlElem<string>;
+  statistic_rec_id: XmlElem<number, StatisticRecCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
+  object_type: XmlElem<string, typeof common.exchange_object_types>;
   object_id: XmlElem<number>;
   object_name: XmlElem<string>;
   value: XmlElem<number>;
@@ -10,7 +10,7 @@ type StatisticDataCatalogDocumentTopElem = XmlTopElem & { Doc: StatisticDataCata
   value_date: XmlElem<Date>;
   statistic_date: XmlElem<Date>;
   additinal_info: XmlElem<string>;
-  period_type: XmlElem<string>;
+  period_type: XmlElem<string, typeof common.perioditys>;
   period_minute: XmlElem<number>;
   period_hour: XmlElem<number>;
   period_day: XmlElem<number>;
@@ -20,8 +20,5 @@ type StatisticDataCatalogDocumentTopElem = XmlTopElem & { Doc: StatisticDataCata
   creation_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type StatisticDataCatalogDocument = XmlDocument & {
-  TopElem: StatisticDataCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

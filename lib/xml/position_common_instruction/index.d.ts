@@ -1,8 +1,9 @@
-type PositionCommonInstructionDocumentTopElem = XmlTopElem & { Doc: PositionCommonInstructionDocument } & {
+type PositionCommonInstructionDocumentTopElem = XmlTopElem & {
+  Doc: PositionCommonInstructionDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  position_common_id: XmlElem<number>;
-  section_instruction_id: XmlElem<number>;
+  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
+  section_instruction_id: XmlElem<number, SectionInstructionCatalogDocumentTopElem>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;

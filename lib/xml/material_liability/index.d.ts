@@ -1,6 +1,7 @@
-type MaterialLiabilityDocumentTopElem = XmlTopElem & { Doc: MaterialLiabilityDocument } &
+type MaterialLiabilityDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase & {
+  Doc: MaterialLiabilityDocument;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;

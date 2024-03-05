@@ -1,24 +1,24 @@
 interface DnTrainMethodComplexDocumentControlForm {
-  form_id: XmlElem<number>;
-  term_id: XmlElem<number>;
+  form_id: XmlElem<number, DnControlFormCatalogDocumentTopElem>;
+  term_id: XmlElem<number, DnTermCatalogDocumentTopElem>;
 }
 
 interface DnTrainMethodComplexDocumentEducatEvent {
-  form_id: XmlElem<number>;
+  form_id: XmlElem<number, DnEducatEventCatalogDocumentTopElem>;
   hours: XmlElem<string>;
 }
 
 interface DnTrainMethodComplexDocumentHoursTerm {
-  term_id: XmlElem<number>;
+  term_id: XmlElem<number, DnTermCatalogDocumentTopElem>;
   hours_week: XmlElem<string>;
 }
 
 interface DnTrainMethodComplexDocumentCourse {
-  course_id: XmlElem<number>;
+  course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
 }
 
 interface DnTrainMethodComplexDocumentAssessment {
-  assessm_id: XmlElem<number>;
+  assessm_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
 }
 
 interface DnTrainMethodComplexDocumentItem {
@@ -32,12 +32,12 @@ CustomElemsBase & {
   Doc: DnTrainMethodComplexDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  facult_id: XmlElem<number>;
-  chair_id: XmlElem<number>;
-  discipline_id: XmlElem<number>;
-  program_discipline_id: XmlElem<number>;
+  facult_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  chair_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  discipline_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
+  program_discipline_id: XmlElem<number, DnProgramDisciplCatalogDocumentTopElem>;
   program_discipline_name: XmlElem<string>;
-  lector_id: XmlElem<number>;
+  lector_id: XmlElem<number, LectorCatalogDocumentTopElem>;
   control_forms: XmlMultiElem<DnTrainMethodComplexDocumentControlForm>;
   educat_events: XmlMultiElem<DnTrainMethodComplexDocumentEducatEvent>;
   hours_terms: XmlMultiElem<DnTrainMethodComplexDocumentHoursTerm>;

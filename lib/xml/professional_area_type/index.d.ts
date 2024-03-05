@@ -1,6 +1,7 @@
-type ProfessionalAreaTypeDocumentTopElem = XmlTopElem & { Doc: ProfessionalAreaTypeDocument } &
+type ProfessionalAreaTypeDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase & {
+  Doc: ProfessionalAreaTypeDocument;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;

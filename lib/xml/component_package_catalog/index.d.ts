@@ -1,10 +1,10 @@
-type ComponentPackageCatalogDocumentTopElem = XmlTopElem & { Doc: ComponentPackageCatalogDocument } & {
+type ComponentPackageCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  download_package_file_id: XmlElem<number>;
+  download_package_file_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   download_date: XmlElem<Date>;
-  type_id: XmlElem<string>;
+  type_id: XmlElem<string, typeof common.access_block_types>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   component_modification_date: XmlElem<Date>;
@@ -13,8 +13,5 @@ type ComponentPackageCatalogDocumentTopElem = XmlTopElem & { Doc: ComponentPacka
   knowledge_parts: XmlElem<string>;
   tags: XmlElem<string>;
   experts: XmlElem<string>;
-};
-
-type ComponentPackageCatalogDocument = XmlDocument & {
-  TopElem: ComponentPackageCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

@@ -1,12 +1,9 @@
-type ProjectTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ProjectTypeCatalogDocument } &
+type ProjectTypeCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type ProjectTypeCatalogDocument = XmlDocument & {
-  TopElem: ProjectTypeCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

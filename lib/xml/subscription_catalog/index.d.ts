@@ -1,10 +1,10 @@
-type SubscriptionCatalogDocumentTopElem = XmlTopElem & { Doc: SubscriptionCatalogDocument } &
+type SubscriptionCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
-  type: XmlElem<string>;
+  type: XmlElem<string, typeof common.exchange_object_types>;
   create_date: XmlElem<Date>;
   date_to: XmlElem<Date>;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
   person_org_name: XmlElem<string>;
   document_id: XmlElem<number>;
@@ -12,8 +12,5 @@ AdminAccessBase & {
   date_last_action: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type SubscriptionCatalogDocument = XmlDocument & {
-  TopElem: SubscriptionCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

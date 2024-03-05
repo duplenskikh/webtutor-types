@@ -1,7 +1,8 @@
-type ReadinessLevelDocumentTopElem = XmlTopElem & { Doc: ReadinessLevelDocument } &
+type ReadinessLevelDocumentTopElem = XmlTopElem &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: ReadinessLevelDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
   desc: XmlElem<string>;

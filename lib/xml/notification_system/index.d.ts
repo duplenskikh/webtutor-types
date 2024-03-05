@@ -1,5 +1,7 @@
-type NotificationSystemDocumentTopElem = XmlTopElem & { Doc: NotificationSystemDocument } &
+type NotificationSystemDocumentTopElem = XmlTopElem &
+MsParametersBase &
 AdminAccessBase & {
+  Doc: NotificationSystemDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -9,7 +11,7 @@ AdminAccessBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type NotificationSystemDocument = XmlDocument & {

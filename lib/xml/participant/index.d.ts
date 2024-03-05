@@ -1,18 +1,19 @@
 interface ParticipantDocumentMark extends PersonFillingBase {
-  collaborator_id: XmlElem<number>;
+  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   value: XmlElem<string>;
   desc: XmlElem<string>;
 }
 
-type ParticipantDocumentTopElem = XmlTopElem & { Doc: ParticipantDocument } &
+type ParticipantDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 FileListBase &
 AdminAccessBase & {
-  contest_id: XmlElem<number>;
+  Doc: ParticipantDocument;
+  contest_id: XmlElem<number, ContestCatalogDocumentTopElem>;
   contest_name: XmlElem<string>;
   work_name: XmlElem<string>;
-  person_id: XmlElem<number>;
-  status_id: XmlElem<string>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  status_id: XmlElem<string, typeof common.participant_states>;
   desc: XmlElem<string>;
   general_mark: XmlElem<string>;
   marks: XmlMultiElem<ParticipantDocumentMark>;

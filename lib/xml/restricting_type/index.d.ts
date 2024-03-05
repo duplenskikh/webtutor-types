@@ -1,6 +1,6 @@
 interface RestrictingTypeDocumentRestricting {
   id: XmlElem<string>;
-  presence_state_id: XmlElem<number>;
+  presence_state_id: XmlElem<number, PresenceStateCatalogDocumentTopElem>;
   start_time_from: XmlElem<string>;
   start_time_to: XmlElem<string>;
   end_time_from: XmlElem<string>;
@@ -12,13 +12,14 @@ interface RestrictingTypeDocumentRestricting {
   comment: XmlElem<string>;
 }
 
-type RestrictingTypeDocumentTopElem = XmlTopElem & { Doc: RestrictingTypeDocument } & {
+type RestrictingTypeDocumentTopElem = XmlTopElem & {
+  Doc: RestrictingTypeDocument;
   id: XmlElem<number>;
-  object_type: XmlElem<string>;
+  object_type: XmlElem<string, typeof common.exchange_object_types>;
   object_id: XmlElem<number>;
   object_name: XmlElem<string>;
   period_type_id: XmlElem<string>;
-  state_id: XmlElem<string>;
+  state_id: XmlElem<string, typeof common.agreement_status_types>;
   restrictings: XmlMultiElem<RestrictingTypeDocumentRestricting>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;

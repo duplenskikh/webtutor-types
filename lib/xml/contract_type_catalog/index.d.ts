@@ -1,4 +1,4 @@
-type ContractTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ContractTypeCatalogDocument } & {
+type ContractTypeCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -8,8 +8,5 @@ type ContractTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ContractTypeCatalo
   default_flag: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type ContractTypeCatalogDocument = XmlDocument & {
-  TopElem: ContractTypeCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

@@ -1,13 +1,14 @@
 interface RepositoriumDocumentAuthor extends PersonFillingBase {
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
 }
 
-type RepositoriumDocumentTopElem = XmlTopElem & { Doc: RepositoriumDocument } &
+type RepositoriumDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
-  parent_object_id: XmlElem<number>;
+  Doc: RepositoriumDocument;
+  parent_object_id: XmlElem<number, RepositoriumCatalogDocumentTopElem>;
   authors: XmlMultiElem<RepositoriumDocumentAuthor>;
   access: XmlElem<AccessDocBase>;
   comment: XmlElem<string>;

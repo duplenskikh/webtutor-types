@@ -1,4 +1,5 @@
-type ScriptQueueElemDocumentTopElem = XmlTopElem & { Doc: ScriptQueueElemDocument } & {
+type ScriptQueueElemDocumentTopElem = XmlTopElem & {
+  Doc: ScriptQueueElemDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;

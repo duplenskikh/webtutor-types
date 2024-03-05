@@ -1,4 +1,4 @@
-type VerbCatalogDocumentTopElem = XmlTopElem & { Doc: VerbCatalogDocument } & {
+type VerbCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -7,8 +7,5 @@ type VerbCatalogDocumentTopElem = XmlTopElem & { Doc: VerbCatalogDocument } & {
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type VerbCatalogDocument = XmlDocument & {
-  TopElem: VerbCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

@@ -1,4 +1,5 @@
-type LibraryMaterialTypeDocumentTopElem = XmlTopElem & { Doc: LibraryMaterialTypeDocument } & {
+type LibraryMaterialTypeDocumentTopElem = XmlTopElem & {
+  Doc: LibraryMaterialTypeDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
   comment: XmlElem<string>;

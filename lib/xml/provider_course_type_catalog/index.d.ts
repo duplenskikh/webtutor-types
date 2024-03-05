@@ -1,4 +1,4 @@
-type ProviderCourseTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ProviderCourseTypeCatalogDocument } &
+type ProviderCourseTypeCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -8,8 +8,5 @@ AdminAccessBase & {
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type ProviderCourseTypeCatalogDocument = XmlDocument & {
-  TopElem: ProviderCourseTypeCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

@@ -3,14 +3,14 @@ AdminAccessBase &
 CustomElemsBase & {
   Doc: DnAcademDebtDocument;
   code: XmlElem<string>;
-  faculty_id: XmlElem<number>;
-  chair_id: XmlElem<number>;
-  state_id: XmlElem<string>;
-  stream_id: XmlElem<number>;
-  stud_group_id: XmlElem<number>;
-  student_id: XmlElem<number>;
-  discipl_id: XmlElem<number>;
-  contr_form_id: XmlElem<number>;
+  faculty_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  chair_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  state_id: XmlElem<string, typeof common.academ_debt_states>;
+  stream_id: XmlElem<number, DnStreamCatalogDocumentTopElem>;
+  stud_group_id: XmlElem<number, DnStudGroupCatalogDocumentTopElem>;
+  student_id: XmlElem<number, DnStudentCatalogDocumentTopElem>;
+  discipl_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
+  contr_form_id: XmlElem<number, DnControlFormCatalogDocumentTopElem>;
   latest_date: XmlElem<Date>;
   liquid_date: XmlElem<Date>;
   doc_info: XmlElem<DocInfoBase>;

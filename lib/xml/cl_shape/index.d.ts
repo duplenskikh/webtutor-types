@@ -1,3 +1,12 @@
+interface ClShapeDocumentParams {
+  type: XmlElem<string>;
+  stroked: XmlElem<string>;
+  filled: XmlElem<string>;
+  coordsize: XmlElem<string>;
+  adj: XmlElem<string>;
+  path: XmlElem<string>;
+}
+
 interface ClShapeDocumentFormula {
   expr: XmlElem<string>;
 }
@@ -6,15 +15,6 @@ interface ClShapeDocumentHandle {
   position: XmlElem<string>;
   xrange: XmlElem<string>;
   yrange: XmlElem<string>;
-}
-
-interface ClShapeDocumentParams {
-  type: XmlElem<string>;
-  stroked: XmlElem<string>;
-  filled: XmlElem<string>;
-  coordsize: XmlElem<string>;
-  adj: XmlElem<string>;
-  path: XmlElem<string>;
 }
 
 type ClShapeDocumentTopElem = XmlTopElem & {

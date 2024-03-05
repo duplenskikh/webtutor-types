@@ -1,12 +1,9 @@
-type WorkModeCatalogDocumentTopElem = XmlTopElem & { Doc: WorkModeCatalogDocument } &
+type WorkModeCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type WorkModeCatalogDocument = XmlDocument & {
-  TopElem: WorkModeCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

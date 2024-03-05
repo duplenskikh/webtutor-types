@@ -11,12 +11,11 @@ interface ActiveWebTemplateDocumentOverrideWebTemplate extends WebVariablesBase 
   cache_vars: XmlElem<string>;
 }
 
-interface ActiveWebTemplateDocumentCustomWebTemplate extends WebVariablesBase,
-  ZonesBase {
+interface ActiveWebTemplateDocumentCustomWebTemplate extends WebVariablesBase, ZonesBase {
   custom_web_template_id: XmlElem<number>;
   saved: XmlElem<boolean>;
-  out_type: XmlElem<string>;
-  cwt_type: XmlElem<string>;
+  out_type: XmlElem<string, typeof common.out_types>;
+  cwt_type: XmlElem<string, typeof common.cwt_types>;
   use_session_cache: XmlElem<boolean>;
   web_page: XmlElem<string>;
   html: XmlElem<string>;
@@ -24,13 +23,13 @@ interface ActiveWebTemplateDocumentCustomWebTemplate extends WebVariablesBase,
 
 type ActiveWebTemplateDocumentTopElem = XmlTopElem & {
   Doc: ActiveWebTemplateDocument;
-  name(): string;
+  name(): unknown;
   access_level: XmlElem<number>;
-  access_role: XmlElem<string>;
+  access_role: XmlElem<string, AccessRoleCatalogDocumentTopElem>;
   mode: XmlElem<string>;
-  web_design_id: XmlElem<number>;
-  site_id: XmlElem<number>;
-  hash(): string;
+  web_design_id: XmlElem<number, WebDesignCatalogDocumentTopElem>;
+  site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
+  hash(): unknown;
   override_web_templates: XmlMultiElem<ActiveWebTemplateDocumentOverrideWebTemplate>;
   custom_web_templates: XmlMultiElem<ActiveWebTemplateDocumentCustomWebTemplate>;
   counter_template: XmlElem<number>;

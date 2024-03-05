@@ -1,4 +1,5 @@
-type KnowledgePartLevelDocumentTopElem = XmlTopElem & { Doc: KnowledgePartLevelDocument } & {
+type KnowledgePartLevelDocumentTopElem = XmlTopElem & {
+  Doc: KnowledgePartLevelDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;

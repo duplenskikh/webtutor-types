@@ -1,4 +1,4 @@
-type ConnectionCatalogDocumentTopElem = XmlTopElem & { Doc: ConnectionCatalogDocument } & {
+type ConnectionCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   course_id: XmlElem<number>;
   part_code: XmlElem<string>;
@@ -10,10 +10,10 @@ type ConnectionCatalogDocumentTopElem = XmlTopElem & { Doc: ConnectionCatalogDoc
   state: XmlElem<string>;
   creation_date: XmlElem<Date>;
   delete_date: XmlElem<Date>;
+  terminate_date: XmlElem<Date>;
   unauthorized: XmlElem<boolean>;
   host_path: XmlElem<string>;
-};
-
-type ConnectionCatalogDocument = XmlDocument & {
-  TopElem: ConnectionCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): unknown;
 };

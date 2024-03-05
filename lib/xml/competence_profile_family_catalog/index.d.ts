@@ -1,4 +1,4 @@
-type CompetenceProfileFamilyCatalogDocumentTopElem = XmlTopElem & { Doc: CompetenceProfileFamilyCatalogDocument } &
+type CompetenceProfileFamilyCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -6,8 +6,5 @@ AdminAccessBase & {
   competence_profiles: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type CompetenceProfileFamilyCatalogDocument = XmlDocument & {
-  TopElem: CompetenceProfileFamilyCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

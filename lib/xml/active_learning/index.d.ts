@@ -1,12 +1,11 @@
-interface ActiveLearningDocumentPart extends LearningPartBase,
-  LearningCurrentStateBase {
+interface ActiveLearningDocumentPart extends LearningPartBase, LearningCurrentStateBase {
   is_mandatory: XmlElem<boolean>;
   score_factor: XmlElem<number>;
   dynamic_status: XmlElem<string>;
 }
 
 interface ActiveLearningDocumentEvent {
-  event_id: XmlElem<number>;
+  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
   score: XmlElem<number>;
 }
 
@@ -15,17 +14,18 @@ PersonFillingBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: ActiveLearningDocument;
+  id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): string;
-  course_id: XmlElem<number>;
+  name(): unknown;
+  course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
   course_name: XmlElem<string>;
   course_code: XmlElem<string>;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_current_state: XmlElem<string>;
   event_id: XmlElem<number>;
   event_name: XmlElem<string>;
   event_start_date: XmlElem<Date>;
-  group_id: XmlElem<number>;
+  group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
   start_usage_date: XmlElem<Date>;
   start_learning_date: XmlElem<Date>;
   is_self_enrolled: XmlElem<boolean>;
@@ -33,17 +33,17 @@ CustomElemsBase & {
   max_end_date: XmlElem<Date>;
   attempts_num: XmlElem<number>;
   base_url: XmlElem<string>;
-  education_plan_id: XmlElem<number>;
+  education_plan_id: XmlElem<number, EducationPlanCatalogDocumentTopElem>;
   parts: XmlMultiElem<ActiveLearningDocumentPart>;
   events: XmlMultiElem<ActiveLearningDocumentEvent>;
   last_usage_part_code: XmlElem<string>;
-  last_usage_date(): Date;
+  last_usage_date: XmlElem<Date>;
   max_score: XmlElem<number>;
   score_sum_eval: XmlElem<string>;
   score: XmlElem<number>;
-  calc_score(): number;
+  calc_score(): unknown;
   state_id: XmlElem<number, typeof common.learning_states>;
-  time(): number;
+  time: XmlElem<number>;
   calc_max_end_date(): unknown;
   no_encoding_core_lesson: XmlElem<boolean>;
   logging: XmlElem<boolean>;
@@ -52,8 +52,8 @@ CustomElemsBase & {
   device_disp_type: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  complete_course(): number | undefined;
-  update_add_data(): undefined;
+  complete_course(): unknown;
+  update_add_data(): unknown;
 };
 
 type ActiveLearningDocument = XmlDocument & {

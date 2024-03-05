@@ -1,8 +1,8 @@
 interface AdminConfigurationDocumentFuncBlockSectionApplication {
-  application_id: XmlElem<number>;
+  application_id: XmlElem<number, ApplicationCatalogDocumentTopElem>;
   name: XmlElem<string>;
   comment: XmlElem<string>;
-  resource_id: XmlElem<string>;
+  resource_id: XmlElem<string, ResourceCatalogDocumentTopElem>;
 }
 
 interface AdminConfigurationDocumentFuncBlockSection {
@@ -15,7 +15,7 @@ interface AdminConfigurationDocumentFuncBlockSection {
 interface AdminConfigurationDocumentFuncBlock {
   id: XmlElem<string>;
   name: XmlElem<string>;
-  resource_id: XmlElem<string>;
+  resource_id: XmlElem<string, ResourceCatalogDocumentTopElem>;
   comment: XmlElem<string>;
   min_height: XmlElem<number>;
   width: XmlElem<number>;
@@ -32,7 +32,7 @@ ObjectCodeNameBase & {
   desc: XmlElem<string>;
   changed: XmlElem<boolean>;
   is_std: XmlElem<boolean>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type AdminConfigurationDocument = XmlDocument & {

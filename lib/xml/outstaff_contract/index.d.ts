@@ -6,10 +6,11 @@ interface OutstaffContractDocumentRegionPositionCommon extends CostCurrencyBase 
 interface OutstaffContractDocumentRegionMaterial extends CostCurrencyBase {
   material_type_id: XmlElem<number>;
 }
+
 interface OutstaffContractDocumentRegion {
   id: XmlElem<string>;
   region_id: XmlElem<number>;
-  subdivision_id: XmlElem<number>;
+  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
   subdivision_name(): unknown;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
@@ -18,20 +19,21 @@ interface OutstaffContractDocumentRegion {
   materials: XmlMultiElem<OutstaffContractDocumentRegionMaterial>;
 }
 
-type OutstaffContractDocumentTopElem = XmlTopElem & { Doc: OutstaffContractDocument } &
+type OutstaffContractDocumentTopElem = XmlTopElem &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: OutstaffContractDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name(): unknown;
-  status: XmlElem<string>;
-  type_id: XmlElem<string>;
+  status: XmlElem<string, typeof common.order_status_types>;
+  type_id: XmlElem<string, typeof common.outstaff_contract_types>;
   date: XmlElem<Date>;
   number: XmlElem<string>;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
-  outstaff_provider_id: XmlElem<number>;
+  outstaff_provider_id: XmlElem<number, OutstaffProviderCatalogDocumentTopElem>;
   disp_name(): unknown;
   regions: XmlMultiElem<OutstaffContractDocumentRegion>;
   access: XmlElem<AccessDocBase>;

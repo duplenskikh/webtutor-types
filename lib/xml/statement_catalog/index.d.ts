@@ -1,4 +1,4 @@
-type StatementCatalogDocumentTopElem = XmlTopElem & { Doc: StatementCatalogDocument } & {
+type StatementCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -8,13 +8,13 @@ type StatementCatalogDocumentTopElem = XmlTopElem & { Doc: StatementCatalogDocum
   statement_ref_id: XmlElem<string>;
   voided: XmlElem<boolean>;
   processed: XmlElem<boolean>;
-  learning_storage_id: XmlElem<number>;
-  person_id: XmlElem<number>;
+  learning_storage_id: XmlElem<number, LearningStorageCatalogDocumentTopElem>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
   object_id: XmlElem<number>;
-  object_type: XmlElem<string>;
+  object_type: XmlElem<string, typeof common.exchange_object_types>;
   object_name: XmlElem<string>;
-  activity_id: XmlElem<number>;
+  activity_id: XmlElem<number, ActivityCatalogDocumentTopElem>;
   activity_code: XmlElem<string>;
   verb_id: XmlElem<string>;
   verb_name: XmlElem<string>;
@@ -37,8 +37,5 @@ type StatementCatalogDocumentTopElem = XmlTopElem & { Doc: StatementCatalogDocum
   result_duration: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type StatementCatalogDocument = XmlDocument & {
-  TopElem: StatementCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

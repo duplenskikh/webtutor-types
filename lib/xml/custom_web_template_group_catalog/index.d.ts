@@ -1,12 +1,9 @@
-type CustomWebTemplateGroupCatalogDocumentTopElem = XmlTopElem & { Doc: CustomWebTemplateGroupCatalogDocument } & {
+type CustomWebTemplateGroupCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type CustomWebTemplateGroupCatalogDocument = XmlDocument & {
-  TopElem: CustomWebTemplateGroupCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

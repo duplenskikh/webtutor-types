@@ -1,11 +1,11 @@
-type ClosingDocumentCatalogDocumentTopElem = XmlTopElem & { Doc: ClosingDocumentCatalogDocument } & {
+type ClosingDocumentCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  pay_stage_id: XmlElem<number>;
-  type_id: XmlElem<string>;
+  pay_stage_id: XmlElem<number, PayStageCatalogDocumentTopElem>;
+  type_id: XmlElem<string, typeof common.payment_types>;
   cost: XmlElem<number>;
-  currency_type_id: XmlElem<string>;
+  currency_type_id: XmlElem<string, typeof lists.currency_types>;
   number: XmlElem<string>;
   expense_create_date: XmlElem<Date>;
   is_formed: XmlElem<boolean>;
@@ -13,11 +13,10 @@ type ClosingDocumentCatalogDocumentTopElem = XmlTopElem & { Doc: ClosingDocument
   recipient: XmlElem<string>;
   consignment_document_number: XmlElem<string>;
   is_received: XmlElem<boolean>;
-  receiving_status_id: XmlElem<number>;
+  receiving_status_id: XmlElem<number, ClosingDocumentStatusCatalogDocumentTopElem>;
   received_date: XmlElem<Date>;
   docs_comment: XmlElem<string>;
-};
-
-type ClosingDocumentCatalogDocument = XmlDocument & {
-  TopElem: ClosingDocumentCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): unknown;
 };

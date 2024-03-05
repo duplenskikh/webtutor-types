@@ -1,5 +1,5 @@
 interface DevelopmentMethodDocumentDevelopmentObject {
-  object_name: XmlElem<string>;
+  object_name: XmlElem<string, typeof common.exchange_object_types>;
 }
 
 type DevelopmentMethodDocumentTopElem = XmlTopElem &

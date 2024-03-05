@@ -25,7 +25,7 @@ interface ClSlideDocumentSubslideObject {
   state_extension: XmlElem<boolean>;
   hide_design: XmlElem<boolean>;
   template: XmlElem<string>;
-  template_id: XmlElem<number>;
+  template_id: XmlElem<number, ClObjectCatalogDocumentTopElem>;
   designcontentxml: XmlElem<string>;
   contentxml: XmlElem<string>;
   paramsxml: XmlElem<string>;
@@ -45,7 +45,7 @@ interface ClSlideDocumentSubslide {
 
 interface ClSlideDocumentComment {
   date: XmlElem<Date>;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
   text: XmlElem<string>;
 }
@@ -54,11 +54,11 @@ type ClSlideDocumentTopElem = XmlTopElem & {
   Doc: ClSlideDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  cl_course_id: XmlElem<number>;
-  cl_module_id: XmlElem<number>;
+  cl_course_id: XmlElem<number, ClCourseCatalogDocumentTopElem>;
+  cl_module_id: XmlElem<number, ClModuleCatalogDocumentTopElem>;
   guid: XmlElem<string>;
   sid: XmlElem<number>;
-  master_id: XmlElem<number>;
+  master_id: XmlElem<number, ClSlideCatalogDocumentTopElem>;
   master_code: XmlElem<string>;
   is_master: XmlElem<boolean>;
   is_splash: XmlElem<boolean>;
@@ -72,12 +72,12 @@ type ClSlideDocumentTopElem = XmlTopElem & {
   subslides: XmlMultiElem<ClSlideDocumentSubslide>;
   comments: XmlMultiElem<ClSlideDocumentComment>;
   flag_locked: XmlElem<boolean>;
-  greedy_person_id: XmlElem<number>;
+  greedy_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   greedy_person_fullname: XmlElem<string>;
   flag_completion: XmlElem<boolean>;
-  champion_id: XmlElem<number>;
+  champion_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   champion_fullname: XmlElem<string>;
-  approval_status: XmlElem<number>;
+  approval_status: XmlElem<number, typeof common.cl_approval_states>;
   desc: XmlElem<string>;
   stamp: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;

@@ -1,6 +1,7 @@
-type VacancyReasonDocumentTopElem = XmlTopElem & { Doc: VacancyReasonDocument } &
+type VacancyReasonDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase & {
+  Doc: VacancyReasonDocument;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;

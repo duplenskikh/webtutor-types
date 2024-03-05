@@ -1,4 +1,4 @@
-type LearningStorageCatalogDocumentTopElem = XmlTopElem & { Doc: LearningStorageCatalogDocument } & {
+type LearningStorageCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -7,8 +7,5 @@ type LearningStorageCatalogDocumentTopElem = XmlTopElem & { Doc: LearningStorage
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type LearningStorageCatalogDocument = XmlDocument & {
-  TopElem: LearningStorageCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

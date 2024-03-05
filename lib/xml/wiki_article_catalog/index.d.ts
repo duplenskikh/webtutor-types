@@ -1,26 +1,24 @@
-type WikiArticleCatalogDocumentTopElem = XmlTopElem & { Doc: WikiArticleCatalogDocument } & {
+type WikiArticleCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  resource_id: XmlElem<number>;
-  wiki_base_id: XmlElem<number>;
-  wiki_article_type_id: XmlElem<number>;
-  acquaint_type_id: XmlElem<string>;
-  status_id: XmlElem<string>;
+  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
+  wiki_base_id: XmlElem<number, WikiBaseCatalogDocumentTopElem>;
+  wiki_article_type_id: XmlElem<number, WikiArticleTypeCatalogDocumentTopElem>;
+  acquaint_type_id: XmlElem<string, typeof common.acquaint_types>;
+  status_id: XmlElem<string, typeof common.status_in_knowledge_map_types>;
   create_date: XmlElem<Date>;
-  author_id: XmlMultiElem<number>;
+  author_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
   publicate_date: XmlElem<Date>;
   critical_publicate_date: XmlElem<Date>;
-  acquaint_group_ids: XmlMultiElem<number>;
+  acquaint_group_ids: XmlMultiElemObject<number, GroupCatalogDocumentTopElem>;
+  annotation: XmlElem<string>;
   knowledge_parts: XmlElem<string>;
   tags: XmlElem<string>;
   experts: XmlElem<string>;
-  files_id: XmlMultiElem<number>;
+  files_id: XmlMultiElemObject<number, ResourceCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  access_group_ids: XmlMultiElem<number>;
-};
-
-type WikiArticleCatalogDocument = XmlDocument & {
-  TopElem: WikiArticleCatalogDocumentTopElem;
+  access_group_ids: XmlMultiElemObject<number, GroupCatalogDocumentTopElem>;
+  OnBuild(): unknown;
 };

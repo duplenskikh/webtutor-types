@@ -1,15 +1,16 @@
 type RemoteActionDocumentTopElem = XmlTopElem &
 ExecCodeBase &
 WebVariablesBase &
-ResultFieldsBase & {
+ResultFieldsBase &
+I18nBase & {
   Doc: RemoteActionDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  type: XmlElem<string>;
+  type: XmlElem<string, typeof common.eval_types>;
   category: XmlElem<string>;
   cache_vars: XmlElem<string>;
-  catalog_name: XmlElem<string>;
+  catalog_name: XmlElem<string, typeof common.exchange_object_types>;
   link_name: XmlElem<string>;
   show_in_list: XmlElem<boolean>;
   show_in_form: XmlElem<boolean>;
@@ -21,8 +22,8 @@ ResultFieldsBase & {
   changed: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  evaluate(): unknown;
-  role_id: XmlMultiElem<number>;
+  evaluate(sResultTypePARAM: string, Request: unknown, oArgVars: unknown): unknown;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type RemoteActionDocument = XmlDocument & {

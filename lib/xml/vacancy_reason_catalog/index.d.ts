@@ -1,12 +1,9 @@
-type VacancyReasonCatalogDocumentTopElem = XmlTopElem & { Doc: VacancyReasonCatalogDocument } &
+type VacancyReasonCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type VacancyReasonCatalogDocument = XmlDocument & {
-  TopElem: VacancyReasonCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

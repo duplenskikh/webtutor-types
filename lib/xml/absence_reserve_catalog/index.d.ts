@@ -1,14 +1,12 @@
 type AbsenceReserveCatalogDocumentTopElem = XmlTopElem &
 PersonFillingBase & {
-  Doc: AbsenceReserveCatalogDocument;
   id: XmlElem<number>;
-  person_id: XmlElem<number>;
-  budget_period_id: XmlElem<number>;
-  presence_state_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
+  presence_state_id: XmlElem<number, PresenceStateCatalogDocumentTopElem>;
   num_days: XmlElem<number>;
   calculation_date: XmlElem<Date>;
-};
-
-type AbsenceReserveCatalogDocument = XmlDocument & {
-  TopElem: AbsenceReserveCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): unknown;
 };

@@ -1,13 +1,14 @@
-type OutstaffProviderDocumentTopElem = XmlTopElem & { Doc: OutstaffProviderDocument } &
+type OutstaffProviderDocumentTopElem = XmlTopElem &
 OrgBase &
 AdminAccessBase &
 FileListBase &
 DocumentPersonsBase &
 CustomElemsBase & {
+  Doc: OutstaffProviderDocument;
   access: XmlElem<AccessDocBase>;
-  place_id: XmlElem<number>;
-  region_id: XmlElem<number>;
-  collaborator_id: XmlElem<number>;
+  place_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
+  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
+  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;

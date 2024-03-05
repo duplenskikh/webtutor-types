@@ -13,7 +13,7 @@ interface DocTypeDocumentFieldSubFieldEntry {
 
 interface DocTypeDocumentFieldSubField {
   name: XmlElem<string>;
-  type: XmlElem<string>;
+  type: XmlElem<string, typeof common.template_field_types>;
   title: XmlElem<string>;
   catalog: XmlElem<string>;
   set_value_action: XmlElem<string>;
@@ -31,7 +31,7 @@ interface DocTypeDocumentFieldControlElement {
 
 interface DocTypeDocumentField {
   name: XmlElem<string>;
-  type: XmlElem<string>;
+  type: XmlElem<string, typeof common.template_field_types>;
   title: XmlElem<string>;
   catalog: XmlElem<string>;
   set_value_action: XmlElem<string>;
@@ -60,17 +60,18 @@ CustomElemsBase & {
   fields: XmlMultiElem<DocTypeDocumentField>;
   is_hier: XmlElem<boolean>;
   is_crave_for_reboot: XmlElem<boolean>;
-  custom_web_template_id: XmlElem<number>;
-  custom_admin_template_id: XmlElem<number>;
+  custom_web_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
+  custom_admin_template_id: XmlElem<number, CustomAdminTemplateCatalogDocumentTopElem>;
   disp_name: XmlElem<string>;
   before_init_action: XmlElem<string>;
   before_save_action: XmlElem<string>;
   log: XmlElem<string>;
   desc: XmlElem<string>;
   access: XmlElem<AccessDocBase>;
+  disp_block: XmlElem<MsDispBlockBase>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type DocTypeDocument = XmlDocument & {

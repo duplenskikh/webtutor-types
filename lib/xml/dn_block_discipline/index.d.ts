@@ -1,5 +1,5 @@
 interface DnBlockDisciplineDocumentDiscipline {
-  discipline_id: XmlElem<number>;
+  discipline_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
 }
 
 type DnBlockDisciplineDocumentTopElem = XmlTopElem &

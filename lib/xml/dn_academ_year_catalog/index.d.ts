@@ -1,4 +1,4 @@
-type DnAcademYearCatalogDocumentTopElem = XmlTopElem & { Doc: DnAcademYearCatalogDocument } &
+type DnAcademYearCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   start_year: XmlElem<string>;
@@ -9,8 +9,5 @@ AdminAccessBase & {
   str_years: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type DnAcademYearCatalogDocument = XmlDocument & {
-  TopElem: DnAcademYearCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

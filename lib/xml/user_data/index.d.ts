@@ -1,4 +1,5 @@
-type UserDataDocumentTopElem = XmlTopElem & { Doc: UserDataDocument } & {
+type UserDataDocumentTopElem = XmlTopElem & {
+  Doc: UserDataDocument;
   name: XmlElem<string>;
   code: XmlElem<string>;
   creation_date(): unknown;

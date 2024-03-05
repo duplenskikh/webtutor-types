@@ -1,15 +1,12 @@
-type PrintFormCatalogDocumentTopElem = XmlTopElem & { Doc: PrintFormCatalogDocument } & {
+type PrintFormCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  type: XmlElem<string>;
-  object_name: XmlElem<string>;
+  type: XmlElem<string, typeof common.print_form_types>;
+  object_name: XmlElem<string, typeof common.exchange_object_types>;
   file_name: XmlElem<string>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type PrintFormCatalogDocument = XmlDocument & {
-  TopElem: PrintFormCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

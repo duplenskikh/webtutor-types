@@ -1,32 +1,32 @@
 interface DnWorkCurriculumDocumentBlockElemDisciplineTerm {
-  id_term: XmlElem<number>;
+  id_term: XmlElem<number, DnTermCatalogDocumentTopElem>;
   term_hours: XmlElem<number>;
 }
 
 interface DnWorkCurriculumDocumentBlockElemDiscipline {
-  discipl_id: XmlElem<number>;
-  loading(): number;
+  discipl_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
+  loading(): unknown;
   auditor: XmlElem<number>;
   independ: XmlElem<number>;
-  load_credit(): number;
+  load_credit(): unknown;
   audit_credit: XmlElem<number>;
   independ_credit: XmlElem<number>;
-  term_id: XmlElem<number>;
-  control_form_id: XmlElem<number>;
+  term_id: XmlElem<number, DnTermCatalogDocumentTopElem>;
+  control_form_id: XmlElem<number, DnControlFormCatalogDocumentTopElem>;
   name_control_form: XmlElem<string>;
   is_choice: XmlElem<boolean>;
   terms: XmlMultiElem<DnWorkCurriculumDocumentBlockElemDisciplineTerm>;
 }
 
 interface DnWorkCurriculumDocumentBlockElem {
-  id_block: XmlElem<number>;
+  id_block: XmlElem<number, DnBlockDisciplineCatalogDocumentTopElem>;
   name: XmlElem<string>;
-  load_block(): number;
-  all_auditor(): number;
-  all_independ(): number;
-  load_cred_block(): number;
-  all_cred_auditor(): number;
-  all_cred_indep(): number;
+  load_block(): unknown;
+  all_auditor(): unknown;
+  all_independ(): unknown;
+  load_cred_block(): unknown;
+  all_cred_auditor(): unknown;
+  all_cred_indep(): unknown;
   disciplines: XmlMultiElem<DnWorkCurriculumDocumentBlockElemDiscipline>;
 }
 
@@ -36,16 +36,16 @@ CustomElemsBase & {
   Doc: DnWorkCurriculumDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  status_id: XmlElem<string>;
-  type: XmlElem<string>;
-  student_id: XmlElem<number>;
-  academ_year_id: XmlElem<number>;
-  faculty_id: XmlElem<number>;
-  chair_id: XmlElem<number>;
-  special_id: XmlElem<number>;
-  specialization_id: XmlElem<number>;
-  qualification_id: XmlElem<number>;
-  educat_form_id: XmlElem<number>;
+  status_id: XmlElem<string, typeof common.prog_discipl_states>;
+  type: XmlElem<string, typeof common.curriculum_types>;
+  student_id: XmlElem<number, DnStudentCatalogDocumentTopElem>;
+  academ_year_id: XmlElem<number, DnAcademYearCatalogDocumentTopElem>;
+  faculty_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  chair_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  special_id: XmlElem<number, DnSpecialCatalogDocumentTopElem>;
+  specialization_id: XmlElem<number, DnSpecializationCatalogDocumentTopElem>;
+  qualification_id: XmlElem<number, QualificationCatalogDocumentTopElem>;
+  educat_form_id: XmlElem<number, DnEducatFormCatalogDocumentTopElem>;
   comment: XmlElem<string>;
   block_elems: XmlMultiElem<DnWorkCurriculumDocumentBlockElem>;
   doc_info: XmlElem<DocInfoBase>;

@@ -1,13 +1,10 @@
-type KnowledgeClassifierCatalogDocumentTopElem = XmlTopElem & { Doc: KnowledgeClassifierCatalogDocument } &
+type KnowledgeClassifierCatalogDocumentTopElem = XmlTopElem &
 AccessDocBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  resource_id: XmlElem<number>;
+  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type KnowledgeClassifierCatalogDocument = XmlDocument & {
-  TopElem: KnowledgeClassifierCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

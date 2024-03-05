@@ -1,11 +1,10 @@
-type ObjectLinkCatalogDocumentTopElem = XmlTopElem & { Doc: ObjectLinkCatalogDocument } &
+type ObjectLinkCatalogDocumentTopElem = XmlTopElem &
 ObjectTypeBase & {
   id: XmlElem<number>;
-  recommender_algorithm_id: XmlElem<number>;
-  state_id: XmlElem<string>;
+  recommender_algorithm_id: XmlElem<number, RecommenderAlgorithmCatalogDocumentTopElem>;
+  state_id: XmlElem<string, typeof common.status_in_knowledge_map_types>;
   calc_date: XmlElem<Date>;
-};
-
-type ObjectLinkCatalogDocument = XmlDocument & {
-  TopElem: ObjectLinkCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): unknown;
 };

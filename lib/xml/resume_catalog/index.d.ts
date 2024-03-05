@@ -1,4 +1,4 @@
-type ResumeCatalogDocumentTopElem = XmlTopElem & { Doc: ResumeCatalogDocument } &
+type ResumeCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -7,41 +7,38 @@ AdminAccessBase & {
   email: XmlElem<string>;
   family_status: XmlElem<string>;
   birth_date: XmlElem<Date>;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
   person_org_name: XmlElem<string>;
   person_subdivision: XmlElem<string>;
   person_position: XmlElem<string>;
-  creator_person_id: XmlElem<number>;
+  creator_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   creator_person_fullname: XmlElem<string>;
   forbid_portal_delete: XmlElem<boolean>;
   filling_type: XmlElem<string>;
   min_wage: XmlElem<number>;
   max_wage: XmlElem<number>;
-  currency_type_id: XmlElem<string>;
-  profession_id: XmlElem<number>;
-  profession_area_id: XmlElem<string>;
+  currency_type_id: XmlElem<string, typeof lists.currency_types>;
+  profession_id: XmlElem<number, ProfessionalAreaCatalogDocumentTopElem>;
+  profession_area_id: XmlElem<string, typeof lists.professional_areas>;
   profession_area: XmlElem<string>;
-  region_id: XmlElem<number>;
-  employment_type_id: XmlElem<string>;
-  schedule_work_id: XmlElem<string>;
-  schedule_id: XmlElem<number>;
-  vacancy_source_id: XmlElem<number>;
+  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
+  employment_type_id: XmlElem<string, typeof common.employment_types>;
+  schedule_work_id: XmlElem<string, typeof common.employment_kinds>;
+  schedule_id: XmlElem<number, WorkScheduleCatalogDocumentTopElem>;
+  vacancy_source_id: XmlElem<number, VacancySourceCatalogDocumentTopElem>;
   exp_years: XmlElem<number>;
-  willingness_travel_type_id: XmlElem<string>;
+  willingness_travel_type_id: XmlElem<string, typeof common.willingness_travel_types>;
   is_willing_relocate: XmlElem<boolean>;
-  main_educ_type_id: XmlElem<string>;
+  main_educ_type_id: XmlElem<string, typeof common.educ_types>;
   education: XmlElem<string>;
   is_archive: XmlElem<boolean>;
   is_candidate: XmlElem<boolean>;
-  lng_id: XmlMultiElem<string>;
-  educ_type_id: XmlMultiElem<string>;
-  education_type_id: XmlElem<number>;
+  lng_id: XmlMultiElemObject<string, typeof common.languages>;
+  educ_type_id: XmlMultiElemObject<string, typeof common.expended_educ_types>;
+  education_type_id: XmlElem<number, EducationTypeCatalogDocumentTopElem>;
   creation_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type ResumeCatalogDocument = XmlDocument & {
-  TopElem: ResumeCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

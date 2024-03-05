@@ -1,4 +1,4 @@
-type HostCatalogDocumentTopElem = XmlTopElem & { Doc: HostCatalogDocument } & {
+type HostCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -7,13 +7,10 @@ type HostCatalogDocumentTopElem = XmlTopElem & { Doc: HostCatalogDocument } & {
   host: XmlElem<string>;
   portal_auth_type: XmlElem<string>;
   allow_lds_auth: XmlElem<boolean>;
-  site_id: XmlElem<number>;
+  site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type HostCatalogDocument = XmlDocument & {
-  TopElem: HostCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

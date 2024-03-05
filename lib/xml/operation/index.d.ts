@@ -1,5 +1,7 @@
-type OperationDocumentTopElem = XmlTopElem & { Doc: OperationDocument } &
+type OperationDocumentTopElem = XmlTopElem &
+MsParametersBase &
 WebVariablesBase & {
+  Doc: OperationDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -8,21 +10,21 @@ WebVariablesBase & {
   priority: XmlElem<number>;
   action: XmlElem<string>;
   operation_type: XmlElem<number>;
-  object_name: XmlElem<string>;
+  object_name: XmlElem<string, typeof common.exchange_object_types>;
   operation_catalog_list: XmlElem<string>;
   group: XmlElem<string>;
   script: XmlElem<string>;
   post_code: XmlElem<string>;
   eval_code: XmlElem<string>;
-  remote_action_id: XmlElem<number>;
+  remote_action_id: XmlElem<number, RemoteActionCatalogDocumentTopElem>;
   access_eval_code: XmlElem<string>;
   use_access_eval(): unknown;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  role_id: XmlMultiElem<number>;
-  execute(): unknown;
+  role_id: XmlMultiElemObject<number>;
+  execute(_parameters: unknown, _variables: unknown): unknown;
 };
 
 type OperationDocument = XmlDocument & {

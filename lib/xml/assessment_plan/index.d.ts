@@ -21,6 +21,7 @@ interface AssessmentPlanDocumentCustomExpert {
   person_type: XmlElem<number>;
   is_done: XmlElem<boolean>;
   responsible: XmlElem<boolean>;
+  expert_code: XmlElem<string>;
 }
 
 interface AssessmentPlanDocumentExpert {
@@ -38,6 +39,7 @@ type AssessmentPlanDocumentTopElem = XmlTopElem &
 WorkflowDataBase &
 SupplementaryQuestionsBase &
 CustomElemsBase &
+FileListBase &
 AdminAccessBase & {
   Doc: AssessmentPlanDocument;
   id: XmlElem<number>;
@@ -56,6 +58,8 @@ AdminAccessBase & {
   integral_mark: XmlElem<number>;
   flag_is_processed: XmlElem<boolean>;
   assessment_result_recommends: XmlMultiElem<AssessmentPlanDocumentAssessmentResultRecommend>;
+  workflow_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  workflow_end_date: XmlElem<Date>;
   assessment_appraise_matrix_id: XmlElem<number, AssessmentAppraiseMatrixCatalogDocumentTopElem>;
   appraised_periods: XmlMultiElem<AssessmentPlanDocumentAppraisedPeriod>;
   custom_comments: XmlMultiElem<AssessmentPlanDocumentCustomComment>;

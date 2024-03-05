@@ -1,5 +1,5 @@
 interface DnAuditoriumDocumentObjectResource {
-  object_resource_id: XmlElem<number>;
+  object_resource_id: XmlElem<number, ObjectResourceCatalogDocumentTopElem>;
 }
 
 type DnAuditoriumDocumentTopElem = XmlTopElem &
@@ -8,7 +8,7 @@ CustomElemsBase & {
   Doc: DnAuditoriumDocument;
   code: XmlElem<string>;
   number_places: XmlElem<string>;
-  place_id: XmlElem<number>;
+  place_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
   desc: XmlElem<string>;
   object_resources: XmlMultiElem<DnAuditoriumDocumentObjectResource>;
   comment: XmlElem<string>;

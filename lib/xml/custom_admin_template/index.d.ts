@@ -12,7 +12,7 @@ WebVariablesBase & {
   doc_info: XmlElem<DocInfoBase>;
   changed: XmlElem<boolean>;
   is_std: XmlElem<boolean>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type CustomAdminTemplateDocument = XmlDocument & {

@@ -1,16 +1,12 @@
 type WikiArticleCommunicationCatalogDocumentTopElem = XmlTopElem & {
-  Doc: WikiArticleCommunicationCatalogDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  resource_id: XmlElem<number>;
-  wiki_article_comm_type_id: XmlElem<number>;
-  base_wiki_article_id: XmlElem<number>;
-  child_wiki_article_id: XmlElem<number>;
+  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
+  wiki_article_comm_type_id: XmlElem<number, WikiArticleCommunicationTypeCatalogDocumentTopElem>;
+  base_wiki_article_id: XmlElem<number, WikiArticleCatalogDocumentTopElem>;
+  child_wiki_article_id: XmlElem<number, WikiArticleCatalogDocumentTopElem>;
   position: XmlElem<number>;
   modification_date: XmlElem<Date>;
-};
-
-type WikiArticleCommunicationCatalogDocument = XmlDocument & {
-  TopElem: WikiArticleCommunicationCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

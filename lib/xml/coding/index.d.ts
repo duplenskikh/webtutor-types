@@ -2,7 +2,7 @@ type CodingDocumentTopElem = XmlTopElem & {
   Doc: CodingDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  catalog_name: XmlElem<string>;
+  catalog_name: XmlElem<string, typeof common.exchange_object_types>;
   prefix: XmlElem<string>;
   next_index: XmlElem<number>;
   digits_num: XmlElem<number>;
@@ -11,7 +11,7 @@ type CodingDocumentTopElem = XmlTopElem & {
   changed: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  obtain_code(): string;
+  obtain_code(): unknown;
 };
 
 type CodingDocument = XmlDocument & {

@@ -1,4 +1,5 @@
-type PaymentTypeDocumentTopElem = XmlTopElem & { Doc: PaymentTypeDocument } & {
+type PaymentTypeDocumentTopElem = XmlTopElem & {
+  Doc: PaymentTypeDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;

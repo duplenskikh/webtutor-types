@@ -1,5 +1,5 @@
 interface ApplicationDocumentAccessBlock {
-  id: XmlElem<string>;
+  id: XmlElem<string, typeof common.access_block_types>;
   can_read: XmlElem<boolean>;
   can_write: XmlElem<boolean>;
   can_delete: XmlElem<boolean>;
@@ -13,15 +13,28 @@ interface ApplicationDocumentAccessLevel {
 
 interface ApplicationDocumentViewConfigurationAccessLevel {
   access_level_id: XmlElem<number>;
+  can_create_roles: XmlElem<boolean>;
+  can_create_root_roles: XmlElem<boolean>;
+  can_edit_roles: XmlElem<boolean>;
+  can_delete_roles: XmlElem<boolean>;
+}
+
+interface ApplicationDocumentViewConfigurationRemoteAction {
+  id: XmlElem<string>;
 }
 
 interface ApplicationDocumentViewConfiguration extends WebVariablesBase {
   id: XmlElem<string>;
-  view_configuration_id: XmlElem<number>;
+  view_configuration_id: XmlElem<number, ViewConfigurationCatalogDocumentTopElem>;
   name: XmlElem<string>;
-  resource_id: XmlElem<number>;
+  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   comment: XmlElem<string>;
+  disp_role_selector: XmlElem<boolean>;
+  can_create_roles: XmlElem<boolean>;
+  config_set: XmlElem<boolean>;
   access_levels: XmlMultiElem<ApplicationDocumentViewConfigurationAccessLevel>;
+  is_custom_menu: XmlElem<boolean>;
+  remote_actions: XmlMultiElem<ApplicationDocumentViewConfigurationRemoteAction>;
 }
 
 interface ApplicationDocumentRemoteActionAccessLevel {
@@ -30,10 +43,10 @@ interface ApplicationDocumentRemoteActionAccessLevel {
 
 interface ApplicationDocumentRemoteAction extends WebVariablesBase {
   id: XmlElem<string>;
-  remote_action_id: XmlElem<number>;
+  remote_action_id: XmlElem<number, RemoteActionCatalogDocumentTopElem>;
   name: XmlElem<string>;
   code: XmlElem<string>;
-  resource_id: XmlElem<number>;
+  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   comment: XmlElem<string>;
   access_levels: XmlMultiElem<ApplicationDocumentRemoteActionAccessLevel>;
   menu_id: XmlElem<string>;
@@ -50,7 +63,7 @@ interface ApplicationDocumentReportTemplate extends WebVariablesBase {
   report_template_url: XmlElem<string>;
   report_template_type: XmlElem<string>;
   name: XmlElem<string>;
-  resource_id: XmlElem<number>;
+  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   comment: XmlElem<string>;
   access_levels: XmlMultiElem<ApplicationDocumentReportTemplateAccessLevel>;
 }
@@ -88,13 +101,23 @@ interface ApplicationDocumentApplicationUnit {
   items: XmlMultiElem<ApplicationDocumentApplicationUnitItem>;
 }
 
+interface ApplicationDocumentLibraryAccessObjectClaim {
+  access_level_id: XmlElem<number>;
+  object_id: XmlElem<number, CodeLibraryCatalogDocumentTopElem>;
+  element_code: XmlElem<string>;
+}
+
+interface ApplicationDocumentLibraryAccess {
+  object_claims: XmlMultiElem<ApplicationDocumentLibraryAccessObjectClaim>;
+}
+
 type ApplicationDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 WebVariablesBase &
 FuncManagersBase &
 CatalogListBase & {
   Doc: ApplicationDocument;
-  type: XmlElem<string>;
+  type: XmlElem<string, typeof common.application_types>;
   disp_type: XmlElem<string>;
   use_instances: XmlElem<boolean>;
   version: XmlElem<string>;
@@ -121,8 +144,9 @@ CatalogListBase & {
   action_menus: XmlMultiElem<ApplicationDocumentActionMenu>;
   application_menus: XmlMultiElem<ApplicationDocumentApplicationMenu>;
   application_units: XmlMultiElem<ApplicationDocumentApplicationUnit>;
-  role_id: XmlMultiElem<number>;
-  web_mode_id: XmlMultiElem<number>;
+  library_access: XmlElem<ApplicationDocumentLibraryAccess>;
+  role_id: XmlMultiElemObject<number>;
+  web_mode_id: XmlMultiElemObject<number, WebModeCatalogDocumentTopElem>;
 };
 
 type ApplicationDocument = XmlDocument & {

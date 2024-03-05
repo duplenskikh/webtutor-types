@@ -1,27 +1,26 @@
-type KpiValueCatalogDocumentTopElem = XmlTopElem & { Doc: KpiValueCatalogDocument } & {
+type KpiValueCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  kpi_id: XmlElem<number>;
-  budget_period_id: XmlElem<number>;
-  responsible_id: XmlElem<number>;
+  kpi_id: XmlElem<number, KpiCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
+  responsible_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   start_date: XmlElem<Date>;
   end_date: XmlElem<Date>;
   fact: XmlElem<number>;
+  fact_text: XmlElem<string>;
+  fact_value: XmlElem<number>;
   value: XmlElem<number>;
-  object_catalog: XmlElem<string>;
+  object_catalog: XmlElem<string, typeof common.exchange_object_types>;
   object_id: XmlElem<number>;
   object_name: XmlElem<string>;
-  expert_id: XmlMultiElem<number>;
-  workflow_id: XmlElem<number>;
+  expert_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
+  workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
   workflow_state: XmlElem<string>;
   workflow_state_name: XmlElem<string>;
-  workflow_person_id: XmlMultiElem<number>;
+  workflow_person_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
   workflow_matching_type: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type KpiValueCatalogDocument = XmlDocument & {
-  TopElem: KpiValueCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

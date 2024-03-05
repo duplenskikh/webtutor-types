@@ -1,4 +1,4 @@
-type EfficiencyEstimationCatalogDocumentTopElem = XmlTopElem & { Doc: EfficiencyEstimationCatalogDocument } &
+type EfficiencyEstimationCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -7,8 +7,5 @@ AdminAccessBase & {
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type EfficiencyEstimationCatalogDocument = XmlDocument & {
-  TopElem: EfficiencyEstimationCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

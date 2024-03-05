@@ -1,6 +1,6 @@
 interface BudgetDocumentTransfer {
   id: XmlElem<string>;
-  budget_id: XmlElem<number>;
+  budget_id: XmlElem<number, BudgetCatalogDocumentTopElem>;
   date: XmlElem<Date>;
   login: XmlElem<string>;
   sum: XmlElem<number>;
@@ -16,11 +16,11 @@ CustomElemsBase & {
   Doc: BudgetDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  state: XmlElem<string>;
-  type_id: XmlElem<number>;
-  cost_center_id: XmlElem<number>;
-  budget_period_id: XmlElem<number>;
-  expense_item_id: XmlElem<number>;
+  state: XmlElem<string, typeof common.budget_state_types>;
+  type_id: XmlElem<number, BudgetTypeCatalogDocumentTopElem>;
+  cost_center_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
+  expense_item_id: XmlElem<number, ExpenseItemCatalogDocumentTopElem>;
   is_approved: XmlElem<boolean>;
   create_date: XmlElem<Date>;
   transfers: XmlMultiElem<BudgetDocumentTransfer>;

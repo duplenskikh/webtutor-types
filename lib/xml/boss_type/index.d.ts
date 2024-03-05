@@ -1,9 +1,9 @@
 interface BossTypeDocumentObjectType {
-  id: XmlElem<string>;
+  id: XmlElem<string, typeof common.exchange_object_types>;
 }
 
 interface BossTypeDocumentOperation {
-  operation_id: XmlElem<number>;
+  operation_id: XmlElem<number, OperationCatalogDocumentTopElem>;
 }
 
 type BossTypeDocumentTopElem = XmlTopElem & {

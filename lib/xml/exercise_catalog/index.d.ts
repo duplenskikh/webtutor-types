@@ -1,11 +1,8 @@
-type ExerciseCatalogDocumentTopElem = XmlTopElem & { Doc: ExerciseCatalogDocument } & {
+type ExerciseCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
-};
-
-type ExerciseCatalogDocument = XmlDocument & {
-  TopElem: ExerciseCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

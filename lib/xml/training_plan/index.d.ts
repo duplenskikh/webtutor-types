@@ -1,9 +1,9 @@
 interface TrainingPlanDocumentEducationMethodParticipant extends PersonFillingBase {
-  collaborator_id: XmlElem<number>;
+  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
 }
 
 interface TrainingPlanDocumentEducationMethodEventParticipant extends PersonFillingBase {
-  collaborator_id: XmlElem<number>;
+  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
 }
 
 interface TrainingPlanDocumentEducationMethodEventWeek {
@@ -14,8 +14,9 @@ interface TrainingPlanDocumentEducationMethodEventWeek {
 }
 
 interface TrainingPlanDocumentEducationMethodEventGeneratedEvent {
-  event_id: XmlElem<number>;
+  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
 }
+
 interface TrainingPlanDocumentEducationMethodEvent {
   id: XmlElem<number>;
   name: XmlElem<string>;
@@ -24,14 +25,15 @@ interface TrainingPlanDocumentEducationMethodEvent {
   max_capacity: XmlElem<number>;
   events_num: XmlElem<number>;
   distributed: XmlElem<number>;
-  cost_center_id: XmlElem<number>;
+  cost_center_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
   weeks: XmlMultiElem<TrainingPlanDocumentEducationMethodEventWeek>;
   generated_events: XmlMultiElem<TrainingPlanDocumentEducationMethodEventGeneratedEvent>;
 }
+
 interface TrainingPlanDocumentEducationMethod {
   id: XmlElem<number>;
   name: XmlElem<string>;
-  education_method_id: XmlElem<number>;
+  education_method_id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
   participants_num: XmlElem<number>;
   participants: XmlMultiElem<TrainingPlanDocumentEducationMethodParticipant>;
   max_capacity: XmlElem<number>;
@@ -47,14 +49,15 @@ interface TrainingPlanDocumentGlobalMonth {
   global_month_year: XmlElem<number>;
 }
 
-type TrainingPlanDocumentTopElem = XmlTopElem & { Doc: TrainingPlanDocument } &
+type TrainingPlanDocumentTopElem = XmlTopElem &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: TrainingPlanDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  budget_period_id: XmlElem<number>;
-  request_type_id: XmlElem<number>;
+  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
+  request_type_id: XmlElem<number, RequestTypeCatalogDocumentTopElem>;
   education_methods: XmlMultiElem<TrainingPlanDocumentEducationMethod>;
   global_months: XmlMultiElem<TrainingPlanDocumentGlobalMonth>;
   desc: XmlElem<string>;

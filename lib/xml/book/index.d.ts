@@ -7,7 +7,7 @@ CustomElemsBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;
   comment: XmlElem<string>;
-  library_section_id: XmlElem<number>;
+  library_section_id: XmlElem<number, LibrarySectionCatalogDocumentTopElem>;
   access: XmlElem<AccessDocBase>;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;

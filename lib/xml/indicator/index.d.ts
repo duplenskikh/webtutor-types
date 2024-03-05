@@ -1,4 +1,4 @@
-type IndicatorDocumentTopElem = XmlTopElem & { Doc: IndicatorDocument } &
+type IndicatorDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 CompetenceScaleBase &
 CompetenceLevelBase &
@@ -7,13 +7,14 @@ KnowledgePartsBaseOld &
 AdminAccessBase &
 CustomElemsBase &
 FileListBase & {
-  competence_id: XmlElem<number>;
-  type: XmlElem<number>;
+  Doc: IndicatorDocument;
+  competence_id: XmlElem<number, CompetenceCatalogDocumentTopElem>;
+  type: XmlElem<number, typeof common.indicator_types>;
   comment: XmlElem<string>;
   positive_comment: XmlElem<string>;
   negative_comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type IndicatorDocument = XmlDocument & {

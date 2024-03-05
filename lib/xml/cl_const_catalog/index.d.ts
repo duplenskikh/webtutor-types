@@ -1,11 +1,10 @@
-type ClConstCatalogDocumentTopElem = XmlTopElem & { Doc: ClConstCatalogDocument } & {
+type ClConstCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  imprint: XmlMultiElem<string>;
-  object_id: XmlMultiElem<number>;
-};
-
-type ClConstCatalogDocument = XmlDocument & {
-  TopElem: ClConstCatalogDocumentTopElem;
+  imprint: XmlMultiElemObject<string>;
+  object_id: XmlMultiElemObject<number>;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): unknown;
 };

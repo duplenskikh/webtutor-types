@@ -1,5 +1,6 @@
 type ConnectionDocumentTopElem = XmlTopElem & {
   Doc: ConnectionDocument;
+  id: XmlElem<number>;
   course_id: XmlElem<number>;
   part_code: XmlElem<string>;
   user_id: XmlElem<number>;
@@ -10,9 +11,11 @@ type ConnectionDocumentTopElem = XmlTopElem & {
   state: XmlElem<string>;
   creation_date: XmlElem<Date>;
   delete_date: XmlElem<Date>;
+  terminate_date: XmlElem<Date>;
   unauthorized: XmlElem<boolean>;
   host_path: XmlElem<string>;
-  get_info(): unknown[];
+  doc_info: XmlElem<DocInfoBase>;
+  get_info(): unknown;
 };
 
 type ConnectionDocument = XmlDocument & {

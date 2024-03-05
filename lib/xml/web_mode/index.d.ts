@@ -1,26 +1,28 @@
 interface WebModeDocumentTemplateLink extends ViewConditionsBase {
   id: XmlElem<string>;
   type: XmlElem<string>;
-  source_template_id: XmlElem<number>;
-  target_template_id: XmlElem<number>;
+  source_template_id: XmlElem<number, OverrideWebTemplateCatalogDocumentTopElem>;
+  target_template_id: XmlElem<number, OverrideWebTemplateCatalogDocumentTopElem>;
 }
 
 interface WebModeDocumentStatisticRec extends WebVariablesBase {
-  statistic_rec_id: XmlElem<number>;
+  statistic_rec_id: XmlElem<number, StatisticRecCatalogDocumentTopElem>;
 }
 
-type WebModeDocumentTopElem = XmlTopElem & { Doc: WebModeDocument } &
+type WebModeDocumentTopElem = XmlTopElem &
 ObjectTypeBase &
+I18nBase &
 FuncManagersBase &
 WebVariablesBase & {
+  Doc: WebModeDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   is_default: XmlElem<boolean>;
-  catalog_name: XmlElem<string>;
-  placeholder_template_id: XmlElem<number>;
-  web_design_id: XmlElem<number>;
-  site_id: XmlElem<number>;
+  catalog_name: XmlElem<string, typeof common.exchange_object_types>;
+  placeholder_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
+  web_design_id: XmlElem<number, WebDesignCatalogDocumentTopElem>;
+  site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
   access: XmlElem<AccessDocBase>;
   template_links: XmlMultiElem<WebModeDocumentTemplateLink>;
   statistic_recs: XmlMultiElem<WebModeDocumentStatisticRec>;
@@ -29,9 +31,11 @@ WebVariablesBase & {
   comment: XmlElem<string>;
   postloading: XmlElem<boolean>;
   loading_instruction: XmlElem<string>;
+  use_fcache: XmlElem<boolean>;
+  searchable_portal: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
   use_lpapi(): unknown;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type WebModeDocument = XmlDocument & {

@@ -1,15 +1,12 @@
-type OutstaffProviderCatalogDocumentTopElem = XmlTopElem & { Doc: OutstaffProviderCatalogDocument } &
+type OutstaffProviderCatalogDocumentTopElem = XmlTopElem &
 AccessDocBase &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  region_id: XmlElem<number>;
-  collaborator_id: XmlElem<number>;
+  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
+  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type OutstaffProviderCatalogDocument = XmlDocument & {
-  TopElem: OutstaffProviderCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

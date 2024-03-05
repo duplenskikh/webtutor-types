@@ -1,25 +1,26 @@
 interface ForumEntryDocumentPrivilegeCollaborator {
-  collaborator_id: XmlElem<number>;
+  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
 }
 
-type ForumEntryDocumentTopElem = XmlTopElem & { Doc: ForumEntryDocument } &
+type ForumEntryDocumentTopElem = XmlTopElem &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: ForumEntryDocument;
   name: XmlElem<string>;
   create_date: XmlElem<Date>;
   closed: XmlElem<boolean>;
   pinned: XmlElem<boolean>;
-  how2show: XmlElem<string>;
-  user_id: XmlElem<number>;
+  how2show: XmlElem<string, typeof common.forum_person_info_types>;
+  user_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
-  forum_id: XmlElem<number>;
-  parent_forum_entry_id: XmlElem<number>;
-  main_forum_entry_id: XmlElem<number>;
+  forum_id: XmlElem<number, ForumCatalogDocumentTopElem>;
+  parent_forum_entry_id: XmlElem<number, ForumEntryCatalogDocumentTopElem>;
+  main_forum_entry_id: XmlElem<number, ForumEntryCatalogDocumentTopElem>;
   text_area: XmlElem<string>;
   remote_ip: XmlElem<string>;
-  author_info(): unknown;
+  author_info(tePersonParam: unknown): unknown;
   privilege_collaborators: XmlMultiElem<ForumEntryDocumentPrivilegeCollaborator>;
   is_moder_approved: XmlElem<boolean>;
   last_create_date: XmlElem<Date>;

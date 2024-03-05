@@ -1,7 +1,7 @@
 interface CourseDocumentPartActivityState {
   activity_state_id: XmlElem<number>;
   score: XmlElem<number>;
-  state_id: XmlElem<number>;
+  state_id: XmlElem<number, typeof common.learning_states>;
 }
 
 interface CourseDocumentPartCompletedParentPart {
@@ -11,12 +11,12 @@ interface CourseDocumentPartCompletedParentPart {
 interface CourseDocumentPart {
   code: XmlElem<string>;
   name: XmlElem<string>;
-  type: XmlElem<string>;
+  type: XmlElem<string, typeof common.course_part_types>;
   max_score: XmlElem<number>;
   mastery_score: XmlElem<number>;
   mastery_score_relative: XmlElem<number>;
   url: XmlElem<string>;
-  course_module_id: XmlElem<number>;
+  course_module_id: XmlElem<number, CourseModuleCatalogDocumentTopElem>;
   parent_part_code: XmlElem<string>;
   desc: XmlElem<string>;
   win_width: XmlElem<number>;
@@ -29,11 +29,11 @@ interface CourseDocumentPart {
   time_limit_action: XmlElem<string>;
   set_status_side: XmlElem<string>;
   score_factor: XmlElem<number>;
-  assessment_id: XmlElem<number>;
+  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
   attempts_num: XmlElem<number>;
   start_day: XmlElem<number>;
   duration_day: XmlElem<number>;
-  activity_id: XmlElem<number>;
+  activity_id: XmlElem<number, ActivityCatalogDocumentTopElem>;
   activity_states: XmlMultiElem<CourseDocumentPartActivityState>;
   object_id: XmlElem<number>;
   cl_module_view: XmlElem<string>;
@@ -41,6 +41,10 @@ interface CourseDocumentPart {
   view: XmlElem<ViewConditionsBase>;
   launch: XmlElem<ViewConditionsBase>;
   cl_module_protocol: XmlElem<string>;
+}
+
+interface CourseDocumentMsWeekScheduleBase {
+
 }
 
 type CourseDocumentTopElem = XmlTopElem &
@@ -58,7 +62,7 @@ CustomElemsBase &
 AdminAccessBase & {
   Doc: CourseDocument;
   desc: XmlElem<string>;
-  status: XmlElem<string>;
+  status: XmlElem<string, typeof common.course_test_states>;
   win_width: XmlElem<number>;
   win_height: XmlElem<number>;
   disp_scrolling: XmlElem<boolean>;
@@ -84,29 +88,29 @@ AdminAccessBase & {
   duration: XmlElem<number>;
   no_encoding_core_lesson: XmlElem<boolean>;
   not_use_default_notification: XmlElem<boolean>;
-  default_response_type_id: XmlElem<number>;
+  default_response_type_id: XmlElem<number, ResponseTypeCatalogDocumentTopElem>;
   mandatory_fill_response: XmlElem<boolean>;
   allow_disp_response: XmlElem<boolean>;
-  cl_course_id: XmlElem<number>;
+  cl_course_id: XmlElem<number, ClCourseCatalogDocumentTopElem>;
   version: XmlElem<string>;
   price: XmlElem<number>;
   pwt_disp: XmlElem<boolean>;
   import_type: XmlElem<string>;
-  education_org_id: XmlElem<number>;
-  schedule: XmlElem<unknown>;
+  education_org_id: XmlElem<number, EducationOrgCatalogDocumentTopElem>;
+  schedule: XmlElem<CourseDocumentMsWeekScheduleBase>;
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-  get_part_code(): string;
-  Width(partCode: string): number;
-  Height(partCode: string): number;
-  DispScrolling(partCode: string): boolean;
-  Resizable(partCode: string): boolean;
-  get_workflow_id(): null;
-  get_workflow_id(source: XmlElem<unknown>): string;
-  GetPartUrl(partCode: string, partIndex: number): string;
-  get_info(): unknown[];
-  role_id: XmlMultiElem<number>;
+  get_part_code(): unknown;
+  Width(sCodeParam: string): unknown;
+  Height(sCodeParam: string): unknown;
+  DispScrolling(_code: unknown): unknown;
+  Resizable(_code: unknown): unknown;
+  get_workflow_id(): unknown;
+  get_pwt_info(_source: unknown): unknown;
+  GetPartUrl(_code: unknown, _index: unknown): unknown;
+  get_info(): unknown;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type CourseDocument = XmlDocument & {

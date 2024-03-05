@@ -1,15 +1,12 @@
-type NotificationSystemCatalogDocumentTopElem = XmlTopElem & { Doc: NotificationSystemCatalogDocument } &
+type NotificationSystemCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type NotificationSystemCatalogDocument = XmlDocument & {
-  TopElem: NotificationSystemCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

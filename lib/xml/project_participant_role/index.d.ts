@@ -1,10 +1,12 @@
-type ProjectParticipantRoleDocumentTopElem = XmlTopElem & { Doc: ProjectParticipantRoleDocument } &
+type ProjectParticipantRoleDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 FileListBase &
 AdminAccessBase &
 KnowledgePartsBase & {
-  project_id: XmlElem<number>;
+  Doc: ProjectParticipantRoleDocument;
+  project_id: XmlElem<number, ProjectCatalogDocumentTopElem>;
   participant_num: XmlElem<number>;
+  provider_id: XmlElem<number, ProviderCatalogDocumentTopElem>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;

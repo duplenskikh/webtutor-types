@@ -1,12 +1,9 @@
-type RegionCatalogDocumentTopElem = XmlTopElem & { Doc: RegionCatalogDocument } & {
+type RegionCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  parent_object_id: XmlElem<number>;
+  parent_object_id: XmlElem<number, RegionCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type RegionCatalogDocument = XmlDocument & {
-  TopElem: RegionCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

@@ -7,6 +7,7 @@ interface OutstaffOrderDocumentPeriodHour {
   full_time: XmlElem<boolean>;
   person_num: XmlElem<number>;
 }
+
 interface OutstaffOrderDocumentPeriod {
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
@@ -15,24 +16,25 @@ interface OutstaffOrderDocumentPeriod {
   sum_person_hour(): unknown;
 }
 
-type OutstaffOrderDocumentTopElem = XmlTopElem & { Doc: OutstaffOrderDocument } &
+type OutstaffOrderDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: OutstaffOrderDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name(): unknown;
-  status: XmlElem<string>;
+  status: XmlElem<string, typeof common.order_status_types>;
   formed_date: XmlElem<Date>;
   paid_date: XmlElem<Date>;
-  person_id: XmlElem<number>;
-  outstaff_provider_id: XmlElem<number>;
-  outstaff_contract_id: XmlElem<number>;
-  budget_period_id: XmlElem<number>;
-  subdivision_id: XmlElem<number>;
-  position_common_id: XmlElem<number>;
-  region_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  outstaff_provider_id: XmlElem<number, OutstaffProviderCatalogDocumentTopElem>;
+  outstaff_contract_id: XmlElem<number, OutstaffContractCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
+  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
+  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   period_type: XmlElem<string>;
@@ -41,8 +43,8 @@ CustomElemsBase & {
   periods_sum_person_hour(): unknown;
   cost_hour: XmlElem<number>;
   cost_sum: XmlElem<number>;
-  currency: XmlElem<string>;
-  agreement_person_id: XmlElem<number>;
+  currency: XmlElem<string, typeof lists.currency_types>;
+  agreement_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   access: XmlElem<AccessDocBase>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;

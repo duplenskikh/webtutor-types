@@ -1,4 +1,4 @@
-type ClShapeCatalogDocumentTopElem = XmlTopElem & { Doc: ClShapeCatalogDocument } &
+type ClShapeCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -9,8 +9,5 @@ AdminAccessBase & {
   type_name: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type ClShapeCatalogDocument = XmlDocument & {
-  TopElem: ClShapeCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

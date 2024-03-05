@@ -22,20 +22,20 @@ interface CollaboratorDocumentHistoryState {
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   object_id: XmlElem<number>;
-  object_type: XmlElem<string>;
+  object_type: XmlElem<string, typeof common.exchange_object_types>;
   comment: XmlElem<string>;
+}
+
+interface CollaboratorDocumentPersonalConfig {
+  avatar_filename: XmlElem<string>;
+  nick: XmlElem<string>;
+  status: XmlElem<string>;
+  default_info_type: XmlElem<string, typeof common.forum_person_info_types>;
 }
 
 interface CollaboratorDocumentCustomParam {
   name: XmlElem<string>;
   value: XmlElem<string>;
-}
-
-interface CollaboratorDocumentPersonConfig {
-  avatar_filename: XmlElem<string>;
-  nick: XmlElem<string>;
-  status: XmlElem<string>;
-  default_info_type: XmlElem<string>;
 }
 
 interface CollaboratorDocumentCompBenPaymentType {
@@ -46,8 +46,8 @@ interface CollaboratorDocumentCompBenPaymentType {
 
 interface CollaboratorDocumentCompBen {
   salary: XmlElem<number>;
-  currency_type_id: XmlElem<string>;
-  payment_period: XmlElem<string>;
+  currency_type_id: XmlElem<string, typeof lists.currency_types>;
+  payment_period: XmlElem<string, typeof common.perioditys>;
   comment: XmlElem<string>;
   payment_types: XmlMultiElem<CollaboratorDocumentCompBenPaymentType>;
 }
@@ -69,7 +69,7 @@ interface CollaboratorDocumentLastData {
 type CollaboratorDocumentTopElem = XmlTopElem &
 PersonBase &
 PassportDataBase &
-FileListBaseFile &
+FileListBase &
 FuncManagersBase &
 PathSubsBase &
 KnowledgePartsBase &
@@ -80,7 +80,8 @@ PersonObjectLinksBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   eid: XmlElem<string>;
-  name(): string;
+  name(): unknown;
+  snils: XmlElem<string>;
   position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
   position_name: XmlElem<string>;
   position_parent_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
@@ -90,7 +91,7 @@ PersonObjectLinksBase & {
   change_password: XmlElem<boolean>;
   is_candidate: XmlElem<boolean>;
   is_outstaff: XmlElem<boolean>;
-  candidate_status_type_id: XmlElem<number>;
+  candidate_status_type_id: XmlElem<number, CandidateStatusTypeCatalogDocumentTopElem>;
   candidate_id: XmlElem<number>;
   is_dismiss: XmlElem<boolean>;
   hire_date: XmlElem<Date>;
@@ -103,12 +104,13 @@ PersonObjectLinksBase & {
   region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
   access: XmlElem<AccessBase>;
   cost_center_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
+  provider_legal_id: XmlElem<string>;
   lng_id: XmlElem<string>;
-  location_id: XmlElem<string>;
+  location_id: XmlElem<string, typeof lists.locations>;
   pict_url: XmlElem<string>;
   access_time_start: XmlElem<string>;
   access_time_end: XmlElem<string>;
-  is_time_access(): boolean;
+  is_time_access(): unknown;
   desc: XmlElem<string>;
   disp_empty_fields: XmlElem<boolean>;
   disp_personal_info: XmlElem<boolean>;
@@ -124,11 +126,11 @@ PersonObjectLinksBase & {
   development_potential_id: XmlElem<number, DevelopmentPotentialCatalogDocumentTopElem>;
   efficiency_estimation_id: XmlElem<number, EfficiencyEstimationCatalogDocumentTopElem>;
   web_enter_date: XmlElem<Date>;
-  category_id: XmlMultiElem<string>;
+  category_id: XmlMultiElemObject<string, CategoryCatalogDocumentTopElem>;
   change_logs: XmlMultiElem<CollaboratorDocumentChangeLog>;
   current_state: XmlElem<string>;
   history_states: XmlMultiElem<CollaboratorDocumentHistoryState>;
-  personal_config: XmlElem<CollaboratorDocumentPersonConfig>;
+  personal_config: XmlElem<CollaboratorDocumentPersonalConfig>;
   doc_info: XmlElem<DocInfoBase>;
   last_import_date: XmlElem<Date>;
   custom_params: XmlMultiElem<CollaboratorDocumentCustomParam>;
@@ -136,39 +138,22 @@ PersonObjectLinksBase & {
   grade_id: XmlElem<number, GradeCatalogDocumentTopElem>;
   comp_ben: XmlElem<CollaboratorDocumentCompBen>;
   gdpr: XmlElem<boolean>;
+  consent_kedo: XmlElem<boolean>;
+  consent_kedo_date: XmlElem<Date>;
   last_data: XmlElem<CollaboratorDocumentLastData>;
-  clear_cur_position(): void;
-  start_action(type: string): number;
-  set_basic_position(positionId: number): boolean;
-  get_courses(type?: "active" | "completed" | "all"): unknown[];
-  get_tests(type?: "active" | "completed" | "all"): unknown[];
-  assign_course(
-    courseId: number,
-    dateStart: Date,
-    dateEnd: Date,
-    eventId: number
-  ): number;
-  assign_test(
-    assessmentId: number,
-    dateStart: Date,
-    dateEnd: Date,
-    eventId: number
-  ): number;
-  get_info(): unknown[];
-  get_events(type: string, status: string, role: string): unknown[];
-  get_groups(): unknown[];
-  get_event_results(): unknown[];
-  update_info(
-    lastname: string,
-    firstname: string,
-    middlename: string,
-    address: string,
-    phone: string,
-    email: string,
-    login: string,
-    password: string
-  ): unknown[] | void;
-  clear_subs_fields(): void;
+  clear_cur_position(): unknown;
+  start_action(sTypeParam: string): unknown;
+  set_basic_position(iPositionIDParam: number): unknown;
+  get_courses(sTypeParam: string): unknown;
+  get_tests(sTypeParam: string): unknown;
+  assign_course(iCourseIDPARAM: number, dStartPARAM: Date, dEndPARAM: Date, iEventIDPARAM: number): unknown;
+  assign_test(iTestIDPARAM: number, dStartPARAM: Date, dEndPARAM: Date, iEventIDPARAM: number): unknown;
+  get_info(): unknown;
+  get_events(sTypeParam: string, sStatusParam: string, sRoleCollabParam: string): unknown;
+  get_groups(): unknown;
+  get_event_results(): unknown;
+  update_info(sLastnameParam: string, sFirstnameParam: string, sMiddlenameParam: string, sAddressParam: string, sPhoneParam: string, sEmailParam: string, sLoginParam: string, sPasswordParam: string): unknown;
+  clear_subs_fields(): unknown;
 };
 
 type CollaboratorDocument = XmlDocument & {

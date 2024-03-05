@@ -1,22 +1,19 @@
-type DnWorkCurriculumCatalogDocumentTopElem = XmlTopElem & { Doc: DnWorkCurriculumCatalogDocument } &
+type DnWorkCurriculumCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  status_id: XmlElem<string>;
-  type: XmlElem<string>;
-  student_id: XmlElem<number>;
-  academ_year_id: XmlElem<number>;
-  faculty_id: XmlElem<number>;
-  chair_id: XmlElem<number>;
-  special_id: XmlElem<number>;
-  specialization_id: XmlElem<number>;
-  qualification_id: XmlElem<number>;
-  educat_form_id: XmlElem<number>;
+  status_id: XmlElem<string, typeof common.prog_discipl_states>;
+  type: XmlElem<string, typeof common.curriculum_types>;
+  student_id: XmlElem<number, DnStudentCatalogDocumentTopElem>;
+  academ_year_id: XmlElem<number, DnAcademYearCatalogDocumentTopElem>;
+  faculty_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  chair_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  special_id: XmlElem<number, DnSpecialCatalogDocumentTopElem>;
+  specialization_id: XmlElem<number, DnSpecializationCatalogDocumentTopElem>;
+  qualification_id: XmlElem<number, QualificationCatalogDocumentTopElem>;
+  educat_form_id: XmlElem<number, DnEducatFormCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type DnWorkCurriculumCatalogDocument = XmlDocument & {
-  TopElem: DnWorkCurriculumCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

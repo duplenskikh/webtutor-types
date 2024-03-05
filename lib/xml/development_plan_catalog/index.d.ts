@@ -1,40 +1,41 @@
-type DevelopmentPlanCatalogDocumentTopElem = XmlTopElem & { Doc: DevelopmentPlanCatalogDocument } &
+type DevelopmentPlanCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  assessment_appraise_id: XmlElem<number>;
-  assessment_plan_id: XmlElem<number>;
-  person_id: XmlElem<number>;
+  assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
+  assessment_plan_id: XmlElem<number, AssessmentPlanCatalogDocumentTopElem>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
   person_position_name: XmlElem<string>;
-  expert_person_id: XmlElem<number>;
+  person_position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
+  person_position_parent_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  expert_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   expert_person_fullname: XmlElem<string>;
   expert_person_position_name: XmlElem<string>;
+  expert_person_position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
+  expert_person_position_parent_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
   department_id: XmlElem<number>;
   department_name: XmlElem<string>;
   custom_experts: XmlElem<string>;
-  custom_experts_array: XmlMultiElem<number>;
+  custom_experts_array: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
   is_custom_experts: XmlElem<boolean>;
   flag_appraise_department: XmlElem<boolean>;
-  status: XmlElem<string>;
-  assessment_appraise_type: XmlElem<string>;
+  status: XmlElem<string, typeof common.assessment_appraise_participants>;
+  assessment_appraise_type: XmlElem<string, typeof common.assessment_appraise_types>;
   is_done: XmlElem<boolean>;
   is_ready: XmlElem<boolean>;
   is_final: XmlElem<boolean>;
   flag_is_processed: XmlElem<boolean>;
-  workflow_id: XmlElem<number>;
+  workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
   workflow_state: XmlElem<string>;
   workflow_state_name: XmlElem<string>;
   workflow_state_last_date: XmlElem<Date>;
   is_workflow_init: XmlElem<boolean>;
-  career_reserve_id: XmlElem<number>;
+  career_reserve_id: XmlElem<number, CareerReserveCatalogDocumentTopElem>;
   appraise_date: XmlElem<Date>;
   index: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type DevelopmentPlanCatalogDocument = XmlDocument & {
-  TopElem: DevelopmentPlanCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

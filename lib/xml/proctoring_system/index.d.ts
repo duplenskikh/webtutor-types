@@ -1,6 +1,8 @@
-type ProctoringSystemDocumentTopElem = XmlTopElem & { Doc: ProctoringSystemDocument } &
+type ProctoringSystemDocumentTopElem = XmlTopElem &
+MsParametersBase &
 AdminAccessBase &
 WebVariablesBase & {
+  Doc: ProctoringSystemDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -10,7 +12,7 @@ WebVariablesBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-  get_setting(): unknown;
+  get_setting(sSettingNameParam: string, teProctorObject: unknown): unknown;
   get_settings(): unknown;
 };
 

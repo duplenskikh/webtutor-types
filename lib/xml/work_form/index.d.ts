@@ -1,4 +1,5 @@
-type WorkFormDocumentTopElem = XmlTopElem & { Doc: WorkFormDocument } & {
+type WorkFormDocumentTopElem = XmlTopElem & {
+  Doc: WorkFormDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;

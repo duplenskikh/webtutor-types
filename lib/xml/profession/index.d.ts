@@ -1,8 +1,9 @@
-type ProfessionDocumentTopElem = XmlTopElem & { Doc: ProfessionDocument } &
+type ProfessionDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase &
 CustomElemsBase & {
-  professional_area_id: XmlElem<number>;
+  Doc: ProfessionDocument;
+  professional_area_id: XmlElem<number, ProfessionalAreaCatalogDocumentTopElem>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;

@@ -1,9 +1,8 @@
-type WorkFormCatalogDocumentTopElem = XmlTopElem & { Doc: WorkFormCatalogDocument } & {
+type WorkFormCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-};
-
-type WorkFormCatalogDocument = XmlDocument & {
-  TopElem: WorkFormCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): unknown;
 };

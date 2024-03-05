@@ -1,10 +1,11 @@
-type ExpenseItemDocumentTopElem = XmlTopElem & { Doc: ExpenseItemDocument } &
+type ExpenseItemDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: ExpenseItemDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
   is_active: XmlElem<boolean>;
-  parent_id: XmlElem<number>;
+  parent_id: XmlElem<number, ExpenseItemCatalogDocumentTopElem>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
 };

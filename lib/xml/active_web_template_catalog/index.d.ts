@@ -1,16 +1,13 @@
-type ActiveWebTemplateCatalogDocumentTopElem = XmlTopElem & { Doc: ActiveWebTemplateCatalogDocument } & {
+type ActiveWebTemplateCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   name: XmlElem<string>;
   access_level: XmlElem<number>;
-  access_role: XmlElem<string>;
+  access_role: XmlElem<string, AccessRoleCatalogDocumentTopElem>;
   mode: XmlElem<string>;
-  web_design_id: XmlElem<number>;
-  site_id: XmlElem<number>;
+  web_design_id: XmlElem<number, WebDesignCatalogDocumentTopElem>;
+  site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
   hash: XmlElem<string>;
   creation_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
-};
-
-type ActiveWebTemplateCatalogDocument = XmlDocument & {
-  TopElem: ActiveWebTemplateCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

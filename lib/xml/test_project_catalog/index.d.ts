@@ -1,12 +1,9 @@
-type TestProjectCatalogDocumentTopElem = XmlTopElem & { Doc: TestProjectCatalogDocument } & {
+type TestProjectCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  status: XmlElem<string>;
+  status: XmlElem<string, typeof common.test_project_types>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type TestProjectCatalogDocument = XmlDocument & {
-  TopElem: TestProjectCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

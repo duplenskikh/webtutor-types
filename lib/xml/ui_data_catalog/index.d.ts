@@ -1,12 +1,11 @@
-type UiDataCatalogDocumentTopElem = XmlTopElem & { Doc: UiDataCatalogDocument } &
+type UiDataCatalogDocumentTopElem = XmlTopElem &
 ObjectTypeBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   create_date: XmlElem<Date>;
   data: XmlElem<string>;
-};
-
-type UiDataCatalogDocument = XmlDocument & {
-  TopElem: UiDataCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): unknown;
 };

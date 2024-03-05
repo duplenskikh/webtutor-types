@@ -1,23 +1,27 @@
-interface BonusItemDocumentBonuse {
-  pa_id: XmlElem<number>;
-  bonus_profile_id: XmlElem<number>;
+interface BonusItemDocumentBonusesBonus {
+  pa_id: XmlElem<number, PaCatalogDocumentTopElem>;
+  bonus_profile_id: XmlElem<number, BonusProfileCatalogDocumentTopElem>;
   value: XmlElem<number>;
   boss_treat: XmlElem<number>;
   overall: XmlElem<number>;
 }
 
+interface BonusItemDocumentBonuses {
+  bonus: XmlElem<BonusItemDocumentBonusesBonus>;
+}
+
 type BonusItemDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   Doc: BonusItemDocument;
-  name(): string;
-  assessment_appraise_id: XmlElem<number>;
-  budget_period_id: XmlElem<number>;
-  person_id: XmlElem<number>;
+  name(): unknown;
+  assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   period_start: XmlElem<Date>;
   period_end: XmlElem<Date>;
-  bonuses: XmlMultiElem<BonusItemDocumentBonuse>;
+  bonuses: XmlElem<BonusItemDocumentBonuses>;
   result: XmlElem<number>;
-  calc_result(): void;
+  calc_result(): unknown;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
 };

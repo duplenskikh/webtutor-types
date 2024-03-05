@@ -1,8 +1,11 @@
-type ExpertQuestionDocumentTopElem = XmlTopElem & { Doc: ExpertQuestionDocument } &
+type ExpertQuestionDocumentTopElem = XmlTopElem &
+MsPersonSdBase &
 KnowledgePartsBase &
 KnowledgePartsBaseOld &
 CustomElemsBase &
 FileListBase & {
+  Doc: ExpertQuestionDocument;
+  id: XmlElem<number>;
   code: XmlElem<string>;
   question: XmlElem<string>;
   answer: XmlElem<string>;
@@ -16,8 +19,8 @@ FileListBase & {
   access: XmlElem<AccessDocBase>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  question_file_id: XmlElem<number>;
-  answer_file_id: XmlElem<number>;
+  question_file_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
+  answer_file_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
 };
 
 type ExpertQuestionDocument = XmlDocument & {

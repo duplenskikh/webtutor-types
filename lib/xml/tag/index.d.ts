@@ -1,19 +1,20 @@
 interface TagDocumentExpert {
-  expert_id: XmlElem<number>;
+  expert_id: XmlElem<number, ExpertCatalogDocumentTopElem>;
 }
 
-type TagDocumentTopElem = XmlTopElem & { Doc: TagDocument } &
+type TagDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
+  Doc: TagDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
   resource_id: XmlElem<number>;
   require_acknowledgement: XmlElem<boolean>;
-  knowledge_part_id: XmlElem<number>;
+  knowledge_part_id: XmlElem<number, KnowledgePartCatalogDocumentTopElem>;
   experts: XmlMultiElem<TagDocumentExpert>;
   access: XmlElem<AccessDocBase>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type TagDocument = XmlDocument & {

@@ -1,13 +1,10 @@
-type ExternalSystemCatalogDocumentTopElem = XmlTopElem & { Doc: ExternalSystemCatalogDocument } &
+type ExternalSystemCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  anonymous_user_id: XmlElem<number>;
+  anonymous_user_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type ExternalSystemCatalogDocument = XmlDocument & {
-  TopElem: ExternalSystemCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

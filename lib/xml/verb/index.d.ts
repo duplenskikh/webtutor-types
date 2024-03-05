@@ -1,4 +1,5 @@
-type VerbDocumentTopElem = XmlTopElem & { Doc: VerbDocument } & {
+type VerbDocumentTopElem = XmlTopElem & {
+  Doc: VerbDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
   processed: XmlElem<boolean>;

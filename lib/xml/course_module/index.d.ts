@@ -19,21 +19,21 @@ AdminAccessBase & {
   mastery_score: XmlElem<number>;
   mastery_score_relative: XmlElem<number>;
   url: XmlElem<string>;
-  assessment_id: XmlElem<number>;
+  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
   attempts_num: XmlElem<number>;
   set_status_side: XmlElem<string>;
   win_width: XmlElem<number>;
   win_height: XmlElem<number>;
   disp_scrolling: XmlElem<boolean>;
   version: XmlElem<string>;
-  import_type: XmlElem<string>;
+  import_type: XmlElem<string, typeof common.course_import_types>;
   activation_count: XmlElem<number>;
   launch_count: XmlElem<number>;
   cmi5: XmlElem<CourseModuleDocumentCmi5>;
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type CourseModuleDocument = XmlDocument & {

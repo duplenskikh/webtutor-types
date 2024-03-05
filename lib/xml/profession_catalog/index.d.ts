@@ -1,13 +1,10 @@
-type ProfessionCatalogDocumentTopElem = XmlTopElem & { Doc: ProfessionCatalogDocument } &
+type ProfessionCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  professional_area_id: XmlElem<number>;
+  professional_area_id: XmlElem<number, ProfessionalAreaCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type ProfessionCatalogDocument = XmlDocument & {
-  TopElem: ProfessionCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

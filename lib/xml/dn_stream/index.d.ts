@@ -1,5 +1,5 @@
 interface DnStreamDocumentStudGroup {
-  group_id: XmlElem<number>;
+  group_id: XmlElem<number, DnStudGroupCatalogDocumentTopElem>;
 }
 
 type DnStreamDocumentTopElem = XmlTopElem &

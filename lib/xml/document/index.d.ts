@@ -1,11 +1,3 @@
-interface DocumentDocumentAttributes extends DocumentAttributesBase {
-  is_menu: XmlElem<boolean>;
-  is_main_item: XmlElem<boolean>;
-  is_news: XmlElem<boolean>;
-  left_disp_childs: XmlElem<boolean>;
-  no_disp_childs: XmlElem<boolean>;
-}
-
 type DocumentDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 CatalogListBase &
@@ -19,24 +11,23 @@ CustomElemsBase &
 AdminAccessBase & {
   Doc: DocumentDocument;
   create_date: XmlElem<Date>;
-  parent_document_id: XmlElem<number>;
-  site_id: XmlElem<number>;
-  catalog_list_desc(): string;
-  desc: XmlElem<string>;
+  parent_document_id: XmlElem<number, DocumentCatalogDocumentTopElem>;
+  site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
+  catalog_list_desc(): unknown;
   text_area: XmlElem<string>;
-  attributes: XmlElem<DocumentDocumentAttributes>;
-  web_template_type: XmlElem<string>;
-  custom_template_type: XmlElem<number>;
+  attributes: XmlElem<DocumentAttributesBase>;
+  web_template_type: XmlElem<string, typeof common.web_template_types>;
+  custom_template_type: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
   templates_source: XmlElem<string>;
   access: XmlElem<AccessDocBase>;
-  access_exists(): boolean;
-  parent_object_type: XmlElem<string>;
+  access_exists(): unknown;
+  parent_object_type: XmlElem<string, typeof common.exchange_object_types>;
   parent_object_id: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-  set_template(templateType?: string): void;
-  set_default_template(): boolean;
-  update_template(): boolean;
+  set_template(sTemplateTypeParam: string): unknown;
+  set_default_template(): unknown;
+  update_template(): unknown;
 };
 
 type DocumentDocument = XmlDocument & {

@@ -1,14 +1,11 @@
-type ViewConfigurationCatalogDocumentTopElem = XmlTopElem & { Doc: ViewConfigurationCatalogDocument } & {
+type ViewConfigurationCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type ViewConfigurationCatalogDocument = XmlDocument & {
-  TopElem: ViewConfigurationCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

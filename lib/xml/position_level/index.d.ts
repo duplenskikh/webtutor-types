@@ -1,4 +1,5 @@
-type PositionLevelDocumentTopElem = XmlTopElem & { Doc: PositionLevelDocument } & {
+type PositionLevelDocumentTopElem = XmlTopElem & {
+  Doc: PositionLevelDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;

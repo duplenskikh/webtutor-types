@@ -1,10 +1,11 @@
-type StatisticDataDocumentTopElem = XmlTopElem & { Doc: StatisticDataDocument } & {
+type StatisticDataDocumentTopElem = XmlTopElem & {
+  Doc: StatisticDataDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name(): unknown;
-  statistic_rec_id: XmlElem<number>;
-  budget_period_id: XmlElem<number>;
-  object_type: XmlElem<string>;
+  statistic_rec_id: XmlElem<number, StatisticRecCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
+  object_type: XmlElem<string, typeof common.exchange_object_types>;
   object_id: XmlElem<number>;
   object_name: XmlElem<string>;
   value: XmlElem<number>;
@@ -13,7 +14,7 @@ type StatisticDataDocumentTopElem = XmlTopElem & { Doc: StatisticDataDocument } 
   value_desc: XmlElem<string>;
   statistic_date: XmlElem<Date>;
   additinal_info: XmlElem<string>;
-  period_type: XmlElem<string>;
+  period_type: XmlElem<string, typeof common.perioditys>;
   period_minute: XmlElem<number>;
   period_hour: XmlElem<number>;
   period_day: XmlElem<number>;

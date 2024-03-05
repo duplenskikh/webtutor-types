@@ -1,15 +1,14 @@
-type ScheduleDayCatalogDocumentTopElem = XmlTopElem & { Doc: ScheduleDayCatalogDocument } & {
+type ScheduleDayCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
-  schedule_type_id: XmlElem<number>;
+  schedule_type_id: XmlElem<number, ScheduleTypeCatalogDocumentTopElem>;
   schedule_type_name: XmlElem<string>;
-  rest_collaborator_schedule_id: XmlElem<number>;
-  budget_period_id: XmlElem<number>;
-  subdivision_id: XmlElem<number>;
+  rest_collaborator_schedule_id: XmlElem<number, RestrictingCollaboratorScheduleCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
+  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
   date: XmlElem<Date>;
   start_time: XmlElem<string>;
   finish_time: XmlElem<string>;
-};
-
-type ScheduleDayCatalogDocument = XmlDocument & {
-  TopElem: ScheduleDayCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): unknown;
 };

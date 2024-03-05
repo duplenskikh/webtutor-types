@@ -1,5 +1,5 @@
 interface BasketDocumentGood {
-  good_id: XmlElem<number>;
+  good_id: XmlElem<number, GoodCatalogDocumentTopElem>;
   number: XmlElem<number>;
   reserved_date: XmlElem<Date>;
 }
@@ -10,9 +10,9 @@ PersonFillingBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   goods: XmlMultiElem<BasketDocumentGood>;
-  currency_type_id: XmlElem<string>;
+  currency_type_id: XmlElem<string, typeof lists.currency_types>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
 };

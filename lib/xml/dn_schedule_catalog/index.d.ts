@@ -1,15 +1,12 @@
-type DnScheduleCatalogDocumentTopElem = XmlTopElem & { Doc: DnScheduleCatalogDocument } &
+type DnScheduleCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
-  faculty: XmlElem<number>;
-  chair: XmlElem<number>;
-  academ_year_id: XmlElem<number>;
-  term_id: XmlElem<number>;
+  faculty: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  chair: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  academ_year_id: XmlElem<number, DnAcademYearCatalogDocumentTopElem>;
+  term_id: XmlElem<number, DnTermCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type DnScheduleCatalogDocument = XmlDocument & {
-  TopElem: DnScheduleCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };

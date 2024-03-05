@@ -1,4 +1,4 @@
-type CollaboratorCatalogDocumentTopElem = XmlTopElem & { Doc: CollaboratorCatalogDocument } & {
+type CollaboratorCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   fullname: XmlElem<string>;
@@ -11,22 +11,22 @@ type CollaboratorCatalogDocumentTopElem = XmlTopElem & { Doc: CollaboratorCatalo
   birth_date: XmlElem<Date>;
   sex: XmlElem<string>;
   pict_url: XmlElem<string>;
-  position_id: XmlElem<number>;
+  position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
   position_name: XmlElem<string>;
-  position_parent_id: XmlElem<number>;
+  position_parent_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
   position_parent_name: XmlElem<string>;
-  org_id: XmlElem<number>;
+  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
   org_name: XmlElem<string>;
-  place_id: XmlElem<number>;
-  region_id: XmlElem<number>;
-  category_id: XmlMultiElem<string>;
+  place_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
+  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
+  category_id: XmlMultiElemObject<string, CategoryCatalogDocumentTopElem>;
   web_banned: XmlElem<boolean>;
   is_arm_admin: XmlElem<boolean>;
   is_content_admin: XmlElem<boolean>;
   is_application_admin: XmlElem<boolean>;
-  role_id: XmlElem<string>;
+  role_id: XmlElem<string, AccessRoleCatalogDocumentTopElem>;
   is_candidate: XmlElem<boolean>;
-  candidate_status_type_id: XmlElem<number>;
+  candidate_status_type_id: XmlElem<number, CandidateStatusTypeCatalogDocumentTopElem>;
   candidate_id: XmlElem<number>;
   is_outstaff: XmlElem<boolean>;
   is_dismiss: XmlElem<boolean>;
@@ -35,21 +35,23 @@ type CollaboratorCatalogDocumentTopElem = XmlTopElem & { Doc: CollaboratorCatalo
   dismiss_date: XmlElem<Date>;
   in_request_black_list: XmlElem<boolean>;
   allow_personal_chat_request: XmlElem<boolean>;
-  level_id: XmlElem<number>;
-  grade_id: XmlElem<number>;
+  level_id: XmlElem<number, LevelCatalogDocumentTopElem>;
+  grade_id: XmlElem<number, GradeCatalogDocumentTopElem>;
   birth_date_rest_days_num(): unknown;
   knowledge_parts: XmlElem<string>;
   tags: XmlElem<string>;
   experts: XmlElem<string>;
-  person_object_profile_id: XmlMultiElem<number>;
+  person_object_profile_id: XmlMultiElemObject<number, PersonObjectProfileCatalogDocumentTopElem>;
   current_state: XmlElem<string>;
   next_state_date: XmlElem<Date>;
-  development_potential_id: XmlElem<number>;
-  efficiency_estimation_id: XmlElem<number>;
+  development_potential_id: XmlElem<number, DevelopmentPotentialCatalogDocumentTopElem>;
+  efficiency_estimation_id: XmlElem<number, EfficiencyEstimationCatalogDocumentTopElem>;
+  consent_kedo: XmlElem<boolean>;
+  consent_kedo_date: XmlElem<Date>;
+  provider_legal_id: XmlElem<string>;
+  snils: XmlElem<string>;
+  cost_center_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type CollaboratorCatalogDocument = XmlDocument & {
-  TopElem: CollaboratorCatalogDocumentTopElem;
+  OnBuild(): unknown;
 };
