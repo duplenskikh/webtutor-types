@@ -29,4 +29,7 @@ WebVariablesBase & {
 
 type OverrideWebTemplateDocument = XmlDocument & {
   TopElem: OverrideWebTemplateDocumentTopElem;
+  override_web_template: OverrideWebTemplateDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

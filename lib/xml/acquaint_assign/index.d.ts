@@ -23,4 +23,6 @@ type AcquaintAssignDocumentTopElem = XmlTopElem & {
 
 type AcquaintAssignDocument = XmlDocument & {
   TopElem: AcquaintAssignDocumentTopElem;
+  acquaint_assign: AcquaintAssignDocumentTopElem;
+  DocDesc(): unknown;
 };

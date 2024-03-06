@@ -28,4 +28,6 @@ type StatisticDataDocumentTopElem = XmlTopElem & {
 
 type StatisticDataDocument = XmlDocument & {
   TopElem: StatisticDataDocumentTopElem;
+  statistic_data: StatisticDataDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -30,4 +30,7 @@ CustomElemsBase & {
 
 type ForumEntryDocument = XmlDocument & {
   TopElem: ForumEntryDocumentTopElem;
+  forum_entry: ForumEntryDocumentTopElem;
+  OnLocalInit(): unknown;
+  DocDesc(): unknown;
 };

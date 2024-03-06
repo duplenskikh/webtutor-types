@@ -16,4 +16,6 @@ CustomElemsBase & {
 
 type PlaceDocument = XmlDocument & {
   TopElem: PlaceDocumentTopElem;
+  place: PlaceDocumentTopElem;
+  DocDesc(): unknown;
 };

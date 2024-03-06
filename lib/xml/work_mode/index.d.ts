@@ -9,4 +9,6 @@ AdminAccessBase & {
 
 type WorkModeDocument = XmlDocument & {
   TopElem: WorkModeDocumentTopElem;
+  work_mode: WorkModeDocumentTopElem;
+  DocDesc(): unknown;
 };

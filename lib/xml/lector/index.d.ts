@@ -24,4 +24,7 @@ PathSubsBase & {
 
 type LectorDocument = XmlDocument & {
   TopElem: LectorDocumentTopElem;
+  lector: LectorDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

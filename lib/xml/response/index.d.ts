@@ -27,4 +27,7 @@ CustomElemsBase & {
 
 type ResponseDocument = XmlDocument & {
   TopElem: ResponseDocumentTopElem;
+  response: ResponseDocumentTopElem;
+  DocDesc(): unknown;
+  OnBeforeSave(): unknown;
 };

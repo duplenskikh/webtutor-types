@@ -115,4 +115,6 @@ AdminAccessBase & {
 
 type CourseDocument = XmlDocument & {
   TopElem: CourseDocumentTopElem;
+  course: CourseDocumentTopElem;
+  DocDesc(): unknown;
 };

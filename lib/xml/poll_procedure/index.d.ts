@@ -116,4 +116,7 @@ AdminAccessBase & {
 
 type PollProcedureDocument = XmlDocument & {
   TopElem: PollProcedureDocumentTopElem;
+  poll_procedure: PollProcedureDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

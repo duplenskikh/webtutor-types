@@ -18,4 +18,6 @@ AdminAccessBase & {
 
 type QtiTestingSystemDocument = XmlDocument & {
   TopElem: QtiTestingSystemDocumentTopElem;
+  qti_testing_system: QtiTestingSystemDocumentTopElem;
+  DocDesc(): unknown;
 };

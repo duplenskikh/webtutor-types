@@ -55,4 +55,6 @@ GameBonusBase & {
 
 type EducationMethodDocument = XmlDocument & {
   TopElem: EducationMethodDocumentTopElem;
+  education_method: EducationMethodDocumentTopElem;
+  DocDesc(): unknown;
 };

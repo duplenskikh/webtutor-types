@@ -16,4 +16,6 @@ type ScheduleTypeDocumentTopElem = XmlTopElem & {
 
 type ScheduleTypeDocument = XmlDocument & {
   TopElem: ScheduleTypeDocumentTopElem;
+  schedule_type: ScheduleTypeDocumentTopElem;
+
 };

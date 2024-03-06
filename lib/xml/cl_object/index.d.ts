@@ -33,4 +33,6 @@ type ClObjectDocumentTopElem = XmlTopElem & {
 
 type ClObjectDocument = XmlDocument & {
   TopElem: ClObjectDocumentTopElem;
+  cl_object: ClObjectDocumentTopElem;
+  DocDesc(): unknown;
 };

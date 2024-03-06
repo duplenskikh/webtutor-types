@@ -12,4 +12,6 @@ PersonFillingBase & {
 
 type RestrictingCollaboratorScheduleDocument = XmlDocument & {
   TopElem: RestrictingCollaboratorScheduleDocumentTopElem;
+  restricting_collaborator_schedule: RestrictingCollaboratorScheduleDocumentTopElem;
+
 };

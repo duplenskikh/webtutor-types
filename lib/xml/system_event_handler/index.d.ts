@@ -16,4 +16,7 @@ WebVariablesBase & {
 
 type SystemEventHandlerDocument = XmlDocument & {
   TopElem: SystemEventHandlerDocumentTopElem;
+  system_event_handler: SystemEventHandlerDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

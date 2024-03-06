@@ -44,4 +44,6 @@ CustomElemsBase & {
 
 type IntervalScheduleDocument = XmlDocument & {
   TopElem: IntervalScheduleDocumentTopElem;
+  interval_schedule: IntervalScheduleDocumentTopElem;
+  OnBeforeSave(): unknown;
 };

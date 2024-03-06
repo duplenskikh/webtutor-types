@@ -24,4 +24,6 @@ KnowledgePartsKpBase & {
 
 type LearningTaskDocument = XmlDocument & {
   TopElem: LearningTaskDocumentTopElem;
+  learning_task: LearningTaskDocumentTopElem;
+  DocDesc(): unknown;
 };

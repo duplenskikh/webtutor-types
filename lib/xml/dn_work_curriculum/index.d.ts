@@ -53,4 +53,6 @@ CustomElemsBase & {
 
 type DnWorkCurriculumDocument = XmlDocument & {
   TopElem: DnWorkCurriculumDocumentTopElem;
+  dn_work_curriculum: DnWorkCurriculumDocumentTopElem;
+  DocDesc(): unknown;
 };

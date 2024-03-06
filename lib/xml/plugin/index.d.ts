@@ -18,4 +18,6 @@ type PluginDocumentTopElem = XmlTopElem & {
 
 type PluginDocument = XmlDocument & {
   TopElem: PluginDocumentTopElem;
+  plugin: PluginDocumentTopElem;
+  DocDesc(): unknown;
 };

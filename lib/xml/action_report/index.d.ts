@@ -17,4 +17,6 @@ type ActionReportDocumentTopElem = XmlTopElem & {
 
 type ActionReportDocument = XmlDocument & {
   TopElem: ActionReportDocumentTopElem;
+  action_report: ActionReportDocumentTopElem;
+  DocDesc(): unknown;
 };

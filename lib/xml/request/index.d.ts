@@ -62,4 +62,9 @@ AdminAccessBase & {
 
 type RequestDocument = XmlDocument & {
   TopElem: RequestDocumentTopElem;
+  request: RequestDocumentTopElem;
+  OnLocalInit(): unknown;
+  OnCreate(): unknown;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

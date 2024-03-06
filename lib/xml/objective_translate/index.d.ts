@@ -18,4 +18,6 @@ type ObjectiveTranslateDocumentTopElem = XmlTopElem & {
 
 type ObjectiveTranslateDocument = XmlDocument & {
   TopElem: ObjectiveTranslateDocumentTopElem;
+  objective_translate: ObjectiveTranslateDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -49,4 +49,6 @@ CustomElemsBase & {
 
 type DnTrainMethodComplexDocument = XmlDocument & {
   TopElem: DnTrainMethodComplexDocumentTopElem;
+  dn_train_method_complex: DnTrainMethodComplexDocumentTopElem;
+  DocDesc(): unknown;
 };

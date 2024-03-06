@@ -158,4 +158,9 @@ PersonObjectLinksBase & {
 
 type CollaboratorDocument = XmlDocument & {
   TopElem: CollaboratorDocumentTopElem;
+  collaborator: CollaboratorDocumentTopElem;
+  OnCreate(): unknown;
+  OnSave(): unknown;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

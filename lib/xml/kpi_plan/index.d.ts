@@ -71,4 +71,6 @@ AdminAccessBase & {
 
 type KpiPlanDocument = XmlDocument & {
   TopElem: KpiPlanDocumentTopElem;
+  kpi_plan: KpiPlanDocumentTopElem;
+  DocDesc(): unknown;
 };

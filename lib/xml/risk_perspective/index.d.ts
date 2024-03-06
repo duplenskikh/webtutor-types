@@ -13,4 +13,6 @@ CustomElemsBase & {
 
 type RiskPerspectiveDocument = XmlDocument & {
   TopElem: RiskPerspectiveDocumentTopElem;
+  risk_perspective: RiskPerspectiveDocumentTopElem;
+  DocDesc(): unknown;
 };

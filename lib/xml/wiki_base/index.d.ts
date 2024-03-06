@@ -36,4 +36,6 @@ KnowledgePartsBase & {
 
 type WikiBaseDocument = XmlDocument & {
   TopElem: WikiBaseDocumentTopElem;
+  wiki_base: WikiBaseDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -134,4 +134,8 @@ CustomElemsBase & {
 
 type ResumeDocument = XmlDocument & {
   TopElem: ResumeDocumentTopElem;
+  resume: ResumeDocumentTopElem;
+  OnLocalInit(): unknown;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

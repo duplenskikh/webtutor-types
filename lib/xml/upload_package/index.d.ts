@@ -10,4 +10,6 @@ type UploadPackageDocumentTopElem = XmlTopElem & {
 
 type UploadPackageDocument = XmlDocument & {
   TopElem: UploadPackageDocumentTopElem;
+  upload_package: UploadPackageDocumentTopElem;
+  DocDesc(): unknown;
 };

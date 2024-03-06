@@ -15,4 +15,6 @@ AdminAccessBase & {
 
 type DevelopmentMethodDocument = XmlDocument & {
   TopElem: DevelopmentMethodDocumentTopElem;
+  development_method: DevelopmentMethodDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -14,4 +14,6 @@ PersonFillingBase & {
 
 type ObjectVersionDocument = XmlDocument & {
   TopElem: ObjectVersionDocumentTopElem;
+  object_version: ObjectVersionDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -60,4 +60,7 @@ CustomElemsBase & {
 
 type VacancyDocument = XmlDocument & {
   TopElem: VacancyDocumentTopElem;
+  vacancy: VacancyDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

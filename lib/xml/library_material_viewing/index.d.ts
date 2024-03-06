@@ -28,4 +28,6 @@ AdminAccessBase & {
 
 type LibraryMaterialViewingDocument = XmlDocument & {
   TopElem: LibraryMaterialViewingDocumentTopElem;
+  library_material_viewing: LibraryMaterialViewingDocumentTopElem;
+
 };

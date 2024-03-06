@@ -13,4 +13,6 @@ CustomElemsBase & {
 
 type RiskLevelDocument = XmlDocument & {
   TopElem: RiskLevelDocumentTopElem;
+  risk_level: RiskLevelDocumentTopElem;
+  DocDesc(): unknown;
 };

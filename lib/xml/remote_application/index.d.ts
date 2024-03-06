@@ -17,4 +17,6 @@ type RemoteApplicationDocumentTopElem = XmlTopElem & {
 
 type RemoteApplicationDocument = XmlDocument & {
   TopElem: RemoteApplicationDocumentTopElem;
+  remote_application: RemoteApplicationDocumentTopElem;
+  DocDesc(): unknown;
 };

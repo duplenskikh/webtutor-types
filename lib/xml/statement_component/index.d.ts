@@ -10,4 +10,6 @@ type StatementComponentDocumentTopElem = XmlTopElem & {
 
 type StatementComponentDocument = XmlDocument & {
   TopElem: StatementComponentDocumentTopElem;
+  statement_component: StatementComponentDocumentTopElem;
+
 };

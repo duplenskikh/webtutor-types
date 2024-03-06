@@ -28,4 +28,6 @@ CustomElemsBase & {
 
 type ExternalSystemDocument = XmlDocument & {
   TopElem: ExternalSystemDocumentTopElem;
+  external_system: ExternalSystemDocumentTopElem;
+  DocDesc(): unknown;
 };

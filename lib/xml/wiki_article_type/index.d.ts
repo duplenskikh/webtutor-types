@@ -11,4 +11,6 @@ type WikiArticleTypeDocumentTopElem = XmlTopElem & {
 
 type WikiArticleTypeDocument = XmlDocument & {
   TopElem: WikiArticleTypeDocumentTopElem;
+  wiki_article_type: WikiArticleTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -36,4 +36,6 @@ CustomElemsBase & {
 
 type OrgDocument = XmlDocument & {
   TopElem: OrgDocumentTopElem;
+  org: OrgDocumentTopElem;
+  DocDesc(): unknown;
 };

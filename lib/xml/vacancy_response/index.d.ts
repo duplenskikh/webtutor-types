@@ -25,4 +25,7 @@ CustomElemsBase & {
 
 type VacancyResponseDocument = XmlDocument & {
   TopElem: VacancyResponseDocumentTopElem;
+  vacancy_response: VacancyResponseDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

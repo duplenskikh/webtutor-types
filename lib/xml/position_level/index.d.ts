@@ -10,4 +10,6 @@ type PositionLevelDocumentTopElem = XmlTopElem & {
 
 type PositionLevelDocument = XmlDocument & {
   TopElem: PositionLevelDocumentTopElem;
+  position_level: PositionLevelDocumentTopElem;
+  DocDesc(): unknown;
 };

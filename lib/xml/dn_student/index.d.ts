@@ -48,4 +48,7 @@ CustomElemsBase & {
 
 type DnStudentDocument = XmlDocument & {
   TopElem: DnStudentDocumentTopElem;
+  dn_student: DnStudentDocumentTopElem;
+  OnLocalInit(): unknown;
+  DocDesc(): unknown;
 };

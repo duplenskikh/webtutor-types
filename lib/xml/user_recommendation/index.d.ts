@@ -23,4 +23,6 @@ CustomElemsBase & {
 
 type UserRecommendationDocument = XmlDocument & {
   TopElem: UserRecommendationDocumentTopElem;
+  user_recommendation: UserRecommendationDocumentTopElem;
+
 };

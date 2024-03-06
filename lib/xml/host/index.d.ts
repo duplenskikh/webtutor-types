@@ -69,4 +69,7 @@ CustomElemsBase & {
 
 type HostDocument = XmlDocument & {
   TopElem: HostDocumentTopElem;
+  host: HostDocumentTopElem;
+  OnSave(): unknown;
+  DocDesc(): unknown;
 };

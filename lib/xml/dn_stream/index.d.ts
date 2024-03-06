@@ -14,4 +14,6 @@ CustomElemsBase & {
 
 type DnStreamDocument = XmlDocument & {
   TopElem: DnStreamDocumentTopElem;
+  dn_stream: DnStreamDocumentTopElem;
+  DocDesc(): unknown;
 };

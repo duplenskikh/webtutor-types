@@ -13,4 +13,6 @@ CustomElemsBase & {
 
 type DnSubjectPlanDocument = XmlDocument & {
   TopElem: DnSubjectPlanDocumentTopElem;
+  dn_subject_plan: DnSubjectPlanDocumentTopElem;
+  DocDesc(): unknown;
 };

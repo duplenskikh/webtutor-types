@@ -37,4 +37,6 @@ ObjectCodeNameBase & {
 
 type AdminConfigurationDocument = XmlDocument & {
   TopElem: AdminConfigurationDocumentTopElem;
+  admin_configuration: AdminConfigurationDocumentTopElem;
+  DocDesc(): unknown;
 };

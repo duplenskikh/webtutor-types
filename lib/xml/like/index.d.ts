@@ -19,4 +19,6 @@ type LikeDocumentTopElem = XmlTopElem & {
 
 type LikeDocument = XmlDocument & {
   TopElem: LikeDocumentTopElem;
+  like: LikeDocumentTopElem;
+  DocDesc(): unknown;
 };

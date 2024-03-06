@@ -12,4 +12,6 @@ CustomElemsBase & {
 
 type WalkthroughDocument = XmlDocument & {
   TopElem: WalkthroughDocumentTopElem;
+  walkthrough: WalkthroughDocumentTopElem;
+  DocDesc(): unknown;
 };

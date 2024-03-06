@@ -35,4 +35,6 @@ CustomElemsBase & {
 
 type CareerPlanDocument = XmlDocument & {
   TopElem: CareerPlanDocumentTopElem;
+  career_plan: CareerPlanDocumentTopElem;
+
 };

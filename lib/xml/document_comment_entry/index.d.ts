@@ -19,4 +19,7 @@ CustomElemsBase & {
 
 type DocumentCommentEntryDocument = XmlDocument & {
   TopElem: DocumentCommentEntryDocumentTopElem;
+  document_comment_entry: DocumentCommentEntryDocumentTopElem;
+  OnLocalInit(): unknown;
+  DocDesc(): unknown;
 };

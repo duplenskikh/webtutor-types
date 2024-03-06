@@ -48,4 +48,7 @@ CustomElemsBase & {
 
 type OutstaffOrderExecutionDocument = XmlDocument & {
   TopElem: OutstaffOrderExecutionDocumentTopElem;
+  outstaff_order_execution: OutstaffOrderExecutionDocumentTopElem;
+  DocDesc(): unknown;
+  OnBeforeSave(): unknown;
 };

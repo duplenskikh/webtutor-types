@@ -19,4 +19,6 @@ AdminAccessBase & {
 
 type BannerDocument = XmlDocument & {
   TopElem: BannerDocumentTopElem;
+  banner: BannerDocumentTopElem;
+  DocDesc(): unknown;
 };

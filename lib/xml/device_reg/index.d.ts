@@ -20,4 +20,6 @@ type DeviceRegDocumentTopElem = XmlTopElem & {
 
 type DeviceRegDocument = XmlDocument & {
   TopElem: DeviceRegDocumentTopElem;
+  device_reg: DeviceRegDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -62,4 +62,7 @@ AdminAccessBase & {
 
 type QtiItemDocument = XmlDocument & {
   TopElem: QtiItemDocumentTopElem;
+  qti_item: QtiItemDocumentTopElem;
+  OnCreate(): unknown;
+  DocDesc(): unknown;
 };

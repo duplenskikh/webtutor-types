@@ -36,4 +36,7 @@ I18nBase & {
 
 type CodeLibraryDocument = XmlDocument & {
   TopElem: CodeLibraryDocumentTopElem;
+  code_library: CodeLibraryDocumentTopElem;
+  OnSave(): unknown;
+  DocDesc(): unknown;
 };

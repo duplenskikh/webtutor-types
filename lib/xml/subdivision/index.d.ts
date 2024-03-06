@@ -41,4 +41,8 @@ DocumentPersonsBase & {
 
 type SubdivisionDocument = XmlDocument & {
   TopElem: SubdivisionDocumentTopElem;
+  subdivision: SubdivisionDocumentTopElem;
+  OnBeforeSave(): unknown;
+  OnSave(): unknown;
+  DocDesc(): unknown;
 };

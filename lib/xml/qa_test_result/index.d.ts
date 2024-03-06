@@ -27,4 +27,6 @@ type QaTestResultDocumentTopElem = XmlTopElem & {
 
 type QaTestResultDocument = XmlDocument & {
   TopElem: QaTestResultDocumentTopElem;
+  qa_test_result: QaTestResultDocumentTopElem;
+  DocDesc(): unknown;
 };

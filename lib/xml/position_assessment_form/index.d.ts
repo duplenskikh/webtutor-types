@@ -16,4 +16,6 @@ CustomElemsBase & {
 
 type PositionAssessmentFormDocument = XmlDocument & {
   TopElem: PositionAssessmentFormDocumentTopElem;
+  position_assessment_form: PositionAssessmentFormDocumentTopElem;
+  DocDesc(): unknown;
 };

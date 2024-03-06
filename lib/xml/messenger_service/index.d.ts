@@ -12,4 +12,7 @@ FileListBase & {
 
 type MessengerServiceDocument = XmlDocument & {
   TopElem: MessengerServiceDocumentTopElem;
+  messenger_service: MessengerServiceDocumentTopElem;
+  OnInit(): unknown;
+  DocDesc(): unknown;
 };

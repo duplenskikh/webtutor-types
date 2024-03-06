@@ -47,4 +47,6 @@ AdminAccessBase & {
 
 type LearningDocument = XmlDocument & {
   TopElem: LearningDocumentTopElem;
+  learning: LearningDocumentTopElem;
+  DocDesc(): unknown;
 };

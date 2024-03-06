@@ -36,4 +36,6 @@ type ObjectClaimDocumentTopElem = XmlTopElem & {
 
 type ObjectClaimDocument = XmlDocument & {
   TopElem: ObjectClaimDocumentTopElem;
+  object_claim: ObjectClaimDocumentTopElem;
+  DocDesc(): unknown;
 };

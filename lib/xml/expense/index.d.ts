@@ -29,4 +29,7 @@ FileListBase & {
 
 type ExpenseDocument = XmlDocument & {
   TopElem: ExpenseDocumentTopElem;
+  expense: ExpenseDocumentTopElem;
+  OnInit(): unknown;
+  DocDesc(): unknown;
 };

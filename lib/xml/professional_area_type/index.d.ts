@@ -9,4 +9,6 @@ AdminAccessBase & {
 
 type ProfessionalAreaTypeDocument = XmlDocument & {
   TopElem: ProfessionalAreaTypeDocumentTopElem;
+  professional_area_type: ProfessionalAreaTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

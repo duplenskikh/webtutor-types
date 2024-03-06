@@ -19,4 +19,6 @@ AdminAccessBase & {
 
 type RatingDocument = XmlDocument & {
   TopElem: RatingDocumentTopElem;
+  rating: RatingDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -10,4 +10,6 @@ type SalarySurveySourceDocumentTopElem = XmlTopElem & {
 
 type SalarySurveySourceDocument = XmlDocument & {
   TopElem: SalarySurveySourceDocumentTopElem;
+  salary_survey_source: SalarySurveySourceDocumentTopElem;
+  DocDesc(): unknown;
 };

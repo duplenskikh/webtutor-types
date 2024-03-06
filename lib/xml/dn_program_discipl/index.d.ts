@@ -59,4 +59,6 @@ CustomElemsBase & {
 
 type DnProgramDisciplDocument = XmlDocument & {
   TopElem: DnProgramDisciplDocumentTopElem;
+  dn_program_discipl: DnProgramDisciplDocumentTopElem;
+  DocDesc(): unknown;
 };

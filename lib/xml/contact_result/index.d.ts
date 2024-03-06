@@ -11,4 +11,6 @@ AdminAccessBase & {
 
 type ContactResultDocument = XmlDocument & {
   TopElem: ContactResultDocumentTopElem;
+  contact_result: ContactResultDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -26,4 +26,7 @@ FileListBase & {
 
 type KnowledgeAcquaintDocument = XmlDocument & {
   TopElem: KnowledgeAcquaintDocumentTopElem;
+  knowledge_acquaint: KnowledgeAcquaintDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

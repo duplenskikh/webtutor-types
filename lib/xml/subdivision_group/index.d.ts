@@ -33,4 +33,7 @@ ViewConditionsBase & {
 
 type SubdivisionGroupDocument = XmlDocument & {
   TopElem: SubdivisionGroupDocumentTopElem;
+  subdivision_group: SubdivisionGroupDocumentTopElem;
+  OnInit(): unknown;
+  DocDesc(): unknown;
 };

@@ -16,4 +16,6 @@ type CodingDocumentTopElem = XmlTopElem & {
 
 type CodingDocument = XmlDocument & {
   TopElem: CodingDocumentTopElem;
+  coding: CodingDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -10,4 +10,6 @@ AdminAccessBase & {
 
 type DnControlFormDocument = XmlDocument & {
   TopElem: DnControlFormDocumentTopElem;
+  dn_control_form: DnControlFormDocumentTopElem;
+  DocDesc(): unknown;
 };

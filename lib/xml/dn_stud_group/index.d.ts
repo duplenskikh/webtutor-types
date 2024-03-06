@@ -26,4 +26,6 @@ CustomElemsBase & {
 
 type DnStudGroupDocument = XmlDocument & {
   TopElem: DnStudGroupDocumentTopElem;
+  dn_stud_group: DnStudGroupDocumentTopElem;
+  DocDesc(): unknown;
 };

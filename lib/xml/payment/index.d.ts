@@ -22,4 +22,6 @@ CustomElemsBase & {
 
 type PaymentDocument = XmlDocument & {
   TopElem: PaymentDocumentTopElem;
+  payment: PaymentDocumentTopElem;
+  DocDesc(): unknown;
 };

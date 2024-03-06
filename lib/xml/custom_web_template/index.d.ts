@@ -35,4 +35,6 @@ WebVariablesBase & {
 
 type CustomWebTemplateDocument = XmlDocument & {
   TopElem: CustomWebTemplateDocumentTopElem;
+  custom_web_template: CustomWebTemplateDocumentTopElem;
+  DocDesc(): unknown;
 };

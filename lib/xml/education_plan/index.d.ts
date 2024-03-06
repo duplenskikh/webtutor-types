@@ -127,4 +127,7 @@ CustomElemsBase & {
 
 type EducationPlanDocument = XmlDocument & {
   TopElem: EducationPlanDocumentTopElem;
+  education_plan: EducationPlanDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

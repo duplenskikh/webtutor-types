@@ -59,4 +59,6 @@ CustomElemsBase & {
 
 type TypicalDevelopmentProgramDocument = XmlDocument & {
   TopElem: TypicalDevelopmentProgramDocumentTopElem;
+  typical_development_program: TypicalDevelopmentProgramDocumentTopElem;
+  DocDesc(): unknown;
 };

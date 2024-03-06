@@ -9,4 +9,6 @@ AdminAccessBase & {
 
 type DnEducatFormDocument = XmlDocument & {
   TopElem: DnEducatFormDocumentTopElem;
+  dn_educat_form: DnEducatFormDocumentTopElem;
+  DocDesc(): unknown;
 };

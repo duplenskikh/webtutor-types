@@ -22,4 +22,6 @@ CustomElemsBase & {
 
 type BudgetPeriodDocument = XmlDocument & {
   TopElem: BudgetPeriodDocumentTopElem;
+  budget_period: BudgetPeriodDocumentTopElem;
+  DocDesc(): unknown;
 };

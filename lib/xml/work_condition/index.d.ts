@@ -9,4 +9,6 @@ AdminAccessBase & {
 
 type WorkConditionDocument = XmlDocument & {
   TopElem: WorkConditionDocumentTopElem;
+  work_condition: WorkConditionDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -9,4 +9,6 @@ AdminAccessBase & {
 
 type MaterialLiabilityDocument = XmlDocument & {
   TopElem: MaterialLiabilityDocumentTopElem;
+  material_liability: MaterialLiabilityDocumentTopElem;
+  DocDesc(): unknown;
 };

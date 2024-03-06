@@ -19,4 +19,6 @@ FileListBase & {
 
 type IndicatorDocument = XmlDocument & {
   TopElem: IndicatorDocumentTopElem;
+  indicator: IndicatorDocumentTopElem;
+  DocDesc(): unknown;
 };

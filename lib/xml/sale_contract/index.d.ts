@@ -67,4 +67,7 @@ AdminAccessBase & {
 
 type SaleContractDocument = XmlDocument & {
   TopElem: SaleContractDocumentTopElem;
+  sale_contract: SaleContractDocumentTopElem;
+  OnInit(): unknown;
+  DocDesc(): unknown;
 };

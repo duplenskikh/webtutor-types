@@ -20,4 +20,6 @@ AdminAccessBase & {
 
 type PresentationDocument = XmlDocument & {
   TopElem: PresentationDocumentTopElem;
+  presentation: PresentationDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -9,4 +9,7 @@ CustomElemsBase & {
 
 type SaleStatusDocument = XmlDocument & {
   TopElem: SaleStatusDocumentTopElem;
+  sale_status: SaleStatusDocumentTopElem;
+  OnInit(): unknown;
+  DocDesc(): unknown;
 };

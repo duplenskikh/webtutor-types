@@ -26,4 +26,7 @@ CustomElemsBase & {
 
 type PersonnelCommitteeDocument = XmlDocument & {
   TopElem: PersonnelCommitteeDocumentTopElem;
+  personnel_committee: PersonnelCommitteeDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

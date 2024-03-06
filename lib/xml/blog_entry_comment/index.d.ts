@@ -21,4 +21,6 @@ CustomElemsBase & {
 
 type BlogEntryCommentDocument = XmlDocument & {
   TopElem: BlogEntryCommentDocumentTopElem;
+  blog_entry_comment: BlogEntryCommentDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -35,4 +35,6 @@ CustomElemsBase & {
 
 type CareerReserveTypeDocument = XmlDocument & {
   TopElem: CareerReserveTypeDocumentTopElem;
+  career_reserve_type: CareerReserveTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

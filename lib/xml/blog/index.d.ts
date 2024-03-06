@@ -32,4 +32,6 @@ CustomElemsBase & {
 
 type BlogDocument = XmlDocument & {
   TopElem: BlogDocumentTopElem;
+  blog: BlogDocumentTopElem;
+  DocDesc(): unknown;
 };

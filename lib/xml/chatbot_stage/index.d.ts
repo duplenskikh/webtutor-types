@@ -172,4 +172,6 @@ MsParametersBase & {
 
 type ChatbotStageDocument = XmlDocument & {
   TopElem: ChatbotStageDocumentTopElem;
+  chatbot_stage: ChatbotStageDocumentTopElem;
+  DocDesc(): unknown;
 };

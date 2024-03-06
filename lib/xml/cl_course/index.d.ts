@@ -88,4 +88,6 @@ CustomElemsBase & {
 
 type ClCourseDocument = XmlDocument & {
   TopElem: ClCourseDocumentTopElem;
+  cl_course: ClCourseDocumentTopElem;
+  DocDesc(): unknown;
 };

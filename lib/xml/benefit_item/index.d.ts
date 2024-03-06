@@ -19,4 +19,6 @@ CustomElemsBase & {
 
 type BenefitItemDocument = XmlDocument & {
   TopElem: BenefitItemDocumentTopElem;
+  benefit_item: BenefitItemDocumentTopElem;
+  DocDesc(): unknown;
 };

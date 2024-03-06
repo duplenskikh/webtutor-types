@@ -44,4 +44,6 @@ CustomElemsBase & {
 
 type OutstaffContractDocument = XmlDocument & {
   TopElem: OutstaffContractDocumentTopElem;
+  outstaff_contract: OutstaffContractDocumentTopElem;
+  DocDesc(): unknown;
 };

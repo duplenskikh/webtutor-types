@@ -130,4 +130,9 @@ AdminAccessBase & {
 
 type PositionCommonDocument = XmlDocument & {
   TopElem: PositionCommonDocumentTopElem;
+  position_common: PositionCommonDocumentTopElem;
+  OnBeforeSave(): unknown;
+  OnCreate(): unknown;
+  OnInit(): unknown;
+  DocDesc(): unknown;
 };

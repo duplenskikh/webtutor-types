@@ -11,4 +11,6 @@ ObjectTypeBase & {
 
 type UiDataDocument = XmlDocument & {
   TopElem: UiDataDocumentTopElem;
+  ui_data: UiDataDocumentTopElem;
+  DocDesc(): unknown;
 };

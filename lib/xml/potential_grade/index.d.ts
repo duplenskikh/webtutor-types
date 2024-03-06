@@ -21,4 +21,7 @@ FileListBase & {
 
 type PotentialGradeDocument = XmlDocument & {
   TopElem: PotentialGradeDocumentTopElem;
+  potential_grade: PotentialGradeDocumentTopElem;
+  DocDesc(): unknown;
+  OnBeforeSave(): unknown;
 };

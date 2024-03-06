@@ -52,4 +52,6 @@ CustomElemsBase & {
 
 type TestLearningDocument = XmlDocument & {
   TopElem: TestLearningDocumentTopElem;
+  test_learning: TestLearningDocumentTopElem;
+  DocDesc(): unknown;
 };

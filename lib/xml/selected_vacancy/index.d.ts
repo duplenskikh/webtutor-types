@@ -9,4 +9,6 @@ type SelectedVacancyDocumentTopElem = XmlTopElem & {
 
 type SelectedVacancyDocument = XmlDocument & {
   TopElem: SelectedVacancyDocumentTopElem;
+  selected_vacancy: SelectedVacancyDocumentTopElem;
+  DocDesc(): unknown;
 };

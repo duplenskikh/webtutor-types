@@ -47,4 +47,6 @@ CustomElemsBase & {
 
 type KpiProfileDocument = XmlDocument & {
   TopElem: KpiProfileDocumentTopElem;
+  kpi_profile: KpiProfileDocumentTopElem;
+  DocDesc(): unknown;
 };

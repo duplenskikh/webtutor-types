@@ -13,4 +13,6 @@ type CredentialDocumentTopElem = XmlTopElem & {
 
 type CredentialDocument = XmlDocument & {
   TopElem: CredentialDocumentTopElem;
+  credential: CredentialDocumentTopElem;
+  DocDesc(): unknown;
 };

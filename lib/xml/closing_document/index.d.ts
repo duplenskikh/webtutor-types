@@ -32,4 +32,7 @@ FileListBase & {
 
 type ClosingDocumentDocument = XmlDocument & {
   TopElem: ClosingDocumentDocumentTopElem;
+  closing_document: ClosingDocumentDocumentTopElem;
+  OnInit(): unknown;
+  DocDesc(): unknown;
 };

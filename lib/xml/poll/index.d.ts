@@ -125,4 +125,8 @@ KnowledgePartsBase & {
 
 type PollDocument = XmlDocument & {
   TopElem: PollDocumentTopElem;
+  poll: PollDocumentTopElem;
+  OnInit(): unknown;
+  OnCreate(): unknown;
+  DocDesc(): unknown;
 };

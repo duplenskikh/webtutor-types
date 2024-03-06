@@ -14,4 +14,6 @@ type ResponseTypeDocumentTopElem = XmlTopElem & {
 
 type ResponseTypeDocument = XmlDocument & {
   TopElem: ResponseTypeDocumentTopElem;
+  response_type: ResponseTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

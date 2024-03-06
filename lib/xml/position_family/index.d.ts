@@ -34,4 +34,7 @@ CustomElemsBase & {
 
 type PositionFamilyDocument = XmlDocument & {
   TopElem: PositionFamilyDocumentTopElem;
+  position_family: PositionFamilyDocumentTopElem;
+  OnInit(): unknown;
+  DocDesc(): unknown;
 };

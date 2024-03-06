@@ -16,4 +16,6 @@ CustomElemsBase & {
 
 type SelectedResumeDocument = XmlDocument & {
   TopElem: SelectedResumeDocumentTopElem;
+  selected_resume: SelectedResumeDocumentTopElem;
+  DocDesc(): unknown;
 };

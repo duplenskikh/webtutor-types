@@ -66,4 +66,6 @@ AdminAccessBase & {
 
 type KpiValueDocument = XmlDocument & {
   TopElem: KpiValueDocumentTopElem;
+  kpi_value: KpiValueDocumentTopElem;
+  DocDesc(): unknown;
 };

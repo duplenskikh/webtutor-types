@@ -9,4 +9,6 @@ AdminAccessBase & {
 
 type EducationTypeDocument = XmlDocument & {
   TopElem: EducationTypeDocumentTopElem;
+  education_type: EducationTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

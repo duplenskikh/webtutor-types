@@ -16,4 +16,6 @@ AdminAccessBase & {
 
 type EducationProgramDocument = XmlDocument & {
   TopElem: EducationProgramDocumentTopElem;
+  education_program: EducationProgramDocumentTopElem;
+  DocDesc(): unknown;
 };

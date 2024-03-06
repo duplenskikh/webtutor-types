@@ -9,4 +9,6 @@ type ClLocalizationDocumentTopElem = XmlTopElem & {
 
 type ClLocalizationDocument = XmlDocument & {
   TopElem: ClLocalizationDocumentTopElem;
+  cl_localization: ClLocalizationDocumentTopElem;
+  DocDesc(): unknown;
 };

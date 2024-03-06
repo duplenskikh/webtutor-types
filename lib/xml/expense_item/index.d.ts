@@ -12,4 +12,6 @@ CustomElemsBase & {
 
 type ExpenseItemDocument = XmlDocument & {
   TopElem: ExpenseItemDocumentTopElem;
+  expense_item: ExpenseItemDocumentTopElem;
+  DocDesc(): unknown;
 };

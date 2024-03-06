@@ -15,4 +15,7 @@ AdminAccessBase & {
 
 type PersonalDataProcessingConsentDocument = XmlDocument & {
   TopElem: PersonalDataProcessingConsentDocumentTopElem;
+  personal_data_processing_consent: PersonalDataProcessingConsentDocumentTopElem;
+  DocDesc(): unknown;
+  OnInit(): unknown;
 };

@@ -13,4 +13,6 @@ type VerbDocumentTopElem = XmlTopElem & {
 
 type VerbDocument = XmlDocument & {
   TopElem: VerbDocumentTopElem;
+  verb: VerbDocumentTopElem;
+  DocDesc(): unknown;
 };

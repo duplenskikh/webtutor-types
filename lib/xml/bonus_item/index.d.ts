@@ -28,4 +28,6 @@ AdminAccessBase & {
 
 type BonusItemDocument = XmlDocument & {
   TopElem: BonusItemDocumentTopElem;
+  bonus_item: BonusItemDocumentTopElem;
+  DocDesc(): unknown;
 };

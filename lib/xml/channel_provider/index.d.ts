@@ -17,4 +17,6 @@ WebVariablesBase & {
 
 type ChannelProviderDocument = XmlDocument & {
   TopElem: ChannelProviderDocumentTopElem;
+  channel_provider: ChannelProviderDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -47,4 +47,8 @@ CustomElemsBase & {
 
 type ActiveTestLearningDocument = XmlDocument & {
   TopElem: ActiveTestLearningDocumentTopElem;
+  active_test_learning: ActiveTestLearningDocumentTopElem;
+  OnLocalInit(): unknown;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

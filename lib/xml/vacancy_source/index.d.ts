@@ -12,4 +12,6 @@ CustomElemsBase & {
 
 type VacancySourceDocument = XmlDocument & {
   TopElem: VacancySourceDocumentTopElem;
+  vacancy_source: VacancySourceDocumentTopElem;
+  DocDesc(): unknown;
 };

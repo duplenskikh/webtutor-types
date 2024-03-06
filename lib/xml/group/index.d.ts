@@ -53,4 +53,8 @@ PersonObjectLinksBase & {
 
 type GroupDocument = XmlDocument & {
   TopElem: GroupDocumentTopElem;
+  group: GroupDocumentTopElem;
+  OnInit(): unknown;
+  OnSave(): unknown;
+  DocDesc(): unknown;
 };

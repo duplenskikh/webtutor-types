@@ -18,4 +18,6 @@ WebVariablesBase & {
 
 type LibraryMaterialSourceTypeDocument = XmlDocument & {
   TopElem: LibraryMaterialSourceTypeDocumentTopElem;
+  library_material_source_type: LibraryMaterialSourceTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

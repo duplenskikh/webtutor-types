@@ -7,4 +7,6 @@ type OutstaffAdditionalWorkDocumentTopElem = XmlTopElem & {
 
 type OutstaffAdditionalWorkDocument = XmlDocument & {
   TopElem: OutstaffAdditionalWorkDocumentTopElem;
+  outstaff_additional_work: OutstaffAdditionalWorkDocumentTopElem;
+
 };

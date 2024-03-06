@@ -91,4 +91,7 @@ MsParametersBase & {
 
 type LearningRecordDocument = XmlDocument & {
   TopElem: LearningRecordDocumentTopElem;
+  learning_record: LearningRecordDocumentTopElem;
+  DocDesc(): unknown;
+  OnBeforeSave(): unknown;
 };

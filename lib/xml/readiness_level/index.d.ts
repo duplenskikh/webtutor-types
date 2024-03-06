@@ -13,4 +13,6 @@ CustomElemsBase & {
 
 type ReadinessLevelDocument = XmlDocument & {
   TopElem: ReadinessLevelDocumentTopElem;
+  readiness_level: ReadinessLevelDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -40,4 +40,7 @@ WebVariablesBase & {
 
 type WebModeDocument = XmlDocument & {
   TopElem: WebModeDocumentTopElem;
+  web_mode: WebModeDocumentTopElem;
+  OnSave(): unknown;
+  DocDesc(): unknown;
 };

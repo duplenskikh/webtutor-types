@@ -97,4 +97,7 @@ CustomElemsBase & {
 
 type TaskDocument = XmlDocument & {
   TopElem: TaskDocumentTopElem;
+  task: TaskDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

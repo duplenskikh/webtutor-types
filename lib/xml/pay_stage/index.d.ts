@@ -56,4 +56,7 @@ AdminAccessBase & {
 
 type PayStageDocument = XmlDocument & {
   TopElem: PayStageDocumentTopElem;
+  pay_stage: PayStageDocumentTopElem;
+  OnInit(): unknown;
+  DocDesc(): unknown;
 };

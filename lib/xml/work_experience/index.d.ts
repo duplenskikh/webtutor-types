@@ -9,4 +9,6 @@ AdminAccessBase & {
 
 type WorkExperienceDocument = XmlDocument & {
   TopElem: WorkExperienceDocumentTopElem;
+  work_experience: WorkExperienceDocumentTopElem;
+  DocDesc(): unknown;
 };

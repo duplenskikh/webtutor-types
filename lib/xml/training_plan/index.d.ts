@@ -67,4 +67,7 @@ CustomElemsBase & {
 
 type TrainingPlanDocument = XmlDocument & {
   TopElem: TrainingPlanDocumentTopElem;
+  training_plan: TrainingPlanDocumentTopElem;
+  OnLocalInit(): unknown;
+  DocDesc(): unknown;
 };

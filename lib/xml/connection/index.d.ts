@@ -20,4 +20,6 @@ type ConnectionDocumentTopElem = XmlTopElem & {
 
 type ConnectionDocument = XmlDocument & {
   TopElem: ConnectionDocumentTopElem;
+  connection: ConnectionDocumentTopElem;
+  OnBeforeSave(): unknown;
 };

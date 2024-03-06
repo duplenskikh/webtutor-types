@@ -154,4 +154,7 @@ type ClModuleDocumentTopElem = XmlTopElem & {
 
 type ClModuleDocument = XmlDocument & {
   TopElem: ClModuleDocumentTopElem;
+  cl_module: ClModuleDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

@@ -44,4 +44,6 @@ CustomElemsBase & {
 
 type ContestDocument = XmlDocument & {
   TopElem: ContestDocumentTopElem;
+  contest: ContestDocumentTopElem;
+  DocDesc(): unknown;
 };

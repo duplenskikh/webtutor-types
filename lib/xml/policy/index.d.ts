@@ -17,4 +17,6 @@ FileListBase & {
 
 type PolicyDocument = XmlDocument & {
   TopElem: PolicyDocumentTopElem;
+  policy: PolicyDocumentTopElem;
+
 };

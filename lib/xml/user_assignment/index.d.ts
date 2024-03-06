@@ -52,4 +52,6 @@ ViewConditionsBase & {
 
 type UserAssignmentDocument = XmlDocument & {
   TopElem: UserAssignmentDocumentTopElem;
+  user_assignment: UserAssignmentDocumentTopElem;
+  DocDesc(): unknown;
 };

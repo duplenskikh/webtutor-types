@@ -9,4 +9,6 @@ type WorkingConditionTypeDocumentTopElem = XmlTopElem & {
 
 type WorkingConditionTypeDocument = XmlDocument & {
   TopElem: WorkingConditionTypeDocumentTopElem;
+  working_condition_type: WorkingConditionTypeDocumentTopElem;
+
 };

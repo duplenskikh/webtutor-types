@@ -9,4 +9,6 @@ AdminAccessBase & {
 
 type WageSystemDocument = XmlDocument & {
   TopElem: WageSystemDocumentTopElem;
+  wage_system: WageSystemDocumentTopElem;
+  DocDesc(): unknown;
 };

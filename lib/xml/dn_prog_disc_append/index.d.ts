@@ -15,4 +15,6 @@ CustomElemsBase & {
 
 type DnProgDiscAppendDocument = XmlDocument & {
   TopElem: DnProgDiscAppendDocumentTopElem;
+  dn_prog_disc_append: DnProgDiscAppendDocumentTopElem;
+  DocDesc(): unknown;
 };

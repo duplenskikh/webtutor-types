@@ -206,4 +206,6 @@ CustomElemsBase & {
 
 type TestProjectDocument = XmlDocument & {
   TopElem: TestProjectDocumentTopElem;
+  test_project: TestProjectDocumentTopElem;
+  DocDesc(): unknown;
 };

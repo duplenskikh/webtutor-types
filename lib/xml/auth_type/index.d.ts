@@ -10,4 +10,6 @@ WebVariablesBase & {
 
 type AuthTypeDocument = XmlDocument & {
   TopElem: AuthTypeDocumentTopElem;
+  auth_type: AuthTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

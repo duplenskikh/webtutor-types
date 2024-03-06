@@ -100,4 +100,8 @@ CustomElemsBase & {
 
 type CareerReserveDocument = XmlDocument & {
   TopElem: CareerReserveDocumentTopElem;
+  career_reserve: CareerReserveDocumentTopElem;
+  OnLocalInit(): unknown;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

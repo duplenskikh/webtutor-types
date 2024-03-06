@@ -92,4 +92,7 @@ KnowledgePartsBase & {
 
 type QualificationDocument = XmlDocument & {
   TopElem: QualificationDocumentTopElem;
+  qualification: QualificationDocumentTopElem;
+  OnInit(): unknown;
+  DocDesc(): unknown;
 };

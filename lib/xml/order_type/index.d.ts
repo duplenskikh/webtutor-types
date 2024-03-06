@@ -15,4 +15,6 @@ type OrderTypeDocumentTopElem = XmlTopElem & {
 
 type OrderTypeDocument = XmlDocument & {
   TopElem: OrderTypeDocumentTopElem;
+  order_type: OrderTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

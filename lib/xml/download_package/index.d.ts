@@ -19,4 +19,6 @@ DownloadPackageLogBase & {
 
 type DownloadPackageDocument = XmlDocument & {
   TopElem: DownloadPackageDocumentTopElem;
+  download_package: DownloadPackageDocumentTopElem;
+  DocDesc(): unknown;
 };

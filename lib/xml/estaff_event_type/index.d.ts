@@ -42,4 +42,6 @@ CustomElemsBase & {
 
 type EstaffEventTypeDocument = XmlDocument & {
   TopElem: EstaffEventTypeDocumentTopElem;
+  estaff_event_type: EstaffEventTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

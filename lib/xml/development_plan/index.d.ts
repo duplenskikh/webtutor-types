@@ -48,4 +48,7 @@ CustomElemsBase & {
 
 type DevelopmentPlanDocument = XmlDocument & {
   TopElem: DevelopmentPlanDocumentTopElem;
+  development_plan: DevelopmentPlanDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

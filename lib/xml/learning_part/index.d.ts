@@ -10,4 +10,6 @@ AnnalsObjectsBase & {
 
 type LearningPartDocument = XmlDocument & {
   TopElem: LearningPartDocumentTopElem;
+  learning_part: LearningPartDocumentTopElem;
+  DocDesc(): unknown;
 };

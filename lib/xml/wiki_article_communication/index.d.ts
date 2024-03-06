@@ -20,4 +20,7 @@ CustomElemsBase & {
 
 type WikiArticleCommunicationDocument = XmlDocument & {
   TopElem: WikiArticleCommunicationDocumentTopElem;
+  wiki_article_communication: WikiArticleCommunicationDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

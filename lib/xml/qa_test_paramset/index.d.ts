@@ -10,4 +10,6 @@ QaTestAssertBase & {
 
 type QaTestParamsetDocument = XmlDocument & {
   TopElem: QaTestParamsetDocumentTopElem;
+  qa_test_paramset: QaTestParamsetDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -32,4 +32,6 @@ type ClConstDocumentTopElem = XmlTopElem & {
 
 type ClConstDocument = XmlDocument & {
   TopElem: ClConstDocumentTopElem;
+  cl_const: ClConstDocumentTopElem;
+  DocDesc(): unknown;
 };

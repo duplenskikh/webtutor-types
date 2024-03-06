@@ -9,4 +9,6 @@ type EventResultTypeDocumentTopElem = XmlTopElem & {
 
 type EventResultTypeDocument = XmlDocument & {
   TopElem: EventResultTypeDocumentTopElem;
+  event_result_type: EventResultTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -32,4 +32,6 @@ type RemoteSecurityProfileDocumentTopElem = XmlTopElem & {
 
 type RemoteSecurityProfileDocument = XmlDocument & {
   TopElem: RemoteSecurityProfileDocumentTopElem;
+  remote_security_profile: RemoteSecurityProfileDocumentTopElem;
+  DocDesc(): unknown;
 };

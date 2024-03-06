@@ -82,4 +82,6 @@ WorkflowFieldsStatesBase & {
 
 type WorkflowDocument = XmlDocument & {
   TopElem: WorkflowDocumentTopElem;
+  workflow: WorkflowDocumentTopElem;
+  DocDesc(): unknown;
 };

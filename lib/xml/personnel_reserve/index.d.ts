@@ -54,4 +54,7 @@ CustomElemsBase & {
 
 type PersonnelReserveDocument = XmlDocument & {
   TopElem: PersonnelReserveDocumentTopElem;
+  personnel_reserve: PersonnelReserveDocumentTopElem;
+  OnLocalInit(): unknown;
+  DocDesc(): unknown;
 };

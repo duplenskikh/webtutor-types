@@ -9,4 +9,6 @@ type ForumThemeReadByCollaboratorDocumentTopElem = XmlTopElem & {
 
 type ForumThemeReadByCollaboratorDocument = XmlDocument & {
   TopElem: ForumThemeReadByCollaboratorDocumentTopElem;
+  forum_theme_read_by_collaborator: ForumThemeReadByCollaboratorDocumentTopElem;
+  DocDesc(): unknown;
 };

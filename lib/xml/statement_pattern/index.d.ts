@@ -9,4 +9,6 @@ type StatementPatternDocumentTopElem = XmlTopElem & {
 
 type StatementPatternDocument = XmlDocument & {
   TopElem: StatementPatternDocumentTopElem;
+  statement_pattern: StatementPatternDocumentTopElem;
+
 };

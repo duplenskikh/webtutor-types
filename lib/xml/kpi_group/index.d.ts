@@ -12,4 +12,6 @@ CustomElemsBase & {
 
 type KpiGroupDocument = XmlDocument & {
   TopElem: KpiGroupDocumentTopElem;
+  kpi_group: KpiGroupDocumentTopElem;
+  DocDesc(): unknown;
 };

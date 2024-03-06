@@ -10,4 +10,6 @@ type UserDataDocumentTopElem = XmlTopElem & {
 
 type UserDataDocument = XmlDocument & {
   TopElem: UserDataDocumentTopElem;
+  user_data: UserDataDocumentTopElem;
+  DocDesc(): unknown;
 };

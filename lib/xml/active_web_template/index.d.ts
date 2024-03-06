@@ -39,4 +39,6 @@ type ActiveWebTemplateDocumentTopElem = XmlTopElem & {
 
 type ActiveWebTemplateDocument = XmlDocument & {
   TopElem: ActiveWebTemplateDocumentTopElem;
+  active_web_template: ActiveWebTemplateDocumentTopElem;
+  DocDesc(): unknown;
 };

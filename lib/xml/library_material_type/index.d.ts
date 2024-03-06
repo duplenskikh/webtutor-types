@@ -8,4 +8,6 @@ type LibraryMaterialTypeDocumentTopElem = XmlTopElem & {
 
 type LibraryMaterialTypeDocument = XmlDocument & {
   TopElem: LibraryMaterialTypeDocumentTopElem;
+  library_material_type: LibraryMaterialTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

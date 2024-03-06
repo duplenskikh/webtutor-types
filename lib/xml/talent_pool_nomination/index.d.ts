@@ -12,4 +12,6 @@ AdminAccessBase & {
 
 type TalentPoolNominationDocument = XmlDocument & {
   TopElem: TalentPoolNominationDocumentTopElem;
+  talent_pool_nomination: TalentPoolNominationDocumentTopElem;
+  DocDesc(): unknown;
 };

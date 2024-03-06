@@ -17,4 +17,6 @@ FileListBase & {
 
 type LibraryMaterialCommentDocument = XmlDocument & {
   TopElem: LibraryMaterialCommentDocumentTopElem;
+  library_material_comment: LibraryMaterialCommentDocumentTopElem;
+  DocDesc(): unknown;
 };

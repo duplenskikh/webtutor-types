@@ -22,4 +22,7 @@ CustomElemsBase & {
 
 type FactPaymentDocument = XmlDocument & {
   TopElem: FactPaymentDocumentTopElem;
+  fact_payment: FactPaymentDocumentTopElem;
+  OnInit(): unknown;
+  DocDesc(): unknown;
 };

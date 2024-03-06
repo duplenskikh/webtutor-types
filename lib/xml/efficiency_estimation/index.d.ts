@@ -15,4 +15,6 @@ CustomElemsBase & {
 
 type EfficiencyEstimationDocument = XmlDocument & {
   TopElem: EfficiencyEstimationDocumentTopElem;
+  efficiency_estimation: EfficiencyEstimationDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -61,4 +61,6 @@ CustomElemsBase & {
 
 type BlockMessageDocument = XmlDocument & {
   TopElem: BlockMessageDocumentTopElem;
+  block_message: BlockMessageDocumentTopElem;
+  OnBeforeSave(): unknown;
 };

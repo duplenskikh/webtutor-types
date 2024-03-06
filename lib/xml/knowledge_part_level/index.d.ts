@@ -10,4 +10,6 @@ type KnowledgePartLevelDocumentTopElem = XmlTopElem & {
 
 type KnowledgePartLevelDocument = XmlDocument & {
   TopElem: KnowledgePartLevelDocumentTopElem;
+  knowledge_part_level: KnowledgePartLevelDocumentTopElem;
+
 };

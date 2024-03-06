@@ -20,4 +20,6 @@ CustomElemsBase & {
 
 type SalarySurveyDocument = XmlDocument & {
   TopElem: SalarySurveyDocumentTopElem;
+  salary_survey: SalarySurveyDocumentTopElem;
+  DocDesc(): unknown;
 };

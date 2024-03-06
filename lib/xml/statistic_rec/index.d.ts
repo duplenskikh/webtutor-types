@@ -72,4 +72,6 @@ I18nBase & {
 
 type StatisticRecDocument = XmlDocument & {
   TopElem: StatisticRecDocumentTopElem;
+  statistic_rec: StatisticRecDocumentTopElem;
+  DocDesc(): unknown;
 };

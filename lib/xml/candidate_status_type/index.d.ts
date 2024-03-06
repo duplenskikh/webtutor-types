@@ -12,4 +12,6 @@ CustomElemsBase & {
 
 type CandidateStatusTypeDocument = XmlDocument & {
   TopElem: CandidateStatusTypeDocumentTopElem;
+  candidate_status_type: CandidateStatusTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

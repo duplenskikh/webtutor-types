@@ -29,4 +29,7 @@ CustomElemsBase & {
 
 type BlogEntryDocument = XmlDocument & {
   TopElem: BlogEntryDocumentTopElem;
+  blog_entry: BlogEntryDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

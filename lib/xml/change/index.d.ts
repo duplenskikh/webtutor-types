@@ -14,4 +14,6 @@ type ChangeDocumentTopElem = XmlTopElem & {
 
 type ChangeDocument = XmlDocument & {
   TopElem: ChangeDocumentTopElem;
+  change: ChangeDocumentTopElem;
+  DocDesc(): unknown;
 };

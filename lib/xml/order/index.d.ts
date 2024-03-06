@@ -46,4 +46,6 @@ CustomElemsBase & {
 
 type OrderDocument = XmlDocument & {
   TopElem: OrderDocumentTopElem;
+  order: OrderDocumentTopElem;
+  DocDesc(): unknown;
 };

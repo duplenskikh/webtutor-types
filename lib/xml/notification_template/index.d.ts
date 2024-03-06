@@ -24,4 +24,6 @@ FileListBase & {
 
 type NotificationTemplateDocument = XmlDocument & {
   TopElem: NotificationTemplateDocumentTopElem;
+  notification_template: NotificationTemplateDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -10,4 +10,6 @@ CustomElemsBase & {
 
 type ProfessionCategoryDocument = XmlDocument & {
   TopElem: ProfessionCategoryDocumentTopElem;
+  profession_category: ProfessionCategoryDocumentTopElem;
+  DocDesc(): unknown;
 };

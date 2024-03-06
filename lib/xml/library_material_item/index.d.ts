@@ -34,4 +34,6 @@ AdminAccessBase & {
 
 type LibraryMaterialItemDocument = XmlDocument & {
   TopElem: LibraryMaterialItemDocumentTopElem;
+  library_material_item: LibraryMaterialItemDocumentTopElem;
+  OnBeforeSave(): unknown;
 };

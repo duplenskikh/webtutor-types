@@ -31,4 +31,6 @@ KnowledgePartsBase & {
 
 type KnowledgePartDocument = XmlDocument & {
   TopElem: KnowledgePartDocumentTopElem;
+  knowledge_part: KnowledgePartDocumentTopElem;
+  DocDesc(): unknown;
 };

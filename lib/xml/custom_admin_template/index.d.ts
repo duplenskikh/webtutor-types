@@ -17,4 +17,7 @@ WebVariablesBase & {
 
 type CustomAdminTemplateDocument = XmlDocument & {
   TopElem: CustomAdminTemplateDocumentTopElem;
+  custom_admin_template: CustomAdminTemplateDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

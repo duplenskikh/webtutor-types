@@ -38,4 +38,6 @@ AdminAccessBase & {
 
 type CourseModuleDocument = XmlDocument & {
   TopElem: CourseModuleDocumentTopElem;
+  course_module: CourseModuleDocumentTopElem;
+  DocDesc(): unknown;
 };

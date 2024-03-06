@@ -28,4 +28,6 @@ type PersonObjectProfileDocumentTopElem = XmlTopElem & {
 
 type PersonObjectProfileDocument = XmlDocument & {
   TopElem: PersonObjectProfileDocumentTopElem;
+  person_object_profile: PersonObjectProfileDocumentTopElem;
+  DocDesc(): unknown;
 };

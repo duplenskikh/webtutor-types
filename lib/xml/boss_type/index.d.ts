@@ -20,4 +20,6 @@ type BossTypeDocumentTopElem = XmlTopElem & {
 
 type BossTypeDocument = XmlDocument & {
   TopElem: BossTypeDocumentTopElem;
+  boss_type: BossTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -65,4 +65,6 @@ AdminAccessBase & {
 
 type ChatDocument = XmlDocument & {
   TopElem: ChatDocumentTopElem;
+  chat: ChatDocumentTopElem;
+  DocDesc(): unknown;
 };

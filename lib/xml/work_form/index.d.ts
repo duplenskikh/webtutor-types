@@ -9,4 +9,6 @@ type WorkFormDocumentTopElem = XmlTopElem & {
 
 type WorkFormDocument = XmlDocument & {
   TopElem: WorkFormDocumentTopElem;
+  work_form: WorkFormDocumentTopElem;
+
 };

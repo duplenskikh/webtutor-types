@@ -14,4 +14,6 @@ ObjectCodeNameBase & {
 
 type ObjectDataTypeDocument = XmlDocument & {
   TopElem: ObjectDataTypeDocumentTopElem;
+  object_data_type: ObjectDataTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -26,4 +26,6 @@ AdminAccessBase & {
 
 type ExpertDocument = XmlDocument & {
   TopElem: ExpertDocumentTopElem;
+  expert: ExpertDocumentTopElem;
+  DocDesc(): unknown;
 };

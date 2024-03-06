@@ -25,4 +25,7 @@ type PersonObjectLinkDocumentTopElem = XmlTopElem & {
 
 type PersonObjectLinkDocument = XmlDocument & {
   TopElem: PersonObjectLinkDocumentTopElem;
+  person_object_link: PersonObjectLinkDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

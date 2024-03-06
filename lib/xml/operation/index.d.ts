@@ -29,4 +29,7 @@ WebVariablesBase & {
 
 type OperationDocument = XmlDocument & {
   TopElem: OperationDocumentTopElem;
+  operation: OperationDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

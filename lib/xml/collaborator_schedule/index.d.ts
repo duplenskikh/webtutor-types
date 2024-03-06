@@ -34,4 +34,6 @@ CustomElemsBase & {
 
 type CollaboratorScheduleDocument = XmlDocument & {
   TopElem: CollaboratorScheduleDocumentTopElem;
+  collaborator_schedule: CollaboratorScheduleDocumentTopElem;
+
 };

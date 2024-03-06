@@ -15,4 +15,6 @@ type ProfilingRecordDocumentTopElem = XmlTopElem & {
 
 type ProfilingRecordDocument = XmlDocument & {
   TopElem: ProfilingRecordDocumentTopElem;
+  profiling_record: ProfilingRecordDocumentTopElem;
+  DocDesc(): unknown;
 };

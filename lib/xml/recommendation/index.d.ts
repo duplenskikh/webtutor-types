@@ -27,4 +27,7 @@ AdminAccessBase & {
 
 type RecommendationDocument = XmlDocument & {
   TopElem: RecommendationDocumentTopElem;
+  recommendation: RecommendationDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

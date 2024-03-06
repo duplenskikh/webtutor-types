@@ -49,4 +49,7 @@ CustomElemsBase & {
 
 type FormulaDocument = XmlDocument & {
   TopElem: FormulaDocumentTopElem;
+  formula: FormulaDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

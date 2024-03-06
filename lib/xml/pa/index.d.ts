@@ -217,4 +217,7 @@ FileListBase & {
 
 type PaDocument = XmlDocument & {
   TopElem: PaDocumentTopElem;
+  pa: PaDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

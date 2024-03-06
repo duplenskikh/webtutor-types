@@ -58,4 +58,8 @@ CustomElemsBase & {
 
 type ActiveLearningDocument = XmlDocument & {
   TopElem: ActiveLearningDocumentTopElem;
+  active_learning: ActiveLearningDocumentTopElem;
+  OnBeforeSave(): unknown;
+  OnLocalInit(): unknown;
+  DocDesc(): unknown;
 };

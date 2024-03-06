@@ -32,4 +32,6 @@ FuncManagersBase & {
 
 type ConversationTypeDocument = XmlDocument & {
   TopElem: ConversationTypeDocumentTopElem;
+  conversation_type: ConversationTypeDocumentTopElem;
+
 };

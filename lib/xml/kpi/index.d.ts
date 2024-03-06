@@ -87,4 +87,7 @@ KnowledgePartsBase & {
 
 type KpiDocument = XmlDocument & {
   TopElem: KpiDocumentTopElem;
+  kpi: KpiDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

@@ -15,4 +15,6 @@ CustomElemsBase & {
 
 type ScheduleDayDocument = XmlDocument & {
   TopElem: ScheduleDayDocumentTopElem;
+  schedule_day: ScheduleDayDocumentTopElem;
+  OnBeforeSave(): unknown;
 };

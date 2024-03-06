@@ -36,4 +36,6 @@ MsVariablesBase & {
 
 type SystemEventDocument = XmlDocument & {
   TopElem: SystemEventDocumentTopElem;
+  system_event: SystemEventDocumentTopElem;
+  DocDesc(): unknown;
 };

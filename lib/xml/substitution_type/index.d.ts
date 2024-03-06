@@ -24,4 +24,6 @@ CustomElemsBase & {
 
 type SubstitutionTypeDocument = XmlDocument & {
   TopElem: SubstitutionTypeDocumentTopElem;
+  substitution_type: SubstitutionTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

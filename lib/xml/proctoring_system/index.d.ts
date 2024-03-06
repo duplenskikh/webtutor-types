@@ -18,4 +18,6 @@ WebVariablesBase & {
 
 type ProctoringSystemDocument = XmlDocument & {
   TopElem: ProctoringSystemDocumentTopElem;
+  proctoring_system: ProctoringSystemDocumentTopElem;
+  DocDesc(): unknown;
 };

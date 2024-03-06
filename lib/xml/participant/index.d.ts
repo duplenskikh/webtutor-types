@@ -24,4 +24,6 @@ AdminAccessBase & {
 
 type ParticipantDocument = XmlDocument & {
   TopElem: ParticipantDocumentTopElem;
+  participant: ParticipantDocumentTopElem;
+  DocDesc(): unknown;
 };

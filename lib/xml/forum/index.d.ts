@@ -35,4 +35,6 @@ AdminAccessBase & {
 
 type ForumDocument = XmlDocument & {
   TopElem: ForumDocumentTopElem;
+  forum: ForumDocumentTopElem;
+  DocDesc(): unknown;
 };

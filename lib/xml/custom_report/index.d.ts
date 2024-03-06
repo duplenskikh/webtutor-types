@@ -37,4 +37,7 @@ CustomReportBase & {
 
 type CustomReportDocument = XmlDocument & {
   TopElem: CustomReportDocumentTopElem;
+  custom_report: CustomReportDocumentTopElem;
+  OnInit(): unknown;
+  DocDesc(): unknown;
 };

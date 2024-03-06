@@ -36,4 +36,6 @@ CustomElemsBase & {
 
 type PresenceStateDocument = XmlDocument & {
   TopElem: PresenceStateDocumentTopElem;
+  presence_state: PresenceStateDocumentTopElem;
+  OnBeforeSave(): unknown;
 };

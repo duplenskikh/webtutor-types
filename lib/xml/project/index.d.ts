@@ -68,4 +68,7 @@ CustomElemsBase & {
 
 type ProjectDocument = XmlDocument & {
   TopElem: ProjectDocumentTopElem;
+  project: ProjectDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

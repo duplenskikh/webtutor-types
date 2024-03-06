@@ -24,4 +24,7 @@ type WebRuleDocumentTopElem = XmlTopElem & {
 
 type WebRuleDocument = XmlDocument & {
   TopElem: WebRuleDocumentTopElem;
+  web_rule: WebRuleDocumentTopElem;
+  OnSave(): unknown;
+  DocDesc(): unknown;
 };

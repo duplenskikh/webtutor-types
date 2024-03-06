@@ -147,4 +147,7 @@ AdminAccessBase & {
 
 type QtiAssessmentDocument = XmlDocument & {
   TopElem: QtiAssessmentDocumentTopElem;
+  qti_assessment: QtiAssessmentDocumentTopElem;
+  OnCreate(): unknown;
+  DocDesc(): unknown;
 };

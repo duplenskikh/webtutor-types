@@ -21,4 +21,6 @@ CustomElemsBase & {
 
 type DnAcademYearDocument = XmlDocument & {
   TopElem: DnAcademYearDocumentTopElem;
+  dn_academ_year: DnAcademYearDocumentTopElem;
+  DocDesc(): unknown;
 };

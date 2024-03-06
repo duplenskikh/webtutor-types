@@ -19,4 +19,6 @@ AdminAccessBase & {
 
 type TagDocument = XmlDocument & {
   TopElem: TagDocumentTopElem;
+  tag: TagDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -13,4 +13,6 @@ type GradeDocumentTopElem = XmlTopElem & {
 
 type GradeDocument = XmlDocument & {
   TopElem: GradeDocumentTopElem;
+  grade: GradeDocumentTopElem;
+  DocDesc(): unknown;
 };

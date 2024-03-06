@@ -15,4 +15,6 @@ AdminAccessBase & {
 
 type ChatbotTypeDocument = XmlDocument & {
   TopElem: ChatbotTypeDocumentTopElem;
+  chatbot_type: ChatbotTypeDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -19,4 +19,6 @@ CustomElemsBase & {
 
 type VendorStateDocument = XmlDocument & {
   TopElem: VendorStateDocumentTopElem;
+  vendor_state: VendorStateDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -84,4 +84,6 @@ CustomElemsBase & {
 
 type ChatbotDocument = XmlDocument & {
   TopElem: ChatbotDocumentTopElem;
+  chatbot: ChatbotDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -32,4 +32,7 @@ AdminAccessBase & {
 
 type PollResultDocument = XmlDocument & {
   TopElem: PollResultDocumentTopElem;
+  poll_result: PollResultDocumentTopElem;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

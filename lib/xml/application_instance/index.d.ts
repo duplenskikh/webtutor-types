@@ -11,4 +11,6 @@ WebVariablesBase & {
 
 type ApplicationInstanceDocument = XmlDocument & {
   TopElem: ApplicationInstanceDocumentTopElem;
+  application_instance: ApplicationInstanceDocumentTopElem;
+  DocDesc(): unknown;
 };

@@ -25,4 +25,8 @@ CustomElemsBase & {
 
 type CertificateDocument = XmlDocument & {
   TopElem: CertificateDocumentTopElem;
+  certificate: CertificateDocumentTopElem;
+  OnCreate(): unknown;
+  OnBeforeSave(): unknown;
+  DocDesc(): unknown;
 };

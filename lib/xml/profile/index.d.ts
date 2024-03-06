@@ -37,4 +37,6 @@ PersonFillingBase & {
 
 type ProfileDocument = XmlDocument & {
   TopElem: ProfileDocumentTopElem;
+  profile: ProfileDocumentTopElem;
+  DocDesc(): unknown;
 };

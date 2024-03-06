@@ -14,4 +14,7 @@ KnowledgePartsBase & {
 
 type QtiRoleDocument = XmlDocument & {
   TopElem: QtiRoleDocumentTopElem;
+  qti_role: QtiRoleDocumentTopElem;
+  DocDesc(): unknown;
+  OnInit(): unknown;
 };
