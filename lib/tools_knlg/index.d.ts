@@ -1,12 +1,6 @@
 declare namespace tools_knlg {
   function alerd(text: string, print: boolean): void;
-
-  function update_acquaint_assign(
-    acquaintId: number,
-    acquaintTopElem: AcquaintDocumentTopElem,
-    isDelete: boolean,
-    isDebug: boolean
-  ): number;
+  function update_acquaint_assign(acquaintId: number, acquaintTopElem: AcquaintDocumentTopElem, isDelete: boolean, isDebug: boolean): number;
 
   type ActivateLearningTaskPayload = {
     // id сотрудника, которому назначается
@@ -45,7 +39,7 @@ declare namespace tools_knlg {
   function activate_learning_task(payload: ActivateLearningTaskPayload): ActiveLearningTaskResult;
 
   type SetStatusLearningTaskResultPayload = {
-    // новый статус ( failed, success )
+    // новый статус (failed, success)
     status: "failed" | "success";
     // id задания
     learning_task_result_id: number;
@@ -55,21 +49,9 @@ declare namespace tools_knlg {
     need_save: boolean;
   };
 
-  function set_status_learning_task_result(
-    payload: SetStatusLearningTaskResultPayload
-  ): ActiveLearningTaskResult;
-
+  function set_status_learning_task_result(payload: SetStatusLearningTaskResultPayload): ActiveLearningTaskResult;
   function http_request(url: string, body: string, executeOnServer: boolean): HttpResponse["Body"];
-
-  function http_request_obj(
-    url: string,
-    method: string,
-    body: string,
-    header: string,
-    executeOnServer: boolean
-  ): Pick<HttpResponse, "Body" | "RespCode">;
-
+  function http_request_obj(url: string, method: string, body: string, header: string, executeOnServer: boolean): Pick<HttpResponse, "Body" | "RespCode">;
   function base64_encode(value: string): string;
-
   function get_article_desc(description: string, url: string, queryParam: string): string | never;
 }

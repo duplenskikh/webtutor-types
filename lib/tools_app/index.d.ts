@@ -28,5 +28,5 @@ declare namespace tools_app {
   function save_cur_application_settings(lastApplication: unknown, newSettings: unknown): unknown;
   function save_application_settings(iApplicationID: number, teSettings: unknown): unknown;
   function save_application_agents(aAgents: unknown): unknown;
-  function save_application_object(docObject: Date, code_wvar: unknown, iApplicationIDParam: number): unknown;
+  function save_application_object(docObject: unknown, code_wvar: unknown, iApplicationIDParam: number): unknown;
 }

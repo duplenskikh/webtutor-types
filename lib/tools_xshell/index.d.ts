@@ -4,7 +4,7 @@ declare namespace tools_xshell {
   let dotnet_env_ext: XmlElem<unknown>;
   let dotnet_auth: XmlElem<unknown>;
   let dotnet_utils: XmlElem<unknown>;
-  function xshell(shell_params: string): unknown;
+  function xshell(shell_params: unknown): unknown;
   function xshell_command(command: unknown, ocmd_params: unknown): unknown;
   function rebuild_catalogs(CmdParams: unknown): unknown;
   function rebuild_person_hierarchy(CmdParams: unknown): unknown;
@@ -31,7 +31,7 @@ declare namespace tools_xshell {
   function console(value: unknown): unknown;
   function get_cmd_param_index(CmdParams: unknown, Key: unknown, KeyValue: unknown): unknown;
   function set_debug_mode(mode: unknown, turn_switch: unknown): unknown;
-  function set_collect_mode(mode: unknown, turn_switch: unknown, args_switch: unknown, format: unknown, output: unknown, background: boolean): unknown;
+  function set_collect_mode(mode: unknown, turn_switch: unknown, args_switch: unknown, format: unknown, output: unknown, background: unknown): unknown;
   function list_components(CmdParams: unknown): unknown;
   function process_components(CmdParams: unknown): unknown;
   function delete_components(CmdParams: unknown): unknown;

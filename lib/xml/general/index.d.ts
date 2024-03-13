@@ -580,7 +580,7 @@ interface FileBase {
 
 interface FileListBase {
   files: XmlMultiElem<FileBase>;
-  AddFile(_file_id: number, docResourceParam: Date): unknown;
+  AddFile(_file_id: number, docResourceParam: unknown): unknown;
 }
 
 interface CoursePartBase {

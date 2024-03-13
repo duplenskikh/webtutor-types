@@ -1,6 +1,5 @@
 declare namespace tools {
   let lds_address: string;
-
   /**
    * Возвращает схему URL.
    * @returns {string} Схема.
@@ -10,21 +9,16 @@ declare namespace tools {
    * ```
    */
   function get_server_protocol(): "file" | "http" | "https" | "mailto" | "ftp" | "x-local";
-
   let object_license: object;
-
   function encode_course_folder(sCodeParam: string): string;
   function decode_course_folder(sCodeParam: string): string;
-
   type BaseToolsResponse = {
     error: number;
     error_text: string;
   };
-
   type LoadCourseResult = BaseToolsResponse & {
     course: null
   };
-
   /**
    * Загрузка курса из архива в базу. Курс создается если его нет или обновляется существующий.
    * @param {string} fileUrl - Адрес до файла (архива) с курсом.
@@ -32,12 +26,7 @@ declare namespace tools {
    * @param {CourseDocument} [courseDocument] - Документ курса.
    * @returns {CourseDocument|never} Документ курса или ошибка.
    */
-  function load_course(
-    fileUrl: string,
-    charset?: string | null | undefined | "",
-    courseDocument?: CourseDocument | undefined | ""
-  ): CourseDocumentTopElem | "" | string | LoadCourseResult;
-
+  function load_course(fileUrl: string, charset?: string | null | undefined | "", courseDocument?: CourseDocument | undefined | ""): CourseDocumentTopElem | "" | string | LoadCourseResult;
   /**
    * Копирует ресурсы из списка, указанного в файле manifest, в папку получателя.
    * @param {string} fileUrl - Путь или URL до файла manifest.
@@ -46,17 +35,13 @@ declare namespace tools {
    * или false - в противном случае (копирование не выполнено).
    */
   function copy_manifest_resources(fileUrl: string, baseUrl: string): BaseToolsResponse;
-
   type OpenCoursePackageServerResponse = BaseToolsResponse & {
-    file_import: string,
-    temp_url: string,
+    file_import: string;
+    temp_url: string;
     course: CourseDocument | null;
   };
-
   function open_course_package_server(destinationUrl: string): OpenCoursePackageServerResponse;
-
   function copy_url_temp_suffix(destinationUrl: string, sourceUrl: string): void;
-
   /**
    * Обновляет данные о количестве дочерних элементов в родительском форуме.
    * Если задан forumId, то дочерним записям форума с iParentForumEntryIDParam,
@@ -73,12 +58,7 @@ declare namespace tools {
    * tools.update_forum_entry(TopElem.Doc, TopElem.forum_id);
    * ```
    */
-  function update_forum_entry(
-    forumDocument: ForumDocument,
-    forumId?: number | "" | null,
-    parentForumId?: number | null
-  ): number;
-
+  function update_forum_entry(forumDocument: ForumDocument, forumId?: number | "" | null, parentForumId?: number | null): number;
   /**
    * Обновляет данные о количестве дочерних элементов в родительском комментарии к разделу портала.
    * Если задан iNewPortalDocIDParam, то дочерним записям проставляется новое значение документа портала,
@@ -89,7 +69,6 @@ declare namespace tools {
    * @returns {number} Целое число , количество дочерних элементов вниз по иерархии в определяемом doc.
    */
   function update_document_comment_entry(documentDocument: DocumentDocument, documentId: number | "" | null): number;
-
   /**
    * Добавляет строку к событию базы, определяемому `report_id` или документом `source_doc`.
    * @param {number} actionReportId - Id события базы, к которому нужно добавить строку.
@@ -103,11 +82,7 @@ declare namespace tools {
    * tools.add_report(reportId, "Saving archive: OK.");
    * ```
    */
-  function add_report(
-    actionReportId: number,
-    text?: string, actionReportDocument?: ActionReportDocument
-  ): ActionReportDocument;
-
+  function add_report(actionReportId: number, text?: string, actionReportDocument?: ActionReportDocument): ActionReportDocument;
   /**
    * Загрузка данных на сервер обмена данными.
    * @param {number} serverId - Id сервера обмена данными, на который нужно отправить данные.
@@ -122,7 +97,6 @@ declare namespace tools {
    * ```
    */
   function upload_data(serverId: number, date: Date, type: string): string;
-
   /**
    * Получение данных с сервера обмена данными.
    * @param {number} serverId - Id сервера обмена данными, с которого необходимо получить данные.
@@ -131,7 +105,6 @@ declare namespace tools {
    * В случае возникновения ошибки возвращаются значения oRes.error = 500 и сведения об ошибке в поле oRes.error_text.
    */
   function download_data(serverId: number): DownloadDataResponse;
-
   /**
    * Создание пакета данных для отправки на сервер обмена данными.
    * @param {number} serverId - Id сервера обмена данными, для которого формируется пакет.
@@ -146,13 +119,7 @@ declare namespace tools {
    * var filename = ServerEval("tools.create_data_package(" + serverId + "," + reportId + "," + packageId + ",\"\")");
    * ```
    */
-  function create_data_package(
-    serverId: number,
-    reportId: number,
-    packageId: string,
-    date: Date
-  ): string;
-
+  function create_data_package(serverId: number, reportId: number, packageId: string, date: Date): string;
   /**
    * Возвращает последнюю дату обмена данными (отправки или получения) для указанного сервера обмена данными.
    * @param {ExchangeServerDocumentTopElem} source - Xml элемент, в котором храниться дата (download, upload).
@@ -165,7 +132,6 @@ declare namespace tools {
    * ```
    */
   function get_exchange_date(source: ExchangeServerDocumentTopElem, lastDate: Date): Date;
-
   /**
    * Отправляет файл на указанный сервер обмена данными.
    * Отправление идет как письмо по протоколу Smtp.
@@ -182,14 +148,7 @@ declare namespace tools {
    * tools.send_file_to_server(subject, "Id: " + packageId, fileName, serverId, reportId);
    * ```
    */
-  function send_file_to_server(
-    subject: string,
-    body: string,
-    sendFile: string,
-    serverId: number,
-    reportId: number
-  ): string;
-
+  function send_file_to_server(subject: string, body: string, sendFile: string, serverId: number, reportId: number): string;
   /**
    * Отправляет файл на указанный сервер обмена данными. Отправление идет Post по http протоколу.
    * @param {string} fileAddress - Строка с адресом до отправляемого файла.
@@ -197,7 +156,6 @@ declare namespace tools {
    * @param {number} reportId - Id документа событий базы, в который будут записываться отчет.
    */
   function post_file_to_server(fileAddress: string, serverId: number, reportId: number): void;
-
   /**
    * Преобразует дату в строку, разделенную символом _ (нижнее подчеркивание).
    * Например, дата 01.02.1999 12:34:15 будет преобразована в 1999_02_01_12_34.
@@ -210,14 +168,12 @@ declare namespace tools {
   function uni_process_package(sUrlPackageParam: unknown, fldFormParam: unknown): unknown;
 
   function process_package(_url: unknown, fldPackagesValidParam: unknown): unknown;
-
   /**
    * Возвращает ошибку формы, переданной как параметр.
    * @param {XmlDocument} xmlDocument - Документ формы, содержащей ошибку.
    * @returns {string} Строка с описанием ошибки.
    */
   function get_param_error_text(xmlDocument: XmlDocument): string;
-
   /**
    * Загружает указанные пакеты с сервера обмена данными.
    * @param {number} exchangeServerId - Id сервера обмена данными, с которого загружаются пакеты.
@@ -230,7 +186,6 @@ declare namespace tools {
    * - и сведения об ошибке oRes.error_text.
    */
   function download_package_list(exchangeServerId: number, packageId?: number, filePath?: string): DownloadDataResponse;
-
   /**
    * Информация об успехе выполнения функции или об ошибке.
    * Результирующий объект oRes имеет три свойства:
@@ -238,19 +193,10 @@ declare namespace tools {
    * - URL файла данных oRes.data_file_url;
    * - и сведения об ошибке oRes.error_text.
    */
-  interface DownloadDataResponse {
-    error: number;
-    data_file_url: string;
-    error_text: string;
+  interface DownloadDataResponse { error: number; data_file_url: string; error_text: string;
   }
 
-  function download_package(
-    exchangeServerId: number,
-    packageId: number,
-    filePath: string,
-    fldPackageValidParam: unknown
-  ): DownloadDataResponse;
-
+  function download_package(exchangeServerId: number, packageId: number, filePath: string, fldPackageValidParam: unknown): DownloadDataResponse;
   /**
    * Обрабатывает пакет с данными и загружает содержимое в базу данных.
    * @param {string} path - Путь до файла с пакетом.
@@ -274,15 +220,7 @@ declare namespace tools {
    * common_variables.len_flag = packageProcessResult !== null;
    * ```
    */
-  function package_process(
-    path: string,
-    type: string,
-    source: XmlDocument,
-    reportId: number,
-    exchangeServerId: number,
-    downloadPackageId: number
-  ): unknown;
-
+  function package_process(path: string, type: string, source: XmlDocument, reportId: number, exchangeServerId: number, downloadPackageId: number): unknown;
   /**
    * Назначение курса участникам указанного мероприятия.
    * @param {number} eventId - Id мероприятия, для участников которого назначается курс.
@@ -298,15 +236,7 @@ declare namespace tools {
    * learnings возвращается как результат работы функции.
    * @returns {number} Количество назначенных курсов.
    */
-  function activate_course_to_event(
-    eventId: number,
-    courseId: number,
-    eventDocument?: EventDocument,
-    duration?: number,
-    startLearningDate?: Date,
-    testLearningDate?: Date
-  ): number;
-
+  function activate_course_to_event(eventId: number, courseId: number, eventDocument?: EventDocument, duration?: number, startLearningDate?: Date, testLearningDate?: Date): number;
   /**
    * Назначение курса участникам указанного мероприятия.
    * @param {number} personId - Id сотрудника, которому назначается курс.
@@ -337,20 +267,7 @@ declare namespace tools {
    * но не прошло еще время, указанное в атрибуте dtLastLearningDateParam,
    * то возвращается Id карточки ранее назначенного курса (из каталога active_learning).
    */
-  function activate_course_to_person(
-    personId: number | string,
-    courseId?: number,
-    eventId?: number,
-    personDoc?: CollaboratorDocumentTopElem,
-    educationPlanId?: number,
-    duration?: number,
-    startLearningDate?: Date,
-    lastLearningDate?: Date,
-    groupId?: number,
-    eid?: unknown,
-    skipDismissed?: boolean
-  ): XmlElem<number> | null | ActiveLearningDocument;
-
+  function activate_course_to_person(personId: number | string, courseId?: number, eventId?: number, personDoc?: CollaboratorDocumentTopElem, educationPlanId?: number, duration?: number, startLearningDate?: Date, lastLearningDate?: Date, groupId?: number, eid?: unknown, skipDismissed?: boolean): XmlElem<number> | null | ActiveLearningDocument;
   /**
    * Назначение курса участникам указанного мероприятия.
    * @param {ActivateCourseToPersonObject} params - Параметры назначения курса.
@@ -361,10 +278,7 @@ declare namespace tools {
    * но не прошло еще время, указанное в атрибуте dtLastLearningDateParam,
    * то возвращается Id карточки ранее назначенного курса (из каталога active_learning).
    */
-  function activate_course_to_person(
-    params: ActivateCourseToPersonObject
-  ): XmlElem<number> | null | ActiveLearningDocument;
-
+  function activate_course_to_person(params: ActivateCourseToPersonObject): XmlElem<number> | null | ActiveLearningDocument;
   /**
    * Назначение сотруднику курсов, которые указаны в учебных программах (с типом "Электронный курс"),
    * перечисленных в наборе программ. Если в наборе учебных программ указаны учебные программы,
@@ -377,13 +291,7 @@ declare namespace tools {
    * учебных программ.
    * @returns {number} Количество назначенных курсов в составе набора учебных программ.
    */
-  function activate_education_program_to_person(
-    personId: number,
-    educationProgramId: number,
-    collaboratorDocumentTopElem: CollaboratorDocumentTopElem,
-    educationProgramDocumentTopElem: EducationProgramDocumentTopElem
-  ): number;
-
+  function activate_education_program_to_person(personId: number, educationProgramId: number, collaboratorDocumentTopElem: CollaboratorDocumentTopElem, educationProgramDocumentTopElem: EducationProgramDocumentTopElem): number;
   /**
    * Назначение теста участникам указанного мероприятия.
    * @param {number} eventId - Id мероприятия, участникам которого назначается тест.
@@ -407,89 +315,37 @@ declare namespace tools {
    * @param {boolean} bActivateOnlyAssist - Активация мероприятий.
    * @returns {number} Количество назначенных тестов.
    */
-  function activate_test_to_event(
-    eventId: number,
-    assessmentId: number,
-    eventDocument?: EventDocument,
-    duration?: number,
-    startLearningDate?: Date,
-    lastLearningDate?: Date,
-    actType?: string,
-    skipDismissed?: boolean,
-    bUseProctoring?: boolean,
-    iProctorPreferID?: number,
-    bActivateOnlyAssist?: boolean
-  ): number;
+  function activate_test_to_event(eventId: number, assessmentId: number, eventDocument?: EventDocument, duration?: number, startLearningDate?: Date, lastLearningDate?: Date, actType?: string, skipDismissed?: boolean, bUseProctoring?: boolean, iProctorPreferID?: number, bActivateOnlyAssist?: boolean): number;
 
-  type ActivateTestToPersonParams = {
-    /**
-     * Id collaborator.
-     */
+  type ActivateTestToPersonParams = { /** Id collaborator. */
     iPersonID: number;
-    /**
-     * Id test.
-     */
+    /** Id test. */
     iAssessmentID: number;
-    /**
-     * Id мероприятия.
-     */
+    /** Id мероприятия. */
     iEventID?: number;
-    /**
-     * Дата последнего обучения.
-     */
+    /** Дата последнего обучения. */
     dtLastLearningDate?: number;
-    /**
-     * Не назначать уволенным.
-     */
+    /** Не назначать уволенным. */
     bSkipDismissed?: number;
-    /**
-     * Карточка сотрудника.
-     */
+    /** Карточка сотрудника. */
     teCollaborator?: CollaboratorDocumentTopElem;
-    /**
-     * Не назначать повторно успешно прошедшим тестирование (с учетом даты последнего обучения).
-     */
+    /** Не назначать повторно успешно прошедшим тестирование (с учетом даты последнего обучения). */
     bMissOnlySuccessLearning?: number;
-    /**
-     * Карточка мероприятия.
-     */
+    /** Карточка мероприятия. */
     teEvent?: EventDocumentTopElem;
-    /**
-     * Карточка теста.
-     */
-    teAssessment?: AssessmentDocumentTopElem;
-    /**
-     * Длительность в днях.
-     */
+    /** Карточка теста. */
+    teAssessment?: AssessmentDocumentTopElem; /** Длительность в днях. */
     iDuration?: number;
-    /**
-     * Дата начала тестирования.
-     */
+    /** Дата начала тестирования. */
     dtStartLearningDate?: Date;
-    /**
-     * Id плана обучения.
-     */
+    /** Id плана обучения. */
     iEducationPlanID?: number;
-    /**
-     * Id группы.
-     */
-    iGroupID?: number;
-    /**
-     * Признак самоактивации.
-     */
-    bSelfEnrolled?: boolean;
-    /**
-     * Комментарий назначившего (записывается в карточку незаконченного/законченного теста).
-     */
-    sComment?: string;
-    /**
-     * Использовать прокторинг.
-     */
-    bUseProctoring?: boolean;
-
+    /** Id группы. */ iGroupID?: number;
+    /** Признак самоактивации. */ bSelfEnrolled?: boolean;
+    /** Комментарий назначившего (записывается в карточку незаконченного/законченного теста). */ sComment?: string;
+    /** Использовать прокторинг. */ bUseProctoring?: boolean;
     iProctorPreferID?: number;
   };
-
   /**
    * Функция назначения теста пользователю.
    * @param {ActivateCourseToPersonObject} params - Объект JavaScript (Структура параметров).
@@ -499,10 +355,7 @@ declare namespace tools {
    * но не прошло еще время, указанное в атрибуте dtLastLearningDateParam,
    * то возвращается Id карточки ранее назначенного теста (из каталога active_test_learning).
    */
-  function activate_test_to_person(
-    params: ActivateTestToPersonParams
-  ): XmlElem<number> | null | ActiveTestLearningDocument;
-
+  function activate_test_to_person(params: ActivateTestToPersonParams): XmlElem<number> | null | ActiveTestLearningDocument;
   /**
    * Функция назначения теста пользователю.
    * @param {number} personId - Id пользователя.
@@ -524,21 +377,7 @@ declare namespace tools {
    * но не прошло еще время, указанное в атрибуте dtLastLearningDateParam,
    * то возвращается Id карточки ранее назначенного теста (из каталога active_test_learning).
    */
-  function activate_test_to_person(
-    personId: number,
-    assessmentId: number | string,
-    eventId: number | string | null | undefined,
-    personDoc: CollaboratorDocumentTopElem | null | undefined | "",
-    assessmentDocument: AssessmentDocumentTopElem | null | "",
-    eventDocument?: null,
-    duration?: number | string | null,
-    startLearningDate?: Date | string,
-    lastLearningDate?: Date | string,
-    groupId?: number | string | null,
-    educationPlanId?: number | string | null,
-    skipDismissed?: boolean | null
-  ): XmlElem<number> | null | ActiveTestLearningDocument;
-
+  function activate_test_to_person(personId: number, assessmentId: number | string, eventId: number | string | null | undefined, personDoc: CollaboratorDocumentTopElem | null | undefined | "", assessmentDocument: AssessmentDocumentTopElem | null | "", eventDocument?: null, duration?: number | string | null, startLearningDate?: Date | string, lastLearningDate?: Date | string, groupId?: number | string | null, educationPlanId?: number | string | null, skipDismissed?: boolean | null): XmlElem<number> | null | ActiveTestLearningDocument;
   /**
    * Функция завершает указанный активный электронный курс и создает карточку завершенного электронного курса
    * (карточка незавершенного курса при этом удаляется).
@@ -548,12 +387,7 @@ declare namespace tools {
    * @param {CourseDocumentTopElem} courseDocumentTopElem - TopElem электронного курса, который необходимо завершить.
    * @returns {number} Id нового завершенного курса.
    */
-  function active_learning_finish(
-    learningId: number,
-    activeLearningDocumentTopElem?: ActiveLearningDocumentTopElem,
-    courseDocumentTopElem?: CourseDocumentTopElem
-  ): number;
-
+  function active_learning_finish(learningId: number, activeLearningDocumentTopElem?: ActiveLearningDocumentTopElem, courseDocumentTopElem?: CourseDocumentTopElem): number;
   /**
    * Функция завершает указанный активный тест и создает карточку завершенного теста
    * (карточка незавершенного теста при этом не удаляется, и тест остается в списке назначенных).
@@ -567,14 +401,7 @@ declare namespace tools {
    * @param {boolean} bFinishTest - Флаг завершение теста.
    * @returns {TestLearningDocument} Документ завершенного теста.
    */
-  function active_test_learning_finish(
-    learningId: number,
-    activeTestLearningDocumentTopElem?: ActiveTestLearningDocumentTopElem,
-    assessmentDocumentTopElem?: AssessmentDocumentTopElem,
-    iPersonIDParam?: number,
-    bFinishTest?: unknown
-  ): TestLearningDocument;
-
+  function active_test_learning_finish(learningId: number, activeTestLearningDocumentTopElem?: ActiveTestLearningDocumentTopElem, assessmentDocumentTopElem?: AssessmentDocumentTopElem, iPersonIDParam?: number, bFinishTest?: unknown): TestLearningDocument;
   /**
    * Функция завершает указанную попытку для теста и создает карточку завершенного теста.
    * @param {number} _learning_id - Id активного теста, попытку которого необходимо завершить.
@@ -587,14 +414,7 @@ declare namespace tools {
    * @param {ActiveTestLearningDocument} docActiveLearning - Документ активного теста, который необходимо завершить.
    * @returns {boolean} Результат выполнения функции.
    */
-  function active_test_learning_finish_attempt(
-    _learning_id: number,
-    _learning_code?: string,
-    _assessment_doc?: AssessmentDocument,
-    _flag_create_learning?: boolean,
-    docActiveLearning?: ActiveTestLearningDocument
-  ): boolean;
-
+  function active_test_learning_finish_attempt(_learning_id: number, _learning_code?: string, _assessment_doc?: AssessmentDocument, _flag_create_learning?: boolean, docActiveLearning?: ActiveTestLearningDocument): boolean;
   /**
    * Добавляет новый язык в список используемых в системе языков. Загрузка происходит из XML-файла с константами.
    * Используется в администраторе в общих настройках, для установки новых языков или обновления существующих.
@@ -605,12 +425,11 @@ declare namespace tools {
    * @example
    * ```
    * tools.add_lng(_url);
-   * tools.add_lng( UrlAppendPath("x-local://custom/", temp_doc.lngs_url), true);
+   * tools.add_lng(UrlAppendPath("x-local://custom/", temp_doc.lngs_url), true);
    * _num = TopElem.add_lng_items(_doc, true);
    * ```
    */
   function add_lng(sLngUrlParam: string, bDoObtainParam?: boolean): number;
-
   /**
    * Функция добавляет сотрудника в список оцениваемых в процедуре оценки. Планы и анкеты при этом не создаются.
    * @param {number} personId - Id сотрудника.
@@ -621,16 +440,10 @@ declare namespace tools {
    * @returns {AssessmentAppraiseDocument} Измененный и сохраненный документ процедуры оценки.
    * @example
    * ```
-   * tools.add_person_to_assessment_appraise ( iPersonID, iObjectID, null, docObject );
+   * tools.add_person_to_assessment_appraise (iPersonID, iObjectID, null, docObject);
    * ```
    */
-  function add_person_to_assessment_appraise(
-    personId: number,
-    assessmentAppraiseId: number,
-    personDocument?: CollaboratorDocument,
-    assessmentAppraiseDocument?: AssessmentAppraiseDocument
-  ): AssessmentAppraiseDocument;
-
+  function add_person_to_assessment_appraise(personId: number, assessmentAppraiseId: number, personDocument?: CollaboratorDocument, assessmentAppraiseDocument?: AssessmentAppraiseDocument): AssessmentAppraiseDocument;
   /**
    * Добавляет участника в мероприятие.
    * @param {number} userId - Id сотрудника, добавляемого в мероприятие.
@@ -648,21 +461,12 @@ declare namespace tools {
    * или `null` (если сотрудник ранее уже был добавлен).
    * @example
    * ```
-   * docEvent = tools.add_person_to_event ( Int(sUserId), Int(sRoomId) );
+   * docEvent = tools.add_person_to_event (Int(sUserId), Int(sRoomId));
    * tools.add_person_to_event(_source.TopElem.person_id, _source.TopElem.object_id, null, docObject);
    * tools.add_person_to_event(fldPersonElem.PrimaryKey, docEvent.DocID, null, docEvent, null, catRequest.PrimaryKey);
    * ```
    */
-  function add_person_to_event(
-    userId: number,
-    eventId: number,
-    userTopElem?: CollaboratorDocumentTopElem,
-    eventDocument?: EventDocument,
-    educationPlanId?: number,
-    requestPersonId?: number,
-    requestId?: number
-  ): EventDocument | null;
-
+  function add_person_to_event(userId: number, eventId: number, userTopElem?: CollaboratorDocumentTopElem, eventDocument?: EventDocument, educationPlanId?: number, requestPersonId?: number, requestId?: number): EventDocument | null;
   /**
    * Создает элемент очереди скриптов.
    * @param {string} sScriptParam - Код для выполнения.
@@ -681,23 +485,16 @@ declare namespace tools {
    *   "send_message",
    *   true,
    *   0
-   * );
+   *);
    * tools.add_script_to_queue(
    *   "tools_chat.change_participants_conversation(" + iConversationID + ", null, " + XQueryLiteral(sAction) + ")",
    *   "change_participants_conversation",
    *   true,
    *   0
-   * );
+   *);
    * ```
    */
-  function add_script_to_queue(
-    sScriptParam: string,
-    sCodeParam: string,
-    bDeleteAutomaticallyParam: boolean,
-    iDelayParam: number,
-    dStartDate?: Date
-  ): number;
-
+  function add_script_to_queue(sScriptParam: string, sCodeParam: string, bDeleteAutomaticallyParam: boolean, iDelayParam: number, dStartDate?: Date): number;
   /**
    * Сдвигает указанную дату на количество секунд, заданное параметрами функции.
    * Можно передать дни, часы, минуты и секунды для сдвига даты.
@@ -716,7 +513,6 @@ declare namespace tools {
    * ```
    */
   function AdjustDate(DATE_VAL?: Date, DAYS?: number, HOURS?: number, MINUTES?: number, SECONDS?: number): Date;
-
   /**
    * Копирует параметры доступа к объекту в другой объект.
    * @param {number} _to_obj_id - Id объекта, в который нужно скопировать параметры доступа.
@@ -726,16 +522,10 @@ declare namespace tools {
    * @example
    * ```
    * tools.admin_access_copying("", docEventResult.TopElem, "", topElem);
-   * tools.admin_access_copying( null, requestDoc.TopElem, curObjectID, curObject );
+   * tools.admin_access_copying(null, requestDoc.TopElem, curObjectID, curObject);
    * ```
    */
-  function admin_access_copying(
-    _to_obj_id: number | undefined | null,
-    _to_obj_doc: XmlTopElem | undefined | null,
-    _from_obj_id: number | undefined | null,
-    _from_obj_doc: XmlTopElem | undefined | null
-  ): void;
-
+  function admin_access_copying(_to_obj_id: number | undefined | null, _to_obj_doc: XmlTopElem | undefined | null, _from_obj_id: number | undefined | null, _from_obj_doc: XmlTopElem | undefined | null): void;
   /**
    * Проверяет доступ к объекту на основе настроек в разделе
    * Отображение каталогов (блок Безопасность) для текущего пользователя в Webtutor Administrator.
@@ -749,7 +539,6 @@ declare namespace tools {
    * ``
    */
   function admin_access_filling(teObjectParam: XmlTopElem): boolean;
-
   /**
    * Представляет результаты теста в формате XML-структуры.
    * @param {XmlElem<unknown>} oSourceParam - Элемент для разбора теста,
@@ -760,23 +549,17 @@ declare namespace tools {
    * @returns {XmlDocument} XML-структура, содержащая результаты тестирования.
    * @example
    * ```
-   * tools.annals_decrypt( Ps );
-   * TopElem.annals_variant = tools.annals_decrypt( oSource, sQtiPath );
+   * tools.annals_decrypt(Ps);
+   * TopElem.annals_variant = tools.annals_decrypt(oSource, sQtiPath);
    *
-   * for ( _learning in _learning_array ) {
-   *   learningDoc = OpenDoc( UrlFromDocID( _learning.id ) ).TopElem;
-   *   assessmentDoc = OpenDoc( UrlFromDocID( _learning.assessment_id ) ).TopElem;
-   *  fldAnnals = tools.annals_decrypt( learningDoc, tools.get_qti_path( assessmentDoc ) );
+   * for (_learning in _learning_array ) {
+   *   learningDoc = OpenDoc(UrlFromDocID(_learning.id ) ).TopElem;
+   *   assessmentDoc = OpenDoc(UrlFromDocID(_learning.assessment_id ) ).TopElem;
+   *  fldAnnals = tools.annals_decrypt(learningDoc, tools.get_qti_path(assessmentDoc ));
    * }
    * ```
    */
-  function annals_decrypt(
-    oSourceParam: XmlElem<unknown>,
-    sQtiPathParam?: string,
-    sQtiTextParam?: string,
-    bNoSendCorrectAnswerParam?: boolean
-  ): XmlDocument;
-
+  function annals_decrypt(oSourceParam: XmlElem<unknown>, sQtiPathParam?: string, sQtiTextParam?: string, bNoSendCorrectAnswerParam?: boolean): XmlDocument;
   /**
    * Преобразует массив в строку указанного формата (`json`, `xml`).
    * @param {unknown[]} _aArrayPARAM - Массив, который необходимо преобразовать.
@@ -800,7 +583,6 @@ declare namespace tools {
   function array_to_text(_aArrayPARAM: unknown[], format?: string, rootName?: string): string;
 
   const dotnet_host: DotnetCoreHost | null;
-
   /**
    * Создает новый объект в указанном каталоге.
    * @param {string} documentName - Название каталога. Обычно указывается без s на конце.
@@ -809,7 +591,6 @@ declare namespace tools {
    * @returns {T} Документ объекта.
    */
   function new_doc_by_name<T = XmlDocument>(documentName: string, isCatalog?: boolean): T;
-
   /**
    * Возвращает значение параметра, переданного в функцию, в зашифрованном виде.
    * Вид шифрования указывается в общих настройках (Формат хранения и проверки пароля): md5, sha1, sha1_base64.
@@ -823,7 +604,6 @@ declare namespace tools {
    * @returns {string} Возвращаемый результат – строка (string), преобразованная в соответствие с параметрами вызова.
    */
   function make_password(password: string, flag: boolean): string;
-
   /**
    * Запускает системный агент на выполнение.
    * @param {number} agentId - Id агента для запуска.
@@ -833,14 +613,7 @@ declare namespace tools {
    * @param {string} [tenancyName] - Код экземпляра системы в multitenant системе, в котором нужно запустить агент.
    * @returns {boolean} Успех или неуспех выполнения агента.
    */
-  function start_agent(
-    agentId: number,
-    objectId?: number,
-    objectIdsStr?: string,
-    dateStart?: Date,
-    tenancyName?: string
-  ): boolean;
-
+  function start_agent(agentId: number, objectId?: number, objectIdsStr?: string, dateStart?: Date, tenancyName?: string): boolean;
   /**
    * Функция открывает документ и возвращает его.
    * Если не смогла открыть, возвращает undefined.
@@ -848,7 +621,6 @@ declare namespace tools {
    * @returns {T|undefined} XML документ или undefined.
    */
   function open_doc<T = XmlDocument>(documentId: number): T | undefined;
-
   /**
    * Проверяет разрешение на доступ к указанному объекту для указанного пользователя.
    * Проверка идет по уровню доступа, роли доступа, группам доступа и условиям доступа,
@@ -859,7 +631,6 @@ declare namespace tools {
    * разрешен ли сотруднику доступ к объекту (true – доступ разрешен, false – доступ запрещен).
    */
   function check_access(TopElem: XmlTopElem, userId: number): boolean;
-
   /**
    * Оптимизированная функция выполнения длинных запросов.
    * Ее предпочтительнее использовать, кода нужно сделать, например запрос с иерархией.
@@ -868,93 +639,54 @@ declare namespace tools {
    * @returns {T[]} Результат выполнения запроса XQuery по оптимизированной строке sQueryParam.
    * @example
    * ```
-   * docArray = tools.xquery( 'for $elem in documents where IsHierChild( $elem/id, ' + _main_doc.document_id + ' )
-   * order by $elem/Hier() return $elem/id' );
-   * xarrSubdivisions = tools.xquery( 'for $elem in subdivisions where IsHierChild( $elem/id, ' + iLastDepID + ' )
-   * order by $elem/Hier() return $elem/id' );
+   * docArray = tools.xquery('for $elem in documents where IsHierChild($elem/id, ' + _main_doc.document_id + ' )
+   * order by $elem/Hier() return $elem/id');
+   * xarrSubdivisions = tools.xquery('for $elem in subdivisions where IsHierChild($elem/id, ' + iLastDepID + ' )
+   * order by $elem/Hier() return $elem/id');
    * ```
    */
   function xquery<T>(command: string): T[];
 
   export type ActivateCourseToPersonObject = {
-    /**
-     * Id Сотрудника.
-     */
+    /** Id Сотрудника. */
     iPersonID: number;
-    /**
-     * Id курса.
-     */
+    /** Id курса. */
     iCourseID: number;
-    /**
-     * Код записи в каталоге незаконченных электронных курсов active_learnings (необязательный),.
-     */
+    /** Код записи в каталоге незаконченных электронных курсов active_learnings (необязательный). */
     sEID?: string;
-    /**
-     * Id мероприятия (необязательный),.
-     */
+    /** Id мероприятия (необязательный). */
     iEventID?: number;
-    /**
-     * Карточка сотрудника (необязательный),.
-     */
+    /** Карточка сотрудника (необязательный). */
     teCollaborator?: CollaboratorDocumentTopElem;
-    /**
-     * Карточка курса (необязательный),.
-     */
+    /** Карточка курса (необязательный). */
     teCourse?: CourseDocumentTopElem;
-    /**
-     * Длительность в днях (необязательный),.
-     */
+    /** Длительность в днях (необязательный). */
     iDuration?: number;
-    /**
-     * Дата последнего обучения (необязательный),.
-     */
+    /** Дата последнего обучения (необязательный). */
     dtLastLearningDate?: Date;
-    /**
-     * Дата начала прохождения курса (необязательный),.
-     */
+    /** Дата начала прохождения курса (необязательный). */
     dtStartLearningDate?: Date;
-    /**
-     * Id плана обучения (необязательный),.
-     */
+    /** Id плана обучения (необязательный). */
     iEducationPlanID?: number;
-    /**
-     * Id группы (необязательный),.
-     */
+    /** Id группы (необязательный). */
     iGroupID?: number;
-    /**
-     * Возможность комментировать (необязательный),.
-     */
+    /** Возможность комментировать (необязательный). */
     bCommenting?: boolean;
-    /**
-     * Ведение подробного лога (журнала) курса (необязательный).
-     */
+    /** Ведение подробного лога (журнала) курса (необязательный). */
     bLogging?: boolean;
-    /**
-     * Не назначать уволенным (необязательный),.
-     */
+    /** Не назначать уволенным (необязательный). */
     bSkipDismissed?: boolean;
-    /**
-     * Не назначать повторно успешно прошедшим курс (с учетом даты последнего обучения) (необязательный),.
-     */
+    /** Не назначать повторно успешно прошедшим курс (с учетом даты последнего обучения) (необязательный). */
     bMissOnlySuccessLearning?: boolean;
-    /**
-     * Карточка мероприятия (необязательный),.
-     */
+    /** Карточка мероприятия (необязательный). */
     teEvent?: EventDocumentTopElem;
-    /**
-     * Признак самоактивации (необязательный),.
-     */
+    /** Признак самоактивации (необязательный). */
     bSelfEnrolled?: boolean;
-    /**
-     * Комментарий назначившего (записывается в карточку незаконченного/законченного курса) (необязательный),.
-     */
+    /** Комментарий назначившего (записывается в карточку незаконченного/законченного курса) (необязательный). */
     sComment?: string;
-    /**
-     * Использовать прокторинг (необязательный).
-     */
+    /** Использовать прокторинг (необязательный). */
     bUseProctoring?: boolean;
   };
-
   /**
    * Возвращает время (часы, минуты и секунды) из строки с разделителем T,
    * например, вида "2015-06-02T07:51:44".
@@ -970,7 +702,6 @@ declare namespace tools {
    * ```
    */
   function get_time_from_duration(duration: string): string;
-
   /**
    * Возвращаете время (часы, минуты и секунды) в виде «часы H минуты M секунды S»,
    * полученное из количества секунд. Используется для разбора результатов теста.
@@ -984,7 +715,6 @@ declare namespace tools {
    * ```
    */
   function get_time_from_seconds(seconds: string): string;
-
   /**
    * Отменяет транзакцию. Используется в модуле геймификация.
    * @param {number} transactionId - Id транзакции, которую нужно отменить.
@@ -995,7 +725,6 @@ declare namespace tools {
    * ```
    */
   function delete_transaction(transactionId: number): number;
-
   /**
    * Создает транзакцию по списанию указной суммы в указанной валюте с указанного счета.
    * Используется в модуле геймификация.
@@ -1014,17 +743,10 @@ declare namespace tools {
    *   fldBonusElem.sum,
    *   "Bonus by qualification \"" + teQualification.name + "\".",
    *   qualificationID
-   * );
+   *);
    * ```
    */
-  function pay_new_transaction_by_object(
-    acountId: number,
-    accountCurrency: string,
-    sum: number,
-    comment: string,
-    objectId: number
-  ): TransactionDocument;
-
+  function pay_new_transaction_by_object(acountId: number, accountCurrency: string, sum: number, comment: string, objectId: number): TransactionDocument;
   /**
    * Создает транзакцию зачислению суммы из указанной оплаты на счет.
    * @param {number} invoiceId - Id документа Оплат.
@@ -1035,7 +757,6 @@ declare namespace tools {
    * ```
    */
   function pay_invoice(invoiceId: number, invoiceDocumentTopElem: InvoiceDocumentTopElem): InvoiceDocument | null;
-
   /**
    * Создает транзакцию по списанию указной суммы со счета указанной организации.
    * @param {number} orgId - Id организации.
@@ -1048,7 +769,6 @@ declare namespace tools {
    * ```
    */
   function pay_courses(orgId: number, amount: number, comment?: string): number | null;
-
   /**
    * Создает документ об оплате (invoice).
    * @param {number} orgId - Id организации.
@@ -1060,7 +780,6 @@ declare namespace tools {
    * ```
    */
   function set_account(orgId: number, amount: number): number;
-
   /**
    * Создает документ об оплате (invoice) для курса из заявки.
    * @param {number} orgId - Id организации.
@@ -1072,7 +791,6 @@ declare namespace tools {
    * ```
    */
   function personal_pay(orgId: number, requestId: number): number;
-
   interface ICreateNotificationAdditionalParams {
     recipients: string[];
     sender_selector: string;
@@ -1089,7 +807,7 @@ declare namespace tools {
    * вызове функции по отправке уведомления objDocSec. ObjDocSec- это TopElem документа.
    * Если документ отрыт ранее, то для ускорения работы функции отправки уведомления, можно передать открытый
    * документ в функцию, что позволит избежать его повторного открытия.
-   * Для этого вместо tools.create_notification( code, id1, '', id2)
+   * Для этого вместо tools.create_notification(code, id1, '', id2)
    * вызывается функция, куда передаются дополнительные параметры
    * tools.create_notification(code, id1, '', id2, TopElem1,TopElem2).
    * @param {string} notificationIdentifier - Код типа уведомления, которое будет отправляться.
@@ -1121,16 +839,7 @@ declare namespace tools {
    * и адрес отправителя (sender_email).
    * @returns {boolean} Результат отправки уведомления.
    */
-  function create_notification<T>(
-    notificationIdentifier: number | string,
-    objectId: number | string,
-    text?: T,
-    secondObjectId?: number,
-    objectTopElem?: XmlTopElem,
-    secondObjectTopElem?: XmlTopElem,
-    additionalParams?: ICreateNotificationAdditionalParams
-  ): boolean;
-
+  function create_notification<T>(notificationIdentifier: number | string, objectId: number | string, text?: T, secondObjectId?: number, objectTopElem?: XmlTopElem, secondObjectTopElem?: XmlTopElem, additionalParams?: ICreateNotificationAdditionalParams): boolean;
   /**
    * Отправляет письмо с параметрами, заданными в аргументах.
    * Если первый параметр равен '0' или пустому значению, то производится отправка по адресам,
@@ -1165,19 +874,10 @@ declare namespace tools {
    *   null,
    *   dlgDoc.TopElem,
    *   iSecondID
-   * );
+   *);
    * ```
    */
-  function create_template_notification(
-    type: string,
-    objectId: number,
-    subject?: string,
-    body?: string,
-    topElem?: XmlTopElem,
-    teSourceParam?: XmlDocument,
-    objectSecondId?: number
-  ): unknown;
-
+  function create_template_notification(type: string, objectId: number, subject?: string, body?: string, topElem?: XmlTopElem, teSourceParam?: XmlDocument, objectSecondId?: number): unknown;
   /**
    * Отправляет созданное с помощью функции tools.create_notification неотправленное уведомление.
    * @param {number} activeNotificationId - Id неотправленного уведомления, которое должно быть отправлено.
@@ -1188,7 +888,6 @@ declare namespace tools {
    * ```
    */
   function send_notification(activeNotificationId: number): boolean;
-
   /**
    * Формирует форму сертификата из стандартного шаблона templates/certificate_template.html
    * на основе завершенного курса.
@@ -1201,7 +900,6 @@ declare namespace tools {
    * ```
    */
   function save_certificate(learningId: number): string;
-
   /**
    * Возвращает строку символов указанной длины, сформированную случайным образом.
    * @param {number} length - Количество символов в указанной строке. Длина возвращаемой строки.
@@ -1221,7 +919,6 @@ declare namespace tools {
    * ```
    */
   function random_string(length: number, dictionary?: string): string;
-
   /**
    * Загрузка данных по сотрудникам из XML-структуры.
    * Используется для импорта сотрудников.
@@ -1238,7 +935,6 @@ declare namespace tools {
    * ```
    */
   function import_excel_persons(xmlDocument: XmlDocument): number;
-
   /**
    * Используется для проверки заполнения схемы импорта перед импортом сотрудников в интерфейсе администратора.
    * @param {XmlTopElem} topElem - TopElem Xml документа с настройками для загрузки.
@@ -1247,7 +943,6 @@ declare namespace tools {
   function start_import_excel_persons(topElem: XmlTopElem): string;
 
   function get_sub_boss_by_person_id(_personId: number, personDocument: CollaboratorDocument): unknown;
-
   /**
    * Возвращает непосредственных руководителей организации указанного сотрудника.
    * @param {number} personId - Id сотрудника для организации, которого производится поиск руководителей.
@@ -1257,7 +952,6 @@ declare namespace tools {
   function get_main_boss_by_person_id(personId: number): number[];
 
   function get_web_str(sNameParam: unknown): unknown;
-
   /**
    * Проверяет, является ли указанный сотрудник (первый аргумент функции) непосредственным руководителем сотрудника,
    * который указан в качестве второго аргумента функции.
@@ -1292,7 +986,6 @@ declare namespace tools {
    * ```
    */
   function is_boss(userId: number, personId: number): boolean;
-
   /**
    * Используется для работы в документообороте по процедуре оценки и по заявкам.
    * Проверяет, является ли указанный сотрудник тем, от чьего имени подана заявка
@@ -1307,7 +1000,6 @@ declare namespace tools {
    * ```
    */
   function is_self_cur_user(userId?: number): boolean;
-
   /**
    * Возвращаемый результат – флаг да, если первый сотрудник, является руководителем второго сотрудника.
    * Или нет, если проверка не удалась или первый сотрудник, не является
@@ -1325,24 +1017,7 @@ declare namespace tools {
    * @param {string} [searchParam] - Условие фильтрации where xquery или по object_name.
    * @returns {boolean|null} Результат проверки.
    */
-  function is_user_boss(
-    managerId: number,
-    userId: number,
-    catalogNames?: "not_native"
-    | "native"
-    | "collaborator"
-    | "group"
-    | "org"
-    | "position"
-    | "subdivision"
-    | ""
-    | null
-    | undefined,
-    bossType?: boolean | number,
-    limit?: number | "",
-    searchParam?: string | null
-  ): boolean | null;
-
+  function is_user_boss(managerId: number, userId: number, catalogNames?: "not_native" | "native" | "collaborator" | "group" | "org" | "position" | "subdivision" | "" | null | undefined, bossType?: boolean | number, limit?: number | "", searchParam?: string | null): boolean | null;
   /**
    * Используется для работы в документообороте по заявкам в процедуре оценки.
    * Проверяет, является ли текущий пользователь непосредственным руководителем указанного подразделения.
@@ -1356,34 +1031,34 @@ declare namespace tools {
    * Пример 1:
    * // Пусть в системе имеется подразделение «IT отдел»
    * // Находим программно подразделение «IT отдел» с помощью функции tools.get_doc_by_key
-   * oSub = tools.get_doc_by_key('subdivision', 'name', 'IT отдел' );
+   * oSub = tools.get_doc_by_key('subdivision', 'name', 'IT отдел');
    * // на экран выводится информация об отобранном подразделении
-   * alert('Найдено подразделение ' + oSub.TopElem.name + ' с идентификационным номером ' + oSub.DocID );
+   * alert('Найдено подразделение ' + oSub.TopElem.name + ' с идентификационным номером ' + oSub.DocID);
    *
    * // Пусть в системе имеется заведующая отделом Жирова Антонина Васильевна
-   * oCollab1 = tools.get_doc_by_key('collaborator', 'fullname', 'Жирова Антонина Васильевна' );
+   * oCollab1 = tools.get_doc_by_key('collaborator', 'fullname', 'Жирова Антонина Васильевна');
    * // на экран выводится информация об отобранном сотруднике
-   * alert('Найден сотрудник ' + oCollab1.TopElem.fullname + ' с идентификационным номером ' + oCollab1.DocID );
+   * alert('Найден сотрудник ' + oCollab1.TopElem.fullname + ' с идентификационным номером ' + oCollab1.DocID);
    *
    * // указание текущего пользователя для корректного выполнения данного примера
    * // (на практике обычно текущий пользователь определен в окружении)
    * curUserID = oCollab1.DocID;
    *
    * // Проверяем, является ли Жирова А.В. начальником указанного подразделения?
-   * bRez = tools.is_boss_by_subdivision_id(oSub.DocID );
+   * bRez = tools.is_boss_by_subdivision_id(oSub.DocID);
    * alert (bRez); // ответ - верно
    *
    * // Пусть в системе имеется сотрудник Васильева Людмила Петровна
-   * oCollab2 = tools.get_doc_by_key('collaborator', 'fullname', 'Васильева Людмила Петровна' );
+   * oCollab2 = tools.get_doc_by_key('collaborator', 'fullname', 'Васильева Людмила Петровна');
    * // на экран выводится информация об отобранном сотруднике
-   * alert('Найден сотрудник ' + oCollab2.TopElem.fullname + ' с идентификационным номером ' + oCollab2.DocID );
+   * alert('Найден сотрудник ' + oCollab2.TopElem.fullname + ' с идентификационным номером ' + oCollab2.DocID);
    *
    * // указание текущего пользователя для корректного выполнения данного примера
    * (на практике обычно текущий пользователь определен в окружении)
    * curUserID = oCollab2.DocID;
    *
    * // Проверяем, является ли Васильева Л.П. начальником указанного подразделения?
-   * bRez2 = tools.is_boss_by_subdivision_id ( oSub.DocID );
+   * bRez2 = tools.is_boss_by_subdivision_id (oSub.DocID);
    * alert (bRez2); // ответ - неверно
    *
    * Пример 2:
@@ -1391,7 +1066,6 @@ declare namespace tools {
    * ```
    */
   function is_boss_by_subdivision_id(subdivisionId: number): boolean;
-
   /**
    * Используется для работы в документообороте по заявкам в процедуре оценки.
    * Проверяет, входит ли текущий пользователь в указанную группу.
@@ -1406,24 +1080,23 @@ declare namespace tools {
    * // Пусть в системе имеется группа «Динамическая группа»
    * // Находим программно данную группу с помощью функции tools.get_doc_by_key
    * // атрибуты групп хранятся в каталоге group; ищем группу по названию
-   * oGroup = tools.get_doc_by_key ( 'group', 'name', 'Динамическая группа' );
+   * oGroup = tools.get_doc_by_key ('group', 'name', 'Динамическая группа');
    * // на экран выводится информация об отобранной группе
-   * alert ( 'Найдена группа ' + oGroup.TopElem.name + ' с идентификационным номером ' + oGroup.DocID );
+   * alert ('Найдена группа ' + oGroup.TopElem.name + ' с идентификационным номером ' + oGroup.DocID);
    * // Пусть в системе имеется сотрудник Калинин Михаил Михайлович,
    * // который входит в состав группы «Динамическая группа»
-   * oCollab1 = tools.get_doc_by_key ( 'collaborator', 'fullname', 'Калинин Михаил Михайлович' );
+   * oCollab1 = tools.get_doc_by_key ('collaborator', 'fullname', 'Калинин Михаил Михайлович');
    * // на экран выводится информация об отобранном сотруднике
-   * alert ( 'Найден сотрудник ' + oCollab1.TopElem.fullname + ' с идентификационным номером ' + oCollab1.DocID );
+   * alert ('Найден сотрудник ' + oCollab1.TopElem.fullname + ' с идентификационным номером ' + oCollab1.DocID);
    * // указание текущего пользователя для корректного выполнения данного примера
    * // (на практике обычно текущий пользователь определен в окружении на портале)
    * curUserID = oCollab1.DocID;
    * // Проверяем, входит ли Калинин М.М. в состав указанной группы?
-   * bRez = tools.is_by_group_id ( oGroup.DocID );
+   * bRez = tools.is_by_group_id (oGroup.DocID);
    * alert (bRez); // ответ - верно
    * ```
    */
   function is_by_group_id(groupId: number): boolean;
-
   /**
    * Используется для работы в документообороте по заявкам в процедуре оценки.
    * Проверяет, занимает ли текущий пользователь указанную должность.
@@ -1437,25 +1110,24 @@ declare namespace tools {
    * ```
    * // Пусть в системе имеется должность Ведущий специалист
    * // Находим программно должность Ведущий специалист с помощью функции tools.get_doc_by_key
-   * oPos = tools.get_doc_by_key ( 'position', 'name', 'Ведущий специалист' ); // ищем должность по названию
+   * oPos = tools.get_doc_by_key ('position', 'name', 'Ведущий специалист'); // ищем должность по названию
    * // на экран выводится информация об отобранной должности
-   * alert ( 'Найдена должность ' + oPos.TopElem.name + ' с идентификационным номером ' + oPos.DocID );
+   * alert ('Найдена должность ' + oPos.TopElem.name + ' с идентификационным номером ' + oPos.DocID);
    * // Пусть в системе имеется сотрудник Васильева Людмила Петровна, которая работает в должности «Ведущий специалист»
-   * oCollab1 = tools.get_doc_by_key ( 'collaborator', 'fullname', 'Васильева Людмила Петровна' );
+   * oCollab1 = tools.get_doc_by_key ('collaborator', 'fullname', 'Васильева Людмила Петровна');
    * // на экран выводится информация об отобранном сотруднике
-   * alert ( 'Найден сотрудник ' + oCollab1.TopElem.fullname + ' с идентификационным номером ' + oCollab1.DocID );
+   * alert ('Найден сотрудник ' + oCollab1.TopElem.fullname + ' с идентификационным номером ' + oCollab1.DocID);
    * // указание текущего пользователя для корректного выполнения данного примера
    * // (на практике обычно текущий пользователь определен в окружении на портале)
    * curUserID = oCollab1.DocID;
    * // Проверяем, занимает ли Васильева Л.П. указанную должность
-   * bRez = tools.is_by_position_id ( oPos.DocID );
+   * bRez = tools.is_by_position_id (oPos.DocID);
    * alert (bRez); // ответ - верно
    * ```
    */
   function is_by_position_id(positionId: number): boolean;
 
   function is_statement_date(iActivityIDParam: unknown, sValueParam: unknown, sUslParam: unknown): unknown;
-
   /**
    * Функция заполняет поля в приемнике данных на основе значений из объекта источника данных:
    * workflow_id,
@@ -1477,13 +1149,7 @@ declare namespace tools {
    * tools.object_filling(docRequest.TopElem.type, docRequest.TopElem, Int(program_id));
    * ```
    */
-  function object_filling(
-    type: unknown,
-    source: XmlTopElem,
-    objectId: number,
-    objectDocument: XmlTopElem | null | ""
-  ): boolean;
-
+  function object_filling(type: unknown, source: XmlTopElem, objectId: number, objectDocument: XmlTopElem | null | ""): boolean;
   /**
    * Функция заполняет некоторые поля (дополнительную информацию) в карточке
    * объекта-приемника данных на основе значений из объекта-источника данных.
@@ -1555,53 +1221,26 @@ declare namespace tools {
    * ```
    * Пример 1:
    * oActiveLearning_receiver = OpenNewDoc ('x-local://wtv/wtv_active_learning.xmd');
-   * oCollab_source = tools.get_doc_by_key ( 'collaborator', 'fullname', 'Вилкова Ольга Николаевна' );
+   * oCollab_source = tools.get_doc_by_key ('collaborator', 'fullname', 'Вилкова Ольга Николаевна');
    * // на экран выводится информация об отобранном сотруднике-источнике
    * alert ('Найден сотрудник ' + oCollab_source.TopElem.name + ' с идентификационным номером ' + oCollab_source.DocID);
    * oActiveLearning_receiver.TopElem.person_id = oCollab_source.DocID; // заполнение основной информации о сотруднике
    * // заполнение дополнительной информации о сотруднике
-   * tools.common_filling( 'collaborator', oActiveLearning_receiver.TopElem, oCollab_source.DocID );
-   * oCourse_source = tools.get_doc_by_key ( 'course', 'name', 'Эффективное совещание' );
+   * tools.common_filling('collaborator', oActiveLearning_receiver.TopElem, oCollab_source.DocID);
+   * oCourse_source = tools.get_doc_by_key ('course', 'name', 'Эффективное совещание');
    * // на экран выводится информация об отобранном курсе-источнике
-   * alert ( 'Найден курс ' + oCourse_source.TopElem.name + ' с идентификационным номером ' + oCourse_source.DocID );
+   * alert ('Найден курс ' + oCourse_source.TopElem.name + ' с идентификационным номером ' + oCourse_source.DocID);
    * oActiveLearning_receiver.TopElem.course_id = oCourse_source.DocID; // заполнение основной информации о курсе
    * // заполнение дополнительной информации о курсе
-   * tools.common_filling( 'course', oActiveLearning_receiver.TopElem, oCourse_source.DocID );
+   * tools.common_filling('course', oActiveLearning_receiver.TopElem, oCourse_source.DocID);
    * oActiveLearning_receiver.BindToDb(); // связывание нового сформированного объекта с базой данных
    * oActiveLearning_receiver.Save(); // сохранение нового объекта в информационной базе
    * Пример 2:
-   * tools.common_filling( 'request_type', doc.TopElem, _request_type_first_elem.PrimaryKey );
-   * tools.common_filling( 'education_method', doc.TopElem, TopElem.Doc.DocID, TopElem );
+   * tools.common_filling('request_type', doc.TopElem, _request_type_first_elem.PrimaryKey);
+   * tools.common_filling('education_method', doc.TopElem, TopElem.Doc.DocID, TopElem);
    * ```
    */
-  function common_filling(
-    type: "subdivision"
-    | "org"
-    | "position"
-    | "event"
-    | "course"
-    | "assessment"
-    | "request_type"
-    | "task_type"
-    | "presence_state"
-    | "project"
-    | "response_type"
-    | "education_method"
-    | "education_org"
-    | "collaborator"
-    | "item"
-    | "submission_type"
-    | "activity"
-    | "object"
-    | "tag"
-    | "object_data_type"
-    | "custom_web_template",
-    topElem: XmlTopElem,
-    objectId: number,
-    xmlTopElem?: XmlTopElem,
-    customFlag?: boolean
-  ): boolean;
-
+  function common_filling(type: "subdivision" | "org" | "position" | "event" | "course" | "assessment" | "request_type" | "task_type" | "presence_state" | "project" | "response_type" | "education_method" | "education_org" | "collaborator" | "item" | "submission_type" | "activity" | "object" | "tag" | "object_data_type" | "custom_web_template", topElem: XmlTopElem, objectId: number, xmlTopElem?: XmlTopElem, customFlag?: boolean): boolean;
   /**
    * Функция очищает поля в приемнике данных на основе указанного типа объекта источника данных.
    * Приемником может быть элемент любого уровня в xml-структуре содержащий нужные поля.
@@ -1631,52 +1270,28 @@ declare namespace tools {
    * @returns {boolean} Возвращает значение true, если операция завершилась успешно, или false - в противном случае.
    * @example
    * ```
-   * tools.common_clear ( _cur_catalog_name, TopElem, Ps );
-   * tools.common_clear ( 'collaborator', Child(0).Parent, person_id );
+   * tools.common_clear (_cur_catalog_name, TopElem, Ps);
+   * tools.common_clear ('collaborator', Child(0).Parent, person_id);
    * ```
    */
-  function common_clear(
-    type: "subdivision"
-    | "org"
-    | "position"
-    | "event"
-    | "education_org"
-    | "course"
-    | "assessment"
-    | "request_type"
-    | "task_type"
-    | "response_type"
-    | "collaborator"
-    | "object"
-    | "education_type",
-    source: XmlTopElem,
-    xmlElemWithSdNode?: MsPersonSdInnerBase,
-    doc?: unknown
-  ): boolean;
+  function common_clear(type: "subdivision" | "org" | "position" | "event" | "education_org" | "course" | "assessment" | "request_type" | "task_type" | "response_type" | "collaborator" | "object" | "education_type", source: XmlTopElem, xmlElemWithSdNode?: MsPersonSdInnerBase, doc?: unknown): boolean;
 
-  function active_test_learning_finish_link(
-    activeLearningID: number,
-    learningID: number,
-    teLearning: TestLearningDocumentTopElem,
-    teAssessment: AssessmentDocumentTopElem
-  ): unknown;
+  function active_test_learning_finish_link(activeLearningID: number, learningID: number, teLearning: TestLearningDocumentTopElem, teAssessment: AssessmentDocumentTopElem): unknown;
 
   function core_decrypt(_core: unknown, _qti_path: unknown, _qti_text: unknown, _learning_doc: unknown): unknown;
-
   /**
    * Представляет результаты завершенного теста в XML-формате.
    * @param {string} testResults - Результаты завершенного теста для дешифровки.
    * @returns {string} Строковое выражение XML-структуры, содержащей результаты тестирования в теге annals.
    * @example
    * ```
-   * tod = StrSimpleDecrypt ( _core );
-   * tod = Trim ( tod );
-   * annals = tools.get_annals_from_core ( tod );
-   * sReport = tools.get_annals_from_core ( Trim ( StrSimpleDecrypt ( oSourceParam.core_lesson ) ));
+   * tod = StrSimpleDecrypt (_core);
+   * tod = Trim (tod);
+   * annals = tools.get_annals_from_core (tod);
+   * sReport = tools.get_annals_from_core (Trim (StrSimpleDecrypt (oSourceParam.core_lesson ) ));
    * ```
    */
   function get_annals_from_core(testResults: string): string;
-
   /**
    * Возвращает строку в формате XML без отступов, но со стандартным XML-заголовком на основе XML-структуры,
    * переданной в функцию. Например, если передан объект XmlElem:
@@ -1702,7 +1317,6 @@ declare namespace tools {
    * @returns {string} Строка в формате XML со стандартным заголовком. Результат действия функции.
    */
   function get_annals_text_from_annals(annals: XmlElem<AnnalsObjectsBase["objects"]>): string;
-
   /**
    * Возвращает путь до файла со структурой теста/курса в формате qti.
    * @param {number} objectId - Id карточки теста/курса.
@@ -1710,7 +1324,6 @@ declare namespace tools {
    * @returns {string} Путь до файла со структурой теста/курса в формате qti.
    */
   function get_qti_path(objectId: number, partCode: string): string;
-
   /**
    * Возвращает путь до файла со структурой теста/курса в формате qti.
    * @param {AssessmentDocumentTopElem | CourseDocumentTopElem} topElem - TopElem карточки теста/курса.
@@ -1723,7 +1336,6 @@ declare namespace tools {
   function fill_annals_timings(fldTarget: unknown, fldSource: unknown): unknown;
   function get_data_answers(fldDataItem: unknown): unknown;
   function get_item_points(fldQuestion: unknown): unknown;
-
   /**
    * Заполняет структуру annals результатами теста в XML-формате.
    * @param {XmlElem<AnnalsObjectBase>} annals - Структура для заполнения.
@@ -1734,14 +1346,7 @@ declare namespace tools {
    * в результирующую структуру (true – не нужно записывать правильный ответ,
    * false – нужно записывать правильный ответ).
    */
-  function fill_annals_text(
-    annals: XmlElem<AnnalsObjectsBase["objects"]>,
-    fileQtiPath: string,
-    qtiStructire: string,
-    annalsSource: XmlElem<AnnalsObjectsBase["objects"]>,
-    noSendCorrectAnswer: boolean
-  ): void;
-
+  function fill_annals_text(annals: XmlElem<AnnalsObjectsBase["objects"]>, fileQtiPath: string, qtiStructire: string, annalsSource: XmlElem<AnnalsObjectsBase["objects"]>, noSendCorrectAnswer: boolean): void;
   /**
    * Заполняет структуру annals результатами теста в XML-формате.
    * @param {XmlElem<AnnalsObjectBase>} annals - Структура для заполнения.
@@ -1751,14 +1356,7 @@ declare namespace tools {
    * @param {XmlTopElem} annalsTarget - TopElem открытого документа структуры для заполнения.
    * @returns {string} Строковое выражение заполненной XML-структуры с результатами тестирования, без отступов.
    */
-  function get_annals_text(
-    annals: unknown,
-    qtiPath: unknown,
-    qtiText: unknown,
-    assessmentDocumentTopElem: AssessmentDocumentTopElem,
-    annalsTarget: XmlTopElem
-  ): string;
-
+  function get_annals_text(annals: unknown, qtiPath: unknown, qtiText: unknown, assessmentDocumentTopElem: AssessmentDocumentTopElem, annalsTarget: XmlTopElem): string;
   /**
    * Закрывает HTTP-запрос к странице.
    * При закрытии запроса вызывается код, обрабатывающий ее закрытие.
@@ -1769,22 +1367,16 @@ declare namespace tools {
   function close_request(requestId: number): boolean;
 
   type WorkflowActionProcessResult = {
-    /** @type {boolean} Успешное или неуспешное выполнение действия. */
+    /** @type {boolean} - Успешное или неуспешное выполнение действия. */
     result: boolean;
-    /**
-     * @type {string} Строка с XAML кодом, выполняющимся при успешном выполнении действия
-     * (обрабатывается в карточке заявки на портале)
-     */
+
+    /** @type {string} - Строка с XAML кодом, выполняющимся при успешном выполнении действия (обрабатывается в карточке заявки на портале) */
     workflow_success_action: string;
-    /**
-     * @type {string} Строка текстом сообщения при успешном выполнении действия,
-     * (обрабатывается в карточке заявки на портале)
-     */
+    /** @type {string} Строка текстом сообщения при успешном выполнении действия, (обрабатывается в карточке заявки на портале) */
     workflow_action_message: string;
     /** @type {boolean} Прерывать или нет выполнения действия (обрабатывается в карточке заявки на портале). */
     workflow_create_break: boolean;
   };
-
   /**
    * Вызов действия документооборота.
    * @param {XmlDocument} source - Документ объекта, относительно которого вызывается действие.
@@ -1795,14 +1387,7 @@ declare namespace tools {
    * то можно передать в этот параметр Id объекта, который будет передаваться в печатную форму как object_id.
    * @returns {WorkflowActionProcessResult} Структура.
    */
-  function workflow_action_process(
-    source: XmlDocument,
-    actionCode: string,
-    workflowId: number,
-    workflowDocumentTopElem: WorkflowDocumentTopElem,
-    additionalObjectId: number,
-  ): WorkflowActionProcessResult;
-
+  function workflow_action_process(source: XmlDocument, actionCode: string, workflowId: number, workflowDocumentTopElem: WorkflowDocumentTopElem, additionalObjectId: number,): WorkflowActionProcessResult;
   /**
    * Добавляет в системные lists новый список(списки) со значениям или обновляет старый.
    * @param {string} url - Путь до файла со Lists.
@@ -1817,7 +1402,6 @@ declare namespace tools {
 
   function event_finish(eventId: number, eventDocument?: EventDocument): unknown;
   function event_start(eventId: number, eventDocument: EventDocument, oScreenParam: unknown): unknown;
-
   /**
    * Возвращает путь до xmd формы каталога или объекта каталога.
    * @param {string} catalogName - Название каталога (без s на конце).
@@ -1827,7 +1411,6 @@ declare namespace tools {
   function get_object_form_url(catalogName: string, isCatalog: unknown): string;
 
   function get_screen_form_url(catalogName: string): unknown;
-
   /**
    * Создает новый пакет по указанному адресу.
    * @param {string} packagePath - Путь в файловой системе с указанием имени файла, в который нужно сохранить пакет.
@@ -1839,19 +1422,13 @@ declare namespace tools {
    * @returns {number} Количество объектов, добавленных в пакет.
    * @example
    * ```
-   * counter = tools.create_package( _file_url, _report_id, Ps, _cur_id );
-   * counter = tools.create_package( _temp_dir + '/' + _pak_name, _report_id, fldPackage, _cur_id );
+   * counter = tools.create_package(_file_url, _report_id, Ps, _cur_id);
+   * counter = tools.create_package(_temp_dir + '/' + _pak_name, _report_id, fldPackage, _cur_id);
    * ```
    */
-  function create_package<T extends XmlElem<unknown, unknown>>(
-    packagePath: string,
-    reportId: number,
-    paramSource: T,
-    packId: string
-  ): number;
+  function create_package<T extends XmlElem<unknown, unknown>>(packagePath: string, reportId: number, paramSource: T, packId: string): number;
 
   function create_list_package(sResultUrlParam: unknown, fldPackage: unknown): unknown;
-
   /**
    * Возвращает объект документа, соответствующего указанным условиям, или null, если документ не найден.
    * @param {string} catalog - Название каталога для поиска объекта (без s на конце).
@@ -1866,7 +1443,6 @@ declare namespace tools {
    * @returns {T} - Документ, удовлетворяющий указанным условиям, или значение null, если такой документ не найден.
    */
   function get_doc_by_key<T = XmlDocument>(catalog: string, key: string | string[], value: string | number): T | null;
-
   /**
    * Возвращает Doc документа по указанным условиям, если документ не найден, то создает новый документ.
    * @param {string} catalogName - Название каталога для поиска объекта (без s на конце).
@@ -1879,7 +1455,6 @@ declare namespace tools {
    * @returns {T} XmlDocument.
    */
   function obtain_doc_by_key<T extends XmlDocument>(catalogName: unknown, key: unknown, value: string|number): T;
-
   /**
    * Возвращает продолжительность периода времени в секундах.
    * Время задано в формате P5Y2M10DT15H30M45S по ГОСТ ИСО 8601-2001.
@@ -1899,19 +1474,13 @@ declare namespace tools {
    * @returns {number} Длительность в секундах.
    */
   function get_seconds_from_duration(duration: string): number;
-
   /**
    * Заполняет карточку теста и создает вопросы к нему на основе qti-описания теста.
    * @param {number} assessmentId - Id теста.
    * @param {AssessmentDocumentTopElem} assessmentDocumentTopElem - TopElem теста.
    * @param {string} qti - Структура теста в формате qti.
    */
-  function assessment_filling_from_qti(
-    assessmentId: number,
-    assessmentDocumentTopElem: AssessmentDocumentTopElem,
-    qti: string
-  ): void;
-
+  function assessment_filling_from_qti(assessmentId: number, assessmentDocumentTopElem: AssessmentDocumentTopElem, qti: string): void;
   /**
    * Отправляет письмо об изменении в блоке, форуме, сообщении форума или документе портала,
    * всем подписанным на изменения пользователям, или конкретному пользователю.
@@ -1920,12 +1489,7 @@ declare namespace tools {
    * @param {number} personId - Id сотрудника, которому нужно отправить сообщение.
    * @returns {SubscriptionCatalogDocumentTopElem[]} Массив каталожных записей с подписками, по которым произошла рассылка.
    */
-  function submit_subscriptions(
-    documentId: number,
-    documentDoc: XmlTopElem,
-    personId: number
-  ): SubscriptionCatalogDocumentTopElem[];
-
+  function submit_subscriptions(documentId: number, documentDoc: XmlTopElem, personId: number): SubscriptionCatalogDocumentTopElem[];
   /**
    * Создает строку условий для использования в выражении where в запросе XQuery на основе
    * структуры с описанием условий.
@@ -1951,7 +1515,6 @@ declare namespace tools {
    * @returns {string} Строковое выражение условий для использования в выражении where в запросе XQuery.
    */
   function create_filter_xquery(conditions: ViewConditionBase, condition: string, name: string): string;
-
   /**
    * Создает строку условий для использования в выражении типа eval в коде администратора WebTutor
    * или в серверном коде на основе структуры с описанием условий.
@@ -1977,7 +1540,6 @@ declare namespace tools {
    * @returns {string} Строковое выражение условий для использования в выражении eval.
    */
   function create_filter_javascript(conditions: ViewConditionBase, condition: string, name: string): string;
-
   /**
    * Обновляет значения текущих настраиваемых полей в системе на основе списка, указанного в параметрах.
    * @param {string} url - Путь до файла с структурой списка (List) из которого будут загружаться данные.
@@ -1989,7 +1551,6 @@ declare namespace tools {
    * ```
    */
   function obtain_custom_templates(url: unknown, source: unknown): unknown;
-
   /**
    * Обновляет значения ролей в системе на основе списка, указанного в параметрах.
    * @param {string} url - Путь до файла с структурой списка (List) из которого будут загружаться данные.
@@ -2001,7 +1562,6 @@ declare namespace tools {
    * ```
    */
   function obtain_access_roles(url: string, list: XmlTopElem): number;
-
   /**
    * Импортирует курс в систему из указанного файла.
    * Файл должен быть сформирован предварительно и соответствовать определенным стандартам (например, SCORM 2004).
@@ -2011,7 +1571,6 @@ declare namespace tools {
   function import_course(filepath: string): boolean;
 
   function process_skk(_inst_flag: unknown): unknown;
-
   /**
    * Возвращает версию и дату модификации из файла history.
    * Поиск файла history может происходить в разных местоположениях в зависимости от параметров функции.
@@ -2030,7 +1589,6 @@ declare namespace tools {
    * ```
    */
   function get_version(type: "wtv" | "qti" | "assessment" | "last"): string;
-
   /**
    * Функция возвращает набор заполненных настраиваемых полей для данного каталога и данного документа.
    * Если указан только первый параметр, функция вернет список полей без значений.
@@ -2050,7 +1608,6 @@ declare namespace tools {
    * ```
    */
   function get_custom_template(catalog: string, topId?: number, source?: XmlTopElem): XmlElem<CustomElemsBase>;
-
   /**
    * Функция меняет статус указанного сотрудника у поля «Временно запрещен доступ на портал».
    * Функция отправляет уведомления сотруднику об изменении доступа.
@@ -2061,13 +1618,7 @@ declare namespace tools {
    * менять значение можно только у сотрудников не являющихся администраторами.
    * @returns {boolean} Флаг да/нет (bool) успех или неуспех смены статуса доступа на портал.
    */
-  function set_web_ban(
-    personId: number,
-    banStatus: boolean,
-    personDocument?: CollaboratorDocument,
-    changeOnlyForAdmin?: boolean
-  ): boolean;
-
+  function set_web_ban(personId: number, banStatus: boolean, personDocument?: CollaboratorDocument, changeOnlyForAdmin?: boolean): boolean;
   /**
    * Заполняет данные для отображения списка объектов в блоке в разделах администратора по указанным источникам.
    * Используется для отображения настраиваемых отчетов, настраиваемых типов документов,
@@ -2080,13 +1631,7 @@ declare namespace tools {
    * @param {number} sourceId - Id объекта, который нужно отобразить в блоке.
    * @returns {void} Возвращаемое значение отсутствует.
    */
-  function disp_block_filling_by_source(
-    source: XmlTopElem,
-    dispBlock: MsDispBlockBase,
-    dispObjectBlocks: AccessBlockBase,
-    sourceId: number
-  ): void;
-
+  function disp_block_filling_by_source(source: XmlTopElem, dispBlock: MsDispBlockBase, dispObjectBlocks: AccessBlockBase, sourceId: number): void;
   /**
    * Заполняет данные для отображения списка объектов в блоке в разделах администратора.
    * Используется для отображения настраиваемых отчетов, настраиваемых типов документов,
@@ -2101,7 +1646,6 @@ declare namespace tools {
   function disp_block_filling(source: XmlTopElem, dispBlock: MsDispBlockBase): void;
 
   function get_order_query(sOrderParam: unknown, sDirParam: unknown): unknown;
-
   /**
    * Формирует строку для использования в запросе XQuery на основе указанных параметров.
    * @param {string} catalog - Строка с названием каталога без «s» на конце,
@@ -2129,18 +1673,7 @@ declare namespace tools {
    * @param {T} oColumnsParam - Колонки (например, из файла view_types.xml) для возврата результатов запроса.
    * @returns {string} Строка для использования в запросе XQuery на основе указанных параметров.
    */
-  function create_xquery<T extends XmElem<unknown, unknown>>(
-    catalog: string,
-    xqueryQual: string,
-    filterXQuery: string,
-    ftFilter: string,
-    order: string,
-    orderDirection: string,
-    isHier?: boolean,
-    foreignField?: string,
-    oColumnsParam?: T
-  ): unknown;
-
+  function create_xquery<T extends XmElem<unknown, unknown>>(catalog: string, xqueryQual: string, filterXQuery: string, ftFilter: string, order: string, orderDirection: string, isHier?: boolean, foreignField?: string, oColumnsParam?: T): unknown;
   /**
    * Осуществляет обработку заявки.
    * Выполняет стандартную обработку заявки по типу прикреплённого объекта
@@ -2154,17 +1687,9 @@ declare namespace tools {
    */
   function request_processing(requestId: number, requestDocument?: RequestDocument): RequestDocument;
 
-  function update_object_versions(
-    docVersion: unknown,
-    iVersionID: unknown,
-    docObject: unknown,
-    iPersonID: unknown,
-    tePerson: unknown,
-    sComment: unknown
-  ): unknown;
+  function update_object_versions(docVersion: unknown, iVersionID: unknown, docObject: unknown, iPersonID: unknown, tePerson: unknown, sComment: unknown): unknown;
 
   function update_adding_objects(docObject: unknown, iObjectID: unknown): unknown;
-
   /**
    * Осуществляет отмену (отклонение) заявки.
    * Выполняет действия по отклонению заявки по типу прикреплённого объекта
@@ -2180,13 +1705,7 @@ declare namespace tools {
    * @param {boolean} isSave - Флаг.
    * @returns {RequestDocument} Doc обработанной и сохраненной заявки.
    */
-  function request_rejecting(
-    objectId: number,
-    objectDocument: RequestDocument,
-    personId?: number,
-    isSave?: boolean
-  ): RequestDocument;
-
+  function request_rejecting(objectId: number, objectDocument: RequestDocument, personId?: number, isSave?: boolean): RequestDocument;
   /**
    * Удаляет участника (сотрудника) из мероприятия.
    * @param {number} personId - Id сотрудника, удаляемого из мероприятия.
@@ -2196,20 +1715,13 @@ declare namespace tools {
    * мероприятия после удаления сотрудника (true – сохранять карточку мероприятия, false – не сохранять).
    * @returns {EventDocument} Документ мероприятия, из которого удален сотрудник.
    */
-  function del_person_from_event(
-    personId: number,
-    eventId: number,
-    eventDocument?: EventDocument,
-    isSave?: boolean
-  ): unknown;
-
+  function del_person_from_event(personId: number, eventId: number, eventDocument?: EventDocument, isSave?: boolean): unknown;
   /**
    * Шифрует указанный курс для его использования в Personal WebTutor.
    * @param {number} courseId - Id курса, подлежащего шифрованию.
    * @returns {DownloadDataResponse} Объект с данными.
    */
   function encrypt_content(courseId: number): DownloadDataResponse;
-
   /**
    * Создает файл с объектом, зашифрованным с использованием указанной лицензии.
    * @param {number} licenseId - Id лицензии для создания файла.
@@ -2220,7 +1732,6 @@ declare namespace tools {
   function create_license(licenseId: number, outPath?: string): string;
 
   function create_license_complete(sTempDirectoryUrl: unknown): unknown;
-
   /**
    * Восстанавливает значение для пустых констант в системе.
    * @param {string} languageId - Id языка, для которого нужно восстановить значения констант.
@@ -2229,7 +1740,6 @@ declare namespace tools {
    * @returns {number} Количество восстановленных элементов.
    */
   function recovery_empty_lng_const<T extends XmlElem<unknown, unknown>>(languageId: string, source: T): number;
-
   /**
    * Импортирует данные, полученные из Personal WebTutor
    * (для дешифровки данных используется функция tools.decript_pwt_data_str).
@@ -2245,13 +1755,7 @@ declare namespace tools {
    * или строка вида 'ERROR=0 \nPROCESS_NUM=Количество загруженных
    * \nFAILED_NUM=количество не загруженных результатов', если функция выполнена успешно.
    */
-  function import_pwt_data_xml(
-    xml: string,
-    userId: number,
-    reportId: number,
-    fileUrl: string
-  ): string;
-
+  function import_pwt_data_xml(xml: string, userId: number, reportId: number, fileUrl: string): string;
   /**
    * Используется в функции import_pwt_data_xml.
    * Дешифрует XML-файл с данными, полученными из Personal WebTutor.
@@ -2259,7 +1763,6 @@ declare namespace tools {
    * @returns {string} Дешифрованная строка. Результат действия функции.
    */
   function decript_pwt_data_str(data: string): string;
-
   /**
    * Обновляет структуру разделов активных электронных курсов.
    * @param {number} learningId - Id активного электронного курса структуру, которого нужно обновить.
@@ -2268,12 +1771,7 @@ declare namespace tools {
    * которого нужно обновить.
    * @returns {true} Всегда возвращается true.
    */
-  function update_course_parts_structure(
-    learningId: unknown,
-    courseDocumentTopElem: CourseDocumentTopElem,
-    activeLearningDocument: ActiveLearningDocument
-  ): true;
-
+  function update_course_parts_structure(learningId: unknown, courseDocumentTopElem: CourseDocumentTopElem, activeLearningDocument: ActiveLearningDocument): true;
   /**
    * Возвращает массив Id сотрудников, состоящий из непосредственных подчиненных указанного сотрудника.
    * @param {number} userId - Id сотрудника, для которого идет поиск подчиненных.
@@ -2281,7 +1779,6 @@ declare namespace tools {
    * состоящий из непосредственных подчиненных указанного сотрудника.
    */
   function get_direct_sub_person_ids(userId: number): CollaboratorCatalogDocumentTopElem[];
-
   /**
    * Возвращает массив Id сотрудников указанного подразделения и дочерних подразделений.
    * @param {number} subdivisionId - Id подразделения, сотрудников которого нужно найти.
@@ -2290,7 +1787,6 @@ declare namespace tools {
    * @returns {number[]} Массив Id сотрудников указанного подразделения и дочерних подразделений.
    */
   function get_sub_person_ids_by_subdivision_id(subdivisionId: number, condition: string): number[];
-
   /**
    * Возвращает массив каталожных записей сотрудников указанного подразделения и дочерних подразделений.
    * @param {number} subdivisionId - Id подразделения, для которого производится поиск сотрудников.
@@ -2299,7 +1795,6 @@ declare namespace tools {
    * @returns {number[]} Массив каталожных записей сотрудников указанного подразделения и дочерних подразделений.
    */
   function get_sub_persons_by_subdivision_id(subdivisionId: number, condition: string): number[];
-
   /**
    * Возвращает массив Id подчиненных сотрудников (как непосредственных, так и подчиненных подчиненных)
    * указанного сотрудника.
@@ -2330,17 +1825,10 @@ declare namespace tools {
    *   null,
    *   null,
    *   search_fullname
-   * );
+   *);
    * ```
    */
-  function get_sub_person_ids_by_func_manager_id(
-    managerId: number,
-    catalogNames?: string | null,
-    bossType?: boolean | number | null,
-    limit?: number | null,
-    fullnameContains?: string
-  ): number[];
-
+  function get_sub_person_ids_by_func_manager_id(managerId: number, catalogNames?: string | null, bossType?: boolean | number | null, limit?: number | null, fullnameContains?: string): number[];
   /**
    * Возвращает массив каталожных записей подчинённых сотрудников
    * (как непосредственных, так и подчинённых подчиненных) указанного сотрудника.
@@ -2359,12 +1847,7 @@ declare namespace tools {
    * сотрудников только для руководителей указанного типа.
    * @returns {CollaboratorCatalogDocumentTopElem[]} Массив каталожных записей подчинённых сотрудников.
    */
-  function get_sub_persons_by_func_manager_id(
-    managerId: number,
-    catalogNames: string,
-    bossType: boolean | number
-  ): CollaboratorCatalogDocumentTopElem[];
-
+  function get_sub_persons_by_func_manager_id(managerId: number, catalogNames: string, bossType: boolean | number): CollaboratorCatalogDocumentTopElem[];
   /**
    * Возвращает массив каталожных записей подчинённых подразделений
    * (как непосредственных, так и дочерних) для указанного сотрудника.
@@ -2373,7 +1856,6 @@ declare namespace tools {
    * @returns {CollaboratorCatalogDocumentTopElem[]} Массив каталожных записей подчинённых подразделений.
    */
   function get_all_subs_by_func_manager_id(managerId: number): CollaboratorCatalogDocumentTopElem[];
-
   /**
    * Выполняет функцию eval указанного в параметрах функции файла.
    * @param {string} url - Путь до файла.
@@ -2387,7 +1869,6 @@ declare namespace tools {
    * @returns {string} Строка, полученная после выполнения функции eval.
    */
   function eval_code_page_url(url: string, documentId: number | XmlDocument | XmlTopElem, fileName: string): string;
-
   /**
    * Обновляет указанный фильтр в администраторе WebTutor.
    * @param {T} sourceConditions - Структура, содержащая текущие условия поиска.
@@ -2396,19 +1877,9 @@ declare namespace tools {
    * @param {boolean} setFlag - Если указанный фильтр проставляется в качестве
    * выбранного для каталога в администраторе WebTutor.
    */
-  function update_filter_conditions<T extends XmlElem<unknown, unknown>>(
-    sourceConditions: T,
-    catalogName: string,
-    schemeId: string,
-    setFlag: boolean
-  ): void;
+  function update_filter_conditions<T extends XmlElem<unknown, unknown>>(sourceConditions: T, catalogName: string, schemeId: string, setFlag: boolean): void;
 
-  function check_cur_user_admin_access(
-    teObjectParam: unknown,
-    curUser: unknown,
-    fldAccessCalalogParam: unknown
-  ): unknown;
-
+  function check_cur_user_admin_access(teObjectParam: unknown, curUser: unknown, fldAccessCalalogParam: unknown): unknown;
   /**
    * Используется в Webtutor Administrator в форме редактирования условий документооборота.
    * Формирует строку на основе стандартных значений, доступных в выпадающем списке условий документооборота.
@@ -2423,12 +1894,7 @@ declare namespace tools {
    * (type='if_workflow_field_value').
    * @returns {string} Значение списка.
    */
-  function build_condition_eval_str(
-    conditions: ConditionBase,
-    workflowId?: number,
-    workflowDocumentTopElem?: WorkflowDocumentTopElem
-  ): string;
-
+  function build_condition_eval_str(conditions: ConditionBase, workflowId?: number, workflowDocumentTopElem?: WorkflowDocumentTopElem): string;
   /**
    * Используется для обновления данных по редактированию разделов на закладке
    * «Редактирование разделов» в администраторе в разделе портала.
@@ -2438,7 +1904,6 @@ declare namespace tools {
    * @returns {number} Количество изменённых дочерних элементов.
    */
   function update_document_persons<T extends XmlTopElem>(objectId: number, topElem: T): number;
-
   /**
    * Возвращает продолжительность периода времени в миллисекундах,
    * преобразованную из XML-тега period.
@@ -2459,7 +1924,6 @@ declare namespace tools {
    * @returns {number} Длительность в миллисекундах.
    */
   function get_period_from_iso(period: string): number;
-
   /**
    * Возвращает Id самого верхнего иерархии документа портала, на который разрешена подписка,
    * относительно текущего документа.
@@ -2469,7 +1933,6 @@ declare namespace tools {
    * на который разрешена подписка, относительно текущего документа или Null если такой документ не найден.
    */
   function get_notification_document(documentId: number | DocumentDocument): number | null;
-
   /**
    * Возвращает Id самого верхнего иерархии документа портала, на который разрешена подписка,
    * относительно текущего документа.
@@ -2480,7 +1943,6 @@ declare namespace tools {
    * на который разрешена подписка, относительно текущего документа или Null если такой документ не найден.
    */
   function get_notification_document(topElem: DocumentDocument): number | null;
-
   /**
    * Функция возвращает Id центра затрат сотрудника, указанного в качестве аргумента.
    * Если такой центр затрат не найден, то функция возвращает Id центра затрат,
@@ -2491,11 +1953,7 @@ declare namespace tools {
    * @returns {number} Id центра затрат указанного сотрудника.
    * Если центр затрат не найден, то возвращает Id центра затрат, указанного в общих настройках.
    */
-  function get_cost_center_id_by_person_id(
-    personId: number,
-    personDocumentTopElem?: CollaboratorDocumentTopElem
-  ): number;
-
+  function get_cost_center_id_by_person_id(personId: number, personDocumentTopElem?: CollaboratorDocumentTopElem): number;
   /**
    * Возвращает массив руководителей (руководителей по должности) центра затрат указанного сотрудника.
    * Если указанные руководители не найдены, то возвращается пустой массив.
@@ -2505,11 +1963,7 @@ declare namespace tools {
    * @returns {CollaboratorCatalogDocumentTopElem[]} Массив каталожных записей сотрудников,
    * являющихся руководителями центра затрат указанного сотрудника.
    */
-  function get_cost_center_boss_by_person_id(
-    personId: number,
-    personDocumentTopElem: CollaboratorDocumentTopElem
-  ): CollaboratorCatalogDocumentTopElem[];
-
+  function get_cost_center_boss_by_person_id(personId: number, personDocumentTopElem: CollaboratorDocumentTopElem): CollaboratorCatalogDocumentTopElem[];
   /**
    * Возвращает массив руководителей (руководителей по должности) центра затрат указанного сотрудника.
    * Если указанные руководители не найдены, то возвращается пустой массив.
@@ -2519,24 +1973,23 @@ declare namespace tools {
    * ```
    * // Пусть в системе имеется подразделение «IT отдел»
    * // Находим программно подразделение «IT отдел» с помощью функции tools.get_doc_by_key
-   * oSub = tools.get_doc_by_key ( 'subdivision', 'name', 'IT отдел' );
+   * oSub = tools.get_doc_by_key ('subdivision', 'name', 'IT отдел');
    * // на экран выводится информация об отобранном подразделении
    * alert("Найдено подразделение " + oSub.TopElem.name + " с идентификационным номером " + oSub.TopElem.id);
-   * arrBoss = tools.get_sub_boss_by_sub_id ( oSub.TopElem.id );
-   * alert ( ArrayCount (arrBoss) ); // возвращает количество элементов массива
+   * arrBoss = tools.get_sub_boss_by_sub_id (oSub.TopElem.id);
+   * alert (ArrayCount (arrBoss)); // возвращает количество элементов массива
    * str = "Руководители подразделения " + oSub.TopElem.name + ": \n";
    * for (elem in arrBoss) // выводит информацию об элементах массива
    * {
    *      // Находим руководителя по его Id с помощью функции tools.get_doc_by_key
    *      iCollab_id = elem;
-   *      oCollab = tools.get_doc_by_key ( 'collaborator', 'id', iCollab_id );
+   *      oCollab = tools.get_doc_by_key ('collaborator', 'id', iCollab_id);
    *      str = str + ' - ' + oCollab.TopElem.fullname + '\n';
    * }
-   * alert ( str );
+   * alert (str);
    * ```
    */
   function get_sub_boss_by_sub_id(subdivisionId: number): number[];
-
   /**
    * Функция разработана для проверки данных времени в строке, полученной из внешнего источника.
    * Возвращает строку со временем (часами и/или минутами и/или секундами) из строки времени,
@@ -2554,13 +2007,11 @@ declare namespace tools {
    * @returns {string | null} Строка с откорректированным значением времени или значение null.
    */
   function get_time(value: string, checkMinutes: boolean, checkSeconds: boolean): string;
-
   /**
    * Включает или выключает журнал веб-запросов.
    * @param {boolean} isEnable - Включить (true) / выключить (false) журнал веб-запросов.
    */
   function enable_log_web_request(isEnable: boolean): void;
-
   /**
    * Возвращает название поле из тега TITLE xmd или xml формы для указанного языка.
    * Если в теге есть «const=», то производится поиск значения указанного после «=» среди констант языка.
@@ -2571,11 +2022,7 @@ declare namespace tools {
    * в администраторе. При вызове на портале параметр обязателен.
    * @returns {string} Название поле из тега TITLE xmd или xml формы для указанного языка.
    */
-  function get_field_title<T extends XmlElem<unknown, unknown>, K extends XmlElem<unknown, unknown>>(
-    field: T,
-    curLngWeb?: K
-  ): unknown;
-
+  function get_field_title<T extends XmlElem<unknown, unknown>, K extends XmlElem<unknown, unknown>>(field: T, curLngWeb?: K): unknown;
   /**
    * Заполняет структуру полей (из объекта или из каталога) для использования в формах выбора условий.
    * Применяется в диалогах построения фильтров, настраиваемых отчетах и т.д.
@@ -2590,17 +2037,8 @@ declare namespace tools {
    * при заполнении структуры field_names. Атрибут передается, если нужно, например,
    * заполнить значения по ключу данными типа multiple из дочернего элемента источника form.
    */
-  function fill_field_names<
-    T extends XmlElem<unknown, unknown>,
-    K extends XmlElem<unknown, unknown>,
-  >(
-    fieldNames: XmlElem<FieldNamesBase>,
-    form: T,
-    isCatalog?: boolean,
-    evalPath?: K,
-    prefix?: string
-  ): void;
-
+  function fill_field_names< T extends XmlElem<unknown, unknown>, K extends XmlElem<unknown, unknown>,
+  >(fieldNames: XmlElem<FieldNamesBase>, form: T, isCatalog?: boolean, evalPath?: K, prefix?: string): void;
   /**
    * Возвращает результат выполнения функции eval, определяемый формулой evalstr и
    * другими атрибутами вызова функции.
@@ -2625,15 +2063,7 @@ declare namespace tools {
    * соответственно.
    * @returns {string} Результат выполнения формулы, заданной атрибутом evalstr.
    */
-  function DateFunc(
-    SRC1: Date,
-    SRC2: Date,
-    EVALSTR: string,
-    PARAM1: string,
-    PARAM2: string,
-    PARAM3: string
-  ): string;
-
+  function DateFunc(SRC1: Date, SRC2: Date, EVALSTR: string, PARAM1: string, PARAM2: string, PARAM3: string): string;
   /**
    * Используется в настраиваемых отчетах для возврата названия тега,
    * в котором хранится значение по типу данных этого значения.
@@ -2648,7 +2078,6 @@ declare namespace tools {
    * - "vs" – для значений аргумента, отличных от допустимых.
    */
   function get_report_storage_field(type: "integer" | "real" | "date" | "bool"): string;
-
   /**
    * Запускает построение настраиваемого отчета.
    * @param {number} reportId - Id отчета для построения.
@@ -2661,8 +2090,8 @@ declare namespace tools {
    * @returns {TaskInfoBase|null} Документ сохраненного настраиваемого отчета.
    * @example
    * ```
-   * tools.build_report_remote ( null, null, docCustomReport );
-   * ServerEval('tools.build_report_remote ( ' + _cur_custom_report_id + ')' );
+   * tools.build_report_remote (null, null, docCustomReport);
+   * ServerEval('tools.build_report_remote (' + _cur_custom_report_id + ')');
    * if (tools.build_report_remote(iCustomReportID, teCustomReport, null) != null) {
    *   vReportResult = teCustomReport.get_report_data(iCustomReportID, curPersonID);
    * } else {
@@ -2670,14 +2099,7 @@ declare namespace tools {
    * }
    * ```
    */
-  function build_report_remote(
-    reportId: number,
-    actionReportDocumentTopElem?: ActionReportDocumentTopElem,
-    actionReportDocument?: ActionReportDocument,
-    lngShort?: string,
-    metaOnly?: boolean
-  ): TaskInfoBase | null;
-
+  function build_report_remote(reportId: number, actionReportDocumentTopElem?: ActionReportDocumentTopElem, actionReportDocument?: ActionReportDocument, lngShort?: string, metaOnly?: boolean): TaskInfoBase | null;
   /**
    * Возвращает массив каталожных записей всех дочерних объектов указанного объекта,включая его самого.
    * @param {number} NODE_ID - Id объекта, для которого происходит поиск дочерних объектов.
@@ -2689,12 +2111,7 @@ declare namespace tools {
    * @returns {XmlTopElem[]} Массив каталожных записей всех дочерних объектов указанного объекта,
    * включая его самого.
    */
-  function get_sub_hierarchy(
-    NODE_ID: number,
-    NODE_CATALOG: string,
-    NODE_PARENT_FIELD: string
-  ): XmlTopElem[];
-
+  function get_sub_hierarchy(NODE_ID: number, NODE_CATALOG: string, NODE_PARENT_FIELD: string): XmlTopElem[];
   /**
    * Возвращает сформированный на основе кода печатной формы текст печатной формы.
    * @param {number} formParam - Id печатной формы.
@@ -2703,7 +2120,6 @@ declare namespace tools {
   function process_print_form(formParam: number): string;
 
   function get_user_boss(OBJECT: unknown): unknown;
-
   /**
    * Функция, которая заполняет структуру path_subs в карточке преподавателя,
    * для отображения пути штатного расписания на основе карточки сотрудника
@@ -2713,12 +2129,7 @@ declare namespace tools {
    * @param {CollaboratorDocument} personDocument - TopElem сотрудника.
    * @returns {PathSubBase["path_subs"]} Заполненная структура {@link PathSubBase["path_subs"]}.
    */
-  function path_subs_filling(
-    pathSubsElement: PathSubsBase["path_subs"],
-    personId: number,
-    personDocument: CollaboratorDocument
-  ): unknown;
-
+  function path_subs_filling(pathSubsElement: PathSubsBase["path_subs"], personId: number, personDocument: CollaboratorDocument): unknown;
   /**
    * Функция возвращает строку вида «часы:минуты:секунды.миллисекунды»,
    * полученную из параметра функции (миллисекунды).
@@ -2728,7 +2139,6 @@ declare namespace tools {
    * @returns {string} Строку вида «часы:минуты:секунды.миллисекунды».
    */
   function str_time_from_mseconds(ms: number): string;
-
   /**
    * Функция возвращает строку с полным штатным расписанием (без должности).
    * Штатное расписание разделено указанным в параметрах функции разделителем.
@@ -2745,14 +2155,7 @@ declare namespace tools {
    * по умолчанию используется разделитель "" -> "".
    * @returns {string} Строка с полным штатным расписанием (без должности).
    */
-  function person_list_staff_by_person_id(
-    personId: number,
-    personDocumentTopElem: CollaboratorDocumentTopElem,
-    depth: number,
-    top: string,
-    separator: string
-  ): string;
-
+  function person_list_staff_by_person_id(personId: number, personDocumentTopElem: CollaboratorDocumentTopElem, depth: number, top: string, separator: string): string;
   /**
    * Проверяет, что переданная строка не пустая и не содержит русские буквы
    * или недопустимые в названии теги XML-символы.
@@ -2766,7 +2169,6 @@ declare namespace tools {
    * прошла ли строка указанную проверку (true – проверка пройдена успешно, false – проверка не пройдена).
    */
   function check_field_name(field: string, isStrictBegin: boolean): boolean;
-
   /**
    * На основе указанного типа настраиваемого документа создает объект,
    * содержащий в своих полях строковое описание XMD-формы документа и XMD-формы каталога,
@@ -2778,7 +2180,6 @@ declare namespace tools {
    * по которому строится иерархия данного документа.
    */
   function get_doc_type_xmds(docTypeId: number, docTypeTopElem: DocTypeDocumentTopElem): object;
-
   /**
    * Проверяется возможность создания настраиваемого документа указанного типа,
    * после чего можно будет создать XMD-форму документа и XMD-форму каталога.
@@ -2789,7 +2190,6 @@ declare namespace tools {
    * документ указанного типа, или false - в противном случае.
    */
   function generate_doc_type_xmds(topElem: DocTypeDocumentTopElem, documentId: number): boolean;
-
   /**
    * На основе указанного типа настраиваемого документа регистрирует в базе объект
    * по XMD форме документа и XMD форме каталога.
@@ -2804,7 +2204,6 @@ declare namespace tools {
    * catalog (названия нового типа документов).
    */
   function register_doc_type(docTypeDocument: DocTypeDocument, documentId: number): object;
-
   /**
    * Создает сертификаты указанного типа для всех участников указанного мероприятия.
    * @param {number} eventId - Id мероприятия.
@@ -2813,7 +2212,6 @@ declare namespace tools {
    * @returns {number} Количество созданных сертификатов.
    */
   function create_certificate_to_event(eventId: number, typeId: number, eventDocument: EventDocument): number;
-
   /**
    * Создает сертификаты указанного типа для указанного сотрудника.
    * Если указано мероприятие, то сертификат привязывается к указанному мероприятию.
@@ -2825,26 +2223,14 @@ declare namespace tools {
    * @param {EventDocument} eventDocument - TopElem мероприятия.
    * @returns {CertificateDocument} Документ созданного сертификата.
    */
-  function create_certificate_to_person(
-    personId: number,
-    typeId: number,
-    eventId: number,
-    personDocument: CollaboratorDocument,
-    certificateTypeTopElem: CertificateTypeDocumentTopElem,
-    eventDocument: EventDocument
-  ): CertificateDocument;
-
+  function create_certificate_to_person(personId: number, typeId: number, eventId: number, personDocument: CollaboratorDocument, certificateTypeTopElem: CertificateTypeDocumentTopElem, eventDocument: EventDocument): CertificateDocument;
   /**
    * Возвращает Id самой верхней в иерархии родительской статьи форума.
    * @param {number} forumEntryId - Id статьи форума.
    * @param {ForumEntryDocumentTopElem} forumEntryTopElem - TopElem статьи форума.
    * @returns {number} Id самой верхней в иерархии родительской статьи форума.
    */
-  function get_main_forum_entry_by_forum_entry_id(
-    forumEntryId: number,
-    forumEntryTopElem: ForumEntryDocumentTopElem
-  ): number;
-
+  function get_main_forum_entry_by_forum_entry_id(forumEntryId: number, forumEntryTopElem: ForumEntryDocumentTopElem): number;
   /**
    * Назначение квалификации.
    * @param {number} personId - Id сотрудника.
@@ -2876,25 +2262,7 @@ declare namespace tools {
    * если присвоение происходит из контекстного меню интерфейса администратора.
    * @returns {QualificationAssignmentDocument|null} Документ квалификации или null.
    */
-  function assign_qualification_to_person(
-    personId: number,
-    eventId: number | undefined | null,
-    qualificationId: number,
-    assignmentDate: Date | undefined | null,
-    expirationDate: Date | undefined | null,
-    testLearnings: number[] | undefined | null,
-    learnings: number[] | undefined | null,
-    sendMail: number,
-    inProcess: number,
-    assignTests: boolean,
-    assignCourses: boolean,
-    unconditionalAssignment: boolean,
-    qualificationAssignmentDocument: QualificationAssignmentDocument | null,
-    qualificationDocumentTopElem: QualificationDocumentTopElem | undefined | null,
-    collaboratorDocumentTopElem: CollaboratorDocumentTopElem | null,
-    givePoint: boolean
-  ): QualificationAssignmentDocument | null;
-
+  function assign_qualification_to_person(personId: number, eventId: number | undefined | null, qualificationId: number, assignmentDate: Date | undefined | null, expirationDate: Date | undefined | null, testLearnings: number[] | undefined | null, learnings: number[] | undefined | null, sendMail: number, inProcess: number, assignTests: boolean, assignCourses: boolean, unconditionalAssignment: boolean, qualificationAssignmentDocument: QualificationAssignmentDocument | null, qualificationDocumentTopElem: QualificationDocumentTopElem | undefined | null, collaboratorDocumentTopElem: CollaboratorDocumentTopElem | null, givePoint: boolean): QualificationAssignmentDocument | null;
   /**
    * Создает объект присвоенной квалификации для всех участников указанного мероприятия.
    * @param {number} eventId - Id мероприятия.
@@ -2903,20 +2271,13 @@ declare namespace tools {
    * @param {Date} date - Дата присвоения квалификации.
    * @returns {number} Количество созданных присвоенных квалификаций.
    */
-  function assign_qualification_to_event(
-    eventId: number,
-    eventDocumentTopElem: EventDocumentTopElem,
-    qualificationId: number,
-    date: Date
-  ): number;
-
+  function assign_qualification_to_event(eventId: number, eventDocumentTopElem: EventDocumentTopElem, qualificationId: number, date: Date): number;
   /**
    * Создает xms форму пользовательского интерфейса.
    * @param {number|XmlTopElem} template - Id или TopElem объекта пользовательский интерфейс.
    * @returns {boolean} Флаг true – создание успешно завершено, false создание неуспешно.
    */
   function save_custom_ui_form(template: number | XmlTopElem): boolean;
-
   /**
    * Возвращает XMS-форму (экранную форму) для каталога (указанного в качестве аргумента),
    * создаваемого из типа настраиваемого документа.
@@ -2929,7 +2290,6 @@ declare namespace tools {
   function get_custom_document_form(catalogName: string): typeof Screen;
 
   function get_custom_document_data_form_url(sCatalogNameParam: unknown): unknown;
-
   /**
    * Функция возвращает строку с полным путем из родительских элементов карты знаний (значений)
    * без классификатора. Путь разделен указанным в параметрах функции разделителем.
@@ -2944,16 +2304,9 @@ declare namespace tools {
    * по умолчанию используется разделитель " -> ".
    * @returns {string} Строка полным путем из родительских элементов карты знаний (значений) без классификатора.
    */
-  function knowledge_part_path_by_knowledge_part_id(
-    knowledgePartId: number,
-    knowledgePartTopElem: KnowledgePartDocumentTopElem,
-    depth: number,
-    top: number,
-    separator: string
-  ): string;
+  function knowledge_part_path_by_knowledge_part_id(knowledgePartId: number, knowledgePartTopElem: KnowledgePartDocumentTopElem, depth: number, top: number, separator: string): string;
 
   function get_func_manager_substitution(arrFuncManagerParam: unknown, oParams: unknown): unknown;
-
   /**
    * Возвращает массив Id или список каталожных записей сотрудников,
    * являющихся непосредственными (фактическими) руководителями указанного объекта
@@ -2967,7 +2320,6 @@ declare namespace tools {
    * @returns {number[]} Массив Id или список каталожных записей руководителей указанного объекта.
    */
   function get_uni_user_bosses(objectParam: object): number[];
-
   /**
    * Возвращает каталожную запись сотрудника, являющегося непосредственным (фактическим)
    * руководителем указанного объекта (организации, подразделения, сотрудника)
@@ -2982,7 +2334,6 @@ declare namespace tools {
    * @returns {XmlDocument} Каталожная запись руководителя указанного объекта.
    */
   function get_uni_user_boss(objectParam: number | XmlTopElem): XmlDocument;
-
   /**
    * Вызов эскалации по документообороту.
    * @param {T} source - Документ объекта, относительно которого вызывается действие.
@@ -2994,14 +2345,7 @@ declare namespace tools {
    * как object_id.
    * @returns {true} Флаг всегда true.
    */
-  function workflow_escalation_process<T extends XmlDocument>(
-    source: T,
-    escalationCode: string,
-    workflowId: number,
-    workflowTopElem: WorkflowDocumentTopElem,
-    alterObjectId: number
-  ): true;
-
+  function workflow_escalation_process<T extends XmlDocument>(source: T, escalationCode: string, workflowId: number, workflowTopElem: WorkflowDocumentTopElem, alterObjectId: number): true;
   /**
    * Возвращает список каталожных записей из профилей компетенции указанного сотрудника.
    * Данные собираются из кодов профилей, указанных в должности сотрудника,
@@ -3016,7 +2360,6 @@ declare namespace tools {
   function get_user_comp_profiles(objectParam: number | object| XmlTopElem): number[];
 
   function get_package_log(sUrlPackageParam: unknown, oParam: unknown): unknown;
-
   /**
    * Заполняет пакет данными из пакета источника.
    * Возвращает количество обработанных объектов в пакете.
@@ -3024,11 +2367,7 @@ declare namespace tools {
    * @param {DownloadPackageLogBase} packageSourceTopElem - TopElem пакета, из которого нужно копировать данные.
    * @returns {number} Количество скопированных элементов.
    */
-  function package_log_filling(
-    packageTargetTopElem: DownloadPackageLogBase,
-    packageSourceTopElem: DownloadPackageLogBase
-  ): number;
-
+  function package_log_filling(packageTargetTopElem: DownloadPackageLogBase, packageSourceTopElem: DownloadPackageLogBase): number;
   /**
    * Функция, которая формирует строку на основе переменных элемента шаблона, шаблона документа,
    * удаленного действия, выгрузки и т.д.
@@ -3046,7 +2385,6 @@ declare namespace tools {
    * шаблона документа, удаленного действия, выгрузки и т.д..
    */
   function wvars_to_script(listWVars: WebVariablesBaseWvar, warily: boolean): string;
-
   /**
    * Функция, которая формирует объект на основе переменных элемента шаблона, шаблона документа,
    * удаленного действия, выгрузки и т.д. Объект будет иметь следующий вид.
@@ -3057,7 +2395,6 @@ declare namespace tools {
    * шаблона документа, удаленного действия, выгрузки и т.д.
    */
   function wvars_to_object(listWVars: WebVariablesBaseWvar): object;
-
   /**
    * Копирует папку с файлами, включая все подпапки из указанного источника в указанный приемник.
    * Если приемник не существует, то он создается по указанному адресу.
@@ -3067,7 +2404,6 @@ declare namespace tools {
    * (копирование выполнено), или false - в противном случае (копирование не выполнено).
    */
   function copy_directory(sourceDirectory: string, destinationDirectory: string): boolean;
-
   /**
    * Отправляет уведомления участникам мероприятия (участникам мероприятия, руководителям участников,
    * преподавателям, ответственным за проведения, ответственным за подготовку) в соответствии с настройками
@@ -3083,7 +2419,6 @@ declare namespace tools {
    * @returns {true} Флаг true – в любом случае.
    */
   function send_event_notifications(eventId: number, eventDocument: EventDocument, sendType?: string): true;
-
   /**
    * Сохраняет версию объекта каталога, для которого проставлен флаг сохранения версий в администраторе.
    * При этом создается объект в каталоге «Версии объектов» (Системное администрирование – Версии объектов).
@@ -3091,7 +2426,6 @@ declare namespace tools {
    * @returns {void} Сохраняет версию объекта каталога. Возвращаемое значение отсутствует.
    */
   function create_object_version(xmlDocument: XmlDocument): void;
-
   /**
    * Возвращает массив из обязательных обучений сотрудника, в которые входит переданный объект.
    * Обязательные обучения указываются в требованиях к следящим объектам сотрудника должность,
@@ -3102,13 +2436,7 @@ declare namespace tools {
    * @param {XmlTopElem} objectTopElem - Элемент {@link XmlTopElem} объекта обучения.
    * @returns {unknown} Массив из обязательных обучений сотрудника, в которые входит переданный объект.
    */
-  function get_mandatory_learnings(
-    personId: number,
-    objectId: number,
-    personTopElem: CollaboratorDocumentTopElem,
-    objectTopElem: XmlTopElem
-  ): unknown;
-
+  function get_mandatory_learnings(personId: number, objectId: number, personTopElem: CollaboratorDocumentTopElem, objectTopElem: XmlTopElem): unknown;
   /**
    * Возвращает массив каталожных записей функциональных руководителей.
    * Отбираются те функциональные руководители, где объект (например, сотрудник),
@@ -3121,11 +2449,7 @@ declare namespace tools {
    * либо массив элементов (сотрудников, подразделений, организаций, групп).
    * @returns {unknow[]} Массив каталожных записей функциональных руководителей.
    */
-  function get_relative_boss_types(
-    object: number | XmlDocument | XmlTopElem,
-    personParameter: number|unknown[]
-  ): unknown[];
-
+  function get_relative_boss_types(object: number | XmlDocument | XmlTopElem, personParameter: number|unknown[]): unknown[];
   /**
    * Возвращает массив каталожных записей операций, определяемых типами руководителей
    * из массива функциональных руководителей, который передается в функцию.
@@ -3134,7 +2458,6 @@ declare namespace tools {
    * @returns {OperationCatalogDocumentTopElem[]} - Массив каталожных записей операций.
    */
   function get_relative_operations(manager: unknown): OperationCatalogDocumentTopElem[];
-
   /**
    * Проверяет, входит ли указанная операция в состав массива операций, определяемых типами руководителей
    * из массива функциональных руководителей, который передается в функцию.
@@ -3144,7 +2467,6 @@ declare namespace tools {
    * (true – операция входит в массив операций, false – операция не входит в массив операций).
    */
   function check_relative_operation(manager: unknown, operation: string|number): boolean;
-
   /**
    * Возвращает массив из каталожных записей типов функциональных руководителей (boss_types),
    * соответствующих указанному объекту и указанному пользователю.
@@ -3180,7 +2502,6 @@ declare namespace tools {
    * соответствующих указанному объекту и указанному пользователю.
    */
   function get_object_relative_boss_types(iUserIDParam: number, iObjectIDParam: number): unknown;
-
   /**
    * Возвращает массив каталожных записей операций, определяемых типами руководителей (boss_types),
    * который передается в функцию. Возвращает объединение операций доступных отдельному типу руководителя.
@@ -3192,11 +2513,7 @@ declare namespace tools {
    * @returns {OperationCatalogDocumentTopElem[]} Массив каталожных записей операций, доступных указанному пользователю
    * относительно указанного объекта.
    */
-  function get_relative_operations_by_boss_types(
-    bossTypes: BossTypeCatalogDocumentTopElem[],
-    catalogName?: string
-  ): OperationCatalogDocumentTopElem[];
-
+  function get_relative_operations_by_boss_types(bossTypes: BossTypeCatalogDocumentTopElem[], catalogName?: string): OperationCatalogDocumentTopElem[];
   /**
    * Возвращает массив из каталожных записей операций, доступных указанному пользователю в рамках указанного объекта
    * и указанного типа (иначе говоря, для всех типов руководителей указанного пользователя в рамках указанного объекта).
@@ -3208,12 +2525,7 @@ declare namespace tools {
    * @returns {OperationCatalogDocumentTopElem[]} Массив из каталожных записей операций,
    * доступных указанному пользователю в рамках указанного объекта и указанного типа.
    */
-  function get_object_relative_operations(
-    userId: number,
-    objectId: number,
-    catalogName: string
-  ): OperationCatalogDocumentTopElem[];
-
+  function get_object_relative_operations(userId: number, objectId: number, catalogName: string): OperationCatalogDocumentTopElem[];
   /**
    * Проверяет, есть ли операция, привязанная к переданному в параметрах функции действию (action),
    * в списке переданных операций.
@@ -3225,12 +2537,7 @@ declare namespace tools {
    * @returns {boolean} Значение true демонстрирует, что в функцию передан TopElem сотрудника с ролью Администратор
    * или в массиве найдена операция с указанным кодом действия. В противном случае возвращается значение false.
    */
-  function check_operation_rights(
-    operations: OperationCatalogDocumentTopElem[],
-    collaboratorTopElem: unknown,
-    action: string
-  ): boolean;
-
+  function check_operation_rights(operations: OperationCatalogDocumentTopElem[], collaboratorTopElem: unknown, action: string): boolean;
   /**
    * Добавляет свойства (properties) объекта-источника к свойствам объекта-получателя.
    * @param {object} target - Объект-получатель.
@@ -3238,7 +2545,6 @@ declare namespace tools {
    * @returns {object} Объект-получатель с добавлением свойств объекта-источника.
    */
   function extend_object(target: object, source: object): object;
-
   /**
    * Заполняет свойства объекта-получателя из соответствующих свойств объекта-источника.
    * Заполняются только те свойства, названия которых указаны в переданном в функцию массиве.
@@ -3249,7 +2555,6 @@ declare namespace tools {
   function assign_elems(fldTarget: XmlTopElem, fldSourceParam: XmlTopElem, arrFieldNamesParam: string[]): void;
 
   function assign_elems_exclude(fldTarget: unknown, fldSourceParam: unknown, arrFieldNamesParam: unknown): unknown;
-
   /**
    * Возвращает значение указанного поля, полученного как ForeignElem поля источника данных,
    * или заданную строку с ошибкой, если ссылка ведет на несуществующий объект.
@@ -3258,12 +2563,7 @@ declare namespace tools {
    * @param {U} defaultValue - Значение по умолчанию.
    * @returns {T[K]["Value"] | U} Значение.
    */
-  function get_foreign_field<T extends XmlTopElem, K extends keyof T, U>(
-    field: T,
-    name: K,
-    defaultValue?: U
-  ): K extends keyof T ? (T[K] extends XmlElem<unknown, unknown> ? T[K]["Value"] : U) : U;
-
+  function get_foreign_field<T extends XmlTopElem, K extends keyof T, U>(field: T, name: K, defaultValue?: U): K extends keyof T ? (T[K] extends XmlElem<unknown, unknown> ? T[K]["Value"] : U) : U;
   /**
    * Возвращает каталожную запись сотрудника с соответствующим логином и типом авторизации,
    * или undefined, если такой сотрудник не найден.
@@ -3273,7 +2573,6 @@ declare namespace tools {
    * если сотрудник не найден.
    */
   function get_user_by_login(login: string, authType: "ntlm" | string): CollaboratorCatalogDocumentTopElem | undefined;
-
   /**
    * Разрешает установки даты сохранения (не modification_date) для объектов каталога
    * для последующего отслеживания версий объекта.
@@ -3281,7 +2580,6 @@ declare namespace tools {
    * @param {boolean} isSetDate - Значение `true` размещать установку даты, `false` не разрешать.
    */
   function set_form_last_seved_data(catalogName: string, isSetDate: boolean): void;
-
   /**
    * Возвращает массив из каталожных записей значений карты знаний из карточки сотрудника
    * и профиля значений карты знаний из должности сотрудника.
@@ -3289,7 +2587,6 @@ declare namespace tools {
    * @returns {KnowledgePartCatalogDocumentTopElem[]} Массив из каталожных записей значений карты знаний.
    */
   function get_knowledge_parts_by_person_id(personId: number): KnowledgePartCatalogDocumentTopElem[];
-
   /**
    * Возвращает массив из каталожных записей экспертов, определенных в значениях карты знаний
    * текущего сотрудника.
@@ -3299,7 +2596,6 @@ declare namespace tools {
    * @returns {ExpertCatalogDocumentTopElem[]} Массив из каталожных записей экспертов.
    */
   function get_experts_by_person_id(personId: number): ExpertCatalogDocumentTopElem[];
-
   /**
    * Возвращает название объекта из поля, которое его содержит.
    * Например, для курса (course) это значение поля name, а для теста (test) это поле title.
@@ -3310,7 +2606,6 @@ declare namespace tools {
    * @returns {string} Строка с названием объекта.
    */
   function get_object_name_field_value<K extends XmlTopElem>(topElem: K): string;
-
   /**
    * Копирует файл из адреса источника данных по адресу получателя данных.
    * Все папки в адресе должны существовать до начала копирования,
@@ -3321,7 +2616,6 @@ declare namespace tools {
    * или false - в противном случае (копирование не выполнено).
    */
   function copy_url(destinationDirectory: string, sourceDirectory: string): boolean;
-
   /**
    * Распаковывает архив из адреса источника данных по адресу получателя данных.
    * Все папки в адресе должны существовать до начала распаковки, как в источнике, так и в получателе.
@@ -3329,7 +2623,6 @@ declare namespace tools {
    * @param {string} destinationPath - Полный путь до файла получателя.
    */
   function zip_extract(sourcePath: string, destinationPath: string): void;
-
   /**
    * Создает архив по указанному адресу из файлов в папке источнике.
    * Все папки в адресе должны существовать до начала распаковки, как в источнике, так и в получателе.
@@ -3341,18 +2634,13 @@ declare namespace tools {
    */
   function zip_create(archivePath: string, contentPath: string, contentDirectoryPath: string): void;
 
-  function register_doc_types_catalog_by_serialized_str(
-    sSerializedCatalogsToRegPARAM: unknown,
-    bServerCheck: unknown
-  ): unknown;
-
+  function register_doc_types_catalog_by_serialized_str(sSerializedCatalogsToRegPARAM: unknown, bServerCheck: unknown): unknown;
   /**
    * Сравнивает hash в структуре doc_types_catalog_hashes с текущим hash объектов и обновляет его в случае изменения.
    * @param {string} objectName - Название объекта.
    * @param {boolean} serverCheck - Флаг true – запускать проверку на сервере, или false на локальной машине.
    */
   function register_doc_types_catalog(objectName: unknown, serverCheck: boolean): void;
-
   /**
    * Возвращает название объекта из поля, которое его содержит.
    * Например, для курса (course) это значение поля name, а для теста (test) это поле title.
@@ -3364,7 +2652,6 @@ declare namespace tools {
    * @returns {string} Строка с названием объекта.
    */
   function get_disp_name_value(topElem: XmlTopElem): string;
-
   /**
    * Возвращает объект с полями id и type, полученные из json строки без ведущих и замыкающих [].
    * Если в переданной строке будет “id”:значение и “type”:значение, то вернет эти значения в возвращаемом объекте.
@@ -3376,7 +2663,6 @@ declare namespace tools {
 
   function get_sum_sid(sIdParam: unknown): unknown;
   function check_sum_sid(sIdParam: unknown, sSumParam: unknown): unknown;
-
   /**
    * Назначает сотруднику материал библиотеки для изучения.
    * При этом создается объект просмотра материала library_material_viewing.
@@ -3389,14 +2675,7 @@ declare namespace tools {
    * false – не отправляется.
    * @returns {LibraryMaterialViewingDocument} Документ.
    */
-  function recommend_library_material_to_person(
-    personId: number,
-    libraryMaterialId: number,
-    collaboratorTopElem: CollaboratorDocumentTopElem,
-    libraryMaterialTopElem: LibraryMaterialDocumentTopElem,
-    sendNotification: boolean,
-  ): LibraryMaterialViewingDocument;
-
+  function recommend_library_material_to_person(personId: number, libraryMaterialId: number, collaboratorTopElem: CollaboratorDocumentTopElem, libraryMaterialTopElem: LibraryMaterialDocumentTopElem, sendNotification: boolean,): LibraryMaterialViewingDocument;
   /**
    * Преобразует в дату первый параметр функции.
    * Если преобразование не удалось, то возвращается второй параметр в таком виде,
@@ -3407,7 +2686,6 @@ declare namespace tools {
    * как он передан в функцию, или undefined, если он не задан.
    */
   function opt_date<T>(value: string, defaultValue: T): Date | T;
-
   /**
    * Возвращает строку с размером файла в соответствующих единицах измерения
    * с учетом размерности (байтах, килобайтах, мегабайтах и т.д.).
@@ -3417,7 +2695,6 @@ declare namespace tools {
    * @returns {string} Размер файла.
    */
   function beautify_file_size(bytes: number, addUnit?: boolean): string;
-
   /**
    * Возвращает строку для использования в запросах для поиска по full text индексу.
    * Строка параметр функция преобразуется в строку в зависимости от настроек базы.
@@ -3431,7 +2708,6 @@ declare namespace tools {
   function get_ft_value(value: string): string;
 
   function set_tenancy_by_host(sTenancyNameParam: unknown): unknown;
-
   /**
    * Создает строку XML для помещения агента с указанным id в очередь на выполнение.
    * Получается строка следующего вида:
@@ -3466,14 +2742,7 @@ declare namespace tools {
    * tools.get_agent_command_queue_xml(5724546796725872406, 5724546796725872406, "", Date(), "dbo");
    * ```
    */
-  function get_agent_command_queue_xml(
-    agentId: number,
-    sElementIDParam?: number,
-    elems?: string,
-    date?: Date,
-    tenancyName?: string
-  ): unknown;
-
+  function get_agent_command_queue_xml(agentId: number, sElementIDParam?: number, elems?: string, date?: Date, tenancyName?: string): unknown;
   /**
    * Формирует строку с уникальным идентификатором на основе параметров функции.
    * Формируется результирующая строка вида $$uid_первый параметр_второй параметр.
@@ -3482,7 +2751,6 @@ declare namespace tools {
    * @returns {string} Строка вида $$uid_первый параметр_второй параметр.
    */
   function get_uid_cached_doc(uid: string, url: string): string;
-
   /**
    * Для типов установки WebTutor с информационной базой, отличной от XML,
    * данная функция обновляет документ в кэше.
@@ -3492,7 +2760,6 @@ declare namespace tools {
    * (true – документ обновлен успешно, false – документ не обновлен).
    */
   function check_and_refresh_cached_docs(url: string): boolean;
-
   /**
    * Функция для записи в лог настраиваемых сообщений с более подробной информацией и
    * возможностью указания типа ошибки и отключения отладочных сообщений,
@@ -3518,7 +2785,6 @@ declare namespace tools {
    * если их можно получить.
    */
   function log(value: unknown, type: "error" | "debug" | "info", showAdditionalInfo: boolean): void;
-
   /**
    * Возвращает массив каталожных записей сотрудников, которые подписаны на данного сотрудника или
    * на его индивидуальный (а не групповой) блог.
@@ -3527,7 +2793,6 @@ declare namespace tools {
    * подписанных на данного сотрудника или на его индивидуальный блог.
    */
   function get_sibscriber_subscriptions(personId: number): CollaboratorCatalogDocumentTopElem[];
-
   /**
    * Проверяет, существует ли файл по указанному пути.
    * @param {string} filepath - Строка с путем до файла.
@@ -3550,7 +2815,6 @@ declare namespace tools {
   function put_url_text_server(sUrlParam: unknown, sTextParam: unknown): unknown;
   function load_share_url_server(sUrlParam: unknown): unknown;
   function get_hash_server(sTextParam: unknown, sTypeParam: unknown): unknown;
-
   /**
    * Используется для вариантов установки WebTutor c базой данных отличной от XML.
    * Если в настройках моста связи с базой данных установлена асинхронная обработка катологов,
@@ -3566,7 +2830,6 @@ declare namespace tools {
    * @param {string} catalogName - Cтрока с названием каталога с `s` на конце.
    */
   function sync_catalog(catalogName: unknown): void;
-
   /**
    * Обновляет список типов мероприятий в системе.
    * @param {boolean} updateServers - Флаг true обновлять данные на сервере
@@ -3574,7 +2837,6 @@ declare namespace tools {
    * @param {XmlTopElem=common} target - TopElem документа, дочерний элемент event_types, которого нужно обновить.
    */
   function update_commons_event_types(updateServers: boolean, target: XmlTopElem): void;
-
   /**
    * Выполняет проверку цифровой подписи и текста в указанном объекте электронно-цифровой подписи.
    * Проверяется, что текст и цифровая подпись текста соответствуют друг другу.
@@ -3583,7 +2845,6 @@ declare namespace tools {
    * @returns {DigitalVerifyResult} Объект.
    */
   function DigitalVerifyDoc(documentID: string): DigitalVerifyResult;
-
   /**
    * - id - Тип: Целое число. Id результата выполнения проверки подписи.
    * - strMessage - Тип: Строка. Текстовое сообщение о результате выполнения функции.
@@ -3596,10 +2857,9 @@ declare namespace tools {
    */
   type DigitalVerifyResult = {
     // eslint-disable-next-line no-magic-numbers
-    id: 0 | 1 | 2 | 3 | 4,
-    strMessage: string
+    id: 0 | 1 | 2 | 3 | 4;
+    strMessage: string;
   };
-
   /**
    * Выполняет проверку электронно-цифровой подписи (ЭЦП) и оригинального текста, переданных как аргументы функции.
    * Проверяется, что текст и цифровая подпись текста соответствуют друг другу
@@ -3610,13 +2870,11 @@ declare namespace tools {
    * @returns {DigitalVerifyResult} Объект.
    */
   function DigitalVerify(source: unknown, signature: string): DigitalVerifyResult;
-
   /**
    * Устанавливает пакеты со стандартными объектами системы, которые входят в первоначальную поставку WebTutor.
    * При этом проверяется дата последней установки и язык системы по умолчанию.
    */
   function process_custom_packs(): void;
-
   /**
    * На основе настроек профиля редактирования контента в карточке сотрудника проверяется
    * возможность загрузки файла указанного размера. В частности, проверяется ограничение
@@ -3629,7 +2887,6 @@ declare namespace tools {
    * или строку с сообщением о причине отказа в загрузке в противном случае.
    */
   function check_resource_size(filesize: number, personId: number): "ok" | string;
-
   /**
    * Включает сотрудника в кадровый резерв.
    * При этом создается объект Кадровый резерв и этап развития карьеры к нему.
@@ -3653,16 +2910,7 @@ declare namespace tools {
    * @param {Date} [includeDateParam=CurDate] - Дата включения в резерв.
    * @returns {number} Id объекта Кадровый резерв.
    */
-  function include_person_to_personnel_reserve_position(
-    personId: unknown,
-    requestTopElem: RequestDocumentTopElem,
-    careerReserveTypeId: unknown,
-    positionId: number,
-    state: string,
-    positionCommonId: number,
-    includeDateParam: Date
-  ): number;
-
+  function include_person_to_personnel_reserve_position(personId: unknown, requestTopElem: RequestDocumentTopElem, careerReserveTypeId: unknown, positionId: number, state: string, positionCommonId: number, includeDateParam: Date): number;
   /**
    * Возвращает объект, составленный из списка полей указанного объекта-источника.
    * Список полей передаётся как аргумент функции.
@@ -3677,7 +2925,6 @@ declare namespace tools {
    * значение свойства – значение поля в исходном объекте-источнике).
    */
   function extract_bfields_by_list(fldSPXML: object | XmlTopElem, fieldList: string, noValidation: boolean): object;
-
   /**
    * Возвращает документ объекта, переданного в параметрах функции.
    * Если свойство Doc определено, то функция возвращает его значение.
@@ -3686,7 +2933,6 @@ declare namespace tools {
    * @returns {XmlDocument|null} Документ объекта или значение null.
    */
   function get_opened_doc(topElem: XmlTopElem): XmlDocument | null;
-
   /**
    * Устанавливает тип руководителя для участника проекта.
    * @param {number} projectParticipantId - Id объекта участник проекта.
@@ -3694,12 +2940,7 @@ declare namespace tools {
    * @param {number} bossTypeId - Id типа руководителя для присвоения участнику проекта.
    * @returns {boolean} Флаг успешного выполнения функции.
    */
-  function set_project_participant_type(
-    projectParticipantId: number,
-    projectParticipantDocument: ProjectParticipantDocument,
-    bossTypeId: number
-  ): boolean;
-
+  function set_project_participant_type(projectParticipantId: number, projectParticipantDocument: ProjectParticipantDocument, bossTypeId: number): boolean;
   /**
    * Создает объект Участник проекта для указанного проекта и указанного сотрудника.
    * Перечень проектов находится в разделе Персонал – Управление проектами - Проекты.
@@ -3708,12 +2949,7 @@ declare namespace tools {
    * @param {number} projectId - Id проекта.
    * @returns {ProjectParticipantDocument} Документ созданного объекта Участник проекта.
    */
-  function create_project_participant(
-    objectId: number,
-    collaboratorTopElem: CollaboratorDocumentTopElem,
-    projectId: number
-  ): ProjectParticipantDocument;
-
+  function create_project_participant(objectId: number, collaboratorTopElem: CollaboratorDocumentTopElem, projectId: number): ProjectParticipantDocument;
   /**
    * Создает запись в журнале profiling.log.
    * ```
@@ -3726,7 +2962,6 @@ declare namespace tools {
    * @param {string} message - Cтрока с текстом события.
    */
   function set_profile_log(eventId: unknown, req: Request, message: string): void;
-
   /**
    * Очищает данные статуса экземпляра товара.
    * @param {number|string} goodInstance - Id экземпляра товара или документ экземпляра товара.
@@ -3735,12 +2970,8 @@ declare namespace tools {
    */
   function clear_good_instance_status(goodInstance: number | string): boolean;
 
-  type GetFormUploadDataResult = XmlElem<unknown, unknown> & {
-    id: string,
-    create_date: Date,
-    server_version: string
+  type GetFormUploadDataResult = XmlElem<unknown, unknown> & { id: string, create_date: Date, server_version: string
   };
-
   /**
    * Получает заполонённую  Xml структуру с данными о выгруженном пакете.
    * Xml структура может быть сохранена как есть, при генерации пакета,
@@ -3749,7 +2980,6 @@ declare namespace tools {
    * @returns {GetFormUploadDataResult} Xml.
    */
   function get_form_upload_data(packageId: string): GetFormUploadDataResult;
-
   /**
    * Добавляет поля в XML структуру (например, полученную функцией tools.get_form_upload_data) из указанного объекта.
    * Применяется при создании лицензии на материалы библиотеки или формировании пакетов.
@@ -3758,13 +2988,7 @@ declare namespace tools {
    * @param {number} objectId - Id объекта.
    * @param {boolean} invariable - Неизвестный параметр.
    */
-  function set_field_to_form_upload_data(
-    fldFormTarget: unknown,
-    fldObjParam: unknown,
-    objectId: number,
-    invariable: boolean
-  ): void;
-
+  function set_field_to_form_upload_data(fldFormTarget: unknown, fldObjParam: unknown, objectId: number, invariable: boolean): void;
   /**
    * Возвращает Id различных объектов системы по умолчанию.
    * Смотрите также устаревшие функции: {@link get_default_notification_system_id}
@@ -3774,18 +2998,7 @@ declare namespace tools {
    * @param {XmlTopElem} topElem - TopElem объекта.
    * @returns {number} Id заданного объекта системы по умолчанию.
    */
-  function get_default_object_id(
-    catalogName: "notification_system"
-    | "webinar_system"
-    | "boss_type"
-    | "contact_type"
-    | "contact_result"
-    | "custom_web_template"
-    | "learning_storage",
-    type?: string,
-    topElem?: XmlTopElem
-  ): number;
-
+  function get_default_object_id(catalogName: "notification_system" | "webinar_system" | "boss_type" | "contact_type" | "contact_result" | "custom_web_template" | "learning_storage", type?: string, topElem?: XmlTopElem): number;
   /**
    * Возвращает TopElem системы отправки уведомлений.
    * @param {unknown} param - Id объекта системы отправки уведомлений, или его TopElem.
@@ -3795,7 +3008,6 @@ declare namespace tools {
    * @returns {NotificationSystemDocumentTopElem} TopElem системы отправки уведомлений.
    */
   function get_notification_system(param: unknown): NotificationSystemDocumentTopElem;
-
   /**
    * Выполняет метод системы отправки уведомлений, указанный в атрибуте.
    * Значения для переменных системы отправки уведомлений, используемых в методе,
@@ -3822,7 +3034,6 @@ declare namespace tools {
   function add_tenancy_storage(sTenancyHost: unknown, sAccountName: unknown, sAccountKey: unknown): unknown;
   function set_thread_tenancy(sTenancyNameParam: unknown): unknown;
   function is_disable_tenancy(sHostName: unknown): unknown;
-
   /**
    * Заполняет в объекте получатель поле type_id кодом типа мероприятия, переданного в параметрах функции.
    * Если при этом в системе есть тип мероприятия с указанным кодом, то заполняется ссылка на этот тип
@@ -3832,7 +3043,6 @@ declare namespace tools {
    * @returns {number|null} Если тип мероприятия с указным кодом не найден, то null, или id этого типа мероприятия.
    */
   function set_event_type_id(target: unknown, eventTypeCode: string): number | null;
-
   /**
    * Ожидает выполнения элемента очереди скриптов.
    * @param {number} scriptId - Id скрипта.
@@ -3843,7 +3053,6 @@ declare namespace tools {
    * Если элемент очереди скриптов не найден, вернет null.
    */
   function wait_script_queue(scriptId: unknown, isScriptDelete: unknown): unknown;
-
   /**
    * Отрывает указанную версию курса в интерфейсе администратора WebTutor.
    * @param {number} courseId - Id курса.
@@ -3851,7 +3060,6 @@ declare namespace tools {
    * @returns {CourseDocument} Документ указанного курса.
    */
   function open_course_version(courseId: number, baseUrl: string): CourseDocument;
-
   /**
    * Заменяет в строке выражения:
    * {@link ProcessExecute}, {@link alert}, {@link eval}, {@link ShellExecute}, {@link Eval}.
@@ -3864,125 +3072,47 @@ declare namespace tools {
   function evalReplace(evalString: string): string;
 
   function get_xhttp_ini(sIniVarName: unknown): unknown;
-  function resource_pic_envelope(
-    sMode: unknown,
-    vParam1: unknown,
-    vParam2: unknown,
-    vParam3: unknown,
-    vParam4: unknown
-  ): unknown;
-  function file_source_get_upload_file_url(
-    iFileSourceIdParam: unknown,
-    sFileNameParam: unknown
-  ): unknown;
-  function file_source_upload_file(
-    iFileSourceIdParam: unknown,
-    sFileUrlParam: unknown,
-    sTempFileUrlParam: unknown
-  ): unknown;
-  function file_source_get_file_to_save_url(
-    iFileSourceIdParam: unknown,
-    iResourceIdParam: unknown,
-    sUidPARAM: unknown
-  ): unknown;
-  function file_source_get_files_list(
-    iFileSourceIdParam: unknown
-  ): unknown;
-  function file_source_download_file(
-    iFileSourceIdParam: unknown,
-    sUidPARAM: unknown,
-    oRequestPARAM: unknown,
-    oResponsePARAM: unknown
-  ): unknown;
-  function file_source_get_file_url(
-    iFileSourceIdParam: unknown,
-    sUidPARAM: unknown
-  ): unknown;
-  function call_webinar_system_method(
-    iWebinarSystemIdParam: unknown,
-    sMethodNameParam: unknown,
-    oParams: unknown
-  ): unknown;
-  function call_library_system_method(
-    iLibrarySystemIdParam: unknown,
-    sMethodNameParam: unknown,
-    oParams: unknown
-  ): unknown;
-  function calculate_statistic_rec(
-    iStatisticRecId: unknown,
-    iObjectIdParam: unknown,
-    bIgnorePeriodSettingsParam: unknown,
-    bCalculateCatalogsParam: unknown
-  ): unknown;
-  function get_statistic_data(
-    iStatisticRecId: unknown,
-    iObjectIdParam: unknown,
-    sPeriodTypeParam: unknown,
-    dDateStartParam: unknown,
-    dDateEndParam: unknown
-  ): unknown;
-  function obtain_statistic_data(
-    StatisticRec: unknown,
-    iObjectIdParam: unknown,
-    sPeriodTypeParam: unknown,
-    dDateStartParam: unknown,
-    dDateEndParam: unknown,
-    bVirtual: unknown,
-    bForceRedo: unknown
-  ): unknown;
+  function resource_pic_envelope(sMode: unknown, vParam1: unknown, vParam2: unknown, vParam3: unknown, vParam4: unknown): unknown;
+  function file_source_get_upload_file_url(iFileSourceIdParam: unknown, sFileNameParam: unknown): unknown;
+  function file_source_upload_file(iFileSourceIdParam: unknown, sFileUrlParam: unknown, sTempFileUrlParam: unknown): unknown;
+  function file_source_get_file_to_save_url(iFileSourceIdParam: unknown, iResourceIdParam: unknown, sUidPARAM: unknown): unknown;
+  function file_source_get_files_list(iFileSourceIdParam: unknown): unknown;
+  function file_source_download_file(iFileSourceIdParam: unknown, sUidPARAM: unknown, oRequestPARAM: unknown, oResponsePARAM: unknown): unknown;
+  function file_source_get_file_url(iFileSourceIdParam: unknown, sUidPARAM: unknown): unknown;
+  function call_webinar_system_method(iWebinarSystemIdParam: unknown, sMethodNameParam: unknown, oParams: unknown): unknown;
+  function call_library_system_method(iLibrarySystemIdParam: unknown, sMethodNameParam: unknown, oParams: unknown): unknown;
+  function calculate_statistic_rec(iStatisticRecId: unknown, iObjectIdParam: unknown, bIgnorePeriodSettingsParam: unknown, bCalculateCatalogsParam: unknown): unknown;
+  function get_statistic_data(iStatisticRecId: unknown, iObjectIdParam: unknown, sPeriodTypeParam: unknown, dDateStartParam: unknown, dDateEndParam: unknown): unknown;
+  function obtain_statistic_data(StatisticRec: unknown, iObjectIdParam: unknown, sPeriodTypeParam: unknown, dDateStartParam: unknown, dDateEndParam: unknown, bVirtual: unknown, bForceRedo: unknown): unknown;
 
   function assign_from_object(fldTarget: unknown, oSourceParam: unknown): unknown;
   function filling_learning_parts(TopElem: unknown): unknown;
   function parse_email_address(sAddressParam: unknown): unknown;
   function safe_execution(sCodeSaveExecutionParam: unknown, oEnvParam?: unknown): unknown;
   function get_content_access(iPersonID: unknown, tePerson: unknown): unknown;
-  function update_content_access(
-    idOrTE_UserPARAM: unknown,
-    sCatalogPARAM: unknown,
-    idOrTE_ObjectID: unknown,
-    bCanEditPARAM: boolean,
-    bCanDeletePARAM: boolean
-  ): unknown;
+  function update_content_access(idOrTE_UserPARAM: unknown, sCatalogPARAM: unknown, idOrTE_ObjectID: unknown, bCanEditPARAM: boolean, bCanDeletePARAM: boolean): unknown;
   function set_default_content(teContentPARAM: unknown, teSubjectPARAM: unknown): unknown;
   function set_upgrade_locked(bParam: unknown): unknown;
-
   /**
    * Возвращает объект библиотеки.
    * @param {T} libraryName - Название библиотеки.
    * @returns {WebsoftDlls[T]} Класс работы с библиотекой.
    */
-  function get_object_assembly<
-    T extends keyof Websoft.Interfaces
+  function get_object_assembly< T extends keyof Websoft.Interfaces
   >(libraryName: T): T extends keyof Websoft.Interfaces ? Websoft.Interfaces[T] : T;
 
-  function create_committee_member(
-    iObjectIDParam: unknown,
-    teObjectParam: unknown,
-    iPersonnelCommitteeIDParam: unknown,
-    strCommitteeMemberTypeParam: unknown
-  ): unknown;
-  function activate_poll_to_person(
-    personId: unknown,
-    oPollID: unknown,
-    iPollProcedureID: unknown,
-    iEducationPlanID: unknown
-  ): unknown;
+  function create_committee_member(iObjectIDParam: unknown, teObjectParam: unknown, iPersonnelCommitteeIDParam: unknown, strCommitteeMemberTypeParam: unknown): unknown;
+  function activate_poll_to_person(personId: unknown, oPollID: unknown, iPollProcedureID: unknown, iEducationPlanID: unknown): unknown;
   function delete_poll_result(oPollResultParam: unknown, tePollParam: unknown): unknown;
   function array_opt_find_by_key(arrParam: unknown, sKeyParam: unknown, oValueParam: unknown): unknown;
   function check_periodity(fldPeriodityParam: unknown, _cur_date: unknown, iSleepSecParam: unknown): unknown;
   function upload_begin(sUrlParam: unknown, iLenghtParam: unknown): unknown;
-  function upload_range(
-    sIDParam: unknown,
-    iStartIndexParam: unknown,
-    iFinishIndexParam: unknown,
-    sDataParam: unknown
-  ): unknown;
+  function upload_range(sIDParam: unknown, iStartIndexParam: unknown, iFinishIndexParam: unknown, sDataParam: unknown): unknown;
   function upload_end(sIDParam: unknown): unknown;
   function is_simple_array_field(fldParam: unknown): unknown;
   function restore_doc(iObjectIDParam: unknown): unknown;
   function ValidateName(str: unknown, is_var: unknown): unknown;
   function check_event_fields(iEventID: unknown, docEvent: unknown, teEvent: unknown): unknown;
-
   /**
    * Вызов метода из библиотеки программного кода. После выполнения загрузки библиотека кэшируется.
    * Примечание - По существу, данная функция получает объект библиотеки по его имени и вызывает
@@ -4019,7 +3149,6 @@ declare namespace tools {
   function get_client_data(sLogin: unknown, sPassword: unknown): unknown;
   function get_webinar_conversation_participants(iWebinarSystemId: unknown): unknown;
   function add_object_to_package(docObject: unknown, iObjectID: unknown, Screen: unknown, fldPackage: unknown): unknown;
-
   /**
    * Преобразование данных
    * (https://news.websoft.ru/_wt/wiki_base/6809298370262485009/base_wiki_article_type_id/6680054725638828770)
@@ -4040,7 +3169,6 @@ declare namespace tools {
    * ```
    */
   function build_phone(strPhoneParam: string): string | null;
-
   /**
    * Заменяет в строке пробел, «(» , «)», «+» и «-» на пустую сроку, а символы «,» и «;» - на пробел.
    * @param {string} strPhoneParam - Исходная строка для преобразования.
@@ -4054,7 +3182,6 @@ declare namespace tools {
    * ```
    */
   function build_simple_phone(strPhoneParam: string): string | null;
-
   /**
    * Функция выявляет домен и логин почтового адреса из электронного сообщения в стандарте X.400
    * и возвращает строку вида login@domainтекст_письма.
@@ -4064,7 +3191,6 @@ declare namespace tools {
    * @returns {string} Строковое выражение вида login@domain текст_письма.
    */
   function convert_email_from_x40(_x40_email: string, _end_mail: string): string;
-
   /**
    * Прообразовывает содержание строки для сохранения в теге <desc> ... </desc>.
    * Предназначено для преобразования тегов и ссылок на файлы в описании.
@@ -4073,7 +3199,6 @@ declare namespace tools {
    * @returns {string} Преобразованная строка. Результат действия функции.
    */
   function desc_cleanup(_desc: string, _temp_dir?: string): string;
-
   /**
    * Преобразовывает html-файл, переданный в функцию, в файл в формате pdf и сохраняет его по указанному пути.
    * Примечание – Если указанный файл уже существует в файловой системе,
@@ -4092,7 +3217,6 @@ declare namespace tools {
    * tools.html_to_pdf(_str, "", UrlToFilePath(_filename));
    */
   function html_to_pdf(sHtmlText: string, sResourcesDirPath: string, sOutFilePath: string): boolean;
-
   /**
    * Преобразует массив или объект в строку указанного формата (json, xml).
    * @param {object | unknown[]} _aDataPARAM - Массив array или объект (object) для преобразования.
@@ -4106,13 +3230,7 @@ declare namespace tools {
    * @example
    * tools.merge_text_array(_aPairs, (_sFormatPARAM == "json" ? null: _sNamePARAM), false, _sFormatPARAM);
    */
-  function merge_text_array(
-    _aDataPARAM: Object | unknown[],
-    _sName?: string,
-    _bObj?: boolean,
-    _sFormatPARAM?: string
-  ): string;
-
+  function merge_text_array(_aDataPARAM: Object | unknown[], _sName?: string, _bObj?: boolean, _sFormatPARAM?: string): string;
   /**
    * Сериализация объекта в строку/xml.
    * @param {T} arg - Объект для преобразования.
@@ -4130,7 +3248,6 @@ declare namespace tools {
    * ```
    */
   function object_to_text<T>(arg: T, formatType: string, maxDepth?: number, _sName?: string): string;
-
   /**
    * Возвращает сроку с тегами XML, полученную из файла путь до которого, передан в параметрах функции.
    * Вызывает функцию tools.open_str_win_ini для разбора файла.
@@ -4138,7 +3255,6 @@ declare namespace tools {
    * @returns {string} Строка с путем до файла.
    */
   function open_doc_win_ini(sUrlParam: string): string;
-
   /**
    * Возвращает сроку с тегами XML, полученную из строки, переданной в параметрах функции.
    * Предполагается, что в функцию передается файл со значениями параметров,
@@ -4149,7 +3265,6 @@ declare namespace tools {
    * tools.open_str_win_ini(LoadUrlText(sUrlParam));
    */
   function open_str_win_ini(sFileText: string): string;
-
   /**
    * Преобразует строку в объект. Например, строку в формате json в объект. Или строку, содержащую XML, в объект.
    * @param {string} value - Строка в формате json или строка, содержащая XML.
@@ -4161,7 +3276,6 @@ declare namespace tools {
    * ```
    */
   function read_object<T>(value: string): T;
-
   /**
    * Используется в процессе выгрузке/загрузки данных в WebTutor при интеграции с другими системами.
    * Заменяет в строке символы определенные символы в [].
@@ -4183,7 +3297,6 @@ declare namespace tools {
    * ```
    */
   function replace_temlate_tags(str: string, date?: Date): string;
-
   /**
    * Преобразует в строку числовой параметр функции.
    * Если параметр отрицательный, то строка будет начинаться со знака «-».

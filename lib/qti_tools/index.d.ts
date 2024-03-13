@@ -17,14 +17,14 @@ declare namespace qti_tools {
   function set_qti_rubric(fldSource: unknown, fldFrom: unknown, sPrefix: string, sImagesDir: string, teObjectParam: unknown, iClLocalizationIDParam: number): unknown;
   function set_qti_item(fldItem: unknown, oItemParam: unknown, sImagesDir: string, fldSection: unknown, iClLocalizationIDParam: number): unknown;
   function get_gti_obj(oAssessmentParam: unknown, sImagesDir: string, bPublish: boolean, iClLocalizationIDParam: number): unknown;
-  function max_score_return(_qti_text: unknown): unknown;
+  function max_score_return(_qti_text: string): unknown;
   function get_player_url_param(_assessment_id: number, _assessment_doc: unknown, sViewTypeParam: string): unknown;
   function get_default_testing_system_id(): unknown;
   function get_testing_system(oParam: unknown): unknown;
   function call_testing_system_method(oParam: unknown, sMethodNameParam: string, oArrParam: unknown, bReturnUrl: boolean): unknown;
   function set_qti_fields(fldTarget: unknown, oParam: unknown): unknown;
   function clear_qti_correct_answer(sQtiParam: string): unknown;
-  function convert_item(docLearning: Date, fldParams: unknown): unknown;
+  function convert_item(docLearning: unknown, fldParams: unknown): unknown;
   function prepare_qti_run(iAssessmentIDParam: number): unknown;
   function get_question_num(fldObjectsParam: unknown, sTypeParam: string): unknown;
 }

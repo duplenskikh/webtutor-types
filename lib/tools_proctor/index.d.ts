@@ -10,5 +10,5 @@ declare namespace tools_proctor {
   function get_proctoring_active_learning_id(teRecord: unknown): unknown;
   function finish_learning_record_thread(iActiveLearningId: number, iLearningId: number, teLearning: unknown, teProctorObject: unknown): unknown;
   function finish_learning_record(iActiveLearningId: number, iLearningId: number, teLearning: unknown, teProctorObject: unknown): unknown;
-  function check_foto(iLearningRecordId: number, docLearningRecord: Date, arrDefaultFotoUrls: unknown, rConfidence: number, sModelType: string): unknown;
+  function check_foto(iLearningRecordId: number, docLearningRecord: unknown, arrDefaultFotoUrls: unknown, rConfidence: number, sModelType: string): unknown;
 }
