@@ -176,17 +176,6 @@ declare namespace tools_web {
   function build_submatched_string(sSourceString: unknown, sRealString: unknown, sDestString: unknown): unknown;
   function get_auth_hash(sSourceParam: unknown): unknown;
   function set_cookie_auth(req: Request, curHost: HostDocumentTopElem, authParam: Object): unknown;
-  interface IToolsWebUserInit {
-    auth_type: string | undefined;
-    anonymous: boolean;
-    auth_login: string | null | undefined;
-    access_time_start: number;
-    access_time_end: number;
-    error_code: string;
-    error_text: string;
-    redirect: string;
-    access: boolean;
-  }
   /**
    * Инициализаяция пользователя.
    * @param {Request} req - Объект Request.
@@ -264,4 +253,16 @@ declare namespace tools_web {
   function check_object(xmCurObject: unknown, sType: string): unknown;
   function check_redirect_url(sUrlParam: string): unknown;
   function check_web_rule_by_url(url: string, Request: Request): boolean;
+}
+
+interface IToolsWebUserInit {
+  auth_type: string | undefined;
+  anonymous: boolean;
+  auth_login: string | null | undefined;
+  access_time_start: number;
+  access_time_end: number;
+  error_code: string;
+  error_text: string;
+  redirect: string;
+  access: boolean;
 }

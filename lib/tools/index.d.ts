@@ -12,13 +12,6 @@ declare namespace tools {
   let object_license: object;
   function encode_course_folder(sCodeParam: string): string;
   function decode_course_folder(sCodeParam: string): string;
-  type BaseToolsResponse = {
-    error: number;
-    error_text: string;
-  };
-  type LoadCourseResult = BaseToolsResponse & {
-    course: null
-  };
   /**
    * Загрузка курса из архива в базу. Курс создается если его нет или обновляется существующий.
    * @param {string} fileUrl - Адрес до файла (архива) с курсом.
@@ -35,11 +28,6 @@ declare namespace tools {
    * или false - в противном случае (копирование не выполнено).
    */
   function copy_manifest_resources(fileUrl: string, baseUrl: string): BaseToolsResponse;
-  type OpenCoursePackageServerResponse = BaseToolsResponse & {
-    file_import: string;
-    temp_url: string;
-    course: CourseDocument | null;
-  };
   function open_course_package_server(destinationUrl: string): OpenCoursePackageServerResponse;
   function copy_url_temp_suffix(destinationUrl: string, sourceUrl: string): void;
   /**
@@ -186,16 +174,6 @@ declare namespace tools {
    * - и сведения об ошибке oRes.error_text.
    */
   function download_package_list(exchangeServerId: number, packageId?: number, filePath?: string): DownloadDataResponse;
-  /**
-   * Информация об успехе выполнения функции или об ошибке.
-   * Результирующий объект oRes имеет три свойства:
-   * - код oRes.error;
-   * - URL файла данных oRes.data_file_url;
-   * - и сведения об ошибке oRes.error_text.
-   */
-  interface DownloadDataResponse { error: number; data_file_url: string; error_text: string;
-  }
-
   function download_package(exchangeServerId: number, packageId: number, filePath: string, fldPackageValidParam: unknown): DownloadDataResponse;
   /**
    * Обрабатывает пакет с данными и загружает содержимое в базу данных.
@@ -316,36 +294,6 @@ declare namespace tools {
    * @returns {number} Количество назначенных тестов.
    */
   function activate_test_to_event(eventId: number, assessmentId: number, eventDocument?: EventDocument, duration?: number, startLearningDate?: Date, lastLearningDate?: Date, actType?: string, skipDismissed?: boolean, bUseProctoring?: boolean, iProctorPreferID?: number, bActivateOnlyAssist?: boolean): number;
-
-  type ActivateTestToPersonParams = { /** Id collaborator. */
-    iPersonID: number;
-    /** Id test. */
-    iAssessmentID: number;
-    /** Id мероприятия. */
-    iEventID?: number;
-    /** Дата последнего обучения. */
-    dtLastLearningDate?: number;
-    /** Не назначать уволенным. */
-    bSkipDismissed?: number;
-    /** Карточка сотрудника. */
-    teCollaborator?: CollaboratorDocumentTopElem;
-    /** Не назначать повторно успешно прошедшим тестирование (с учетом даты последнего обучения). */
-    bMissOnlySuccessLearning?: number;
-    /** Карточка мероприятия. */
-    teEvent?: EventDocumentTopElem;
-    /** Карточка теста. */
-    teAssessment?: AssessmentDocumentTopElem; /** Длительность в днях. */
-    iDuration?: number;
-    /** Дата начала тестирования. */
-    dtStartLearningDate?: Date;
-    /** Id плана обучения. */
-    iEducationPlanID?: number;
-    /** Id группы. */ iGroupID?: number;
-    /** Признак самоактивации. */ bSelfEnrolled?: boolean;
-    /** Комментарий назначившего (записывается в карточку незаконченного/законченного теста). */ sComment?: string;
-    /** Использовать прокторинг. */ bUseProctoring?: boolean;
-    iProctorPreferID?: number;
-  };
   /**
    * Функция назначения теста пользователю.
    * @param {ActivateCourseToPersonObject} params - Объект JavaScript (Структура параметров).
@@ -791,14 +739,6 @@ declare namespace tools {
    * ```
    */
   function personal_pay(orgId: number, requestId: number): number;
-  interface ICreateNotificationAdditionalParams {
-    recipients: string[];
-    sender_selector: string;
-    subject: string;
-    body_type: string;
-    body: string;
-    sender_email: string;
-  }
   /**
    * Создает новое неотправленное уведомление.
    * В теле уведомления (шаблоне уведомления) обращение к первому параметру идет через objDocID, к документу,
@@ -1365,18 +1305,6 @@ declare namespace tools {
    * @returns {boolean} Возвращает значение true, если операция завершилась успешно, или false - в противном случае.
    */
   function close_request(requestId: number): boolean;
-
-  type WorkflowActionProcessResult = {
-    /** @type {boolean} - Успешное или неуспешное выполнение действия. */
-    result: boolean;
-
-    /** @type {string} - Строка с XAML кодом, выполняющимся при успешном выполнении действия (обрабатывается в карточке заявки на портале) */
-    workflow_success_action: string;
-    /** @type {string} Строка текстом сообщения при успешном выполнении действия, (обрабатывается в карточке заявки на портале) */
-    workflow_action_message: string;
-    /** @type {boolean} Прерывать или нет выполнения действия (обрабатывается в карточке заявки на портале). */
-    workflow_create_break: boolean;
-  };
   /**
    * Вызов действия документооборота.
    * @param {XmlDocument} source - Документ объекта, относительно которого вызывается действие.
@@ -2846,21 +2774,6 @@ declare namespace tools {
    */
   function DigitalVerifyDoc(documentID: string): DigitalVerifyResult;
   /**
-   * - id - Тип: Целое число. Id результата выполнения проверки подписи.
-   * - strMessage - Тип: Строка. Текстовое сообщение о результате выполнения функции.
-   * Поле id может принимать следующие значения:
-   * 0 – подпись действительна;
-   * 1 – подпись недействительна;
-   * 2 - номер сертификата подписи не соответствует номеру сертификата, указанному в карточке пользователя;
-   * 3 - текст подписанного документа пустой;
-   * 4 - электронно-цифровая подпись пустая.
-   */
-  type DigitalVerifyResult = {
-    // eslint-disable-next-line no-magic-numbers
-    id: 0 | 1 | 2 | 3 | 4;
-    strMessage: string;
-  };
-  /**
    * Выполняет проверку электронно-цифровой подписи (ЭЦП) и оригинального текста, переданных как аргументы функции.
    * Проверяется, что текст и цифровая подпись текста соответствуют друг другу
    * или, иначе говоря, что указанный текст действительно подписан данной подписью.
@@ -2969,9 +2882,6 @@ declare namespace tools {
    * выполнена ли функция успешно (true – функция выполнена успешно, false – функция не выполнена).
    */
   function clear_good_instance_status(goodInstance: number | string): boolean;
-
-  type GetFormUploadDataResult = XmlElem<unknown, unknown> & { id: string, create_date: Date, server_version: string
-  };
   /**
    * Получает заполонённую  Xml структуру с данными о выгруженном пакете.
    * Xml структура может быть сохранена как есть, при генерации пакета,
@@ -3070,7 +2980,6 @@ declare namespace tools {
    * {@link ProcessExecute}, {@link alert}, {@link eval}, {@link ShellExecute}, {@link Eval}.
    */
   function evalReplace(evalString: string): string;
-
   function get_xhttp_ini(sIniVarName: unknown): unknown;
   function resource_pic_envelope(sMode: unknown, vParam1: unknown, vParam2: unknown, vParam3: unknown, vParam4: unknown): unknown;
   function file_source_get_upload_file_url(iFileSourceIdParam: unknown, sFileNameParam: unknown): unknown;
@@ -3084,7 +2993,6 @@ declare namespace tools {
   function calculate_statistic_rec(iStatisticRecId: unknown, iObjectIdParam: unknown, bIgnorePeriodSettingsParam: unknown, bCalculateCatalogsParam: unknown): unknown;
   function get_statistic_data(iStatisticRecId: unknown, iObjectIdParam: unknown, sPeriodTypeParam: unknown, dDateStartParam: unknown, dDateEndParam: unknown): unknown;
   function obtain_statistic_data(StatisticRec: unknown, iObjectIdParam: unknown, sPeriodTypeParam: unknown, dDateStartParam: unknown, dDateEndParam: unknown, bVirtual: unknown, bForceRedo: unknown): unknown;
-
   function assign_from_object(fldTarget: unknown, oSourceParam: unknown): unknown;
   function filling_learning_parts(TopElem: unknown): unknown;
   function parse_email_address(sAddressParam: unknown): unknown;
@@ -3098,9 +3006,7 @@ declare namespace tools {
    * @param {T} libraryName - Название библиотеки.
    * @returns {WebsoftDlls[T]} Класс работы с библиотекой.
    */
-  function get_object_assembly< T extends keyof Websoft.Interfaces
-  >(libraryName: T): T extends keyof Websoft.Interfaces ? Websoft.Interfaces[T] : T;
-
+  function get_object_assembly<T extends keyof Websoft.Interfaces>(libraryName: T): T extends keyof Websoft.Interfaces ? Websoft.Interfaces[T] : T;
   function create_committee_member(iObjectIDParam: unknown, teObjectParam: unknown, iPersonnelCommitteeIDParam: unknown, strCommitteeMemberTypeParam: unknown): unknown;
   function activate_poll_to_person(personId: unknown, oPollID: unknown, iPollProcedureID: unknown, iEducationPlanID: unknown): unknown;
   function delete_poll_result(oPollResultParam: unknown, tePollParam: unknown): unknown;
@@ -3308,4 +3214,110 @@ declare namespace tools {
    * ```
    */
   function str_negative_number(number: number): string;
+}
+
+type BaseToolsResponse = {
+  error: number;
+  error_text: string;
+};
+
+type LoadCourseResult = BaseToolsResponse & {
+  course: null
+};
+
+type OpenCoursePackageServerResponse = BaseToolsResponse & {
+  file_import: string;
+  temp_url: string;
+  course: CourseDocument | null;
+};
+
+type ActivateTestToPersonParams = {
+  /** Id collaborator. */
+  iPersonID: number;
+  /** Id test. */
+  iAssessmentID: number;
+  /** Id мероприятия. */
+  iEventID?: number;
+  /** Дата последнего обучения. */
+  dtLastLearningDate?: number;
+  /** Не назначать уволенным. */
+  bSkipDismissed?: number;
+  /** Карточка сотрудника. */
+  teCollaborator?: CollaboratorDocumentTopElem;
+  /** Не назначать повторно успешно прошедшим тестирование (с учетом даты последнего обучения). */
+  bMissOnlySuccessLearning?: number;
+  /** Карточка мероприятия. */
+  teEvent?: EventDocumentTopElem;
+  /** Карточка теста. */
+  teAssessment?: AssessmentDocumentTopElem;
+  /** Длительность в днях. */
+  iDuration?: number;
+  /** Дата начала тестирования. */
+  dtStartLearningDate?: Date;
+  /** Id плана обучения. */
+  iEducationPlanID?: number;
+  /** Id группы. */
+  iGroupID?: number;
+  /** Признак самоактивации. */
+  bSelfEnrolled?: boolean;
+  /** Комментарий назначившего (записывается в карточку незаконченного/законченного теста). */
+  sComment?: string;
+  /** Использовать прокторинг. */
+  bUseProctoring?: boolean;
+  iProctorPreferID?: number;
+};
+
+type WorkflowActionProcessResult = {
+  /** @type {boolean} - Успешное или неуспешное выполнение действия. */
+  result: boolean;
+  /** @type {string} - Строка с XAML кодом, выполняющимся при успешном выполнении действия (обрабатывается в карточке заявки на портале) */
+  workflow_success_action: string;
+  /** @type {string} Строка текстом сообщения при успешном выполнении действия, (обрабатывается в карточке заявки на портале) */
+  workflow_action_message: string;
+  /** @type {boolean} Прерывать или нет выполнения действия (обрабатывается в карточке заявки на портале). */
+  workflow_create_break: boolean;
+};
+
+/**
+ * - id - Тип: Целое число. Id результата выполнения проверки подписи.
+ * - strMessage - Тип: Строка. Текстовое сообщение о результате выполнения функции.
+ * Поле id может принимать следующие значения:
+ * 0 – подпись действительна;
+ * 1 – подпись недействительна;
+ * 2 - номер сертификата подписи не соответствует номеру сертификата, указанному в карточке пользователя;
+ * 3 - текст подписанного документа пустой;
+ * 4 - электронно-цифровая подпись пустая.
+ */
+type DigitalVerifyResult = {
+  // eslint-disable-next-line no-magic-numbers
+  id: 0 | 1 | 2 | 3 | 4;
+  strMessage: string;
+};
+
+type GetFormUploadDataResult = XmlElem<unknown, unknown> & {
+  id: string;
+  create_date: Date;
+  server_version: string;
+};
+
+/**
+ * Информация об успехе выполнения функции или об ошибке.
+ * Результирующий объект oRes имеет три свойства:
+ * - код oRes.error;
+ * - URL файла данных oRes.data_file_url;
+ * - и сведения об ошибке oRes.error_text.
+ */
+interface DownloadDataResponse {
+  error: number;
+  data_file_url: string;
+  error_text: string;
+}
+
+interface ICreateNotificationAdditionalParams {
+  recipients: string[];
+  sender_selector: string;
+  subject: string;
+  body_type: string;
+  body: string;
+  sender_email: string;
 }
