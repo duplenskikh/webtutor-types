@@ -34,12 +34,8 @@ interface MsEventSdBase {
   event_id: XmlElem<number, EventCatalogDocumentTopElem> & XmlElem<MsEventSdInnerBase>;
 }
 
-interface MsViewCatalogBaseAuFtFilter {
-
-}
-
 interface MsViewCatalogBase extends ViewConditionsBase {
-  filter: XmlElem<MsViewCatalogBaseAuFtFilter>;
+  filter: XmlElem<AuFtFilter>;
   catalog_name: XmlElem<string, typeof common.exchange_object_types>;
   is_hier: XmlElem<boolean>;
   scheme_id: XmlElem<string, typeof lists.view_conditions_schemes>;
@@ -89,7 +85,7 @@ interface MsGeneralMsWeekScheduleBaseWeekDay {
 interface MsGeneralMsWeekScheduleBase {
   type: XmlElem<string>;
   week_days: XmlMultiElem<MsGeneralMsWeekScheduleBaseWeekDay>;
-  check_week_schedule(curUserID: number, curUser: unknown, Session: unknown): unknown;
+  check_week_schedule(curUserID: number, curUser: CurUser, Session: Session): unknown;
 }
 
 interface WorkflowElemOperationBase {
@@ -104,16 +100,8 @@ interface WorkflowElemOperationBase {
   operation_id: XmlElem<number, OperationCatalogDocumentTopElem> & XmlElem<MsParametersBase>;
 }
 
-interface WorkflowElemOperationsBaseOperation extends WorkflowElemOperationBase {
-
-}
-
 interface WorkflowElemOperationsBase {
-  operations: XmlMultiElem<WorkflowElemOperationsBaseOperation>;
-}
-
-interface WorkflowElemOperationsBaseWorkflowElemOperationBase {
-
+  operations: XmlMultiElem<WorkflowElemOperationBase>;
 }
 
 interface MsViewTemplatesBaseCss extends WebVariablesBase {
@@ -137,17 +125,9 @@ interface MsPeriodityBase {
   last_run_date: XmlElem<Date>;
 }
 
-interface MsViewConfigurationBaseWebVariablesBase {
-
-}
-
 interface MsViewConfigurationBaseMessageText {
   code: XmlElem<string>;
   text: XmlElem<string>;
-}
-
-interface MsViewConfigurationBaseCategoryWebVariablesBase {
-
 }
 
 interface MsViewConfigurationBaseCategory extends WebVariablesBase {
@@ -155,24 +135,7 @@ interface MsViewConfigurationBaseCategory extends WebVariablesBase {
   category_field: XmlElem<string>;
   remote_collection_id: XmlElem<number, RemoteCollectionCatalogDocumentTopElem>;
   custom_admin_template_id: XmlElem<number, CustomAdminTemplateCatalogDocumentTopElem>;
-  admin_template: XmlElem<MsViewConfigurationBaseCategoryWebVariablesBase>;
-}
-
-interface MsViewConfigurationBaseCategorysCategoryWebVariablesBase {
-
-}
-
-interface MsViewConfigurationBaseCategorysCategory extends WebVariablesBase {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
-  category_field: XmlElem<string>;
-  remote_collection_id: XmlElem<number, RemoteCollectionCatalogDocumentTopElem>;
-  custom_admin_template_id: XmlElem<number, CustomAdminTemplateCatalogDocumentTopElem>;
-  admin_template: XmlElem<MsViewConfigurationBaseCategorysCategoryWebVariablesBase>;
-}
-
-interface MsViewConfigurationBaseCategorys {
-  category: XmlElem<MsViewConfigurationBaseCategorysCategory>;
+  admin_template: XmlElem<WebVariablesBase>;
 }
 
 interface MsViewConfigurationBaseViewConfigurationFilterItem {
@@ -193,11 +156,11 @@ interface MsViewConfigurationBase extends WebVariablesBase {
   disp_column_selector: XmlElem<boolean>;
   disp_preview_button: XmlElem<boolean>;
   row_custom_admin_template_id: XmlElem<number, CustomAdminTemplateCatalogDocumentTopElem>;
-  row_admin_template: XmlElem<MsViewConfigurationBaseWebVariablesBase>;
+  row_admin_template: XmlElem<WebVariablesBase>;
   preview_custom_admin_template_id: XmlElem<number, CustomAdminTemplateCatalogDocumentTopElem>;
   preview_custom_admin_template_array: XmlElem<string>;
   preview_id_field: XmlElem<string>;
-  preview_template: XmlElem<MsViewConfigurationBaseWebVariablesBase>;
+  preview_template: XmlElem<WebVariablesBase>;
   display_roles: XmlElem<boolean>;
   can_create_roles: XmlElem<boolean>;
   can_edit_preview: XmlElem<boolean>;
@@ -213,33 +176,33 @@ interface MsViewConfigurationBase extends WebVariablesBase {
   custom_admin_template_id: XmlElem<number, CustomAdminTemplateCatalogDocumentTopElem>;
   doc_id_field: XmlElem<string>;
   custom_is_dlg: XmlElem<boolean>;
-  admin_template: XmlElem<MsViewConfigurationBaseWebVariablesBase>;
+  admin_template: XmlElem<WebVariablesBase>;
   message_texts: XmlMultiElem<MsViewConfigurationBaseMessageText>;
   remote_collection_mode: XmlElem<string>;
   remote_collection_id: XmlElem<number, RemoteCollectionCatalogDocumentTopElem>;
   category: XmlElem<MsViewConfigurationBaseCategory>;
-  categorys: XmlElem<MsViewConfigurationBaseCategorys>;
+  categorys: XmlMultiElem<MsViewConfigurationBaseCategory>;
   view_configuration_filters: XmlMultiElem<MsViewConfigurationBaseViewConfigurationFilter>;
 }
 
 interface MsConfirmationBaseConfirmationAssessment {
-  assessment_id: XmlElem<number>;
+  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
 }
 
 interface MsConfirmationBaseConfirmationCourse {
-  course_id: XmlElem<number>;
+  course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
 }
 
 interface MsConfirmationBaseConfirmationCertificate {
-  certificates_id: XmlElem<number>;
+  certificates_id: XmlElem<number, CertificateTypeCatalogDocumentTopElem>;
 }
 
 interface MsConfirmationBase {
   currency_type_id: XmlElem<string, typeof lists.currency_types>;
   cost: XmlElem<number>;
   confirmation_expert_type: XmlElem<string, typeof common.confirmation_expert_types>;
-  confirmation_boss_type_id: XmlElem<number>;
-  confirmation_person_id: XmlElem<number>;
+  confirmation_boss_type_id: XmlElem<number, BossTypeCatalogDocumentTopElem>;
+  confirmation_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   project_participant_id: XmlElem<number, ProjectParticipantCatalogDocumentTopElem>;
   confirmation_assessments: XmlMultiElem<MsConfirmationBaseConfirmationAssessment>;
   confirmation_courses: XmlMultiElem<MsConfirmationBaseConfirmationCourse>;
@@ -253,17 +216,16 @@ interface MsCodeLibraryConditionBaseMethodParam {
 }
 
 interface MsCodeLibraryConditionBase {
-  code_library_id: XmlElem<number>;
+  code_library_id: XmlElem<number, CodeLibraryCatalogDocumentTopElem>;
   method_name: XmlElem<string>;
   method_params: XmlMultiElem<MsCodeLibraryConditionBaseMethodParam>;
 }
 
 interface MsCodeLibraryCondition extends MsCodeLibraryConditionBase {
   perfom_condition_type: XmlElem<string, typeof common.perfom_condition_types>;
-  classification_model_id: XmlElem<number>;
-  statistic_rec_id: XmlElem<number>;
+  classification_model_id: XmlElem<number, StatisticRecCatalogDocumentTopElem>;
+  statistic_rec_id: XmlElem<number, StatisticRecCatalogDocumentTopElem>;
   statistic_param: XmlElem<string>;
   statistic_option_type: XmlElem<string, typeof common.all_option_types>;
   condition_value: XmlElem<string>;
 }
-

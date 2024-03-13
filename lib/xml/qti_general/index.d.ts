@@ -8,12 +8,7 @@ interface ImageBase {
   location: XmlElem<string, typeof common.material_locations>;
 }
 
-interface RubricBaseImageBase {
-
-}
-
 interface RubricBase {
   candidate: XmlElem<string>;
-  image: XmlElem<RubricBaseImageBase>;
+  image: XmlElem<ImageBase>;
 }
-

@@ -49,17 +49,9 @@ interface ViewConditionBase {
   bracket: XmlElem<string>;
 }
 
-interface ViewConditionsBaseCondition extends ViewConditionBase {
-
-}
-
 interface ViewConditionsBase {
-  conditions: XmlMultiElem<ViewConditionsBaseCondition>;
+  conditions: XmlMultiElem<ViewConditionBase>;
   conditions_qual: XmlElem<string>;
-}
-
-interface ViewConditionsBaseViewConditionBase {
-
 }
 
 interface PassportDataBase {
@@ -117,8 +109,14 @@ interface BankAccountBase {
   cno: XmlElem<string>;
 }
 
-interface EssentialBasePersonNameBase {
+interface EssentialBaseDirector extends PersonNameBase {
+  position_name: XmlElem<string, typeof common.position_types>;
+  mod_name: XmlElem<PersonNameBase>;
+  authority: XmlElem<string>;
+}
 
+interface EssentialBaseChiefAccountant extends PersonNameBase {
+  mod_name: XmlElem<PersonNameBase>;
 }
 
 interface EssentialBaseBankAccount extends BankAccountBase {
@@ -137,8 +135,8 @@ interface EssentialBase {
   okpo: XmlElem<string>;
   ogrn: XmlElem<string>;
   oktmo: XmlElem<string>;
-  director: XmlElem<EssentialBasePersonNameBase>;
-  chief_accountant: XmlElem<EssentialBasePersonNameBase>;
+  director: XmlElem<EssentialBaseDirector>;
+  chief_accountant: XmlElem<EssentialBaseChiefAccountant>;
   bank_account: XmlElem<EssentialBaseBankAccount>;
 }
 
@@ -340,12 +338,8 @@ interface GlobalSettingsBaseExternalWebPlayers {
   openurl_eq_openwindow: XmlElem<boolean>;
 }
 
-interface GlobalSettingsBaseCalendarAccessDocBase {
-
-}
-
 interface GlobalSettingsBaseCalendar {
-  access: XmlElem<GlobalSettingsBaseCalendarAccessDocBase>;
+  access: XmlElem<AccessDocBase>;
 }
 
 interface GlobalSettingsBasePpmMatrixRowColumn {
@@ -379,8 +373,13 @@ interface GlobalSettingsBaseScriptQueues {
   clear_period: XmlElem<number>;
 }
 
-interface GlobalSettingsBaseOutstaffPeriodsBase {
+interface GlobalSettingsBaseOutstaffOutstaffBossType {
+  boss_type_id: XmlElem<number, BossTypeCatalogDocumentTopElem>;
+}
 
+interface GlobalSettingsBaseOutstaff extends OutstaffPeriodsBase {
+  outstaff_boss_types: XmlMultiElem<GlobalSettingsBaseOutstaffOutstaffBossType>;
+  boss_type_id: XmlElem<number, BossTypeCatalogDocumentTopElem>;
 }
 
 interface GlobalSettingsBaseProjectOptions {
@@ -543,7 +542,7 @@ interface GlobalSettingsBase extends EventSettingsBase {
   use_profiling: XmlElem<boolean>;
   default_webinar_system_id: XmlElem<number, WebinarSystemCatalogDocumentTopElem>;
   lds_url_pattern: XmlElem<string>;
-  outstaff: XmlElem<GlobalSettingsBaseOutstaffPeriodsBase>;
+  outstaff: XmlElem<GlobalSettingsBaseOutstaff>;
   send_learning_additional_info: XmlElem<boolean>;
   set_st_category: XmlElem<boolean>;
   use_queue_learnings: XmlElem<boolean>;
@@ -579,17 +578,9 @@ interface FileBase {
   file_id: XmlElem<number, ResourceCatalogDocumentTopElem> & XmlElem<FileActionBase>;
 }
 
-interface FileListBaseFile extends FileBase {
-
-}
-
 interface FileListBase {
-  files: XmlMultiElem<FileListBaseFile>;
+  files: XmlMultiElem<FileBase>;
   AddFile(_file_id: number, docResourceParam: Date): unknown;
-}
-
-interface FileListBaseFileBase {
-
 }
 
 interface CoursePartBase {
@@ -603,16 +594,8 @@ interface CoursePartBase {
   visible: XmlElem<boolean>;
 }
 
-interface CoursePartsBasePart extends CoursePartBase {
-
-}
-
 interface CoursePartsBase {
-  parts: XmlMultiElem<CoursePartsBasePart>;
-}
-
-interface CoursePartsBaseCoursePartBase {
-
+  parts: XmlMultiElem<CoursePartBase>;
 }
 
 interface ImportExcelPersonsBaseColumn {
@@ -727,7 +710,7 @@ interface WorkflowDataBaseWorkflowField {
   workflow_state: XmlElem<string>;
 }
 
-interface WorkflowDataBaseWorkflowLogEntrysWorkflowLogEntry {
+interface WorkflowDataBaseWorkflowLogEntry {
   create_date: XmlElem<Date>;
   action_id: XmlElem<string>;
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
@@ -735,10 +718,6 @@ interface WorkflowDataBaseWorkflowLogEntrysWorkflowLogEntry {
   begin_state: XmlElem<string>;
   finish_state: XmlElem<string>;
   submited: XmlElem<boolean>;
-}
-
-interface WorkflowDataBaseWorkflowLogEntrys {
-  workflow_log_entry: XmlElem<WorkflowDataBaseWorkflowLogEntrysWorkflowLogEntry>;
 }
 
 interface WorkflowDataBaseWorkflowCustomStateCondition {
@@ -769,7 +748,7 @@ interface WorkflowDataBase {
   add_workflow_log_entry(Param: unknown): unknown;
   is_workflow_init: XmlElem<boolean>;
   workflow_fields: XmlMultiElem<WorkflowDataBaseWorkflowField>;
-  workflow_log_entrys: XmlElem<WorkflowDataBaseWorkflowLogEntrys>;
+  workflow_log_entrys: XmlMultiElem<WorkflowDataBaseWorkflowLogEntry>;
   workflow_custom_states: XmlMultiElem<WorkflowDataBaseWorkflowCustomState>;
 }
 
@@ -793,21 +772,13 @@ interface ConditionBase {
   cur_activity_id: XmlElem<number, ActivityCatalogDocumentTopElem>;
 }
 
-interface ConditionsBaseCondition extends ConditionBase {
-
-}
-
 interface ConditionsBase {
-  conditions: XmlMultiElem<ConditionsBaseCondition>;
+  conditions: XmlMultiElem<ConditionBase>;
   condition_eval_str: XmlElem<string>;
   desc_str: XmlElem<string>;
   has_error: XmlElem<boolean>;
   is_false: XmlElem<boolean>;
   error_eval(): unknown;
-}
-
-interface ConditionsBaseConditionBase {
-
 }
 
 interface PersonFillingBase {
@@ -856,10 +827,6 @@ interface ServerBase {
   recovery_empty_lng_const: XmlElem<boolean>;
 }
 
-interface SelectServerBaseServer extends ServerBase {
-
-}
-
 interface SelectServerBaseInstall {
   skip_reg_page: XmlElem<boolean>;
   reg_user_name: XmlElem<string>;
@@ -872,7 +839,7 @@ interface SelectServerBase extends ServerBase {
   disp_select_password: XmlElem<boolean>;
   disp_select_replication_time: XmlElem<boolean>;
   selector_type: XmlElem<string>;
-  servers: XmlMultiElem<SelectServerBaseServer>;
+  servers: XmlMultiElem<ServerBase>;
   replication_time: XmlElem<string>;
   install: XmlElem<SelectServerBaseInstall>;
 }
@@ -1116,28 +1083,16 @@ interface AdminAccessBase {
   user_group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
 }
 
-interface DocumentPersonsBaseDocumentPersonsDocumentPerson {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  can_create: XmlElem<boolean>;
-  can_edit: XmlElem<boolean>;
-  can_delete: XmlElem<boolean>;
-}
-
-interface DocumentPersonsBaseDocumentPersons {
-  document_person: XmlElem<DocumentPersonsBaseDocumentPersonsDocumentPerson>;
-}
-
-interface DocumentPersonsBase {
-  document_persons: XmlElem<DocumentPersonsBaseDocumentPersons>;
-}
-
 interface DocumentPersonsBaseDocumentPerson {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
   can_create: XmlElem<boolean>;
   can_edit: XmlElem<boolean>;
   can_delete: XmlElem<boolean>;
+}
+
+interface DocumentPersonsBase {
+  document_persons: XmlMultiElem<DocumentPersonsBaseDocumentPerson>;
 }
 
 interface PathSubsBasePathSub {
@@ -1523,20 +1478,20 @@ interface ChartReportGraphBase {
   plot_type: XmlElem<string>;
 }
 
-interface CriterionBaseCriterionsCriterionCatalogChain extends FieldNamesBase, ViewConditionsBase {
+interface CriterionBaseCriterionCatalogChain extends FieldNamesBase, ViewConditionsBase {
   catalog_name: XmlElem<string>;
   field: XmlElem<string>;
   scheme_id: XmlElem<string, typeof lists.view_conditions_schemes>;
 }
 
-interface CriterionBaseCriterionsCriterion {
+interface CriterionBaseCriterion {
   value: XmlElem<string>;
   column_title: XmlElem<string>;
   type: XmlElem<string>;
   option_type: XmlElem<string, typeof common.all_option_types>;
   and_or: XmlElem<string>;
   is_custom_field: XmlElem<boolean>;
-  catalog_chains: XmlMultiElem<CriterionBaseCriterionsCriterionCatalogChain>;
+  catalog_chains: XmlMultiElem<CriterionBaseCriterionCatalogChain>;
   flag_value_filter: XmlElem<boolean>;
   flag_is_parameter: XmlElem<boolean>;
   flag_hierarchy: XmlElem<number>;
@@ -1545,12 +1500,8 @@ interface CriterionBaseCriterionsCriterion {
   close_bracket: XmlElem<string>;
 }
 
-interface CriterionBaseCriterions {
-  criterion: XmlElem<CriterionBaseCriterionsCriterion>;
-}
-
 interface CriterionBase extends FieldNamesBase {
-  criterions: XmlElem<CriterionBaseCriterions>;
+  criterions: XmlMultiElem<CriterionBaseCriterion>;
 }
 
 interface CustomReportBaseSort {
@@ -1666,7 +1617,7 @@ interface CustomElemsBaseCustomElem {
 
 interface CustomElemsBase {
   custom_elems: XmlMultiElem<CustomElemsBaseCustomElem>;
-  check_fields_default_value(curUser: unknown): unknown;
+  check_fields_default_value(curUser: CurUser): unknown;
 }
 
 interface EstimationLevelsBaseEstimationLevel {
@@ -1708,13 +1659,9 @@ interface TableDataBase {
   rs: XmlMultiElem<TableDataBaseR>;
 }
 
-interface TableDataBaseExtendedTableDataBase {
-
-}
-
 interface TableDataBaseExtended {
   excel_file_url: XmlElem<string>;
-  data: XmlElem<TableDataBaseExtendedTableDataBase>;
+  data: XmlElem<TableDataBase>;
   fnGetFile(iFileIDParam: number): unknown;
 }
 
@@ -1865,22 +1812,10 @@ interface AnnalsNumsBase {
   question_passed_num: XmlElem<number>;
 }
 
-interface LearningObjectivesInteractionsBaseObjective extends ObjectiveBase {
-
-}
-
-interface LearningObjectivesInteractionsBaseInteraction extends InteractionBase {
-
-}
-
 interface LearningObjectivesInteractionsBase {
-  objectives: XmlMultiElem<LearningObjectivesInteractionsBaseObjective>;
-  interactions: XmlMultiElem<LearningObjectivesInteractionsBaseInteraction>;
+  objectives: XmlMultiElem<ObjectiveBase>;
+  interactions: XmlMultiElem<InteractionBase>;
   scoring_type: XmlElem<string>;
-}
-
-interface LearningObjectivesInteractionsBaseObjectiveBase {
-
 }
 
 interface CoreLessonBaseDataLesson {
@@ -2167,24 +2102,14 @@ interface LearningCurrentStateBase {
   cur_state_id: XmlElem<number, typeof common.learning_states>;
 }
 
-interface CourseExpertsBasePersonsPerson extends PersonFillingBase {
-  id: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  type: XmlElem<string, typeof common.course_expert_types>;
-}
-
-interface CourseExpertsBasePersons {
-  person: XmlElem<CourseExpertsBasePersonsPerson>;
-}
-
-interface CourseExpertsBase {
-  persons: XmlElem<CourseExpertsBasePersons>;
-}
-
 interface CourseExpertsBasePerson extends PersonFillingBase {
   id: XmlElem<string>;
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   type: XmlElem<string, typeof common.course_expert_types>;
+}
+
+interface CourseExpertsBase {
+  persons: XmlMultiElem<CourseExpertsBasePerson>;
 }
 
 interface GeneralStorageInfoBaseMssqlStorageModeParametrs {
@@ -2507,24 +2432,14 @@ interface TaskInfoBase {
   callback: XmlElem<string>;
 }
 
-interface GameBonusBaseGameBonussGameBonus {
-  id: XmlElem<string>;
-  currency_type_id: XmlElem<string, typeof lists.currency_types>;
-  sum: XmlElem<number>;
-}
-
-interface GameBonusBaseGameBonuss {
-  game_bonus: XmlElem<GameBonusBaseGameBonussGameBonus>;
-}
-
-interface GameBonusBase {
-  game_bonuss: XmlElem<GameBonusBaseGameBonuss>;
-}
-
 interface GameBonusBaseGameBonus {
   id: XmlElem<string>;
   currency_type_id: XmlElem<string, typeof lists.currency_types>;
   sum: XmlElem<number>;
+}
+
+interface GameBonusBase {
+  game_bonuss: XmlMultiElem<GameBonusBaseGameBonus>;
 }
 
 interface ClLocalizationsBaseLocalization {
@@ -2663,4 +2578,3 @@ interface QaTestAssertBaseAssert {
 interface QaTestAssertBase {
   asserts: XmlMultiElem<QaTestAssertBaseAssert>;
 }
-
