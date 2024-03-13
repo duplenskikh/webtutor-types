@@ -1,0 +1,32 @@
+declare namespace tools_app {
+  let object_library: XmlElem<unknown>;
+  function get_str_app_instance_id(iApplicationInstanceIDParam: number): unknown;
+  function get_application(oObjectParam: unknown): unknown;
+  function get_application_instance(oObjectParam: unknown, iApplicationIDParam: number): unknown;
+  let cur_application: XmlElem<unknown>;
+  function get_cur_application(iApplicationIDParam: number, iApplicationInstanceIDParam: number, iObjectIDParam: number, teObjectParam: unknown): unknown;
+  let cur_application_instance: XmlElem<unknown>;
+  function get_cur_application_instance(iApplicationIDParam: number, iApplicationInstanceIDParam: number, iObjectIDParam: number, teObjectParam: unknown): unknown;
+  function set_cur_application_instance(iApplicationInstanceIDParam: number, teApplicationInstanceParam: unknown): unknown;
+  function create_application_instance(iApplicationIDParam: number, bReturnID: number): unknown;
+  function create_application_instance_object(sObjectNameParam: string, oObjectFieldsParam: unknown, iApplicationInstanceIDParam: number, bSaveParam: boolean): unknown;
+  function get_cur_user_application_access_level(iApplicationIDParam: number): unknown;
+  function get_application_lib_url(sApplicationCodeParam: string, sApplicationLibraryUrlParam: string, sApplicationVendorParam: string, sApplicationVendorLibraryParam: string, sApplicationLicTypeParam: string): unknown;
+  function get_application_lib(oObjectParam: unknown): unknown;
+  let cur_application_lib: XmlElem<unknown>;
+  function get_cur_application_lib(iApplicationIDParam: number, iApplicationInstanceIDParam: number, iObjectIDParam: number, teObjectParam: unknown): unknown;
+  function convert_wvars_to_object(oVars: unknown, sFormat: string, sParentId: number, oResultElem: unknown): unknown;
+  function get_settings(sNameParam: string, sTargetParam: string, sFormatParam: string, oObjectParam: unknown): unknown;
+  function get_cur_settings(sNameParam: string, sTargetParam: string, sFormatParam: string, iApplicationIDParam: number, iApplicationInstanceIDParam: number, iObjectIDParam: number, teObjectParam: unknown): unknown;
+  function call_application_library_method(oObjectParam: unknown, sMethodNameParam: string, arrMethodParam: unknown): unknown;
+  function get_application_resources_list(oObjectParam: unknown): unknown;
+  function get_application_resource(oObjectParam: unknown, sResourceUrl: string): unknown;
+  function package_application(oObjectParam: unknown): unknown;
+  function clear_application_cache(sApplicationCode: string): unknown;
+  function get_application_ids(oObjectParam: unknown): unknown;
+  function get_application_objects(oObjectParam: unknown, arrCatalogs: unknown): unknown;
+  function save_cur_application_settings(lastApplication: unknown, newSettings: unknown): unknown;
+  function save_application_settings(iApplicationID: number, teSettings: unknown): unknown;
+  function save_application_agents(aAgents: unknown): unknown;
+  function save_application_object(docObject: Date, code_wvar: unknown, iApplicationIDParam: number): unknown;
+}

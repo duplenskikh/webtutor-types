@@ -1,0 +1,30 @@
+declare namespace qti_tools {
+  function date_generate(_minutes: unknown): unknown;
+  function date_sec_generate(_secs: unknown): unknown;
+  function get_valid_filename(_name: unknown, bDoCutParam: boolean): unknown;
+  function qti_generate(iAssessmentID: number, _url: unknown, _image_url: unknown): unknown;
+  function get_relational_url(_url: unknown): unknown;
+  function course_import_info_generate(_test_id: number, _url: unknown): unknown;
+  function display_qti_generate_error(_str: unknown): unknown;
+  function get_qti_zip(iAssessmentID: number): unknown;
+  function pulish_assessment(oAssessmentParam: unknown, sCoursePathParam: string): unknown;
+  function qti_return(_assessment_id: number, _images_url: unknown, fldLearningTarget: unknown): unknown;
+  function set_qti_comment_duration_objectives(fldSource: unknown, fldFrom: unknown, iObjectIDParam: number, iClLocalizationIDParam: number): unknown;
+  function set_qti_control(fldSource: unknown, fldFrom: unknown, bParentDisplayCorrectAnswer: boolean, bParentDisplayfeedback: boolean): unknown;
+  function set_qti_material(fldSource: unknown, sCData: string, iObjectIDParam: number, iClLocalizationIDParam: number): unknown;
+  function put_qti_matimage(fldImage: unknown, sPrefix: string, sImagesDir: string, iObjectIDParam: number, iClLocalizationIDParam: number): unknown;
+  function set_qti_material_matimage(fldSource: unknown, sCData: string, fldImage: unknown, sPrefix: string, sImagesDir: string, teObjectParam: unknown, iClLocalizationIDParam: number): unknown;
+  function set_qti_rubric(fldSource: unknown, fldFrom: unknown, sPrefix: string, sImagesDir: string, teObjectParam: unknown, iClLocalizationIDParam: number): unknown;
+  function set_qti_item(fldItem: unknown, oItemParam: unknown, sImagesDir: string, fldSection: unknown, iClLocalizationIDParam: number): unknown;
+  function get_gti_obj(oAssessmentParam: unknown, sImagesDir: string, bPublish: boolean, iClLocalizationIDParam: number): unknown;
+  function max_score_return(_qti_text: unknown): unknown;
+  function get_player_url_param(_assessment_id: number, _assessment_doc: unknown, sViewTypeParam: string): unknown;
+  function get_default_testing_system_id(): unknown;
+  function get_testing_system(oParam: unknown): unknown;
+  function call_testing_system_method(oParam: unknown, sMethodNameParam: string, oArrParam: unknown, bReturnUrl: boolean): unknown;
+  function set_qti_fields(fldTarget: unknown, oParam: unknown): unknown;
+  function clear_qti_correct_answer(sQtiParam: string): unknown;
+  function convert_item(docLearning: Date, fldParams: unknown): unknown;
+  function prepare_qti_run(iAssessmentIDParam: number): unknown;
+  function get_question_num(fldObjectsParam: unknown, sTypeParam: string): unknown;
+}
