@@ -4,7 +4,6 @@ interface UiLngItem {
   web: XmlElem<boolean>;
 }
 
-
 interface IUiLng {
   id: XmlElem<string>;
   short_id: XmlElem<string>;

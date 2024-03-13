@@ -320,10 +320,6 @@ interface CommonTriggerType {
   bk_color: XmlElem<string>;
 }
 
-interface CommonAccessBlockType extends AccessBlockBase {
-
-}
-
 interface CommonRecipientType {
   id: XmlElem<string>;
   name: XmlElem<string>;
@@ -708,14 +704,10 @@ interface CommonParticipantState {
   name: XmlElem<string>;
 }
 
-interface CommonPerioditysPeriodity {
+interface CommonPeriodity {
   id: XmlElem<string>;
   name: XmlElem<string>;
   weight: XmlElem<number>;
-}
-
-interface CommonPerioditys {
-  periodity: XmlElem<CommonPerioditysPeriodity>;
 }
 
 interface CommonSubmissionState {
@@ -1059,13 +1051,9 @@ interface CommonPaymentType {
   is_can_received: XmlElem<boolean>;
 }
 
-interface CommonQualificationStatussQualificationStatus {
+interface CommonQualificationStatus {
   id: XmlElem<string>;
   name: XmlElem<string>;
-}
-
-interface CommonQualificationStatuss {
-  qualification_status: XmlElem<CommonQualificationStatussQualificationStatus>;
 }
 
 interface CommonEducationMethodState {
@@ -1094,14 +1082,10 @@ interface CommonProctoringObject {
   name: XmlElem<string>;
 }
 
-interface CommonLearningRecordStatussLearningRecordStatus {
+interface CommonLearningRecordStatus {
   id: XmlElem<string>;
   icon_url: XmlElem<string>;
   name: XmlElem<string>;
-}
-
-interface CommonLearningRecordStatuss {
-  learning_record_status: XmlElem<CommonLearningRecordStatussLearningRecordStatus>;
 }
 
 interface CommonCourseImportType {
@@ -1308,13 +1292,9 @@ interface CommonWillingnessTravelType {
   name: XmlElem<string>;
 }
 
-interface CommonStatementComponentPropertysStatementComponentProperty {
+interface CommonStatementComponentProperty {
   id: XmlElem<string>;
   name: XmlElem<string>;
-}
-
-interface CommonStatementComponentPropertys {
-  statement_component_property: XmlElem<CommonStatementComponentPropertysStatementComponentProperty>;
 }
 
 interface CommonSignatureType {
@@ -1337,22 +1317,14 @@ interface CommonJobTransferType {
   name: XmlElem<string>;
 }
 
-interface CommonPositionCommonStatussPositionCommonStatus {
+interface CommonPositionCommonStatus {
   id: XmlElem<string>;
   name: XmlElem<string>;
 }
 
-interface CommonPositionCommonStatuss {
-  position_common_status: XmlElem<CommonPositionCommonStatussPositionCommonStatus>;
-}
-
-interface CommonTypicalDevelopmentProgramStatussTypicalDevelopmentProgramStatus {
+interface CommonTypicalDevelopmentProgramStatus {
   id: XmlElem<string>;
   name: XmlElem<string>;
-}
-
-interface CommonTypicalDevelopmentProgramStatuss {
-  typical_development_program_status: XmlElem<CommonTypicalDevelopmentProgramStatussTypicalDevelopmentProgramStatus>;
 }
 
 interface CommonFilterType {
@@ -1464,7 +1436,6 @@ interface CommonProcessingMethod {
   name: XmlElem<string>;
 }
 
-
 interface ICommon {
   order_types: XmlMultiElem<CommonOrderType>;
   item_types: XmlMultiElem<CommonItemType>;
@@ -1520,7 +1491,7 @@ interface ICommon {
   template_field_types: XmlMultiElem<CommonTemplateFieldType>;
   server_agent_types: XmlMultiElem<CommonServerAgentType>;
   trigger_types: XmlMultiElem<CommonTriggerType>;
-  access_block_types: XmlMultiElem<CommonAccessBlockType>;
+  access_block_types: XmlMultiElem<AccessBlockBase>;
   recipient_types: XmlMultiElem<CommonRecipientType>;
   cost_types: XmlMultiElem<CommonCostType>;
   web_filter_types: XmlMultiElem<CommonWebFilterType>;
@@ -1583,7 +1554,7 @@ interface ICommon {
   system_event_operation_types: XmlMultiElem<CommonSystemEventOperationType>;
   forum_person_info_types: XmlMultiElem<CommonForumPersonInfoType>;
   participant_states: XmlMultiElem<CommonParticipantState>;
-  perioditys: XmlElem<CommonPerioditys>;
+  perioditys: XmlMultiElem<CommonPeriodity>;
   submission_states: XmlMultiElem<CommonSubmissionState>;
   collect_states: XmlMultiElem<CommonCollectState>;
   node_types: XmlMultiElem<CommonNodeType>;
@@ -1649,13 +1620,13 @@ interface ICommon {
   keyboard_types: XmlMultiElem<CommonKeyboardType>;
   service_provider_types: XmlMultiElem<CommonServiceProviderType>;
   payment_types: XmlMultiElem<CommonPaymentType>;
-  qualification_statuss: XmlElem<CommonQualificationStatuss>;
+  qualification_statuss: XmlMultiElem<CommonQualificationStatus>;
   education_method_states: XmlMultiElem<CommonEducationMethodState>;
   learning_catalogs: XmlMultiElem<CommonLearningCatalog>;
   vclass_learning_catalogs: XmlMultiElem<CommonVclassLearningCatalog>;
   document_sent_types: XmlMultiElem<CommonDocumentSentType>;
   proctoring_objects: XmlMultiElem<CommonProctoringObject>;
-  learning_record_statuss: XmlElem<CommonLearningRecordStatuss>;
+  learning_record_statuss: XmlMultiElem<CommonLearningRecordStatus>;
   course_import_types: XmlMultiElem<CommonCourseImportType>;
   timezones: XmlMultiElem<CommonTimezone>;
   substitution_status_types: XmlMultiElem<CommonSubstitutionStatusType>;
@@ -1696,13 +1667,13 @@ interface ICommon {
   acquaint_confirmation_types: XmlMultiElem<CommonAcquaintConfirmationType>;
   confirmation_expert_types: XmlMultiElem<CommonConfirmationExpertType>;
   willingness_travel_types: XmlMultiElem<CommonWillingnessTravelType>;
-  statement_component_propertys: XmlElem<CommonStatementComponentPropertys>;
+  statement_component_propertys: XmlMultiElem<CommonStatementComponentProperty>;
   signature_types: XmlMultiElem<CommonSignatureType>;
   personnel_document_states: XmlMultiElem<CommonPersonnelDocumentState>;
   layer_types: XmlMultiElem<CommonLayerType>;
   job_transfer_types: XmlMultiElem<CommonJobTransferType>;
-  position_common_statuss: XmlElem<CommonPositionCommonStatuss>;
-  typical_development_program_statuss: XmlElem<CommonTypicalDevelopmentProgramStatuss>;
+  position_common_statuss: XmlMultiElem<CommonPositionCommonStatus>;
+  typical_development_program_statuss: XmlMultiElem<CommonTypicalDevelopmentProgramStatus>;
   filter_types: XmlMultiElem<CommonFilterType>;
   good_states: XmlMultiElem<CommonGoodState>;
   web_person_state_types: XmlMultiElem<CommonWebPersonStateType>;

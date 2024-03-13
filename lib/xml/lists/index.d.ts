@@ -7,7 +7,6 @@ interface ListsViewConditionsScheme extends ViewConditionsBase {
   is_parametric: XmlElem<boolean>;
 }
 
-
 interface ILists extends ExchangeListsBase {
   view_conditions_schemes: XmlMultiElem<ListsViewConditionsScheme>;
 }
