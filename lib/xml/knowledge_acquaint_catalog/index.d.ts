@@ -17,7 +17,7 @@ PersonFillingBase & {
   finish_date: XmlElem<Date>;
   confirmation_type: XmlElem<string, typeof common.acquaint_confirmation_types>;
   confirmation_expert_type: XmlElem<string, typeof common.confirmation_expert_types>;
-  confirmation_boss_type_id: XmlElem<number>;
+  confirmation_boss_type_id: XmlElem<number, BossTypeCatalogDocumentTopElem>;
   project_participant_id: XmlElem<number, ProjectParticipantCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;

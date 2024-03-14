@@ -9,4 +9,5 @@ type SubCatalogDocumentTopElem = XmlTopElem & {
   is_boss: XmlElem<boolean>;
   is_disbanded: XmlElem<boolean>;
   OnBuild(): unknown;
+  MatchDocType(): unknown;
 };

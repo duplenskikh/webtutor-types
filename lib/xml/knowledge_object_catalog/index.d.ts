@@ -1,0 +1,24 @@
+type KnowledgeObjectCatalogDocumentTopElem = XmlTopElem & {
+  id: XmlElem<number>;
+  catalog: XmlElem<string, typeof common.exchange_object_types>;
+  object_id: XmlElem<number>;
+  object_name: XmlElem<string>;
+  object_status: XmlElem<string, typeof common.status_in_knowledge_map_types>;
+  object_start_date: XmlElem<Date>;
+  object_end_date: XmlElem<Date>;
+  doc_create_date: XmlElem<Date>;
+  knowledge_part_id: XmlElem<number, KnowledgePartCatalogDocumentTopElem>;
+  knowledge_part_name: XmlElem<string>;
+  current_level_id: XmlElem<string>;
+  current_level_name: XmlElem<string>;
+  current_level_index: XmlElem<number>;
+  target_level_id: XmlElem<string>;
+  target_level_name: XmlElem<string>;
+  target_level_index: XmlElem<number>;
+  require_acknowledgement: XmlElem<boolean>;
+  knowledge_part_level_id: XmlElem<number, KnowledgePartLevelCatalogDocumentTopElem>;
+  acquaint_time: XmlElem<number>;
+  MatchDocTypeExt(): unknown;
+  OnBuildExt(): unknown;
+  OnDeleteExt(): unknown;
+};

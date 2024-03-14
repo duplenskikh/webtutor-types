@@ -1,0 +1,4 @@
+type ObjectiveCatalogDocumentTopElem = XmlTopElem &
+ObjectiveBase & {
+
+};

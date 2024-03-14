@@ -1,8 +1,4 @@
-interface CategorysDocumentCategory {
+type CategoryCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<string>;
   name: XmlElem<string>;
-}
-
-type CategoryCatalogDocumentTopElem = XmlTopElem & {
-  category: XmlElem<CategorysDocumentCategory>;
 };
