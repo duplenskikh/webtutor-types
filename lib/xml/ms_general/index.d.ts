@@ -85,7 +85,7 @@ interface MsGeneralMsWeekScheduleBaseWeekDay {
 interface MsGeneralMsWeekScheduleBase {
   type: XmlElem<string>;
   week_days: XmlMultiElem<MsGeneralMsWeekScheduleBaseWeekDay>;
-  check_week_schedule(curUserID: number, curUser: CurUser, Session: Session): unknown;
+  check_week_schedule(curUserId: number, curUser: CurUser, session: Session): unknown;
 }
 
 interface WorkflowElemOperationBase {

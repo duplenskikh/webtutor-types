@@ -568,10 +568,10 @@ interface InsertFileBase {
 }
 
 interface FileActionBase {
-  AssignFile(_file_url: unknown, _source: unknown, oParams: unknown): unknown;
-  DeleteFile(_source: unknown): unknown;
-  SaveFile(_file_url: unknown): unknown;
-  AddFile(_file_id: number, _source: unknown): unknown;
+  AssignFile(fileUrl: unknown, source: unknown, params: unknown): unknown;
+  DeleteFile(source: unknown): unknown;
+  SaveFile(fileUrl: unknown): unknown;
+  AddFile(fileId: number, source: unknown): unknown;
 }
 
 interface FileBase {
@@ -580,7 +580,7 @@ interface FileBase {
 
 interface FileListBase {
   files: XmlMultiElem<FileBase>;
-  AddFile(_file_id: number, docResourceParam: unknown): unknown;
+  AddFile(fileId: number, docResource: unknown): unknown;
 }
 
 interface CoursePartBase {
@@ -744,8 +744,8 @@ interface WorkflowDataBase {
   workflow_state_name: XmlElem<string>;
   workflow_state_last_date: XmlElem<Date>;
   get_workflow_state_name(workflowDoc: unknown): unknown;
-  set_workflow_state_last_date(Param: unknown): unknown;
-  add_workflow_log_entry(Param: unknown): unknown;
+  set_workflow_state_last_date(param: unknown): unknown;
+  add_workflow_log_entry(param: unknown): unknown;
   is_workflow_init: XmlElem<boolean>;
   workflow_fields: XmlMultiElem<WorkflowDataBaseWorkflowField>;
   workflow_log_entrys: XmlMultiElem<WorkflowDataBaseWorkflowLogEntry>;
@@ -1075,7 +1075,7 @@ interface FuncManagersBasePositionManager {
 interface FuncManagersBase {
   func_managers: XmlMultiElem<FuncManagersBaseFuncManager>;
   position_managers: XmlMultiElem<FuncManagersBasePositionManager>;
-  obtain_func_manager_by_id(_person_id: number, _is_native: unknown): unknown;
+  obtain_func_manager_by_id(personId: number, isNative: unknown): unknown;
 }
 
 interface AdminAccessBase {
@@ -1156,8 +1156,8 @@ interface LastAttemptTestLearningsBase {
 
 interface DescBase {
   desc_update_hyper_object(): unknown;
-  desc_save(bDescOffParam: boolean): unknown;
-  get_desc(_source: unknown): unknown;
+  desc_save(descOff: boolean): unknown;
+  get_desc(source: unknown): unknown;
 }
 
 interface AccessBlockBaseStructureItemItemItem {
@@ -1529,10 +1529,10 @@ interface CustomReportBase extends CriterionBase, ColumnBase, ChartReportGraphBa
   custom_x: XmlElem<string>;
   show_table: XmlElem<boolean>;
   show_chart: XmlElem<boolean>;
-  get_report_data(iReportID_PARAM: number, iUserID_PARAM: number): unknown;
+  get_report_data(reportId: number, userId: number): unknown;
   get_crit_hash(): unknown;
   extractVolatileData(): unknown;
-  condenseVolatileData(oVolatile: unknown): unknown;
+  condenseVolatileData(volatile: unknown): unknown;
   report_result_date: XmlElem<Date>;
   report_result_author: XmlElem<string>;
   performance_launch_time: XmlElem<Date>;
@@ -1662,7 +1662,7 @@ interface TableDataBase {
 interface TableDataBaseExtended {
   excel_file_url: XmlElem<string>;
   data: XmlElem<TableDataBase>;
-  fnGetFile(iFileIDParam: number): unknown;
+  fnGetFile(fileId: number): unknown;
 }
 
 interface ObjectiveBase {
@@ -1836,8 +1836,8 @@ interface CoreLessonBase {
 
 interface CoreLessonInfoBase {
   learning_part_id: XmlElem<number, LearningPartCatalogDocumentTopElem>;
-  filing_learning_part(bSetChangedParam: boolean): unknown;
-  save_learning_part(bSaveParam: boolean): unknown;
+  filing_learning_part(setChanged: boolean): unknown;
+  save_learning_part(save: boolean): unknown;
 }
 
 interface LearningAssessmentBase extends AnnalsObjectsBase {
@@ -2275,7 +2275,7 @@ interface TalentPoolFuncManagersBaseTalentPoolFuncManager extends PersonFillingB
 
 interface TalentPoolFuncManagersBase {
   talent_pool_func_managers: XmlMultiElem<TalentPoolFuncManagersBaseTalentPoolFuncManager>;
-  obtain_talent_pool_func_manager_by_id(_person_id: number, _is_native: unknown): unknown;
+  obtain_talent_pool_func_manager_by_id(personId: number, isNative: unknown): unknown;
 }
 
 interface SocialObjectAccessBase {
@@ -2391,8 +2391,8 @@ interface CustomDatasBaseCustomData {
 
 interface CustomDatasBase {
   custom_datas: XmlMultiElem<CustomDatasBaseCustomData>;
-  get_custom_data(sNameParam: string): unknown;
-  set_custom_data(sNameParam: string, sValueParam: string): unknown;
+  get_custom_data(name: string): unknown;
+  set_custom_data(name: string, value: string): unknown;
 }
 
 interface SelectLearningOptionBase {
