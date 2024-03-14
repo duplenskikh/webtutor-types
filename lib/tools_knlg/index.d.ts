@@ -5,6 +5,7 @@ declare namespace tools_knlg {
   function set_status_learning_task_result(payload: SetStatusLearningTaskResultPayload): ActiveLearningTaskResult;
   function http_request(url: string, body: string, executeOnServer: boolean): HttpResponse["Body"];
   function http_request_obj(url: string, method: string, body: string, header: string, executeOnServer: boolean): Pick<HttpResponse, "Body" | "RespCode">;
+  function get_http_request_file_id(url: string, method: string, s: string, header: string, onServer: boolean, fileUrl: string, fileName: string): unknown;
   function base64_encode(value: string): string;
   function get_article_desc(description: string, url: string, queryParam: string): string | never;
 }

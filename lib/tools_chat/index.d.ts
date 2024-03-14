@@ -1,20 +1,20 @@
 declare namespace tools_chat {
-  function write_message(sTextMessage: string, iObjectID: number, teObject: unknown, iSenderID: number, teSender: unknown, arrFiles: unknown, arrCatalogs: unknown, sMessageID: number, oMessageData: unknown, sMessageType: string, arrMessageRecipients: unknown): unknown;
-  function get_recipients(iObjectID: number, teObject: unknown): unknown;
-  function set_status_participant_in_conversation(iConversationID: number, aParticipantStates: unknown, teConversation: unknown): unknown;
-  function change_participants_conversation(iConversationID: number, docConversation: unknown, sAction: string, iParticipantID: number, arrParticipants: unknown, iChatbotID: number, iConversationTypeID: number, docParticipantObject: unknown): unknown;
-  function get_data_conversation(iConversationID: number, iPersonID: number, teConversation: unknown, feConversation: unknown): unknown;
-  function get_conversations(iPersonID: number, sStatus: string, sQueryQual: string, dLastDate: Date, bSelectOnlyNewMessage: boolean, Session: Session, iCurrentConversationID: number, sObjectTypes: string, bShowPublic: boolean, bUpdateState: boolean): unknown;
-  function get_conversation_messages(iConversationID: number, iPersonID: number, Session: Session, teConversation: unknown, tePerson: unknown, iPageNum: number, iPageSize: number, bCheckUnreadMessage: boolean, xarrBlockMessages: unknown, dLastMessageDate: Date, bSelectOnlyUnreadMessage: boolean): unknown;
-  function get_operations_conversation(iConversationID: number, iPersonID: number, teConversation: unknown, tePerson: unknown, teConversationType: unknown): unknown;
-  function create_resource(oFileData: unknown, iPersonID: number, bUnauthorize: boolean, tePerson: unknown): unknown;
-  function alerd(sText: string, bDebug: boolean): unknown;
-  function add_message(iChatID: number, sMessage: string, iSenderID: number, teChat: unknown, iStageID: number, iPrevStageID: number, teChatBot: unknown, oAnswer: unknown, iConversationID: number, bWriteMessage: boolean): unknown;
-  function create_chat_chatbot(catChatBotType: unknown, oMessage: unknown, teChatBot: unknown, iPersonID: number, iConversationID: number): unknown;
-  function send_to_stage(sChatBotCode: string, curChatID: number, iStageID: number, curChatDoc: unknown, iPrevStageID: number, teChatBot: unknown, bReWriteLastMessage: boolean, iConversationID: number, oRequest: unknown): unknown;
-  function chatbot_request_processing(Request: unknown, RequestBody: unknown, RequestQueryString: unknown, RequestForm: unknown, bWriteMessage: boolean, curUserID: number, iConversationID: number): unknown;
-  function get_aiml_data(iCustomChatBotTemplateID: number, bIsForcibly: boolean, iCurChatID: number, curChat: unknown, teCustomChatBotTemplate: unknown): unknown;
-  function conversation_api(Request: unknown, Response: unknown, isWebSocket: boolean, Session: Session, sAction: string): unknown;
-  function add_chatbot_to_conversation(iConversationID: number, iChatbotID: number, iChatbotTypeID: number): unknown;
-  function del_chatbot_from_conversation(iConversationID: number, iChatbotID: number): unknown;
+  function write_message(textMessage: string, objectId: number, teObject: unknown, senderId: number, teSender: unknown, arrFiles: unknown, arrCatalogs: unknown, messageId: number, messageData: unknown, messageType: string, arrMessageRecipients: unknown): unknown;
+  function get_recipients(objectId: number, teObject: unknown): unknown;
+  function set_status_participant_in_conversation(conversationId: number, aParticipantStates: unknown, teConversation: unknown): unknown;
+  function change_participants_conversation(conversationId: number, docConversation: unknown, action: string, participantId: number, arrParticipants: unknown, chatbotId: number, conversationTypeId: number, docParticipantObject: unknown): unknown;
+  function get_data_conversation(conversationId: number, personId: number, teConversation: unknown, feConversation: unknown): unknown;
+  function get_conversations(personId: number, status: string, queryQual: string, lastDate: Date, selectOnlyNewMessage: boolean, session: Session, currentConversationId: number, objectTypes: string, showPublic: boolean, updateState: boolean): unknown;
+  function get_conversation_messages(conversationId: number, personId: number, session: Session, teConversation: unknown, tePerson: unknown, pageNum: number, pageSize: number, checkUnreadMessage: boolean, xarrBlockMessages: unknown, lastMessageDate: Date, selectOnlyUnreadMessage: boolean): unknown;
+  function get_operations_conversation(conversationId: number, personId: number, teConversation: unknown, tePerson: unknown, teConversationType: unknown): unknown;
+  function create_resource(fileData: unknown, personId: number, unauthorize: boolean, tePerson: unknown): unknown;
+  function alerd(text: string, debug: boolean): unknown;
+  function add_message(chatId: number, message: string, senderId: number, teChat: unknown, stageId: number, prevStageId: number, teChatBot: unknown, answer: unknown, conversationId: number, writeMessage: boolean): unknown;
+  function create_chat_chatbot(catChatBotType: unknown, message: unknown, teChatBot: unknown, personId: number, conversationId: number): unknown;
+  function send_to_stage(chatBotCode: string, curChatId: number, stageId: number, curChatDoc: unknown, prevStageId: number, teChatBot: unknown, reWriteLastMessage: boolean, conversationId: number, request: unknown): unknown;
+  function chatbot_request_processing(request: unknown, requestBody: unknown, requestQueryString: unknown, requestForm: unknown, writeMessage: boolean, curUserId: number, conversationId: number): unknown;
+  function get_aiml_data(customChatBotTemplateId: number, isForcibly: boolean, curChatId: number, curChat: unknown, teCustomChatBotTemplate: unknown): unknown;
+  function conversation_api(request: unknown, response: unknown, isWebSocket: boolean, session: Session, action: string): unknown;
+  function add_chatbot_to_conversation(conversationId: number, chatbotId: number, chatbotTypeId: number): unknown;
+  function del_chatbot_from_conversation(conversationId: number, chatbotId: number): unknown;
 }

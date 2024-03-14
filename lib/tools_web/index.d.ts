@@ -4,7 +4,7 @@ declare namespace tools_web {
    * Путь до wt/web директории сервера.
    * @returns {string} Путь.
    */
-  function web_url(): string;
+  let web_url: XmlElem<string>;
   /**
    * Ссылка на раздел портала.
    * @param {object} attr - Параметры.
@@ -156,7 +156,7 @@ declare namespace tools_web {
    * Возвращает DOTNETCORE-VFS=='1' из AppConfig.
    * @returns {boolean} DOTNETCORE-VFS=='1'.
    */
-  function is_vfs(): boolean;
+  let is_vfs: XmlElem<boolean>;
   /**
    * Отправка файла в response stream.
    * @param {string} url - Url файла.
@@ -175,6 +175,7 @@ declare namespace tools_web {
   function get_active_web_template_hash(sModeParam: unknown, sAccessLevelParam: unknown, sAccessRoleParam: unknown, sSiteIDParam: unknown, sWebDesignIDParam: unknown): unknown;
   function build_submatched_string(sSourceString: unknown, sRealString: unknown, sDestString: unknown): unknown;
   function get_auth_hash(sSourceParam: unknown): unknown;
+  function get_user_id_by_login(authLogin: string, authParams: unknown): unknown;
   function set_cookie_auth(req: Request, curHost: HostDocumentTopElem, authParam: Object): unknown;
   /**
    * Инициализаяция пользователя.
@@ -201,7 +202,7 @@ declare namespace tools_web {
   function GetVacancyResponseStatus(obVacancyResponseParam: unknown, iVacancyResponseIDParam: unknown, curLngCommonParam: unknown): unknown;
   function html_decode(sParam: unknown): unknown;
   function html_to_imput_value(sParam: unknown): unknown;
-  const content_types: unknown;
+  let content_types: XmlElem<unknown>;
   function get_app_ui(): unknown;
   function set_st_category(curUserParam: unknown): unknown;
   function get_child_by_key_value(fldSourceParam: unknown, sKeyParam: unknown, sDefaultValueParam: unknown): unknown;
@@ -220,6 +221,7 @@ declare namespace tools_web {
   function get_header_obj(sHeaderParam: unknown): unknown;
   function get_multipart_array(Request: unknown): unknown;
   function get_game_rating(curUser: unknown, bCheckLevel: unknown, sCurrencyTypeID: unknown, bAllLevel: unknown, bDispSub: unknown, iSubDepth: unknown, iGrpColl: unknown, oPaging: unknown, curUserID: unknown, bRange: unknown, iAmntCollsRating: unknown, sGap: unknown, bSamePlace: unknown, bShowTopRating: unknown): unknown;
+  function get_game_rating_awards_or_badges(tePerson: unknown, allLevel: boolean, checkLevel: boolean, levelId: number, amntCollsRating: number, dispSub: boolean, subdivId: number, subdivNum: number, currencyTypeId: number, grpColl: number, paging: unknown, range: boolean): unknown;
   function get_game_rating_all(bAllLevel: unknown, bCheckLevel: unknown, iLevelID: number, bDispSub: unknown, iSubdivID: number, iSubdivNum: number, sCurrencyTypeID: unknown, iGrpColl: number, oPaging: Object, bRange: boolean, iAmntCollsRating: number, bSamePlace: boolean, bShowTopRating: boolean): unknown;
   function get_timezone(iObjectId: unknown, catObject: unknown, bReturnNull: unknown): unknown;
   function get_timezone_date(dDate: unknown, catTimeZone1: unknown, catTimeZone2: unknown): unknown;
@@ -231,11 +233,12 @@ declare namespace tools_web {
   function set_override_web_params(curParamsTarget: unknown, catOverrideWebTemplateParam: unknown): unknown;
   function access_exists(fldAccessParam: unknown): unknown;
   function str_period_date(dtParam: unknown, curLngWeb: unknown): unknown;
-  const enabled_web_rules_date: Date;
-  const enabled_web_rules_obj: unknown;
+  let enabled_web_rules_date: XmlElem<Date>;
+  let enabled_web_rules_obj: XmlElem<unknown>;
   function get_enabled_web_rules(): unknown;
-  const std_web_rules_obj: unknown;
+  let std_web_rules_obj: XmlElem<unknown>;
   function get_std_web_rules(): unknown;
+  function clear_std_web_rules(): unknown;
   function get_mode_clean_url(sModeParam: unknown, iObjectIDParam: unknown, oParams: unknown): unknown;
   function get_web_mode_clean_url(oWebModeParam: unknown, iObjectIDParam: unknown, oParams: unknown): unknown;
   function convert_mode_clean_url(sUrlParam: unknown): unknown;
@@ -253,6 +256,16 @@ declare namespace tools_web {
   function check_object(xmCurObject: unknown, sType: string): unknown;
   function check_redirect_url(sUrlParam: string): unknown;
   function check_web_rule_by_url(url: string, Request: Request): boolean;
+  function check_learning_schedule(learning: unknown, teObject: unknown): unknown;
+  function set_user_status(curUserId: unknown, status: unknown): unknown;
+  function get_user_status(curUserId: unknown): unknown;
+  function terminate_learning_connection(objectId: number): unknown;
+  function create_learning_connection(teObject: unknown, teUser: unknown, partCode: string): unknown;
+  function log_learning_connection(type: string, connection: unknown): unknown;
+  function set_data_cache(key: string, value: unknown, duration: number): unknown;
+  function get_data_cache(key: string): unknown;
+  function get_data_cache_by_pattern(pattern: string): unknown;
+  function remove_data_cache(key: string): unknown;
 }
 
 interface IToolsWebUserInit {

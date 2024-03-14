@@ -10,14 +10,14 @@ declare namespace tools_i18n {
   function get_active_i18n(): unknown;
   let components_obj: XmlElem<unknown>;
   function components(): unknown;
-  function t(sConstParam: string, oI18nParam: unknown): unknown;
-  function get_cur_i18n(oI18nParam: unknown, sLocaleParam: string): unknown;
-  function get_const_key(sLocaleParam: string, sCodeParam: string, sConstParam: string): unknown;
-  function get_locale_cache_field(sFieldNameParam: string): unknown;
-  function put_locale_cache_field(sFieldNameParam: string, sFieldValueParam: string): unknown;
-  function get_const_ids_from_func_text(sSourceCodeParam: string): unknown;
+  function t(param: string, i18n: unknown): unknown;
+  function get_cur_i18n(i18n: unknown, locale: string): unknown;
+  function get_const_key(locale: string, code: string, param: string): unknown;
+  function get_locale_cache_field(fieldName: string): unknown;
+  function put_locale_cache_field(fieldName: string, fieldValue: string): unknown;
+  function get_const_ids_from_func_text(sourceCode: string): unknown;
   function get_cwt_wvar_mapping(): unknown;
-  function translate_object_fields(fldObjectTarget: unknown, curLocale: unknown, sFieldsParam: string): unknown;
+  function translate_object_fields(fldObjectTarget: unknown, curLocale: unknown, fields: string): unknown;
   function save_const_translate_data(): unknown;
-  function obtain_const_translate_data(sUrlParam: string): unknown;
+  function obtain_const_translate_data(url: string): unknown;
 }
