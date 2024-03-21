@@ -20,8 +20,8 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElemObject<number>;
   access: XmlElem<AccessDocBase>;
-  set_status(sNewStatusParam: string, bSendNotificationsParam: boolean, oScreenParam: unknown): unknown;
-  start_action(sTypeParam: string): unknown;
+  set_status(newStatus: string, sendNotifications: boolean, screen: unknown): unknown;
+  start_action(type: string): unknown;
 };
 
 type PersonnelCommitteeDocument = XmlDocument & {

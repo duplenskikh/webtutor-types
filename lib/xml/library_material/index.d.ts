@@ -65,13 +65,9 @@ interface LibraryMaterialDocumentGroup {
   name: XmlElem<string>;
 }
 
-interface LibraryMaterialDocumentSubscribedPersonsSubscribedPerson {
+interface LibraryMaterialDocumentSubscribedPerson {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
-}
-
-interface LibraryMaterialDocumentSubscribedPersons {
-  subscribed_person: XmlElem<LibraryMaterialDocumentSubscribedPersonsSubscribedPerson>;
 }
 
 interface LibraryMaterialDocumentPathSection {
@@ -114,7 +110,7 @@ CustomElemsBase & {
   is_closed: XmlElem<boolean>;
   groups: XmlMultiElem<LibraryMaterialDocumentGroup>;
   external_id: XmlElem<string>;
-  subscribed_persons: XmlElem<LibraryMaterialDocumentSubscribedPersons>;
+  subscribed_persons: XmlMultiElem<LibraryMaterialDocumentSubscribedPerson>;
   default_response_type_id: XmlElem<number, ResponseTypeCatalogDocumentTopElem>;
   mandatory_fill_response: XmlElem<boolean>;
   old_id: XmlElem<number, LibrarySectionCatalogDocumentTopElem>;

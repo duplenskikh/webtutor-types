@@ -28,11 +28,11 @@ CustomReportBase & {
   binding_selection: XmlElem<number>;
   initiator_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   perfomance_cutoff: XmlElem<number>;
-  build_report_v2(sTaskIDParam: string, bMetaParam: boolean): unknown;
-  buildCustomReportQuery(TOP_ELEM: unknown, sTaskIDParam: string): unknown;
-  UI_CoreModeChangeHandler(NewValue: unknown): unknown;
-  UI_CoreObjectChangeHandler(fldSource: unknown, NewValue: unknown): unknown;
-  SetModeSelector(imode: number): unknown;
+  build_report_v2(taskId: string, meta: boolean): unknown;
+  buildCustomReportQuery(tOPELEM: unknown, taskId: string): unknown;
+  UI_CoreModeChangeHandler(newValue: unknown): unknown;
+  UI_CoreObjectChangeHandler(fldSource: unknown, newValue: unknown): unknown;
+  SetModeSelector(imode: unknown): unknown;
 };
 
 type CustomReportDocument = XmlDocument & {

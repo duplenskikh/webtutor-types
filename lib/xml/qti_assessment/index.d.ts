@@ -1,31 +1,31 @@
-interface QtiAssessmentDocumentSectionSelectionOrderingPoint {
+interface QtiAssessmentDocumentAssessmentSectionSelectionOrderingPoint {
   point_num: XmlElem<number>;
   item_num: XmlElem<number>;
   item_sum_num(): unknown;
 }
 
-interface QtiAssessmentDocumentSectionSelectionOrdering {
+interface QtiAssessmentDocumentAssessmentSectionSelectionOrdering {
   order: XmlElem<string, typeof common.order_types>;
   select_id: XmlElem<string>;
   select_num: XmlElem<number>;
-  points: XmlMultiElem<QtiAssessmentDocumentSectionSelectionOrderingPoint>;
+  points: XmlMultiElem<QtiAssessmentDocumentAssessmentSectionSelectionOrderingPoint>;
 }
 
-interface QtiAssessmentDocumentSectionItemScale {
+interface QtiAssessmentDocumentAssessmentSectionItemScale {
   scale_id: XmlElem<string>;
 }
 
-interface QtiAssessmentDocumentSectionItem {
+interface QtiAssessmentDocumentAssessmentSectionItem {
   id: XmlElem<number>;
   title: XmlElem<string>;
-  scales: XmlMultiElem<QtiAssessmentDocumentSectionItemScale>;
+  scales: XmlMultiElem<QtiAssessmentDocumentAssessmentSectionItemScale>;
 }
 
-interface QtiAssessmentDocumentSectionRole {
+interface QtiAssessmentDocumentAssessmentSectionRole {
   id: XmlElem<number>;
 }
 
-interface QtiAssessmentDocumentSection {
+interface QtiAssessmentDocumentAssessmentSection {
   id: XmlElem<number>;
   code: XmlElem<string>;
   title: XmlElem<string>;
@@ -38,17 +38,13 @@ interface QtiAssessmentDocumentSection {
   feedback_correct: XmlElem<string>;
   rubric: XmlElem<RubricBase>;
   objectives: XmlElem<ObjectivesBase>;
-  selection_ordering: XmlElem<QtiAssessmentDocumentSectionSelectionOrdering>;
-  items: XmlMultiElem<QtiAssessmentDocumentSectionItem>;
+  selection_ordering: XmlElem<QtiAssessmentDocumentAssessmentSectionSelectionOrdering>;
+  items: XmlMultiElem<QtiAssessmentDocumentAssessmentSectionItem>;
   comment: XmlElem<string>;
-  roles: XmlMultiElem<QtiAssessmentDocumentSectionRole>;
+  roles: XmlMultiElem<QtiAssessmentDocumentAssessmentSectionRole>;
 }
 
-interface QtiAssessmentDocumentMsWeekScheduleBase {
-
-}
-
-interface QtiAssessmentDocumentPlayer {
+interface QtiAssessmentDocumentAssessmentPlayer {
   type: XmlElem<string, typeof common.player_types>;
   fit_screen: XmlElem<boolean>;
   position: XmlElem<string, typeof common.player_positions>;
@@ -69,25 +65,13 @@ interface QtiAssessmentDocumentPlayer {
   display_res_score: XmlElem<boolean>;
 }
 
-interface QtiAssessmentDocumentScale {
+interface QtiAssessmentDocumentAssessmentScale {
   id: XmlElem<string>;
   name: XmlElem<string>;
   comment: XmlElem<string>;
 }
 
-type QtiAssessmentDocumentTopElem = XmlTopElem &
-ProctoringBase &
-CatalogListBase &
-CourseExpertsBase &
-FileListBase &
-CustomElemsBase &
-KnowledgePartsBase &
-KnowledgePartsBaseOld &
-GameBonusBase &
-EstimationLevelsBase &
-ClLocalizationsBase &
-AdminAccessBase & {
-  Doc: QtiAssessmentDocument;
+interface QtiAssessmentDocumentAssessment extends ProctoringBase, CatalogListBase, CourseExpertsBase, FileListBase, CustomElemsBase, KnowledgePartsBase, KnowledgePartsBaseOld, GameBonusBase, EstimationLevelsBase, ClLocalizationsBase, AdminAccessBase {
   id: XmlElem<number>;
   code: XmlElem<string>;
   title: XmlElem<string>;
@@ -114,7 +98,7 @@ AdminAccessBase & {
   not_sent_correct_answer: XmlElem<boolean>;
   rubric: XmlElem<RubricBase>;
   objectives: XmlElem<ObjectivesBase>;
-  sections: XmlMultiElem<QtiAssessmentDocumentSection>;
+  sections: XmlMultiElem<QtiAssessmentDocumentAssessmentSection>;
   certificate_type_id: XmlElem<number, CertificateTypeCatalogDocumentTopElem>;
   display_result: XmlElem<boolean>;
   is_adaptive_test: XmlElem<boolean>;
@@ -128,26 +112,32 @@ AdminAccessBase & {
   not_use_default_notification: XmlElem<boolean>;
   view_templates: XmlElem<MsViewTemplatesBase>;
   comment: XmlElem<string>;
-  schedule: XmlElem<QtiAssessmentDocumentMsWeekScheduleBase>;
+  schedule: XmlElem<MsWeekScheduleBase>;
   access: XmlElem<AccessDocBase>;
   publish_url: XmlElem<string>;
   publish_date: XmlElem<Date>;
   template_url: XmlElem<string>;
   win_width: XmlElem<string>;
   win_height: XmlElem<string>;
-  player: XmlElem<QtiAssessmentDocumentPlayer>;
-  scales: XmlMultiElem<QtiAssessmentDocumentScale>;
+  player: XmlElem<QtiAssessmentDocumentAssessmentPlayer>;
+  scales: XmlMultiElem<QtiAssessmentDocumentAssessmentScale>;
   before_finish_eval: XmlElem<string>;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   get_info(): unknown;
   update_structure(): unknown;
   role_id: XmlMultiElemObject<number>;
+}
+
+type QtiAssessmentDocumentTopElem = XmlTopElem & {
+  Doc: QtiAssessmentDocument;
+
 };
 
 type QtiAssessmentDocument = XmlDocument & {
   TopElem: QtiAssessmentDocumentTopElem;
   qti_assessment: QtiAssessmentDocumentTopElem;
+  assessment: XmlElem<QtiAssessmentDocumentAssessment>;
   OnCreate(): unknown;
   DocDesc(): unknown;
 };

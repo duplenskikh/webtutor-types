@@ -1,11 +1,7 @@
-interface AssessmentAppraiseDocumentAuditorysAuditory {
+interface AssessmentAppraiseDocumentAuditory {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_name: XmlElem<string>;
   position_name: XmlElem<string>;
-}
-
-interface AssessmentAppraiseDocumentAuditorys {
-  auditory: XmlElem<AssessmentAppraiseDocumentAuditorysAuditory>;
 }
 
 interface AssessmentAppraiseDocumentGroup {
@@ -112,17 +108,13 @@ interface AssessmentAppraiseDocumentCustomObject {
   custom_object_type: XmlElem<string, typeof common.exchange_object_types>;
 }
 
-interface AssessmentAppraiseDocumentImpersonatePersonsImpersonatePerson {
+interface AssessmentAppraiseDocumentImpersonatePerson {
   impersonator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   impersonator_fullname: XmlElem<string>;
   face_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   face_person_fullname: XmlElem<string>;
   from_date: XmlElem<Date>;
   to_date: XmlElem<Date>;
-}
-
-interface AssessmentAppraiseDocumentImpersonatePersons {
-  impersonate_person: XmlElem<AssessmentAppraiseDocumentImpersonatePersonsImpersonatePerson>;
 }
 
 type AssessmentAppraiseDocumentTopElem = XmlTopElem &
@@ -140,7 +132,7 @@ AdminAccessBase & {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   assessment_object_type: XmlElem<string>;
   max_auditory: XmlElem<number>;
-  auditorys: XmlElem<AssessmentAppraiseDocumentAuditorys>;
+  auditorys: XmlMultiElem<AssessmentAppraiseDocumentAuditory>;
   groups: XmlMultiElem<AssessmentAppraiseDocumentGroup>;
   departments: XmlMultiElem<AssessmentAppraiseDocumentDepartment>;
   assessment_objects: XmlMultiElem<AssessmentAppraiseDocumentAssessmentObject>;
@@ -177,7 +169,7 @@ AdminAccessBase & {
   xml_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
   server_agent_id: XmlElem<number, ServerAgentCatalogDocumentTopElem>;
   player: XmlElem<number>;
-  impersonate_persons: XmlElem<AssessmentAppraiseDocumentImpersonatePersons>;
+  impersonate_persons: XmlMultiElem<AssessmentAppraiseDocumentImpersonatePerson>;
   role_id: XmlMultiElemObject<number>;
 };
 

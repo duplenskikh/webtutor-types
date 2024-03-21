@@ -17,7 +17,7 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
   text_area: XmlElem<string>;
-  load_file(tData: unknown, source: string, needInstall: unknown): unknown;
+  load_file(tData: unknown, source: unknown, needInstall: unknown): unknown;
 };
 
 type ComponentPackageDocument = XmlDocument & {

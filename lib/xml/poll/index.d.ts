@@ -119,7 +119,7 @@ KnowledgePartsBase & {
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElemObject<number>;
   get_report_data(): unknown;
-  set_question_id(fldQuestionIDTarget: unknown, fldItemParam: unknown, sItemTypeParam: string, bIsNewParam: boolean): unknown;
+  set_question_id(fldQuestionIdTarget: unknown, fldItem: unknown, itemType: string, isNew: boolean): unknown;
   set_value(fldValueTarget: unknown): unknown;
 };
 

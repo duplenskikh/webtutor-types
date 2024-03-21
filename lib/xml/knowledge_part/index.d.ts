@@ -17,7 +17,7 @@ KnowledgePartsBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;
   resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
-  parent_object_id: XmlElem<number>;
+  parent_object_id: XmlElem<number, KnowledgePartCatalogDocumentTopElem>;
   knowledge_classifier_id: XmlElem<number, KnowledgeClassifierCatalogDocumentTopElem>;
   confirmation_type: XmlElem<string, typeof common.confirmation_types>;
   text_area: XmlElem<string>;

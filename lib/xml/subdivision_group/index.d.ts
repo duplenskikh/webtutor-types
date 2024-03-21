@@ -26,9 +26,9 @@ ViewConditionsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   desc: XmlElem<string>;
-  dynamic_select_subdivision(_clear_list: unknown): unknown;
-  dynamic_select_person(_clear_list: unknown): unknown;
-  start_action(sTypeParam: string): unknown;
+  dynamic_select_subdivision(clearList: unknown): unknown;
+  dynamic_select_person(clearList: unknown): unknown;
+  start_action(type: string): unknown;
 };
 
 type SubdivisionGroupDocument = XmlDocument & {

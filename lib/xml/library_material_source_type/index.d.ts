@@ -13,7 +13,7 @@ WebVariablesBase & {
   doc_info: XmlElem<DocInfoBase>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  evaluate(sFileUrlPARAM: string, oOptionalPARAM: unknown): unknown;
+  evaluate(fileUrl: string, optional: unknown): unknown;
 };
 
 type LibraryMaterialSourceTypeDocument = XmlDocument & {

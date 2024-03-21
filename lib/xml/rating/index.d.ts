@@ -10,7 +10,7 @@ AdminAccessBase & {
   name: XmlElem<string>;
   object_type: XmlElem<string, typeof common.exchange_object_types>;
   date: XmlElem<Date>;
-  expert_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & XmlElem<MsPersonSdInnerBase>;
+  expert_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
   status: XmlElem<boolean>;
   objects: XmlMultiElem<RatingDocumentObject>;
   comment: XmlElem<string>;

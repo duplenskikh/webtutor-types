@@ -9,9 +9,9 @@ CustomElemsBase & {
   name: XmlElem<string>;
   vacancy_id: XmlElem<number, VacancyCatalogDocumentTopElem>;
   vacancy_name: XmlElem<string>;
-  recruiter_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & XmlElem<MsPersonSdInnerBase>;
+  recruiter_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
   comment_recruiter: XmlElem<string>;
-  response_author_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & XmlElem<MsPersonSdInnerBase>;
+  response_author_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
   resume_id: XmlElem<number, ResumeCatalogDocumentTopElem>;
   date: XmlElem<Date>;
   date_invitation: XmlElem<Date>;
@@ -20,7 +20,7 @@ CustomElemsBase & {
   employer_answer: XmlElem<string>;
   career_reserve_id: XmlElem<number, CareerReserveCatalogDocumentTopElem>;
   doc_info: XmlElem<DocInfoBase>;
-  set_status(sNewStatusParam: string, bSendNotificationsParam: boolean): unknown;
+  set_status(newStatus: string, sendNotifications: boolean): unknown;
 };
 
 type VacancyResponseDocument = XmlDocument & {

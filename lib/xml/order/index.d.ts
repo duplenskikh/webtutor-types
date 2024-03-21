@@ -18,7 +18,7 @@ interface OrderDocumentGood {
   delivery_type: XmlElem<string, typeof common.delivery_types>;
   cost: XmlElem<number>;
   sum(): unknown;
-  add_good_instance(iGoodInstanceIDParam: number): unknown;
+  add_good_instance(goodInstanceId: number): unknown;
   status: XmlElem<string, typeof common.order_status_types>;
   request_id: XmlElem<number, RequestCatalogDocumentTopElem>;
 }

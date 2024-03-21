@@ -21,7 +21,7 @@ AdminAccessBase & {
   kpi_groups: XmlMultiElem<BonusProfileDocumentKpiGroup>;
   script: XmlElem<string>;
   url: XmlElem<string>;
-  evaluate_pa(PAID: number, PA: unknown): unknown;
+  evaluate_pa(paId: number, pA: unknown): unknown;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
 };

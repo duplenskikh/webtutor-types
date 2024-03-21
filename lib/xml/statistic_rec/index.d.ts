@@ -64,9 +64,9 @@ I18nBase & {
   doc_info: XmlElem<DocInfoBase>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  calculate_on_server(iObjectIdParam: number): unknown;
-  calculate(ObjectParam: unknown, dFrom: Date, dTo: Date, sPeriodParam: string, oOptionPARAM: unknown): unknown;
-  calculate_context(teObjectParam: unknown, Env: unknown): unknown;
+  calculate_on_server(objectId: number): unknown;
+  calculate(object: unknown, from: Date, to: Date, period: string, option: unknown): unknown;
+  calculate_context(teObject: unknown, env: unknown): unknown;
   role_id: XmlMultiElemObject<number>;
 };
 

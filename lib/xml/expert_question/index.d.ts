@@ -12,7 +12,7 @@ FileListBase & {
   date: XmlElem<Date>;
   normative_date: XmlElem<Date>;
   answer_date: XmlElem<Date>;
-  expert_id: XmlElem<number>;
+  expert_id: XmlElem<number, ExpertCatalogDocumentTopElem>;
   status: XmlElem<boolean>;
   is_faq: XmlElem<boolean>;
   is_disclosed: XmlElem<boolean>;

@@ -30,7 +30,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  start_action(sTypeParam: string): unknown;
+  start_action(type: string): unknown;
   role_id: XmlMultiElemObject<number>;
 };
 

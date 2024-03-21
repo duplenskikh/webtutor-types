@@ -37,8 +37,12 @@ interface ExchangeBase {
   process_eval: XmlElem<string>;
 }
 
-interface ExchangeServerDocumentExchangeBase {
+interface ExchangeServerDocumentDownload extends ExchangeBase {
+  take_dest_modification_date: XmlElem<boolean>;
+}
 
+interface ExchangeServerDocumentUpload extends ExchangeBase {
+  clear_resource_data: XmlElem<boolean>;
 }
 
 type ExchangeServerDocumentTopElem = XmlTopElem &
@@ -48,10 +52,10 @@ CustomElemsBase & {
   name: XmlElem<string>;
   server_password: XmlElem<string>;
   is_active: XmlElem<boolean>;
-  download: XmlElem<ExchangeServerDocumentExchangeBase>;
+  download: XmlElem<ExchangeServerDocumentDownload>;
   update_exist_package_obj: XmlElem<boolean>;
   auto_publish_test: XmlElem<boolean>;
-  upload: XmlElem<ExchangeServerDocumentExchangeBase>;
+  upload: XmlElem<ExchangeServerDocumentUpload>;
   last_upload_date: XmlElem<Date>;
   last_download_date: XmlElem<Date>;
   server_version: XmlElem<string>;

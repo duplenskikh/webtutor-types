@@ -210,8 +210,8 @@ FileListBase & {
   career_plan_type: XmlElem<string>;
   career_plan_id: XmlElem<number, CareerPlanCatalogDocumentTopElem>;
   stages: XmlMultiElem<PaDocumentStage>;
-  experiment_foo(sString: string): unknown;
-  calculate(oParams: unknown): unknown;
+  experiment_foo(string: string): unknown;
+  calculate(params: unknown): unknown;
   load_kpi_values(): unknown;
 };
 

@@ -3,12 +3,8 @@ interface PositionCommonDocumentParentPositionCommon {
   career_transition_direction: XmlElem<string, typeof common.career_transition_direction_types>;
 }
 
-interface PositionCommonDocumentPositionFamilysPositionFamily {
+interface PositionCommonDocumentPositionFamily {
   position_family_id: XmlElem<number, PositionFamilyCatalogDocumentTopElem>;
-}
-
-interface PositionCommonDocumentPositionFamilys {
-  position_family: XmlElem<PositionCommonDocumentPositionFamilysPositionFamily>;
 }
 
 interface PositionCommonDocumentPositionName {
@@ -102,7 +98,7 @@ AdminAccessBase & {
   benefit_sum: XmlElem<number>;
   status: XmlElem<string, typeof common.position_common_statuss>;
   parent_position_commons: XmlMultiElem<PositionCommonDocumentParentPositionCommon>;
-  position_familys: XmlElem<PositionCommonDocumentPositionFamilys>;
+  position_familys: XmlMultiElem<PositionCommonDocumentPositionFamily>;
   position_names: XmlMultiElem<PositionCommonDocumentPositionName>;
   min_salary: XmlElem<number>;
   max_salary: XmlElem<number>;

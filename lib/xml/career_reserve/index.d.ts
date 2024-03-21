@@ -6,14 +6,10 @@ interface CareerReserveDocumentTutor extends PersonFillingBase {
   comment: XmlElem<string>;
 }
 
-interface CareerReserveDocumentTaskCommissionPersonsCommissionPerson extends PersonFillingBase {
+interface CareerReserveDocumentTaskCommissionPerson extends PersonFillingBase {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   score: XmlElem<number>;
   comment: XmlElem<string>;
-}
-
-interface CareerReserveDocumentTaskCommissionPersons {
-  commission_person: XmlElem<CareerReserveDocumentTaskCommissionPersonsCommissionPerson>;
 }
 
 interface CareerReserveDocumentTask extends CustomElemsBase, FileListBase {
@@ -51,7 +47,7 @@ interface CareerReserveDocumentTask extends CustomElemsBase, FileListBase {
   task_id: XmlElem<number, TaskCatalogDocumentTopElem>;
   learning_task_result_id: XmlElem<number, LearningTaskResultCatalogDocumentTopElem>;
   forbid_task_portal_edit: XmlElem<boolean>;
-  commission_persons: XmlElem<CareerReserveDocumentTaskCommissionPersons>;
+  commission_persons: XmlMultiElem<CareerReserveDocumentTaskCommissionPerson>;
   position: XmlElem<number>;
 }
 
@@ -90,10 +86,10 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
   get_linked_position_common_id(): unknown;
-  assign_typical_program(iTypicalProgramIDParam: number): unknown;
-  set_task(_task: unknown, _typical_program_id: number, sParentTaskIDParam: string): unknown;
+  assign_typical_program(typicalProgramId: number): unknown;
+  set_task(task: unknown, typicalProgramId: number, parentTaskId: string): unknown;
   change_tutors_list(): unknown;
-  calc_position(_task: unknown): unknown;
+  calc_position(task: unknown): unknown;
   filling_empty_position_field(): unknown;
   role_id: XmlMultiElemObject<number>;
 };

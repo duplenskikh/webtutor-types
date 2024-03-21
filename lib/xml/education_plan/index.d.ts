@@ -121,7 +121,7 @@ CustomElemsBase & {
   assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-  getEducationPlanAccess(_obj_id: number, _user_id: number, teObject: unknown): unknown;
+  getEducationPlanAccess(objId: number, userId: number, teObject: unknown): unknown;
   calculateMark(): unknown;
 };
 

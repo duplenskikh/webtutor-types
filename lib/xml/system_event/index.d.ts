@@ -6,7 +6,7 @@ interface SystemEventDocumentSectionAction {
   print_form_id: XmlElem<number, PrintFormCatalogDocumentTopElem>;
   activity_id: XmlElem<number, ActivityCatalogDocumentTopElem>;
   log_eval_str: XmlElem<string>;
-  operation_id: XmlElem<number, OperationCatalogDocumentTopElem> & XmlElem<MsParametersBase>;
+  operation_id: XmlElem<number, OperationCatalogDocumentTopElem> & MsParametersBase;
 }
 
 interface SystemEventDocumentSection {

@@ -1,9 +1,5 @@
-interface RequestDocumentPersonsPerson extends PersonFillingBase {
+interface RequestDocumentPerson extends PersonFillingBase {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-}
-
-interface RequestDocumentPersons {
-  person: XmlElem<RequestDocumentPersonsPerson>;
 }
 
 interface RequestDocumentGroup {
@@ -48,7 +44,7 @@ AdminAccessBase & {
   object_start_date: XmlElem<Date>;
   object_type: XmlElem<string>;
   is_group: XmlElem<boolean>;
-  persons: XmlElem<RequestDocumentPersons>;
+  persons: XmlMultiElem<RequestDocumentPerson>;
   person_num(): unknown;
   groups: XmlMultiElem<RequestDocumentGroup>;
   workflow_matchings: XmlMultiElem<RequestDocumentWorkflowMatching>;
@@ -57,7 +53,7 @@ AdminAccessBase & {
   comment: XmlElem<string>;
   custom_elements: XmlMultiElem<RequestDocumentCustomElement>;
   access: XmlElem<AccessDocBase>;
-  start_action(sTypeParam: string): unknown;
+  start_action(type: string): unknown;
 };
 
 type RequestDocument = XmlDocument & {

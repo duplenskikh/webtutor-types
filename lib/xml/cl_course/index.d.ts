@@ -28,12 +28,8 @@ interface ClCourseDocumentAuthor extends PersonFillingBase {
   types_display(): unknown;
 }
 
-interface ClCourseDocumentRepositoriumsRepositorium {
+interface ClCourseDocumentRepositorium {
   repositorium_id: XmlElem<number, RepositoriumCatalogDocumentTopElem>;
-}
-
-interface ClCourseDocumentRepositoriums {
-  repositorium: XmlElem<ClCourseDocumentRepositoriumsRepositorium>;
 }
 
 interface ClCourseDocumentPlanTablePlanRow {
@@ -72,7 +68,7 @@ CustomElemsBase & {
   windows: XmlMultiElem<ClCourseDocumentWindow>;
   folders: XmlMultiElem<ClCourseDocumentFolder>;
   authors: XmlMultiElem<ClCourseDocumentAuthor>;
-  repositoriums: XmlElem<ClCourseDocumentRepositoriums>;
+  repositoriums: XmlMultiElem<ClCourseDocumentRepositorium>;
   plan_table: XmlElem<ClCourseDocumentPlanTable>;
   aux_consts: XmlMultiElem<ClCourseDocumentAuxConst>;
   desc: XmlElem<string>;

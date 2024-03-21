@@ -11,7 +11,7 @@ WebVariablesBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-  get_setting(sSettingNameParam: string): unknown;
+  get_setting(settingName: string): unknown;
   get_settings(): unknown;
 };
 

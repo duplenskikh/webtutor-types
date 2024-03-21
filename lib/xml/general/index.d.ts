@@ -12,8 +12,8 @@ interface PersonNameBase {
   lastname: XmlElem<string>;
   firstname: XmlElem<string>;
   middlename: XmlElem<string>;
-  fullname(): string;
-  shortname(): string;
+  fullname(): unknown;
+  shortname(): unknown;
 }
 
 interface DocInfoBaseCreation {

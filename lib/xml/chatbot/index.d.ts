@@ -1,6 +1,6 @@
 interface ChatbotDocumentChatbotType {
   bot_id: XmlElem<string>;
-  chatbot_type_id: XmlElem<number>;
+  chatbot_type_id: XmlElem<number, ChatbotTypeCatalogDocumentTopElem>;
   webhook_url: XmlElem<string>;
   host_id: XmlElem<number, HostCatalogDocumentTopElem>;
   chatbot_code: XmlElem<string>;
@@ -8,12 +8,12 @@ interface ChatbotDocumentChatbotType {
 
 interface ChatbotDocumentCommandEvalLibrary extends MsCodeLibraryConditionBase {
   eval_code_type: XmlElem<string, typeof common.eval_code_types>;
-  classification_model_id: XmlElem<number>;
+  classification_model_id: XmlElem<number, ClassificationModelCatalogDocumentTopElem>;
 }
 
 interface ChatbotDocumentUnknowCommandTextLibrary extends MsCodeLibraryConditionBase {
   eval_code_type: XmlElem<string, typeof common.eval_code_types>;
-  classification_model_id: XmlElem<number>;
+  classification_model_id: XmlElem<number, ClassificationModelCatalogDocumentTopElem>;
 }
 
 interface ChatbotDocumentUniversalCommand extends MsCodeLibraryCondition {
@@ -27,7 +27,7 @@ interface ChatbotDocumentUniversalCommand extends MsCodeLibraryCondition {
 
 interface ChatbotDocumentUnknowCommandChatbotStageUnknowCommandChatbotStageUnknowCommandTextLibrary extends MsCodeLibraryConditionBase {
   eval_code_type: XmlElem<string, typeof common.eval_code_types>;
-  classification_model_id: XmlElem<number>;
+  classification_model_id: XmlElem<number, ClassificationModelCatalogDocumentTopElem>;
 }
 
 interface ChatbotDocumentUnknowCommandChatbotStageUnknowCommandChatbotStage extends MsCodeLibraryCondition {
@@ -46,7 +46,7 @@ interface ChatbotDocumentUnknowCommandChatbotStage {
 
 interface ChatbotDocumentRegularEvalLibrary extends MsCodeLibraryConditionBase {
   eval_code_type: XmlElem<string, typeof common.eval_code_types>;
-  classification_model_id: XmlElem<number>;
+  classification_model_id: XmlElem<number, ClassificationModelCatalogDocumentTopElem>;
 }
 
 type ChatbotDocumentTopElem = XmlTopElem &

@@ -9,14 +9,10 @@ interface KpiDocumentOwner extends PersonFillingBase {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
 }
 
-interface KpiDocumentResponsiblePersonsResponsiblePerson extends PersonFillingBase {
+interface KpiDocumentResponsiblePerson extends PersonFillingBase {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   is_native: XmlElem<boolean>;
   boss_type_id: XmlElem<number, BossTypeCatalogDocumentTopElem>;
-}
-
-interface KpiDocumentResponsiblePersons {
-  responsible_person: XmlElem<KpiDocumentResponsiblePersonsResponsiblePerson>;
 }
 
 interface KpiDocumentResponsibleGroup {
@@ -66,7 +62,7 @@ KnowledgePartsBase & {
   scale_id: XmlElem<number, ScaleCatalogDocumentTopElem>;
   scales: XmlMultiElem<KpiDocumentScale>;
   owners: XmlMultiElem<KpiDocumentOwner>;
-  responsible_persons: XmlElem<KpiDocumentResponsiblePersons>;
+  responsible_persons: XmlMultiElem<KpiDocumentResponsiblePerson>;
   responsible_groups: XmlMultiElem<KpiDocumentResponsibleGroup>;
   responsible_staffs: XmlMultiElem<KpiDocumentResponsibleStaff>;
   auto_formula: XmlElem<string>;

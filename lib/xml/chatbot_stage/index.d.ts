@@ -1,21 +1,21 @@
 interface ChatbotStageDocumentSendTextLibrary extends MsCodeLibraryConditionBase {
   eval_code_type: XmlElem<string, typeof common.eval_code_types>;
-  classification_model_id: XmlElem<number>;
+  classification_model_id: XmlElem<number, ClassificationModelCatalogDocumentTopElem>;
 }
 
 interface ChatbotStageDocumentEvalGenerateKeyboardLibrary extends MsCodeLibraryConditionBase {
   eval_code_type: XmlElem<string, typeof common.eval_code_types>;
-  classification_model_id: XmlElem<number>;
+  classification_model_id: XmlElem<number, ClassificationModelCatalogDocumentTopElem>;
 }
 
 interface ChatbotStageDocumentUnknowCommandTextLibrary extends MsCodeLibraryConditionBase {
   eval_code_type: XmlElem<string, typeof common.eval_code_types>;
-  classification_model_id: XmlElem<number>;
+  classification_model_id: XmlElem<number, ClassificationModelCatalogDocumentTopElem>;
 }
 
 interface ChatbotStageDocumentUnknowCommandChatbotStageUnknowCommandChatbotStageUnknowCommandTextLibrary extends MsCodeLibraryConditionBase {
   eval_code_type: XmlElem<string, typeof common.eval_code_types>;
-  classification_model_id: XmlElem<number>;
+  classification_model_id: XmlElem<number, ClassificationModelCatalogDocumentTopElem>;
 }
 
 interface ChatbotStageDocumentUnknowCommandChatbotStageUnknowCommandChatbotStage extends MsCodeLibraryCondition {
@@ -57,12 +57,12 @@ interface ChatbotStageDocumentKeyboard extends MsCodeLibraryCondition {
 
 interface ChatbotStageDocumentCommandEvalLibrary extends MsCodeLibraryConditionBase {
   eval_code_type: XmlElem<string, typeof common.eval_code_types>;
-  classification_model_id: XmlElem<number>;
+  classification_model_id: XmlElem<number, ClassificationModelCatalogDocumentTopElem>;
 }
 
 interface ChatbotStageDocumentCommandCommandActionLibrary extends MsCodeLibraryConditionBase {
   eval_code_type: XmlElem<string, typeof common.eval_code_types>;
-  classification_model_id: XmlElem<number>;
+  classification_model_id: XmlElem<number, ClassificationModelCatalogDocumentTopElem>;
 }
 
 interface ChatbotStageDocumentCommand extends MsCodeLibraryCondition {
@@ -78,12 +78,12 @@ interface ChatbotStageDocumentCommand extends MsCodeLibraryCondition {
 
 interface ChatbotStageDocumentEscalationEscalationStageEscalationCommandTextLibrary extends MsCodeLibraryConditionBase {
   eval_code_type: XmlElem<string, typeof common.eval_code_types>;
-  classification_model_id: XmlElem<number>;
+  classification_model_id: XmlElem<number, ClassificationModelCatalogDocumentTopElem>;
 }
 
 interface ChatbotStageDocumentEscalationEscalationStageEscalationActionLibrary extends MsCodeLibraryConditionBase {
   eval_code_type: XmlElem<string, typeof common.eval_code_types>;
-  classification_model_id: XmlElem<number>;
+  classification_model_id: XmlElem<number, ClassificationModelCatalogDocumentTopElem>;
 }
 
 interface ChatbotStageDocumentEscalationEscalationStage extends MsCodeLibraryCondition {

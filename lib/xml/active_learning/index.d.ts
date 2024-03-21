@@ -22,7 +22,7 @@ CustomElemsBase & {
   course_code: XmlElem<string>;
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_current_state: XmlElem<string>;
-  event_id: XmlElem<number>;
+  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
   event_name: XmlElem<string>;
   event_start_date: XmlElem<Date>;
   group_id: XmlElem<number, GroupCatalogDocumentTopElem>;

@@ -43,11 +43,11 @@ PersonObjectLinksBase & {
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
   desc: XmlElem<string>;
-  dynamic_select_person(_clear_list: unknown): unknown;
-  start_action(_item_name: unknown): unknown;
-  activateCourseToPersons(oInputParam: unknown): unknown;
-  add_collaborator(iPersonIdParam: number, docPersonParam: Date): unknown;
-  remove_collaborator(iPersonIdParam: number): unknown;
+  dynamic_select_person(clearList: unknown): unknown;
+  start_action(itemName: unknown): unknown;
+  activateCourseToPersons(input: unknown): unknown;
+  add_collaborator(personId: number, docPerson: unknown): unknown;
+  remove_collaborator(personId: number): unknown;
   role_id: XmlMultiElemObject<number>;
 };
 

@@ -86,7 +86,7 @@ MsParametersBase & {
   sessions: XmlMultiElem<LearningRecordDocumentSession>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  get_url_record(teUser: unknown, ProctorId: number): unknown;
+  get_url_record(teUser: unknown, proctorId: number): unknown;
 };
 
 type LearningRecordDocument = XmlDocument & {

@@ -1,18 +1,14 @@
-interface PollProcedureDocumentAuditorysAuditoryPollGroup {
+interface PollProcedureDocumentAuditoryPollGroup {
   id: XmlElem<string>;
 }
 
-interface PollProcedureDocumentAuditorysAuditory {
+interface PollProcedureDocumentAuditory {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_name: XmlElem<string>;
   position_name: XmlElem<string>;
-  poll_groups: XmlMultiElem<PollProcedureDocumentAuditorysAuditoryPollGroup>;
+  poll_groups: XmlMultiElem<PollProcedureDocumentAuditoryPollGroup>;
   responsible_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   responsible_person_fullname: XmlElem<string>;
-}
-
-interface PollProcedureDocumentAuditorys {
-  auditory: XmlElem<PollProcedureDocumentAuditorysAuditory>;
 }
 
 interface PollProcedureDocumentSubdivisionPollGroup {
@@ -43,16 +39,16 @@ interface PollProcedureDocumentGroup {
 }
 
 interface PollProcedureDocumentPoll {
-  poll_id: XmlElem<number>;
+  poll_id: XmlElem<number, PollCatalogDocumentTopElem>;
 }
 
 interface PollProcedureDocumentAdditionalPollGroupPoll {
-  poll_id: XmlElem<number>;
+  poll_id: XmlElem<number, PollCatalogDocumentTopElem>;
 }
 
 interface PollProcedureDocumentAdditionalPollGroupCondition {
   id: XmlElem<string>;
-  poll_id: XmlElem<number>;
+  poll_id: XmlElem<number, PollCatalogDocumentTopElem>;
   question_id: XmlElem<number>;
   entry_id: XmlElem<number>;
   and_or: XmlElem<string>;
@@ -92,7 +88,7 @@ AdminAccessBase & {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   is_model: XmlElem<boolean>;
   is_open: XmlElem<boolean>;
-  auditorys: XmlElem<PollProcedureDocumentAuditorys>;
+  auditorys: XmlMultiElem<PollProcedureDocumentAuditory>;
   subdivisions: XmlMultiElem<PollProcedureDocumentSubdivision>;
   groups: XmlMultiElem<PollProcedureDocumentGroup>;
   polls: XmlMultiElem<PollProcedureDocumentPoll>;
@@ -105,11 +101,11 @@ AdminAccessBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  set_poll_id(fldConditionParam: unknown): unknown;
-  set_question_id(fldConditionParam: unknown, fldItemParam: unknown): unknown;
+  set_poll_id(fldCondition: unknown): unknown;
+  set_question_id(fldCondition: unknown, fldItem: unknown): unknown;
   update_poll_questionare(): unknown;
-  get_person_poll_objs(curUserID: number): unknown;
-  is_launch_person(curUserID: number): unknown;
+  get_person_poll_objs(curUserId: number): unknown;
+  is_launch_person(curUserId: number): unknown;
   role_id: XmlMultiElemObject<number>;
   equal_hash: XmlElem<string>;
 };

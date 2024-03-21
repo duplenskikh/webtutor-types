@@ -64,7 +64,7 @@ CustomElemsBase & {
   changed: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  set_auth_type(oAuthTypeParam: unknown): unknown;
+  set_auth_type(authType: unknown): unknown;
 };
 
 type HostDocument = XmlDocument & {

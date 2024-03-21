@@ -3,19 +3,15 @@ interface TestProjectDocumentExpert extends PersonFillingBase {
   item_count: XmlElem<number>;
 }
 
-interface TestProjectDocumentGroupPersonsPerson extends PersonFillingBase {
+interface TestProjectDocumentGroupPerson extends PersonFillingBase {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   is_master: XmlElem<boolean>;
-}
-
-interface TestProjectDocumentGroupPersons {
-  person: XmlElem<TestProjectDocumentGroupPersonsPerson>;
 }
 
 interface TestProjectDocumentGroup {
   id: XmlElem<string>;
   name: XmlElem<string>;
-  persons: XmlElem<TestProjectDocumentGroupPersons>;
+  persons: XmlMultiElem<TestProjectDocumentGroupPerson>;
 }
 
 interface TestProjectDocumentPurpose {
@@ -199,9 +195,9 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   report: XmlElem<TestProjectDocumentReport>;
-  get_angof_avg(_variant_id: number, _items_source: unknown): unknown;
+  get_angof_avg(variantId: number, itemsSource: unknown): unknown;
   pul_list_file(): unknown;
-  set_assessment_status(_assessment_id: number, _status: unknown): unknown;
+  set_assessment_status(assessmentId: number, status: unknown): unknown;
 };
 
 type TestProjectDocument = XmlDocument & {

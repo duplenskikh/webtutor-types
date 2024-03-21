@@ -14,8 +14,8 @@ CustomDatasBase & {
   type_id: XmlElem<number, ContactTypeCatalogDocumentTopElem>;
   initiator_person_fullname(): unknown;
   contact_person_fullname(): unknown;
-  initiator_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & XmlElem<MsPersonSdInnerBase>;
-  contact_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & XmlElem<MsPersonSdInnerBase>;
+  initiator_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
+  contact_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
   contact_org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
   status_id: XmlElem<string, typeof common.contact_status_types>;
   contact_date: XmlElem<Date>;

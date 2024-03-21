@@ -7,7 +7,7 @@ AdminAccessBase & {
   Doc: TagDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  resource_id: XmlElem<number>;
+  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   require_acknowledgement: XmlElem<boolean>;
   knowledge_part_id: XmlElem<number, KnowledgePartCatalogDocumentTopElem>;
   experts: XmlMultiElem<TagDocumentExpert>;

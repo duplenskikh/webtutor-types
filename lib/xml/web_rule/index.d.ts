@@ -19,7 +19,7 @@ type WebRuleDocumentTopElem = XmlTopElem & {
   changed: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  script_validate(PATH: unknown, PARAMETERS: unknown): unknown;
+  script_validate(pATH: unknown, pARAMETERS: unknown): unknown;
 };
 
 type WebRuleDocument = XmlDocument & {

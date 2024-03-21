@@ -13,7 +13,7 @@ interface WorkingConditionDocumentAdditionalPayment {
 }
 
 interface WorkingConditionDocumentBenefit {
-  benefit_id: XmlElem<number>;
+  benefit_id: XmlElem<number, BenefitCatalogDocumentTopElem>;
   comment: XmlElem<string>;
 }
 

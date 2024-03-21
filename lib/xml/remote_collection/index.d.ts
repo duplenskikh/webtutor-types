@@ -55,10 +55,10 @@ I18nBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-  setPaging(iIdx: number, iSize: number): unknown;
+  setPaging(idx: number, size: number): unknown;
   setColumnsWhiteList(aFields: unknown): unknown;
-  getStamp(cur_user_id: number, cur_object_id: number): unknown;
-  evaluate(sDataTypePARAM: string, Request: unknown, oArgVars: unknown): unknown;
+  getStamp(curUserId: number, curObjectId: number): unknown;
+  evaluate(dataType: string, request: unknown, argVars: unknown): unknown;
   role_id: XmlMultiElemObject<number>;
 };
 

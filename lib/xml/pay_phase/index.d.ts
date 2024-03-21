@@ -24,10 +24,6 @@ interface PayPhaseDocumentCollaborator extends PersonFillingBase {
   not_pay: XmlElem<boolean>;
 }
 
-interface PayPhaseDocumentExpensePayBase {
-
-}
-
 interface PayPhaseDocumentExpense {
   id: XmlElem<string>;
   currency: XmlElem<string, typeof lists.currency_types>;
@@ -36,14 +32,15 @@ interface PayPhaseDocumentExpense {
   exemption_nds: XmlElem<string>;
   supplier_name: XmlElem<string>;
   supplier_code: XmlElem<string>;
-  invoice: XmlElem<PayPhaseDocumentExpensePayBase>;
-  draft: XmlElem<PayPhaseDocumentExpensePayBase>;
-  act: XmlElem<PayPhaseDocumentExpensePayBase>;
-  invoice2: XmlElem<PayPhaseDocumentExpensePayBase>;
+  invoice: XmlElem<PayBase>;
+  draft: XmlElem<PayBase>;
+  act: XmlElem<PayBase>;
+  invoice2: XmlElem<PayBase>;
 }
 
-interface PayPhaseDocumentPayDocBase {
-
+interface PayPhaseDocumentInvoice extends PayDocBase {
+  is_pay: XmlElem<boolean>;
+  no_nds: XmlElem<boolean>;
 }
 
 type PayPhaseDocumentTopElem = XmlTopElem &
@@ -62,10 +59,10 @@ AdminAccessBase & {
   unnamed_person_num: XmlElem<number>;
   unnamed_person_sum: XmlElem<number>;
   expenses: XmlMultiElem<PayPhaseDocumentExpense>;
-  invoice: XmlElem<PayPhaseDocumentPayDocBase>;
-  draft: XmlElem<PayPhaseDocumentPayDocBase>;
-  act: XmlElem<PayPhaseDocumentPayDocBase>;
-  invoice2: XmlElem<PayPhaseDocumentPayDocBase>;
+  invoice: XmlElem<PayPhaseDocumentInvoice>;
+  draft: XmlElem<PayDocBase>;
+  act: XmlElem<PayDocBase>;
+  invoice2: XmlElem<PayDocBase>;
   invoice_sum: XmlElem<number>;
   draft_sum: XmlElem<number>;
   act_sum: XmlElem<number>;

@@ -21,6 +21,14 @@ interface TaskTypeDocumentParentTaskBlock {
   parent_task_states: XmlMultiElem<TaskTypeDocumentParentTaskBlockParentTaskState>;
 }
 
+interface TaskTypeDocumentResultBlockSelectedField {
+  field_id: XmlElem<string>;
+}
+
+interface TaskTypeDocumentResultBlock extends ResultFieldsBase {
+  selected_fields: XmlMultiElem<TaskTypeDocumentResultBlockSelectedField>;
+}
+
 type TaskTypeDocumentTopElem = XmlTopElem &
 CustomElemsBase &
 WebVariablesBase & {
@@ -49,7 +57,7 @@ WebVariablesBase & {
   can_change_task: XmlElem<boolean>;
   can_delete_task: XmlElem<boolean>;
   related_conversation_type_id: XmlElem<number, ConversationTypeCatalogDocumentTopElem>;
-  result_block: XmlElem<ResultFieldsBase>;
+  result_block: XmlElem<TaskTypeDocumentResultBlock>;
   doc_info: XmlElem<DocInfoBase>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;

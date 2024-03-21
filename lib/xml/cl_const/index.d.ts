@@ -27,7 +27,7 @@ type ClConstDocumentTopElem = XmlTopElem & {
   flags: XmlMultiElem<ClConstDocumentFlag>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  set_value(LOC_ID: number, VALUE: unknown): unknown;
+  set_value(locId: number, value: unknown): unknown;
 };
 
 type ClConstDocument = XmlDocument & {

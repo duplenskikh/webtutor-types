@@ -1,9 +1,5 @@
-interface DnStudGroupDocumentSubfacultysSubfaculty {
+interface DnStudGroupDocumentSubfaculty {
   subfac_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-}
-
-interface DnStudGroupDocumentSubfacultys {
-  subfaculty: XmlElem<DnStudGroupDocumentSubfacultysSubfaculty>;
 }
 
 type DnStudGroupDocumentTopElem = XmlTopElem &
@@ -19,7 +15,7 @@ CustomElemsBase & {
   specialization_id: XmlElem<number, DnSpecializationCatalogDocumentTopElem>;
   qualification_id: XmlElem<number, QualificationCatalogDocumentTopElem>;
   faculty: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  subfacultys: XmlElem<DnStudGroupDocumentSubfacultys>;
+  subfacultys: XmlMultiElem<DnStudGroupDocumentSubfaculty>;
   group_size: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
 };

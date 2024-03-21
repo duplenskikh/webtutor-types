@@ -39,7 +39,7 @@ interface CollaboratorDocumentCustomParam {
 }
 
 interface CollaboratorDocumentCompBenPaymentType {
-  payment_type_id: XmlElem<number>;
+  payment_type_id: XmlElem<number, PaymentTypeCatalogDocumentTopElem>;
   max_value: XmlElem<number>;
   comment: XmlElem<string>;
 }
@@ -142,17 +142,17 @@ PersonObjectLinksBase & {
   consent_kedo_date: XmlElem<Date>;
   last_data: XmlElem<CollaboratorDocumentLastData>;
   clear_cur_position(): unknown;
-  start_action(sTypeParam: string): unknown;
-  set_basic_position(iPositionIDParam: number): unknown;
-  get_courses(sTypeParam: string): unknown;
-  get_tests(sTypeParam: string): unknown;
-  assign_course(iCourseIDPARAM: number, dStartPARAM: Date, dEndPARAM: Date, iEventIDPARAM: number): unknown;
-  assign_test(iTestIDPARAM: number, dStartPARAM: Date, dEndPARAM: Date, iEventIDPARAM: number): unknown;
+  start_action(type: string): unknown;
+  set_basic_position(positionId: number): unknown;
+  get_courses(type: string): unknown;
+  get_tests(type: string): unknown;
+  assign_course(courseId: number, start: Date, end: Date, eventId: number): unknown;
+  assign_test(testId: number, start: Date, end: Date, eventId: number): unknown;
   get_info(): unknown;
-  get_events(sTypeParam: string, sStatusParam: string, sRoleCollabParam: string): unknown;
+  get_events(type: string, status: string, roleCollab: string): unknown;
   get_groups(): unknown;
   get_event_results(): unknown;
-  update_info(sLastnameParam: string, sFirstnameParam: string, sMiddlenameParam: string, sAddressParam: string, sPhoneParam: string, sEmailParam: string, sLoginParam: string, sPasswordParam: string): unknown;
+  update_info(lastname: string, firstname: string, middlename: string, address: string, phone: string, email: string, login: string, password: string): unknown;
   clear_subs_fields(): unknown;
 };
 

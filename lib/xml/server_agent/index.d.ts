@@ -12,7 +12,7 @@ CustomElemsBase & {
   type: XmlElem<string, typeof common.server_agent_types>;
   run_code_url: XmlElem<string>;
   run_code: XmlElem<string>;
-  run_agent(iObjectIDParam: number, sObjectsIDsParam: string, dDateParam: Date): unknown;
+  run_agent(objectId: number, objectsIds: string, date: Date): unknown;
   discharge_id: XmlElem<number, DischargeCatalogDocumentTopElem>;
   user_assignment_id: XmlElem<number, UserAssignmentCatalogDocumentTopElem>;
   import_excel_person_scheme_id: XmlElem<string, typeof lists.import_excel_person_schemes>;

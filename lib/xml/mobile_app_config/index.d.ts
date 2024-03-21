@@ -46,14 +46,6 @@ interface MobileAppConfigDocumentDocument {
   subchildren: XmlMultiElem<MobileAppConfigDocumentDocumentSubchild>;
 }
 
-interface MobileAppConfigDocumentObject extends ObjectInnerBase {
-
-}
-
-interface MobileAppConfigDocumentVirtobj extends ObjectInnerBase {
-
-}
-
 interface MobileAppConfigDocumentInfoDoc {
   id: XmlElem<number, DocumentCatalogDocumentTopElem>;
 }
@@ -111,8 +103,8 @@ CustomElemsBase & {
   typeSet(key: unknown, yes: unknown): unknown;
   menu: XmlElem<MobileAppConfigDocumentMenu>;
   documents: XmlMultiElem<MobileAppConfigDocumentDocument>;
-  objects: XmlMultiElem<MobileAppConfigDocumentObject>;
-  virtobjs: XmlMultiElem<MobileAppConfigDocumentVirtobj>;
+  objects: XmlMultiElem<ObjectInnerBase>;
+  virtobjs: XmlMultiElem<ObjectInnerBase>;
   info_docs: XmlMultiElem<MobileAppConfigDocumentInfoDoc>;
   display_mode: XmlElem<number>;
   display_fine_tuning: XmlElem<MobileAppConfigDocumentDisplayFineTuning>;

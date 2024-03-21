@@ -1,35 +1,29 @@
-interface QtiItemDocumentAnswerCondition {
+interface QtiItemDocumentItemAnswerCondition {
   grading_option_id: XmlElem<string, typeof common.grading_option_types>;
   sentence_option_id: XmlElem<string, typeof common.sentence_option_types>;
   value: XmlElem<string>;
   case_sensitive: XmlElem<boolean>;
 }
 
-interface QtiItemDocumentAnswerValue {
+interface QtiItemDocumentItemAnswerValue {
   id: XmlElem<string>;
   text: XmlElem<string>;
   image: XmlElem<ImageBase>;
 }
 
-interface QtiItemDocumentAnswer {
+interface QtiItemDocumentItemAnswer {
   id: XmlElem<string>;
   text: XmlElem<string>;
   image: XmlElem<ImageBase>;
   is_correct_answer: XmlElem<boolean>;
-  conditions: XmlMultiElem<QtiItemDocumentAnswerCondition>;
-  values: XmlMultiElem<QtiItemDocumentAnswerValue>;
+  conditions: XmlMultiElem<QtiItemDocumentItemAnswerCondition>;
+  values: XmlMultiElem<QtiItemDocumentItemAnswerValue>;
   rows: XmlElem<number>;
   columns: XmlElem<number>;
   ws_score: XmlElem<number>;
 }
 
-type QtiItemDocumentTopElem = XmlTopElem &
-CustomElemsBase &
-KnowledgePartsBase &
-KnowledgePartsBaseOld &
-ClLocalizationsBase &
-AdminAccessBase & {
-  Doc: QtiItemDocument;
+interface QtiItemDocumentItem extends CustomElemsBase, KnowledgePartsBase, KnowledgePartsBaseOld, ClLocalizationsBase, AdminAccessBase {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name(): unknown;
@@ -54,15 +48,21 @@ AdminAccessBase & {
   feedback_wrong: XmlElem<string>;
   feedback_correct: XmlElem<string>;
   answers_image_location: XmlElem<string, typeof common.material_locations>;
-  answers: XmlMultiElem<QtiItemDocumentAnswer>;
+  answers: XmlMultiElem<QtiItemDocumentItemAnswer>;
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElemObject<number>;
+}
+
+type QtiItemDocumentTopElem = XmlTopElem & {
+  Doc: QtiItemDocument;
+
 };
 
 type QtiItemDocument = XmlDocument & {
   TopElem: QtiItemDocumentTopElem;
   qti_item: QtiItemDocumentTopElem;
+  item: XmlElem<QtiItemDocumentItem>;
   OnCreate(): unknown;
   DocDesc(): unknown;
 };

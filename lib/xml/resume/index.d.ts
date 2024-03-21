@@ -80,7 +80,7 @@ CustomElemsBase & {
   name: XmlElem<string>;
   resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   is_candidate: XmlElem<boolean>;
-  creator_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & XmlElem<MsPersonSdInnerBase>;
+  creator_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
   forbid_portal_delete: XmlElem<boolean>;
   filling_type: XmlElem<string>;
   sex: XmlElem<string>;

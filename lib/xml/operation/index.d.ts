@@ -24,7 +24,7 @@ WebVariablesBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   role_id: XmlMultiElemObject<number>;
-  execute(_parameters: unknown, _variables: unknown): unknown;
+  execute(parameters: unknown, variables: unknown): unknown;
 };
 
 type OperationDocument = XmlDocument & {

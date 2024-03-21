@@ -38,7 +38,7 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
   role_id: XmlMultiElemObject<number>;
-  EvalThreat(arrRiskLevels: unknown, fldRiskPerspective: unknown, iKeyPositionID: number): unknown;
+  EvalThreat(arrRiskLevels: unknown, fldRiskPerspective: unknown, keyPositionId: number): unknown;
 };
 
 type KeyPositionDocument = XmlDocument & {

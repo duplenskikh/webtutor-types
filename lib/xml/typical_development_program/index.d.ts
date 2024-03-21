@@ -1,9 +1,5 @@
-interface TypicalDevelopmentProgramDocumentTaskCommissionPersonsCommissionPerson extends PersonFillingBase {
+interface TypicalDevelopmentProgramDocumentTaskCommissionPerson extends PersonFillingBase {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-}
-
-interface TypicalDevelopmentProgramDocumentTaskCommissionPersons {
-  commission_person: XmlElem<TypicalDevelopmentProgramDocumentTaskCommissionPersonsCommissionPerson>;
 }
 
 interface TypicalDevelopmentProgramDocumentTask extends CustomElemsBase {
@@ -26,7 +22,7 @@ interface TypicalDevelopmentProgramDocumentTask extends CustomElemsBase {
   type_document: XmlElem<string, typeof common.career_reserve_material_types>;
   link_document: XmlElem<string>;
   forbid_task_portal_edit: XmlElem<boolean>;
-  commission_persons: XmlElem<TypicalDevelopmentProgramDocumentTaskCommissionPersons>;
+  commission_persons: XmlMultiElem<TypicalDevelopmentProgramDocumentTaskCommissionPerson>;
 }
 
 interface TypicalDevelopmentProgramDocumentTutorsBySubTutor extends PersonFillingBase {
@@ -53,7 +49,7 @@ CustomElemsBase & {
   role_id: XmlMultiElemObject<number>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-  calc_position(_task: unknown): unknown;
+  calc_position(task: unknown): unknown;
   filling_empty_position_field(): unknown;
 };
 

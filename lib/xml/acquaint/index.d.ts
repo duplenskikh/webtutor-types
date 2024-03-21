@@ -1,5 +1,5 @@
 interface AcquaintDocumentCollaborator {
-  collaborator_id: XmlElem<number>;
+  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   collaborator_fullname: XmlElem<string>;
   date: XmlElem<Date>;
   acquaint: XmlElem<boolean>;
@@ -8,11 +8,11 @@ interface AcquaintDocumentCollaborator {
 }
 
 interface AcquaintDocumentAssessment {
-  assessment_id: XmlElem<number>;
+  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
 }
 
 interface AcquaintDocumentGroup {
-  group_id: XmlElem<number>;
+  group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
 }
 
 interface AcquaintDocumentQuestionCondition {

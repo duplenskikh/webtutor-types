@@ -82,7 +82,7 @@ KnowledgePartsBase & {
   eval_conditions: XmlMultiElem<QualificationDocumentEvalCondition>;
   eval_assignment_query: XmlElem<string>;
   get_assignment_persons(): unknown;
-  get_scaled_progress(iPersonIDParam: number, oParam: unknown): unknown;
+  get_scaled_progress(personId: number, param: unknown): unknown;
   access: XmlElem<AccessDocBase>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;

@@ -65,8 +65,8 @@ AdminAccessBase & {
   workflow_matching_type: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  obtain_custom_data(teKPIPARAM: unknown, aData: unknown): unknown;
-  calc_data(sFormula: string): unknown;
+  obtain_custom_data(teKPI: unknown, aData: unknown): unknown;
+  calc_data(formula: string): unknown;
 };
 
 type KpiPlanDocument = XmlDocument & {

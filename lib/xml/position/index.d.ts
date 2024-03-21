@@ -14,13 +14,13 @@ CustomElemsBase & {
   Doc: PositionDocument;
   org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
   parent_object_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  basic_collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & XmlElem<MsPersonSdInnerBase>;
+  basic_collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
   basic_rate: XmlElem<number>;
   is_boss: XmlElem<boolean>;
   position_date: XmlElem<Date>;
   cost_month: XmlElem<number>;
   currency: XmlElem<string, typeof lists.currency_types>;
-  competence_profile_id: XmlElem<number>;
+  competence_profile_id: XmlElem<number, CompetenceProfileCatalogDocumentTopElem>;
   competence_profiles: XmlMultiElem<PositionDocumentCompetenceProfile>;
   competence_codes: XmlElem<string>;
   kpi_profile_id: XmlElem<number>;

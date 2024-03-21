@@ -21,7 +21,7 @@ CustomElemsBase & {
   scale_elements: XmlMultiElem<ScaleDocumentScaleElement>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  checked(iValue: number): unknown;
+  checked(value: number): unknown;
 };
 
 type ScaleDocument = XmlDocument & {

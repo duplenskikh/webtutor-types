@@ -1,5 +1,11 @@
-interface ScheduleTypeDocumentMsWeekScheduleBase {
+interface ScheduleTypeDocumentScheduleDay {
+  id: XmlElem<string, typeof common.day_types>;
+  start_time: XmlElem<string>;
+  finish_time: XmlElem<string>;
+}
 
+interface ScheduleTypeDocumentSchedule extends MsWeekScheduleBase {
+  days: XmlMultiElem<ScheduleTypeDocumentScheduleDay>;
 }
 
 type ScheduleTypeDocumentTopElem = XmlTopElem & {
@@ -10,7 +16,7 @@ type ScheduleTypeDocumentTopElem = XmlTopElem & {
   object_type: XmlElem<string, typeof common.exchange_object_types>;
   is_shedule: XmlElem<boolean>;
   library_url: XmlElem<string>;
-  schedule: XmlElem<ScheduleTypeDocumentMsWeekScheduleBase>;
+  schedule: XmlElem<ScheduleTypeDocumentSchedule>;
   doc_info: XmlElem<DocInfoBase>;
 };
 

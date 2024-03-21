@@ -1,7 +1,3 @@
-interface LearningDocumentPart extends LearningPartBase {
-
-}
-
 interface LearningDocumentEvent {
   event_id: XmlElem<number, EventCatalogDocumentTopElem>;
   score: XmlElem<number>;
@@ -19,12 +15,12 @@ AdminAccessBase & {
   course_code: XmlElem<string>;
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_current_state: XmlElem<string>;
-  event_id: XmlElem<number>;
+  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
   event_name: XmlElem<string>;
   event_start_date: XmlElem<Date>;
   group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
   education_plan_id: XmlElem<number, EducationPlanCatalogDocumentTopElem>;
-  parts: XmlMultiElem<LearningDocumentPart>;
+  parts: XmlMultiElem<LearningPartBase>;
   no_encoding_core_lesson: XmlElem<boolean>;
   time: XmlElem<number>;
   events: XmlMultiElem<LearningDocumentEvent>;

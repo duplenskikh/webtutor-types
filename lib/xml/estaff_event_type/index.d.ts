@@ -33,9 +33,9 @@ CustomElemsBase & {
   run_action_event_occurs_url: XmlElem<string>;
   check_event_processing: XmlElem<string>;
   run_check_event_processing_url: XmlElem<string>;
-  eval_action_event_occurs(iEstaffEventIDParam: number, iPersonIDParam: number, iObjectIDParam: number, iCandidateEIDParam: number, iVacancyEIDParam: number, iRecruterIDParam: number): unknown;
-  eval_check_event_process(iEstaffEventIDParam: number, iPersonIDParam: number, iObjectIDParam: number, sUrlParam: string, sActionParam: string, sEstaffEventStatusParam: string, SourceParam: unknown): unknown;
-  eval_visibility_condition(iEstaffEventIDParam: number, iPersonIDParam: number, iCurUserIDParam: number, iObjectIDParam: number): unknown;
+  eval_action_event_occurs(estaffEventId: number, personId: number, objectId: number, candidateEId: number, vacancyEId: number, recruterId: number): unknown;
+  eval_check_event_process(estaffEventId: number, personId: number, objectId: number, url: string, action: string, estaffEventStatus: string, source: unknown): unknown;
+  eval_visibility_condition(estaffEventId: number, personId: number, curUserId: number, objectId: number): unknown;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
 };

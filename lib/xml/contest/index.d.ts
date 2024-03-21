@@ -38,7 +38,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-  add_participant(iPersonIdPARAM: number, teParticipantPARAM: unknown): unknown;
+  add_participant(personId: number, teParticipant: unknown): unknown;
   calculate_rating(): unknown;
 };
 

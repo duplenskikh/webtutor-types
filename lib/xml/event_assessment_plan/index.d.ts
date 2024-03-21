@@ -27,7 +27,7 @@ CustomElemsBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   event_id: XmlElem<number, EventCatalogDocumentTopElem>;
-  expert_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & XmlElem<MsPersonSdInnerBase>;
+  expert_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
   date_start: XmlElem<Date>;
   assessment_type: XmlElem<string>;
   assessment_type_id: XmlElem<string>;

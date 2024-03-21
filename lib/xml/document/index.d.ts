@@ -1,3 +1,11 @@
+interface DocumentDocumentAttributes extends DocumentAttributesBase {
+  is_menu: XmlElem<boolean>;
+  is_main_item: XmlElem<boolean>;
+  is_news: XmlElem<boolean>;
+  left_disp_childs: XmlElem<boolean>;
+  no_disp_childs: XmlElem<boolean>;
+}
+
 type DocumentDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 CatalogListBase &
@@ -15,7 +23,7 @@ AdminAccessBase & {
   site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
   catalog_list_desc(): unknown;
   text_area: XmlElem<string>;
-  attributes: XmlElem<DocumentAttributesBase>;
+  attributes: XmlElem<DocumentDocumentAttributes>;
   web_template_type: XmlElem<string, typeof common.web_template_types>;
   custom_template_type: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
   templates_source: XmlElem<string>;
@@ -25,7 +33,7 @@ AdminAccessBase & {
   parent_object_id: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-  set_template(sTemplateTypeParam: string): unknown;
+  set_template(templateType: string): unknown;
   set_default_template(): unknown;
   update_template(): unknown;
 };

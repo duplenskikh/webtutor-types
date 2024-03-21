@@ -29,7 +29,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  dynamic_select_position_commons(_clear_list: unknown): unknown;
+  dynamic_select_position_commons(clearList: unknown): unknown;
 };
 
 type PositionFamilyDocument = XmlDocument & {

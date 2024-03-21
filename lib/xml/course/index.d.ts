@@ -1,5 +1,5 @@
 interface CourseDocumentPartActivityState {
-  activity_state_id: XmlElem<number>;
+  activity_state_id: XmlElem<number, ActivityStateCatalogDocumentTopElem>;
   score: XmlElem<number>;
   state_id: XmlElem<number, typeof common.learning_states>;
 }
@@ -41,10 +41,6 @@ interface CourseDocumentPart {
   view: XmlElem<ViewConditionsBase>;
   launch: XmlElem<ViewConditionsBase>;
   cl_module_protocol: XmlElem<string>;
-}
-
-interface CourseDocumentMsWeekScheduleBase {
-
 }
 
 type CourseDocumentTopElem = XmlTopElem &
@@ -97,18 +93,18 @@ AdminAccessBase & {
   pwt_disp: XmlElem<boolean>;
   import_type: XmlElem<string>;
   education_org_id: XmlElem<number, EducationOrgCatalogDocumentTopElem>;
-  schedule: XmlElem<CourseDocumentMsWeekScheduleBase>;
+  schedule: XmlElem<MsWeekScheduleBase>;
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
   get_part_code(): unknown;
-  Width(sCodeParam: string): unknown;
-  Height(sCodeParam: string): unknown;
-  DispScrolling(_code: unknown): unknown;
-  Resizable(_code: unknown): unknown;
+  Width(code: string): unknown;
+  Height(code: string): unknown;
+  DispScrolling(code: unknown): unknown;
+  Resizable(code: unknown): unknown;
   get_workflow_id(): unknown;
-  get_pwt_info(_source: unknown): unknown;
-  GetPartUrl(_code: unknown, _index: unknown): unknown;
+  get_pwt_info(source: unknown): unknown;
+  GetPartUrl(code: unknown, index: unknown): unknown;
   get_info(): unknown;
   role_id: XmlMultiElemObject<number>;
 };

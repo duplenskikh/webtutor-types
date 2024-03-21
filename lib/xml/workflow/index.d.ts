@@ -12,17 +12,17 @@ interface WorkflowDocumentAction extends WorkflowElemOperationsBase, ConditionsB
 }
 
 interface WorkflowDocumentEscalationCourse {
-  course_id: XmlElem<number>;
+  course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
   state_id: XmlElem<number, typeof common.learning_states>;
 }
 
 interface WorkflowDocumentEscalationAssessment {
-  assessment_id: XmlElem<number>;
+  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
   state_id: XmlElem<number, typeof common.learning_states>;
 }
 
 interface WorkflowDocumentEscalationPoll {
-  poll_id: XmlElem<number>;
+  poll_id: XmlElem<number, PollCatalogDocumentTopElem>;
   status: XmlElem<number, typeof common.learning_states>;
 }
 
@@ -76,7 +76,7 @@ WorkflowFieldsStatesBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-  run_action(sActionParam: string): unknown;
+  run_action(action: string): unknown;
   role_id: XmlMultiElemObject<number>;
 };
 

@@ -16,7 +16,7 @@ FileListBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   main_object: XmlElem<NotificationTemplateDocumentMainObject>;
-  add_text_to_edit(oScreenParam: unknown, sTextParam: string, dFieldParam: Date): unknown;
+  add_text_to_edit(screen: unknown, text: string, field: Date): unknown;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElemObject<number>;

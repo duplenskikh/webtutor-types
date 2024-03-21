@@ -47,7 +47,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  set_task(_task: unknown): unknown;
+  set_task(task: unknown): unknown;
   change_func_managers_list(): unknown;
   role_id: XmlMultiElemObject<number>;
 };

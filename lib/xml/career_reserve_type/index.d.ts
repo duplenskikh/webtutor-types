@@ -1,9 +1,5 @@
-interface CareerReserveTypeDocumentTaskCommissionPersonsCommissionPerson extends PersonFillingBase {
+interface CareerReserveTypeDocumentTaskCommissionPerson extends PersonFillingBase {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-}
-
-interface CareerReserveTypeDocumentTaskCommissionPersons {
-  commission_person: XmlElem<CareerReserveTypeDocumentTaskCommissionPersonsCommissionPerson>;
 }
 
 interface CareerReserveTypeDocumentTask {
@@ -16,7 +12,7 @@ interface CareerReserveTypeDocumentTask {
   object_id: XmlElem<number>;
   auto_appoint_learning: XmlElem<boolean>;
   add_exist_appraise: XmlElem<boolean>;
-  commission_persons: XmlElem<CareerReserveTypeDocumentTaskCommissionPersons>;
+  commission_persons: XmlMultiElem<CareerReserveTypeDocumentTaskCommissionPerson>;
 }
 
 type CareerReserveTypeDocumentTopElem = XmlTopElem &
