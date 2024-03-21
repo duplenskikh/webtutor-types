@@ -16,7 +16,7 @@ interface MsPersonSdInnerBase {
 }
 
 interface MsPersonSdBase {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & XmlElem<MsPersonSdInnerBase>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
 }
 
 interface MsEventSdInnerBaseSd {
@@ -31,7 +31,7 @@ interface MsEventSdInnerBase {
 }
 
 interface MsEventSdBase {
-  event_id: XmlElem<number, EventCatalogDocumentTopElem> & XmlElem<MsEventSdInnerBase>;
+  event_id: XmlElem<number, EventCatalogDocumentTopElem> & MsEventSdInnerBase;
 }
 
 interface MsViewCatalogBase extends ViewConditionsBase {
@@ -76,15 +76,15 @@ interface MsParametersBase {
   parameters: XmlMultiElem<MsParametersBaseParameter>;
 }
 
-interface MsGeneralMsWeekScheduleBaseWeekDay {
+interface MsWeekScheduleBaseWeekDay {
   id: XmlElem<string, typeof common.week_day_types>;
   start_time: XmlElem<string>;
   finish_time: XmlElem<string>;
 }
 
-interface MsGeneralMsWeekScheduleBase {
+interface MsWeekScheduleBase {
   type: XmlElem<string>;
-  week_days: XmlMultiElem<MsGeneralMsWeekScheduleBaseWeekDay>;
+  week_days: XmlMultiElem<MsWeekScheduleBaseWeekDay>;
   check_week_schedule(curUserId: number, curUser: CurUser, session: Session): unknown;
 }
 
@@ -97,7 +97,7 @@ interface WorkflowElemOperationBase {
   eval_str: XmlElem<string>;
   notification_id: XmlElem<number, NotificationCatalogDocumentTopElem>;
   print_form_id: XmlElem<number, PrintFormCatalogDocumentTopElem>;
-  operation_id: XmlElem<number, OperationCatalogDocumentTopElem> & XmlElem<MsParametersBase>;
+  operation_id: XmlElem<number, OperationCatalogDocumentTopElem> & MsParametersBase;
 }
 
 interface WorkflowElemOperationsBase {

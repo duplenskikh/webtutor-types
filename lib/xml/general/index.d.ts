@@ -575,7 +575,7 @@ interface FileActionBase {
 }
 
 interface FileBase {
-  file_id: XmlElem<number, ResourceCatalogDocumentTopElem> & XmlElem<FileActionBase>;
+  file_id: XmlElem<number, ResourceCatalogDocumentTopElem> & FileActionBase;
 }
 
 interface FileListBase {
