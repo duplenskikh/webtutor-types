@@ -8,7 +8,7 @@ AdminAccessBase & {
   lastname: XmlElem<string>;
   firstname: XmlElem<string>;
   middlename: XmlElem<string>;
-  fullname(): unknown;
+  fullname(): string;
   phone: XmlElem<string>;
   email: XmlElem<string>;
   work_phone: XmlElem<string>;
@@ -28,6 +28,6 @@ AdminAccessBase & {
 type RecommendationDocument = XmlDocument & {
   TopElem: RecommendationDocumentTopElem;
   recommendation: RecommendationDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

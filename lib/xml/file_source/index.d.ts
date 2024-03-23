@@ -18,6 +18,6 @@ WebVariablesBase & {
 type FileSourceDocument = XmlDocument & {
   TopElem: FileSourceDocumentTopElem;
   file_source: FileSourceDocumentTopElem;
-  OnSave(): unknown;
-  DocDesc(): unknown;
+  OnSave(): void;
+  DocDesc(): string;
 };

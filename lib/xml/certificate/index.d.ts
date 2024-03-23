@@ -19,14 +19,14 @@ CustomElemsBase & {
   signed_by_name: XmlElem<string>;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  update_expire_date(): unknown;
+  update_expire_date(): void;
   role_id: XmlMultiElemObject<number>;
 };
 
 type CertificateDocument = XmlDocument & {
   TopElem: CertificateDocumentTopElem;
   certificate: CertificateDocumentTopElem;
-  OnCreate(): unknown;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnCreate(): void;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

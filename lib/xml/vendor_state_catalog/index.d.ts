@@ -7,5 +7,5 @@ AdminAccessBase & {
   education_org_id: XmlElem<number, EducationOrgCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

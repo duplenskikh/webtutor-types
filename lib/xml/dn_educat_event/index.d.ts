@@ -11,5 +11,5 @@ AdminAccessBase & {
 type DnEducatEventDocument = XmlDocument & {
   TopElem: DnEducatEventDocumentTopElem;
   dn_educat_event: DnEducatEventDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

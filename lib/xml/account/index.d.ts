@@ -16,5 +16,5 @@ AdminAccessBase & {
 type AccountDocument = XmlDocument & {
   TopElem: AccountDocumentTopElem;
   account: AccountDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

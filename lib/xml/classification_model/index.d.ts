@@ -32,6 +32,6 @@ ObjectCodeNameBase & {
 type ClassificationModelDocument = XmlDocument & {
   TopElem: ClassificationModelDocumentTopElem;
   classification_model: ClassificationModelDocumentTopElem;
-  OnCreate(): unknown;
-  DocDesc(): unknown;
+  OnCreate(): void;
+  DocDesc(): string;
 };

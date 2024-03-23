@@ -16,5 +16,5 @@ AdminAccessBase & {
   modification_date: XmlElem<Date>;
   modification_user_id: XmlElem<number>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

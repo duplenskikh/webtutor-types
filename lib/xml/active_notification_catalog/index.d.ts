@@ -12,5 +12,5 @@ type ActiveNotificationCatalogDocumentTopElem = XmlTopElem & {
   send_counter: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

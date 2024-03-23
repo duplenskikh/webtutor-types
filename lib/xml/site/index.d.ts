@@ -61,6 +61,6 @@ CustomElemsBase & {
 type SiteDocument = XmlDocument & {
   TopElem: SiteDocumentTopElem;
   site: SiteDocumentTopElem;
-  OnSave(): unknown;
-  DocDesc(): unknown;
+  OnSave(): void;
+  DocDesc(): string;
 };

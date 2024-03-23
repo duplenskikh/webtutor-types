@@ -43,6 +43,6 @@ WebVariablesBase & {
 type WebinarSystemDocument = XmlDocument & {
   TopElem: WebinarSystemDocumentTopElem;
   webinar_system: WebinarSystemDocumentTopElem;
-  OnSave(): unknown;
-  DocDesc(): unknown;
+  OnSave(): void;
+  DocDesc(): string;
 };

@@ -29,6 +29,6 @@ AdminAccessBase & {
 type ObjectDataDocument = XmlDocument & {
   TopElem: ObjectDataDocumentTopElem;
   object_data: ObjectDataDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

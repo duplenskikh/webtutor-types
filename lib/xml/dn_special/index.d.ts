@@ -12,5 +12,5 @@ CustomElemsBase & {
 type DnSpecialDocument = XmlDocument & {
   TopElem: DnSpecialDocumentTopElem;
   dn_special: DnSpecialDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

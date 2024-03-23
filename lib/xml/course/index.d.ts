@@ -97,7 +97,7 @@ AdminAccessBase & {
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-  get_part_code(): unknown;
+  get_part_code(): string;
   Width(code: string): unknown;
   Height(code: string): unknown;
   DispScrolling(code: unknown): unknown;
@@ -105,12 +105,12 @@ AdminAccessBase & {
   get_workflow_id(): unknown;
   get_pwt_info(source: unknown): unknown;
   GetPartUrl(code: unknown, index: unknown): unknown;
-  get_info(): unknown;
+  get_info(): null | Object;
   role_id: XmlMultiElemObject<number>;
 };
 
 type CourseDocument = XmlDocument & {
   TopElem: CourseDocumentTopElem;
   course: CourseDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

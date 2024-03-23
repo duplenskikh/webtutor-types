@@ -38,6 +38,6 @@ CustomElemsBase & {
 type LearningTaskResultDocument = XmlDocument & {
   TopElem: LearningTaskResultDocumentTopElem;
   learning_task_result: LearningTaskResultDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

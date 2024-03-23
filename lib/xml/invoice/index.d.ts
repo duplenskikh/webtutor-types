@@ -25,6 +25,6 @@ AdminAccessBase & {
 type InvoiceDocument = XmlDocument & {
   TopElem: InvoiceDocumentTopElem;
   invoice: InvoiceDocumentTopElem;
-  OnCreate(): unknown;
-  DocDesc(): unknown;
+  OnCreate(): void;
+  DocDesc(): string;
 };

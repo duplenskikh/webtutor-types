@@ -39,5 +39,5 @@ CustomElemsBase & {
 type SubmissionTypeDocument = XmlDocument & {
   TopElem: SubmissionTypeDocumentTopElem;
   submission_type: SubmissionTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

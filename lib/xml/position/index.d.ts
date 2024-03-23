@@ -44,8 +44,8 @@ CustomElemsBase & {
 type PositionDocument = XmlDocument & {
   TopElem: PositionDocumentTopElem;
   position: PositionDocumentTopElem;
-  OnBeforeSave(): unknown;
-  OnSave(): unknown;
-  OnLocalInit(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  OnSave(): void;
+  OnLocalInit(): void;
+  DocDesc(): string;
 };

@@ -34,13 +34,13 @@ WebVariablesBase & {
   use_fcache: XmlElem<boolean>;
   searchable_portal: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-  use_lpapi(): unknown;
+  use_lpapi(): boolean;
   role_id: XmlMultiElemObject<number>;
 };
 
 type WebModeDocument = XmlDocument & {
   TopElem: WebModeDocumentTopElem;
   web_mode: WebModeDocumentTopElem;
-  OnSave(): unknown;
-  DocDesc(): unknown;
+  OnSave(): void;
+  DocDesc(): string;
 };

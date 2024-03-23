@@ -86,6 +86,6 @@ type ClSlideDocumentTopElem = XmlTopElem & {
 type ClSlideDocument = XmlDocument & {
   TopElem: ClSlideDocumentTopElem;
   cl_slide: ClSlideDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

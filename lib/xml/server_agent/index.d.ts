@@ -28,6 +28,6 @@ CustomElemsBase & {
 type ServerAgentDocument = XmlDocument & {
   TopElem: ServerAgentDocumentTopElem;
   server_agent: ServerAgentDocumentTopElem;
-  OnLoad_____(): unknown;
-  DocDesc(): unknown;
+  OnLoad_____(): void;
+  DocDesc(): string;
 };

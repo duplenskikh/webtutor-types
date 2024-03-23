@@ -15,5 +15,5 @@ type PaymentCatalogDocumentTopElem = XmlTopElem & {
   budget_id: XmlElem<number, BudgetCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

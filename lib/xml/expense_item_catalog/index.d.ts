@@ -7,5 +7,5 @@ AdminAccessBase & {
   parent_id: XmlElem<number, ExpenseItemCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

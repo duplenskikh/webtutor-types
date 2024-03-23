@@ -44,7 +44,7 @@ PersonObjectLinksBase & {
   access: XmlElem<AccessDocBase>;
   desc: XmlElem<string>;
   dynamic_select_person(clearList: unknown): unknown;
-  start_action(itemName: unknown): unknown;
+  start_action(itemName: unknown): number;
   activateCourseToPersons(input: unknown): unknown;
   add_collaborator(personId: number, docPerson: unknown): unknown;
   remove_collaborator(personId: number): unknown;
@@ -54,7 +54,7 @@ PersonObjectLinksBase & {
 type GroupDocument = XmlDocument & {
   TopElem: GroupDocumentTopElem;
   group: GroupDocumentTopElem;
-  OnInit(): unknown;
-  OnSave(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  OnSave(): void;
+  DocDesc(): string;
 };

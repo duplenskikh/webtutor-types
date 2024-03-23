@@ -88,6 +88,6 @@ AdminAccessBase & {
 type CompoundProgramDocument = XmlDocument & {
   TopElem: CompoundProgramDocumentTopElem;
   compound_program: CompoundProgramDocumentTopElem;
-  OnInit(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  DocDesc(): string;
 };

@@ -8,7 +8,7 @@ type DnRegisterStudentCatalogDocumentTopElem = XmlTopElem & {
   contr_form_id: XmlElem<number, DnControlFormCatalogDocumentTopElem>;
   student_id: XmlElem<number, DnStudentCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

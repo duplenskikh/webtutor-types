@@ -11,5 +11,5 @@ AdminAccessBase & {
   status_id: XmlElem<string, typeof common.participant_states>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

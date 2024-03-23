@@ -5,5 +5,5 @@ type RegionCatalogDocumentTopElem = XmlTopElem & {
   parent_object_id: XmlElem<number, RegionCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

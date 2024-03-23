@@ -11,7 +11,7 @@ interface QaTestResultDocumentLogRecord {
 type QaTestResultDocumentTopElem = XmlTopElem & {
   Doc: QaTestResultDocument;
   id: XmlElem<number>;
-  name(): unknown;
+  name(): string;
   test_id: XmlElem<number, QaTestCatalogDocumentTopElem>;
   test_set_id: XmlElem<number, QaTestSetCatalogDocumentTopElem>;
   test_paramset_id: XmlElem<number, QaTestParamsetCatalogDocumentTopElem>;
@@ -28,5 +28,5 @@ type QaTestResultDocumentTopElem = XmlTopElem & {
 type QaTestResultDocument = XmlDocument & {
   TopElem: QaTestResultDocumentTopElem;
   qa_test_result: QaTestResultDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

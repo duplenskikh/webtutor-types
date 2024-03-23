@@ -7,6 +7,6 @@ type KnowledgeCatalogDocumentTopElem = XmlTopElem & {
   parent_object_id: XmlElem<number>;
   parent_catalog: XmlElem<string>;
   has_experts: XmlElem<boolean>;
-  OnBuild(): unknown;
+  OnBuild(): void;
   MatchDoc(): unknown;
 };

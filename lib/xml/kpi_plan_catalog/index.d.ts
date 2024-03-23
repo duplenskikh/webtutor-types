@@ -27,5 +27,5 @@ type KpiPlanCatalogDocumentTopElem = XmlTopElem & {
   workflow_matching_type: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

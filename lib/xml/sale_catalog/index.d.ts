@@ -17,5 +17,5 @@ AdminAccessBase & {
   currency_type_id: XmlElem<string, typeof lists.currency_types>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

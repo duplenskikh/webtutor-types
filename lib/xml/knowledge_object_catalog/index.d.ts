@@ -18,7 +18,7 @@ type KnowledgeObjectCatalogDocumentTopElem = XmlTopElem & {
   require_acknowledgement: XmlElem<boolean>;
   knowledge_part_level_id: XmlElem<number, KnowledgePartLevelCatalogDocumentTopElem>;
   acquaint_time: XmlElem<number>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

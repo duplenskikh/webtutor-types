@@ -47,5 +47,5 @@ CustomElemsBase & {
 type DnLessonDocument = XmlDocument & {
   TopElem: DnLessonDocumentTopElem;
   dn_lesson: DnLessonDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

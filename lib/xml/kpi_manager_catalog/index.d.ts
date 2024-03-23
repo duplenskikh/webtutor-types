@@ -8,7 +8,7 @@ type KpiManagerCatalogDocumentTopElem = XmlTopElem & {
   manager_name: XmlElem<string>;
   is_owner: XmlElem<boolean>;
   boss_type_id: XmlElem<number, BossTypeCatalogDocumentTopElem>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

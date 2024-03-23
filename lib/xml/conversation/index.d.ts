@@ -63,5 +63,5 @@ CustomElemsBase & {
 type ConversationDocument = XmlDocument & {
   TopElem: ConversationDocumentTopElem;
   conversation: ConversationDocumentTopElem;
-  OnBeforeSave(): unknown;
+  OnBeforeSave(): void;
 };

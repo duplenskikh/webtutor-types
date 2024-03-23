@@ -20,5 +20,5 @@ FileListBase & {
 type AttorneyDocument = XmlDocument & {
   TopElem: AttorneyDocumentTopElem;
   attorney: AttorneyDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

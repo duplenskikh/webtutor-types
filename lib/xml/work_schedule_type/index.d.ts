@@ -10,5 +10,4 @@ type WorkScheduleTypeDocumentTopElem = XmlTopElem & {
 type WorkScheduleTypeDocument = XmlDocument & {
   TopElem: WorkScheduleTypeDocumentTopElem;
   work_schedule_type: WorkScheduleTypeDocumentTopElem;
-
 };

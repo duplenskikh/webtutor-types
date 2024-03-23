@@ -26,5 +26,5 @@ type PersonnelDocumentTypeDocumentTopElem = XmlTopElem & {
 type PersonnelDocumentTypeDocument = XmlDocument & {
   TopElem: PersonnelDocumentTypeDocumentTopElem;
   personnel_document_type: PersonnelDocumentTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

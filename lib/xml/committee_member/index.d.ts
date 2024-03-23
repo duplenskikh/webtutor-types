@@ -21,5 +21,5 @@ CustomElemsBase & {
 type CommitteeMemberDocument = XmlDocument & {
   TopElem: CommitteeMemberDocumentTopElem;
   committee_member: CommitteeMemberDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

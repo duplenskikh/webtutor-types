@@ -6,5 +6,5 @@ type ApplicationInstanceCatalogDocumentTopElem = XmlTopElem & {
   application_id: XmlElem<number, ApplicationCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

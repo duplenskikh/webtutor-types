@@ -23,9 +23,9 @@ interface ClCourseDocumentAuthorType {
 
 interface ClCourseDocumentAuthor extends PersonFillingBase {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  typecode(): unknown;
+  typecode(): number;
   types: XmlMultiElem<ClCourseDocumentAuthorType>;
-  types_display(): unknown;
+  types_display(): boolean;
 }
 
 interface ClCourseDocumentRepositorium {
@@ -77,13 +77,13 @@ CustomElemsBase & {
   role_id: XmlMultiElemObject<number>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-  module_href_get(): unknown;
-  export_2_scorm(): unknown;
-  fix_new_authors(): unknown;
+  module_href_get(): false | void;
+  export_2_scorm(): false | void;
+  fix_new_authors(): void;
 };
 
 type ClCourseDocument = XmlDocument & {
   TopElem: ClCourseDocumentTopElem;
   cl_course: ClCourseDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

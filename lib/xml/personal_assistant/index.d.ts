@@ -22,6 +22,6 @@ PersonFillingBase & {
 type PersonalAssistantDocument = XmlDocument & {
   TopElem: PersonalAssistantDocumentTopElem;
   personal_assistant: PersonalAssistantDocumentTopElem;
-  OnCreate(): unknown;
-  DocDesc(): unknown;
+  OnCreate(): void;
+  DocDesc(): string;
 };

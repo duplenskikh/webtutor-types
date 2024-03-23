@@ -31,5 +31,5 @@ CustomElemsBase & {
 type DnControlEventDocument = XmlDocument & {
   TopElem: DnControlEventDocumentTopElem;
   dn_control_event: DnControlEventDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -36,6 +36,6 @@ CustomElemsBase & {
 type NotificationDocument = XmlDocument & {
   TopElem: NotificationDocumentTopElem;
   notification: NotificationDocumentTopElem;
-  OnInit(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  DocDesc(): string;
 };

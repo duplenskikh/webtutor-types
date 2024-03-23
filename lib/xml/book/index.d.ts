@@ -16,6 +16,6 @@ CustomElemsBase & {
 type BookDocument = XmlDocument & {
   TopElem: BookDocumentTopElem;
   book: BookDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

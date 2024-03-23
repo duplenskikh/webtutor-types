@@ -22,5 +22,5 @@ type QtiTestingSystemDocument = XmlDocument & {
   TopElem: QtiTestingSystemDocumentTopElem;
   qti_testing_system: QtiTestingSystemDocumentTopElem;
   testing_system: XmlElem<QtiTestingSystemDocumentTestingSystem>;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -6,5 +6,5 @@ type KnowledgeProfileCatalogDocumentTopElem = XmlTopElem & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   knowledge_parts: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

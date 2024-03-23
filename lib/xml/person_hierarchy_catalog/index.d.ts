@@ -5,7 +5,7 @@ type PersonHierarchyCatalogDocumentTopElem = XmlTopElem & {
   parent_sub_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
   subdivision_id: XmlMultiElemObject<number, SubdivisionCatalogDocumentTopElem>;
   ready: XmlElem<boolean>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

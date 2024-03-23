@@ -146,8 +146,8 @@ type ClModuleDocumentTopElem = XmlTopElem & {
   desc: XmlElem<string>;
   stamp: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-  module_href_get(): unknown;
-  export_2_scorm(): unknown;
+  module_href_get(): false | void;
+  export_2_scorm(): false | void;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
 };
@@ -155,6 +155,6 @@ type ClModuleDocumentTopElem = XmlTopElem & {
 type ClModuleDocument = XmlDocument & {
   TopElem: ClModuleDocumentTopElem;
   cl_module: ClModuleDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

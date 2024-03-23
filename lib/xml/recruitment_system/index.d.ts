@@ -18,5 +18,5 @@ WebVariablesBase & {
 type RecruitmentSystemDocument = XmlDocument & {
   TopElem: RecruitmentSystemDocumentTopElem;
   recruitment_system: RecruitmentSystemDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

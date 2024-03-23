@@ -9,5 +9,5 @@ type ClVideoCourseCatalogDocumentTopElem = XmlTopElem & {
   authors_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   creation_date: XmlElem<Date>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

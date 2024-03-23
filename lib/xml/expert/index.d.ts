@@ -10,7 +10,7 @@ CustomElemsBase &
 AdminAccessBase & {
   Doc: ExpertDocument;
   id: XmlElem<number>;
-  name(): unknown;
+  name(): string;
   code: XmlElem<string>;
   desc: XmlElem<string>;
   type: XmlElem<string, typeof common.lector_types>;
@@ -27,5 +27,5 @@ AdminAccessBase & {
 type ExpertDocument = XmlDocument & {
   TopElem: ExpertDocumentTopElem;
   expert: ExpertDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

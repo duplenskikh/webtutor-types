@@ -82,6 +82,6 @@ AdminAccessBase & {
 type AssessmentPlanDocument = XmlDocument & {
   TopElem: AssessmentPlanDocumentTopElem;
   assessment_plan: AssessmentPlanDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

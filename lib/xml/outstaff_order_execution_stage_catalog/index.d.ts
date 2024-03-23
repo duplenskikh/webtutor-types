@@ -21,7 +21,7 @@ type OutstaffOrderExecutionStageCatalogDocumentTopElem = XmlTopElem & {
   stage_hours_worked: XmlElem<number>;
   stage_is_assist: XmlElem<boolean>;
   stage_status_type: XmlElem<string, typeof common.outstaff_order_execution_status_types>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

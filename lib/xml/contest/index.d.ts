@@ -38,12 +38,12 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-  add_participant(personId: number, teParticipant: unknown): unknown;
+  add_participant(personId: number, participantTopElem: unknown): unknown;
   calculate_rating(): unknown;
 };
 
 type ContestDocument = XmlDocument & {
   TopElem: ContestDocumentTopElem;
   contest: ContestDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

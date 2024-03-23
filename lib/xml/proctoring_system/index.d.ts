@@ -12,12 +12,12 @@ WebVariablesBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-  get_setting(settingName: string, teProctorObject: unknown): unknown;
+  get_setting(settingName: string, proctorObjectTopElem: unknown): unknown;
   get_settings(): unknown;
 };
 
 type ProctoringSystemDocument = XmlDocument & {
   TopElem: ProctoringSystemDocumentTopElem;
   proctoring_system: ProctoringSystemDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

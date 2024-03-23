@@ -6,7 +6,7 @@ type BlogAuthorCatalogDocumentTopElem = XmlTopElem & {
   person_id: XmlElem<string>;
   person_fullname: XmlElem<string>;
   is_full_moderator: XmlElem<boolean>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

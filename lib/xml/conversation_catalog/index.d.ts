@@ -24,5 +24,5 @@ PersonFillingBase & {
   can_call: XmlElem<boolean>;
   can_change_participant: XmlElem<boolean>;
   can_show_additional_info: XmlElem<boolean>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

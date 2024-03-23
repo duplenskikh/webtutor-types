@@ -21,6 +21,6 @@ AdminAccessBase & {
 type RecruitmentEventDocument = XmlDocument & {
   TopElem: RecruitmentEventDocumentTopElem;
   recruitment_event: RecruitmentEventDocumentTopElem;
-  DocDesc(): unknown;
-  OnInit(): unknown;
+  DocDesc(): string;
+  OnInit(): void;
 };

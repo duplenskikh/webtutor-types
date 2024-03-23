@@ -22,5 +22,5 @@ CustomElemsBase & {
 type LibrarySectionDocument = XmlDocument & {
   TopElem: LibrarySectionDocumentTopElem;
   library_section: LibrarySectionDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

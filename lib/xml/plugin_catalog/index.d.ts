@@ -6,5 +6,5 @@ type PluginCatalogDocumentTopElem = XmlTopElem & {
   plugin_id: XmlElem<string>;
   version: XmlElem<number>;
   modification_date: XmlElem<Date>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

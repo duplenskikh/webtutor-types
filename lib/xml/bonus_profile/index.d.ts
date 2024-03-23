@@ -21,7 +21,7 @@ AdminAccessBase & {
   kpi_groups: XmlMultiElem<BonusProfileDocumentKpiGroup>;
   script: XmlElem<string>;
   url: XmlElem<string>;
-  evaluate_pa(paId: number, pA: unknown): unknown;
+  evaluate_pa(paId: number, pa: PaDocument): never | Object;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
 };
@@ -29,5 +29,5 @@ AdminAccessBase & {
 type BonusProfileDocument = XmlDocument & {
   TopElem: BonusProfileDocumentTopElem;
   bonus_profile: BonusProfileDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

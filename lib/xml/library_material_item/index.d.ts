@@ -28,12 +28,12 @@ AdminAccessBase & {
   return_plan_date: XmlElem<Date>;
   return_date: XmlElem<Date>;
   change_logs: XmlMultiElem<LibraryMaterialItemDocumentChangeLog>;
-  clear_data(teSource: unknown): unknown;
-  add_log_record(teMaterialItem: unknown): unknown;
+  clear_data(sourceTopElem: unknown): unknown;
+  add_log_record(materialItemTopElem: unknown): unknown;
 };
 
 type LibraryMaterialItemDocument = XmlDocument & {
   TopElem: LibraryMaterialItemDocumentTopElem;
   library_material_item: LibraryMaterialItemDocumentTopElem;
-  OnBeforeSave(): unknown;
+  OnBeforeSave(): void;
 };

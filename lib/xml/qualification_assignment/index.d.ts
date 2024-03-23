@@ -38,5 +38,5 @@ CustomElemsBase & {
 type QualificationAssignmentDocument = XmlDocument & {
   TopElem: QualificationAssignmentDocumentTopElem;
   qualification_assignment: QualificationAssignmentDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -11,7 +11,7 @@ type ObjectRequirementCatalogDocumentTopElem = XmlTopElem & {
   obligatory: XmlElem<boolean>;
   requirement_value: XmlElem<string>;
   additional_param: XmlElem<string>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

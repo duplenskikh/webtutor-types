@@ -13,7 +13,7 @@ type ResumeSkillCatalogDocumentTopElem = XmlTopElem & {
   skill_id_with_levels: XmlElem<number, SkillCatalogDocumentTopElem>;
   level_id: XmlElem<string>;
   level_name: XmlElem<string>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

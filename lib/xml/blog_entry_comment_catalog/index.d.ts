@@ -12,5 +12,5 @@ type BlogEntryCommentCatalogDocumentTopElem = XmlTopElem & {
   like_id: XmlElem<number, LikeCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

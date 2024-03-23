@@ -1,7 +1,7 @@
 interface AssessmentDocumentSectionSelectionOrderingPoint {
   point_num: XmlElem<number>;
   item_num: XmlElem<number>;
-  item_sum_num(): unknown;
+  item_sum_num(): number;
 }
 
 interface AssessmentDocumentSectionSelectionOrdering {
@@ -42,10 +42,6 @@ interface AssessmentDocumentSection {
   items: XmlMultiElem<AssessmentDocumentSectionItem>;
   comment: XmlElem<string>;
   roles: XmlMultiElem<AssessmentDocumentSectionRole>;
-}
-
-interface AssessmentDocumentMsWeekScheduleBase {
-
 }
 
 interface AssessmentDocumentPlayer {
@@ -91,7 +87,7 @@ AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   title: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   status: XmlElem<string, typeof common.course_test_states>;
   testing_system_id: XmlElem<number, TestingSystemCatalogDocumentTopElem>;
@@ -128,7 +124,7 @@ AdminAccessBase & {
   not_use_default_notification: XmlElem<boolean>;
   view_templates: XmlElem<MsViewTemplatesBase>;
   comment: XmlElem<string>;
-  schedule: XmlElem<AssessmentDocumentMsWeekScheduleBase>;
+  schedule: XmlElem<MsWeekScheduleBase>;
   access: XmlElem<AccessDocBase>;
   publish_url: XmlElem<string>;
   publish_date: XmlElem<Date>;
@@ -140,11 +136,14 @@ AdminAccessBase & {
   before_finish_eval: XmlElem<string>;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  get_info(): unknown;
-  update_structure(): unknown;
+  get_info(): null | Object;
+  update_structure(): boolean;
   role_id: XmlMultiElemObject<number>;
 };
 
 type AssessmentDocument = XmlDocument & {
   TopElem: AssessmentDocumentTopElem;
+  assessment: AssessmentDocumentTopElem;
+  OnCreate(): void;
+  DocDesc(): string;
 };

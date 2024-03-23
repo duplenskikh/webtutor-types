@@ -6,5 +6,5 @@ type ReprimandCatalogDocumentTopElem = XmlTopElem & {
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

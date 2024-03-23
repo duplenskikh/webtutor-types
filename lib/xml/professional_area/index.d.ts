@@ -17,5 +17,5 @@ CustomElemsBase & {
 type ProfessionalAreaDocument = XmlDocument & {
   TopElem: ProfessionalAreaDocumentTopElem;
   professional_area: ProfessionalAreaDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

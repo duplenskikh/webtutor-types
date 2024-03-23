@@ -4,5 +4,5 @@ type ExerciseCatalogDocumentTopElem = XmlTopElem & {
   name: XmlElem<string>;
   role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

@@ -6,5 +6,5 @@ type GoodTypeCatalogDocumentTopElem = XmlTopElem & {
   request_type_id: XmlElem<number, RequestTypeCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

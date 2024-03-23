@@ -5,5 +5,5 @@ type DischargeCatalogDocumentTopElem = XmlTopElem & {
   type: XmlElem<string, typeof common.discharge_types>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

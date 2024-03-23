@@ -18,5 +18,5 @@ CustomElemsBase & {
 type DnAuditoriumDocument = XmlDocument & {
   TopElem: DnAuditoriumDocumentTopElem;
   dn_auditorium: DnAuditoriumDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

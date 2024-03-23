@@ -16,5 +16,5 @@ AdminAccessBase & {
 type SubscriptionDocument = XmlDocument & {
   TopElem: SubscriptionDocumentTopElem;
   subscription: SubscriptionDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

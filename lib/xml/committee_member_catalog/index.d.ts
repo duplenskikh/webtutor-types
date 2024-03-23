@@ -11,5 +11,5 @@ AdminAccessBase & {
   committee_member_type: XmlElem<string, typeof common.committee_member_types>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

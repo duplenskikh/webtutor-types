@@ -17,6 +17,6 @@ FileListBase & {
 type WikiArticleCommunicationTypeDocument = XmlDocument & {
   TopElem: WikiArticleCommunicationTypeDocumentTopElem;
   wiki_article_communication_type: WikiArticleCommunicationTypeDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

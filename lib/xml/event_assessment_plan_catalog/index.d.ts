@@ -15,5 +15,5 @@ type EventAssessmentPlanCatalogDocumentTopElem = XmlTopElem & {
   status: XmlElem<string, typeof common.assessment_appraise_participants>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

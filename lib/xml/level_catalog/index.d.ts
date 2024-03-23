@@ -8,5 +8,5 @@ type LevelCatalogDocumentTopElem = XmlTopElem & {
   max_value: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

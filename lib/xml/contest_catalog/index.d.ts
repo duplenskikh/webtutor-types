@@ -10,5 +10,5 @@ AdminAccessBase & {
   estimation_id: XmlElem<string, typeof common.contest_types>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

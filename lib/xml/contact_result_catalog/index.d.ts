@@ -7,5 +7,5 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
   changed: XmlElem<boolean>;
   is_std: XmlElem<boolean>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

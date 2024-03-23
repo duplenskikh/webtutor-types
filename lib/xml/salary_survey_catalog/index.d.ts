@@ -14,5 +14,5 @@ type SalarySurveyCatalogDocumentTopElem = XmlTopElem & {
   region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

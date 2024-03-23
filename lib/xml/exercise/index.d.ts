@@ -11,5 +11,5 @@ type ExerciseDocumentTopElem = XmlTopElem & {
 type ExerciseDocument = XmlDocument & {
   TopElem: ExerciseDocumentTopElem;
   exercise: ExerciseDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

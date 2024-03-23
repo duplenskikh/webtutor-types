@@ -66,12 +66,12 @@ I18nBase & {
   changed: XmlElem<boolean>;
   calculate_on_server(objectId: number): unknown;
   calculate(object: unknown, from: Date, to: Date, period: string, option: unknown): unknown;
-  calculate_context(teObject: unknown, env: unknown): unknown;
+  calculate_context(objectTopElem: unknown, env: unknown): unknown;
   role_id: XmlMultiElemObject<number>;
 };
 
 type StatisticRecDocument = XmlDocument & {
   TopElem: StatisticRecDocumentTopElem;
   statistic_rec: StatisticRecDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

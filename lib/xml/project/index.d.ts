@@ -63,12 +63,12 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   set_status(newStatus: string, sendNotifications: boolean, screen: unknown): unknown;
   create_project_participant(fldParticipant: unknown): unknown;
-  start_action(type: string): unknown;
+  start_action(type: string): number;
 };
 
 type ProjectDocument = XmlDocument & {
   TopElem: ProjectDocumentTopElem;
   project: ProjectDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

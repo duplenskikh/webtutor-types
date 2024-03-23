@@ -20,6 +20,6 @@ ObjectCodeNameBase & {
 type LevelDocument = XmlDocument & {
   TopElem: LevelDocumentTopElem;
   level: LevelDocumentTopElem;
-  OnInit(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  DocDesc(): string;
 };

@@ -21,5 +21,5 @@ QaTestAssertBase & {
 type QaTestSetDocument = XmlDocument & {
   TopElem: QaTestSetDocumentTopElem;
   qa_test_set: QaTestSetDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

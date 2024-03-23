@@ -77,6 +77,6 @@ AdminAccessBase & {
 type PayPhaseDocument = XmlDocument & {
   TopElem: PayPhaseDocumentTopElem;
   pay_phase: PayPhaseDocumentTopElem;
-  OnLocalInit(): unknown;
-  DocDesc(): unknown;
+  OnLocalInit(): void;
+  DocDesc(): string;
 };

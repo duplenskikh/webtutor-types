@@ -13,5 +13,5 @@ type ContractTypeDocumentTopElem = XmlTopElem & {
 type ContractTypeDocument = XmlDocument & {
   TopElem: ContractTypeDocumentTopElem;
   contract_type: ContractTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

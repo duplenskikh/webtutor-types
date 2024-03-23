@@ -17,7 +17,7 @@ interface OrderDocumentGood {
   good_instances: XmlMultiElem<OrderDocumentGoodGoodInstance>;
   delivery_type: XmlElem<string, typeof common.delivery_types>;
   cost: XmlElem<number>;
-  sum(): unknown;
+  sum(): number;
   add_good_instance(goodInstanceId: number): unknown;
   status: XmlElem<string, typeof common.order_status_types>;
   request_id: XmlElem<number, RequestCatalogDocumentTopElem>;
@@ -34,7 +34,7 @@ CustomElemsBase & {
   status: XmlElem<string, typeof common.order_status_types>;
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   goods: XmlMultiElem<OrderDocumentGood>;
-  sum(): unknown;
+  sum(): number;
   currency_type_id: XmlElem<string, typeof lists.currency_types>;
   formed_date: XmlElem<Date>;
   paid_date: XmlElem<Date>;
@@ -47,5 +47,5 @@ CustomElemsBase & {
 type OrderDocument = XmlDocument & {
   TopElem: OrderDocumentTopElem;
   order: OrderDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

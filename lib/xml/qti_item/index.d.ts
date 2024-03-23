@@ -26,7 +26,7 @@ interface QtiItemDocumentItemAnswer {
 interface QtiItemDocumentItem extends CustomElemsBase, KnowledgePartsBase, KnowledgePartsBaseOld, ClLocalizationsBase, AdminAccessBase {
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   status: XmlElem<string, typeof common.tutor_status_types>;
   type_id: XmlElem<string, typeof common.item_types>;
   title: XmlElem<string>;
@@ -63,6 +63,6 @@ type QtiItemDocument = XmlDocument & {
   TopElem: QtiItemDocumentTopElem;
   qti_item: QtiItemDocumentTopElem;
   item: XmlElem<QtiItemDocumentItem>;
-  OnCreate(): unknown;
-  DocDesc(): unknown;
+  OnCreate(): void;
+  DocDesc(): string;
 };

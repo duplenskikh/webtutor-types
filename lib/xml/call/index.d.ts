@@ -28,5 +28,4 @@ PersonFillingBase & {
 type CallDocument = XmlDocument & {
   TopElem: CallDocumentTopElem;
   call: CallDocumentTopElem;
-
 };

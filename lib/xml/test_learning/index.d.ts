@@ -15,7 +15,7 @@ AdminAccessBase &
 CustomElemsBase & {
   Doc: TestLearningDocument;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
   assessment_name: XmlElem<string>;
   assessment_code: XmlElem<string>;
@@ -53,5 +53,5 @@ CustomElemsBase & {
 type TestLearningDocument = XmlDocument & {
   TopElem: TestLearningDocumentTopElem;
   test_learning: TestLearningDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

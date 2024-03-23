@@ -14,7 +14,7 @@ type CareerReserveTutorCatalogDocumentTopElem = XmlTopElem & {
   tutor_type: XmlElem<string>;
   is_responsible: XmlElem<boolean>;
   tutor_fullname: XmlElem<string>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

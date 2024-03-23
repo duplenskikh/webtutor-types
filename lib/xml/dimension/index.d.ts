@@ -9,6 +9,6 @@ type DimensionDocumentTopElem = XmlTopElem & {
 type DimensionDocument = XmlDocument & {
   TopElem: DimensionDocumentTopElem;
   dimension: DimensionDocumentTopElem;
-  OnInit(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  DocDesc(): string;
 };

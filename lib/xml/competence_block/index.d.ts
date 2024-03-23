@@ -11,5 +11,5 @@ AdminAccessBase & {
 type CompetenceBlockDocument = XmlDocument & {
   TopElem: CompetenceBlockDocumentTopElem;
   competence_block: CompetenceBlockDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

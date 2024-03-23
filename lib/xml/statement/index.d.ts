@@ -89,7 +89,7 @@ FileListBase & {
   Doc: StatementDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   voited: XmlElem<boolean>;
   voided: XmlElem<boolean>;
   request: XmlElem<StatementDocumentRequest>;
@@ -117,5 +117,5 @@ FileListBase & {
 type StatementDocument = XmlDocument & {
   TopElem: StatementDocumentTopElem;
   statement: StatementDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

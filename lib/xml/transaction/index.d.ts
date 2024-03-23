@@ -19,6 +19,6 @@ CustomElemsBase & {
 type TransactionDocument = XmlDocument & {
   TopElem: TransactionDocumentTopElem;
   transaction: TransactionDocumentTopElem;
-  OnCreate(): unknown;
-  DocDesc(): unknown;
+  OnCreate(): void;
+  DocDesc(): string;
 };

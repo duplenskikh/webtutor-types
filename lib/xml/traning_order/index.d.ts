@@ -22,6 +22,6 @@ CustomElemsBase & {
 type TraningOrderDocument = XmlDocument & {
   TopElem: TraningOrderDocumentTopElem;
   traning_order: TraningOrderDocumentTopElem;
-  OnInit(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  DocDesc(): string;
 };

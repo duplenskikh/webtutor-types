@@ -7,7 +7,7 @@ type TalentPoolFuncManagerCatalogDocumentTopElem = XmlTopElem & {
   person_fullname: XmlElem<string>;
   is_native: XmlElem<boolean>;
   boss_type_id: XmlElem<number, BossTypeCatalogDocumentTopElem>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

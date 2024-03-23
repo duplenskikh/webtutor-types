@@ -5,5 +5,5 @@ ObjectCodeNameBase & {
   person_fullname: XmlElem<string>;
   sex: XmlElem<string>;
   chatbot_ids: XmlMultiElemObject<number, ChatbotCatalogDocumentTopElem>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

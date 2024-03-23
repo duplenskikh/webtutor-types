@@ -44,6 +44,6 @@ CustomElemsBase & {
 type KeyPositionDocument = XmlDocument & {
   TopElem: KeyPositionDocumentTopElem;
   key_position: KeyPositionDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

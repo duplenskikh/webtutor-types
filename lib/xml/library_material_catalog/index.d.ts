@@ -26,5 +26,5 @@ AdminAccessBase & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   status_in_knowledge_map: XmlElem<string, typeof common.status_in_knowledge_map_types>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

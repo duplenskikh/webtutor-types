@@ -10,5 +10,5 @@ type PersonObjectLinkCatalogDocumentTopElem = XmlTopElem & {
   all_can_edit: XmlElem<boolean>;
   all_can_delete: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

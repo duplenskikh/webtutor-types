@@ -32,5 +32,5 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
   is_self_enrolled: XmlElem<boolean>;
   use_proctoring: XmlElem<boolean>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

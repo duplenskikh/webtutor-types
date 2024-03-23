@@ -21,5 +21,5 @@ type LearningStorageDocumentTopElem = XmlTopElem & {
 type LearningStorageDocument = XmlDocument & {
   TopElem: LearningStorageDocumentTopElem;
   learning_storage: LearningStorageDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

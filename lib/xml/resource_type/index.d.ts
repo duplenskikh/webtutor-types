@@ -10,5 +10,5 @@ ObjectCodeNameBase & {
 type ResourceTypeDocument = XmlDocument & {
   TopElem: ResourceTypeDocumentTopElem;
   resource_type: ResourceTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

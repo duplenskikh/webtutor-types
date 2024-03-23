@@ -5,7 +5,7 @@ type SiteOwnerObjectCatalogDocumentTopElem = XmlTopElem & {
   site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
   object_id: XmlElem<number>;
   catalog_name: XmlElem<string, typeof common.exchange_object_types>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

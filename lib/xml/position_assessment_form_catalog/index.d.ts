@@ -10,5 +10,5 @@ type PositionAssessmentFormCatalogDocumentTopElem = XmlTopElem & {
   grade_id: XmlElem<number, GradeCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

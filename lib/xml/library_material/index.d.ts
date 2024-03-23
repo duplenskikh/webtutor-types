@@ -123,5 +123,5 @@ CustomElemsBase & {
 type LibraryMaterialDocument = XmlDocument & {
   TopElem: LibraryMaterialDocumentTopElem;
   library_material: LibraryMaterialDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

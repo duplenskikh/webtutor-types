@@ -10,5 +10,5 @@ type SiteCatalogDocumentTopElem = XmlTopElem & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   owner_object: XmlMultiElemObject<number>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

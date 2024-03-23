@@ -346,7 +346,7 @@ interface CommonPollType {
 
 interface CommonWebTemplateType extends WebVariablesBase {
   id: XmlElem<string>;
-  code(): unknown;
+  code(): string;
   name: XmlElem<string>;
   url: XmlElem<string>;
   mode: XmlElem<string>;

@@ -67,5 +67,5 @@ WebVariablesBase & {
 type TaskTypeDocument = XmlDocument & {
   TopElem: TaskTypeDocumentTopElem;
   task_type: TaskTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

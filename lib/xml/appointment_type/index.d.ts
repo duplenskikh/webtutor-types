@@ -10,5 +10,5 @@ AdminAccessBase & {
 type AppointmentTypeDocument = XmlDocument & {
   TopElem: AppointmentTypeDocumentTopElem;
   appointment_type: AppointmentTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -27,5 +27,4 @@ CustomElemsBase & {
 type ScaleDocument = XmlDocument & {
   TopElem: ScaleDocumentTopElem;
   scale: ScaleDocumentTopElem;
-
 };

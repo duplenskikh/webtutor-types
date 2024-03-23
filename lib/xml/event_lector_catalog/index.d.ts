@@ -13,7 +13,7 @@ EventCatalogBase & {
   is_tutor: XmlElem<boolean>;
   is_collaborator: XmlElem<boolean>;
   is_preparation: XmlElem<boolean>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

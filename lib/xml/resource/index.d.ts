@@ -123,6 +123,6 @@ GameBonusBase & {
 type ResourceDocument = XmlDocument & {
   TopElem: ResourceDocumentTopElem;
   resource: ResourceDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

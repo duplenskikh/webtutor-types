@@ -11,7 +11,7 @@ CustomElemsBase & {
   portal_doc_id: XmlElem<number, DocumentCatalogDocumentTopElem>;
   parent_document_entry_id: XmlElem<number, DocumentCommentEntryCatalogDocumentTopElem>;
   text_area: XmlElem<string>;
-  author_info(tePerson: unknown): unknown;
+  author_info(personTopElem: unknown): unknown;
   last_create_date: XmlElem<Date>;
   child_num: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
@@ -20,6 +20,6 @@ CustomElemsBase & {
 type DocumentCommentEntryDocument = XmlDocument & {
   TopElem: DocumentCommentEntryDocumentTopElem;
   document_comment_entry: DocumentCommentEntryDocumentTopElem;
-  OnLocalInit(): unknown;
-  DocDesc(): unknown;
+  OnLocalInit(): void;
+  DocDesc(): string;
 };

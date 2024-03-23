@@ -12,5 +12,5 @@ type DocTypeCatalogDocumentTopElem = XmlTopElem & {
   role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

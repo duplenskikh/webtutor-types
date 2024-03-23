@@ -11,5 +11,4 @@ type StatementAdditionalDocumentTopElem = XmlTopElem & {
 type StatementAdditionalDocument = XmlDocument & {
   TopElem: StatementAdditionalDocumentTopElem;
   statement_additional: StatementAdditionalDocumentTopElem;
-
 };

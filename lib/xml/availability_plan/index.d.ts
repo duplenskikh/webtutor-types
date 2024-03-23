@@ -27,5 +27,5 @@ CustomElemsBase & {
 type AvailabilityPlanDocument = XmlDocument & {
   TopElem: AvailabilityPlanDocumentTopElem;
   availability_plan: AvailabilityPlanDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

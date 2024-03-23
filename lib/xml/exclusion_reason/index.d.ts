@@ -13,5 +13,5 @@ AdminAccessBase & {
 type ExclusionReasonDocument = XmlDocument & {
   TopElem: ExclusionReasonDocumentTopElem;
   exclusion_reason: ExclusionReasonDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

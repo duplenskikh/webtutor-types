@@ -21,17 +21,17 @@ CustomElemsBase & {
   object_type: XmlElem<string, typeof common.exchange_object_types>;
   object_name: XmlElem<string>;
   authors: XmlMultiElem<BlogDocumentAuthor>;
-  authors_num(): unknown;
+  authors_num(): number;
   num_message_in_list: XmlElem<number>;
   access: XmlElem<AccessDocBase>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  creator_full_info(): unknown;
+  creator_full_info(): string;
 };
 
 type BlogDocument = XmlDocument & {
   TopElem: BlogDocumentTopElem;
   blog: BlogDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -5,5 +5,5 @@ type DnSpecializationCatalogDocumentTopElem = XmlTopElem & {
   speciality_id: XmlElem<number, DnSpecialCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

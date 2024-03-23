@@ -21,5 +21,4 @@ CustomElemsBase & {
 type RecommenderAlgorithmApplyingDocument = XmlDocument & {
   TopElem: RecommenderAlgorithmApplyingDocumentTopElem;
   recommender_algorithm_applying: RecommenderAlgorithmApplyingDocumentTopElem;
-
 };

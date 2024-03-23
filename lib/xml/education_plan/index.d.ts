@@ -121,13 +121,13 @@ CustomElemsBase & {
   assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-  getEducationPlanAccess(objId: number, userId: number, teObject: unknown): unknown;
+  getEducationPlanAccess(objId: number, userId: number, objectTopElem: unknown): unknown;
   calculateMark(): unknown;
 };
 
 type EducationPlanDocument = XmlDocument & {
   TopElem: EducationPlanDocumentTopElem;
   education_plan: EducationPlanDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

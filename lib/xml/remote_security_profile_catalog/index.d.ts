@@ -5,5 +5,5 @@ type RemoteSecurityProfileCatalogDocumentTopElem = XmlTopElem & {
   modification_date: XmlElem<Date>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

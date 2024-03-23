@@ -11,5 +11,5 @@ type PaymentTypeDocumentTopElem = XmlTopElem & {
 type PaymentTypeDocument = XmlDocument & {
   TopElem: PaymentTypeDocumentTopElem;
   payment_type: PaymentTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -14,5 +14,4 @@ PersonFillingBase & {
 type AbsenceReserveDocument = XmlDocument & {
   TopElem: AbsenceReserveDocumentTopElem;
   absence_reserve: AbsenceReserveDocumentTopElem;
-
 };

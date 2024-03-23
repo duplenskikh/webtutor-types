@@ -15,7 +15,7 @@ type PersonalChatCatalogDocumentTopElem = XmlTopElem & {
   last_message_text: XmlElem<string>;
   last_message_sender_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

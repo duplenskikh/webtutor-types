@@ -13,7 +13,7 @@ type EventPhaseCatalogDocumentTopElem = XmlTopElem & {
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   object_resource_id: XmlElem<number, ObjectResourceCatalogDocumentTopElem>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

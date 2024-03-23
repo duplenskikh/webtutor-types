@@ -59,7 +59,7 @@ CustomElemsBase & {
   Doc: CareerReserveDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   start_date: XmlElem<Date>;
   plan_readiness_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
@@ -85,19 +85,19 @@ CustomElemsBase & {
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-  get_linked_position_common_id(): unknown;
-  assign_typical_program(typicalProgramId: number): unknown;
-  set_task(task: unknown, typicalProgramId: number, parentTaskId: string): unknown;
-  change_tutors_list(): unknown;
-  calc_position(task: unknown): unknown;
-  filling_empty_position_field(): unknown;
+  get_linked_position_common_id(): number;
+  assign_typical_program(typicalProgramId: number): void;
+  set_task(task: unknown, typicalProgramId: number, parentTaskId: string): string | void;
+  change_tutors_list(): void;
+  calc_position(task: unknown): void;
+  filling_empty_position_field(): void;
   role_id: XmlMultiElemObject<number>;
 };
 
 type CareerReserveDocument = XmlDocument & {
   TopElem: CareerReserveDocumentTopElem;
   career_reserve: CareerReserveDocumentTopElem;
-  OnLocalInit(): unknown;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnLocalInit(): void;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

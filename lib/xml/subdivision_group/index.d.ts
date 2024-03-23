@@ -28,12 +28,12 @@ ViewConditionsBase & {
   desc: XmlElem<string>;
   dynamic_select_subdivision(clearList: unknown): unknown;
   dynamic_select_person(clearList: unknown): unknown;
-  start_action(type: string): unknown;
+  start_action(type: string): number;
 };
 
 type SubdivisionGroupDocument = XmlDocument & {
   TopElem: SubdivisionGroupDocumentTopElem;
   subdivision_group: SubdivisionGroupDocumentTopElem;
-  OnInit(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  DocDesc(): string;
 };

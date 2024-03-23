@@ -9,5 +9,5 @@ AdminAccessBase & {
   period_type: XmlElem<string, typeof common.perioditys>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

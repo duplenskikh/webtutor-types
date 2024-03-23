@@ -9,7 +9,7 @@ PersonBase & {
   status_id: XmlElem<string, typeof common.student_states>;
   main_group_id: XmlElem<number, DnStudGroupCatalogDocumentTopElem>;
   group_id: XmlElem<number, DnStudGroupCatalogDocumentTopElem>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

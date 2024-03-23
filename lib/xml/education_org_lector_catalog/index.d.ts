@@ -8,7 +8,7 @@ type EducationOrgLectorCatalogDocumentTopElem = XmlTopElem & {
   lector_id: XmlElem<number, LectorCatalogDocumentTopElem>;
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

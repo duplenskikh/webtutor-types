@@ -3,7 +3,7 @@ type WebRuleDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  is_pattern(): unknown;
+  is_pattern(): boolean;
   use_matches(): unknown;
   url: XmlElem<string>;
   script: XmlElem<string>;
@@ -25,6 +25,6 @@ type WebRuleDocumentTopElem = XmlTopElem & {
 type WebRuleDocument = XmlDocument & {
   TopElem: WebRuleDocumentTopElem;
   web_rule: WebRuleDocumentTopElem;
-  OnSave(): unknown;
-  DocDesc(): unknown;
+  OnSave(): void;
+  DocDesc(): string;
 };

@@ -17,5 +17,5 @@ WebVariablesBase & {
 type CheckScheduleDocument = XmlDocument & {
   TopElem: CheckScheduleDocumentTopElem;
   check_schedule: CheckScheduleDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

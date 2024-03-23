@@ -15,5 +15,5 @@ AdminAccessBase & {
   custom_web_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

@@ -176,6 +176,6 @@ AdminAccessBase & {
 type AssessmentAppraiseDocument = XmlDocument & {
   TopElem: AssessmentAppraiseDocumentTopElem;
   assessment_appraise: AssessmentAppraiseDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

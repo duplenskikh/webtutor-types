@@ -12,5 +12,5 @@ type ChatbotCatalogDocumentTopElem = XmlTopElem & {
   create_date: XmlElem<Date>;
   role_id: XmlMultiElemObject<number>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

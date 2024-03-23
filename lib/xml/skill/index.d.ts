@@ -20,5 +20,5 @@ AdminAccessBase & {
 type SkillDocument = XmlDocument & {
   TopElem: SkillDocumentTopElem;
   skill: SkillDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -20,7 +20,7 @@ CustomElemsBase & {
   Doc: OutstaffOrderExecutionDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   status: XmlElem<string, typeof common.order_status_types>;
   formed_date: XmlElem<Date>;
   paid_date: XmlElem<Date>;
@@ -49,6 +49,6 @@ CustomElemsBase & {
 type OutstaffOrderExecutionDocument = XmlDocument & {
   TopElem: OutstaffOrderExecutionDocumentTopElem;
   outstaff_order_execution: OutstaffOrderExecutionDocumentTopElem;
-  DocDesc(): unknown;
-  OnBeforeSave(): unknown;
+  DocDesc(): string;
+  OnBeforeSave(): void;
 };

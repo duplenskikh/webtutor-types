@@ -26,5 +26,5 @@ AdminAccessBase & {
   knowledge_parts: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

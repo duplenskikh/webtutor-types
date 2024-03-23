@@ -67,5 +67,5 @@ CustomElemsBase & {
 type ExchangeServerDocument = XmlDocument & {
   TopElem: ExchangeServerDocumentTopElem;
   exchange_server: ExchangeServerDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

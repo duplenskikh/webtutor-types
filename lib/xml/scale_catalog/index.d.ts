@@ -7,5 +7,5 @@ type ScaleCatalogDocumentTopElem = XmlTopElem & {
   status: XmlElem<string, typeof common.kpi_states>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

@@ -1,6 +1,6 @@
 type LikeDocumentTopElem = XmlTopElem & {
   Doc: LikeDocument;
-  name(): unknown;
+  name(): string;
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
   type_id: XmlElem<string, typeof common.reaction_types>;
@@ -20,5 +20,5 @@ type LikeDocumentTopElem = XmlTopElem & {
 type LikeDocument = XmlDocument & {
   TopElem: LikeDocumentTopElem;
   like: LikeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

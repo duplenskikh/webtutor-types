@@ -66,5 +66,5 @@ PersonFillingBase & {
 type CalendarEventDocument = XmlDocument & {
   TopElem: CalendarEventDocumentTopElem;
   calendar_event: CalendarEventDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

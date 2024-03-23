@@ -67,5 +67,5 @@ ExportOdbcSourceBase & {
 type DischargeDocument = XmlDocument & {
   TopElem: DischargeDocumentTopElem;
   discharge: DischargeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

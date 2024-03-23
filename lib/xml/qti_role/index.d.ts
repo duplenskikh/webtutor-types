@@ -18,6 +18,6 @@ type QtiRoleDocument = XmlDocument & {
   TopElem: QtiRoleDocumentTopElem;
   qti_role: QtiRoleDocumentTopElem;
   role: XmlElem<QtiRoleDocumentRole>;
-  DocDesc(): unknown;
-  OnInit(): unknown;
+  DocDesc(): string;
+  OnInit(): void;
 };

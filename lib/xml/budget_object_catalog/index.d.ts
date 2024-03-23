@@ -6,7 +6,7 @@ type BudgetObjectCatalogDocumentTopElem = XmlTopElem & {
   catalog_name: XmlElem<string, typeof common.exchange_object_types>;
   all: XmlElem<boolean>;
   object_id: XmlElem<number>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

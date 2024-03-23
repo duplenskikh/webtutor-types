@@ -69,5 +69,4 @@ CustomElemsBase & {
 type LicenseDocument = XmlDocument & {
   TopElem: LicenseDocumentTopElem;
   license: LicenseDocumentTopElem;
-
 };

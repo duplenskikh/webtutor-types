@@ -41,5 +41,5 @@ type ActiveNotificationDocumentTopElem = XmlTopElem & {
 type ActiveNotificationDocument = XmlDocument & {
   TopElem: ActiveNotificationDocumentTopElem;
   active_notification: ActiveNotificationDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

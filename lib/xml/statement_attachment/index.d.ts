@@ -14,5 +14,4 @@ type StatementAttachmentDocumentTopElem = XmlTopElem & {
 type StatementAttachmentDocument = XmlDocument & {
   TopElem: StatementAttachmentDocumentTopElem;
   statement_attachment: StatementAttachmentDocumentTopElem;
-
 };

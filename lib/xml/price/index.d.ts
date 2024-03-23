@@ -26,6 +26,6 @@ CustomElemsBase & {
 type PriceDocument = XmlDocument & {
   TopElem: PriceDocumentTopElem;
   price: PriceDocumentTopElem;
-  OnInit(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  DocDesc(): string;
 };

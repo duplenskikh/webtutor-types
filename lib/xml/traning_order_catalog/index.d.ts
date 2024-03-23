@@ -14,5 +14,5 @@ type TraningOrderCatalogDocumentTopElem = XmlTopElem & {
   status: XmlElem<string, typeof common.traning_order_states>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

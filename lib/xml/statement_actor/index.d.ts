@@ -16,5 +16,4 @@ type StatementActorDocumentTopElem = XmlTopElem & {
 type StatementActorDocument = XmlDocument & {
   TopElem: StatementActorDocumentTopElem;
   statement_actor: StatementActorDocumentTopElem;
-
 };

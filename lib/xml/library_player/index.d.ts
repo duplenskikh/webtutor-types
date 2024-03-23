@@ -16,5 +16,5 @@ type LibraryPlayerDocumentTopElem = XmlTopElem & {
 type LibraryPlayerDocument = XmlDocument & {
   TopElem: LibraryPlayerDocumentTopElem;
   library_player: LibraryPlayerDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

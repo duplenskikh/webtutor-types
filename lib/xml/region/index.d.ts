@@ -12,5 +12,5 @@ CustomElemsBase & {
 type RegionDocument = XmlDocument & {
   TopElem: RegionDocumentTopElem;
   region: RegionDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

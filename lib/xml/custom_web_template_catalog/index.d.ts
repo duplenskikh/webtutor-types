@@ -12,5 +12,5 @@ AccessDocBase & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   role_id: XmlMultiElemObject<number>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

@@ -15,5 +15,5 @@ AdminAccessBase & {
   role_id: XmlMultiElemObject<number>;
   tags: XmlElem<string>;
   knowledge_parts: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

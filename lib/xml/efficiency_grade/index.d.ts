@@ -23,6 +23,6 @@ FileListBase & {
 type EfficiencyGradeDocument = XmlDocument & {
   TopElem: EfficiencyGradeDocumentTopElem;
   efficiency_grade: EfficiencyGradeDocumentTopElem;
-  DocDesc(): unknown;
-  OnBeforeSave(): unknown;
+  DocDesc(): string;
+  OnBeforeSave(): void;
 };

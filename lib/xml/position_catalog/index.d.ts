@@ -23,5 +23,5 @@ type PositionCatalogDocumentTopElem = XmlTopElem & {
   staff_position_id: XmlElem<number, StaffPositionCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

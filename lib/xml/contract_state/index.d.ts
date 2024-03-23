@@ -9,6 +9,6 @@ type ContractStateDocumentTopElem = XmlTopElem & {
 type ContractStateDocument = XmlDocument & {
   TopElem: ContractStateDocumentTopElem;
   contract_state: ContractStateDocumentTopElem;
-  OnInit(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  DocDesc(): string;
 };

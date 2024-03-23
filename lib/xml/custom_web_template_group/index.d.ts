@@ -22,5 +22,5 @@ type CustomWebTemplateGroupDocumentTopElem = XmlTopElem & {
 type CustomWebTemplateGroupDocument = XmlDocument & {
   TopElem: CustomWebTemplateGroupDocumentTopElem;
   custom_web_template_group: CustomWebTemplateGroupDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

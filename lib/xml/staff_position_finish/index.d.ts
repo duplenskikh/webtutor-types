@@ -22,5 +22,5 @@ CustomElemsBase & {
 type StaffPositionFinishDocument = XmlDocument & {
   TopElem: StaffPositionFinishDocumentTopElem;
   staff_position_finish: StaffPositionFinishDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

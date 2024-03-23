@@ -8,5 +8,5 @@ type WikiArticleCommunicationCatalogDocumentTopElem = XmlTopElem & {
   child_wiki_article_id: XmlElem<number, WikiArticleCatalogDocumentTopElem>;
   position: XmlElem<number>;
   modification_date: XmlElem<Date>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

@@ -19,7 +19,7 @@ type CompoundProgramEducationMethodCatalogDocumentTopElem = XmlTopElem & {
   object_code: XmlElem<string>;
   is_open: XmlElem<boolean>;
   duration_days: XmlElem<number>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

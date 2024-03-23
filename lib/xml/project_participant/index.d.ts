@@ -49,6 +49,6 @@ KnowledgePartsBase & {
 type ProjectParticipantDocument = XmlDocument & {
   TopElem: ProjectParticipantDocumentTopElem;
   project_participant: ProjectParticipantDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

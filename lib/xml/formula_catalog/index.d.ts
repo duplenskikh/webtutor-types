@@ -8,5 +8,5 @@ type FormulaCatalogDocumentTopElem = XmlTopElem & {
   formula_eval_str: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

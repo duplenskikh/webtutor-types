@@ -4,7 +4,7 @@ CustomElemsBase & {
   Doc: WikiArticleCommunicationDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   name_value: XmlElem<string>;
   resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   wiki_article_communication_type_id: XmlElem<number, WikiArticleCommunicationTypeCatalogDocumentTopElem>;
@@ -21,6 +21,6 @@ CustomElemsBase & {
 type WikiArticleCommunicationDocument = XmlDocument & {
   TopElem: WikiArticleCommunicationDocumentTopElem;
   wiki_article_communication: WikiArticleCommunicationDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

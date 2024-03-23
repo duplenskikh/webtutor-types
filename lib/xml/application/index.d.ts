@@ -152,5 +152,5 @@ CatalogListBase & {
 type ApplicationDocument = XmlDocument & {
   TopElem: ApplicationDocumentTopElem;
   application: ApplicationDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

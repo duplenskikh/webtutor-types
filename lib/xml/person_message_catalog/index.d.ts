@@ -11,7 +11,7 @@ type PersonMessageCatalogDocumentTopElem = XmlTopElem & {
   message_date: XmlElem<Date>;
   file_count: XmlElem<number>;
   unread: XmlElem<boolean>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

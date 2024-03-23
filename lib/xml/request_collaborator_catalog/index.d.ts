@@ -13,7 +13,7 @@ type RequestCollaboratorCatalogDocumentTopElem = XmlTopElem & {
   object_name: XmlElem<string>;
   workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
   create_date: XmlElem<Date>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

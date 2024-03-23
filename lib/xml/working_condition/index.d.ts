@@ -63,5 +63,4 @@ CustomElemsBase & {
 type WorkingConditionDocument = XmlDocument & {
   TopElem: WorkingConditionDocumentTopElem;
   working_condition: WorkingConditionDocumentTopElem;
-
 };

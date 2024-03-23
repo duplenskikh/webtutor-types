@@ -9,5 +9,5 @@ type BossTypeCatalogDocumentTopElem = XmlTopElem & {
   app_instance_id: XmlElem<string>;
   object_type: XmlMultiElemObject<string, typeof common.exchange_object_types>;
   operation_id: XmlMultiElemObject<string, OperationCatalogDocumentTopElem>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

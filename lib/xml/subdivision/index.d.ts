@@ -36,13 +36,13 @@ DocumentPersonsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  start_action(type: string): unknown;
+  start_action(type: string): number;
 };
 
 type SubdivisionDocument = XmlDocument & {
   TopElem: SubdivisionDocumentTopElem;
   subdivision: SubdivisionDocumentTopElem;
-  OnBeforeSave(): unknown;
-  OnSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  OnSave(): void;
+  DocDesc(): string;
 };

@@ -11,6 +11,6 @@ CustomElemsBase & {
 type SaleContractTypeDocument = XmlDocument & {
   TopElem: SaleContractTypeDocumentTopElem;
   sale_contract_type: SaleContractTypeDocumentTopElem;
-  OnInit(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  DocDesc(): string;
 };

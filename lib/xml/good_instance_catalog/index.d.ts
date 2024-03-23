@@ -8,5 +8,5 @@ type GoodInstanceCatalogDocumentTopElem = XmlTopElem & {
   paid_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

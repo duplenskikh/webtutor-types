@@ -12,5 +12,5 @@ type AcquaintAssignCatalogDocumentTopElem = XmlTopElem & {
   state_id: XmlElem<string, typeof common.acquaint_states>;
   attempt_num: XmlElem<number>;
   modification_date: XmlElem<Date>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

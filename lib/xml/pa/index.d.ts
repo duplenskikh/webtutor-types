@@ -159,7 +159,7 @@ FileListBase & {
   Doc: PaDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   expert_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   restrict_by_group: XmlElem<number, GroupCatalogDocumentTopElem>;
@@ -218,6 +218,6 @@ FileListBase & {
 type PaDocument = XmlDocument & {
   TopElem: PaDocumentTopElem;
   pa: PaDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

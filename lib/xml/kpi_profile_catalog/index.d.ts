@@ -18,5 +18,5 @@ AdminAccessBase & {
   workflow_main_person_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

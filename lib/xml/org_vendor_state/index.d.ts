@@ -19,5 +19,5 @@ CustomElemsBase & {
 type OrgVendorStateDocument = XmlDocument & {
   TopElem: OrgVendorStateDocumentTopElem;
   org_vendor_state: OrgVendorStateDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

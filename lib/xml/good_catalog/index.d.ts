@@ -10,5 +10,5 @@ ObjectCodeNameBase & {
   delivery_type: XmlElem<string, typeof common.delivery_types>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

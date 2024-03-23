@@ -10,5 +10,4 @@ type WebPersonStateDocumentTopElem = XmlTopElem & {
 type WebPersonStateDocument = XmlDocument & {
   TopElem: WebPersonStateDocumentTopElem;
   web_person_state: WebPersonStateDocumentTopElem;
-
 };

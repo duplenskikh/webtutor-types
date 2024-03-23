@@ -16,5 +16,5 @@ KnowledgePartsBase & {
 type ProjectParticipantRoleDocument = XmlDocument & {
   TopElem: ProjectParticipantRoleDocumentTopElem;
   project_participant_role: ProjectParticipantRoleDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

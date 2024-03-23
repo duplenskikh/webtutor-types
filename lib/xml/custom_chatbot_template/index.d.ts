@@ -25,6 +25,6 @@ MsParametersBase & {
 type CustomChatbotTemplateDocument = XmlDocument & {
   TopElem: CustomChatbotTemplateDocumentTopElem;
   custom_chatbot_template: CustomChatbotTemplateDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

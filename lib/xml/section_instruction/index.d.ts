@@ -11,5 +11,5 @@ type SectionInstructionDocumentTopElem = XmlTopElem & {
 type SectionInstructionDocument = XmlDocument & {
   TopElem: SectionInstructionDocumentTopElem;
   section_instruction: SectionInstructionDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

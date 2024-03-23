@@ -30,5 +30,5 @@ CustomDatasBase & {
 type ContactDocument = XmlDocument & {
   TopElem: ContactDocumentTopElem;
   contact: ContactDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

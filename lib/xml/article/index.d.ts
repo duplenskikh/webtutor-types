@@ -21,6 +21,6 @@ CustomElemsBase & {
 type ArticleDocument = XmlDocument & {
   TopElem: ArticleDocumentTopElem;
   article: ArticleDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

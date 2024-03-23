@@ -8,5 +8,5 @@ AdminAccessBase & {
   collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

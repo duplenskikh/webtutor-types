@@ -12,5 +12,5 @@ AdminAccessBase & {
   budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

@@ -25,6 +25,6 @@ CustomElemsBase & {
 type DnRegisterDocument = XmlDocument & {
   TopElem: DnRegisterDocumentTopElem;
   dn_register: DnRegisterDocumentTopElem;
-  OnLocalInit(): unknown;
-  DocDesc(): unknown;
+  OnLocalInit(): void;
+  DocDesc(): string;
 };

@@ -35,7 +35,7 @@ type EducationPlanCollaboratorCatalogDocumentTopElem = XmlTopElem & {
   person_subdivision_name: XmlElem<string>;
   is_collaborator: XmlElem<boolean>;
   is_tutor: XmlElem<boolean>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

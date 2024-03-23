@@ -23,5 +23,4 @@ CustomElemsBase & {
 type ComponentPackageDocument = XmlDocument & {
   TopElem: ComponentPackageDocumentTopElem;
   component_package: ComponentPackageDocumentTopElem;
-
 };

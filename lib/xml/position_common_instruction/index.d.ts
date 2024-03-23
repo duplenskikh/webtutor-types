@@ -12,5 +12,5 @@ type PositionCommonInstructionDocumentTopElem = XmlTopElem & {
 type PositionCommonInstructionDocument = XmlDocument & {
   TopElem: PositionCommonInstructionDocumentTopElem;
   position_common_instruction: PositionCommonInstructionDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

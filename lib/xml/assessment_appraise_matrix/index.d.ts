@@ -46,5 +46,5 @@ AdminAccessBase & {
 type AssessmentAppraiseMatrixDocument = XmlDocument & {
   TopElem: AssessmentAppraiseMatrixDocumentTopElem;
   assessment_appraise_matrix: AssessmentAppraiseMatrixDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

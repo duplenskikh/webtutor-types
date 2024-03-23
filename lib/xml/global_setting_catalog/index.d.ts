@@ -65,5 +65,5 @@ type GlobalSettingCatalogDocumentTopElem = XmlTopElem & {
   default_contact_type_id: XmlElem<number, ContactTypeCatalogDocumentTopElem>;
   default_contact_result_id: XmlElem<number, ContactResultCatalogDocumentTopElem>;
   install_stamp: XmlElem<string>;
-  OnInit(): unknown;
+  OnInit(): void;
 };

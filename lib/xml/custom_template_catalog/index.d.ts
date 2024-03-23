@@ -38,216 +38,216 @@ interface CustomTemplateBase extends CustomFields {
 
 interface CustomTemplatesDocumentRequest {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentRequestTypeItem {
   id: XmlElem<number, RequestTypeCatalogDocumentTopElem>;
-  title(): unknown;
+  title(): string;
 }
 
 interface CustomTemplatesDocumentRequestType {
-  title(): unknown;
+  title(): string;
   items: XmlMultiElem<CustomTemplatesDocumentRequestTypeItem>;
 }
 
 interface CustomTemplatesDocumentResponse {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentResponseTypeItem {
   id: XmlElem<number, ResponseTypeCatalogDocumentTopElem>;
-  title(): unknown;
+  title(): string;
 }
 
 interface CustomTemplatesDocumentResponseType {
-  title(): unknown;
+  title(): string;
   items: XmlMultiElem<CustomTemplatesDocumentResponseTypeItem>;
 }
 
 interface CustomTemplatesDocumentEventResult {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentEventResultTypeItem {
   id: XmlElem<number, EventResultTypeCatalogDocumentTopElem>;
-  title(): unknown;
+  title(): string;
 }
 
 interface CustomTemplatesDocumentEventResultType {
-  title(): unknown;
+  title(): string;
   items: XmlMultiElem<CustomTemplatesDocumentEventResultTypeItem>;
 }
 
 interface CustomTemplatesDocumentObjectData {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentObjectDataTypeItem {
   id: XmlElem<number, ObjectDataTypeCatalogDocumentTopElem>;
-  title(): unknown;
+  title(): string;
 }
 
 interface CustomTemplatesDocumentObjectDataType {
-  title(): unknown;
+  title(): string;
   items: XmlMultiElem<CustomTemplatesDocumentObjectDataTypeItem>;
 }
 
 interface CustomTemplatesDocumentSubmission {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentSubmissionTypeItem {
   id: XmlElem<number, SubmissionTypeCatalogDocumentTopElem>;
-  title(): unknown;
+  title(): string;
 }
 
 interface CustomTemplatesDocumentSubmissionType {
-  title(): unknown;
+  title(): string;
   items: XmlMultiElem<CustomTemplatesDocumentSubmissionTypeItem>;
 }
 
 interface CustomTemplatesDocumentEventAssessmentPlan {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentPollResult {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentTaskTypeItem {
   id: XmlElem<number, TaskTypeCatalogDocumentTopElem>;
-  title(): unknown;
+  title(): string;
 }
 
 interface CustomTemplatesDocumentTaskType {
-  title(): unknown;
+  title(): string;
   items: XmlMultiElem<CustomTemplatesDocumentTaskTypeItem>;
 }
 
 interface CustomTemplatesDocumentKnowledgePart {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentKnowledgePartTypeItem {
   id: XmlElem<number, KnowledgePartTypeCatalogDocumentTopElem>;
-  title(): unknown;
+  title(): string;
 }
 
 interface CustomTemplatesDocumentKnowledgePartType {
-  title(): unknown;
+  title(): string;
   items: XmlMultiElem<CustomTemplatesDocumentKnowledgePartTypeItem>;
 }
 
 interface CustomTemplatesDocumentChatbotChat {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentChatbotItem {
   id: XmlElem<number, ChatbotCatalogDocumentTopElem>;
-  title(): unknown;
+  title(): string;
 }
 
 interface CustomTemplatesDocumentChatbot {
-  title(): unknown;
+  title(): string;
   items: XmlMultiElem<CustomTemplatesDocumentChatbotItem>;
 }
 
 interface CustomTemplatesDocumentGood {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentGoodTypeItem {
   id: XmlElem<number, GoodTypeCatalogDocumentTopElem>;
-  title(): unknown;
+  title(): string;
 }
 
 interface CustomTemplatesDocumentGoodType {
-  title(): unknown;
+  title(): string;
   items: XmlMultiElem<CustomTemplatesDocumentGoodTypeItem>;
 }
 
 interface CustomTemplatesDocumentWikiArticle {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentWikiArticleTypeItem {
   id: XmlElem<number, WikiArticleTypeCatalogDocumentTopElem>;
-  title(): unknown;
+  title(): string;
 }
 
 interface CustomTemplatesDocumentWikiArticleType {
-  title(): unknown;
+  title(): string;
   items: XmlMultiElem<CustomTemplatesDocumentWikiArticleTypeItem>;
 }
 
 interface CustomTemplatesDocumentWikiArticleCommunication {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentWikiArticleCommunicationTypeItem {
   id: XmlElem<number, WikiArticleCommunicationTypeCatalogDocumentTopElem>;
-  title(): unknown;
+  title(): string;
 }
 
 interface CustomTemplatesDocumentWikiArticleCommunicationType {
-  title(): unknown;
+  title(): string;
   items: XmlMultiElem<CustomTemplatesDocumentWikiArticleCommunicationTypeItem>;
 }
 
 interface CustomTemplatesDocumentConversation {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentConversationTypeItem {
   id: XmlElem<number, ConversationTypeCatalogDocumentTopElem>;
-  title(): unknown;
+  title(): string;
 }
 
 interface CustomTemplatesDocumentConversationType {
-  title(): unknown;
+  title(): string;
   items: XmlMultiElem<CustomTemplatesDocumentConversationTypeItem>;
 }
 
 interface CustomTemplatesDocumentIntervalSchedule {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentPresenceStateIntervalScheduleItem {
   id: XmlElem<number, PresenceStateCatalogDocumentTopElem>;
-  title(): unknown;
+  title(): string;
 }
 
 interface CustomTemplatesDocumentPresenceStateIntervalSchedule {
-  title(): unknown;
+  title(): string;
   items: XmlMultiElem<CustomTemplatesDocumentPresenceStateIntervalScheduleItem>;
 }
 
 interface CustomTemplatesDocumentPersonnelDocument {
   template_field: XmlElem<string>;
-  template_field_id(): unknown;
+  template_field_id(): string;
 }
 
 interface CustomTemplatesDocumentPersonnelDocumentTypeItem {
   id: XmlElem<number, PersonnelDocumentTypeCatalogDocumentTopElem>;
-  title(): unknown;
+  title(): string;
 }
 
 interface CustomTemplatesDocumentPersonnelDocumentType {
-  title(): unknown;
+  title(): string;
   items: XmlMultiElem<CustomTemplatesDocumentPersonnelDocumentTypeItem>;
 }
 

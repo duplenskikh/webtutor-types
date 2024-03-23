@@ -17,7 +17,7 @@ type FuncManagerCatalogDocumentTopElem = XmlTopElem & {
   is_finished: XmlElem<boolean>;
   parent_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
   org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

@@ -3,5 +3,5 @@ type ReprimandTypeCatalogDocumentTopElem = XmlTopElem & {
   code: XmlElem<string>;
   name: XmlElem<string>;
   modification_date: XmlElem<Date>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

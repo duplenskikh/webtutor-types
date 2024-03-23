@@ -29,7 +29,7 @@ AdminAccessBase & {
   Doc: RequestDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   request_type_id: XmlElem<number, RequestTypeCatalogDocumentTopElem>;
   budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
   type: XmlElem<string, typeof common.exchange_object_types>;
@@ -53,14 +53,14 @@ AdminAccessBase & {
   comment: XmlElem<string>;
   custom_elements: XmlMultiElem<RequestDocumentCustomElement>;
   access: XmlElem<AccessDocBase>;
-  start_action(type: string): unknown;
+  start_action(type: string): number;
 };
 
 type RequestDocument = XmlDocument & {
   TopElem: RequestDocumentTopElem;
   request: RequestDocumentTopElem;
-  OnLocalInit(): unknown;
-  OnCreate(): unknown;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnLocalInit(): void;
+  OnCreate(): void;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

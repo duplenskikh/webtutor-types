@@ -29,5 +29,5 @@ CustomElemsBase & {
 type CovenantDocument = XmlDocument & {
   TopElem: CovenantDocumentTopElem;
   covenant: CovenantDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

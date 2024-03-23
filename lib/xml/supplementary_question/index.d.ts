@@ -20,5 +20,5 @@ AdminAccessBase & {
 type SupplementaryQuestionDocument = XmlDocument & {
   TopElem: SupplementaryQuestionDocumentTopElem;
   supplementary_question: SupplementaryQuestionDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

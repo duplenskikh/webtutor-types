@@ -13,5 +13,5 @@ CustomElemsBase & {
 type WorkScheduleDocument = XmlDocument & {
   TopElem: WorkScheduleDocumentTopElem;
   work_schedule: WorkScheduleDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

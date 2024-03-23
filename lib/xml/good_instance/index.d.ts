@@ -16,5 +16,5 @@ PersonFillingBase & {
 type GoodInstanceDocument = XmlDocument & {
   TopElem: GoodInstanceDocumentTopElem;
   good_instance: GoodInstanceDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

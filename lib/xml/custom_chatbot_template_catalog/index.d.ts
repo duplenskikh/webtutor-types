@@ -9,5 +9,5 @@ type CustomChatbotTemplateCatalogDocumentTopElem = XmlTopElem & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   role_id: XmlMultiElemObject<number>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

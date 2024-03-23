@@ -6,5 +6,5 @@ AdminAccessBase & {
   format_type_id: XmlElem<string, typeof common.material_format_types>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

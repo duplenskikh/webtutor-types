@@ -15,6 +15,6 @@ FileListBase & {
 type ProviderDocument = XmlDocument & {
   TopElem: ProviderDocumentTopElem;
   provider: ProviderDocumentTopElem;
-  OnInit(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  DocDesc(): string;
 };

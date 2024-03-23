@@ -20,5 +20,5 @@ type WikiArticleCatalogDocumentTopElem = XmlTopElem & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   access_group_ids: XmlMultiElemObject<number, GroupCatalogDocumentTopElem>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

@@ -22,5 +22,5 @@ AdminAccessBase & {
   event_form: XmlElem<string, typeof lists.event_forms>;
   event_type_id: XmlElem<number, EventTypeCatalogDocumentTopElem>;
   role_id: XmlMultiElemObject<number>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

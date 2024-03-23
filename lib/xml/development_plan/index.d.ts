@@ -21,7 +21,7 @@ AdminAccessBase &
 CustomElemsBase & {
   Doc: DevelopmentPlanDocument;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   expert_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   department_id: XmlElem<number>;
@@ -49,6 +49,6 @@ CustomElemsBase & {
 type DevelopmentPlanDocument = XmlDocument & {
   TopElem: DevelopmentPlanDocumentTopElem;
   development_plan: DevelopmentPlanDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

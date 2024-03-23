@@ -68,6 +68,6 @@ ViewConditionsBase & {
 type AcquaintDocument = XmlDocument & {
   TopElem: AcquaintDocumentTopElem;
   acquaint: AcquaintDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

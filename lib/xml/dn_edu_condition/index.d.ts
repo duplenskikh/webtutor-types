@@ -10,5 +10,5 @@ AdminAccessBase & {
 type DnEduConditionDocument = XmlDocument & {
   TopElem: DnEduConditionDocumentTopElem;
   dn_edu_condition: DnEduConditionDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

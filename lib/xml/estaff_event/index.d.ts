@@ -39,6 +39,6 @@ AdminAccessBase & {
 type EstaffEventDocument = XmlDocument & {
   TopElem: EstaffEventDocumentTopElem;
   estaff_event: EstaffEventDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

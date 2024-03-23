@@ -6,5 +6,5 @@ type VclassSettingCatalogDocumentTopElem = XmlTopElem & {
   conversation_id: XmlElem<number, ConversationCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

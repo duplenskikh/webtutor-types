@@ -19,5 +19,5 @@ WebVariablesBase & {
 type LibrarySystemDocument = XmlDocument & {
   TopElem: LibrarySystemDocumentTopElem;
   library_system: LibrarySystemDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

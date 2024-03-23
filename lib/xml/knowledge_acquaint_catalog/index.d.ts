@@ -21,5 +21,5 @@ PersonFillingBase & {
   project_participant_id: XmlElem<number, ProjectParticipantCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

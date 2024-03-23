@@ -21,12 +21,12 @@ CustomElemsBase & {
   role_id: XmlMultiElemObject<number>;
   access: XmlElem<AccessDocBase>;
   set_status(newStatus: string, sendNotifications: boolean, screen: unknown): unknown;
-  start_action(type: string): unknown;
+  start_action(type: string): number;
 };
 
 type PersonnelCommitteeDocument = XmlDocument & {
   TopElem: PersonnelCommitteeDocumentTopElem;
   personnel_committee: PersonnelCommitteeDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

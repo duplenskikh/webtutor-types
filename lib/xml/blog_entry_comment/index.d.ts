@@ -16,11 +16,11 @@ CustomElemsBase & {
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
   type: XmlElem<string>;
-  creator_name(): unknown;
+  creator_name(): string;
 };
 
 type BlogEntryCommentDocument = XmlDocument & {
   TopElem: BlogEntryCommentDocumentTopElem;
   blog_entry_comment: BlogEntryCommentDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

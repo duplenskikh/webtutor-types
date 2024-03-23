@@ -11,5 +11,5 @@ type ProfilingRecordCatalogDocumentTopElem = XmlTopElem & {
   parent_template_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

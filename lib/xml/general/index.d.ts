@@ -12,8 +12,8 @@ interface PersonNameBase {
   lastname: XmlElem<string>;
   firstname: XmlElem<string>;
   middlename: XmlElem<string>;
-  fullname(): unknown;
-  shortname(): unknown;
+  fullname(): string;
+  shortname(): string;
 }
 
 interface DocInfoBaseCreation {
@@ -797,12 +797,12 @@ interface PersonFillingBase {
 }
 
 interface PersonForeignBase {
-  person_fullname(): unknown;
+  person_fullname(): string;
   person_position_name(): unknown;
-  person_org_name(): unknown;
-  person_subdivision_name(): unknown;
+  person_org_name(): string;
+  person_subdivision_name(): string;
   person_instance_id(): unknown;
-  person_code(): unknown;
+  person_code(): string;
 }
 
 interface ServerBase {
@@ -1075,7 +1075,7 @@ interface FuncManagersBasePositionManager {
 interface FuncManagersBase {
   func_managers: XmlMultiElem<FuncManagersBaseFuncManager>;
   position_managers: XmlMultiElem<FuncManagersBasePositionManager>;
-  obtain_func_manager_by_id(personId: number, isNative: unknown): unknown;
+  obtain_func_manager_by_id(personId: number, isNative: boolean): unknown;
 }
 
 interface AdminAccessBase {
@@ -1157,7 +1157,7 @@ interface LastAttemptTestLearningsBase {
 interface DescBase {
   desc_update_hyper_object(): unknown;
   desc_save(descOff: boolean): unknown;
-  get_desc(source: unknown): unknown;
+  get_desc(source: unknown): string;
 }
 
 interface AccessBlockBaseStructureItemItemItem {
@@ -1978,7 +1978,7 @@ interface CostCentersBaseCostCenterExpenseItem {
 interface CostCentersBaseCostCenter {
   cost_center_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
   person_num: XmlElem<number>;
-  sum(): unknown;
+  sum(): number;
   expense_items: XmlMultiElem<CostCentersBaseCostCenterExpenseItem>;
 }
 
@@ -2275,7 +2275,7 @@ interface TalentPoolFuncManagersBaseTalentPoolFuncManager extends PersonFillingB
 
 interface TalentPoolFuncManagersBase {
   talent_pool_func_managers: XmlMultiElem<TalentPoolFuncManagersBaseTalentPoolFuncManager>;
-  obtain_talent_pool_func_manager_by_id(personId: number, isNative: unknown): unknown;
+  obtain_talent_pool_func_manager_by_id(personId: number, isNative: boolean): unknown;
 }
 
 interface SocialObjectAccessBase {

@@ -11,5 +11,5 @@ AdminAccessBase & {
   lector_id: XmlElem<number, LectorCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

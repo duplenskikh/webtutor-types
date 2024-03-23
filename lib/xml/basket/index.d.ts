@@ -20,5 +20,5 @@ PersonFillingBase & {
 type BasketDocument = XmlDocument & {
   TopElem: BasketDocumentTopElem;
   basket: BasketDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

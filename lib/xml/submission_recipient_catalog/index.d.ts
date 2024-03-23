@@ -6,7 +6,7 @@ type SubmissionRecipientCatalogDocumentTopElem = XmlTopElem & {
   person_fullname: XmlElem<string>;
   person_position_name: XmlElem<string>;
   person_subdivision_name: XmlElem<string>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

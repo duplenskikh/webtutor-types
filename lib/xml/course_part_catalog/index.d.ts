@@ -11,7 +11,7 @@ type CoursePartCatalogDocumentTopElem = XmlTopElem & {
   assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
   activity_id: XmlElem<number, ActivityCatalogDocumentTopElem>;
   object_id: XmlElem<number>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

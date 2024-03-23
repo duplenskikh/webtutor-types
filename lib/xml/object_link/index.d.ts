@@ -19,5 +19,4 @@ CustomElemsBase & {
 type ObjectLinkDocument = XmlDocument & {
   TopElem: ObjectLinkDocumentTopElem;
   object_link: ObjectLinkDocumentTopElem;
-
 };

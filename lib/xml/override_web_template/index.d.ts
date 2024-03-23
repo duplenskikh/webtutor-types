@@ -3,7 +3,7 @@ WebVariablesBase & {
   Doc: OverrideWebTemplateDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   parent_id: XmlElem<number, OverrideWebTemplateCatalogDocumentTopElem>;
   mode: XmlElem<string>;
   mode_exception: XmlElem<string>;
@@ -30,6 +30,6 @@ WebVariablesBase & {
 type OverrideWebTemplateDocument = XmlDocument & {
   TopElem: OverrideWebTemplateDocumentTopElem;
   override_web_template: OverrideWebTemplateDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

@@ -12,5 +12,5 @@ type ObjectVersionCatalogDocumentTopElem = XmlTopElem & {
   creation_user_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

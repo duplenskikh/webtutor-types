@@ -45,5 +45,5 @@ CustomElemsBase & {
 type EventAssessmentPlanDocument = XmlDocument & {
   TopElem: EventAssessmentPlanDocumentTopElem;
   event_assessment_plan: EventAssessmentPlanDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -75,5 +75,5 @@ KnowledgePartsBase & {
 type WikiArticleDocument = XmlDocument & {
   TopElem: WikiArticleDocumentTopElem;
   wiki_article: WikiArticleDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

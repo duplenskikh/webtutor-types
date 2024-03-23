@@ -21,5 +21,5 @@ AdminAccessBase & {
   tags: XmlElem<string>;
   experts: XmlElem<string>;
   previous_version_object_id: XmlElem<number, KpiCatalogDocumentTopElem>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

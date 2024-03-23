@@ -14,5 +14,5 @@ CustomElemsBase & {
 type KnowledgeClassifierDocument = XmlDocument & {
   TopElem: KnowledgeClassifierDocumentTopElem;
   knowledge_classifier: KnowledgeClassifierDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

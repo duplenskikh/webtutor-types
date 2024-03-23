@@ -9,5 +9,5 @@ type ReprimandTypeDocumentTopElem = XmlTopElem & {
 type ReprimandTypeDocument = XmlDocument & {
   TopElem: ReprimandTypeDocumentTopElem;
   reprimand_type: ReprimandTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -24,7 +24,7 @@ declare namespace tools_ass {
   function create_event_assessment_plans(eventId: number): unknown;
   function generate_poll_procedure_result_card(pOLLPROCEDUREId: number, pOLLPROCEDUREDOC: unknown, pERSONId: number, pOLLId: number, pOLL: unknown, dONOTIFY: unknown): unknown;
   function generate_procedure_plan(aSSESSMENTAPPRAISEId: number, docASSESSMENTAPPRAISE: unknown, addOnlyNew: boolean): unknown;
-  function generate_kpi_values(budgetPeriodId: number, teBudgetPeriod: unknown, kPIId: number, teKPI: unknown): unknown;
+  function generate_kpi_values(budgetPeriodId: number, budgetPeriodTopElem: unknown, kpiId: number, kpiTopElem: unknown): unknown;
   function manual_run_bonus_calc(): unknown;
   function run_bonus_calc(assessmentId: number, budgetPeriodId: number): unknown;
   function ui_set_competence_plan(selRows: unknown, flagMark: unknown): unknown;

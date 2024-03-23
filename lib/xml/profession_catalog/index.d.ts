@@ -6,5 +6,5 @@ AdminAccessBase & {
   professional_area_id: XmlElem<number, ProfessionalAreaCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

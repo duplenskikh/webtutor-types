@@ -26,5 +26,5 @@ FileListBase & {
 type ExpertQuestionDocument = XmlDocument & {
   TopElem: ExpertQuestionDocumentTopElem;
   expert_question: ExpertQuestionDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -4,5 +4,5 @@ type GradeCatalogDocumentTopElem = XmlTopElem & {
   name: XmlElem<string>;
   desc: XmlElem<string>;
   modification_date: XmlElem<Date>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

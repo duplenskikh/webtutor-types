@@ -15,5 +15,5 @@ WebVariablesBase & {
 type ProviderCourseTypeDocument = XmlDocument & {
   TopElem: ProviderCourseTypeDocumentTopElem;
   provider_course_type: ProviderCourseTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

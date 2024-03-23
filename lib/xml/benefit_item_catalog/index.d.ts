@@ -11,5 +11,5 @@ type BenefitItemCatalogDocumentTopElem = XmlTopElem & {
   benefit_id: XmlElem<number, BenefitCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

@@ -39,5 +39,5 @@ type ClShapeDocumentTopElem = XmlTopElem & {
 type ClShapeDocument = XmlDocument & {
   TopElem: ClShapeDocumentTopElem;
   cl_shape: ClShapeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

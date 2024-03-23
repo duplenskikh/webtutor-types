@@ -14,5 +14,5 @@ PersonFillingBase & {
   active_participants_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
   participants_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
   entered_participants_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

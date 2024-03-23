@@ -23,5 +23,5 @@ PersonFillingBase & {
 type ActivityStateDocument = XmlDocument & {
   TopElem: ActivityStateDocumentTopElem;
   activity_state: ActivityStateDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

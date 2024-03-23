@@ -2,7 +2,7 @@ type StatisticDataDocumentTopElem = XmlTopElem & {
   Doc: StatisticDataDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   statistic_rec_id: XmlElem<number, StatisticRecCatalogDocumentTopElem>;
   budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
   object_type: XmlElem<string, typeof common.exchange_object_types>;
@@ -29,5 +29,5 @@ type StatisticDataDocumentTopElem = XmlTopElem & {
 type StatisticDataDocument = XmlDocument & {
   TopElem: StatisticDataDocumentTopElem;
   statistic_data: StatisticDataDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

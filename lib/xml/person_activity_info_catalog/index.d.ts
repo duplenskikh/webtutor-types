@@ -4,7 +4,7 @@ type PersonActivityInfoCatalogDocumentTopElem = XmlTopElem & {
   chat_last_activity_date: XmlElem<Date>;
   presence_state_id: XmlElem<number, PresenceStateCatalogDocumentTopElem>;
   update_date: XmlElem<Date>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

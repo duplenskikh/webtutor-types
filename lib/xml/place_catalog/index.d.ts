@@ -8,5 +8,5 @@ AdminAccessBase & {
   timezone_id: XmlElem<number, typeof common.timezones>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

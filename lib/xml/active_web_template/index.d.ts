@@ -23,13 +23,13 @@ interface ActiveWebTemplateDocumentCustomWebTemplate extends WebVariablesBase, Z
 
 type ActiveWebTemplateDocumentTopElem = XmlTopElem & {
   Doc: ActiveWebTemplateDocument;
-  name(): unknown;
+  name(): string;
   access_level: XmlElem<number>;
   access_role: XmlElem<string, AccessRoleCatalogDocumentTopElem>;
   mode: XmlElem<string>;
   web_design_id: XmlElem<number, WebDesignCatalogDocumentTopElem>;
   site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
-  hash(): unknown;
+  hash(): string;
   override_web_templates: XmlMultiElem<ActiveWebTemplateDocumentOverrideWebTemplate>;
   custom_web_templates: XmlMultiElem<ActiveWebTemplateDocumentCustomWebTemplate>;
   counter_template: XmlElem<number>;
@@ -40,5 +40,5 @@ type ActiveWebTemplateDocumentTopElem = XmlTopElem & {
 type ActiveWebTemplateDocument = XmlDocument & {
   TopElem: ActiveWebTemplateDocumentTopElem;
   active_web_template: ActiveWebTemplateDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -8,5 +8,5 @@ type WikiArticleCommunicationTypeCatalogDocumentTopElem = XmlTopElem & {
   child_wiki_article_type_id: XmlElem<number, WikiArticleTypeCatalogDocumentTopElem>;
   is_mandatory: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

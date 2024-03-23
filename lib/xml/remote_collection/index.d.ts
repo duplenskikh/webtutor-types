@@ -65,6 +65,6 @@ I18nBase & {
 type RemoteCollectionDocument = XmlDocument & {
   TopElem: RemoteCollectionDocumentTopElem;
   remote_collection: RemoteCollectionDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

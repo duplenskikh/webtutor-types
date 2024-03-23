@@ -38,5 +38,5 @@ AdminAccessBase & {
 type VclassSettingDocument = XmlDocument & {
   TopElem: VclassSettingDocumentTopElem;
   vclass_setting: VclassSettingDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

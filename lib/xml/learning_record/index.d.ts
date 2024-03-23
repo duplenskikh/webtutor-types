@@ -86,12 +86,12 @@ MsParametersBase & {
   sessions: XmlMultiElem<LearningRecordDocumentSession>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  get_url_record(teUser: unknown, proctorId: number): unknown;
+  get_url_record(userTopElem: unknown, proctorId: number): unknown;
 };
 
 type LearningRecordDocument = XmlDocument & {
   TopElem: LearningRecordDocumentTopElem;
   learning_record: LearningRecordDocumentTopElem;
-  DocDesc(): unknown;
-  OnBeforeSave(): unknown;
+  DocDesc(): string;
+  OnBeforeSave(): void;
 };

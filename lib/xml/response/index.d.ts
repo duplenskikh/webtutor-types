@@ -22,12 +22,12 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   basic_score: XmlElem<number>;
   basic_desc: XmlElem<string>;
-  calc_basic_values(): unknown;
+  calc_basic_values(): void;
 };
 
 type ResponseDocument = XmlDocument & {
   TopElem: ResponseDocumentTopElem;
   response: ResponseDocumentTopElem;
-  DocDesc(): unknown;
-  OnBeforeSave(): unknown;
+  DocDesc(): string;
+  OnBeforeSave(): void;
 };

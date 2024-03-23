@@ -8,5 +8,5 @@ AdminAccessBase & {
   chair_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

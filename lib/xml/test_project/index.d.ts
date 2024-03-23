@@ -42,7 +42,7 @@ interface TestProjectDocumentItem {
 interface TestProjectDocumentItemComment {
   id: XmlElem<string>;
   person_id: XmlElem<number>;
-  person_fullname(): unknown;
+  person_fullname(): string;
   item_id: XmlElem<number>;
   quota_correct: XmlElem<number>;
   status: XmlElem<string, typeof common.item_status_types>;
@@ -203,5 +203,5 @@ CustomElemsBase & {
 type TestProjectDocument = XmlDocument & {
   TopElem: TestProjectDocumentTopElem;
   test_project: TestProjectDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

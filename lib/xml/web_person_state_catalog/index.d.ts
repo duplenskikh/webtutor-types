@@ -3,5 +3,5 @@ type WebPersonStateCatalogDocumentTopElem = XmlTopElem & {
   code: XmlElem<string>;
   name: XmlElem<string>;
   type_id: XmlElem<string, typeof common.web_person_state_types>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

@@ -12,5 +12,5 @@ CustomElemsBase & {
 type AssessmentResultRecommendDocument = XmlDocument & {
   TopElem: AssessmentResultRecommendDocumentTopElem;
   assessment_result_recommend: AssessmentResultRecommendDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

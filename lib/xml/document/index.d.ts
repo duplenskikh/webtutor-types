@@ -41,6 +41,6 @@ AdminAccessBase & {
 type DocumentDocument = XmlDocument & {
   TopElem: DocumentDocumentTopElem;
   document: DocumentDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

@@ -12,7 +12,7 @@ CostCurrencyTypeBase & {
   duration_days: XmlElem<number>;
   person_num: XmlElem<number>;
   lector_id: XmlElem<number, LectorCatalogDocumentTopElem>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

@@ -5,7 +5,7 @@ type LibraryMaterialObjectCatalogDocumentTopElem = XmlTopElem & {
   object_id: XmlElem<number>;
   object_name: XmlElem<string>;
   object_catalog: XmlElem<string>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

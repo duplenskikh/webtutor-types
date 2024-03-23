@@ -15,5 +15,5 @@ AdminAccessBase & {
   subdivision_group_id: XmlElem<number, SubdivisionGroupCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

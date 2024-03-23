@@ -12,5 +12,5 @@ AdminAccessBase & {
   experts: XmlElem<string>;
   exercises: XmlElem<string>;
   role_id: XmlMultiElemObject<number>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

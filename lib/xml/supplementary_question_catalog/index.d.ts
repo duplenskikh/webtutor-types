@@ -7,5 +7,5 @@ AdminAccessBase & {
   type: XmlElem<string, typeof common.supplementary_question_types>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

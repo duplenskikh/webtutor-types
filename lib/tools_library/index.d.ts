@@ -6,7 +6,7 @@ declare namespace tools_library {
   function word_to_html(fileUrl: string, useCutter: boolean, setTags: boolean): unknown;
   function pdf_to_html(fileUrl: string, useCutter: boolean, setTags: boolean): unknown;
   function convert_to_simple_html(htmlText: string, sourceFile: string, applyGlobalCutter: boolean, setTags: boolean): unknown;
-  function get_article_html(articleId: number, teArticle: unknown, flush: boolean): unknown;
+  function get_article_html(articleId: number, articleTopElem: unknown, flush: boolean): unknown;
   function heal_html(partProcess: string, objRegExpRef: unknown): unknown;
   function slice_pages(symbolLength: number, fatText: string): unknown;
   function slice_by_global_cutter(fatHtml: string): unknown;

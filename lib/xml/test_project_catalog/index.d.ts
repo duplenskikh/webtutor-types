@@ -5,5 +5,5 @@ type TestProjectCatalogDocumentTopElem = XmlTopElem & {
   status: XmlElem<string, typeof common.test_project_types>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

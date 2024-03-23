@@ -12,5 +12,5 @@ PersonFillingBase & {
   attorney_url: XmlElem<string>;
   attorney_sig_file_url: XmlElem<string>;
   upload: XmlElem<boolean>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

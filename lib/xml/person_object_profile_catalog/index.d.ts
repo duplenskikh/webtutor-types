@@ -4,5 +4,5 @@ type PersonObjectProfileCatalogDocumentTopElem = XmlTopElem & {
   name: XmlElem<string>;
   object_catalog: XmlMultiElemObject<string, typeof common.exchange_object_types>;
   modification_date: XmlElem<Date>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

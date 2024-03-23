@@ -42,5 +42,5 @@ CustomElemsBase & {
 type StaffPositionDocument = XmlDocument & {
   TopElem: StaffPositionDocumentTopElem;
   staff_position: StaffPositionDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

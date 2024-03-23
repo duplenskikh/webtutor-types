@@ -30,12 +30,12 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  start_action(type: string): unknown;
+  start_action(type: string): number;
   role_id: XmlMultiElemObject<number>;
 };
 
 type OrgDocument = XmlDocument & {
   TopElem: OrgDocumentTopElem;
   org: OrgDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

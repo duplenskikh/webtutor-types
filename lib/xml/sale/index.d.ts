@@ -38,6 +38,6 @@ CustomElemsBase & {
 type SaleDocument = XmlDocument & {
   TopElem: SaleDocumentTopElem;
   sale: SaleDocumentTopElem;
-  OnInit(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  DocDesc(): string;
 };

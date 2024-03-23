@@ -8,5 +8,4 @@ type OutstaffTypeMaterialDocumentTopElem = XmlTopElem & {
 type OutstaffTypeMaterialDocument = XmlDocument & {
   TopElem: OutstaffTypeMaterialDocumentTopElem;
   outstaff_type_material: OutstaffTypeMaterialDocumentTopElem;
-
 };

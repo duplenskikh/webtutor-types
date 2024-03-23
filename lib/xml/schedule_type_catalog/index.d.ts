@@ -6,5 +6,5 @@ type ScheduleTypeCatalogDocumentTopElem = XmlTopElem & {
   is_shedule: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

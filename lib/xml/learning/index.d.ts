@@ -9,7 +9,7 @@ CustomElemsBase &
 AdminAccessBase & {
   Doc: LearningDocument;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
   course_name: XmlElem<string>;
   course_code: XmlElem<string>;
@@ -44,5 +44,5 @@ AdminAccessBase & {
 type LearningDocument = XmlDocument & {
   TopElem: LearningDocumentTopElem;
   learning: LearningDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

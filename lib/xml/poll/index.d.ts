@@ -58,7 +58,7 @@ interface PollDocumentItemRow {
   question_id: XmlElem<number>;
   value: XmlElem<string>;
   columns: XmlMultiElem<PollDocumentItemRowColumn>;
-  is_title(): unknown;
+  is_title(): boolean;
 }
 
 interface PollDocumentItemCondition {
@@ -126,7 +126,7 @@ KnowledgePartsBase & {
 type PollDocument = XmlDocument & {
   TopElem: PollDocumentTopElem;
   poll: PollDocumentTopElem;
-  OnInit(): unknown;
-  OnCreate(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  OnCreate(): void;
+  DocDesc(): string;
 };

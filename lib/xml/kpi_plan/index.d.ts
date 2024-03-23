@@ -41,7 +41,7 @@ AdminAccessBase & {
   Doc: KpiPlanDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   kpi_id: XmlElem<number, KpiCatalogDocumentTopElem>;
   budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
   responsible_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
@@ -65,12 +65,12 @@ AdminAccessBase & {
   workflow_matching_type: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  obtain_custom_data(teKPI: unknown, aData: unknown): unknown;
+  obtain_custom_data(kPITopElem: unknown, aData: unknown): unknown;
   calc_data(formula: string): unknown;
 };
 
 type KpiPlanDocument = XmlDocument & {
   TopElem: KpiPlanDocumentTopElem;
   kpi_plan: KpiPlanDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

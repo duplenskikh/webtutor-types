@@ -7,7 +7,7 @@ type TaggedObjectCatalogDocumentTopElem = XmlTopElem & {
   require_acknowledgement: XmlElem<boolean>;
   tag_id: XmlElem<number, TagCatalogDocumentTopElem>;
   tag_name: XmlElem<string>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

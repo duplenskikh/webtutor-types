@@ -48,5 +48,5 @@ AdminAccessBase & {
   workflow_matching_type: XmlElem<string>;
   conversation_id: XmlElem<number, ConversationCatalogDocumentTopElem>;
   preparation_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

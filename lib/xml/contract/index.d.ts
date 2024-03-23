@@ -23,6 +23,6 @@ CustomElemsBase & {
 type ContractDocument = XmlDocument & {
   TopElem: ContractDocumentTopElem;
   contract: ContractDocumentTopElem;
-  OnInit(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  DocDesc(): string;
 };

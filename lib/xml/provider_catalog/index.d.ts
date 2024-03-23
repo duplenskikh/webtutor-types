@@ -7,5 +7,5 @@ type ProviderCatalogDocumentTopElem = XmlTopElem & {
   dimension_id: XmlElem<number, DimensionCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

@@ -10,7 +10,7 @@ CustomElemsBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   activation_code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_current_state: XmlElem<string>;
   event_id: XmlElem<number, EventCatalogDocumentTopElem>;
@@ -35,20 +35,20 @@ CustomElemsBase & {
   max_score: XmlElem<number>;
   assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
   question_num: XmlElem<number>;
-  question_answered_num(): unknown;
-  question_passed_num(): unknown;
+  question_answered_num(): number;
+  question_passed_num(): number;
   no_encoding_core_lesson: XmlElem<boolean>;
   use_proctoring: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  calc_max_end_date(): unknown;
-  complete_test(): unknown;
+  calc_max_end_date(): Date | null;
+  complete_test(): number;
 };
 
 type ActiveTestLearningDocument = XmlDocument & {
   TopElem: ActiveTestLearningDocumentTopElem;
   active_test_learning: ActiveTestLearningDocumentTopElem;
-  OnLocalInit(): unknown;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnLocalInit(): void;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

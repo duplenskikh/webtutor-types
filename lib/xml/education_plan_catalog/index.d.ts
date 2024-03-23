@@ -26,5 +26,5 @@ AdminAccessBase & {
   assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

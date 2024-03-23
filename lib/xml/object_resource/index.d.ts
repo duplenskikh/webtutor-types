@@ -17,5 +17,5 @@ CustomElemsBase & {
 type ObjectResourceDocument = XmlDocument & {
   TopElem: ObjectResourceDocumentTopElem;
   object_resource: ObjectResourceDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

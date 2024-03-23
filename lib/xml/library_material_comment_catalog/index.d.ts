@@ -6,5 +6,5 @@ AdminAccessBase & {
   parent_object_id: XmlElem<number, LibraryMaterialCommentCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

@@ -12,7 +12,7 @@ type EventObjectResourceCatalogDocumentTopElem = XmlTopElem & {
   object_resource_id: XmlElem<number, ObjectResourceCatalogDocumentTopElem>;
   object_resource_name: XmlElem<string>;
   object_resource_type: XmlElem<string, typeof lists.object_resource_types>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

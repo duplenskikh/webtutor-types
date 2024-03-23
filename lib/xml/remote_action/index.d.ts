@@ -29,6 +29,6 @@ I18nBase & {
 type RemoteActionDocument = XmlDocument & {
   TopElem: RemoteActionDocumentTopElem;
   remote_action: RemoteActionDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

@@ -11,6 +11,6 @@ AccessDocBase & {
   object_id: XmlElem<number>;
   object_name: XmlElem<string>;
   like_id: XmlElem<number, LikeCatalogDocumentTopElem>;
-  OnBuild(): unknown;
-  MatchDocType(): unknown;
+  OnBuild(): void;
+  MatchDocType(): boolean;
 };

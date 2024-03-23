@@ -10,5 +10,4 @@ type SalaryPaymentTypeDocumentTopElem = XmlTopElem & {
 type SalaryPaymentTypeDocument = XmlDocument & {
   TopElem: SalaryPaymentTypeDocumentTopElem;
   salary_payment_type: SalaryPaymentTypeDocumentTopElem;
-
 };

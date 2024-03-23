@@ -46,5 +46,5 @@ FuncManagersBase & {
 type EducationOrgDocument = XmlDocument & {
   TopElem: EducationOrgDocumentTopElem;
   education_org: EducationOrgDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

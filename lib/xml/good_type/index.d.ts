@@ -11,5 +11,5 @@ ObjectCodeNameBase & {
 type GoodTypeDocument = XmlDocument & {
   TopElem: GoodTypeDocumentTopElem;
   good_type: GoodTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -19,5 +19,5 @@ CustomElemsBase & {
 type DnAcademDebtDocument = XmlDocument & {
   TopElem: DnAcademDebtDocumentTopElem;
   dn_academ_debt: DnAcademDebtDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

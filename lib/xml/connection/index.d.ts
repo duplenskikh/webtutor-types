@@ -15,11 +15,11 @@ type ConnectionDocumentTopElem = XmlTopElem & {
   unauthorized: XmlElem<boolean>;
   host_path: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  get_info(): unknown;
+  get_info(): null | Object;
 };
 
 type ConnectionDocument = XmlDocument & {
   TopElem: ConnectionDocumentTopElem;
   connection: ConnectionDocumentTopElem;
-  OnBeforeSave(): unknown;
+  OnBeforeSave(): void;
 };

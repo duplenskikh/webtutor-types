@@ -28,5 +28,5 @@ CustomElemsBase & {
 type DnIndEducatPlanDocument = XmlDocument & {
   TopElem: DnIndEducatPlanDocumentTopElem;
   dn_ind_educat_plan: DnIndEducatPlanDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

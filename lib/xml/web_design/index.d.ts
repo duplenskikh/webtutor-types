@@ -22,6 +22,6 @@ WebVariablesBase & {
 type WebDesignDocument = XmlDocument & {
   TopElem: WebDesignDocumentTopElem;
   web_design: WebDesignDocumentTopElem;
-  OnSave(): unknown;
-  DocDesc(): unknown;
+  OnSave(): void;
+  DocDesc(): string;
 };

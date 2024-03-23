@@ -8,5 +8,5 @@ AdminAccessBase & {
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

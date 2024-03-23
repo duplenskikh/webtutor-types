@@ -14,5 +14,5 @@ AdminAccessBase & {
   knowledge_parts: XmlElem<string>;
   tags: XmlElem<string>;
   experts: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

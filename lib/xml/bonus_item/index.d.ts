@@ -13,7 +13,7 @@ interface BonusItemDocumentBonuses {
 type BonusItemDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   Doc: BonusItemDocument;
-  name(): unknown;
+  name(): string;
   assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
   budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
@@ -21,7 +21,7 @@ AdminAccessBase & {
   period_end: XmlElem<Date>;
   bonuses: XmlElem<BonusItemDocumentBonuses>;
   result: XmlElem<number>;
-  calc_result(): unknown;
+  calc_result(): number;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
 };
@@ -29,5 +29,5 @@ AdminAccessBase & {
 type BonusItemDocument = XmlDocument & {
   TopElem: BonusItemDocumentTopElem;
   bonus_item: BonusItemDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -11,5 +11,5 @@ type OrderTypeCatalogDocumentTopElem = XmlTopElem & {
   default_flag: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

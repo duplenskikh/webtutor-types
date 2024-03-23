@@ -10,5 +10,5 @@ type LibraryMaterialFormatDocumentTopElem = XmlTopElem & {
 type LibraryMaterialFormatDocument = XmlDocument & {
   TopElem: LibraryMaterialFormatDocumentTopElem;
   library_material_format: LibraryMaterialFormatDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

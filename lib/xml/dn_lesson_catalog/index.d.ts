@@ -13,5 +13,5 @@ AdminAccessBase & {
   stream_id: XmlElem<number, DnStreamCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

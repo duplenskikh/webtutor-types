@@ -31,12 +31,12 @@ PersonFillingBase & {
   activity_code: XmlElem<string>;
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   request: XmlElem<ProfileDocumentRequest>;
-  hash(): unknown;
+  hash(): string;
   doc_info: XmlElem<DocInfoBase>;
 };
 
 type ProfileDocument = XmlDocument & {
   TopElem: ProfileDocumentTopElem;
   profile: ProfileDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

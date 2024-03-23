@@ -5,7 +5,7 @@ type ChatbotChatbotTypeCatalogDocumentTopElem = XmlTopElem & {
   chatbot_id: XmlElem<number, ChatbotCatalogDocumentTopElem>;
   chatbot_type_id: XmlElem<number, ChatbotTypeCatalogDocumentTopElem>;
   webhook_url: XmlElem<string>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

@@ -32,5 +32,5 @@ CustomElemsBase & {
 type BudgetDocument = XmlDocument & {
   TopElem: BudgetDocumentTopElem;
   budget: BudgetDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

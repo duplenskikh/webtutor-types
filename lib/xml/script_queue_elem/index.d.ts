@@ -22,5 +22,5 @@ type ScriptQueueElemDocumentTopElem = XmlTopElem & {
 type ScriptQueueElemDocument = XmlDocument & {
   TopElem: ScriptQueueElemDocumentTopElem;
   script_queue_elem: ScriptQueueElemDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

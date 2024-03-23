@@ -115,5 +115,5 @@ type ClVideoCourseDocumentTopElem = XmlTopElem & {
 type ClVideoCourseDocument = XmlDocument & {
   TopElem: ClVideoCourseDocumentTopElem;
   cl_video_course: ClVideoCourseDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

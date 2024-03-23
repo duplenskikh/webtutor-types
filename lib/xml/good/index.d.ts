@@ -27,5 +27,5 @@ CustomElemsBase & {
 type GoodDocument = XmlDocument & {
   TopElem: GoodDocumentTopElem;
   good: GoodDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

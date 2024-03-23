@@ -7,5 +7,5 @@ PersonFillingBase & {
   state_id: XmlElem<string, typeof common.agreement_status_types>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

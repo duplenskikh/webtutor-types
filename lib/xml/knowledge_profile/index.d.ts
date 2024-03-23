@@ -20,5 +20,5 @@ type KnowledgeProfileDocumentTopElem = XmlTopElem & {
 type KnowledgeProfileDocument = XmlDocument & {
   TopElem: KnowledgeProfileDocumentTopElem;
   knowledge_profile: KnowledgeProfileDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

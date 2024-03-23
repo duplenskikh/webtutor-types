@@ -15,5 +15,5 @@ InsertFileBase & {
 type PrintFormDocument = XmlDocument & {
   TopElem: PrintFormDocumentTopElem;
   print_form: PrintFormDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

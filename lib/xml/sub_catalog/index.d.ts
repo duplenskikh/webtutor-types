@@ -8,6 +8,6 @@ type SubCatalogDocumentTopElem = XmlTopElem & {
   basic_collaborator_fullname: XmlElem<string>;
   is_boss: XmlElem<boolean>;
   is_disbanded: XmlElem<boolean>;
-  OnBuild(): unknown;
-  MatchDocType(): unknown;
+  OnBuild(): void;
+  MatchDocType(): boolean;
 };

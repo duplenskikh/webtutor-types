@@ -16,5 +16,5 @@ CustomElemsBase & {
 type DevelopmentPotentialDocument = XmlDocument & {
   TopElem: DevelopmentPotentialDocumentTopElem;
   development_potential: DevelopmentPotentialDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

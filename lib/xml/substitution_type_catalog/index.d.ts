@@ -12,5 +12,5 @@ type SubstitutionTypeCatalogDocumentTopElem = XmlTopElem & {
   is_active: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

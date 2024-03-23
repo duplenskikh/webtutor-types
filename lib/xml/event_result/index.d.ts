@@ -39,6 +39,6 @@ CustomDatasBase & {
 type EventResultDocument = XmlDocument & {
   TopElem: EventResultDocumentTopElem;
   event_result: EventResultDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

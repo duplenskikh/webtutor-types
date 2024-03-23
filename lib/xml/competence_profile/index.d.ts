@@ -88,5 +88,5 @@ AdminAccessBase & {
 type CompetenceProfileDocument = XmlDocument & {
   TopElem: CompetenceProfileDocumentTopElem;
   competence_profile: CompetenceProfileDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

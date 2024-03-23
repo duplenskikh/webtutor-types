@@ -20,7 +20,7 @@ CustomElemsBase & {
   main_forum_entry_id: XmlElem<number, ForumEntryCatalogDocumentTopElem>;
   text_area: XmlElem<string>;
   remote_ip: XmlElem<string>;
-  author_info(tePerson: unknown): unknown;
+  author_info(personTopElem: unknown): unknown;
   privilege_collaborators: XmlMultiElem<ForumEntryDocumentPrivilegeCollaborator>;
   is_moder_approved: XmlElem<boolean>;
   last_create_date: XmlElem<Date>;
@@ -31,6 +31,6 @@ CustomElemsBase & {
 type ForumEntryDocument = XmlDocument & {
   TopElem: ForumEntryDocumentTopElem;
   forum_entry: ForumEntryDocumentTopElem;
-  OnLocalInit(): unknown;
-  DocDesc(): unknown;
+  OnLocalInit(): void;
+  DocDesc(): string;
 };

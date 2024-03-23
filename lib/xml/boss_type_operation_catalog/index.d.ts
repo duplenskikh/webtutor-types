@@ -5,7 +5,7 @@ type BossTypeOperationCatalogDocumentTopElem = XmlTopElem & {
   name: XmlElem<string>;
   operation_id: XmlElem<number, OperationCatalogDocumentTopElem>;
   operations: XmlElem<string>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

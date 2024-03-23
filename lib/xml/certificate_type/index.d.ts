@@ -26,5 +26,5 @@ CustomElemsBase & {
 type CertificateTypeDocument = XmlDocument & {
   TopElem: CertificateTypeDocumentTopElem;
   certificate_type: CertificateTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

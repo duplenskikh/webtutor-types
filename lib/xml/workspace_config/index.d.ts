@@ -130,5 +130,5 @@ ObjectCodeNameBase & {
 type WorkspaceConfigDocument = XmlDocument & {
   TopElem: WorkspaceConfigDocumentTopElem;
   workspace_config: WorkspaceConfigDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

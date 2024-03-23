@@ -15,5 +15,5 @@ CustomElemsBase & {
 type KeyPositionThreatDocument = XmlDocument & {
   TopElem: KeyPositionThreatDocumentTopElem;
   key_position_threat: KeyPositionThreatDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

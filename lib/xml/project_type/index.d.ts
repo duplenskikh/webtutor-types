@@ -10,5 +10,5 @@ AdminAccessBase & {
 type ProjectTypeDocument = XmlDocument & {
   TopElem: ProjectTypeDocumentTopElem;
   project_type: ProjectTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

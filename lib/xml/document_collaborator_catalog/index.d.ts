@@ -12,7 +12,7 @@ type DocumentCollaboratorCatalogDocumentTopElem = XmlTopElem & {
   can_create: XmlElem<boolean>;
   can_edit: XmlElem<boolean>;
   can_delete: XmlElem<boolean>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

@@ -27,5 +27,5 @@ CustomElemsBase & {
 type DnScheduleDocument = XmlDocument & {
   TopElem: DnScheduleDocumentTopElem;
   dn_schedule: DnScheduleDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

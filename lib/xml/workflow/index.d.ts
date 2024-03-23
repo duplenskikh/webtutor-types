@@ -76,12 +76,12 @@ WorkflowFieldsStatesBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-  run_action(action: string): unknown;
+  run_action(action: string): void;
   role_id: XmlMultiElemObject<number>;
 };
 
 type WorkflowDocument = XmlDocument & {
   TopElem: WorkflowDocumentTopElem;
   workflow: WorkflowDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

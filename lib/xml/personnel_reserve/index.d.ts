@@ -47,7 +47,7 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  set_task(task: unknown): unknown;
+  set_task(task: unknown): string | void;
   change_func_managers_list(): unknown;
   role_id: XmlMultiElemObject<number>;
 };
@@ -55,6 +55,6 @@ CustomElemsBase & {
 type PersonnelReserveDocument = XmlDocument & {
   TopElem: PersonnelReserveDocumentTopElem;
   personnel_reserve: PersonnelReserveDocumentTopElem;
-  OnLocalInit(): unknown;
-  DocDesc(): unknown;
+  OnLocalInit(): void;
+  DocDesc(): string;
 };

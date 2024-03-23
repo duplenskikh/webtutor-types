@@ -14,5 +14,5 @@ CustomElemsBase & {
 type DnStudCentrtestResultDocument = XmlDocument & {
   TopElem: DnStudCentrtestResultDocumentTopElem;
   dn_stud_centrtest_result: DnStudCentrtestResultDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -5,5 +5,5 @@ type MobileAppConfigCatalogDocumentTopElem = XmlTopElem & {
   type: XmlElem<string>;
   use_chat: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

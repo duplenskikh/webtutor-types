@@ -24,5 +24,5 @@ CustomElemsBase & {
 type DigitalSignatureDocument = XmlDocument & {
   TopElem: DigitalSignatureDocumentTopElem;
   digital_signature: DigitalSignatureDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

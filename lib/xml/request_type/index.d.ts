@@ -34,5 +34,5 @@ WebVariablesBase & {
 type RequestTypeDocument = XmlDocument & {
   TopElem: RequestTypeDocumentTopElem;
   request_type: RequestTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

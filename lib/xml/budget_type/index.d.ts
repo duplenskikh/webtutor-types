@@ -10,5 +10,5 @@ AdminAccessBase & {
 type BudgetTypeDocument = XmlDocument & {
   TopElem: BudgetTypeDocumentTopElem;
   budget_type: BudgetTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

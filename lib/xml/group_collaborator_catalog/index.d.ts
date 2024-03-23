@@ -12,7 +12,7 @@ type GroupCollaboratorCatalogDocumentTopElem = XmlTopElem & {
   collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   collaborator_fullname: XmlElem<string>;
   position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

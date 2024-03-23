@@ -128,5 +128,5 @@ CustomElemsBase & {
 type MobileAppConfigDocument = XmlDocument & {
   TopElem: MobileAppConfigDocumentTopElem;
   mobile_app_config: MobileAppConfigDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

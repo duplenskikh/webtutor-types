@@ -19,5 +19,5 @@ AdminAccessBase & {
 type EventTypeDocument = XmlDocument & {
   TopElem: EventTypeDocumentTopElem;
   event_type: EventTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

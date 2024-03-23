@@ -18,5 +18,5 @@ CustomElemsBase & {
 type RepositoriumDocument = XmlDocument & {
   TopElem: RepositoriumDocumentTopElem;
   repositorium: RepositoriumDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

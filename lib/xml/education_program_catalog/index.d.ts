@@ -7,5 +7,5 @@ AdminAccessBase & {
   app_instance_id: XmlElem<string>;
   role_id: XmlMultiElemObject<number>;
   education_methods_id: XmlMultiElemObject<number, EducationMethodCatalogDocumentTopElem>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

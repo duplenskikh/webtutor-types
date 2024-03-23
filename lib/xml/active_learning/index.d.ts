@@ -16,7 +16,7 @@ CustomElemsBase & {
   Doc: ActiveLearningDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
   course_name: XmlElem<string>;
   course_code: XmlElem<string>;
@@ -41,10 +41,10 @@ CustomElemsBase & {
   max_score: XmlElem<number>;
   score_sum_eval: XmlElem<string>;
   score: XmlElem<number>;
-  calc_score(): unknown;
+  calc_score(): number;
   state_id: XmlElem<number, typeof common.learning_states>;
   time: XmlElem<number>;
-  calc_max_end_date(): unknown;
+  calc_max_end_date(): Date | null;
   no_encoding_core_lesson: XmlElem<boolean>;
   logging: XmlElem<boolean>;
   commenting: XmlElem<boolean>;
@@ -52,14 +52,14 @@ CustomElemsBase & {
   device_disp_type: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  complete_course(): unknown;
-  update_add_data(): unknown;
+  complete_course(): number | undefined;
+  update_add_data(): void;
 };
 
 type ActiveLearningDocument = XmlDocument & {
   TopElem: ActiveLearningDocumentTopElem;
   active_learning: ActiveLearningDocumentTopElem;
-  OnBeforeSave(): unknown;
-  OnLocalInit(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  OnLocalInit(): void;
+  DocDesc(): string;
 };

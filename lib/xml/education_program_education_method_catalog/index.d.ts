@@ -13,7 +13,7 @@ type EducationProgramEducationMethodCatalogDocumentTopElem = XmlTopElem & {
   type: XmlElem<string, typeof common.education_method_types>;
   is_open: XmlElem<boolean>;
   duration_days: XmlElem<number>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

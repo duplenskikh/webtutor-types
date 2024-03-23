@@ -10,5 +10,5 @@ AdminAccessBase & {
 type VacancyTypeDocument = XmlDocument & {
   TopElem: VacancyTypeDocumentTopElem;
   vacancy_type: VacancyTypeDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

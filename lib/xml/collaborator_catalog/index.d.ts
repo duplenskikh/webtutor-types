@@ -53,5 +53,5 @@ type CollaboratorCatalogDocumentTopElem = XmlTopElem & {
   cost_center_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

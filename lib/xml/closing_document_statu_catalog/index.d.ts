@@ -5,5 +5,5 @@ CustomElemsBase & {
   name: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

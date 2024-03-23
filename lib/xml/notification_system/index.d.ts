@@ -17,5 +17,5 @@ AdminAccessBase & {
 type NotificationSystemDocument = XmlDocument & {
   TopElem: NotificationSystemDocumentTopElem;
   notification_system: NotificationSystemDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

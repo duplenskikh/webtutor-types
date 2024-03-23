@@ -14,5 +14,5 @@ AdminAccessBase & {
   educat_form_id: XmlElem<number, DnEducatFormCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

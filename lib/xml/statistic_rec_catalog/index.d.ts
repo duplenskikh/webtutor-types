@@ -24,5 +24,5 @@ type StatisticRecCatalogDocumentTopElem = XmlTopElem & {
   access_block_type: XmlElem<string, AccessBlockCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

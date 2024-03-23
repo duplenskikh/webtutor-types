@@ -12,8 +12,8 @@ interface OutstaffOrderDocumentPeriod {
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   hours: XmlMultiElem<OutstaffOrderDocumentPeriodHour>;
-  sum_person(): unknown;
-  sum_person_hour(): unknown;
+  sum_person(): number;
+  sum_person_hour(): number;
 }
 
 type OutstaffOrderDocumentTopElem = XmlTopElem &
@@ -24,7 +24,7 @@ CustomElemsBase & {
   Doc: OutstaffOrderDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   status: XmlElem<string, typeof common.order_status_types>;
   formed_date: XmlElem<Date>;
   paid_date: XmlElem<Date>;
@@ -55,7 +55,7 @@ CustomElemsBase & {
 type OutstaffOrderDocument = XmlDocument & {
   TopElem: OutstaffOrderDocumentTopElem;
   outstaff_order: OutstaffOrderDocumentTopElem;
-  OnInit(): unknown;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

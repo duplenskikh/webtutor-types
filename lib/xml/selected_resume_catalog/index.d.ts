@@ -7,5 +7,5 @@ AdminAccessBase & {
   resume_id: XmlElem<number, ResumeCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

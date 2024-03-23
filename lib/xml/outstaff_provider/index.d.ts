@@ -17,5 +17,5 @@ CustomElemsBase & {
 type OutstaffProviderDocument = XmlDocument & {
   TopElem: OutstaffProviderDocumentTopElem;
   outstaff_provider: OutstaffProviderDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

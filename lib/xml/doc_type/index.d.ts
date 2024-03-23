@@ -77,6 +77,6 @@ CustomElemsBase & {
 type DocTypeDocument = XmlDocument & {
   TopElem: DocTypeDocumentTopElem;
   doc_type: DocTypeDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

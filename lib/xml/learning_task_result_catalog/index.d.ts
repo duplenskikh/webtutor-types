@@ -22,5 +22,5 @@ AdminAccessBase & {
   active_learning_id: XmlElem<number, ActiveLearningCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

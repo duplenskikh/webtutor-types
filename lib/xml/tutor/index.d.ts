@@ -34,5 +34,5 @@ CustomElemsBase & {
 type TutorDocument = XmlDocument & {
   TopElem: TutorDocumentTopElem;
   tutor: TutorDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

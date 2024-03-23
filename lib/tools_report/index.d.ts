@@ -72,7 +72,7 @@ declare namespace tools_report {
   function run_db_perfomance_test(checkCurrentDb: unknown, countUsers: unknown): unknown;
   function gather_system_info(): unknown;
   function get_xhttp_info(): unknown;
-  function custom_report_html_export(customReportId: number, teCustomReport: unknown, curUserId: number, outType: string): unknown;
+  function custom_report_html_export(customReportId: number, customReportTopElem: unknown, curUserId: number, outType: string): unknown;
   function custom_report_export_to_file(vCustomReport: unknown, curUserId: number, outType: string, fileUrl: string): unknown;
   function list_html_export(list: unknown, outType: string): unknown;
   function load_word(html: string, fileUrl: string): unknown;

@@ -21,5 +21,5 @@ CustomElemsBase & {
 type TimeEntryDocument = XmlDocument & {
   TopElem: TimeEntryDocumentTopElem;
   time_entry: TimeEntryDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

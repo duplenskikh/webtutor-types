@@ -31,13 +31,13 @@ CustomReportBase & {
   build_report_v2(taskId: string, meta: boolean): unknown;
   buildCustomReportQuery(tOPELEM: unknown, taskId: string): unknown;
   UI_CoreModeChangeHandler(newValue: unknown): unknown;
-  UI_CoreObjectChangeHandler(fldSource: unknown, newValue: unknown): unknown;
+  UI_CoreObjectChangeHandler(fieldSource: unknown, newValue: unknown): unknown;
   SetModeSelector(imode: unknown): unknown;
 };
 
 type CustomReportDocument = XmlDocument & {
   TopElem: CustomReportDocumentTopElem;
   custom_report: CustomReportDocumentTopElem;
-  OnInit(): unknown;
-  DocDesc(): unknown;
+  OnInit(): void;
+  DocDesc(): string;
 };

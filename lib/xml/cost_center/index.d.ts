@@ -20,5 +20,5 @@ CustomElemsBase & {
 type CostCenterDocument = XmlDocument & {
   TopElem: CostCenterDocumentTopElem;
   cost_center: CostCenterDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

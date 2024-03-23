@@ -23,6 +23,6 @@ CustomElemsBase & {
 type SuccessorDocument = XmlDocument & {
   TopElem: SuccessorDocumentTopElem;
   successor: SuccessorDocumentTopElem;
-  OnBeforeSave(): unknown;
-  DocDesc(): unknown;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

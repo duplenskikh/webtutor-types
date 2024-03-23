@@ -26,7 +26,7 @@ CustomElemsBase & {
   Doc: OutstaffContractDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   status: XmlElem<string, typeof common.order_status_types>;
   type_id: XmlElem<string, typeof common.outstaff_contract_types>;
   date: XmlElem<Date>;
@@ -45,5 +45,5 @@ CustomElemsBase & {
 type OutstaffContractDocument = XmlDocument & {
   TopElem: OutstaffContractDocumentTopElem;
   outstaff_contract: OutstaffContractDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -12,7 +12,7 @@ type PersonObjectLinkObjectCatalogDocumentTopElem = XmlTopElem & {
   can_edit: XmlElem<boolean>;
   can_delete: XmlElem<boolean>;
   access_level: XmlElem<number>;
-  MatchDocTypeExt(): unknown;
-  OnBuildExt(): unknown;
-  OnDeleteExt(): unknown;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
 };

@@ -26,5 +26,5 @@ PersonFillingBase & {
   state_id: XmlElem<string, typeof common.event_status_types>;
   modification_date: XmlElem<Date>;
   notification_reminder_date: XmlElem<Date>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

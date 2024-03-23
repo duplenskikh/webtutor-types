@@ -8,5 +8,5 @@ AdminAccessBase & {
   term_id: XmlElem<number, DnTermCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

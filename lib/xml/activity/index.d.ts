@@ -19,5 +19,5 @@ WebVariablesBase & {
 type ActivityDocument = XmlDocument & {
   TopElem: ActivityDocumentTopElem;
   activity: ActivityDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

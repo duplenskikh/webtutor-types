@@ -49,12 +49,12 @@ CustomElemsBase & {
   role_id: XmlMultiElemObject<number>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-  calc_position(task: unknown): unknown;
-  filling_empty_position_field(): unknown;
+  calc_position(task: unknown): void;
+  filling_empty_position_field(): void;
 };
 
 type TypicalDevelopmentProgramDocument = XmlDocument & {
   TopElem: TypicalDevelopmentProgramDocumentTopElem;
   typical_development_program: TypicalDevelopmentProgramDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

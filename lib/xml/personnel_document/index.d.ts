@@ -51,5 +51,5 @@ CustomElemsBase & {
 type PersonnelDocumentDocument = XmlDocument & {
   TopElem: PersonnelDocumentDocumentTopElem;
   personnel_document: PersonnelDocumentDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

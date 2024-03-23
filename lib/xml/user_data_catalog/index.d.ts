@@ -7,5 +7,5 @@ type UserDataCatalogDocumentTopElem = XmlTopElem & {
   creation_user_id: XmlElem<number>;
   modification_date: XmlElem<Date>;
   modification_user_id: XmlElem<number>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

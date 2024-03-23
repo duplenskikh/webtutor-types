@@ -13,5 +13,5 @@ CustomElemsBase & {
 type ReprimandDocument = XmlDocument & {
   TopElem: ReprimandDocumentTopElem;
   reprimand: ReprimandDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

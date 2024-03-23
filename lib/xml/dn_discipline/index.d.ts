@@ -19,5 +19,5 @@ CustomElemsBase & {
 type DnDisciplineDocument = XmlDocument & {
   TopElem: DnDisciplineDocumentTopElem;
   dn_discipline: DnDisciplineDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

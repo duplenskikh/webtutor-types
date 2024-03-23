@@ -16,5 +16,5 @@ MsViewConfigurationBase & {
 type ViewConfigurationDocument = XmlDocument & {
   TopElem: ViewConfigurationDocumentTopElem;
   view_configuration: ViewConfigurationDocumentTopElem;
-  DocDesc(): unknown;
+  DocDesc(): string;
 };

@@ -6,5 +6,5 @@ type SectionInstructionCatalogDocumentTopElem = XmlTopElem & {
   parent_object_id: XmlElem<number, SectionInstructionCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };

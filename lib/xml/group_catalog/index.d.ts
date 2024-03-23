@@ -19,5 +19,5 @@ AccessDocBase & {
   tag_id: XmlMultiElemObject<number, TagCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  OnBuild(): unknown;
+  OnBuild(): void;
 };
