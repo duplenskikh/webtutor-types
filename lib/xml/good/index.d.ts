@@ -15,7 +15,7 @@ CustomElemsBase & {
   is_cant_chose: XmlElem<boolean>;
   costs: XmlMultiElem<GoodDocumentCost>;
   cost_desc(): unknown;
-  bonus_shop_cost(): unknown;
+  bonus_shop_cost(): number;
   delivery_type: XmlElem<string, typeof common.delivery_types>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;

@@ -31,7 +31,7 @@ PersonObjectLinksBase & {
   allow_social_post: XmlElem<boolean>;
   is_position: XmlElem<boolean>;
   collaborators: XmlMultiElem<GroupDocumentCollaborator>;
-  person_num(): unknown;
+  person_num(): number;
   forum_id: XmlElem<number, ForumCatalogDocumentTopElem>;
   kpi_profile_id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
   kpi_profiles: XmlMultiElem<GroupDocumentKpiProfile>;

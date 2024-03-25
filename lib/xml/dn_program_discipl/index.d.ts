@@ -11,8 +11,8 @@ interface DnProgramDisciplDocumentTermPlanTheme {
 interface DnProgramDisciplDocumentTerm {
   term_id: XmlElem<number, DnTermCatalogDocumentTopElem>;
   laboriousn_all_term: XmlElem<number>;
-  laboriousn_audit_term(): unknown;
-  laboriousn_indep_term(): unknown;
+  laboriousn_audit_term(): number;
+  laboriousn_indep_term(): number;
   plan_themes: XmlMultiElem<DnProgramDisciplDocumentTermPlanTheme>;
 }
 

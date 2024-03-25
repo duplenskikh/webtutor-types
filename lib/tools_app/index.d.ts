@@ -16,7 +16,7 @@ declare namespace tools_app {
   let cur_application_lib: XmlElem<unknown>;
   function get_cur_application_lib(applicationId: number, applicationInstanceId: number, objectId: number, objectTopElem: unknown): unknown;
   function convert_wvars_to_object(vars: unknown, format: string, parentId: number, resultElem: unknown): unknown;
-  function get_settings(name: string, target: string, format: string, object: unknown): unknown;
+  function get_settings(name: string, target: string, format: string, object: unknown): Object;
   function get_cur_settings(name: string, target: string, format: string, applicationId: number, applicationInstanceId: number, objectId: number, objectTopElem: unknown): unknown;
   function call_application_library_method(object: unknown, methodName: string, arrMethod: unknown): unknown;
   function get_application_resources_list(object: unknown): unknown;

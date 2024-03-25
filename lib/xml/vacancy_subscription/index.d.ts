@@ -18,7 +18,7 @@ AdminAccessBase & {
   suitable_vacancys: XmlMultiElem<VacancySubscriptionDocumentSuitableVacancy>;
   send_vacancy_date: XmlElem<Date>;
   doc_info: XmlElem<DocInfoBase>;
-  refresh_suitable_vacancys(): unknown;
+  refresh_suitable_vacancys(): VacancyCatalogDocumentTopElem;
 };
 
 type VacancySubscriptionDocument = XmlDocument & {

@@ -1,25 +1,25 @@
 interface UnfoldedContentBaseContentContentContentContent {
-  id(): unknown;
+  id(): string;
   number: XmlElem<number>;
   title: XmlElem<string>;
 }
 
 interface UnfoldedContentBaseContentContentContent {
-  id(): unknown;
+  id(): string;
   number: XmlElem<number>;
   title: XmlElem<string>;
   contents: XmlMultiElem<UnfoldedContentBaseContentContentContentContent>;
 }
 
 interface UnfoldedContentBaseContentContent {
-  id(): unknown;
+  id(): string;
   number: XmlElem<number>;
   title: XmlElem<string>;
   contents: XmlMultiElem<UnfoldedContentBaseContentContentContent>;
 }
 
 interface UnfoldedContentBaseContent {
-  id(): unknown;
+  id(): string;
   number: XmlElem<number>;
   title: XmlElem<string>;
   contents: XmlMultiElem<UnfoldedContentBaseContentContent>;

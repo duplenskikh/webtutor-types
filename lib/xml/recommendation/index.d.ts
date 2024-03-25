@@ -22,7 +22,7 @@ AdminAccessBase & {
   letter_text: XmlElem<string>;
   comment_recruiter: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  set_status(newStatus: string, sendNotifications: boolean): unknown;
+  set_status(newStatus: string, sendNotifications: boolean): void;
 };
 
 type RecommendationDocument = XmlDocument & {

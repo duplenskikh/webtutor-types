@@ -5,10 +5,10 @@ interface DnWorkCurriculumDocumentBlockElemDisciplineTerm {
 
 interface DnWorkCurriculumDocumentBlockElemDiscipline {
   discipl_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
-  loading(): unknown;
+  loading(): number;
   auditor: XmlElem<number>;
   independ: XmlElem<number>;
-  load_credit(): unknown;
+  load_credit(): number;
   audit_credit: XmlElem<number>;
   independ_credit: XmlElem<number>;
   term_id: XmlElem<number, DnTermCatalogDocumentTopElem>;
@@ -21,12 +21,12 @@ interface DnWorkCurriculumDocumentBlockElemDiscipline {
 interface DnWorkCurriculumDocumentBlockElem {
   id_block: XmlElem<number, DnBlockDisciplineCatalogDocumentTopElem>;
   name: XmlElem<string>;
-  load_block(): unknown;
-  all_auditor(): unknown;
-  all_independ(): unknown;
-  load_cred_block(): unknown;
-  all_cred_auditor(): unknown;
-  all_cred_indep(): unknown;
+  load_block(): number;
+  all_auditor(): number;
+  all_independ(): number;
+  load_cred_block(): number;
+  all_cred_auditor(): number;
+  all_cred_indep(): number;
   disciplines: XmlMultiElem<DnWorkCurriculumDocumentBlockElemDiscipline>;
 }
 

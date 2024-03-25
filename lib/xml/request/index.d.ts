@@ -45,7 +45,7 @@ AdminAccessBase & {
   object_type: XmlElem<string>;
   is_group: XmlElem<boolean>;
   persons: XmlMultiElem<RequestDocumentPerson>;
-  person_num(): unknown;
+  person_num(): number;
   groups: XmlMultiElem<RequestDocumentGroup>;
   workflow_matchings: XmlMultiElem<RequestDocumentWorkflowMatching>;
   workflow_matching_type: XmlElem<string>;

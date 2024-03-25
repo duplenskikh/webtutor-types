@@ -4,7 +4,7 @@ type WebRuleDocumentTopElem = XmlTopElem & {
   code: XmlElem<string>;
   name: XmlElem<string>;
   is_pattern(): boolean;
-  use_matches(): unknown;
+  use_matches(): boolean;
   url: XmlElem<string>;
   script: XmlElem<string>;
   is_enabled: XmlElem<boolean>;

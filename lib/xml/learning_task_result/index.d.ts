@@ -29,7 +29,7 @@ CustomElemsBase & {
   start_execution_date: XmlElem<Date>;
   finish_execution_date: XmlElem<Date>;
   files: XmlMultiElem<LearningTaskResultDocumentFile>;
-  AddFile(fileId: number, docResource: unknown): unknown;
+  AddFile(fileId: number, docResource: unknown): void;
   comment: XmlElem<string>;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;

@@ -55,13 +55,13 @@ CustomElemsBase & {
   participant_types: XmlMultiElem<ProjectDocumentParticipantType>;
   participant_roles: XmlMultiElem<ProjectDocumentParticipantRole>;
   files: XmlMultiElem<ProjectDocumentFile>;
-  AddFile(fileId: number): unknown;
+  AddFile(fileId: number): void;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElemObject<number>;
   access: XmlElem<AccessDocBase>;
-  set_status(newStatus: string, sendNotifications: boolean, screen: unknown): unknown;
+  set_status(newStatus: string, sendNotifications: boolean, screen: unknown): void;
   create_project_participant(fldParticipant: unknown): unknown;
   start_action(type: string): number;
 };

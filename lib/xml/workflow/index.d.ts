@@ -65,7 +65,7 @@ WorkflowFieldsStatesBase & {
   add_conditions: XmlElem<ConditionsBase>;
   field_groups: XmlMultiElem<WorkflowDocumentFieldGroup>;
   actions: XmlMultiElem<WorkflowDocumentAction>;
-  use_triggers(): unknown;
+  use_triggers(): boolean;
   escalations: XmlMultiElem<WorkflowDocumentEscalation>;
   default_state: XmlElem<string>;
   default_action: XmlElem<string>;

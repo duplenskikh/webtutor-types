@@ -20,7 +20,7 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   role_id: XmlMultiElemObject<number>;
   access: XmlElem<AccessDocBase>;
-  set_status(newStatus: string, sendNotifications: boolean, screen: unknown): unknown;
+  set_status(newStatus: string, sendNotifications: boolean, screen: unknown): void;
   start_action(type: string): number;
 };
 

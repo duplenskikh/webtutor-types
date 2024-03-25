@@ -571,7 +571,7 @@ interface FileActionBase {
   AssignFile(fileUrl: unknown, source: unknown, params: unknown): unknown;
   DeleteFile(source: unknown): unknown;
   SaveFile(fileUrl: unknown): unknown;
-  AddFile(fileId: number, source: unknown): unknown;
+  AddFile(fileId: number, source: unknown): void;
 }
 
 interface FileBase {
@@ -580,7 +580,7 @@ interface FileBase {
 
 interface FileListBase {
   files: XmlMultiElem<FileBase>;
-  AddFile(fileId: number, docResource: unknown): unknown;
+  AddFile(fileId: number, docResource: unknown): void;
 }
 
 interface CoursePartBase {

@@ -11,8 +11,8 @@ WebVariablesBase & {
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-  get_setting(settingName: string): unknown;
-  get_settings(): unknown;
+  get_setting(settingName: string): string;
+  get_settings(): Object;
 };
 
 type RecruitmentSystemDocument = XmlDocument & {

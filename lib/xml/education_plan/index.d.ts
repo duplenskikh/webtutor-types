@@ -122,7 +122,7 @@ CustomElemsBase & {
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
   getEducationPlanAccess(objId: number, userId: number, objectTopElem: unknown): unknown;
-  calculateMark(): unknown;
+  calculateMark(): EducationPlanDocument;
 };
 
 type EducationPlanDocument = XmlDocument & {

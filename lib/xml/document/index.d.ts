@@ -21,20 +21,20 @@ AdminAccessBase & {
   create_date: XmlElem<Date>;
   parent_document_id: XmlElem<number, DocumentCatalogDocumentTopElem>;
   site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
-  catalog_list_desc(): unknown;
+  catalog_list_desc(): string;
   text_area: XmlElem<string>;
   attributes: XmlElem<DocumentDocumentAttributes>;
   web_template_type: XmlElem<string, typeof common.web_template_types>;
   custom_template_type: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
   templates_source: XmlElem<string>;
   access: XmlElem<AccessDocBase>;
-  access_exists(): unknown;
+  access_exists(): boolean;
   parent_object_type: XmlElem<string, typeof common.exchange_object_types>;
   parent_object_id: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-  set_template(templateType: string): unknown;
-  set_default_template(): unknown;
+  set_template(templateType: string): void;
+  set_default_template(): boolean;
   update_template(): unknown;
 };
 
