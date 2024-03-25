@@ -63,7 +63,7 @@ declare namespace tools_web {
 
   function write_custom_web_template(oCustomWebTemplate: unknown): unknown;
 
-  function get_override_web_template(iOverrideWebTemplateID: unknown, session: Session, curUserID: number, curUser: CurUser, curAnonymousAccess: unknown, activeWebTemplateTopElem: unknown, bAdding: unknown): unknown;
+  function get_override_web_template(overrideWebTemplateId: unknown, session: Session, curUserID: number, curUser: CurUser, curAnonymousAccess: unknown, activeWebTemplateTopElem: unknown, bAdding: unknown): unknown;
 
   function get_override_web_templates(session: Session, zone: unknown, curActiveWebTemplate: unknown, addWebTemplate: boolean): unknown;
 
@@ -75,13 +75,13 @@ declare namespace tools_web {
 
   function eval_operation_script(operationId: number, scriptType: unknown, O_PARAMS: unknown): unknown;
 
-  function is_moderator_forum(forumId: number, iUserID: unknown, teForum: unknown): unknown;
+  function is_moderator_forum(forumId: number, userId: number, teForum: unknown): unknown;
 
-  function is_privilege_collaborator(forumEntryId: number, userTopElem: unknown, iUserID: unknown, eForumEntry: unknown): unknown;
+  function is_privilege_collaborator(forumEntryId: number, userTopElem: unknown, userId: number, eForumEntry: unknown): unknown;
 
   function is_forum_readed(forumId: number, userId: number): unknown;
 
-  function check_forum_entry_access(catForumEntry: unknown, teUser: unknown, iUserID: unknown, eForum: unknown): unknown;
+  function check_forum_entry_access(catForumEntry: unknown, userTopElem: unknown, userId: number, eForum: unknown): unknown;
 
   function remove_forum_entry(forumEntryId: number): unknown;
 
@@ -93,17 +93,17 @@ declare namespace tools_web {
 
   function convert_xhttp_res(textArea: unknown, _source_desc: unknown): unknown;
 
-  function get_my_person_object_link_card(CATALOG: unknown, USER_ID: unknown, DOC_HIMSELF: unknown, MAKE_NEW_ON_ABSENCE: unknown): unknown;
+  function get_my_person_object_link_card(CATALOG: unknown, userId: number, DOC_HIMSELF: unknown, MAKE_NEW_ON_ABSENCE: unknown): unknown;
 
-  function get_person_object_info(sCatalog: unknown, iUserID: unknown, teUser: unknown): unknown;
+  function get_person_object_info(catalog: string, userId: number, userTopElem: unknown): unknown;
 
-  function set_person_object_info(sCatalog: unknown, iUserID: unknown, teUser: unknown, aObjectsMeta: unknown): unknown;
+  function set_person_object_info(catalog: string, userId: number, userTopElem: unknown, aObjectsMeta: unknown): unknown;
 
-  function get_object_owners(objectID: number, sCatalog: unknown): unknown;
+  function get_object_owners(objectId: number, catalog: string): unknown;
 
-  function insert_custom_code(iCustomWebTemplateID_: unknown, teCustomWebTemplate_: unknown, bEval_: unknown, bNaked_: unknown, iDepth_: unknown, aOfFldNativeParamsArr_: unknown, bExternalEnvelope_: unknown): unknown;
+  function insert_custom_code(customWebTemplateId: number, customWebTemplateTopElem: unknown, eval: boolean, naked: boolean, depth: number, aOfFldNativeParamsArr_: unknown, bExternalEnvelope_: unknown): unknown;
 
-  function place_xaml(iCustomWebTemplateID_: unknown, teCWebTemplate_: unknown, oPlaceXamlParams_: unknown): unknown;
+  function place_xaml(customWebTemplateId: number, teCWebTemplate_: unknown, oPlaceXamlParams_: unknown): unknown;
 
   function place_xaml_player(iCustomWebTemplate: unknown, curWebDesign: unknown, Request: unknown, oPlaceXamlParams_: unknown): unknown;
 
@@ -118,35 +118,35 @@ declare namespace tools_web {
    */
   function reg_exp_init(): Websoft.RegExp.RegExp;
 
-  function convert_bbcode_to_html(sMessageSource: unknown, objRegExp: unknown): unknown;
+  function convert_bbcode_to_html(messageSource: string, objRegExp: unknown): unknown;
 
-  function convert_html_to_bbcode(sMessageSource: unknown, objRegExp: unknown): unknown;
+  function convert_html_to_bbcode(messageSource: string, objRegExp: unknown): unknown;
 
-  function convert_bbtags_to_html(sMessageSource: unknown, objRegExp: unknown): unknown;
+  function convert_bbtags_to_html(messageSource: string, objRegExp: unknown): unknown;
 
-  function get_bbcode_tag_ids(sMessageSource: unknown, objRegExp: unknown): unknown;
+  function get_bbcode_tag_ids(messageSource: string, objRegExp: unknown): unknown;
 
   function get_new_request_by_query(): unknown;
 
-  function update_community_authors(objectID: number, vAuthors: unknown, nbDelete: unknown): unknown;
+  function update_community_authors(objectId: number, vAuthors: unknown, nbDelete: unknown): unknown;
 
   function evaluate_remote_action(vRemoteActionDoc: unknown, Request: unknown): unknown;
 
-  function Unsqueeze(sTxt: unknown, iIdx: unknown): unknown;
+  function Unsqueeze(txt: string, idx: number): unknown;
 
   function get_collection_param(): unknown;
 
-  function external_eval(sCommand: unknown, oParams: unknown, Env: unknown): unknown;
+  function external_eval(command: string, params: unknown, Env: unknown): unknown;
 
   function env_to_script(oEnv: unknown): unknown;
 
   function object_init(oSessionTarget: unknown, oQuery: unknown, bObjectEnvSave: unknown): unknown;
 
-  function get_column_width(sType: unknown, sMode: unknown): unknown;
+  function get_column_width(type: string, mode: string): unknown;
 
   function get_catalog_list_arrays(oCollection: unknown, Env: unknown, EnvLngCommon: unknown): unknown;
 
-  function check_session_user(Request: unknown, iUserID: unknown): unknown;
+  function check_session_user(Request: unknown, userId: number): unknown;
 
   /**
    * Возвращает значение true/false в завимости от передаваемого параметра.
@@ -155,19 +155,19 @@ declare namespace tools_web {
    */
   function is_true<T>(value: T): boolean;
 
-  function init_cur_active_web_template(Env: unknown, bCreate: unknown): unknown;
+  function init_cur_active_web_template(env: unknown, create: boolean): unknown;
 
-  function save_cur_active_web_template(teActiveWebTemplateDoc: unknown, bFinishSave: unknown): unknown;
+  function save_cur_active_web_template(activeWebTemplateDocTopElem: unknown, bFinishSave: unknown): unknown;
 
   function drop_active_web_templates(): unknown;
 
-  function get_session_lng(Session: unknown): unknown;
+  function get_session_lng(session: Session): unknown;
 
   function check_site_access(personTopElem: unknown, oSite: unknown): unknown;
 
-  function get_resource_url(objectID: number, Session: unknown): unknown;
+  function get_resource_url(objectId: number, session: Session): unknown;
 
-  function get_custom_web_template_url(iTemplateID: unknown): unknown;
+  function get_custom_web_template_url(templateId: number): unknown;
 
   /**
    * Получение url ссылки объекта по Id.
@@ -178,7 +178,7 @@ declare namespace tools_web {
    */
   function get_object_source_url(catalogName: string, objectId: number, oParams?: unknown): string;
 
-  function GetTalentPoolObjectsList(iPersonId: unknown, bAddFuncSubordinates: unknown, bHideDissmissed: unknown, vBossType: unknown, iCareerReserveType: unknown): unknown;
+  function GetTalentPoolObjectsList(iPersonId: unknown, bAddFuncSubordinates: unknown, bHideDissmissed: unknown, tossType: string, iCareerReserveType: unknown): unknown;
 
   function GetRequiredQualificationsList(iPersonID: unknown, sSearchList: unknown, bCatalogList: unknown): unknown;
 
@@ -190,7 +190,7 @@ declare namespace tools_web {
 
   function convert_desc_to_html(desc: string): unknown;
 
-  function get_user_recommended_learning(iUserId: unknown, teUser: unknown): unknown;
+  function get_user_recommended_learning(userId: number, userTopElem: unknown): unknown;
 
   /**
    * Создание кэша по коду.
@@ -207,23 +207,23 @@ declare namespace tools_web {
    */
   function get_user_data(userDataCode: string): null | string;
 
-  function remove_user_data(sKey: string): unknown;
+  function remove_user_data(key: string): unknown;
 
-  function remove_user_data_by_prefix(sKey: string): unknown;
+  function remove_user_data_by_prefix(key: string): unknown;
 
-  function obtain_text_area(iDocID: unknown, teDocTarget: unknown): unknown;
+  function obtain_text_area(docID: number, teDocTarget: unknown): unknown;
 
   function get_host_name(url: string): unknown;
 
-  function get_cur_host_name(teHost: unknown, oRequest: unknown): unknown;
+  function get_cur_host_name(hostTopElem: unknown, request: unknown): unknown;
 
-  function get_cur_host_path(teHost: unknown, oRequest: unknown): unknown;
+  function get_cur_host_path(hostTopElem: unknown, request: unknown): unknown;
 
-  function get_cur_host_path_by_url(teHost: unknown, url: string): unknown;
+  function get_cur_host_path_by_url(hostTopElem: unknown, url: string): unknown;
 
-  function get_cur_hosts(oRequest: unknown): unknown;
+  function get_cur_hosts(request: unknown): unknown;
 
-  function get_cur_host(oRequest: unknown): unknown;
+  function get_cur_host(request: unknown): unknown;
 
   function is_correct_question(fldquestion: unknown, teItem: unknown): unknown;
 
@@ -233,9 +233,9 @@ declare namespace tools_web {
 
   function build_relative_url(url: string): unknown;
 
-  function set_modified_response_status(oRequestTarget: unknown, url: string, dtLastModified: unknown): unknown;
+  function set_modified_response_status(requestTarget: unknown, url: string, dtLastModified: unknown): unknown;
 
-  function str_utc_mime_date(dtDate: unknown): unknown;
+  function str_utc_mime_date(date: Date): unknown;
 
   function get_tracking_url(fldLocation: unknown, curHostPath: unknown): unknown;
 
@@ -271,15 +271,15 @@ declare namespace tools_web {
    */
   function encrypt_launch_id(objectId?: number, date?: Date): string;
 
-  function decrypt_launch_id(sLaunchID: unknown): unknown;
+  function decrypt_launch_id(launchID: string): unknown;
 
   function get_valid_url(url: string): unknown;
 
-  function get_active_web_template_hash(sMode: unknown, sAccessLevel: unknown, sAccessRole: unknown, sSiteID: unknown, sWebDesignID: unknown): unknown;
+  function get_active_web_template_hash(mode: string, accessLevel: string, accessRole: string, siteId: string, webDesignId: string): unknown;
 
-  function build_submatched_string(sSourceString: unknown, sRealString: unknown, sDestString: unknown): unknown;
+  function build_submatched_string(sourceString: string, sRealString: unknown, sDestString: unknown): unknown;
 
-  function get_auth_hash(sSource: unknown): unknown;
+  function get_auth_hash(source: string): unknown;
 
   function get_user_id_by_login(authLogin: string, authParams: unknown): unknown;
 
@@ -293,7 +293,7 @@ declare namespace tools_web {
    */
   function user_init(req: Request, query: Object): IToolsWebUserInit;
 
-  function GetProjectManagementObjectsList(iPersonID: unknown, arrCurLng: unknown, bAddFuncSubordinates: unknown, bHideDissmissed: unknown, bShowProjectManagers: unknown, bOverdue: unknown, bProjectTree: unknown, bCheckTaskSeeRights: unknown, vBossType: unknown, oStruct: unknown): unknown;
+  function GetProjectManagementObjectsList(iPersonID: unknown, arrCurLng: unknown, bAddFuncSubordinates: unknown, bHideDissmissed: unknown, bShowProjectManagers: unknown, bOverdue: unknown, bProjectTree: unknown, bCheckTaskSeeRights: unknown, tossType: string, oStruct: unknown): unknown;
 
   function CheckRelativeFileVisibility(fldFile: unknown, userId: number, objectId: number, objectTopElem: XmlTopElem): unknown;
 
@@ -315,11 +315,11 @@ declare namespace tools_web {
 
   function get_cur_env(req: Request): Env;
 
-  function get_default_lng_web(oUser: unknown): unknown;
+  function get_default_lng_web(user: unknown): unknown;
 
   function get_profiling_statistic_rec_id(): unknown;
 
-  function start_profiling_record(oParams: unknown): unknown;
+  function start_profiling_record(params: unknown): unknown;
 
   function finish_profiling_record(sID: unknown): unknown;
 
@@ -334,41 +334,41 @@ declare namespace tools_web {
 
   function set_st_category(curUser: unknown): unknown;
 
-  function get_child_by_key_value(fldSource: unknown, sKey: unknown, sDefaultValue: unknown): unknown;
+  function get_child_by_key_value(fldSource: unknown, key: string, sDefaultValue: unknown): unknown;
 
-  function get_object_image_url(oObject: unknown, bDispDefault: unknown): unknown;
+  function get_object_image_url(object: unknown, bDispDefault: unknown): unknown;
 
-  function str_file_size(iSize: unknown, bDispDefault: unknown): unknown;
+  function str_file_size(size: number, bDispDefault: unknown): unknown;
 
   function get_base_url_path(oEnv: unknown): unknown;
 
   function set_base_url_path(url: string, oEnv: unknown): unknown;
 
-  function get_menu_items(sMenuCode: unknown, iLevelsToShow: unknown, bShowDesc: unknown, iCacheTime: unknown): unknown;
+  function get_menu_items(menuCode: string, levelsToShow: number, showDesc: boolean, cacheTime: number): unknown;
 
-  function get_secid(iSessionId: unknown): unknown;
+  function get_secid(sessionId: number): unknown;
 
-  function check_secid(sSum: unknown, iSessionId: unknown): unknown;
+  function check_secid(sSum: unknown, sessionId: number): unknown;
 
-  function clear_person_pict_cache(iPersonID: unknown): unknown;
+  function clear_person_pict_cache(personId: number): unknown;
 
   function get_item_objectives_value(fldItem: unknown): unknown;
 
   function obtain_item_objectives_value(fldTarget: unknown, rValue: unknown, sAction: unknown): unknown;
 
-  function send_message(vApplication: unknown, sMessage: unknown, sDomain: unknown, aUser: unknown, oOptions: unknown): unknown;
+  function send_message(vApplication: unknown, message: string, domain: string, aUser: unknown, oOptions: unknown): unknown;
 
   function replace_condition_operators(oConditions: unknown, iValue: unknown): unknown;
 
-  function get_header_obj(sHeader: unknown): unknown;
+  function get_header_obj(header: string): unknown;
 
   function get_multipart_array(Request: unknown): unknown;
 
-  function get_game_rating(curUser: unknown, checkLevel: boolean, sCurrencyTypeID: unknown, allLevel: boolean, bDispSub: unknown, iSubDepth: unknown, iGrpColl: unknown, oPaging: unknown, curUserID: unknown, bRange: unknown, iAmntCollsRating: unknown, sGap: unknown, bSamePlace: unknown, bShowTopRating: unknown): unknown;
+  function get_game_rating(curUser: unknown, checkLevel: boolean, currencyTypeID: number, allLevel: boolean, dispSub: boolean, subDepth: number, iGrpColl: unknown, oPaging: unknown, curUserID: unknown, bRange: unknown, iAmntCollsRating: unknown, sGap: unknown, bSamePlace: unknown, bShowTopRating: unknown): unknown;
 
   function get_game_rating_awards_or_badges(personTopElem: unknown, allLevel: boolean, checkLevel: boolean, levelId: number, amntCollsRating: number, dispSub: boolean, subdivId: number, subdivNum: number, currencyTypeId: number, grpColl: number, paging: unknown, range: boolean): unknown;
 
-  function get_game_rating_all(allLevel: boolean, checkLevel: boolean, iLevelID: number, bDispSub: unknown, iSubdivID: number, iSubdivNum: number, sCurrencyTypeID: unknown, iGrpColl: number, oPaging: Object, bRange: boolean, iAmntCollsRating: number, bSamePlace: boolean, bShowTopRating: boolean): unknown;
+  function get_game_rating_all(allLevel: boolean, checkLevel: boolean, levelId: number, dispSub: boolean, iSubdivID: number, subdivNum: number, currencyTypeID: number, iGrpColl: number, oPaging: Object, bRange: boolean, iAmntCollsRating: number, bSamePlace: boolean, bShowTopRating: boolean): unknown;
 
   function get_timezone(objectId: number, catObject: unknown, bReturnNull: unknown): unknown;
 
@@ -418,7 +418,7 @@ declare namespace tools_web {
 
   function get_remote_action_param(aNames: unknown, topElem: unknown): unknown;
 
-  function check_collection_access(curUser: unknown, object: unknown, personAccessType: unknown): unknown;
+  function check_collection_access(curUser: unknown, object: unknown, trsonAccessType: string): unknown;
 
   function get_empty_env(): unknown;
 
@@ -430,7 +430,7 @@ declare namespace tools_web {
 
   function get_md5_id(hash: string): unknown;
 
-  function check_object(xmCurObject: unknown, sType: string): unknown;
+  function check_object(xmCurObject: unknown, type: string): unknown;
 
   function check_redirect_url(url: string): unknown;
 
