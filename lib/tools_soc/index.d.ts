@@ -10,6 +10,6 @@ declare namespace tools_soc {
   function get_social_wall_arrs(session: Session, arrItemList: unknown, blogObjectId: number, blogObjectName: string, dtMaxDate: Date, arrGroups: unknown, arrFilters: unknown): unknown;
   function get_social_wall_object(session: Session, arrItemList: unknown, blogObjectId: number, blogObjectName: string, arrGroups: unknown, arrFilters: unknown): unknown;
   function get_social_item_object(session: Session, wallItemId: number, objectTopElem: unknown): unknown;
-  function obtain_files_from_request(request: unknown, targetDoc: unknown): unknown;
-  function obtain_tags_from_request(request: unknown, targetDoc: unknown): unknown;
+  function obtain_files_from_request(request: Request, targetDoc: unknown): unknown;
+  function obtain_tags_from_request(request: Request, targetDoc: unknown): unknown;
 }

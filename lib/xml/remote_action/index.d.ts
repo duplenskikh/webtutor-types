@@ -22,7 +22,7 @@ I18nBase & {
   changed: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  evaluate(resultType: string, request: unknown, argVars: unknown): unknown;
+  evaluate(resultType: string, request: Request, argVars: unknown): unknown;
   role_id: XmlMultiElemObject<number>;
 };
 

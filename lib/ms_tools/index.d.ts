@@ -36,7 +36,7 @@ declare namespace ms_tools {
   function activate_objects_to_persons(taskId: string, type: string, objectIds: string, personIds: string, params: unknown): unknown;
   function assign_qualifications_to_objects(taskId: string, type: string, objectIds: string, params: unknown): unknown;
   function activate_to_objects(taskId: string, type: string, objectIds: string, params: unknown): unknown;
-  function check_task(taskId: string, retTarget: unknown, request: unknown): unknown;
+  function check_task(taskId: string, retTarget: unknown, request: Request): unknown;
   function init_task(params: unknown, delay: number): unknown;
   function init_task_data(taskInfoTopElem: unknown, delay: number): unknown;
   function start_task(taskId: string, methodName: string, methodParams: unknown): unknown;

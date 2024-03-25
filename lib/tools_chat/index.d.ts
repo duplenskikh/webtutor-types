@@ -12,9 +12,9 @@ declare namespace tools_chat {
   function add_message(chatId: number, message: string, senderId: number, chatTopElem: unknown, stageId: number, prevStageId: number, chatBotTopElem: unknown, answer: unknown, conversationId: number, writeMessage: boolean): unknown;
   function create_chat_chatbot(catChatBotType: unknown, message: unknown, chatBotTopElem: unknown, personId: number, conversationId: number): unknown;
   function send_to_stage(chatBotCode: string, curChatId: number, stageId: number, curChatDoc: unknown, prevStageId: number, chatBotTopElem: unknown, reWriteLastMessage: boolean, conversationId: number, request: unknown): unknown;
-  function chatbot_request_processing(request: unknown, requestBody: unknown, requestQueryString: unknown, requestForm: unknown, writeMessage: boolean, curUserId: number, conversationId: number): unknown;
+  function chatbot_request_processing(request: Request, requestBody: unknown, requestQueryString: unknown, requestForm: unknown, writeMessage: boolean, curUserId: number, conversationId: number): unknown;
   function get_aiml_data(customChatBotTemplateId: number, isForcibly: boolean, curChatId: number, curChat: unknown, customChatBotTemplateTopElem: unknown): unknown;
-  function conversation_api(request: unknown, response: unknown, isWebSocket: boolean, session: Session, action: string): unknown;
+  function conversation_api(request: Request, response: unknown, isWebSocket: boolean, session: Session, action: string): unknown;
   function add_chatbot_to_conversation(conversationId: number, chatbotId: number, chatbotTypeId: number): unknown;
   function del_chatbot_from_conversation(conversationId: number, chatbotId: number): unknown;
 }

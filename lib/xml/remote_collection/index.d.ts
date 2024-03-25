@@ -58,7 +58,7 @@ I18nBase & {
   setPaging(idx: number, size: number): unknown;
   setColumnsWhiteList(aFields: unknown): unknown;
   getStamp(curUserId: number, curObjectId: number): unknown;
-  evaluate(dataType: string, request: unknown, argVars: unknown): unknown;
+  evaluate(dataType: string, request: Request, argVars: unknown): unknown;
   role_id: XmlMultiElemObject<number>;
 };
 

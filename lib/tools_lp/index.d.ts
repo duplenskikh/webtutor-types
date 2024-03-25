@@ -25,7 +25,7 @@ declare namespace tools_lp {
   function get_template_cache_id(webModeId: number, siteId: number, locale: string): unknown;
   function save_template_cache(webModeTopElem: unknown, text: string, siteId: number, locale: string): unknown;
   function get_template_cache(webModeTopElem: unknown, siteId: number, locale: string): unknown;
-  function replace_template_cache(webModeTopElem: unknown, text: string, request: unknown): unknown;
+  function replace_template_cache(webModeTopElem: unknown, text: string, request: Request): unknown;
   function replace_local_subs(colParams: unknown): unknown;
   function map_collection_result(colResult: unknown, aColMap: unknown): unknown;
   function fill_subs_with_values(env: unknown, arrSubs: unknown): unknown;

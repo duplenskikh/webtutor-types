@@ -13,9 +13,9 @@ declare namespace tools {
 
   let object_license: XmlElem<object>;
 
-  function encode_course_folder(sCodeParam: string): string;
+  function encode_course_folder(code: string): string;
 
-  function decode_course_folder(sCodeParam: string): string;
+  function decode_course_folder(code: string): string;
 
   /**
    * Загрузка курса из архива в базу. Курс создается если его нет или обновляется существующий.
@@ -173,7 +173,7 @@ declare namespace tools {
 
   function uni_process_package(sUrlPackageParam: unknown, fldFormParam: unknown): unknown;
 
-  function process_package(_url: unknown, fldPackagesValidParam: unknown): unknown;
+  function process_package(url: unknown, fldPackagesValidParam: unknown): unknown;
 
   /**
    * Возвращает ошибку формы, переданной как параметр.
@@ -1528,7 +1528,7 @@ declare namespace tools {
    */
   function request_processing(requestId: number, requestDocument?: RequestDocument): RequestDocument;
 
-  function update_object_versions(docVersion: unknown, iVersionID: unknown, docObject: unknown, iPersonID: unknown, tePerson: unknown, sComment: unknown): unknown;
+  function update_object_versions(docVersion: unknown, iVersionID: unknown, docObject: unknown, personId: number, tePerson: unknown, sComment: unknown): unknown;
 
   function update_adding_objects(docObject: unknown, iObjectID: unknown): unknown;
 
@@ -1766,12 +1766,12 @@ declare namespace tools {
    */
   function update_filter_conditions<T extends XmlElem<unknown, unknown>>(sourceConditions: T, catalogName: string, schemeId: string, setFlag: boolean): void;
 
-  function check_cur_user_admin_access(teObjectParam: unknown, curUser: unknown, fldAccessCalalogParam: unknown): unknown;
+  function check_cur_user_admin_access(objectTopElem: unknown, curUser: unknown, fldAccessCalalogParam: unknown): unknown;
 
   /**
    * Проверяет доступ к объекту на основе настроек в разделе
    * Отображение каталогов (блок Безопасность) для текущего пользователя в Webtutor Administrator.
-   * @param {XmlTopElem} teObjectParam - `TopElem` объекта, к которому проверяется доступ.
+   * @param {XmlTopElem} objectTopElem - `TopElem` объекта, к которому проверяется доступ.
    * @returns {boolean} Возвращает значение, показывающее наличие или отсутствие доступа:
    * - `true` – доступ разрешен;
    * - `false` – доступ запрещен.
@@ -1780,7 +1780,7 @@ declare namespace tools {
    * tools.admin_access_filling(TopElem);
    * ``
    */
-  function admin_access_filling(teObjectParam: XmlTopElem): boolean;
+  function admin_access_filling(objectTopElem: XmlTopElem): boolean;
 
   /**
    * Копирует параметры доступа к объекту в другой объект.
@@ -2589,9 +2589,9 @@ declare namespace tools {
    * Если выбран объект – сотрудник отдела – и пользователь – руководитель отдела,
    * в котором работает указанный сотрудник, то типы руководителя могут быть следующими:
    * «Непосредственный руководитель», «Руководитель обучения» и т.д.
-   * @param {number} iUserIDParam - Id сотрудника, для которого нужно определить список
+   * @param {number} userId - Id сотрудника, для которого нужно определить список
    * типов функциональных руководителей.
-   * @param {number} iObjectIDParam - Id объекта, относительно которого нужно определить список типов
+   * @param {number} objectId - Id объекта, относительно которого нужно определить список типов
    * функциональных руководителей.
    * Доступные типы объектов, Id которых может быть указан в данном аргументе:
    * - career_reserve (развитие карьеры);
@@ -2614,7 +2614,7 @@ declare namespace tools {
    * @returns {any[]} Массив из каталожных записей типов функциональных руководителей (boss_types),
    * соответствующих указанному объекту и указанному пользователю.
    */
-  function get_object_relative_boss_types(iUserIDParam: number, iObjectIDParam: number): unknown;
+  function get_object_relative_boss_types(userId: number, objectId: number): unknown;
 
   /**
    * Возвращает массив каталожных записей операций, определяемых типами руководителей (boss_types),
@@ -2848,9 +2848,9 @@ declare namespace tools {
    */
   function read_selected_date(value: string): object;
 
-  function get_sum_sid(sIdParam: unknown): unknown;
+  function get_sum_sid(id: string): unknown;
 
-  function check_sum_sid(sIdParam: unknown, sSumParam: unknown): unknown;
+  function check_sum_sid(id: string, sSumParam: unknown): unknown;
 
   /**
    * Заменяет в строке пробел, «(» , «)», «+» и «-» на пустую сроку, а символы «,» и «;» - на пробел.
@@ -2998,10 +2998,10 @@ declare namespace tools {
   /**
    * Возвращает сроку с тегами XML, полученную из файла путь до которого, передан в параметрах функции.
    * Вызывает функцию tools.open_str_win_ini для разбора файла.
-   * @param {string} sUrlParam - Строка с путем до файла.
+   * @param {string} url -string с путем до файла.
    * @returns {string} Строка с путем до файла.
    */
-  function open_doc_win_ini(sUrlParam: string): string;
+  function open_doc_win_ini(url: string): string;
 
   /**
    * Возвращает сроку с тегами XML, полученную из строки, переданной в параметрах функции.
@@ -3010,7 +3010,7 @@ declare namespace tools {
    * @param {string} sFileText - Строка для разбора.
    * @returns {string} Строка с тегами XML.
    * @example
-   * tools.open_str_win_ini(LoadUrlText(sUrlParam));
+   * tools.open_str_win_ini(LoadUrlText(url))string
    */
   function open_str_win_ini(sFileText: string): string;
 
@@ -3069,21 +3069,21 @@ declare namespace tools {
 
   function zip_extract_server(sSourceUrlParam: unknown, sTargetUrlParam: unknown): unknown;
 
-  function delete_trash_url_server(sUrlParam: unknown): unknown;
+  function delete_trash_url_server(url: string): unknown;
 
   function alert_server(sMessageParam: unknown): unknown;
 
   function log_event_server(sTypeParam: unknown, sTextParam: unknown): unknown;
 
-  function replace_cached_doc_server(sUrlParam: unknown): unknown;
+  function replace_cached_doc_server(url: string): unknown;
 
   function copy_url_server(sDestUrlParam: unknown, sSourceUrlParam: unknown): unknown;
 
-  function url_file_size_server(sUrlParam: unknown): unknown;
+  function url_file_size_server(url: string): unknown;
 
-  function put_url_text_server(sUrlParam: unknown, sTextParam: unknown): unknown;
+  function put_url_text_server(url: string, sTextParam: unknown): unknown;
 
-  function load_share_url_server(sUrlParam: unknown): unknown;
+  function load_share_url_server(url: string): unknown;
 
   function get_hash_server(sTextParam: unknown, sTypeParam: unknown): unknown;
 
@@ -3325,13 +3325,13 @@ declare namespace tools {
 
   /**
    * Создает элемент очереди скриптов.
-   * @param {string} sScriptParam - Код для выполнения.
-   * @param {string} sCodeParam - Строка с кодом скрипта.
-   * @param {boolean} bDeleteAutomaticallyParam - Флаг, определяющий, нужно ли автоматически удалять код из очереди:
+   * @param {string} scriptParam - Код для выполнения.
+   * @param {string} code - Строка с кодом скрипта.
+   * @param {boolean} deleteAutomaticallyParam - Флаг, определяющий, нужно ли автоматически удалять код из очереди:
    * - `true` – код автоматически удаляется из очереди;
    * - `false` – не удаляется.
-   * @param {number} iDelayParam - Задержка в секундах перед выполнением кода.
-   * @param {Date} dStartDate - Дата старта агента.
+   * @param {number} delayParam - Задержка в секундах перед выполнением кода.
+   * @param {Date} [startDate] - Дата старта агента.
    * @returns {number} Id созданного объекта.
    * @example
    * ```
@@ -3350,7 +3350,7 @@ declare namespace tools {
    *);
    * ```
    */
-  function add_script_to_queue(sScriptParam: string, sCodeParam: string, bDeleteAutomaticallyParam: boolean, iDelayParam: number, dStartDate?: Date): number;
+  function add_script_to_queue(scriptParam: string, code: string, deleteAutomaticallyParam: boolean, delayParam: number, startDate?: Date): number;
 
   /**
    * Ожидает выполнения элемента очереди скриптов.
@@ -3361,7 +3361,7 @@ declare namespace tools {
    * error описание ошибки, возникшей при выполнении (если ошибка обрабатывается скриптом).
    * Если элемент очереди скриптов не найден, вернет null.
    */
-  function wait_script_queue(scriptId: unknown, isScriptDelete: unknown): unknown;
+  function wait_script_queue(scriptId: unknown, isScriptDelete: boolean): unknown;
 
   /**
    * Отрывает указанную версию курса в интерфейсе администратора WebTutor.
@@ -3408,33 +3408,33 @@ declare namespace tools {
 
   function resource_pic_envelope(sMode: unknown, vParam1: unknown, vParam2: unknown, vParam3: unknown, vParam4: unknown): unknown;
 
-  function file_source_get_upload_file_url(iFileSourceIdParam: unknown, sFileNameParam: unknown): unknown;
+  function file_source_get_upload_file_url(fileSourceId: number, fileName: string): unknown;
 
-  function file_source_upload_file(iFileSourceIdParam: unknown, sFileUrlParam: unknown, sTempFileUrlParam: unknown): unknown;
+  function file_source_upload_file(fileSourceId: number, fileUrl: string, tempFileUrl: string): unknown;
 
-  function file_source_get_file_to_save_url(iFileSourceIdParam: unknown, iResourceIdParam: unknown, sUidPARAM: unknown): unknown;
+  function file_source_get_file_to_save_url(fileSourceId: number, resourceId: number, uid: string): unknown;
 
   function file_source_get_temp_file_to_save_url(fileSourceId: number, resourceId: number, uid: string): unknown;
 
   function file_source_clear_old_file(fileSourceId: number, oldFileUrl: string, curFileUrl: string): unknown;
 
-  function file_source_get_files_list(iFileSourceIdParam: unknown): unknown;
+  function file_source_get_files_list(fileSourceId: number): unknown;
 
-  function file_source_download_file(iFileSourceIdParam: unknown, sUidPARAM: unknown, oRequestPARAM: unknown, oResponsePARAM: unknown): unknown;
+  function file_source_download_file(fileSourceId: number, uid: string, oRequestPARAM: unknown, oResponsePARAM: unknown): unknown;
 
-  function file_source_get_file_url(iFileSourceIdParam: unknown, sUidPARAM: unknown): unknown;
+  function file_source_get_file_url(fileSourceId: number, uid: string): unknown;
 
-  function call_webinar_system_method(iWebinarSystemIdParam: unknown, sMethodNameParam: unknown, oParams: unknown): unknown;
+  function call_webinar_system_method(webinarSystemId: number, methodName: number, oParams: unknown): unknown;
 
   function get_webinar_system_topelem(webinarSystemId: number): unknown;
 
-  function call_library_system_method(iLibrarySystemIdParam: unknown, sMethodNameParam: unknown, oParams: unknown): unknown;
+  function call_library_system_method(librarySystemId: number, methodName: number, oParams: unknown): unknown;
 
-  function calculate_statistic_rec(iStatisticRecId: unknown, iObjectIdParam: unknown, bIgnorePeriodSettingsParam: unknown, bCalculateCatalogsParam: unknown): unknown;
+  function calculate_statistic_rec(statisticRecId: number, objectId: number, bIgnorePeriodSettingsParam: unknown, bCalculateCatalogsParam: unknown): unknown;
 
-  function get_statistic_data(iStatisticRecId: unknown, iObjectIdParam: unknown, sPeriodTypeParam: unknown, dDateStartParam: unknown, dDateEndParam: unknown): unknown;
+  function get_statistic_data(statisticRecId: number, objectId: number, periodType: string, dateStart: Date, dateEnd: Date): unknown;
 
-  function obtain_statistic_data(StatisticRec: unknown, iObjectIdParam: unknown, sPeriodTypeParam: unknown, dDateStartParam: unknown, dDateEndParam: unknown, bVirtual: unknown, bForceRedo: unknown): unknown;
+  function obtain_statistic_data(StatisticRec: unknown, objectId: number, periodType: string, dateStart: Date, dateEnd: Date, bVirtual: unknown, bForceRedo: unknown): unknown;
 
   function assign_from_object(fldTarget: unknown, oSourceParam: unknown): unknown;
 
@@ -3452,7 +3452,7 @@ declare namespace tools {
 
   function safe_execution(sCodeSaveExecutionParam: unknown, oEnvParam?: unknown): unknown;
 
-  function get_content_access(iPersonID: unknown, tePerson: unknown): unknown;
+  function get_content_access(personId: number, tePerson: unknown): unknown;
 
   function update_content_access(idOrTE_UserPARAM: unknown, sCatalogPARAM: unknown, idOrTE_ObjectID: unknown, bCanEditPARAM: boolean, bCanDeletePARAM: boolean): unknown;
 
@@ -3472,7 +3472,7 @@ declare namespace tools {
    */
   function get_object_assembly<T extends keyof Websoft.Interfaces>(libraryName: T): T extends keyof Websoft.Interfaces ? Websoft.Interfaces[T] : T;
 
-  function create_committee_member(iObjectIDParam: unknown, teObjectParam: unknown, iPersonnelCommitteeIDParam: unknown, strCommitteeMemberTypeParam: unknown): unknown;
+  function create_committee_member(objectID: number, objectTopElem: unknown, iPersonnelCommitteeIDParam: unknown, strCommitteeMemberTypeParam: unknown): unknown;
 
   function activate_poll_to_person(personId: unknown, oPollID: unknown, iPollProcedureID: unknown, iEducationPlanID: unknown): unknown;
 
@@ -3491,22 +3491,22 @@ declare namespace tools {
 
   function check_periodity(fldPeriodityParam: unknown, _cur_date: unknown, iSleepSecParam: unknown): unknown;
 
-  function upload_begin(sUrlParam: unknown, iLenghtParam: unknown): unknown;
+  function upload_begin(url: string, iLenghtParam: unknown): unknown;
 
-  function upload_range(sIDParam: unknown, iStartIndexParam: unknown, iFinishIndexParam: unknown, sDataParam: unknown): unknown;
+  function upload_range(id: string, iStartIndexParam: unknown, iFinishIndexParam: unknown, sDataParam: unknown): unknown;
 
-  function upload_end(sIDParam: unknown): unknown;
+  function upload_end(id: string): unknown;
 
   function get_oapi_schemas(): unknown;
   let dotnet_xhttp_middleware: XmlElem<unknown>;
 
   function is_simple_array_field(fldParam: unknown): unknown;
 
-  function restore_doc(iObjectIDParam: unknown): unknown;
+  function restore_doc(objectID: number): unknown;
 
   function ValidateName(str: unknown, is_var: unknown): unknown;
 
-  function check_event_fields(iEventID: unknown, docEvent: unknown, teEvent: unknown): unknown;
+  function check_event_fields(eventId: number, docEvent: unknown, teEvent: unknown): unknown;
 
   function get_code_library(library: unknown): unknown;
 
@@ -3558,7 +3558,7 @@ declare namespace tools {
 
   function amgr_kill_role(nodeId: unknown, roleUID: unknown): unknown;
 
-  function get_doc_desc(teObjectParam: unknown): unknown;
+  function get_doc_desc(objectTopElem: unknown): unknown;
 
   function get_client_data(sLogin: unknown, sPassword: unknown): unknown;
   let webinar_conversation_participants_obj: XmlElem<unknown>;
@@ -3630,13 +3630,13 @@ declare namespace tools {
 
   type OpenCoursePackageServerResponse = BaseToolsResponse & {
     file_import: string;
-    temp_url: string;
+    tempurl: string;
     course: CourseDocument | null;
   };
 
   type ActivateTestToPersonParams = {
     /** Id collaborator. */
-    iPersonID: number;
+    personId: number;
     /** Id test. */
     iAssessmentID: number;
     /** Id мероприятия. */
@@ -3712,7 +3712,7 @@ declare namespace tools {
    */
   interface DownloadDataResponse {
     error: number;
-    data_file_url: string;
+    data_fileurl: string;
     error_text: string;
   }
 
@@ -3727,7 +3727,7 @@ declare namespace tools {
 
   export type ActivateCourseToPersonObject = {
     /** Id Сотрудника. */
-    iPersonID: number;
+    personId: number;
     /** Id курса. */
     iCourseID: number;
     /** Код записи в каталоге незаконченных электронных курсов active_learnings (необязательный). */
