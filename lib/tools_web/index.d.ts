@@ -195,7 +195,7 @@ declare namespace tools_web {
   /**
    * Создание кэша по коду.
    * @param {string} userDataCode - Код кэша.
-   * @param {T} valueParam - Payload.
+   * @param {T} value - Payload.
    * @param {number} ttl - Время жизни кэша.
    */
   function set_user_data<T>(userDataCode: string, value: T, ttl?: number): void;
@@ -426,7 +426,7 @@ declare namespace tools_web {
 
   function get_admin_request(): unknown;
 
-  function parse_multiple_parameter(: unknown): unknown;
+  function parse_multiple_parameter(param: unknown): unknown;
 
   function get_md5_id(hash: string): unknown;
 
