@@ -16,7 +16,7 @@
 
 ## 📦 Установка
 
-> **_Важно:_** типы работают только с **typescript<=4.4.4**
+> **_Важно:_** типы работают только с **typescript<=4.4.4** в связи с тем, что при конкатенации + теперь превращается в .concat https://github.com/microsoft/TypeScript/pull/45304
 
 Установка типов сводится к установке самой зависимости в ваш проект и **typescript**:
 
@@ -24,14 +24,14 @@
 
 ```bash
 npm i typescript -D
-npm i @umbrik/webtutor-types -D
+npm i @umbrik/webtutor-types@4.4.4 -D
 ```
 
 ### or yarn
 
 ```bash
 yarn add typescript -D
-yarn add @umbrik/webtutor-types -D
+yarn add @umbrik/webtutor-types@4.4.4 -D
 ```
 
 ## 🔨 Настройка
