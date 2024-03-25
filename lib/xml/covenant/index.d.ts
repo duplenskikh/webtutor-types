@@ -14,8 +14,8 @@ CustomElemsBase & {
   period_work: XmlElem<number>;
   proc_pay_bank: XmlElem<number>;
   proc_pay_collab: XmlElem<number>;
-  sum_pay_bank(): unknown;
-  sum_pay_collab(): unknown;
+  sum_pay_bank(): number | null;
+  sum_pay_collab(): number | null;
   proc_deduct: XmlElem<number>;
   education_method_id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
   education_org_id: XmlElem<number, EducationOrgCatalogDocumentTopElem>;

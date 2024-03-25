@@ -82,7 +82,7 @@ AdminAccessBase & {
   comment: XmlElem<string>;
   access: XmlElem<AccessDocBase>;
   role_id: XmlMultiElemObject<number>;
-  activate_program_to_person(input: unknown): unknown;
+  activate_program_to_person(input: unknown): { error: number, errorText: string; result: { id: number, error: number, text: string }[] };
 };
 
 type CompoundProgramDocument = XmlDocument & {

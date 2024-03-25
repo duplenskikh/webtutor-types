@@ -14,7 +14,7 @@ CustomElemsBase & {
   education_org_id: XmlElem<number, EducationOrgCatalogDocumentTopElem>;
   legal_entity_name: XmlElem<string>;
   legal_entity_code: XmlElem<string>;
-  files_count(): unknown;
+  files_count(): number;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;

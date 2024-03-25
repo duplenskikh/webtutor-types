@@ -12,7 +12,9 @@ declare namespace tools {
   function get_server_protocol(): "file" | "http" | "https" | "mailto" | "ftp" | "x-local";
 
   let object_license: XmlElem<object>;
+
   function encode_course_folder(sCodeParam: string): string;
+
   function decode_course_folder(sCodeParam: string): string;
 
   /**
@@ -32,7 +34,9 @@ declare namespace tools {
    * или false - в противном случае (копирование не выполнено).
    */
   function copy_manifest_resources(fileUrl: string, baseUrl: string): BaseToolsResponse;
+
   function open_course_package_server(destinationUrl: string): OpenCoursePackageServerResponse;
+
   function copy_url_temp_suffix(destinationUrl: string, sourceUrl: string): void;
 
   /**
@@ -190,6 +194,7 @@ declare namespace tools {
    * - и сведения об ошибке oRes.error_text.
    */
   function download_package_list(exchangeServerId: number, packageId?: number, filePath?: string): DownloadDataResponse;
+
   function download_package(exchangeServerId: number, packageId: number, filePath: string, fldPackageValidParam: unknown): DownloadDataResponse;
 
   /**
@@ -711,8 +716,11 @@ declare namespace tools {
   function is_self_cur_user(userId?: number): boolean;
 
   function is_main_boss(): unknown;
+
   function is_real_boss(): unknown;
+
   function is_cost_center_boss(): unknown;
+
   function is_next_boss(): unknown;
 
   /**
@@ -827,9 +835,13 @@ declare namespace tools {
   function is_by_group_id(groupId: number): boolean;
 
   function is_person_func_manager(): unknown;
+
   function is_person_org_func_manager(): unknown;
+
   function is_func_manager(): unknown;
+
   function is_project_manager(): unknown;
+
   function is_statement_date(iActivityIDParam: unknown, sValueParam: unknown, sUslParam: unknown): unknown;
 
 
@@ -1110,8 +1122,11 @@ declare namespace tools {
   function annals_decrypt(oSourceParam: XmlElem<unknown>, sQtiPathParam?: string, sQtiTextParam?: string, bNoSendCorrectAnswerParam?: boolean): XmlDocument;
 
   function report_decrypt(_source: unknown, _qti_path: unknown, _qti_text: unknown): unknown;
+
   function fill_annals_timings(fldTarget: unknown, fldSource: unknown): unknown;
+
   function get_data_answers(fldDataItem: unknown): unknown;
+
   function get_item_points(fldQuestion: unknown): unknown;
 
   /**
@@ -1171,6 +1186,7 @@ declare namespace tools {
   function obtain_lists(url: string, name?: string): boolean;
 
   function event_finish(eventId: number, eventDocument?: EventDocument): unknown;
+
   function event_start(eventId: number, eventDocument: EventDocument, oScreenParam: unknown): unknown;
 
   /**
@@ -1715,17 +1731,29 @@ declare namespace tools {
   let cur_user_admin_type: XmlElem<string>;
 
   function get_cur_user(): unknown;
+
   function update_cur_user(): unknown;
+
   function get_cur_user_groups(): unknown;
+
   function update_cur_user_groups(): unknown;
+
   function cur_user_is_admin(): unknown;
+
   function get_cur_user_content_access(): unknown;
+
   function update_cur_user_content_access(): unknown;
+
   function get_cur_user_admin_configuration(): unknown;
+
   function update_cur_user_admin_configuration(): unknown;
+
   function get_cur_user_admin_configuration_applications(): unknown;
+
   function get_cur_user_application_access_level(applicationId: number): unknown;
+
   function get_access_role_application_access_level(fldAccessRole: unknown, applicationId: number): unknown;
+
   function get_cur_user_access_blocks(): unknown;
 
   /**
@@ -2821,6 +2849,7 @@ declare namespace tools {
   function read_selected_date(value: string): object;
 
   function get_sum_sid(sIdParam: unknown): unknown;
+
   function check_sum_sid(sIdParam: unknown, sSumParam: unknown): unknown;
 
   /**
@@ -3029,19 +3058,33 @@ declare namespace tools {
   function file_url_exists(filepath: string): boolean;
 
   function file_url_exists_server(sFilePathParam: unknown): unknown;
+
   function load_url_text_server(sFilePathParam: unknown): unknown;
+
   function load_url_data_server(sFilePathParam: unknown, iSizeParam: unknown): unknown;
+
   function read_directory_server(sFilePathParam: unknown, bDirParam: unknown): unknown;
+
   function delete_directory_server(sDirParam: unknown): unknown;
+
   function zip_extract_server(sSourceUrlParam: unknown, sTargetUrlParam: unknown): unknown;
+
   function delete_trash_url_server(sUrlParam: unknown): unknown;
+
   function alert_server(sMessageParam: unknown): unknown;
+
   function log_event_server(sTypeParam: unknown, sTextParam: unknown): unknown;
+
   function replace_cached_doc_server(sUrlParam: unknown): unknown;
+
   function copy_url_server(sDestUrlParam: unknown, sSourceUrlParam: unknown): unknown;
+
   function url_file_size_server(sUrlParam: unknown): unknown;
+
   function put_url_text_server(sUrlParam: unknown, sTextParam: unknown): unknown;
+
   function load_share_url_server(sUrlParam: unknown): unknown;
+
   function get_hash_server(sTextParam: unknown, sTypeParam: unknown): unknown;
 
   /**
@@ -3362,21 +3405,37 @@ declare namespace tools {
   function load_xhttp_ini(): unknown;
 
   function get_xhttp_ini(sIniVarName: unknown): unknown;
+
   function resource_pic_envelope(sMode: unknown, vParam1: unknown, vParam2: unknown, vParam3: unknown, vParam4: unknown): unknown;
+
   function file_source_get_upload_file_url(iFileSourceIdParam: unknown, sFileNameParam: unknown): unknown;
+
   function file_source_upload_file(iFileSourceIdParam: unknown, sFileUrlParam: unknown, sTempFileUrlParam: unknown): unknown;
+
   function file_source_get_file_to_save_url(iFileSourceIdParam: unknown, iResourceIdParam: unknown, sUidPARAM: unknown): unknown;
+
   function file_source_get_temp_file_to_save_url(fileSourceId: number, resourceId: number, uid: string): unknown;
+
   function file_source_clear_old_file(fileSourceId: number, oldFileUrl: string, curFileUrl: string): unknown;
+
   function file_source_get_files_list(iFileSourceIdParam: unknown): unknown;
+
   function file_source_download_file(iFileSourceIdParam: unknown, sUidPARAM: unknown, oRequestPARAM: unknown, oResponsePARAM: unknown): unknown;
+
   function file_source_get_file_url(iFileSourceIdParam: unknown, sUidPARAM: unknown): unknown;
+
   function call_webinar_system_method(iWebinarSystemIdParam: unknown, sMethodNameParam: unknown, oParams: unknown): unknown;
+
   function get_webinar_system_topelem(webinarSystemId: number): unknown;
+
   function call_library_system_method(iLibrarySystemIdParam: unknown, sMethodNameParam: unknown, oParams: unknown): unknown;
+
   function calculate_statistic_rec(iStatisticRecId: unknown, iObjectIdParam: unknown, bIgnorePeriodSettingsParam: unknown, bCalculateCatalogsParam: unknown): unknown;
+
   function get_statistic_data(iStatisticRecId: unknown, iObjectIdParam: unknown, sPeriodTypeParam: unknown, dDateStartParam: unknown, dDateEndParam: unknown): unknown;
+
   function obtain_statistic_data(StatisticRec: unknown, iObjectIdParam: unknown, sPeriodTypeParam: unknown, dDateStartParam: unknown, dDateEndParam: unknown, bVirtual: unknown, bForceRedo: unknown): unknown;
+
   function assign_from_object(fldTarget: unknown, oSourceParam: unknown): unknown;
 
   /**
@@ -3388,13 +3447,19 @@ declare namespace tools {
   function open_doc<T = XmlDocument>(documentId: number): T | undefined;
 
   function filling_learning_parts(TopElem: unknown): unknown;
+
   function parse_email_address(sAddressParam: unknown): unknown;
+
   function safe_execution(sCodeSaveExecutionParam: unknown, oEnvParam?: unknown): unknown;
+
   function get_content_access(iPersonID: unknown, tePerson: unknown): unknown;
+
   function update_content_access(idOrTE_UserPARAM: unknown, sCatalogPARAM: unknown, idOrTE_ObjectID: unknown, bCanEditPARAM: boolean, bCanDeletePARAM: boolean): unknown;
+
   function set_default_content(teContentPARAM: unknown, teSubjectPARAM: unknown): unknown;
   let upgrade_locked: XmlElem<boolean>;
   let in_place_upgrade: XmlElem<boolean>;
+
   function set_upgrade_locked(bParam: unknown): unknown;
   let os_type: XmlElem<string>;
   let dotnet_host: DotnetCoreHost | null;
@@ -3408,25 +3473,43 @@ declare namespace tools {
   function get_object_assembly<T extends keyof Websoft.Interfaces>(libraryName: T): T extends keyof Websoft.Interfaces ? Websoft.Interfaces[T] : T;
 
   function create_committee_member(iObjectIDParam: unknown, teObjectParam: unknown, iPersonnelCommitteeIDParam: unknown, strCommitteeMemberTypeParam: unknown): unknown;
+
   function activate_poll_to_person(personId: unknown, oPollID: unknown, iPollProcedureID: unknown, iEducationPlanID: unknown): unknown;
+
   function delete_poll_result(oPollResultParam: unknown, tePollParam: unknown): unknown;
+
   function array_opt_find_by_key(arrParam: unknown, sKeyParam: unknown, oValueParam: unknown): unknown;
   let crypto_obj: XmlElem<unknown>;
+
   function crypto_obj_init(): unknown;
+
   function get_default_proctoring_system_id(): unknown;
+
   function data_type(v: unknown, detailed: unknown): unknown;
+
   function get_list_lngs(): unknown;
+
   function check_periodity(fldPeriodityParam: unknown, _cur_date: unknown, iSleepSecParam: unknown): unknown;
+
   function upload_begin(sUrlParam: unknown, iLenghtParam: unknown): unknown;
+
   function upload_range(sIDParam: unknown, iStartIndexParam: unknown, iFinishIndexParam: unknown, sDataParam: unknown): unknown;
+
   function upload_end(sIDParam: unknown): unknown;
+
   function get_oapi_schemas(): unknown;
   let dotnet_xhttp_middleware: XmlElem<unknown>;
+
   function is_simple_array_field(fldParam: unknown): unknown;
+
   function restore_doc(iObjectIDParam: unknown): unknown;
+
   function ValidateName(str: unknown, is_var: unknown): unknown;
+
   function check_event_fields(iEventID: unknown, docEvent: unknown, teEvent: unknown): unknown;
+
   function get_code_library(library: unknown): unknown;
+
   function lite_call_code_library_method(libraryUrl: unknown, methodName: string, arrParams: unknown): unknown;
 
   /**
@@ -3458,43 +3541,77 @@ declare namespace tools {
   function call_code_library_method<T, K>(library: string, method: string, arrParams: T): K;
 
   function get_params_code_library(library: unknown): unknown;
+
   function get_process_param(library: unknown, nameAttr: string): unknown;
+
   function get_code_library_error_message(oLibResParam: unknown, oEnvParam: unknown): unknown;
+
   function parse_throw_error(errorStr: string, error: unknown): unknown;
+
   function split_errortext(errorStr: string): unknown;
+
   function get_code_library_result_object(oLibResParam: unknown, oEnvParam: unknown): unknown;
+
   function amgr_get_agent_list_json(): unknown;
+
   function amgr_cancel_agent(roleUID: unknown, threadID: unknown): unknown;
+
   function amgr_kill_role(nodeId: unknown, roleUID: unknown): unknown;
+
   function get_doc_desc(teObjectParam: unknown): unknown;
+
   function get_client_data(sLogin: unknown, sPassword: unknown): unknown;
   let webinar_conversation_participants_obj: XmlElem<unknown>;
+
   function get_webinar_conversation_participants(iWebinarSystemId: unknown): unknown;
+
   function update_webinar_conversation_participants(webinarSystemId: number): unknown;
   let system_event_handlers_obj: XmlElem<unknown>;
+
   function get_system_event_handlers(systemEventId: number): unknown;
+
   function add_system_event_handlers_to_obj(systemEventId: number, systemEventHandlerId: number, teSystemEventHandler: unknown): unknown;
+
   function del_system_event_handlers_from_obj(systemEventId: number, systemEventHandlerId: number): unknown;
+
   function add_object_to_package(docObject: unknown, iObjectID: unknown, Screen: unknown, fldPackage: unknown): unknown;
+
   function generate_qr(text: string, options: unknown): unknown;
+
   function repeate_learning_activation(leartning: unknown): unknown;
+
   function person_hierarchy_build(aInstructions: unknown): unknown;
+
   function person_hierarchy_build_all(): unknown;
+
   function put_message_in_queue(queueName: string, commandXml: string): unknown;
   let file_sources_obj: XmlElem<unknown>;
+
   function get_file_sources(fileSourceId: number): unknown;
+
   function update_file_sources(fileSourceId: number, teFileSource: unknown): unknown;
   let cache_code_librarys_obj: XmlElem<unknown>;
+
   function init_cache_code_librarys(codeLibraryId: number): unknown;
+
   function get_cache_code_librarys(codeLibraryId: number): unknown;
+
   function update_cache_code_librarys(codeLibraryId: number, teParamCodeLibrary: unknown): unknown;
+
   function drop_cache_code_library(codeLibraryIds: unknown): unknown;
+
   function get_file_from_data(source: unknown): unknown;
+
   function getDayYear(date: Date): unknown;
+
   function getWeekYear(date: Date): unknown;
+
   function create_search_condition(searchString: string, catalogName: string, arrSearchFieldNames: unknown, foreignFieldName: string, searchType: string): unknown;
+
   function get_access_role_claims(update: Date): unknown;
+
   function remove_fetch_doc(objectId: number): unknown;
+
   function open_excel(fileUrl: string): unknown;
 
   type ToolsDocTypesCatalogHash = {

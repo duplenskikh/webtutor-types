@@ -38,8 +38,8 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-  add_participant(personId: number, participantTopElem: unknown): unknown;
-  calculate_rating(): unknown;
+  add_participant(personId: number, participantTopElem: unknown): undefined | void;
+  calculate_rating(): void;
 };
 
 type ContestDocument = XmlDocument & {

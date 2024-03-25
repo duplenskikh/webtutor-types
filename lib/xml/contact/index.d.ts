@@ -12,8 +12,8 @@ CustomDatasBase & {
   code: XmlElem<string>;
   project_id: XmlElem<number, ProjectCatalogDocumentTopElem>;
   type_id: XmlElem<number, ContactTypeCatalogDocumentTopElem>;
-  initiator_person_fullname(): unknown;
-  contact_person_fullname(): unknown;
+  initiator_person_fullname(): string;
+  contact_person_fullname(): string;
   initiator_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
   contact_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
   contact_org_id: XmlElem<number, OrgCatalogDocumentTopElem>;

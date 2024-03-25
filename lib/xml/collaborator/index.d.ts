@@ -152,7 +152,7 @@ PersonObjectLinksBase & {
   get_events(type: string, status: string, roleCollab: string): EventCollaboratorCatalogDocumentTopElem[];
   get_groups(): GroupCollaboratorCatalogDocumentTopElem[];
   get_event_results(): EventResultCatalogDocumentTopElem[];
-  update_info(lastname: string, firstname: string, middlename: string, address: string, phone: string, email: string, login: string, password: string): unknown;
+  update_info(lastname: string, firstname: string, middlename: string, address: string, phone: string, email: string, login: string, password: string): Object;
   clear_subs_fields(): void;
 };
 

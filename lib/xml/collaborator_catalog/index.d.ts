@@ -37,7 +37,7 @@ type CollaboratorCatalogDocumentTopElem = XmlTopElem & {
   allow_personal_chat_request: XmlElem<boolean>;
   level_id: XmlElem<number, LevelCatalogDocumentTopElem>;
   grade_id: XmlElem<number, GradeCatalogDocumentTopElem>;
-  birth_date_rest_days_num(): unknown;
+  birth_date_rest_days_num(): number | null;
   knowledge_parts: XmlElem<string>;
   tags: XmlElem<string>;
   experts: XmlElem<string>;

@@ -49,7 +49,7 @@ GameBonusBase & {
   event_forms: XmlMultiElem<EducationMethodDocumentEventForm>;
   competences: XmlMultiElem<EducationMethodDocumentCompetence>;
   similar_education_methods: XmlMultiElem<EducationMethodDocumentSimilarEducationMethod>;
-  get_workflow_id(): unknown;
+  get_workflow_id(): null;
   role_id: XmlMultiElemObject<number>;
 };
 

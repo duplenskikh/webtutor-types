@@ -11,7 +11,7 @@ type CodingDocumentTopElem = XmlTopElem & {
   changed: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  obtain_code(): unknown;
+  obtain_code(): string;
 };
 
 type CodingDocument = XmlDocument & {

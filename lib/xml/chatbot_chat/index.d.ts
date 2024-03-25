@@ -53,7 +53,7 @@ CustomElemsBase & {
   last_message_id: XmlElem<string>;
   last_message_xml: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  calculate_escalation_date(stageTopElem: unknown): unknown;
+  calculate_escalation_date(stageTopElem: unknown): boolean;
 };
 
 type ChatbotChatDocument = XmlDocument & {

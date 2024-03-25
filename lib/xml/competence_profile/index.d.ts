@@ -81,7 +81,7 @@ AdminAccessBase & {
   position_commons: XmlMultiElem<CompetenceProfileDocumentPositionCommon>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
-  update_values(): unknown;
+  update_values(): void;
   role_id: XmlMultiElemObject<number>;
 };
 
