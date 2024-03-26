@@ -1,4 +1,5 @@
-type StatementAttachmentDocumentTopElem = XmlTopElem & { Doc: StatementAttachmentDocument } & {
+type StatementAttachmentDocumentTopElem = XmlTopElem & {
+  Doc: StatementAttachmentDocument;
   id: XmlElem<number>;
   path: XmlElem<string>;
   usage_type: XmlElem<string>;
@@ -6,10 +7,11 @@ type StatementAttachmentDocumentTopElem = XmlTopElem & { Doc: StatementAttachmen
   length: XmlElem<string>;
   file_hash: XmlElem<string>;
   file_url: XmlElem<string>;
-  statement_id: XmlElem<number>;
+  statement_id: XmlElem<number, StatementCatalogDocumentTopElem>;
   doc_info: XmlElem<DocInfoBase>;
 };
 
 type StatementAttachmentDocument = XmlDocument & {
   TopElem: StatementAttachmentDocumentTopElem;
+  statement_attachment: StatementAttachmentDocumentTopElem;
 };

@@ -1,4 +1,4 @@
-type OrderTypeCatalogDocumentTopElem = XmlTopElem & { Doc: OrderTypeCatalogDocument } & {
+type OrderTypeCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -11,8 +11,5 @@ type OrderTypeCatalogDocumentTopElem = XmlTopElem & { Doc: OrderTypeCatalogDocum
   default_flag: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type OrderTypeCatalogDocument = XmlDocument & {
-  TopElem: OrderTypeCatalogDocumentTopElem;
+  OnBuild(): void;
 };

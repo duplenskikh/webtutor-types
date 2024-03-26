@@ -1,14 +1,11 @@
-type NotificationTemplateCatalogDocumentTopElem = XmlTopElem & { Doc: NotificationTemplateCatalogDocument } & {
+type NotificationTemplateCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type NotificationTemplateCatalogDocument = XmlDocument & {
-  TopElem: NotificationTemplateCatalogDocumentTopElem;
+  OnBuild(): void;
 };

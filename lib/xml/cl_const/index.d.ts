@@ -1,5 +1,5 @@
 interface ClConstDocumentLocalization {
-  id: XmlElem<number>;
+  id: XmlElem<number, ClLocalizationCatalogDocumentTopElem>;
   text: XmlElem<string>;
   imprint: XmlElem<string>;
 }
@@ -7,8 +7,9 @@ interface ClConstDocumentLocalization {
 interface ClConstDocumentObjectTypeObject {
   id: XmlElem<number>;
 }
+
 interface ClConstDocumentObjectType {
-  id: XmlElem<string>;
+  id: XmlElem<string, typeof common.exchange_object_types>;
   objects: XmlMultiElem<ClConstDocumentObjectTypeObject>;
 }
 
@@ -26,9 +27,11 @@ type ClConstDocumentTopElem = XmlTopElem & {
   flags: XmlMultiElem<ClConstDocumentFlag>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  set_value(logId: number, value: null | undefined | string): boolean;
+  set_value(locId: number, value: unknown): boolean;
 };
 
 type ClConstDocument = XmlDocument & {
   TopElem: ClConstDocumentTopElem;
+  cl_const: ClConstDocumentTopElem;
+  DocDesc(): string;
 };

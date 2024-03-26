@@ -1,5 +1,5 @@
 interface ChatDocumentCollaborator {
-  collaborator_id: XmlElem<number>;
+  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   login: XmlElem<string>;
   person_fullname: XmlElem<string>;
   person_position_name: XmlElem<string>;
@@ -11,7 +11,7 @@ interface ChatDocumentCollaborator {
 }
 
 interface ChatDocumentUser {
-  user_id: XmlElem<number>;
+  user_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   date: XmlElem<Date>;
   login: XmlElem<string>;
   fullname: XmlElem<string>;
@@ -27,10 +27,10 @@ interface ChatDocumentMessage {
   date: XmlElem<Date>;
   login: XmlElem<string>;
   sender_is_manager: XmlElem<boolean>;
-  sender_id: XmlElem<number>;
+  sender_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   is_private: XmlElem<boolean>;
   fullname: XmlElem<string>;
-  recipient_id: XmlElem<number>;
+  recipient_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   recipient_fullname: XmlElem<string>;
   recipient_login: XmlElem<string>;
   time: XmlElem<string>;
@@ -55,9 +55,9 @@ AdminAccessBase & {
   max_messages: XmlElem<number>;
   view_messages: XmlElem<number>;
   reload_timeout: XmlElem<number>;
-  document_id: XmlElem<number>;
-  course_id: XmlElem<number>;
-  conversation_id: XmlElem<number>;
+  document_id: XmlElem<number, DocumentCatalogDocumentTopElem>;
+  course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
+  conversation_id: XmlElem<number, ConversationCatalogDocumentTopElem>;
   name_source: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
@@ -65,4 +65,6 @@ AdminAccessBase & {
 
 type ChatDocument = XmlDocument & {
   TopElem: ChatDocumentTopElem;
+  chat: ChatDocumentTopElem;
+  DocDesc(): string;
 };

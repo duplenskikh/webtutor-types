@@ -1,10 +1,11 @@
-type ProfessionalAreaDocumentTopElem = XmlTopElem & { Doc: ProfessionalAreaDocument } &
+type ProfessionalAreaDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
-  parent_id: XmlElem<number>;
-  professional_area_type_id: XmlElem<number>;
+  Doc: ProfessionalAreaDocument;
+  parent_id: XmlElem<number, ProfessionalAreaCatalogDocumentTopElem>;
+  professional_area_type_id: XmlElem<number, ProfessionalAreaTypeCatalogDocumentTopElem>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   desc: XmlElem<string>;
@@ -15,4 +16,6 @@ CustomElemsBase & {
 
 type ProfessionalAreaDocument = XmlDocument & {
   TopElem: ProfessionalAreaDocumentTopElem;
+  professional_area: ProfessionalAreaDocumentTopElem;
+  DocDesc(): string;
 };

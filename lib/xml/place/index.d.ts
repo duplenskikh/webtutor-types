@@ -1,12 +1,13 @@
-type PlaceDocumentTopElem = XmlTopElem & { Doc: PlaceDocument } &
+type PlaceDocumentTopElem = XmlTopElem &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: PlaceDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  parent_id: XmlElem<number>;
-  region_id: XmlElem<number>;
-  timezone_id: XmlElem<number>;
+  parent_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
+  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
+  timezone_id: XmlElem<number, typeof common.timezones>;
   address: XmlElem<string>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
@@ -15,4 +16,6 @@ CustomElemsBase & {
 
 type PlaceDocument = XmlDocument & {
   TopElem: PlaceDocumentTopElem;
+  place: PlaceDocumentTopElem;
+  DocDesc(): string;
 };

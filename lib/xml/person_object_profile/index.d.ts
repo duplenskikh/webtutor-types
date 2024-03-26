@@ -5,8 +5,9 @@ interface PersonObjectProfileDocumentPersonObjectLinkObject {
   can_delete: XmlElem<boolean>;
   access_level: XmlElem<number>;
 }
+
 interface PersonObjectProfileDocumentPersonObjectLink {
-  object_catalog: XmlElem<string>;
+  object_catalog: XmlElem<string, typeof common.exchange_object_types>;
   all_can_create: XmlElem<boolean>;
   all_can_edit: XmlElem<boolean>;
   all_can_delete: XmlElem<boolean>;
@@ -16,7 +17,8 @@ interface PersonObjectProfileDocumentPersonObjectLink {
   objects: XmlMultiElem<PersonObjectProfileDocumentPersonObjectLinkObject>;
 }
 
-type PersonObjectProfileDocumentTopElem = XmlTopElem & { Doc: PersonObjectProfileDocument } & {
+type PersonObjectProfileDocumentTopElem = XmlTopElem & {
+  Doc: PersonObjectProfileDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
   person_object_links: XmlMultiElem<PersonObjectProfileDocumentPersonObjectLink>;
@@ -26,4 +28,6 @@ type PersonObjectProfileDocumentTopElem = XmlTopElem & { Doc: PersonObjectProfil
 
 type PersonObjectProfileDocument = XmlDocument & {
   TopElem: PersonObjectProfileDocumentTopElem;
+  person_object_profile: PersonObjectProfileDocumentTopElem;
+  DocDesc(): string;
 };

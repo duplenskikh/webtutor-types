@@ -1,4 +1,5 @@
-type SalarySurveySourceDocumentTopElem = XmlTopElem & { Doc: SalarySurveySourceDocument } & {
+type SalarySurveySourceDocumentTopElem = XmlTopElem & {
+  Doc: SalarySurveySourceDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -9,4 +10,6 @@ type SalarySurveySourceDocumentTopElem = XmlTopElem & { Doc: SalarySurveySourceD
 
 type SalarySurveySourceDocument = XmlDocument & {
   TopElem: SalarySurveySourceDocumentTopElem;
+  salary_survey_source: SalarySurveySourceDocumentTopElem;
+  DocDesc(): string;
 };

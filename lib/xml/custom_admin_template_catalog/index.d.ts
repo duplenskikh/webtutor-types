@@ -1,4 +1,4 @@
-type CustomAdminTemplateCatalogDocumentTopElem = XmlTopElem & { Doc: CustomAdminTemplateCatalogDocument } & {
+type CustomAdminTemplateCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -6,11 +6,8 @@ type CustomAdminTemplateCatalogDocumentTopElem = XmlTopElem & { Doc: CustomAdmin
   form_name: XmlElem<string>;
   changed: XmlElem<boolean>;
   is_std: XmlElem<boolean>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type CustomAdminTemplateCatalogDocument = XmlDocument & {
-  TopElem: CustomAdminTemplateCatalogDocumentTopElem;
+  OnBuild(): void;
 };

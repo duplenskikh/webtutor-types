@@ -1,4 +1,5 @@
-type LearningStorageDocumentTopElem = XmlTopElem & { Doc: LearningStorageDocument } & {
+type LearningStorageDocumentTopElem = XmlTopElem & {
+  Doc: LearningStorageDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
   std_auth: XmlElem<boolean>;
@@ -19,4 +20,6 @@ type LearningStorageDocumentTopElem = XmlTopElem & { Doc: LearningStorageDocumen
 
 type LearningStorageDocument = XmlDocument & {
   TopElem: LearningStorageDocumentTopElem;
+  learning_storage: LearningStorageDocumentTopElem;
+  DocDesc(): string;
 };

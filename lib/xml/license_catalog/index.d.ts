@@ -1,25 +1,23 @@
-type LicenseCatalogDocumentTopElem = XmlTopElem & { Doc: LicenseCatalogDocument } & {
+type LicenseCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   object_id: XmlElem<number>;
-  object_type: XmlElem<string>;
+  object_type: XmlElem<string, typeof common.exchange_object_types>;
   object_name: XmlElem<string>;
   computer_name: XmlElem<string>;
   domain_name: XmlElem<string>;
   domain_short_name: XmlElem<string>;
   user_name: XmlElem<string>;
   is_temporary: XmlElem<boolean>;
-  status_id: XmlElem<string>;
-  sale_contract_id: XmlElem<number>;
+  status_id: XmlElem<string, typeof common.status_in_knowledge_map_types>;
+  sale_contract_id: XmlElem<number, SaleContractCatalogDocumentTopElem>;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   maintaince_date: XmlElem<Date>;
   users_num: XmlElem<number>;
+  demo: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type LicenseCatalogDocument = XmlDocument & {
-  TopElem: LicenseCatalogDocumentTopElem;
+  OnBuild(): void;
 };

@@ -1,17 +1,13 @@
 type TypicalDevelopmentProgramCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  Doc: TypicalDevelopmentProgramCatalogDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  status: XmlElem<string>;
-  resource_id: XmlElem<number>;
+  status: XmlElem<string, typeof common.typical_development_program_statuss>;
+  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   desc: XmlElem<string>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type TypicalDevelopmentProgramCatalogDocument = XmlDocument & {
-  TopElem: TypicalDevelopmentProgramCatalogDocumentTopElem;
+  OnBuild(): void;
 };

@@ -1,18 +1,15 @@
-type CommitteeMemberCatalogDocumentTopElem = XmlTopElem & { Doc: CommitteeMemberCatalogDocument } &
+type CommitteeMemberCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
-  catalog: XmlElem<string>;
+  catalog: XmlElem<string, typeof common.exchange_object_types>;
   object_id: XmlElem<number>;
   object_name: XmlElem<string>;
-  boss_type_id: XmlElem<number>;
-  personnel_committee_id: XmlElem<number>;
-  status: XmlElem<string>;
-  committee_member_type: XmlElem<string>;
+  boss_type_id: XmlElem<number, BossTypeCatalogDocumentTopElem>;
+  personnel_committee_id: XmlElem<number, PersonnelCommitteeCatalogDocumentTopElem>;
+  status: XmlElem<string, typeof common.committee_member_status_types>;
+  committee_member_type: XmlElem<string, typeof common.committee_member_types>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type CommitteeMemberCatalogDocument = XmlDocument & {
-  TopElem: CommitteeMemberCatalogDocumentTopElem;
+  OnBuild(): void;
 };

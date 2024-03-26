@@ -1,4 +1,5 @@
-type SalaryPaymentTypeDocumentTopElem = XmlTopElem & { Doc: SalaryPaymentTypeDocument } & {
+type SalaryPaymentTypeDocumentTopElem = XmlTopElem & {
+  Doc: SalaryPaymentTypeDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -8,4 +9,5 @@ type SalaryPaymentTypeDocumentTopElem = XmlTopElem & { Doc: SalaryPaymentTypeDoc
 
 type SalaryPaymentTypeDocument = XmlDocument & {
   TopElem: SalaryPaymentTypeDocumentTopElem;
+  salary_payment_type: SalaryPaymentTypeDocumentTopElem;
 };

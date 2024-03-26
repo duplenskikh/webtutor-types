@@ -1,4 +1,4 @@
-type BossTypeCatalogDocumentTopElem = XmlTopElem & { Doc: BossTypeCatalogDocument } & {
+type BossTypeCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -7,10 +7,7 @@ type BossTypeCatalogDocumentTopElem = XmlTopElem & { Doc: BossTypeCatalogDocumen
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  object_type: XmlMultiElem<string>;
-  operation_id: XmlMultiElem<string>;
-};
-
-type BossTypeCatalogDocument = XmlDocument & {
-  TopElem: BossTypeCatalogDocumentTopElem;
+  object_type: XmlMultiElemObject<string, typeof common.exchange_object_types>;
+  operation_id: XmlMultiElemObject<string, OperationCatalogDocumentTopElem>;
+  OnBuild(): void;
 };

@@ -1,11 +1,13 @@
-type SelectedResumeDocumentTopElem = XmlTopElem & { Doc: SelectedResumeDocument } &
+type SelectedResumeDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: SelectedResumeDocument;
+  id: XmlElem<number>;
   code: XmlElem<string>;
-  person_id: XmlElem<number>;
-  resume_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  resume_id: XmlElem<number, ResumeCatalogDocumentTopElem>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
@@ -14,4 +16,6 @@ CustomElemsBase & {
 
 type SelectedResumeDocument = XmlDocument & {
   TopElem: SelectedResumeDocumentTopElem;
+  selected_resume: SelectedResumeDocumentTopElem;
+  DocDesc(): string;
 };

@@ -1,4 +1,4 @@
-type ScriptQueueElemCatalogDocumentTopElem = XmlTopElem & { Doc: ScriptQueueElemCatalogDocument } & {
+type ScriptQueueElemCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   name: XmlElem<string>;
   code: XmlElem<string>;
@@ -8,15 +8,12 @@ type ScriptQueueElemCatalogDocumentTopElem = XmlTopElem & { Doc: ScriptQueueElem
   delay: XmlElem<number>;
   completed: XmlElem<boolean>;
   delete_automatically: XmlElem<boolean>;
-  block: XmlElem<string>;
-  role_id: XmlMultiElem<number>;
+  block: XmlElem<string, AccessBlockCatalogDocumentTopElem>;
+  role_id: XmlMultiElemObject<number>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   create_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type ScriptQueueElemCatalogDocument = XmlDocument & {
-  TopElem: ScriptQueueElemCatalogDocumentTopElem;
+  OnBuild(): void;
 };

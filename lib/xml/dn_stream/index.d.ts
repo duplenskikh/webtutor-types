@@ -1,5 +1,5 @@
 interface DnStreamDocumentStudGroup {
-  group_id: XmlElem<number>;
+  group_id: XmlElem<number, DnStudGroupCatalogDocumentTopElem>;
 }
 
 type DnStreamDocumentTopElem = XmlTopElem &
@@ -14,4 +14,6 @@ CustomElemsBase & {
 
 type DnStreamDocument = XmlDocument & {
   TopElem: DnStreamDocumentTopElem;
+  dn_stream: DnStreamDocumentTopElem;
+  DocDesc(): string;
 };

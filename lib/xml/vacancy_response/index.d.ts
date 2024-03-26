@@ -1,25 +1,31 @@
-type VacancyResponseDocumentTopElem = XmlTopElem & { Doc: VacancyResponseDocument } &
+type VacancyResponseDocumentTopElem = XmlTopElem &
+MsPersonSdBase &
 AdminAccessBase &
 FileListBase &
 CustomElemsBase & {
+  Doc: VacancyResponseDocument;
+  id: XmlElem<number>;
   code: XmlElem<string>;
-  name?(): string;
-  vacancy_id: XmlElem<number>;
+  name: XmlElem<string>;
+  vacancy_id: XmlElem<number, VacancyCatalogDocumentTopElem>;
   vacancy_name: XmlElem<string>;
-  recruiter_person_id: XmlElem<number>;
+  recruiter_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
   comment_recruiter: XmlElem<string>;
-  response_author_person_id: XmlElem<number>;
-  resume_id: XmlElem<number>;
+  response_author_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
+  resume_id: XmlElem<number, ResumeCatalogDocumentTopElem>;
   date: XmlElem<Date>;
   date_invitation: XmlElem<Date>;
   desc: XmlElem<string>;
-  status: XmlElem<string>;
+  status: XmlElem<string, typeof common.vacancy_response_status_types>;
   employer_answer: XmlElem<string>;
-  career_reserve_id: XmlElem<number>;
+  career_reserve_id: XmlElem<number, CareerReserveCatalogDocumentTopElem>;
   doc_info: XmlElem<DocInfoBase>;
-  set_status(): unknown;
+  set_status(newStatus: string, sendNotifications: boolean): void;
 };
 
 type VacancyResponseDocument = XmlDocument & {
   TopElem: VacancyResponseDocumentTopElem;
+  vacancy_response: VacancyResponseDocumentTopElem;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

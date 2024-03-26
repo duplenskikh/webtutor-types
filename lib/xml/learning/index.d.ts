@@ -1,16 +1,15 @@
-type LearningDocumentPart = LearningPartBase;
-
 interface LearningDocumentEvent {
-  event_id: XmlElem<number>;
+  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
   score: XmlElem<number>;
 }
 
-type LearningDocumentTopElem = XmlTopElem & { Doc: LearningDocument } &
+type LearningDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 CustomElemsBase &
 AdminAccessBase & {
+  Doc: LearningDocument;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
   course_name: XmlElem<string>;
   course_code: XmlElem<string>;
@@ -21,7 +20,7 @@ AdminAccessBase & {
   event_start_date: XmlElem<Date>;
   group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
   education_plan_id: XmlElem<number, EducationPlanCatalogDocumentTopElem>;
-  parts: XmlMultiElem<LearningDocumentPart>;
+  parts: XmlMultiElem<LearningPartBase>;
   no_encoding_core_lesson: XmlElem<boolean>;
   time: XmlElem<number>;
   events: XmlMultiElem<LearningDocumentEvent>;
@@ -44,4 +43,6 @@ AdminAccessBase & {
 
 type LearningDocument = XmlDocument & {
   TopElem: LearningDocumentTopElem;
+  learning: LearningDocumentTopElem;
+  DocDesc(): string;
 };

@@ -1,13 +1,14 @@
 interface LevelDocumentCurrencyType {
-  currency_type_id: XmlElem<string>;
+  currency_type_id: XmlElem<string, typeof lists.currency_types>;
   min_value: XmlElem<number>;
   max_value: XmlElem<number>;
 }
 
-type LevelDocumentTopElem = XmlTopElem & { Doc: LevelDocument } &
+type LevelDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase & {
-  prev_level_id: XmlElem<number>;
-  currency_type_id: XmlElem<string>;
+  Doc: LevelDocument;
+  prev_level_id: XmlElem<number, LevelCatalogDocumentTopElem>;
+  currency_type_id: XmlElem<string, typeof lists.currency_types>;
   min_value: XmlElem<number>;
   max_value: XmlElem<number>;
   currency_types: XmlMultiElem<LevelDocumentCurrencyType>;
@@ -18,4 +19,7 @@ ObjectCodeNameBase & {
 
 type LevelDocument = XmlDocument & {
   TopElem: LevelDocumentTopElem;
+  level: LevelDocumentTopElem;
+  OnInit(): void;
+  DocDesc(): string;
 };

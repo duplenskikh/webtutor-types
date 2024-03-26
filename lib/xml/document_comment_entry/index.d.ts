@@ -5,13 +5,13 @@ CustomElemsBase & {
   name: XmlElem<string>;
   create_date: XmlElem<Date>;
   deleted: XmlElem<boolean>;
-  how2show: XmlElem<string>;
-  user_id: XmlElem<number>;
+  how2show: XmlElem<string, typeof common.forum_person_info_types>;
+  user_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
-  portal_doc_id: XmlElem<number>;
-  parent_document_entry_id: XmlElem<number>;
+  portal_doc_id: XmlElem<number, DocumentCatalogDocumentTopElem>;
+  parent_document_entry_id: XmlElem<number, DocumentCommentEntryCatalogDocumentTopElem>;
   text_area: XmlElem<string>;
-  author_info(collaboratorDocumentTopElem: CollaboratorDocumentTopElem): string;
+  author_info(personTopElem: unknown): never | string | XmlElem<string>;
   last_create_date: XmlElem<Date>;
   child_num: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
@@ -19,4 +19,7 @@ CustomElemsBase & {
 
 type DocumentCommentEntryDocument = XmlDocument & {
   TopElem: DocumentCommentEntryDocumentTopElem;
+  document_comment_entry: DocumentCommentEntryDocumentTopElem;
+  OnLocalInit(): void;
+  DocDesc(): string;
 };

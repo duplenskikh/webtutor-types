@@ -1,15 +1,16 @@
 interface LibrarySectionDocumentAdministrator extends PersonFillingBase {
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
 }
 
-type LibrarySectionDocumentTopElem = XmlTopElem & { Doc: LibrarySectionDocument } &
+type LibrarySectionDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase &
 CustomElemsBase & {
-  parent_object_id: XmlElem<number>;
+  Doc: LibrarySectionDocument;
+  parent_object_id: XmlElem<number, LibrarySectionCatalogDocumentTopElem>;
   position: XmlElem<number>;
   link: XmlElem<string>;
-  web_view: XmlElem<string>;
+  web_view: XmlElem<string, typeof common.library_section_web_templates>;
   administrators: XmlMultiElem<LibrarySectionDocumentAdministrator>;
   external_id: XmlElem<string>;
   comment: XmlElem<string>;
@@ -20,4 +21,6 @@ CustomElemsBase & {
 
 type LibrarySectionDocument = XmlDocument & {
   TopElem: LibrarySectionDocumentTopElem;
+  library_section: LibrarySectionDocumentTopElem;
+  DocDesc(): string;
 };

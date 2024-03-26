@@ -1,10 +1,9 @@
-type RemoteSecurityProfileCatalogDocumentTopElem = XmlTopElem & { Doc: RemoteSecurityProfileCatalogDocument } & {
+type RemoteSecurityProfileCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   modification_date: XmlElem<Date>;
-};
-
-type RemoteSecurityProfileCatalogDocument = XmlDocument & {
-  TopElem: RemoteSecurityProfileCatalogDocumentTopElem;
+  is_std: XmlElem<boolean>;
+  changed: XmlElem<boolean>;
+  OnBuild(): void;
 };

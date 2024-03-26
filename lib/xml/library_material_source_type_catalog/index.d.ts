@@ -1,18 +1,14 @@
 type LibraryMaterialSourceTypeCatalogDocumentTopElem = XmlTopElem & {
-  Doc: LibraryMaterialSourceTypeCatalogDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  type: XmlElem<string>;
+  type: XmlElem<string, typeof common.resource_types>;
   is_active: XmlElem<boolean>;
   filenamemask: XmlElem<string>;
-  library_player_id: XmlElem<number>;
+  library_player_id: XmlElem<number, LibraryPlayerCatalogDocumentTopElem>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type LibraryMaterialSourceTypeCatalogDocument = XmlDocument & {
-  TopElem: LibraryMaterialSourceTypeCatalogDocumentTopElem;
+  OnBuild(): void;
 };

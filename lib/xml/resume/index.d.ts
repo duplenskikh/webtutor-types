@@ -1,9 +1,9 @@
 interface ResumeDocumentSkill {
   id: XmlElem<string>;
-  skill_id: XmlElem<number>;
-  skill_parent_id: XmlElem<number>;
+  skill_id: XmlElem<number, SkillCatalogDocumentTopElem>;
+  skill_parent_id: XmlElem<number, SkillCatalogDocumentTopElem>;
   skill_name: XmlElem<string>;
-  skill_id_with_levels: XmlElem<number>;
+  skill_id_with_levels: XmlElem<number, SkillCatalogDocumentTopElem>;
   level_id: XmlElem<string>;
   level_name: XmlElem<string>;
 }
@@ -13,9 +13,9 @@ interface ResumeDocumentWorkExperience {
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   org_name: XmlElem<string>;
-  profession_area_id: XmlElem<string>;
-  profession_id: XmlElem<number>;
-  region_id: XmlElem<number>;
+  profession_area_id: XmlElem<string, typeof lists.professional_areas>;
+  profession_id: XmlElem<number, ProfessionalAreaCatalogDocumentTopElem>;
+  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
   org_phone: XmlElem<string>;
   org_fax: XmlElem<string>;
   org_email: XmlElem<string>;
@@ -29,14 +29,14 @@ interface ResumeDocumentWorkExperience {
 interface ResumeDocumentEducation {
   id: XmlElem<string>;
   name: XmlElem<string>;
-  type: XmlElem<string>;
-  education_type_id: XmlElem<string>;
-  form: XmlElem<number>;
-  mode: XmlElem<number>;
+  type: XmlElem<string, typeof common.expended_educ_types>;
+  education_type_id: XmlElem<number, EducationTypeCatalogDocumentTopElem>;
+  form: XmlElem<number, EducationFormCatalogDocumentTopElem>;
+  mode: XmlElem<number, EducationModeCatalogDocumentTopElem>;
   date: XmlElem<number>;
-  professional_area_type_id: XmlElem<number>;
-  professional_area_id: XmlElem<number>;
-  parent_id: XmlElem<number>;
+  professional_area_type_id: XmlElem<number, ProfessionalAreaTypeCatalogDocumentTopElem>;
+  professional_area_id: XmlElem<number, ProfessionalAreaCatalogDocumentTopElem>;
+  parent_id: XmlElem<number, ProfessionalAreaCatalogDocumentTopElem>;
   specialisation: XmlElem<string>;
   result: XmlElem<string>;
   site: XmlElem<string>;
@@ -65,19 +65,22 @@ interface ResumeDocumentPublication {
 
 interface ResumeDocumentLng {
   id: XmlElem<string>;
-  lng_id: XmlElem<string>;
-  level: XmlElem<number>;
+  lng_id: XmlElem<string, typeof common.languages>;
+  level: XmlElem<number, typeof common.language_levels>;
 }
 
-type ResumeDocumentTopElem = XmlTopElem & { Doc: ResumeDocument } &
+type ResumeDocumentTopElem = XmlTopElem &
+MsPersonSdBase &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: ResumeDocument;
+  id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  resource_id: XmlElem<number>;
+  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   is_candidate: XmlElem<boolean>;
-  creator_person_id: XmlElem<number>;
+  creator_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
   forbid_portal_delete: XmlElem<boolean>;
   filling_type: XmlElem<string>;
   sex: XmlElem<string>;
@@ -94,24 +97,24 @@ CustomElemsBase & {
   mobile_phone: XmlElem<string>;
   min_wage: XmlElem<number>;
   max_wage: XmlElem<number>;
-  currency_type_id: XmlElem<string>;
+  currency_type_id: XmlElem<string, typeof lists.currency_types>;
   email: XmlElem<string>;
   inet_uid: XmlElem<string>;
-  profession_area_id: XmlElem<string>;
-  profession_id: XmlElem<number>;
-  professional_area_type_id: XmlElem<string>;
-  region_id: XmlElem<number>;
-  employment_type_id: XmlElem<string>;
-  schedule_work_id: XmlElem<string>;
-  schedule_id: XmlElem<number>;
-  vacancy_source_id: XmlElem<number>;
+  profession_area_id: XmlElem<string, typeof lists.professional_areas>;
+  profession_id: XmlElem<number, ProfessionalAreaCatalogDocumentTopElem>;
+  professional_area_type_id: XmlElem<string, ProfessionalAreaTypeCatalogDocumentTopElem>;
+  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
+  employment_type_id: XmlElem<string, typeof common.employment_types>;
+  schedule_work_id: XmlElem<string, typeof common.employment_kinds>;
+  schedule_id: XmlElem<number, WorkScheduleCatalogDocumentTopElem>;
+  vacancy_source_id: XmlElem<number, VacancySourceCatalogDocumentTopElem>;
   exp_years: XmlElem<number>;
-  willingness_travel_type_id: XmlElem<string>;
+  willingness_travel_type_id: XmlElem<string, typeof common.willingness_travel_types>;
   is_willing_relocate: XmlElem<boolean>;
   relocate_name: XmlElem<string>;
   children_num: XmlElem<number>;
-  educ_type_id: XmlElem<string>;
-  education_type_id: XmlElem<number>;
+  educ_type_id: XmlElem<string, typeof common.educ_types>;
+  education_type_id: XmlElem<number, EducationTypeCatalogDocumentTopElem>;
   skills: XmlMultiElem<ResumeDocumentSkill>;
   is_archive: XmlElem<boolean>;
   work_experiences: XmlMultiElem<ResumeDocumentWorkExperience>;
@@ -119,7 +122,7 @@ CustomElemsBase & {
   projects: XmlMultiElem<ResumeDocumentProject>;
   publications: XmlMultiElem<ResumeDocumentPublication>;
   citizenship: XmlElem<string>;
-  main_lng: XmlElem<string>;
+  main_lng: XmlElem<string, typeof common.languages>;
   lngs: XmlMultiElem<ResumeDocumentLng>;
   dominant_skills: XmlElem<string>;
   access: XmlElem<AccessDocBase>;
@@ -131,4 +134,8 @@ CustomElemsBase & {
 
 type ResumeDocument = XmlDocument & {
   TopElem: ResumeDocumentTopElem;
+  resume: ResumeDocumentTopElem;
+  OnLocalInit(): void;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

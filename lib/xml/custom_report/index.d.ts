@@ -9,20 +9,13 @@ interface CustomReportDocumentSubscribe {
   format: XmlElem<string>;
 }
 
-interface IBuildReportV2Result {
-  error: number;
-  error_text: string;
-  i: number;
-  count: number;
-}
-
 type CustomReportDocumentTopElem = XmlTopElem &
 CustomReportBase & {
   Doc: CustomReportDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  block: XmlElem<string>;
+  block: XmlElem<string, AccessBlockCatalogDocumentTopElem>;
   connect_2_object: XmlElem<string>;
   mode_selector: XmlElem<number>;
   source_binding_object: XmlElem<string>;
@@ -30,18 +23,21 @@ CustomReportBase & {
   subscribe: XmlElem<CustomReportDocumentSubscribe>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  disp_block: XmlElem<MSDispBlockBase>;
+  disp_block: XmlElem<MsDispBlockBase>;
   access: XmlElem<AccessDocBase>;
   binding_selection: XmlElem<number>;
-  initiator_person_id: XmlElem<number>;
+  initiator_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   perfomance_cutoff: XmlElem<number>;
-  build_report_v2(taskId?: string, meta?: boolean): IBuildReportV2Result;
-  buildCustomReportQuery(topElem: XmlTopElem, taskId: string): unknown;
-  UI_CoreModeChangeHandler(value: number): void;
-  UI_CoreObjectChangeHandler(fieldSource: XmlElem<unknown>, value: unknown): boolean;
-  SetModeSelector(mode: number): void;
+  build_report_v2(taskId: string, meta: boolean): unknown;
+  buildCustomReportQuery(tOPELEM: unknown, taskId: string): unknown;
+  UI_CoreModeChangeHandler(newValue: unknown): unknown;
+  UI_CoreObjectChangeHandler(fieldSource: unknown, newValue: unknown): unknown;
+  SetModeSelector(imode: unknown): unknown;
 };
 
 type CustomReportDocument = XmlDocument & {
   TopElem: CustomReportDocumentTopElem;
+  custom_report: CustomReportDocumentTopElem;
+  OnInit(): void;
+  DocDesc(): string;
 };

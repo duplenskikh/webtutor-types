@@ -1,4 +1,5 @@
-type WorkingConditionTypeDocumentTopElem = XmlTopElem & { Doc: WorkingConditionTypeDocument } & {
+type WorkingConditionTypeDocumentTopElem = XmlTopElem & {
+  Doc: WorkingConditionTypeDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -8,4 +9,5 @@ type WorkingConditionTypeDocumentTopElem = XmlTopElem & { Doc: WorkingConditionT
 
 type WorkingConditionTypeDocument = XmlDocument & {
   TopElem: WorkingConditionTypeDocumentTopElem;
+  working_condition_type: WorkingConditionTypeDocumentTopElem;
 };

@@ -1,4 +1,5 @@
-type PositionLevelDocumentTopElem = XmlTopElem & { Doc: PositionLevelDocument } & {
+type PositionLevelDocumentTopElem = XmlTopElem & {
+  Doc: PositionLevelDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -9,4 +10,6 @@ type PositionLevelDocumentTopElem = XmlTopElem & { Doc: PositionLevelDocument } 
 
 type PositionLevelDocument = XmlDocument & {
   TopElem: PositionLevelDocumentTopElem;
+  position_level: PositionLevelDocumentTopElem;
+  DocDesc(): string;
 };

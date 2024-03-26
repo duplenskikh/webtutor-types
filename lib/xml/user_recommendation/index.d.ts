@@ -1,16 +1,17 @@
 interface UserRecommendationDocumentObject extends ObjectTypeBase {
   id: XmlElem<string>;
   comment: XmlElem<string>;
-  recommender_algorithm_id: XmlElem<number>;
+  recommender_algorithm_id: XmlElem<number, RecommenderAlgorithmCatalogDocumentTopElem>;
 }
 
 interface UserRecommendationDocumentCalculateDate {
   date: XmlElem<Date>;
 }
 
-type UserRecommendationDocumentTopElem = XmlTopElem & { Doc: UserRecommendationDocument } &
+type UserRecommendationDocumentTopElem = XmlTopElem &
 ObjectTypeBase &
 CustomElemsBase & {
+  Doc: UserRecommendationDocument;
   id: XmlElem<number>;
   objects: XmlMultiElem<UserRecommendationDocumentObject>;
   calculate_dates: XmlMultiElem<UserRecommendationDocumentCalculateDate>;
@@ -22,4 +23,5 @@ CustomElemsBase & {
 
 type UserRecommendationDocument = XmlDocument & {
   TopElem: UserRecommendationDocumentTopElem;
+  user_recommendation: UserRecommendationDocumentTopElem;
 };

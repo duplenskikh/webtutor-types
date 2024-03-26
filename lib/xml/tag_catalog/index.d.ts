@@ -1,18 +1,15 @@
-type TagCatalogDocumentTopElem = XmlTopElem & { Doc: TagCatalogDocument } &
+type TagCatalogDocumentTopElem = XmlTopElem &
 AccessDocBase &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  resource_id: XmlElem<number>;
-  knowledge_part_id: XmlElem<number>;
+  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
+  knowledge_part_id: XmlElem<number, KnowledgePartCatalogDocumentTopElem>;
   require_acknowledgement: XmlElem<boolean>;
   experts: XmlElem<string>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type TagCatalogDocument = XmlDocument & {
-  TopElem: TagCatalogDocumentTopElem;
+  OnBuild(): void;
 };

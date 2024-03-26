@@ -1,14 +1,14 @@
 interface ClCourseDocumentModule {
-  id: XmlElem<number>;
+  id: XmlElem<number, ClModuleCatalogDocumentTopElem>;
   path_id: XmlElem<string>;
   folder_id: XmlElem<number>;
 }
 
 interface ClCourseDocumentWindow {
-  module_id: XmlElem<number>;
+  module_id: XmlElem<number, ClModuleCatalogDocumentTopElem>;
   zoom: XmlElem<number>;
   active: XmlElem<boolean>;
-  slide_id: XmlElem<number>;
+  slide_id: XmlElem<number, ClSlideCatalogDocumentTopElem>;
 }
 
 interface ClCourseDocumentFolder {
@@ -18,23 +18,18 @@ interface ClCourseDocumentFolder {
 }
 
 interface ClCourseDocumentAuthorType {
-  type_id: XmlElem<number>;
+  type_id: XmlElem<number, typeof common.cl_author_types>;
 }
 
 interface ClCourseDocumentAuthor extends PersonFillingBase {
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   typecode(): number;
   types: XmlMultiElem<ClCourseDocumentAuthorType>;
-  types_display(): string;
+  types_display(): boolean;
 }
 
 interface ClCourseDocumentRepositorium {
-  repositorium_id: XmlElem<number>;
-}
-
-interface ClCourseDocumentAuxConst {
-  code: XmlElem<string>;
-  cl_const_id: XmlElem<number>;
+  repositorium_id: XmlElem<number, RepositoriumCatalogDocumentTopElem>;
 }
 
 interface ClCourseDocumentPlanTablePlanRow {
@@ -44,14 +39,19 @@ interface ClCourseDocumentPlanTablePlanRow {
   fact_date: XmlElem<Date>;
   completion: XmlElem<number>;
   name: XmlElem<string>;
-  responsible_id: XmlElem<number>;
+  responsible_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   responsible_fullname: XmlElem<string>;
   description: XmlElem<string>;
   req_plan_row_id: XmlElem<string>;
 }
 
 interface ClCourseDocumentPlanTable {
-  plan_row: XmlMultiElem<ClCourseDocumentPlanTablePlanRow>;
+  plan_row: XmlElem<ClCourseDocumentPlanTablePlanRow>;
+}
+
+interface ClCourseDocumentAuxConst {
+  code: XmlElem<string>;
+  cl_const_id: XmlElem<number, ClConstCatalogDocumentTopElem>;
 }
 
 type ClCourseDocumentTopElem = XmlTopElem &
@@ -62,7 +62,7 @@ CustomElemsBase & {
   Doc: ClCourseDocument;
   start_date: XmlElem<Date>;
   end_date: XmlElem<Date>;
-  state_id: XmlElem<number>;
+  state_id: XmlElem<number, typeof common.cl_states>;
   platform: XmlElem<string>;
   modules: XmlMultiElem<ClCourseDocumentModule>;
   windows: XmlMultiElem<ClCourseDocumentWindow>;
@@ -73,14 +73,17 @@ CustomElemsBase & {
   aux_consts: XmlMultiElem<ClCourseDocumentAuxConst>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
-  forum_id: XmlElem<number>;
-  role_id: XmlMultiElem<number>;
+  forum_id: XmlElem<number, ForumCatalogDocumentTopElem>;
+  role_id: XmlMultiElemObject<number>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-  module_href_get(): void;
-  export_2_scorm(): void;
+  module_href_get(): false | void;
+  export_2_scorm(): false | void;
+  fix_new_authors(): void;
 };
 
 type ClCourseDocument = XmlDocument & {
   TopElem: ClCourseDocumentTopElem;
+  cl_course: ClCourseDocumentTopElem;
+  DocDesc(): string;
 };

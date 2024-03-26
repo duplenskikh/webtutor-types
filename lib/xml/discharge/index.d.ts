@@ -1,3 +1,19 @@
+interface ExportOdbcSourceBase {
+  db_path: XmlElem<string>;
+  db_server: XmlElem<string>;
+  db_login: XmlElem<string>;
+  db_password: XmlElem<string>;
+  source_name: XmlElem<string>;
+  source_type: XmlElem<string>;
+  form: XmlElem<string>;
+  delim: XmlElem<string>;
+  encoding: XmlElem<string>;
+  lotus_id_path: XmlElem<string>;
+  lotus_undefined_name: XmlElem<string>;
+  use_unibridge: XmlElem<boolean>;
+  db_type: XmlElem<string, typeof common.discharge_db_types>;
+}
+
 interface DischargeDocumentTableField {
   object_field: XmlElem<string>;
   table_field: XmlElem<string>;
@@ -21,7 +37,7 @@ interface DischargeDocumentTable extends ExportOdbcSourceBase {
   id: XmlElem<string>;
   name: XmlElem<string>;
   is_active: XmlElem<boolean>;
-  object_name: XmlElem<string>;
+  object_name: XmlElem<string, typeof common.exchange_object_types>;
   table_name: XmlElem<string>;
   condition_text: XmlElem<string>;
   select_query: XmlElem<string>;
@@ -35,26 +51,12 @@ interface DischargeDocumentTable extends ExportOdbcSourceBase {
   binds: XmlMultiElem<DischargeDocumentTableBind>;
 }
 
-interface ExportOdbcSourceBase {
-  db_path: XmlElem<string>;
-  db_server: XmlElem<string>;
-  db_login: XmlElem<string>;
-  db_password: XmlElem<string>;
-  source_name: XmlElem<string>;
-  source_type: XmlElem<string>;
-  form: XmlElem<string>;
-  delim: XmlElem<string>;
-  encoding: XmlElem<string>;
-  lotus_id_path: XmlElem<string>;
-  lotus_undefined_name: XmlElem<string>;
-}
-
 type DischargeDocumentTopElem = XmlTopElem &
 ExportOdbcSourceBase & {
   Doc: DischargeDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  type: XmlElem<string>;
+  type: XmlElem<string, typeof common.discharge_types>;
   use_common_db: XmlElem<boolean>;
   use_common_form: XmlElem<boolean>;
   tables: XmlMultiElem<DischargeDocumentTable>;
@@ -64,4 +66,6 @@ ExportOdbcSourceBase & {
 
 type DischargeDocument = XmlDocument & {
   TopElem: DischargeDocumentTopElem;
+  discharge: DischargeDocumentTopElem;
+  DocDesc(): string;
 };

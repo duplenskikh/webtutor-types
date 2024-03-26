@@ -1,8 +1,9 @@
-type ExclusionReasonDocumentTopElem = XmlTopElem & { Doc: ExclusionReasonDocument } &
+type ExclusionReasonDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 FileListBase &
 CustomElemsBase &
 AdminAccessBase & {
+  Doc: ExclusionReasonDocument;
   access: XmlElem<AccessDocBase>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
@@ -11,4 +12,6 @@ AdminAccessBase & {
 
 type ExclusionReasonDocument = XmlDocument & {
   TopElem: ExclusionReasonDocumentTopElem;
+  exclusion_reason: ExclusionReasonDocumentTopElem;
+  DocDesc(): string;
 };

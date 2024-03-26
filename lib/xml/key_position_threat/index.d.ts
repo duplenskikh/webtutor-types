@@ -1,7 +1,8 @@
-type KeyPositionThreatDocumentTopElem = XmlTopElem & { Doc: KeyPositionThreatDocument } &
+type KeyPositionThreatDocumentTopElem = XmlTopElem &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: KeyPositionThreatDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
   color: XmlElem<string>;
@@ -13,4 +14,6 @@ CustomElemsBase & {
 
 type KeyPositionThreatDocument = XmlDocument & {
   TopElem: KeyPositionThreatDocumentTopElem;
+  key_position_threat: KeyPositionThreatDocumentTopElem;
+  DocDesc(): string;
 };

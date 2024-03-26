@@ -1,9 +1,8 @@
-type ClLocalizationCatalogDocumentTopElem = XmlTopElem & { Doc: ClLocalizationCatalogDocument } & {
+type ClLocalizationCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-};
-
-type ClLocalizationCatalogDocument = XmlDocument & {
-  TopElem: ClLocalizationCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): void;
 };

@@ -10,8 +10,10 @@ interface Env extends Object {
   /**
    * Объект пользователя.
    */
-  curUser?: CollaboratorDocumentTopElem;
+  curUser?: CurUser;
 }
 
+type CurUser = CollaboratorDocumentTopElem;
+
 declare const curUserID: number;
-declare const curUser: CollaboratorDocumentTopElem;
+declare const curUser: CurUser;

@@ -1,11 +1,8 @@
-type PresentationCatalogDocumentTopElem = XmlTopElem & { Doc: PresentationCatalogDocument } &
+type PresentationCatalogDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase & {
-  file_id: XmlElem<number>;
-  event_id: XmlElem<number>;
-  vclass_setting_id: XmlElem<number>;
+  file_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
+  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
+  vclass_setting_id: XmlElem<number, VclassSettingCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
-};
-
-type PresentationCatalogDocument = XmlDocument & {
-  TopElem: PresentationCatalogDocumentTopElem;
+  OnBuild(): void;
 };

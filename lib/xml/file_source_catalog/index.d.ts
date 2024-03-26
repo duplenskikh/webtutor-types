@@ -1,4 +1,4 @@
-type FileSourceCatalogDocumentTopElem = XmlTopElem & { Doc: FileSourceCatalogDocument } &
+type FileSourceCatalogDocumentTopElem = XmlTopElem &
 AccessDocBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -10,8 +10,5 @@ AccessDocBase & {
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type FileSourceCatalogDocument = XmlDocument & {
-  TopElem: FileSourceCatalogDocumentTopElem;
+  OnBuild(): void;
 };

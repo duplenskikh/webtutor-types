@@ -1,4 +1,4 @@
-type KnowledgePartLevelCatalogDocumentTopElem = XmlTopElem & { Doc: KnowledgePartLevelCatalogDocument } & {
+type KnowledgePartLevelCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -6,8 +6,5 @@ type KnowledgePartLevelCatalogDocumentTopElem = XmlTopElem & { Doc: KnowledgePar
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type KnowledgePartLevelCatalogDocument = XmlDocument & {
-  TopElem: KnowledgePartLevelCatalogDocumentTopElem;
+  OnBuild(): void;
 };

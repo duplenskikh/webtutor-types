@@ -1,5 +1,6 @@
-type PolicyTypeDocumentTopElem = XmlTopElem & { Doc: PolicyTypeDocument } &
+type PolicyTypeDocumentTopElem = XmlTopElem &
 FileListBase & {
+  Doc: PolicyTypeDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -10,4 +11,5 @@ FileListBase & {
 
 type PolicyTypeDocument = XmlDocument & {
   TopElem: PolicyTypeDocumentTopElem;
+  policy_type: PolicyTypeDocumentTopElem;
 };

@@ -1,9 +1,10 @@
-type RecommenderSelectCollaboratorDocumentTopElem = XmlTopElem & { Doc: RecommenderSelectCollaboratorDocument } &
+type RecommenderSelectCollaboratorDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 CustomElemsBase & {
+  Doc: RecommenderSelectCollaboratorDocument;
   id: XmlElem<number>;
-  person_id: XmlElem<number>;
-  recommender_algorithm_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  recommender_algorithm_id: XmlElem<number, RecommenderAlgorithmCatalogDocumentTopElem>;
   base_object: XmlElem<ObjectTypeBase>;
   selected_object: XmlElem<ObjectTypeBase>;
   created_object: XmlElem<ObjectTypeBase>;
@@ -16,4 +17,5 @@ CustomElemsBase & {
 
 type RecommenderSelectCollaboratorDocument = XmlDocument & {
   TopElem: RecommenderSelectCollaboratorDocumentTopElem;
+  recommender_select_collaborator: RecommenderSelectCollaboratorDocumentTopElem;
 };

@@ -1,11 +1,14 @@
-type ResourceTypeDocumentTopElem = XmlTopElem & { Doc: ResourceTypeDocument } &
+type ResourceTypeDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase & {
+  Doc: ResourceTypeDocument;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   access: XmlElem<AccessDocBase>;
 };
 
 type ResourceTypeDocument = XmlDocument & {
   TopElem: ResourceTypeDocumentTopElem;
+  resource_type: ResourceTypeDocumentTopElem;
+  DocDesc(): string;
 };

@@ -1,9 +1,8 @@
-type SalaryPaymentTypeCatalogDocumentTopElem = XmlTopElem & { Doc: SalaryPaymentTypeCatalogDocument } & {
+type SalaryPaymentTypeCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-};
-
-type SalaryPaymentTypeCatalogDocument = XmlDocument & {
-  TopElem: SalaryPaymentTypeCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): void;
 };

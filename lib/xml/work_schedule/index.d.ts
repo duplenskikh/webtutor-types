@@ -1,8 +1,9 @@
-type WorkScheduleDocumentTopElem = XmlTopElem & { Doc: WorkScheduleDocument } &
+type WorkScheduleDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: WorkScheduleDocument;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
@@ -11,4 +12,6 @@ CustomElemsBase & {
 
 type WorkScheduleDocument = XmlDocument & {
   TopElem: WorkScheduleDocumentTopElem;
+  work_schedule: WorkScheduleDocumentTopElem;
+  DocDesc(): string;
 };

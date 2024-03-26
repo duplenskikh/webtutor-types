@@ -1,9 +1,8 @@
-type WorkingConditionTypeCatalogDocumentTopElem = XmlTopElem & { Doc: WorkingConditionTypeCatalogDocument } & {
+type WorkingConditionTypeCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-};
-
-type WorkingConditionTypeCatalogDocument = XmlDocument & {
-  TopElem: WorkingConditionTypeCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): void;
 };

@@ -1,11 +1,8 @@
-type PositionLevelCatalogDocumentTopElem = XmlTopElem & { Doc: PositionLevelCatalogDocument } & {
+type PositionLevelCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type PositionLevelCatalogDocument = XmlDocument & {
-  TopElem: PositionLevelCatalogDocumentTopElem;
+  OnBuild(): void;
 };

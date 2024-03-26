@@ -1,6 +1,6 @@
 interface ProjectParticipantDocumentWorkflowMatching {
   id: XmlElem<string>;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
 }
 
 interface ProjectParticipantDocumentCustomField {
@@ -9,27 +9,28 @@ interface ProjectParticipantDocumentCustomField {
 }
 
 interface ProjectParticipantDocumentCurrentKnowledgePart {
-  knowledge_part_id: XmlElem<number>;
+  knowledge_part_id: XmlElem<number, KnowledgePartCatalogDocumentTopElem>;
   current_level_id: XmlElem<string>;
   comment: XmlElem<string>;
 }
 
-type ProjectParticipantDocumentTopElem = XmlTopElem & { Doc: ProjectParticipantDocument } &
+type ProjectParticipantDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 FileListBase &
 WorkflowDataBase &
 AdminAccessBase &
 CustomElemsBase &
 KnowledgePartsBase & {
+  Doc: ProjectParticipantDocument;
   code: XmlElem<string>;
-  person_id: XmlElem<number>;
-  catalog: XmlElem<string>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  catalog: XmlElem<string, typeof common.exchange_object_types>;
   object_id: XmlElem<number>;
   object_name: XmlElem<string>;
-  boss_type_id: XmlElem<number>;
-  project_id: XmlElem<number>;
-  participant_roles_id: XmlMultiElem<number>;
-  status_id: XmlElem<string>;
+  boss_type_id: XmlElem<number, BossTypeCatalogDocumentTopElem>;
+  project_id: XmlElem<number, ProjectCatalogDocumentTopElem>;
+  participant_roles_id: XmlMultiElemObject<number, ProjectParticipantRoleCatalogDocumentTopElem>;
+  status_id: XmlElem<string, typeof common.agreement_status_types>;
   workflow_matchings: XmlMultiElem<ProjectParticipantDocumentWorkflowMatching>;
   workflow_matching_type: XmlElem<string>;
   custom_fields: XmlMultiElem<ProjectParticipantDocumentCustomField>;
@@ -47,4 +48,7 @@ KnowledgePartsBase & {
 
 type ProjectParticipantDocument = XmlDocument & {
   TopElem: ProjectParticipantDocumentTopElem;
+  project_participant: ProjectParticipantDocumentTopElem;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

@@ -1,8 +1,9 @@
-type UiDataDocumentTopElem = XmlTopElem & { Doc: UiDataDocument } &
+type UiDataDocumentTopElem = XmlTopElem &
 ObjectTypeBase & {
+  Doc: UiDataDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
-  name(): unknown;
+  name(): string;
   create_date: XmlElem<Date>;
   data: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
@@ -10,4 +11,6 @@ ObjectTypeBase & {
 
 type UiDataDocument = XmlDocument & {
   TopElem: UiDataDocumentTopElem;
+  ui_data: UiDataDocumentTopElem;
+  DocDesc(): string;
 };

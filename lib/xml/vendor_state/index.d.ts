@@ -1,15 +1,16 @@
 interface VendorStateDocumentCertificateType {
-  certificate_type_id: XmlElem<number>;
+  certificate_type_id: XmlElem<number, CertificateTypeCatalogDocumentTopElem>;
   required_quantity: XmlElem<number>;
 }
 
-type VendorStateDocumentTopElem = XmlTopElem & { Doc: VendorStateDocument } &
+type VendorStateDocumentTopElem = XmlTopElem &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: VendorStateDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  education_org_id: XmlElem<number>;
+  education_org_id: XmlElem<number, EducationOrgCatalogDocumentTopElem>;
   certificate_types: XmlMultiElem<VendorStateDocumentCertificateType>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
@@ -18,4 +19,6 @@ CustomElemsBase & {
 
 type VendorStateDocument = XmlDocument & {
   TopElem: VendorStateDocumentTopElem;
+  vendor_state: VendorStateDocumentTopElem;
+  DocDesc(): string;
 };

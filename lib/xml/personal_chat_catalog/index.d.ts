@@ -1,0 +1,21 @@
+type PersonalChatCatalogDocumentTopElem = XmlTopElem & {
+  id: XmlElem<number>;
+  name: XmlElem<string>;
+  chat_id: XmlElem<number, ChatCatalogDocumentTopElem>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  person_fullname: XmlElem<string>;
+  confirmed: XmlElem<boolean>;
+  prohibited: XmlElem<boolean>;
+  partner_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  partner_fullname: XmlElem<string>;
+  partner_confirmed: XmlElem<boolean>;
+  partner_prohibited: XmlElem<boolean>;
+  last_message_date: XmlElem<Date>;
+  last_view_date: XmlElem<Date>;
+  last_message_text: XmlElem<string>;
+  last_message_sender_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  modification_date: XmlElem<Date>;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
+};

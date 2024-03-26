@@ -9,4 +9,6 @@ AdminAccessBase & {
 
 type CandidateSourceDocument = XmlDocument & {
   TopElem: CandidateSourceDocumentTopElem;
+  candidate_source: CandidateSourceDocumentTopElem;
+  DocDesc(): string;
 };

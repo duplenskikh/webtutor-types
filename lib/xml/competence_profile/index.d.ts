@@ -1,5 +1,5 @@
 interface RoleWeightsBaseRoleWeight {
-  role_code: XmlElem<string>;
+  role_code: XmlElem<string, AccessRoleCatalogDocumentTopElem>;
   weight: XmlElem<number>;
 }
 
@@ -8,7 +8,7 @@ interface RoleWeightsBase {
 }
 
 interface CompetenceProfileDocumentRole {
-  role_code: XmlElem<string>;
+  role_code: XmlElem<string, AccessRoleCatalogDocumentTopElem>;
 }
 
 interface CompetenceProfileDocumentCompetenceEducationMethod {
@@ -45,23 +45,23 @@ interface CompetenceProfileDocumentCompetence extends RoleWeightsBase {
   plan_value: XmlElem<number>;
   weight: XmlElem<number>;
   comment: XmlElem<string>;
-  type: XmlElem<string>;
+  type: XmlElem<string, typeof lists.competence_types>;
   education_methods: XmlMultiElem<CompetenceProfileDocumentCompetenceEducationMethod>;
   development_methods: XmlMultiElem<CompetenceProfileDocumentCompetenceDevelopmentMethod>;
   indicators: XmlMultiElem<CompetenceProfileDocumentCompetenceIndicator>;
 }
 
 interface CompetenceProfileDocumentEducationMethod {
-  education_method_id: XmlElem<number>;
+  education_method_id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
 }
 
 interface CompetenceProfileDocumentAssessment {
-  assessment_id: XmlElem<number>;
+  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
   assessment_score: XmlElem<number>;
 }
 
 interface CompetenceProfileDocumentPositionCommon {
-  position_common_id: XmlElem<number>;
+  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
 }
 
 type CompetenceProfileDocumentTopElem = XmlTopElem &
@@ -77,14 +77,16 @@ AdminAccessBase & {
   competences: XmlMultiElem<CompetenceProfileDocumentCompetence>;
   education_methods: XmlMultiElem<CompetenceProfileDocumentEducationMethod>;
   assessments: XmlMultiElem<CompetenceProfileDocumentAssessment>;
-  access_role: XmlElem<string>;
+  access_role: XmlElem<string, AccessRoleCatalogDocumentTopElem>;
   position_commons: XmlMultiElem<CompetenceProfileDocumentPositionCommon>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
   update_values(): void;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type CompetenceProfileDocument = XmlDocument & {
   TopElem: CompetenceProfileDocumentTopElem;
+  competence_profile: CompetenceProfileDocumentTopElem;
+  DocDesc(): string;
 };

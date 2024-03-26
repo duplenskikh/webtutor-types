@@ -1,5 +1,5 @@
 interface AcquaintDocumentCollaborator {
-  collaborator_id: XmlElem<number>;
+  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   collaborator_fullname: XmlElem<string>;
   date: XmlElem<Date>;
   acquaint: XmlElem<boolean>;
@@ -8,16 +8,16 @@ interface AcquaintDocumentCollaborator {
 }
 
 interface AcquaintDocumentAssessment {
-  assessment_id: XmlElem<number>;
+  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
 }
 
 interface AcquaintDocumentGroup {
-  group_id: XmlElem<number>;
+  group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
 }
 
 interface AcquaintDocumentQuestionCondition {
-  grading_option_id: XmlElem<string>;
-  sentence_option_id: XmlElem<string>;
+  grading_option_id: XmlElem<string, typeof common.grading_option_types>;
+  sentence_option_id: XmlElem<string, typeof common.sentence_option_types>;
   value: XmlElem<string>;
 }
 
@@ -26,11 +26,12 @@ interface AcquaintDocumentQuestionEntry {
   value: XmlElem<string>;
   is_correct: XmlElem<boolean>;
 }
+
 interface AcquaintDocumentQuestion {
   id: XmlElem<string>;
   is_custom: XmlElem<boolean>;
   item_id: XmlElem<number>;
-  type_id: XmlElem<string>;
+  type_id: XmlElem<string, typeof common.acquaint_question_types>;
   title: XmlElem<string>;
   correct_answer: XmlElem<string>;
   conditions: XmlMultiElem<AcquaintDocumentQuestionCondition>;
@@ -46,7 +47,7 @@ ViewConditionsBase & {
   Doc: AcquaintDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  object_type: XmlElem<string>;
+  object_type: XmlElem<string, typeof common.exchange_object_types>;
   object_id: XmlElem<number>;
   object_name: XmlElem<string>;
   normative_date: XmlElem<Date>;
@@ -59,11 +60,14 @@ ViewConditionsBase & {
   questions: XmlMultiElem<AcquaintDocumentQuestion>;
   select_types: XmlMultiElem<AcquaintDocumentSelectType>;
   access: XmlElem<AccessDocBase>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
 };
 
 type AcquaintDocument = XmlDocument & {
   TopElem: AcquaintDocumentTopElem;
+  acquaint: AcquaintDocumentTopElem;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

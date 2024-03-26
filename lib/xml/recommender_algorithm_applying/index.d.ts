@@ -2,12 +2,13 @@ interface RecommenderAlgorithmApplyingDocumentApplyDate {
   date: XmlElem<Date>;
 }
 
-type RecommenderAlgorithmApplyingDocumentTopElem = XmlTopElem & { Doc: RecommenderAlgorithmApplyingDocument } &
+type RecommenderAlgorithmApplyingDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 CustomElemsBase & {
+  Doc: RecommenderAlgorithmApplyingDocument;
   id: XmlElem<number>;
-  person_id: XmlElem<number>;
-  recommender_algorithm_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  recommender_algorithm_id: XmlElem<number, RecommenderAlgorithmCatalogDocumentTopElem>;
   base_object: XmlElem<ObjectTypeBase>;
   context_object: XmlElem<ObjectTypeBase>;
   count: XmlElem<number>;
@@ -19,4 +20,5 @@ CustomElemsBase & {
 
 type RecommenderAlgorithmApplyingDocument = XmlDocument & {
   TopElem: RecommenderAlgorithmApplyingDocumentTopElem;
+  recommender_algorithm_applying: RecommenderAlgorithmApplyingDocumentTopElem;
 };

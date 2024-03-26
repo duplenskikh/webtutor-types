@@ -1,9 +1,9 @@
 interface SubmissionTypeDocumentRecipient extends PersonFillingBase {
-  collaborator_id: XmlElem<number>;
+  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
 }
 
 interface SubmissionTypeDocumentSender extends PersonFillingBase {
-  collaborator_id: XmlElem<number>;
+  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
 }
 
 interface SubmissionTypeDocumentPhase {
@@ -13,14 +13,15 @@ interface SubmissionTypeDocumentPhase {
   period_date_finish: XmlElem<Date>;
   date_start: XmlElem<Date>;
   date_finish: XmlElem<Date>;
-  collect_state: XmlElem<string>;
+  collect_state: XmlElem<string, typeof common.collect_states>;
 }
 
-type SubmissionTypeDocumentTopElem = XmlTopElem & { Doc: SubmissionTypeDocument } &
+type SubmissionTypeDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
+  Doc: SubmissionTypeDocument;
   name: XmlElem<string>;
   code: XmlElem<string>;
-  periodity_id: XmlElem<string>;
+  periodity_id: XmlElem<string, typeof common.perioditys>;
   period_form: XmlElem<number>;
   recipients: XmlMultiElem<SubmissionTypeDocumentRecipient>;
   senders: XmlMultiElem<SubmissionTypeDocumentSender>;
@@ -37,4 +38,6 @@ CustomElemsBase & {
 
 type SubmissionTypeDocument = XmlDocument & {
   TopElem: SubmissionTypeDocumentTopElem;
+  submission_type: SubmissionTypeDocumentTopElem;
+  DocDesc(): string;
 };

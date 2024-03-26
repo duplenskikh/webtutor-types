@@ -5,27 +5,27 @@ interface WorkflowDocumentFieldGroup {
   write_conditions: XmlElem<ConditionsBase>;
 }
 
-interface WorkflowDocumentAction extends WorkflowElemOperationsBase,
-  ConditionsBase {
+interface WorkflowDocumentAction extends WorkflowElemOperationsBase, ConditionsBase {
   code: XmlElem<string>;
   name: XmlElem<string>;
   is_trigger: XmlElem<boolean>;
 }
 
 interface WorkflowDocumentEscalationCourse {
-  course_id: XmlElem<number>;
-  state_id: XmlElem<number>;
+  course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
+  state_id: XmlElem<number, typeof common.learning_states>;
 }
 
 interface WorkflowDocumentEscalationAssessment {
-  assessment_id: XmlElem<number>;
-  state_id: XmlElem<number>;
+  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
+  state_id: XmlElem<number, typeof common.learning_states>;
 }
 
 interface WorkflowDocumentEscalationPoll {
-  poll_id: XmlElem<number>;
-  status: XmlElem<number>;
+  poll_id: XmlElem<number, PollCatalogDocumentTopElem>;
+  status: XmlElem<number, typeof common.learning_states>;
 }
+
 interface WorkflowDocumentEscalation extends WorkflowElemOperationsBase {
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -41,30 +41,47 @@ interface WorkflowDocumentEscalation extends WorkflowElemOperationsBase {
   polls: XmlMultiElem<WorkflowDocumentEscalationPoll>;
 }
 
-type WorkflowDocumentTopElem = XmlTopElem & { Doc: WorkflowDocument } &
+interface WorkflowDocumentTuneFieldTuneFieldChain {
+  name: XmlElem<string>;
+  path: XmlElem<string>;
+  catalog_name: XmlElem<string>;
+  type: XmlElem<string>;
+  is_multiple: XmlElem<boolean>;
+  pk: XmlElem<string>;
+  value: XmlElem<string>;
+}
+
+interface WorkflowDocumentTuneField {
+  tune_field_chain: XmlElem<WorkflowDocumentTuneFieldTuneFieldChain>;
+}
+
+type WorkflowDocumentTopElem = XmlTopElem &
 ConditionsBase &
 WorkflowFieldsStatesBase & {
+  Doc: WorkflowDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   add_conditions: XmlElem<ConditionsBase>;
   field_groups: XmlMultiElem<WorkflowDocumentFieldGroup>;
   actions: XmlMultiElem<WorkflowDocumentAction>;
-  use_triggers(): unknown;
+  use_triggers(): boolean;
   escalations: XmlMultiElem<WorkflowDocumentEscalation>;
   default_state: XmlElem<string>;
   default_action: XmlElem<string>;
   auto_submit_fields: XmlElem<boolean>;
   comment: XmlElem<string>;
-  destination_object_name: XmlElem<string>;
-  tune_fields: XmlMultiElem<unknown>;
+  destination_object_name: XmlElem<string, typeof common.exchange_object_types>;
+  tune_fields: XmlMultiElem<WorkflowDocumentTuneField>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
-  run_action(): unknown;
-  role_id: XmlMultiElem<number>;
+  run_action(action: string): void;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type WorkflowDocument = XmlDocument & {
   TopElem: WorkflowDocumentTopElem;
+  workflow: WorkflowDocumentTopElem;
+  DocDesc(): string;
 };

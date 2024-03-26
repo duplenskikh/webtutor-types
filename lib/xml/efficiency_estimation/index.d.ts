@@ -1,7 +1,8 @@
-type EfficiencyEstimationDocumentTopElem = XmlTopElem & { Doc: EfficiencyEstimationDocument } &
+type EfficiencyEstimationDocumentTopElem = XmlTopElem &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: EfficiencyEstimationDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
   desc: XmlElem<string>;
@@ -14,4 +15,6 @@ CustomElemsBase & {
 
 type EfficiencyEstimationDocument = XmlDocument & {
   TopElem: EfficiencyEstimationDocumentTopElem;
+  efficiency_estimation: EfficiencyEstimationDocumentTopElem;
+  DocDesc(): string;
 };

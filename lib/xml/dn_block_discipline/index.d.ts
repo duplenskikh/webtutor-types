@@ -1,5 +1,5 @@
 interface DnBlockDisciplineDocumentDiscipline {
-  discipline_id: XmlElem<number>;
+  discipline_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
 }
 
 type DnBlockDisciplineDocumentTopElem = XmlTopElem &
@@ -15,4 +15,6 @@ CustomElemsBase & {
 
 type DnBlockDisciplineDocument = XmlDocument & {
   TopElem: DnBlockDisciplineDocumentTopElem;
+  dn_block_discipline: DnBlockDisciplineDocumentTopElem;
+  DocDesc(): string;
 };

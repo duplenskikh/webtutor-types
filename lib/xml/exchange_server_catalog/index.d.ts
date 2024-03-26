@@ -1,4 +1,4 @@
-type ExchangeServerCatalogDocumentTopElem = XmlTopElem & { Doc: ExchangeServerCatalogDocument } & {
+type ExchangeServerCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -6,11 +6,8 @@ type ExchangeServerCatalogDocumentTopElem = XmlTopElem & { Doc: ExchangeServerCa
   last_upload_date: XmlElem<Date>;
   last_download_date: XmlElem<Date>;
   server_version: XmlElem<string>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type ExchangeServerCatalogDocument = XmlDocument & {
-  TopElem: ExchangeServerCatalogDocumentTopElem;
+  OnBuild(): void;
 };
