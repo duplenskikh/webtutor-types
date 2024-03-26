@@ -1,0 +1,20 @@
+type ContestMarkCatalogDocumentTopElem = XmlTopElem & {
+  id: XmlElem<number>;
+  contest_id: XmlElem<number, ContestCatalogDocumentTopElem>;
+  contest_name: XmlElem<string>;
+  participant_id: XmlElem<number, ParticipantCatalogDocumentTopElem>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  person_fullname: XmlElem<string>;
+  person_position_name: XmlElem<string>;
+  status_id: XmlElem<string, typeof common.participant_states>;
+  general_mark: XmlElem<string>;
+  judge_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  value: XmlElem<string>;
+  rating: XmlElem<number>;
+  place: XmlElem<number>;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
+};

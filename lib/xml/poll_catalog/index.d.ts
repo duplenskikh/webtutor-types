@@ -1,4 +1,4 @@
-type PollCatalogDocumentTopElem = XmlTopElem & { Doc: PollCatalogDocument } &
+type PollCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -9,14 +9,11 @@ AdminAccessBase & {
   completed: XmlElem<boolean>;
   is_anonymous: XmlElem<boolean>;
   is_one_time: XmlElem<boolean>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   knowledge_parts: XmlElem<string>;
   tags: XmlElem<string>;
   experts: XmlElem<string>;
-};
-
-type PollCatalogDocument = XmlDocument & {
-  TopElem: PollCatalogDocumentTopElem;
+  OnBuild(): void;
 };

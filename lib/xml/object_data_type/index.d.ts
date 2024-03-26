@@ -1,15 +1,19 @@
-type ObjectDataTypeDocumentTopElem = XmlTopElem & { Doc: ObjectDataTypeDocument } &
+type ObjectDataTypeDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase & {
-  object_type: XmlElem<string>;
-  sec_object_type: XmlElem<string>;
+  Doc: ObjectDataTypeDocument;
+  object_type: XmlElem<string, typeof common.exchange_object_types>;
+  sec_object_type: XmlElem<string, typeof common.exchange_object_types>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
   desc: XmlElem<string>;
-  role_id: XmlMultiElem<number>;
+  disp_block: XmlElem<MsDispBlockBase>;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type ObjectDataTypeDocument = XmlDocument & {
   TopElem: ObjectDataTypeDocumentTopElem;
+  object_data_type: ObjectDataTypeDocumentTopElem;
+  DocDesc(): string;
 };

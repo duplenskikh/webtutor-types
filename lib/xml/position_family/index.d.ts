@@ -1,13 +1,14 @@
 interface PositionFamilyDocumentCompetenceProfile {
-  id: XmlElem<number>;
+  id: XmlElem<number, CompetenceProfileCatalogDocumentTopElem>;
 }
 
 interface PositionFamilyDocumentKpiProfile {
-  id: XmlElem<number>;
-  period_type_id: XmlElem<string>;
+  id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
+  period_type_id: XmlElem<string, typeof common.perioditys>;
+  obligatory: XmlElem<boolean>;
 }
 
-type PositionFamilyDocumentTopElem = XmlTopElem & { Doc: PositionFamilyDocument } &
+type PositionFamilyDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 ViewConditionsBase &
 RequirementsBase &
@@ -16,20 +17,24 @@ KnowledgePartsBase &
 KnowledgePartsBaseOld &
 AdminAccessBase &
 CustomElemsBase & {
-  parent_position_family_id: XmlElem<number>;
-  subdivision_group_id: XmlElem<number>;
+  Doc: PositionFamilyDocument;
+  parent_position_family_id: XmlElem<number, PositionFamilyCatalogDocumentTopElem>;
+  subdivision_group_id: XmlElem<number, SubdivisionGroupCatalogDocumentTopElem>;
   is_dynamic: XmlElem<boolean>;
-  bonus_profile_id: XmlElem<number>;
-  competence_profile_id: XmlElem<number>;
+  bonus_profile_id: XmlElem<number, BonusProfileCatalogDocumentTopElem>;
+  competence_profile_id: XmlElem<number, CompetenceProfileCatalogDocumentTopElem>;
   competence_profiles: XmlMultiElem<PositionFamilyDocumentCompetenceProfile>;
   kpi_profile_id: XmlElem<number>;
   kpi_profiles: XmlMultiElem<PositionFamilyDocumentKpiProfile>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  dynamic_select_position_commons(): unknown;
+  dynamic_select_position_commons(clearList: unknown): unknown;
 };
 
 type PositionFamilyDocument = XmlDocument & {
   TopElem: PositionFamilyDocumentTopElem;
+  position_family: PositionFamilyDocumentTopElem;
+  OnInit(): void;
+  DocDesc(): string;
 };

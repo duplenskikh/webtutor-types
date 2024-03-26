@@ -1,33 +1,31 @@
-interface AssessmentSectionSelectionOrderingPoint {
+interface AssessmentDocumentSectionSelectionOrderingPoint {
   point_num: XmlElem<number>;
   item_num: XmlElem<number>;
   item_sum_num(): number;
-  item_count: XmlElem<number>;
 }
 
-interface AssessmentSectionSelectionOrdering {
-  order: XmlElem<string>;
+interface AssessmentDocumentSectionSelectionOrdering {
+  order: XmlElem<string, typeof common.order_types>;
   select_id: XmlElem<string>;
   select_num: XmlElem<number>;
-  points: XmlMultiElem<AssessmentSectionSelectionOrderingPoint>;
+  points: XmlMultiElem<AssessmentDocumentSectionSelectionOrderingPoint>;
 }
 
-interface AssessmentSectionRole {
-  id: XmlElem<number>;
-}
-
-interface AssessmentSectionItemScale {
+interface AssessmentDocumentSectionItemScale {
   scale_id: XmlElem<string>;
 }
 
-interface AssessmentSectionItem {
+interface AssessmentDocumentSectionItem {
   id: XmlElem<number>;
   title: XmlElem<string>;
-  question_points: XmlElem<number>;
-  scales: XmlMultiElem<AssessmentSectionItemScale>;
+  scales: XmlMultiElem<AssessmentDocumentSectionItemScale>;
 }
 
-interface AssessmentSection {
+interface AssessmentDocumentSectionRole {
+  id: XmlElem<number>;
+}
+
+interface AssessmentDocumentSection {
   id: XmlElem<number>;
   code: XmlElem<string>;
   title: XmlElem<string>;
@@ -38,23 +36,23 @@ interface AssessmentSection {
   not_disp_last_attempt: XmlElem<boolean>;
   feedback_wrong: XmlElem<string>;
   feedback_correct: XmlElem<string>;
-  rubric: XmlElem <RubricBase>;
-  objectives: XmlElem <ObjectiveBase>;
-  selection_ordering: XmlElem <AssessmentSectionSelectionOrdering>;
-  items: XmlMultiElem<AssessmentSectionItem>;
+  rubric: XmlElem<RubricBase>;
+  objectives: XmlElem<ObjectivesBase>;
+  selection_ordering: XmlElem<AssessmentDocumentSectionSelectionOrdering>;
+  items: XmlMultiElem<AssessmentDocumentSectionItem>;
   comment: XmlElem<string>;
-  roles: XmlMultiElem<AssessmentSectionRole>;
+  roles: XmlMultiElem<AssessmentDocumentSectionRole>;
 }
 
-interface AssessmentPlayer {
-  type: XmlElem<string>;
+interface AssessmentDocumentPlayer {
+  type: XmlElem<string, typeof common.player_types>;
   fit_screen: XmlElem<boolean>;
-  position: XmlElem<string>;
-  language: XmlElem<string>;
-  send_type: XmlElem<string>;
+  position: XmlElem<string, typeof common.player_positions>;
+  language: XmlElem<string, typeof common.player_languages>;
+  send_type: XmlElem<string, typeof common.player_send_types>;
   send_timer: XmlElem<number>;
-  display_type: XmlElem<string>;
-  rubric_display_type: XmlElem<string>;
+  display_type: XmlElem<string, typeof common.player_display_types>;
+  rubric_display_type: XmlElem<string, typeof common.player_rubric_display_types>;
   display_map: XmlElem<boolean>;
   navigate_map: XmlElem<boolean>;
   strict_navigation: XmlElem<boolean>;
@@ -67,7 +65,7 @@ interface AssessmentPlayer {
   display_res_score: XmlElem<boolean>;
 }
 
-interface AssessmentScale {
+interface AssessmentDocumentScale {
   id: XmlElem<string>;
   name: XmlElem<string>;
   comment: XmlElem<string>;
@@ -77,7 +75,7 @@ type AssessmentDocumentTopElem = XmlTopElem &
 ProctoringBase &
 CatalogListBase &
 CourseExpertsBase &
-FileListBaseFile &
+FileListBase &
 CustomElemsBase &
 KnowledgePartsBase &
 KnowledgePartsBaseOld &
@@ -90,9 +88,9 @@ AdminAccessBase & {
   code: XmlElem<string>;
   title: XmlElem<string>;
   name(): string;
-  resource_id: XmlElem<number>;
-  status: XmlElem<string>;
-  testing_system_id: XmlElem<number>;
+  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
+  status: XmlElem<string, typeof common.course_test_states>;
+  testing_system_id: XmlElem<number, TestingSystemCatalogDocumentTopElem>;
   duration: XmlElem<number>;
   duration_days: XmlElem<number>;
   attempts_num: XmlElem<number>;
@@ -110,10 +108,10 @@ AdminAccessBase & {
   feedback_failed: XmlElem<string>;
   use_launch_code: XmlElem<boolean>;
   not_sent_correct_answer: XmlElem<boolean>;
-  rubric: XmlElem <RubricBase>;
-  objectives: XmlElem <ObjectiveBase>;
-  sections: XmlMultiElem<AssessmentSection>;
-  certificate_type_id: XmlElem<number>;
+  rubric: XmlElem<RubricBase>;
+  objectives: XmlElem<ObjectivesBase>;
+  sections: XmlMultiElem<AssessmentDocumentSection>;
+  certificate_type_id: XmlElem<number, CertificateTypeCatalogDocumentTopElem>;
   display_result: XmlElem<boolean>;
   is_adaptive_test: XmlElem<boolean>;
   display_correct_answer: XmlElem<boolean>;
@@ -121,28 +119,31 @@ AdminAccessBase & {
   is_open: XmlElem<boolean>;
   display_correct_answer_in_report: XmlElem<boolean>;
   display_answers_in_report: XmlElem<boolean>;
-  proctoring_system_id: XmlElem<number>;
-  external_type: XmlElem<string>;
+  proctoring_system_id: XmlElem<number, ProctoringSystemCatalogDocumentTopElem>;
+  external_type: XmlElem<string, typeof common.assessment_external_types>;
   not_use_default_notification: XmlElem<boolean>;
-  view_templates: XmlElem<unknown>;
+  view_templates: XmlElem<MsViewTemplatesBase>;
   comment: XmlElem<string>;
-  schedule: XmlElem<unknown>;
+  schedule: XmlElem<MsWeekScheduleBase>;
   access: XmlElem<AccessDocBase>;
   publish_url: XmlElem<string>;
   publish_date: XmlElem<Date>;
   template_url: XmlElem<string>;
   win_width: XmlElem<string>;
   win_height: XmlElem<string>;
-  player: XmlElem <AssessmentPlayer>;
-  scales: XmlMultiElem<AssessmentScale>;
+  player: XmlElem<AssessmentDocumentPlayer>;
+  scales: XmlMultiElem<AssessmentDocumentScale>;
   before_finish_eval: XmlElem<string>;
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   get_info(): null | Object;
   update_structure(): boolean;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type AssessmentDocument = XmlDocument & {
-  TopElem: AssessmentDocumentTopElem
+  TopElem: AssessmentDocumentTopElem;
+  assessment: AssessmentDocumentTopElem;
+  OnCreate(): void;
+  DocDesc(): string;
 };

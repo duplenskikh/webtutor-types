@@ -19,7 +19,7 @@ type ClObjectDocumentTopElem = XmlTopElem & {
   width: XmlElem<number>;
   height: XmlElem<number>;
   format: XmlElem<string>;
-  group: XmlElem<string>;
+  group: XmlElem<string, typeof common.cl_object_groups>;
   pages: XmlMultiElem<ClObjectDocumentPage>;
   methods: XmlMultiElem<ClObjectDocumentMethod>;
   xsl: XmlElem<string>;
@@ -33,4 +33,6 @@ type ClObjectDocumentTopElem = XmlTopElem & {
 
 type ClObjectDocument = XmlDocument & {
   TopElem: ClObjectDocumentTopElem;
+  cl_object: ClObjectDocumentTopElem;
+  DocDesc(): string;
 };

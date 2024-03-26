@@ -1,14 +1,14 @@
 interface ContestDocumentResponsible extends PersonFillingBase {
-  collaborator_id: XmlElem<number>;
+  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
 }
 
 interface ContestDocumentJudge extends PersonFillingBase {
-  collaborator_id: XmlElem<number>;
+  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   main: XmlElem<boolean>;
 }
 
 interface ContestDocumentParticipant {
-  participant_id: XmlElem<number>;
+  participant_id: XmlElem<number, ParticipantCatalogDocumentTopElem>;
 }
 
 type ContestDocumentTopElem = XmlTopElem &
@@ -19,10 +19,10 @@ CustomElemsBase & {
   code: XmlElem<string>;
   is_open: XmlElem<boolean>;
   show_works: XmlElem<boolean>;
-  status_id: XmlElem<string>;
+  status_id: XmlElem<string, typeof common.contest_states>;
   show_marks: XmlElem<boolean>;
-  web_template_id: XmlElem<string>;
-  estimation_id: XmlElem<string>;
+  web_template_id: XmlElem<string, typeof common.contest_web_templates>;
+  estimation_id: XmlElem<string, typeof common.contest_types>;
   online_vote: XmlElem<boolean>;
   show_rating: XmlElem<boolean>;
   show_results: XmlElem<boolean>;
@@ -38,10 +38,12 @@ CustomElemsBase & {
   desc: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
-  add_participant(personId: number, perticipantTopElem?: CollaboratorDocumentTopElem): void;
+  add_participant(personId: number, participantTopElem: unknown): undefined | void;
   calculate_rating(): void;
 };
 
 type ContestDocument = XmlDocument & {
   TopElem: ContestDocumentTopElem;
+  contest: ContestDocumentTopElem;
+  DocDesc(): string;
 };

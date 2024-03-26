@@ -1,11 +1,11 @@
 interface AssessmentAppraiseDocumentAuditory {
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_name: XmlElem<string>;
   position_name: XmlElem<string>;
 }
 
 interface AssessmentAppraiseDocumentGroup {
-  group_id: XmlElem<number>;
+  group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
 }
 
 interface AssessmentAppraiseDocumentDepartment {
@@ -17,26 +17,43 @@ interface AssessmentAppraiseDocumentAssessmentObject {
 }
 
 interface AssessmentAppraiseDocumentAssPositionCommon {
-  ass_position_common_id: XmlElem<number>;
+  ass_position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
 }
 
 interface AssessmentAppraiseDocumentGrade {
-  grade_id: XmlElem<number>;
+  grade_id: XmlElem<number, GradeCatalogDocumentTopElem>;
   level: XmlElem<number>;
   comment: XmlElem<string>;
 }
 
 interface AssessmentAppraiseDocumentParticipantParameter {
-  parameter_id: XmlElem<string>;
+  parameter_id: XmlElem<string, typeof common.assessment_appraise_parameters>;
 }
 
-interface AssessmentAppraiseDocumentParticipantAssessmentAppraiseType extends SupplementaryQuestionsBase,
-  WebVariablesBase {
-  assessment_appraise_type_id: XmlElem<string>;
-  competence_profile_id: XmlElem<number>;
-  kpi_profile_id: XmlElem<number>;
-  budget_period_id: XmlElem<number>;
-  bonus_profile_id: XmlElem<number>;
+interface AssessmentAppraiseDocumentParticipantCustomizeExpert {
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  person_fullname: XmlElem<string>;
+  person_position_name: XmlElem<string>;
+  role: XmlElem<string>;
+  responsible: XmlElem<boolean>;
+}
+
+interface AssessmentAppraiseDocumentParticipantCustomize {
+  min: XmlElem<number>;
+  max: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  is_custom_experts: XmlElem<boolean>;
+  custom_title: XmlElem<string>;
+  experts: XmlMultiElem<AssessmentAppraiseDocumentParticipantCustomizeExpert>;
+  additional_participants_code: XmlElem<string>;
+}
+
+interface AssessmentAppraiseDocumentParticipantAssessmentAppraiseType extends SupplementaryQuestionsBase, WebVariablesBase {
+  assessment_appraise_type_id: XmlElem<string, typeof common.assessment_appraise_types>;
+  competence_profile_id: XmlElem<number, CompetenceProfileCatalogDocumentTopElem>;
+  kpi_profile_id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
+  bonus_profile_id: XmlElem<number, BonusProfileCatalogDocumentTopElem>;
   flag_01: XmlElem<boolean>;
   flag_02: XmlElem<string>;
   flag_03: XmlElem<number>;
@@ -54,47 +71,29 @@ interface AssessmentAppraiseDocumentParticipantAssessmentAppraiseType extends Su
   period_start: XmlElem<Date>;
   period_end: XmlElem<Date>;
   type_title: XmlElem<string>;
-  print_form_id: XmlElem<number>;
-  custom_web_template_id: XmlElem<number>;
-  custom_post_web_template_id: XmlElem<number>;
+  print_form_id: XmlElem<number, PrintFormCatalogDocumentTopElem>;
+  custom_web_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
+  custom_post_web_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
   index: XmlElem<number>;
-}
-
-interface AssessmentAppraiseDocumentParticipantCustomizeExpert {
-  person_id: XmlElem<number>;
-  person_fullname: XmlElem<string>;
-  person_position_name: XmlElem<string>;
-  role: XmlElem<string>;
-  responsible: XmlElem<boolean>;
-}
-
-interface AssessmentAppraiseDocumentParticipantCustomize {
-  min: XmlElem<number>;
-  max: XmlElem<number>;
-  person_id: XmlElem<number>;
-  is_custom_experts: XmlElem<boolean>;
-  custom_title: XmlElem<string>;
-  experts: XmlMultiElem<AssessmentAppraiseDocumentParticipantCustomizeExpert>;
-  show_additional_participants: XmlElem<boolean>;
-  additional_participants_code: XmlElem<string>;
+  career_plan_type: XmlElem<string>;
+  career_plan_id: XmlElem<number, CareerPlanCatalogDocumentTopElem>;
 }
 
 interface AssessmentAppraiseDocumentParticipant {
-  participant_id: XmlElem<string>;
+  participant_id: XmlElem<string, typeof common.assessment_appraise_participants>;
   parameters: XmlMultiElem<AssessmentAppraiseDocumentParticipantParameter>;
   customize: XmlElem<AssessmentAppraiseDocumentParticipantCustomize>;
   is_final: XmlElem<boolean>;
   assessment_appraise_types: XmlMultiElem<AssessmentAppraiseDocumentParticipantAssessmentAppraiseType>;
-  tab_selector_type: XmlElem<string>;
 }
 
 interface AssessmentAppraiseDocumentAssessment {
-  assessment_id: XmlElem<number>;
+  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
   assessment_name: XmlElem<string>;
 }
 
 interface AssessmentAppraiseDocumentExercise {
-  exercise_id: XmlElem<number>;
+  exercise_id: XmlElem<number, ExerciseCatalogDocumentTopElem>;
 }
 
 interface AssessmentAppraiseDocumentCustomHeader {
@@ -106,13 +105,13 @@ interface AssessmentAppraiseDocumentCustomHeader {
 interface AssessmentAppraiseDocumentCustomObject {
   custom_object_id: XmlElem<number>;
   custom_object_name: XmlElem<string>;
-  custom_object_type: XmlElem<string>;
+  custom_object_type: XmlElem<string, typeof common.exchange_object_types>;
 }
 
 interface AssessmentAppraiseDocumentImpersonatePerson {
-  impersonator_id: XmlElem<number>;
+  impersonator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   impersonator_fullname: XmlElem<string>;
-  face_person_id: XmlElem<number>;
+  face_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   face_person_fullname: XmlElem<string>;
   from_date: XmlElem<Date>;
   to_date: XmlElem<Date>;
@@ -121,15 +120,16 @@ interface AssessmentAppraiseDocumentImpersonatePerson {
 type AssessmentAppraiseDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 CustomElemsBase &
+FileListBase &
 AdminAccessBase & {
   Doc: AssessmentAppraiseDocument;
   start_date: XmlElem<Date>;
   end_date: XmlElem<Date>;
-  status: XmlElem<string>;
+  status: XmlElem<string, typeof common.assessment_appraise_statuses>;
   web_display: XmlElem<boolean>;
   flag_use_plan: XmlElem<boolean>;
   is_model: XmlElem<boolean>;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   assessment_object_type: XmlElem<string>;
   max_auditory: XmlElem<number>;
   auditorys: XmlMultiElem<AssessmentAppraiseDocumentAuditory>;
@@ -138,10 +138,13 @@ AdminAccessBase & {
   assessment_objects: XmlMultiElem<AssessmentAppraiseDocumentAssessmentObject>;
   ass_position_commons: XmlMultiElem<AssessmentAppraiseDocumentAssPositionCommon>;
   grades: XmlMultiElem<AssessmentAppraiseDocumentGrade>;
-  workflow_id: XmlElem<number>;
-  assessment_appraise_matrix_id: XmlElem<number>;
+  workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
+  is_visible_auditorys: XmlElem<boolean>;
+  is_visible_evaluatings: XmlElem<boolean>;
+  is_visible_experts: XmlElem<boolean>;
+  assessment_appraise_matrix_id: XmlElem<number, AssessmentAppraiseMatrixCatalogDocumentTopElem>;
   participants: XmlMultiElem<AssessmentAppraiseDocumentParticipant>;
-  participant_select: XmlElem<string>;
+  participant_select: XmlElem<string, ParticipantCatalogDocumentTopElem>;
   ignore_presence: XmlElem<boolean>;
   include_fired: XmlElem<boolean>;
   always_check_custom_experts: XmlElem<boolean>;
@@ -149,27 +152,30 @@ AdminAccessBase & {
   assessments: XmlMultiElem<AssessmentAppraiseDocumentAssessment>;
   exercises: XmlMultiElem<AssessmentAppraiseDocumentExercise>;
   custom_headers: XmlMultiElem<AssessmentAppraiseDocumentCustomHeader>;
-  custom_object_type: XmlElem<string>;
+  custom_object_type: XmlElem<string, typeof common.exchange_object_types>;
   custom_objects: XmlMultiElem<AssessmentAppraiseDocumentCustomObject>;
-  manual_document_id: XmlElem<number>;
+  manual_document_id: XmlElem<number, DocumentCatalogDocumentTopElem>;
   is_basic_comment: XmlElem<boolean>;
   is_comment_required: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   log: XmlElem<string>;
-  report_id: XmlElem<number>;
-  prefix_custom_web_template_id: XmlElem<number>;
-  tree_custom_web_template_id: XmlElem<number>;
-  header_web_template_id: XmlElem<number>;
-  data_web_template_id: XmlElem<number>;
-  css_template_id: XmlElem<number>;
-  xml_template_id: XmlElem<number>;
-  server_agent_id: XmlElem<number>;
+  report_id: XmlElem<number, ActionReportCatalogDocumentTopElem>;
+  prefix_custom_web_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
+  tree_custom_web_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
+  header_web_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
+  data_web_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
+  css_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
+  xml_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
+  server_agent_id: XmlElem<number, ServerAgentCatalogDocumentTopElem>;
   player: XmlElem<number>;
   impersonate_persons: XmlMultiElem<AssessmentAppraiseDocumentImpersonatePerson>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type AssessmentAppraiseDocument = XmlDocument & {
   TopElem: AssessmentAppraiseDocumentTopElem;
+  assessment_appraise: AssessmentAppraiseDocumentTopElem;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

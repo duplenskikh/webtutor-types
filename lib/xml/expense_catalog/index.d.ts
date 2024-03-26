@@ -1,10 +1,10 @@
-type ExpenseCatalogDocumentTopElem = XmlTopElem & { Doc: ExpenseCatalogDocument } & {
+type ExpenseCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  pay_stage_id: XmlElem<number>;
+  pay_stage_id: XmlElem<number, PayStageCatalogDocumentTopElem>;
   cost: XmlElem<number>;
-  currency_type_id: XmlElem<string>;
+  currency_type_id: XmlElem<string, typeof lists.currency_types>;
   number: XmlElem<string>;
   expense_create_date: XmlElem<Date>;
   is_formed: XmlElem<boolean>;
@@ -19,8 +19,7 @@ type ExpenseCatalogDocumentTopElem = XmlTopElem & { Doc: ExpenseCatalogDocument 
   is_received: XmlElem<boolean>;
   received_date: XmlElem<Date>;
   docs_comment: XmlElem<string>;
-};
-
-type ExpenseCatalogDocument = XmlDocument & {
-  TopElem: ExpenseCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): void;
 };

@@ -5,13 +5,13 @@ CustomElemsBase & {
   id: XmlElem<number>;
   create_date: XmlElem<Date>;
   blog_entry_id: XmlElem<number>;
-  object_type: XmlElem<string>;
+  object_type: XmlElem<string, typeof common.exchange_object_types>;
   object_name: XmlElem<string>;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
   name: XmlElem<string>;
-  parent_id: XmlElem<number>;
-  like_id: XmlElem<number>;
+  parent_id: XmlElem<number, BlogEntryCommentCatalogDocumentTopElem>;
+  like_id: XmlElem<number, LikeCatalogDocumentTopElem>;
   message: XmlElem<string>;
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;
@@ -21,4 +21,6 @@ CustomElemsBase & {
 
 type BlogEntryCommentDocument = XmlDocument & {
   TopElem: BlogEntryCommentDocumentTopElem;
+  blog_entry_comment: BlogEntryCommentDocumentTopElem;
+  DocDesc(): string;
 };

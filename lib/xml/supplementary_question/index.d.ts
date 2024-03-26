@@ -1,14 +1,15 @@
 interface SupplementaryQuestionDocumentSectionInstruction {
-  section_instruction_id: XmlElem<number>;
+  section_instruction_id: XmlElem<number, SectionInstructionCatalogDocumentTopElem>;
 }
 
-type SupplementaryQuestionDocumentTopElem = XmlTopElem & { Doc: SupplementaryQuestionDocument } &
+type SupplementaryQuestionDocumentTopElem = XmlTopElem &
 CompetenceScaleBase &
 AdminAccessBase & {
+  Doc: SupplementaryQuestionDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
   section: XmlElem<string>;
-  type: XmlElem<string>;
+  type: XmlElem<string, typeof common.supplementary_question_types>;
   is_assessment_position_common: XmlElem<boolean>;
   section_instructions: XmlMultiElem<SupplementaryQuestionDocumentSectionInstruction>;
   is_requered: XmlElem<boolean>;
@@ -18,4 +19,6 @@ AdminAccessBase & {
 
 type SupplementaryQuestionDocument = XmlDocument & {
   TopElem: SupplementaryQuestionDocumentTopElem;
+  supplementary_question: SupplementaryQuestionDocumentTopElem;
+  DocDesc(): string;
 };

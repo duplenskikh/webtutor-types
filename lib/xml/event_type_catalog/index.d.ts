@@ -1,10 +1,10 @@
-type EventTypeCatalogDocumentTopElem = XmlTopElem & { Doc: EventTypeCatalogDocument } &
+type EventTypeCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  custom_web_template_id: XmlElem<number>;
-  simpl_custom_web_template_id: XmlElem<number>;
+  custom_web_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
+  simpl_custom_web_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
   online: XmlElem<boolean>;
   auto_start: XmlElem<boolean>;
   can_use_camera: XmlElem<boolean>;
@@ -13,8 +13,5 @@ AdminAccessBase & {
   is_std: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type EventTypeCatalogDocument = XmlDocument & {
-  TopElem: EventTypeCatalogDocumentTopElem;
+  OnBuild(): void;
 };

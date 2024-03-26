@@ -10,4 +10,6 @@ CustomElemsBase & {
 
 type ClosingDocumentStatusDocument = XmlDocument & {
   TopElem: ClosingDocumentStatusDocumentTopElem;
+  closing_document_status: ClosingDocumentStatusDocumentTopElem;
+  DocDesc(): string;
 };

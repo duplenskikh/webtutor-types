@@ -1,18 +1,3 @@
-interface ClModuleDocumentGuideLine {
-  pos: XmlElem<number>;
-  is_vertical: XmlElem<boolean>;
-}
-
-interface ClModuleDocumentSlide {
-  id: XmlElem<number>;
-}
-
-interface ClModuleDocumentTemplateSlide {
-  id: XmlElem<string>;
-  guid: XmlElem<string>;
-  template_slide_xml: XmlElem<string>;
-}
-
 interface ClModuleDocumentDesignFont {
   face: XmlElem<string>;
   style: XmlElem<string>;
@@ -29,7 +14,7 @@ interface ClModuleDocumentDesignNewids {
   group: XmlElem<string>;
 }
 
-interface ClModuleDocumentDesignModuleColors {
+interface ClModuleDocumentDesignModuleColor {
   color: XmlElem<string>;
 }
 
@@ -38,7 +23,7 @@ interface ClModuleDocumentDesign {
   slide_height: XmlElem<number>;
   font: XmlElem<ClModuleDocumentDesignFont>;
   newids: XmlElem<ClModuleDocumentDesignNewids>;
-  module_colors: XmlMultiElem<ClModuleDocumentDesignModuleColors>;
+  module_colors: XmlMultiElem<ClModuleDocumentDesignModuleColor>;
 }
 
 interface ClModuleDocumentRuntimeNextidentity {
@@ -51,18 +36,18 @@ interface ClModuleDocumentRuntimeNextidentity {
 }
 
 interface ClModuleDocumentRuntimeImport {
-  masterid: XmlElem<number>
-  left: XmlElem<number>
-  top: XmlElem<number>
-  width: XmlElem<number>
-  height: XmlElem<number>
-  comments_left: XmlElem<number>
-  comments_top: XmlElem<number>
-  comments_width: XmlElem<number>
-  comments_height: XmlElem<number>
-  import_comments: XmlElem<boolean>
-  commentscolor: XmlElem<string>
-  fiximages: XmlElem<boolean>
+  masterid: XmlElem<number>;
+  left: XmlElem<number>;
+  top: XmlElem<number>;
+  width: XmlElem<number>;
+  height: XmlElem<number>;
+  comments_left: XmlElem<number>;
+  comments_top: XmlElem<number>;
+  comments_width: XmlElem<number>;
+  comments_height: XmlElem<number>;
+  import_comments: XmlElem<boolean>;
+  commentscolor: XmlElem<string>;
+  fiximages: XmlElem<boolean>;
 }
 
 interface ClModuleDocumentRuntimeRuntimecheck {
@@ -121,11 +106,26 @@ interface ClModuleDocumentRuntime {
   rules: XmlMultiElem<ClModuleDocumentRuntimeRule>;
 }
 
+interface ClModuleDocumentGuideLine {
+  pos: XmlElem<number>;
+  is_vertical: XmlElem<boolean>;
+}
+
+interface ClModuleDocumentSlide {
+  id: XmlElem<number, ClSlideCatalogDocumentTopElem>;
+}
+
+interface ClModuleDocumentTemplateSlide {
+  id: XmlElem<string>;
+  guid: XmlElem<string>;
+  template_slide_xml: XmlElem<string>;
+}
+
 type ClModuleDocumentTopElem = XmlTopElem & {
   Doc: ClModuleDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  cl_course_id: XmlElem<number>;
+  cl_course_id: XmlElem<number, ClCourseCatalogDocumentTopElem>;
   resource_url: XmlElem<string>;
   is_template: XmlElem<boolean>;
   category: XmlElem<string>;
@@ -133,7 +133,7 @@ type ClModuleDocumentTopElem = XmlTopElem & {
   format: XmlElem<string>;
   rev: XmlElem<number>;
   template: XmlElem<string>;
-  template_id: XmlElem<number>;
+  template_id: XmlElem<number, ClModuleCatalogDocumentTopElem>;
   file: XmlElem<string>;
   design: XmlElem<ClModuleDocumentDesign>;
   runtime: XmlElem<ClModuleDocumentRuntime>;
@@ -146,12 +146,15 @@ type ClModuleDocumentTopElem = XmlTopElem & {
   desc: XmlElem<string>;
   stamp: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
-  module_href_get(): void;
-  export_2_scorm(): boolean;
+  module_href_get(): false | void;
+  export_2_scorm(): false | void;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
 };
 
 type ClModuleDocument = XmlDocument & {
   TopElem: ClModuleDocumentTopElem;
+  cl_module: ClModuleDocumentTopElem;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

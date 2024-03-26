@@ -1,6 +1,7 @@
-type UploadPackageDocumentTopElem = XmlTopElem & { Doc: UploadPackageDocument } & {
+type UploadPackageDocumentTopElem = XmlTopElem & {
+  Doc: UploadPackageDocument;
   code: XmlElem<string>;
-  type: XmlElem<string>;
+  type: XmlElem<string, typeof common.package_types>;
   file_url: XmlElem<string>;
   package_date: XmlElem<Date>;
   comment: XmlElem<string>;
@@ -9,4 +10,6 @@ type UploadPackageDocumentTopElem = XmlTopElem & { Doc: UploadPackageDocument } 
 
 type UploadPackageDocument = XmlDocument & {
   TopElem: UploadPackageDocumentTopElem;
+  upload_package: UploadPackageDocumentTopElem;
+  DocDesc(): string;
 };

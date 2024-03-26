@@ -1,9 +1,10 @@
-type GoodInstanceDocumentTopElem = XmlTopElem & { Doc: GoodInstanceDocument } &
+type GoodInstanceDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 PersonFillingBase & {
-  status: XmlElem<string>;
-  good_id: XmlElem<number>;
-  person_id: XmlElem<number>;
+  Doc: GoodInstanceDocument;
+  status: XmlElem<string, typeof common.good_instance_status_types>;
+  good_id: XmlElem<number, GoodCatalogDocumentTopElem>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   reserved_date: XmlElem<Date>;
   paid_date: XmlElem<Date>;
   desc: XmlElem<string>;
@@ -14,4 +15,6 @@ PersonFillingBase & {
 
 type GoodInstanceDocument = XmlDocument & {
   TopElem: GoodInstanceDocumentTopElem;
+  good_instance: GoodInstanceDocumentTopElem;
+  DocDesc(): string;
 };

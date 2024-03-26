@@ -1,4 +1,5 @@
 type ChatbotTypeDocumentTopElem = XmlTopElem &
+MsParametersBase &
 AdminAccessBase & {
   Doc: ChatbotTypeDocument;
   id: XmlElem<number>;
@@ -14,4 +15,6 @@ AdminAccessBase & {
 
 type ChatbotTypeDocument = XmlDocument & {
   TopElem: ChatbotTypeDocumentTopElem;
+  chatbot_type: ChatbotTypeDocumentTopElem;
+  DocDesc(): string;
 };

@@ -1,16 +1,16 @@
 interface EducationMethodDocumentEventForm {
-  form_id: XmlElem<string>;
+  form_id: XmlElem<string, typeof lists.event_forms>;
 }
 
 interface EducationMethodDocumentCompetenceIndicator {
-  indicator_id: XmlElem<number>;
+  indicator_id: XmlElem<number, IndicatorCatalogDocumentTopElem>;
   plan: XmlElem<string>;
   required_mark: XmlElem<string>;
   weight: XmlElem<number>;
 }
 
 interface EducationMethodDocumentCompetence {
-  competence_id: XmlElem<number>;
+  competence_id: XmlElem<number, CompetenceCatalogDocumentTopElem>;
   plan: XmlElem<string>;
   required_mark: XmlElem<string>;
   weight: XmlElem<number>;
@@ -18,7 +18,7 @@ interface EducationMethodDocumentCompetence {
 }
 
 interface EducationMethodDocumentSimilarEducationMethod {
-  id: XmlElem<number>;
+  id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
 }
 
 type EducationMethodDocumentTopElem = XmlTopElem &
@@ -37,10 +37,10 @@ GameBonusBase & {
   code: XmlElem<string>;
   resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   is_open: XmlElem<boolean>;
-  default_request_type_id: XmlElem<number, RequestCatalogDocumentTopElem>;
+  default_request_type_id: XmlElem<number, RequestTypeCatalogDocumentTopElem>;
   default_response_type_id: XmlElem<number, ResponseTypeCatalogDocumentTopElem>;
   mandatory_fill_response: XmlElem<boolean>;
-  certificate_type_id: XmlElem<number, CertificateCatalogTopElem>;
+  certificate_type_id: XmlElem<number, CertificateTypeCatalogDocumentTopElem>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   access: XmlElem<AccessDocBase>;
@@ -49,10 +49,12 @@ GameBonusBase & {
   event_forms: XmlMultiElem<EducationMethodDocumentEventForm>;
   competences: XmlMultiElem<EducationMethodDocumentCompetence>;
   similar_education_methods: XmlMultiElem<EducationMethodDocumentSimilarEducationMethod>;
-  get_workflow_id(): number;
-  role_id: XmlMultiElem<number>;
+  get_workflow_id(): null;
+  role_id: XmlMultiElemObject<number>;
 };
 
 type EducationMethodDocument = XmlDocument & {
   TopElem: EducationMethodDocumentTopElem;
+  education_method: EducationMethodDocumentTopElem;
+  DocDesc(): string;
 };

@@ -1,26 +1,24 @@
-type PositionCommonCatalogDocumentTopElem = XmlTopElem & { Doc: PositionCommonCatalogDocument } & {
+type PositionCommonCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  status: XmlElem<string>;
+  status: XmlElem<string, typeof common.position_common_statuss>;
   min_salary: XmlElem<number>;
   max_salary: XmlElem<number>;
-  currency: XmlElem<string>;
+  currency: XmlElem<string, typeof lists.currency_types>;
   position_familys: XmlElem<string>;
   allow_outstaff: XmlElem<boolean>;
   knowledge_parts: XmlElem<string>;
   tags: XmlElem<string>;
   experts: XmlElem<string>;
-  kpi_profile_id: XmlElem<number>;
-  bonus_profile_id: XmlElem<number>;
-  knowledge_profile_id: XmlElem<number>;
-  parent_position_common_id: XmlMultiElem<number>;
-  grade_ids: XmlMultiElem<number>;
+  kpi_profile_id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
+  kpi_profiles_id: XmlMultiElemObject<number, KpiProfileCatalogDocumentTopElem>;
+  bonus_profile_id: XmlElem<number, BonusProfileCatalogDocumentTopElem>;
+  knowledge_profile_id: XmlElem<number, KnowledgeProfileCatalogDocumentTopElem>;
+  parent_position_common_id: XmlMultiElemObject<number, PositionCommonCatalogDocumentTopElem>;
+  grade_ids: XmlMultiElemObject<number, GradeCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  role_id: XmlMultiElem<number>;
-};
-
-type PositionCommonCatalogDocument = XmlDocument & {
-  TopElem: PositionCommonCatalogDocumentTopElem;
+  role_id: XmlMultiElemObject<number>;
+  OnBuild(): void;
 };

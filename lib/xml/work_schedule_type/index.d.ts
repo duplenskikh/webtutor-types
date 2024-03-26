@@ -1,4 +1,5 @@
-type WorkScheduleTypeDocumentTopElem = XmlTopElem & { Doc: WorkScheduleTypeDocument } & {
+type WorkScheduleTypeDocumentTopElem = XmlTopElem & {
+  Doc: WorkScheduleTypeDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -8,4 +9,5 @@ type WorkScheduleTypeDocumentTopElem = XmlTopElem & { Doc: WorkScheduleTypeDocum
 
 type WorkScheduleTypeDocument = XmlDocument & {
   TopElem: WorkScheduleTypeDocumentTopElem;
+  work_schedule_type: WorkScheduleTypeDocumentTopElem;
 };

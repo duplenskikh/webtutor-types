@@ -7,17 +7,18 @@ LastAttemptTestLearningsBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: ActiveTestLearningDocument;
+  id: XmlElem<number>;
   code: XmlElem<string>;
   activation_code: XmlElem<string>;
   name(): string;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_current_state: XmlElem<string>;
-  event_id: XmlElem<number>;
+  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
   event_name: XmlElem<string>;
   event_start_date: XmlElem<Date>;
-  education_plan_id: XmlElem<number>;
-  group_id: XmlElem<number>;
-  proctor_prefer_id: XmlElem<number>;
+  education_plan_id: XmlElem<number, EducationPlanCatalogDocumentTopElem>;
+  group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
+  proctor_prefer_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   duration: XmlElem<number>;
   attempts_num: XmlElem<number>;
   state_id: XmlElem<number, typeof common.learning_states>;
@@ -32,7 +33,7 @@ CustomElemsBase & {
   max_end_date: XmlElem<Date>;
   time: XmlElem<number>;
   max_score: XmlElem<number>;
-  assessment_appraise_id: XmlElem<number>;
+  assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
   question_num: XmlElem<number>;
   question_answered_num(): number;
   question_passed_num(): number;
@@ -46,4 +47,8 @@ CustomElemsBase & {
 
 type ActiveTestLearningDocument = XmlDocument & {
   TopElem: ActiveTestLearningDocumentTopElem;
+  active_test_learning: ActiveTestLearningDocumentTopElem;
+  OnLocalInit(): void;
+  OnBeforeSave(): void;
+  DocDesc(): string;
 };

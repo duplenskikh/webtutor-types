@@ -12,9 +12,9 @@ PersonFillingBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;
   create_date: XmlElem<Date>;
-  activity_id: XmlElem<number>;
+  activity_id: XmlElem<number, ActivityCatalogDocumentTopElem>;
   activity_code: XmlElem<string>;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   registration: XmlElem<string>;
   request: XmlElem<ActivityStateDocumentRequest>;
   doc_info: XmlElem<DocInfoBase>;
@@ -22,4 +22,6 @@ PersonFillingBase & {
 
 type ActivityStateDocument = XmlDocument & {
   TopElem: ActivityStateDocumentTopElem;
+  activity_state: ActivityStateDocumentTopElem;
+  DocDesc(): string;
 };

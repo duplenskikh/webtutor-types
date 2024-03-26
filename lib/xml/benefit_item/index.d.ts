@@ -6,11 +6,12 @@ CustomElemsBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  status: XmlElem<string>;
+  status: XmlElem<string, typeof common.budget_state_types>;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
-  person_id: XmlElem<number>;
-  benefit_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
+  benefit_id: XmlElem<number, BenefitCatalogDocumentTopElem>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
@@ -18,4 +19,6 @@ CustomElemsBase & {
 
 type BenefitItemDocument = XmlDocument & {
   TopElem: BenefitItemDocumentTopElem;
+  benefit_item: BenefitItemDocumentTopElem;
+  DocDesc(): string;
 };

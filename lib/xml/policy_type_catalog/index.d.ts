@@ -1,10 +1,9 @@
-type PolicyTypeCatalogDocumentTopElem = XmlTopElem & { Doc: PolicyTypeCatalogDocument } & {
+type PolicyTypeCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   provider: XmlElem<string>;
-};
-
-type PolicyTypeCatalogDocument = XmlDocument & {
-  TopElem: PolicyTypeCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): void;
 };

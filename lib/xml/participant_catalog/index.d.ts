@@ -1,18 +1,15 @@
-type ParticipantCatalogDocumentTopElem = XmlTopElem & { Doc: ParticipantCatalogDocument } &
+type ParticipantCatalogDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 AdminAccessBase & {
   id: XmlElem<number>;
   work_name: XmlElem<string>;
-  contest_id: XmlElem<number>;
+  contest_id: XmlElem<number, ContestCatalogDocumentTopElem>;
   contest_name: XmlElem<string>;
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   rating: XmlElem<number>;
   place: XmlElem<number>;
-  status_id: XmlElem<string>;
+  status_id: XmlElem<string, typeof common.participant_states>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type ParticipantCatalogDocument = XmlDocument & {
-  TopElem: ParticipantCatalogDocumentTopElem;
+  OnBuild(): void;
 };

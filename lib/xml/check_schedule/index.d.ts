@@ -6,7 +6,7 @@ WebVariablesBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;
   is_enabled: XmlElem<boolean>;
-  type_id: XmlElem<string>;
+  type_id: XmlElem<string, typeof common.check_schedule_types>;
   library_url: XmlElem<string>;
   comment: XmlElem<string>;
   is_std: XmlElem<boolean>;
@@ -16,4 +16,6 @@ WebVariablesBase & {
 
 type CheckScheduleDocument = XmlDocument & {
   TopElem: CheckScheduleDocumentTopElem;
+  check_schedule: CheckScheduleDocumentTopElem;
+  DocDesc(): string;
 };

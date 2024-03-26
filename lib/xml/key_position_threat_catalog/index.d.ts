@@ -1,4 +1,4 @@
-type KeyPositionThreatCatalogDocumentTopElem = XmlTopElem & { Doc: KeyPositionThreatCatalogDocument } &
+type KeyPositionThreatCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -6,8 +6,5 @@ AdminAccessBase & {
   color: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type KeyPositionThreatCatalogDocument = XmlDocument & {
-  TopElem: KeyPositionThreatCatalogDocumentTopElem;
+  OnBuild(): void;
 };

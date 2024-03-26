@@ -4,31 +4,32 @@ interface DnProgramDisciplDocumentTermPlanTheme {
   number_week: XmlElem<string>;
   hours_audit: XmlElem<number>;
   hours_independ: XmlElem<number>;
-  educat_event_id: XmlElem<number>;
+  educat_event_id: XmlElem<number, DnEducatEventCatalogDocumentTopElem>;
   name_educat_event: XmlElem<string>;
 }
 
 interface DnProgramDisciplDocumentTerm {
-  term_id: XmlElem<number>;
-  laboriousn_all_term(): number;
+  term_id: XmlElem<number, DnTermCatalogDocumentTopElem>;
+  laboriousn_all_term: XmlElem<number>;
   laboriousn_audit_term(): number;
   laboriousn_indep_term(): number;
   plan_themes: XmlMultiElem<DnProgramDisciplDocumentTermPlanTheme>;
 }
 
 interface DnProgramDisciplDocumentDiscipline {
-  discipline_id: XmlElem<number>;
+  discipline_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
 }
 
 interface DnProgramDisciplDocumentSubject {
-  subject_id: XmlElem<number>;
+  subject_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
 }
 
 interface DnProgramDisciplDocumentSpecialSpecialization {
-  specializat_id: XmlElem<number>;
+  specializat_id: XmlElem<number, DnSpecializationCatalogDocumentTopElem>;
 }
+
 interface DnProgramDisciplDocumentSpecial {
-  special_id: XmlElem<number>;
+  special_id: XmlElem<number, DnSpecialCatalogDocumentTopElem>;
   specializations: XmlMultiElem<DnProgramDisciplDocumentSpecialSpecialization>;
 }
 
@@ -39,15 +40,15 @@ CustomElemsBase & {
   Doc: DnProgramDisciplDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  status_id: XmlElem<string>;
-  faculty_id: XmlElem<number>;
-  chair_id: XmlElem<number>;
-  discipline_id: XmlElem<number>;
-  academ_year_id: XmlElem<number>;
-  educat_form_id: XmlElem<number>;
-  control_form: XmlElem<number>;
-  all_laboriousn_audit(): number;
-  all_laboriousn_indep(): number;
+  status_id: XmlElem<string, typeof common.prog_discipl_states>;
+  faculty_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  chair_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  discipline_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
+  academ_year_id: XmlElem<number, DnAcademYearCatalogDocumentTopElem>;
+  educat_form_id: XmlElem<number, DnEducatFormCatalogDocumentTopElem>;
+  control_form: XmlElem<number, DnControlFormCatalogDocumentTopElem>;
+  all_laboriousn_audit: XmlElem<number>;
+  all_laboriousn_indep: XmlElem<number>;
   terms: XmlMultiElem<DnProgramDisciplDocumentTerm>;
   desc: XmlElem<string>;
   disciplines: XmlMultiElem<DnProgramDisciplDocumentDiscipline>;
@@ -58,4 +59,6 @@ CustomElemsBase & {
 
 type DnProgramDisciplDocument = XmlDocument & {
   TopElem: DnProgramDisciplDocumentTopElem;
+  dn_program_discipl: DnProgramDisciplDocumentTopElem;
+  DocDesc(): string;
 };

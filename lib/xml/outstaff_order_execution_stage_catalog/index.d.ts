@@ -1,0 +1,27 @@
+type OutstaffOrderExecutionStageCatalogDocumentTopElem = XmlTopElem & {
+  id: XmlElem<number>;
+  outstaff_order_execution_id: XmlElem<number, OutstaffOrderExecutionCatalogDocumentTopElem>;
+  status: XmlElem<string, typeof common.order_status_types>;
+  formed_date: XmlElem<Date>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  outstaff_provider_id: XmlElem<number, OutstaffProviderCatalogDocumentTopElem>;
+  outstaff_contract_id: XmlElem<number, OutstaffContractCatalogDocumentTopElem>;
+  outstaff_order_id: XmlElem<number, OutstaffContractCatalogDocumentTopElem>;
+  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
+  start_date: XmlElem<Date>;
+  finish_date: XmlElem<Date>;
+  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
+  stage_id: XmlElem<string>;
+  stage_parent_id: XmlElem<string>;
+  stage_collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  stage_date: XmlElem<Date>;
+  stage_fact_date: XmlElem<Date>;
+  stage_hour_num: XmlElem<number>;
+  stage_hours_worked: XmlElem<number>;
+  stage_is_assist: XmlElem<boolean>;
+  stage_status_type: XmlElem<string, typeof common.outstaff_order_execution_status_types>;
+  MatchDocTypeExt(): void;
+  OnBuildExt(): void;
+  OnDeleteExt(): void;
+};

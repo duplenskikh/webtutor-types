@@ -1,11 +1,8 @@
-type MessengerServiceCatalogDocumentTopElem = XmlTopElem & { Doc: MessengerServiceCatalogDocument } & {
+type MessengerServiceCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type MessengerServiceCatalogDocument = XmlDocument & {
-  TopElem: MessengerServiceCatalogDocumentTopElem;
+  OnBuild(): void;
 };

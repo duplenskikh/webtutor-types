@@ -1,5 +1,6 @@
-type SaleStatusDocumentTopElem = XmlTopElem & { Doc: SaleStatusDocument } &
+type SaleStatusDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
+  Doc: SaleStatusDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
   comment: XmlElem<string>;
@@ -8,4 +9,7 @@ CustomElemsBase & {
 
 type SaleStatusDocument = XmlDocument & {
   TopElem: SaleStatusDocumentTopElem;
+  sale_status: SaleStatusDocumentTopElem;
+  OnInit(): void;
+  DocDesc(): string;
 };

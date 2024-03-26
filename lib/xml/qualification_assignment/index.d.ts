@@ -7,22 +7,26 @@ interface QualificationAssignmentDocumentTestLearning {
 }
 
 interface QualificationAssignmentDocumentEducationMethod {
-  education_method_id: XmlElem<number>;
+  education_method_id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
 }
 
-type QualificationAssignmentDocumentTopElem = XmlTopElem & { Doc: QualificationAssignmentDocument } &
+type QualificationAssignmentDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: QualificationAssignmentDocument;
   assignment_date: XmlElem<Date>;
   expiration_date: XmlElem<Date>;
   plan_end_date: XmlElem<Date>;
   reason: XmlElem<string>;
-  status: XmlElem<string>;
-  qualification_id: XmlElem<number>;
-  person_id: XmlElem<number>;
-  event_id: XmlElem<number>;
+  status: XmlElem<string, typeof common.qualification_assignment_states>;
+  qualification_id: XmlElem<number, QualificationCatalogDocumentTopElem>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
+  sender_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  competence_id: XmlElem<number, CompetenceCatalogDocumentTopElem>;
+  is_reward: XmlElem<boolean>;
   learnings: XmlMultiElem<QualificationAssignmentDocumentLearning>;
   test_learnings: XmlMultiElem<QualificationAssignmentDocumentTestLearning>;
   education_methods: XmlMultiElem<QualificationAssignmentDocumentEducationMethod>;
@@ -33,4 +37,6 @@ CustomElemsBase & {
 
 type QualificationAssignmentDocument = XmlDocument & {
   TopElem: QualificationAssignmentDocumentTopElem;
+  qualification_assignment: QualificationAssignmentDocumentTopElem;
+  DocDesc(): string;
 };

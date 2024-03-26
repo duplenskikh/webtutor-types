@@ -1,15 +1,13 @@
-type DeviceRegCatalogDocumentTopElem = XmlTopElem & { Doc: DeviceRegCatalogDocument } &
+type DeviceRegCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   device_id: XmlElem<string>;
   last_access_date: XmlElem<Date>;
-  mobile_app_config_id: XmlElem<number>;
-  person_id: XmlElem<number>;
+  mobile_app_config_id: XmlElem<number, MobileAppConfigCatalogDocumentTopElem>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type DeviceRegCatalogDocument = XmlDocument & {
-  TopElem: DeviceRegCatalogDocumentTopElem;
+  tokens: XmlMultiElemObject<number>;
+  OnBuild(): void;
 };

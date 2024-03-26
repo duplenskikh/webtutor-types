@@ -1,15 +1,12 @@
-type ProfessionalAreaCatalogDocumentTopElem = XmlTopElem & { Doc: ProfessionalAreaCatalogDocument } &
+type ProfessionalAreaCatalogDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase & {
-  parent_id: XmlElem<number>;
-  professional_area_type_id: XmlElem<number>;
+  parent_id: XmlElem<number, ProfessionalAreaCatalogDocumentTopElem>;
+  professional_area_type_id: XmlElem<number, ProfessionalAreaTypeCatalogDocumentTopElem>;
   comment: XmlElem<string>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type ProfessionalAreaCatalogDocument = XmlDocument & {
-  TopElem: ProfessionalAreaCatalogDocumentTopElem;
+  OnBuild(): void;
 };

@@ -1,12 +1,15 @@
-type QaTestParamsetDocumentTopElem = XmlTopElem & { Doc: QaTestParamsetDocument } &
+type QaTestParamsetDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 QaTestParamBase &
 QaTestAssertBase & {
-  status: XmlElem<string>;
+  Doc: QaTestParamsetDocument;
+  status: XmlElem<string, typeof common.qa_test_states>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
 };
 
 type QaTestParamsetDocument = XmlDocument & {
   TopElem: QaTestParamsetDocumentTopElem;
+  qa_test_paramset: QaTestParamsetDocumentTopElem;
+  DocDesc(): string;
 };

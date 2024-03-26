@@ -1,9 +1,9 @@
-type StatementActorCatalogDocumentTopElem = XmlTopElem & { Doc: StatementActorCatalogDocument } & {
+type StatementActorCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   path: XmlElem<string>;
   name: XmlElem<string>;
   object_type: XmlElem<string>;
-  statement_id: XmlElem<number>;
+  statement_id: XmlElem<number, StatementCatalogDocumentTopElem>;
   mbox: XmlElem<string>;
   mbox_sha1sum: XmlElem<string>;
   openid: XmlElem<string>;
@@ -11,8 +11,5 @@ type StatementActorCatalogDocumentTopElem = XmlTopElem & { Doc: StatementActorCa
   account_name: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type StatementActorCatalogDocument = XmlDocument & {
-  TopElem: StatementActorCatalogDocumentTopElem;
+  OnBuild(): void;
 };

@@ -1,5 +1,5 @@
 interface DnDisciplineDocumentDiscBlock {
-  block_id: XmlElem<number>;
+  block_id: XmlElem<number, DnDisciplineBlockCatalogDocumentTopElem>;
 }
 
 type DnDisciplineDocumentTopElem = XmlTopElem &
@@ -9,8 +9,8 @@ CustomElemsBase & {
   code: XmlElem<string>;
   name: XmlElem<string>;
   desc: XmlElem<string>;
-  faculty_id: XmlElem<number>;
-  chair_id: XmlElem<number>;
+  faculty_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  chair_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
   disc_blocks: XmlMultiElem<DnDisciplineDocumentDiscBlock>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
@@ -18,4 +18,6 @@ CustomElemsBase & {
 
 type DnDisciplineDocument = XmlDocument & {
   TopElem: DnDisciplineDocumentTopElem;
+  dn_discipline: DnDisciplineDocumentTopElem;
+  DocDesc(): string;
 };

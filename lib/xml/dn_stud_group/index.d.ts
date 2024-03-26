@@ -1,5 +1,5 @@
 interface DnStudGroupDocumentSubfaculty {
-  subfac_id: XmlElem<number>;
+  subfac_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
 }
 
 type DnStudGroupDocumentTopElem = XmlTopElem &
@@ -8,13 +8,13 @@ CustomElemsBase & {
   Doc: DnStudGroupDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  stream_id: XmlElem<number>;
-  status_id: XmlElem<string>;
-  academ_year_id: XmlElem<number>;
-  special_id: XmlElem<number>;
-  specialization_id: XmlElem<number>;
-  qualification_id: XmlElem<number>;
-  faculty: XmlElem<number>;
+  stream_id: XmlElem<number, DnStreamCatalogDocumentTopElem>;
+  status_id: XmlElem<string, typeof common.stud_group_states>;
+  academ_year_id: XmlElem<number, DnAcademYearCatalogDocumentTopElem>;
+  special_id: XmlElem<number, DnSpecialCatalogDocumentTopElem>;
+  specialization_id: XmlElem<number, DnSpecializationCatalogDocumentTopElem>;
+  qualification_id: XmlElem<number, QualificationCatalogDocumentTopElem>;
+  faculty: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
   subfacultys: XmlMultiElem<DnStudGroupDocumentSubfaculty>;
   group_size: XmlElem<number>;
   doc_info: XmlElem<DocInfoBase>;
@@ -22,4 +22,6 @@ CustomElemsBase & {
 
 type DnStudGroupDocument = XmlDocument & {
   TopElem: DnStudGroupDocumentTopElem;
+  dn_stud_group: DnStudGroupDocumentTopElem;
+  DocDesc(): string;
 };

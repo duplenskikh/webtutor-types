@@ -1,11 +1,8 @@
-type SaleContractTypeCatalogDocumentTopElem = XmlTopElem & { Doc: SaleContractTypeCatalogDocument } & {
+type SaleContractTypeCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type SaleContractTypeCatalogDocument = XmlDocument & {
-  TopElem: SaleContractTypeCatalogDocumentTopElem;
+  OnBuild(): void;
 };

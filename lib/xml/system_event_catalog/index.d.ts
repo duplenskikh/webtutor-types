@@ -1,4 +1,4 @@
-type SystemEventCatalogDocumentTopElem = XmlTopElem & { Doc: SystemEventCatalogDocument } & {
+type SystemEventCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -6,11 +6,8 @@ type SystemEventCatalogDocumentTopElem = XmlTopElem & { Doc: SystemEventCatalogD
   is_active: XmlElem<boolean>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type SystemEventCatalogDocument = XmlDocument & {
-  TopElem: SystemEventCatalogDocumentTopElem;
+  OnBuild(): void;
 };

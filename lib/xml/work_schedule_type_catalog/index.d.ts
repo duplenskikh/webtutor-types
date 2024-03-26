@@ -1,9 +1,8 @@
-type WorkScheduleTypeCatalogDocumentTopElem = XmlTopElem & { Doc: WorkScheduleTypeCatalogDocument } & {
+type WorkScheduleTypeCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-};
-
-type WorkScheduleTypeCatalogDocument = XmlDocument & {
-  TopElem: WorkScheduleTypeCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): void;
 };

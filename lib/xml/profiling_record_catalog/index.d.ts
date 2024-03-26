@@ -1,4 +1,4 @@
-type ProfilingRecordCatalogDocumentTopElem = XmlTopElem & { Doc: ProfilingRecordCatalogDocument } & {
+type ProfilingRecordCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   start_date: XmlElem<Date>;
   ticks: XmlElem<number>;
@@ -9,8 +9,7 @@ type ProfilingRecordCatalogDocumentTopElem = XmlTopElem & { Doc: ProfilingRecord
   template_id: XmlElem<number>;
   parent_template_type: XmlElem<string>;
   parent_template_id: XmlElem<number>;
-};
-
-type ProfilingRecordCatalogDocument = XmlDocument & {
-  TopElem: ProfilingRecordCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): void;
 };

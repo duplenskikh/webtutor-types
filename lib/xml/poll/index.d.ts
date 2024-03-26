@@ -1,5 +1,5 @@
 interface PollDocumentReportViewer extends PersonFillingBase {
-  person_id: XmlElem<number>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
 }
 
 interface PollDocumentQuestionEntry {
@@ -7,7 +7,7 @@ interface PollDocumentQuestionEntry {
   value: XmlElem<string>;
   weight: XmlElem<number>;
   bg_color: XmlElem<string>;
-  resource_id: XmlElem<number>;
+  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
 }
 
 interface PollDocumentQuestionRowColumn {
@@ -15,27 +15,29 @@ interface PollDocumentQuestionRowColumn {
   value: XmlElem<string>;
   bg_color: XmlElem<string>;
 }
+
 interface PollDocumentQuestionRow {
   id: XmlElem<number>;
   value: XmlElem<string>;
   bg_color: XmlElem<string>;
   columns: XmlMultiElem<PollDocumentQuestionRowColumn>;
 }
+
 interface PollDocumentQuestion extends CustomElemsBase {
   class: XmlElem<unknown>;
   id: XmlElem<number>;
-  type: XmlElem<string>;
+  type: XmlElem<string, typeof common.poll_types>;
   title: XmlElem<string>;
   is_in_table: XmlElem<boolean>;
   show_header: XmlElem<boolean>;
   required: XmlElem<boolean>;
-  catalog: XmlElem<string>;
+  catalog: XmlElem<string, typeof common.exchange_object_types>;
   add_comment: XmlElem<boolean>;
   subtype: XmlElem<number>;
   is_multiple: XmlElem<boolean>;
   value_condition: XmlElem<string>;
   completed: XmlElem<boolean>;
-  image_id: XmlElem<number>;
+  image_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   entries: XmlMultiElem<PollDocumentQuestionEntry>;
   rows: XmlMultiElem<PollDocumentQuestionRow>;
   is_current: XmlElem<boolean>;
@@ -49,13 +51,14 @@ interface PollDocumentItemRowColumn {
   value: XmlElem<string>;
   is_title: XmlElem<boolean>;
 }
+
 interface PollDocumentItemRow {
   id: XmlElem<string>;
   bg_color: XmlElem<string>;
   question_id: XmlElem<number>;
   value: XmlElem<string>;
   columns: XmlMultiElem<PollDocumentItemRowColumn>;
-  is_title(): unknown;
+  is_title(): boolean;
 }
 
 interface PollDocumentItemCondition {
@@ -64,13 +67,14 @@ interface PollDocumentItemCondition {
   entry_id: XmlElem<number>;
   and_or: XmlElem<string>;
 }
+
 interface PollDocumentItem {
   id: XmlElem<string>;
-  type: XmlElem<string>;
+  type: XmlElem<string, typeof common.poll_item_types>;
   title: XmlElem<string>;
   question_id: XmlElem<number>;
   required: XmlElem<boolean>;
-  resource_type: XmlElem<string>;
+  resource_type: XmlElem<string, typeof common.resource_types>;
   max_duration: XmlElem<number>;
   preparation_time: XmlElem<number>;
   prohibit_viewing: XmlElem<boolean>;
@@ -79,7 +83,7 @@ interface PollDocumentItem {
   conditions: XmlMultiElem<PollDocumentItemCondition>;
 }
 
-type PollDocumentTopElem = XmlTopElem & { Doc: PollDocument } &
+type PollDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 CourseExpertsBase &
 CustomElemsBase &
@@ -87,6 +91,7 @@ AdminAccessBase &
 ProctoringBase &
 GameBonusBase &
 KnowledgePartsBase & {
+  Doc: PollDocument;
   class: XmlElem<string>;
   poll_id: XmlElem<number>;
   start_date: XmlElem<Date>;
@@ -98,12 +103,13 @@ KnowledgePartsBase & {
   show_report: XmlElem<boolean>;
   show_comments_in_report: XmlElem<boolean>;
   report_viewers: XmlMultiElem<PollDocumentReportViewer>;
-  is_multiple_select(): boolean;
+  is_multiple_select: XmlElem<boolean>;
   columns_num: XmlElem<number>;
   questions: XmlMultiElem<PollDocumentQuestion>;
   items: XmlMultiElem<PollDocumentItem>;
   allow_delete_poll_result: XmlElem<boolean>;
   complete_message: XmlElem<string>;
+  view_templates: XmlElem<MsViewTemplatesBase>;
   adaptive_mode(): unknown;
   access: XmlElem<AccessDocBase>;
   complete_massege: XmlElem<string>;
@@ -111,12 +117,16 @@ KnowledgePartsBase & {
   desc: XmlElem<string>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  role_id: XmlMultiElem<number>;
+  role_id: XmlMultiElemObject<number>;
   get_report_data(): unknown;
-  set_question_id(): unknown;
-  set_value(): unknown;
+  set_question_id(fldQuestionIdTarget: unknown, fldItem: unknown, itemType: string, isNew: boolean): unknown;
+  set_value(fldValueTarget: unknown): boolean;
 };
 
 type PollDocument = XmlDocument & {
   TopElem: PollDocumentTopElem;
+  poll: PollDocumentTopElem;
+  OnInit(): void;
+  OnCreate(): void;
+  DocDesc(): string;
 };

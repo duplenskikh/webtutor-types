@@ -1,4 +1,4 @@
-type CertificateCatalogTopElem = XmlElem<
+type CertificateCatalogDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 AdminAccessBase & {
   id: XmlElem<number>;
@@ -15,5 +15,6 @@ AdminAccessBase & {
   expire_date: XmlElem<Date>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  role_id: XmlMultiElem<number>;
-}>;
+  role_id: XmlMultiElemObject<number>;
+  OnBuild(): void;
+};

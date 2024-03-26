@@ -4,11 +4,13 @@ WebVariablesBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  status: XmlElem<string>;
-  application_id: XmlElem<number>;
+  status: XmlElem<string, typeof common.progress_types>;
+  application_id: XmlElem<number, ApplicationCatalogDocumentTopElem>;
   doc_info: XmlElem<DocInfoBase>;
 };
 
 type ApplicationInstanceDocument = XmlDocument & {
   TopElem: ApplicationInstanceDocumentTopElem;
+  application_instance: ApplicationInstanceDocumentTopElem;
+  DocDesc(): string;
 };

@@ -1,36 +1,33 @@
-type LearningRecordCatalogDocumentTopElem = XmlTopElem & { Doc: LearningRecordCatalogDocument } &
+type LearningRecordCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
-  object_type: XmlElem<string>;
+  object_type: XmlElem<string, typeof common.exchange_object_types>;
   object_id: XmlElem<number>;
   object_name: XmlElem<string>;
-  event_id: XmlElem<number>;
-  proctoring_object_type: XmlElem<string>;
+  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
+  proctoring_object_type: XmlElem<string, typeof common.exchange_object_types>;
   proctoring_object_id: XmlElem<number>;
   proctoring_object_name: XmlElem<string>;
-  proctoring_system_id: XmlElem<number>;
-  person_id: XmlElem<number>;
+  proctoring_system_id: XmlElem<number, ProctoringSystemCatalogDocumentTopElem>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
   person_position_name: XmlElem<string>;
   person_subdivision_name: XmlElem<string>;
   create_date: XmlElem<Date>;
-  state_id: XmlElem<string>;
+  state_id: XmlElem<string, typeof common.learning_record_statuss>;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   is_finish_record: XmlElem<boolean>;
   num_failed_checked_foto: XmlElem<number>;
-  check_foto_state_id: XmlElem<string>;
+  check_foto_state_id: XmlElem<string, typeof common.learning_record_statuss>;
   download_materials: XmlElem<boolean>;
   active_session_id: XmlElem<string>;
   active_session_finish_date: XmlElem<Date>;
-  proctors_id: XmlMultiElem<number>;
-  archive_proctors_id: XmlMultiElem<number>;
+  proctors_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
+  archive_proctors_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
   is_prefer_proctor: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type LearningRecordCatalogDocument = XmlDocument & {
-  TopElem: LearningRecordCatalogDocumentTopElem;
+  OnBuild(): void;
 };

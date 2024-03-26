@@ -1,5 +1,5 @@
 interface CompetenceProfileFamilyDocumentCompetenceProfile {
-  competence_profile_id: XmlElem<number>;
+  competence_profile_id: XmlElem<number, CompetenceProfileCatalogDocumentTopElem>;
 }
 
 type CompetenceProfileFamilyDocumentTopElem = XmlTopElem &
@@ -14,4 +14,6 @@ AdminAccessBase & {
 
 type CompetenceProfileFamilyDocument = XmlDocument & {
   TopElem: CompetenceProfileFamilyDocumentTopElem;
+  competence_profile_family: CompetenceProfileFamilyDocumentTopElem;
+  DocDesc(): string;
 };

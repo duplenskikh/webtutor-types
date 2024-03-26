@@ -11,4 +11,6 @@ AdminAccessBase & {
 
 type DnTermDocument = XmlDocument & {
   TopElem: DnTermDocumentTopElem;
+  dn_term: DnTermDocumentTopElem;
+  DocDesc(): string;
 };

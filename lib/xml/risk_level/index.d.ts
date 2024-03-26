@@ -1,7 +1,8 @@
-type RiskLevelDocumentTopElem = XmlTopElem & { Doc: RiskLevelDocument } &
+type RiskLevelDocumentTopElem = XmlTopElem &
 FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
+  Doc: RiskLevelDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
   desc: XmlElem<string>;
@@ -12,4 +13,6 @@ CustomElemsBase & {
 
 type RiskLevelDocument = XmlDocument & {
   TopElem: RiskLevelDocumentTopElem;
+  risk_level: RiskLevelDocumentTopElem;
+  DocDesc(): string;
 };

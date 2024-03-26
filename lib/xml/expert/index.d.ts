@@ -4,17 +4,19 @@ interface ExpertDocumentFaq {
   faq_answer: XmlElem<string>;
 }
 
-type ExpertDocumentTopElem = XmlTopElem & { Doc: ExpertDocument } &
+type ExpertDocumentTopElem = XmlTopElem &
 PersonBase &
 CustomElemsBase &
 AdminAccessBase & {
-  name(): unknown;
+  Doc: ExpertDocument;
+  id: XmlElem<number>;
+  name(): string;
   code: XmlElem<string>;
   desc: XmlElem<string>;
-  type: XmlElem<string>;
-  person_id: XmlElem<number>;
+  type: XmlElem<string, typeof common.lector_types>;
+  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;
-  sub_expert_id: XmlElem<number>;
+  sub_expert_id: XmlElem<number, ExpertCatalogDocumentTopElem>;
   rating: XmlElem<number>;
   answer_expire_time: XmlElem<number>;
   faqs: XmlMultiElem<ExpertDocumentFaq>;
@@ -24,4 +26,6 @@ AdminAccessBase & {
 
 type ExpertDocument = XmlDocument & {
   TopElem: ExpertDocumentTopElem;
+  expert: ExpertDocumentTopElem;
+  DocDesc(): string;
 };

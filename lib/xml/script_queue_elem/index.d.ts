@@ -1,4 +1,5 @@
-type ScriptQueueElemDocumentTopElem = XmlTopElem & { Doc: ScriptQueueElemDocument } & {
+type ScriptQueueElemDocumentTopElem = XmlTopElem & {
+  Doc: ScriptQueueElemDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -20,4 +21,6 @@ type ScriptQueueElemDocumentTopElem = XmlTopElem & { Doc: ScriptQueueElemDocumen
 
 type ScriptQueueElemDocument = XmlDocument & {
   TopElem: ScriptQueueElemDocumentTopElem;
+  script_queue_elem: ScriptQueueElemDocumentTopElem;
+  DocDesc(): string;
 };

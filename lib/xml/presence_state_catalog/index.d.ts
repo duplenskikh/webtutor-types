@@ -1,24 +1,23 @@
-type PresenceStateCatalogDocumentTopElem = XmlTopElem & { Doc: PresenceStateCatalogDocument } & {
+type PresenceStateCatalogDocumentTopElem = XmlTopElem & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  state_id: XmlElem<string>;
+  state_id: XmlElem<string, typeof lists.person_states>;
   state_name: XmlElem<string>;
   accessible: XmlElem<boolean>;
   is_absence: XmlElem<boolean>;
-  workflow_id: XmlElem<number>;
+  workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
   can_cancel: XmlElem<boolean>;
   can_change: XmlElem<boolean>;
-  cancel_workflow_id: XmlElem<number>;
-  change_workflow_id: XmlElem<number>;
+  cancel_workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
+  change_workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
   position: XmlElem<number>;
   style_css: XmlElem<string>;
   all_day: XmlElem<boolean>;
   is_sub_work_time: XmlElem<boolean>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-};
-
-type PresenceStateCatalogDocument = XmlDocument & {
-  TopElem: PresenceStateCatalogDocumentTopElem;
+  modification_date: XmlElem<Date>;
+  app_instance_id: XmlElem<string>;
+  OnBuild(): void;
 };

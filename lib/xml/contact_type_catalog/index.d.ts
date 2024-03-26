@@ -1,4 +1,4 @@
-type ContactTypeCatalogDocumentTopElem = XmlTopElem & { Doc: ContactTypeCatalogDocument } &
+type ContactTypeCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
@@ -7,8 +7,5 @@ AdminAccessBase & {
   is_std: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-};
-
-type ContactTypeCatalogDocument = XmlDocument & {
-  TopElem: ContactTypeCatalogDocumentTopElem;
+  OnBuild(): void;
 };

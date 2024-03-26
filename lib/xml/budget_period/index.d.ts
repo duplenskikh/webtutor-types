@@ -1,7 +1,7 @@
 interface BudgetPeriodDocumentDay {
   date: XmlElem<Date>;
-  type: XmlElem<string>;
-  region_id: XmlElem<number>;
+  type: XmlElem<string, typeof common.day_types>;
+  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
   comment: XmlElem<string>;
 }
 
@@ -11,10 +11,10 @@ CustomElemsBase & {
   Doc: BudgetPeriodDocument;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  parent_id: XmlElem<number>;
+  parent_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
-  period_type: XmlElem<string>;
+  period_type: XmlElem<string, typeof common.perioditys>;
   days: XmlMultiElem<BudgetPeriodDocumentDay>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
@@ -22,4 +22,6 @@ CustomElemsBase & {
 
 type BudgetPeriodDocument = XmlDocument & {
   TopElem: BudgetPeriodDocumentTopElem;
+  budget_period: BudgetPeriodDocumentTopElem;
+  DocDesc(): string;
 };

@@ -1,17 +1,17 @@
-type ProjectCatalogDocumentTopElem = XmlTopElem & { Doc: ProjectCatalogDocument } &
+type ProjectCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
-  org_id: XmlElem<number>;
-  subdivision_id: XmlElem<number>;
-  group_id: XmlElem<number>;
-  contract_id: XmlElem<number>;
-  project_type_id: XmlElem<number>;
-  sale_contract_id: XmlElem<number>;
-  status: XmlElem<string>;
+  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
+  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
+  contract_id: XmlElem<number, ContractCatalogDocumentTopElem>;
+  project_type_id: XmlElem<number, ProjectTypeCatalogDocumentTopElem>;
+  sale_contract_id: XmlElem<number, SaleContractCatalogDocumentTopElem>;
+  status: XmlElem<string, typeof common.project_status_types>;
   is_model: XmlElem<boolean>;
-  workflow_id: XmlElem<number>;
+  workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
   plan_labor_costs: XmlElem<number>;
   fact_labor_costs: XmlElem<number>;
   percent_complete: XmlElem<number>;
@@ -21,13 +21,12 @@ AdminAccessBase & {
   start_date_fact: XmlElem<Date>;
   end_date_fact: XmlElem<Date>;
   allow_assessment: XmlElem<boolean>;
-  join_mode: XmlElem<string>;
-  resource_type_id: XmlElem<number>;
+  join_mode: XmlElem<string, typeof common.join_mode_types>;
+  resource_type_id: XmlElem<number, ResourceTypeCatalogDocumentTopElem>;
+  all_participant_view_task: XmlElem<boolean>;
+  allow_assigning_tasks_to_all: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
-  role_id: XmlMultiElem<number>;
-};
-
-type ProjectCatalogDocument = XmlDocument & {
-  TopElem: ProjectCatalogDocumentTopElem;
+  role_id: XmlMultiElemObject<number>;
+  OnBuild(): void;
 };
