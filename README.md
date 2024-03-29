@@ -65,7 +65,8 @@ npx tsc -init
     "noLib": true,
     "typeRoots": [
       "node_modules/@umbrik/webtutor-types/lib",
-      "node_modules/@umbrik/webtutor-types/lib/xml"
+      "node_modules/@umbrik/webtutor-types/lib/xml",
+      "node_modules/@umbrik/webtutor-types/lib/namespaces"
     ]
   }
 }
