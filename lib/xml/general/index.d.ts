@@ -521,6 +521,7 @@ interface GlobalSettingsBase extends EventSettingsBase {
   disp_log_mail_trans: XmlElem<boolean>;
   tracing: XmlElem<boolean>;
   tracing_timeout: XmlElem<number>;
+  log_embedding_detail: XmlElem<boolean>;
   export_odbc_commant_timeout: XmlElem<number>;
   not_use_doc_contains: XmlElem<boolean>;
   not_use_doc_contains_str_begins: XmlElem<boolean>;
@@ -558,6 +559,7 @@ interface GlobalSettingsBase extends EventSettingsBase {
   design_vscode_save_default: XmlElem<string, typeof common.design_vscode_save_types>;
   design_vscode_access: XmlElem<string, typeof common.design_vscode_access_types>;
   single_learning_session: XmlElem<boolean>;
+  course_access_on_education_plan: XmlElem<boolean>;
   unique_id_slot: XmlElem<number>;
   use_ws_idm: XmlElem<boolean>;
 }
@@ -2511,14 +2513,36 @@ interface PersonObjectLinksBase {
   person_object_profiles: XmlMultiElem<PersonObjectLinksBasePersonObjectProfile>;
 }
 
+interface ExecCodeBaseExecCodeBinFile {
+  name: XmlElem<string>;
+  parent_file_name: XmlElem<string>;
+  file_path: XmlElem<string>;
+  value: XmlElem<string>;
+  position: XmlElem<number>;
+  timestamp: XmlElem<Date>;
+}
+
 interface ExecCodeBaseExecCode {
   code_type: XmlElem<string>;
   code_url: XmlElem<string>;
   code_text: XmlElem<string>;
+  entry_point: XmlElem<string>;
+  code_hash: XmlElem<string>;
+  configuration: XmlElem<string>;
+  bin_files: XmlMultiElem<ExecCodeBaseExecCodeBinFile>;
 }
 
 interface ExecCodeBase {
   exec_code: XmlElem<ExecCodeBaseExecCode>;
+}
+
+interface ExecCodeBaseBinFile {
+  name: XmlElem<string>;
+  parent_file_name: XmlElem<string>;
+  file_path: XmlElem<string>;
+  value: XmlElem<string>;
+  position: XmlElem<number>;
+  timestamp: XmlElem<Date>;
 }
 
 interface ViewBaseLinkCatalog {

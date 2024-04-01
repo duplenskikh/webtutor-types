@@ -10,6 +10,9 @@ interface PersonnelDocumentDocumentSignature extends PersonFillingBase {
   signature: XmlElem<string>;
   signature_date: XmlElem<Date>;
   org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
+  check_in_sig: XmlElem<boolean>;
+  group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
+  essential_id: XmlElem<string>;
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   signature_file_id: XmlElem<string>;
   signature_type: XmlElem<string>;

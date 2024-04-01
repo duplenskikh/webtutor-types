@@ -4,6 +4,7 @@ interface ActiveNotificationDocumentSender {
 }
 
 interface ActiveNotificationDocumentAttachment {
+  cid: XmlElem<string>;
   name: XmlElem<string>;
   data: XmlElem<Binary>;
 }

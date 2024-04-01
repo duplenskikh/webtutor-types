@@ -45,6 +45,7 @@ interface ChatDocumentMessage {
 type ChatDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   Doc: ChatDocument;
+  id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
   collaborators: XmlMultiElem<ChatDocumentCollaborator>;

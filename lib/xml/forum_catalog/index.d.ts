@@ -1,6 +1,7 @@
 type ForumCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   id: XmlElem<number>;
+  code: XmlElem<string>;
   name: XmlElem<string>;
   resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   permit_subscription: XmlElem<boolean>;
@@ -9,6 +10,7 @@ AdminAccessBase & {
   allow_create_closed_theme: XmlElem<boolean>;
   allow_user_delete: XmlElem<boolean>;
   disp_user_status: XmlElem<boolean>;
+  need_moder_approval: XmlElem<boolean>;
   course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
   person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   person_fullname: XmlElem<string>;

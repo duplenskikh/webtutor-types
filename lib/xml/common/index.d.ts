@@ -1362,6 +1362,11 @@ interface CommonEvalCodeType {
   name: XmlElem<string>;
 }
 
+interface CommonEvalTextType {
+  id: XmlElem<string>;
+  name: XmlElem<string>;
+}
+
 interface CommonMaterialLocation {
   id: XmlElem<string>;
   name: XmlElem<string>;
@@ -1432,6 +1437,31 @@ interface CommonWeekType {
 }
 
 interface CommonProcessingMethod {
+  id: XmlElem<string>;
+  name: XmlElem<string>;
+}
+
+interface CommonBenefitStatus {
+  id: XmlElem<string>;
+  name: XmlElem<string>;
+}
+
+interface CommonBenefitItemStatus {
+  id: XmlElem<string>;
+  name: XmlElem<string>;
+}
+
+interface CommonObjectParamBaseObjectType {
+  name: XmlElem<string>;
+  title: XmlElem<string>;
+}
+
+interface CommonWikiBaseType {
+  id: XmlElem<string>;
+  name: XmlElem<string>;
+}
+
+interface CommonWikiBaseStatus {
   id: XmlElem<string>;
   name: XmlElem<string>;
 }
@@ -1681,6 +1711,7 @@ interface ICommon {
   usage_object_types: XmlMultiElem<CommonUsageObjectType>;
   perfom_condition_types: XmlMultiElem<CommonPerfomConditionType>;
   eval_code_types: XmlMultiElem<CommonEvalCodeType>;
+  eval_text_types: XmlMultiElem<CommonEvalTextType>;
   material_locations: XmlMultiElem<CommonMaterialLocation>;
   reaction_types: XmlMultiElem<CommonReactionType>;
   create_task_types: XmlMultiElem<CommonCreateTaskType>;
@@ -1695,6 +1726,11 @@ interface ICommon {
   scheduler_types: XmlMultiElem<CommonSchedulerType>;
   week_types: XmlMultiElem<CommonWeekType>;
   processing_methods: XmlMultiElem<CommonProcessingMethod>;
+  benefit_statuses: XmlMultiElem<CommonBenefitStatus>;
+  benefit_item_statuses: XmlMultiElem<CommonBenefitItemStatus>;
+  object_param_base_object_types: XmlMultiElem<CommonObjectParamBaseObjectType>;
+  wiki_base_types: XmlMultiElem<CommonWikiBaseType>;
+  wiki_base_statuses: XmlMultiElem<CommonWikiBaseStatus>;
 }
 
 declare const common: XmlElem<ICommon>;

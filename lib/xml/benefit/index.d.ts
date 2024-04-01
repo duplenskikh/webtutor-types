@@ -6,6 +6,7 @@ CustomElemsBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
+  status: XmlElem<string, typeof common.benefit_statuses>;
   weight: XmlElem<number>;
   desc: XmlElem<string>;
   comment: XmlElem<string>;
