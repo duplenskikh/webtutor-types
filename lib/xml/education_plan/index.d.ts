@@ -30,6 +30,12 @@ interface EducationPlanDocumentProgramStartNotifiation {
   edit_notification: XmlElem<boolean>;
 }
 
+interface EducationPlanDocumentProgramResultObject {
+  object_id: XmlElem<number>;
+  result_type: XmlElem<string, typeof common.exchange_object_types>;
+  result_object_id: XmlElem<number>;
+}
+
 interface EducationPlanDocumentProgramCompletedParentProgram {
   program_id: XmlElem<number>;
 }
@@ -73,6 +79,7 @@ interface EducationPlanDocumentProgram extends CustomElemsBase {
   result_object_code: XmlElem<string>;
   result_object_start_date: XmlElem<Date>;
   result_object_finish_date: XmlElem<Date>;
+  result_objects: XmlMultiElem<EducationPlanDocumentProgramResultObject>;
   state_id: XmlElem<number, typeof common.education_learning_states>;
   tutor_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   weight: XmlElem<number>;

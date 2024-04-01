@@ -1,5 +1,6 @@
 interface WikiArticleDocumentAuthor extends PersonFillingBase {
   author_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  boss_type_id: XmlElem<number, BossTypeCatalogDocumentTopElem>;
 }
 
 interface WikiArticleDocumentAddingObjectsWikiArticleCommunication {
@@ -55,6 +56,7 @@ KnowledgePartsBase & {
   resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   wiki_base_id: XmlElem<number, WikiBaseCatalogDocumentTopElem>;
   wiki_article_type_id: XmlElem<number, WikiArticleTypeCatalogDocumentTopElem>;
+  content_type: XmlElem<string>;
   status_id: XmlElem<string, typeof common.status_in_knowledge_map_types>;
   acquaint_type_id: XmlElem<string, typeof common.acquaint_types>;
   create_date: XmlElem<Date>;
@@ -66,6 +68,7 @@ KnowledgePartsBase & {
   questions: XmlMultiElem<WikiArticleDocumentQuestion>;
   acquaint_groups: XmlMultiElem<WikiArticleDocumentAcquaintGroup>;
   annotation: XmlElem<string>;
+  longread: XmlElem<string>;
   text_area: XmlElem<string>;
   access: XmlElem<AccessDocBase>;
   doc_info: XmlElem<DocInfoBase>;

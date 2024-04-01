@@ -12,7 +12,7 @@ CustomElemsBase & {
   type: XmlElem<string, typeof common.server_agent_types>;
   run_code_url: XmlElem<string>;
   run_code: XmlElem<string>;
-  run_agent(objectId: number, objectsIds: string, date: Date): unknown;
+  run_agent(objectId: number, objectsIds: string, date: Date, inPlace: boolean, configuration: string): unknown;
   discharge_id: XmlElem<number, DischargeCatalogDocumentTopElem>;
   user_assignment_id: XmlElem<number, UserAssignmentCatalogDocumentTopElem>;
   import_excel_person_scheme_id: XmlElem<string, typeof lists.import_excel_person_schemes>;
@@ -29,5 +29,6 @@ type ServerAgentDocument = XmlDocument & {
   TopElem: ServerAgentDocumentTopElem;
   server_agent: ServerAgentDocumentTopElem;
   OnLoad_____(): void;
+  OnBeforeSave(): void;
   DocDesc(): string;
 };

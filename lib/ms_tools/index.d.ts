@@ -104,10 +104,11 @@ declare namespace ms_tools {
   function eval_remote_action_step(remoteActionId: number, params: unknown): unknown;
   function eval_remote_action(remoteActionId: unknown, params: unknown, fldTopElem: unknown, screen: unknown, dispType: string): unknown;
   function get_remote_actions_by_cur_application(catalogName: string, viewConfigurationId: number): unknown;
-  function get_element_property(elem: unknown, propertyName: string, altPropertyName: string): unknown;
+  function get_element_property(elem: unknown, propertyName: string, altPropertyName: string, hasValue: boolean): unknown;
   function disp_application_view_configuration(applicationTopElem: unknown, viewConfigurationId: string, elemType: string, menuElem: unknown, noTab: boolean, onlyUrl: boolean): unknown;
   function disp_application_complex_block(blockId: string, noTab: boolean, onlyUrl: boolean): unknown;
   function update_access_blocks_doc_types(fldAccessBlocks: unknown): unknown;
   function update_claims_by_object(objectId: number, objectType: string, claimTypes: string): unknown;
   function get_doc_screen_wvars(doc: unknown): unknown;
+  function evaluate_convert_post(lastVersion: string): unknown;
 }
