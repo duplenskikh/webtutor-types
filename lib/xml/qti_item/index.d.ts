@@ -56,7 +56,6 @@ interface QtiItemDocumentItem extends CustomElemsBase, KnowledgePartsBase, Knowl
 
 type QtiItemDocumentTopElem = XmlTopElem & {
   Doc: QtiItemDocument;
-
 };
 
 type QtiItemDocument = XmlDocument & {

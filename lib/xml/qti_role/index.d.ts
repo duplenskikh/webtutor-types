@@ -11,7 +11,6 @@ interface QtiRoleDocumentRole extends ObjectCodeNameBase, KnowledgePartsBase {
 
 type QtiRoleDocumentTopElem = XmlTopElem & {
   Doc: QtiRoleDocument;
-
 };
 
 type QtiRoleDocument = XmlDocument & {

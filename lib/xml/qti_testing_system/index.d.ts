@@ -15,7 +15,6 @@ interface QtiTestingSystemDocumentTestingSystem extends ExecCodeBase, MsParamete
 
 type QtiTestingSystemDocumentTopElem = XmlTopElem & {
   Doc: QtiTestingSystemDocument;
-
 };
 
 type QtiTestingSystemDocument = XmlDocument & {
