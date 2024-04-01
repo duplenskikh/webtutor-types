@@ -7,6 +7,7 @@ AdminAccessBase & {
   start_date: XmlElem<Date>;
   finish_date: XmlElem<Date>;
   period_type: XmlElem<string, typeof common.perioditys>;
+  role_id: XmlMultiElemObject<number>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   OnBuild(): void;

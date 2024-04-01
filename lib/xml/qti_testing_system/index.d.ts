@@ -1,4 +1,4 @@
-interface QtiTestingSystemDocumentTestingSystem extends MsParametersBase, AdminAccessBase {
+interface QtiTestingSystemDocumentTestingSystem extends ExecCodeBase, MsParametersBase, AdminAccessBase {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;

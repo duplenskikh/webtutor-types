@@ -20,6 +20,7 @@ CustomElemsBase & {
   field_recipient_type: XmlElem<string>;
   notification_systems: XmlMultiElem<NotificationDocumentNotificationSystem>;
   active: XmlElem<boolean>;
+  active_chatbot_script: XmlElem<boolean>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
   notification_template_id: XmlElem<number, NotificationTemplateCatalogDocumentTopElem>;

@@ -1,3 +1,9 @@
+interface HostDocumentAuthRule extends WebVariablesBase {
+  id: XmlElem<string>;
+  user_agent: XmlElem<string>;
+  auth_type_id: XmlElem<number, AuthTypeCatalogDocumentTopElem>;
+}
+
 interface HostDocumentHeaderHost {
   host_name: XmlElem<string>;
 }
@@ -57,6 +63,7 @@ CustomElemsBase & {
   disp_login_pass: XmlElem<boolean>;
   allow_lds_auth: XmlElem<boolean>;
   auth_type_id: XmlElem<number, AuthTypeCatalogDocumentTopElem>;
+  auth_rules: XmlMultiElem<HostDocumentAuthRule>;
   header_hosts: XmlMultiElem<HostDocumentHeaderHost>;
   register_logged_in: XmlElem<boolean>;
   workspace_config_block: XmlElem<HostDocumentWorkspaceConfigBlock>;
@@ -64,7 +71,7 @@ CustomElemsBase & {
   changed: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
-  set_auth_type(authType: unknown): unknown;
+  set_auth_type(authType: unknown, authRuleId: string): unknown;
 };
 
 type HostDocument = XmlDocument & {

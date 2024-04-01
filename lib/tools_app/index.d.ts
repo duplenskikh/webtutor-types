@@ -22,7 +22,7 @@ declare namespace tools_app {
   function get_application_resources_list(object: unknown): unknown;
   function get_application_resource(object: unknown, resourceUrl: string): unknown;
   function package_application(object: unknown): unknown;
-  function clear_application_cache(applicationCode: string): unknown;
+  function clear_application_cache(applicationCode: string, componentCode: string): unknown;
   function get_application_ids(object: unknown): unknown;
   function get_application_objects(object: unknown, arrCatalogs: unknown): unknown;
   function save_cur_application_settings(lastApplication: unknown, newSettings: unknown): unknown;
