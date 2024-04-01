@@ -3,7 +3,7 @@
   Typescript типы для WebSoft HCM.
   
   [![actions](https://github.com/umbrik/webtutor-types/actions/workflows/actions.yml/badge.svg)](https://github.com/umbrik/webtutor-types/actions/workflows/actions.yml)
-  ![npm](https://img.shields.io/npm/dy/@umbrik/webtutor-types)
+  ![npm](https://img.shields.io/npm/dw/@umbrik/webtutor-types)
 </div>
 
 ## Документация
