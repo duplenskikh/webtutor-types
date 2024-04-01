@@ -1,6 +1,6 @@
 declare namespace tools_report {
   function log_report(msg: string): unknown;
-  function model_roles(curUserId: number, applicationId: number): unknown;
+  function model_roles(curUserId: number, applicationId: number, blockName: string): unknown;
   function save_report_to_file(html: string, reportName: string, outType: string, fileUrl: string, isWebClient: boolean, columns: string, arrData: unknown, params: unknown): unknown;
   function read_report_settings(reportName: string, topElem: unknown, arrParams: unknown): unknown;
   function save_report_settings(reportName: string, arrParams: unknown): unknown;

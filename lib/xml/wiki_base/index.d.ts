@@ -20,6 +20,8 @@ KnowledgePartsBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
+  wiki_base_type_id: XmlElem<string, typeof common.wiki_base_types>;
+  status: XmlElem<string, typeof common.wiki_base_statuses>;
   resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
   base_wiki_article_types: XmlMultiElem<WikiBaseDocumentBaseWikiArticleType>;
   wiki_article_types: XmlMultiElem<WikiBaseDocumentWikiArticleType>;
@@ -28,6 +30,7 @@ KnowledgePartsBase & {
   free_access_edit: XmlElem<boolean>;
   copy_access_in_new_article: XmlElem<boolean>;
   text_area: XmlElem<string>;
+  process_embedding: XmlElem<boolean>;
   access: XmlElem<AccessDocBase>;
   role_id: XmlMultiElemObject<number>;
   doc_info: XmlElem<DocInfoBase>;

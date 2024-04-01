@@ -51,6 +51,8 @@ type CollaboratorCatalogDocumentTopElem = XmlTopElem & {
   provider_legal_id: XmlElem<string>;
   snils: XmlElem<string>;
   cost_center_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
+  disp_birthdate: XmlElem<boolean>;
+  disp_birthdate_year: XmlElem<boolean>;
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   OnBuild(): void;

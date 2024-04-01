@@ -16,6 +16,7 @@ CustomElemsBase & {
   finish_date: XmlElem<Date>;
   period_type: XmlElem<string, typeof common.perioditys>;
   days: XmlMultiElem<BudgetPeriodDocumentDay>;
+  role_id: XmlMultiElemObject<number>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
 };
