@@ -6,4 +6,3 @@ interface categorys extends Object {
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 declare const categorys: categorys;
-declare const DefaultDb: string;
