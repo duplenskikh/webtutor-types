@@ -150,3 +150,10 @@ IsArray(xmlDocumentForTesting.TopElem.tasks);
 IsArray(1);
 
 var result = MailMessage();
+
+DefaultDb.Name = "default_db_name";
+if (DefaultDb.IsShared) {
+  DefaultDb.StorageDirectory = "";
+  var document = DefaultDb.OpenNewObjectDoc<VacancyDocument>("vacancy");
+  document.TopElem.Name == "vacancy";
+}
