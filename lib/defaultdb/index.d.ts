@@ -12,15 +12,15 @@ interface DefaultDb {
   // HostDir: T;
   RegisterObjectType(urlScheme: string, object: Object): void;
   RegisterCatalog(urlScheme: string): never | undefined;
-  OpenObjectDoc(arg1: object, arg2: object): object;
-  OpenNewObjectDoc<T>(objectName: string): T;
-  DeleteObjectDoc<T extends XmlDocument>(arg: object): T;
+  OpenObjectDoc<T extends XmlDocument>(catalogName: string, id: number): T;
+  OpenNewObjectDoc<T extends XmlDocument>(objectName: string): T;
+  DeleteObjectDoc(objectName: string, objectId: number, bool?: boolean): void;
   ChangeObjectFields(arg: object): object;
   UpdateObjectSecondaryData(arg: object): object;
-  GetObjectForm(arg: object): object;
+  GetObjectForm<T>(name: string): T;
   GetOptCatalog<T>(catalogName: string): T;
-  GetRecordPrimaryObjectUrl(arg: object): object;
-  RunSql(arg: object): object;
+  GetRecordPrimaryObjectUrl(object: object): string;
+  RunSql(cmd: string): unknown;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
