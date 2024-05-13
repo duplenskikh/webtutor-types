@@ -2686,7 +2686,10 @@ declare namespace tools {
    * @param {U} defaultValue - Значение по умолчанию.
    * @returns {T[K]["Value"] | U} Значение.
    */
-  function get_foreign_field<T extends XmlTopElem, K extends keyof T, U>(field: T, name: K, defaultValue?: U): K extends keyof T ? (T[K] extends XmlElem<unknown, unknown> ? T[K]["Value"] : U) : U;
+  function get_foreign_field<R, T extends keyof R>(
+    field: XmlElem<unknown, R>,
+    name: T,
+    defaultValue?: string): R[T] extends XmlElem<unknown, unknown> ? R[T]["Value"] : string;
 
   function get_short_login_by_login(login: string): unknown;
 

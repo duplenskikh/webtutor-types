@@ -4,7 +4,7 @@ var collaborator2 = tools.new_doc_by_name<CollaboratorDocument>("collaborator");
 
 if (collaborator !== undefined) {
   if (collaborator.TopElem.position_id.OptForeignElem !== undefined) {
-    var foreignName = tools.get_foreign_field(collaborator.TopElem.position_id.OptForeignElem, "basic_rate", "");
+    var foreignName = tools.get_foreign_field(collaborator.TopElem.position_id, "basic_rate", "");
   }
 }
 
