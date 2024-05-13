@@ -4,7 +4,7 @@
  * AddProperty , SetProperty , GetProperty , GetOptProperty .
  */
 interface Object {
-  [key: string]: unknown;
+  [key: string | number]: unknown;
 
   /**
    * Выдает true, если атрубут с заданным наименованием существует,
