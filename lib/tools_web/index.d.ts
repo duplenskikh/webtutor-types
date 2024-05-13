@@ -205,7 +205,7 @@ declare namespace tools_web {
    * @param {string} userDataCode - Код кэша.
    * @returns {string|null} Значение кэша.
    */
-  function get_user_data(userDataCode: string): null | string;
+  function get_user_data<T>(userDataCode: string): null | T;
 
   function remove_user_data(key: string): unknown;
 
