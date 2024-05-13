@@ -1900,7 +1900,7 @@ declare function RegisterSharedDoc(docUrl: string): XmlDocument;
  * См. Опции открытия документа XML.
  * @returns {XmlDocument} XmlDocument.
  */
-declare function OpenDocFromStr(dataStr: string, options?: string): XmlDocument;
+declare function OpenDocFromStr<T extends XmlDocument>(dataStr: string, options?: string): T;
 
 /**
  * Загружает содержимое файла с заданным путем с учетом наличия BOM.
