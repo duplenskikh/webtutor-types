@@ -593,6 +593,7 @@ declare function ArrayDirect<T>(array: XmlMultiElem<T>): T[];
  * @returns {Array} - Результат.
  */
 declare function ArrayExtract<T, K>(array: T[], fieldExpr: string | null): K[];
+
 /**
  * Выбирает определенное значение из каждого элемента массива.
  * Возвращает новый массив той же длинны, содержащий выбранные элементы.
@@ -2505,6 +2506,14 @@ declare function IsAbsoluteFilePath(path: string): boolean;
 declare function ObtainSessionTempFile(suffix?: string): string;
 
 /**
+ * Создает директорию с уникальным именем внутри директории для временных файлов.
+ * Возвращает путь к созданной директории.
+ * Смотри также {@link ObtainTempFile}().
+ * @returns {string} - Путь к созданной директории.
+ */
+declare function ObtainTempDirectoryPath(): string;
+
+/**
  * Перемещает или переименовывает файл.
  * @param {string} path1 - Исходный путь к файлу.
  * @param {string} path2 - Новый путь к файлу.
@@ -2676,6 +2685,13 @@ declare function CodeLiteral(value: undefined | null | string | number | boolean
 declare function RegisterCodeLibrary(url: string): void;
 
 /**
+ * Возврат объекта namespace по названию.
+ * @param {string} name - Название namespace.
+ * @returns {T} - Объект namespace.
+ */
+declare function OpenCodeLibrary<T>(name: string): T;
+
+/**
  * Функция ядра, которая удаленно (на сервере) вызывает метод с параметрами для конкретного объекта.
  * Примечание - По существу, оператор oResult = CallObjectMethod (oLib, ‘some_function’, [param1, param2])
  * выполняет почти то же самое, что и oResult = oLib.some_function (param1, param2),
@@ -2691,7 +2707,7 @@ declare function RegisterCodeLibrary(url: string): void;
  * В случае, если параметры метода не предусмотрены, указывается пустой массив ([]).
  * @returns {unknown} Result.
  */
-declare function CallObjectMethod<T>(object: Object, method: string, params?: T): unknown;
+declare function CallObjectMethod<T, K>(object: Object | XmlDocument, method: string, params?: K): T;
 
 /**
  * Интерпретирует содержимое страницы по правилам ASP.
