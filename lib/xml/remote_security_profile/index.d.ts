@@ -1,20 +1,12 @@
-interface RemoteSecurityProfileDocumentMethodAccessListMethodAccess {
+interface RemoteSecurityProfileDocumentMethodAccess {
   access_block_id: XmlElem<string, AccessBlockCatalogDocumentTopElem>;
   library_profile: XmlElem<string>;
 }
 
-interface RemoteSecurityProfileDocumentMethodAccessList {
-  method_access: XmlElem<RemoteSecurityProfileDocumentMethodAccessListMethodAccess>;
-}
-
-interface RemoteSecurityProfileDocumentLibAccessListLibAccess {
+interface RemoteSecurityProfileDocumentLibAccess {
   library_id: XmlElem<number, CodeLibraryCatalogDocumentTopElem>;
   library_code: XmlElem<string>;
   filter: XmlElem<string>;
-}
-
-interface RemoteSecurityProfileDocumentLibAccessList {
-  lib_access: XmlElem<RemoteSecurityProfileDocumentLibAccessListLibAccess>;
 }
 
 type RemoteSecurityProfileDocumentTopElem = XmlTopElem & {
@@ -22,8 +14,8 @@ type RemoteSecurityProfileDocumentTopElem = XmlTopElem & {
   code: XmlElem<string>;
   name: XmlElem<string>;
   source: XmlElem<number>;
-  method_access_list: XmlElem<RemoteSecurityProfileDocumentMethodAccessList>;
-  lib_access_list: XmlElem<RemoteSecurityProfileDocumentLibAccessList>;
+  method_access_list: XmlMultiElem<RemoteSecurityProfileDocumentMethodAccess>;
+  lib_access_list: XmlMultiElem<RemoteSecurityProfileDocumentLibAccess>;
   comment: XmlElem<string>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
