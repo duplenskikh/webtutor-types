@@ -995,6 +995,74 @@ declare function GetCurTicks(): number;
 declare function DateDiff(date1: Date, date2: Date): number;
 
 /**
+ * Меняет значение часового пояса внутри даты, оставляя значение времени суток без изменений.
+ * Функция обычно используется в локальных вычислениях.
+ * При сохранении даты в базе данных или передачи ее по сети информация
+ * о хранимом часовом поясе внутри даты может потеряться.
+ * @param {Date} date - Дата.
+ * @param {number} timezone - Дата.
+ * @returns {Date} - Дата.
+ */
+declare function DateNewTimeZone(date: Date, timezone: number): Date;
+
+/**
+ * Преобразует дату к местному часовому поясу, оставляя глобальное значение даты без изменений.
+ * Функция обычно используется в локальных вычислениях.
+ * При сохранении даты в базе данных или передачи ее по сети информация
+ * о хранимом часовом поясе внутри даты может потеряться.
+ * @param {Date} date - Дата.
+ * @returns {Date} - Дата.
+ */
+declare function DateToLocalDate(date: Date): Date;
+
+/**
+ * Преобразует дату к другому часовому поясу, оставляя глобальное значение даты без изменений.
+ * Функция обычно используется в локальных вычислениях.
+ * При сохранении даты в базе данных или передачи ее по сети информация
+ * о хранимом часовом поясе внутри даты может потеряться.
+ * @param {Date} date - Дата.
+ * @param {number} timezone - Дата.
+ * @returns {Date} - Дата.
+ */
+declare function DateToTimeZoneDate(date: Date, timezone: number): Date;
+
+/**
+ * Возвращает местный часовой пояс.
+ * @param {Date} date - Дата.
+ * @returns {number} - Часовой пояс.
+ */
+declare function GetLocalTimeZone(date: Date): number;
+
+/**
+ * Проверяет валидность даты по календарю.
+ * Возвращает true или false.
+ * Функция {@link IsValidDate}() может потребоваться, поскольку не все функции,
+ * работающие с датами, имеют встроенную проверку на валидность.
+ * @param {Date} date - Дата.
+ * @example
+ * ```
+ * IsValidDate(date);
+ * ```
+ * @returns {boolean} - Флаг валидности даты.
+ */
+declare function IsValidDate(date: Date): boolean;
+
+/**
+ * Преобразует строку, содержащую дату в формате MIME, в дату.
+ * @param {string} str - Строка с датой в формате MIME, например "Wed, 21 Oct 2015 07:28:00 GMT".
+ * @returns {Date} - Дата.
+ */
+declare function ParseMimeDate(str: string): Date;
+
+/**
+ * Возвращает часовой пояс, хранимый внтури даты.
+ * Если дата не содержит внутри себя часовой пояс, возвращает undefined.
+ * @param {Date} date - Дата.
+ * @returns {number | undefined} - Часовой пояс или undefined.
+ */
+declare function TimeZone(date: Date): number | undefined;
+
+/**
  * Сдвигает дату на указанное число секунд. Если значение второго аргумента отрицательное, дата сдвигается назад.
  * @param {Date} date - Заданная дата.
  * @param {number} seconds - Сдвиг в секундах.
