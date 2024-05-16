@@ -2768,7 +2768,7 @@ declare namespace tools {
    * @param {string} contentDirectoryPath - Если все файлы лежат в одной папке - полный путь
    * до папки источника с файлами.
    */
-  function zip_create(archivePath: string, contentPath: string, contentDirectoryPath: string): void;
+  function zip_create(archivePath: string, contentPath: string, contentDirectoryPath?: string): void;
 
   function sys_db_type(): unknown;
 

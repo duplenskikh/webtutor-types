@@ -1610,4 +1610,6 @@ declare namespace System {
       Write = 2
     }
   }
+
+  const ComputerName: string;
 }

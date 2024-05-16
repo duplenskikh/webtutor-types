@@ -28,7 +28,7 @@ interface Object {
    * отстутвия атрибута (Any). Необязятельный аргумент. По умолчанию равен undefined.
    */
   GetOptProperty<T>(key: string | number): T | undefined;
-  GetOptProperty<T, K>(key: string | number, defaultValue?: K): T | K;
+  GetOptProperty<T extends string | number, K>(key: T, defaultValue?: K): T | K;
 
   /**
    * Выдает значение атрибута объекта. Если атрибут отсутствует, выдает ошибку.
