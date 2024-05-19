@@ -11,7 +11,7 @@
     "lint:fix": "eslint -c ./lib/.eslintrc.json lib --fix",
     "build": "tsc -p lib/tsconfig.json",
     "test": "check-dts",
-    "precommit": "npm run lint && npm run test && npm run build"
+    "check": "npm run lint && npm run test && npm run build"
   },
   "repository": {
     "type": "git",
