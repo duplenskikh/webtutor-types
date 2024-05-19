@@ -1,4 +1,4 @@
-name: actions
+name: PR.Check
 
 on:
   pull_request:
@@ -22,11 +22,8 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Lint
-        run: npm run lint:stage
-
-      - name: Lint
-        run: npm run test
+      - name: Check
+        run: npm run check
 
       - name: Build
         run: npm run build
