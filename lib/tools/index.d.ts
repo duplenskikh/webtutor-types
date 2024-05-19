@@ -101,7 +101,7 @@ declare namespace tools {
   /**
    * Получение данных с сервера обмена данными.
    * @param {number} serverId - Id сервера обмена данными, с которого необходимо получить данные.
-   * @returns {DownloadDataResponse} - В случае успеха выполнения функции возвращаются значения oRes.error = 0
+   * @returns {DownloadDataResponse} В случае успеха выполнения функции возвращаются значения oRes.error = 0
    * и пустая строка в поле oRes.error_text.
    * В случае возникновения ошибки возвращаются значения oRes.error = 500 и сведения об ошибке в поле oRes.error_text.
    */
@@ -145,7 +145,7 @@ declare namespace tools {
    * @param {string} sendFile - Строка с адресом до отправляемого файла.
    * @param {number} serverId - Id сервера обмена данными, для которого формируется пакет.
    * @param {number} reportId - Id документа событий базы, в который будут записываться отчет.
-   * @returns {string} - Строка с адресом до сформированного пакета.
+   * @returns {string} Строка с адресом до сформированного пакета.
    * @example
    * ```
    * var subject = "data [" + serverDocument.code.Value + "]" + (type == "full" ? " - full" : "");
@@ -534,7 +534,7 @@ declare namespace tools {
    * @param {number} [objectSecondId] - Id документа, который передается,
    * как второй прикрепленный к уведомлению документ.
    * В шаблоне уведомления обращение этому параметру идет через objDocSecID.
-   * @returns {boolean} Возвращает значение true, если операция завершилась успешно, или false - в противном случае.
+   * @returns {boolean} Возвращает значение true, если операция завершилась успешно, или false в противном случае.
    * @example
    * ```
    * tools.create_template_notification(
@@ -730,7 +730,7 @@ declare namespace tools {
    * (Id текущего авторизованного на портале пользователя равно curUserID),
    * если он определен в окружении, в котором вызывается функция.
    * @param {number} subdivisionId - Id подразделения, для которого производится проверка.
-   * @returns {boolean} Возвращает значение true, если функция выполнена успешно, или false - в противном случае.
+   * @returns {boolean} Возвращает значение true, если функция выполнена успешно, или false в противном случае.
    * @example
    * ```
    * Пример 1:
@@ -986,7 +986,7 @@ declare namespace tools {
    * @param {MsPersonSdInnerBase} xmlElemWithSdNode - Элемент XML, имеющий дочерний элемент sd
    * (если атрибут ps указан, то его дочерний элемент sd очищается).
    * @param {unknown} doc - Неиспользуемый параметр.
-   * @returns {boolean} Возвращает значение true, если операция завершилась успешно, или false - в противном случае.
+   * @returns {boolean} Возвращает значение true, если операция завершилась успешно, или false в противном случае.
    * @example
    * ```
    * tools.common_clear (_cur_catalog_name, TopElem, Ps);
@@ -1157,7 +1157,7 @@ declare namespace tools {
    * При закрытии запроса вызывается код, обрабатывающий ее закрытие.
    * В самой функции статус запроса не меняется.
    * @param {number} requestId - Id HTTP-запроса, который необходимо закрыть.
-   * @returns {boolean} Возвращает значение true, если операция завершилась успешно, или false - в противном случае.
+   * @returns {boolean} Возвращает значение true, если операция завершилась успешно, или false в противном случае.
    */
   function close_request(requestId: number): boolean;
 
@@ -1249,7 +1249,7 @@ declare namespace tools {
    * в котором название свойства - название поля в каталоге, по которому происходит поиск значения,
    * а значение - значение указанного свойства.
    * @param {string} value - Значение поля в каталоге, по которому происходит поиск.
-   * @returns {T} - Документ, удовлетворяющий указанным условиям, или значение null, если такой документ не найден.
+   * @returns {T} Документ, удовлетворяющий указанным условиям, или значение null, если такой документ не найден.
    */
   function get_doc_by_key<T = XmlDocument>(catalog: string, key: string | string[], value: string | number): T | null;
 
@@ -2566,7 +2566,7 @@ declare namespace tools {
    * из массива функциональных руководителей, который передается в функцию.
    * Возвращает объединение операций, доступных отдельному типу руководителя.
    * @param {FuncManagersBaseFuncManager[]} manager - Массив каталожных записей функциональных руководителей.
-   * @returns {OperationCatalogDocumentTopElem[]} - Массив каталожных записей операций.
+   * @returns {OperationCatalogDocumentTopElem[]} Массив каталожных записей операций.
    */
   function get_relative_operations(manager: unknown): OperationCatalogDocumentTopElem[];
 
@@ -2935,7 +2935,7 @@ declare namespace tools {
    * Возвращает строку для использования в запросах для поиска по full text индексу.
    * Строка параметр функция преобразуется в строку в зависимости от настроек базы.
    * @param {string} value - Строка для преобразования.
-   * @returns {string} - Строка для использования в запросах для поиска по full text индексу.
+   * @returns {string} Строка для использования в запросах для поиска по full text индексу.
    * @example
    * ```
    * tools.get_ft_value(value);
@@ -3056,7 +3056,7 @@ declare namespace tools {
   /**
    * Проверяет, существует ли файл по указанному пути.
    * @param {string} filepath - Строка с путем до файла.
-   * @returns {boolean} Возвращает значение true, если файл существует, или false - в противном случае.
+   * @returns {boolean} Возвращает значение true, если файл существует, или false в противном случае.
    */
   function file_url_exists(filepath: string): boolean;
 
@@ -3415,7 +3415,7 @@ declare namespace tools {
 
   function file_source_upload_file(fileSourceId: number, fileUrl: string, tempFileUrl: string): unknown;
 
-  function file_source_get_file_to_save_url(fileSourceId: number, resourceId: number, uid: string): unknown;
+  function file_source_get_file_to_save_url(fileSourceId: number, resourceId: number, uid: string): string;
 
   function file_source_get_temp_file_to_save_url(fileSourceId: number, resourceId: number, uid: string): unknown;
 

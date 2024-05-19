@@ -75,7 +75,7 @@ declare function CheckCurThread(): undefined;
  * Увеличивает яркость цвета, переданного в качестве аргумента.
  * @param {string} color - Цвет в формате RGB.
  * @param {number} ratio - Действительное число обозначающее на сколько увеличивается/уменьшается яркость.
- * @returns {string} - Результат.
+ * @returns {string} Результат.
  */
 declare function ColorNewBrightness(color: string, ratio: number): string;
 
@@ -468,7 +468,7 @@ declare function ArrayMerge<T>(array: XmlMultiElem<T>, elemExpr: string, delim?:
  * @param {string} [fieldExpr2] - Выражение, вычисляемое относительно каждого элемента массива 2
  * и возвращающее значение ключа для сравнения. Необязательный аргумент.
  * Если аргумент не указан, используется значение самого элемента (This).
- * @returns {T[]} - Результат.
+ * @returns {T[]} Результат.
  */
 declare function ArrayIntersect<T, K>(
   array1: T[],
@@ -487,7 +487,7 @@ declare function ArrayIntersect<T, K>(
  * @param {string} [fieldExpr2] - Выражение, вычисляемое относительно каждого элемента массива 2
  * и возвращающее значение ключа для сравнения. Необязательный аргумент.
  * Если аргумент не указан, используется значение самого элемента (This).
- * @returns {XmlElem<T>[]} - Результат.
+ * @returns {XmlElem<T>[]} Результат.
  */
 declare function ArrayIntersect<T, K>(
   array1: XmlMultiElem<T>,
@@ -572,7 +572,7 @@ declare function ArrayCount<T>(array: XmlMultiElem<T>): number;
  * В противном случае функция работает аналогично {@link ArraySelectAll}() и возвращает массив типа Array,
  * содержащий копию исходного массива.
  * @param {Array} array - Исходный массив.
- * @returns {Array} - Результат.
+ * @returns {Array} Результат.
  */
 declare function ArrayDirect<T>(array: T[]): T[];
 /**
@@ -581,7 +581,7 @@ declare function ArrayDirect<T>(array: T[]): T[];
  * В противном случае функция работает аналогично {@link ArraySelectAll}() и возвращает массив типа Array,
  * содержащий копию исходного массива.
  * @param {XmlMultiElem<T>} array - Исходный массив.
- * @returns {Array} - Результат.
+ * @returns {Array} Результат.
  */
 declare function ArrayDirect<T>(array: XmlMultiElem<T>): T[];
 
@@ -590,7 +590,7 @@ declare function ArrayDirect<T>(array: XmlMultiElem<T>): T[];
  * Возвращает новый массив той же длинны, содержащий выбранные элементы.
  * @param {Array} array - Исходный массив.
  * @param {string} fieldExpr - Выражение, вычисляемое относительно каждого элемента исходного массива.
- * @returns {Array} - Результат.
+ * @returns {Array} Результат.
  */
 declare function ArrayExtract<T, K>(array: T[], fieldExpr: string | null): K[];
 
@@ -599,7 +599,7 @@ declare function ArrayExtract<T, K>(array: T[], fieldExpr: string | null): K[];
  * Возвращает новый массив той же длинны, содержащий выбранные элементы.
  * @param {XmlMultiElem<T>} array - Исходный массив.
  * @param {string} fieldExpr - Выражение, вычисляемое относительно каждого элемента исходного массива.
- * @returns {Array} - Результат.
+ * @returns {Array} Результат.
  */
 declare function ArrayExtract<T, K>(array: XmlMultiElem<T>, fieldExpr: string | null): K[];
 
@@ -684,7 +684,7 @@ declare function ArrayOptMax<T>(array: XmlMultiElem<T>, elemExpr: string): XmlEl
  * @param {number} pos - Начальная позиция.
  * @param {number} [elemsNum] - Количество элементов нового массива.
  * Если количество не указано, возвращаются все элементы с начальной позиции.
- * @returns {T[]} - Результат.
+ * @returns {T[]} Результат.
  */
 declare function ArrayRange<T>(array: T[], pos: number, elemsNum?: number): T[];
 /**
@@ -694,7 +694,7 @@ declare function ArrayRange<T>(array: T[], pos: number, elemsNum?: number): T[];
  * @param {number} pos - Начальная позиция.
  * @param {number} [elemsNum] - Количество элементов нового массива.
  * Если количество не указано, возвращаются все элементы с начальной позиции.
- * @returns {XmlElem<T>[]} - Результат.
+ * @returns {XmlElem<T>[]} Результат.
  */
 declare function ArrayRange<T>(array: XmlMultiElem<T>, pos: number, elemsNum?: number): XmlElem<T>[];
 
@@ -798,7 +798,7 @@ declare function ArrayOptFindBySortedKey<T, K>(array: XmlMultiElem<T>, value: K,
  * таких как результаты XQuery 2.
  * Когда в цикле, осуществляющем проход по массиву, происходит выборочное удаление его элементов.
  * @param {T} array - Исходный массив.
- * @returns {Array} - Результат.
+ * @returns {Array} Результат.
  */
 declare function ArraySelectAll<T>(array: T[]): T[];
 
@@ -809,7 +809,7 @@ declare function ArraySelectAll<T>(array: T[]): T[];
  * таких как результаты {@link XQuery}
  * 2. Когда в цикле, осуществляющем проход по массиву, происходит выборочное удаление его элементов.
  * @param {XmlMultiElem<T>} array - Исходный массив.
- * @returns {XmlElem<T>[]} - Результат.
+ * @returns {XmlElem<T>[]} Результат.
  */
 declare function ArraySelectAll<T>(array: XmlMultiElem<T>): XmlElem<T>[];
 
@@ -832,10 +832,17 @@ declare function ArraySelectDistinct<T>(array: XmlMultiElem<T>, fieldExpr?: stri
 
 /**
  * Последовательное объединение нескольких массивов в один.
- * @param {unknown[]} args - Массивы.
- * @returns {unknown[]} - Результат.
+ * @param {T[]} args - Массивы.
+ * @returns {T[]} Результат.
  */
-declare function ArrayUnion(...args: unknown[]): unknown[];
+declare function ArrayUnion<T>(...args: T[]): T;
+
+/**
+ * Последовательное объединение нескольких массивов в один.
+ * @param {unknown[]} args - Массивы.
+ * @returns {unknown[]} Результат.
+ */
+declare function ArrayUnion(...args: unknown[]): unknown;
 
 /**
  * Проверяет, является ли аргумент массивом.
@@ -852,7 +859,7 @@ declare function IsArray(value: unknown): value is unknown[] | XmlMultiElem<unkn
  * @param {string | number} value - Значение ключа.
  * @param {string} name - Имя элемента, являющегося  ключом.
  * @param {boolean} [ignoreCase] - Игнорировать регистр (для массивов, содержащих строки).
- * @returns {T[]} - Результат.
+ * @returns {T[]} Результат.
  */
 declare function ArraySelectBySortedKey<T>(array: T[], value: string | number, name: string, ignoreCase?: boolean): T[];
 /**
@@ -863,7 +870,7 @@ declare function ArraySelectBySortedKey<T>(array: T[], value: string | number, n
  * @param {string | number} value - Значение ключа.
  * @param {string} name - Имя элемента, являющегося  ключом.
  * @param {boolean} [ignoreCase] - Игнорировать регистр (для массивов, содержащих строки).
- * @returns {XmlElem<T>[]} - Результат.
+ * @returns {XmlElem<T>[]} Результат.
  */
 declare function ArraySelectBySortedKey<T>(
   array: XmlMultiElem<T>,
@@ -878,7 +885,7 @@ declare function ArraySelectBySortedKey<T>(
  * @param {T[]} array - Массив.
  * @param {boolean | string | number} value - Значение ключа.
  * @param {string} [name] - Имя элемента, являющегося ключом. Если имя ключа не указано, используется первичный ключ.
- * @returns {T[]} - Результат.
+ * @returns {T[]} Результат.
  */
 declare function ArraySelectByKey<T>(
   array: T[],
@@ -891,7 +898,7 @@ declare function ArraySelectByKey<T>(
  * @param {XmlMultiElem<T>} array - Массив.
  * @param {boolean | string | number} value - Значение ключа.
  * @param {string} [name] - Имя элемента, являющегося ключом. Если имя ключа не указано, используется первичный ключ.
- * @returns {XmlElem<T>[]} - Результат.
+ * @returns {XmlElem<T>[]} Результат.
  */
 declare function ArraySelectByKey<T>(
   array: XmlMultiElem<T>,
@@ -976,7 +983,7 @@ declare const CurDate: Date;
  * @param {number} [hour] - Час.
  * @param {number} [minute] - Минута.
  * @param {number} [second] - Секунда.
- * @returns {Date} - Дата.
+ * @returns {Date} Дата.
  */
 declare function DateNewTime(date: Date, hour?: number, minute?: number, second?: number): Date;
 
@@ -1001,7 +1008,7 @@ declare function DateDiff(date1: Date, date2: Date): number;
  * о хранимом часовом поясе внутри даты может потеряться.
  * @param {Date} date - Дата.
  * @param {number} timezone - Дата.
- * @returns {Date} - Дата.
+ * @returns {Date} Дата.
  */
 declare function DateNewTimeZone(date: Date, timezone: number): Date;
 
@@ -1011,7 +1018,7 @@ declare function DateNewTimeZone(date: Date, timezone: number): Date;
  * При сохранении даты в базе данных или передачи ее по сети информация
  * о хранимом часовом поясе внутри даты может потеряться.
  * @param {Date} date - Дата.
- * @returns {Date} - Дата.
+ * @returns {Date} Дата.
  */
 declare function DateToLocalDate(date: Date): Date;
 
@@ -1022,14 +1029,14 @@ declare function DateToLocalDate(date: Date): Date;
  * о хранимом часовом поясе внутри даты может потеряться.
  * @param {Date} date - Дата.
  * @param {number} timezone - Дата.
- * @returns {Date} - Дата.
+ * @returns {Date} Дата.
  */
 declare function DateToTimeZoneDate(date: Date, timezone: number): Date;
 
 /**
  * Возвращает местный часовой пояс.
  * @param {Date} date - Дата.
- * @returns {number} - Часовой пояс.
+ * @returns {number} Часовой пояс.
  */
 declare function GetLocalTimeZone(date: Date): number;
 
@@ -1043,14 +1050,14 @@ declare function GetLocalTimeZone(date: Date): number;
  * ```
  * IsValidDate(date);
  * ```
- * @returns {boolean} - Флаг валидности даты.
+ * @returns {boolean} Флаг валидности даты.
  */
 declare function IsValidDate(date: Date): boolean;
 
 /**
  * Преобразует строку, содержащую дату в формате MIME, в дату.
  * @param {string} str - Строка с датой в формате MIME, например "Wed, 21 Oct 2015 07:28:00 GMT".
- * @returns {Date} - Дата.
+ * @returns {Date} Дата.
  */
 declare function ParseMimeDate(str: string): Date;
 
@@ -1058,7 +1065,7 @@ declare function ParseMimeDate(str: string): Date;
  * Возвращает часовой пояс, хранимый внтури даты.
  * Если дата не содержит внутри себя часовой пояс, возвращает undefined.
  * @param {Date} date - Дата.
- * @returns {number | undefined} - Часовой пояс или undefined.
+ * @returns {number | undefined} Часовой пояс или undefined.
  */
 declare function TimeZone(date: Date): number | undefined;
 
@@ -1066,7 +1073,7 @@ declare function TimeZone(date: Date): number | undefined;
  * Сдвигает дату на указанное число секунд. Если значение второго аргумента отрицательное, дата сдвигается назад.
  * @param {Date} date - Заданная дата.
  * @param {number} seconds - Сдвиг в секундах.
- * @returns {Date} - Дата.
+ * @returns {Date} Дата.
  */
 declare function DateOffset(date: Date, seconds: number): Date;
 
@@ -1137,7 +1144,7 @@ declare function StrLongDate(date: Date): string;
  * OptDate(2019, 04, 20, 12, 30);
  * OptDate(2019, 04, 20, 12, 30, 0);
  * ```
- * @returns {Date} - Дата.
+ * @returns {Date} Дата.
  */
 declare function OptDate(date: string | Date | null | undefined | number | boolean): Date | undefined;
 declare function OptDate<T>(date: string | Date | null | undefined | number | boolean, defaultDate: T): Date | T;
@@ -1151,14 +1158,14 @@ declare function OptDate(year: number, month: number, day: number, hour: number,
  * Преобразует строку с датой в большинство известных форматов в дату.
  * В отличие от функции {@link Date}() понимает дату со словесным указанием месяца, например '1 ноября 2011 года'.
  * @param {string} date - Строка с датой.
- * @returns {Date} - Дата.
+ * @returns {Date} Дата.
  */
 declare function ParseDate(date: string): Date;
 
 /**
  * Преобразует количество секунд, прошедших с 1970 года в дату.
  * @param {number} seconds - Количество секунд.
- * @returns {Date} - Дата.
+ * @returns {Date} Дата.
  */
 declare function RawSecondsToDate(seconds: number): Date;
 
@@ -1191,7 +1198,7 @@ declare function StrDate(date: Date, showTime?: boolean, showSeconds?: boolean):
 /**
  * Преобразует дату из универсального часового пояса в текущий часовой пояс.
  * @param {Date} date - Дата.
- * @returns {Date} - Дата.
+ * @returns {Date} Дата.
  */
 declare function UtcToLocalDate(date: Date): Date;
 
@@ -1206,14 +1213,14 @@ declare function StrTime(date: Date): string;
 /**
  * Возвращает значение года для заданной даты.
  * @param {Date} date - Дата.
- * @returns {number} - Год.
+ * @returns {number} Год.
  */
 declare function Year(date: Date): number;
 
 /**
  * Возвращает номер дня недели для заданной даты. (0 - Воскресенье, 1 - Понедельник и т.д.).
  * @param {Date} date - Дата.
- * @returns {number} - День недели.
+ * @returns {number} День недели.
  */
 declare function WeekDay(date: Date): number;
 
@@ -1280,7 +1287,7 @@ declare function declareElemsToStr<T>(arg1: T): string;
  * полученных от внешних процедур и плагинов.
  * Смотри также {@link declareElemsToStr}.
  * @param {string} arg1 - Строка.
- * @returns {Array} - Результат.
+ * @returns {Array} Результат.
  */
 declare function LoadElemsFromStr(arg1: string): unknown[];
 
@@ -1415,7 +1422,7 @@ declare function SetDbHostDir(dbName: string, dirUrl: string): undefined;
  * Выполняет заданный запрос XQuery на клиентской машине.
  * Используется для запроса данных из каталогов локальных баз данных.
  * @param {string} query - Строка, содержащая запрос.
- * @returns {Array} - Результат.
+ * @returns {Array} Результат.
  */
 declare function XQueryLocal<T>(query: string): T;
 
@@ -1803,7 +1810,7 @@ declare function UrlParam(url: string): string;
 /**
  * Возвращает дату изменения файла, находящегося по локальному пути типа file: или x-local:.
  * @param {string} url - Url.
- * @returns {Date} - Дата.
+ * @returns {Date} Дата.
  */
 declare function UrlModDate(url: string): Date;
 
@@ -2160,7 +2167,7 @@ declare function RValue<T>(value: XmlElem<T> | T): T;
 /**
  * Возвращает строку, содержащую аргумент в шестнадцатеричном виде (64 бита).
  * @param {number} num - Число, которую нужно преобразовать.
- * @returns {string} - Строка.
+ * @returns {string} Строка.
  * @example
  * ```
  * StrHexInt(1000); // "00000000000003E8"
@@ -2466,7 +2473,7 @@ declare function CreateDirectory(path: string): undefined;
 /**
  * Возвращает дату модификации файла.
  * @param {string} path - Путь (или url) к файлу.
- * @returns {Date} - Дата.
+ * @returns {Date} Дата.
  */
 declare function GetFileModDate(path: string): Date;
 
@@ -2577,7 +2584,7 @@ declare function ObtainSessionTempFile(suffix?: string): string;
  * Создает директорию с уникальным именем внутри директории для временных файлов.
  * Возвращает путь к созданной директории.
  * Смотри также {@link ObtainTempFile}().
- * @returns {string} - Путь к созданной директории.
+ * @returns {string} Путь к созданной директории.
  */
 declare function ObtainTempDirectoryPath(): string;
 
@@ -2600,7 +2607,7 @@ declare function ParentDirectory(path: string): string;
  * Возвращает массив, содержащий список файлов и вложенных директорий внутри указанной директории.
  * Каждый элемент массива будет содержать полный путь ко вложенному файлу или директории.
  * @param {string} path - Путь до директории.
- * @returns {Array} - Результат.
+ * @returns {Array} Результат.
  */
 declare function ReadDirectoryByPath(path: string): string[];
 
@@ -2630,7 +2637,7 @@ declare function PathIsDirectory(path: string): boolean;
  * Возвращает массив, содержащий список файлов и вложенных директорий внутри указанной директории.
  * Каждый элемент массива будет содержать `URL` вложенного файла или директории.
  * @param {string} dirUrl - Url директории.
- * @returns {Array} - Результат.
+ * @returns {Array} Результат.
  */
 declare function ReadDirectory(dirUrl: string): string[];
 
@@ -2639,7 +2646,7 @@ declare function ReadDirectory(dirUrl: string): string[];
  * Если преобразование выполнить невозможно, возвращает undefined, либо defaultVal, если оно указано.
  * @param {T} value - Целое число, вещественное число или строка, содержащая число.
  * @param {K} [defaultValue] - Значение по умолчанию.
- * @returns {number | K} - Результат.
+ * @returns {number | K} Результат.
  */
 declare function OptInt<T, K = undefined>(value: T, defaultValue?: K): number | K;
 
@@ -2649,7 +2656,7 @@ declare function OptInt<T, K = undefined>(value: T, defaultValue?: K): number | 
  * функция возвращает undefined, либо defaultVal, если оно указано.
  * @param {T} value - Целое число, вещественное число или строка, содержащая вещественное число.
  * @param {K} [defaultValue] - Значение по умолчанию.
- * @returns {number | K} - Результат.
+ * @returns {number | K} Результат.
  */
 declare function OptReal<T, K = undefined>(value: T, defaultValue?: K): number | K;
 
@@ -2755,7 +2762,7 @@ declare function RegisterCodeLibrary(url: string): void;
 /**
  * Возврат объекта namespace по названию.
  * @param {string} name - Название namespace.
- * @returns {T} - Объект namespace.
+ * @returns {T} Объект namespace.
  */
 declare function OpenCodeLibrary<T>(name: string): T;
 
@@ -2919,7 +2926,7 @@ declare function StartModalTask(taskTitle: string): undefined;
  * @param {string} url - Url загружаемого документа с расширением XML или JS.
  * @returns {XmlDocument} XmlDocument.
  */
-declare function OpenCodeLib(url: string): XmlDocument;
+declare function OpenCodeLib<T = XmlDocument>(url: string): T;
 
 /**
  * Вызывает метод (функцию) библиотеки на сервере приложения.

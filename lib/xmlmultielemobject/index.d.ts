@@ -95,7 +95,7 @@ type XmlMultiElemObject<T, F = never> = {
    * Если такой элемент не найден, возвращает ошибку.
    * @param {string} value - Значение ключа.
    * @param {string} name - Имя элемента, являющегося ключом. Если имя ключа не указано, используется первичный ключ.
-   * @returns {XmlElem<T>} - Объект {@link XmlElem}.
+   * @returns {XmlElem<T>} Объект {@link XmlElem}.
    */
   GetByKey<K>(value: K, name?: string): XmlElem<T>;
 
