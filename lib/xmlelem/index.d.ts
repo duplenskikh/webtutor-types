@@ -515,7 +515,7 @@ interface XmElem<T, ForeignElem = never> {
    * Если путь неверный, возвращается ошибка.
    * @param {string} path - Путь от текущего до целевого элемента, с разделением имен узлов точками.
    */
-  EvalPath(path: string): XmlElem<unknown>;
+  EvalPath<T>(path: string): T;
 
   /**
    * Проверяет, существует ли в форме текущего элемента дочерний элемент с таким именем,
@@ -660,7 +660,7 @@ interface XmElem<T, ForeignElem = never> {
    * Смотри также метод {@link Child}.
    * @param {string} name - Имя дочернего элемента.
    */
-  OptChild(name: string): XmlElem<unknown>;
+  OptChild<T>(name: string): T;
 
   /**
    * Метод находит (среди дочерних элементов текущего элемента) элемент, имеющий атрибут с заданным именем,

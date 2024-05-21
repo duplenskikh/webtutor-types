@@ -239,12 +239,9 @@ interface XmlDocument {
   // UpdateValues(): unknown;
 }
 
-interface XmlTopElem {
+interface XmlTopElem extends XmlElem<unknown> {
   name: XmlElem<string>;
   Name: string;
   Doc: XmlDocument;
-  OptChild(childName: string): unknown;
-  AssignElem(TopElem: XmlTopElem): void;
-  EvalPath(pathName: string): unknown;
   role_id: XmlMultiElem<number>;
 }
