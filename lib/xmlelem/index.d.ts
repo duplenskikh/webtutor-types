@@ -660,7 +660,7 @@ interface XmElem<T, ForeignElem = never> {
    * Смотри также метод {@link Child}.
    * @param {string} name - Имя дочернего элемента.
    */
-  OptChild<T>(name: string): T;
+  OptChild<T>(name: string): T | undefined;
 
   /**
    * Метод находит (среди дочерних элементов текущего элемента) элемент, имеющий атрибут с заданным именем,
