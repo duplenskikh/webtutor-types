@@ -700,6 +700,14 @@ interface XmElem<T, ForeignElem = never> {
   SaveToFile(url: string): void;
 
   /**
+   * Устанавливает значение атрибута у текущего элемента.
+   * Метод работает только для динамических элементов.
+   * @param {string} attrName - Имя атрибута.
+   * @param {T} attrValue - Значение атрибута.
+   */
+  SetAttr<T>(attrName: string, attrValue: T): void;
+
+  /**
    * Переставляет данный элемент на другую позицию среди дочерних элементов его родительского элемента.
    * Элемент должен либо иметь атрибут `MULTIPLE`, либо быть динамически созданным элементом.
    * @param {number} newPositionIndex - Новый порядковый индекс элемента, начиная с нуля.
@@ -719,6 +727,14 @@ interface XmElem<T, ForeignElem = never> {
    * @param {string} [defaultValue=""] - Значение атрибута по умолчанию.
    */
   SetOptAttrValue(name: string, value: string, defaultValue?: string): void;
+
+  /**
+   * Очищает содержимое элемента и загружает новое из строки, содержащей XML.
+   * Имя корневого элемента в XML должно совпадать с именем текущего элемента.
+   * {@link SetInnerXml}().
+   * @param {string} xml - Xml строка.
+   */
+  SetXml(xml: string): void;
 
   /**
    * Сортирует дочерние элементы в заданном порядке.
