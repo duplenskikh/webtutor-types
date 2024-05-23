@@ -5,6 +5,7 @@ AdminAccessBase & {
   is_model: XmlElem<boolean>;
   use_vclass: XmlElem<boolean>;
   vclass_setting_id: XmlElem<number, VclassSettingCatalogDocumentTopElem>;
+  conversation_id: XmlElem<number, ConversationCatalogDocumentTopElem>;
   compound_program_id: XmlElem<number, CompoundProgramCatalogDocumentTopElem>;
   education_program_id: XmlElem<number, EducationProgramCatalogDocumentTopElem>;
   education_method_id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;

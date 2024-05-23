@@ -41,6 +41,7 @@ CustomElemsBase & {
   use_proctoring: XmlElem<boolean>;
   comment: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
+  testing_link: XmlElem<string>;
   calc_max_end_date(): Date | null;
   complete_test(): number;
 };

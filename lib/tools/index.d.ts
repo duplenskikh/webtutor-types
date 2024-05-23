@@ -3242,6 +3242,7 @@ declare namespace tools {
 
   /**
    * Создает запись в журнале profiling.log.
+   * @example
    * ```
    * Строка вида
    * var sid = Request.Session.GetOptProperty("sid", "");
@@ -3251,7 +3252,7 @@ declare namespace tools {
    * @param {Request} req - Объект {@link Request}.
    * @param {string} message - Cтрока с текстом события.
    */
-  function set_profile_log(eventId: unknown, req: Request, message: string): void;
+  function set_profile_log(eventId: string, req: Request, message: string): void;
 
   /**
    * Очищает данные статуса экземпляра товара.

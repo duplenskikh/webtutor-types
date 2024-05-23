@@ -229,3 +229,8 @@ interface MsCodeLibraryCondition extends MsCodeLibraryConditionBase {
   statistic_option_type: XmlElem<string, typeof common.all_option_types>;
   condition_value: XmlElem<string>;
 }
+
+interface ChangeHashBase {
+  current_hash(): unknown;
+  processed_embedding_hash: XmlElem<string>;
+}

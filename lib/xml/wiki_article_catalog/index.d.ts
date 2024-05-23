@@ -1,4 +1,5 @@
-type WikiArticleCatalogDocumentTopElem = XmlTopElem & {
+type WikiArticleCatalogDocumentTopElem = XmlTopElem &
+ChangeHashFieldsBase & {
   id: XmlElem<number>;
   code: XmlElem<string>;
   name: XmlElem<string>;
@@ -20,5 +21,6 @@ type WikiArticleCatalogDocumentTopElem = XmlTopElem & {
   modification_date: XmlElem<Date>;
   app_instance_id: XmlElem<string>;
   access_group_ids: XmlMultiElemObject<number, GroupCatalogDocumentTopElem>;
+  enable_anonymous_access: XmlElem<boolean>;
   OnBuild(): void;
 };

@@ -20,5 +20,6 @@ AdminAccessBase & {
   tags: XmlElem<string>;
   experts: XmlElem<string>;
   role_id: XmlMultiElemObject<number>;
+  testing_system_id: XmlElem<number, TestingSystemCatalogDocumentTopElem>;
   OnBuild(): void;
 };
