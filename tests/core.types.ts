@@ -157,3 +157,9 @@ if (DefaultDb.IsShared) {
   var document = DefaultDb.OpenNewObjectDoc<VacancyDocument>("vacancy");
   document.TopElem.Name == "vacancy";
 }
+
+const object1 = new Object();
+const object2 = {};
+const object3 = Object();
+
+const stringValue = object1.GetOptProperty<string>("value");
