@@ -9,9 +9,10 @@
     "lint:stage": "ts-node ./ci/lint.ts",
     "lint": "eslint -c ./lib/.eslintrc.json lib",
     "lint:fix": "eslint -c ./lib/.eslintrc.json lib --fix",
-    "build": "tsc -p lib/tsconfig.json",
+    "tsc": "tsc -p lib/tsconfig.json",
+    "tsc:w": "tsc -p lib/tsconfig.json -w",
     "test": "check-dts",
-    "check": "npm run lint && npm run test && npm run build"
+    "check": "npm run lint && npm run test && npm run tsc"
   },
   "repository": {
     "type": "git",
