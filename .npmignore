@@ -1,0 +1,5 @@
+tests
+.github
+.vscode
+ci
+node_modules
