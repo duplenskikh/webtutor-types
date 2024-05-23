@@ -6,21 +6,20 @@
     "lib": "lib"
   },
   "scripts": {
-    "lint:stage": "ts-node ./ci/lint.ts",
     "lint": "eslint -c ./lib/.eslintrc.json lib",
-    "lint:fix": "eslint -c ./lib/.eslintrc.json lib --fix",
-    "tsc": "tsc -p lib/tsconfig.json",
-    "tsc:w": "tsc -p lib/tsconfig.json -w",
-    "test": "tsc -p tests/tsconfig.json",
-    "check": "npm run lint && npm run test && npm run tsc"
+    "tsc:lib": "tsc -p lib/tsconfig.json",
+    "tsc:tests": "tsc -p tests/tsconfig.json",
+    "check": "npm run lint && npm run tsc:lib && npm run tsc:tests"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/umbrik/webtutor-types.git"
   },
   "keywords": [
+    "types",
+    "websoft",
     "webtutor",
-    "types"
+    "webtutor-types"
   ],
   "author": "",
   "license": "ISC",
