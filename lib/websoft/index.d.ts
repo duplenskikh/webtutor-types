@@ -272,7 +272,7 @@ declare namespace Websoft {
         /**
          * Значение ячейки.
          */
-        Value: string | number | boolean | null;
+        Value: string | number | boolean | Date | null;
 
         /**
          * Получить картинку.

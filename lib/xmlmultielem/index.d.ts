@@ -221,7 +221,7 @@ interface XmMultiElem<T> extends XmElem<T> {
    * Смотри также метод {@link Child}.
    * @param {string} name - Имя дочернего элемента.
    */
-  OptChild(name: string): XmlElem<T>;
+  OptChild<T>(name: string): T | undefined;
 }
 
 type XmlMultiElem<T> = XmMultiElem<T> & T;
