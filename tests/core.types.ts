@@ -162,4 +162,6 @@ const object1 = new Object();
 const object2 = {};
 const object3 = Object();
 
+ArraySelectAll([]);
+
 const stringValue = object1.GetOptProperty<string>("value");

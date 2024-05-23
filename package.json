@@ -11,7 +11,7 @@
     "lint:fix": "eslint -c ./lib/.eslintrc.json lib --fix",
     "tsc": "tsc -p lib/tsconfig.json",
     "tsc:w": "tsc -p lib/tsconfig.json -w",
-    "test": "check-dts",
+    "test": "tsc -p tests/tsconfig.json",
     "check": "npm run lint && npm run test && npm run tsc"
   },
   "repository": {
@@ -35,7 +35,6 @@
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
     "@umbrik/eslint-config-hcm-wt": "^1.4.0",
-    "check-dts": "^0.7.2",
     "eslint": "^8.16.0",
     "eslint-plugin-jsdoc": "^46.4.5",
     "eslint-plugin-no-for-of-loops": "^1.0.1",
