@@ -90,6 +90,11 @@ interface LocalSettingsDocumentViewQuestionsAnalyticsReport {
   variance: XmlElem<number>;
 }
 
+interface LocalSettingsDocumentViewItems {
+  display_question_richtext: XmlElem<boolean>;
+  display_answer_richtext: XmlElem<boolean>;
+}
+
 interface LocalSettingsDocumentAdminConfiguration {
   func_block_id: XmlElem<string>;
   disp_desc: XmlElem<boolean>;
@@ -126,6 +131,7 @@ type LocalSettingCatalogDocumentTopElem = XmlTopElem & {
   home: XmlElem<LocalSettingsDocumentHome>;
   view_course_integral_efficiency_report: XmlElem<LocalSettingsDocumentViewCourseIntegralEfficiencyReport>;
   view_questions_analytics_report: XmlElem<LocalSettingsDocumentViewQuestionsAnalyticsReport>;
+  view_items: XmlElem<LocalSettingsDocumentViewItems>;
   cur_user_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
   tab_block_id: XmlElem<string, AccessBlockCatalogDocumentTopElem>;
   last_block_id: XmlElem<string, AccessBlockCatalogDocumentTopElem>;

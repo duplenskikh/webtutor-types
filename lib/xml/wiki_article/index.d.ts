@@ -48,7 +48,8 @@ type WikiArticleDocumentTopElem = XmlTopElem &
 FileListBase &
 CustomElemsBase &
 CatalogListBase &
-KnowledgePartsBase & {
+KnowledgePartsBase &
+ChangeHashBase & {
   Doc: WikiArticleDocument;
   id: XmlElem<number>;
   code: XmlElem<string>;

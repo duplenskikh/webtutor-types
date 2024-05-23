@@ -117,6 +117,7 @@ GameBonusBase & {
   del_counter(source: unknown, sourceId: number): unknown;
   obtain_link(source: unknown): unknown;
   guess_type(fileUrl: string): unknown;
+  set_data(): unknown;
   role_id: XmlMultiElemObject<number>;
 };
 

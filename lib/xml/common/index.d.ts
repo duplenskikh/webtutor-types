@@ -1014,7 +1014,9 @@ interface CommonDayType {
 
 interface CommonMonth {
   id: XmlElem<string>;
+  number: XmlElem<number>;
   name: XmlElem<string>;
+  name_genitive: XmlElem<string>;
   days: XmlElem<number>;
   quarter: XmlElem<number>;
 }

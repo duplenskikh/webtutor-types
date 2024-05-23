@@ -214,6 +214,7 @@ EventSettingsBase & {
   webinar_system_fields: XmlMultiElem<EventDocumentWebinarSystemField>;
   use_vclass: XmlElem<boolean>;
   vclass_setting_id: XmlElem<number, VclassSettingCatalogDocumentTopElem>;
+  conversation_id: XmlElem<number, ConversationCatalogDocumentTopElem>;
   show_record: XmlElem<boolean>;
   allow_record_download: XmlElem<boolean>;
   use_reserve_server: XmlElem<boolean>;

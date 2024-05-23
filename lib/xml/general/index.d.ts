@@ -265,7 +265,6 @@ interface GlobalSettingsBaseMobileDocumentReader {
   use_search: XmlElem<boolean>;
   confirmation: XmlElem<string>;
   use_update_stamp: XmlElem<boolean>;
-  cs_p: XmlElem<string>;
 }
 
 interface GlobalSettingsBaseMobile {
@@ -442,6 +441,7 @@ interface GlobalSettingsBase extends EventSettingsBase {
   use_personal_chat_global_policy: XmlElem<boolean>;
   personal_chat_confirmation_required: XmlElem<boolean>;
   max_message_in_block_count: XmlElem<number>;
+  conversation_debug: XmlElem<boolean>;
   conversation_visible_type_id: XmlElem<string, typeof common.conversation_visible_types>;
   use_queue_in_chat: XmlElem<boolean>;
   use_mobile_chat: XmlElem<boolean>;
@@ -1614,7 +1614,7 @@ interface KnowledgePartsBaseOld {
 
 interface CustomElemsBaseCustomElem {
   name: XmlElem<string>;
-  value: XmlElem<string | number | Date | boolean | null | undefined>;
+  value: XmlElem<null | undefined | string | Date | number | boolean>;
 }
 
 interface CustomElemsBase {
@@ -2601,4 +2601,9 @@ interface QaTestAssertBaseAssert {
 
 interface QaTestAssertBase {
   asserts: XmlMultiElem<QaTestAssertBaseAssert>;
+}
+
+interface ChangeHashFieldsBase {
+  current_hash: XmlElem<string>;
+  processed_embedding_hash: XmlElem<string>;
 }
