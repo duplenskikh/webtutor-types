@@ -51,6 +51,7 @@ AdminAccessBase & {
   workflow_matching_type: XmlElem<string>;
   doc_info: XmlElem<DocInfoBase>;
   comment: XmlElem<string>;
+  is_create_init: XmlElem<boolean>;
   custom_elements: XmlMultiElem<RequestDocumentCustomElement>;
   access: XmlElem<AccessDocBase>;
   start_action(type: string): number;

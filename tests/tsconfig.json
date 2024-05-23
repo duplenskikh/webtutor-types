@@ -9,6 +9,7 @@
     "strict": true,
     "noLib": true,
     "noEmit": true,
+    "baseUrl": "tests",
     "typeRoots": [
       "../lib",
       "../lib/xml"

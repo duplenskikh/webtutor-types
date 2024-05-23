@@ -10,6 +10,7 @@
     "strict": true,
     "noLib": true,
     "noEmit": true,
+    "baseUrl": "lib",
     "outDir": "../build"
   },
   "include": [

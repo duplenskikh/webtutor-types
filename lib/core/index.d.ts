@@ -2769,17 +2769,25 @@ declare function EvalCodePageUrl(pageUrl: string, options?: string): string;
 declare function CodeLiteral(value: undefined | null | string | number | boolean | Date, quoteChar?: string): string;
 
 /**
- * Регистрация глобальной библиотеки отмеченной директивой `"META:NAMESPACE:{namespace_name}"`.
- * @param {string} url - `URL` библиотеки.
+ * Динамически регистрирует файл v2-библиотеки,
+ * как если бы он был описан в модуле через code_source_file.
+ *
+ * "META:NAMESPACE:{namespace_name}".
+ * @param {string} url - Url файла .bs или .xmi.
  */
 declare function RegisterCodeLibrary(url: string): void;
 
 /**
- * Возврат объекта namespace по названию.
- * @param {string} name - Название namespace.
+ * Функция динамически загружает библиотеку v2.
+ * У динамически загруженной библиотеки v2,
+ * в отличие от статически описанной в модуле через <code_source_files>,
+ * есть два ограничения:
+ * 1. Namespace, указанный в файле, игнорируется.
+ * 2. Библиотека должна быть описана в одном файле.
+ * @param {string} url - Url файла .bs.
  * @returns {T} Объект namespace.
  */
-declare function OpenCodeLibrary<T>(name: string): T;
+declare function OpenCodeLibrary<T>(url: string): T;
 
 /**
  * Функция ядра, которая удаленно (на сервере) вызывает метод с параметрами для конкретного объекта.

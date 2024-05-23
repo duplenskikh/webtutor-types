@@ -1,25 +1,25 @@
 {
   "name": "@umbrik/webtutor-types",
-  "version": "8.0.8-2023.2.868",
+  "version": "9.0.0",
   "description": "## Подключение к проекту",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "lint:stage": "ts-node ./ci/lint.ts",
     "lint": "eslint -c ./lib/.eslintrc.json lib",
-    "lint:fix": "eslint -c ./lib/.eslintrc.json lib --fix",
-    "build": "tsc -p lib/tsconfig.json",
-    "test": "check-dts",
-    "check": "npm run lint && npm run test && npm run build"
+    "tsc:lib": "tsc -p lib/tsconfig.json",
+    "tsc:tests": "tsc -p tests/tsconfig.json",
+    "check": "npm run lint && npm run tsc:lib && npm run tsc:tests"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/umbrik/webtutor-types.git"
   },
   "keywords": [
+    "types",
+    "websoft",
     "webtutor",
-    "types"
+    "webtutor-types"
   ],
   "author": "",
   "license": "ISC",
@@ -34,7 +34,6 @@
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
     "@umbrik/eslint-config-hcm-wt": "^1.4.0",
-    "check-dts": "^0.7.2",
     "eslint": "^8.16.0",
     "eslint-plugin-jsdoc": "^46.4.5",
     "eslint-plugin-no-for-of-loops": "^1.0.1",

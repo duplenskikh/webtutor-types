@@ -1,3 +1,8 @@
+interface RequestTypeDocumentCreateCode {
+  code: XmlElem<string>;
+  code_library_id: XmlElem<number, CodeLibraryCatalogDocumentTopElem>;
+}
+
 type RequestTypeDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 WebVariablesBase & {
@@ -16,8 +21,11 @@ WebVariablesBase & {
   workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
   create_message: XmlElem<string>;
   use_standart_processing: XmlElem<boolean>;
+  create_code: XmlElem<RequestTypeDocumentCreateCode>;
   processing_code: XmlElem<string>;
+  processing_code_library_id: XmlElem<number, CodeLibraryCatalogDocumentTopElem>;
   reject_processing_code: XmlElem<string>;
+  reject_processing_code_library_id: XmlElem<number, CodeLibraryCatalogDocumentTopElem>;
   request_custom_web_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
   reject_redirect_url: XmlElem<string>;
   remote_action_id: XmlElem<number, RemoteActionCatalogDocumentTopElem>;

@@ -22,6 +22,7 @@ AdminAccessBase & {
   state_id: XmlElem<number, typeof common.learning_states>;
   time: XmlElem<number>;
   max_score: XmlElem<number>;
+  link_report: XmlElem<string>;
   education_plan_id: XmlElem<number, EducationPlanCatalogDocumentTopElem>;
   assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
   active_test_learning_id: XmlElem<number>;

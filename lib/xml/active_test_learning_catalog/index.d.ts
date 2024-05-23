@@ -15,6 +15,7 @@ AdminAccessBase & {
   event_id: XmlElem<number, EventCatalogDocumentTopElem>;
   group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
   proctor_prefer_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  testing_link: XmlElem<string>;
   start_usage_date: XmlElem<Date>;
   start_learning_date: XmlElem<Date>;
   last_usage_date: XmlElem<Date>;
