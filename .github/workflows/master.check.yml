@@ -1,11 +1,10 @@
-name: Master on push check
+name: Push on master check
 
 on:
   workflow_dispatch:
   push:
     branches:
       - main
-      - dev/update-ci
 
 jobs:
   Check:

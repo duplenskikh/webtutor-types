@@ -1,11 +1,10 @@
-name: Pull request check
+name: PR check
 
 on:
   workflow_dispatch:
   pull_request:
     branches:
       - main
-      - dev/update-ci
 
 jobs:
   Check:
