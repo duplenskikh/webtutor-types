@@ -11,7 +11,17 @@ interface Math {
    */
   sqrt(number: number): number;
 
+  /**
+   * Округляет аргумент до ближайшего большего целого.
+   * @param number - Числовое выражение (Real).
+   */
   ceil(number: number): number;
+
+  /**
+   * Возвращает абсолютное значение числа
+   * @param number - Числовое выражение (Real).
+   */
+  abs(number: number): number;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
