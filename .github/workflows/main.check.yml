@@ -1,4 +1,4 @@
-name: Push on master check
+name: main
 
 on:
   workflow_dispatch:
