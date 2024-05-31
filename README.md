@@ -23,15 +23,15 @@
 ### npm
 
 ```bash
-npm i typescript -D
-npm i @umbrik/webtutor-types@4.4.4 -D
+npm i typescript@4.4.4 -D
+npm i @umbrik/webtutor-types -D
 ```
 
 ### or yarn
 
 ```bash
-yarn add typescript -D
-yarn add @umbrik/webtutor-types@4.4.4 -D
+yarn add typescript@4.4.4 -D
+yarn add @umbrik/webtutor-types -D
 ```
 
 ## 🔨 Настройка

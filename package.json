@@ -1,7 +1,6 @@
 {
   "name": "@umbrik/webtutor-types",
   "version": "9.0.0",
-  "description": "## Подключение к проекту",
   "directories": {
     "lib": "lib"
   },
@@ -19,7 +18,8 @@
     "types",
     "websoft",
     "webtutor",
-    "webtutor-types"
+    "webtutor-types",
+    "wt"
   ],
   "author": "",
   "license": "ISC",
