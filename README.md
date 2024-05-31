@@ -2,13 +2,9 @@
 <div align="center">
   Typescript типы для WebSoft HCM.
   
-  [![actions](https://github.com/umbrik/webtutor-types/actions/workflows/actions.yml/badge.svg)](https://github.com/umbrik/webtutor-types/actions/workflows/actions.yml)
+  [![main](https://github.com/umbrik/webtutor-types/actions/workflows/main.check.yml/badge.svg)](https://github.com/umbrik/webtutor-types/actions/workflows/main.check.yml)
   ![npm](https://img.shields.io/npm/dw/@umbrik/webtutor-types)
 </div>
-
-## Документация
-
-Скоро документация переедет полностью на [GitHub pages](https://hcm-guru.github.io/docs/types/)
 
 ## Зачем?
 
