@@ -3022,3 +3022,27 @@ declare function SHA256(value: string): string;
  * @returns {string} Результат преобразования.
  */
 declare function StrSignedInt(value: number, digitsNum?: number, addGroupDelim?: boolean): string;
+
+/**
+ * Проверяет две строки на равенство, в том числе без учета регистра.
+ * @param {string} str1 - Строка 1.
+ * @param {string} str2 - Строка 2.
+ * @param {boolean} ignoreCase - Не учитывать регистр.
+ * @returns {boolean} Результат.
+ * StrEquals(str1, str2, ignoreCase).
+ */
+declare function StrEquals(str1: string, str2: string, ignoreCase?: boolean): boolean;
+
+/**
+ * Извлекает из строки фрагменты в соответствии с заданным шаблоном. Если строка не соответствует шаблону, возвращается undefined.
+ * Шаблоны могут содержать элементы: %s - вхождение подстроки (возвращаемое) %*s - вхождение подстроки (невозвращаемое).
+ * @param {string} str - Строка.
+ * @param {any} pattern - Шаблон.
+ * @returns {string[] | undefined} Результат.
+ * @example
+ * ```
+ * const obj = StrOptScan("x-local://wtv/tools.xml", "x-local://%*s/%s.xml");
+ * const fileName = obj[0]; // "tools"
+ * ```
+ */
+declare function StrOptScan(str: string, pattern: string): string[] | undefined;
