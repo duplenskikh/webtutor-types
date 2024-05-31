@@ -1,7 +1,7 @@
-name: Pull request check
+name: Master on push check
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
