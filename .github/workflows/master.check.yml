@@ -1,6 +1,7 @@
 name: Master on push check
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
