@@ -18,7 +18,7 @@ interface Math {
   ceil(number: number): number;
 
   /**
-   * Возвращает абсолютное значение числа
+   * Возвращает абсолютное значение числа.
    * @param number - Числовое выражение (Real).
    */
   abs(number: number): number;
