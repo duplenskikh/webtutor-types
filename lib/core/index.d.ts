@@ -3029,9 +3029,9 @@ declare function StrSignedInt(value: number, digitsNum?: number, addGroupDelim?:
  * @param {string} str2 - Строка 2.
  * @param {boolean} ignoreCase - Не учитывать регистр.
  * @returns {boolean} Результат.
- * StrEquals(str1, str2, ignoreCase).
+ * StrEqual(str1, str2, ignoreCase).
  */
-declare function StrEquals(str1: string, str2: string, ignoreCase?: boolean): boolean;
+declare function StrEqual(str1: string, str2: string, ignoreCase?: boolean): boolean;
 
 /**
  * Извлекает из строки фрагменты в соответствии с заданным шаблоном. Если строка не соответствует шаблону, возвращается undefined.
@@ -3046,3 +3046,21 @@ declare function StrEquals(str1: string, str2: string, ignoreCase?: boolean): bo
  * ```
  */
 declare function StrOptScan(str: string, pattern: string): string[] | undefined;
+
+type StrSplitToLinesOptions = {
+  LineFolding: boolean;
+};
+
+/**
+ * Разбивает сроку на подстроки, используя разделители LF либо CRLF. Возвращает массив подстрок.
+ * @param {string} str - Строка.
+ * @param {StrSplitToLinesOptions} [options] - Опции.
+ * @returns {string[]} Результат.
+ * @example
+ * ```
+ * const str = "Purple\nYellow\nGreen";
+ * const stringLines = StrSplitToLines(str);
+ * const color = stringLines[1] // "Yellow"
+ * ```
+ */
+declare function StrSplitToLines(str: string, options?: StrSplitToLinesOptions): string[];
