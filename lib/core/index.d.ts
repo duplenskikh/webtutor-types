@@ -3029,9 +3029,9 @@ declare function StrSignedInt(value: number, digitsNum?: number, addGroupDelim?:
  * @param {string} str2 - Строка 2.
  * @param {boolean} ignoreCase - Не учитывать регистр.
  * @returns {boolean} Результат.
- * StrEquals(str1, str2, ignoreCase).
+ * StrEqual(str1, str2, ignoreCase).
  */
-declare function StrEquals(str1: string, str2: string, ignoreCase?: boolean): boolean;
+declare function StrEqual(str1: string, str2: string, ignoreCase?: boolean): boolean;
 
 /**
  * Извлекает из строки фрагменты в соответствии с заданным шаблоном. Если строка не соответствует шаблону, возвращается undefined.
