@@ -1,23 +1,20 @@
-name: Publishing package
+name: Publishing NPM package
 
 on:
   workflow_dispatch:
-  release:
-    types: [created]
+    inputs:
+      version:
+        type: string
+        description: Version to publish
+        required: true
+        default: latest
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm ci
-      - run: npm run check
+  Check:
+    uses: ./.github/workflows/check.yml
 
-  publish-npm:
-    needs: build
+  Publishing:
+    needs: Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
