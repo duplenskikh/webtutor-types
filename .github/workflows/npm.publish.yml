@@ -13,7 +13,8 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ github.event.inputs.version }}
+    - run: echo ${{ github.event.inputs.version == '' }}
+    - run: echo ${{ github.event.inputs.version != '' }}
   # Check:
   #   uses: ./.github/workflows/check.yml
 
