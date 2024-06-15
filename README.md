@@ -69,46 +69,9 @@ npx tsc -init
 
 ## ⌨️ Пример использования
 
+Примеры использования можно найти в [examples](/examples/)
+
 ![image](https://github.com/HCM-guru/webtutor-types/assets/693254/aefa6c12-4479-4cab-a7e8-c29d880358b7)
-
-```ts
-type FuncManagerQueryResult = {
-  person_id: XmlElem<number>;
-}
-
-function getManagersByType(bossTypeCode: string = "main") {
-  const sql = `sql:
-    SELECT
-      [t0].[person_id]
-    FROM [func_managers] AS [t0]
-      INNER JOIN [boss_types] AS [t1] ON [t1].[id] = [t0].[boss_type_id]
-    WHERE [t1].[code] = ${SqlLiteral(bossTypeCode)}
-  `;
-
-  const query = ArraySelectAll(tools.xquery<FuncManagerQueryResult>(sql));
-
-  const result = [];
-  let collaboratorDocument;
-  let personId;
-
-  for (let i = 0; i < query.length; i++) {
-    personId = query[i].person_id.Value;
-    collaboratorDocument = tools.open_doc<CollaboratorDocument>(personId);
-
-    if (collaboratorDocument === undefined) {
-      alert(`Can't open collaborator document by id ${personId}`);
-      continue;
-    }
-
-    result.push({
-      personId,
-      fullname: collaboratorDocument.TopElem.fullname()
-    });
-  }
-  
-  return result;
-}
-```
 
 ## 🔨 Тестирование
 

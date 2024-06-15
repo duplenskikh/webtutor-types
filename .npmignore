@@ -3,3 +3,4 @@ tests
 .vscode
 ci
 node_modules
+examples
