@@ -12,7 +12,7 @@ on:
 
 jobs:
   Check:
-    uses: .github/workflows/check.yml
+    uses: ./.github/workflows/check.yml
 
   Publishing:
     needs: Check
