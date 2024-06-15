@@ -10,33 +10,37 @@ on:
         default: latest
 
 jobs:
-  Check:
-    uses: ./.github/workflows/check.yml
-
-  Publishing:
-    needs: Check
+  Test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - name: Automated Version Bump
-        if: "${{ github.event.inputs.version == '' }}"
-        uses: phips28/gh-action-bump-version@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          version-type: minor
-      - name: Automated Version Bump
-        if: "${{ github.event.inputs.version != '' }}"
-        uses: phips28/gh-action-bump-version@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          version-type: ${{ github.event.inputs.version }}
-      # - run: npm publish
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+    - run: echo ${{ github.event.inputs.version }}
+  # Check:
+  #   uses: ./.github/workflows/check.yml
+
+  # Publishing:
+  #   needs: Check
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 20
+  #         registry-url: https://registry.npmjs.org/
+  #     - run: npm ci
+  #     - name: Automated Version Bump
+  #       if: "${{ github.event.inputs.version == '' }}"
+  #       uses: phips28/gh-action-bump-version@master
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       with:
+  #         version-type: minor
+  #     - name: Automated Version Bump
+  #       if: "${{ github.event.inputs.version != '' }}"
+  #       uses: phips28/gh-action-bump-version@master
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       with:
+  #         version-type: ${{ github.event.inputs.version }}
+  #     # - run: npm publish
+  #     #   env:
+  #     #     NODE_AUTH_TOKEN: ${{secrets.npm_token}}
