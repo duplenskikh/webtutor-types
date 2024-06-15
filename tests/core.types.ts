@@ -1,4 +1,4 @@
-import {testArrayOfObjects, testPrimitivesArray, xmlDocumentForTesting} from "./mocks/arrayFunctions";
+import { testArrayOfObjects, testPrimitivesArray, xmlDocumentForTesting } from "./mocks/arrayFunctions";
 
 CheckPamMd5("source_string", "checksum");
 

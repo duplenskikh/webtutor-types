@@ -13,8 +13,5 @@
   "plugins": [
     "@typescript-eslint",
     "jsdoc"
-  ],
-  "rules": {
-    "no-magic-numbers": "off"
-  }
+  ]
 }
