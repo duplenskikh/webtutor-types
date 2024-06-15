@@ -15,6 +15,6 @@
     "jsdoc"
   ],
   "rules": {
-    "semi": "error"
+    "no-magic-numbers": "off"
   }
 }

@@ -5,6 +5,7 @@ var collaborator2 = tools.new_doc_by_name<CollaboratorDocument>("collaborator");
 if (collaborator !== undefined) {
   if (collaborator.TopElem.position_id.OptForeignElem !== undefined) {
     var foreignName = tools.get_foreign_field(collaborator.TopElem.position_id, "basic_rate", "");
+    alert(foreignName);
   }
 }
 
@@ -14,7 +15,14 @@ tools.common_filling("collaborator", collaborator2.TopElem, collaboratorId);
 tools.common_filling("collaborator", collaborator2.TopElem, collaboratorId, collaborator?.TopElem, true);
 
 var authorizationLibrary = tools.get_object_assembly("Authorization");
-authorizationLibrary.GetValidateADALWithTokenAttributes("ad_server_tenant", "ad_clientid", "resourceId", "token", "properties", "stsDiscoveryEndPoint");
+authorizationLibrary.GetValidateADALWithTokenAttributes(
+  "ad_server_tenant",
+  "ad_clientid",
+  "resourceId",
+  "token",
+  "properties",
+  "stsDiscoveryEndPoint"
+);
 
 var cryptoPro = tools.get_object_assembly("CryptoPro");
-cryptoPro.CloseStore()
+cryptoPro.CloseStore();
