@@ -31,6 +31,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           version-type: minor
+      - name: Automated Version Bump
+        if: "${{ github.event.inputs.inputs != '' }}"
+        uses: phips28/gh-action-bump-version@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          version-type: ${{ github.event.inputs.inputs }}
       # - run: npm publish
       #   env:
       #     NODE_AUTH_TOKEN: ${{secrets.npm_token}}
