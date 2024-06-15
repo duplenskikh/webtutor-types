@@ -10,9 +10,12 @@
     "noLib": true,
     "noEmit": true,
     "baseUrl": "tests",
-    "typeRoots": [
+    "typeRoots" : [
       "../lib",
       "../lib/xml"
-    ]
-  }
+    ],
+  },
+  "include": [
+    "**/*.ts"
+  ]
 }
