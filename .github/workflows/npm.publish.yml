@@ -25,19 +25,19 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - name: Automated Version Bump
-        if: "${{ github.event.inputs.inputs == '' }}"
+        if: "${{ github.event.inputs.version == '' }}"
         uses: phips28/gh-action-bump-version@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           version-type: minor
       - name: Automated Version Bump
-        if: "${{ github.event.inputs.inputs != '' }}"
+        if: "${{ github.event.inputs.version != '' }}"
         uses: phips28/gh-action-bump-version@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          version-type: ${{ github.event.inputs.inputs }}
+          version-type: ${{ github.event.inputs.version }}
       # - run: npm publish
       #   env:
       #     NODE_AUTH_TOKEN: ${{secrets.npm_token}}
