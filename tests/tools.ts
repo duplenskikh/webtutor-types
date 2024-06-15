@@ -17,5 +17,4 @@ var authorizationLibrary = tools.get_object_assembly("Authorization");
 authorizationLibrary.GetValidateADALWithTokenAttributes("ad_server_tenant", "ad_clientid", "resourceId", "token", "properties", "stsDiscoveryEndPoint");
 
 var cryptoPro = tools.get_object_assembly("CryptoPro");
-cryptoPro.CloseStore();
-
+cryptoPro.CloseStore()
