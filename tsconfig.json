@@ -13,5 +13,8 @@
     "strict": true,
     "noEmit": true,
     "skipLibCheck": true
-  }
+  },
+  "exclude": [
+    "examples"
+  ]
 }
