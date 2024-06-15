@@ -1,7 +1,6 @@
 name: Publishing NPM package
 
 on:
-  push:
   workflow_dispatch:
     inputs:
       version:
