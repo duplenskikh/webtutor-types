@@ -1,6 +1,11 @@
+type ActiveXObjectType = {
+  "ADODB.Connection": ADODB.Connection;
+  "ADODB.Recordset": ADODB.Recordset;
+};
+
 interface ActiveXObjectConstructor {
-  new<T>(name: string): T;
-  <T>(name: string): T;
+  new<T extends keyof ActiveXObjectType>(name: T): ActiveXObjectType[T];
+  <T extends keyof ActiveXObjectType>(name: T): ActiveXObjectType[T];
 }
 
 declare const ActiveXObject: ActiveXObjectConstructor;
