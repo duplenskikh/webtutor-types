@@ -2813,7 +2813,7 @@ declare namespace tools {
   let UNI_CAP_VCLASS_RECORDER_ROLE_TAG: XmlElem<number>;
   let UNI_CAP_MEDIA_HANDLER_ROLE_TAG: XmlElem<number>;
   let UNI_CAP_NEURAL_HANDLER_ROLE_TAG: XmlElem<number>;
-  let spxml_unibridge: XmlElem<unknown>;
+  let spxml_unibridge: SPXMLUnibridgeTool;
   let app_insights_threshold: XmlElem<number>;
   let spxml_unibridge_stage: XmlElem<number>;
   let UNI_STAGE_INIT: XmlElem<number>;
