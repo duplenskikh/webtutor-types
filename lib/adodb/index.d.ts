@@ -1158,7 +1158,7 @@ declare namespace ADODB {
     _xClone(): Recordset;
     _xResync(AffectRecords?: AffectEnum): void;
     _xSave(FileName?: string, PersistFormat?: PersistFormatEnum): void;
-    AbsolutePage: PositionEnum;
+    AbsolutePage: PositionEnum | number;
     AbsolutePosition: PositionEnum;
     readonly ActiveCommand?: Command | undefined;
     ActiveConnection: string | Connection | null;
