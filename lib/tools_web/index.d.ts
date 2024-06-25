@@ -328,8 +328,7 @@ declare namespace tools_web {
   function html_decode(s: unknown): unknown;
 
   function html_to_imput_value(s: unknown): unknown;
-  let content_types: XmlElem<unknown>;
-
+  const content_types: XmlElem<ToolsWebContentTypes>;
   function get_app_ui(): unknown;
 
   function set_st_category(curUser: unknown): unknown;
