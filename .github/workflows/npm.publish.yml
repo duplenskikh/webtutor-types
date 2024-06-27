@@ -1,20 +1,15 @@
 name: Publishing NPM package
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        type: string
-        description: Version to publish
-        required: true
-        default: latest
+  push:
+    tags:
+      - 'v[]'
 
 jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ github.event.inputs.version == '' }}
-    - run: echo ${{ github.event.inputs.version != '' }}
+    - run: echo ${{ github.ref }}
   # Check:
   #   uses: ./.github/workflows/check.yml
 
