@@ -8,6 +8,11 @@
  * Session содержит несколько собственных атрибутов.
  */
 interface Session extends Object {
-  Env: Env;
   sid: number;
+  Env: Env;
+  cur_user_id: number;
+  cur_user_fullname: string;
+  cur_user_login: string;
+  cur_useragent: string;
+  auth_type: string;
 }
