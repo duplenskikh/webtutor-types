@@ -4,7 +4,11 @@ interface Env extends Object {
   curLngID: string;
   curSiteID: number;
   curHostID: number;
-  curHostSettings: object;
+  curHostSettings: {
+    default_web_design: string;
+    default_portal_type: string;
+    portal_auth_type: string;
+  };
   curHostPath: string;
   curHostName: string;
   curDevice: {
@@ -30,7 +34,7 @@ interface Env extends Object {
   curContext: unknown[];
   curContextObjectID: number | null;
   curContextMode: string;
-  curI18n: object;
+  curI18n: ReturnType<typeof tools_i18n.get_cur_i18n>;
   curUserID: number;
   curUser: CurUser;
 }
