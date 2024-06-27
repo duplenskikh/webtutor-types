@@ -3,7 +3,7 @@ name: Publishing NPM package
 on:
   push:
     tags:
-      - 'v[]'
+      - 'v*'
 
 jobs:
   Test:
