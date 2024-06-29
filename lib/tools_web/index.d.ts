@@ -391,11 +391,15 @@ declare namespace tools_web {
 
   let enabled_web_rules_date: XmlElem<Date>;
 
-  let enabled_web_rules_obj: XmlElem<unknown>;
+  let enabled_web_rules_obj: Variant<WebRuleCatalogDocumentTopElem[]>;
 
   function get_enabled_web_rules(): unknown;
 
-  let std_web_rules_obj: XmlElem<unknown>;
+  let std_web_rules_obj: Variant<{
+    mode: string;
+    site_id: number;
+    web_design_id: number;
+  }>;
 
   function get_std_web_rules(): unknown;
 
