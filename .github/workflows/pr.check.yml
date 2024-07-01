@@ -9,3 +9,8 @@ on:
 jobs:
   Check:
     uses: ./.github/workflows/check.yml
+  CheckVersion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check version
+        run: npm run version:check
