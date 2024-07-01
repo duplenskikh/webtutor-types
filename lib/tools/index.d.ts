@@ -2663,9 +2663,9 @@ declare namespace tools {
    */
   function extend_object(target: object, source: object): object;
 
-  let current_user_boss_type: XmlElem<unknown>;
+  let current_user_boss_type: Variant<BossTypeDocumentTopElem>;
 
-  function get_current_user_operations(): unknown;
+  function get_current_user_operations(): number[];
 
   /**
    * Заполняет свойства объекта-получателя из соответствующих свойств объекта-источника.
@@ -3467,7 +3467,7 @@ declare namespace tools {
   function set_upgrade_locked(bParam: unknown): unknown;
   let os_type: XmlElem<string>;
   let dotnet_host: DotnetCoreHost | null;
-  let object_assembly: XmlElem<unknown>;
+  let object_assembly: Variant<Websoft.Interfaces>;
 
   /**
    * Возвращает объект библиотеки.

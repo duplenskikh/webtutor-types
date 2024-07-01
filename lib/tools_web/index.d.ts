@@ -328,8 +328,7 @@ declare namespace tools_web {
   function html_decode(s: unknown): unknown;
 
   function html_to_imput_value(s: unknown): unknown;
-  let content_types: XmlElem<unknown>;
-
+  const content_types: XmlElem<ToolsWebContentTypes>;
   function get_app_ui(): unknown;
 
   function set_st_category(curUser: unknown): unknown;
@@ -392,11 +391,15 @@ declare namespace tools_web {
 
   let enabled_web_rules_date: XmlElem<Date>;
 
-  let enabled_web_rules_obj: XmlElem<unknown>;
+  let enabled_web_rules_obj: Variant<WebRuleCatalogDocumentTopElem[]>;
 
   function get_enabled_web_rules(): unknown;
 
-  let std_web_rules_obj: XmlElem<unknown>;
+  let std_web_rules_obj: Variant<{
+    mode: string;
+    site_id: number;
+    web_design_id: number;
+  }>;
 
   function get_std_web_rules(): unknown;
 
