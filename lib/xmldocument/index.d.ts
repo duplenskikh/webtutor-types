@@ -1,4 +1,6 @@
 interface XmlDocument {
+  ActiveThreadIsRunning: unknown;
+
   /**
    * Если атрибут имеет значение true, это означает,
    * что при выходе из системы или при остановке сервера документы,
@@ -6,6 +8,8 @@ interface XmlDocument {
    * Обычно установлен у документов, содержащих настройки пользователя.
    */
   AutoSave: boolean;
+
+  BuildPrintReport: unknown;
 
   /**
    * Возвращает id документа (только для объектных документов).
@@ -25,6 +29,12 @@ interface XmlDocument {
    * Если документ не имеет формы, возвращается пустая строка.
    */
   FormUrl: string;
+
+  /**
+   * Возвращает true, если документ открыт с правом на запись (обычный сценарий) и false,
+   * если документ открыт только на чтение.
+   */
+  HasWriteAccess: boolean;
 
   /**
    * Флаг, обозначающий что документ был изменен.
@@ -74,7 +84,14 @@ interface XmlDocument {
    * В случае если документ открыт в экране,
    * возвращает ссылку на экран, иначе - undefined.
    */
-  OptScreen: ScriptQueueElemDocument;
+  OptScreen: typeof Screen;
+
+  /**
+   * По умолчанию имеет значение `true`, означающие, что при сохранении документа
+   * следует исполнить описанный в форме документа метод {@link OnBeforeSave}.
+   * Может быть переведен в значение false, например для оптимизации массовой обработки документов.
+   */
+  RunActionOnBeforeSave: boolean;
 
   /**
    * По умолчанию имеет значение true, означающие,
@@ -85,6 +102,8 @@ interface XmlDocument {
    */
   RunActionOnSave: boolean;
 
+  ServerOnly: unknown;
+
   /**
    * В случае если документ открыт в экране,
    * возвращает ссылку на экран, иначе - выдает ошибку.
@@ -93,17 +112,17 @@ interface XmlDocument {
   Screen: typeof Screen;
 
   /**
-   * Свойство TempData содержит объект, в котором можно хранить произвольные данные.
+   * Свойство {@link TempData} содержит объект, в котором можно хранить произвольные данные.
    * Данные хранятся только на время, пока открыт документ.
-   * Может быть использовано, в частности, для передачи данных между OnBeforeSave() и {@link OnSave}().
-   * TempData представляет из себя стандартный объект в режиме совместимости.
+   * Может быть использовано, в частности, для передачи данных между {@link OnBeforeSave}() и {@link OnSave}().
+   * {@link TempData} представляет из себя стандартный объект в режиме совместимости.
    */
   TempData: Object;
 
   /**
    * Возвращает корневой элемент в документе.
    * Так же к можно обратиться к корневому элементу,
-   * используя его имя, но TopElem - более универсальный способ.
+   * используя его имя, но {@link TopElem} - более универсальный способ.
    */
   TopElem: XmlTopElem;
 
@@ -126,6 +145,7 @@ interface XmlDocument {
   WriteAllNodes: boolean;
 
   /**
+   * @experimental
    * @deprecated
    * Экспериментальный атрибут. Не поддерживается.
    */
@@ -172,8 +192,9 @@ interface XmlDocument {
    * который сразу и создает новый объектный документ, и присваивает ему id и url.
    * Также в новой объектной модели используется метод {@link BindToDbObjectType}().
    * @param {string | DefaultDb} [database] - Имя базы.
+   * @param {number} [docId=0] - Id объекта.
    */
-  BindToDb(database?: string | DefaultDb): undefined;
+  BindToDb(database?: string | DefaultDb, docId?: number): undefined;
 
   /**
    * Преобразует документ (как правило, вновь созданный) в объектный
@@ -190,7 +211,7 @@ interface XmlDocument {
 
   /**
    * Запускает выполнение отдельного потока относительно данного документа.
-   * В отличие от обычного объекта Thread,
+   * В отличие от обычного объекта {@link Thread},
    * этот метод позволяет более удобно работать с потоками.
    * Созданный поток получает документ в качестве базового указателя This.
    * Т.е. Можно создать документ с набором полей, содержащих какие-либо методы.
@@ -214,12 +235,39 @@ interface XmlDocument {
    * Если элемент не найден, возвращается undefined.
    * @param {number} extID - Внешний Id элемента.
    */
-  FindExtDataElemByFieldID(): XmlElem<number>;
+  FindExtDataElemByFieldID(extID: number): XmlElem<number>;
 
-  // KillActiveThread(): unknown;
-  // LoadFromLds(): unknown;
-  // MakeReport(): unknown;
+  /**
+   * Дает сигнал потоку, запущенному через {@link EvalThread}() относительно данного документа,
+   * прекратить исполнение.
+   *
+   * Вызов данного метода не означает, что поток завершится мгновенно,
+   * но как только он дойдет до ближайшей контрольной точки,
+   * которая поддерживает ликвидацию потока,
+   * исполнение кода этого потока завершится с ошибкой Cancel - операция отменена пользователем.
+   */
+  KillActiveThread(): void;
+
+  /**
+   * @experimental
+   * Экспериментальная функция.
+   * Используется для синхронизации документов.
+   * Загружает документ сервера приложений.
+   * @returns {object} SpXml.
+   */
+  LoadFromLds(): object;
+
+  /**
+   * @deprecated
+   * Устаревший метод.
+   */
+  MakeReport(): unknown;
   // PrepareLastSavedData(): unknown;
+
+  /**
+   * Удаляет документ из кэша документов.
+   */
+  RemoveFromCache(): void;
 
   /**
    * Сохраняет документ.
@@ -228,15 +276,73 @@ interface XmlDocument {
    * @param {string} documentUrl - Url, под которым должен быть сохранен документ.
    */
   Save(documentUrl?: string): undefined;
-  // SaveToLds(): unknown;
-  // SaveToStream(): unknown;
-  // SaveToUrl(): unknown;
-  // SetCached(): unknown;
-  // SetChanged(): unknown;
-  // SetShared(): unknown;
-  // SubElem(): unknown;
-  // TopOrChildElem(): unknown;
-  // UpdateValues(): unknown;
+
+  /**
+   * @experimental
+   * Экспериментальный метод.
+   *
+   * Сохраняет документ принудительно на сервере приложений.
+   *
+   * Используется для синхронизации, когда, например, документ открывается или создается локально,
+   * а сохраняется на сервере.
+   */
+  SaveToLds(): unknown;
+
+  /**
+   * Сохраняет содержимое документа в поток.
+   * @param {Stream} destStream - Поток.
+   * @param {string} [options] - Опции экспорта документа.
+   */
+  SaveToStream(destStream: Stream, options?: string): void;
+
+  /**
+   * Сохраняет содержимое документа под заданным url. Текущий url при этом не изменяется.
+   * @param {string} destUrl - Новый url.
+   * @param {string} [options] - Опции экспорта документа.
+   */
+  SaveToUrl(destUrl: string, options?: string): void;
+
+  /**
+   * Добавляет документ в кэш документов.
+   */
+  SetCached(): void;
+
+  /**
+   * Устанавливает флаг модификации документа.
+   * @param {boolean} [isChanged=true] - Флаг модификации.
+   */
+  SetChanged(isChanged?: boolean): void;
+
+  /**
+   * Добавляет документ в список документов, чьи имена доступны в глобальном окружении.
+   */
+  SetShared(): void;
+
+  /**
+   * Возвращает элемент документа с полным путем относительно документа.
+   * @param {string} path - Путь к элементу (включая корневой элемент).
+   * @param {XmlElem}
+   * @example
+   * ```
+   * doc.SubElem("person.view.last_state_id")
+   * ```
+   */
+  SubElem<T extends XmlElem<unknown>>(path: string): T;
+
+  /**
+   * Если аргумент совпадает с именем корневого элемента, то возвращается корневой элемент.
+   * Если аргумент совпадает с именем дочернего элемента, выдается дочерний элемент.
+   * Редко используемая функция.
+   * @param {string} elemName - Имя элемента.
+   * @param {XmlElem}
+   */
+  TopOrChildElem<T extends XmlElem<unknown>>(elemName: string): T;
+
+  /**
+   * Вызывает принудительный пересчет всех вычисляемых элементов документа тех полей,
+   * в описании которых есть атрибут EXPR или EXPR-INIT.
+   */
+  UpdateValues(): void;
 }
 
 interface XmlTopElem extends XmlElem<unknown> {
