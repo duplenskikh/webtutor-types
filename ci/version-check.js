@@ -21,7 +21,7 @@ execSync(`git show origin/main:package.json > ${masterTempPackagePath}`);
 const packageJSON = JSON.parse(readFileSync(resolve(rootPath, "package.json")));
 const masterPackageJSON = JSON.parse(readFileSync(masterTempPackagePath));
 
-if (semver.lte(masterPackageJSON.version, packageJSON.version)) {
+if (semver.gte(masterPackageJSON.version, packageJSON.version)) {
   console.error(`Необходимо обновить версию типов в package.json минимум до ${semver.inc(packageJSON.version, "patch")}`);
   process.exit(1);
 }
