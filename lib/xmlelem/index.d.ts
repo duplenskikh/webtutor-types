@@ -753,3 +753,10 @@ interface XmElem<T, ForeignElem = never> {
 }
 
 type XmlElem<T, ForeignElem = never> = XmElem<T, ForeignElem> & T;
+
+type XmlElemUnknown = XmlElem<unknown>;
+
+type XmlElemNonMethodsKeys = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [K in keyof XmlElemUnknown]: XmlElemUnknown[K] extends (...args: any) => any ? never : K;
+}[keyof XmlElemUnknown];
