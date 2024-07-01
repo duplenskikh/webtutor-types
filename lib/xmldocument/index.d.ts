@@ -262,7 +262,14 @@ interface XmlDocument {
    * Устаревший метод.
    */
   MakeReport(): unknown;
-  // PrepareLastSavedData(): unknown;
+
+  /**
+   * @experimental
+   * Экспериментальный метод.
+   * Принудительно приготавливает предыдущую сохраненную версию документа.
+   * Смотри также атрибут {@link LastSavedData}.
+   */
+  PrepareLastSavedData(): void;
 
   /**
    * Удаляет документ из кэша документов.
