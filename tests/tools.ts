@@ -28,3 +28,8 @@ const cryptoPro = tools.get_object_assembly("CryptoPro");
 cryptoPro.CloseStore();
 
 tools.current_user_boss_type;
+
+const careerReserveDocument = tools.new_doc_by_name<CareerReserveDocument>("career_reserve");
+
+tools.common_filling("collaborator", careerReserveDocument.TopElem, careerReserveDocument.DocID);
+tools.common_filling("collaborator", careerReserveDocument.TopElem.tutors, careerReserveDocument.DocID);
