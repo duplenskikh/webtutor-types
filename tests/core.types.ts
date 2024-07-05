@@ -180,5 +180,22 @@ alert(object1 == object3);
 
 ArraySelectAll([]);
 
-const stringValue = object1.GetOptProperty<string>("value");
-alert(stringValue?.length);
+const stringValue = object1.GetOptProperty("value");
+
+alert(stringValue);
+
+var obj = {
+  key: "value",
+  key1: "value",
+  key3: "value",
+};
+
+obj.SetProperty("1", "1");
+var propertyValue = obj.GetProperty("key1");
+var propertyValue1 = obj.GetOptProperty<typeof obj, string, number>("key12", 1);
+var propertyValue2 = obj.GetOptProperty("key12", 1);
+
+propertyValue;
+propertyValue1;
+propertyValue2;
+
