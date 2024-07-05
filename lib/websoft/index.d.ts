@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-magic-numbers */
 declare namespace Websoft {
-
   type Interfaces = {
     "Authorization": Authorization.Authorization,
     "Crypto": Utils.Crypto,

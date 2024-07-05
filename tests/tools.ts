@@ -28,3 +28,31 @@ const cryptoPro = tools.get_object_assembly("CryptoPro");
 cryptoPro.CloseStore();
 
 tools.current_user_boss_type;
+
+const assembly = tools.dotnet_host?.Object.GetAssembly("Rusal.Excel.Document");
+
+type CreateReportResult = {
+  data: string[]
+};
+
+type ExcelCell = {
+  Column: number;
+  Copy(cell: ExcelCell): void;
+};
+
+if (assembly) {
+  const result = assembly.CallClassStaticMethod<CreateReportResult>(
+    "Rusal.Excel.Document",
+    "createReport",
+    [collaborator]
+  );
+
+  IsArray(result.data);
+
+  const classInstance = assembly.CreateClassObject<ExcelCell>("ExcelCell");
+
+  const columnNumber = classInstance.Column;
+  alert(columnNumber);
+
+  classInstance.Copy(classInstance);
+}

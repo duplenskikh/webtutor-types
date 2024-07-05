@@ -3466,7 +3466,7 @@ declare namespace tools {
 
   function set_upgrade_locked(bParam: unknown): unknown;
   let os_type: XmlElem<string>;
-  let dotnet_host: DotnetCoreHost | null;
+  let dotnet_host: DotNetCoreHost | null;
   let object_assembly: Variant<Websoft.Interfaces>;
 
   /**
