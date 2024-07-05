@@ -1,5 +1,8 @@
-declare class DotnetCoreHost {
+declare class DotNetCoreHost {
   Object: {
-    GetAssembly<T>(name: string): T;
+    GetAssembly(dllName: string): {
+      CreateClassObject<T>(className: string): T;
+      CallClassStaticMethod<T, A extends unknown[]= unknown[]>(namespaceOrClass: string, methodName: string, args: A): T;
+    };
   };
 }
