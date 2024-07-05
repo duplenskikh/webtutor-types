@@ -925,9 +925,9 @@ declare namespace tools {
    * Для типа источника object заполняются поля object_type, object_name, object_code, object_start_date.
    * Для типа источника tag заполняется поле tag_name.
    * @param {string} type - Строка, содержащая название типа источника объекта.
-   * @param {XmlTopElem} topElem - TopElem документа-приемника данных (документа, которому передаются данные).
+   * @param {XmlElem<unknown>} elem - TopElem документа-приемника данных (документа, которому передаются данные).
    * @param {number} objectId - Id документа-источника данных.
-   * @param {XmlTopEleme} [xmlTopElem] - TopElem документа-источника данных.
+   * @param {XmlTopElem} [xmlTopElem] - TopElem документа-источника данных.
    * @param {boolean} [customFlag] - Если значение данного атрибута равно true и значение атрибута type равно 'event',
    * то в интерфейс администратора выводится сообщение о количестве преподавателей в мероприятии.
    * @returns {boolean} Возвращает значение true, если операция завершилась успешно
@@ -937,28 +937,30 @@ declare namespace tools {
    * функция вернет значение true.
    * @example
    * ```
-   * Пример 1:
-   * oActiveLearning_receiver = OpenNewDoc ('x-local://wtv/wtv_active_learning.xmd');
-   * oCollab_source = tools.get_doc_by_key ('collaborator', 'fullname', 'Вилкова Ольга Николаевна');
+   * // Пример 1:
+   * oActiveLearning_receiver = OpenNewDoc("x-local://wtv/wtv_active_learning.xmd");
+   * oCollab_source = tools.get_doc_by_key("collaborator", "fullname", "Вилкова Ольга Николаевна");
    * // на экран выводится информация об отобранном сотруднике-источнике
-   * alert ('Найден сотрудник ' + oCollab_source.TopElem.name + ' с идентификационным номером ' + oCollab_source.DocID);
+   * alert ("Найден сотрудник " + oCollab_source.TopElem.name + " с идентификационным номером " + oCollab_source.DocID);
    * oActiveLearning_receiver.TopElem.person_id = oCollab_source.DocID; // заполнение основной информации о сотруднике
    * // заполнение дополнительной информации о сотруднике
-   * tools.common_filling('collaborator', oActiveLearning_receiver.TopElem, oCollab_source.DocID);
-   * oCourse_source = tools.get_doc_by_key ('course', 'name', 'Эффективное совещание');
+   * tools.common_filling("collaborator", oActiveLearning_receiver.TopElem, oCollab_source.DocID);
+   * oCourse_source = tools.get_doc_by_key ("course", "name", "Эффективное совещание");
    * // на экран выводится информация об отобранном курсе-источнике
-   * alert ('Найден курс ' + oCourse_source.TopElem.name + ' с идентификационным номером ' + oCourse_source.DocID);
+   * alert ("Найден курс " + oCourse_source.TopElem.name + " с идентификационным номером " + oCourse_source.DocID);
    * oActiveLearning_receiver.TopElem.course_id = oCourse_source.DocID; // заполнение основной информации о курсе
    * // заполнение дополнительной информации о курсе
-   * tools.common_filling('course', oActiveLearning_receiver.TopElem, oCourse_source.DocID);
-   * oActiveLearning_receiver.BindToDb(); // связывание нового сформированного объекта с базой данных
-   * oActiveLearning_receiver.Save(); // сохранение нового объекта в информационной базе
-   * Пример 2:
-   * tools.common_filling('request_type', doc.TopElem, _request_type_first_elem.PrimaryKey);
-   * tools.common_filling('education_method', doc.TopElem, TopElem.Doc.DocID, TopElem);
+   * tools.common_filling("course", oActiveLearning_receiver.TopElem, oCourse_source.DocID);
+   * // связывание нового сформированного объекта с базой данных
+   * oActiveLearning_receiver.BindToDb();
+   * // сохранение нового объекта в информационной базе
+   * oActiveLearning_receiver.Save();
+   * // Пример 2:
+   * tools.common_filling("request_type", doc.TopElem, _request_type_first_elem.PrimaryKey);
+   * tools.common_filling("education_method", doc.TopElem, TopElem.Doc.DocID, TopElem);
    * ```
    */
-  function common_filling(type: "subdivision" | "org" | "position" | "event" | "course" | "assessment" | "request_type" | "task_type" | "presence_state" | "project" | "response_type" | "education_method" | "education_org" | "collaborator" | "item" | "submission_type" | "activity" | "object" | "tag" | "object_data_type" | "custom_web_template", topElem: XmlTopElem, objectId: number, xmlTopElem?: XmlTopElem, customFlag?: boolean): boolean;
+  function common_filling(type: "subdivision" | "org" | "position" | "event" | "course" | "assessment" | "request_type" | "task_type" | "presence_state" | "project" | "response_type" | "education_method" | "education_org" | "collaborator" | "item" | "submission_type" | "activity" | "object" | "tag" | "object_data_type" | "custom_web_template", elem: XmlElem<unknown>, objectId: number, xmlTopElem?: XmlTopElem, customFlag?: boolean): boolean;
 
   /**
    * Функция очищает поля в приемнике данных на основе указанного типа объекта источника данных.
@@ -989,8 +991,8 @@ declare namespace tools {
    * @returns {boolean} Возвращает значение true, если операция завершилась успешно, или false в противном случае.
    * @example
    * ```
-   * tools.common_clear (_cur_catalog_name, TopElem, Ps);
-   * tools.common_clear ('collaborator', Child(0).Parent, person_id);
+   * tools.common_clear(_cur_catalog_name, TopElem, Ps);
+   * tools.common_clear("collaborator", Child(0).Parent, person_id);
    * ```
    */
   function common_clear(type: "subdivision" | "org" | "position" | "event" | "education_org" | "course" | "assessment" | "request_type" | "task_type" | "response_type" | "collaborator" | "object" | "education_type", source: XmlTopElem, xmlElemWithSdNode?: MsPersonSdInnerBase, doc?: unknown): boolean;
@@ -1047,10 +1049,10 @@ declare namespace tools {
    * @returns {string} Строковое выражение XML-структуры, содержащей результаты тестирования в теге annals.
    * @example
    * ```
-   * tod = StrSimpleDecrypt (_core);
-   * tod = Trim (tod);
-   * annals = tools.get_annals_from_core (tod);
-   * sReport = tools.get_annals_from_core (Trim (StrSimpleDecrypt (oSourceParam.core_lesson ) ));
+   * tod = StrSimpleDecrypt(_core);
+   * tod = Trim(tod);
+   * annals = tools.get_annals_from_core(tod);
+   * sReport = tools.get_annals_from_core(Trim(StrSimpleDecrypt(oSourceParam.core_lesson)));
    * ```
    */
   function get_annals_from_core(testResults: string): string;
@@ -1113,9 +1115,9 @@ declare namespace tools {
    * TopElem.annals_variant = tools.annals_decrypt(oSource, sQtiPath);
    *
    * for (_learning in _learning_array ) {
-   *   learningDoc = OpenDoc(UrlFromDocID(_learning.id ) ).TopElem;
-   *   assessmentDoc = OpenDoc(UrlFromDocID(_learning.assessment_id ) ).TopElem;
-   *  fldAnnals = tools.annals_decrypt(learningDoc, tools.get_qti_path(assessmentDoc ));
+   *   learningDoc = OpenDoc(UrlFromDocID(_learning.id)).TopElem;
+   *   assessmentDoc = OpenDoc(UrlFromDocID(_learning.assessment_id)).TopElem;
+   *   fldAnnals = tools.annals_decrypt(learningDoc, tools.get_qti_path(assessmentDoc));
    * }
    * ```
    */

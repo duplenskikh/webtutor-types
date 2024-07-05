@@ -29,6 +29,11 @@ cryptoPro.CloseStore();
 
 tools.current_user_boss_type;
 
+const careerReserveDocument = tools.new_doc_by_name<CareerReserveDocument>("career_reserve");
+
+tools.common_filling("collaborator", careerReserveDocument.TopElem, careerReserveDocument.DocID);
+tools.common_filling("collaborator", careerReserveDocument.TopElem.tutors, careerReserveDocument.DocID);
+
 const assembly = tools.dotnet_host?.Object.GetAssembly("Rusal.Excel.Document");
 
 type CreateReportResult = {
