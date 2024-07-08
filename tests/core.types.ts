@@ -199,3 +199,6 @@ propertyValue;
 propertyValue1;
 propertyValue2;
 
+DecodeCharset("teststring", "cp-866");
+EncodeCharset("teststring1", "windows-1251");
+EncodeCharset("teststring2", "windows-1252");

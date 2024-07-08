@@ -2312,7 +2312,7 @@ declare function Base64Decode(str: string): string;
  * @param {string} charset - Имя кодировки, в которую нужно перевести строку.
  * @returns {string} Результат.
  */
-declare function EncodeCharset(str: string, charset: string): string;
+declare function EncodeCharset(str: string, charset: WebtutorCharsets): string;
 
 /**
  * Преобразует строку, содержащую HTML, в простой текст.
@@ -2359,7 +2359,7 @@ declare function Base64Encode(str: string): string;
  * @param {string} charset - Название кодировки, в которую нужно перевести строку.
  * @returns {string} Результат.
  */
-declare function DecodeCharset(str: string, charset: string): string;
+declare function DecodeCharset(str: string, charset: WebtutorCharsets): string;
 
 /**
  * Кодирует обычный текст в формат rtf.
