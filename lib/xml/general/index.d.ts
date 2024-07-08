@@ -1614,7 +1614,7 @@ interface KnowledgePartsBaseOld {
 
 interface CustomElemsBaseCustomElem {
   name: XmlElem<string>;
-  value: XmlElem<null | undefined | string | Date | number | boolean>;
+  value: XmlElem<string>;
 }
 
 interface CustomElemsBase {
