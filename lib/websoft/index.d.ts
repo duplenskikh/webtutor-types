@@ -10,8 +10,8 @@ declare namespace Websoft {
     // "FaceRecognition": OpenCV.FaceRecognition,
     "FileUtils": Utils.FileUtils,
     // "HttpRequest": HttpRequest.HttpRequest,
-    // "Image": Imaging.Image,
-    // "ImageUtils": Imaging.ImageUtils,
+    "Image": Imaging.Image,
+    "ImageUtils": Imaging.ImageUtils,
     // "MediaPostStreamHandler": MediaHandler.MediaPostStreamHandler,
     "Pdf": Office.Pdf.Document,
     "PdfGenerator": Office.Pdf.Generator,
@@ -1848,6 +1848,136 @@ declare namespace Websoft {
       QrGen(text: string, filePath: string): string;
       ResolveUrlDns(url: string, allowIPV6?: boolean, defaultValue?: string, mask?: string): string;
       WildCardToRegular(value: string): string;
+    }
+  }
+
+  namespace Imaging {
+    /** Класс для работы с изображениями. */
+    class Image extends WebsoftBaseClass {
+      /** Высота изображения. */
+      Height: number;
+      /** Ширина изображения. */
+      Width: number;
+
+      /**
+       * Выгружает изображение из памяти и освобождает файл.
+       */
+      Close(): 1 | 0;
+
+      /**
+       * Отражает изображение.
+       * @param {string} direction - Направление отражение. "x" - по горизонтали, "y" - по вертикали, "xy" - по горизотали и вертикали.
+       */
+      Flip(direction: string): 1 | 0;
+
+      /**
+       * Открывает изображение по указанному пути.
+       * @param {string} filePath - Путь до изображения.
+       */
+      Open(filePath: string): 1 | 0;
+
+      /**
+       * Изменяет размер изображения согласно указанным параметрам.
+       * @param {number} newWidth - Новая ширина.
+       * @param {number} maxHeight - Новая высота.
+       * @param {boolean} keepProportions - Соблюдать пропорции.
+       * @param {boolean} onlyResizeIfWider - Изменять размер только если новая ширина больше текущей.
+       */
+      Resize(
+        newWidth: number,
+        maxHeight: number,
+        keepProportions: boolean,
+        onlyResizeIfWider: boolean
+      ): 1 | 0;
+
+      /**
+       * Поворачивает изображение на указанный угол.
+       * @param {number} degree - Угол поворота. Принимает одно из следующих значений: 90, 180, 270.
+       */
+      Rotate(degree: number): 1 | 0;
+
+      /**
+       * Сохраняет загруженное изображение.
+       */
+      Save(): 1 | 0;
+
+      /**
+       * Сохраняет изображение по указанному пути с указанным качеством (только для JPEG).
+       * Формат определяется по расширению имени файла в пути сохранения.
+       * @param {string} newFilePath - Путь сохранения, включая имя файла.
+       * @param {number} [quality=80] - Качество сохранения JPEG. Значения от 1 до 100.
+       */
+      SaveAs(
+        newFilePath: string,
+        quality: number
+      ): 1 | 0;
+    }
+
+    /** Класс для создания фотогалерей. Для работы с изображениями рекомендуется использовать класс Image. */
+    class ImageUtils extends WebsoftBaseClass {
+      /**
+       * Подготавливает изображения для галереи.
+       * @param {string} sourceFolderPath - Путь до папки с изображениями.
+       * @param {string} outputPath - Путь для сохранения результатов обработки.
+       * @param {number} newFileWidth - Новая ширина.
+       * @param {number} newFileHeight - Новая высота.
+       * @param {number} thumbnailWidth - Ширина изображений для препросмотра.
+       * @param {number} thumbnailHeight - Высота изображений для препросмотра.
+       * @param {number} quality - Качество сохранения JPEG. Значения от 1 до 100.
+       * @param {boolean} onlyResizeIfWider - Изменять размер только если новая ширина больше текущей.
+       */
+      BuildGallery(
+        sourceFolderPath: string,
+        outputPath: string,
+        newFileWidth: number,
+        newFileHeight: number,
+        thumbnailWidth: number,
+        thumbnailHeight: number,
+        quality: number,
+        onlyResizeIfWider: boolean
+      ): 1 | 0;
+
+      /**
+       * Изменяет размер изображения и сохраняет по указанному пути.
+       * @param {string} originalFilePath - Путь до изображения.
+       * @param {string} newFilePath - Путь для сохранения измененного изображения.
+       * @param {number} newWidth - Новая ширина.
+       * @param {number} maxHeight - Новая высота.
+       * @param {number} quality - Качество сохранения JPEG. Значения от 1 до 100.
+       * @param {boolean} onlyIfDoesntExists - Сохранять только если файл назначения не существует.
+       * @param {boolean} onlyResizeIfWider - Изменять размер только если новая ширина больше текущей.
+       */
+      ResizeImage(
+        originalFilePath: string,
+        newFilePath: string,
+        newWidth: number,
+        maxHeight: number,
+        quality: number,
+        onlyIfDoesntExists: boolean,
+        onlyResizeIfWider: boolean
+      ): 1 | 0;
+
+      /**
+       * Изменяет размер набора изображений из указанной папки и сохраняет по указанному пути.
+       * @param {string} folderPath - Путь до папки с изображениями.
+       * @param {string} outputPath - Путь для сохранения измененных изображений.
+       * @param {number} newFileWidth - Новая ширина.
+       * @param {number} newFileHeight - Новая высота.
+       * @param {number} quality - Качество сохранения JPEG. Значения от 1 до 100.
+       * @param {boolean} includeSubFolder - Обрабатывать изображения в дочерних папках.
+       * @param {boolean} onlyIfDoesntExists - Сохранять только если файл назначения не существует.
+       * @param {boolean} onlyResizeIfWider - Изменять размер только если новая ширина больше текущей.
+       */
+      ResizeImages(
+        folderPath: string,
+        outputPath: string,
+        newFileWidth: number,
+        newFileHeight: number,
+        quality: number,
+        includeSubFolder: boolean,
+        onlyIfDoesntExists: boolean,
+        onlyResizeIfWider: boolean
+      ): 1 | 0;
     }
   }
 }
