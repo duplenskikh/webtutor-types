@@ -13,7 +13,7 @@ declare namespace Websoft {
     // "Image": Imaging.Image,
     // "ImageUtils": Imaging.ImageUtils,
     // "MediaPostStreamHandler": MediaHandler.MediaPostStreamHandler,
-    // "Pdf": Office.Pdf.Document,
+    "Pdf": Office.Pdf.Document,
     // "PdfGenerator": Office.Pdf.Generator,
     // "PKeyGenerator": PKeyGenerator.PKeyGenerator,
     // "Powerpoint": Office.Powerpoint.Presentation,
@@ -21,7 +21,7 @@ declare namespace Websoft {
     "RegExp": RegExp.RegExp,
     // "UniBridgeSettings": spxml.unibridge.UniBridgeSettings,
     // "VideoNeuralHandler": VideoNeuralHandler.VideoNeuralHandler,
-    // "Word": Office.Word.Document,
+    "Word": Office.Word.Document,
     "WebUtils": Utils.WebUtils,
     // "XHTTPMiddleware": XHTTP.Middleware,
     "Zip": Zip.Zip,
@@ -1357,9 +1357,201 @@ declare namespace Websoft {
       }
     }
 
-    /**
-     * Библиотека для работы с документами в формате Microsoft Word.
-     */
+    /** Библиотека для работы с документами в формате PDF. */
+    namespace Pdf {
+      /** Информация о параграфе. */
+      class BaseParagraph extends WebsoftBaseClass { }
+
+      /** Класс для работы с документом в формате PDF */
+      class Document extends WebsoftBaseClass {
+        /** Параметры страниц документа. Используется только при генерации. */
+        PageInfo: PageInfo;
+        /** Параметры страниц документа. Используется только при генерации. */
+        Pages: PageCollection;
+
+        /** Закрывает документ, освобождает используемые ресурсы. */
+        Close(): 1 | 0;
+
+        /**
+         * Сохраняет страницы документа в виде изображений.
+         * @param {string} path - Путь до папки сохранения.
+         * @param {string} format - Формат сохранения ("jpeg","png","optimized").
+         * @param {number} newWidth - Ширина изображений.
+         * @param {number} maxHeight - Высота изображений.
+         * @param {number} resolution - Разрешение изображений (dpi).
+         * @param {number} quality - Качество в процентах (применяется только для формата jpeg).
+         * @param {boolean} keepProportions - Сохранять пропорции изображений.
+         * @returns {string[]} - Массив имен экспортированных файлов.
+         */
+        ExportPages(
+          path: string,
+          format: string,
+          newWidth: number,
+          maxHeight: number,
+          resolution: number,
+          quality: number,
+          keepProportions: boolean
+        ): string[];
+
+        /**
+         * Используется для получения оглавления из текста документа
+         * @returns {string} - Структура оглавления в виде XML.
+         */
+        GetContents(): string;
+
+        /**
+         * Открывает файл в формате PDF.
+         * @param {string} filePath - Путь до файла.
+         * @param {LoadOptions} [loadOptions] - Параметры загрузки.
+         */
+        Open(
+          filePath: string,
+          loadOptions?: LoadOptions
+        ): 1 | 0;
+
+        /**
+         * Сохраняет текущий документ.
+         * @param {string} newPath - Путь сохранения, включая имя файла.
+         * @param {SaveOptions} saveOptions - Параметры сохранения файла.
+         */
+        Save(
+          newPath?: string,
+          saveOptions?: SaveOptions
+        ): 1 | 0;
+
+        /**
+         * Сохраняет документ по указанному пути.
+         * Формат определяется по расширению имени файла в пути сохранения.
+         * Доступные форматы: DOC, DOC, XPS, XML, SVG, EPUB, HTML, MHTML.
+         * @param {string} newPath - Путь сохранения, включая имя файла.
+         */
+        SaveAs(newPath: string): 1 | 0;
+
+        /**
+         * Используется для сохранения в формате HTML с расширенными настройками.
+         * @param {string} newPath - Путь сохранения, включая имя файла.
+         * @param {boolean} useFixedLayout - Фиксированное или "резиновое" расположение элементов.
+         * @param {boolean} splitIntoPages - Разбивать документ на страницы.
+         */
+        SaveAsHtml(newPath: string, useFixedLayout: boolean, splitIntoPages: boolean): 1 | 0;
+      }
+
+      /** Класс для создания документов в формате PDF. */
+      class Generator extends WebsoftBaseClass {
+
+      }
+
+      /** Информация о фрагменте HTML. */
+      class HtmlFragment extends WebsoftBaseClass {
+        /**
+         * Альбомная ориентация.
+         */
+        IsLandscape: boolean;
+
+        /**
+         * Путь до папки с ресурсами (изображения, стили и т.д.).
+         */
+        ResourcesDirectoryPath: string;
+
+        /**
+         * Создает новую страницу и размещает в ней текст в формате HTML.
+         * @param {string} htmlText - Строка с HTML-данными.
+         */
+        AddHtmlPage(htmlText: string): 1 | 0;
+
+        /**
+         * Создает новый экзпемпляр документа.
+         */
+        CreateDocument(): 1 | 0;
+
+        /**
+         * Загружает данные в формате HTML из указанного файла.
+         * @param {string} filePath - Путь до файла в формате HTML.
+         */
+        LoadHtmlFile(filePath: string): 1 | 0;
+
+        /**
+         * Загружает данные в формате HTML из строки.
+         * Стили, изображения и прочие ресурсы должны хранится в указанной папке либо рядом с файлом HTML.
+         * В документе ссылки на эти ресурсы должны быть указаны без учета папок.
+         * Название папки указывается без пути до нее.
+         * @param {string} htmlText - Переменная, содержащаю строку в формате HTML.
+         */
+        LoadHtmlString(htmlText: string): 1 | 0;
+
+        /**
+         * Сохраняет документ в формате PDF по указанному пути.
+         * @param {string} filePath - Путь сохранения.
+         */
+        Save(filePath: string): 1 | 0;
+      }
+
+      /** Параметры загрузки HTML. */
+      class HtmlLoadOptions extends WebsoftBaseClass {
+        /** Путь до папки с ресурсами (изображения, стили и т.д.). */
+        BasePath: string;
+        /** Кодировка. */
+        InputEncoding: string;
+        /** Информация о странице. */
+        PageInfo: PageInfo;
+      }
+
+      /** Параметры сохранения HTML. */
+      class HtmlSaveOptions extends WebsoftBaseClass {
+        /**
+         * Фиксированный макет.
+         */
+        FixedLayout: boolean;
+
+        /**
+         * Файл может содержать растровые изображения.
+         * Этот параметр определяет, как они должны обрабатываться при конвертации PDF в HTML.
+         * Принимает значения "AsPngImagesEmbeddedIntoSvg", "AsExternalPngFilesReferencedViaSvg", "AsEmbeddedPartsOfPngPageBackground".
+         */
+        RasterImagesSavingMode: string;
+
+        /**
+         * Разбивать документ на страницы.
+         */
+        SplitIntoPages: boolean;
+      }
+
+      /** Параметры загрузки документа. */
+      class LoadOptions extends WebsoftBaseClass { }
+
+      /** Информация о странице. */
+      class Page extends WebsoftBaseClass {
+        /** Горизонтальная ориентация. */
+        Paragraphs: Paragraphs;
+      }
+
+      /** Информация о странице. */
+      class PageCollection extends WebsoftBaseClass {
+        /** Добавление страницы. */
+        Add(): Page;
+      }
+
+      /** Информация о странице. */
+      class PageInfo extends WebsoftBaseClass {
+        /** Высота. */
+        Height: number;
+        /** Горизонтальная ориентация. */
+        IsLandscape: boolean;
+        /** Ширина. */
+        Width: number;
+      }
+
+      /** Информация о параграфах. */
+      class Paragraphs extends WebsoftBaseClass {
+        /** Добавляет параграф. */
+        Add(): Page;
+      }
+
+      /** Параметры сохранения документа. */
+      class SaveOptions extends WebsoftBaseClass { }
+    }
+
+    /** Библиотека для работы с документами в формате Microsoft Word. */
     namespace Word {
       class Document extends WebsoftBaseClass {
         /**
