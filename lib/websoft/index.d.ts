@@ -14,9 +14,9 @@ declare namespace Websoft {
     // "ImageUtils": Imaging.ImageUtils,
     // "MediaPostStreamHandler": MediaHandler.MediaPostStreamHandler,
     "Pdf": Office.Pdf.Document,
-    // "PdfGenerator": Office.Pdf.Generator,
+    "PdfGenerator": Office.Pdf.Generator,
     // "PKeyGenerator": PKeyGenerator.PKeyGenerator,
-    // "Powerpoint": Office.Powerpoint.Presentation,
+    "Powerpoint": Office.Powerpoint.Presentation,
     // "RecordingClient": Recording.Client,
     "RegExp": RegExp.RegExp,
     // "UniBridgeSettings": spxml.unibridge.UniBridgeSettings,
@@ -1438,11 +1438,6 @@ declare namespace Websoft {
 
       /** Класс для создания документов в формате PDF. */
       class Generator extends WebsoftBaseClass {
-
-      }
-
-      /** Информация о фрагменте HTML. */
-      class HtmlFragment extends WebsoftBaseClass {
         /**
          * Альбомная ориентация.
          */
@@ -1485,6 +1480,9 @@ declare namespace Websoft {
          */
         Save(filePath: string): 1 | 0;
       }
+
+      /** Информация о фрагменте HTML. */
+      class HtmlFragment extends BaseParagraph { }
 
       /** Параметры загрузки HTML. */
       class HtmlLoadOptions extends WebsoftBaseClass {
@@ -1549,6 +1547,67 @@ declare namespace Websoft {
 
       /** Параметры сохранения документа. */
       class SaveOptions extends WebsoftBaseClass { }
+    }
+
+    /** Библиотека для работы с документами в формате Microsoft PowerPoint. */
+    namespace Powerpoint {
+      /** Класс для работы с документом в формате Microsoft PowerPoint */
+      class Presentation extends WebsoftBaseClass {
+        /** Высота презентации. */
+        Height: number;
+
+        /** Ширина презентации. */
+        Width: number;
+
+        /**
+         * Используется для закрытия документа.
+         */
+        Close(): void;
+
+        /**
+         * Используется для экспорта слайдов презентации в изображения.
+         * @param {string} outputPath - Путь до директории сохранения.
+         * @param {string} format - Формат экспорта. Принимает значения "png", "jpg", "optimized".
+         * @param {number} width - Ширина изображений.
+         * @param {number} height - Высота изображений.
+         * @returns {string} - Текст со структурой документа в формате XML.
+         */
+        Export(
+          outputPath: string,
+          format: string,
+          width: boolean,
+          height: boolean
+        ): string;
+
+        /**
+         * Открывает файл в формате PDF.
+         * @param {string} filePath - Путь до файла.
+         */
+        Open(filePath: string): 1 | 0;
+
+        /**
+         * Сохраняет документ по указанному пути.
+         * Формат определяется по расширению имени файла в пути сохранения.
+         * Доступные форматы: PDF, XPS, ODP, TIFF, PNG, HTML.
+         * @param {string} filePath - Путь сохранения, включая имя файла.
+         */
+        SaveAs(filePath: string): 1 | 0;
+
+        /**
+         * Используется для сохранения в формате PNG с расширенными настройками.
+         * @param {string} outputPath - Путь до директории сохранения.
+         * @param {number} width - Ширина изображений.
+         * @param {number} height - Высота изображений.
+         * @returns {string} - Текст со структурой документа в формате XML.
+         */
+        SaveAsPng(): string;
+      }
+
+      /** Типы презентаций. */
+      enum PresentationTypes {
+        Ppt = 0,
+        Pptx = 1
+      }
     }
 
     /** Библиотека для работы с документами в формате Microsoft Word. */
