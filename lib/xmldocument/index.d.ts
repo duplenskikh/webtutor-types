@@ -272,6 +272,11 @@ interface XmlDocument {
   PrepareLastSavedData(): void;
 
   /**
+   * Заново загружает содержимое документа из его url.
+   */
+  Reload(): void;
+
+  /**
    * Удаляет документ из кэша документов.
    */
   RemoveFromCache(): void;
