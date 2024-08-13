@@ -1,153 +1,153 @@
 interface PaDocumentKpiProfile {
-  id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  period_type_id: XmlElem<string, typeof common.perioditys>;
-  object_type: XmlElem<string, typeof common.exchange_object_types>;
-  object_id: XmlElem<number>;
-  comment: XmlElem<string>;
+  id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  period_type_id: XmlElem<string | null, typeof common.perioditys>;
+  object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  object_id: XmlElem<number | null>;
+  comment: XmlElem<string | null>;
 }
 
 interface PaDocumentLabour {
-  cash: XmlElem<number>;
-  currency: XmlElem<string, typeof lists.currency_types>;
-  standard_hours: XmlElem<number>;
-  tenure: XmlElem<number>;
-  work_hours: XmlElem<number>;
+  cash: XmlElem<number | null>;
+  currency: XmlElem<string | null, typeof lists.currency_types>;
+  standard_hours: XmlElem<number | null>;
+  tenure: XmlElem<number | null>;
+  work_hours: XmlElem<number | null>;
 }
 
 interface PaDocumentHierSnapshot {
-  position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
-  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  position_id: XmlElem<number | null, PositionCatalogDocumentTopElem>;
+  position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
 }
 
 interface PaDocumentCompetenceExercise {
-  exercise_id: XmlElem<number, ExerciseCatalogDocumentTopElem>;
-  mark: XmlElem<string>;
+  exercise_id: XmlElem<number | null, ExerciseCatalogDocumentTopElem>;
+  mark: XmlElem<string | null>;
 }
 
 interface PaDocumentCompetenceIndicator extends WorkflowFieldsAssessmentBase {
-  indicator_id: XmlElem<number, IndicatorCatalogDocumentTopElem>;
-  plan: XmlElem<string>;
-  plan_text: XmlElem<string>;
-  plan_value: XmlElem<number>;
-  mark: XmlElem<string>;
-  mark_text: XmlElem<string>;
-  mark_value: XmlElem<number>;
+  indicator_id: XmlElem<number | null, IndicatorCatalogDocumentTopElem>;
+  plan: XmlElem<string | null>;
+  plan_text: XmlElem<string | null>;
+  plan_value: XmlElem<number | null>;
+  mark: XmlElem<string | null>;
+  mark_text: XmlElem<string | null>;
+  mark_value: XmlElem<number | null>;
   weight: XmlElem<number>;
-  comment: XmlElem<string>;
+  comment: XmlElem<string | null>;
 }
 
 interface PaDocumentCompetence extends WorkflowFieldsAssessmentBase {
-  competence_id: XmlElem<number, CompetenceCatalogDocumentTopElem>;
-  plan: XmlElem<string>;
-  plan_text: XmlElem<string>;
-  plan_value: XmlElem<number>;
-  mark: XmlElem<string>;
-  mark_text: XmlElem<string>;
-  mark_value: XmlElem<number>;
+  competence_id: XmlElem<number | null, CompetenceCatalogDocumentTopElem>;
+  plan: XmlElem<string | null>;
+  plan_text: XmlElem<string | null>;
+  plan_value: XmlElem<number | null>;
+  mark: XmlElem<string | null>;
+  mark_text: XmlElem<string | null>;
+  mark_value: XmlElem<number | null>;
   weight: XmlElem<number>;
-  comment: XmlElem<string>;
-  type: XmlElem<string, typeof lists.competence_types>;
-  exercises: XmlMultiElem<PaDocumentCompetenceExercise>;
-  indicators: XmlMultiElem<PaDocumentCompetenceIndicator>;
+  comment: XmlElem<string | null>;
+  type: XmlElem<string | null, typeof lists.competence_types>;
+  exercises: XmlMultiElem<PaDocumentCompetenceExercise | null>;
+  indicators: XmlMultiElem<PaDocumentCompetenceIndicator | null>;
 }
 
 interface PaDocumentKpi extends WorkflowFieldsAssessmentBase {
-  kpi_id: XmlElem<number, KpiCatalogDocumentTopElem>;
-  threshold: XmlElem<number>;
-  plan: XmlElem<string>;
-  challenge: XmlElem<number>;
-  fact: XmlElem<string>;
-  mark: XmlElem<string>;
+  kpi_id: XmlElem<number | null, KpiCatalogDocumentTopElem>;
+  threshold: XmlElem<number | null>;
+  plan: XmlElem<string | null>;
+  challenge: XmlElem<number | null>;
+  fact: XmlElem<string | null>;
+  mark: XmlElem<string | null>;
   weight: XmlElem<number>;
-  source_pa_id: XmlElem<number, PaCatalogDocumentTopElem>;
-  kpi_value_id: XmlElem<number, KpiValueCatalogDocumentTopElem>;
-  kpi_plan_id: XmlElem<number, KpiPlanCatalogDocumentTopElem>;
-  position: XmlElem<number>;
-  parent_kpi_id: XmlElem<number, KpiCatalogDocumentTopElem>;
+  source_pa_id: XmlElem<number | null, PaCatalogDocumentTopElem>;
+  kpi_value_id: XmlElem<number | null, KpiValueCatalogDocumentTopElem>;
+  kpi_plan_id: XmlElem<number | null, KpiPlanCatalogDocumentTopElem>;
+  position: XmlElem<number | null>;
+  parent_kpi_id: XmlElem<number | null, KpiCatalogDocumentTopElem>;
 }
 
 interface PaDocumentProject extends WorkflowFieldsAssessmentBase {
-  project_id: XmlElem<string>;
-  name: XmlElem<string>;
-  threshold: XmlElem<number>;
-  plan: XmlElem<string>;
-  challenge: XmlElem<number>;
-  fact: XmlElem<string>;
-  mark: XmlElem<number>;
+  project_id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  threshold: XmlElem<number | null>;
+  plan: XmlElem<string | null>;
+  challenge: XmlElem<number | null>;
+  fact: XmlElem<string | null>;
+  mark: XmlElem<number | null>;
   weight: XmlElem<number>;
-  standard_project_id: XmlElem<number, KpiCatalogDocumentTopElem>;
+  standard_project_id: XmlElem<number | null, KpiCatalogDocumentTopElem>;
 }
 
 interface PaDocumentObjectiveSubobjective extends WorkflowFieldsAssessmentBase {
-  name: XmlElem<string>;
-  plan: XmlElem<string>;
-  date: XmlElem<Date>;
-  fact: XmlElem<string>;
-  mark: XmlElem<number>;
-  plan_budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  fact_budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
+  name: XmlElem<string | null>;
+  plan: XmlElem<string | null>;
+  date: XmlElem<Date | null>;
+  fact: XmlElem<string | null>;
+  mark: XmlElem<number | null>;
+  plan_budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  fact_budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
 }
 
 interface PaDocumentObjective extends WorkflowFieldsAssessmentBase {
-  objective_id: XmlElem<string>;
-  name: XmlElem<string>;
+  objective_id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
   weight: XmlElem<number>;
-  mark: XmlElem<number>;
-  plan_budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  fact_budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  subobjectives: XmlMultiElem<PaDocumentObjectiveSubobjective>;
+  mark: XmlElem<number | null>;
+  plan_budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  fact_budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  subobjectives: XmlMultiElem<PaDocumentObjectiveSubobjective | null>;
 }
 
 interface PaDocumentTask {
-  task_id: XmlElem<number, TaskCatalogDocumentTopElem>;
+  task_id: XmlElem<number | null, TaskCatalogDocumentTopElem>;
   weight: XmlElem<number>;
-  position: XmlElem<number>;
-  value_text: XmlElem<string>;
-  value: XmlElem<number>;
-  parent_task_id: XmlElem<number, TaskCatalogDocumentTopElem>;
+  position: XmlElem<number | null>;
+  value_text: XmlElem<string | null>;
+  value: XmlElem<number | null>;
+  parent_task_id: XmlElem<number | null, TaskCatalogDocumentTopElem>;
 }
 
 interface PaDocumentCustomExpert {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_type: XmlElem<number>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_type: XmlElem<number | null>;
   is_done: XmlElem<boolean>;
   responsible: XmlElem<boolean>;
-  expert_code: XmlElem<string>;
+  expert_code: XmlElem<string | null>;
 }
 
 interface PaDocumentCustomComment {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  workflow_state: XmlElem<string>;
-  comment: XmlElem<string>;
-  comment_date: XmlElem<Date>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  workflow_state: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  comment_date: XmlElem<Date | null>;
 }
 
 interface PaDocumentLastData {
   is_done: XmlElem<boolean>;
-  workflow_state: XmlElem<string>;
+  workflow_state: XmlElem<string | null>;
 }
 
 interface PaDocumentStageCustomField {
-  name: XmlElem<string>;
-  title: XmlElem<string>;
-  value: XmlElem<string>;
+  name: XmlElem<string | null>;
+  title: XmlElem<string | null>;
+  value: XmlElem<string | null>;
 }
 
 interface PaDocumentStage {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
   career_transition_direction: XmlElem<string, typeof common.career_transition_direction_types>;
-  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
+  position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
   check_requirements: XmlElem<boolean>;
-  plan_date: XmlElem<Date>;
-  fact_date: XmlElem<Date>;
+  plan_date: XmlElem<Date | null>;
+  fact_date: XmlElem<Date | null>;
   status: XmlElem<string, typeof common.career_reserve_status_types>;
-  position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  stipulation: XmlElem<string>;
-  comment: XmlElem<string>;
-  custom_fields: XmlMultiElem<PaDocumentStageCustomField>;
+  position_id: XmlElem<number | null, PositionCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  stipulation: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  custom_fields: XmlMultiElem<PaDocumentStageCustomField | null>;
 }
 
 type PaDocumentTopElem = XmlTopElem &
@@ -157,59 +157,59 @@ CustomElemsBase &
 AdminAccessBase &
 FileListBase & {
   Doc: PaDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
   name(): string;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  expert_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  restrict_by_group: XmlElem<number, GroupCatalogDocumentTopElem>;
-  department_id: XmlElem<number>;
-  department_name: XmlElem<string>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  expert_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  restrict_by_group: XmlElem<number | null, GroupCatalogDocumentTopElem>;
+  department_id: XmlElem<number | null>;
+  department_name: XmlElem<string | null>;
   flag_appraise_department: XmlElem<boolean>;
   assessment_object_type: XmlElem<string>;
-  assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
-  assessment_plan_id: XmlElem<number, AssessmentPlanCatalogDocumentTopElem>;
-  status: XmlElem<string, typeof common.assessment_appraise_participants>;
+  assessment_appraise_id: XmlElem<number | null, AssessmentAppraiseCatalogDocumentTopElem>;
+  assessment_plan_id: XmlElem<number | null, AssessmentPlanCatalogDocumentTopElem>;
+  status: XmlElem<string | null, typeof common.assessment_appraise_participants>;
   is_done: XmlElem<boolean>;
   is_ready: XmlElem<boolean>;
   is_final: XmlElem<boolean>;
   flag_is_processed: XmlElem<boolean>;
-  assessment_appraise_type: XmlElem<string, typeof common.assessment_appraise_types>;
-  competence_profile_id: XmlElem<number, CompetenceProfileCatalogDocumentTopElem>;
-  competence_codes: XmlElem<string>;
-  kpi_profile_id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  kpi_profiles: XmlMultiElem<PaDocumentKpiProfile>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  bonus_profile_id: XmlElem<number, BonusProfileCatalogDocumentTopElem>;
-  salary: XmlElem<number>;
-  labour: XmlElem<PaDocumentLabour>;
-  hier_snapshot: XmlElem<PaDocumentHierSnapshot>;
-  boss_treat: XmlElem<string>;
-  revised_value: XmlElem<number>;
-  workflow_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  workflow_end_date: XmlElem<Date>;
-  assessment_appraise_matrix_id: XmlElem<number, AssessmentAppraiseMatrixCatalogDocumentTopElem>;
-  competences: XmlMultiElem<PaDocumentCompetence>;
-  period_start: XmlElem<Date>;
-  period_end: XmlElem<Date>;
-  kpis: XmlMultiElem<PaDocumentKpi>;
-  projects: XmlMultiElem<PaDocumentProject>;
-  objectives: XmlMultiElem<PaDocumentObjective>;
-  tasks: XmlMultiElem<PaDocumentTask>;
-  custom_experts: XmlMultiElem<PaDocumentCustomExpert>;
-  custom_comments: XmlMultiElem<PaDocumentCustomComment>;
-  overall: XmlElem<number>;
-  appraise_date: XmlElem<Date>;
-  temp: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  comment: XmlElem<string>;
-  file_name: XmlElem<string>;
-  file_url: XmlElem<string>;
+  assessment_appraise_type: XmlElem<string | null, typeof common.assessment_appraise_types>;
+  competence_profile_id: XmlElem<number | null, CompetenceProfileCatalogDocumentTopElem>;
+  competence_codes: XmlElem<string | null>;
+  kpi_profile_id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  kpi_profiles: XmlMultiElem<PaDocumentKpiProfile | null>;
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  bonus_profile_id: XmlElem<number | null, BonusProfileCatalogDocumentTopElem>;
+  salary: XmlElem<number | null>;
+  labour: XmlElem<PaDocumentLabour | null>;
+  hier_snapshot: XmlElem<PaDocumentHierSnapshot | null>;
+  boss_treat: XmlElem<string | null>;
+  revised_value: XmlElem<number | null>;
+  workflow_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  workflow_end_date: XmlElem<Date | null>;
+  assessment_appraise_matrix_id: XmlElem<number | null, AssessmentAppraiseMatrixCatalogDocumentTopElem>;
+  competences: XmlMultiElem<PaDocumentCompetence | null>;
+  period_start: XmlElem<Date | null>;
+  period_end: XmlElem<Date | null>;
+  kpis: XmlMultiElem<PaDocumentKpi | null>;
+  projects: XmlMultiElem<PaDocumentProject | null>;
+  objectives: XmlMultiElem<PaDocumentObjective | null>;
+  tasks: XmlMultiElem<PaDocumentTask | null>;
+  custom_experts: XmlMultiElem<PaDocumentCustomExpert | null>;
+  custom_comments: XmlMultiElem<PaDocumentCustomComment | null>;
+  overall: XmlElem<number | null>;
+  appraise_date: XmlElem<Date | null>;
+  temp: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  comment: XmlElem<string | null>;
+  file_name: XmlElem<string | null>;
+  file_url: XmlElem<string | null>;
   index: XmlElem<number>;
-  last_data: XmlElem<PaDocumentLastData>;
-  career_plan_type: XmlElem<string>;
-  career_plan_id: XmlElem<number, CareerPlanCatalogDocumentTopElem>;
-  stages: XmlMultiElem<PaDocumentStage>;
+  last_data: XmlElem<PaDocumentLastData | null>;
+  career_plan_type: XmlElem<string | null>;
+  career_plan_id: XmlElem<number | null, CareerPlanCatalogDocumentTopElem>;
+  stages: XmlMultiElem<PaDocumentStage | null>;
   experiment_foo(string: string): unknown;
   calculate(params: unknown): unknown;
   load_kpi_values(): unknown;

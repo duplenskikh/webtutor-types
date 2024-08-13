@@ -8,13 +8,13 @@ AdminAccessBase &
 CustomElemsBase &
 FileListBase & {
   Doc: IndicatorDocument;
-  competence_id: XmlElem<number, CompetenceCatalogDocumentTopElem>;
+  competence_id: XmlElem<number | null, CompetenceCatalogDocumentTopElem>;
   type: XmlElem<number, typeof common.indicator_types>;
-  comment: XmlElem<string>;
-  positive_comment: XmlElem<string>;
-  negative_comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  role_id: XmlMultiElemObject<number>;
+  comment: XmlElem<string | null>;
+  positive_comment: XmlElem<string | null>;
+  negative_comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type IndicatorDocument = XmlDocument & {

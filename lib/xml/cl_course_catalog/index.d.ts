@@ -1,15 +1,15 @@
 type ClCourseCatalogDocumentTopElem = XmlTopElem &
 AccessDocBase &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  author_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
-  localization_id: XmlMultiElemObject<number, ClLocalizationCatalogDocumentTopElem>;
-  tag_id: XmlMultiElemObject<number, TagCatalogDocumentTopElem>;
-  role_id: XmlMultiElemObject<number>;
-  platform: XmlElem<string>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  author_id: XmlMultiElemObject<number | null, CollaboratorCatalogDocumentTopElem>;
+  localization_id: XmlMultiElemObject<number | null, ClLocalizationCatalogDocumentTopElem>;
+  tag_id: XmlMultiElemObject<number | null, TagCatalogDocumentTopElem>;
+  role_id: XmlMultiElemObject<number | null>;
+  platform: XmlElem<string | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

@@ -1,25 +1,25 @@
 interface DnRegisterDocumentStudentMark {
-  stud_id: XmlElem<number, DnStudentCatalogDocumentTopElem>;
-  mark_id: XmlElem<string, typeof common.type_marks>;
-  mark_name: XmlElem<string>;
+  stud_id: XmlElem<number | null, DnStudentCatalogDocumentTopElem>;
+  mark_id: XmlElem<string | null, typeof common.type_marks>;
+  mark_name: XmlElem<string | null>;
 }
 
 type DnRegisterDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnRegisterDocument;
-  code: XmlElem<string>;
-  control_event_id: XmlElem<number, DnControlEventCatalogDocumentTopElem>;
+  code: XmlElem<string | null>;
+  control_event_id: XmlElem<number | null, DnControlEventCatalogDocumentTopElem>;
   type_id: XmlElem<string, typeof common.registr_types>;
-  faculty_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  chair_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  discipl_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
-  lector_id: XmlElem<number, LectorCatalogDocumentTopElem>;
-  date_event: XmlElem<Date>;
-  contr_form_id: XmlElem<number, DnControlFormCatalogDocumentTopElem>;
-  stud_group_id: XmlElem<number, DnStudGroupCatalogDocumentTopElem>;
-  student_marks: XmlMultiElem<DnRegisterDocumentStudentMark>;
-  doc_info: XmlElem<DocInfoBase>;
+  faculty_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  chair_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  discipl_id: XmlElem<number | null, DnDisciplineCatalogDocumentTopElem>;
+  lector_id: XmlElem<number | null, LectorCatalogDocumentTopElem>;
+  date_event: XmlElem<Date | null>;
+  contr_form_id: XmlElem<number | null, DnControlFormCatalogDocumentTopElem>;
+  stud_group_id: XmlElem<number | null, DnStudGroupCatalogDocumentTopElem>;
+  student_marks: XmlMultiElem<DnRegisterDocumentStudentMark | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type DnRegisterDocument = XmlDocument & {

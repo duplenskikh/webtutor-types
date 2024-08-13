@@ -1,15 +1,15 @@
 type PayPhaseCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  name: XmlElem<string>;
-  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
-  event_name: XmlElem<string>;
-  cost: XmlElem<number>;
-  currency: XmlElem<string, typeof lists.currency_types>;
-  invoice_sum: XmlElem<number>;
-  draft_sum: XmlElem<number>;
-  act_sum: XmlElem<number>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  name: XmlElem<string | null>;
+  event_id: XmlElem<number | null, EventCatalogDocumentTopElem>;
+  event_name: XmlElem<string | null>;
+  cost: XmlElem<number | null>;
+  currency: XmlElem<string | null, typeof lists.currency_types>;
+  invoice_sum: XmlElem<number | null>;
+  draft_sum: XmlElem<number | null>;
+  act_sum: XmlElem<number | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

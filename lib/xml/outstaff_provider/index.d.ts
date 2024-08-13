@@ -5,13 +5,13 @@ FileListBase &
 DocumentPersonsBase &
 CustomElemsBase & {
   Doc: OutstaffProviderDocument;
-  access: XmlElem<AccessDocBase>;
-  place_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
-  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
-  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase | null>;
+  place_id: XmlElem<number | null, PlaceCatalogDocumentTopElem>;
+  region_id: XmlElem<number | null, RegionCatalogDocumentTopElem>;
+  collaborator_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type OutstaffProviderDocument = XmlDocument & {

@@ -1,7 +1,7 @@
 interface ParticipantDocumentMark extends PersonFillingBase {
-  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  value: XmlElem<string>;
-  desc: XmlElem<string>;
+  collaborator_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  value: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
 }
 
 type ParticipantDocumentTopElem = XmlTopElem &
@@ -9,17 +9,17 @@ PersonFillingBase &
 FileListBase &
 AdminAccessBase & {
   Doc: ParticipantDocument;
-  contest_id: XmlElem<number, ContestCatalogDocumentTopElem>;
-  contest_name: XmlElem<string>;
-  work_name: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  status_id: XmlElem<string, typeof common.participant_states>;
-  desc: XmlElem<string>;
-  general_mark: XmlElem<string>;
-  marks: XmlMultiElem<ParticipantDocumentMark>;
-  rating: XmlElem<number>;
-  place: XmlElem<number>;
-  doc_info: XmlElem<DocInfoBase>;
+  contest_id: XmlElem<number | null, ContestCatalogDocumentTopElem>;
+  contest_name: XmlElem<string | null>;
+  work_name: XmlElem<string | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  status_id: XmlElem<string | null, typeof common.participant_states>;
+  desc: XmlElem<string | null>;
+  general_mark: XmlElem<string | null>;
+  marks: XmlMultiElem<ParticipantDocumentMark | null>;
+  rating: XmlElem<number | null>;
+  place: XmlElem<number | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ParticipantDocument = XmlDocument & {

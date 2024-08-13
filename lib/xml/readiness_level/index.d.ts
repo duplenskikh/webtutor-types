@@ -3,12 +3,12 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: ReadinessLevelDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  access: XmlElem<AccessDocBase | null>;
 };
 
 type ReadinessLevelDocument = XmlDocument & {

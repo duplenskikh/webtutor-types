@@ -1,35 +1,35 @@
 interface PresenceStateDocumentDisplayField {
-  value: XmlElem<string>;
-  comment: XmlElem<string>;
+  value: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
 }
 
 interface PresenceStateDocumentRequiredField {
-  value: XmlElem<string>;
-  comment: XmlElem<string>;
+  value: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
 }
 
 type PresenceStateDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
   Doc: PresenceStateDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  state_id: XmlElem<string, typeof lists.person_states>;
-  state_name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  state_id: XmlElem<string | null, typeof lists.person_states>;
+  state_name: XmlElem<string | null>;
   accessible: XmlElem<boolean>;
   is_absence: XmlElem<boolean>;
-  workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
+  workflow_id: XmlElem<number | null, WorkflowCatalogDocumentTopElem>;
   can_cancel: XmlElem<boolean>;
   can_change: XmlElem<boolean>;
-  cancel_workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
-  change_workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
-  position: XmlElem<number>;
-  style_css: XmlElem<string>;
+  cancel_workflow_id: XmlElem<number | null, WorkflowCatalogDocumentTopElem>;
+  change_workflow_id: XmlElem<number | null, WorkflowCatalogDocumentTopElem>;
+  position: XmlElem<number | null>;
+  style_css: XmlElem<string | null>;
   all_day: XmlElem<boolean>;
   is_sub_work_time: XmlElem<boolean>;
-  display_fields: XmlMultiElem<PresenceStateDocumentDisplayField>;
-  required_fields: XmlMultiElem<PresenceStateDocumentRequiredField>;
-  doc_info: XmlElem<DocInfoBase>;
+  display_fields: XmlMultiElem<PresenceStateDocumentDisplayField | null>;
+  required_fields: XmlMultiElem<PresenceStateDocumentRequiredField | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
 };

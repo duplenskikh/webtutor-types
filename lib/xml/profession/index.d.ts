@@ -3,10 +3,10 @@ ObjectCodeNameBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: ProfessionDocument;
-  professional_area_id: XmlElem<number, ProfessionalAreaCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
+  professional_area_id: XmlElem<number | null, ProfessionalAreaCatalogDocumentTopElem>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  access: XmlElem<AccessDocBase | null>;
 };
 
 type ProfessionDocument = XmlDocument & {

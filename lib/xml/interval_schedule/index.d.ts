@@ -1,22 +1,22 @@
 interface IntervalScheduleDocumentWorkflowMatching {
-  id: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  id: XmlElem<string | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
 }
 
 interface IntervalScheduleDocumentCustomField {
-  name: XmlElem<string>;
-  value: XmlElem<string>;
+  name: XmlElem<string | null>;
+  value: XmlElem<string | null>;
 }
 
 interface IntervalScheduleDocumentHistory {
-  status_id: XmlElem<string, typeof common.agreement_status_types>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
+  status_id: XmlElem<string | null, typeof common.agreement_status_types>;
+  start_date: XmlElem<Date | null>;
+  finish_date: XmlElem<Date | null>;
 }
 
 interface IntervalScheduleDocumentChange {
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
+  start_date: XmlElem<Date | null>;
+  finish_date: XmlElem<Date | null>;
 }
 
 type IntervalScheduleDocumentTopElem = XmlTopElem &
@@ -25,21 +25,21 @@ WorkflowDataBase &
 FileListBase &
 CustomElemsBase & {
   Doc: IntervalScheduleDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  presence_state_id: XmlElem<number, PresenceStateCatalogDocumentTopElem>;
-  status_id: XmlElem<string, typeof common.agreement_status_types>;
-  workflow_type: XmlElem<string>;
-  workflow_matchings: XmlMultiElem<IntervalScheduleDocumentWorkflowMatching>;
-  workflow_matching_type: XmlElem<string>;
-  custom_fields: XmlMultiElem<IntervalScheduleDocumentCustomField>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  history: XmlElem<IntervalScheduleDocumentHistory>;
-  change: XmlElem<IntervalScheduleDocumentChange>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  start_date: XmlElem<Date | null>;
+  finish_date: XmlElem<Date | null>;
+  presence_state_id: XmlElem<number | null, PresenceStateCatalogDocumentTopElem>;
+  status_id: XmlElem<string | null, typeof common.agreement_status_types>;
+  workflow_type: XmlElem<string | null>;
+  workflow_matchings: XmlMultiElem<IntervalScheduleDocumentWorkflowMatching | null>;
+  workflow_matching_type: XmlElem<string | null>;
+  custom_fields: XmlMultiElem<IntervalScheduleDocumentCustomField | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  history: XmlElem<IntervalScheduleDocumentHistory | null>;
+  change: XmlElem<IntervalScheduleDocumentChange | null>;
 };
 
 type IntervalScheduleDocument = XmlDocument & {

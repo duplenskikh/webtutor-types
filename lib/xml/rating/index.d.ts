@@ -1,20 +1,20 @@
 interface RatingDocumentObject {
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
+  object_id: XmlElem<number | null>;
+  object_name: XmlElem<string | null>;
 }
 
 type RatingDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   Doc: RatingDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  object_type: XmlElem<string, typeof common.exchange_object_types>;
-  date: XmlElem<Date>;
-  expert_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  date: XmlElem<Date | null>;
+  expert_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
   status: XmlElem<boolean>;
-  objects: XmlMultiElem<RatingDocumentObject>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  objects: XmlMultiElem<RatingDocumentObject | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type RatingDocument = XmlDocument & {

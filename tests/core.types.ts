@@ -202,3 +202,9 @@ propertyValue2;
 DecodeCharset("teststring", "cp-866");
 EncodeCharset("teststring1", "windows-1251");
 EncodeCharset("teststring2", "windows-1252");
+
+const doc = tools.open_doc<CollaboratorDocument>(1);
+
+if (doc != undefined) {
+  doc.TopElem.firstname.Value = null;
+}

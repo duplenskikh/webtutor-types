@@ -1,38 +1,38 @@
 interface SaleDocumentDocument {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
-  sent_by_us: XmlElem<boolean>;
-  sent_date: XmlElem<Date>;
-  sent_type: XmlElem<string, typeof common.document_sent_types>;
-  sent_messenger_service_id: XmlElem<number, MessengerServiceCatalogDocumentTopElem>;
-  back_sent_date: XmlElem<Date>;
-  back_sent_type: XmlElem<string, typeof common.document_sent_types>;
-  back_sent_messenger_service_id: XmlElem<number, MessengerServiceCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
+  id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  sent_by_us: XmlElem<boolean | null>;
+  sent_date: XmlElem<Date | null>;
+  sent_type: XmlElem<string | null, typeof common.document_sent_types>;
+  sent_messenger_service_id: XmlElem<number | null, MessengerServiceCatalogDocumentTopElem>;
+  back_sent_date: XmlElem<Date | null>;
+  back_sent_type: XmlElem<string | null, typeof common.document_sent_types>;
+  back_sent_messenger_service_id: XmlElem<number | null, MessengerServiceCatalogDocumentTopElem>;
+  comment: XmlElem<string | null>;
 }
 
 type SaleDocumentTopElem = XmlTopElem &
 FileListBase &
 CustomElemsBase & {
   Doc: SaleDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  create_date: XmlElem<Date>;
-  status_id: XmlElem<number, SaleStatusCatalogDocumentTopElem>;
-  number: XmlElem<string>;
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  client_org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  project_id: XmlElem<number, ProjectCatalogDocumentTopElem>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  client_manager_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  manager_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  cost: XmlElem<number>;
-  currency_type_id: XmlElem<string, typeof lists.currency_types>;
-  documents: XmlMultiElem<SaleDocumentDocument>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  create_date: XmlElem<Date | null>;
+  status_id: XmlElem<number | null, SaleStatusCatalogDocumentTopElem>;
+  number: XmlElem<string | null>;
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  client_org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  project_id: XmlElem<number | null, ProjectCatalogDocumentTopElem>;
+  start_date: XmlElem<Date | null>;
+  finish_date: XmlElem<Date | null>;
+  client_manager_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  manager_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  cost: XmlElem<number | null>;
+  currency_type_id: XmlElem<string | null, typeof lists.currency_types>;
+  documents: XmlMultiElem<SaleDocumentDocument | null>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type SaleDocument = XmlDocument & {

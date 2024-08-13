@@ -1,10 +1,10 @@
 type LibraryMaterialFormatDocumentTopElem = XmlTopElem & {
   Doc: LibraryMaterialFormatDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  format_type_id: XmlElem<string, typeof common.material_format_types>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  format_type_id: XmlElem<string | null, typeof common.material_format_types>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type LibraryMaterialFormatDocument = XmlDocument & {

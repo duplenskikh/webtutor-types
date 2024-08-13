@@ -1,9 +1,9 @@
 type RepositoriumAuthorCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  repositorium_id: XmlElem<number, RepositoriumCatalogDocumentTopElem>;
-  repositorium_name: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
+  id: XmlElem<number | null>;
+  repositorium_id: XmlElem<number | null, RepositoriumCatalogDocumentTopElem>;
+  repositorium_name: XmlElem<string | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_fullname: XmlElem<string | null>;
   MatchDocTypeExt(): void;
   OnBuildExt(): void;
   OnDeleteExt(): void;

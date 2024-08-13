@@ -4,16 +4,16 @@ ObjectTypeBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: TransactionDocument;
-  code: XmlElem<string>;
-  date: XmlElem<Date>;
+  code: XmlElem<string | null>;
+  date: XmlElem<Date | null>;
   direction: XmlElem<number>;
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  account_id: XmlElem<number, AccountCatalogDocumentTopElem>;
-  amount: XmlElem<number>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  objects: XmlMultiElemObject<number>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  account_id: XmlElem<number | null, AccountCatalogDocumentTopElem>;
+  amount: XmlElem<number | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  objects: XmlMultiElemObject<number | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type TransactionDocument = XmlDocument & {

@@ -1,13 +1,13 @@
 type ContractTypeDocumentTopElem = XmlTopElem & {
   Doc: ContractTypeDocument;
-  code: XmlElem<string>;
-  current_number: XmlElem<number>;
-  name: XmlElem<string>;
-  prefix: XmlElem<string>;
-  suffix: XmlElem<string>;
-  default_flag: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  current_number: XmlElem<number | null>;
+  name: XmlElem<string | null>;
+  prefix: XmlElem<string | null>;
+  suffix: XmlElem<string | null>;
+  default_flag: XmlElem<boolean | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ContractTypeDocument = XmlDocument & {

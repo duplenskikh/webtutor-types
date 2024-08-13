@@ -2,9 +2,9 @@ type EducationTypeDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase & {
   Doc: EducationTypeDocument;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  access: XmlElem<AccessDocBase | null>;
 };
 
 type EducationTypeDocument = XmlDocument & {

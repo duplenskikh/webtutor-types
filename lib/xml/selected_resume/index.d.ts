@@ -4,14 +4,14 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: SelectedResumeDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  resume_id: XmlElem<number, ResumeCatalogDocumentTopElem>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  resume_id: XmlElem<number | null, ResumeCatalogDocumentTopElem>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  access: XmlElem<AccessDocBase | null>;
 };
 
 type SelectedResumeDocument = XmlDocument & {

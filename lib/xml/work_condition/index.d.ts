@@ -2,9 +2,9 @@ type WorkConditionDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase & {
   Doc: WorkConditionDocument;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  access: XmlElem<AccessDocBase | null>;
 };
 
 type WorkConditionDocument = XmlDocument & {

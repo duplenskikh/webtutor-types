@@ -1,69 +1,69 @@
 interface CompoundProgramDocumentProgramStartLearningTask {
-  learning_task_id: XmlElem<number, LearningTaskCatalogDocumentTopElem>;
+  learning_task_id: XmlElem<number | null, LearningTaskCatalogDocumentTopElem>;
 }
 
 interface CompoundProgramDocumentProgramStartAssessment {
-  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
+  assessment_id: XmlElem<number | null, AssessmentCatalogDocumentTopElem>;
 }
 
 interface CompoundProgramDocumentProgramFinishLearningTask {
-  learning_task_id: XmlElem<number, LearningTaskCatalogDocumentTopElem>;
+  learning_task_id: XmlElem<number | null, LearningTaskCatalogDocumentTopElem>;
 }
 
 interface CompoundProgramDocumentProgramFinishAssessment {
-  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
+  assessment_id: XmlElem<number | null, AssessmentCatalogDocumentTopElem>;
 }
 
 interface CompoundProgramDocumentProgramFinishNotifiation {
-  notification_template_id: XmlElem<number, NotificationTemplateCatalogDocumentTopElem>;
-  subject: XmlElem<string>;
-  body: XmlElem<string>;
-  body_type: XmlElem<string>;
+  notification_template_id: XmlElem<number | null, NotificationTemplateCatalogDocumentTopElem>;
+  subject: XmlElem<string | null>;
+  body: XmlElem<string | null>;
+  body_type: XmlElem<string | null>;
   edit_notification: XmlElem<boolean>;
 }
 
 interface CompoundProgramDocumentProgramStartNotifiation {
-  notification_template_id: XmlElem<number, NotificationTemplateCatalogDocumentTopElem>;
-  subject: XmlElem<string>;
-  body: XmlElem<string>;
-  body_type: XmlElem<string>;
+  notification_template_id: XmlElem<number | null, NotificationTemplateCatalogDocumentTopElem>;
+  subject: XmlElem<string | null>;
+  body: XmlElem<string | null>;
+  body_type: XmlElem<string | null>;
   edit_notification: XmlElem<boolean>;
 }
 
 interface CompoundProgramDocumentProgramCompletedParentProgram {
-  program_id: XmlElem<number>;
+  program_id: XmlElem<number | null>;
 }
 
 interface CompoundProgramDocumentProgram extends CostCurrencyTypeBase, CustomElemsBase {
-  id: XmlElem<number>;
-  name: XmlElem<string>;
-  parent_progpam_id: XmlElem<number>;
-  education_program_id: XmlElem<number, EducationProgramCatalogDocumentTopElem>;
-  education_method_id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
-  start_learning_tasks: XmlMultiElem<CompoundProgramDocumentProgramStartLearningTask>;
-  start_assessments: XmlMultiElem<CompoundProgramDocumentProgramStartAssessment>;
-  finish_learning_tasks: XmlMultiElem<CompoundProgramDocumentProgramFinishLearningTask>;
-  finish_assessments: XmlMultiElem<CompoundProgramDocumentProgramFinishAssessment>;
-  finish_notifiation: XmlElem<CompoundProgramDocumentProgramFinishNotifiation>;
-  start_notifiation: XmlElem<CompoundProgramDocumentProgramStartNotifiation>;
-  duration: XmlElem<number>;
-  person_num: XmlElem<number>;
-  type: XmlElem<string>;
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
-  object_code: XmlElem<string>;
-  catalog_name: XmlElem<string, typeof common.learning_catalogs>;
-  subject: XmlElem<string>;
-  body: XmlElem<string>;
-  body_type: XmlElem<string>;
+  id: XmlElem<number | null>;
+  name: XmlElem<string | null>;
+  parent_progpam_id: XmlElem<number | null>;
+  education_program_id: XmlElem<number | null, EducationProgramCatalogDocumentTopElem>;
+  education_method_id: XmlElem<number | null, EducationMethodCatalogDocumentTopElem>;
+  start_learning_tasks: XmlMultiElem<CompoundProgramDocumentProgramStartLearningTask | null>;
+  start_assessments: XmlMultiElem<CompoundProgramDocumentProgramStartAssessment | null>;
+  finish_learning_tasks: XmlMultiElem<CompoundProgramDocumentProgramFinishLearningTask | null>;
+  finish_assessments: XmlMultiElem<CompoundProgramDocumentProgramFinishAssessment | null>;
+  finish_notifiation: XmlElem<CompoundProgramDocumentProgramFinishNotifiation | null>;
+  start_notifiation: XmlElem<CompoundProgramDocumentProgramStartNotifiation | null>;
+  duration: XmlElem<number | null>;
+  person_num: XmlElem<number | null>;
+  type: XmlElem<string | null>;
+  object_id: XmlElem<number | null>;
+  object_name: XmlElem<string | null>;
+  object_code: XmlElem<string | null>;
+  catalog_name: XmlElem<string | null, typeof common.learning_catalogs>;
+  subject: XmlElem<string | null>;
+  body: XmlElem<string | null>;
+  body_type: XmlElem<string | null>;
   edit_notification: XmlElem<boolean>;
-  delay_days: XmlElem<number>;
-  days: XmlElem<number>;
-  weight: XmlElem<number>;
-  start_type: XmlElem<string>;
+  delay_days: XmlElem<number | null>;
+  days: XmlElem<number | null>;
+  weight: XmlElem<number | null>;
+  start_type: XmlElem<string | null>;
   required: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  completed_parent_programs: XmlMultiElem<CompoundProgramDocumentProgramCompletedParentProgram>;
+  comment: XmlElem<string | null>;
+  completed_parent_programs: XmlMultiElem<CompoundProgramDocumentProgramCompletedParentProgram | null>;
 }
 
 type CompoundProgramDocumentTopElem = XmlTopElem &
@@ -74,14 +74,14 @@ KnowledgePartsBase &
 CustomElemsBase &
 AdminAccessBase & {
   Doc: CompoundProgramDocument;
-  desc: XmlElem<string>;
-  min_person_num: XmlElem<number>;
+  desc: XmlElem<string | null>;
+  min_person_num: XmlElem<number | null>;
   allow_self_assignment: XmlElem<boolean>;
-  programs: XmlMultiElem<CompoundProgramDocumentProgram>;
-  doc_info: XmlElem<DocInfoBase>;
-  comment: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
-  role_id: XmlMultiElemObject<number>;
+  programs: XmlMultiElem<CompoundProgramDocumentProgram | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  comment: XmlElem<string | null>;
+  access: XmlElem<AccessDocBase | null>;
+  role_id: XmlMultiElemObject<number | null>;
   activate_program_to_person(input: unknown): { error: number, errorText: string; result: { id: number, error: number, text: string }[] };
 };
 

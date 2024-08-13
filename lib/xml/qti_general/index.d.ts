@@ -1,14 +1,14 @@
 interface ObjectivesBase {
-  candidate: XmlElem<string>;
+  candidate: XmlElem<string | null>;
 }
 
 interface ImageBase {
-  name: XmlElem<string>;
-  data: XmlElem<Binary>;
-  location: XmlElem<string, typeof common.material_locations>;
+  name: XmlElem<string | null>;
+  data: XmlElem<Binary | null>;
+  location: XmlElem<string | null, typeof common.material_locations>;
 }
 
 interface RubricBase {
-  candidate: XmlElem<string>;
-  image: XmlElem<ImageBase>;
+  candidate: XmlElem<string | null>;
+  image: XmlElem<ImageBase | null>;
 }

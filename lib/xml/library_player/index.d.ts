@@ -1,14 +1,14 @@
 type LibraryPlayerDocumentTopElem = XmlTopElem & {
   Doc: LibraryPlayerDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  player_url: XmlElem<string>;
-  learning_storage_id: XmlElem<number, LearningStorageCatalogDocumentTopElem>;
-  activity_id: XmlElem<number, ActivityCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  player_url: XmlElem<string | null>;
+  learning_storage_id: XmlElem<number | null, LearningStorageCatalogDocumentTopElem>;
+  activity_id: XmlElem<number | null, ActivityCatalogDocumentTopElem>;
   cmi5: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
 };

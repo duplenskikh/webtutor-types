@@ -1,14 +1,14 @@
 type GradeDocumentTopElem = XmlTopElem & {
   Doc: GradeDocument;
-  id: XmlElem<number>;
-  level: XmlElem<number>;
-  name: XmlElem<string>;
-  desc: XmlElem<string>;
-  min_salary: XmlElem<number>;
-  max_salary: XmlElem<number>;
-  currency: XmlElem<string, typeof lists.currency_types>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  level: XmlElem<number | null>;
+  name: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
+  min_salary: XmlElem<number | null>;
+  max_salary: XmlElem<number | null>;
+  currency: XmlElem<string | null, typeof lists.currency_types>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type GradeDocument = XmlDocument & {

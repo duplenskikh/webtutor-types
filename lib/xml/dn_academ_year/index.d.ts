@@ -1,22 +1,22 @@
 interface DnAcademYearDocumentPeriod {
-  id: XmlElem<string>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  desc: XmlElem<string>;
+  id: XmlElem<string | null>;
+  start_date: XmlElem<Date | null>;
+  finish_date: XmlElem<Date | null>;
+  desc: XmlElem<string | null>;
 }
 
 type DnAcademYearDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnAcademYearDocument;
-  start_year: XmlElem<string>;
-  end_year: XmlElem<string>;
-  name: XmlElem<string>;
-  amount_week_autumnal_term: XmlElem<number>;
-  amount_week_spring_term: XmlElem<number>;
-  str_years: XmlElem<string>;
-  periods: XmlMultiElem<DnAcademYearDocumentPeriod>;
-  doc_info: XmlElem<DocInfoBase>;
+  start_year: XmlElem<string | null>;
+  end_year: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  amount_week_autumnal_term: XmlElem<number | null>;
+  amount_week_spring_term: XmlElem<number | null>;
+  str_years: XmlElem<string | null>;
+  periods: XmlMultiElem<DnAcademYearDocumentPeriod | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type DnAcademYearDocument = XmlDocument & {

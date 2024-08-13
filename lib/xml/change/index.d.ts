@@ -1,15 +1,15 @@
 type ChangeDocumentTopElem = XmlTopElem & {
   Doc: ChangeDocument;
-  name: XmlElem<string>;
-  create_date: XmlElem<Date>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  object_id: XmlElem<number>;
-  object_type: XmlElem<string, typeof common.exchange_object_types>;
-  object_name: XmlElem<string>;
-  comment: XmlElem<string>;
-  desc: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  name: XmlElem<string | null>;
+  create_date: XmlElem<Date | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_fullname: XmlElem<string | null>;
+  object_id: XmlElem<number | null>;
+  object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  object_name: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ChangeDocument = XmlDocument & {

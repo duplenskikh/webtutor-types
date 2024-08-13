@@ -3,14 +3,14 @@ MsPersonSdBase &
 CustomElemsBase &
 AdminAccessBase & {
   Doc: SubscriptionDocument;
-  create_date: XmlElem<Date>;
+  create_date: XmlElem<Date | null>;
   type: XmlElem<string, typeof common.exchange_object_types>;
-  document_id: XmlElem<number>;
+  document_id: XmlElem<number | null>;
   include_subdocs: XmlElem<boolean>;
-  date_to: XmlElem<Date>;
-  date_last_action: XmlElem<Date>;
-  doc_info: XmlElem<DocInfoBase>;
-  comment: XmlElem<string>;
+  date_to: XmlElem<Date | null>;
+  date_last_action: XmlElem<Date | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  comment: XmlElem<string | null>;
 };
 
 type SubscriptionDocument = XmlDocument & {

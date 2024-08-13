@@ -1,21 +1,21 @@
 interface RecommenderAlgorithmApplyingDocumentApplyDate {
-  date: XmlElem<Date>;
+  date: XmlElem<Date | null>;
 }
 
 type RecommenderAlgorithmApplyingDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 CustomElemsBase & {
   Doc: RecommenderAlgorithmApplyingDocument;
-  id: XmlElem<number>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  recommender_algorithm_id: XmlElem<number, RecommenderAlgorithmCatalogDocumentTopElem>;
-  base_object: XmlElem<ObjectTypeBase>;
-  context_object: XmlElem<ObjectTypeBase>;
-  count: XmlElem<number>;
-  applying_date: XmlElem<Date>;
-  apply_dates: XmlMultiElem<RecommenderAlgorithmApplyingDocumentApplyDate>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  recommender_algorithm_id: XmlElem<number | null, RecommenderAlgorithmCatalogDocumentTopElem>;
+  base_object: XmlElem<ObjectTypeBase | null>;
+  context_object: XmlElem<ObjectTypeBase | null>;
+  count: XmlElem<number | null>;
+  applying_date: XmlElem<Date | null>;
+  apply_dates: XmlMultiElem<RecommenderAlgorithmApplyingDocumentApplyDate | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type RecommenderAlgorithmApplyingDocument = XmlDocument & {

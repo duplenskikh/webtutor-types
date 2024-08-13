@@ -1,7 +1,7 @@
 interface TestLearningDocumentSection {
-  id: XmlElem<string>;
-  title: XmlElem<string>;
-  score: XmlElem<number>;
+  id: XmlElem<string | null>;
+  title: XmlElem<string | null>;
+  score: XmlElem<number | null>;
 }
 
 type TestLearningDocumentTopElem = XmlTopElem &
@@ -14,41 +14,41 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: TestLearningDocument;
-  code: XmlElem<string>;
+  code: XmlElem<string | null>;
   name(): string;
-  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
-  assessment_name: XmlElem<string>;
-  assessment_code: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_current_state: XmlElem<string>;
-  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
-  event_name: XmlElem<string>;
-  event_start_date: XmlElem<Date>;
-  education_plan_id: XmlElem<number, EducationPlanCatalogDocumentTopElem>;
-  group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
+  assessment_id: XmlElem<number | null, AssessmentCatalogDocumentTopElem>;
+  assessment_name: XmlElem<string | null>;
+  assessment_code: XmlElem<string | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_current_state: XmlElem<string | null>;
+  event_id: XmlElem<number | null, EventCatalogDocumentTopElem>;
+  event_name: XmlElem<string | null>;
+  event_start_date: XmlElem<Date | null>;
+  education_plan_id: XmlElem<number | null, EducationPlanCatalogDocumentTopElem>;
+  group_id: XmlElem<number | null, GroupCatalogDocumentTopElem>;
   state_id: XmlElem<number, typeof common.learning_states>;
   score: XmlElem<number>;
-  text_result: XmlElem<string>;
-  core_lesson: XmlElem<string>;
-  lesson_report: XmlElem<string>;
-  start_usage_date: XmlElem<Date>;
-  start_learning_date: XmlElem<Date>;
-  last_usage_date: XmlElem<Date>;
-  max_end_date: XmlElem<Date>;
-  time: XmlElem<number>;
-  max_score: XmlElem<number>;
-  qti_text: XmlElem<string>;
-  qti_date: XmlElem<Date>;
-  sections: XmlMultiElem<TestLearningDocumentSection>;
-  assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
-  learning_record_id: XmlElem<number, LearningRecordCatalogDocumentTopElem>;
-  active_test_learning_id: XmlElem<number>;
-  active_test_learning_deleted: XmlElem<boolean>;
-  is_self_enrolled: XmlElem<boolean>;
+  text_result: XmlElem<string | null>;
+  core_lesson: XmlElem<string | null>;
+  lesson_report: XmlElem<string | null>;
+  start_usage_date: XmlElem<Date | null>;
+  start_learning_date: XmlElem<Date | null>;
+  last_usage_date: XmlElem<Date | null>;
+  max_end_date: XmlElem<Date | null>;
+  time: XmlElem<number | null>;
+  max_score: XmlElem<number | null>;
+  qti_text: XmlElem<string | null>;
+  qti_date: XmlElem<Date | null>;
+  sections: XmlMultiElem<TestLearningDocumentSection | null>;
+  assessment_appraise_id: XmlElem<number | null, AssessmentAppraiseCatalogDocumentTopElem>;
+  learning_record_id: XmlElem<number | null, LearningRecordCatalogDocumentTopElem>;
+  active_test_learning_id: XmlElem<number | null>;
+  active_test_learning_deleted: XmlElem<boolean | null>;
+  is_self_enrolled: XmlElem<boolean | null>;
   use_proctoring: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  link_report: XmlElem<string>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  link_report: XmlElem<string | null>;
 };
 
 type TestLearningDocument = XmlDocument & {

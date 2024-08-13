@@ -1,11 +1,11 @@
 type KnowledgePartLevelDocumentTopElem = XmlTopElem & {
   Doc: KnowledgePartLevelDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  doc_info: XmlElem<DocInfoBase>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type KnowledgePartLevelDocument = XmlDocument & {

@@ -4,13 +4,13 @@ ExecCodeBase &
 WebVariablesBase & {
   Doc: SystemEventHandlerDocument;
   is_enabled: XmlElem<boolean>;
-  system_event_id: XmlElem<number, SystemEventCatalogDocumentTopElem>;
-  perfom_condition: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  comment: XmlElem<string>;
+  system_event_id: XmlElem<number | null, SystemEventCatalogDocumentTopElem>;
+  perfom_condition: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  comment: XmlElem<string | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  last_system_event_id: XmlElem<number, SystemEventCatalogDocumentTopElem>;
+  last_system_event_id: XmlElem<number | null, SystemEventCatalogDocumentTopElem>;
   last_is_enabled: XmlElem<boolean>;
 };
 

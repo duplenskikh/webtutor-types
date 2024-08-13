@@ -1,21 +1,21 @@
 interface CodeLibraryDocumentMethodBlockMethod extends WebVariablesBase {
-  name: XmlElem<string>;
-  description: XmlElem<string>;
+  name: XmlElem<string | null>;
+  description: XmlElem<string | null>;
 }
 
 interface CodeLibraryDocumentMethodBlock {
-  methods: XmlMultiElem<CodeLibraryDocumentMethodBlockMethod>;
+  methods: XmlMultiElem<CodeLibraryDocumentMethodBlockMethod | null>;
 }
 
 interface CodeLibraryDocumentAssociatedApplication {
-  application_id: XmlElem<number, ApplicationCatalogDocumentTopElem>;
+  application_id: XmlElem<number | null, ApplicationCatalogDocumentTopElem>;
 }
 
 interface CodeLibraryDocumentParameterMap {
-  application_id: XmlElem<number, ApplicationCatalogDocumentTopElem>;
-  application_name: XmlElem<string>;
-  library_param: XmlElem<string>;
-  application_param: XmlElem<string>;
+  application_id: XmlElem<number | null, ApplicationCatalogDocumentTopElem>;
+  application_name: XmlElem<string | null>;
+  library_param: XmlElem<string | null>;
+  application_param: XmlElem<string | null>;
 }
 
 type CodeLibraryDocumentTopElem = XmlTopElem &
@@ -24,14 +24,14 @@ ExecCodeBase &
 WebVariablesBase &
 I18nBase & {
   Doc: CodeLibraryDocument;
-  doc_info: XmlElem<DocInfoBase>;
-  comment: XmlElem<string>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  comment: XmlElem<string | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  method_block: XmlElem<CodeLibraryDocumentMethodBlock>;
-  associated_applications: XmlMultiElem<CodeLibraryDocumentAssociatedApplication>;
-  parameter_maps: XmlMultiElem<CodeLibraryDocumentParameterMap>;
-  role_id: XmlMultiElemObject<number>;
+  method_block: XmlElem<CodeLibraryDocumentMethodBlock | null>;
+  associated_applications: XmlMultiElem<CodeLibraryDocumentAssociatedApplication | null>;
+  parameter_maps: XmlMultiElem<CodeLibraryDocumentParameterMap | null>;
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type CodeLibraryDocument = XmlDocument & {

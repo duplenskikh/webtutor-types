@@ -1,7 +1,7 @@
 interface VacancySubscriptionDocumentSuitableVacancy {
-  id: XmlElem<number, VacancyCatalogDocumentTopElem>;
-  name: XmlElem<string>;
-  code: XmlElem<string>;
+  id: XmlElem<number | null, VacancyCatalogDocumentTopElem>;
+  name: XmlElem<string | null>;
+  code: XmlElem<string | null>;
 }
 
 type VacancySubscriptionDocumentTopElem = XmlTopElem &
@@ -9,15 +9,15 @@ MsPersonSdBase &
 ViewConditionsBase &
 AdminAccessBase & {
   Doc: VacancySubscriptionDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  is_active: XmlElem<boolean>;
-  full_text_search_str: XmlElem<string>;
-  site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
-  suitable_vacancys: XmlMultiElem<VacancySubscriptionDocumentSuitableVacancy>;
-  send_vacancy_date: XmlElem<Date>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  is_active: XmlElem<boolean | null>;
+  full_text_search_str: XmlElem<string | null>;
+  site_id: XmlElem<number | null, SiteCatalogDocumentTopElem>;
+  suitable_vacancys: XmlMultiElem<VacancySubscriptionDocumentSuitableVacancy | null>;
+  send_vacancy_date: XmlElem<Date | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   refresh_suitable_vacancys(): VacancyCatalogDocumentTopElem;
 };
 

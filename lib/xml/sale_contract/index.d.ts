@@ -1,20 +1,20 @@
 interface SaleContractDocumentCost {
-  id: XmlElem<string>;
-  cost_currency_type_id: XmlElem<string, typeof lists.currency_types>;
-  cost_value: XmlElem<number>;
+  id: XmlElem<string | null>;
+  cost_currency_type_id: XmlElem<string | null, typeof lists.currency_types>;
+  cost_value: XmlElem<number | null>;
 }
 
 interface SaleContractDocumentPrice {
-  id: XmlElem<string>;
-  price_id: XmlElem<number, PriceCatalogDocumentTopElem>;
+  id: XmlElem<string | null>;
+  price_id: XmlElem<number | null, PriceCatalogDocumentTopElem>;
 }
 
 interface SaleContractDocumentProlongationInfo {
-  id: XmlElem<string>;
-  cost: XmlElem<number>;
-  cost_currency_type_id: XmlElem<string, typeof lists.currency_types>;
-  start_date: XmlElem<Date>;
-  end_date: XmlElem<Date>;
+  id: XmlElem<string | null>;
+  cost: XmlElem<number | null>;
+  cost_currency_type_id: XmlElem<string | null, typeof lists.currency_types>;
+  start_date: XmlElem<Date | null>;
+  end_date: XmlElem<Date | null>;
 }
 
 type SaleContractDocumentTopElem = XmlTopElem &
@@ -22,47 +22,47 @@ FileListBase &
 CustomElemsBase &
 AdminAccessBase & {
   Doc: SaleContractDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  state_id: XmlElem<number, ContractStateCatalogDocumentTopElem>;
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  is_agent_contract: XmlElem<boolean>;
-  agent_org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  client_org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  client_manager_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  manager_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  parent_sale_contract_id: XmlElem<number, SaleContractCatalogDocumentTopElem>;
-  number: XmlElem<string>;
-  serial_number: XmlElem<string>;
-  date_signature: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  subject_contract: XmlElem<string>;
-  prev_contract_id: XmlElem<number, SaleContractCatalogDocumentTopElem>;
-  contract_type: XmlElem<number, SaleContractTypeCatalogDocumentTopElem>;
-  contract_signature: XmlElem<string>;
-  client_legal: XmlElem<string>;
-  provider_legal: XmlElem<string>;
-  client_legal_name: XmlElem<string>;
-  provider_legal_name: XmlElem<string>;
-  bad_debt: XmlElem<boolean>;
-  contract_cost: XmlElem<number>;
-  currency_type_id: XmlElem<string, typeof lists.currency_types>;
-  costs: XmlMultiElem<SaleContractDocumentCost>;
-  prices: XmlMultiElem<SaleContractDocumentPrice>;
-  prolongation_infos: XmlMultiElem<SaleContractDocumentProlongationInfo>;
-  sent_date: XmlElem<Date>;
-  sent_type: XmlElem<string, typeof common.document_sent_types>;
-  recipient: XmlElem<string>;
-  consignment_document_number: XmlElem<string>;
-  sent_messenger_service_id: XmlElem<number, MessengerServiceCatalogDocumentTopElem>;
-  back_sent_type: XmlElem<string, typeof common.document_sent_types>;
-  back_sent_messenger_service_id: XmlElem<number, MessengerServiceCatalogDocumentTopElem>;
-  is_received: XmlElem<boolean>;
-  received_date: XmlElem<Date>;
-  docs_comment: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  state_id: XmlElem<number | null, ContractStateCatalogDocumentTopElem>;
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  is_agent_contract: XmlElem<boolean | null>;
+  agent_org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  client_org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  client_manager_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  manager_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  parent_sale_contract_id: XmlElem<number | null, SaleContractCatalogDocumentTopElem>;
+  number: XmlElem<string | null>;
+  serial_number: XmlElem<string | null>;
+  date_signature: XmlElem<Date | null>;
+  finish_date: XmlElem<Date | null>;
+  subject_contract: XmlElem<string | null>;
+  prev_contract_id: XmlElem<number | null, SaleContractCatalogDocumentTopElem>;
+  contract_type: XmlElem<number | null, SaleContractTypeCatalogDocumentTopElem>;
+  contract_signature: XmlElem<string | null>;
+  client_legal: XmlElem<string | null>;
+  provider_legal: XmlElem<string | null>;
+  client_legal_name: XmlElem<string | null>;
+  provider_legal_name: XmlElem<string | null>;
+  bad_debt: XmlElem<boolean | null>;
+  contract_cost: XmlElem<number | null>;
+  currency_type_id: XmlElem<string | null, typeof lists.currency_types>;
+  costs: XmlMultiElem<SaleContractDocumentCost | null>;
+  prices: XmlMultiElem<SaleContractDocumentPrice | null>;
+  prolongation_infos: XmlMultiElem<SaleContractDocumentProlongationInfo | null>;
+  sent_date: XmlElem<Date | null>;
+  sent_type: XmlElem<string | null, typeof common.document_sent_types>;
+  recipient: XmlElem<string | null>;
+  consignment_document_number: XmlElem<string | null>;
+  sent_messenger_service_id: XmlElem<number | null, MessengerServiceCatalogDocumentTopElem>;
+  back_sent_type: XmlElem<string | null, typeof common.document_sent_types>;
+  back_sent_messenger_service_id: XmlElem<number | null, MessengerServiceCatalogDocumentTopElem>;
+  is_received: XmlElem<boolean | null>;
+  received_date: XmlElem<Date | null>;
+  docs_comment: XmlElem<string | null>;
+  access: XmlElem<AccessDocBase | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type SaleContractDocument = XmlDocument & {

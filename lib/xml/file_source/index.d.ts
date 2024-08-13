@@ -1,16 +1,16 @@
 type FileSourceDocumentTopElem = XmlTopElem &
 WebVariablesBase & {
   Doc: FileSourceDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  category: XmlElem<string>;
-  url: XmlElem<string>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  category: XmlElem<string | null>;
+  url: XmlElem<string | null>;
   search_available: XmlElem<boolean>;
   selection_available: XmlElem<boolean>;
-  run_code: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  run_code: XmlElem<string | null>;
+  access: XmlElem<AccessDocBase | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
 };

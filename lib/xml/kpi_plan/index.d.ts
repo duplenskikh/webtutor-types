@@ -1,36 +1,36 @@
 interface KpiPlanDocumentCustomDataHeaderColumn {
-  title: XmlElem<string>;
+  title: XmlElem<string | null>;
   type: XmlElem<string, typeof common.spxml_types>;
 }
 
 interface KpiPlanDocumentCustomDataHeader {
-  column: XmlElem<KpiPlanDocumentCustomDataHeaderColumn>;
+  column: XmlElem<KpiPlanDocumentCustomDataHeaderColumn | null>;
 }
 
 interface KpiPlanDocumentCustomDataDataRowColumn {
-  value: XmlElem<string>;
+  value: XmlElem<string | null>;
 }
 
 interface KpiPlanDocumentCustomDataDataRow {
-  columns: XmlMultiElem<KpiPlanDocumentCustomDataDataRowColumn>;
+  columns: XmlMultiElem<KpiPlanDocumentCustomDataDataRowColumn | null>;
 }
 
 interface KpiPlanDocumentCustomDataData {
-  row: XmlElem<KpiPlanDocumentCustomDataDataRow>;
+  row: XmlElem<KpiPlanDocumentCustomDataDataRow | null>;
 }
 
 interface KpiPlanDocumentCustomData {
-  header: XmlElem<KpiPlanDocumentCustomDataHeader>;
-  data: XmlElem<KpiPlanDocumentCustomDataData>;
+  header: XmlElem<KpiPlanDocumentCustomDataHeader | null>;
+  data: XmlElem<KpiPlanDocumentCustomDataData | null>;
 }
 
 interface KpiPlanDocumentExpert {
-  expert_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  expert_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
 }
 
 interface KpiPlanDocumentWorkflowMatching {
-  id: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  id: XmlElem<string | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
 }
 
 type KpiPlanDocumentTopElem = XmlTopElem &
@@ -39,32 +39,32 @@ FileListBase &
 CustomElemsBase &
 AdminAccessBase & {
   Doc: KpiPlanDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
   name(): string;
-  kpi_id: XmlElem<number, KpiCatalogDocumentTopElem>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  responsible_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  start_date: XmlElem<Date>;
-  end_date: XmlElem<Date>;
-  custom_data: XmlElem<KpiPlanDocumentCustomData>;
-  threshold: XmlElem<string>;
-  threshold_text: XmlElem<string>;
-  threshold_value: XmlElem<number>;
-  challenge: XmlElem<string>;
-  challenge_text: XmlElem<string>;
-  challenge_value: XmlElem<number>;
-  plan: XmlElem<string>;
-  plan_text: XmlElem<string>;
-  plan_value: XmlElem<number>;
-  object_catalog: XmlElem<string, typeof common.exchange_object_types>;
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
-  experts: XmlMultiElem<KpiPlanDocumentExpert>;
-  workflow_matchings: XmlMultiElem<KpiPlanDocumentWorkflowMatching>;
-  workflow_matching_type: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  kpi_id: XmlElem<number | null, KpiCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  responsible_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  start_date: XmlElem<Date | null>;
+  end_date: XmlElem<Date | null>;
+  custom_data: XmlElem<KpiPlanDocumentCustomData | null>;
+  threshold: XmlElem<string | null>;
+  threshold_text: XmlElem<string | null>;
+  threshold_value: XmlElem<number | null>;
+  challenge: XmlElem<string | null>;
+  challenge_text: XmlElem<string | null>;
+  challenge_value: XmlElem<number | null>;
+  plan: XmlElem<string | null>;
+  plan_text: XmlElem<string | null>;
+  plan_value: XmlElem<number | null>;
+  object_catalog: XmlElem<string | null, typeof common.exchange_object_types>;
+  object_id: XmlElem<number | null>;
+  object_name: XmlElem<string | null>;
+  experts: XmlMultiElem<KpiPlanDocumentExpert | null>;
+  workflow_matchings: XmlMultiElem<KpiPlanDocumentWorkflowMatching | null>;
+  workflow_matching_type: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   obtain_custom_data(kPITopElem: unknown, aData: unknown): unknown;
   calc_data(formula: string): unknown;
 };

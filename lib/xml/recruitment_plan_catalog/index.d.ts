@@ -1,17 +1,17 @@
 type RecruitmentPlanCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
+  id: XmlElem<number | null>;
   state: XmlElem<string, typeof common.recruitment_plan_state_types>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  subdivision_group_id: XmlElem<number, SubdivisionGroupCatalogDocumentTopElem>;
-  position_family_id: XmlElem<number, PositionFamilyCatalogDocumentTopElem>;
-  position_type: XmlElem<string>;
-  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
-  position_name: XmlElem<string>;
-  vacancy_type_id: XmlElem<number, VacancyTypeCatalogDocumentTopElem>;
-  quantity: XmlElem<number>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  subdivision_group_id: XmlElem<number | null, SubdivisionGroupCatalogDocumentTopElem>;
+  position_family_id: XmlElem<number | null, PositionFamilyCatalogDocumentTopElem>;
+  position_type: XmlElem<string | null>;
+  position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
+  position_name: XmlElem<string | null>;
+  vacancy_type_id: XmlElem<number | null, VacancyTypeCatalogDocumentTopElem>;
+  quantity: XmlElem<number | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

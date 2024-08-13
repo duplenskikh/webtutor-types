@@ -4,14 +4,14 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: ProfessionalAreaDocument;
-  parent_id: XmlElem<number, ProfessionalAreaCatalogDocumentTopElem>;
-  professional_area_type_id: XmlElem<number, ProfessionalAreaTypeCatalogDocumentTopElem>;
+  parent_id: XmlElem<number | null, ProfessionalAreaCatalogDocumentTopElem>;
+  professional_area_type_id: XmlElem<number | null, ProfessionalAreaTypeCatalogDocumentTopElem>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  access: XmlElem<AccessDocBase | null>;
 };
 
 type ProfessionalAreaDocument = XmlDocument & {

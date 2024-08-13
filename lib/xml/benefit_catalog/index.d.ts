@@ -1,11 +1,11 @@
 type BenefitCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  status: XmlElem<string, typeof common.benefit_statuses>;
-  weight: XmlElem<number>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  status: XmlElem<string | null, typeof common.benefit_statuses>;
+  weight: XmlElem<number | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

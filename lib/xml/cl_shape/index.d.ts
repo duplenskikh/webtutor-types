@@ -1,39 +1,39 @@
 interface ClShapeDocumentParams {
-  type: XmlElem<string>;
-  stroked: XmlElem<string>;
-  filled: XmlElem<string>;
-  coordsize: XmlElem<string>;
-  adj: XmlElem<string>;
-  path: XmlElem<string>;
+  type: XmlElem<string | null>;
+  stroked: XmlElem<string | null>;
+  filled: XmlElem<string | null>;
+  coordsize: XmlElem<string | null>;
+  adj: XmlElem<string | null>;
+  path: XmlElem<string | null>;
 }
 
 interface ClShapeDocumentFormula {
-  expr: XmlElem<string>;
+  expr: XmlElem<string | null>;
 }
 
 interface ClShapeDocumentHandle {
-  position: XmlElem<string>;
-  xrange: XmlElem<string>;
-  yrange: XmlElem<string>;
+  position: XmlElem<string | null>;
+  xrange: XmlElem<string | null>;
+  yrange: XmlElem<string | null>;
 }
 
 type ClShapeDocumentTopElem = XmlTopElem & {
   Doc: ClShapeDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  category: XmlElem<string>;
-  category_label: XmlElem<string>;
-  type: XmlElem<string>;
-  type_name: XmlElem<string>;
-  params: XmlElem<ClShapeDocumentParams>;
-  formulas: XmlMultiElem<ClShapeDocumentFormula>;
-  textboxrect: XmlElem<string>;
-  otherxml: XmlElem<string>;
-  handles: XmlMultiElem<ClShapeDocumentHandle>;
-  ico: XmlElem<Binary>;
-  vml: XmlElem<string>;
-  desc: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  category: XmlElem<string | null>;
+  category_label: XmlElem<string | null>;
+  type: XmlElem<string | null>;
+  type_name: XmlElem<string | null>;
+  params: XmlElem<ClShapeDocumentParams | null>;
+  formulas: XmlMultiElem<ClShapeDocumentFormula | null>;
+  textboxrect: XmlElem<string | null>;
+  otherxml: XmlElem<string | null>;
+  handles: XmlMultiElem<ClShapeDocumentHandle | null>;
+  ico: XmlElem<Binary | null>;
+  vml: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ClShapeDocument = XmlDocument & {

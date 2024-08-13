@@ -1,125 +1,125 @@
 interface SystemInfoDocumentSystemInfoSystem {
-  os_version: XmlElem<string>;
-  os_bit: XmlElem<string>;
-  process_bit: XmlElem<string>;
-  total_memory: XmlElem<string>;
-  available_memory: XmlElem<string>;
-  cpu_count: XmlElem<string>;
-  cpu_usage: XmlElem<string>;
+  os_version: XmlElem<string | null>;
+  os_bit: XmlElem<string | null>;
+  process_bit: XmlElem<string | null>;
+  total_memory: XmlElem<string | null>;
+  available_memory: XmlElem<string | null>;
+  cpu_count: XmlElem<string | null>;
+  cpu_usage: XmlElem<string | null>;
 }
 
 interface SystemInfoDocumentSystemInfoProcess {
-  name: XmlElem<string>;
-  cpu_usage: XmlElem<string>;
-  memory_usage: XmlElem<string>;
+  name: XmlElem<string | null>;
+  cpu_usage: XmlElem<string | null>;
+  memory_usage: XmlElem<string | null>;
 }
 
 interface SystemInfoDocumentSystemInfo {
-  system: XmlElem<SystemInfoDocumentSystemInfoSystem>;
-  processes: XmlMultiElem<SystemInfoDocumentSystemInfoProcess>;
+  system: XmlElem<SystemInfoDocumentSystemInfoSystem | null>;
+  processes: XmlMultiElem<SystemInfoDocumentSystemInfoProcess | null>;
 }
 
 interface SystemInfoDocumentServerAgent {
-  name: XmlElem<string>;
-  start_time: XmlElem<string>;
-  thread_id: XmlElem<string>;
+  name: XmlElem<string | null>;
+  start_time: XmlElem<string | null>;
+  thread_id: XmlElem<string | null>;
 }
 
 interface SystemInfoDocumentUnibridgeInfoOverall {
-  unibridge_info: XmlElem<string>;
-  overall_requests: XmlElem<string>;
-  average_request_time: XmlElem<string>;
-  memory_occupied: XmlElem<string>;
-  memory_available: XmlElem<string>;
-  active_requests: XmlElem<string>;
+  unibridge_info: XmlElem<string | null>;
+  overall_requests: XmlElem<string | null>;
+  average_request_time: XmlElem<string | null>;
+  memory_occupied: XmlElem<string | null>;
+  memory_available: XmlElem<string | null>;
+  active_requests: XmlElem<string | null>;
 }
 
 interface SystemInfoDocumentUnibridgeInfoThread {
-  id: XmlElem<string>;
-  xquery: XmlElem<string>;
-  sql: XmlElem<string>;
-  count_sql: XmlElem<string>;
-  fetch_counter: XmlElem<string>;
-  self_connection: XmlElem<string>;
-  rtl: XmlElem<string>;
-  state: XmlElem<string>;
+  id: XmlElem<string | null>;
+  xquery: XmlElem<string | null>;
+  sql: XmlElem<string | null>;
+  count_sql: XmlElem<string | null>;
+  fetch_counter: XmlElem<string | null>;
+  self_connection: XmlElem<string | null>;
+  rtl: XmlElem<string | null>;
+  state: XmlElem<string | null>;
 }
 
 interface SystemInfoDocumentUnibridgeInfoProcess {
-  session_id: XmlElem<string>;
-  user_process: XmlElem<string>;
-  login: XmlElem<string>;
-  database: XmlElem<string>;
-  task_state: XmlElem<string>;
-  command: XmlElem<string>;
-  application: XmlElem<string>;
-  wait_time: XmlElem<string>;
-  wait_type: XmlElem<string>;
-  wait_resource: XmlElem<string>;
-  blocked_by: XmlElem<string>;
-  head_blocker: XmlElem<string>;
-  total_cpu: XmlElem<string>;
-  total_physical_io: XmlElem<string>;
-  memory_use: XmlElem<string>;
-  open_transactions: XmlElem<string>;
-  login_time: XmlElem<string>;
-  last_request_start_time: XmlElem<string>;
-  host_name: XmlElem<string>;
-  net_address: XmlElem<string>;
-  execution_context_id: XmlElem<string>;
-  sql: XmlElem<string>;
+  session_id: XmlElem<string | null>;
+  user_process: XmlElem<string | null>;
+  login: XmlElem<string | null>;
+  database: XmlElem<string | null>;
+  task_state: XmlElem<string | null>;
+  command: XmlElem<string | null>;
+  application: XmlElem<string | null>;
+  wait_time: XmlElem<string | null>;
+  wait_type: XmlElem<string | null>;
+  wait_resource: XmlElem<string | null>;
+  blocked_by: XmlElem<string | null>;
+  head_blocker: XmlElem<string | null>;
+  total_cpu: XmlElem<string | null>;
+  total_physical_io: XmlElem<string | null>;
+  memory_use: XmlElem<string | null>;
+  open_transactions: XmlElem<string | null>;
+  login_time: XmlElem<string | null>;
+  last_request_start_time: XmlElem<string | null>;
+  host_name: XmlElem<string | null>;
+  net_address: XmlElem<string | null>;
+  execution_context_id: XmlElem<string | null>;
+  sql: XmlElem<string | null>;
 }
 
 interface SystemInfoDocumentUnibridgeInfo {
-  overall: XmlElem<SystemInfoDocumentUnibridgeInfoOverall>;
-  threads: XmlMultiElem<SystemInfoDocumentUnibridgeInfoThread>;
-  processes: XmlMultiElem<SystemInfoDocumentUnibridgeInfoProcess>;
+  overall: XmlElem<SystemInfoDocumentUnibridgeInfoOverall | null>;
+  threads: XmlMultiElem<SystemInfoDocumentUnibridgeInfoThread | null>;
+  processes: XmlMultiElem<SystemInfoDocumentUnibridgeInfoProcess | null>;
 }
 
 interface SystemInfoDocumentXhttpInfoRequest {
-  life_time: XmlElem<string>;
-  method: XmlElem<string>;
-  url: XmlElem<string>;
-  description: XmlElem<string>;
-  current_activity: XmlElem<string>;
-  user: XmlElem<string>;
-  thread_id: XmlElem<string>;
+  life_time: XmlElem<string | null>;
+  method: XmlElem<string | null>;
+  url: XmlElem<string | null>;
+  description: XmlElem<string | null>;
+  current_activity: XmlElem<string | null>;
+  user: XmlElem<string | null>;
+  thread_id: XmlElem<string | null>;
 }
 
 interface SystemInfoDocumentXhttpInfoThread {
-  life_time: XmlElem<string>;
-  type: XmlElem<string>;
-  description: XmlElem<string>;
-  current_activity: XmlElem<string>;
-  thread_id: XmlElem<string>;
+  life_time: XmlElem<string | null>;
+  type: XmlElem<string | null>;
+  description: XmlElem<string | null>;
+  current_activity: XmlElem<string | null>;
+  thread_id: XmlElem<string | null>;
 }
 
 interface SystemInfoDocumentXhttpInfoLdsSession {
-  life_time: XmlElem<string>;
-  id: XmlElem<string>;
-  idle_time: XmlElem<string>;
-  cursors: XmlElem<string>;
-  login: XmlElem<string>;
+  life_time: XmlElem<string | null>;
+  id: XmlElem<string | null>;
+  idle_time: XmlElem<string | null>;
+  cursors: XmlElem<string | null>;
+  login: XmlElem<string | null>;
 }
 
 interface SystemInfoDocumentXhttpInfo {
-  info: XmlElem<string>;
-  build: XmlElem<string>;
-  url: XmlElem<string>;
-  requests: XmlMultiElem<SystemInfoDocumentXhttpInfoRequest>;
-  threads: XmlMultiElem<SystemInfoDocumentXhttpInfoThread>;
-  lds_sessions: XmlMultiElem<SystemInfoDocumentXhttpInfoLdsSession>;
+  info: XmlElem<string | null>;
+  build: XmlElem<string | null>;
+  url: XmlElem<string | null>;
+  requests: XmlMultiElem<SystemInfoDocumentXhttpInfoRequest | null>;
+  threads: XmlMultiElem<SystemInfoDocumentXhttpInfoThread | null>;
+  lds_sessions: XmlMultiElem<SystemInfoDocumentXhttpInfoLdsSession | null>;
 }
 
 type SystemInfoDocumentTopElem = XmlTopElem & {
   Doc: SystemInfoDocument;
-  file_url: XmlElem<string>;
-  db_type: XmlElem<string>;
-  system_info: XmlElem<SystemInfoDocumentSystemInfo>;
-  active_notifications: XmlElem<string>;
-  server_agents: XmlMultiElem<SystemInfoDocumentServerAgent>;
-  unibridge_info: XmlElem<SystemInfoDocumentUnibridgeInfo>;
-  xhttp_info: XmlElem<SystemInfoDocumentXhttpInfo>;
+  file_url: XmlElem<string | null>;
+  db_type: XmlElem<string | null>;
+  system_info: XmlElem<SystemInfoDocumentSystemInfo | null>;
+  active_notifications: XmlElem<string | null>;
+  server_agents: XmlMultiElem<SystemInfoDocumentServerAgent | null>;
+  unibridge_info: XmlElem<SystemInfoDocumentUnibridgeInfo | null>;
+  xhttp_info: XmlElem<SystemInfoDocumentXhttpInfo | null>;
   getSystemInfo(input: unknown): unknown;
 };
 

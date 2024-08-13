@@ -1,6 +1,6 @@
 interface OrgDocumentKpiProfile {
-  id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  period_type_id: XmlElem<string, typeof common.perioditys>;
+  id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  period_type_id: XmlElem<string | null, typeof common.perioditys>;
   obligatory: XmlElem<boolean>;
 }
 
@@ -13,25 +13,25 @@ KnowledgePartsBaseOld &
 DocumentPersonsBase &
 CustomElemsBase & {
   Doc: OrgDocument;
-  account_id: XmlElem<number, AccountCatalogDocumentTopElem>;
-  contract_num: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
-  lng_id: XmlElem<string>;
-  location_id: XmlElem<string, typeof lists.locations>;
-  place_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
-  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
-  access_time_start: XmlElem<string>;
-  access_time_end: XmlElem<string>;
-  show_detailed: XmlElem<boolean>;
-  show_children: XmlElem<boolean>;
-  kpi_profile_id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  kpi_profiles: XmlMultiElem<OrgDocumentKpiProfile>;
-  bonus_profile_id: XmlElem<number, BonusProfileCatalogDocumentTopElem>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  account_id: XmlElem<number | null, AccountCatalogDocumentTopElem>;
+  contract_num: XmlElem<string | null>;
+  access: XmlElem<AccessDocBase | null>;
+  lng_id: XmlElem<string | null>;
+  location_id: XmlElem<string | null, typeof lists.locations>;
+  place_id: XmlElem<number | null, PlaceCatalogDocumentTopElem>;
+  region_id: XmlElem<number | null, RegionCatalogDocumentTopElem>;
+  access_time_start: XmlElem<string | null>;
+  access_time_end: XmlElem<string | null>;
+  show_detailed: XmlElem<boolean | null>;
+  show_children: XmlElem<boolean | null>;
+  kpi_profile_id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  kpi_profiles: XmlMultiElem<OrgDocumentKpiProfile | null>;
+  bonus_profile_id: XmlElem<number | null, BonusProfileCatalogDocumentTopElem>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   start_action(type: string): number;
-  role_id: XmlMultiElemObject<number>;
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type OrgDocument = XmlDocument & {

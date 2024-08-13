@@ -1,10 +1,10 @@
 type ClLocalizationDocumentTopElem = XmlTopElem & {
   Doc: ClLocalizationDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  access: XmlElem<AccessDocBase | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ClLocalizationDocument = XmlDocument & {

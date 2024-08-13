@@ -1,12 +1,12 @@
 type ProviderCourseTypeCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  library_url: XmlElem<string>;
-  is_std: XmlElem<boolean>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  library_url: XmlElem<string | null>;
+  is_std: XmlElem<boolean | null>;
   changed: XmlElem<boolean>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

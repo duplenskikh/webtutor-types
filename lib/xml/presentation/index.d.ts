@@ -1,21 +1,21 @@
 interface PresentationDocumentShape {
-  id: XmlElem<string>;
-  slide_id: XmlElem<string>;
-  json: XmlElem<string>;
+  id: XmlElem<string | null>;
+  slide_id: XmlElem<string | null>;
+  json: XmlElem<string | null>;
 }
 
 type PresentationDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase & {
   Doc: PresentationDocument;
-  access: XmlElem<AccessDocBase>;
-  file_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
-  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
-  vclass_setting_id: XmlElem<number, VclassSettingCatalogDocumentTopElem>;
-  current_slide_id: XmlElem<string>;
-  shapes: XmlMultiElem<PresentationDocumentShape>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  access: XmlElem<AccessDocBase | null>;
+  file_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
+  event_id: XmlElem<number | null, EventCatalogDocumentTopElem>;
+  vclass_setting_id: XmlElem<number | null, VclassSettingCatalogDocumentTopElem>;
+  current_slide_id: XmlElem<string | null>;
+  shapes: XmlMultiElem<PresentationDocumentShape | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type PresentationDocument = XmlDocument & {

@@ -2,11 +2,11 @@ type DnSpecializationDocumentTopElem = XmlTopElem &
 FileListBase &
 CustomElemsBase & {
   Doc: DnSpecializationDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  speciality_id: XmlElem<number, DnSpecialCatalogDocumentTopElem>;
-  desc: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  speciality_id: XmlElem<number | null, DnSpecialCatalogDocumentTopElem>;
+  desc: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type DnSpecializationDocument = XmlDocument & {

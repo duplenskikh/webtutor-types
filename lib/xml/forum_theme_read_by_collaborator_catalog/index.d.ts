@@ -1,10 +1,10 @@
 type ForumThemeReadByCollaboratorCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  forum_id: XmlElem<number, ForumCatalogDocumentTopElem>;
-  forum_theme_id: XmlElem<number, ForumEntryCatalogDocumentTopElem>;
-  date: XmlElem<Date>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  forum_id: XmlElem<number | null, ForumCatalogDocumentTopElem>;
+  forum_theme_id: XmlElem<number | null, ForumEntryCatalogDocumentTopElem>;
+  date: XmlElem<Date | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

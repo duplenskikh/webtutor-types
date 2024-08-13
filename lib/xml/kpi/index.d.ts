@@ -1,43 +1,43 @@
 interface KpiDocumentScale {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
-  percent: XmlElem<number>;
-  desc: XmlElem<string>;
+  id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  percent: XmlElem<number | null>;
+  desc: XmlElem<string | null>;
 }
 
 interface KpiDocumentOwner extends PersonFillingBase {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
 }
 
 interface KpiDocumentResponsiblePerson extends PersonFillingBase {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   is_native: XmlElem<boolean>;
-  boss_type_id: XmlElem<number, BossTypeCatalogDocumentTopElem>;
+  boss_type_id: XmlElem<number | null, BossTypeCatalogDocumentTopElem>;
 }
 
 interface KpiDocumentResponsibleGroup {
-  group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
-  group_name: XmlElem<string>;
+  group_id: XmlElem<number | null, GroupCatalogDocumentTopElem>;
+  group_name: XmlElem<string | null>;
   is_native: XmlElem<boolean>;
-  boss_type_id: XmlElem<number, BossTypeCatalogDocumentTopElem>;
+  boss_type_id: XmlElem<number | null, BossTypeCatalogDocumentTopElem>;
 }
 
 interface KpiDocumentResponsibleStaff {
-  staff_position_id: XmlElem<number, StaffPositionCatalogDocumentTopElem>;
-  staff_position_name: XmlElem<string>;
+  staff_position_id: XmlElem<number | null, StaffPositionCatalogDocumentTopElem>;
+  staff_position_name: XmlElem<string | null>;
   is_native: XmlElem<boolean>;
-  boss_type_id: XmlElem<number, BossTypeCatalogDocumentTopElem>;
+  boss_type_id: XmlElem<number | null, BossTypeCatalogDocumentTopElem>;
 }
 
 interface KpiDocumentCustomDataColumn {
-  title: XmlElem<string>;
+  title: XmlElem<string | null>;
   type: XmlElem<string, typeof common.spxml_types>;
 }
 
 interface KpiDocumentCustomData {
   on: XmlElem<boolean>;
-  columns: XmlMultiElem<KpiDocumentCustomDataColumn>;
-  custom_data_formula: XmlElem<string>;
+  columns: XmlMultiElem<KpiDocumentCustomDataColumn | null>;
+  custom_data_formula: XmlElem<string | null>;
 }
 
 type KpiDocumentTopElem = XmlTopElem &
@@ -46,39 +46,39 @@ AdminAccessBase &
 CustomElemsBase &
 KnowledgePartsBase & {
   Doc: KpiDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  type: XmlElem<string, typeof common.kpi_types>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  type: XmlElem<string | null, typeof common.kpi_types>;
   status: XmlElem<string, typeof common.kpi_states>;
   is_kpi: XmlElem<boolean>;
-  parent_object_id: XmlElem<number, KpiCatalogDocumentTopElem>;
-  kpi_group_id: XmlElem<number, KpiGroupCatalogDocumentTopElem>;
-  range_min: XmlElem<number>;
-  range_max: XmlElem<number>;
-  norma: XmlElem<number>;
+  parent_object_id: XmlElem<number | null, KpiCatalogDocumentTopElem>;
+  kpi_group_id: XmlElem<number | null, KpiGroupCatalogDocumentTopElem>;
+  range_min: XmlElem<number | null>;
+  range_max: XmlElem<number | null>;
+  norma: XmlElem<number | null>;
   calc_type: XmlElem<string, typeof common.kpi_calc_types>;
-  formula_id: XmlElem<number, FormulaCatalogDocumentTopElem>;
-  scale_id: XmlElem<number, ScaleCatalogDocumentTopElem>;
-  scales: XmlMultiElem<KpiDocumentScale>;
-  owners: XmlMultiElem<KpiDocumentOwner>;
-  responsible_persons: XmlMultiElem<KpiDocumentResponsiblePerson>;
-  responsible_groups: XmlMultiElem<KpiDocumentResponsibleGroup>;
-  responsible_staffs: XmlMultiElem<KpiDocumentResponsibleStaff>;
-  auto_formula: XmlElem<string>;
-  load_formula: XmlElem<string>;
+  formula_id: XmlElem<number | null, FormulaCatalogDocumentTopElem>;
+  scale_id: XmlElem<number | null, ScaleCatalogDocumentTopElem>;
+  scales: XmlMultiElem<KpiDocumentScale | null>;
+  owners: XmlMultiElem<KpiDocumentOwner | null>;
+  responsible_persons: XmlMultiElem<KpiDocumentResponsiblePerson | null>;
+  responsible_groups: XmlMultiElem<KpiDocumentResponsibleGroup | null>;
+  responsible_staffs: XmlMultiElem<KpiDocumentResponsibleStaff | null>;
+  auto_formula: XmlElem<string | null>;
+  load_formula: XmlElem<string | null>;
   is_bonus_source: XmlElem<boolean>;
   is_global: XmlElem<boolean>;
-  unit_of_measurement: XmlElem<string>;
-  period_type: XmlElem<string, typeof common.perioditys>;
-  workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
-  custom_data: XmlElem<KpiDocumentCustomData>;
-  comment: XmlElem<string>;
-  desc: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  disp_block: XmlElem<MsDispBlockBase>;
-  access: XmlElem<AccessDocBase>;
-  role_id: XmlMultiElemObject<number>;
+  unit_of_measurement: XmlElem<string | null>;
+  period_type: XmlElem<string | null, typeof common.perioditys>;
+  workflow_id: XmlElem<number | null, WorkflowCatalogDocumentTopElem>;
+  custom_data: XmlElem<KpiDocumentCustomData | null>;
+  comment: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  disp_block: XmlElem<MsDispBlockBase | null>;
+  access: XmlElem<AccessDocBase | null>;
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type KpiDocument = XmlDocument & {

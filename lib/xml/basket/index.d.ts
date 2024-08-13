@@ -1,20 +1,20 @@
 interface BasketDocumentGood {
-  good_id: XmlElem<number, GoodCatalogDocumentTopElem>;
+  good_id: XmlElem<number | null, GoodCatalogDocumentTopElem>;
   number: XmlElem<number>;
-  reserved_date: XmlElem<Date>;
+  reserved_date: XmlElem<Date | null>;
 }
 
 type BasketDocumentTopElem = XmlTopElem &
 PersonFillingBase & {
   Doc: BasketDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  goods: XmlMultiElem<BasketDocumentGood>;
-  currency_type_id: XmlElem<string, typeof lists.currency_types>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  goods: XmlMultiElem<BasketDocumentGood | null>;
+  currency_type_id: XmlElem<string | null, typeof lists.currency_types>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type BasketDocument = XmlDocument & {

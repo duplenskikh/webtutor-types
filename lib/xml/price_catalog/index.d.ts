@@ -1,12 +1,12 @@
 type PriceCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  create_date: XmlElem<Date>;
-  state_id: XmlElem<string, typeof common.successor_status_types>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  modification_date: XmlElem<Date>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  create_date: XmlElem<Date | null>;
+  state_id: XmlElem<string | null, typeof common.successor_status_types>;
+  start_date: XmlElem<Date | null>;
+  finish_date: XmlElem<Date | null>;
+  modification_date: XmlElem<Date | null>;
   OnBuild(): void;
 };

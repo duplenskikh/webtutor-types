@@ -1,10 +1,10 @@
 type PluginCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  block: XmlElem<string, typeof common.access_block_types>;
-  plugin_id: XmlElem<string>;
-  version: XmlElem<number>;
-  modification_date: XmlElem<Date>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  block: XmlElem<string | null, typeof common.access_block_types>;
+  plugin_id: XmlElem<string | null>;
+  version: XmlElem<number | null>;
+  modification_date: XmlElem<Date | null>;
   OnBuild(): void;
 };

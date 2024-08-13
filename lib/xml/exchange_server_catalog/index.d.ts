@@ -1,13 +1,13 @@
 type ExchangeServerCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
   is_active: XmlElem<boolean>;
-  last_upload_date: XmlElem<Date>;
-  last_download_date: XmlElem<Date>;
-  server_version: XmlElem<string>;
-  role_id: XmlMultiElemObject<number>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  last_upload_date: XmlElem<Date | null>;
+  last_download_date: XmlElem<Date | null>;
+  server_version: XmlElem<string | null>;
+  role_id: XmlMultiElemObject<number | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

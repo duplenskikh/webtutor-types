@@ -4,10 +4,10 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: WorkScheduleDocument;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  access: XmlElem<AccessDocBase | null>;
 };
 
 type WorkScheduleDocument = XmlDocument & {

@@ -1,69 +1,69 @@
 interface CollaboratorDocumentChangeLog extends CustomElemsBase {
-  id: XmlElem<string>;
-  position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
-  position_name: XmlElem<string>;
-  position_parent_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  position_parent_name: XmlElem<string>;
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  org_name: XmlElem<string>;
-  date: XmlElem<Date>;
-  comment: XmlElem<string>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  working_days: XmlElem<number>;
-  working_hours: XmlElem<number>;
-  rate: XmlElem<number>;
-  rate_percent: XmlElem<number>;
+  id: XmlElem<string | null>;
+  position_id: XmlElem<number | null, PositionCatalogDocumentTopElem>;
+  position_name: XmlElem<string | null>;
+  position_parent_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  position_parent_name: XmlElem<string | null>;
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  org_name: XmlElem<string | null>;
+  date: XmlElem<Date | null>;
+  comment: XmlElem<string | null>;
+  start_date: XmlElem<Date | null>;
+  finish_date: XmlElem<Date | null>;
+  working_days: XmlElem<number | null>;
+  working_hours: XmlElem<number | null>;
+  rate: XmlElem<number | null>;
+  rate_percent: XmlElem<number | null>;
 }
 
 interface CollaboratorDocumentHistoryState {
-  id: XmlElem<string>;
-  state_id: XmlElem<string, typeof lists.person_states>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  object_id: XmlElem<number>;
-  object_type: XmlElem<string, typeof common.exchange_object_types>;
-  comment: XmlElem<string>;
+  id: XmlElem<string | null>;
+  state_id: XmlElem<string | null, typeof lists.person_states>;
+  start_date: XmlElem<Date | null>;
+  finish_date: XmlElem<Date | null>;
+  object_id: XmlElem<number | null>;
+  object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  comment: XmlElem<string | null>;
 }
 
 interface CollaboratorDocumentPersonalConfig {
-  avatar_filename: XmlElem<string>;
-  nick: XmlElem<string>;
-  status: XmlElem<string>;
+  avatar_filename: XmlElem<string | null>;
+  nick: XmlElem<string | null>;
+  status: XmlElem<string | null>;
   default_info_type: XmlElem<string, typeof common.forum_person_info_types>;
 }
 
 interface CollaboratorDocumentCustomParam {
-  name: XmlElem<string>;
-  value: XmlElem<string>;
+  name: XmlElem<string | null>;
+  value: XmlElem<string | null>;
 }
 
 interface CollaboratorDocumentCompBenPaymentType {
-  payment_type_id: XmlElem<number, PaymentTypeCatalogDocumentTopElem>;
-  max_value: XmlElem<number>;
-  comment: XmlElem<string>;
+  payment_type_id: XmlElem<number | null, PaymentTypeCatalogDocumentTopElem>;
+  max_value: XmlElem<number | null>;
+  comment: XmlElem<string | null>;
 }
 
 interface CollaboratorDocumentCompBen {
-  salary: XmlElem<number>;
-  currency_type_id: XmlElem<string, typeof lists.currency_types>;
-  payment_period: XmlElem<string, typeof common.perioditys>;
-  comment: XmlElem<string>;
-  payment_types: XmlMultiElem<CollaboratorDocumentCompBenPaymentType>;
+  salary: XmlElem<number | null>;
+  currency_type_id: XmlElem<string | null, typeof lists.currency_types>;
+  payment_period: XmlElem<string | null, typeof common.perioditys>;
+  comment: XmlElem<string | null>;
+  payment_types: XmlMultiElem<CollaboratorDocumentCompBenPaymentType | null>;
 }
 
 interface CollaboratorDocumentLastData {
   web_banned: XmlElem<boolean>;
-  login: XmlElem<string>;
-  password: XmlElem<string>;
-  access_role: XmlElem<string>;
+  login: XmlElem<string | null>;
+  password: XmlElem<string | null>;
+  access_role: XmlElem<string | null>;
   is_arm_admin: XmlElem<boolean>;
   is_application_admin: XmlElem<boolean>;
   is_content_admin: XmlElem<boolean>;
   in_request_black_list: XmlElem<boolean>;
-  position_id: XmlElem<number>;
-  pict_url: XmlElem<string>;
-  avatar_filename: XmlElem<string>;
+  position_id: XmlElem<number | null>;
+  pict_url: XmlElem<string | null>;
+  avatar_filename: XmlElem<string | null>;
 }
 
 type CollaboratorDocumentTopElem = XmlTopElem &
@@ -77,41 +77,41 @@ KnowledgePartsBaseOld &
 CustomElemsBase &
 PersonObjectLinksBase & {
   Doc: CollaboratorDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  eid: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  eid: XmlElem<string | null>;
   name(): string;
-  snils: XmlElem<string>;
-  position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
-  position_name: XmlElem<string>;
-  position_parent_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  position_parent_name: XmlElem<string>;
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  org_name: XmlElem<string>;
+  snils: XmlElem<string | null>;
+  position_id: XmlElem<number | null, PositionCatalogDocumentTopElem>;
+  position_name: XmlElem<string | null>;
+  position_parent_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  position_parent_name: XmlElem<string | null>;
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  org_name: XmlElem<string | null>;
   change_password: XmlElem<boolean>;
   is_candidate: XmlElem<boolean>;
   is_outstaff: XmlElem<boolean>;
-  candidate_status_type_id: XmlElem<number, CandidateStatusTypeCatalogDocumentTopElem>;
-  candidate_id: XmlElem<number>;
+  candidate_status_type_id: XmlElem<number | null, CandidateStatusTypeCatalogDocumentTopElem>;
+  candidate_id: XmlElem<number | null>;
   is_dismiss: XmlElem<boolean>;
-  hire_date: XmlElem<Date>;
-  dismiss_date: XmlElem<Date>;
-  position_date: XmlElem<Date>;
+  hire_date: XmlElem<Date | null>;
+  dismiss_date: XmlElem<Date | null>;
+  position_date: XmlElem<Date | null>;
   in_request_black_list: XmlElem<boolean>;
-  request_black_list_data: XmlElem<Date>;
-  request_black_list_comment: XmlElem<string>;
-  place_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
-  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
-  access: XmlElem<AccessBase>;
-  cost_center_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
-  provider_legal_id: XmlElem<string>;
-  lng_id: XmlElem<string>;
-  location_id: XmlElem<string, typeof lists.locations>;
-  pict_url: XmlElem<string>;
-  access_time_start: XmlElem<string>;
-  access_time_end: XmlElem<string>;
+  request_black_list_data: XmlElem<Date | null>;
+  request_black_list_comment: XmlElem<string | null>;
+  place_id: XmlElem<number | null, PlaceCatalogDocumentTopElem>;
+  region_id: XmlElem<number | null, RegionCatalogDocumentTopElem>;
+  access: XmlElem<AccessBase | null>;
+  cost_center_id: XmlElem<number | null, CostCenterCatalogDocumentTopElem>;
+  provider_legal_id: XmlElem<string | null>;
+  lng_id: XmlElem<string | null>;
+  location_id: XmlElem<string | null, typeof lists.locations>;
+  pict_url: XmlElem<string | null>;
+  access_time_start: XmlElem<string | null>;
+  access_time_end: XmlElem<string | null>;
   is_time_access(): boolean;
-  desc: XmlElem<string>;
+  desc: XmlElem<string | null>;
   disp_empty_fields: XmlElem<boolean>;
   disp_personal_info: XmlElem<boolean>;
   disp_login: XmlElem<boolean>;
@@ -123,24 +123,24 @@ PersonObjectLinksBase & {
   disp_resume: XmlElem<boolean>;
   allow_personal_chat_request: XmlElem<boolean>;
   personal_chat_confirmation_required: XmlElem<boolean>;
-  development_potential_id: XmlElem<number, DevelopmentPotentialCatalogDocumentTopElem>;
-  efficiency_estimation_id: XmlElem<number, EfficiencyEstimationCatalogDocumentTopElem>;
-  web_enter_date: XmlElem<Date>;
-  category_id: XmlMultiElemObject<string, CategoryCatalogDocumentTopElem>;
-  change_logs: XmlMultiElem<CollaboratorDocumentChangeLog>;
-  current_state: XmlElem<string>;
-  history_states: XmlMultiElem<CollaboratorDocumentHistoryState>;
-  personal_config: XmlElem<CollaboratorDocumentPersonalConfig>;
-  doc_info: XmlElem<DocInfoBase>;
-  last_import_date: XmlElem<Date>;
-  custom_params: XmlMultiElem<CollaboratorDocumentCustomParam>;
-  level_id: XmlElem<number, LevelCatalogDocumentTopElem>;
-  grade_id: XmlElem<number, GradeCatalogDocumentTopElem>;
-  comp_ben: XmlElem<CollaboratorDocumentCompBen>;
+  development_potential_id: XmlElem<number | null, DevelopmentPotentialCatalogDocumentTopElem>;
+  efficiency_estimation_id: XmlElem<number | null, EfficiencyEstimationCatalogDocumentTopElem>;
+  web_enter_date: XmlElem<Date | null>;
+  category_id: XmlMultiElemObject<string | null, CategoryCatalogDocumentTopElem>;
+  change_logs: XmlMultiElem<CollaboratorDocumentChangeLog | null>;
+  current_state: XmlElem<string | null>;
+  history_states: XmlMultiElem<CollaboratorDocumentHistoryState | null>;
+  personal_config: XmlElem<CollaboratorDocumentPersonalConfig | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  last_import_date: XmlElem<Date | null>;
+  custom_params: XmlMultiElem<CollaboratorDocumentCustomParam | null>;
+  level_id: XmlElem<number | null, LevelCatalogDocumentTopElem>;
+  grade_id: XmlElem<number | null, GradeCatalogDocumentTopElem>;
+  comp_ben: XmlElem<CollaboratorDocumentCompBen | null>;
   gdpr: XmlElem<boolean>;
   consent_kedo: XmlElem<boolean>;
-  consent_kedo_date: XmlElem<Date>;
-  last_data: XmlElem<CollaboratorDocumentLastData>;
+  consent_kedo_date: XmlElem<Date | null>;
+  last_data: XmlElem<CollaboratorDocumentLastData | null>;
   clear_cur_position(): void;
   start_action(type: string): number;
   set_basic_position(positionId: number): boolean;

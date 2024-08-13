@@ -1,11 +1,11 @@
 type SelectedResumeCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  resume_id: XmlElem<number, ResumeCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_fullname: XmlElem<string | null>;
+  resume_id: XmlElem<number | null, ResumeCatalogDocumentTopElem>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

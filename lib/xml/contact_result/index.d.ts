@@ -1,10 +1,10 @@
 type ContactResultDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   Doc: ContactResultDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   changed: XmlElem<boolean>;
   is_std: XmlElem<boolean>;
 };

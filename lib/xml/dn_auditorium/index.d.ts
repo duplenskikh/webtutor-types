@@ -1,18 +1,18 @@
 interface DnAuditoriumDocumentObjectResource {
-  object_resource_id: XmlElem<number, ObjectResourceCatalogDocumentTopElem>;
+  object_resource_id: XmlElem<number | null, ObjectResourceCatalogDocumentTopElem>;
 }
 
 type DnAuditoriumDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnAuditoriumDocument;
-  code: XmlElem<string>;
-  number_places: XmlElem<string>;
-  place_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
-  desc: XmlElem<string>;
-  object_resources: XmlMultiElem<DnAuditoriumDocumentObjectResource>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  number_places: XmlElem<string | null>;
+  place_id: XmlElem<number | null, PlaceCatalogDocumentTopElem>;
+  desc: XmlElem<string | null>;
+  object_resources: XmlMultiElem<DnAuditoriumDocumentObjectResource | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type DnAuditoriumDocument = XmlDocument & {
