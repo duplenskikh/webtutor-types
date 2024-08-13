@@ -1,16 +1,16 @@
 interface AiccCrsDocumentCourse {
-  course_id: XmlElem<string>;
-  course_title: XmlElem<string>;
-  version: XmlElem<string>;
+  course_id: XmlElem<string | null>;
+  course_title: XmlElem<string | null>;
+  version: XmlElem<string | null>;
 }
 
 interface AiccCrsDocumentCourseWindow {
-  width: XmlElem<number>;
-  height: XmlElem<number>;
+  width: XmlElem<number | null>;
+  height: XmlElem<number | null>;
 }
 
 type AiccCrCatalogDocumentTopElem = XmlTopElem & {
-  course: XmlElem<AiccCrsDocumentCourse>;
-  course_description: XmlElem<string>;
-  course_window: XmlElem<AiccCrsDocumentCourseWindow>;
+  course: XmlElem<AiccCrsDocumentCourse | null>;
+  course_description: XmlElem<string | null>;
+  course_window: XmlElem<AiccCrsDocumentCourseWindow | null>;
 };

@@ -1,13 +1,13 @@
 type InvoiceCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  date: XmlElem<Date>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  date: XmlElem<Date | null>;
   is_paid: XmlElem<boolean>;
-  amount: XmlElem<number>;
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  request_id: XmlElem<number, RequestCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  amount: XmlElem<number | null>;
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  request_id: XmlElem<number | null, RequestCatalogDocumentTopElem>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

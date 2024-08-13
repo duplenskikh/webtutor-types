@@ -2,16 +2,16 @@ type ChannelProviderDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 WebVariablesBase & {
   Doc: ChannelProviderDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  code_library_id: XmlElem<number, CodeLibraryCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  code_library_id: XmlElem<number | null, CodeLibraryCatalogDocumentTopElem>;
   root_function_name: XmlElem<string>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  doc_info: XmlElem<DocInfoBase>;
+  doc_info: XmlElem<DocInfoBase | null>;
   provider_do(channelWVars: unknown): unknown;
 };
 

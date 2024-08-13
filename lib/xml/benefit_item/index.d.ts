@@ -3,18 +3,18 @@ PersonFillingBase &
 FileListBase &
 CustomElemsBase & {
   Doc: BenefitItemDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  status: XmlElem<string, typeof common.benefit_item_statuses>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  benefit_id: XmlElem<number, BenefitCatalogDocumentTopElem>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  status: XmlElem<string | null, typeof common.benefit_item_statuses>;
+  start_date: XmlElem<Date | null>;
+  finish_date: XmlElem<Date | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  benefit_id: XmlElem<number | null, BenefitCatalogDocumentTopElem>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type BenefitItemDocument = XmlDocument & {

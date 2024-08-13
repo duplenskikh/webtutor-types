@@ -1,16 +1,16 @@
 type OrderTypeDocumentTopElem = XmlTopElem & {
   Doc: OrderTypeDocument;
-  code: XmlElem<string>;
-  number: XmlElem<number>;
-  name: XmlElem<string>;
-  prefix: XmlElem<string>;
-  suffix: XmlElem<string>;
-  default_flag: XmlElem<boolean>;
-  signing_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  responsible_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  performer_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  number: XmlElem<number | null>;
+  name: XmlElem<string | null>;
+  prefix: XmlElem<string | null>;
+  suffix: XmlElem<string | null>;
+  default_flag: XmlElem<boolean | null>;
+  signing_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  responsible_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  performer_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type OrderTypeDocument = XmlDocument & {

@@ -4,13 +4,13 @@ KnowledgePartsBaseOld &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: BookDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  comment: XmlElem<string>;
-  library_section_id: XmlElem<number, LibrarySectionCatalogDocumentTopElem>;
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  library_section_id: XmlElem<number | null, LibrarySectionCatalogDocumentTopElem>;
+  access: XmlElem<AccessDocBase | null>;
+  desc: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type BookDocument = XmlDocument & {

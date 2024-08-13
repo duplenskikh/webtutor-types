@@ -1,11 +1,11 @@
 type UserDataDocumentTopElem = XmlTopElem & {
   Doc: UserDataDocument;
-  name: XmlElem<string>;
-  code: XmlElem<string>;
+  name: XmlElem<string | null>;
+  code: XmlElem<string | null>;
   creation_date(): Date;
-  delete_date: XmlElem<Date>;
-  data: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  delete_date: XmlElem<Date | null>;
+  data: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type UserDataDocument = XmlDocument & {

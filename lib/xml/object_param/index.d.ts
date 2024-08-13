@@ -1,14 +1,14 @@
 type ObjectParamDocumentTopElem = XmlTopElem &
 ObjectTypeBase & {
   Doc: ObjectParamDocument;
-  id: XmlElem<number>;
+  id: XmlElem<number | null>;
   is_enabled: XmlElem<boolean>;
-  start_date: XmlElem<Date>;
-  sec_object_code: XmlElem<string>;
-  base_object: XmlElem<ObjectTypeBase>;
-  params_block: XmlElem<WebVariablesBase>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  start_date: XmlElem<Date | null>;
+  sec_object_code: XmlElem<string | null>;
+  base_object: XmlElem<ObjectTypeBase | null>;
+  params_block: XmlElem<WebVariablesBase | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
 };

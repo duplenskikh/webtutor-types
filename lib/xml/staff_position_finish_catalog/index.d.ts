@@ -1,16 +1,16 @@
 type StaffPositionFinishCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  subdivision_name: XmlElem<string>;
-  position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
-  position_name: XmlElem<string>;
-  position_finish_date: XmlElem<Date>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_fullname: XmlElem<string | null>;
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  subdivision_name: XmlElem<string | null>;
+  position_id: XmlElem<number | null, PositionCatalogDocumentTopElem>;
+  position_name: XmlElem<string | null>;
+  position_finish_date: XmlElem<Date | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

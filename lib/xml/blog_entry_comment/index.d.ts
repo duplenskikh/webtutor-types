@@ -2,20 +2,20 @@ type BlogEntryCommentDocumentTopElem = XmlTopElem &
 FileListBase &
 CustomElemsBase & {
   Doc: BlogEntryCommentDocument;
-  id: XmlElem<number>;
-  create_date: XmlElem<Date>;
-  blog_entry_id: XmlElem<number>;
-  object_type: XmlElem<string, typeof common.exchange_object_types>;
-  object_name: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  name: XmlElem<string>;
-  parent_id: XmlElem<number, BlogEntryCommentCatalogDocumentTopElem>;
-  like_id: XmlElem<number, LikeCatalogDocumentTopElem>;
-  message: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
-  doc_info: XmlElem<DocInfoBase>;
-  type: XmlElem<string>;
+  id: XmlElem<number | null>;
+  create_date: XmlElem<Date | null>;
+  blog_entry_id: XmlElem<number | null>;
+  object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  object_name: XmlElem<string | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_fullname: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  parent_id: XmlElem<number | null, BlogEntryCommentCatalogDocumentTopElem>;
+  like_id: XmlElem<number | null, LikeCatalogDocumentTopElem>;
+  message: XmlElem<string | null>;
+  access: XmlElem<AccessDocBase | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  type: XmlElem<string | null>;
   creator_name(): string;
 };
 

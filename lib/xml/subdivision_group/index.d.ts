@@ -1,11 +1,11 @@
 interface SubdivisionGroupDocumentSubdivision {
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  subdivision_name: XmlElem<string>;
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  subdivision_name: XmlElem<string | null>;
 }
 
 interface SubdivisionGroupDocumentKpiProfile {
-  id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  period_type_id: XmlElem<string, typeof common.perioditys>;
+  id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  period_type_id: XmlElem<string | null, typeof common.perioditys>;
   obligatory: XmlElem<boolean>;
 }
 
@@ -18,14 +18,14 @@ RequirementsBase &
 ViewConditionsBase & {
   Doc: SubdivisionGroupDocument;
   is_dynamic: XmlElem<boolean>;
-  subdivisions: XmlMultiElem<SubdivisionGroupDocumentSubdivision>;
-  kpi_profile_id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  kpi_profiles: XmlMultiElem<SubdivisionGroupDocumentKpiProfile>;
-  bonus_profile_id: XmlElem<number, BonusProfileCatalogDocumentTopElem>;
-  schedule_type_id: XmlElem<number, ScheduleTypeCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  desc: XmlElem<string>;
+  subdivisions: XmlMultiElem<SubdivisionGroupDocumentSubdivision | null>;
+  kpi_profile_id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  kpi_profiles: XmlMultiElem<SubdivisionGroupDocumentKpiProfile | null>;
+  bonus_profile_id: XmlElem<number | null, BonusProfileCatalogDocumentTopElem>;
+  schedule_type_id: XmlElem<number | null, ScheduleTypeCatalogDocumentTopElem>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  desc: XmlElem<string | null>;
   dynamic_select_subdivision(clearList: unknown): unknown;
   dynamic_select_person(clearList: unknown): unknown;
   start_action(type: string): number;

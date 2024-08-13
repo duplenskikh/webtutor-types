@@ -1,25 +1,25 @@
 type AssessmentCatalogDocumentTopElem = XmlTopElem &
 AccessDocBase &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  title: XmlElem<string>;
-  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  title: XmlElem<string | null>;
+  resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
   status: XmlElem<string, typeof common.course_test_states>;
-  duration: XmlElem<number>;
-  duration_days: XmlElem<number>;
-  passing_score: XmlElem<number>;
+  duration: XmlElem<number | null>;
+  duration_days: XmlElem<number | null>;
+  passing_score: XmlElem<number | null>;
   not_display_unfinished_score: XmlElem<boolean>;
   is_open: XmlElem<boolean>;
   use_proctoring: XmlElem<boolean>;
-  external_type: XmlElem<string, typeof common.assessment_external_types>;
-  modification_date: XmlElem<Date>;
-  creation_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
-  knowledge_parts: XmlElem<string>;
-  tags: XmlElem<string>;
-  experts: XmlElem<string>;
-  role_id: XmlMultiElemObject<number>;
-  testing_system_id: XmlElem<number, TestingSystemCatalogDocumentTopElem>;
+  external_type: XmlElem<string | null, typeof common.assessment_external_types>;
+  modification_date: XmlElem<Date | null>;
+  creation_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
+  knowledge_parts: XmlElem<string | null>;
+  tags: XmlElem<string | null>;
+  experts: XmlElem<string | null>;
+  role_id: XmlMultiElemObject<number | null>;
+  testing_system_id: XmlElem<number | null, TestingSystemCatalogDocumentTopElem>;
   OnBuild(): void;
 };

@@ -1,5 +1,5 @@
 interface ForumDocumentModerator extends PersonFillingBase {
-  moderator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  moderator_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
 }
 
 type ForumDocumentTopElem = XmlTopElem &
@@ -10,7 +10,7 @@ KnowledgePartsBaseOld &
 CustomElemsBase &
 AdminAccessBase & {
   Doc: ForumDocument;
-  create_date: XmlElem<Date>;
+  create_date: XmlElem<Date | null>;
   permit_subscription: XmlElem<boolean>;
   closed: XmlElem<boolean>;
   allow_anonymous_message: XmlElem<boolean>;
@@ -24,13 +24,13 @@ AdminAccessBase & {
   disp_foto: XmlElem<boolean>;
   need_moder_approval: XmlElem<boolean>;
   can_attach_file: XmlElem<boolean>;
-  course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
-  access: XmlElem<AccessDocBase>;
-  moderators: XmlMultiElem<ForumDocumentModerator>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  role_id: XmlMultiElemObject<number>;
+  course_id: XmlElem<number | null, CourseCatalogDocumentTopElem>;
+  access: XmlElem<AccessDocBase | null>;
+  moderators: XmlMultiElem<ForumDocumentModerator | null>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type ForumDocument = XmlDocument & {

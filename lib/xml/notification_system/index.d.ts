@@ -2,16 +2,16 @@ type NotificationSystemDocumentTopElem = XmlTopElem &
 MsParametersBase &
 AdminAccessBase & {
   Doc: NotificationSystemDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  library_url: XmlElem<string>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  library_url: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  doc_info: XmlElem<DocInfoBase>;
-  role_id: XmlMultiElemObject<number>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type NotificationSystemDocument = XmlDocument & {

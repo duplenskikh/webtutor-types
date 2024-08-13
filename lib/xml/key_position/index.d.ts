@@ -1,14 +1,14 @@
 interface KeyPositionDocumentRiskLevel {
-  risk_level_id: XmlElem<number, RiskLevelCatalogDocumentTopElem>;
+  risk_level_id: XmlElem<number | null, RiskLevelCatalogDocumentTopElem>;
 }
 
 interface KeyPositionDocumentPositionCommon {
-  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
+  position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
 }
 
 interface KeyPositionDocumentPositionName {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
 }
 
 type KeyPositionDocumentTopElem = XmlTopElem &
@@ -20,24 +20,24 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: KeyPositionDocument;
-  position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
-  position_name: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  risk_perspective_id: XmlElem<number, RiskPerspectiveCatalogDocumentTopElem>;
-  key_position_threat_id: XmlElem<number, KeyPositionThreatCatalogDocumentTopElem>;
-  career_reserve_type_id: XmlElem<number, CareerReserveTypeCatalogDocumentTopElem>;
+  position_id: XmlElem<number | null, PositionCatalogDocumentTopElem>;
+  position_name: XmlElem<string | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  risk_perspective_id: XmlElem<number | null, RiskPerspectiveCatalogDocumentTopElem>;
+  key_position_threat_id: XmlElem<number | null, KeyPositionThreatCatalogDocumentTopElem>;
+  career_reserve_type_id: XmlElem<number | null, CareerReserveTypeCatalogDocumentTopElem>;
   status: XmlElem<string, typeof common.key_position_status_types>;
   is_open: XmlElem<boolean>;
   position_type: XmlElem<string>;
-  risk_levels: XmlMultiElem<KeyPositionDocumentRiskLevel>;
-  position_commons: XmlMultiElem<KeyPositionDocumentPositionCommon>;
-  position_names: XmlMultiElem<KeyPositionDocumentPositionName>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
-  role_id: XmlMultiElemObject<number>;
+  risk_levels: XmlMultiElem<KeyPositionDocumentRiskLevel | null>;
+  position_commons: XmlMultiElem<KeyPositionDocumentPositionCommon | null>;
+  position_names: XmlMultiElem<KeyPositionDocumentPositionName | null>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  access: XmlElem<AccessDocBase | null>;
+  role_id: XmlMultiElemObject<number | null>;
   EvalThreat(arrRiskLevels: unknown, fldRiskPerspective: unknown, keyPositionId: number): unknown;
 };
 

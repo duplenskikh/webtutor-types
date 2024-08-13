@@ -1,23 +1,23 @@
 interface TaskDocumentExpert {
-  expert_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  expert_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
 }
 
 interface TaskDocumentPreparation {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_plan: XmlElem<number>;
-  role_id: XmlElem<string>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_plan: XmlElem<number | null>;
+  role_id: XmlElem<string | null>;
 }
 
 interface TaskDocumentWorkflowMatching {
-  id: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  type: XmlElem<string>;
-  is_main: XmlElem<boolean>;
+  id: XmlElem<string | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  type: XmlElem<string | null>;
+  is_main: XmlElem<boolean | null>;
 }
 
 interface TaskDocumentCustomField {
-  name: XmlElem<string>;
-  value: XmlElem<string>;
+  name: XmlElem<string | null>;
+  value: XmlElem<string | null>;
 }
 
 interface TaskDocumentFile extends FileBase {
@@ -25,15 +25,15 @@ interface TaskDocumentFile extends FileBase {
 }
 
 interface TaskDocumentCustomComment {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  workflow_state: XmlElem<string>;
-  comment: XmlElem<string>;
-  comment_date: XmlElem<Date>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  workflow_state: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  comment_date: XmlElem<Date | null>;
 }
 
 interface TaskDocumentHistory {
-  status: XmlElem<string>;
-  custom_state_id: XmlElem<string>;
+  status: XmlElem<string | null>;
+  custom_state_id: XmlElem<string | null>;
 }
 
 type TaskDocumentTopElem = XmlTopElem &
@@ -42,57 +42,57 @@ WorkflowDataBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: TaskDocument;
-  task_type_id: XmlElem<number, TaskTypeCatalogDocumentTopElem>;
-  parent_task_id: XmlElem<number, TaskCatalogDocumentTopElem>;
-  translated_task_id: XmlElem<number, TaskCatalogDocumentTopElem>;
-  translated_target_type: XmlElem<string, typeof common.exchange_object_types>;
-  translated_target_id: XmlElem<number>;
-  assigner_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  task_type_id: XmlElem<number | null, TaskTypeCatalogDocumentTopElem>;
+  parent_task_id: XmlElem<number | null, TaskCatalogDocumentTopElem>;
+  translated_task_id: XmlElem<number | null, TaskCatalogDocumentTopElem>;
+  translated_target_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  translated_target_id: XmlElem<number | null>;
+  assigner_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   executor_type: XmlElem<string, typeof common.exchange_object_types>;
-  executor_id: XmlElem<number>;
-  executor_plan: XmlElem<number>;
-  experts: XmlMultiElem<TaskDocumentExpert>;
-  preparations: XmlMultiElem<TaskDocumentPreparation>;
-  source_object_type: XmlElem<string, typeof common.exchange_object_types>;
-  source_object_id: XmlElem<number>;
-  pay_stage_id: XmlElem<number, PayStageCatalogDocumentTopElem>;
-  target_object_type: XmlElem<string, typeof common.exchange_object_types>;
-  target_object_id: XmlElem<number>;
-  fact_object_type: XmlElem<string, typeof common.exchange_object_types>;
-  fact_object_id: XmlElem<number>;
-  date_period_type: XmlElem<string, typeof common.perioditys>;
-  date_plan: XmlElem<Date>;
-  date_fact: XmlElem<Date>;
-  plan_labor_costs: XmlElem<number>;
-  fact_labor_costs: XmlElem<number>;
-  plan_budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  fact_budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  priority: XmlElem<number>;
-  start_date_plan: XmlElem<Date>;
-  end_date_plan: XmlElem<Date>;
-  delayed_start: XmlElem<number>;
-  plan_duraion: XmlElem<number>;
-  plan: XmlElem<string>;
-  plan_value: XmlElem<number>;
-  fact: XmlElem<string>;
-  fact_value: XmlElem<number>;
-  custom_state_id: XmlElem<string>;
-  status: XmlElem<string, typeof common.task_statuses>;
-  value: XmlElem<number>;
-  readiness_percent: XmlElem<number>;
-  conversation_id: XmlElem<number, ConversationCatalogDocumentTopElem>;
-  workflow_matchings: XmlMultiElem<TaskDocumentWorkflowMatching>;
-  workflow_matching_type: XmlElem<string>;
-  custom_fields: XmlMultiElem<TaskDocumentCustomField>;
-  files: XmlMultiElem<TaskDocumentFile>;
+  executor_id: XmlElem<number | null>;
+  executor_plan: XmlElem<number | null>;
+  experts: XmlMultiElem<TaskDocumentExpert | null>;
+  preparations: XmlMultiElem<TaskDocumentPreparation | null>;
+  source_object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  source_object_id: XmlElem<number | null>;
+  pay_stage_id: XmlElem<number | null, PayStageCatalogDocumentTopElem>;
+  target_object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  target_object_id: XmlElem<number | null>;
+  fact_object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  fact_object_id: XmlElem<number | null>;
+  date_period_type: XmlElem<string | null, typeof common.perioditys>;
+  date_plan: XmlElem<Date | null>;
+  date_fact: XmlElem<Date | null>;
+  plan_labor_costs: XmlElem<number | null>;
+  fact_labor_costs: XmlElem<number | null>;
+  plan_budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  fact_budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  priority: XmlElem<number | null>;
+  start_date_plan: XmlElem<Date | null>;
+  end_date_plan: XmlElem<Date | null>;
+  delayed_start: XmlElem<number | null>;
+  plan_duraion: XmlElem<number | null>;
+  plan: XmlElem<string | null>;
+  plan_value: XmlElem<number | null>;
+  fact: XmlElem<string | null>;
+  fact_value: XmlElem<number | null>;
+  custom_state_id: XmlElem<string | null>;
+  status: XmlElem<string | null, typeof common.task_statuses>;
+  value: XmlElem<number | null>;
+  readiness_percent: XmlElem<number | null>;
+  conversation_id: XmlElem<number | null, ConversationCatalogDocumentTopElem>;
+  workflow_matchings: XmlMultiElem<TaskDocumentWorkflowMatching | null>;
+  workflow_matching_type: XmlElem<string | null>;
+  custom_fields: XmlMultiElem<TaskDocumentCustomField | null>;
+  files: XmlMultiElem<TaskDocumentFile | null>;
   AddFile(fileId: number): void;
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  custom_comments: XmlMultiElem<TaskDocumentCustomComment>;
-  doc_info: XmlElem<DocInfoBase>;
-  history: XmlElem<TaskDocumentHistory>;
-  role_id: XmlMultiElemObject<number>;
+  access: XmlElem<AccessDocBase | null>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  custom_comments: XmlMultiElem<TaskDocumentCustomComment | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  history: XmlElem<TaskDocumentHistory | null>;
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type TaskDocument = XmlDocument & {

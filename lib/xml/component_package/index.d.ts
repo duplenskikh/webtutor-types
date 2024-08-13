@@ -3,20 +3,20 @@ FileListBase &
 KnowledgePartsBase &
 CustomElemsBase & {
   Doc: ComponentPackageDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  comment: XmlElem<string>;
-  download_date: XmlElem<Date>;
-  is_download: XmlElem<boolean>;
-  is_install: XmlElem<boolean>;
-  type_id: XmlElem<string, typeof common.access_block_types>;
-  component_modification_date: XmlElem<Date>;
-  is_std: XmlElem<boolean>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  download_date: XmlElem<Date | null>;
+  is_download: XmlElem<boolean | null>;
+  is_install: XmlElem<boolean | null>;
+  type_id: XmlElem<string | null, typeof common.access_block_types>;
+  component_modification_date: XmlElem<Date | null>;
+  is_std: XmlElem<boolean | null>;
   changed: XmlElem<boolean>;
-  download_package_file_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
-  text_area: XmlElem<string>;
+  download_package_file_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  access: XmlElem<AccessDocBase | null>;
+  text_area: XmlElem<string | null>;
   load_file(tData: unknown, source: unknown, needInstall: unknown): number | undefined;
 };
 

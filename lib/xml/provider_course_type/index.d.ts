@@ -2,14 +2,14 @@ type ProviderCourseTypeDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 WebVariablesBase & {
   Doc: ProviderCourseTypeDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  library_url: XmlElem<string>;
-  comment: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  library_url: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  doc_info: XmlElem<DocInfoBase>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ProviderCourseTypeDocument = XmlDocument & {

@@ -1,20 +1,20 @@
 type BannerDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   Doc: BannerDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
   type: XmlElem<string>;
-  zone: XmlElem<string>;
-  img_url: XmlElem<string>;
-  url: XmlElem<string>;
-  html_text: XmlElem<string>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
-  role_id: XmlMultiElemObject<number>;
+  zone: XmlElem<string | null>;
+  img_url: XmlElem<string | null>;
+  url: XmlElem<string | null>;
+  html_text: XmlElem<string | null>;
+  start_date: XmlElem<Date | null>;
+  finish_date: XmlElem<Date | null>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  access: XmlElem<AccessDocBase | null>;
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type BannerDocument = XmlDocument & {

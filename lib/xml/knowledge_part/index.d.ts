@@ -1,7 +1,7 @@
 interface KnowledgePartDocumentLevel extends MsConfirmationBase {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
-  desc: XmlElem<string>;
+  id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
   expertise_level: XmlElem<boolean>;
   confirmation_type: XmlElem<string, typeof common.confirmation_types>;
 }
@@ -13,20 +13,20 @@ FileListBase &
 CustomElemsBase &
 KnowledgePartsBase & {
   Doc: KnowledgePartDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
-  parent_object_id: XmlElem<number, KnowledgePartCatalogDocumentTopElem>;
-  knowledge_classifier_id: XmlElem<number, KnowledgeClassifierCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
+  parent_object_id: XmlElem<number | null, KnowledgePartCatalogDocumentTopElem>;
+  knowledge_classifier_id: XmlElem<number | null, KnowledgeClassifierCatalogDocumentTopElem>;
   confirmation_type: XmlElem<string, typeof common.confirmation_types>;
-  text_area: XmlElem<string>;
+  text_area: XmlElem<string | null>;
   require_acknowledgement: XmlElem<boolean>;
-  levels: XmlMultiElem<KnowledgePartDocumentLevel>;
-  access: XmlElem<AccessDocBase>;
-  doc_info: XmlElem<DocInfoBase>;
-  comment: XmlElem<string>;
-  knowledge_part_type_id: XmlElem<number, KnowledgePartTypeCatalogDocumentTopElem>;
+  levels: XmlMultiElem<KnowledgePartDocumentLevel | null>;
+  access: XmlElem<AccessDocBase | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  comment: XmlElem<string | null>;
+  knowledge_part_type_id: XmlElem<number | null, KnowledgePartTypeCatalogDocumentTopElem>;
 };
 
 type KnowledgePartDocument = XmlDocument & {

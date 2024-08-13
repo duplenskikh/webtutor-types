@@ -1,87 +1,87 @@
 interface PositionCommonDocumentParentPositionCommon {
-  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
-  career_transition_direction: XmlElem<string, typeof common.career_transition_direction_types>;
+  position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
+  career_transition_direction: XmlElem<string | null, typeof common.career_transition_direction_types>;
 }
 
 interface PositionCommonDocumentPositionFamily {
-  position_family_id: XmlElem<number, PositionFamilyCatalogDocumentTopElem>;
+  position_family_id: XmlElem<number | null, PositionFamilyCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentPositionName {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
 }
 
 interface PositionCommonDocumentBonusType {
-  id: XmlElem<string>;
+  id: XmlElem<string | null>;
   checked: XmlElem<boolean>;
-  name: XmlElem<string>;
-  min_value: XmlElem<number>;
-  max_value: XmlElem<number>;
+  name: XmlElem<string | null>;
+  min_value: XmlElem<number | null>;
+  max_value: XmlElem<number | null>;
   value_type: XmlElem<string>;
-  comment: XmlElem<string>;
+  comment: XmlElem<string | null>;
 }
 
 interface PositionCommonDocumentGrade {
-  grade_id: XmlElem<number, GradeCatalogDocumentTopElem>;
-  name: XmlElem<string>;
-  min_grade: XmlElem<number>;
-  max_grade: XmlElem<number>;
+  grade_id: XmlElem<number | null, GradeCatalogDocumentTopElem>;
+  name: XmlElem<string | null>;
+  min_grade: XmlElem<number | null>;
+  max_grade: XmlElem<number | null>;
 }
 
 interface PositionCommonDocumentBenefit {
-  id: XmlElem<number, BenefitCatalogDocumentTopElem>;
+  id: XmlElem<number | null, BenefitCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentCompetenceProfile {
-  id: XmlElem<number, CompetenceProfileCatalogDocumentTopElem>;
+  id: XmlElem<number | null, CompetenceProfileCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentKpiProfile {
-  id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  period_type_id: XmlElem<string, typeof common.perioditys>;
+  id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  period_type_id: XmlElem<string | null, typeof common.perioditys>;
   obligatory: XmlElem<boolean>;
 }
 
 interface PositionCommonDocumentSubdivision {
-  id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentOrg {
-  id: XmlElem<number, OrgCatalogDocumentTopElem>;
+  id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentLevelCertificateType {
-  certificate_type_id: XmlElem<number, CertificateTypeCatalogDocumentTopElem>;
+  certificate_type_id: XmlElem<number | null, CertificateTypeCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentLevelCompoundProgram {
-  compound_program_id: XmlElem<number, CompoundProgramCatalogDocumentTopElem>;
+  compound_program_id: XmlElem<number | null, CompoundProgramCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentLevelEducationMethod {
-  education_method_id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
+  education_method_id: XmlElem<number | null, EducationMethodCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentLevelTypicalDevelopmentProgram {
-  typical_development_program_id: XmlElem<number, TypicalDevelopmentProgramCatalogDocumentTopElem>;
+  typical_development_program_id: XmlElem<number | null, TypicalDevelopmentProgramCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentLevelQualification {
-  qualification_id: XmlElem<number, QualificationCatalogDocumentTopElem>;
+  qualification_id: XmlElem<number | null, QualificationCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentLevel {
-  level_id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  competence_profile_id: XmlElem<number, CompetenceProfileCatalogDocumentTopElem>;
-  kpi_profile_id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  certificate_types: XmlMultiElem<PositionCommonDocumentLevelCertificateType>;
-  compound_programs: XmlMultiElem<PositionCommonDocumentLevelCompoundProgram>;
-  education_methods: XmlMultiElem<PositionCommonDocumentLevelEducationMethod>;
-  typical_development_programs: XmlMultiElem<PositionCommonDocumentLevelTypicalDevelopmentProgram>;
-  qualifications: XmlMultiElem<PositionCommonDocumentLevelQualification>;
+  level_id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  competence_profile_id: XmlElem<number | null, CompetenceProfileCatalogDocumentTopElem>;
+  kpi_profile_id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  certificate_types: XmlMultiElem<PositionCommonDocumentLevelCertificateType | null>;
+  compound_programs: XmlMultiElem<PositionCommonDocumentLevelCompoundProgram | null>;
+  education_methods: XmlMultiElem<PositionCommonDocumentLevelEducationMethod | null>;
+  typical_development_programs: XmlMultiElem<PositionCommonDocumentLevelTypicalDevelopmentProgram | null>;
+  qualifications: XmlMultiElem<PositionCommonDocumentLevelQualification | null>;
 }
 
 type PositionCommonDocumentTopElem = XmlTopElem &
@@ -93,35 +93,35 @@ KnowledgePartsBaseOld &
 CustomElemsBase &
 AdminAccessBase & {
   Doc: PositionCommonDocument;
-  min_grade: XmlElem<number>;
-  max_grade: XmlElem<number>;
-  benefit_sum: XmlElem<number>;
-  status: XmlElem<string, typeof common.position_common_statuss>;
-  parent_position_commons: XmlMultiElem<PositionCommonDocumentParentPositionCommon>;
-  position_familys: XmlMultiElem<PositionCommonDocumentPositionFamily>;
-  position_names: XmlMultiElem<PositionCommonDocumentPositionName>;
-  min_salary: XmlElem<number>;
-  max_salary: XmlElem<number>;
-  currency: XmlElem<string, typeof lists.currency_types>;
+  min_grade: XmlElem<number | null>;
+  max_grade: XmlElem<number | null>;
+  benefit_sum: XmlElem<number | null>;
+  status: XmlElem<string | null, typeof common.position_common_statuss>;
+  parent_position_commons: XmlMultiElem<PositionCommonDocumentParentPositionCommon | null>;
+  position_familys: XmlMultiElem<PositionCommonDocumentPositionFamily | null>;
+  position_names: XmlMultiElem<PositionCommonDocumentPositionName | null>;
+  min_salary: XmlElem<number | null>;
+  max_salary: XmlElem<number | null>;
+  currency: XmlElem<string | null, typeof lists.currency_types>;
   allow_outstaff: XmlElem<boolean>;
-  bonus_types: XmlMultiElem<PositionCommonDocumentBonusType>;
-  grades: XmlMultiElem<PositionCommonDocumentGrade>;
-  benefits: XmlMultiElem<PositionCommonDocumentBenefit>;
-  competence_profile_id: XmlElem<number, CompetenceProfileCatalogDocumentTopElem>;
-  competence_profiles: XmlMultiElem<PositionCommonDocumentCompetenceProfile>;
-  kpi_profile_id: XmlElem<number>;
-  kpi_profiles: XmlMultiElem<PositionCommonDocumentKpiProfile>;
-  bonus_profile_id: XmlElem<number, BonusProfileCatalogDocumentTopElem>;
-  knowledge_profile_id: XmlElem<number, KnowledgeProfileCatalogDocumentTopElem>;
-  subdivisions: XmlMultiElem<PositionCommonDocumentSubdivision>;
-  orgs: XmlMultiElem<PositionCommonDocumentOrg>;
-  cur_level_id: XmlElem<number>;
-  levels: XmlMultiElem<PositionCommonDocumentLevel>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
-  role_id: XmlMultiElemObject<number>;
+  bonus_types: XmlMultiElem<PositionCommonDocumentBonusType | null>;
+  grades: XmlMultiElem<PositionCommonDocumentGrade | null>;
+  benefits: XmlMultiElem<PositionCommonDocumentBenefit | null>;
+  competence_profile_id: XmlElem<number | null, CompetenceProfileCatalogDocumentTopElem>;
+  competence_profiles: XmlMultiElem<PositionCommonDocumentCompetenceProfile | null>;
+  kpi_profile_id: XmlElem<number | null>;
+  kpi_profiles: XmlMultiElem<PositionCommonDocumentKpiProfile | null>;
+  bonus_profile_id: XmlElem<number | null, BonusProfileCatalogDocumentTopElem>;
+  knowledge_profile_id: XmlElem<number | null, KnowledgeProfileCatalogDocumentTopElem>;
+  subdivisions: XmlMultiElem<PositionCommonDocumentSubdivision | null>;
+  orgs: XmlMultiElem<PositionCommonDocumentOrg | null>;
+  cur_level_id: XmlElem<number | null>;
+  levels: XmlMultiElem<PositionCommonDocumentLevel | null>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  access: XmlElem<AccessDocBase | null>;
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type PositionCommonDocument = XmlDocument & {

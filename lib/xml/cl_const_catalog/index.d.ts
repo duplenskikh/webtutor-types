@@ -1,10 +1,10 @@
 type ClConstCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  imprint: XmlMultiElemObject<string>;
-  object_id: XmlMultiElemObject<number>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  imprint: XmlMultiElemObject<string | null>;
+  object_id: XmlMultiElemObject<number | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

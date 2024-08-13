@@ -2,7 +2,7 @@ type PanelEditValueDocumentTopElem = XmlTopElem &
 ViewConditionBase &
 FieldNamesBase & {
   Doc: PanelEditValueDocument;
-  catalog_name: XmlElem<string>;
+  catalog_name: XmlElem<string | null>;
 };
 
 type PanelEditValueDocument = XmlDocument & {

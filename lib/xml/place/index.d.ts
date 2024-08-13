@@ -3,15 +3,15 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: PlaceDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  parent_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
-  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
-  timezone_id: XmlElem<number, typeof common.timezones>;
-  address: XmlElem<string>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  parent_id: XmlElem<number | null, PlaceCatalogDocumentTopElem>;
+  region_id: XmlElem<number | null, RegionCatalogDocumentTopElem>;
+  timezone_id: XmlElem<number | null, typeof common.timezones>;
+  address: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type PlaceDocument = XmlDocument & {

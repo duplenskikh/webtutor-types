@@ -1,7 +1,7 @@
 type ReprimandTypeCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  modification_date: XmlElem<Date>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  modification_date: XmlElem<Date | null>;
   OnBuild(): void;
 };

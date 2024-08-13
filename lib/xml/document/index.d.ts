@@ -18,21 +18,21 @@ DocumentPersonsBase &
 CustomElemsBase &
 AdminAccessBase & {
   Doc: DocumentDocument;
-  create_date: XmlElem<Date>;
-  parent_document_id: XmlElem<number, DocumentCatalogDocumentTopElem>;
-  site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
+  create_date: XmlElem<Date | null>;
+  parent_document_id: XmlElem<number | null, DocumentCatalogDocumentTopElem>;
+  site_id: XmlElem<number | null, SiteCatalogDocumentTopElem>;
   catalog_list_desc(): string;
-  text_area: XmlElem<string>;
-  attributes: XmlElem<DocumentDocumentAttributes>;
-  web_template_type: XmlElem<string, typeof common.web_template_types>;
-  custom_template_type: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
-  templates_source: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
+  text_area: XmlElem<string | null>;
+  attributes: XmlElem<DocumentDocumentAttributes | null>;
+  web_template_type: XmlElem<string | null, typeof common.web_template_types>;
+  custom_template_type: XmlElem<number | null, CustomWebTemplateCatalogDocumentTopElem>;
+  templates_source: XmlElem<string | null>;
+  access: XmlElem<AccessDocBase | null>;
   access_exists(): boolean;
-  parent_object_type: XmlElem<string, typeof common.exchange_object_types>;
-  parent_object_id: XmlElem<number>;
-  doc_info: XmlElem<DocInfoBase>;
-  comment: XmlElem<string>;
+  parent_object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  parent_object_id: XmlElem<number | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  comment: XmlElem<string | null>;
   set_template(templateType: string): void;
   set_default_template(): boolean;
   update_template(): unknown;

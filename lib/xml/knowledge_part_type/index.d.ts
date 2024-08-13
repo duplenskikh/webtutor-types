@@ -1,9 +1,9 @@
 type KnowledgePartTypeDocumentTopElem = XmlTopElem & {
   Doc: KnowledgePartTypeDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type KnowledgePartTypeDocument = XmlDocument & {

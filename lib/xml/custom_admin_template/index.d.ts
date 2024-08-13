@@ -2,17 +2,17 @@ type CustomAdminTemplateDocumentTopElem = XmlTopElem &
 ExecCodeBase &
 WebVariablesBase & {
   Doc: CustomAdminTemplateDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  category: XmlElem<string>;
-  form_name: XmlElem<string>;
-  xms: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  category: XmlElem<string | null>;
+  form_name: XmlElem<string | null>;
+  xms: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   changed: XmlElem<boolean>;
   is_std: XmlElem<boolean>;
-  role_id: XmlMultiElemObject<number>;
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type CustomAdminTemplateDocument = XmlDocument & {

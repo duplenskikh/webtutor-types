@@ -3,13 +3,13 @@ ObjectCodeNameBase &
 PersonFillingBase & {
   Doc: GoodInstanceDocument;
   status: XmlElem<string, typeof common.good_instance_status_types>;
-  good_id: XmlElem<number, GoodCatalogDocumentTopElem>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  reserved_date: XmlElem<Date>;
-  paid_date: XmlElem<Date>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  good_id: XmlElem<number | null, GoodCatalogDocumentTopElem>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  reserved_date: XmlElem<Date | null>;
+  paid_date: XmlElem<Date | null>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   clear_status(): unknown;
 };
 

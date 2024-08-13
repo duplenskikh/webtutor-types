@@ -1,4 +1,4 @@
 type CategoryCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
 };

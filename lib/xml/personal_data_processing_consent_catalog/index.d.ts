@@ -1,13 +1,13 @@
 type PersonalDataProcessingConsentCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  consent_date: XmlElem<Date>;
-  person_type: XmlElem<string>;
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_fullname: XmlElem<string | null>;
+  consent_date: XmlElem<Date | null>;
+  person_type: XmlElem<string | null>;
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  site_id: XmlElem<number | null, SiteCatalogDocumentTopElem>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

@@ -1,12 +1,12 @@
 type SkillCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  parent_id: XmlElem<number, SkillCatalogDocumentTopElem>;
-  use_parent_levels: XmlElem<boolean>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
-  role_id: XmlMultiElemObject<number>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  parent_id: XmlElem<number | null, SkillCatalogDocumentTopElem>;
+  use_parent_levels: XmlElem<boolean | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
+  role_id: XmlMultiElemObject<number | null>;
   OnBuild(): void;
 };

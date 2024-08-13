@@ -2,16 +2,16 @@ type CheckScheduleDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 WebVariablesBase & {
   Doc: CheckScheduleDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
   is_enabled: XmlElem<boolean>;
   type_id: XmlElem<string, typeof common.check_schedule_types>;
-  library_url: XmlElem<string>;
-  comment: XmlElem<string>;
+  library_url: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  doc_info: XmlElem<DocInfoBase>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type CheckScheduleDocument = XmlDocument & {

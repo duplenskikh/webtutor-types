@@ -1,29 +1,29 @@
 interface ImportEventsDocumentCollaborator {
-  collaborator_id: XmlElem<string>;
-  lastname: XmlElem<string>;
-  firstname: XmlElem<string>;
-  middlename: XmlElem<string>;
-  birth_date: XmlElem<Date>;
-  sex: XmlElem<string>;
-  email: XmlElem<string>;
-  person_position_name: XmlElem<string>;
-  person_org_name: XmlElem<string>;
+  collaborator_id: XmlElem<string | null>;
+  lastname: XmlElem<string | null>;
+  firstname: XmlElem<string | null>;
+  middlename: XmlElem<string | null>;
+  birth_date: XmlElem<Date | null>;
+  sex: XmlElem<string | null>;
+  email: XmlElem<string | null>;
+  person_position_name: XmlElem<string | null>;
+  person_org_name: XmlElem<string | null>;
 }
 
 interface ImportEventsDocumentTest {
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  qti_text: XmlElem<string>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  qti_text: XmlElem<string | null>;
 }
 
 type ImportEventCatalogDocumentTopElem = XmlTopElem & {
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  start_date: XmlElem<Date>;
-  education_org_name: XmlElem<string>;
-  status_id: XmlElem<string, typeof common.event_status_types>;
-  collaborators: XmlMultiElem<ImportEventsDocumentCollaborator>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  test: XmlElem<ImportEventsDocumentTest>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  start_date: XmlElem<Date | null>;
+  education_org_name: XmlElem<string | null>;
+  status_id: XmlElem<string | null, typeof common.event_status_types>;
+  collaborators: XmlMultiElem<ImportEventsDocumentCollaborator | null>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  test: XmlElem<ImportEventsDocumentTest | null>;
 };

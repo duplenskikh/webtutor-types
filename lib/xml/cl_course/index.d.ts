@@ -1,57 +1,57 @@
 interface ClCourseDocumentModule {
-  id: XmlElem<number, ClModuleCatalogDocumentTopElem>;
+  id: XmlElem<number | null, ClModuleCatalogDocumentTopElem>;
   path_id: XmlElem<string>;
-  folder_id: XmlElem<number>;
+  folder_id: XmlElem<number | null>;
 }
 
 interface ClCourseDocumentWindow {
-  module_id: XmlElem<number, ClModuleCatalogDocumentTopElem>;
-  zoom: XmlElem<number>;
+  module_id: XmlElem<number | null, ClModuleCatalogDocumentTopElem>;
+  zoom: XmlElem<number | null>;
   active: XmlElem<boolean>;
-  slide_id: XmlElem<number, ClSlideCatalogDocumentTopElem>;
+  slide_id: XmlElem<number | null, ClSlideCatalogDocumentTopElem>;
 }
 
 interface ClCourseDocumentFolder {
-  id: XmlElem<number>;
-  name: XmlElem<string>;
-  parent_id: XmlElem<number>;
+  id: XmlElem<number | null>;
+  name: XmlElem<string | null>;
+  parent_id: XmlElem<number | null>;
 }
 
 interface ClCourseDocumentAuthorType {
-  type_id: XmlElem<number, typeof common.cl_author_types>;
+  type_id: XmlElem<number | null, typeof common.cl_author_types>;
 }
 
 interface ClCourseDocumentAuthor extends PersonFillingBase {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   typecode(): number;
-  types: XmlMultiElem<ClCourseDocumentAuthorType>;
+  types: XmlMultiElem<ClCourseDocumentAuthorType | null>;
   types_display(): boolean;
 }
 
 interface ClCourseDocumentRepositorium {
-  repositorium_id: XmlElem<number, RepositoriumCatalogDocumentTopElem>;
+  repositorium_id: XmlElem<number | null, RepositoriumCatalogDocumentTopElem>;
 }
 
 interface ClCourseDocumentPlanTablePlanRow {
-  id: XmlElem<string>;
-  start_date: XmlElem<Date>;
-  plan_date: XmlElem<Date>;
-  fact_date: XmlElem<Date>;
+  id: XmlElem<string | null>;
+  start_date: XmlElem<Date | null>;
+  plan_date: XmlElem<Date | null>;
+  fact_date: XmlElem<Date | null>;
   completion: XmlElem<number>;
-  name: XmlElem<string>;
-  responsible_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  responsible_fullname: XmlElem<string>;
-  description: XmlElem<string>;
-  req_plan_row_id: XmlElem<string>;
+  name: XmlElem<string | null>;
+  responsible_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  responsible_fullname: XmlElem<string | null>;
+  description: XmlElem<string | null>;
+  req_plan_row_id: XmlElem<string | null>;
 }
 
 interface ClCourseDocumentPlanTable {
-  plan_row: XmlElem<ClCourseDocumentPlanTablePlanRow>;
+  plan_row: XmlElem<ClCourseDocumentPlanTablePlanRow | null>;
 }
 
 interface ClCourseDocumentAuxConst {
-  code: XmlElem<string>;
-  cl_const_id: XmlElem<number, ClConstCatalogDocumentTopElem>;
+  code: XmlElem<string | null>;
+  cl_const_id: XmlElem<number | null, ClConstCatalogDocumentTopElem>;
 }
 
 type ClCourseDocumentTopElem = XmlTopElem &
@@ -60,23 +60,23 @@ ClLocalizationsBase &
 KnowledgePartsBase &
 CustomElemsBase & {
   Doc: ClCourseDocument;
-  start_date: XmlElem<Date>;
-  end_date: XmlElem<Date>;
+  start_date: XmlElem<Date | null>;
+  end_date: XmlElem<Date | null>;
   state_id: XmlElem<number, typeof common.cl_states>;
-  platform: XmlElem<string>;
-  modules: XmlMultiElem<ClCourseDocumentModule>;
-  windows: XmlMultiElem<ClCourseDocumentWindow>;
-  folders: XmlMultiElem<ClCourseDocumentFolder>;
-  authors: XmlMultiElem<ClCourseDocumentAuthor>;
-  repositoriums: XmlMultiElem<ClCourseDocumentRepositorium>;
-  plan_table: XmlElem<ClCourseDocumentPlanTable>;
-  aux_consts: XmlMultiElem<ClCourseDocumentAuxConst>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  forum_id: XmlElem<number, ForumCatalogDocumentTopElem>;
-  role_id: XmlMultiElemObject<number>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
+  platform: XmlElem<string | null>;
+  modules: XmlMultiElem<ClCourseDocumentModule | null>;
+  windows: XmlMultiElem<ClCourseDocumentWindow | null>;
+  folders: XmlMultiElem<ClCourseDocumentFolder | null>;
+  authors: XmlMultiElem<ClCourseDocumentAuthor | null>;
+  repositoriums: XmlMultiElem<ClCourseDocumentRepositorium | null>;
+  plan_table: XmlElem<ClCourseDocumentPlanTable | null>;
+  aux_consts: XmlMultiElem<ClCourseDocumentAuxConst | null>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  forum_id: XmlElem<number | null, ForumCatalogDocumentTopElem>;
+  role_id: XmlMultiElemObject<number | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  access: XmlElem<AccessDocBase | null>;
   module_href_get(): false | void;
   export_2_scorm(): false | void;
   fix_new_authors(): void;

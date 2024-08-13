@@ -1,9 +1,9 @@
 type ForumCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
   permit_subscription: XmlElem<boolean>;
   closed: XmlElem<boolean>;
   allow_anonymous_message: XmlElem<boolean>;
@@ -11,14 +11,14 @@ AdminAccessBase & {
   allow_user_delete: XmlElem<boolean>;
   disp_user_status: XmlElem<boolean>;
   need_moder_approval: XmlElem<boolean>;
-  course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  knowledge_parts: XmlElem<string>;
-  tags: XmlElem<string>;
-  experts: XmlElem<string>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
-  role_id: XmlMultiElemObject<number>;
+  course_id: XmlElem<number | null, CourseCatalogDocumentTopElem>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_fullname: XmlElem<string | null>;
+  knowledge_parts: XmlElem<string | null>;
+  tags: XmlElem<string | null>;
+  experts: XmlElem<string | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
+  role_id: XmlMultiElemObject<number | null>;
   OnBuild(): void;
 };

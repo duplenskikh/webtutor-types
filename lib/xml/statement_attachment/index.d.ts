@@ -1,14 +1,14 @@
 type StatementAttachmentDocumentTopElem = XmlTopElem & {
   Doc: StatementAttachmentDocument;
-  id: XmlElem<number>;
-  path: XmlElem<string>;
-  usage_type: XmlElem<string>;
-  content_type: XmlElem<string>;
-  length: XmlElem<string>;
-  file_hash: XmlElem<string>;
-  file_url: XmlElem<string>;
-  statement_id: XmlElem<number, StatementCatalogDocumentTopElem>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  path: XmlElem<string | null>;
+  usage_type: XmlElem<string | null>;
+  content_type: XmlElem<string | null>;
+  length: XmlElem<string | null>;
+  file_hash: XmlElem<string | null>;
+  file_url: XmlElem<string | null>;
+  statement_id: XmlElem<number | null, StatementCatalogDocumentTopElem>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type StatementAttachmentDocument = XmlDocument & {

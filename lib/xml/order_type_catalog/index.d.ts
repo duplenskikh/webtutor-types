@@ -1,15 +1,15 @@
 type OrderTypeCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  number: XmlElem<string>;
-  prefix: XmlElem<string>;
-  suffix: XmlElem<string>;
-  signing_person_fullname: XmlElem<string>;
-  responsible_person_fullname: XmlElem<string>;
-  performer_person_fullname: XmlElem<string>;
-  default_flag: XmlElem<boolean>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  number: XmlElem<string | null>;
+  prefix: XmlElem<string | null>;
+  suffix: XmlElem<string | null>;
+  signing_person_fullname: XmlElem<string | null>;
+  responsible_person_fullname: XmlElem<string | null>;
+  performer_person_fullname: XmlElem<string | null>;
+  default_flag: XmlElem<boolean | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

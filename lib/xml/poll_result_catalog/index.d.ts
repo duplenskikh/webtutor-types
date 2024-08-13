@@ -1,21 +1,21 @@
 type PollResultCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  poll_id: XmlElem<number, PollCatalogDocumentTopElem>;
-  poll_procedure_id: XmlElem<number, PollProcedureCatalogDocumentTopElem>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  person_org_name: XmlElem<string>;
-  question_id: XmlMultiElemObject<number>;
-  is_done: XmlElem<boolean>;
-  status: XmlElem<number>;
-  education_plan_id: XmlElem<number, EducationPlanCatalogDocumentTopElem>;
-  create_date: XmlElem<Date>;
-  main_value: XmlElem<string>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  poll_id: XmlElem<number | null, PollCatalogDocumentTopElem>;
+  poll_procedure_id: XmlElem<number | null, PollProcedureCatalogDocumentTopElem>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_fullname: XmlElem<string | null>;
+  person_org_name: XmlElem<string | null>;
+  question_id: XmlMultiElemObject<number | null>;
+  is_done: XmlElem<boolean | null>;
+  status: XmlElem<number | null>;
+  education_plan_id: XmlElem<number | null, EducationPlanCatalogDocumentTopElem>;
+  create_date: XmlElem<Date | null>;
+  main_value: XmlElem<string | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   use_proctoring: XmlElem<boolean>;
   OnBuild(): void;
 };

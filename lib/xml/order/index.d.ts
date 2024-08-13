@@ -1,26 +1,26 @@
 interface OrderDocumentGoodGoodInstance {
-  good_instance_id: XmlElem<number, GoodInstanceCatalogDocumentTopElem>;
-  name: XmlElem<string>;
-  code: XmlElem<string>;
+  good_instance_id: XmlElem<number | null, GoodInstanceCatalogDocumentTopElem>;
+  name: XmlElem<string | null>;
+  code: XmlElem<string | null>;
   cost: XmlElem<number>;
-  reserved_date: XmlElem<Date>;
+  reserved_date: XmlElem<Date | null>;
   status: XmlElem<string, typeof common.good_instance_status_types>;
-  request_id: XmlElem<number, RequestCatalogDocumentTopElem>;
+  request_id: XmlElem<number | null, RequestCatalogDocumentTopElem>;
 }
 
 interface OrderDocumentGood {
-  good_id: XmlElem<number, GoodCatalogDocumentTopElem>;
-  name: XmlElem<string>;
-  code: XmlElem<string>;
+  good_id: XmlElem<number | null, GoodCatalogDocumentTopElem>;
+  name: XmlElem<string | null>;
+  code: XmlElem<string | null>;
   number: XmlElem<number>;
-  reserved_date: XmlElem<Date>;
-  good_instances: XmlMultiElem<OrderDocumentGoodGoodInstance>;
+  reserved_date: XmlElem<Date | null>;
+  good_instances: XmlMultiElem<OrderDocumentGoodGoodInstance | null>;
   delivery_type: XmlElem<string, typeof common.delivery_types>;
   cost: XmlElem<number>;
   sum(): number;
   add_good_instance(goodInstanceId: number): unknown;
   status: XmlElem<string, typeof common.order_status_types>;
-  request_id: XmlElem<number, RequestCatalogDocumentTopElem>;
+  request_id: XmlElem<number | null, RequestCatalogDocumentTopElem>;
 }
 
 type OrderDocumentTopElem = XmlTopElem &
@@ -28,19 +28,19 @@ PersonFillingBase &
 FileListBase &
 CustomElemsBase & {
   Doc: OrderDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
   status: XmlElem<string, typeof common.order_status_types>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  goods: XmlMultiElem<OrderDocumentGood>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  goods: XmlMultiElem<OrderDocumentGood | null>;
   sum(): number;
-  currency_type_id: XmlElem<string, typeof lists.currency_types>;
-  formed_date: XmlElem<Date>;
-  paid_date: XmlElem<Date>;
-  issue_date: XmlElem<Date>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  currency_type_id: XmlElem<string | null, typeof lists.currency_types>;
+  formed_date: XmlElem<Date | null>;
+  paid_date: XmlElem<Date | null>;
+  issue_date: XmlElem<Date | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   calculate_status(): unknown;
 };
 

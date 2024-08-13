@@ -1,10 +1,10 @@
 type ForumThemeReadByCollaboratorDocumentTopElem = XmlTopElem & {
   Doc: ForumThemeReadByCollaboratorDocument;
-  forum_id: XmlElem<number, ForumCatalogDocumentTopElem>;
-  forum_theme_id: XmlElem<number, ForumEntryCatalogDocumentTopElem>;
-  date: XmlElem<Date>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  doc_info: XmlElem<DocInfoBase>;
+  forum_id: XmlElem<number | null, ForumCatalogDocumentTopElem>;
+  forum_theme_id: XmlElem<number | null, ForumEntryCatalogDocumentTopElem>;
+  date: XmlElem<Date | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ForumThemeReadByCollaboratorDocument = XmlDocument & {

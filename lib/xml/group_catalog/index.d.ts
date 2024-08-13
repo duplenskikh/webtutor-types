@@ -1,23 +1,23 @@
 type GroupCatalogDocumentTopElem = XmlTopElem &
 AccessDocBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
-  person_num: XmlElem<number>;
-  forum_id: XmlElem<number, ForumCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
+  person_num: XmlElem<number | null>;
+  forum_id: XmlElem<number | null, ForumCatalogDocumentTopElem>;
   is_dynamic: XmlElem<boolean>;
   is_educ: XmlElem<boolean>;
   is_hidden: XmlElem<boolean>;
   allow_social_post: XmlElem<boolean>;
-  join_mode: XmlElem<string, typeof common.join_mode_types>;
-  kpi_profile_id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  kpi_profiles_id: XmlMultiElemObject<number, KpiProfileCatalogDocumentTopElem>;
-  bonus_profile_id: XmlElem<number, BonusProfileCatalogDocumentTopElem>;
-  role_id: XmlMultiElemObject<number>;
-  tags: XmlElem<string>;
-  tag_id: XmlMultiElemObject<number, TagCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  join_mode: XmlElem<string | null, typeof common.join_mode_types>;
+  kpi_profile_id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  kpi_profiles_id: XmlMultiElemObject<number | null, KpiProfileCatalogDocumentTopElem>;
+  bonus_profile_id: XmlElem<number | null, BonusProfileCatalogDocumentTopElem>;
+  role_id: XmlMultiElemObject<number | null>;
+  tags: XmlElem<string | null>;
+  tag_id: XmlMultiElemObject<number | null, TagCatalogDocumentTopElem>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

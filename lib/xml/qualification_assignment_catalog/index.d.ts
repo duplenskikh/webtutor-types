@@ -1,18 +1,18 @@
 type QualificationAssignmentCatalogDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  assignment_date: XmlElem<Date>;
-  expiration_date: XmlElem<Date>;
+  id: XmlElem<number | null>;
+  assignment_date: XmlElem<Date | null>;
+  expiration_date: XmlElem<Date | null>;
   status: XmlElem<string, typeof common.qualification_assignment_states>;
-  qualification_id: XmlElem<number, QualificationCatalogDocumentTopElem>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  sender_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  competence_id: XmlElem<number, CompetenceCatalogDocumentTopElem>;
-  reason: XmlElem<string>;
-  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
-  is_reward: XmlElem<boolean>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  qualification_id: XmlElem<number | null, QualificationCatalogDocumentTopElem>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  sender_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  competence_id: XmlElem<number | null, CompetenceCatalogDocumentTopElem>;
+  reason: XmlElem<string | null>;
+  event_id: XmlElem<number | null, EventCatalogDocumentTopElem>;
+  is_reward: XmlElem<boolean | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

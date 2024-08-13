@@ -4,26 +4,26 @@ WebVariablesBase &
 ResultFieldsBase &
 I18nBase & {
   Doc: RemoteActionDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
   type: XmlElem<string, typeof common.eval_types>;
-  category: XmlElem<string>;
-  cache_vars: XmlElem<string>;
-  catalog_name: XmlElem<string, typeof common.exchange_object_types>;
-  link_name: XmlElem<string>;
+  category: XmlElem<string | null>;
+  cache_vars: XmlElem<string | null>;
+  catalog_name: XmlElem<string | null, typeof common.exchange_object_types>;
+  link_name: XmlElem<string | null>;
   show_in_list: XmlElem<boolean>;
   show_in_form: XmlElem<boolean>;
-  url: XmlElem<string>;
-  script: XmlElem<string>;
+  url: XmlElem<string | null>;
+  script: XmlElem<string | null>;
   default_disp_evaluate: XmlElem<boolean>;
-  access: XmlElem<AccessDocBase>;
+  access: XmlElem<AccessDocBase | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   evaluate(resultType: string, request: Request, argVars: unknown, configuration: string): unknown;
-  role_id: XmlMultiElemObject<number>;
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type RemoteActionDocument = XmlDocument & {

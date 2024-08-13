@@ -1,14 +1,14 @@
 type WorkflowCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  condition_eval_str: XmlElem<string>;
-  escalation_stages_str: XmlElem<string>;
-  use_triggers: XmlElem<boolean>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  condition_eval_str: XmlElem<string | null>;
+  escalation_stages_str: XmlElem<string | null>;
+  use_triggers: XmlElem<boolean | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  role_id: XmlMultiElemObject<number>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  role_id: XmlMultiElemObject<number | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

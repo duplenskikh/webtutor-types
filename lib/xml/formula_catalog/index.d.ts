@@ -1,12 +1,12 @@
 type FormulaCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  type: XmlElem<string>;
-  status: XmlElem<string>;
-  dependencies: XmlElem<string>;
-  formula_eval_str: XmlElem<string>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  type: XmlElem<string | null>;
+  status: XmlElem<string | null>;
+  dependencies: XmlElem<string | null>;
+  formula_eval_str: XmlElem<string | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

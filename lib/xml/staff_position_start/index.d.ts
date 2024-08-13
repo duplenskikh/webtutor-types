@@ -3,20 +3,20 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: StaffPositionStartDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  subdivision_name: XmlElem<string>;
-  position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
-  position_name: XmlElem<string>;
-  staff_position_id: XmlElem<number, StaffPositionCatalogDocumentTopElem>;
-  position_date: XmlElem<Date>;
-  document: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_fullname: XmlElem<string | null>;
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  subdivision_name: XmlElem<string | null>;
+  position_id: XmlElem<number | null, PositionCatalogDocumentTopElem>;
+  position_name: XmlElem<string | null>;
+  staff_position_id: XmlElem<number | null, StaffPositionCatalogDocumentTopElem>;
+  position_date: XmlElem<Date | null>;
+  document: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type StaffPositionStartDocument = XmlDocument & {

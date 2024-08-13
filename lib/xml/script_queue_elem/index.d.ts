@@ -1,22 +1,22 @@
 type ScriptQueueElemDocumentTopElem = XmlTopElem & {
   Doc: ScriptQueueElemDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  start_date: XmlElem<Date>;
-  start_time: XmlElem<Date>;
-  finish_time: XmlElem<Date>;
-  delay: XmlElem<number>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  start_date: XmlElem<Date | null>;
+  start_time: XmlElem<Date | null>;
+  finish_time: XmlElem<Date | null>;
+  delay: XmlElem<number | null>;
   completed: XmlElem<boolean>;
-  error: XmlElem<string>;
-  result: XmlElem<string>;
+  error: XmlElem<string | null>;
+  result: XmlElem<string | null>;
   delete_automatically: XmlElem<boolean>;
-  obj: XmlElem<unknown>;
-  run_code: XmlElem<string>;
+  obj: XmlElem<unknown | null>;
+  run_code: XmlElem<string | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ScriptQueueElemDocument = XmlDocument & {

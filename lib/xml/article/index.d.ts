@@ -6,16 +6,16 @@ KnowledgePartsBaseOld &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: ArticleDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  parent_object_id: XmlElem<number, ArticleCatalogDocumentTopElem>;
-  book_id: XmlElem<number, BookCatalogDocumentTopElem>;
-  library_material_id: XmlElem<number, LibraryMaterialCatalogDocumentTopElem>;
-  weight: XmlElem<number>;
-  comment: XmlElem<string>;
-  desc: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  parent_object_id: XmlElem<number | null, ArticleCatalogDocumentTopElem>;
+  book_id: XmlElem<number | null, BookCatalogDocumentTopElem>;
+  library_material_id: XmlElem<number | null, LibraryMaterialCatalogDocumentTopElem>;
+  weight: XmlElem<number | null>;
+  comment: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
+  access: XmlElem<AccessDocBase | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ArticleDocument = XmlDocument & {

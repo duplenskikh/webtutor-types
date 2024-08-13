@@ -1,12 +1,12 @@
 type RepositoriumCatalogDocumentTopElem = XmlTopElem &
 AccessDocBase &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  authors_count: XmlElem<number>;
-  parent_object_id: XmlElem<number, RepositoriumCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  authors_count: XmlElem<number | null>;
+  parent_object_id: XmlElem<number | null, RepositoriumCatalogDocumentTopElem>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

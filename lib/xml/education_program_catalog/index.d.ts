@@ -1,11 +1,11 @@
 type EducationProgramCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
-  role_id: XmlMultiElemObject<number>;
-  education_methods_id: XmlMultiElemObject<number, EducationMethodCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  modification_date: XmlElem<Date | null>;
+  app_instance_id: XmlElem<string | null>;
+  role_id: XmlMultiElemObject<number | null>;
+  education_methods_id: XmlMultiElemObject<number | null, EducationMethodCatalogDocumentTopElem>;
   OnBuild(): void;
 };

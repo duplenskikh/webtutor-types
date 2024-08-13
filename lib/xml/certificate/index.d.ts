@@ -4,23 +4,23 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: CertificateDocument;
-  serial: XmlElem<string>;
-  number: XmlElem<string>;
-  type_id: XmlElem<number, CertificateTypeCatalogDocumentTopElem>;
-  type_name: XmlElem<string>;
-  education_org_id: XmlElem<number, EducationOrgCatalogDocumentTopElem>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  qualification_id: XmlElem<number, QualificationCatalogDocumentTopElem>;
-  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
-  delivery_date: XmlElem<Date>;
-  expire_date: XmlElem<Date>;
+  serial: XmlElem<string | null>;
+  number: XmlElem<string | null>;
+  type_id: XmlElem<number | null, CertificateTypeCatalogDocumentTopElem>;
+  type_name: XmlElem<string | null>;
+  education_org_id: XmlElem<number | null, EducationOrgCatalogDocumentTopElem>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  qualification_id: XmlElem<number | null, QualificationCatalogDocumentTopElem>;
+  event_id: XmlElem<number | null, EventCatalogDocumentTopElem>;
+  delivery_date: XmlElem<Date | null>;
+  expire_date: XmlElem<Date | null>;
   valid: XmlElem<boolean>;
-  signed_by_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  signed_by_name: XmlElem<string>;
-  desc: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  signed_by_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  signed_by_name: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   update_expire_date(): void;
-  role_id: XmlMultiElemObject<number>;
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type CertificateDocument = XmlDocument & {

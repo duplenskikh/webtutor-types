@@ -1,46 +1,46 @@
 interface PayDocBase extends CostCurrencyBase {
-  code: XmlElem<string>;
-  date: XmlElem<Date>;
-  nds: XmlElem<number>;
-  exemption_nds: XmlElem<string>;
+  code: XmlElem<string | null>;
+  date: XmlElem<Date | null>;
+  nds: XmlElem<number | null>;
+  exemption_nds: XmlElem<string | null>;
 }
 
 interface PayBase {
-  code: XmlElem<string>;
-  date: XmlElem<Date>;
-  cost: XmlElem<number>;
+  code: XmlElem<string | null>;
+  date: XmlElem<Date | null>;
+  cost: XmlElem<number | null>;
   nds(): unknown;
 }
 
 interface PayPhaseDocumentCollaboratorExpenseItem {
-  expense_item_id: XmlElem<number, ExpenseItemCatalogDocumentTopElem>;
-  sum: XmlElem<number>;
+  expense_item_id: XmlElem<number | null, ExpenseItemCatalogDocumentTopElem>;
+  sum: XmlElem<number | null>;
 }
 
 interface PayPhaseDocumentCollaborator extends PersonFillingBase {
-  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  expense_items: XmlMultiElem<PayPhaseDocumentCollaboratorExpenseItem>;
-  cost_center_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
-  not_pay: XmlElem<boolean>;
+  collaborator_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  expense_items: XmlMultiElem<PayPhaseDocumentCollaboratorExpenseItem | null>;
+  cost_center_id: XmlElem<number | null, CostCenterCatalogDocumentTopElem>;
+  not_pay: XmlElem<boolean | null>;
 }
 
 interface PayPhaseDocumentExpense {
-  id: XmlElem<string>;
-  currency: XmlElem<string, typeof lists.currency_types>;
-  is_pay: XmlElem<boolean>;
-  no_nds: XmlElem<boolean>;
-  exemption_nds: XmlElem<string>;
-  supplier_name: XmlElem<string>;
-  supplier_code: XmlElem<string>;
-  invoice: XmlElem<PayBase>;
-  draft: XmlElem<PayBase>;
-  act: XmlElem<PayBase>;
-  invoice2: XmlElem<PayBase>;
+  id: XmlElem<string | null>;
+  currency: XmlElem<string | null, typeof lists.currency_types>;
+  is_pay: XmlElem<boolean | null>;
+  no_nds: XmlElem<boolean | null>;
+  exemption_nds: XmlElem<string | null>;
+  supplier_name: XmlElem<string | null>;
+  supplier_code: XmlElem<string | null>;
+  invoice: XmlElem<PayBase | null>;
+  draft: XmlElem<PayBase | null>;
+  act: XmlElem<PayBase | null>;
+  invoice2: XmlElem<PayBase | null>;
 }
 
 interface PayPhaseDocumentInvoice extends PayDocBase {
-  is_pay: XmlElem<boolean>;
-  no_nds: XmlElem<boolean>;
+  is_pay: XmlElem<boolean | null>;
+  no_nds: XmlElem<boolean | null>;
 }
 
 type PayPhaseDocumentTopElem = XmlTopElem &
@@ -50,24 +50,24 @@ ExpenseDistributionBase &
 CostCentersBase &
 AdminAccessBase & {
   Doc: PayPhaseDocument;
-  name: XmlElem<string>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  contract_id: XmlElem<number, ContractCatalogDocumentTopElem>;
-  nds_rate: XmlElem<number>;
+  name: XmlElem<string | null>;
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  contract_id: XmlElem<number | null, ContractCatalogDocumentTopElem>;
+  nds_rate: XmlElem<number | null>;
   distribute_cost_type: XmlElem<string>;
-  collaborators: XmlMultiElem<PayPhaseDocumentCollaborator>;
-  unnamed_person_num: XmlElem<number>;
-  unnamed_person_sum: XmlElem<number>;
-  expenses: XmlMultiElem<PayPhaseDocumentExpense>;
-  invoice: XmlElem<PayPhaseDocumentInvoice>;
-  draft: XmlElem<PayDocBase>;
-  act: XmlElem<PayDocBase>;
-  invoice2: XmlElem<PayDocBase>;
-  invoice_sum: XmlElem<number>;
-  draft_sum: XmlElem<number>;
-  act_sum: XmlElem<number>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  collaborators: XmlMultiElem<PayPhaseDocumentCollaborator | null>;
+  unnamed_person_num: XmlElem<number | null>;
+  unnamed_person_sum: XmlElem<number | null>;
+  expenses: XmlMultiElem<PayPhaseDocumentExpense | null>;
+  invoice: XmlElem<PayPhaseDocumentInvoice | null>;
+  draft: XmlElem<PayDocBase | null>;
+  act: XmlElem<PayDocBase | null>;
+  invoice2: XmlElem<PayDocBase | null>;
+  invoice_sum: XmlElem<number | null>;
+  draft_sum: XmlElem<number | null>;
+  act_sum: XmlElem<number | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   create_name(): unknown;
   distribute_cost_centers(): unknown;
   distribute_payment_persons(): unknown;

@@ -1,26 +1,26 @@
 interface ScaleDocumentScaleElement {
-  id: XmlElem<string>;
+  id: XmlElem<string | null>;
   name: XmlElem<string>;
   type: XmlElem<string>;
   min: XmlElem<number>;
   max: XmlElem<number>;
-  result: XmlElem<number>;
-  desc: XmlElem<string>;
-  desc_required: XmlElem<boolean>;
+  result: XmlElem<number | null>;
+  desc: XmlElem<string | null>;
+  desc_required: XmlElem<boolean | null>;
 }
 
 type ScaleDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
   Doc: ScaleDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  max_limit: XmlElem<number>;
-  min_limit: XmlElem<number>;
-  status: XmlElem<string, typeof common.kpi_states>;
-  scale_elements: XmlMultiElem<ScaleDocumentScaleElement>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  max_limit: XmlElem<number | null>;
+  min_limit: XmlElem<number | null>;
+  status: XmlElem<string | null, typeof common.kpi_states>;
+  scale_elements: XmlMultiElem<ScaleDocumentScaleElement | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
   checked(value: number): unknown;
 };
 

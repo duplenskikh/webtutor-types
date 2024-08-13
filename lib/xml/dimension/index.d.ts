@@ -1,9 +1,9 @@
 type DimensionDocumentTopElem = XmlTopElem & {
   Doc: DimensionDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type DimensionDocument = XmlDocument & {

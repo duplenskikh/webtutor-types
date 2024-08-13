@@ -1,20 +1,20 @@
 type DownloadPackageDocumentTopElem = XmlTopElem &
 DownloadPackageLogBase & {
   Doc: DownloadPackageDocument;
-  package_id: XmlElem<string>;
-  exchange_server_id: XmlElem<number, ExchangeServerCatalogDocumentTopElem>;
-  type: XmlElem<string, typeof common.package_types>;
-  base_url: XmlElem<string>;
-  url: XmlElem<string>;
+  package_id: XmlElem<string | null>;
+  exchange_server_id: XmlElem<number | null, ExchangeServerCatalogDocumentTopElem>;
+  type: XmlElem<string | null, typeof common.package_types>;
+  base_url: XmlElem<string | null>;
+  url: XmlElem<string | null>;
   status: XmlElem<string, typeof common.package_status_types>;
-  local_file_url: XmlElem<string>;
-  create_date: XmlElem<Date>;
-  download_date: XmlElem<Date>;
-  package_date: XmlElem<Date>;
-  application_code: XmlElem<string>;
-  application_id: XmlElem<number, ApplicationCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  local_file_url: XmlElem<string | null>;
+  create_date: XmlElem<Date | null>;
+  download_date: XmlElem<Date | null>;
+  package_date: XmlElem<Date | null>;
+  application_code: XmlElem<string | null>;
+  application_id: XmlElem<number | null, ApplicationCatalogDocumentTopElem>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type DownloadPackageDocument = XmlDocument & {

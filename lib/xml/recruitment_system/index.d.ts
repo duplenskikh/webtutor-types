@@ -2,15 +2,15 @@ type RecruitmentSystemDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 WebVariablesBase & {
   Doc: RecruitmentSystemDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  library_url: XmlElem<string>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  library_url: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
   is_std: XmlElem<boolean>;
   changed: XmlElem<boolean>;
-  doc_info: XmlElem<DocInfoBase>;
+  doc_info: XmlElem<DocInfoBase | null>;
   get_setting(settingName: string): string;
   get_settings(): Object;
 };

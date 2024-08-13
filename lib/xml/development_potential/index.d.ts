@@ -3,13 +3,13 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DevelopmentPotentialDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
-  is_std: XmlElem<boolean>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  access: XmlElem<AccessDocBase | null>;
+  is_std: XmlElem<boolean | null>;
   changed: XmlElem<boolean>;
 };
 

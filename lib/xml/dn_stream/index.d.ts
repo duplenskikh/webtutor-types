@@ -1,15 +1,15 @@
 interface DnStreamDocumentStudGroup {
-  group_id: XmlElem<number, DnStudGroupCatalogDocumentTopElem>;
+  group_id: XmlElem<number | null, DnStudGroupCatalogDocumentTopElem>;
 }
 
 type DnStreamDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnStreamDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  stud_groups: XmlMultiElem<DnStreamDocumentStudGroup>;
-  doc_info: XmlElem<DocInfoBase>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  stud_groups: XmlMultiElem<DnStreamDocumentStudGroup | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type DnStreamDocument = XmlDocument & {

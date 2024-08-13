@@ -1,24 +1,24 @@
 interface EducationMethodDocumentEventForm {
-  form_id: XmlElem<string, typeof lists.event_forms>;
+  form_id: XmlElem<string | null, typeof lists.event_forms>;
 }
 
 interface EducationMethodDocumentCompetenceIndicator {
-  indicator_id: XmlElem<number, IndicatorCatalogDocumentTopElem>;
-  plan: XmlElem<string>;
-  required_mark: XmlElem<string>;
+  indicator_id: XmlElem<number | null, IndicatorCatalogDocumentTopElem>;
+  plan: XmlElem<string | null>;
+  required_mark: XmlElem<string | null>;
   weight: XmlElem<number>;
 }
 
 interface EducationMethodDocumentCompetence {
-  competence_id: XmlElem<number, CompetenceCatalogDocumentTopElem>;
-  plan: XmlElem<string>;
-  required_mark: XmlElem<string>;
+  competence_id: XmlElem<number | null, CompetenceCatalogDocumentTopElem>;
+  plan: XmlElem<string | null>;
+  required_mark: XmlElem<string | null>;
   weight: XmlElem<number>;
-  indicators: XmlMultiElem<EducationMethodDocumentCompetenceIndicator>;
+  indicators: XmlMultiElem<EducationMethodDocumentCompetenceIndicator | null>;
 }
 
 interface EducationMethodDocumentSimilarEducationMethod {
-  id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
+  id: XmlElem<number | null, EducationMethodCatalogDocumentTopElem>;
 }
 
 type EducationMethodDocumentTopElem = XmlTopElem &
@@ -33,24 +33,24 @@ FileListBase &
 ExpenseDistributionBase &
 GameBonusBase & {
   Doc: EducationMethodDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
   is_open: XmlElem<boolean>;
-  default_request_type_id: XmlElem<number, RequestTypeCatalogDocumentTopElem>;
-  default_response_type_id: XmlElem<number, ResponseTypeCatalogDocumentTopElem>;
+  default_request_type_id: XmlElem<number | null, RequestTypeCatalogDocumentTopElem>;
+  default_response_type_id: XmlElem<number | null, ResponseTypeCatalogDocumentTopElem>;
   mandatory_fill_response: XmlElem<boolean>;
-  certificate_type_id: XmlElem<number, CertificateTypeCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
-  event_form: XmlElem<string, typeof lists.event_forms>;
-  event_type_id: XmlElem<number, EventTypeCatalogDocumentTopElem>;
-  event_forms: XmlMultiElem<EducationMethodDocumentEventForm>;
-  competences: XmlMultiElem<EducationMethodDocumentCompetence>;
-  similar_education_methods: XmlMultiElem<EducationMethodDocumentSimilarEducationMethod>;
+  certificate_type_id: XmlElem<number | null, CertificateTypeCatalogDocumentTopElem>;
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  access: XmlElem<AccessDocBase | null>;
+  event_form: XmlElem<string | null, typeof lists.event_forms>;
+  event_type_id: XmlElem<number | null, EventTypeCatalogDocumentTopElem>;
+  event_forms: XmlMultiElem<EducationMethodDocumentEventForm | null>;
+  competences: XmlMultiElem<EducationMethodDocumentCompetence | null>;
+  similar_education_methods: XmlMultiElem<EducationMethodDocumentSimilarEducationMethod | null>;
   get_workflow_id(): null;
-  role_id: XmlMultiElemObject<number>;
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type EducationMethodDocument = XmlDocument & {

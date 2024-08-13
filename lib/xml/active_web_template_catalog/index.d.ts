@@ -1,13 +1,13 @@
 type ActiveWebTemplateCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  name: XmlElem<string>;
-  access_level: XmlElem<number>;
-  access_role: XmlElem<string, AccessRoleCatalogDocumentTopElem>;
-  mode: XmlElem<string>;
-  web_design_id: XmlElem<number, WebDesignCatalogDocumentTopElem>;
-  site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
-  hash: XmlElem<string>;
-  creation_date: XmlElem<Date>;
-  modification_date: XmlElem<Date>;
+  id: XmlElem<number | null>;
+  name: XmlElem<string | null>;
+  access_level: XmlElem<number | null>;
+  access_role: XmlElem<string | null, AccessRoleCatalogDocumentTopElem>;
+  mode: XmlElem<string | null>;
+  web_design_id: XmlElem<number | null, WebDesignCatalogDocumentTopElem>;
+  site_id: XmlElem<number | null, SiteCatalogDocumentTopElem>;
+  hash: XmlElem<string | null>;
+  creation_date: XmlElem<Date | null>;
+  modification_date: XmlElem<Date | null>;
   OnBuild(): void;
 };
