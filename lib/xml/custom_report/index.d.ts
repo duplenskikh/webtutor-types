@@ -13,15 +13,20 @@ type CustomReportDocumentTopElem = XmlTopElem &
 CustomReportBase & {
   Doc: CustomReportDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Раздел */
   block: XmlElem<string | null, AccessBlockCatalogDocumentTopElem>;
   connect_2_object: XmlElem<string | null>;
   mode_selector: XmlElem<number | null>;
   source_binding_object: XmlElem<string | null>;
   web_settings: XmlElem<CustomReportDocumentWebSettings | null>;
   subscribe: XmlElem<CustomReportDocumentSubscribe | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
   disp_block: XmlElem<MsDispBlockBase | null>;
   access: XmlElem<AccessDocBase | null>;

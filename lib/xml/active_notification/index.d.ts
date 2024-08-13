@@ -10,32 +10,51 @@ interface ActiveNotificationDocumentAttachment {
 }
 
 interface ActiveNotificationDocumentRecipient {
+  /** Адрес */
   address: XmlElem<string | null>;
+  /** Мобильный телефон */
   mobile_phone: XmlElem<string | null>;
+  /** Имя */
   name: XmlElem<string | null>;
+  /** Сотрудник */
   collaborator_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
 }
 
 type ActiveNotificationDocumentTopElem = XmlTopElem & {
   Doc: ActiveNotificationDocument;
+  /** Тип уведомления */
   notification_id: XmlElem<number | null, NotificationCatalogDocumentTopElem>;
+  /** Прикрепляемый документ */
   object_id: XmlElem<number | null>;
+  /** Прикрепляемый документ */
   sec_object_id: XmlElem<number | null>;
+  /** Текст */
   text: XmlElem<string | null>;
+  /** Дата создания */
   create_date: XmlElem<Date | null>;
+  /** Дата последней отправки */
   last_send_date: XmlElem<Date | null>;
+  /** Дата отправки */
   send_date: XmlElem<Date | null>;
+  /** Уведомление заполняется пользователем */
   is_custom: XmlElem<boolean>;
+  /** Статус */
   status: XmlElem<string, typeof common.active_notification_status_types>;
+  /** Количество попыток */
   send_counter: XmlElem<number | null>;
   sender: XmlElem<ActiveNotificationDocumentSender | null>;
   date: XmlElem<Date | null>;
+  /** Тема */
   subject: XmlElem<string | null>;
   body: XmlElem<string | null>;
+  /** Формат сообщения */
   body_type: XmlElem<string | null>;
   attachments: XmlMultiElem<ActiveNotificationDocumentAttachment | null>;
+  /** Адресаты */
   recipients: XmlMultiElem<ActiveNotificationDocumentRecipient | null>;
+  /** Система уведомлений */
   notification_system_id: XmlElem<number | null, NotificationSystemCatalogDocumentTopElem>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

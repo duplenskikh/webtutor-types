@@ -1,5 +1,7 @@
 interface WikiArticleDocumentAuthor extends PersonFillingBase {
+  /** Автор */
   author_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Тип */
   boss_type_id: XmlElem<number | null, BossTypeCatalogDocumentTopElem>;
 }
 
@@ -9,6 +11,7 @@ interface WikiArticleDocumentAddingObjectsWikiArticleCommunication {
   wiki_article_comm_type_id: XmlElem<number | null, WikiArticleCommunicationTypeCatalogDocumentTopElem>;
   base_wiki_article_id: XmlElem<number | null, WikiArticleCatalogDocumentTopElem>;
   child_wiki_article_id: XmlElem<number | null, WikiArticleCatalogDocumentTopElem>;
+  /** Позиция в списке */
   position: XmlElem<number | null>;
 }
 
@@ -25,18 +28,26 @@ interface WikiArticleDocumentQuestionCondition {
 
 interface WikiArticleDocumentQuestionEntry {
   id: XmlElem<string | null>;
+  /** Значение */
   value: XmlElem<string | null>;
+  /** Правильный ответ */
   is_correct: XmlElem<boolean | null>;
 }
 
 interface WikiArticleDocumentQuestion {
+  /** Вопрос */
   id: XmlElem<string | null>;
   is_custom: XmlElem<boolean | null>;
+  /** Вопрос */
   item_id: XmlElem<number | null>;
+  /** Тип вопроса */
   type_id: XmlElem<string | null, typeof common.acquaint_question_types>;
+  /** Заголовок */
   title: XmlElem<string | null>;
+  /** Правильный ответ */
   correct_answer: XmlElem<string | null>;
   conditions: XmlMultiElem<WikiArticleDocumentQuestionCondition | null>;
+  /** Варианты ответов */
   entries: XmlMultiElem<WikiArticleDocumentQuestionEntry | null>;
 }
 
@@ -52,27 +63,39 @@ KnowledgePartsBase &
 ChangeHashBase & {
   Doc: WikiArticleDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Ресурс базы */
   resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
   wiki_base_id: XmlElem<number | null, WikiBaseCatalogDocumentTopElem>;
   wiki_article_type_id: XmlElem<number | null, WikiArticleTypeCatalogDocumentTopElem>;
   content_type: XmlElem<string | null>;
+  /** Статус */
   status_id: XmlElem<string | null, typeof common.status_in_knowledge_map_types>;
   acquaint_type_id: XmlElem<string | null, typeof common.acquaint_types>;
+  /** Дата создания */
   create_date: XmlElem<Date | null>;
+  /** Дата публикации */
   publicate_date: XmlElem<Date | null>;
   critical_publicate_date: XmlElem<Date | null>;
   critical_change: XmlElem<boolean | null>;
+  /** Авторы */
   authors: XmlMultiElem<WikiArticleDocumentAuthor | null>;
   adding_objects: XmlElem<WikiArticleDocumentAddingObjects | null>;
+  /** Вопросы */
   questions: XmlMultiElem<WikiArticleDocumentQuestion | null>;
   acquaint_groups: XmlMultiElem<WikiArticleDocumentAcquaintGroup | null>;
+  /** Аннотация */
   annotation: XmlElem<string | null>;
   longread: XmlElem<string | null>;
+  /** Описание */
   text_area: XmlElem<string | null>;
+  /** Доступ */
   access: XmlElem<AccessDocBase | null>;
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
 };
 

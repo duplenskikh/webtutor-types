@@ -24,16 +24,21 @@ interface ActiveWebTemplateDocumentCustomWebTemplate extends WebVariablesBase, Z
 type ActiveWebTemplateDocumentTopElem = XmlTopElem & {
   Doc: ActiveWebTemplateDocument;
   name(): string;
+  /** Уровень доступа */
   access_level: XmlElem<number | null>;
+  /** Роль сотрудника */
   access_role: XmlElem<string | null, AccessRoleCatalogDocumentTopElem>;
   mode: XmlElem<string | null>;
+  /** Дизайн */
   web_design_id: XmlElem<number | null, WebDesignCatalogDocumentTopElem>;
+  /** Сайт */
   site_id: XmlElem<number | null, SiteCatalogDocumentTopElem>;
   hash(): string;
   override_web_templates: XmlMultiElem<ActiveWebTemplateDocumentOverrideWebTemplate | null>;
   custom_web_templates: XmlMultiElem<ActiveWebTemplateDocumentCustomWebTemplate | null>;
   counter_template: XmlElem<number>;
   counter_saved_template: XmlElem<number>;
+  /** Об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

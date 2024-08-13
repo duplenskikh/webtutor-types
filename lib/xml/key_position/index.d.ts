@@ -8,6 +8,7 @@ interface KeyPositionDocumentPositionCommon {
 
 interface KeyPositionDocumentPositionName {
   id: XmlElem<string | null>;
+  /** Название должности */
   name: XmlElem<string | null>;
 }
 
@@ -20,23 +21,38 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: KeyPositionDocument;
+  /** Должность */
   position_id: XmlElem<number | null, PositionCatalogDocumentTopElem>;
+  /** Название должности */
   position_name: XmlElem<string | null>;
+  /** Сотрудник */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Бюджетный период */
   budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Уровень риска */
   risk_perspective_id: XmlElem<number | null, RiskPerspectiveCatalogDocumentTopElem>;
+  /** Угроза ключевой должности */
   key_position_threat_id: XmlElem<number | null, KeyPositionThreatCatalogDocumentTopElem>;
+  /** Тип кадрового резерва */
   career_reserve_type_id: XmlElem<number | null, CareerReserveTypeCatalogDocumentTopElem>;
+  /** Статус */
   status: XmlElem<string, typeof common.key_position_status_types>;
+  /** Доступна для преемников с любой должности */
   is_open: XmlElem<boolean>;
+  /** Тип */
   position_type: XmlElem<string>;
   risk_levels: XmlMultiElem<KeyPositionDocumentRiskLevel | null>;
   position_commons: XmlMultiElem<KeyPositionDocumentPositionCommon | null>;
+  /** Названия должностей */
   position_names: XmlMultiElem<KeyPositionDocumentPositionName | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
   access: XmlElem<AccessDocBase | null>;
+  /** Категория */
   role_id: XmlMultiElemObject<number | null>;
   EvalThreat(arrRiskLevels: unknown, fldRiskPerspective: unknown, keyPositionId: number): unknown;
 };

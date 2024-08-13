@@ -17,12 +17,17 @@ type ExternalSystemDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: ExternalSystemDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
   knowledge_url_pairs: XmlMultiElem<ExternalSystemDocumentKnowledgeUrlPair | null>;
+  /** Анонимный пользователь */
   anonymous_user_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   settings: XmlElem<ExternalSystemDocumentSettings | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

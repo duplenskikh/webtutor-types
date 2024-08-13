@@ -1,5 +1,7 @@
 interface AssessmentDocumentSectionSelectionOrderingPoint {
+  /** Вес */
   point_num: XmlElem<number | null>;
+  /** Количество */
   item_num: XmlElem<number | null>;
   item_sum_num(): number;
 }
@@ -8,6 +10,7 @@ interface AssessmentDocumentSectionSelectionOrdering {
   order: XmlElem<string, typeof common.order_types>;
   select_id: XmlElem<string | null>;
   select_num: XmlElem<number | null>;
+  /** Веса */
   points: XmlMultiElem<AssessmentDocumentSectionSelectionOrderingPoint | null>;
 }
 
@@ -88,12 +91,15 @@ AdminAccessBase & {
   code: XmlElem<string | null>;
   title: XmlElem<string | null>;
   name(): string;
+  /** Ресурс базы */
   resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
   status: XmlElem<string, typeof common.course_test_states>;
+  /** Система тестирования */
   testing_system_id: XmlElem<number | null, TestingSystemCatalogDocumentTopElem>;
   duration: XmlElem<number | null>;
   duration_days: XmlElem<number | null>;
   attempts_num: XmlElem<number>;
+  /** Проходной балл */
   passing_score: XmlElem<number | null>;
   use_scale_calculation: XmlElem<boolean>;
   test_finish_redirect: XmlElem<string>;
@@ -107,23 +113,28 @@ AdminAccessBase & {
   feedback_passed: XmlElem<string | null>;
   feedback_failed: XmlElem<string | null>;
   use_launch_code: XmlElem<boolean>;
+  /** Не показывать набранный балл для незавершенных тестов */
   not_sent_correct_answer: XmlElem<boolean>;
   rubric: XmlElem<RubricBase | null>;
   objectives: XmlElem<ObjectivesBase | null>;
   sections: XmlMultiElem<AssessmentDocumentSection | null>;
+  /** Тип сертификата */
   certificate_type_id: XmlElem<number | null, CertificateTypeCatalogDocumentTopElem>;
   display_result: XmlElem<boolean>;
   is_adaptive_test: XmlElem<boolean>;
   display_correct_answer: XmlElem<boolean>;
   display_result_report: XmlElem<boolean>;
+  /** Открытый тест (возможно самостоятельно назначить тест) */
   is_open: XmlElem<boolean>;
   display_correct_answer_in_report: XmlElem<boolean>;
   display_answers_in_report: XmlElem<boolean>;
   proctoring_system_id: XmlElem<number | null, ProctoringSystemCatalogDocumentTopElem>;
   external_type: XmlElem<string | null, typeof common.assessment_external_types>;
+  /** Не отправлять стандартные уведомления о назначении */
   not_use_default_notification: XmlElem<boolean | null>;
   view_templates: XmlElem<MsViewTemplatesBase | null>;
   comment: XmlElem<string | null>;
+  /** Расписание прохождения */
   schedule: XmlElem<MsWeekScheduleBase | null>;
   access: XmlElem<AccessDocBase | null>;
   publish_url: XmlElem<string | null>;
@@ -134,10 +145,12 @@ AdminAccessBase & {
   player: XmlElem<AssessmentDocumentPlayer | null>;
   scales: XmlMultiElem<AssessmentDocumentScale | null>;
   before_finish_eval: XmlElem<string | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
   doc_info: XmlElem<DocInfoBase | null>;
   get_info(): null | Object;
   update_structure(): boolean;
+  /** Категория */
   role_id: XmlMultiElemObject<number | null>;
 };
 

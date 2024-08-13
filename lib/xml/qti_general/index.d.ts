@@ -1,4 +1,5 @@
 interface ObjectivesBase {
+  /** Инструкция */
   candidate: XmlElem<string | null>;
 }
 

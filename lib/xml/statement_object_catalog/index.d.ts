@@ -8,7 +8,9 @@ type StatementObjectCatalogDocumentTopElem = XmlTopElem & {
   definition_more_info: XmlElem<string | null>;
   definition_interaction_type: XmlElem<string | null>;
   context_activity_type: XmlElem<string | null>;
+  /** Дата модификации */
   modification_date: XmlElem<Date | null>;
+  /** Код сервера */
   app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

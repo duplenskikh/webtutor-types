@@ -1,10 +1,12 @@
 interface TaskTypeDocumentRole {
   id: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
 }
 
 interface TaskTypeDocumentCustomState {
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
   workflow_state: XmlElem<string | null>;
   workflow_action_id: XmlElem<string | null>;
@@ -33,9 +35,13 @@ type TaskTypeDocumentTopElem = XmlTopElem &
 CustomElemsBase &
 WebVariablesBase & {
   Doc: TaskTypeDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Документооборот по умолчанию */
   workflow_id: XmlElem<number | null, WorkflowCatalogDocumentTopElem>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
   eval_code_for_url: XmlElem<string | null>;
   roles: XmlMultiElem<TaskTypeDocumentRole | null>;
@@ -58,9 +64,13 @@ WebVariablesBase & {
   can_delete_task: XmlElem<boolean>;
   related_conversation_type_id: XmlElem<number | null, ConversationTypeCatalogDocumentTopElem>;
   result_block: XmlElem<TaskTypeDocumentResultBlock | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
+  /** Доступ */
   access: XmlElem<AccessDocBase | null>;
 };
 

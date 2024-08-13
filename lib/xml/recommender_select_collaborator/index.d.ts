@@ -3,6 +3,7 @@ PersonFillingBase &
 CustomElemsBase & {
   Doc: RecommenderSelectCollaboratorDocument;
   id: XmlElem<number | null>;
+  /** Сотрудник */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   recommender_algorithm_id: XmlElem<number | null, RecommenderAlgorithmCatalogDocumentTopElem>;
   base_object: XmlElem<ObjectTypeBase | null>;
@@ -11,6 +12,7 @@ CustomElemsBase & {
   implemented: XmlElem<boolean>;
   selected_date: XmlElem<Date | null>;
   implemented_date: XmlElem<Date | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
   doc_info: XmlElem<DocInfoBase | null>;
 };

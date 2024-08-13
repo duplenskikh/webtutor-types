@@ -4,17 +4,27 @@ AdminAccessBase &
 CustomElemsBase & {
   Doc: StaffPositionStartDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Сотрудник */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
   person_fullname: XmlElem<string | null>;
+  /** Подразделение */
   subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  /** Название подразделения */
   subdivision_name: XmlElem<string | null>;
+  /** Должность */
   position_id: XmlElem<number | null, PositionCatalogDocumentTopElem>;
+  /** Название должности */
   position_name: XmlElem<string | null>;
   staff_position_id: XmlElem<number | null, StaffPositionCatalogDocumentTopElem>;
+  /** Дата вступления в должность */
   position_date: XmlElem<Date | null>;
   document: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
   doc_info: XmlElem<DocInfoBase | null>;
 };

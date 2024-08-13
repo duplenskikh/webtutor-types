@@ -23,15 +23,22 @@ type ProfileDocumentTopElem = XmlTopElem &
 PersonFillingBase & {
   Doc: ProfileDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string | null>;
+  /** Дата создания */
   create_date: XmlElem<Date | null>;
+  /** Тип учебной активности */
   activity_id: XmlElem<number | null, ActivityCatalogDocumentTopElem>;
   activity_code: XmlElem<string | null>;
+  /** Сотрудник */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   request: XmlElem<ProfileDocumentRequest | null>;
   hash(): string;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

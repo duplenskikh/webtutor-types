@@ -19,11 +19,17 @@ interface ClShapeDocumentHandle {
 
 type ClShapeDocumentTopElem = XmlTopElem & {
   Doc: ClShapeDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Папка */
   category: XmlElem<string | null>;
+  /** Категория */
   category_label: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string | null>;
+  /** Расшифровка типа */
   type_name: XmlElem<string | null>;
   params: XmlElem<ClShapeDocumentParams | null>;
   formulas: XmlMultiElem<ClShapeDocumentFormula | null>;
@@ -32,7 +38,9 @@ type ClShapeDocumentTopElem = XmlTopElem & {
   handles: XmlMultiElem<ClShapeDocumentHandle | null>;
   ico: XmlElem<Binary | null>;
   vml: XmlElem<string | null>;
+  /** Комментарий */
   desc: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

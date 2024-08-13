@@ -8,13 +8,20 @@ interface BossTypeDocumentOperation {
 
 type BossTypeDocumentTopElem = XmlTopElem & {
   Doc: BossTypeDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
   object_types: XmlMultiElem<BossTypeDocumentObjectType | null>;
+  /** Операции */
   operations: XmlMultiElem<BossTypeDocumentOperation | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
 };
 

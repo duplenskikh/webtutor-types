@@ -1,6 +1,7 @@
 type RecommenderSelectCollaboratorCatalogDocumentTopElem = XmlTopElem &
 PersonFillingBase & {
   id: XmlElem<number | null>;
+  /** Сотрудник */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   recommender_algorithm_id: XmlElem<number | null, RecommenderAlgorithmCatalogDocumentTopElem>;
   base_object_id: XmlElem<number | null>;
@@ -15,7 +16,9 @@ PersonFillingBase & {
   implemented: XmlElem<boolean>;
   selected_date: XmlElem<Date | null>;
   implemented_date: XmlElem<Date | null>;
+  /** Дата модификации */
   modification_date: XmlElem<Date | null>;
+  /** Код сервера */
   app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

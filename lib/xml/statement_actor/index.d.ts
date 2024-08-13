@@ -2,6 +2,7 @@ type StatementActorDocumentTopElem = XmlTopElem & {
   Doc: StatementActorDocument;
   id: XmlElem<number | null>;
   path: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
   object_type: XmlElem<string | null>;
   statement_id: XmlElem<number | null, StatementCatalogDocumentTopElem>;

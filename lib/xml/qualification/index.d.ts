@@ -1,5 +1,7 @@
 interface QualificationDocumentRewardParams {
+  /** Сумма */
   sum: XmlElem<number | null>;
+  /** Валюта */
   currency_type_id: XmlElem<string | null, typeof lists.currency_types>;
   receivers_group_id: XmlElem<number | null, GroupCatalogDocumentTopElem>;
   script: XmlElem<string | null>;
@@ -56,14 +58,21 @@ AdminAccessBase &
 CustomElemsBase &
 KnowledgePartsBase & {
   Doc: QualificationDocument;
+  /** Тип вступления */
   join_mode: XmlElem<string, typeof common.join_mode_types>;
+  /** Уровень */
   level_id: XmlElem<number | null, LevelCatalogDocumentTopElem>;
+  /** Родительская квалификация */
   parent_id: XmlElem<number | null, QualificationCatalogDocumentTopElem>;
+  /** Статус */
   status: XmlElem<string, typeof common.qualification_statuss>;
+  /** При приеме на работу */
   test_on_hire: XmlElem<boolean>;
+  /** Количество дней до следующего подтверждения */
   days_for_check: XmlElem<number | null>;
   term_days: XmlElem<number | null>;
   expires_days: XmlElem<number | null>;
+  /** Разрешить самостоятельное назначение испытаний по квалификации */
   yourself_start: XmlElem<boolean>;
   is_reward: XmlElem<boolean | null>;
   work_experience_type: XmlElem<string | null>;
@@ -72,21 +81,32 @@ KnowledgePartsBase & {
   period_type: XmlElem<string | null>;
   is_active: XmlElem<boolean | null>;
   reward_params: XmlElem<QualificationDocumentRewardParams | null>;
+  /** Электронные курсы */
   courses: XmlMultiElem<QualificationDocumentCourse | null>;
+  /** Тесты */
   assessments: XmlMultiElem<QualificationDocumentAssessment | null>;
+  /** Учебные программы */
   education_methods: XmlMultiElem<QualificationDocumentEducationMethod | null>;
+  /** Модульные программы */
   compound_programs: XmlMultiElem<QualificationDocumentCompoundProgram | null>;
+  /** Квалификации */
   qualifications: XmlMultiElem<QualificationDocumentQualification | null>;
+  /** Оценочные процедуры */
   assessment_appraises: XmlMultiElem<QualificationDocumentAssessmentAppraise | null>;
   allow_assign(): unknown;
   eval_conditions: XmlMultiElem<QualificationDocumentEvalCondition | null>;
   eval_assignment_query: XmlElem<string | null>;
   get_assignment_persons(): unknown;
   get_scaled_progress(personId: number, param: unknown): unknown;
+  /** Доступ */
   access: XmlElem<AccessDocBase | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Категория */
   role_id: XmlMultiElemObject<number | null>;
 };
 

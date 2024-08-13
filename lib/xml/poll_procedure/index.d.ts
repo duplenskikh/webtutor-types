@@ -3,9 +3,13 @@ interface PollProcedureDocumentAuditoryPollGroup {
 }
 
 interface PollProcedureDocumentAuditory {
+  /** ID оцениваемого сотрудника */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
   person_name: XmlElem<string | null>;
+  /** Должность */
   position_name: XmlElem<string | null>;
+  /** Группы опросов */
   poll_groups: XmlMultiElem<PollProcedureDocumentAuditoryPollGroup | null>;
   responsible_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   responsible_person_fullname: XmlElem<string | null>;
@@ -17,11 +21,16 @@ interface PollProcedureDocumentSubdivisionPollGroup {
 
 interface PollProcedureDocumentSubdivision {
   subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  /** Название подразделения */
   subdivision_name: XmlElem<string | null>;
+  /** Ответственный */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО ответственного */
   person_fullname: XmlElem<string | null>;
   confirmation: XmlElem<boolean>;
+  /** Кол-во */
   max_auditory: XmlElem<number | null>;
+  /** Группа опросов */
   poll_groups: XmlMultiElem<PollProcedureDocumentSubdivisionPollGroup | null>;
 }
 
@@ -33,8 +42,11 @@ interface PollProcedureDocumentGroup {
   group_id: XmlElem<number | null, GroupCatalogDocumentTopElem>;
   group_name: XmlElem<string | null>;
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО ответственного */
   person_fullname: XmlElem<string | null>;
+  /** Кол-во */
   max_auditory: XmlElem<number | null>;
+  /** Группа опросов */
   poll_groups: XmlMultiElem<PollProcedureDocumentGroupPollGroup | null>;
 }
 
@@ -81,31 +93,48 @@ CustomElemsBase &
 AdminAccessBase & {
   Doc: PollProcedureDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Дата начала */
   start_date: XmlElem<Date | null>;
+  /** Дата завершения */
   end_date: XmlElem<Date | null>;
+  /** Ответственный за проведение */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Эталонная */
   is_model: XmlElem<boolean>;
+  /** Открытый тест (возможно самостоятельно назначить тест) */
   is_open: XmlElem<boolean>;
+  /** Оцениваемые */
   auditorys: XmlMultiElem<PollProcedureDocumentAuditory | null>;
+  /** Оцениваемые */
   subdivisions: XmlMultiElem<PollProcedureDocumentSubdivision | null>;
+  /** Группы */
   groups: XmlMultiElem<PollProcedureDocumentGroup | null>;
+  /** Опросы */
   polls: XmlMultiElem<PollProcedureDocumentPoll | null>;
+  /** Отображать на Портале */
   web_display: XmlElem<boolean>;
+  /** Статус */
   status: XmlElem<number>;
   additional: XmlElem<PollProcedureDocumentAdditional | null>;
   periodity: XmlElem<MsPeriodityBase | null>;
   complete_message: XmlElem<string | null>;
   adaptive(): unknown;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
   set_poll_id(fldCondition: unknown): unknown;
   set_question_id(fldCondition: unknown, fldItem: unknown): unknown;
   update_poll_questionare(): unknown;
   get_person_poll_objs(curUserId: number): unknown;
   is_launch_person(curUserId: number): unknown;
+  /** Категория */
   role_id: XmlMultiElemObject<number | null>;
   equal_hash: XmlElem<string | null>;
 };

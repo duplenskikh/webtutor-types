@@ -1,9 +1,11 @@
 interface DnProgramDisciplDocumentTermPlanTheme {
   id_subj: XmlElem<number | null>;
+  /** Тема */
   theme: XmlElem<string | null>;
   number_week: XmlElem<string | null>;
   hours_audit: XmlElem<number | null>;
   hours_independ: XmlElem<number | null>;
+  /** Форма проведения */
   educat_event_id: XmlElem<number | null, DnEducatEventCatalogDocumentTopElem>;
   name_educat_event: XmlElem<string | null>;
 }
@@ -38,9 +40,13 @@ LectorsBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnProgramDisciplDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Статус договора */
   status_id: XmlElem<string, typeof common.prog_discipl_states>;
+  /** Факультет */
   faculty_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
   chair_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
   discipline_id: XmlElem<number | null, DnDisciplineCatalogDocumentTopElem>;
@@ -50,6 +56,7 @@ CustomElemsBase & {
   all_laboriousn_audit: XmlElem<number | null>;
   all_laboriousn_indep: XmlElem<number | null>;
   terms: XmlMultiElem<DnProgramDisciplDocumentTerm | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
   disciplines: XmlMultiElem<DnProgramDisciplDocumentDiscipline | null>;
   subjects: XmlMultiElem<DnProgramDisciplDocumentSubject | null>;

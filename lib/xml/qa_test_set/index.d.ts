@@ -10,11 +10,16 @@ QaTestParamBase &
 QaTestFixtureBase &
 QaTestAssertBase & {
   Doc: QaTestSetDocument;
+  /** Статус */
   status: XmlElem<string, typeof common.qa_test_states>;
   tests: XmlMultiElem<QaTestSetDocumentTest | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Категория */
   role_id: XmlMultiElemObject<number | null>;
 };
 

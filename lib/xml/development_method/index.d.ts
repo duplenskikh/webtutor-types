@@ -6,10 +6,14 @@ type DevelopmentMethodDocumentTopElem = XmlTopElem &
 CustomElemsBase &
 AdminAccessBase & {
   Doc: DevelopmentMethodDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
   development_objects: XmlMultiElem<DevelopmentMethodDocumentDevelopmentObject | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

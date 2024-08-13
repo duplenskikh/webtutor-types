@@ -1,6 +1,8 @@
 type OutstaffTypeMaterialDocumentTopElem = XmlTopElem & {
   Doc: OutstaffTypeMaterialDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
   doc_info: XmlElem<DocInfoBase | null>;
 };

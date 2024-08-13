@@ -48,8 +48,11 @@ interface ClVideoCourseDocumentFragmentLayerTextBlock {
 
 interface ClVideoCourseDocumentFragmentLayer {
   id: XmlElem<string | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Тип */
   type_id: XmlElem<string | null, typeof common.layer_types>;
   start_second: XmlElem<number | null>;
   end_second: XmlElem<number | null>;
@@ -64,6 +67,7 @@ interface ClVideoCourseDocumentFragmentLayer {
   background_color: XmlElem<string | null>;
   background_color_html: XmlElem<string | null>;
   mute_audio: XmlElem<boolean | null>;
+  /** Ресурс базы */
   resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
   resource_name: XmlElem<string | null>;
   resource_draft_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
@@ -78,7 +82,9 @@ interface ClVideoCourseDocumentFragmentLayer {
 
 interface ClVideoCourseDocumentFragment {
   id: XmlElem<string | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
   width: XmlElem<number | null>;
   height: XmlElem<number | null>;
@@ -92,13 +98,17 @@ interface ClVideoCourseDocumentFragment {
 type ClVideoCourseDocumentTopElem = XmlTopElem & {
   Doc: ClVideoCourseDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Ресурс базы */
   resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
   course_width: XmlElem<number | null>;
   course_height: XmlElem<number | null>;
   max_bitrate: XmlElem<number | null>;
   output_format: XmlElem<string | null>;
+  /** Авторы */
   authors: XmlMultiElem<ClVideoCourseDocumentAuthor | null>;
   last_compile_date: XmlElem<Date | null>;
   media_file_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
@@ -109,6 +119,7 @@ type ClVideoCourseDocumentTopElem = XmlTopElem & {
   current_position: XmlElem<number>;
   fragments: XmlMultiElem<ClVideoCourseDocumentFragment | null>;
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
 };
 

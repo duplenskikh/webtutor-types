@@ -20,6 +20,7 @@ interface DnWorkCurriculumDocumentBlockElemDiscipline {
 
 interface DnWorkCurriculumDocumentBlockElem {
   id_block: XmlElem<number | null, DnBlockDisciplineCatalogDocumentTopElem>;
+  /** Название */
   name: XmlElem<string | null>;
   load_block(): number;
   all_auditor(): number;
@@ -34,20 +35,28 @@ type DnWorkCurriculumDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnWorkCurriculumDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Статус договора */
   status_id: XmlElem<string, typeof common.prog_discipl_states>;
+  /** Тип */
   type: XmlElem<string, typeof common.curriculum_types>;
   student_id: XmlElem<number | null, DnStudentCatalogDocumentTopElem>;
   academ_year_id: XmlElem<number | null, DnAcademYearCatalogDocumentTopElem>;
+  /** Факультет */
   faculty_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
   chair_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
   special_id: XmlElem<number | null, DnSpecialCatalogDocumentTopElem>;
   specialization_id: XmlElem<number | null, DnSpecializationCatalogDocumentTopElem>;
+  /** Квалификация */
   qualification_id: XmlElem<number | null, QualificationCatalogDocumentTopElem>;
   educat_form_id: XmlElem<number | null, DnEducatFormCatalogDocumentTopElem>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
   block_elems: XmlMultiElem<DnWorkCurriculumDocumentBlockElem | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

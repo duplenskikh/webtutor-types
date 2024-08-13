@@ -24,13 +24,18 @@ ExecCodeBase &
 WebVariablesBase &
 I18nBase & {
   Doc: CodeLibraryDocument;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
   method_block: XmlElem<CodeLibraryDocumentMethodBlock | null>;
   associated_applications: XmlMultiElem<CodeLibraryDocumentAssociatedApplication | null>;
   parameter_maps: XmlMultiElem<CodeLibraryDocumentParameterMap | null>;
+  /** Категория */
   role_id: XmlMultiElemObject<number | null>;
 };
 

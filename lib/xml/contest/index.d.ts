@@ -37,6 +37,7 @@ CustomElemsBase & {
   file_num: XmlElem<number>;
   desc: XmlElem<string | null>;
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
   access: XmlElem<AccessDocBase | null>;
   add_participant(personId: number, participantTopElem: unknown): undefined | void;
   calculate_rating(): void;

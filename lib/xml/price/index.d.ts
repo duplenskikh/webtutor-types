@@ -1,10 +1,12 @@
 interface PriceDocumentServiceProvider {
+  /** Код */
   code: XmlElem<string | null>;
   provider_id: XmlElem<number | null, ProviderCatalogDocumentTopElem>;
   cost_value: XmlElem<number | null>;
   type_id: XmlElem<string | null, typeof common.service_provider_types>;
   start_date: XmlElem<Date | null>;
   finish_date: XmlElem<Date | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
 }
 
@@ -19,7 +21,9 @@ CustomElemsBase & {
   start_date: XmlElem<Date | null>;
   finish_date: XmlElem<Date | null>;
   service_providers: XmlMultiElem<PriceDocumentServiceProvider | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

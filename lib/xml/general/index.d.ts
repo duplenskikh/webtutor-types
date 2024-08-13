@@ -1,48 +1,73 @@
 interface CostCurrencyBase {
+  /** Стоимость */
   cost: XmlElem<number | null>;
+  /** Ставка НДС */
   cost_nds: XmlElem<number | null>;
+  /** Валюта */
   currency: XmlElem<string | null, typeof lists.currency_types>;
 }
 
 interface CostCurrencyTypeBase extends CostCurrencyBase {
+  /** Стоимость */
   cost_type: XmlElem<string | null, typeof common.cost_types>;
 }
 
 interface PersonNameBase {
+  /** Фамилия */
   lastname: XmlElem<string | null>;
+  /** Имя */
   firstname: XmlElem<string | null>;
+  /** Отчество */
   middlename: XmlElem<string | null>;
   fullname(): string;
   shortname(): string;
 }
 
 interface DocInfoBaseCreation {
+  /** Логин */
   user_login: XmlElem<string | null>;
+  /** Пользователь */
   user_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Дата */
   date: XmlElem<Date | null>;
+  /** Код сервера */
   app_instance_id: XmlElem<string | null>;
 }
 
 interface DocInfoBaseModification {
+  /** Логин */
   user_login: XmlElem<string | null>;
+  /** Пользователь */
   user_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Дата */
   date: XmlElem<Date | null>;
 }
 
 interface DocInfoBase {
+  /** Создание */
   creation: XmlElem<DocInfoBaseCreation | null>;
+  /** Изменение */
   modification: XmlElem<DocInfoBaseModification | null>;
+  /** Неизменяемый */
   invariable: XmlElem<boolean | null>;
 }
 
 interface ViewConditionBase {
+  /** Корневой элемент */
   top_elem: XmlElem<string | null>;
+  /** Поле */
   field: XmlElem<string | null>;
+  /** Название поля */
   title: XmlElem<string | null>;
+  /** Значение поля */
   value: XmlElem<string | null>;
+  /** Тип поля */
   type: XmlElem<string>;
+  /** Условие */
   option_type: XmlElem<string, typeof common.all_option_types>;
+  /** Является настраиваемым */
   is_custom_field: XmlElem<boolean | null>;
+  /** И/Или */
   and_or: XmlElem<string>;
   is_multiple: XmlElem<boolean | null>;
   value_multiple: XmlMultiElemObject<string | null>;
@@ -50,23 +75,34 @@ interface ViewConditionBase {
 }
 
 interface ViewConditionsBase {
+  /** Условия */
   conditions: XmlMultiElem<ViewConditionBase | null>;
   conditions_qual: XmlElem<string | null>;
 }
 
 interface PassportDataBase {
+  /** Документ */
   passport_type_id: XmlElem<string | null, typeof common.passport_types>;
+  /** Серия */
   series: XmlElem<string | null>;
+  /** Номер */
   num: XmlElem<string | null>;
+  /** Дата выдачи */
   registration_date: XmlElem<Date | null>;
+  /** Кем выдан */
   registration_agency: XmlElem<string | null>;
 }
 
 interface PersonBase extends PersonNameBase {
+  /** Пол */
   sex: XmlElem<string | null>;
+  /** Дата рождения */
   birth_date: XmlElem<Date | null>;
+  /** Адрес */
   address: XmlElem<string | null>;
+  /** Телефон */
   phone: XmlElem<string | null>;
+  /** Мобильный телефон */
   mobile_phone: XmlElem<string | null>;
   mobile_phone_conf_code: XmlElem<string | null>;
   mobile_phone_conf_date: XmlElem<Date | null>;
@@ -75,18 +111,28 @@ interface PersonBase extends PersonNameBase {
   email_conf_code: XmlElem<string | null>;
   email_conf_date: XmlElem<Date | null>;
   email_conf: XmlElem<boolean | null>;
+  /** Внутренний e-mail */
   system_email: XmlElem<string | null>;
+  /** Логин */
   login: XmlElem<string | null>;
+  /** Пароль */
   password: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
 }
 
 interface DocumentAttributesBase {
+  /** URL шаблона */
   template: XmlElem<string | null>;
+  /** Позиция в списке */
   position: XmlElem<number | null>;
+  /** Переходить по ссылке */
   is_link: XmlElem<boolean>;
+  /** Ссылка */
   link_href: XmlElem<string | null>;
+  /** Цель */
   link_target: XmlElem<string | null>;
+  /** Возможна подписка на раздел портала */
   permit_subscription: XmlElem<boolean>;
 }
 
@@ -98,24 +144,33 @@ interface LocalSettingsBase {
 }
 
 interface BankAccountBaseBank {
+  /** Название банка */
   name: XmlElem<string | null>;
+  /** Адрес банка */
   address: XmlElem<string | null>;
+  /** БИК */
   bic: XmlElem<string | null>;
 }
 
 interface BankAccountBase {
   bank: XmlElem<BankAccountBaseBank | null>;
+  /** Расчетный счет */
   no: XmlElem<string | null>;
+  /** Корреспондентский счет */
   cno: XmlElem<string | null>;
 }
 
 interface EssentialBaseDirector extends PersonNameBase {
+  /** Должность */
   position_name: XmlElem<string | null, typeof common.position_types>;
+  /** ФИО в родительном падеже */
   mod_name: XmlElem<PersonNameBase | null>;
+  /** Действует на основании */
   authority: XmlElem<string | null>;
 }
 
 interface EssentialBaseChiefAccountant extends PersonNameBase {
+  /** ФИО в родительном падеже */
   mod_name: XmlElem<PersonNameBase | null>;
 }
 
@@ -127,11 +182,16 @@ interface EssentialBase {
   is_foreign: XmlElem<boolean | null>;
   swift_code: XmlElem<string | null>;
   iban_no: XmlElem<string | null>;
+  /** ИНН */
   inn: XmlElem<string | null>;
+  /** КПП */
   kpp: XmlElem<string | null>;
+  /** Юридический адрес */
   legal_address: XmlElem<string | null>;
   fact_address: XmlElem<string | null>;
+  /** ОКОНХ */
   okonh: XmlElem<string | null>;
+  /** ОКПО */
   okpo: XmlElem<string | null>;
   ogrn: XmlElem<string | null>;
   oktmo: XmlElem<string | null>;
@@ -165,19 +225,30 @@ interface EventSettingsBase {
 
 interface OutstaffPeriodsBasePeriod {
   id: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Типовая должность */
   position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
+  /** Название типовой должности */
   position_common_name: XmlElem<string | null>;
+  /** Контракт на временный персонал */
   outstaff_contract_id: XmlElem<number | null, OutstaffContractCatalogDocumentTopElem>;
+  /** Контракт на временный персонал */
   outstaff_contract_name: XmlElem<string | null>;
+  /** Бюджетный период */
   budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Бюджетный период */
   budget_period_name: XmlElem<string | null>;
+  /** Дата начала */
   start_date: XmlElem<Date | null>;
+  /** Дата завершения */
   finish_date: XmlElem<Date | null>;
   ext_time: XmlElem<string | null>;
   start_time: XmlElem<string | null>;
   finish_time: XmlElem<string | null>;
+  /** Часов */
   hour_num: XmlElem<number | null>;
+  /** Полный день */
   full_time: XmlElem<boolean | null>;
   days_length: XmlElem<string>;
   max_cnt: XmlElem<number | null>;
@@ -185,44 +256,64 @@ interface OutstaffPeriodsBasePeriod {
 
 interface OutstaffPeriodsBaseMaterial {
   id: XmlElem<string | null>;
+  /** Тип материала */
   outstaff_type_material_id: XmlElem<number | null, OutstaffTypeMaterialCatalogDocumentTopElem>;
+  /** Бюджетный период */
   budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Плановая величина */
   plan_value: XmlElem<number | null>;
+  /** Фактическая величина */
   fact_value: XmlElem<number | null>;
 }
 
 interface OutstaffPeriodsBase {
+  /** Интервалы работы временного персонала */
   periods: XmlMultiElem<OutstaffPeriodsBasePeriod | null>;
   materials: XmlMultiElem<OutstaffPeriodsBaseMaterial | null>;
 }
 
 interface AccessBase {
+  /** Уровень доступа */
   access_level: XmlElem<number>;
+  /** Роль сотрудника */
   access_role: XmlElem<string, AccessRoleCatalogDocumentTopElem>;
+  /** Является пользователем интерфейса администратора */
   is_arm_admin: XmlElem<boolean>;
+  /** Временно запрещен доступ на портал */
   web_banned: XmlElem<boolean>;
+  /** Группа по умолчанию */
   user_group_id: XmlElem<number | null, GroupCatalogDocumentTopElem>;
   is_content_admin: XmlElem<boolean>;
   is_application_admin: XmlElem<boolean>;
 }
 
 interface AccessDocBaseAccessRole {
+  /** Роль доступа */
   access_role_id: XmlElem<string | null, AccessRoleCatalogDocumentTopElem>;
 }
 
 interface AccessDocBaseAccessGroup {
+  /** Группа доступа */
   group_id: XmlElem<number | null, GroupCatalogDocumentTopElem>;
 }
 
 interface AccessDocBase extends ViewConditionsBase {
+  /** Анонимный доступ */
   enable_anonymous_access: XmlElem<boolean | null>;
+  /** Уровень доступа */
   access_level: XmlElem<number>;
+  /** Роли доступа */
   access_roles: XmlMultiElem<AccessDocBaseAccessRole | null>;
+  /** Группы доступа */
   access_groups: XmlMultiElem<AccessDocBaseAccessGroup | null>;
+  /** Организация */
   access_org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  /** Сайт */
   access_site_id: XmlElem<number | null, SiteCatalogDocumentTopElem>;
+  /** Узел */
   access_host_id: XmlElem<number | null, HostCatalogDocumentTopElem>;
   web_mode_id: XmlElem<number | null, WebModeCatalogDocumentTopElem>;
+  /** Оператор */
   operator: XmlElem<string | null>;
 }
 
@@ -338,12 +429,14 @@ interface GlobalSettingsBaseExternalWebPlayers {
 }
 
 interface GlobalSettingsBaseCalendar {
+  /** Доступ */
   access: XmlElem<AccessDocBase | null>;
 }
 
 interface GlobalSettingsBasePpmMatrixRowColumn {
   id: XmlElem<number | null, DevelopmentPotentialCatalogDocumentTopElem>;
   value: XmlElem<string | null>;
+  /** URL к файлу фотографии */
   pict_url: XmlElem<string | null>;
   is_base: XmlElem<boolean>;
   comment: XmlElem<string | null>;
@@ -581,17 +674,24 @@ interface FileBase {
 }
 
 interface FileListBase {
+  /** Файлы */
   files: XmlMultiElem<FileBase | null>;
   AddFile(fileId: number, docResource: unknown): void;
 }
 
 interface CoursePartBase {
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string>;
+  /** Максимальный балл */
   max_score: XmlElem<number | null>;
+  /** Проходной балл */
   mastery_score: XmlElem<number | null>;
   url: XmlElem<string | null>;
+  /** Ссылка на родительский раздел */
   parent_part_code: XmlElem<string | null>;
   visible: XmlElem<boolean>;
 }
@@ -601,14 +701,18 @@ interface CoursePartsBase {
 }
 
 interface ImportExcelPersonsBaseColumn {
+  /** Номер колонки */
   index: XmlElem<number | null>;
+  /** Поле */
   field_name: XmlElem<string | null, typeof common.field_name_types>;
   eval_str: XmlElem<string | null>;
   is_key: XmlElem<boolean>;
 }
 
 interface ImportExcelPersonsBaseCollaboratorCustomField {
+  /** Номер колонки */
   index: XmlElem<number | null>;
+  /** Поле */
   name: XmlElem<string | null>;
 }
 
@@ -617,53 +721,87 @@ interface ImportExcelPersonsBaseCollaborator {
 }
 
 interface ImportExcelPersonsBase {
+  /** Путь к файлу */
   file_url: XmlElem<string | null>;
+  /** Тип объекта */
   object_type: XmlElem<string | null, typeof common.exchange_object_types>;
   columns: XmlMultiElem<ImportExcelPersonsBaseColumn | null>;
   collaborator: XmlElem<ImportExcelPersonsBaseCollaborator | null>;
+  /** Запретить доступ на портал */
   web_banned: XmlElem<boolean>;
+  /** Отправлять уведомление новым сотрудникам с логином и паролем */
   send_notification: XmlElem<boolean>;
+  /** Обновлять данные о сотруднике, если он уже существует в базе */
   update_data: XmlElem<boolean>;
+  /** Тип генерации пароля */
   create_password_type: XmlElem<string>;
+  /** Пароль один для всех с последующей заменой */
   common_password: XmlElem<string | null>;
+  /** Количество символов пароля */
   password_digits_num: XmlElem<number>;
+  /** Пропустить первую строку */
   miss_first_row: XmlElem<boolean>;
+  /** Выводить предупреждение о совпадении кода или логина, если они уж существуют в базе */
   show_warnings: XmlElem<boolean>;
+  /** Блокировать добавление или изменение записей, если обнаружено, что код или логин уже существуют в базе */
   block_import: XmlElem<boolean>;
+  /** Выбор организации */
   create_org_type: XmlElem<string>;
+  /** Организация */
   org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  /** Разделитель */
   separator: XmlElem<string>;
+  /** Предварительно исполняемый код */
   pre_eval_code: XmlElem<string | null>;
+  /** Регулярно исполняемый код */
   reg_eval_code: XmlElem<string | null>;
 }
 
 interface OrgBase extends EssentialsBase {
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Условное название */
   disp_name: XmlElem<string | null>;
+  /** Официальное название */
   name: XmlElem<string | null>;
+  /** Ресурс базы */
   resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
+  /** Почтовый адрес */
   postal_address: XmlElem<string | null>;
+  /** Телефон */
   phone: XmlElem<string | null>;
+  /** Факс */
   fax: XmlElem<string | null>;
   email: XmlElem<string | null>;
   web: XmlElem<string | null>;
 }
 
 interface ProgramMethodBase extends CostCurrencyTypeBase {
+  /** Название */
   name: XmlElem<string | null>;
+  /** Тип проведения */
   type: XmlElem<string, typeof common.education_method_types>;
+  /** Статус */
   state_id: XmlElem<string, typeof common.education_method_states>;
+  /** Обучающая организация */
   education_org_id: XmlElem<number | null, EducationOrgCatalogDocumentTopElem>;
+  /** Электронный курс */
   course_id: XmlElem<number | null, CourseCatalogDocumentTopElem>;
+  /** Длительность в часах */
   duration: XmlElem<number | null>;
+  /** Длительность в днях */
   duration_days: XmlElem<number | null>;
+  /** Количество участников */
   person_num: XmlElem<number | null>;
+  /** Тип документооборота */
   workflow_id: XmlElem<number | null, WorkflowCatalogDocumentTopElem>;
+  /** Описание */
   desc: XmlElem<string | null>;
 }
 
 interface LectorsBaseLector {
+  /** Преподаватель */
   lector_id: XmlElem<number | null, LectorCatalogDocumentTopElem>;
   hours: XmlElem<number | null>;
   weekend_hours: XmlElem<number | null>;
@@ -678,29 +816,39 @@ interface LectorsBase {
 
 interface AccessRoleBaseAccessBloc {
   id: XmlElem<string | null, AccessBlockCatalogDocumentTopElem>;
+  /** Чтение */
   can_read: XmlElem<boolean | null>;
+  /** Запись */
   can_write: XmlElem<boolean | null>;
+  /** Удаление */
   can_delete: XmlElem<boolean | null>;
 }
 
 interface AccessRoleBaseFuncBlockApplication {
   application_id: XmlElem<number | null, ApplicationCatalogDocumentTopElem>;
   application_code: XmlElem<string | null>;
+  /** Включен */
   is_enabled: XmlElem<boolean>;
+  /** Уровень доступа */
   access_level: XmlElem<number | null>;
 }
 
 interface AccessRoleBaseFuncBlock {
   id: XmlElem<string | null>;
+  /** Включен */
   is_enabled: XmlElem<boolean>;
   applications: XmlMultiElem<AccessRoleBaseFuncBlockApplication | null>;
 }
 
 interface AccessRoleBase {
   id: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Модули */
   access_blocs: XmlMultiElem<AccessRoleBaseAccessBloc | null>;
+  /** Управление руководителями */
   can_edit_managers: XmlElem<boolean | null>;
+  /** Управление правами доступа */
   can_edit_access: XmlElem<boolean | null>;
   admin_configuration_id: XmlElem<number | null, AdminConfigurationCatalogDocumentTopElem>;
   func_blocks: XmlMultiElem<AccessRoleBaseFuncBlock | null>;
@@ -784,17 +932,25 @@ interface ConditionsBase {
 }
 
 interface PersonFillingBase {
+  /** ФИО сотрудника */
   person_fullname: XmlElem<string | null>;
+  /** Должность сотрудника */
   person_position_id: XmlElem<number | null>;
+  /** Название должности сотрудника */
   person_position_name: XmlElem<string | null>;
   person_position_code: XmlElem<string | null>;
+  /** Организация сотрудника */
   person_org_id: XmlElem<number | null>;
+  /** Название организации сотрудника */
   person_org_name: XmlElem<string | null>;
   person_org_code: XmlElem<string | null>;
+  /** Подразделение сотрудника */
   person_subdivision_id: XmlElem<number | null>;
   person_subdivision_name: XmlElem<string | null>;
   person_subdivision_code: XmlElem<string | null>;
+  /** Код сервера сотрудника */
   person_instance_id: XmlElem<string | null>;
+  /** Код сотрудника */
   person_code: XmlElem<string | null>;
 }
 
@@ -854,9 +1010,12 @@ interface ViewColumnsBaseColumnTileItem {
 }
 
 interface ViewColumnsBaseColumn {
+  /** Формула */
   name: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string | null>;
   const: XmlElem<string | null>;
+  /** Ширина */
   width: XmlElem<string | null>;
   order: XmlElem<string | null>;
   order_field(): unknown;
@@ -880,6 +1039,7 @@ interface ViewColumnsBase {
   row_image_url: XmlElem<string | null>;
   disp_role_selector: XmlElem<boolean>;
   data_fields: XmlElem<string | null>;
+  /** Столбцы */
   columns: XmlMultiElem<ViewColumnsBaseColumn | null>;
 }
 
@@ -1028,6 +1188,7 @@ interface ExchangeListsBase {
 }
 
 interface WorkflowFieldsStatesBaseWorkflowFieldEntry {
+  /** Значение */
   value: XmlElem<string | null>;
 }
 
@@ -1038,10 +1199,12 @@ interface WorkflowFieldsStatesBaseWorkflowField {
   title: XmlElem<string | null>;
   tooltip: XmlElem<string | null>;
   xquery_qual: XmlElem<string | null>;
+  /** Список допустимых значений */
   entries: XmlMultiElem<WorkflowFieldsStatesBaseWorkflowFieldEntry | null>;
   external_value: XmlElem<string | null>;
   external_array: XmlElem<string | null>;
   field_group_id: XmlElem<string | null>;
+  /** Обязательное для заполнения */
   is_required: XmlElem<boolean | null>;
 }
 
@@ -1058,38 +1221,57 @@ interface WorkflowFieldsStatesBase {
 }
 
 interface FuncManagersBaseFuncManager extends PersonFillingBase {
+  /** Сотрудник */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   subordinate_position_id: XmlElem<number | null, PositionCatalogDocumentTopElem>;
+  /** Дата начала действия */
   start_date: XmlElem<Date | null>;
+  /** Дата окончания действия */
   end_date: XmlElem<Date | null>;
+  /** Является непосредственным руководителем */
   is_native: XmlElem<boolean>;
+  /** Тип руководителя */
   boss_type_id: XmlElem<number | null, BossTypeCatalogDocumentTopElem>;
 }
 
 interface FuncManagersBasePositionManager {
+  /** Тип объекта */
   object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Объект */
   object_id: XmlElem<number | null>;
+  /** Название объекта */
   object_name: XmlElem<string | null>;
+  /** Является непосредственным руководителем */
   is_native: XmlElem<boolean>;
+  /** Тип руководителя */
   boss_type_id: XmlElem<number | null, BossTypeCatalogDocumentTopElem>;
 }
 
 interface FuncManagersBase {
+  /** Функциональные руководители */
   func_managers: XmlMultiElem<FuncManagersBaseFuncManager | null>;
+  /** Функциональные руководители */
   position_managers: XmlMultiElem<FuncManagersBasePositionManager | null>;
   obtain_func_manager_by_id(personId: number, isNative: boolean): unknown;
 }
 
 interface AdminAccessBase {
+  /** Роль пользователя */
   user_access_role: XmlElem<string | null, AccessRoleCatalogDocumentTopElem>;
+  /** Группа пользователя */
   user_group_id: XmlElem<number | null, GroupCatalogDocumentTopElem>;
 }
 
 interface DocumentPersonsBaseDocumentPerson {
+  /** Сотрудник */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
   person_fullname: XmlElem<string | null>;
+  /** Может создавать */
   can_create: XmlElem<boolean | null>;
+  /** Может редактировать */
   can_edit: XmlElem<boolean | null>;
+  /** Может удалять */
   can_delete: XmlElem<boolean | null>;
 }
 
@@ -1111,12 +1293,16 @@ interface PathSubsBase {
 
 interface AssessmentScaleValueScale {
   id: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Сумма */
   value: XmlElem<number | null>;
+  /** Строка */
   value_str: XmlElem<string | null>;
 }
 
 interface AssessmentScaleValue {
+  /** Шкалы */
   scales: XmlMultiElem<AssessmentScaleValueScale | null>;
 }
 
@@ -1145,14 +1331,20 @@ interface ConstantItemBase {
 }
 
 interface LastAttemptTestLearningsBaseTestLearning {
+  /** Тест */
   test_learning_id: XmlElem<number | null, TestLearningCatalogDocumentTopElem>;
+  /** Состояние */
   state_id: XmlElem<number, typeof common.learning_states>;
+  /** Баллы */
   score: XmlElem<number>;
+  /** Дата начала изучения */
   start_usage_date: XmlElem<Date | null>;
+  /** Дата последнего посещ. */
   last_usage_date: XmlElem<Date | null>;
 }
 
 interface LastAttemptTestLearningsBase {
+  /** Попытки прохождения теста */
   test_learnings: XmlMultiElem<LastAttemptTestLearningsBaseTestLearning | null>;
 }
 
@@ -1250,14 +1442,20 @@ interface CompetenceLevelBase {
 }
 
 interface SupplementaryQuestionsBaseSupplementaryQuestion {
+  /** Код дополнительного вопроса */
   supplementary_question_id: XmlElem<number | null, SupplementaryQuestionCatalogDocumentTopElem>;
+  /** Название вопроса */
   supplementary_question_name: XmlElem<string | null>;
+  /** Тип вопроса */
   supplementary_question_type: XmlElem<string>;
+  /** Оценка вопроса */
   supplementary_question_mark: XmlElem<string | null>;
+  /** Группа */
   supplementary_question_group: XmlElem<string | null>;
 }
 
 interface SupplementaryQuestionsBase {
+  /** Дополнительные вопросы */
   supplementary_questions: XmlMultiElem<SupplementaryQuestionsBaseSupplementaryQuestion | null>;
 }
 
@@ -1321,6 +1519,7 @@ interface DevelopmentPlanDataBaseCompetenceDevelopmentMethodEducationMethod {
 
 interface DevelopmentPlanDataBaseCompetenceDevelopmentMethod {
   development_method_id: XmlElem<number | null, DevelopmentMethodCatalogDocumentTopElem>;
+  /** Учебные программы */
   education_methods: XmlMultiElem<DevelopmentPlanDataBaseCompetenceDevelopmentMethodEducationMethod | null>;
 }
 
@@ -1347,11 +1546,14 @@ interface DevelopmentPlanDataBaseCompetenceAim {
 
 interface DevelopmentPlanDataBaseCompetence extends WorkflowFieldsAssessmentBase {
   competence_id: XmlElem<number | null, CompetenceCatalogDocumentTopElem>;
+  /** Способы развития */
   development_methods: XmlMultiElem<DevelopmentPlanDataBaseCompetenceDevelopmentMethod | null>;
+  /** Учебные программы */
   education_methods: XmlMultiElem<DevelopmentPlanDataBaseCompetenceEducationMethod | null>;
   education_types: XmlMultiElem<DevelopmentPlanDataBaseCompetenceEducationType | null>;
   education_comment: XmlElem<string | null>;
   aims: XmlMultiElem<DevelopmentPlanDataBaseCompetenceAim | null>;
+  /** Комментарии */
   comment: XmlElem<string | null>;
 }
 
@@ -1382,11 +1584,14 @@ interface DevelopmentPlanDataBaseIndicatorAim {
 
 interface DevelopmentPlanDataBaseIndicator extends WorkflowFieldsAssessmentBase {
   indicator_id: XmlElem<number | null, IndicatorCatalogDocumentTopElem>;
+  /** Способы развития */
   development_methods: XmlMultiElem<DevelopmentPlanDataBaseIndicatorDevelopmentMethod | null>;
+  /** Учебные программы */
   education_methods: XmlMultiElem<DevelopmentPlanDataBaseIndicatorEducationMethod | null>;
   education_types: XmlMultiElem<DevelopmentPlanDataBaseIndicatorEducationType | null>;
   education_comment: XmlElem<string | null>;
   aims: XmlMultiElem<DevelopmentPlanDataBaseIndicatorAim | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
 }
 
@@ -1417,16 +1622,21 @@ interface DevelopmentPlanDataBasePlaindevelopmentAim {
 
 interface DevelopmentPlanDataBasePlaindevelopment extends WorkflowFieldsAssessmentBase {
   name: XmlElem<string | null>;
+  /** Способы развития */
   development_methods: XmlMultiElem<DevelopmentPlanDataBasePlaindevelopmentDevelopmentMethod | null>;
+  /** Учебные программы */
   education_methods: XmlMultiElem<DevelopmentPlanDataBasePlaindevelopmentEducationMethod | null>;
   education_types: XmlMultiElem<DevelopmentPlanDataBasePlaindevelopmentEducationType | null>;
   education_comment: XmlElem<string | null>;
   aims: XmlMultiElem<DevelopmentPlanDataBasePlaindevelopmentAim | null>;
+  /** Комментарии */
   comment: XmlElem<string | null>;
 }
 
 interface DevelopmentPlanDataBase {
+  /** Компетенции */
   competences: XmlMultiElem<DevelopmentPlanDataBaseCompetence | null>;
+  /** Индикаторы */
   indicators: XmlMultiElem<DevelopmentPlanDataBaseIndicator | null>;
   plaindevelopments: XmlMultiElem<DevelopmentPlanDataBasePlaindevelopment | null>;
 }
@@ -1552,9 +1762,11 @@ interface CustomReportBase extends CriterionBase, ColumnBase, ChartReportGraphBa
 }
 
 interface KnowledgePartsFieldsBaseKnowledgePart {
+  /** Значения карты знаний */
   knowledge_part_id: XmlElem<number | null, KnowledgePartCatalogDocumentTopElem>;
   knowledge_part_name: XmlElem<string | null>;
   knowledge_part_level_id: XmlElem<number | null, KnowledgePartLevelCatalogDocumentTopElem>;
+  /** Родительское значение */
   full_path: XmlElem<string | null>;
   current_level_id: XmlElem<string | null>;
   current_level_index: XmlElem<number | null>;
@@ -1562,7 +1774,9 @@ interface KnowledgePartsFieldsBaseKnowledgePart {
   target_level_id: XmlElem<string | null>;
   target_level_index: XmlElem<number | null>;
   target_level_name: XmlElem<string | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Требует подтверждения */
   require_acknowledgement: XmlElem<boolean>;
 }
 
@@ -1573,23 +1787,31 @@ interface KnowledgePartsFieldsBase {
 interface KnowledgePartsKpBaseTag {
   tag_id: XmlElem<number | null, TagCatalogDocumentTopElem>;
   tag_name: XmlElem<string | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Требует подтверждения */
   require_acknowledgement: XmlElem<boolean>;
 }
 
 interface KnowledgePartsKpBase extends KnowledgePartsFieldsBase {
+  /** Тэги */
   tags: XmlMultiElem<KnowledgePartsKpBaseTag | null>;
   acquaint_time: XmlElem<number | null>;
   previous_version_object_id: XmlElem<number | null>;
+  /** Статус */
   status_in_knowledge_map: XmlElem<string, typeof common.status_in_knowledge_map_types>;
+  /** Дата начала действия */
   kp_start_date: XmlElem<Date | null>;
+  /** Дата окончания действия */
   kp_end_date: XmlElem<Date | null>;
 }
 
 interface KnowledgePartsBaseTag {
   tag_id: XmlElem<number | null, TagCatalogDocumentTopElem>;
   tag_name: XmlElem<string | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Требует подтверждения */
   require_acknowledgement: XmlElem<boolean>;
 }
 
@@ -1598,26 +1820,35 @@ interface KnowledgePartsBaseExpert {
 }
 
 interface KnowledgePartsBase extends KnowledgePartsFieldsBase {
+  /** Тэги */
   tags: XmlMultiElem<KnowledgePartsBaseTag | null>;
   experts: XmlMultiElem<KnowledgePartsBaseExpert | null>;
   acquaint_time: XmlElem<number | null>;
   previous_version_object_id: XmlElem<number | null>;
+  /** Статус */
   status_in_knowledge_map: XmlElem<string, typeof common.status_in_knowledge_map_types>;
+  /** Дата начала действия */
   kp_start_date: XmlElem<Date | null>;
+  /** Дата окончания действия */
   kp_end_date: XmlElem<Date | null>;
 }
 
 interface KnowledgePartsBaseOld {
+  /** Дата начала действия */
   start_date: XmlElem<Date | null>;
+  /** Дата окончания действия */
   end_date: XmlElem<Date | null>;
 }
 
 interface CustomElemsBaseCustomElem {
+  /** Название */
   name: XmlElem<string | null>;
+  /** Значение */
   value: XmlElem<null | undefined | string | Date | number | boolean | null>;
 }
 
 interface CustomElemsBase {
+  /** Настраиваемые поля */
   custom_elems: XmlMultiElem<CustomElemsBaseCustomElem | null>;
   check_fields_default_value(curUser: CurUser): unknown;
 }
@@ -1635,6 +1866,7 @@ interface EstimationLevelsBase {
 interface TableDataBaseFile extends InsertFileBase {
   id: XmlElem<number | null>;
   name: XmlElem<string | null>;
+  /** Тип ресурса */
   type: XmlElem<string, typeof common.resource_types>;
 }
 
@@ -1654,6 +1886,7 @@ interface TableDataBaseR {
 }
 
 interface TableDataBase {
+  /** Файлы */
   files: XmlMultiElem<TableDataBaseFile | null>;
   has_fixed_rows: XmlElem<boolean | null>;
   run_report: XmlElem<boolean | null>;
@@ -1809,8 +2042,11 @@ interface AnnalsObjectsBase {
 }
 
 interface AnnalsNumsBase {
+  /** Вопросов */
   question_num: XmlElem<number | null>;
+  /** Вопросов отвечено */
   question_answered_num: XmlElem<number | null>;
+  /** Вопросов, отвеченных верно */
   question_passed_num: XmlElem<number | null>;
 }
 
@@ -1821,18 +2057,28 @@ interface LearningObjectivesInteractionsBase {
 }
 
 interface CoreLessonBaseDataLesson {
+  /** Блок данных Core_Vendor */
   core_vendor: XmlElem<string | null>;
+  /** Блок данных Objectives_Status */
   objectives_status: XmlElem<string | null>;
+  /** Блок данных Evaluation */
   evaluation: XmlElem<string | null>;
+  /** Блок данных Comments */
   comments: XmlElem<string | null>;
+  /** Блок данных Student_Data */
   student_data: XmlElem<string | null>;
+  /** Блок данных Student_Preferences */
   student_preferences: XmlElem<string | null>;
+  /** Блок данных Student_Demographics */
   student_demographics: XmlElem<string | null>;
 }
 
 interface CoreLessonBase {
+  /** Данные курса */
   core_lesson: XmlElem<string | null>;
+  /** Данные о прохождении курса */
   lesson_report: XmlElem<string | null>;
+  /** Данные учебного модуля */
   data_lesson: XmlElem<CoreLessonBaseDataLesson | null>;
 }
 
@@ -1843,13 +2089,18 @@ interface CoreLessonInfoBase {
 }
 
 interface LearningAssessmentBase extends AnnalsObjectsBase {
+  /** Тест */
   assessment_id: XmlElem<number | null, AssessmentCatalogDocumentTopElem>;
+  /** Название теста */
   assessment_name: XmlElem<string | null>;
+  /** Код теста */
   assessment_code: XmlElem<string | null>;
+  /** QTI теста */
   qti_text: XmlElem<string | null>;
   qti_date: XmlElem<Date | null>;
   expert_eval: XmlElem<boolean>;
   adaptive_eval: XmlElem<boolean>;
+  /** Назначен самостоятельно */
   is_self_enrolled: XmlElem<boolean | null>;
 }
 
@@ -1863,29 +2114,45 @@ interface LearningPartBaseLog {
 }
 
 interface LearningPartBaseStatement {
+  /** Учебная активность */
   statement_id: XmlElem<number | null, StatementCatalogDocumentTopElem>;
+  /** Статус учебной активности */
   activity_state_id: XmlElem<number | null, ActivityStateCatalogDocumentTopElem>;
   score: XmlElem<number>;
 }
 
 interface LearningPartBase extends CoreLessonInfoBase, CoreLessonBase, LearningObjectivesInteractionsBase, LearningAssessmentBase, LastAttemptTestLearningsBase {
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название раздела */
   name: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string | null, typeof common.course_part_types>;
   cl_module_protocol: XmlElem<string | null>;
+  /** Родительский раздел */
   parent_part_code: XmlElem<string | null>;
   course_module_id: XmlElem<number | null>;
   object_id: XmlElem<number | null>;
+  /** Статус */
   state_id: XmlElem<number, typeof common.learning_states>;
+  /** Данные положения курса */
   lesson_location: XmlElem<string | null>;
+  /** Баллы */
   score: XmlElem<number>;
+  /** Строка баллов */
   score_str: XmlElem<string | null>;
   max_score_per_attempt: XmlElem<number>;
+  /** Дата активации */
   start_usage_date: XmlElem<Date | null>;
+  /** Дата последнего посещ. */
   last_usage_date: XmlElem<Date | null>;
+  /** Время модуля */
   time: XmlElem<number | null>;
+  /** Максимальный балл */
   max_score: XmlElem<number | null>;
+  /** Количество попыток */
   attempts_num: XmlElem<number>;
+  /** Текущий номер попытки */
   cur_attempt_num: XmlElem<number>;
   use_proctoring: XmlElem<boolean | null>;
   logs: XmlMultiElem<LearningPartBaseLog | null>;
@@ -1893,41 +2160,61 @@ interface LearningPartBase extends CoreLessonInfoBase, CoreLessonBase, LearningO
 }
 
 interface WebVariablesBaseWvarEntry {
+  /** Значение */
   id: XmlElem<string | null>;
+  /** Описание */
   name: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string | null, typeof common.template_field_types>;
+  /** Тип объекта */
   catalog: XmlElem<string | null, typeof common.exchange_object_types>;
 }
 
 interface WebVariablesBaseWvarViewCondition {
   id: XmlElem<string | null>;
+  /** Параметр */
   wvar_name: XmlElem<string | null>;
+  /** Условие */
   option_type: XmlElem<string, typeof common.all_option_types>;
+  /** Значение */
   value: XmlElem<string | null>;
+  /** Условие */
   and_or: XmlElem<string>;
 }
 
 interface WebVariablesBaseWvarView {
+  /** Условия видимости */
   conditions: XmlMultiElem<WebVariablesBaseWvarViewCondition | null>;
 }
 
 interface WebVariablesBaseWvar {
+  /** Название */
   name: XmlElem<string | null>;
+  /** Родительский элемент */
   parent_wvar_name: XmlElem<string | null>;
+  /** Значение */
   value: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string, typeof common.template_field_types>;
+  /** Тип объекта */
   catalog: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Условие XQuery (относительно $elem) */
   xquery_qual: XmlElem<string | null>;
+  /** Значения */
   entries: XmlMultiElem<WebVariablesBaseWvarEntry | null>;
+  /** Заголовок */
   title: XmlElem<string | null>;
+  /** Описание */
   description: XmlElem<string | null>;
   silent: XmlElem<boolean>;
+  /** Позиция */
   position: XmlElem<number>;
   view: XmlElem<WebVariablesBaseWvarView | null>;
   required: XmlElem<boolean>;
 }
 
 interface WebVariablesBase {
+  /** Переменные */
   wvars: XmlMultiElem<WebVariablesBaseWvar | null>;
   wvars_num(): unknown;
 }
@@ -1944,31 +2231,50 @@ interface EducGroupsBaseEducGroup {
   group_id: XmlElem<string | null>;
   code: XmlElem<string | null>;
   name: XmlElem<string | null>;
+  /** Место проведения */
   place_id: XmlElem<number | null, PlaceCatalogDocumentTopElem>;
   conversation_id: XmlElem<number | null, ConversationCatalogDocumentTopElem>;
+  /** Сотрудники */
   collaborators: XmlMultiElem<EducGroupsBaseEducGroupCollaborator | null>;
+  /** Преподаватели */
   lectors: XmlMultiElem<EducGroupsBaseEducGroupLector | null>;
 }
 
 interface EducGroupsBase {
+  /** Учебные группы */
   educ_groups: XmlMultiElem<EducGroupsBaseEducGroup | null>;
 }
 
 interface EventCatalogBase {
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Ресурс базы */
   resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
+  /** Тип */
   type_id: XmlElem<string | null, typeof common.event_types>;
+  /** Тип */
   event_type_id: XmlElem<number | null, EventTypeCatalogDocumentTopElem>;
+  /** Дата начала */
   start_date: XmlElem<Date | null>;
+  /** Дата завершения */
   finish_date: XmlElem<Date | null>;
+  /** Статус */
   status_id: XmlElem<string | null, typeof common.event_status_types>;
+  /** Количество участников */
   person_num: XmlElem<number | null>;
+  /** Количество неименованных участников */
   unnamed_person_num: XmlElem<number | null>;
+  /** Организационная форма */
   organizational_form: XmlElem<string | null, typeof lists.organizational_forms>;
+  /** Обучающая организация */
   education_org_id: XmlElem<number | null, EducationOrgCatalogDocumentTopElem>;
+  /** Название обучающей организации */
   education_org_name: XmlElem<string | null>;
+  /** Общая стоимость */
   total_cost: XmlElem<number | null>;
+  /** Валюта */
   currency: XmlElem<string | null, typeof lists.currency_types>;
 }
 
@@ -1981,10 +2287,12 @@ interface CostCentersBaseCostCenter {
   cost_center_id: XmlElem<number | null, CostCenterCatalogDocumentTopElem>;
   person_num: XmlElem<number | null>;
   sum(): number;
+  /** Статьи затрат */
   expense_items: XmlMultiElem<CostCentersBaseCostCenterExpenseItem | null>;
 }
 
 interface CostCentersBase {
+  /** Центры затрат */
   cost_centers: XmlMultiElem<CostCentersBaseCostCenter | null>;
 }
 
@@ -2024,39 +2332,53 @@ interface SkillsBaseSkill {
 }
 
 interface SkillsBase {
+  /** Требуемые навыки */
   skills: XmlMultiElem<SkillsBaseSkill | null>;
 }
 
 interface RequirementsBaseRequirement {
   id: XmlElem<string | null>;
+  /** Требование */
   name: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
 }
 
 interface RequirementsBaseCertificateType {
+  /** Название */
   certificate_type_id: XmlElem<number | null, CertificateTypeCatalogDocumentTopElem>;
+  /** Обязательный */
   obligatory: XmlElem<boolean>;
 }
 
 interface RequirementsBaseCompoundProgram {
+  /** Название */
   compound_program_id: XmlElem<number | null, CompoundProgramCatalogDocumentTopElem>;
+  /** Обязательный */
   obligatory: XmlElem<boolean>;
 }
 
 interface RequirementsBaseEducationMethod {
+  /** Название */
   education_method_id: XmlElem<number | null, EducationMethodCatalogDocumentTopElem>;
+  /** Периодичность назначения */
   period: XmlElem<number | null>;
+  /** Обязательный */
   obligatory: XmlElem<boolean>;
 }
 
 interface RequirementsBaseTypicalDevelopmentProgram {
+  /** Типовая программа развития */
   typical_development_program_id: XmlElem<number | null, TypicalDevelopmentProgramCatalogDocumentTopElem>;
   job_transfer_type_id: XmlElem<string | null, typeof common.job_transfer_types>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
 }
 
 interface RequirementsBaseQualification {
+  /** Название */
   qualification_id: XmlElem<number | null, QualificationCatalogDocumentTopElem>;
+  /** Обязательный */
   obligatory: XmlElem<boolean>;
 }
 
@@ -2069,7 +2391,9 @@ interface RequirementsBaseAssessment {
 }
 
 interface RequirementsBaseRecomendedLibraryMaterial {
+  /** Материал библиотеки */
   material_id: XmlElem<number | null, LibraryMaterialCatalogDocumentTopElem>;
+  /** Обязательный */
   obligatory: XmlElem<boolean>;
 }
 
@@ -2079,33 +2403,49 @@ interface RequirementsBaseProfessionalArea {
 
 interface RequirementsBase extends SkillsBase {
   requirements: XmlMultiElem<RequirementsBaseRequirement | null>;
+  /** Требуемые типы сертификатов */
   certificate_types: XmlMultiElem<RequirementsBaseCertificateType | null>;
+  /** Требуемые модульные программы */
   compound_programs: XmlMultiElem<RequirementsBaseCompoundProgram | null>;
+  /** Требуемые учебные программы */
   education_methods: XmlMultiElem<RequirementsBaseEducationMethod | null>;
   obligatory_education_amount: XmlElem<number | null>;
   education_period: XmlElem<number | null>;
+  /** Требуемые типовые программы развития */
   typical_development_programs: XmlMultiElem<RequirementsBaseTypicalDevelopmentProgram | null>;
+  /** Требуемые квалификации */
   qualifications: XmlMultiElem<RequirementsBaseQualification | null>;
+  /** Курсы */
   courses: XmlMultiElem<RequirementsBaseCourse | null>;
+  /** Требуемые тесты */
   assessments: XmlMultiElem<RequirementsBaseAssessment | null>;
   recomended_library_materials: XmlMultiElem<RequirementsBaseRecomendedLibraryMaterial | null>;
+  /** Профессиональные области */
   professional_areas: XmlMultiElem<RequirementsBaseProfessionalArea | null>;
+  /** Образование */
   educ_type_id: XmlElem<string | null, typeof common.educ_types>;
+  /** Образование */
   education_type_id: XmlElem<number | null, EducationTypeCatalogDocumentTopElem>;
+  /** Возраст от */
   age_min: XmlElem<number | null>;
+  /** Возраст до */
   age_max: XmlElem<number | null>;
   experience_in_company: XmlElem<number | null>;
   experience_in_current_position: XmlElem<number | null>;
 }
 
 interface LearningCurrentStateBase {
+  /** Текущие баллы */
   cur_score: XmlElem<number>;
+  /** Текущая строка баллов */
   cur_score_str: XmlElem<string | null>;
+  /** Текущее состояние */
   cur_state_id: XmlElem<number, typeof common.learning_states>;
 }
 
 interface CourseExpertsBasePerson extends PersonFillingBase {
   id: XmlElem<string | null>;
+  /** Эксперт курса */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   type: XmlElem<string, typeof common.course_expert_types>;
 }
@@ -2249,6 +2589,7 @@ interface BlockReportsBase {
 }
 
 interface ZonesBaseZone {
+  /** Название */
   name: XmlElem<string | null>;
   tag_id: XmlElem<string | null>;
   style: XmlElem<string | null>;
@@ -2270,8 +2611,11 @@ interface ViewDispButtonBase {
 }
 
 interface TalentPoolFuncManagersBaseTalentPoolFuncManager extends PersonFillingBase {
+  /** Сотрудник */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Является непосредственным руководителем */
   is_native: XmlElem<boolean>;
+  /** Тип руководителя */
   boss_type_id: XmlElem<number | null, BossTypeCatalogDocumentTopElem>;
 }
 
@@ -2304,21 +2648,33 @@ interface AdminAccessCatalogBase {
 
 interface ObjectCodeNameBase {
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Ресурс базы */
   resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
 }
 
 interface CourseSettingsBaseSettings {
+  /** Открывать автоматически, если в курсе один модуль */
   open_single_module: XmlElem<boolean>;
+  /** Открывать автоматически первый модуль при первом входе */
   open_first_module: XmlElem<boolean>;
+  /** Открывать автоматически последний посещенный модуль при продолжении обучения */
   open_last_visited: XmlElem<boolean>;
+  /** Если последний посещенный модуль уже завершен, открыть автоматически следующий по порядку */
   open_next_after_completed: XmlElem<boolean>;
   no_display_status_msg: XmlElem<boolean>;
+  /** Разрешить пользователю завершать курс */
   enable_user_completion: XmlElem<boolean>;
+  /** Показывать сообщение при выполнении условий завершения */
   display_completion_msg: XmlElem<boolean>;
+  /** Сообщение при выполнении условий завершения */
   completion_msg: XmlElem<string | null>;
+  /** Разрешить проверки компонентов */
   allow_checks: XmlElem<boolean>;
+  /** Действие, если отсутствуют требуемые компоненты */
   after_checks: XmlElem<string>;
   launch_type: XmlElem<string | null>;
   panel: XmlElem<boolean | null>;
@@ -2332,62 +2688,86 @@ interface CourseSettingsBase {
 }
 
 interface WebChecksBaseChecksBrowserCheck {
+  /** Тип */
   type: XmlElem<string | null, typeof lists.web_requirements>;
+  /** Условие */
   cond: XmlElem<string | null, typeof common.all_option_types>;
+  /** Версия */
   version: XmlElem<number | null>;
 }
 
 interface WebChecksBaseChecksBrowser {
+  /** Браузер */
   check: XmlElem<WebChecksBaseChecksBrowserCheck | null>;
 }
 
 interface WebChecksBaseChecksPluginCheck {
+  /** Тип */
   type: XmlElem<string | null, typeof lists.web_requirements>;
+  /** Условие */
   cond: XmlElem<string | null, typeof common.all_option_types>;
+  /** Версия */
   version: XmlElem<number | null>;
 }
 
 interface WebChecksBaseChecksPlugin {
+  /** Плагин */
   check: XmlElem<WebChecksBaseChecksPluginCheck | null>;
 }
 
 interface WebChecksBaseChecks {
+  /** Браузеры */
   browser: XmlElem<WebChecksBaseChecksBrowser | null>;
+  /** Плагины */
   plugin: XmlElem<WebChecksBaseChecksPlugin | null>;
 }
 
 interface WebChecksBase {
+  /** Требование к клиенту */
   checks: XmlElem<WebChecksBaseChecks | null>;
 }
 
 interface WebChecksBaseBrowserCheck {
+  /** Тип */
   type: XmlElem<string | null, typeof lists.web_requirements>;
+  /** Условие */
   cond: XmlElem<string | null, typeof common.all_option_types>;
+  /** Версия */
   version: XmlElem<number | null>;
 }
 
 interface WebChecksBaseBrowser {
+  /** Браузер */
   check: XmlElem<WebChecksBaseBrowserCheck | null>;
 }
 
 interface WebChecksBasePluginCheck {
+  /** Тип */
   type: XmlElem<string | null, typeof lists.web_requirements>;
+  /** Условие */
   cond: XmlElem<string | null, typeof common.all_option_types>;
+  /** Версия */
   version: XmlElem<number | null>;
 }
 
 interface WebChecksBasePlugin {
+  /** Плагин */
   check: XmlElem<WebChecksBasePluginCheck | null>;
 }
 
 interface ObjectTypeBase {
+  /** Тип объекта */
   object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Объект */
   object_id: XmlElem<number | null>;
+  /** Название объекта */
   object_name: XmlElem<string | null>;
 }
 
 interface CustomDatasBaseCustomData {
+  /** Название */
   name: XmlElem<string | null>;
+  /** Значение */
   value: XmlElem<string | null>;
 }
 
@@ -2436,11 +2816,14 @@ interface TaskInfoBase {
 
 interface GameBonusBaseGameBonus {
   id: XmlElem<string | null>;
+  /** Валюта */
   currency_type_id: XmlElem<string | null, typeof lists.currency_types>;
+  /** Сумма */
   sum: XmlElem<number | null>;
 }
 
 interface GameBonusBase {
+  /** Бонусы */
   game_bonuss: XmlMultiElem<GameBonusBaseGameBonus | null>;
 }
 
@@ -2487,14 +2870,19 @@ interface ProctoringBase {
 
 interface ResultFieldsBaseResultField {
   id: XmlElem<string | null>;
+  /** Название поля */
   name: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string | null, typeof common.result_field_types>;
+  /** Заголовок */
   title: XmlElem<string | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
   for_analytics: XmlElem<boolean>;
   for_analytics_aggregation: XmlElem<boolean>;
   for_analytics_aggregation_type: XmlElem<string | null, typeof common.aggregation_types>;
   for_analytics_scale_maximum: XmlElem<string | null>;
+  /** Ширина */
   width: XmlElem<number | null>;
   bk_color: XmlElem<string | null>;
   text_color: XmlElem<string | null>;
@@ -2514,21 +2902,29 @@ interface PersonObjectLinksBase {
 }
 
 interface ExecCodeBaseExecCodeBinFile {
+  /** Название */
   name: XmlElem<string | null>;
+  /** Родительский элемент */
   parent_file_name: XmlElem<string | null>;
+  /** Путь до файла */
   file_path: XmlElem<string | null>;
+  /** Текст */
   value: XmlElem<string | null>;
+  /** Позиция */
   position: XmlElem<number>;
+  /** Дата */
   timestamp: XmlElem<Date | null>;
 }
 
 interface ExecCodeBaseExecCode {
   code_type: XmlElem<string | null>;
   code_url: XmlElem<string | null>;
+  /** Выполняемый код */
   code_text: XmlElem<string | null>;
   entry_point: XmlElem<string | null>;
   code_hash: XmlElem<string | null>;
   configuration: XmlElem<string | null>;
+  /** Файлы */
   bin_files: XmlMultiElem<ExecCodeBaseExecCodeBinFile | null>;
 }
 
@@ -2537,11 +2933,17 @@ interface ExecCodeBase {
 }
 
 interface ExecCodeBaseBinFile {
+  /** Название */
   name: XmlElem<string | null>;
+  /** Родительский элемент */
   parent_file_name: XmlElem<string | null>;
+  /** Путь до файла */
   file_path: XmlElem<string | null>;
+  /** Текст */
   value: XmlElem<string | null>;
+  /** Позиция */
   position: XmlElem<number>;
+  /** Дата */
   timestamp: XmlElem<Date | null>;
 }
 
@@ -2558,15 +2960,21 @@ interface ViewBase extends ViewDispButtonBase, ViewColumnsBase {
 }
 
 interface QaTestParamBase extends WebVariablesBase {
+  /** Сотрудник */
   cur_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   use_cur_object: XmlElem<boolean>;
+  /** Тип объекта */
   cur_object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Объект */
   cur_object_id: XmlElem<number | null>;
   use_cur_web_design: XmlElem<boolean>;
+  /** Дизайн портала */
   cur_web_design_id: XmlElem<number | null, WebDesignCatalogDocumentTopElem>;
   use_cur_site: XmlElem<boolean>;
+  /** Сайт */
   cur_site_id: XmlElem<number | null, SiteCatalogDocumentTopElem>;
   use_cur_lng: XmlElem<boolean>;
+  /** Язык интерфейса */
   cur_lng: XmlElem<string | null>;
 }
 
@@ -2590,6 +2998,7 @@ interface QaTestFixtureBase {
 
 interface QaTestAssertBaseAssert {
   id: XmlElem<string | null>;
+  /** Наименование */
   name: XmlElem<string | null>;
   assert_type: XmlElem<string | null, typeof common.qa_test_assert_types>;
   check_inversion: XmlElem<boolean>;

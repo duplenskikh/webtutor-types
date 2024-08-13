@@ -24,13 +24,17 @@ CustomElemsBase & {
   qualification_id: XmlElem<number | null, QualificationCatalogDocumentTopElem>;
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   event_id: XmlElem<number | null, EventCatalogDocumentTopElem>;
+  /** Отправитель */
   sender_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Компетенция */
   competence_id: XmlElem<number | null, CompetenceCatalogDocumentTopElem>;
   is_reward: XmlElem<boolean | null>;
   learnings: XmlMultiElem<QualificationAssignmentDocumentLearning | null>;
   test_learnings: XmlMultiElem<QualificationAssignmentDocumentTestLearning | null>;
   education_methods: XmlMultiElem<QualificationAssignmentDocumentEducationMethod | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
   doc_info: XmlElem<DocInfoBase | null>;
 };

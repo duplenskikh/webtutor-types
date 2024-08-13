@@ -1,7 +1,9 @@
 type LibraryMaterialCommentDocumentTopElem = XmlTopElem &
 FileListBase & {
   Doc: LibraryMaterialCommentDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
   is_admin_approved: XmlElem<boolean>;
   material_id: XmlElem<number | null, LibraryMaterialCatalogDocumentTopElem>;
@@ -11,7 +13,9 @@ FileListBase & {
   how2show: XmlElem<string | null>;
   last_create_date: XmlElem<Date | null>;
   is_closed: XmlElem<boolean>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

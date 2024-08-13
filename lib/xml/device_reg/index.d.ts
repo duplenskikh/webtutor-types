@@ -7,6 +7,7 @@ interface DeviceRegDocumentToken {
 
 type DeviceRegDocumentTopElem = XmlTopElem & {
   Doc: DeviceRegDocument;
+  /** Код */
   code: XmlElem<string | null>;
   device_id: XmlElem<string | null>;
   device_desc: XmlElem<string | null>;
@@ -14,6 +15,7 @@ type DeviceRegDocumentTopElem = XmlTopElem & {
   last_access_date: XmlElem<Date | null>;
   mobile_app_config_id: XmlElem<number | null, MobileAppConfigCatalogDocumentTopElem>;
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
   tokens: XmlMultiElem<DeviceRegDocumentToken | null>;
 };
