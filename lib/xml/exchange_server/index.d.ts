@@ -38,6 +38,7 @@ interface ExchangeBase {
 }
 
 interface ExchangeServerDocumentDownload extends ExchangeBase {
+  /** Не обновлять объекты с большей датой модификации */
   take_dest_modification_date: XmlElem<boolean>;
 }
 
@@ -48,19 +49,33 @@ interface ExchangeServerDocumentUpload extends ExchangeBase {
 type ExchangeServerDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
   Doc: ExchangeServerDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Пароль сервера */
   server_password: XmlElem<string | null>;
+  /** Зарегистрирован */
   is_active: XmlElem<boolean>;
+  /** Настройки получения */
   download: XmlElem<ExchangeServerDocumentDownload | null>;
+  /** Обновлять данные в базе при совпадении ID */
   update_exist_package_obj: XmlElem<boolean>;
+  /** Автоматически публиковать тест */
   auto_publish_test: XmlElem<boolean>;
+  /** Настройки отправки */
   upload: XmlElem<ExchangeServerDocumentUpload | null>;
+  /** Дата последней отправки данных */
   last_upload_date: XmlElem<Date | null>;
+  /** Дата последнего приема данных */
   last_download_date: XmlElem<Date | null>;
+  /** Версия сервера при приеме данных */
   server_version: XmlElem<string | null>;
+  /** Прием данных */
   allow_receive_data: XmlElem<boolean>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Категория */
   role_id: XmlMultiElemObject<number | null>;
 };
 

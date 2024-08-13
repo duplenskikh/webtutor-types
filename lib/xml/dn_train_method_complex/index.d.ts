@@ -30,13 +30,17 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnTrainMethodComplexDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Факультет */
   facult_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
   chair_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
   discipline_id: XmlElem<number | null, DnDisciplineCatalogDocumentTopElem>;
   program_discipline_id: XmlElem<number | null, DnProgramDisciplCatalogDocumentTopElem>;
   program_discipline_name: XmlElem<string | null>;
+  /** Преподаватель */
   lector_id: XmlElem<number | null, LectorCatalogDocumentTopElem>;
   control_forms: XmlMultiElem<DnTrainMethodComplexDocumentControlForm | null>;
   educat_events: XmlMultiElem<DnTrainMethodComplexDocumentEducatEvent | null>;

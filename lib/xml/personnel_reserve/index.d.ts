@@ -3,9 +3,12 @@ interface PersonnelReserveDocumentTask extends FileListBase {
   name: XmlElem<string | null>;
   type: XmlElem<string, typeof common.career_reserve_type_tasks_types>;
   status: XmlElem<string, typeof common.personnel_reserve_task_status_types>;
+  /** Плановая дата выполнения */
   plan_date: XmlElem<Date | null>;
+  /** Фактическая дата выполнения */
   fact_date: XmlElem<Date | null>;
   desc: XmlElem<string | null>;
+  /** Оценка */
   score: XmlElem<number | null>;
   comment: XmlElem<string | null>;
   object_type: XmlElem<string | null, typeof common.exchange_object_types>;
@@ -30,25 +33,38 @@ AdminAccessBase &
 CustomElemsBase & {
   Doc: PersonnelReserveDocument;
   id: XmlElem<number | null>;
+  /** Название */
   name: XmlElem<string | null>;
   start_date: XmlElem<Date | null>;
   include_reserve_date: XmlElem<Date | null>;
+  /** Дата исключения из резерва */
   finish_date: XmlElem<Date | null>;
+  /** Статус */
   status: XmlElem<string, typeof common.personnel_reserve_status_types>;
+  /** Тип кадрового резерва */
   career_reserve_type_id: XmlElem<number | null, CareerReserveTypeCatalogDocumentTopElem>;
+  /** Основание для исключения */
   exclusion_reason_id: XmlElem<number | null, ExclusionReasonCatalogDocumentTopElem>;
+  /** Способ выдвижения в резерв */
   nomination_id: XmlElem<number | null, TalentPoolNominationCatalogDocumentTopElem>;
+  /** Потенциал развития */
   development_potential_id: XmlElem<number | null, DevelopmentPotentialCatalogDocumentTopElem>;
+  /** Оценка эффективности */
   efficiency_estimation_id: XmlElem<number | null, EfficiencyEstimationCatalogDocumentTopElem>;
   tasks: XmlMultiElem<PersonnelReserveDocumentTask | null>;
   recommendators: XmlMultiElem<PersonnelReserveDocumentRecommendator | null>;
   overall_comment: XmlElem<string | null>;
+  /** Доступ */
   access: XmlElem<AccessDocBase | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
   set_task(task: unknown): string | void;
   change_func_managers_list(): unknown;
+  /** Категория */
   role_id: XmlMultiElemObject<number | null>;
 };
 

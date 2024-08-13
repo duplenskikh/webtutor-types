@@ -9,7 +9,9 @@ type ProfilingRecordCatalogDocumentTopElem = XmlTopElem & {
   template_id: XmlElem<number | null>;
   parent_template_type: XmlElem<string | null>;
   parent_template_id: XmlElem<number | null>;
+  /** Дата модификации */
   modification_date: XmlElem<Date | null>;
+  /** Код сервера */
   app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

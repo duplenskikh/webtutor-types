@@ -9,14 +9,20 @@ type ActivityStateDocumentTopElem = XmlTopElem &
 PersonFillingBase & {
   Doc: ActivityStateDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Дата создания */
   create_date: XmlElem<Date | null>;
+  /** Тип учебной активности */
   activity_id: XmlElem<number | null, ActivityCatalogDocumentTopElem>;
   activity_code: XmlElem<string | null>;
+  /** Сотрудник */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   registration: XmlElem<string | null>;
   request: XmlElem<ActivityStateDocumentRequest | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

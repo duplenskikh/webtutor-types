@@ -12,7 +12,9 @@ AdminAccessBase & {
   all_laboriousn_indep: XmlElem<number | null>;
   control_form: XmlElem<number | null, DnControlFormCatalogDocumentTopElem>;
   educat_form_id: XmlElem<number | null, DnEducatFormCatalogDocumentTopElem>;
+  /** Дата модификации */
   modification_date: XmlElem<Date | null>;
+  /** Код сервера */
   app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

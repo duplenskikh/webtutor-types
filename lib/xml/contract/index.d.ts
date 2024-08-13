@@ -11,12 +11,19 @@ CustomElemsBase & {
   contract_type_id: XmlElem<number | null, ContractTypeCatalogDocumentTopElem>;
   start_date: XmlElem<Date | null>;
   finish_date: XmlElem<Date | null>;
+  /** Обучающая организация */
   education_org_id: XmlElem<number | null, EducationOrgCatalogDocumentTopElem>;
+  /** Название юридического лица */
   legal_entity_name: XmlElem<string | null>;
+  /** Название юридического лица из списка */
   legal_entity_code: XmlElem<string | null>;
+  /** Количество прикрепленных файлов */
   files_count(): number;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

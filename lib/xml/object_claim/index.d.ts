@@ -1,7 +1,9 @@
 type ObjectClaimDocumentTopElem = XmlTopElem & {
   Doc: ObjectClaimDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
   source_type: XmlElem<string | null>;
   source_id: XmlElem<number | null>;
@@ -24,12 +26,18 @@ type ObjectClaimDocumentTopElem = XmlTopElem & {
   access_level: XmlElem<number | null>;
   value: XmlElem<string | null>;
   is_active: XmlElem<boolean>;
+  /** Дата начала */
   start_date: XmlElem<Date | null>;
+  /** Дата завершения */
   finish_date: XmlElem<Date | null>;
   data_str: XmlElem<string | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
   is_manual: XmlElem<boolean | null>;
 };

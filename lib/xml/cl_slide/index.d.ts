@@ -52,15 +52,23 @@ interface ClSlideDocumentComment {
 
 type ClSlideDocumentTopElem = XmlTopElem & {
   Doc: ClSlideDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Курс CourseLab */
   cl_course_id: XmlElem<number | null, ClCourseCatalogDocumentTopElem>;
+  /** Модуль Courselab */
   cl_module_id: XmlElem<number | null, ClModuleCatalogDocumentTopElem>;
   guid: XmlElem<string | null>;
   sid: XmlElem<number | null>;
+  /** Слайд-хозяин */
   master_id: XmlElem<number | null, ClSlideCatalogDocumentTopElem>;
+  /** Код слайда-хозяина */
   master_code: XmlElem<string | null>;
+  /** Является хозяином */
   is_master: XmlElem<boolean>;
+  /** Является выскакивающим экраном */
   is_splash: XmlElem<boolean>;
   indent: XmlElem<number | null>;
   infinite: XmlElem<boolean>;
@@ -71,15 +79,22 @@ type ClSlideDocumentTopElem = XmlTopElem & {
   actionboxesxml: XmlElem<string | null>;
   subslides: XmlMultiElem<ClSlideDocumentSubslide | null>;
   comments: XmlMultiElem<ClSlideDocumentComment | null>;
+  /** Заблокировано */
   flag_locked: XmlElem<boolean>;
+  /** Владелец ресурса */
   greedy_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Имя владельца */
   greedy_person_fullname: XmlElem<string | null>;
+  /** Слайд завершен */
   flag_completion: XmlElem<boolean>;
   champion_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   champion_fullname: XmlElem<string | null>;
+  /** Состояние разработки */
   approval_status: XmlElem<number, typeof common.cl_approval_states>;
+  /** Комментарий */
   desc: XmlElem<string | null>;
   stamp: XmlElem<number>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

@@ -30,6 +30,7 @@ interface KpiPlanDocumentExpert {
 
 interface KpiPlanDocumentWorkflowMatching {
   id: XmlElem<string | null>;
+  /** Сотрудник */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
 }
 
@@ -40,30 +41,46 @@ CustomElemsBase &
 AdminAccessBase & {
   Doc: KpiPlanDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name(): string;
+  /** КПЭ */
   kpi_id: XmlElem<number | null, KpiCatalogDocumentTopElem>;
+  /** Бюджетный период */
   budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Ответственный */
   responsible_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Дата начала */
   start_date: XmlElem<Date | null>;
+  /** Дата завершения */
   end_date: XmlElem<Date | null>;
   custom_data: XmlElem<KpiPlanDocumentCustomData | null>;
+  /** Минимальное значение */
   threshold: XmlElem<string | null>;
   threshold_text: XmlElem<string | null>;
   threshold_value: XmlElem<number | null>;
+  /** Максимальное значение */
   challenge: XmlElem<string | null>;
   challenge_text: XmlElem<string | null>;
   challenge_value: XmlElem<number | null>;
+  /** Плановая величина */
   plan: XmlElem<string | null>;
   plan_text: XmlElem<string | null>;
   plan_value: XmlElem<number | null>;
+  /** Каталог объектов */
   object_catalog: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** ID объекта */
   object_id: XmlElem<number | null>;
+  /** Название объекта */
   object_name: XmlElem<string | null>;
   experts: XmlMultiElem<KpiPlanDocumentExpert | null>;
   workflow_matchings: XmlMultiElem<KpiPlanDocumentWorkflowMatching | null>;
+  /** Тип выборки условий видимости */
   workflow_matching_type: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
   obtain_custom_data(kPITopElem: unknown, aData: unknown): unknown;
   calc_data(formula: string): unknown;

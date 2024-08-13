@@ -1,4 +1,5 @@
 interface DnLessonDocumentStudGroup {
+  /** Учебная группа */
   group_id: XmlElem<number | null, DnStudGroupCatalogDocumentTopElem>;
 }
 
@@ -26,21 +27,28 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnLessonDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Факультет */
   faculty_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
   chair_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
   discipline_id: XmlElem<number | null, DnDisciplineCatalogDocumentTopElem>;
+  /** Дата */
   lesson_date: XmlElem<Date | null>;
+  /** Статус договора */
   status_id: XmlElem<string | null, typeof common.lesson_states>;
+  /** Преподаватель */
   lector_id: XmlElem<number | null, LectorCatalogDocumentTopElem>;
   educat_event_form_id: XmlElem<number | null, DnEducatEventCatalogDocumentTopElem>;
   auditorium_id: XmlElem<number | null, DnAuditoriumCatalogDocumentTopElem>;
   stream_id: XmlElem<number | null, DnStreamCatalogDocumentTopElem>;
+  /** Учебные группы */
   stud_groups: XmlMultiElem<DnLessonDocumentStudGroup | null>;
   deliv_date: XmlElem<Date | null>;
   stud_works: XmlMultiElem<DnLessonDocumentStudWork | null>;
   registr_students: XmlMultiElem<DnLessonDocumentRegistrStudent | null>;
   students: XmlMultiElem<DnLessonDocumentStudent | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

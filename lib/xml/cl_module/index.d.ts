@@ -123,12 +123,19 @@ interface ClModuleDocumentTemplateSlide {
 
 type ClModuleDocumentTopElem = XmlTopElem & {
   Doc: ClModuleDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Курс CourseLab */
   cl_course_id: XmlElem<number | null, ClCourseCatalogDocumentTopElem>;
+  /** Ссылка на файлы ресурсов объекта */
   resource_url: XmlElem<string | null>;
+  /** Является шаблоном */
   is_template: XmlElem<boolean>;
+  /** Папка */
   category: XmlElem<string | null>;
+  /** Категория */
   category_label: XmlElem<string | null>;
   format: XmlElem<string | null>;
   rev: XmlElem<number | null>;
@@ -142,13 +149,17 @@ type ClModuleDocumentTopElem = XmlTopElem & {
   guide_lines: XmlMultiElem<ClModuleDocumentGuideLine | null>;
   slides: XmlMultiElem<ClModuleDocumentSlide | null>;
   template_slides: XmlMultiElem<ClModuleDocumentTemplateSlide | null>;
+  /** Доступ */
   access: XmlElem<AccessDocBase | null>;
   desc: XmlElem<string | null>;
   stamp: XmlElem<number>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
   module_href_get(): false | void;
   export_2_scorm(): false | void;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
 };
 

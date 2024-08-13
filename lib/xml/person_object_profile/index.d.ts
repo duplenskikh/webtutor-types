@@ -3,6 +3,7 @@ interface PersonObjectProfileDocumentPersonObjectLinkObject {
   object_name: XmlElem<string | null>;
   can_edit: XmlElem<boolean>;
   can_delete: XmlElem<boolean>;
+  /** Уровень доступа */
   access_level: XmlElem<number | null>;
 }
 
@@ -19,10 +20,14 @@ interface PersonObjectProfileDocumentPersonObjectLink {
 
 type PersonObjectProfileDocumentTopElem = XmlTopElem & {
   Doc: PersonObjectProfileDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
   person_object_links: XmlMultiElem<PersonObjectProfileDocumentPersonObjectLink | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

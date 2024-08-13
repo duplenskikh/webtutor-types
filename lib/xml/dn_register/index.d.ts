@@ -8,17 +8,24 @@ type DnRegisterDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnRegisterDocument;
+  /** Код */
   code: XmlElem<string | null>;
   control_event_id: XmlElem<number | null, DnControlEventCatalogDocumentTopElem>;
+  /** Тип */
   type_id: XmlElem<string, typeof common.registr_types>;
+  /** Факультет */
   faculty_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
   chair_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
   discipl_id: XmlElem<number | null, DnDisciplineCatalogDocumentTopElem>;
+  /** Преподаватель */
   lector_id: XmlElem<number | null, LectorCatalogDocumentTopElem>;
+  /** Дата */
   date_event: XmlElem<Date | null>;
   contr_form_id: XmlElem<number | null, DnControlFormCatalogDocumentTopElem>;
+  /** Учебная группа */
   stud_group_id: XmlElem<number | null, DnStudGroupCatalogDocumentTopElem>;
   student_marks: XmlMultiElem<DnRegisterDocumentStudentMark | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

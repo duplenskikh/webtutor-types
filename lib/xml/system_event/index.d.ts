@@ -11,7 +11,9 @@ interface SystemEventDocumentSectionAction {
 
 interface SystemEventDocumentSection {
   id: XmlElem<string | null>;
+  /** Название блока */
   name: XmlElem<string | null>;
+  /** Условия выполнения */
   perfom_condition: XmlElem<string | null>;
   actions: XmlMultiElem<SystemEventDocumentSectionAction | null>;
 }
@@ -19,18 +21,31 @@ interface SystemEventDocumentSection {
 type SystemEventDocumentTopElem = XmlTopElem &
 MsVariablesBase & {
   Doc: SystemEventDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Связанное системное событие */
   linked_system_event_id: XmlElem<number | null, SystemEventCatalogDocumentTopElem>;
+  /** Условия выполнения */
   perfom_condition: XmlElem<string | null>;
+  /** Активное событие */
   is_active: XmlElem<boolean>;
+  /** Блоки операций */
   sections: XmlMultiElem<SystemEventDocumentSection | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Категория */
   role_id: XmlMultiElemObject<number | null>;
 };
 

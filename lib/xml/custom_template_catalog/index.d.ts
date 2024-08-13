@@ -1,23 +1,32 @@
 interface CustomFieldsFieldEntry {
+  /** Значение */
   value: XmlElem<string | null>;
 }
 
 interface CustomFieldsField {
+  /** Название */
   name: XmlElem<string | null>;
   type: XmlElem<string | null, typeof common.template_field_types>;
   title: XmlElem<string | null>;
   catalog: XmlElem<string | null, typeof common.exchange_object_types>;
   xquery_qual: XmlElem<string | null>;
+  /** Список допустимых значений */
   entries: XmlMultiElem<CustomFieldsFieldEntry | null>;
   sheet_id: XmlElem<string | null>;
   disp_web: XmlElem<boolean>;
   is_required: XmlElem<boolean>;
+  /** Условие верности */
   condition_eval: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
   default_value_eval: XmlElem<string | null>;
+  /** Длина */
   width: XmlElem<string | null>;
+  /** Высота */
   height: XmlElem<string | null>;
+  /** Визуальный класс */
   class: XmlElem<string | null>;
+  /** Количество символов */
   max_chars: XmlElem<string | null>;
   view: XmlElem<ViewConditionsBase | null>;
 }

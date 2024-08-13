@@ -60,7 +60,9 @@ ClLocalizationsBase &
 KnowledgePartsBase &
 CustomElemsBase & {
   Doc: ClCourseDocument;
+  /** Дата начала */
   start_date: XmlElem<Date | null>;
+  /** Дата завершения */
   end_date: XmlElem<Date | null>;
   state_id: XmlElem<number, typeof common.cl_states>;
   platform: XmlElem<string | null>;
@@ -71,11 +73,16 @@ CustomElemsBase & {
   repositoriums: XmlMultiElem<ClCourseDocumentRepositorium | null>;
   plan_table: XmlElem<ClCourseDocumentPlanTable | null>;
   aux_consts: XmlMultiElem<ClCourseDocumentAuxConst | null>;
+  /** Комментарий */
   desc: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
   forum_id: XmlElem<number | null, ForumCatalogDocumentTopElem>;
+  /** Категория */
   role_id: XmlMultiElemObject<number | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
   access: XmlElem<AccessDocBase | null>;
   module_href_get(): false | void;
   export_2_scorm(): false | void;

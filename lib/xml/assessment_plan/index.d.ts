@@ -31,6 +31,7 @@ interface AssessmentPlanDocumentExpert {
 }
 
 interface AssessmentPlanDocumentCustomField {
+  /** Название */
   name: XmlElem<string | null>;
   value: XmlElem<string | null>;
 }
@@ -43,28 +44,47 @@ FileListBase &
 AdminAccessBase & {
   Doc: AssessmentPlanDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Процедура оценки */
   assessment_appraise_id: XmlElem<number | null, AssessmentAppraiseCatalogDocumentTopElem>;
+  /** Сотрудник */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Оценивающий */
   expert_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Руководитель */
   boss_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Подразделение */
   department_id: XmlElem<number | null>;
+  /** Название подразделения */
   department_name: XmlElem<string | null>;
   flag_appraise_department: XmlElem<boolean>;
+  /** Объект оценки */
   assessment_object_type: XmlElem<string>;
+  /** Тип процедуры */
   assessment_appraise_type: XmlElem<string | null, typeof common.assessment_appraise_types>;
   status: XmlElem<string | null, typeof common.assessment_appraise_participants>;
+  /** Признак завершения */
   is_done: XmlElem<boolean>;
+  /** Интегральная оценка */
   integral_mark: XmlElem<number | null>;
   flag_is_processed: XmlElem<boolean>;
+  /** Рекомендации */
   assessment_result_recommends: XmlMultiElem<AssessmentPlanDocumentAssessmentResultRecommend | null>;
+  /** Сотрудник */
   workflow_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** План. дата завершения */
   workflow_end_date: XmlElem<Date | null>;
+  /** Матрица ответственности */
   assessment_appraise_matrix_id: XmlElem<number | null, AssessmentAppraiseMatrixCatalogDocumentTopElem>;
   appraised_periods: XmlMultiElem<AssessmentPlanDocumentAppraisedPeriod | null>;
+  /** Комментарии */
   custom_comments: XmlMultiElem<AssessmentPlanDocumentCustomComment | null>;
+  /** Согласующие эксперты */
   custom_experts: XmlMultiElem<AssessmentPlanDocumentCustomExpert | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
   temp: XmlElem<string | null>;
   fire_wf_action: XmlElem<string | null>;
@@ -74,6 +94,7 @@ AdminAccessBase & {
   index: XmlElem<number>;
   start_date: XmlElem<Date | null>;
   end_date: XmlElem<Date | null>;
+  /** Бюджетный период */
   budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
   period_start: XmlElem<Date | null>;
   period_end: XmlElem<Date | null>;

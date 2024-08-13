@@ -2,8 +2,11 @@ type ProfessionalAreaTypeDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase & {
   Doc: ProfessionalAreaTypeDocument;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
   access: XmlElem<AccessDocBase | null>;
 };
 

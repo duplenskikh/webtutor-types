@@ -33,13 +33,21 @@ type AssessmentAppraiseMatrixDocumentTopElem = XmlTopElem &
 FieldNamesBase &
 AdminAccessBase & {
   Doc: AssessmentAppraiseMatrixDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Объект */
   object_name: XmlElem<string>;
+  /** Расписание */
   time_tables: XmlMultiElem<AssessmentAppraiseMatrixDocumentTimeTable | null>;
+  /** Периоды */
   periods: XmlMultiElem<AssessmentAppraiseMatrixDocumentPeriod | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
 };
 

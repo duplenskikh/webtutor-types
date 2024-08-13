@@ -12,17 +12,23 @@ interface WorkflowDocumentAction extends WorkflowElemOperationsBase, ConditionsB
 }
 
 interface WorkflowDocumentEscalationCourse {
+  /** Электронный курс */
   course_id: XmlElem<number | null, CourseCatalogDocumentTopElem>;
+  /** Состояние */
   state_id: XmlElem<number | null, typeof common.learning_states>;
 }
 
 interface WorkflowDocumentEscalationAssessment {
+  /** Тест */
   assessment_id: XmlElem<number | null, AssessmentCatalogDocumentTopElem>;
+  /** Состояние */
   state_id: XmlElem<number | null, typeof common.learning_states>;
 }
 
 interface WorkflowDocumentEscalationPoll {
+  /** Опрос */
   poll_id: XmlElem<number | null, PollCatalogDocumentTopElem>;
+  /** Состояние */
   status: XmlElem<number | null, typeof common.learning_states>;
 }
 
@@ -36,8 +42,11 @@ interface WorkflowDocumentEscalation extends WorkflowElemOperationsBase {
   auto_escalation_repeat: XmlElem<boolean | null>;
   escalation_eval_str: XmlElem<string | null>;
   escalation_eval_negative: XmlElem<boolean | null>;
+  /** Курсы */
   courses: XmlMultiElem<WorkflowDocumentEscalationCourse | null>;
+  /** Тесты */
   assessments: XmlMultiElem<WorkflowDocumentEscalationAssessment | null>;
+  /** Опросы */
   polls: XmlMultiElem<WorkflowDocumentEscalationPoll | null>;
 }
 
@@ -66,6 +75,7 @@ WorkflowFieldsStatesBase & {
   field_groups: XmlMultiElem<WorkflowDocumentFieldGroup | null>;
   actions: XmlMultiElem<WorkflowDocumentAction | null>;
   use_triggers(): boolean;
+  /** Эскалации заявки */
   escalations: XmlMultiElem<WorkflowDocumentEscalation | null>;
   default_state: XmlElem<string | null>;
   default_action: XmlElem<string | null>;
@@ -73,10 +83,13 @@ WorkflowFieldsStatesBase & {
   comment: XmlElem<string | null>;
   destination_object_name: XmlElem<string | null, typeof common.exchange_object_types>;
   tune_fields: XmlMultiElem<WorkflowDocumentTuneField | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase | null>;
   run_action(action: string): void;
+  /** Категория */
   role_id: XmlMultiElemObject<number | null>;
 };
 

@@ -18,20 +18,33 @@ CustomElemsBase & {
   code: XmlElem<string | null>;
   name: XmlElem<string | null>;
   create_date: XmlElem<Date | null>;
+  /** Статус */
   status_id: XmlElem<number | null, SaleStatusCatalogDocumentTopElem>;
+  /** Номер договора */
   number: XmlElem<string | null>;
+  /** Организация */
   org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
   client_org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  /** Проект */
   project_id: XmlElem<number | null, ProjectCatalogDocumentTopElem>;
+  /** Дата начала */
   start_date: XmlElem<Date | null>;
+  /** Дата завершения */
   finish_date: XmlElem<Date | null>;
+  /** Клиент */
   client_manager_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Менеджер */
   manager_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Стоимость */
   cost: XmlElem<number | null>;
+  /** Валюта */
   currency_type_id: XmlElem<string | null, typeof lists.currency_types>;
   documents: XmlMultiElem<SaleDocumentDocument | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

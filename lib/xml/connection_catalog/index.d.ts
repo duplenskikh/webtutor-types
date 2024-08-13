@@ -13,7 +13,9 @@ type ConnectionCatalogDocumentTopElem = XmlTopElem & {
   terminate_date: XmlElem<Date | null>;
   unauthorized: XmlElem<boolean | null>;
   host_path: XmlElem<string | null>;
+  /** Дата модификации */
   modification_date: XmlElem<Date | null>;
+  /** Код сервера */
   app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

@@ -10,53 +10,84 @@ interface TestProjectDocumentGroupPerson extends PersonFillingBase {
 
 interface TestProjectDocumentGroup {
   id: XmlElem<string | null>;
+  /** Название группы */
   name: XmlElem<string | null>;
+  /** Тестируемые */
   persons: XmlMultiElem<TestProjectDocumentGroupPerson | null>;
 }
 
 interface TestProjectDocumentPurpose {
   id: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Родительская цель */
   parent_id: XmlElem<string | null>;
+  /** Вес */
   weight: XmlElem<number | null>;
+  /** Необходимое количество вопросов */
   item_count: XmlElem<number | null>;
+  /** Показывать вопросы цели */
   _expanded: XmlElem<boolean | null>;
 }
 
 interface TestProjectDocumentItem {
   id: XmlElem<number | null>;
+  /** Заголовок */
   title: XmlElem<string | null>;
+  /** Текст вопроса */
   question_text: XmlElem<string | null>;
+  /** Тип */
   type_id: XmlElem<string | null, typeof common.item_types>;
   question_points: XmlElem<number>;
+  /** Дата добавления */
   create_date: XmlElem<Date | null>;
+  /** Статус */
   status: XmlElem<string, typeof common.item_status_types>;
+  /** Требуемый процент верно ответивших */
   quota_correct: XmlElem<number | null>;
+  /** Требуемое количество статусов "Принят" */
   quota_approved: XmlElem<number | null>;
+  /** Требуемое количество статусов "Отклонен" */
   quota_rejected: XmlElem<number | null>;
+  /** Автор */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО автора */
   person_fullname: XmlElem<string | null>;
+  /** Цель */
   purpose_id: XmlElem<string | null>;
 }
 
 interface TestProjectDocumentItemComment {
   id: XmlElem<string | null>;
+  /** Эксперт */
   person_id: XmlElem<number | null>;
+  /** ФИО эксперта */
   person_fullname(): string;
+  /** Вопрос */
   item_id: XmlElem<number | null>;
+  /** Процент верных */
   quota_correct: XmlElem<number | null>;
+  /** Статус */
   status: XmlElem<string, typeof common.item_status_types>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
 }
 
 interface TestProjectDocumentVariant {
   id: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Дата создания */
   create_date: XmlElem<Date | null>;
+  /** Статус */
   status: XmlElem<string | null, typeof common.test_project_types>;
+  /** Тест */
   assessment_id: XmlElem<number | null, AssessmentCatalogDocumentTopElem>;
+  /** Группа */
   group_id: XmlElem<string | null>;
+  /** Проходной балл по Ангофу */
   angof_avg: XmlElem<number | null>;
+  /** Максимальный балл */
   max_score: XmlElem<number | null>;
 }
 
@@ -176,23 +207,39 @@ interface TestProjectDocumentReport {
 type TestProjectDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
   Doc: TestProjectDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Статус */
   status: XmlElem<string | null, typeof common.test_project_types>;
+  /** Эксперты */
   experts: XmlMultiElem<TestProjectDocumentExpert | null>;
+  /** Группы */
   groups: XmlMultiElem<TestProjectDocumentGroup | null>;
+  /** Цели теста */
   purposes: XmlMultiElem<TestProjectDocumentPurpose | null>;
+  /** Вопросы */
   items: XmlMultiElem<TestProjectDocumentItem | null>;
+  /** Комментарии экспертов */
   item_comments: XmlMultiElem<TestProjectDocumentItemComment | null>;
+  /** Варианты тестов */
   variants: XmlMultiElem<TestProjectDocumentVariant | null>;
+  /** Требуемый процент верно ответивших */
   default_quota_correct: XmlElem<number>;
+  /** Требуемое количество статусов Принят */
   default_quota_approved: XmlElem<number>;
+  /** Требуемое количество статусов Отклонен */
   default_quota_rejected: XmlElem<number>;
   variant_counter: XmlElem<number>;
   get_variant_counter(): unknown;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Доступ */
   access: XmlElem<AccessDocBase | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
   report: XmlElem<TestProjectDocumentReport | null>;
   get_angof_avg(variantId: number, itemsSource: unknown): unknown;

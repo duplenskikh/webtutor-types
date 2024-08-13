@@ -102,6 +102,7 @@ interface FuncParamsDocumentRequestReport {
   budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
   start_date: XmlElem<Date | null>;
   finish_date: XmlElem<Date | null>;
+  /** Статус */
   status_id: XmlElem<string, typeof common.request_status_types>;
 }
 
@@ -505,12 +506,16 @@ interface FuncParamsDocumentCareerReserveReportColumn {
 
 interface FuncParamsDocumentCareerReserveReport {
   type: XmlElem<string>;
+  /** Тип */
   position_type: XmlElem<string>;
+  /** Название должности */
   target_position_name: XmlElem<string | null>;
   position_id: XmlElem<number | null, PositionCatalogDocumentTopElem>;
+  /** Типовая должность */
   position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
   readiness_date_start: XmlElem<Date | null>;
   readiness_date_finish: XmlElem<Date | null>;
+  /** Статус */
   status: XmlElem<string>;
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   group_id: XmlElem<number | null, GroupCatalogDocumentTopElem>;

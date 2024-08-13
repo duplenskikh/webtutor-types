@@ -1,4 +1,5 @@
 interface WebinarSystemDocumentWebinarSystemFieldEntry {
+  /** Значение */
   value: XmlElem<string | null>;
 }
 
@@ -9,6 +10,7 @@ interface WebinarSystemDocumentWebinarSystemField {
   title: XmlElem<string | null>;
   tooltip: XmlElem<string | null>;
   xquery_qual: XmlElem<string | null>;
+  /** Список допустимых значений */
   entries: XmlMultiElem<WebinarSystemDocumentWebinarSystemFieldEntry | null>;
 }
 
@@ -18,7 +20,9 @@ AdminAccessBase &
 WebVariablesBase & {
   Doc: WebinarSystemDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
   library_url: XmlElem<string | null>;
   library_code: XmlElem<string | null>;
@@ -31,9 +35,13 @@ WebVariablesBase & {
   web_save_code_url: XmlElem<string | null>;
   web_save_code: XmlElem<string | null>;
   webinar_system_fields: XmlMultiElem<WebinarSystemDocumentWebinarSystemField | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
   doc_info: XmlElem<DocInfoBase | null>;
   get_setting(settingName: string): string;

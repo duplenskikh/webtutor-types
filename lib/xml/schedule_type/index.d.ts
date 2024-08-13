@@ -1,6 +1,9 @@
 interface ScheduleTypeDocumentScheduleDay {
+  /** Тип */
   id: XmlElem<string | null, typeof common.day_types>;
+  /** Время начала */
   start_time: XmlElem<string | null>;
+  /** Время окончания */
   finish_time: XmlElem<string | null>;
 }
 
@@ -11,11 +14,16 @@ interface ScheduleTypeDocumentSchedule extends MsWeekScheduleBase {
 type ScheduleTypeDocumentTopElem = XmlTopElem & {
   Doc: ScheduleTypeDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Тип объекта */
   object_type: XmlElem<string, typeof common.exchange_object_types>;
+  /** Расписание */
   is_shedule: XmlElem<boolean | null>;
   library_url: XmlElem<string | null>;
+  /** Расписание прохождения */
   schedule: XmlElem<ScheduleTypeDocumentSchedule | null>;
   doc_info: XmlElem<DocInfoBase | null>;
 };

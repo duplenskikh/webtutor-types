@@ -8,8 +8,11 @@ interface LicenseDocumentAccessBlockType {
 }
 
 interface LicenseDocumentAdditionalKey {
+  /** Дата начала */
   start_date: XmlElem<Date | null>;
+  /** Дата окончания */
   finish_date: XmlElem<Date | null>;
+  /** Тип */
   type_id: XmlElem<string | null>;
   ident: XmlElem<string | null>;
   public_key: XmlElem<string | null>;
@@ -19,8 +22,11 @@ type LicenseDocumentTopElem = XmlTopElem & {
   Doc: LicenseDocument;
   version_min: XmlElem<string>;
   version_max: XmlElem<string>;
+  /** Объект */
   object_id: XmlElem<number | null>;
+  /** Тип объекта */
   object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Название объекта */
   object_name: XmlElem<string | null>;
   catalogs: XmlMultiElem<LicenseDocumentCatalog | null>;
   access_block_types: XmlMultiElem<LicenseDocumentAccessBlockType | null>;

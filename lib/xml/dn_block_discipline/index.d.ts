@@ -6,9 +6,12 @@ type DnBlockDisciplineDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnBlockDisciplineDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
   disciplines: XmlMultiElem<DnBlockDisciplineDocumentDiscipline | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
   doc_info: XmlElem<DocInfoBase | null>;
 };

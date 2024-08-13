@@ -20,12 +20,16 @@ interface ClConstDocumentFlag {
 type ClConstDocumentTopElem = XmlTopElem & {
   Doc: ClConstDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
   localizations: XmlMultiElem<ClConstDocumentLocalization | null>;
   object_types: XmlMultiElem<ClConstDocumentObjectType | null>;
   flags: XmlMultiElem<ClConstDocumentFlag | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
   set_value(locId: number, value: unknown): boolean;
 };

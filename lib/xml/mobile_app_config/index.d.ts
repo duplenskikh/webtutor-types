@@ -97,8 +97,11 @@ type MobileAppConfigDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
   Doc: MobileAppConfigDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string>;
   typeSet(key: unknown, yes: unknown): unknown;
   menu: XmlElem<MobileAppConfigDocumentMenu | null>;
@@ -119,9 +122,12 @@ CustomElemsBase & {
   custom: XmlElem<MobileAppConfigDocumentCustom | null>;
   schedule_settings: XmlElem<MobileAppConfigDocumentScheduleSettings | null>;
   messaging: XmlElem<MobileAppConfigDocumentMessaging | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
   show_messaging: XmlElem<boolean>;
+  /** Доступ */
   access: XmlElem<AccessDocBase | null>;
 };
 

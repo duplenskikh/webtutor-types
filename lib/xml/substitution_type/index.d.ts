@@ -13,12 +13,16 @@ ObjectCodeNameBase &
 CustomElemsBase & {
   Doc: SubstitutionTypeDocument;
   object_type: XmlElem<string | null>;
+  /** Операции */
   operations: XmlMultiElem<SubstitutionTypeDocumentOperation | null>;
   remote_actions: XmlMultiElem<SubstitutionTypeDocumentRemoteAction | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
   data_str: XmlElem<string | null>;
+  /** Категория */
   role_id: XmlMultiElemObject<number | null>;
   is_active: XmlElem<boolean>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

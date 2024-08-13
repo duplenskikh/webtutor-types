@@ -15,8 +15,11 @@ interface RecruitmentPlanDocumentCandidateSource {
 
 interface RecruitmentPlanDocumentCoordinator extends PersonFillingBase {
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Является непосредственным руководителем */
   is_native: XmlElem<boolean>;
+  /** Тип руководителя */
   boss_type_id: XmlElem<number | null, BossTypeCatalogDocumentTopElem>;
+  /** Является ответственным */
   is_responsible: XmlElem<boolean>;
   comment: XmlElem<string | null>;
 }
@@ -30,8 +33,11 @@ AdminAccessBase & {
   position_type: XmlElem<string | null>;
   position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
   position_name: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Статус */
   state: XmlElem<string, typeof common.recruitment_plan_state_types>;
+  /** Бюджетный период */
   budget_period_id: XmlElem<number | null>;
   subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
   subdivision_group_id: XmlElem<number | null, SubdivisionGroupCatalogDocumentTopElem>;
@@ -42,8 +48,11 @@ AdminAccessBase & {
   budget_periods: XmlMultiElem<RecruitmentPlanDocumentBudgetPeriod | null>;
   recruitment_methods: XmlMultiElem<RecruitmentPlanDocumentRecruitmentMethod | null>;
   candidate_sources: XmlMultiElem<RecruitmentPlanDocumentCandidateSource | null>;
+  /** Наставники */
   coordinators: XmlMultiElem<RecruitmentPlanDocumentCoordinator | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
   access: XmlElem<AccessDocBase | null>;
 };
 

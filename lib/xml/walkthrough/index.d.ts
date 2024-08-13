@@ -2,11 +2,16 @@ type WalkthroughDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: WalkthroughDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Внешняя система */
   external_system_id: XmlElem<number | null, ExternalSystemCatalogDocumentTopElem>;
   xml: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

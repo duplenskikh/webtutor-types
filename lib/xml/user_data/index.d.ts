@@ -5,6 +5,7 @@ type UserDataDocumentTopElem = XmlTopElem & {
   creation_date(): Date;
   delete_date: XmlElem<Date | null>;
   data: XmlElem<string | null>;
+  /** Об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
 };
 

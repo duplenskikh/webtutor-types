@@ -1,17 +1,24 @@
 interface ApplicationDocumentAccessBlock {
   id: XmlElem<string | null, typeof common.access_block_types>;
+  /** Чтение */
   can_read: XmlElem<boolean | null>;
+  /** Запись */
   can_write: XmlElem<boolean | null>;
+  /** Удаление */
   can_delete: XmlElem<boolean | null>;
+  /** Уровень */
   access_level_id: XmlElem<number | null>;
 }
 
 interface ApplicationDocumentAccessLevel {
+  /** Уровень */
   id: XmlElem<number | null>;
+  /** Название */
   name: XmlElem<string | null>;
 }
 
 interface ApplicationDocumentViewConfigurationAccessLevel {
+  /** Уровень */
   access_level_id: XmlElem<number | null>;
   can_create_roles: XmlElem<boolean | null>;
   can_create_root_roles: XmlElem<boolean | null>;
@@ -38,6 +45,7 @@ interface ApplicationDocumentViewConfiguration extends WebVariablesBase {
 }
 
 interface ApplicationDocumentRemoteActionAccessLevel {
+  /** Уровень */
   access_level_id: XmlElem<number | null>;
 }
 
@@ -54,6 +62,7 @@ interface ApplicationDocumentRemoteAction extends WebVariablesBase {
 }
 
 interface ApplicationDocumentReportTemplateAccessLevel {
+  /** Уровень */
   access_level_id: XmlElem<number | null>;
 }
 
@@ -102,6 +111,7 @@ interface ApplicationDocumentApplicationUnit {
 }
 
 interface ApplicationDocumentLibraryAccessObjectClaim {
+  /** Уровень */
   access_level_id: XmlElem<number | null>;
   object_id: XmlElem<number | null, CodeLibraryCatalogDocumentTopElem>;
   element_code: XmlElem<string | null>;
@@ -117,11 +127,16 @@ WebVariablesBase &
 FuncManagersBase &
 CatalogListBase & {
   Doc: ApplicationDocument;
+  /** Тип */
   type: XmlElem<string, typeof common.application_types>;
+  /** Тип отображения */
   disp_type: XmlElem<string | null>;
   use_instances: XmlElem<boolean>;
+  /** Версия */
   version: XmlElem<string | null>;
+  /** Предыдущая версия */
   prev_version: XmlElem<string | null>;
+  /** Версия */
   server_version: XmlElem<string | null>;
   vendor: XmlElem<string | null>;
   vendor_library: XmlElem<string | null>;
@@ -129,11 +144,17 @@ CatalogListBase & {
   lic_type: XmlElem<string | null>;
   list_xms_url: XmlElem<string | null>;
   default_xms_url: XmlElem<string | null>;
+  /** Ссылка на файл библиотеки функций */
   library_url: XmlElem<string | null>;
+  /** Описание */
   desc: XmlElem<string | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Измененный */
   changed: XmlElem<boolean>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
   instance: XmlElem<WebVariablesBase | null>;
   access_blocks: XmlMultiElem<ApplicationDocumentAccessBlock | null>;
@@ -145,6 +166,7 @@ CatalogListBase & {
   application_menus: XmlMultiElem<ApplicationDocumentApplicationMenu | null>;
   application_units: XmlMultiElem<ApplicationDocumentApplicationUnit | null>;
   library_access: XmlElem<ApplicationDocumentLibraryAccess | null>;
+  /** Категория */
   role_id: XmlMultiElemObject<number | null>;
   web_mode_id: XmlMultiElemObject<number | null, WebModeCatalogDocumentTopElem>;
 };

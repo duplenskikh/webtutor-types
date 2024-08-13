@@ -13,13 +13,20 @@ type ScaleDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
   Doc: ScaleDocument;
   id: XmlElem<number | null>;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Ограничение */
   max_limit: XmlElem<number | null>;
+  /** Ограничение */
   min_limit: XmlElem<number | null>;
+  /** Статус */
   status: XmlElem<string | null, typeof common.kpi_states>;
   scale_elements: XmlMultiElem<ScaleDocumentScaleElement | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
   checked(value: number): unknown;
 };

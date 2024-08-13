@@ -1,7 +1,11 @@
 interface KpiBase extends CustomElemsBase {
+  /** Плановое значение */
   plan: XmlElem<string | null>;
+  /** Порог */
   threshold: XmlElem<number | null>;
+  /** Вызов */
   challenge: XmlElem<number | null>;
+  /** Вес */
   weight: XmlElem<number>;
   kpi_plan_id: XmlElem<number | null, KpiPlanCatalogDocumentTopElem>;
   comment: XmlElem<string | null>;
@@ -58,16 +62,22 @@ interface KpiProfileDocumentKpi extends KpiBase {
 
 interface KpiProfileDocumentProject extends WorkflowFieldsAssessmentBase {
   project_id: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
+  /** Порог */
   threshold: XmlElem<number | null>;
+  /** Плановая величина */
   plan: XmlElem<string | null>;
+  /** Вызов */
   challenge: XmlElem<number | null>;
+  /** Вес */
   weight: XmlElem<number>;
   comment: XmlElem<string | null>;
 }
 
 interface KpiProfileDocumentWorkflowMatching {
   id: XmlElem<string | null>;
+  /** Сотрудник */
   person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
 }
 
@@ -78,17 +88,25 @@ WorkflowDataBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: KpiProfileDocument;
+  /** Код */
   code: XmlElem<string | null>;
+  /** Название */
   name: XmlElem<string | null>;
   kpis: XmlMultiElem<KpiProfileDocumentKpi | null>;
+  /** Проекты */
   projects: XmlMultiElem<KpiProfileDocumentProject | null>;
+  /** Семейство */
   competence_profile_family_id: XmlElem<number | null, CompetenceProfileFamilyCatalogDocumentTopElem>;
   period_type: XmlElem<string | null, typeof common.perioditys>;
   parent_kpi_profile_id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
   workflow_matchings: XmlMultiElem<KpiProfileDocumentWorkflowMatching | null>;
+  /** Тип выборки условий видимости */
   workflow_matching_type: XmlElem<string | null>;
+  /** Информация об объекте */
   doc_info: XmlElem<DocInfoBase | null>;
+  /** Комментарий */
   comment: XmlElem<string | null>;
+  /** Категория */
   role_id: XmlMultiElemObject<number | null>;
 };
 
