@@ -1,21 +1,33 @@
 type SalarySurveyDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
   Doc: SalarySurveyDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
-  position_name: XmlElem<string>;
-  position_level_id: XmlElem<number, PositionLevelCatalogDocumentTopElem>;
-  salary_survey_source_id: XmlElem<number, SalarySurveySourceCatalogDocumentTopElem>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
-  min_salary: XmlElem<number>;
-  max_salary: XmlElem<number>;
-  avg_salary: XmlElem<number>;
-  currency: XmlElem<string, typeof lists.currency_types>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Типовая должность */
+  position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
+  /** Название должности */
+  position_name: XmlElem<string | null>;
+  /** Уровень должности */
+  position_level_id: XmlElem<number | null, PositionLevelCatalogDocumentTopElem>;
+  /** Источник обзоров зарплат */
+  salary_survey_source_id: XmlElem<number | null, SalarySurveySourceCatalogDocumentTopElem>;
+  /** Бюджетный период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Регион */
+  region_id: XmlElem<number | null, RegionCatalogDocumentTopElem>;
+  /** Минимальная зарплата */
+  min_salary: XmlElem<number | null>;
+  /** Максимальная зарплата */
+  max_salary: XmlElem<number | null>;
+  avg_salary: XmlElem<number | null>;
+  /** Валюта */
+  currency: XmlElem<string | null, typeof lists.currency_types>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type SalarySurveyDocument = XmlDocument & {

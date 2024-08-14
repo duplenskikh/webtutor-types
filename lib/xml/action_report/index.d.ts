@@ -1,18 +1,26 @@
 type ActionReportDocumentTopElem = XmlTopElem & {
   Doc: ActionReportDocument;
-  type: XmlElem<string, typeof common.action_report_types>;
-  status: XmlElem<string, typeof common.action_status_types>;
+  /** Тип */
+  type: XmlElem<string | null, typeof common.action_report_types>;
+  /** Статус */
+  status: XmlElem<string | null, typeof common.action_status_types>;
+  /** Признак завершения */
   completed: XmlElem<boolean>;
   finished: XmlElem<boolean>;
-  exchange_server_id: XmlElem<number, ExchangeServerCatalogDocumentTopElem>;
-  object_id: XmlElem<number>;
-  last_upload_date: XmlElem<Date>;
-  report_text: XmlElem<string>;
-  data_file_url: XmlElem<string>;
-  server_version: XmlElem<string>;
-  report_json: XmlElem<string>;
-  create_date: XmlElem<Date>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Сервер */
+  exchange_server_id: XmlElem<number | null, ExchangeServerCatalogDocumentTopElem>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Дата загрузки */
+  last_upload_date: XmlElem<Date | null>;
+  /** Сообщение */
+  report_text: XmlElem<string | null>;
+  /** Файл */
+  data_file_url: XmlElem<string | null>;
+  server_version: XmlElem<string | null>;
+  report_json: XmlElem<string | null>;
+  create_date: XmlElem<Date | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ActionReportDocument = XmlDocument & {

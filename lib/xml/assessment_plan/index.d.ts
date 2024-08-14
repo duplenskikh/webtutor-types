@@ -1,38 +1,39 @@
 interface AssessmentPlanDocumentAssessmentResultRecommend {
-  assessment_result_recommend_id: XmlElem<number, AssessmentResultRecommendCatalogDocumentTopElem>;
-  assessment_result_recommend_name: XmlElem<string>;
+  assessment_result_recommend_id: XmlElem<number | null, AssessmentResultRecommendCatalogDocumentTopElem>;
+  assessment_result_recommend_name: XmlElem<string | null>;
 }
 
 interface AssessmentPlanDocumentAppraisedPeriod {
-  period_id: XmlElem<string>;
-  period_name: XmlElem<string>;
-  is_done: XmlElem<boolean>;
+  period_id: XmlElem<string | null>;
+  period_name: XmlElem<string | null>;
+  is_done: XmlElem<boolean | null>;
 }
 
 interface AssessmentPlanDocumentCustomComment {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  workflow_state: XmlElem<string>;
-  comment: XmlElem<string>;
-  comment_date: XmlElem<Date>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  workflow_state: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  comment_date: XmlElem<Date | null>;
 }
 
 interface AssessmentPlanDocumentCustomExpert {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_type: XmlElem<number>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_type: XmlElem<number | null>;
   is_done: XmlElem<boolean>;
   responsible: XmlElem<boolean>;
-  expert_code: XmlElem<string>;
+  expert_code: XmlElem<string | null>;
 }
 
 interface AssessmentPlanDocumentExpert {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  status: XmlElem<string, typeof common.assessment_appraise_participants>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  status: XmlElem<string | null, typeof common.assessment_appraise_participants>;
   is_custom: XmlElem<boolean>;
 }
 
 interface AssessmentPlanDocumentCustomField {
-  name: XmlElem<string>;
-  value: XmlElem<string>;
+  /** Название */
+  name: XmlElem<string | null>;
+  value: XmlElem<string | null>;
 }
 
 type AssessmentPlanDocumentTopElem = XmlTopElem &
@@ -42,41 +43,61 @@ CustomElemsBase &
 FileListBase &
 AdminAccessBase & {
   Doc: AssessmentPlanDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  expert_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  boss_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  department_id: XmlElem<number>;
-  department_name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Процедура оценки */
+  assessment_appraise_id: XmlElem<number | null, AssessmentAppraiseCatalogDocumentTopElem>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Оценивающий */
+  expert_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Руководитель */
+  boss_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Подразделение */
+  department_id: XmlElem<number | null>;
+  /** Название подразделения */
+  department_name: XmlElem<string | null>;
   flag_appraise_department: XmlElem<boolean>;
+  /** Объект оценки */
   assessment_object_type: XmlElem<string>;
-  assessment_appraise_type: XmlElem<string, typeof common.assessment_appraise_types>;
-  status: XmlElem<string, typeof common.assessment_appraise_participants>;
+  /** Тип процедуры */
+  assessment_appraise_type: XmlElem<string | null, typeof common.assessment_appraise_types>;
+  status: XmlElem<string | null, typeof common.assessment_appraise_participants>;
+  /** Признак завершения */
   is_done: XmlElem<boolean>;
-  integral_mark: XmlElem<number>;
+  /** Интегральная оценка */
+  integral_mark: XmlElem<number | null>;
   flag_is_processed: XmlElem<boolean>;
-  assessment_result_recommends: XmlMultiElem<AssessmentPlanDocumentAssessmentResultRecommend>;
-  workflow_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  workflow_end_date: XmlElem<Date>;
-  assessment_appraise_matrix_id: XmlElem<number, AssessmentAppraiseMatrixCatalogDocumentTopElem>;
-  appraised_periods: XmlMultiElem<AssessmentPlanDocumentAppraisedPeriod>;
-  custom_comments: XmlMultiElem<AssessmentPlanDocumentCustomComment>;
-  custom_experts: XmlMultiElem<AssessmentPlanDocumentCustomExpert>;
-  doc_info: XmlElem<DocInfoBase>;
-  comment: XmlElem<string>;
-  temp: XmlElem<string>;
-  fire_wf_action: XmlElem<string>;
+  /** Рекомендации */
+  assessment_result_recommends: XmlMultiElem<AssessmentPlanDocumentAssessmentResultRecommend | null>;
+  /** Сотрудник */
+  workflow_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** План. дата завершения */
+  workflow_end_date: XmlElem<Date | null>;
+  /** Матрица ответственности */
+  assessment_appraise_matrix_id: XmlElem<number | null, AssessmentAppraiseMatrixCatalogDocumentTopElem>;
+  appraised_periods: XmlMultiElem<AssessmentPlanDocumentAppraisedPeriod | null>;
+  /** Комментарии */
+  custom_comments: XmlMultiElem<AssessmentPlanDocumentCustomComment | null>;
+  /** Согласующие эксперты */
+  custom_experts: XmlMultiElem<AssessmentPlanDocumentCustomExpert | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  temp: XmlElem<string | null>;
+  fire_wf_action: XmlElem<string | null>;
   flag_expert_select: XmlElem<boolean>;
-  experts: XmlMultiElem<AssessmentPlanDocumentExpert>;
-  custom_fields: XmlMultiElem<AssessmentPlanDocumentCustomField>;
+  experts: XmlMultiElem<AssessmentPlanDocumentExpert | null>;
+  custom_fields: XmlMultiElem<AssessmentPlanDocumentCustomField | null>;
   index: XmlElem<number>;
-  start_date: XmlElem<Date>;
-  end_date: XmlElem<Date>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  period_start: XmlElem<Date>;
-  period_end: XmlElem<Date>;
+  start_date: XmlElem<Date | null>;
+  end_date: XmlElem<Date | null>;
+  /** Бюджетный период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  period_start: XmlElem<Date | null>;
+  period_end: XmlElem<Date | null>;
 };
 
 type AssessmentPlanDocument = XmlDocument & {

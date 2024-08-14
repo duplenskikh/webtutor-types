@@ -1,12 +1,16 @@
 type DnScheduleCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  faculty: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  chair: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  academ_year_id: XmlElem<number, DnAcademYearCatalogDocumentTopElem>;
-  term_id: XmlElem<number, DnTermCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Факультет */
+  faculty: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  chair: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  academ_year_id: XmlElem<number | null, DnAcademYearCatalogDocumentTopElem>;
+  term_id: XmlElem<number | null, DnTermCatalogDocumentTopElem>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

@@ -1,20 +1,31 @@
 type DownloadPackageDocumentTopElem = XmlTopElem &
 DownloadPackageLogBase & {
   Doc: DownloadPackageDocument;
-  package_id: XmlElem<string>;
-  exchange_server_id: XmlElem<number, ExchangeServerCatalogDocumentTopElem>;
-  type: XmlElem<string, typeof common.package_types>;
-  base_url: XmlElem<string>;
-  url: XmlElem<string>;
+  /** ID пакета */
+  package_id: XmlElem<string | null>;
+  /** Сервер */
+  exchange_server_id: XmlElem<number | null, ExchangeServerCatalogDocumentTopElem>;
+  /** Тип пакета */
+  type: XmlElem<string | null, typeof common.package_types>;
+  base_url: XmlElem<string | null>;
+  /** Адрес скачивания */
+  url: XmlElem<string | null>;
+  /** Статус пакета */
   status: XmlElem<string, typeof common.package_status_types>;
-  local_file_url: XmlElem<string>;
-  create_date: XmlElem<Date>;
-  download_date: XmlElem<Date>;
-  package_date: XmlElem<Date>;
-  application_code: XmlElem<string>;
-  application_id: XmlElem<number, ApplicationCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Файл пакета */
+  local_file_url: XmlElem<string | null>;
+  /** Дата объекта */
+  create_date: XmlElem<Date | null>;
+  /** Дата скачивания */
+  download_date: XmlElem<Date | null>;
+  /** Дата пакета */
+  package_date: XmlElem<Date | null>;
+  application_code: XmlElem<string | null>;
+  application_id: XmlElem<number | null, ApplicationCatalogDocumentTopElem>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type DownloadPackageDocument = XmlDocument & {

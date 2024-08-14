@@ -1,8 +1,8 @@
 type RepositoriumResourceCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  repositorium_id: XmlElem<number, RepositoriumCatalogDocumentTopElem>;
-  repositorium_name: XmlElem<string>;
-  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  repositorium_id: XmlElem<number | null, RepositoriumCatalogDocumentTopElem>;
+  repositorium_name: XmlElem<string | null>;
+  resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
   MatchDocTypeExt(): void;
   OnBuildExt(): void;
   OnDeleteExt(): void;

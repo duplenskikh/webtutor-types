@@ -8,13 +8,20 @@ AdminAccessBase &
 CustomElemsBase &
 FileListBase & {
   Doc: IndicatorDocument;
-  competence_id: XmlElem<number, CompetenceCatalogDocumentTopElem>;
+  /** Компетенция */
+  competence_id: XmlElem<number | null, CompetenceCatalogDocumentTopElem>;
+  /** Тип */
   type: XmlElem<number, typeof common.indicator_types>;
-  comment: XmlElem<string>;
-  positive_comment: XmlElem<string>;
-  negative_comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  role_id: XmlMultiElemObject<number>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Позитивное проявление */
+  positive_comment: XmlElem<string | null>;
+  /** Негативное проявление */
+  negative_comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type IndicatorDocument = XmlDocument & {

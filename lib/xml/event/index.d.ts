@@ -1,171 +1,210 @@
 interface EventDocumentTest {
-  class: XmlElem<unknown>;
-  id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
-  title: XmlElem<string>;
-  state: XmlElem<string>;
-  start_time: XmlElem<string>;
-  duration: XmlElem<number>;
+  class: XmlElem<unknown | null>;
+  /** Текущий тест */
+  id: XmlElem<number | null, AssessmentCatalogDocumentTopElem>;
+  title: XmlElem<string | null>;
+  state: XmlElem<string | null>;
+  start_time: XmlElem<string | null>;
+  duration: XmlElem<number | null>;
 }
 
 interface EventDocumentRecord {
-  class: XmlElem<string>;
-  status: XmlElem<string>;
-  start_time: XmlElem<string>;
-  recorder_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  data: XmlElem<string>;
-  width: XmlElem<string>;
-  height: XmlElem<string>;
+  class: XmlElem<string | null>;
+  status: XmlElem<string | null>;
+  start_time: XmlElem<string | null>;
+  recorder_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  data: XmlElem<string | null>;
+  width: XmlElem<string | null>;
+  height: XmlElem<string | null>;
 }
 
 interface EventDocumentWebinarSetting {
-  name: XmlElem<string>;
-  type: XmlElem<string>;
-  value: XmlElem<string>;
+  name: XmlElem<string | null>;
+  type: XmlElem<string | null>;
+  value: XmlElem<string | null>;
 }
 
 interface EventDocumentWebinarSystemField {
-  name: XmlElem<string>;
-  value: XmlElem<string>;
+  name: XmlElem<string | null>;
+  value: XmlElem<string | null>;
 }
 
 interface EventDocumentEventForm {
-  form_id: XmlElem<string, typeof lists.event_forms>;
+  form_id: XmlElem<string | null, typeof lists.event_forms>;
 }
 
 interface EventDocumentStage {
-  stage_id: XmlElem<number>;
-  parent_id: XmlElem<number>;
-  name: XmlElem<string>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  is_active: XmlElem<boolean>;
+  stage_id: XmlElem<number | null>;
+  parent_id: XmlElem<number | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Дата начала */
+  start_date: XmlElem<Date | null>;
+  /** Дата окончания */
+  finish_date: XmlElem<Date | null>;
+  /** Доступен */
+  is_active: XmlElem<boolean | null>;
 }
 
 interface EventDocumentCollaborator extends PersonFillingBase {
-  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  last_exist_date: XmlElem<Date>;
-  education_plan_id: XmlElem<number, EducationPlanCatalogDocumentTopElem>;
-  request_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  active_test_learning_id: XmlElem<number, ActiveTestLearningCatalogDocumentTopElem>;
-  controller_code: XmlElem<string>;
-  webinar_url: XmlElem<string>;
-  participation_id: XmlElem<string>;
-  not_pay: XmlElem<boolean>;
-  can_use_camera: XmlElem<boolean>;
-  can_use_microphone: XmlElem<boolean>;
+  collaborator_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  last_exist_date: XmlElem<Date | null>;
+  education_plan_id: XmlElem<number | null, EducationPlanCatalogDocumentTopElem>;
+  request_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  active_test_learning_id: XmlElem<number | null, ActiveTestLearningCatalogDocumentTopElem>;
+  controller_code: XmlElem<string | null>;
+  webinar_url: XmlElem<string | null>;
+  participation_id: XmlElem<string | null>;
+  not_pay: XmlElem<boolean | null>;
+  can_use_camera: XmlElem<boolean | null>;
+  can_use_microphone: XmlElem<boolean | null>;
 }
 
 interface EventDocumentUnnamedPersonByOrg {
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  org_name: XmlElem<string>;
-  unnamed_person_num: XmlElem<number>;
-  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  org_name: XmlElem<string | null>;
+  /** Количество неименованных участников */
+  unnamed_person_num: XmlElem<number | null>;
+  /** Ответственный */
+  collaborator_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
+  person_fullname: XmlElem<string | null>;
 }
 
 interface EventDocumentEvenPreparation {
-  even_preparation_id: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  plan_date: XmlElem<Date>;
-  fact_date: XmlElem<Date>;
+  even_preparation_id: XmlElem<string | null>;
+  /** Ответственный за выполнение */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО ответственного */
+  person_fullname: XmlElem<string | null>;
+  /** Плановая дата */
+  plan_date: XmlElem<Date | null>;
+  /** Фактическая дата */
+  fact_date: XmlElem<Date | null>;
+  /** Статус */
   status_id: XmlElem<string, typeof common.event_status_types>;
-  comment: XmlElem<string>;
-  comment_person: XmlElem<string>;
-  webinar_url: XmlElem<string>;
-  participation_id: XmlElem<string>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Комментарий ответственного */
+  comment_person: XmlElem<string | null>;
+  webinar_url: XmlElem<string | null>;
+  participation_id: XmlElem<string | null>;
 }
 
 interface EventDocumentHitt {
-  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
-  tutor_controller_code: XmlElem<string>;
-  instruction: XmlElem<string>;
+  /** Тест */
+  assessment_id: XmlElem<number | null, AssessmentCatalogDocumentTopElem>;
+  /** Пульт руководителя */
+  tutor_controller_code: XmlElem<string | null>;
+  /** Инструкция */
+  instruction: XmlElem<string | null>;
+  /** Автопереход на следующий вопрос при ответе всех тестируемых */
   auto_next_all_answer: XmlElem<boolean>;
+  /** Автоматически завершать тесты после завершения тестирования */
   auto_finish_test: XmlElem<boolean>;
+  /** Использовать уже активированные тесты для записи результатов */
   use_activated_test: XmlElem<boolean>;
-  port_num: XmlElem<number>;
+  /** Номер COM порта */
+  port_num: XmlElem<number | null>;
+  /** Количество колонок */
   column_num: XmlElem<number>;
+  /** Размер шрифта */
   font_size: XmlElem<number>;
 }
 
 interface EventDocumentGroup {
-  group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
+  group_id: XmlElem<number | null, GroupCatalogDocumentTopElem>;
 }
 
 interface EventDocumentTutor extends PersonFillingBase {
-  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  telephone_out: XmlElem<string>;
-  telephone_in: XmlElem<string>;
+  /** Ответственный за проведение */
+  collaborator_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  telephone_out: XmlElem<string | null>;
+  telephone_in: XmlElem<string | null>;
+  /** Является основным */
   main: XmlElem<boolean>;
-  webinar_url: XmlElem<string>;
-  participation_id: XmlElem<string>;
+  webinar_url: XmlElem<string | null>;
+  participation_id: XmlElem<string | null>;
 }
 
 interface EventDocumentObjectResource {
-  object_resource_id: XmlElem<number, ObjectResourceCatalogDocumentTopElem>;
+  object_resource_id: XmlElem<number | null, ObjectResourceCatalogDocumentTopElem>;
 }
 
 interface EventDocumentContract extends CostCurrencyBase {
-  code: XmlElem<string>;
-  date: XmlElem<Date>;
-  legal_entity_name: XmlElem<string>;
-  legal_entity_code: XmlElem<string>;
-  desc: XmlElem<string>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Дата */
+  date: XmlElem<Date | null>;
+  /** Название юридического лица */
+  legal_entity_name: XmlElem<string | null>;
+  /** Юридическое лицо из списка */
+  legal_entity_code: XmlElem<string | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
 }
 
 interface EventDocumentExpenseItem {
-  expense_item_id: XmlElem<number, ExpenseItemCatalogDocumentTopElem>;
-  sum: XmlElem<number>;
-  unnamed_person_sum: XmlElem<number>;
+  /** Статья затрат */
+  expense_item_id: XmlElem<number | null, ExpenseItemCatalogDocumentTopElem>;
+  /** Сумма */
+  sum: XmlElem<number | null>;
+  unnamed_person_sum: XmlElem<number | null>;
 }
 
 interface EventDocumentFile extends FileBase {
-  presentation_id: XmlElem<number>;
+  presentation_id: XmlElem<number | null>;
   visibility: XmlElem<string, typeof common.event_file_visibility_types>;
 }
 
 interface EventDocumentLibraryMaterial {
-  library_material_id: XmlElem<number, LibraryMaterialCatalogDocumentTopElem>;
+  library_material_id: XmlElem<number | null, LibraryMaterialCatalogDocumentTopElem>;
 }
 
 interface EventDocumentLearningTask {
-  learning_task_id: XmlElem<number, LearningTaskCatalogDocumentTopElem>;
+  learning_task_id: XmlElem<number | null, LearningTaskCatalogDocumentTopElem>;
 }
 
 interface EventDocumentRegularScheduleExpenseItem {
-  expense_item_id: XmlElem<number, ExpenseItemCatalogDocumentTopElem>;
-  sum: XmlElem<number>;
+  expense_item_id: XmlElem<number | null, ExpenseItemCatalogDocumentTopElem>;
+  /** Сумма */
+  sum: XmlElem<number | null>;
 }
 
 interface EventDocumentRegularSchedule extends MsWeekScheduleBase {
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  expense_items: XmlMultiElem<EventDocumentRegularScheduleExpenseItem>;
-  cost_center_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
+  /** Период с */
+  start_date: XmlElem<Date | null>;
+  /** Период по */
+  finish_date: XmlElem<Date | null>;
+  /** Статьи затрат */
+  expense_items: XmlMultiElem<EventDocumentRegularScheduleExpenseItem | null>;
+  /** Центр затрат */
+  cost_center_id: XmlElem<number | null, CostCenterCatalogDocumentTopElem>;
   cost_center_type: XmlElem<string>;
-  total_cost: XmlElem<number>;
-  phases_num: XmlElem<number>;
+  /** Общая стоимость всех этапов */
+  total_cost: XmlElem<number | null>;
+  phases_num: XmlElem<number | null>;
 }
 
 interface EventDocumentPhaseCollaborator {
-  collaborator_id: XmlElem<number>;
+  collaborator_id: XmlElem<number | null>;
   is_assist: XmlElem<boolean>;
 }
 
 interface EventDocumentPhase {
-  id: XmlElem<string>;
-  lector_id: XmlElem<number, LectorCatalogDocumentTopElem>;
-  object_resource_id: XmlElem<number, ObjectResourceCatalogDocumentTopElem>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  comment: XmlElem<string>;
-  collaborators: XmlMultiElem<EventDocumentPhaseCollaborator>;
+  id: XmlElem<string | null>;
+  lector_id: XmlElem<number | null, LectorCatalogDocumentTopElem>;
+  object_resource_id: XmlElem<number | null, ObjectResourceCatalogDocumentTopElem>;
+  start_date: XmlElem<Date | null>;
+  finish_date: XmlElem<Date | null>;
+  comment: XmlElem<string | null>;
+  collaborators: XmlMultiElem<EventDocumentPhaseCollaborator | null>;
 }
 
 interface EventDocumentNotificationReminder {
-  id: XmlElem<string>;
-  minutes: XmlElem<number>;
-  sended: XmlElem<boolean>;
+  id: XmlElem<string | null>;
+  minutes: XmlElem<number | null>;
+  sended: XmlElem<boolean | null>;
 }
 
 type EventDocumentTopElem = XmlTopElem &
@@ -184,159 +223,256 @@ CatalogListBase &
 AdminAccessBase &
 EventSettingsBase & {
   Doc: EventDocument;
+  /** Тип */
   type_id: XmlElem<string, typeof common.event_types>;
-  event_type_id: XmlElem<number, EventTypeCatalogDocumentTopElem>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
+  /** Тип */
+  event_type_id: XmlElem<number | null, EventTypeCatalogDocumentTopElem>;
+  /** Дата начала */
+  start_date: XmlElem<Date | null>;
+  /** Дата завершения */
+  finish_date: XmlElem<Date | null>;
+  /** Эталонное мероприятие */
   is_model: XmlElem<boolean>;
   is_room: XmlElem<boolean>;
-  place_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
-  place: XmlElem<string>;
-  vclass_host: XmlElem<string>;
+  place_id: XmlElem<number | null, PlaceCatalogDocumentTopElem>;
+  /** Место проведения */
+  place: XmlElem<string | null>;
+  /** Сервер Виртуального класса */
+  vclass_host: XmlElem<string | null>;
   use_camera_capture: XmlElem<boolean>;
   login_with_camera_only: XmlElem<boolean>;
   capture_rate: XmlElem<number>;
-  record_status: XmlElem<string>;
+  /** Статус записи */
+  record_status: XmlElem<string | null>;
+  /** Вебинар не записан */
   record_exists: XmlElem<boolean>;
-  record_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
-  record_date: XmlElem<Date>;
-  record_download_count: XmlElem<number>;
-  record_view_count: XmlElem<number>;
-  bandwidth: XmlElem<number>;
+  record_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
+  /** Дата записи */
+  record_date: XmlElem<Date | null>;
+  /** Количество скачиваний */
+  record_download_count: XmlElem<number | null>;
+  /** Количество просмотров */
+  record_view_count: XmlElem<number | null>;
+  /** Ширина канала для видео */
+  bandwidth: XmlElem<number | null>;
+  /** Делать снимки с камеры во время просмотра записи */
   use_record_camera_capture: XmlElem<boolean>;
+  /** Разрешить просмотр записи только при наличии веб-камеры */
   view_with_camera_only: XmlElem<boolean>;
   record_capture_rate: XmlElem<number>;
-  current_presentation_id: XmlElem<number>;
-  webinar_system_id: XmlElem<number, WebinarSystemCatalogDocumentTopElem>;
-  test: XmlElem<EventDocumentTest>;
-  record: XmlElem<EventDocumentRecord>;
-  webinar_settings: XmlMultiElem<EventDocumentWebinarSetting>;
-  webinar_system_fields: XmlMultiElem<EventDocumentWebinarSystemField>;
+  /** Текущая презентация */
+  current_presentation_id: XmlElem<number | null>;
+  /** Система вебинаров */
+  webinar_system_id: XmlElem<number | null, WebinarSystemCatalogDocumentTopElem>;
+  test: XmlElem<EventDocumentTest | null>;
+  record: XmlElem<EventDocumentRecord | null>;
+  webinar_settings: XmlMultiElem<EventDocumentWebinarSetting | null>;
+  webinar_system_fields: XmlMultiElem<EventDocumentWebinarSystemField | null>;
   use_vclass: XmlElem<boolean>;
-  vclass_setting_id: XmlElem<number, VclassSettingCatalogDocumentTopElem>;
-  conversation_id: XmlElem<number, ConversationCatalogDocumentTopElem>;
+  vclass_setting_id: XmlElem<number | null, VclassSettingCatalogDocumentTopElem>;
+  conversation_id: XmlElem<number | null, ConversationCatalogDocumentTopElem>;
+  /** Запись доступна для просмотра */
   show_record: XmlElem<boolean>;
   allow_record_download: XmlElem<boolean>;
+  /** Использовать резервный сервер */
   use_reserve_server: XmlElem<boolean>;
-  compound_program_id: XmlElem<number, CompoundProgramCatalogDocumentTopElem>;
-  education_program_id: XmlElem<number, EducationProgramCatalogDocumentTopElem>;
-  education_method_id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
-  program_id: XmlElem<number>;
-  create_compound_program_id: XmlElem<number, CompoundProgramCatalogDocumentTopElem>;
-  training_plan_id: XmlElem<number, TrainingPlanCatalogDocumentTopElem>;
-  education_org_id: XmlElem<number, EducationOrgCatalogDocumentTopElem>;
-  education_org_type: XmlElem<string>;
-  education_org_name: XmlElem<string>;
-  course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
-  forum_id: XmlElem<number, ForumCatalogDocumentTopElem>;
-  chat_id: XmlElem<number, ChatCatalogDocumentTopElem>;
-  poll_id: XmlElem<number, PollCatalogDocumentTopElem>;
-  status_id: XmlElem<string, typeof common.event_status_types>;
+  /** Модульная программа */
+  compound_program_id: XmlElem<number | null, CompoundProgramCatalogDocumentTopElem>;
+  /** Набор программ */
+  education_program_id: XmlElem<number | null, EducationProgramCatalogDocumentTopElem>;
+  /** Учебная программа */
+  education_method_id: XmlElem<number | null, EducationMethodCatalogDocumentTopElem>;
+  /** Использовать резервный сервер */
+  program_id: XmlElem<number | null>;
+  create_compound_program_id: XmlElem<number | null, CompoundProgramCatalogDocumentTopElem>;
+  training_plan_id: XmlElem<number | null, TrainingPlanCatalogDocumentTopElem>;
+  /** Организация */
+  education_org_id: XmlElem<number | null, EducationOrgCatalogDocumentTopElem>;
+  education_org_type: XmlElem<string | null>;
+  /** Название организации */
+  education_org_name: XmlElem<string | null>;
+  /** Электронный курс */
+  course_id: XmlElem<number | null, CourseCatalogDocumentTopElem>;
+  /** Форум */
+  forum_id: XmlElem<number | null, ForumCatalogDocumentTopElem>;
+  /** Чат */
+  chat_id: XmlElem<number | null, ChatCatalogDocumentTopElem>;
+  /** Опрос */
+  poll_id: XmlElem<number | null, PollCatalogDocumentTopElem>;
+  /** Статус */
+  status_id: XmlElem<string | null, typeof common.event_status_types>;
+  /** Публичное мероприятие */
   is_public: XmlElem<boolean>;
+  /** Открытое мероприятие */
   is_open: XmlElem<boolean>;
   allow_guest_login: XmlElem<boolean>;
-  guest_restrictions: XmlElem<number>;
+  guest_restrictions: XmlElem<number | null>;
   is_open_case: XmlElem<boolean>;
   public_answers: XmlElem<boolean>;
-  duration_plan: XmlElem<number>;
-  duration_days_plan: XmlElem<number>;
-  duration_fact: XmlElem<number>;
-  duration_days_fact: XmlElem<number>;
-  max_person_num: XmlElem<number>;
-  min_person_num: XmlElem<number>;
+  /** Планируемое количество часов */
+  duration_plan: XmlElem<number | null>;
+  /** Планируемое количество дней */
+  duration_days_plan: XmlElem<number | null>;
+  /** Фактическое количество часов */
+  duration_fact: XmlElem<number | null>;
+  /** Фактическое количество дней */
+  duration_days_fact: XmlElem<number | null>;
+  /** Максимальное количество участников */
+  max_person_num: XmlElem<number | null>;
+  /** Минимальное количество участников */
+  min_person_num: XmlElem<number | null>;
   person_num(): number;
   assist_person_num(): number;
-  course_finished: XmlElem<number>;
-  course_process: XmlElem<number>;
-  course_started: XmlElem<number>;
-  course_began: XmlElem<number>;
-  test_finished: XmlElem<number>;
-  test_process: XmlElem<number>;
-  test_started: XmlElem<number>;
-  test_began: XmlElem<number>;
-  tutor_main: XmlElem<string>;
-  contract_id: XmlElem<number, ContractCatalogDocumentTopElem>;
-  organizational_form: XmlElem<string, typeof lists.organizational_forms>;
-  event_form: XmlElem<string, typeof lists.event_forms>;
-  event_forms: XmlMultiElem<EventDocumentEventForm>;
-  stages: XmlMultiElem<EventDocumentStage>;
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  collaborators: XmlMultiElem<EventDocumentCollaborator>;
-  group_educ_group_id: XmlElem<string>;
-  unnamed_person_by_orgs: XmlMultiElem<EventDocumentUnnamedPersonByOrg>;
-  unnamed_person_num: XmlElem<number>;
-  unnamed_person_sum: XmlElem<number>;
+  /** Завершенных курсов */
+  course_finished: XmlElem<number | null>;
+  /** Активных курсов */
+  course_process: XmlElem<number | null>;
+  /** Неначатых курсов */
+  course_started: XmlElem<number | null>;
+  /** Начатых курсов */
+  course_began: XmlElem<number | null>;
+  /** Завершенных тестов */
+  test_finished: XmlElem<number | null>;
+  /** Активных тестов */
+  test_process: XmlElem<number | null>;
+  /** Неначатых тестов */
+  test_started: XmlElem<number | null>;
+  /** Начатых тестов */
+  test_began: XmlElem<number | null>;
+  /** Ответственный */
+  tutor_main: XmlElem<string | null>;
+  contract_id: XmlElem<number | null, ContractCatalogDocumentTopElem>;
+  /** Организационная форма */
+  organizational_form: XmlElem<string | null, typeof lists.organizational_forms>;
+  /** Форма проведения */
+  event_form: XmlElem<string | null, typeof lists.event_forms>;
+  /** Формы проведения */
+  event_forms: XmlMultiElem<EventDocumentEventForm | null>;
+  /** Этапы */
+  stages: XmlMultiElem<EventDocumentStage | null>;
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  /** Сотрудники */
+  collaborators: XmlMultiElem<EventDocumentCollaborator | null>;
+  /** Группа обучения */
+  group_educ_group_id: XmlElem<string | null>;
+  /** Неименованные участники по организациям */
+  unnamed_person_by_orgs: XmlMultiElem<EventDocumentUnnamedPersonByOrg | null>;
+  /** Количество неименованных участников */
+  unnamed_person_num: XmlElem<number | null>;
+  unnamed_person_sum: XmlElem<number | null>;
+  /** Группа сформирована */
   group_formed: XmlElem<boolean>;
-  quota_org: XmlElem<number>;
-  quota_subdivision: XmlElem<number>;
-  quota_person: XmlElem<number>;
-  even_preparations: XmlMultiElem<EventDocumentEvenPreparation>;
-  hitt: XmlElem<EventDocumentHitt>;
-  groups: XmlMultiElem<EventDocumentGroup>;
-  tutors: XmlMultiElem<EventDocumentTutor>;
-  object_resources: XmlMultiElem<EventDocumentObjectResource>;
-  total_cost: XmlElem<number>;
-  total_cost_plan: XmlElem<number>;
-  contracts: XmlMultiElem<EventDocumentContract>;
-  cost_center_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
+  /** Квота на организацию */
+  quota_org: XmlElem<number | null>;
+  /** Квота на подразделение */
+  quota_subdivision: XmlElem<number | null>;
+  /** Квота на заявителя */
+  quota_person: XmlElem<number | null>;
+  /** Подготовка мероприятия */
+  even_preparations: XmlMultiElem<EventDocumentEvenPreparation | null>;
+  /** Тестирование с ДУ */
+  hitt: XmlElem<EventDocumentHitt | null>;
+  /** Группы */
+  groups: XmlMultiElem<EventDocumentGroup | null>;
+  /** Ответственные за проведение */
+  tutors: XmlMultiElem<EventDocumentTutor | null>;
+  /** Оборудование */
+  object_resources: XmlMultiElem<EventDocumentObjectResource | null>;
+  /** Общая стоимость */
+  total_cost: XmlElem<number | null>;
+  /** Планируемая общая стоимость */
+  total_cost_plan: XmlElem<number | null>;
+  /** Договоры */
+  contracts: XmlMultiElem<EventDocumentContract | null>;
+  /** Центр затрат */
+  cost_center_id: XmlElem<number | null, CostCenterCatalogDocumentTopElem>;
   cost_center_type: XmlElem<string>;
   default_cost_center_id(): number;
+  /** Распределение общей стоимости */
   distribute_cost_type: XmlElem<string>;
-  expense_items: XmlMultiElem<EventDocumentExpenseItem>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  files: XmlMultiElem<EventDocumentFile>;
-  library_materials: XmlMultiElem<EventDocumentLibraryMaterial>;
-  learning_tasks: XmlMultiElem<EventDocumentLearningTask>;
+  /** Статьи затрат */
+  expense_items: XmlMultiElem<EventDocumentExpenseItem | null>;
+  /** Бюджетный период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  files: XmlMultiElem<EventDocumentFile | null>;
+  library_materials: XmlMultiElem<EventDocumentLibraryMaterial | null>;
+  learning_tasks: XmlMultiElem<EventDocumentLearningTask | null>;
   AddFile(resourceId: number, docResource: unknown): void;
-  default_response_type_id: XmlElem<number, ResponseTypeCatalogDocumentTopElem>;
+  /** Тип отзыва по умолчанию */
+  default_response_type_id: XmlElem<number | null, ResponseTypeCatalogDocumentTopElem>;
+  /** Обязательное заполнение отзыва */
   mandatory_fill_response: XmlElem<boolean>;
-  default_request_type_id: XmlElem<number, RequestTypeCatalogDocumentTopElem>;
-  use_object_workflow: XmlElem<boolean>;
-  default_event_result_type_id: XmlElem<number, EventResultTypeCatalogDocumentTopElem>;
-  main_material_url: XmlElem<string>;
-  main_material_width: XmlElem<string>;
-  main_material_height: XmlElem<string>;
+  /** Тип заявки по умолчанию */
+  default_request_type_id: XmlElem<number | null, RequestTypeCatalogDocumentTopElem>;
+  /** Использовать документооборот учебной программы */
+  use_object_workflow: XmlElem<boolean | null>;
+  /** Тип результата по умолчанию */
+  default_event_result_type_id: XmlElem<number | null, EventResultTypeCatalogDocumentTopElem>;
+  /** Основной материал */
+  main_material_url: XmlElem<string | null>;
+  /** Ширина */
+  main_material_width: XmlElem<string | null>;
+  /** Высота */
+  main_material_height: XmlElem<string | null>;
+  /** Показывать видео */
   use_video: XmlElem<boolean>;
-  video_url: XmlElem<string>;
-  video_login: XmlElem<string>;
-  video_password: XmlElem<string>;
+  /** Путь к видео */
+  video_url: XmlElem<string | null>;
+  /** Логин */
+  video_login: XmlElem<string | null>;
+  /** Пароль */
+  video_password: XmlElem<string | null>;
+  /** Показывать аудио */
   use_audio: XmlElem<boolean>;
-  audio_url: XmlElem<string>;
-  audio_channel_login: XmlElem<string>;
-  audio_channel_password: XmlElem<string>;
-  audio_login: XmlElem<string>;
-  audio_password: XmlElem<string>;
-  date_request_begin: XmlElem<Date>;
-  date_request_over: XmlElem<Date>;
-  date_request_rejection_over: XmlElem<Date>;
-  parent_event_id: XmlElem<number, EventCatalogDocumentTopElem>;
-  regular_schedule: XmlElem<EventDocumentRegularSchedule>;
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Путь к аудио */
+  audio_url: XmlElem<string | null>;
+  /** Название аудио канала */
+  audio_channel_login: XmlElem<string | null>;
+  /** Пароль аудио канала */
+  audio_channel_password: XmlElem<string | null>;
+  /** Логин пользователя аудио канала */
+  audio_login: XmlElem<string | null>;
+  /** Пароль пользователя аудио канала */
+  audio_password: XmlElem<string | null>;
+  /** Дата начала подачи заявок */
+  date_request_begin: XmlElem<Date | null>;
+  /** Дата окончания подачи заявок */
+  date_request_over: XmlElem<Date | null>;
+  /** Дата окончания возможности отмены участия */
+  date_request_rejection_over: XmlElem<Date | null>;
+  parent_event_id: XmlElem<number | null, EventCatalogDocumentTopElem>;
+  /** Расписание */
+  regular_schedule: XmlElem<EventDocumentRegularSchedule | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
   get_chat_messages(dtLastMessage: Date): unknown;
   send_chat_message(text: string, fullname: string): boolean;
-  phases: XmlMultiElem<EventDocumentPhase>;
+  phases: XmlMultiElem<EventDocumentPhase | null>;
   disp_collaborator_phase_presence: XmlElem<boolean>;
-  disp_persons_for_all: XmlElem<boolean>;
-  has_lector_appraise: XmlElem<boolean>;
-  has_lector_comp: XmlElem<boolean>;
-  has_lector_quest: XmlElem<boolean>;
-  lector_restype: XmlElem<number, EventResultTypeCatalogDocumentTopElem>;
-  lector_date_start: XmlElem<Date>;
-  has_self_appraise: XmlElem<boolean>;
-  has_self_comp: XmlElem<boolean>;
-  has_self_quest: XmlElem<boolean>;
-  self_restype: XmlElem<number, EventResultTypeCatalogDocumentTopElem>;
-  self_date_start: XmlElem<Date>;
-  has_manager_appraise: XmlElem<boolean>;
-  has_manager_comp: XmlElem<boolean>;
-  has_manager_quest: XmlElem<boolean>;
-  manager_restype: XmlElem<number, EventResultTypeCatalogDocumentTopElem>;
-  manager_date_start: XmlElem<Date>;
-  disp_all_assessment_plan: XmlElem<boolean>;
+  disp_persons_for_all: XmlElem<boolean | null>;
+  has_lector_appraise: XmlElem<boolean | null>;
+  has_lector_comp: XmlElem<boolean | null>;
+  has_lector_quest: XmlElem<boolean | null>;
+  lector_restype: XmlElem<number | null, EventResultTypeCatalogDocumentTopElem>;
+  lector_date_start: XmlElem<Date | null>;
+  has_self_appraise: XmlElem<boolean | null>;
+  has_self_comp: XmlElem<boolean | null>;
+  has_self_quest: XmlElem<boolean | null>;
+  self_restype: XmlElem<number | null, EventResultTypeCatalogDocumentTopElem>;
+  self_date_start: XmlElem<Date | null>;
+  has_manager_appraise: XmlElem<boolean | null>;
+  has_manager_comp: XmlElem<boolean | null>;
+  has_manager_quest: XmlElem<boolean | null>;
+  manager_restype: XmlElem<number | null, EventResultTypeCatalogDocumentTopElem>;
+  manager_date_start: XmlElem<Date | null>;
+  disp_all_assessment_plan: XmlElem<boolean | null>;
   need_create_results: XmlElem<boolean>;
   set_status(newStatus: string, sendNotifications: boolean, screen: unknown): void;
   send_notifications(sendType: string): boolean;
@@ -375,8 +511,9 @@ EventSettingsBase & {
   get_webinar_record_url(currentHost: string): unknown;
   get_webinar_record_download_url(currentHost: string): unknown;
   get_finish_date(newDate: string): unknown;
-  notification_reminders: XmlMultiElem<EventDocumentNotificationReminder>;
-  role_id: XmlMultiElemObject<number>;
+  notification_reminders: XmlMultiElem<EventDocumentNotificationReminder | null>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type EventDocument = XmlDocument & {

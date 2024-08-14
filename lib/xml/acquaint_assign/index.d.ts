@@ -1,24 +1,40 @@
 interface AcquaintAssignDocumentQuestion {
-  id: XmlElem<string>;
-  answer: XmlElem<string>;
+  /** Вопрос */
+  id: XmlElem<string | null>;
+  /** Правильный ответ */
+  answer: XmlElem<string | null>;
 }
 
 type AcquaintAssignDocumentTopElem = XmlTopElem & {
   Doc: AcquaintAssignDocument;
-  code: XmlElem<string>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Тип объекта */
   object_type: XmlElem<string, typeof common.exchange_object_types>;
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
-  normative_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Название объекта */
+  object_name: XmlElem<string | null>;
+  /** Требуемая дата ознакомления */
+  normative_date: XmlElem<Date | null>;
+  /** Требуемая дата ознакомления */
+  finish_date: XmlElem<Date | null>;
+  /** Периодичность повторного обновления в днях */
   reacquaintance_period: XmlElem<number>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  acquaint_id: XmlElem<number, AcquaintCatalogDocumentTopElem>;
-  state_id: XmlElem<string, typeof common.acquaint_states>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Ознакомление */
+  acquaint_id: XmlElem<number | null, AcquaintCatalogDocumentTopElem>;
+  /** Состояние */
+  state_id: XmlElem<string | null, typeof common.acquaint_states>;
+  /** Количество попыток */
   attempt_num: XmlElem<number>;
-  questions: XmlMultiElem<AcquaintAssignDocumentQuestion>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Вопросы */
+  questions: XmlMultiElem<AcquaintAssignDocumentQuestion | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type AcquaintAssignDocument = XmlDocument & {

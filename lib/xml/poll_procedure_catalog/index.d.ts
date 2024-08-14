@@ -1,19 +1,31 @@
 type PollProcedureCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  start_date: XmlElem<Date>;
-  end_date: XmlElem<Date>;
-  web_display: XmlElem<boolean>;
-  status: XmlElem<number>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Ответственный за проведение */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Дата начала */
+  start_date: XmlElem<Date | null>;
+  /** Дата завершения */
+  end_date: XmlElem<Date | null>;
+  /** Отображать на Портале */
+  web_display: XmlElem<boolean | null>;
+  /** Статус */
+  status: XmlElem<number | null>;
+  /** Эталонная */
   is_model: XmlElem<boolean>;
-  str_sub_bosses_ids: XmlElem<string>;
-  trigger_type: XmlElem<string, typeof common.trigger_types>;
-  role_id: XmlMultiElemObject<number>;
-  equal_hash: XmlElem<string>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  /** Ответственный */
+  str_sub_bosses_ids: XmlElem<string | null>;
+  trigger_type: XmlElem<string | null, typeof common.trigger_types>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
+  equal_hash: XmlElem<string | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

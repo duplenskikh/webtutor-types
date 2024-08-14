@@ -1,16 +1,21 @@
 type ScheduleDayDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
   Doc: ScheduleDayDocument;
-  id: XmlElem<number>;
-  schedule_type_id: XmlElem<number, ScheduleTypeCatalogDocumentTopElem>;
-  schedule_type_name: XmlElem<string>;
-  rest_collaborator_schedule_id: XmlElem<number, RestrictingCollaboratorScheduleCatalogDocumentTopElem>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  date: XmlElem<Date>;
-  start_time: XmlElem<string>;
-  finish_time: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  schedule_type_id: XmlElem<number | null, ScheduleTypeCatalogDocumentTopElem>;
+  schedule_type_name: XmlElem<string | null>;
+  rest_collaborator_schedule_id: XmlElem<number | null, RestrictingCollaboratorScheduleCatalogDocumentTopElem>;
+  /** Бюджетный период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Подразделение */
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  /** Дата */
+  date: XmlElem<Date | null>;
+  /** Дата начала */
+  start_time: XmlElem<string | null>;
+  /** Дата окончания */
+  finish_time: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ScheduleDayDocument = XmlDocument & {

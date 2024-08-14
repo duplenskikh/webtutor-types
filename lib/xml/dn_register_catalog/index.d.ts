@@ -1,16 +1,22 @@
 type DnRegisterCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  control_event_id: XmlElem<number, DnControlEventCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  control_event_id: XmlElem<number | null, DnControlEventCatalogDocumentTopElem>;
+  /** Тип */
   type_id: XmlElem<string, typeof common.registr_types>;
-  faculty_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  chair_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  discipl_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
-  lector_id: XmlElem<number, LectorCatalogDocumentTopElem>;
-  date_event: XmlElem<Date>;
-  contr_form_id: XmlElem<number, DnControlFormCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  /** Факультет */
+  faculty_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  chair_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  discipl_id: XmlElem<number | null, DnDisciplineCatalogDocumentTopElem>;
+  /** Преподаватель */
+  lector_id: XmlElem<number | null, LectorCatalogDocumentTopElem>;
+  date_event: XmlElem<Date | null>;
+  contr_form_id: XmlElem<number | null, DnControlFormCatalogDocumentTopElem>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

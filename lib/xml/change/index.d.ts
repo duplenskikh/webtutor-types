@@ -1,15 +1,25 @@
 type ChangeDocumentTopElem = XmlTopElem & {
   Doc: ChangeDocument;
-  name: XmlElem<string>;
-  create_date: XmlElem<Date>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  object_id: XmlElem<number>;
-  object_type: XmlElem<string, typeof common.exchange_object_types>;
-  object_name: XmlElem<string>;
-  comment: XmlElem<string>;
-  desc: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Дата создания */
+  create_date: XmlElem<Date | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
+  person_fullname: XmlElem<string | null>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Тип объекта */
+  object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Имя объекта */
+  object_name: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ChangeDocument = XmlDocument & {

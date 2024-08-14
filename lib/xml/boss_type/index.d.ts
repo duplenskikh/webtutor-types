@@ -1,21 +1,28 @@
 interface BossTypeDocumentObjectType {
-  id: XmlElem<string, typeof common.exchange_object_types>;
+  id: XmlElem<string | null, typeof common.exchange_object_types>;
 }
 
 interface BossTypeDocumentOperation {
-  operation_id: XmlElem<number, OperationCatalogDocumentTopElem>;
+  operation_id: XmlElem<number | null, OperationCatalogDocumentTopElem>;
 }
 
 type BossTypeDocumentTopElem = XmlTopElem & {
   Doc: BossTypeDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  object_types: XmlMultiElem<BossTypeDocumentObjectType>;
-  operations: XmlMultiElem<BossTypeDocumentOperation>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  object_types: XmlMultiElem<BossTypeDocumentObjectType | null>;
+  /** Операции */
+  operations: XmlMultiElem<BossTypeDocumentOperation | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
-  doc_info: XmlElem<DocInfoBase>;
-  comment: XmlElem<string>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
 };
 
 type BossTypeDocument = XmlDocument & {

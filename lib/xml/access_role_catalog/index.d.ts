@@ -1,4 +1,5 @@
 type AccessRoleCatalogDocumentTopElem = XmlTopElem &
 AccessRoleBase & {
-  read_only: XmlElem<boolean>;
+  /** Только чтение */
+  read_only: XmlElem<boolean | null>;
 };

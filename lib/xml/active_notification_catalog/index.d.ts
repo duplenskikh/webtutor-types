@@ -1,16 +1,28 @@
 type ActiveNotificationCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  notification_id: XmlElem<number, NotificationCatalogDocumentTopElem>;
-  object_id: XmlElem<number>;
-  subject: XmlElem<string>;
-  create_date: XmlElem<Date>;
-  last_send_date: XmlElem<Date>;
-  send_date: XmlElem<Date>;
-  recipient_person_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  /** Тип уведомления */
+  notification_id: XmlElem<number | null, NotificationCatalogDocumentTopElem>;
+  /** Прикрепляемый объект */
+  object_id: XmlElem<number | null>;
+  /** Тема */
+  subject: XmlElem<string | null>;
+  /** Дата создания */
+  create_date: XmlElem<Date | null>;
+  /** Дата предполагаемой отправки */
+  last_send_date: XmlElem<Date | null>;
+  /** Дата последней отправки */
+  send_date: XmlElem<Date | null>;
+  /** Адресаты */
+  recipient_person_id: XmlMultiElemObject<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Уведомление заполняется пользователем */
   is_custom: XmlElem<boolean>;
-  status: XmlElem<string, typeof common.active_notification_status_types>;
-  send_counter: XmlElem<number>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  /** Статус */
+  status: XmlElem<string | null, typeof common.active_notification_status_types>;
+  /** Количество попыток */
+  send_counter: XmlElem<number | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

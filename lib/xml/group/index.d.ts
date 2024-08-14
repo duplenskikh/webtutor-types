@@ -1,14 +1,17 @@
 interface GroupDocumentCollaborator extends PersonForeignBase {
-  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  collaborator_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   collaborator_fullname(): unknown;
-  position_id: XmlMultiElemObject<number, PositionCatalogDocumentTopElem>;
+  position_id: XmlMultiElemObject<number | null, PositionCatalogDocumentTopElem>;
+  /** Должности */
   position_position_names(): unknown;
-  desc: XmlElem<string>;
+  desc: XmlElem<string | null>;
 }
 
 interface GroupDocumentKpiProfile {
-  id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  period_type_id: XmlElem<string, typeof common.perioditys>;
+  /** Профиль KPI */
+  id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  period_type_id: XmlElem<string | null, typeof common.perioditys>;
+  /** Обязательный */
   obligatory: XmlElem<boolean>;
 }
 
@@ -24,31 +27,48 @@ KnowledgePartsBaseOld &
 ViewConditionsBase &
 PersonObjectLinksBase & {
   Doc: GroupDocument;
-  show_detailed: XmlElem<boolean>;
+  /** Показывать подробную информациюна портале */
+  show_detailed: XmlElem<boolean | null>;
+  /** Является динамической */
   is_dynamic: XmlElem<boolean>;
+  /** Является учебной */
   is_educ: XmlElem<boolean>;
+  /** Скрытая группа */
   is_hidden: XmlElem<boolean>;
+  /** Возможно оставлять сообщения на ленту */
   allow_social_post: XmlElem<boolean>;
+  /** По должности */
   is_position: XmlElem<boolean>;
-  collaborators: XmlMultiElem<GroupDocumentCollaborator>;
+  /** Сотрудники */
+  collaborators: XmlMultiElem<GroupDocumentCollaborator | null>;
   person_num(): number;
-  forum_id: XmlElem<number, ForumCatalogDocumentTopElem>;
-  kpi_profile_id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  kpi_profiles: XmlMultiElem<GroupDocumentKpiProfile>;
-  bonus_profile_id: XmlElem<number, BonusProfileCatalogDocumentTopElem>;
-  schedule_type_id: XmlElem<number, ScheduleTypeCatalogDocumentTopElem>;
+  /** Форум */
+  forum_id: XmlElem<number | null, ForumCatalogDocumentTopElem>;
+  /** Профиль KPI */
+  kpi_profile_id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  kpi_profiles: XmlMultiElem<GroupDocumentKpiProfile | null>;
+  /** Профиль премирования */
+  bonus_profile_id: XmlElem<number | null, BonusProfileCatalogDocumentTopElem>;
+  schedule_type_id: XmlElem<number | null, ScheduleTypeCatalogDocumentTopElem>;
+  /** Тип вступления */
   join_mode: XmlElem<string, typeof common.join_mode_types>;
-  default_request_type_id: XmlElem<number, RequestTypeCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
+  /** Тип заявки по умолчанию */
+  default_request_type_id: XmlElem<number | null, RequestTypeCatalogDocumentTopElem>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
   dynamic_select_person(clearList: unknown): unknown;
   start_action(itemName: unknown): number;
   activateCourseToPersons(input: unknown): unknown;
   add_collaborator(personId: number, docPerson: unknown): unknown;
   remove_collaborator(personId: number): unknown;
-  role_id: XmlMultiElemObject<number>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type GroupDocument = XmlDocument & {

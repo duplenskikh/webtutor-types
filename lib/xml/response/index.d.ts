@@ -3,25 +3,40 @@ PersonFillingBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: ResponseDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Статус */
   status: XmlElem<string, typeof common.response_status_types>;
-  response_type_id: XmlElem<number, ResponseTypeCatalogDocumentTopElem>;
-  type: XmlElem<string, typeof common.exchange_object_types>;
-  create_date: XmlElem<Date>;
-  plan_date: XmlElem<Date>;
-  done_date: XmlElem<Date>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  owner_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
-  object_code: XmlElem<string>;
-  object_start_date: XmlElem<Date>;
+  /** Тип отзыва */
+  response_type_id: XmlElem<number | null, ResponseTypeCatalogDocumentTopElem>;
+  /** Тип объекта */
+  type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Дата создания */
+  create_date: XmlElem<Date | null>;
+  /** Планируемая дата */
+  plan_date: XmlElem<Date | null>;
+  /** Фактическая дата */
+  done_date: XmlElem<Date | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Инициатор */
+  owner_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Название объекта */
+  object_name: XmlElem<string | null>;
+  /** Код объекта */
+  object_code: XmlElem<string | null>;
+  /** Дата */
+  object_start_date: XmlElem<Date | null>;
   is_public: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  basic_score: XmlElem<number>;
-  basic_desc: XmlElem<string>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  basic_score: XmlElem<number | null>;
+  basic_desc: XmlElem<string | null>;
   calc_basic_values(): void;
 };
 

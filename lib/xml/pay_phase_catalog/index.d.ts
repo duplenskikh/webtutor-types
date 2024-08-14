@@ -1,15 +1,25 @@
 type PayPhaseCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  name: XmlElem<string>;
-  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
-  event_name: XmlElem<string>;
-  cost: XmlElem<number>;
-  currency: XmlElem<string, typeof lists.currency_types>;
-  invoice_sum: XmlElem<number>;
-  draft_sum: XmlElem<number>;
-  act_sum: XmlElem<number>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Мероприятие */
+  event_id: XmlElem<number | null, EventCatalogDocumentTopElem>;
+  /** Название мероприятия */
+  event_name: XmlElem<string | null>;
+  /** Планируемая сумма */
+  cost: XmlElem<number | null>;
+  /** Валюта */
+  currency: XmlElem<string | null, typeof lists.currency_types>;
+  /** Сумма счетов */
+  invoice_sum: XmlElem<number | null>;
+  /** Сумма оплат */
+  draft_sum: XmlElem<number | null>;
+  /** Сумма актов */
+  act_sum: XmlElem<number | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

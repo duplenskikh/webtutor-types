@@ -1,24 +1,28 @@
 interface EducationMethodDocumentEventForm {
-  form_id: XmlElem<string, typeof lists.event_forms>;
+  form_id: XmlElem<string | null, typeof lists.event_forms>;
 }
 
 interface EducationMethodDocumentCompetenceIndicator {
-  indicator_id: XmlElem<number, IndicatorCatalogDocumentTopElem>;
-  plan: XmlElem<string>;
-  required_mark: XmlElem<string>;
+  indicator_id: XmlElem<number | null, IndicatorCatalogDocumentTopElem>;
+  /** Плановая величина */
+  plan: XmlElem<string | null>;
+  required_mark: XmlElem<string | null>;
+  /** Вес */
   weight: XmlElem<number>;
 }
 
 interface EducationMethodDocumentCompetence {
-  competence_id: XmlElem<number, CompetenceCatalogDocumentTopElem>;
-  plan: XmlElem<string>;
-  required_mark: XmlElem<string>;
+  competence_id: XmlElem<number | null, CompetenceCatalogDocumentTopElem>;
+  /** Плановая величина */
+  plan: XmlElem<string | null>;
+  required_mark: XmlElem<string | null>;
+  /** Вес */
   weight: XmlElem<number>;
-  indicators: XmlMultiElem<EducationMethodDocumentCompetenceIndicator>;
+  indicators: XmlMultiElem<EducationMethodDocumentCompetenceIndicator | null>;
 }
 
 interface EducationMethodDocumentSimilarEducationMethod {
-  id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
+  id: XmlElem<number | null, EducationMethodCatalogDocumentTopElem>;
 }
 
 type EducationMethodDocumentTopElem = XmlTopElem &
@@ -33,24 +37,37 @@ FileListBase &
 ExpenseDistributionBase &
 GameBonusBase & {
   Doc: EducationMethodDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Ресурс базы */
+  resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
+  /** Является открытой учебной программой */
   is_open: XmlElem<boolean>;
-  default_request_type_id: XmlElem<number, RequestTypeCatalogDocumentTopElem>;
-  default_response_type_id: XmlElem<number, ResponseTypeCatalogDocumentTopElem>;
+  /** Тип заявки по умолчанию */
+  default_request_type_id: XmlElem<number | null, RequestTypeCatalogDocumentTopElem>;
+  /** Тип отзыва по умолчанию */
+  default_response_type_id: XmlElem<number | null, ResponseTypeCatalogDocumentTopElem>;
+  /** Обязательное заполнение отзыва */
   mandatory_fill_response: XmlElem<boolean>;
-  certificate_type_id: XmlElem<number, CertificateTypeCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
-  event_form: XmlElem<string, typeof lists.event_forms>;
-  event_type_id: XmlElem<number, EventTypeCatalogDocumentTopElem>;
-  event_forms: XmlMultiElem<EducationMethodDocumentEventForm>;
-  competences: XmlMultiElem<EducationMethodDocumentCompetence>;
-  similar_education_methods: XmlMultiElem<EducationMethodDocumentSimilarEducationMethod>;
+  /** Тип сертификата по результатам прохождения тестирования */
+  certificate_type_id: XmlElem<number | null, CertificateTypeCatalogDocumentTopElem>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  event_form: XmlElem<string | null, typeof lists.event_forms>;
+  event_type_id: XmlElem<number | null, EventTypeCatalogDocumentTopElem>;
+  /** Формы проведения */
+  event_forms: XmlMultiElem<EducationMethodDocumentEventForm | null>;
+  /** Компетенции */
+  competences: XmlMultiElem<EducationMethodDocumentCompetence | null>;
+  similar_education_methods: XmlMultiElem<EducationMethodDocumentSimilarEducationMethod | null>;
   get_workflow_id(): null;
-  role_id: XmlMultiElemObject<number>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type EducationMethodDocument = XmlDocument & {

@@ -1,25 +1,42 @@
 type EstaffEventCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code_event: XmlElem<string>;
-  event_name: XmlElem<string>;
-  start_date: XmlElem<Date>;
-  vacancy_id: XmlElem<number, VacancyCatalogDocumentTopElem>;
-  vacancy_name: XmlElem<string>;
-  vacancy_code: XmlElem<string>;
-  request_id: XmlElem<number, RequestCatalogDocumentTopElem>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  estaff_event_type_id: XmlElem<number, EstaffEventTypeCatalogDocumentTopElem>;
-  estaff_event_type_name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код события */
+  code_event: XmlElem<string | null>;
+  event_name: XmlElem<string | null>;
+  /** Дата начала */
+  start_date: XmlElem<Date | null>;
+  /** Вакансия */
+  vacancy_id: XmlElem<number | null, VacancyCatalogDocumentTopElem>;
+  /** Название вакансии */
+  vacancy_name: XmlElem<string | null>;
+  /** Код вакансии */
+  vacancy_code: XmlElem<string | null>;
+  /** Заявка */
+  request_id: XmlElem<number | null, RequestCatalogDocumentTopElem>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
+  person_fullname: XmlElem<string | null>;
+  /** Тип события E-Staff */
+  estaff_event_type_id: XmlElem<number | null, EstaffEventTypeCatalogDocumentTopElem>;
+  /** Тип события E-Staff */
+  estaff_event_type_name: XmlElem<string | null>;
+  /** Тип объекта */
   object_type: XmlElem<string, typeof common.exchange_object_types>;
-  objects: XmlElem<string>;
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
-  linked_object_url: XmlElem<string>;
-  event_status_id: XmlElem<string, typeof common.estaff_event_status_types>;
-  estaff_event_eid: XmlElem<number>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  /** Прикрепленные объекты */
+  objects: XmlElem<string | null>;
+  /** Связанный объект */
+  object_id: XmlElem<number | null>;
+  /** Название объекта */
+  object_name: XmlElem<string | null>;
+  linked_object_url: XmlElem<string | null>;
+  /** Статус */
+  event_status_id: XmlElem<string | null, typeof common.estaff_event_status_types>;
+  estaff_event_eid: XmlElem<number | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

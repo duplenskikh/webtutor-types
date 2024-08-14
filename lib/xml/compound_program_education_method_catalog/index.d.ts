@@ -1,24 +1,43 @@
 type CompoundProgramEducationMethodCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  program_id: XmlElem<number>;
-  parent_progpam_id: XmlElem<number>;
-  position: XmlElem<number>;
-  compound_program_id: XmlElem<number, CompoundProgramCatalogDocumentTopElem>;
-  name: XmlElem<string>;
-  education_method_id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
-  education_method_name: XmlElem<string>;
-  cost: XmlElem<number>;
-  currency: XmlElem<string, typeof lists.currency_types>;
-  cost_type: XmlElem<string, typeof common.cost_types>;
-  duration: XmlElem<number>;
-  person_num: XmlElem<number>;
+  id: XmlElem<number | null>;
+  /** Корневой раздел */
+  program_id: XmlElem<number | null>;
+  /** Корневой раздел */
+  parent_progpam_id: XmlElem<number | null>;
+  /** Должность */
+  position: XmlElem<number | null>;
+  /** Модульная программа */
+  compound_program_id: XmlElem<number | null, CompoundProgramCatalogDocumentTopElem>;
+  /** Название модульной программы */
+  name: XmlElem<string | null>;
+  /** Учебная программа */
+  education_method_id: XmlElem<number | null, EducationMethodCatalogDocumentTopElem>;
+  /** Название учебной программы */
+  education_method_name: XmlElem<string | null>;
+  /** Стоимость */
+  cost: XmlElem<number | null>;
+  /** Валюта */
+  currency: XmlElem<string | null, typeof lists.currency_types>;
+  /** Тип оплаты */
+  cost_type: XmlElem<string | null, typeof common.cost_types>;
+  /** Длительность в часах */
+  duration: XmlElem<number | null>;
+  /** Количество участников */
+  person_num: XmlElem<number | null>;
+  /** Тип учебной программы */
   type: XmlElem<string, typeof common.education_method_types>;
-  object_type: XmlElem<string>;
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
-  object_code: XmlElem<string>;
+  /** Тип */
+  object_type: XmlElem<string | null>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Название объекта */
+  object_name: XmlElem<string | null>;
+  /** Код объекта */
+  object_code: XmlElem<string | null>;
+  /** Признак открытой учебной программы */
   is_open: XmlElem<boolean>;
-  duration_days: XmlElem<number>;
+  /** Длительность в днях */
+  duration_days: XmlElem<number | null>;
   MatchDocTypeExt(): void;
   OnBuildExt(): void;
   OnDeleteExt(): void;

@@ -2,12 +2,18 @@ type ExpenseItemDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: ExpenseItemDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Активная */
   is_active: XmlElem<boolean>;
-  parent_id: XmlElem<number, ExpenseItemCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Родительская статья затрат */
+  parent_id: XmlElem<number | null, ExpenseItemCatalogDocumentTopElem>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ExpenseItemDocument = XmlDocument & {

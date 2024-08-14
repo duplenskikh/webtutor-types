@@ -2,16 +2,23 @@ type NotificationSystemDocumentTopElem = XmlTopElem &
 MsParametersBase &
 AdminAccessBase & {
   Doc: NotificationSystemDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  library_url: XmlElem<string>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  library_url: XmlElem<string | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
-  doc_info: XmlElem<DocInfoBase>;
-  role_id: XmlMultiElemObject<number>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type NotificationSystemDocument = XmlDocument & {

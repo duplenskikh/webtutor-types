@@ -1,36 +1,49 @@
 interface PresenceStateDocumentDisplayField {
-  value: XmlElem<string>;
-  comment: XmlElem<string>;
+  /** Значение */
+  value: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
 }
 
 interface PresenceStateDocumentRequiredField {
-  value: XmlElem<string>;
-  comment: XmlElem<string>;
+  /** Значение */
+  value: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
 }
 
 type PresenceStateDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
   Doc: PresenceStateDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  state_id: XmlElem<string, typeof lists.person_states>;
-  state_name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Состояние */
+  state_id: XmlElem<string | null, typeof lists.person_states>;
+  /** Состояние */
+  state_name: XmlElem<string | null>;
   accessible: XmlElem<boolean>;
   is_absence: XmlElem<boolean>;
-  workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
+  /** Документооборот по умолчанию */
+  workflow_id: XmlElem<number | null, WorkflowCatalogDocumentTopElem>;
   can_cancel: XmlElem<boolean>;
   can_change: XmlElem<boolean>;
-  cancel_workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
-  change_workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
-  position: XmlElem<number>;
-  style_css: XmlElem<string>;
+  cancel_workflow_id: XmlElem<number | null, WorkflowCatalogDocumentTopElem>;
+  change_workflow_id: XmlElem<number | null, WorkflowCatalogDocumentTopElem>;
+  /** Позиция в списке */
+  position: XmlElem<number | null>;
+  style_css: XmlElem<string | null>;
+  /** Весь день */
   all_day: XmlElem<boolean>;
   is_sub_work_time: XmlElem<boolean>;
-  display_fields: XmlMultiElem<PresenceStateDocumentDisplayField>;
-  required_fields: XmlMultiElem<PresenceStateDocumentRequiredField>;
-  doc_info: XmlElem<DocInfoBase>;
+  display_fields: XmlMultiElem<PresenceStateDocumentDisplayField | null>;
+  required_fields: XmlMultiElem<PresenceStateDocumentRequiredField | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
 };
 

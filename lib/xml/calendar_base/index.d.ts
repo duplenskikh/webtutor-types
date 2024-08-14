@@ -1,23 +1,23 @@
 type CalendarBaseDocumentTopElem = XmlTopElem & {
   Doc: CalendarBaseDocument;
-  days_text_color: XmlElem<string>;
-  bk_color: XmlElem<string>;
-  sel_day_bk_color: XmlElem<string>;
-  weekdays_text_color: XmlElem<string>;
-  sunday_text_color: XmlElem<string>;
-  saturday_text_color: XmlElem<string>;
-  sundays_text_color: XmlElem<string>;
-  saturdays_text_color: XmlElem<string>;
-  today_text_color: XmlElem<string>;
-  today_bk_color: XmlElem<string>;
-  month_text_color: XmlElem<string>;
-  pointer_text_color: XmlElem<string>;
-  months_name: XmlElem<unknown>;
-  months_day_num: XmlElem<unknown>;
-  is_double: XmlElem<boolean>;
-  display_year: XmlElem<boolean>;
-  sel_date: XmlElem<Date>;
-  list_date: XmlElem<Date>;
+  days_text_color: XmlElem<string | null>;
+  bk_color: XmlElem<string | null>;
+  sel_day_bk_color: XmlElem<string | null>;
+  weekdays_text_color: XmlElem<string | null>;
+  sunday_text_color: XmlElem<string | null>;
+  saturday_text_color: XmlElem<string | null>;
+  sundays_text_color: XmlElem<string | null>;
+  saturdays_text_color: XmlElem<string | null>;
+  today_text_color: XmlElem<string | null>;
+  today_bk_color: XmlElem<string | null>;
+  month_text_color: XmlElem<string | null>;
+  pointer_text_color: XmlElem<string | null>;
+  months_name: XmlElem<unknown | null>;
+  months_day_num: XmlElem<unknown | null>;
+  is_double: XmlElem<boolean | null>;
+  display_year: XmlElem<boolean | null>;
+  sel_date: XmlElem<Date | null>;
+  list_date: XmlElem<Date | null>;
 };
 
 type CalendarBaseDocument = XmlDocument & {

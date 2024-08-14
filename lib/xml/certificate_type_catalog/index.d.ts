@@ -1,13 +1,21 @@
 type CertificateTypeCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  education_org_id: XmlElem<number, EducationOrgCatalogDocumentTopElem>;
-  required_quantity: XmlElem<number>;
-  duration: XmlElem<number>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Обучающая организация */
+  education_org_id: XmlElem<number | null, EducationOrgCatalogDocumentTopElem>;
+  /** Необходимое количество */
+  required_quantity: XmlElem<number | null>;
+  /** Нормативный срок */
+  duration: XmlElem<number | null>;
+  /** Бессрочно */
   forever: XmlElem<boolean>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

@@ -1,8 +1,11 @@
 type PersonObjectProfileCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  object_catalog: XmlMultiElemObject<string, typeof common.exchange_object_types>;
-  modification_date: XmlElem<Date>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  object_catalog: XmlMultiElemObject<string | null, typeof common.exchange_object_types>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
   OnBuild(): void;
 };

@@ -1,20 +1,33 @@
 type ClModuleCatalogDocumentTopElem = XmlTopElem &
 AccessDocBase &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  cl_course_id: XmlElem<number, ClCourseCatalogDocumentTopElem>;
-  resource_url: XmlElem<string>;
-  category: XmlElem<string>;
-  category_label: XmlElem<string>;
-  slide_width: XmlElem<number>;
-  slide_height: XmlElem<number>;
-  is_template: XmlElem<boolean>;
-  stamp: XmlElem<number>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Курс CourseLab */
+  cl_course_id: XmlElem<number | null, ClCourseCatalogDocumentTopElem>;
+  /** Ссылка на файлы ресурсов объекта */
+  resource_url: XmlElem<string | null>;
+  /** Папка */
+  category: XmlElem<string | null>;
+  /** Категория */
+  category_label: XmlElem<string | null>;
+  /** Ширина слайда */
+  slide_width: XmlElem<number | null>;
+  /** Высота слайда */
+  slide_height: XmlElem<number | null>;
+  /** Является шаблоном */
+  is_template: XmlElem<boolean | null>;
+  stamp: XmlElem<number | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

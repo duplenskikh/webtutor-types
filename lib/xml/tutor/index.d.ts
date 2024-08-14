@@ -1,13 +1,13 @@
 interface TutorDocumentPositionCommon {
-  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
+  position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
 }
 
 interface TutorDocumentTypicalDevelopmentProgram {
-  typical_development_program_id: XmlElem<number, TypicalDevelopmentProgramCatalogDocumentTopElem>;
+  typical_development_program_id: XmlElem<number | null, TypicalDevelopmentProgramCatalogDocumentTopElem>;
 }
 
 interface TutorDocumentSubdivision {
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
 }
 
 type TutorDocumentTopElem = XmlTopElem &
@@ -16,19 +16,31 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: TutorDocument;
-  code: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  career_reserve_type_id: XmlElem<number, CareerReserveTypeCatalogDocumentTopElem>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Тип кадрового резерва */
+  career_reserve_type_id: XmlElem<number | null, CareerReserveTypeCatalogDocumentTopElem>;
+  /** Статус */
   status: XmlElem<string, typeof common.tutor_status_types>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  position_commons: XmlMultiElem<TutorDocumentPositionCommon>;
-  typical_development_programs: XmlMultiElem<TutorDocumentTypicalDevelopmentProgram>;
-  subdivisions: XmlMultiElem<TutorDocumentSubdivision>;
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** C даты */
+  start_date: XmlElem<Date | null>;
+  /** По дату */
+  finish_date: XmlElem<Date | null>;
+  /** Требуемые типы сертификатов */
+  position_commons: XmlMultiElem<TutorDocumentPositionCommon | null>;
+  /** Типовые программы развития */
+  typical_development_programs: XmlMultiElem<TutorDocumentTypicalDevelopmentProgram | null>;
+  /** Подразделения */
+  subdivisions: XmlMultiElem<TutorDocumentSubdivision | null>;
+  access: XmlElem<AccessDocBase | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type TutorDocument = XmlDocument & {

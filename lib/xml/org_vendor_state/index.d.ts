@@ -3,17 +3,28 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: OrgVendorStateDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  vendor_status_id: XmlElem<number, VendorStateCatalogDocumentTopElem>;
-  education_org_id: XmlElem<number, EducationOrgCatalogDocumentTopElem>;
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Статус вендора */
+  vendor_status_id: XmlElem<number | null, VendorStateCatalogDocumentTopElem>;
+  /** Обучающая организация */
+  education_org_id: XmlElem<number | null, EducationOrgCatalogDocumentTopElem>;
+  /** Организация */
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  /** Состояние */
   vendor_status_type_id: XmlElem<string, typeof common.vendor_status_types>;
-  start_date: XmlElem<Date>;
-  recertification_date: XmlElem<Date>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Дата начала */
+  start_date: XmlElem<Date | null>;
+  /** Дата завершения */
+  recertification_date: XmlElem<Date | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type OrgVendorStateDocument = XmlDocument & {

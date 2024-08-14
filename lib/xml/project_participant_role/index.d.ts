@@ -4,13 +4,17 @@ FileListBase &
 AdminAccessBase &
 KnowledgePartsBase & {
   Doc: ProjectParticipantRoleDocument;
-  project_id: XmlElem<number, ProjectCatalogDocumentTopElem>;
-  participant_num: XmlElem<number>;
-  provider_id: XmlElem<number, ProviderCatalogDocumentTopElem>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
+  /** Проект */
+  project_id: XmlElem<number | null, ProjectCatalogDocumentTopElem>;
+  participant_num: XmlElem<number | null>;
+  provider_id: XmlElem<number | null, ProviderCatalogDocumentTopElem>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
 };
 
 type ProjectParticipantRoleDocument = XmlDocument & {

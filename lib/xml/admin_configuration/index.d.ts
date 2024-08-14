@@ -1,38 +1,46 @@
 interface AdminConfigurationDocumentFuncBlockSectionApplication {
-  application_id: XmlElem<number, ApplicationCatalogDocumentTopElem>;
-  name: XmlElem<string>;
-  comment: XmlElem<string>;
-  resource_id: XmlElem<string, ResourceCatalogDocumentTopElem>;
+  application_id: XmlElem<number | null, ApplicationCatalogDocumentTopElem>;
+  name: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  resource_id: XmlElem<string | null, ResourceCatalogDocumentTopElem>;
 }
 
 interface AdminConfigurationDocumentFuncBlockSection {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
-  color: XmlElem<string>;
-  applications: XmlMultiElem<AdminConfigurationDocumentFuncBlockSectionApplication>;
+  id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  color: XmlElem<string | null>;
+  applications: XmlMultiElem<AdminConfigurationDocumentFuncBlockSectionApplication | null>;
 }
 
 interface AdminConfigurationDocumentFuncBlock {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
-  resource_id: XmlElem<string, ResourceCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  min_height: XmlElem<number>;
-  width: XmlElem<number>;
-  sections: XmlMultiElem<AdminConfigurationDocumentFuncBlockSection>;
+  id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  resource_id: XmlElem<string | null, ResourceCatalogDocumentTopElem>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  min_height: XmlElem<number | null>;
+  width: XmlElem<number | null>;
+  sections: XmlMultiElem<AdminConfigurationDocumentFuncBlockSection | null>;
 }
 
 type AdminConfigurationDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase & {
   Doc: AdminConfigurationDocument;
-  func_blocks: XmlMultiElem<AdminConfigurationDocumentFuncBlock>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
+  func_blocks: XmlMultiElem<AdminConfigurationDocumentFuncBlock | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Измененный */
   changed: XmlElem<boolean>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
-  role_id: XmlMultiElemObject<number>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type AdminConfigurationDocument = XmlDocument & {

@@ -1,52 +1,93 @@
 type TaskCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  task_type_id: XmlElem<number, TaskTypeCatalogDocumentTopElem>;
-  parent_task_id: XmlElem<number, TaskCatalogDocumentTopElem>;
-  translated_task_id: XmlElem<number, TaskCatalogDocumentTopElem>;
-  translated_target_type: XmlElem<string, typeof common.exchange_object_types>;
-  translated_target_id: XmlElem<number>;
-  assigner_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  executor_type: XmlElem<string, typeof common.exchange_object_types>;
-  executor_id: XmlElem<number>;
-  status: XmlElem<string, typeof common.task_statuses>;
-  custom_state_id: XmlElem<string>;
-  plan: XmlElem<string>;
-  fact: XmlElem<string>;
-  plan_value: XmlElem<number>;
-  fact_value: XmlElem<number>;
-  value: XmlElem<number>;
-  readiness_percent: XmlElem<number>;
-  priority: XmlElem<number>;
-  source_object_type: XmlElem<string, typeof common.exchange_object_types>;
-  source_object_id: XmlElem<number>;
-  pay_stage_id: XmlElem<number, PayStageCatalogDocumentTopElem>;
-  target_object_type: XmlElem<string, typeof common.exchange_object_types>;
-  target_object_id: XmlElem<number>;
-  fact_object_type: XmlElem<string, typeof common.exchange_object_types>;
-  fact_object_id: XmlElem<number>;
-  expert_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
-  date_plan: XmlElem<Date>;
-  date_fact: XmlElem<Date>;
-  start_date_plan: XmlElem<Date>;
-  end_date_plan: XmlElem<Date>;
-  plan_budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  fact_budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  plan_labor_costs: XmlElem<number>;
-  fact_labor_costs: XmlElem<number>;
-  role_id: XmlMultiElemObject<number>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
-  workflow_id: XmlElem<number, WorkflowCatalogDocumentTopElem>;
-  workflow_state: XmlElem<string>;
-  workflow_state_name: XmlElem<string>;
-  workflow_person_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
-  workflow_matching_type: XmlElem<string>;
-  conversation_id: XmlElem<number, ConversationCatalogDocumentTopElem>;
-  preparation_id: XmlMultiElemObject<number, CollaboratorCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Тип */
+  task_type_id: XmlElem<number | null, TaskTypeCatalogDocumentTopElem>;
+  /** Родительская задача */
+  parent_task_id: XmlElem<number | null, TaskCatalogDocumentTopElem>;
+  /** Источник транслирования */
+  translated_task_id: XmlElem<number | null, TaskCatalogDocumentTopElem>;
+  /** Тип получателя трансляции */
+  translated_target_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Получатель трансляции */
+  translated_target_id: XmlElem<number | null>;
+  /** Назначивший задачу */
+  assigner_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Тип ответственного */
+  executor_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Ответственный за исполнение задачи */
+  executor_id: XmlElem<number | null>;
+  /** Статус */
+  status: XmlElem<string | null, typeof common.task_statuses>;
+  custom_state_id: XmlElem<string | null>;
+  /** Плановая величина */
+  plan: XmlElem<string | null>;
+  /** Факт */
+  fact: XmlElem<string | null>;
+  /** Плановая величина (число) */
+  plan_value: XmlElem<number | null>;
+  /** Факт (число) */
+  fact_value: XmlElem<number | null>;
+  /** Оценка */
+  value: XmlElem<number | null>;
+  /** Процент готовности */
+  readiness_percent: XmlElem<number | null>;
+  priority: XmlElem<number | null>;
+  /** Тип объекта-источника */
+  source_object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Объект-источник */
+  source_object_id: XmlElem<number | null>;
+  pay_stage_id: XmlElem<number | null, PayStageCatalogDocumentTopElem>;
+  /** Тип объекта цели */
+  target_object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Объект цели */
+  target_object_id: XmlElem<number | null>;
+  /** Тип фактического объекта */
+  fact_object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Фактический объект */
+  fact_object_id: XmlElem<number | null>;
+  /** Эксперты */
+  expert_id: XmlMultiElemObject<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Фактическая дата начала */
+  date_plan: XmlElem<Date | null>;
+  /** Фактическая дата завершения */
+  date_fact: XmlElem<Date | null>;
+  /** Планируемая дата начала */
+  start_date_plan: XmlElem<Date | null>;
+  /** Планируемая дата завершения */
+  end_date_plan: XmlElem<Date | null>;
+  /** Бюджетный период */
+  plan_budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Бюджетный период */
+  fact_budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  plan_labor_costs: XmlElem<number | null>;
+  fact_labor_costs: XmlElem<number | null>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
+  /** Документооборот */
+  workflow_id: XmlElem<number | null, WorkflowCatalogDocumentTopElem>;
+  /** Текущий этап документооборота */
+  workflow_state: XmlElem<string | null>;
+  /** Название текущего этапа документооборота */
+  workflow_state_name: XmlElem<string | null>;
+  /** Сотрудник */
+  workflow_person_id: XmlMultiElemObject<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Тип выборки условий видимости */
+  workflow_matching_type: XmlElem<string | null>;
+  conversation_id: XmlElem<number | null, ConversationCatalogDocumentTopElem>;
+  /** Сотрудник */
+  preparation_id: XmlMultiElemObject<number | null, CollaboratorCatalogDocumentTopElem>;
   OnBuild(): void;
 };

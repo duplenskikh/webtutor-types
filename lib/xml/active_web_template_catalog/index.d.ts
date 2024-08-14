@@ -1,13 +1,20 @@
 type ActiveWebTemplateCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  name: XmlElem<string>;
-  access_level: XmlElem<number>;
-  access_role: XmlElem<string, AccessRoleCatalogDocumentTopElem>;
-  mode: XmlElem<string>;
-  web_design_id: XmlElem<number, WebDesignCatalogDocumentTopElem>;
-  site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
-  hash: XmlElem<string>;
-  creation_date: XmlElem<Date>;
-  modification_date: XmlElem<Date>;
+  id: XmlElem<number | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Уровень доступа */
+  access_level: XmlElem<number | null>;
+  /** Роль сотрудника */
+  access_role: XmlElem<string | null, AccessRoleCatalogDocumentTopElem>;
+  mode: XmlElem<string | null>;
+  /** Дизайн */
+  web_design_id: XmlElem<number | null, WebDesignCatalogDocumentTopElem>;
+  /** Сайт */
+  site_id: XmlElem<number | null, SiteCatalogDocumentTopElem>;
+  hash: XmlElem<string | null>;
+  /** Дата создания */
+  creation_date: XmlElem<Date | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
   OnBuild(): void;
 };

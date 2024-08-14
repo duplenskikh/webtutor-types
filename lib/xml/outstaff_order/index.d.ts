@@ -1,17 +1,19 @@
 interface OutstaffOrderDocumentPeriodHour {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
-  start_hour: XmlElem<number>;
-  finish_hour: XmlElem<number>;
-  hour_num: XmlElem<number>;
-  full_time: XmlElem<boolean>;
+  id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  start_hour: XmlElem<number | null>;
+  finish_hour: XmlElem<number | null>;
+  hour_num: XmlElem<number | null>;
+  full_time: XmlElem<boolean | null>;
   person_num: XmlElem<number>;
 }
 
 interface OutstaffOrderDocumentPeriod {
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  hours: XmlMultiElem<OutstaffOrderDocumentPeriodHour>;
+  /** Дата начала */
+  start_date: XmlElem<Date | null>;
+  /** Дата завершения */
+  finish_date: XmlElem<Date | null>;
+  hours: XmlMultiElem<OutstaffOrderDocumentPeriodHour | null>;
   sum_person(): number;
   sum_person_hour(): number;
 }
@@ -22,33 +24,55 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: OutstaffOrderDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
   name(): string;
+  /** Статус */
   status: XmlElem<string, typeof common.order_status_types>;
-  formed_date: XmlElem<Date>;
-  paid_date: XmlElem<Date>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  outstaff_provider_id: XmlElem<number, OutstaffProviderCatalogDocumentTopElem>;
-  outstaff_contract_id: XmlElem<number, OutstaffContractCatalogDocumentTopElem>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
-  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
+  /** Дата формирования */
+  formed_date: XmlElem<Date | null>;
+  /** Дата оплаты */
+  paid_date: XmlElem<Date | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Провайдер временного персонала */
+  outstaff_provider_id: XmlElem<number | null, OutstaffProviderCatalogDocumentTopElem>;
+  /** Контракт на временный персонал */
+  outstaff_contract_id: XmlElem<number | null, OutstaffContractCatalogDocumentTopElem>;
+  /** Бюджетный период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Подразделение */
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  /** Типовая должность */
+  position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
+  /** Регион */
+  region_id: XmlElem<number | null, RegionCatalogDocumentTopElem>;
+  /** Дата начала */
+  start_date: XmlElem<Date | null>;
+  /** Дата завершения */
+  finish_date: XmlElem<Date | null>;
   period_type: XmlElem<string>;
-  periods: XmlMultiElem<OutstaffOrderDocumentPeriod>;
+  periods: XmlMultiElem<OutstaffOrderDocumentPeriod | null>;
   periods_sum_person(): unknown;
   periods_sum_person_hour(): unknown;
-  cost_hour: XmlElem<number>;
-  cost_sum: XmlElem<number>;
-  currency: XmlElem<string, typeof lists.currency_types>;
-  agreement_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Ставка */
+  cost_hour: XmlElem<number | null>;
+  /** Стоимость */
+  cost_sum: XmlElem<number | null>;
+  /** Валюта */
+  currency: XmlElem<string | null, typeof lists.currency_types>;
+  /** Согласующий */
+  agreement_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
   update_periods(): unknown;
 };
 

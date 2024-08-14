@@ -3,14 +3,23 @@ ObjectCodeNameBase &
 ExecCodeBase &
 WebVariablesBase & {
   Doc: SystemEventHandlerDocument;
+  /** Включен */
   is_enabled: XmlElem<boolean>;
-  system_event_id: XmlElem<number, SystemEventCatalogDocumentTopElem>;
-  perfom_condition: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  comment: XmlElem<string>;
+  /** Системное событие */
+  system_event_id: XmlElem<number | null, SystemEventCatalogDocumentTopElem>;
+  /** Условия выполнения */
+  perfom_condition: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
-  last_system_event_id: XmlElem<number, SystemEventCatalogDocumentTopElem>;
+  /** Системное событие */
+  last_system_event_id: XmlElem<number | null, SystemEventCatalogDocumentTopElem>;
+  /** Включен */
   last_is_enabled: XmlElem<boolean>;
 };
 

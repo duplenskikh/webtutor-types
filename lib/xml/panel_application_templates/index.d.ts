@@ -1,12 +1,12 @@
 type PanelApplicationTemplatesDocumentTopElem = XmlTopElem & {
   Doc: PanelApplicationTemplatesDocument;
-  report_id: XmlElem<string>;
-  report_template_id: XmlElem<number>;
-  report_template_url: XmlElem<string>;
-  report_template_type: XmlElem<string>;
-  report_template_name: XmlElem<string>;
-  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
+  report_id: XmlElem<string | null>;
+  report_template_id: XmlElem<number | null>;
+  report_template_url: XmlElem<string | null>;
+  report_template_type: XmlElem<string | null>;
+  report_template_name: XmlElem<string | null>;
+  resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
+  comment: XmlElem<string | null>;
 };
 
 type PanelApplicationTemplatesDocument = XmlDocument & {

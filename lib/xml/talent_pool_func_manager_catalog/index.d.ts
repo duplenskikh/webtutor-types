@@ -1,12 +1,19 @@
 type TalentPoolFuncManagerCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  catalog: XmlElem<string, typeof common.exchange_object_types>;
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Тип объекта */
+  catalog: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Название объекта */
+  object_name: XmlElem<string | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
+  person_fullname: XmlElem<string | null>;
+  /** Является фактическим */
   is_native: XmlElem<boolean>;
-  boss_type_id: XmlElem<number, BossTypeCatalogDocumentTopElem>;
+  /** Тип функционального руководителя */
+  boss_type_id: XmlElem<number | null, BossTypeCatalogDocumentTopElem>;
   MatchDocTypeExt(): void;
   OnBuildExt(): void;
   OnDeleteExt(): void;

@@ -1,10 +1,14 @@
 type DnAuditoriumCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  number_places: XmlElem<string>;
-  place_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  number_places: XmlElem<string | null>;
+  /** Расположение */
+  place_id: XmlElem<number | null, PlaceCatalogDocumentTopElem>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

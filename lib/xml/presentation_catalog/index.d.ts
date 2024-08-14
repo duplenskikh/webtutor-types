@@ -1,8 +1,11 @@
 type PresentationCatalogDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase & {
-  file_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
-  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
-  vclass_setting_id: XmlElem<number, VclassSettingCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
+  /** Файл */
+  file_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
+  /** Мероприятие */
+  event_id: XmlElem<number | null, EventCatalogDocumentTopElem>;
+  vclass_setting_id: XmlElem<number | null, VclassSettingCatalogDocumentTopElem>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
   OnBuild(): void;
 };

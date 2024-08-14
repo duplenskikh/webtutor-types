@@ -1,19 +1,29 @@
 type DnControlEventCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  date_event: XmlElem<Date>;
-  status_id: XmlElem<string, typeof common.lesson_states>;
-  faculty_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  chair_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  discipl_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
-  lector_id: XmlElem<number, LectorCatalogDocumentTopElem>;
-  control_form_id: XmlElem<number, DnControlFormCatalogDocumentTopElem>;
-  lesson_id: XmlElem<number, DnLessonCatalogDocumentTopElem>;
-  stream_id: XmlElem<number, DnStreamCatalogDocumentTopElem>;
-  stud_group_id: XmlElem<number, DnStudGroupCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Дата */
+  date_event: XmlElem<Date | null>;
+  /** Статус договора */
+  status_id: XmlElem<string | null, typeof common.lesson_states>;
+  /** Факультет */
+  faculty_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  chair_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  discipl_id: XmlElem<number | null, DnDisciplineCatalogDocumentTopElem>;
+  /** Преподаватель */
+  lector_id: XmlElem<number | null, LectorCatalogDocumentTopElem>;
+  /** Форма итогового контроля */
+  control_form_id: XmlElem<number | null, DnControlFormCatalogDocumentTopElem>;
+  lesson_id: XmlElem<number | null, DnLessonCatalogDocumentTopElem>;
+  stream_id: XmlElem<number | null, DnStreamCatalogDocumentTopElem>;
+  /** Учебная группа */
+  stud_group_id: XmlElem<number | null, DnStudGroupCatalogDocumentTopElem>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

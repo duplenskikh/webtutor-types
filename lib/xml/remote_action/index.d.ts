@@ -4,26 +4,39 @@ WebVariablesBase &
 ResultFieldsBase &
 I18nBase & {
   Doc: RemoteActionDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название курса */
+  name: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string, typeof common.eval_types>;
-  category: XmlElem<string>;
-  cache_vars: XmlElem<string>;
-  catalog_name: XmlElem<string, typeof common.exchange_object_types>;
-  link_name: XmlElem<string>;
+  /** Комментарий */
+  category: XmlElem<string | null>;
+  cache_vars: XmlElem<string | null>;
+  /** Тип объекта */
+  catalog_name: XmlElem<string | null, typeof common.exchange_object_types>;
+  link_name: XmlElem<string | null>;
   show_in_list: XmlElem<boolean>;
   show_in_form: XmlElem<boolean>;
-  url: XmlElem<string>;
-  script: XmlElem<string>;
+  /** Ссылка на шаблон */
+  url: XmlElem<string | null>;
+  /** Код */
+  script: XmlElem<string | null>;
   default_disp_evaluate: XmlElem<boolean>;
-  access: XmlElem<AccessDocBase>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
   evaluate(resultType: string, request: Request, argVars: unknown, configuration: string): unknown;
-  role_id: XmlMultiElemObject<number>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type RemoteActionDocument = XmlDocument & {

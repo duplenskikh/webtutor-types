@@ -1,5 +1,5 @@
 interface CostCenterDocumentSubdivision {
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
 }
 
 type CostCenterDocumentTopElem = XmlTopElem &
@@ -7,14 +7,20 @@ FuncManagersBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: CostCenterDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Актуальный */
   is_active: XmlElem<boolean>;
-  parent_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
-  subdivisions: XmlMultiElem<CostCenterDocumentSubdivision>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Родительский центр затрат */
+  parent_id: XmlElem<number | null, CostCenterCatalogDocumentTopElem>;
+  subdivisions: XmlMultiElem<CostCenterDocumentSubdivision | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type CostCenterDocument = XmlDocument & {

@@ -1,14 +1,22 @@
 type EstaffEventTypeCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  status: XmlElem<string>;
-  event_type_estaff_id: XmlElem<string>;
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  recruitment_system_id: XmlElem<number, RecruitmentSystemCatalogDocumentTopElem>;
-  position_commons: XmlElem<string>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Статус */
+  status: XmlElem<string | null>;
+  /** Тип события E-Staff */
+  event_type_estaff_id: XmlElem<string | null>;
+  /** Организация */
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  recruitment_system_id: XmlElem<number | null, RecruitmentSystemCatalogDocumentTopElem>;
+  /** Семействa должностей */
+  position_commons: XmlElem<string | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

@@ -2,22 +2,31 @@ type FactPaymentDocumentTopElem = XmlTopElem &
 FileListBase &
 CustomElemsBase & {
   Doc: FactPaymentDocument;
-  name: XmlElem<string>;
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  client_org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  agent_org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  client_legal: XmlElem<string>;
-  provider_legal: XmlElem<string>;
-  agent_legal: XmlElem<string>;
-  client_legal_name: XmlElem<string>;
-  provider_legal_name: XmlElem<string>;
-  agent_legal_name: XmlElem<string>;
-  cost_currency_type_id: XmlElem<string, typeof lists.currency_types>;
-  cost_value: XmlElem<number>;
-  date: XmlElem<Date>;
-  expense_id: XmlElem<number, ExpenseCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Организация */
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  /** Клиент */
+  client_org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  agent_org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  client_legal: XmlElem<string | null>;
+  provider_legal: XmlElem<string | null>;
+  agent_legal: XmlElem<string | null>;
+  client_legal_name: XmlElem<string | null>;
+  provider_legal_name: XmlElem<string | null>;
+  agent_legal_name: XmlElem<string | null>;
+  /** Валюта */
+  cost_currency_type_id: XmlElem<string | null, typeof lists.currency_types>;
+  /** Сумма */
+  cost_value: XmlElem<number | null>;
+  /** Дата */
+  date: XmlElem<Date | null>;
+  /** Счет */
+  expense_id: XmlElem<number | null, ExpenseCatalogDocumentTopElem>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type FactPaymentDocument = XmlDocument & {

@@ -1,10 +1,12 @@
 type ForumThemeReadByCollaboratorCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  forum_id: XmlElem<number, ForumCatalogDocumentTopElem>;
-  forum_theme_id: XmlElem<number, ForumEntryCatalogDocumentTopElem>;
-  date: XmlElem<Date>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  forum_id: XmlElem<number | null, ForumCatalogDocumentTopElem>;
+  forum_theme_id: XmlElem<number | null, ForumEntryCatalogDocumentTopElem>;
+  date: XmlElem<Date | null>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

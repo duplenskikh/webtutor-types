@@ -1,19 +1,33 @@
 type DigitalSignatureCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  person_position_name: XmlElem<string>;
-  object_type: XmlElem<string, typeof common.exchange_object_types>;
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
-  create_date: XmlElem<Date>;
-  sign_date: XmlElem<Date>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Преемник */
+  person_fullname: XmlElem<string | null>;
+  /** Должность сотрудника */
+  person_position_name: XmlElem<string | null>;
+  /** Тип объекта */
+  object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Название объекта */
+  object_name: XmlElem<string | null>;
+  /** Дата создания */
+  create_date: XmlElem<Date | null>;
+  /** Дата подписания */
+  sign_date: XmlElem<Date | null>;
+  /** Подписана */
   is_signed: XmlElem<boolean>;
-  custom_web_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  /** Шаблон */
+  custom_web_template_id: XmlElem<number | null, CustomWebTemplateCatalogDocumentTopElem>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

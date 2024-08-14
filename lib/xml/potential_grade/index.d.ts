@@ -3,20 +3,28 @@ AdminAccessBase &
 CustomElemsBase &
 FileListBase & {
   Doc: PotentialGradeDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  development_potential_id: XmlElem<number, DevelopmentPotentialCatalogDocumentTopElem>;
-  assessment_source: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  successor_id: XmlElem<number, SuccessorCatalogDocumentTopElem>;
-  personnel_reserve_id: XmlElem<number, PersonnelReserveCatalogDocumentTopElem>;
-  assessor_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  assessment_date: XmlElem<Date>;
-  assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  development_potential_id: XmlElem<number | null, DevelopmentPotentialCatalogDocumentTopElem>;
+  assessment_source: XmlElem<string | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Преемник */
+  successor_id: XmlElem<number | null, SuccessorCatalogDocumentTopElem>;
+  personnel_reserve_id: XmlElem<number | null, PersonnelReserveCatalogDocumentTopElem>;
+  /** Оценивающий */
+  assessor_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  assessment_date: XmlElem<Date | null>;
+  /** Процедура оценки */
+  assessment_appraise_id: XmlElem<number | null, AssessmentAppraiseCatalogDocumentTopElem>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
 };
 
 type PotentialGradeDocument = XmlDocument & {

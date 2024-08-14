@@ -1,12 +1,16 @@
 type RegionDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
   Doc: RegionDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  parent_object_id: XmlElem<number, RegionCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  parent_object_id: XmlElem<number | null, RegionCatalogDocumentTopElem>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type RegionDocument = XmlDocument & {

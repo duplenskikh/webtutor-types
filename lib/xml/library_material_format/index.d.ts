@@ -1,10 +1,15 @@
 type LibraryMaterialFormatDocumentTopElem = XmlTopElem & {
   Doc: LibraryMaterialFormatDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  format_type_id: XmlElem<string, typeof common.material_format_types>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Тип */
+  format_type_id: XmlElem<string | null, typeof common.material_format_types>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type LibraryMaterialFormatDocument = XmlDocument & {

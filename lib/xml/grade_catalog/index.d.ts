@@ -1,8 +1,12 @@
 type GradeCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  level: XmlElem<number>;
-  name: XmlElem<string>;
-  desc: XmlElem<string>;
-  modification_date: XmlElem<Date>;
+  id: XmlElem<number | null>;
+  /** Уровень */
+  level: XmlElem<number | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
   OnBuild(): void;
 };

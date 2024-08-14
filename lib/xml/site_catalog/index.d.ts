@@ -1,14 +1,24 @@
 type SiteCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  web_design_id: XmlElem<number, WebDesignCatalogDocumentTopElem>;
-  lng_id: XmlElem<string>;
-  object_id: XmlElem<number>;
-  is_std: XmlElem<boolean>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Дизайн */
+  web_design_id: XmlElem<number | null, WebDesignCatalogDocumentTopElem>;
+  /** Язык */
+  lng_id: XmlElem<string | null>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Является встроенным */
+  is_std: XmlElem<boolean | null>;
+  /** Измененный */
   changed: XmlElem<boolean>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
-  owner_object: XmlMultiElemObject<number>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
+  /** Владельцы */
+  owner_object: XmlMultiElemObject<number | null>;
   OnBuild(): void;
 };

@@ -1,25 +1,43 @@
 type KpiCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  parent_object_id: XmlElem<number, KpiCatalogDocumentTopElem>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  type: XmlElem<string, typeof common.kpi_types>;
-  status: XmlElem<string, typeof common.kpi_states>;
+  id: XmlElem<number | null>;
+  /** KPI */
+  parent_object_id: XmlElem<number | null, KpiCatalogDocumentTopElem>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Тип */
+  type: XmlElem<string | null, typeof common.kpi_types>;
+  /** Статус */
+  status: XmlElem<string | null, typeof common.kpi_states>;
   is_kpi: XmlElem<boolean>;
-  kpi_group_id: XmlElem<number, KpiGroupCatalogDocumentTopElem>;
-  range_min: XmlElem<number>;
-  range_max: XmlElem<number>;
-  owners_ids: XmlElem<string>;
-  formula_id: XmlElem<number, FormulaCatalogDocumentTopElem>;
-  scale_id: XmlElem<number, ScaleCatalogDocumentTopElem>;
-  role_id: XmlMultiElemObject<number>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
-  access_block_type: XmlElem<string, AccessBlockCatalogDocumentTopElem>;
-  knowledge_parts: XmlElem<string>;
-  tags: XmlElem<string>;
-  experts: XmlElem<string>;
-  previous_version_object_id: XmlElem<number, KpiCatalogDocumentTopElem>;
+  /** Группа */
+  kpi_group_id: XmlElem<number | null, KpiGroupCatalogDocumentTopElem>;
+  /** Минимальное значение */
+  range_min: XmlElem<number | null>;
+  /** Максимальное значение */
+  range_max: XmlElem<number | null>;
+  /** Владельцы */
+  owners_ids: XmlElem<string | null>;
+  /** Формула */
+  formula_id: XmlElem<number | null, FormulaCatalogDocumentTopElem>;
+  /** Шкала */
+  scale_id: XmlElem<number | null, ScaleCatalogDocumentTopElem>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
+  /** Блок */
+  access_block_type: XmlElem<string | null, AccessBlockCatalogDocumentTopElem>;
+  /** Значения карты знаний */
+  knowledge_parts: XmlElem<string | null>;
+  tags: XmlElem<string | null>;
+  /** Эксперты */
+  experts: XmlElem<string | null>;
+  /** Предыдущая версия */
+  previous_version_object_id: XmlElem<number | null, KpiCatalogDocumentTopElem>;
   OnBuild(): void;
 };

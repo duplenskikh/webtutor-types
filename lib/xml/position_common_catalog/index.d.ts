@@ -1,24 +1,42 @@
 type PositionCommonCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  status: XmlElem<string, typeof common.position_common_statuss>;
-  min_salary: XmlElem<number>;
-  max_salary: XmlElem<number>;
-  currency: XmlElem<string, typeof lists.currency_types>;
-  position_familys: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Статус */
+  status: XmlElem<string | null, typeof common.position_common_statuss>;
+  /** Мин. зарплата */
+  min_salary: XmlElem<number | null>;
+  /** Макс. зарплата */
+  max_salary: XmlElem<number | null>;
+  /** Валюта */
+  currency: XmlElem<string | null, typeof lists.currency_types>;
+  /** Семейство должностей */
+  position_familys: XmlElem<string | null>;
+  /** Можно привлекать временный персонал */
   allow_outstaff: XmlElem<boolean>;
-  knowledge_parts: XmlElem<string>;
-  tags: XmlElem<string>;
-  experts: XmlElem<string>;
-  kpi_profile_id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  kpi_profiles_id: XmlMultiElemObject<number, KpiProfileCatalogDocumentTopElem>;
-  bonus_profile_id: XmlElem<number, BonusProfileCatalogDocumentTopElem>;
-  knowledge_profile_id: XmlElem<number, KnowledgeProfileCatalogDocumentTopElem>;
-  parent_position_common_id: XmlMultiElemObject<number, PositionCommonCatalogDocumentTopElem>;
-  grade_ids: XmlMultiElemObject<number, GradeCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
-  role_id: XmlMultiElemObject<number>;
+  /** Значения карты знаний */
+  knowledge_parts: XmlElem<string | null>;
+  tags: XmlElem<string | null>;
+  /** Эксперты */
+  experts: XmlElem<string | null>;
+  /** Профиль KPI */
+  kpi_profile_id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  /** Профили KPI */
+  kpi_profiles_id: XmlMultiElemObject<number | null, KpiProfileCatalogDocumentTopElem>;
+  /** Профиль премирования */
+  bonus_profile_id: XmlElem<number | null, BonusProfileCatalogDocumentTopElem>;
+  /** Профиль знаний */
+  knowledge_profile_id: XmlElem<number | null, KnowledgeProfileCatalogDocumentTopElem>;
+  parent_position_common_id: XmlMultiElemObject<number | null, PositionCommonCatalogDocumentTopElem>;
+  /** Грейды */
+  grade_ids: XmlMultiElemObject<number | null, GradeCatalogDocumentTopElem>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
   OnBuild(): void;
 };

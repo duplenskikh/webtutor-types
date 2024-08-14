@@ -3,9 +3,11 @@ ObjectCodeNameBase &
 ExecCodeBase &
 WebVariablesBase & {
   Doc: AuthTypeDocument;
-  is_std: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Является системным */
+  is_std: XmlElem<boolean | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type AuthTypeDocument = XmlDocument & {

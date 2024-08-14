@@ -1,94 +1,94 @@
 interface ClModuleDocumentDesignFont {
-  face: XmlElem<string>;
-  style: XmlElem<string>;
-  size: XmlElem<number>;
-  color: XmlElem<string>;
+  face: XmlElem<string | null>;
+  style: XmlElem<string | null>;
+  size: XmlElem<number | null>;
+  color: XmlElem<string | null>;
 }
 
 interface ClModuleDocumentDesignNewids {
-  slide: XmlElem<string>;
-  subslide: XmlElem<string>;
-  iebox: XmlElem<string>;
-  image: XmlElem<string>;
-  object: XmlElem<string>;
-  group: XmlElem<string>;
+  slide: XmlElem<string | null>;
+  subslide: XmlElem<string | null>;
+  iebox: XmlElem<string | null>;
+  image: XmlElem<string | null>;
+  object: XmlElem<string | null>;
+  group: XmlElem<string | null>;
 }
 
 interface ClModuleDocumentDesignModuleColor {
-  color: XmlElem<string>;
+  color: XmlElem<string | null>;
 }
 
 interface ClModuleDocumentDesign {
-  slide_width: XmlElem<number>;
-  slide_height: XmlElem<number>;
-  font: XmlElem<ClModuleDocumentDesignFont>;
-  newids: XmlElem<ClModuleDocumentDesignNewids>;
-  module_colors: XmlMultiElem<ClModuleDocumentDesignModuleColor>;
+  slide_width: XmlElem<number | null>;
+  slide_height: XmlElem<number | null>;
+  font: XmlElem<ClModuleDocumentDesignFont | null>;
+  newids: XmlElem<ClModuleDocumentDesignNewids | null>;
+  module_colors: XmlMultiElem<ClModuleDocumentDesignModuleColor | null>;
 }
 
 interface ClModuleDocumentRuntimeNextidentity {
-  slide: XmlElem<number>;
-  subslide: XmlElem<number>;
-  object: XmlElem<number>;
-  group: XmlElem<number>;
-  mousepointer: XmlElem<number>;
-  actionbox: XmlElem<number>;
+  slide: XmlElem<number | null>;
+  subslide: XmlElem<number | null>;
+  object: XmlElem<number | null>;
+  group: XmlElem<number | null>;
+  mousepointer: XmlElem<number | null>;
+  actionbox: XmlElem<number | null>;
 }
 
 interface ClModuleDocumentRuntimeImport {
-  masterid: XmlElem<number>;
-  left: XmlElem<number>;
-  top: XmlElem<number>;
-  width: XmlElem<number>;
-  height: XmlElem<number>;
-  comments_left: XmlElem<number>;
-  comments_top: XmlElem<number>;
-  comments_width: XmlElem<number>;
-  comments_height: XmlElem<number>;
+  masterid: XmlElem<number | null>;
+  left: XmlElem<number | null>;
+  top: XmlElem<number | null>;
+  width: XmlElem<number | null>;
+  height: XmlElem<number | null>;
+  comments_left: XmlElem<number | null>;
+  comments_top: XmlElem<number | null>;
+  comments_width: XmlElem<number | null>;
+  comments_height: XmlElem<number | null>;
   import_comments: XmlElem<boolean>;
-  commentscolor: XmlElem<string>;
+  commentscolor: XmlElem<string | null>;
   fiximages: XmlElem<boolean>;
 }
 
 interface ClModuleDocumentRuntimeRuntimecheck {
-  id: XmlElem<string>;
+  id: XmlElem<string | null>;
   check: XmlElem<boolean>;
 }
 
 interface ClModuleDocumentRuntimeObjective {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
-  cs: XmlElem<string>;
-  ss: XmlElem<string>;
-  scoremin: XmlElem<number>;
-  scoremax: XmlElem<number>;
+  id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  cs: XmlElem<string | null>;
+  ss: XmlElem<string | null>;
+  scoremin: XmlElem<number | null>;
+  scoremax: XmlElem<number | null>;
   module: XmlElem<boolean>;
 }
 
 interface ClModuleDocumentRuntimeRuleCondition {
-  type: XmlElem<string>;
-  op: XmlElem<string>;
-  slideidfrom: XmlElem<string>;
-  slideidto: XmlElem<string>;
-  objective: XmlElem<string>;
-  comp: XmlElem<string>;
-  score: XmlElem<number>;
-  cs: XmlElem<string>;
-  ss: XmlElem<string>;
+  type: XmlElem<string | null>;
+  op: XmlElem<string | null>;
+  slideidfrom: XmlElem<string | null>;
+  slideidto: XmlElem<string | null>;
+  objective: XmlElem<string | null>;
+  comp: XmlElem<string | null>;
+  score: XmlElem<number | null>;
+  cs: XmlElem<string | null>;
+  ss: XmlElem<string | null>;
 }
 
 interface ClModuleDocumentRuntimeRuleConditiongroup {
-  op: XmlElem<string>;
-  open: XmlElem<number>;
-  close: XmlElem<number>;
+  op: XmlElem<string | null>;
+  open: XmlElem<number | null>;
+  close: XmlElem<number | null>;
 }
 
 interface ClModuleDocumentRuntimeRule {
-  objective_id: XmlElem<string>;
-  cs: XmlElem<string>;
-  ss: XmlElem<string>;
-  conditions: XmlMultiElem<ClModuleDocumentRuntimeRuleCondition>;
-  conditiongroups: XmlMultiElem<ClModuleDocumentRuntimeRuleConditiongroup>;
+  objective_id: XmlElem<string | null>;
+  cs: XmlElem<string | null>;
+  ss: XmlElem<string | null>;
+  conditions: XmlMultiElem<ClModuleDocumentRuntimeRuleCondition | null>;
+  conditiongroups: XmlMultiElem<ClModuleDocumentRuntimeRuleConditiongroup | null>;
 }
 
 interface ClModuleDocumentRuntime {
@@ -99,56 +99,67 @@ interface ClModuleDocumentRuntime {
   preview_fullscreen: XmlElem<boolean>;
   preview_fitwindow: XmlElem<boolean>;
   fit_small_window: XmlElem<boolean>;
-  nextidentity: XmlElem<ClModuleDocumentRuntimeNextidentity>;
-  import: XmlElem<ClModuleDocumentRuntimeImport>;
-  runtimechecks: XmlMultiElem<ClModuleDocumentRuntimeRuntimecheck>;
-  objectives: XmlMultiElem<ClModuleDocumentRuntimeObjective>;
-  rules: XmlMultiElem<ClModuleDocumentRuntimeRule>;
+  nextidentity: XmlElem<ClModuleDocumentRuntimeNextidentity | null>;
+  import: XmlElem<ClModuleDocumentRuntimeImport | null>;
+  runtimechecks: XmlMultiElem<ClModuleDocumentRuntimeRuntimecheck | null>;
+  objectives: XmlMultiElem<ClModuleDocumentRuntimeObjective | null>;
+  rules: XmlMultiElem<ClModuleDocumentRuntimeRule | null>;
 }
 
 interface ClModuleDocumentGuideLine {
-  pos: XmlElem<number>;
+  pos: XmlElem<number | null>;
   is_vertical: XmlElem<boolean>;
 }
 
 interface ClModuleDocumentSlide {
-  id: XmlElem<number, ClSlideCatalogDocumentTopElem>;
+  id: XmlElem<number | null, ClSlideCatalogDocumentTopElem>;
 }
 
 interface ClModuleDocumentTemplateSlide {
-  id: XmlElem<string>;
-  guid: XmlElem<string>;
-  template_slide_xml: XmlElem<string>;
+  id: XmlElem<string | null>;
+  guid: XmlElem<string | null>;
+  template_slide_xml: XmlElem<string | null>;
 }
 
 type ClModuleDocumentTopElem = XmlTopElem & {
   Doc: ClModuleDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  cl_course_id: XmlElem<number, ClCourseCatalogDocumentTopElem>;
-  resource_url: XmlElem<string>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Курс CourseLab */
+  cl_course_id: XmlElem<number | null, ClCourseCatalogDocumentTopElem>;
+  /** Ссылка на файлы ресурсов объекта */
+  resource_url: XmlElem<string | null>;
+  /** Является шаблоном */
   is_template: XmlElem<boolean>;
-  category: XmlElem<string>;
-  category_label: XmlElem<string>;
-  format: XmlElem<string>;
-  rev: XmlElem<number>;
-  template: XmlElem<string>;
-  template_id: XmlElem<number, ClModuleCatalogDocumentTopElem>;
-  file: XmlElem<string>;
-  design: XmlElem<ClModuleDocumentDesign>;
-  runtime: XmlElem<ClModuleDocumentRuntime>;
-  cx_settings: XmlElem<string>;
-  cx_groups: XmlElem<string>;
-  guide_lines: XmlMultiElem<ClModuleDocumentGuideLine>;
-  slides: XmlMultiElem<ClModuleDocumentSlide>;
-  template_slides: XmlMultiElem<ClModuleDocumentTemplateSlide>;
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
+  /** Папка */
+  category: XmlElem<string | null>;
+  /** Категория */
+  category_label: XmlElem<string | null>;
+  format: XmlElem<string | null>;
+  rev: XmlElem<number | null>;
+  template: XmlElem<string | null>;
+  template_id: XmlElem<number | null, ClModuleCatalogDocumentTopElem>;
+  file: XmlElem<string | null>;
+  design: XmlElem<ClModuleDocumentDesign | null>;
+  runtime: XmlElem<ClModuleDocumentRuntime | null>;
+  cx_settings: XmlElem<string | null>;
+  cx_groups: XmlElem<string | null>;
+  guide_lines: XmlMultiElem<ClModuleDocumentGuideLine | null>;
+  slides: XmlMultiElem<ClModuleDocumentSlide | null>;
+  template_slides: XmlMultiElem<ClModuleDocumentTemplateSlide | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  desc: XmlElem<string | null>;
   stamp: XmlElem<number>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
   module_href_get(): false | void;
   export_2_scorm(): false | void;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
 };
 

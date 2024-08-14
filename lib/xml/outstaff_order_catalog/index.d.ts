@@ -1,22 +1,38 @@
 type OutstaffOrderCatalogDocumentTopElem = XmlTopElem &
 AccessDocBase &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Статус */
   status: XmlElem<string, typeof common.order_status_types>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
-  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
-  agreement_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  cost_hour: XmlElem<number>;
-  cost_sum: XmlElem<number>;
-  formed_date: XmlElem<Date>;
-  paid_date: XmlElem<Date>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
+  person_fullname: XmlElem<string | null>;
+  /** Бюджетный период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Подразделение */
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  /** Типовая должность */
+  position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
+  /** Регион */
+  region_id: XmlElem<number | null, RegionCatalogDocumentTopElem>;
+  /** Согласующий */
+  agreement_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Ставка */
+  cost_hour: XmlElem<number | null>;
+  /** Стоимость */
+  cost_sum: XmlElem<number | null>;
+  /** Дата формирования */
+  formed_date: XmlElem<Date | null>;
+  /** Дата оплаты */
+  paid_date: XmlElem<Date | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

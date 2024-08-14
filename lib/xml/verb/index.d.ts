@@ -1,14 +1,21 @@
 type VerbDocumentTopElem = XmlTopElem & {
   Doc: VerbDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  processed: XmlElem<boolean>;
-  processing_code_url: XmlElem<string>;
-  processing_code: XmlElem<string>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  processed: XmlElem<boolean | null>;
+  /** Ссылка на файл выполняемого кода */
+  processing_code_url: XmlElem<string | null>;
+  /** Программный код обработки данных */
+  processing_code: XmlElem<string | null>;
   code_process(): void;
-  is_std: XmlElem<boolean>;
+  /** Является системным */
+  is_std: XmlElem<boolean | null>;
+  /** Измененный */
   changed: XmlElem<boolean>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type VerbDocument = XmlDocument & {

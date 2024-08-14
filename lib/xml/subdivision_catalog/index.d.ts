@@ -1,21 +1,37 @@
 type SubdivisionCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  parent_object_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  is_disbanded: XmlElem<boolean>;
-  knowledge_parts: XmlElem<string>;
-  tags: XmlElem<string>;
-  experts: XmlElem<string>;
-  place_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
-  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
-  kpi_profile_id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  kpi_profiles_id: XmlMultiElemObject<number, KpiProfileCatalogDocumentTopElem>;
-  bonus_profile_id: XmlElem<number, BonusProfileCatalogDocumentTopElem>;
-  cost_center_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Организация */
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  /** Подразделение */
+  parent_object_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  /** Подразделение расформировано */
+  is_disbanded: XmlElem<boolean | null>;
+  /** Значения карты знаний */
+  knowledge_parts: XmlElem<string | null>;
+  tags: XmlElem<string | null>;
+  /** Эксперты */
+  experts: XmlElem<string | null>;
+  /** Расположение */
+  place_id: XmlElem<number | null, PlaceCatalogDocumentTopElem>;
+  /** Регион */
+  region_id: XmlElem<number | null, RegionCatalogDocumentTopElem>;
+  /** Профиль KPI */
+  kpi_profile_id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  /** Профили KPI */
+  kpi_profiles_id: XmlMultiElemObject<number | null, KpiProfileCatalogDocumentTopElem>;
+  /** Профиль премирования */
+  bonus_profile_id: XmlElem<number | null, BonusProfileCatalogDocumentTopElem>;
+  /** Центр затрат */
+  cost_center_id: XmlElem<number | null, CostCenterCatalogDocumentTopElem>;
+  /** Факультет */
   is_faculty: XmlElem<boolean>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

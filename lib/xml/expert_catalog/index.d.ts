@@ -1,15 +1,25 @@
 type ExpertCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  name: XmlElem<string>;
-  code: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string, typeof common.lector_types>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  sub_expert_id: XmlElem<number, ExpertCatalogDocumentTopElem>;
-  rating: XmlElem<number>;
-  answer_expire_time: XmlElem<number>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  /** Эксперт */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО эксперта */
+  person_fullname: XmlElem<string | null>;
+  /** Замещающий эксперт */
+  sub_expert_id: XmlElem<number | null, ExpertCatalogDocumentTopElem>;
+  /** Рейтинг эксперта */
+  rating: XmlElem<number | null>;
+  /** Нормативный срок ответа на вопрос */
+  answer_expire_time: XmlElem<number | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

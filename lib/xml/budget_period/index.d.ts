@@ -1,24 +1,36 @@
 interface BudgetPeriodDocumentDay {
-  date: XmlElem<Date>;
-  type: XmlElem<string, typeof common.day_types>;
-  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
+  /** Дата */
+  date: XmlElem<Date | null>;
+  /** Тип */
+  type: XmlElem<string | null, typeof common.day_types>;
+  /** Регион */
+  region_id: XmlElem<number | null, RegionCatalogDocumentTopElem>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
 }
 
 type BudgetPeriodDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: BudgetPeriodDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  parent_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Родительский бюджетный период */
+  parent_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Дата начала */
+  start_date: XmlElem<Date | null>;
+  /** Дата завершения */
+  finish_date: XmlElem<Date | null>;
   period_type: XmlElem<string, typeof common.perioditys>;
-  days: XmlMultiElem<BudgetPeriodDocumentDay>;
-  role_id: XmlMultiElemObject<number>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  days: XmlMultiElem<BudgetPeriodDocumentDay | null>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type BudgetPeriodDocument = XmlDocument & {

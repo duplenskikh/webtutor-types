@@ -1,11 +1,16 @@
 type UploadPackageDocumentTopElem = XmlTopElem & {
   Doc: UploadPackageDocument;
-  code: XmlElem<string>;
-  type: XmlElem<string, typeof common.package_types>;
-  file_url: XmlElem<string>;
-  package_date: XmlElem<Date>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** ID пакета */
+  code: XmlElem<string | null>;
+  /** Тип пакета */
+  type: XmlElem<string | null, typeof common.package_types>;
+  /** Файл пакета */
+  file_url: XmlElem<string | null>;
+  /** Дата пакета */
+  package_date: XmlElem<Date | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type UploadPackageDocument = XmlDocument & {

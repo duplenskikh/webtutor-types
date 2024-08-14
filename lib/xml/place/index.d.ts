@@ -3,15 +3,23 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: PlaceDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  parent_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
-  region_id: XmlElem<number, RegionCatalogDocumentTopElem>;
-  timezone_id: XmlElem<number, typeof common.timezones>;
-  address: XmlElem<string>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Родительское расположение */
+  parent_id: XmlElem<number | null, PlaceCatalogDocumentTopElem>;
+  /** Регион */
+  region_id: XmlElem<number | null, RegionCatalogDocumentTopElem>;
+  timezone_id: XmlElem<number | null, typeof common.timezones>;
+  /** Адрес */
+  address: XmlElem<string | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type PlaceDocument = XmlDocument & {

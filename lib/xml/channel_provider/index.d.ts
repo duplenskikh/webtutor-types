@@ -2,16 +2,23 @@ type ChannelProviderDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 WebVariablesBase & {
   Doc: ChannelProviderDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  code_library_id: XmlElem<number, CodeLibraryCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  code_library_id: XmlElem<number | null, CodeLibraryCatalogDocumentTopElem>;
   root_function_name: XmlElem<string>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
   provider_do(channelWVars: unknown): unknown;
 };
 

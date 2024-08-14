@@ -1,11 +1,14 @@
 interface StaffPositionDocumentKpiProfile {
-  id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  period_type_id: XmlElem<string, typeof common.perioditys>;
+  /** Профиль KPI */
+  id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  period_type_id: XmlElem<string | null, typeof common.perioditys>;
+  /** Обязательный */
   obligatory: XmlElem<boolean>;
 }
 
 interface StaffPositionDocumentCompetenceProfile {
-  id: XmlElem<number, CompetenceProfileCatalogDocumentTopElem>;
+  /** Профиль компетенций */
+  id: XmlElem<number | null, CompetenceProfileCatalogDocumentTopElem>;
 }
 
 type StaffPositionDocumentTopElem = XmlTopElem &
@@ -15,28 +18,43 @@ KnowledgePartsBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: StaffPositionDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  status: XmlElem<string, typeof common.project_status_types>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  org_name: XmlElem<string>;
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  subdivision_name: XmlElem<string>;
-  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
-  profession_id: XmlElem<number, ProfessionCatalogDocumentTopElem>;
-  profession_category_id: XmlElem<number, ProfessionCategoryCatalogDocumentTopElem>;
-  bonus_profile_id: XmlElem<number, BonusProfileCatalogDocumentTopElem>;
-  staff_num: XmlElem<number>;
-  kpi_profile_id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  kpi_profiles: XmlMultiElem<StaffPositionDocumentKpiProfile>;
-  knowledge_profile_id: XmlElem<number, KnowledgeProfileCatalogDocumentTopElem>;
-  competence_profile_id: XmlElem<number, CompetenceProfileCatalogDocumentTopElem>;
-  competence_profiles: XmlMultiElem<StaffPositionDocumentCompetenceProfile>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Статус */
+  status: XmlElem<string | null, typeof common.project_status_types>;
+  start_date: XmlElem<Date | null>;
+  /** Дата закрытия */
+  finish_date: XmlElem<Date | null>;
+  /** Организация */
+  org_name: XmlElem<string | null>;
+  /** Организация */
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  /** Подразделение */
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  /** Название подразделения */
+  subdivision_name: XmlElem<string | null>;
+  /** Типовая должность */
+  position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
+  profession_id: XmlElem<number | null, ProfessionCatalogDocumentTopElem>;
+  profession_category_id: XmlElem<number | null, ProfessionCategoryCatalogDocumentTopElem>;
+  /** Профиль премирования */
+  bonus_profile_id: XmlElem<number | null, BonusProfileCatalogDocumentTopElem>;
+  staff_num: XmlElem<number | null>;
+  /** Профиль KPI */
+  kpi_profile_id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  kpi_profiles: XmlMultiElem<StaffPositionDocumentKpiProfile | null>;
+  /** Профиль знаний */
+  knowledge_profile_id: XmlElem<number | null, KnowledgeProfileCatalogDocumentTopElem>;
+  /** Профиль компетенций */
+  competence_profile_id: XmlElem<number | null, CompetenceProfileCatalogDocumentTopElem>;
+  /** Профили компетенций */
+  competence_profiles: XmlMultiElem<StaffPositionDocumentCompetenceProfile | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type StaffPositionDocument = XmlDocument & {

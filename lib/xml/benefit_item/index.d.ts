@@ -3,18 +3,28 @@ PersonFillingBase &
 FileListBase &
 CustomElemsBase & {
   Doc: BenefitItemDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  status: XmlElem<string, typeof common.benefit_item_statuses>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  benefit_id: XmlElem<number, BenefitCatalogDocumentTopElem>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Статус */
+  status: XmlElem<string | null, typeof common.benefit_item_statuses>;
+  /** Дата начала */
+  start_date: XmlElem<Date | null>;
+  /** Дата завершения */
+  finish_date: XmlElem<Date | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Бюджетный период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Тип привилегий */
+  benefit_id: XmlElem<number | null, BenefitCatalogDocumentTopElem>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type BenefitItemDocument = XmlDocument & {

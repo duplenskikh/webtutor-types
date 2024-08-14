@@ -1,6 +1,6 @@
 interface ForumEntryDocumentPrivilegeCollaborator {
-  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
+  collaborator_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_fullname: XmlElem<string | null>;
 }
 
 type ForumEntryDocumentTopElem = XmlTopElem &
@@ -8,24 +8,37 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: ForumEntryDocument;
-  name: XmlElem<string>;
-  create_date: XmlElem<Date>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Дата */
+  create_date: XmlElem<Date | null>;
+  /** Обсуждение закрыто */
   closed: XmlElem<boolean>;
-  pinned: XmlElem<boolean>;
+  /** Закрепить тему */
+  pinned: XmlElem<boolean | null>;
+  /** Способ отображения */
   how2show: XmlElem<string, typeof common.forum_person_info_types>;
-  user_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  forum_id: XmlElem<number, ForumCatalogDocumentTopElem>;
-  parent_forum_entry_id: XmlElem<number, ForumEntryCatalogDocumentTopElem>;
-  main_forum_entry_id: XmlElem<number, ForumEntryCatalogDocumentTopElem>;
-  text_area: XmlElem<string>;
-  remote_ip: XmlElem<string>;
+  /** Сотрудник */
+  user_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
+  person_fullname: XmlElem<string | null>;
+  /** Форум */
+  forum_id: XmlElem<number | null, ForumCatalogDocumentTopElem>;
+  /** Родительская статья форума */
+  parent_forum_entry_id: XmlElem<number | null, ForumEntryCatalogDocumentTopElem>;
+  /** Корневая статья формума */
+  main_forum_entry_id: XmlElem<number | null, ForumEntryCatalogDocumentTopElem>;
+  /** Тело статьи */
+  text_area: XmlElem<string | null>;
+  remote_ip: XmlElem<string | null>;
   author_info(personTopElem: unknown): never | string | XmlElem<string>;
-  privilege_collaborators: XmlMultiElem<ForumEntryDocumentPrivilegeCollaborator>;
+  privilege_collaborators: XmlMultiElem<ForumEntryDocumentPrivilegeCollaborator | null>;
+  /** Одобрена модератором */
   is_moder_approved: XmlElem<boolean>;
-  last_create_date: XmlElem<Date>;
-  child_num: XmlElem<number>;
-  doc_info: XmlElem<DocInfoBase>;
+  last_create_date: XmlElem<Date | null>;
+  child_num: XmlElem<number | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ForumEntryDocument = XmlDocument & {

@@ -2,17 +2,25 @@ type PolicyDocumentTopElem = XmlTopElem &
 PersonFillingBase &
 FileListBase & {
   Doc: PolicyDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  number: XmlElem<string>;
-  policy_type_id: XmlElem<number, PolicyTypeCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Дата начала */
+  start_date: XmlElem<Date | null>;
+  /** Дата завершения */
+  finish_date: XmlElem<Date | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Номер */
+  number: XmlElem<string | null>;
+  policy_type_id: XmlElem<number | null, PolicyTypeCatalogDocumentTopElem>;
+  /** Состояние */
   state_id: XmlElem<string, typeof common.budget_state_types>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Бюджетный период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type PolicyDocument = XmlDocument & {

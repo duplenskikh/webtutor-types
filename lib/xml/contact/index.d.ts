@@ -1,5 +1,5 @@
 interface ContactDocumentPollResult {
-  poll_result_id: XmlElem<number, PollResultCatalogDocumentTopElem>;
+  poll_result_id: XmlElem<number | null, PollResultCatalogDocumentTopElem>;
 }
 
 type ContactDocumentTopElem = XmlTopElem &
@@ -8,23 +8,35 @@ AdminAccessBase &
 CustomElemsBase &
 CustomDatasBase & {
   Doc: ContactDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  project_id: XmlElem<number, ProjectCatalogDocumentTopElem>;
-  type_id: XmlElem<number, ContactTypeCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Проект */
+  project_id: XmlElem<number | null, ProjectCatalogDocumentTopElem>;
+  /** Тип контакта */
+  type_id: XmlElem<number | null, ContactTypeCatalogDocumentTopElem>;
   initiator_person_fullname(): string;
   contact_person_fullname(): string;
-  initiator_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
-  contact_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
-  contact_org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  status_id: XmlElem<string, typeof common.contact_status_types>;
-  contact_date: XmlElem<Date>;
-  previous_contact_id: XmlElem<number, ContactCatalogDocumentTopElem>;
-  result_id: XmlElem<number, ContactResultCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  poll_results: XmlMultiElem<ContactDocumentPollResult>;
-  desc: XmlElem<string>;
+  /** Инициатор */
+  initiator_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
+  /** Контактное лицо */
+  contact_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem> & MsPersonSdInnerBase;
+  /** Организация */
+  contact_org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  /** Статус */
+  status_id: XmlElem<string | null, typeof common.contact_status_types>;
+  /** Дата контакта */
+  contact_date: XmlElem<Date | null>;
+  /** Предыдущий контакт */
+  previous_contact_id: XmlElem<number | null, ContactCatalogDocumentTopElem>;
+  /** Результат контакта */
+  result_id: XmlElem<number | null, ContactResultCatalogDocumentTopElem>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  poll_results: XmlMultiElem<ContactDocumentPollResult | null>;
+  desc: XmlElem<string | null>;
 };
 
 type ContactDocument = XmlDocument & {

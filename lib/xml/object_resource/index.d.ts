@@ -3,15 +3,24 @@ ObjectCodeNameBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: ObjectResourceDocument;
-  type: XmlElem<string, typeof lists.object_resource_types>;
-  state_id: XmlElem<string, typeof common.object_resource_states>;
-  count: XmlElem<number>;
-  place_id: XmlElem<number, PlaceCatalogDocumentTopElem>;
-  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  small_desc: XmlElem<string>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Тип ресурса */
+  type: XmlElem<string | null, typeof lists.object_resource_types>;
+  /** Состояние */
+  state_id: XmlElem<string | null, typeof common.object_resource_states>;
+  /** Количество */
+  count: XmlElem<number | null>;
+  /** Расположение */
+  place_id: XmlElem<number | null, PlaceCatalogDocumentTopElem>;
+  /** Сотрудник */
+  collaborator_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Краткое описание */
+  small_desc: XmlElem<string | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ObjectResourceDocument = XmlDocument & {

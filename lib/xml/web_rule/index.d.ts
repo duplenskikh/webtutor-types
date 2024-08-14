@@ -1,24 +1,36 @@
 type WebRuleDocumentTopElem = XmlTopElem & {
   Doc: WebRuleDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Является шаблоном */
   is_pattern(): boolean;
+  /** Использует подстановки */
   use_matches(): boolean;
-  url: XmlElem<string>;
-  script: XmlElem<string>;
+  url: XmlElem<string | null>;
+  script: XmlElem<string | null>;
+  /** Включен */
   is_enabled: XmlElem<boolean>;
-  redirect_url: XmlElem<string>;
+  redirect_url: XmlElem<string | null>;
   redirect_type: XmlElem<number>;
-  redirect_web_mode_id: XmlElem<number, WebModeCatalogDocumentTopElem>;
-  web_design_id: XmlElem<number, WebDesignCatalogDocumentTopElem>;
-  site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
-  weight: XmlElem<number>;
-  role_id: XmlMultiElemObject<number>;
-  is_std: XmlElem<boolean>;
+  redirect_web_mode_id: XmlElem<number | null, WebModeCatalogDocumentTopElem>;
+  /** Дизайн */
+  web_design_id: XmlElem<number | null, WebDesignCatalogDocumentTopElem>;
+  /** Сайт */
+  site_id: XmlElem<number | null, SiteCatalogDocumentTopElem>;
+  weight: XmlElem<number | null>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
+  /** Является системным */
+  is_std: XmlElem<boolean | null>;
+  /** Измененный */
   changed: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
   script_validate(path: unknown, parameters: unknown): unknown;
 };
 

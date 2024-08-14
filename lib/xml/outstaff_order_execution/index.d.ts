@@ -1,15 +1,23 @@
 interface OutstaffOrderExecutionDocumentStage extends CostCurrencyBase, CustomElemsBase {
-  id: XmlElem<string>;
-  parent_stage_id: XmlElem<string>;
-  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  provider_person_fullname: XmlElem<string>;
-  date: XmlElem<Date>;
-  fact_date: XmlElem<Date>;
+  id: XmlElem<string | null>;
+  /** Родительский этап */
+  parent_stage_id: XmlElem<string | null>;
+  /** Сотрудник */
+  collaborator_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Сотрудник */
+  provider_person_fullname: XmlElem<string | null>;
+  /** Дата */
+  date: XmlElem<Date | null>;
+  /** Дата */
+  fact_date: XmlElem<Date | null>;
   hour_num: XmlElem<number>;
   hours_worked: XmlElem<number>;
+  /** Присутствие */
   is_assist: XmlElem<boolean>;
-  outstaff_order_execution_status_type: XmlElem<string, typeof common.outstaff_order_execution_status_types>;
-  comment: XmlElem<string>;
+  /** Статус */
+  outstaff_order_execution_status_type: XmlElem<string | null, typeof common.outstaff_order_execution_status_types>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
 }
 
 type OutstaffOrderExecutionDocumentTopElem = XmlTopElem &
@@ -18,31 +26,53 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: OutstaffOrderExecutionDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
   name(): string;
+  /** Статус */
   status: XmlElem<string, typeof common.order_status_types>;
-  formed_date: XmlElem<Date>;
-  paid_date: XmlElem<Date>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  collaborator_fullname: XmlElem<string>;
-  outstaff_provider_id: XmlElem<number, OutstaffProviderCatalogDocumentTopElem>;
-  outstaff_contract_id: XmlElem<number, OutstaffContractCatalogDocumentTopElem>;
-  outstaff_contract_name: XmlElem<string>;
-  outstaff_order_id: XmlElem<number, OutstaffContractCatalogDocumentTopElem>;
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  subdivision_name: XmlElem<string>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
-  position_common_name: XmlElem<string>;
+  /** Дата формирования */
+  formed_date: XmlElem<Date | null>;
+  /** Дата оплаты */
+  paid_date: XmlElem<Date | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО ответственного */
+  collaborator_fullname: XmlElem<string | null>;
+  /** Провайдер временного персонала */
+  outstaff_provider_id: XmlElem<number | null, OutstaffProviderCatalogDocumentTopElem>;
+  /** Контракт на временный персонал */
+  outstaff_contract_id: XmlElem<number | null, OutstaffContractCatalogDocumentTopElem>;
+  /** Контракт на временный персонал */
+  outstaff_contract_name: XmlElem<string | null>;
+  /** Заказ на временный персонал */
+  outstaff_order_id: XmlElem<number | null, OutstaffContractCatalogDocumentTopElem>;
+  /** Подразделение */
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  /** Подразделение */
+  subdivision_name: XmlElem<string | null>;
+  /** Бюджетный период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Дата начала */
+  start_date: XmlElem<Date | null>;
+  /** Дата завершения */
+  finish_date: XmlElem<Date | null>;
+  /** Типовая должность */
+  position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
+  /** Типовая должность */
+  position_common_name: XmlElem<string | null>;
   stage_num: XmlElem<number>;
-  stages: XmlMultiElem<OutstaffOrderExecutionDocumentStage>;
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  stages: XmlMultiElem<OutstaffOrderExecutionDocumentStage | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
   update_stages(): unknown;
 };
 

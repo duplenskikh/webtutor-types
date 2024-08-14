@@ -1,21 +1,35 @@
 type SaleCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  create_date: XmlElem<Date>;
-  status_id: XmlElem<number, SaleStatusCatalogDocumentTopElem>;
-  number: XmlElem<string>;
-  org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  client_org_id: XmlElem<number, OrgCatalogDocumentTopElem>;
-  project_id: XmlElem<number, ProjectCatalogDocumentTopElem>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  client_manager_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  manager_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  cost: XmlElem<number>;
-  currency_type_id: XmlElem<string, typeof lists.currency_types>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  create_date: XmlElem<Date | null>;
+  /** Статус */
+  status_id: XmlElem<number | null, SaleStatusCatalogDocumentTopElem>;
+  /** Номер договора */
+  number: XmlElem<string | null>;
+  /** Организация */
+  org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  client_org_id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
+  /** Проект */
+  project_id: XmlElem<number | null, ProjectCatalogDocumentTopElem>;
+  /** Дата начала */
+  start_date: XmlElem<Date | null>;
+  /** Дата завершения */
+  finish_date: XmlElem<Date | null>;
+  /** Клиент */
+  client_manager_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Менеджер */
+  manager_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Стоимость */
+  cost: XmlElem<number | null>;
+  /** Валюта */
+  currency_type_id: XmlElem<string | null, typeof lists.currency_types>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

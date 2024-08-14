@@ -1,16 +1,16 @@
 type ProfilingRecordDocumentTopElem = XmlTopElem & {
   Doc: ProfilingRecordDocument;
-  id: XmlElem<number>;
-  start_date: XmlElem<Date>;
-  ticks: XmlElem<number>;
-  url: XmlElem<string>;
-  sid: XmlElem<string>;
-  duration: XmlElem<number>;
-  template_type: XmlElem<string>;
-  template_id: XmlElem<number>;
-  parent_template_type: XmlElem<string>;
-  parent_template_id: XmlElem<number>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  start_date: XmlElem<Date | null>;
+  ticks: XmlElem<number | null>;
+  url: XmlElem<string | null>;
+  sid: XmlElem<string | null>;
+  duration: XmlElem<number | null>;
+  template_type: XmlElem<string | null>;
+  template_id: XmlElem<number | null>;
+  parent_template_type: XmlElem<string | null>;
+  parent_template_id: XmlElem<number | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ProfilingRecordDocument = XmlDocument & {

@@ -3,19 +3,28 @@ CatalogListBase &
 FileListBase &
 AdminAccessBase & {
   Doc: RecruitmentEventDocument;
-  id: XmlElem<number>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  start_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  vacancy_id: XmlElem<number, VacancyCatalogDocumentTopElem>;
-  estaff_event_type_id: XmlElem<number, EstaffEventTypeCatalogDocumentTopElem>;
-  estaff_event_type_status_id: XmlElem<number, EstaffEventTypeCatalogDocumentTopElem>;
-  site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
-  recruitment_system_id: XmlElem<number, RecruitmentSystemCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  /** Кандидат */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО */
+  person_fullname: XmlElem<string | null>;
+  start_date: XmlElem<Date | null>;
+  finish_date: XmlElem<Date | null>;
+  /** Вакансия */
+  vacancy_id: XmlElem<number | null, VacancyCatalogDocumentTopElem>;
+  /** Тип события */
+  estaff_event_type_id: XmlElem<number | null, EstaffEventTypeCatalogDocumentTopElem>;
+  /** Статус */
+  estaff_event_type_status_id: XmlElem<number | null, EstaffEventTypeCatalogDocumentTopElem>;
+  /** Сайт */
+  site_id: XmlElem<number | null, SiteCatalogDocumentTopElem>;
+  recruitment_system_id: XmlElem<number | null, RecruitmentSystemCatalogDocumentTopElem>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type RecruitmentEventDocument = XmlDocument & {

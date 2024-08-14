@@ -1,16 +1,20 @@
 type ObjectRequirementCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  object_id: XmlElem<number>;
-  object_type: XmlElem<string, typeof common.exchange_object_types>;
-  object_name: XmlElem<string>;
-  requirement_type: XmlElem<string>;
-  requirement_object_id: XmlElem<number>;
-  requirement_object_type: XmlElem<string, typeof common.exchange_object_types>;
-  sec_requirement_object_id: XmlElem<number>;
-  sec_requirement_object_type: XmlElem<string, typeof common.exchange_object_types>;
+  id: XmlElem<number | null>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Тип объекта */
+  object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Название объекта */
+  object_name: XmlElem<string | null>;
+  requirement_type: XmlElem<string | null>;
+  requirement_object_id: XmlElem<number | null>;
+  requirement_object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  sec_requirement_object_id: XmlElem<number | null>;
+  sec_requirement_object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Обязательный */
   obligatory: XmlElem<boolean>;
-  requirement_value: XmlElem<string>;
-  additional_param: XmlElem<string>;
+  requirement_value: XmlElem<string | null>;
+  additional_param: XmlElem<string | null>;
   MatchDocTypeExt(): void;
   OnBuildExt(): void;
   OnDeleteExt(): void;

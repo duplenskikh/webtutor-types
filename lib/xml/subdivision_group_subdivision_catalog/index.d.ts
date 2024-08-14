@@ -1,11 +1,17 @@
 type SubdivisionGroupSubdivisionCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  subdivision_group_id: XmlElem<number, SubdivisionGroupCatalogDocumentTopElem>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Группа подразделений */
+  subdivision_group_id: XmlElem<number | null, SubdivisionGroupCatalogDocumentTopElem>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Признак динамической группы */
   is_dynamic: XmlElem<boolean>;
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  subdivision_name: XmlElem<string>;
+  /** Подразделение */
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  /** Название подразделения */
+  subdivision_name: XmlElem<string | null>;
   MatchDocTypeExt(): void;
   OnBuildExt(): void;
   OnDeleteExt(): void;

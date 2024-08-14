@@ -1,6 +1,6 @@
 interface LearningDocumentEvent {
-  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
-  score: XmlElem<number>;
+  event_id: XmlElem<number | null, EventCatalogDocumentTopElem>;
+  score: XmlElem<number | null>;
 }
 
 type LearningDocumentTopElem = XmlTopElem &
@@ -8,37 +8,64 @@ PersonFillingBase &
 CustomElemsBase &
 AdminAccessBase & {
   Doc: LearningDocument;
-  code: XmlElem<string>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
   name(): string;
-  course_id: XmlElem<number, CourseCatalogDocumentTopElem>;
-  course_name: XmlElem<string>;
-  course_code: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_current_state: XmlElem<string>;
-  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
-  event_name: XmlElem<string>;
-  event_start_date: XmlElem<Date>;
-  group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
-  education_plan_id: XmlElem<number, EducationPlanCatalogDocumentTopElem>;
-  parts: XmlMultiElem<LearningPartBase>;
-  no_encoding_core_lesson: XmlElem<boolean>;
-  time: XmlElem<number>;
-  events: XmlMultiElem<LearningDocumentEvent>;
-  start_usage_date: XmlElem<Date>;
-  start_learning_date: XmlElem<Date>;
+  /** Электронный курс */
+  course_id: XmlElem<number | null, CourseCatalogDocumentTopElem>;
+  /** Название электронного курса */
+  course_name: XmlElem<string | null>;
+  /** Код электронного курса */
+  course_code: XmlElem<string | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Текущее состояние сотрудника */
+  person_current_state: XmlElem<string | null>;
+  /** Мероприятие */
+  event_id: XmlElem<number | null, EventCatalogDocumentTopElem>;
+  /** Название мероприятия */
+  event_name: XmlElem<string | null>;
+  /** Дата начала мероприятия */
+  event_start_date: XmlElem<Date | null>;
+  /** Группа */
+  group_id: XmlElem<number | null, GroupCatalogDocumentTopElem>;
+  /** План обучения */
+  education_plan_id: XmlElem<number | null, EducationPlanCatalogDocumentTopElem>;
+  /** Разделы */
+  parts: XmlMultiElem<LearningPartBase | null>;
+  /** Не кодировать данные модуля при запуске курса */
+  no_encoding_core_lesson: XmlElem<boolean | null>;
+  /** Время модулей */
+  time: XmlElem<number | null>;
+  /** Мероприятия */
+  events: XmlMultiElem<LearningDocumentEvent | null>;
+  /** Дата активации */
+  start_usage_date: XmlElem<Date | null>;
+  start_learning_date: XmlElem<Date | null>;
+  /** Назначен самостоятельно */
   is_self_enrolled: XmlElem<boolean>;
-  last_usage_date: XmlElem<Date>;
-  max_end_date: XmlElem<Date>;
-  base_url: XmlElem<string>;
+  /** Дата последнего посещ. */
+  last_usage_date: XmlElem<Date | null>;
+  /** Дата планир. завершения */
+  max_end_date: XmlElem<Date | null>;
+  /** Базовый url */
+  base_url: XmlElem<string | null>;
+  /** Максимальный балл */
   max_score: XmlElem<number>;
-  score: XmlElem<number>;
-  text_result: XmlElem<string>;
-  state_id: XmlElem<number, typeof common.learning_states>;
-  active_learning_id: XmlElem<number, ActiveLearningCatalogDocumentTopElem>;
-  active_learning_deleted: XmlElem<boolean>;
+  /** Баллы */
+  score: XmlElem<number | null>;
+  text_result: XmlElem<string | null>;
+  /** Состояние */
+  state_id: XmlElem<number | null, typeof common.learning_states>;
+  /** Незаконченный курс */
+  active_learning_id: XmlElem<number | null, ActiveLearningCatalogDocumentTopElem>;
+  active_learning_deleted: XmlElem<boolean | null>;
   use_proctoring: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type LearningDocument = XmlDocument & {

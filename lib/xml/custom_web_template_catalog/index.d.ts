@@ -1,16 +1,26 @@
 type CustomWebTemplateCatalogDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AccessDocBase & {
-  category: XmlElem<string>;
-  cwt_type: XmlElem<string, typeof common.cwt_types>;
-  out_type: XmlElem<string, typeof common.out_types>;
-  mode: XmlElem<string>;
-  template: XmlElem<string>;
+  /** Категория */
+  category: XmlElem<string | null>;
+  /** Тип шаблона */
+  cwt_type: XmlElem<string | null, typeof common.cwt_types>;
+  /** Тип результата */
+  out_type: XmlElem<string | null, typeof common.out_types>;
+  mode: XmlElem<string | null>;
+  /** URL шаблона */
+  template: XmlElem<string | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
-  is_enabled: XmlElem<boolean>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
-  role_id: XmlMultiElemObject<number>;
+  /** Включен */
+  is_enabled: XmlElem<boolean | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
+  /** Роль */
+  role_id: XmlMultiElemObject<number | null>;
   OnBuild(): void;
 };

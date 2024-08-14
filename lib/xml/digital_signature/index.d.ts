@@ -4,21 +4,35 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DigitalSignatureDocument;
-  name: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  object_type: XmlElem<string, typeof common.exchange_object_types>;
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
-  create_date: XmlElem<Date>;
-  sign_date: XmlElem<Date>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Тип объекта */
+  object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Название объекта */
+  object_name: XmlElem<string | null>;
+  /** Дата создания */
+  create_date: XmlElem<Date | null>;
+  /** Дата подписания */
+  sign_date: XmlElem<Date | null>;
+  /** Подписана */
   is_signed: XmlElem<boolean>;
-  custom_web_template_id: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
-  sign_open: XmlElem<string>;
-  sign_encrypted: XmlElem<string>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
+  /** Шаблон */
+  custom_web_template_id: XmlElem<number | null, CustomWebTemplateCatalogDocumentTopElem>;
+  /** Подписанный документ */
+  sign_open: XmlElem<string | null>;
+  /** Цифровая подпись */
+  sign_encrypted: XmlElem<string | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
 };
 
 type DigitalSignatureDocument = XmlDocument & {

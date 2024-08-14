@@ -1,8 +1,10 @@
 type OutstaffAdditionalWorkDocumentTopElem = XmlTopElem & {
   Doc: OutstaffAdditionalWorkDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type OutstaffAdditionalWorkDocument = XmlDocument & {

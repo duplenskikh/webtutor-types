@@ -1,36 +1,38 @@
 interface DnProgramDisciplDocumentTermPlanTheme {
-  id_subj: XmlElem<number>;
-  theme: XmlElem<string>;
-  number_week: XmlElem<string>;
-  hours_audit: XmlElem<number>;
-  hours_independ: XmlElem<number>;
-  educat_event_id: XmlElem<number, DnEducatEventCatalogDocumentTopElem>;
-  name_educat_event: XmlElem<string>;
+  id_subj: XmlElem<number | null>;
+  /** Тема */
+  theme: XmlElem<string | null>;
+  number_week: XmlElem<string | null>;
+  hours_audit: XmlElem<number | null>;
+  hours_independ: XmlElem<number | null>;
+  /** Форма проведения */
+  educat_event_id: XmlElem<number | null, DnEducatEventCatalogDocumentTopElem>;
+  name_educat_event: XmlElem<string | null>;
 }
 
 interface DnProgramDisciplDocumentTerm {
-  term_id: XmlElem<number, DnTermCatalogDocumentTopElem>;
-  laboriousn_all_term: XmlElem<number>;
+  term_id: XmlElem<number | null, DnTermCatalogDocumentTopElem>;
+  laboriousn_all_term: XmlElem<number | null>;
   laboriousn_audit_term(): number;
   laboriousn_indep_term(): number;
-  plan_themes: XmlMultiElem<DnProgramDisciplDocumentTermPlanTheme>;
+  plan_themes: XmlMultiElem<DnProgramDisciplDocumentTermPlanTheme | null>;
 }
 
 interface DnProgramDisciplDocumentDiscipline {
-  discipline_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
+  discipline_id: XmlElem<number | null, DnDisciplineCatalogDocumentTopElem>;
 }
 
 interface DnProgramDisciplDocumentSubject {
-  subject_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
+  subject_id: XmlElem<number | null, DnDisciplineCatalogDocumentTopElem>;
 }
 
 interface DnProgramDisciplDocumentSpecialSpecialization {
-  specializat_id: XmlElem<number, DnSpecializationCatalogDocumentTopElem>;
+  specializat_id: XmlElem<number | null, DnSpecializationCatalogDocumentTopElem>;
 }
 
 interface DnProgramDisciplDocumentSpecial {
-  special_id: XmlElem<number, DnSpecialCatalogDocumentTopElem>;
-  specializations: XmlMultiElem<DnProgramDisciplDocumentSpecialSpecialization>;
+  special_id: XmlElem<number | null, DnSpecialCatalogDocumentTopElem>;
+  specializations: XmlMultiElem<DnProgramDisciplDocumentSpecialSpecialization | null>;
 }
 
 type DnProgramDisciplDocumentTopElem = XmlTopElem &
@@ -38,23 +40,28 @@ LectorsBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnProgramDisciplDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Статус договора */
   status_id: XmlElem<string, typeof common.prog_discipl_states>;
-  faculty_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  chair_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  discipline_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
-  academ_year_id: XmlElem<number, DnAcademYearCatalogDocumentTopElem>;
-  educat_form_id: XmlElem<number, DnEducatFormCatalogDocumentTopElem>;
-  control_form: XmlElem<number, DnControlFormCatalogDocumentTopElem>;
-  all_laboriousn_audit: XmlElem<number>;
-  all_laboriousn_indep: XmlElem<number>;
-  terms: XmlMultiElem<DnProgramDisciplDocumentTerm>;
-  desc: XmlElem<string>;
-  disciplines: XmlMultiElem<DnProgramDisciplDocumentDiscipline>;
-  subjects: XmlMultiElem<DnProgramDisciplDocumentSubject>;
-  specials: XmlMultiElem<DnProgramDisciplDocumentSpecial>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Факультет */
+  faculty_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  chair_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  discipline_id: XmlElem<number | null, DnDisciplineCatalogDocumentTopElem>;
+  academ_year_id: XmlElem<number | null, DnAcademYearCatalogDocumentTopElem>;
+  educat_form_id: XmlElem<number | null, DnEducatFormCatalogDocumentTopElem>;
+  control_form: XmlElem<number | null, DnControlFormCatalogDocumentTopElem>;
+  all_laboriousn_audit: XmlElem<number | null>;
+  all_laboriousn_indep: XmlElem<number | null>;
+  terms: XmlMultiElem<DnProgramDisciplDocumentTerm | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  disciplines: XmlMultiElem<DnProgramDisciplDocumentDiscipline | null>;
+  subjects: XmlMultiElem<DnProgramDisciplDocumentSubject | null>;
+  specials: XmlMultiElem<DnProgramDisciplDocumentSpecial | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type DnProgramDisciplDocument = XmlDocument & {

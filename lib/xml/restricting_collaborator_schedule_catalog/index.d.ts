@@ -1,11 +1,16 @@
 type RestrictingCollaboratorScheduleCatalogDocumentTopElem = XmlTopElem &
 PersonFillingBase & {
-  id: XmlElem<number>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  restriction_type_id: XmlElem<number, RestrictingTypeCatalogDocumentTopElem>;
-  state_id: XmlElem<string, typeof common.agreement_status_types>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  restriction_type_id: XmlElem<number | null, RestrictingTypeCatalogDocumentTopElem>;
+  /** Состояние */
+  state_id: XmlElem<string | null, typeof common.agreement_status_types>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

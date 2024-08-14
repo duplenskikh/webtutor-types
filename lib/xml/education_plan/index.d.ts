@@ -1,98 +1,145 @@
 interface EducationPlanDocumentProgramStartLearningTask {
-  learning_task_id: XmlElem<number, LearningTaskCatalogDocumentTopElem>;
+  learning_task_id: XmlElem<number | null, LearningTaskCatalogDocumentTopElem>;
 }
 
 interface EducationPlanDocumentProgramStartAssessment {
-  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
+  assessment_id: XmlElem<number | null, AssessmentCatalogDocumentTopElem>;
 }
 
 interface EducationPlanDocumentProgramFinishLearningTask {
-  learning_task_id: XmlElem<number, LearningTaskCatalogDocumentTopElem>;
+  learning_task_id: XmlElem<number | null, LearningTaskCatalogDocumentTopElem>;
 }
 
 interface EducationPlanDocumentProgramFinishAssessment {
-  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
+  assessment_id: XmlElem<number | null, AssessmentCatalogDocumentTopElem>;
 }
 
 interface EducationPlanDocumentProgramFinishNotifiation {
-  notification_template_id: XmlElem<number, NotificationTemplateCatalogDocumentTopElem>;
-  subject: XmlElem<string>;
-  body: XmlElem<string>;
-  body_type: XmlElem<string>;
+  /** Шаблон уведомления */
+  notification_template_id: XmlElem<number | null, NotificationTemplateCatalogDocumentTopElem>;
+  /** Тема */
+  subject: XmlElem<string | null>;
+  /** Сообщение */
+  body: XmlElem<string | null>;
+  /** Формат сообщения */
+  body_type: XmlElem<string | null>;
   edit_notification: XmlElem<boolean>;
 }
 
 interface EducationPlanDocumentProgramStartNotifiation {
-  notification_template_id: XmlElem<number, NotificationTemplateCatalogDocumentTopElem>;
-  subject: XmlElem<string>;
-  body: XmlElem<string>;
-  body_type: XmlElem<string>;
+  /** Шаблон уведомления */
+  notification_template_id: XmlElem<number | null, NotificationTemplateCatalogDocumentTopElem>;
+  /** Тема */
+  subject: XmlElem<string | null>;
+  /** Сообщение */
+  body: XmlElem<string | null>;
+  /** Формат сообщения */
+  body_type: XmlElem<string | null>;
   edit_notification: XmlElem<boolean>;
 }
 
 interface EducationPlanDocumentProgramResultObject {
-  object_id: XmlElem<number>;
-  result_type: XmlElem<string, typeof common.exchange_object_types>;
-  result_object_id: XmlElem<number>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Тип результата */
+  result_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Объект */
+  result_object_id: XmlElem<number | null>;
 }
 
 interface EducationPlanDocumentProgramCompletedParentProgram {
-  program_id: XmlElem<number>;
+  program_id: XmlElem<number | null>;
 }
 
 interface EducationPlanDocumentProgramProgramResult {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  type: XmlElem<string>;
-  date: XmlElem<Date>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  type: XmlElem<string | null>;
+  /** Дата создания */
+  date: XmlElem<Date | null>;
 }
 
 interface EducationPlanDocumentProgram extends CustomElemsBase {
-  id: XmlElem<number>;
-  name: XmlElem<string>;
-  parent_progpam_id: XmlElem<number>;
-  education_method_id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
-  education_program_id: XmlElem<number, EducationProgramCatalogDocumentTopElem>;
-  start_learning_tasks: XmlMultiElem<EducationPlanDocumentProgramStartLearningTask>;
-  start_assessments: XmlMultiElem<EducationPlanDocumentProgramStartAssessment>;
-  finish_learning_tasks: XmlMultiElem<EducationPlanDocumentProgramFinishLearningTask>;
-  finish_assessments: XmlMultiElem<EducationPlanDocumentProgramFinishAssessment>;
-  finish_notifiation: XmlElem<EducationPlanDocumentProgramFinishNotifiation>;
-  start_notifiation: XmlElem<EducationPlanDocumentProgramStartNotifiation>;
-  type: XmlElem<string>;
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
-  object_code: XmlElem<string>;
-  object_start_date: XmlElem<Date>;
-  catalog_name: XmlElem<string, typeof common.learning_catalogs>;
-  subject: XmlElem<string>;
-  body: XmlElem<string>;
-  body_type: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Корневой раздел */
+  parent_progpam_id: XmlElem<number | null>;
+  /** Учебная программа */
+  education_method_id: XmlElem<number | null, EducationMethodCatalogDocumentTopElem>;
+  /** Набор программ */
+  education_program_id: XmlElem<number | null, EducationProgramCatalogDocumentTopElem>;
+  /** Доступ после завершения разделов */
+  start_learning_tasks: XmlMultiElem<EducationPlanDocumentProgramStartLearningTask | null>;
+  /** Доступ после завершения разделов */
+  start_assessments: XmlMultiElem<EducationPlanDocumentProgramStartAssessment | null>;
+  /** Доступ после завершения разделов */
+  finish_learning_tasks: XmlMultiElem<EducationPlanDocumentProgramFinishLearningTask | null>;
+  /** Доступ после завершения разделов */
+  finish_assessments: XmlMultiElem<EducationPlanDocumentProgramFinishAssessment | null>;
+  finish_notifiation: XmlElem<EducationPlanDocumentProgramFinishNotifiation | null>;
+  start_notifiation: XmlElem<EducationPlanDocumentProgramStartNotifiation | null>;
+  /** Тип */
+  type: XmlElem<string | null>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Название объекта */
+  object_name: XmlElem<string | null>;
+  /** Код */
+  object_code: XmlElem<string | null>;
+  object_start_date: XmlElem<Date | null>;
+  catalog_name: XmlElem<string | null, typeof common.learning_catalogs>;
+  /** Тема */
+  subject: XmlElem<string | null>;
+  /** Сообщение */
+  body: XmlElem<string | null>;
+  /** Формат сообщения */
+  body_type: XmlElem<string | null>;
   edit_notification: XmlElem<boolean>;
-  delay_days: XmlElem<number>;
-  days: XmlElem<number>;
-  create_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  plan_date: XmlElem<Date>;
-  result_type: XmlElem<string, typeof common.exchange_object_types>;
-  result_object_id: XmlElem<number>;
-  result_object_name: XmlElem<string>;
-  result_object_code: XmlElem<string>;
-  result_object_start_date: XmlElem<Date>;
-  result_object_finish_date: XmlElem<Date>;
-  result_objects: XmlMultiElem<EducationPlanDocumentProgramResultObject>;
+  /** Дней */
+  delay_days: XmlElem<number | null>;
+  /** Дней */
+  days: XmlElem<number | null>;
+  /** Дата создания */
+  create_date: XmlElem<Date | null>;
+  /** Дата завершения */
+  finish_date: XmlElem<Date | null>;
+  /** Планируемая дата */
+  plan_date: XmlElem<Date | null>;
+  /** Тип результата */
+  result_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Объект */
+  result_object_id: XmlElem<number | null>;
+  /** Название объекта */
+  result_object_name: XmlElem<string | null>;
+  /** Код */
+  result_object_code: XmlElem<string | null>;
+  result_object_start_date: XmlElem<Date | null>;
+  result_object_finish_date: XmlElem<Date | null>;
+  result_objects: XmlMultiElem<EducationPlanDocumentProgramResultObject | null>;
+  /** Статус */
   state_id: XmlElem<number, typeof common.education_learning_states>;
-  tutor_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  weight: XmlElem<number>;
-  readiness_percent: XmlElem<number>;
-  start_type: XmlElem<string>;
-  mark: XmlElem<number>;
-  active_learning_id: XmlElem<number, ActiveLearningCatalogDocumentTopElem>;
-  learning_id: XmlElem<number, LearningCatalogDocumentTopElem>;
-  request_id: XmlElem<number, RequestCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
+  /** Ответственный */
+  tutor_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Вес, % */
+  weight: XmlElem<number | null>;
+  /** Процент готовности */
+  readiness_percent: XmlElem<number | null>;
+  start_type: XmlElem<string | null>;
+  /** Оценка */
+  mark: XmlElem<number | null>;
+  /** Незаконченный электронный курс */
+  active_learning_id: XmlElem<number | null, ActiveLearningCatalogDocumentTopElem>;
+  /** Электронный курс */
+  learning_id: XmlElem<number | null, LearningCatalogDocumentTopElem>;
+  request_id: XmlElem<number | null, RequestCatalogDocumentTopElem>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Обязательный раздел */
   required: XmlElem<boolean>;
-  completed_parent_programs: XmlMultiElem<EducationPlanDocumentProgramCompletedParentProgram>;
-  program_results: XmlMultiElem<EducationPlanDocumentProgramProgramResult>;
+  /** Доступ после завершения разделов */
+  completed_parent_programs: XmlMultiElem<EducationPlanDocumentProgramCompletedParentProgram | null>;
+  program_results: XmlMultiElem<EducationPlanDocumentProgramProgramResult | null>;
 }
 
 type EducationPlanDocumentTopElem = XmlTopElem &
@@ -102,32 +149,53 @@ AdminAccessBase &
 FileListBase &
 CustomElemsBase & {
   Doc: EducationPlanDocument;
-  group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
-  compound_program_id: XmlElem<number, CompoundProgramCatalogDocumentTopElem>;
-  type: XmlElem<string, typeof common.exchange_object_types>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
-  tutor_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  /** Группа */
+  group_id: XmlElem<number | null, GroupCatalogDocumentTopElem>;
+  /** Модульная программа */
+  compound_program_id: XmlElem<number | null, CompoundProgramCatalogDocumentTopElem>;
+  /** Тип */
+  type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Название объекта */
+  object_name: XmlElem<string | null>;
+  /** Ответственный */
+  tutor_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
   update_status_and_activity: XmlElem<boolean>;
   strong_date_control: XmlElem<boolean>;
-  create_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
-  fact_finish_date: XmlElem<Date>;
-  last_activity_date: XmlElem<Date>;
-  plan_date: XmlElem<Date>;
-  mark: XmlElem<number>;
-  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
-  readiness_percent: XmlElem<number>;
+  /** Дата создания */
+  create_date: XmlElem<Date | null>;
+  /** Дата завершения */
+  finish_date: XmlElem<Date | null>;
+  fact_finish_date: XmlElem<Date | null>;
+  last_activity_date: XmlElem<Date | null>;
+  /** Планируемая дата */
+  plan_date: XmlElem<Date | null>;
+  /** Общая оценка */
+  mark: XmlElem<number | null>;
+  /** Мероприятие */
+  event_id: XmlElem<number | null, EventCatalogDocumentTopElem>;
+  /** Процент готовности */
+  readiness_percent: XmlElem<number | null>;
+  /** Статус */
   state_id: XmlElem<number, typeof common.education_learning_states>;
-  last_state_id: XmlElem<number, typeof common.education_learning_states>;
-  programs: XmlMultiElem<EducationPlanDocumentProgram>;
+  /** Статус */
+  last_state_id: XmlElem<number | null, typeof common.education_learning_states>;
+  /** Разделы плана */
+  programs: XmlMultiElem<EducationPlanDocumentProgram | null>;
   calculate_state_id(): unknown;
-  development_plan_id: XmlElem<number, DevelopmentPlanCatalogDocumentTopElem>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
-  doc_info: XmlElem<DocInfoBase>;
-  comment: XmlElem<string>;
+  /** План развития */
+  development_plan_id: XmlElem<number | null, DevelopmentPlanCatalogDocumentTopElem>;
+  /** Бюджетный период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Процедура */
+  assessment_appraise_id: XmlElem<number | null, AssessmentAppraiseCatalogDocumentTopElem>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
   getEducationPlanAccess(objId: number, userId: number, objectTopElem: unknown): unknown;
   calculateMark(): EducationPlanDocument;
 };

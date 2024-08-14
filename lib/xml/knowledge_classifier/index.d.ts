@@ -1,14 +1,21 @@
 type KnowledgeClassifierDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
   Doc: KnowledgeClassifierDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
-  doc_info: XmlElem<DocInfoBase>;
-  comment: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Ресурс базы */
+  resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
 };
 
 type KnowledgeClassifierDocument = XmlDocument & {

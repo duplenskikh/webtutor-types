@@ -4,10 +4,13 @@ FileListBase &
 CustomElemsBase &
 AdminAccessBase & {
   Doc: TalentPoolNominationDocument;
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type TalentPoolNominationDocument = XmlDocument & {

@@ -1,12 +1,17 @@
 type WikiArticleTypeDocumentTopElem = XmlTopElem & {
   Doc: WikiArticleTypeDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
-  comment: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Ресурс базы */
+  resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
 };
 
 type WikiArticleTypeDocument = XmlDocument & {

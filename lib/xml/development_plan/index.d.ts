@@ -1,16 +1,16 @@
 interface DevelopmentPlanDocumentCustomExpert {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_type: XmlElem<number>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  person_type: XmlElem<number | null>;
   is_done: XmlElem<boolean>;
   responsible: XmlElem<boolean>;
-  expert_code: XmlElem<string>;
+  expert_code: XmlElem<string | null>;
 }
 
 interface DevelopmentPlanDocumentCustomComment {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  workflow_state: XmlElem<string>;
-  comment: XmlElem<string>;
-  comment_date: XmlElem<Date>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  workflow_state: XmlElem<string | null>;
+  comment: XmlElem<string | null>;
+  comment_date: XmlElem<Date | null>;
 }
 
 type DevelopmentPlanDocumentTopElem = XmlTopElem &
@@ -20,29 +20,48 @@ DevelopmentPlanDataBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DevelopmentPlanDocument;
-  code: XmlElem<string>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
   name(): string;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  expert_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  department_id: XmlElem<number>;
-  department_name: XmlElem<string>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Оценивающий */
+  expert_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Подразделение */
+  department_id: XmlElem<number | null>;
+  /** Название подразделения */
+  department_name: XmlElem<string | null>;
+  /** Признак завершенности */
   is_done: XmlElem<boolean>;
+  /** Признак результирующей формы */
   is_final: XmlElem<boolean>;
+  /** Признак готовности (для параллельной оценки) */
   is_ready: XmlElem<boolean>;
   flag_is_processed: XmlElem<boolean>;
   flag_appraise_department: XmlElem<boolean>;
-  assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
-  assessment_plan_id: XmlElem<number, AssessmentPlanCatalogDocumentTopElem>;
-  career_reserve_id: XmlElem<number, CareerReserveCatalogDocumentTopElem>;
+  /** Оценочная процедура */
+  assessment_appraise_id: XmlElem<number | null, AssessmentAppraiseCatalogDocumentTopElem>;
+  /** Планы оценки */
+  assessment_plan_id: XmlElem<number | null, AssessmentPlanCatalogDocumentTopElem>;
+  /** Карьерный резерв */
+  career_reserve_id: XmlElem<number | null, CareerReserveCatalogDocumentTopElem>;
+  /** Тип оценочной процедуры */
   assessment_appraise_type: XmlElem<string, typeof common.assessment_appraise_types>;
-  status: XmlElem<string, typeof common.assessment_appraise_participants>;
-  assessment_appraise_matrix_id: XmlElem<number, AssessmentAppraiseMatrixCatalogDocumentTopElem>;
-  doc_info: XmlElem<DocInfoBase>;
-  temp: XmlElem<string>;
-  custom_experts: XmlMultiElem<DevelopmentPlanDocumentCustomExpert>;
-  custom_comments: XmlMultiElem<DevelopmentPlanDocumentCustomComment>;
-  comment: XmlElem<string>;
-  appraise_date: XmlElem<Date>;
+  /** Статус оценивающего */
+  status: XmlElem<string | null, typeof common.assessment_appraise_participants>;
+  /** Матрица ответственности */
+  assessment_appraise_matrix_id: XmlElem<number | null, AssessmentAppraiseMatrixCatalogDocumentTopElem>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  temp: XmlElem<string | null>;
+  /** Согласующие эксперты */
+  custom_experts: XmlMultiElem<DevelopmentPlanDocumentCustomExpert | null>;
+  custom_comments: XmlMultiElem<DevelopmentPlanDocumentCustomComment | null>;
+  comment: XmlElem<string | null>;
+  /** Дата последнего сохранения */
+  appraise_date: XmlElem<Date | null>;
+  /** Порядковый номер */
   index: XmlElem<number>;
 };
 

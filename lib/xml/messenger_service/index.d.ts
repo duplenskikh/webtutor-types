@@ -2,12 +2,15 @@ type MessengerServiceDocumentTopElem = XmlTopElem &
 CustomElemsBase &
 FileListBase & {
   Doc: MessengerServiceDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  desc: XmlElem<string>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
 };
 
 type MessengerServiceDocument = XmlDocument & {

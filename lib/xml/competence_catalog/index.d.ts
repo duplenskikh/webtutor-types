@@ -1,16 +1,26 @@
 type CompetenceCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  parent_id: XmlElem<number, CompetenceCatalogDocumentTopElem>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  competence_block_id: XmlElem<number, CompetenceBlockCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
-  knowledge_parts: XmlElem<string>;
-  tags: XmlElem<string>;
-  experts: XmlElem<string>;
-  exercises: XmlElem<string>;
-  role_id: XmlMultiElemObject<number>;
+  id: XmlElem<number | null>;
+  /** Родитель */
+  parent_id: XmlElem<number | null, CompetenceCatalogDocumentTopElem>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Блок компетенции */
+  competence_block_id: XmlElem<number | null, CompetenceBlockCatalogDocumentTopElem>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
+  /** Все значения карты знаний */
+  knowledge_parts: XmlElem<string | null>;
+  tags: XmlElem<string | null>;
+  /** Эксперты */
+  experts: XmlElem<string | null>;
+  /** Все упражнения */
+  exercises: XmlElem<string | null>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
   OnBuild(): void;
 };

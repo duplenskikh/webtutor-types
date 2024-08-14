@@ -4,23 +4,39 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: CertificateDocument;
-  serial: XmlElem<string>;
-  number: XmlElem<string>;
-  type_id: XmlElem<number, CertificateTypeCatalogDocumentTopElem>;
-  type_name: XmlElem<string>;
-  education_org_id: XmlElem<number, EducationOrgCatalogDocumentTopElem>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  qualification_id: XmlElem<number, QualificationCatalogDocumentTopElem>;
-  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
-  delivery_date: XmlElem<Date>;
-  expire_date: XmlElem<Date>;
+  /** Серия */
+  serial: XmlElem<string | null>;
+  /** Номер */
+  number: XmlElem<string | null>;
+  /** Тип сертификата */
+  type_id: XmlElem<number | null, CertificateTypeCatalogDocumentTopElem>;
+  /** Название типа сертификата */
+  type_name: XmlElem<string | null>;
+  /** Обучающая организация */
+  education_org_id: XmlElem<number | null, EducationOrgCatalogDocumentTopElem>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Квалификация */
+  qualification_id: XmlElem<number | null, QualificationCatalogDocumentTopElem>;
+  /** Мероприятие */
+  event_id: XmlElem<number | null, EventCatalogDocumentTopElem>;
+  /** Дата выдачи */
+  delivery_date: XmlElem<Date | null>;
+  /** Истекает */
+  expire_date: XmlElem<Date | null>;
+  /** Действителен */
   valid: XmlElem<boolean>;
-  signed_by_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  signed_by_name: XmlElem<string>;
-  desc: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Подписан */
+  signed_by_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Подписан */
+  signed_by_name: XmlElem<string | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
   update_expire_date(): void;
-  role_id: XmlMultiElemObject<number>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type CertificateDocument = XmlDocument & {

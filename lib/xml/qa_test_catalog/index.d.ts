@@ -1,14 +1,23 @@
 type QaTestCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  status: XmlElem<string, typeof common.qa_test_states>;
-  type: XmlElem<string, typeof common.qa_test_types>;
-  object_type_name: XmlElem<string>;
-  object_name: XmlElem<string>;
-  create_date: XmlElem<Date>;
-  role_id: XmlMultiElemObject<number>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Статус */
+  status: XmlElem<string | null, typeof common.qa_test_states>;
+  type: XmlElem<string | null, typeof common.qa_test_types>;
+  /** Тип объектов */
+  object_type_name: XmlElem<string | null>;
+  /** Объект */
+  object_name: XmlElem<string | null>;
+  /** Дата создания */
+  create_date: XmlElem<Date | null>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

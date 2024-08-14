@@ -1,11 +1,13 @@
 type ClosingDocumentStatusDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
   Doc: ClosingDocumentStatusDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  code: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ClosingDocumentStatusDocument = XmlDocument & {

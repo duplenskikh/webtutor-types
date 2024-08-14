@@ -1,10 +1,16 @@
 type SectionInstructionCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  desc: XmlElem<string>;
-  parent_object_id: XmlElem<number, SectionInstructionCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Родительский раздел инструкции */
+  parent_object_id: XmlElem<number | null, SectionInstructionCatalogDocumentTopElem>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

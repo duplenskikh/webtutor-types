@@ -1,27 +1,33 @@
 interface DnScheduleDocumentScheduleElem {
-  elem_id: XmlElem<string>;
-  week_day_id: XmlElem<number, typeof common.week_days>;
-  time: XmlElem<string>;
-  periodic_type_id: XmlElem<string, typeof common.periodicity_types>;
-  discipl_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
-  edu_event_form_id: XmlElem<number, DnEducatEventCatalogDocumentTopElem>;
-  lector_id: XmlElem<number, LectorCatalogDocumentTopElem>;
-  stream_id: XmlElem<number, DnStreamCatalogDocumentTopElem>;
-  stud_group_id: XmlElem<number, DnStudGroupCatalogDocumentTopElem>;
-  auditor_id: XmlElem<number, DnAuditoriumCatalogDocumentTopElem>;
+  elem_id: XmlElem<string | null>;
+  week_day_id: XmlElem<number | null, typeof common.week_days>;
+  /** Время */
+  time: XmlElem<string | null>;
+  periodic_type_id: XmlElem<string | null, typeof common.periodicity_types>;
+  discipl_id: XmlElem<number | null, DnDisciplineCatalogDocumentTopElem>;
+  edu_event_form_id: XmlElem<number | null, DnEducatEventCatalogDocumentTopElem>;
+  /** Преподаватель */
+  lector_id: XmlElem<number | null, LectorCatalogDocumentTopElem>;
+  stream_id: XmlElem<number | null, DnStreamCatalogDocumentTopElem>;
+  /** Учебная группа */
+  stud_group_id: XmlElem<number | null, DnStudGroupCatalogDocumentTopElem>;
+  auditor_id: XmlElem<number | null, DnAuditoriumCatalogDocumentTopElem>;
 }
 
 type DnScheduleDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnScheduleDocument;
-  code: XmlElem<string>;
-  faculty: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  chair: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  academ_year_id: XmlElem<number, DnAcademYearCatalogDocumentTopElem>;
-  term_id: XmlElem<number, DnTermCatalogDocumentTopElem>;
-  schedule_elems: XmlMultiElem<DnScheduleDocumentScheduleElem>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Факультет */
+  faculty: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  chair: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  academ_year_id: XmlElem<number | null, DnAcademYearCatalogDocumentTopElem>;
+  term_id: XmlElem<number | null, DnTermCatalogDocumentTopElem>;
+  schedule_elems: XmlMultiElem<DnScheduleDocumentScheduleElem | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type DnScheduleDocument = XmlDocument & {

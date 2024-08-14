@@ -1,45 +1,32 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-magic-numbers */
 declare namespace Websoft {
   type Interfaces = {
-    "Authorization": Authorization.Authorization,
+    "Authorization": Authorization.Authorization;
     "Crypto": Utils.Crypto,
-    "CryptoPro": CryptoPro.CryptoProPrime,
-    "CryptoStore": CryptoStore.CryptoStore,
-    "Excel": Office.Excel.Document,
-    // "FaceRecognition": OpenCV.FaceRecognition,
-    "FileUtils": Utils.FileUtils,
-    // "HttpRequest": HttpRequest.HttpRequest,
-    // "Image": Imaging.Image,
-    // "ImageUtils": Imaging.ImageUtils,
-    // "MediaPostStreamHandler": MediaHandler.MediaPostStreamHandler,
-    // "Pdf": Office.Pdf.Document,
-    // "PdfGenerator": Office.Pdf.Generator,
-    // "PKeyGenerator": PKeyGenerator.PKeyGenerator,
-    // "Powerpoint": Office.Powerpoint.Presentation,
-    // "RecordingClient": Recording.Client,
-    "RegExp": RegExp.RegExp,
-    // "UniBridgeSettings": spxml.unibridge.UniBridgeSettings,
-    // "VideoNeuralHandler": VideoNeuralHandler.VideoNeuralHandler,
-    // "Word": Office.Word.Document,
-    "WebUtils": Utils.WebUtils,
-    // "XHTTPMiddleware": XHTTP.Middleware,
-    "Zip": Zip.Zip,
+    "CryptoPro": CryptoPro.CryptoProPrime;
+    "CryptoStore": CryptoStore.CryptoStore;
+    "Excel": Office.Excel.Document;
+    // "FaceRecognition": OpenCV.FaceRecognition;
+    "HttpRequest": {
+      HttpRequest: HttpRequest.HttpRequest;
+      HttpResponse: HttpRequest.HttpResponse;
+    };
+    "Image": Imaging.Image;
+    "ImageUtils": Imaging.ImageUtils;
+    // "MediaPostStreamHandler": MediaHandler.MediaPostStreamHandler;
+    "Pdf": Office.Pdf.Document;
+    "PdfGenerator": Office.Pdf.Generator;
+    // "PKeyGenerator": PKeyGenerator.PKeyGenerator;
+    "Powerpoint": Office.Powerpoint.Presentation;
+    // "RecordingClient": Recording.Client;
+    "RegExp": RegExp.RegExp;
+    // "UniBridgeSettings": spxml.unibridge.UniBridgeSettings;
+    // "VideoNeuralHandler": VideoNeuralHandler.VideoNeuralHandler;
+    "Video": Video.Video;
+    "Word": Office.Word.Document;
+    "WebUtils": Utils.WebUtils;
+    // "XHTTPMiddleware": XHTTP.Middleware;
+    "Zip": Zip.Zip;
   };
-
-  class WebsoftBaseClass {
-    /**
-     * Используется для получения последней произошедшей ошибки.
-     * @returns Текст последней произошедшей ошибки.
-     */
-    GetError(): string;
-
-    /**
-     * Используется для получения версии компонента.
-     * @returns Версия компонента.
-     */
-    GetVersion(): string;
-  }
 
   namespace Authorization {
     interface IObjectArray {
@@ -165,6 +152,155 @@ declare namespace Websoft {
       Open(store: number, storeName: string, flags: number): boolean;
       SelectCertificate(recipCert: string): boolean;
       SelectCertificateByThumbprint(thumbprint: string, validOnly?: boolean, hasPrivateKey?: boolean): boolean;
+    }
+  }
+
+  namespace HttpRequest {
+    class HttpRequest {
+      readonly Error: number;
+      readonly ErrorMessage: string;
+      Open(url: string, method: string, body?: string, headers?: string, handler?: Object, client?: Object, timeout?: number): HttpResponse;
+      CreateNewHttpClientHandler(ignoreClientCertficate: boolean): Object;
+      CreateNewHttpClient(handler: Object): Object;
+    }
+
+    class HttpResponse {
+      readonly RespCode: number;
+      readonly Headers: string;
+      readonly Url: string;
+      readonly IsSuccessStatusCode: boolean;
+      Body: string;
+      BinaryBody: Binary;
+    }
+  }
+
+  namespace Imaging {
+    /** Класс для работы с изображениями. */
+    class Image extends WebsoftBaseClass {
+      /** Высота изображения. */
+      Height: number;
+      /** Ширина изображения. */
+      Width: number;
+
+      /**
+       * Выгружает изображение из памяти и освобождает файл.
+       */
+      Close(): 1 | 0;
+
+      /**
+       * Отражает изображение.
+       * @param {string} direction - Направление отражение. "x" - по горизонтали, "y" - по вертикали, "xy" - по горизотали и вертикали.
+       */
+      Flip(direction: string): 1 | 0;
+
+      /**
+       * Открывает изображение по указанному пути.
+       * @param {string} filePath - Путь до изображения.
+       */
+      Open(filePath: string): 1 | 0;
+
+      /**
+       * Изменяет размер изображения согласно указанным параметрам.
+       * @param {number} newWidth - Новая ширина.
+       * @param {number} maxHeight - Новая высота.
+       * @param {boolean} keepProportions - Соблюдать пропорции.
+       * @param {boolean} onlyResizeIfWider - Изменять размер только если новая ширина больше текущей.
+       */
+      Resize(
+        newWidth: number,
+        maxHeight: number,
+        keepProportions: boolean,
+        onlyResizeIfWider: boolean
+      ): 1 | 0;
+
+      /**
+       * Поворачивает изображение на указанный угол.
+       * @param {number} degree - Угол поворота. Принимает одно из следующих значений: 90, 180, 270.
+       */
+      Rotate(degree: number): 1 | 0;
+
+      /**
+       * Сохраняет загруженное изображение.
+       */
+      Save(): 1 | 0;
+
+      /**
+       * Сохраняет изображение по указанному пути с указанным качеством (только для JPEG).
+       * Формат определяется по расширению имени файла в пути сохранения.
+       * @param {string} newFilePath - Путь сохранения, включая имя файла.
+       * @param {number} [quality=80] - Качество сохранения JPEG. Значения от 1 до 100.
+       */
+      SaveAs(
+        newFilePath: string,
+        quality: number
+      ): 1 | 0;
+    }
+
+    /** Класс для создания фотогалерей. Для работы с изображениями рекомендуется использовать класс Image. */
+    class ImageUtils extends WebsoftBaseClass {
+      /**
+       * Подготавливает изображения для галереи.
+       * @param {string} sourceFolderPath - Путь до папки с изображениями.
+       * @param {string} outputPath - Путь для сохранения результатов обработки.
+       * @param {number} newFileWidth - Новая ширина.
+       * @param {number} newFileHeight - Новая высота.
+       * @param {number} thumbnailWidth - Ширина изображений для препросмотра.
+       * @param {number} thumbnailHeight - Высота изображений для препросмотра.
+       * @param {number} quality - Качество сохранения JPEG. Значения от 1 до 100.
+       * @param {boolean} onlyResizeIfWider - Изменять размер только если новая ширина больше текущей.
+       */
+      BuildGallery(
+        sourceFolderPath: string,
+        outputPath: string,
+        newFileWidth: number,
+        newFileHeight: number,
+        thumbnailWidth: number,
+        thumbnailHeight: number,
+        quality: number,
+        onlyResizeIfWider: boolean
+      ): 1 | 0;
+
+      /**
+       * Изменяет размер изображения и сохраняет по указанному пути.
+       * @param {string} originalFilePath - Путь до изображения.
+       * @param {string} newFilePath - Путь для сохранения измененного изображения.
+       * @param {number} newWidth - Новая ширина.
+       * @param {number} maxHeight - Новая высота.
+       * @param {number} quality - Качество сохранения JPEG. Значения от 1 до 100.
+       * @param {boolean} onlyIfDoesntExists - Сохранять только если файл назначения не существует.
+       * @param {boolean} onlyResizeIfWider - Изменять размер только если новая ширина больше текущей.
+       */
+      ResizeImage(
+        originalFilePath: string,
+        newFilePath: string,
+        newWidth: number,
+        maxHeight: number,
+        quality: number,
+        onlyIfDoesntExists: boolean,
+        onlyResizeIfWider: boolean
+      ): 1 | 0;
+
+      /**
+       * Изменяет размер набора изображений из указанной папки и сохраняет по указанному пути.
+       * @param {string} folderPath - Путь до папки с изображениями.
+       * @param {string} outputPath - Путь для сохранения измененных изображений.
+       * @param {number} newFileWidth - Новая ширина.
+       * @param {number} newFileHeight - Новая высота.
+       * @param {number} quality - Качество сохранения JPEG. Значения от 1 до 100.
+       * @param {boolean} includeSubFolder - Обрабатывать изображения в дочерних папках.
+       * @param {boolean} onlyIfDoesntExists - Сохранять только если файл назначения не существует.
+       * @param {boolean} onlyResizeIfWider - Изменять размер только если новая ширина больше текущей.
+       */
+      ResizeImages(
+        folderPath: string,
+        outputPath: string,
+        newFileWidth: number,
+        newFileHeight: number,
+        quality: number,
+        includeSubFolder: boolean,
+        onlyIfDoesntExists: boolean,
+        onlyResizeIfWider: boolean
+      ): 1 | 0;
     }
   }
 
@@ -1357,9 +1493,260 @@ declare namespace Websoft {
       }
     }
 
-    /**
-     * Библиотека для работы с документами в формате Microsoft Word.
-     */
+    /** Библиотека для работы с документами в формате PDF. */
+    namespace Pdf {
+      /** Информация о параграфе. */
+      class BaseParagraph extends WebsoftBaseClass { }
+
+      /** Класс для работы с документом в формате PDF */
+      class Document extends WebsoftBaseClass {
+        /** Параметры страниц документа. Используется только при генерации. */
+        PageInfo: PageInfo;
+        /** Параметры страниц документа. Используется только при генерации. */
+        Pages: PageCollection;
+
+        /** Закрывает документ, освобождает используемые ресурсы. */
+        Close(): 1 | 0;
+
+        /**
+         * Сохраняет страницы документа в виде изображений.
+         * @param {string} path - Путь до папки сохранения.
+         * @param {string} format - Формат сохранения ("jpeg","png","optimized").
+         * @param {number} newWidth - Ширина изображений.
+         * @param {number} maxHeight - Высота изображений.
+         * @param {number} resolution - Разрешение изображений (dpi).
+         * @param {number} quality - Качество в процентах (применяется только для формата jpeg).
+         * @param {boolean} keepProportions - Сохранять пропорции изображений.
+         * @returns {string[]} - Массив имен экспортированных файлов.
+         */
+        ExportPages(
+          path: string,
+          format: string,
+          newWidth: number,
+          maxHeight: number,
+          resolution: number,
+          quality: number,
+          keepProportions: boolean
+        ): string[];
+
+        /**
+         * Используется для получения оглавления из текста документа
+         * @returns {string} - Структура оглавления в виде XML.
+         */
+        GetContents(): string;
+
+        /**
+         * Открывает файл в формате PDF.
+         * @param {string} filePath - Путь до файла.
+         * @param {LoadOptions} [loadOptions] - Параметры загрузки.
+         */
+        Open(
+          filePath: string,
+          loadOptions?: LoadOptions
+        ): 1 | 0;
+
+        /**
+         * Сохраняет текущий документ.
+         * @param {string} newPath - Путь сохранения, включая имя файла.
+         * @param {SaveOptions} saveOptions - Параметры сохранения файла.
+         */
+        Save(
+          newPath?: string,
+          saveOptions?: SaveOptions
+        ): 1 | 0;
+
+        /**
+         * Сохраняет документ по указанному пути.
+         * Формат определяется по расширению имени файла в пути сохранения.
+         * Доступные форматы: DOC, DOC, XPS, XML, SVG, EPUB, HTML, MHTML.
+         * @param {string} newPath - Путь сохранения, включая имя файла.
+         */
+        SaveAs(newPath: string): 1 | 0;
+
+        /**
+         * Используется для сохранения в формате HTML с расширенными настройками.
+         * @param {string} newPath - Путь сохранения, включая имя файла.
+         * @param {boolean} useFixedLayout - Фиксированное или "резиновое" расположение элементов.
+         * @param {boolean} splitIntoPages - Разбивать документ на страницы.
+         */
+        SaveAsHtml(newPath: string, useFixedLayout: boolean, splitIntoPages: boolean): 1 | 0;
+      }
+
+      /** Класс для создания документов в формате PDF. */
+      class Generator extends WebsoftBaseClass {
+        /**
+         * Альбомная ориентация.
+         */
+        IsLandscape: boolean;
+
+        /**
+         * Путь до папки с ресурсами (изображения, стили и т.д.).
+         */
+        ResourcesDirectoryPath: string;
+
+        /**
+         * Создает новую страницу и размещает в ней текст в формате HTML.
+         * @param {string} htmlText - Строка с HTML-данными.
+         */
+        AddHtmlPage(htmlText: string): 1 | 0;
+
+        /**
+         * Создает новый экзпемпляр документа.
+         */
+        CreateDocument(): 1 | 0;
+
+        /**
+         * Загружает данные в формате HTML из указанного файла.
+         * @param {string} filePath - Путь до файла в формате HTML.
+         */
+        LoadHtmlFile(filePath: string): 1 | 0;
+
+        /**
+         * Загружает данные в формате HTML из строки.
+         * Стили, изображения и прочие ресурсы должны хранится в указанной папке либо рядом с файлом HTML.
+         * В документе ссылки на эти ресурсы должны быть указаны без учета папок.
+         * Название папки указывается без пути до нее.
+         * @param {string} htmlText - Переменная, содержащаю строку в формате HTML.
+         */
+        LoadHtmlString(htmlText: string): 1 | 0;
+
+        /**
+         * Сохраняет документ в формате PDF по указанному пути.
+         * @param {string} filePath - Путь сохранения.
+         */
+        Save(filePath: string): 1 | 0;
+      }
+
+      /** Информация о фрагменте HTML. */
+      class HtmlFragment extends BaseParagraph { }
+
+      /** Параметры загрузки HTML. */
+      class HtmlLoadOptions extends WebsoftBaseClass {
+        /** Путь до папки с ресурсами (изображения, стили и т.д.). */
+        BasePath: string;
+        /** Кодировка. */
+        InputEncoding: string;
+        /** Информация о странице. */
+        PageInfo: PageInfo;
+      }
+
+      /** Параметры сохранения HTML. */
+      class HtmlSaveOptions extends WebsoftBaseClass {
+        /**
+         * Фиксированный макет.
+         */
+        FixedLayout: boolean;
+
+        /**
+         * Файл может содержать растровые изображения.
+         * Этот параметр определяет, как они должны обрабатываться при конвертации PDF в HTML.
+         * Принимает значения "AsPngImagesEmbeddedIntoSvg", "AsExternalPngFilesReferencedViaSvg", "AsEmbeddedPartsOfPngPageBackground".
+         */
+        RasterImagesSavingMode: string;
+
+        /**
+         * Разбивать документ на страницы.
+         */
+        SplitIntoPages: boolean;
+      }
+
+      /** Параметры загрузки документа. */
+      class LoadOptions extends WebsoftBaseClass { }
+
+      /** Информация о странице. */
+      class Page extends WebsoftBaseClass {
+        /** Горизонтальная ориентация. */
+        Paragraphs: Paragraphs;
+      }
+
+      /** Информация о странице. */
+      class PageCollection extends WebsoftBaseClass {
+        /** Добавление страницы. */
+        Add(): Page;
+      }
+
+      /** Информация о странице. */
+      class PageInfo extends WebsoftBaseClass {
+        /** Высота. */
+        Height: number;
+        /** Горизонтальная ориентация. */
+        IsLandscape: boolean;
+        /** Ширина. */
+        Width: number;
+      }
+
+      /** Информация о параграфах. */
+      class Paragraphs extends WebsoftBaseClass {
+        /** Добавляет параграф. */
+        Add(): Page;
+      }
+
+      /** Параметры сохранения документа. */
+      class SaveOptions extends WebsoftBaseClass { }
+    }
+
+    /** Библиотека для работы с документами в формате Microsoft PowerPoint. */
+    namespace Powerpoint {
+      /** Класс для работы с документом в формате Microsoft PowerPoint */
+      class Presentation extends WebsoftBaseClass {
+        /** Высота презентации. */
+        Height: number;
+
+        /** Ширина презентации. */
+        Width: number;
+
+        /**
+         * Используется для закрытия документа.
+         */
+        Close(): void;
+
+        /**
+         * Используется для экспорта слайдов презентации в изображения.
+         * @param {string} outputPath - Путь до директории сохранения.
+         * @param {string} format - Формат экспорта. Принимает значения "png", "jpg", "optimized".
+         * @param {number} width - Ширина изображений.
+         * @param {number} height - Высота изображений.
+         * @returns {string} - Текст со структурой документа в формате XML.
+         */
+        Export(
+          outputPath: string,
+          format: string,
+          width: boolean,
+          height: boolean
+        ): string;
+
+        /**
+         * Открывает файл в формате PDF.
+         * @param {string} filePath - Путь до файла.
+         */
+        Open(filePath: string): 1 | 0;
+
+        /**
+         * Сохраняет документ по указанному пути.
+         * Формат определяется по расширению имени файла в пути сохранения.
+         * Доступные форматы: PDF, XPS, ODP, TIFF, PNG, HTML.
+         * @param {string} filePath - Путь сохранения, включая имя файла.
+         */
+        SaveAs(filePath: string): 1 | 0;
+
+        /**
+         * Используется для сохранения в формате PNG с расширенными настройками.
+         * @param {string} outputPath - Путь до директории сохранения.
+         * @param {number} width - Ширина изображений.
+         * @param {number} height - Высота изображений.
+         * @returns {string} - Текст со структурой документа в формате XML.
+         */
+        SaveAsPng(): string;
+      }
+
+      /** Типы презентаций. */
+      enum PresentationTypes {
+        Ppt = 0,
+        Pptx = 1
+      }
+    }
+
+    /** Библиотека для работы с документами в формате Microsoft Word. */
     namespace Word {
       class Document extends WebsoftBaseClass {
         /**
@@ -1414,6 +1801,207 @@ declare namespace Websoft {
         SetBookmarkText(bookmark: string, value: string): string;
       }
     }
+  }
+
+  namespace RegExp {
+    class Match {
+      Default: string;
+      FirstIndex: number;
+      Length: number;
+      Value: string;
+      SubMatches(): SubMatches;
+      SubMatches(index: number): string;
+      ToString(): string;
+    }
+
+    class MatchCollection {
+      Count: number;
+      Item(index: number): Match;
+    }
+
+    class RegExp extends WebsoftBaseClass {
+      Global: boolean;
+      IgnoreCase: boolean;
+      MultiLine: boolean;
+      Pattern: string;
+      Execute(source: string): MatchCollection;
+      Execute(source: string, pattern: string): MatchCollection;
+      IsMatch(source: string): boolean;
+      Replace(source: string, repl: string): string;
+    }
+
+    class SubMatches {
+      Count: number;
+      Item(index: number): string;
+    }
+  }
+
+  namespace Utils {
+    class Crypto {
+      /**
+       * Используется для получения последней произошедшей ошибки.
+       * @returns Текст последней произошедшей ошибки.
+       */
+      GetError(): string;
+
+      HMAC_SHA1(message: string, secret: string): string;
+      HMAC_SHA256(message: string, secret: string): string;
+    }
+
+    class FileUtils {
+      /**
+       * Используется для получения последней произошедшей ошибки.
+       * @returns Текст последней произошедшей ошибки.
+       */
+      GetError(): string;
+
+      GetEncoding(filePath: string): string;
+    }
+
+    class ServiceData {
+      Data: {
+        [key: string]: string;
+      };
+
+      Keys: string[];
+      Name: string;
+      Values: string[];
+    }
+
+    class UUID {
+      getUUID(): string;
+    }
+
+    class WebUtils {
+      IsError: boolean;
+
+      /**
+       * Используется для получения последней произошедшей ошибки.
+       * @returns Текст последней произошедшей ошибки.
+       */
+      GetError(): string;
+
+      QrGen(text: string, filePath: string): string;
+      ResolveUrlDns(url: string, allowIPV6?: boolean, defaultValue?: string, mask?: string): string;
+      WildCardToRegular(value: string): string;
+    }
+  }
+
+  namespace Video {
+    class Video extends WebsoftBaseClass {
+      /**
+       * Список доступных форматов, разделенных символом ";".
+       */
+      readonly AvailableFormats: string;
+      /**
+       * Высота исходного видео.
+       */
+      readonly Height: number;
+      /**
+       * Устанавливает путь до директории с утилитами ffmpeg и ffprobe.
+       */
+      UtilsDirectory: string;
+      /**
+       * Ширина исходного видео.
+       */
+      readonly Width: number;
+
+      /**
+       * Добавляет формат и настройки для пакетной конвертации.
+       * @param {string} sizeName - Название формата (например, 720p).
+       * @param {string} format - Формат - разрешение файла в результате конвертации (например flv).
+       * @param {number} width - Ширина видео.
+       * @param {number} height - Высота видео.
+       * @param {number} bitrate - Битрейт видео.
+       * @param {number} bitrateTolerance - Максимально допустимы битрейт видео.
+       * @param {number} fps - Количество кадров в секунду (на данный момент не используется, но параметр передавать необходимо).
+       * @param {number} audioSamplingRate - Частота дискретизации аудио (например, 44100).
+       * @param {number} audioBitrate - Битрейт аудио.
+       */
+      AddConvertFormat(
+        sizeName: string,
+        format: string,
+        width: number,
+        height: number,
+        bitrate: number,
+        bitrateTolerance: number,
+        fps: number,
+        audioSamplingRate: number,
+        audioBitrate: number
+      ): 1 | 0;
+
+      /**
+       * Конвертация загруженного видео. Формат определяется из разрешения выходного файла.
+       * @param {string} outFilePath - Путь до выходного файла.
+       * @param {number} width - Ширина видео.
+       * @param {number} height - Высота видео.
+       * @param {number} bitrate - Битрейт видео.
+       * @param {number} bitrateTolerance - Максимально допустимы битрейт видео.
+       * @param {number} fps - Количество кадров в секунду (на данный момент не используется, но параметр передавать необходимо).
+       * @param {number} audioSamplingRate - Частота дискретизации аудио (например, 44100).
+       * @param {number} audioBitrate - Битрейт аудио.
+       */
+      Convert(
+        outFilePath: string,
+        width: number,
+        height: number,
+        bitrate: number,
+        bitrateTolerance: number,
+        fps: number,
+        audioSamplingRate: number,
+        audioBitrate: number
+      ): 1 | 0;
+
+      /**
+       * Конвертирует видео в указанный формат с заданными заранее форматами и параметрами.
+       * @param {string} outputPath - Путь до директории для сохранения сконвертированных файлов.
+       * @param {string} fileName - Префикс результирующего файла. Сконвертированные файлы будут иметь название [fileName]_[название формата].[тип]. Например видео_720p.flv
+       */
+      ConvertAll(
+        outputPath: string,
+        fileName: string
+      ): 1 | 0;
+
+      /**
+       * Сохраняет скришнот с указанного времени на видео.
+       * @param {string} thumbnailPath - Путь до выходного файла.
+       * @param {number} time - Секунда видео.
+       * @param {number} width - Ширина скриншота.
+       * @param {number} height - Высота скриншота.
+       */
+      GetThumbnail(
+        thumbnailPath: string,
+        time: number,
+        width: number,
+        height: number
+      ): 1 | 0;
+
+      /**
+       * Загружает файл видео.
+       * @param {string} filePath - Путь до файла.
+       */
+      LoadFile(filePath: string): 1 | 0;
+
+      /**
+       * Устанавливает путь до директории с утилитами ffmpeg и ffprobe.
+       * @param {string} directoryPath - Путь до директории с утилитами ffmpeg и ffprobe.
+       */
+      SetUtilsDirectory(directoryPath: string): 1 | 0;
+    }
+  }
+
+  class WebsoftBaseClass {
+    /**
+     * Используется для получения последней произошедшей ошибки.
+     * @returns Текст последней произошедшей ошибки.
+     */
+    GetError(): string;
+
+    /**
+     * Используется для получения версии компонента.
+     * @returns Версия компонента.
+     */
+    GetVersion(): string;
   }
 
   namespace Zip {
@@ -1513,90 +2101,6 @@ declare namespace Websoft {
        * @param compressionLevel
        */
       SetCompressionLevel(compressionLevel: number): 1 | 0;
-    }
-  }
-
-  namespace RegExp {
-    class Match {
-      Default: string;
-      FirstIndex: number;
-      Length: number;
-      Value: string;
-      SubMatches(): SubMatches;
-      SubMatches(index: number): string;
-      ToString(): string;
-    }
-
-    class MatchCollection {
-      Count: number;
-      Item(index: number): Match;
-    }
-
-    class RegExp extends WebsoftBaseClass {
-      Global: boolean;
-      IgnoreCase: boolean;
-      MultiLine: boolean;
-      Pattern: string;
-      Execute(source: string): MatchCollection;
-      Execute(source: string, pattern: string): MatchCollection;
-      IsMatch(source: string): boolean;
-      Replace(source: string, repl: string): string;
-    }
-
-    class SubMatches {
-      Count: number;
-      Item(index: number): string;
-    }
-  }
-
-  namespace Utils {
-    class Crypto {
-      /**
-       * Используется для получения последней произошедшей ошибки.
-       * @returns Текст последней произошедшей ошибки.
-       */
-      GetError(): string;
-
-      HMAC_SHA1(message: string, secret: string): string;
-      HMAC_SHA256(message: string, secret: string): string;
-    }
-
-    class FileUtils {
-      /**
-       * Используется для получения последней произошедшей ошибки.
-       * @returns Текст последней произошедшей ошибки.
-       */
-      GetError(): string;
-
-      GetEncoding(filePath: string): string;
-    }
-
-    class ServiceData {
-      Data: {
-        [key: string]: string;
-      };
-
-      Keys: string[];
-      Name: string;
-      Values: string[];
-    }
-
-    class UUID {
-      getUUID(): string;
-    }
-
-    class WebUtils {
-      IsError: boolean;
-
-      /**
-       * Используется для получения последней произошедшей ошибки.
-       * @returns Текст последней произошедшей ошибки.
-       */
-      GetError(): string;
-
-      QrGen(text: string, filePath: string): string;
-      ResolveUrlDns(url: string, allowIPV6?: boolean, defaultValue?: string, mask?: string): string;
-      WildCardToRegular(value: string): string;
     }
   }
 }

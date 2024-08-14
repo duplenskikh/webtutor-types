@@ -1,22 +1,37 @@
 type ScriptQueueElemDocumentTopElem = XmlTopElem & {
   Doc: ScriptQueueElemDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  start_date: XmlElem<Date>;
-  start_time: XmlElem<Date>;
-  finish_time: XmlElem<Date>;
-  delay: XmlElem<number>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  start_date: XmlElem<Date | null>;
+  /** Время запуска */
+  start_time: XmlElem<Date | null>;
+  /** Время завершения */
+  finish_time: XmlElem<Date | null>;
+  /** Задержка между запусками */
+  delay: XmlElem<number | null>;
+  /** Выполнено */
   completed: XmlElem<boolean>;
-  error: XmlElem<string>;
-  result: XmlElem<string>;
+  /** Текст ошибки */
+  error: XmlElem<string | null>;
+  /** Результат */
+  result: XmlElem<string | null>;
+  /** Удалять после выполнения */
   delete_automatically: XmlElem<boolean>;
-  obj: XmlElem<unknown>;
-  run_code: XmlElem<string>;
+  /** Объект */
+  obj: XmlElem<unknown | null>;
+  /** Выполняемый код */
+  run_code: XmlElem<string | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ScriptQueueElemDocument = XmlDocument & {

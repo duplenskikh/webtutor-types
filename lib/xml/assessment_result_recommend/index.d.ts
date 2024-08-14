@@ -2,11 +2,16 @@ type AssessmentResultRecommendDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: AssessmentResultRecommendDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  type: XmlElem<number, typeof common.assessment_appraise_recommend_types>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Тип */
+  type: XmlElem<number | null, typeof common.assessment_appraise_recommend_types>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type AssessmentResultRecommendDocument = XmlDocument & {

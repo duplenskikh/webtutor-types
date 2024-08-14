@@ -1,16 +1,28 @@
 type OrderCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Статус */
   status: XmlElem<string, typeof common.order_status_types>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  sum: XmlElem<number>;
-  currency_type_id: XmlElem<string, typeof lists.currency_types>;
-  formed_date: XmlElem<Date>;
-  paid_date: XmlElem<Date>;
-  issue_date: XmlElem<Date>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
+  person_fullname: XmlElem<string | null>;
+  /** Общая стоимость */
+  sum: XmlElem<number | null>;
+  /** Валюта */
+  currency_type_id: XmlElem<string | null, typeof lists.currency_types>;
+  /** Дата формирования */
+  formed_date: XmlElem<Date | null>;
+  /** Дата оплаты */
+  paid_date: XmlElem<Date | null>;
+  /** Дата выдачи */
+  issue_date: XmlElem<Date | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

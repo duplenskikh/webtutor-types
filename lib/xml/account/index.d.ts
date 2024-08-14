@@ -2,15 +2,23 @@ type AccountDocumentTopElem = XmlTopElem &
 ObjectTypeBase &
 AdminAccessBase & {
   Doc: AccountDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Баланс */
   balance: XmlElem<number>;
-  currency_type_id: XmlElem<string, typeof lists.currency_types>;
-  status: XmlElem<string, typeof common.account_status_types>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Валюта */
+  currency_type_id: XmlElem<string | null, typeof lists.currency_types>;
+  /** Статус */
+  status: XmlElem<string | null, typeof common.account_status_types>;
+  /** Бюджетный период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type AccountDocument = XmlDocument & {

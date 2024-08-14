@@ -1,4 +1,4 @@
 type ContentTypeCatalogDocumentTopElem = XmlTopElem & {
-  ext: XmlElem<string>;
-  type: XmlElem<string>;
+  ext: XmlElem<string | null>;
+  type: XmlElem<string | null>;
 };

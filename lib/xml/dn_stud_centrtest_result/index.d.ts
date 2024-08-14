@@ -2,13 +2,17 @@ type DnStudCentrtestResultDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnStudCentrtestResultDocument;
-  subject: XmlElem<string>;
-  mark: XmlElem<number>;
-  result_date: XmlElem<Date>;
-  student_id: XmlElem<number, DnStudentCatalogDocumentTopElem>;
-  student_fullname: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  subject: XmlElem<string | null>;
+  /** Балл */
+  mark: XmlElem<number | null>;
+  /** Дата */
+  result_date: XmlElem<Date | null>;
+  student_id: XmlElem<number | null, DnStudentCatalogDocumentTopElem>;
+  student_fullname: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type DnStudCentrtestResultDocument = XmlDocument & {

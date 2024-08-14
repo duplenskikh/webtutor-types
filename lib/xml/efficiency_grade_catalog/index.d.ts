@@ -1,18 +1,28 @@
 type EfficiencyGradeCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  efficiency_estimation_id: XmlElem<number, EfficiencyEstimationCatalogDocumentTopElem>;
-  assessment_source: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  successor_id: XmlElem<number, SuccessorCatalogDocumentTopElem>;
-  personnel_reserve_id: XmlElem<number, PersonnelReserveCatalogDocumentTopElem>;
-  assessor_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  assessment_date: XmlElem<Date>;
-  assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Оценка эффективности */
+  efficiency_estimation_id: XmlElem<number | null, EfficiencyEstimationCatalogDocumentTopElem>;
+  assessment_source: XmlElem<string | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Преемник */
+  successor_id: XmlElem<number | null, SuccessorCatalogDocumentTopElem>;
+  personnel_reserve_id: XmlElem<number | null, PersonnelReserveCatalogDocumentTopElem>;
+  /** Оценивающий */
+  assessor_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  assessment_date: XmlElem<Date | null>;
+  /** Процедура оценки */
+  assessment_appraise_id: XmlElem<number | null, AssessmentAppraiseCatalogDocumentTopElem>;
+  /** Бюджетный период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

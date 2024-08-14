@@ -1,12 +1,19 @@
 type PositionCommonInstructionDocumentTopElem = XmlTopElem & {
   Doc: PositionCommonInstructionDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
-  section_instruction_id: XmlElem<number, SectionInstructionCatalogDocumentTopElem>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Типовая должность */
+  position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
+  /** Раздел инструкции */
+  section_instruction_id: XmlElem<number | null, SectionInstructionCatalogDocumentTopElem>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type PositionCommonInstructionDocument = XmlDocument & {

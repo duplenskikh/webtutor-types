@@ -1,25 +1,28 @@
 interface PersonnelReserveDocumentTask extends FileListBase {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
   type: XmlElem<string, typeof common.career_reserve_type_tasks_types>;
   status: XmlElem<string, typeof common.personnel_reserve_task_status_types>;
-  plan_date: XmlElem<Date>;
-  fact_date: XmlElem<Date>;
-  desc: XmlElem<string>;
-  score: XmlElem<number>;
-  comment: XmlElem<string>;
-  object_type: XmlElem<string, typeof common.exchange_object_types>;
-  object_id: XmlElem<number>;
-  active_test_learning_id: XmlElem<number, ActiveTestLearningCatalogDocumentTopElem>;
-  assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
-  assessment_appraise_result_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
-  add_exist_appraise: XmlElem<boolean>;
-  poll_result_id: XmlElem<number, PollResultCatalogDocumentTopElem>;
-  poll_procedure_id: XmlElem<number, PollProcedureCatalogDocumentTopElem>;
+  /** Плановая дата выполнения */
+  plan_date: XmlElem<Date | null>;
+  /** Фактическая дата выполнения */
+  fact_date: XmlElem<Date | null>;
+  desc: XmlElem<string | null>;
+  /** Оценка */
+  score: XmlElem<number | null>;
+  comment: XmlElem<string | null>;
+  object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  object_id: XmlElem<number | null>;
+  active_test_learning_id: XmlElem<number | null, ActiveTestLearningCatalogDocumentTopElem>;
+  assessment_appraise_id: XmlElem<number | null, AssessmentAppraiseCatalogDocumentTopElem>;
+  assessment_appraise_result_id: XmlElem<number | null, AssessmentAppraiseCatalogDocumentTopElem>;
+  add_exist_appraise: XmlElem<boolean | null>;
+  poll_result_id: XmlElem<number | null, PollResultCatalogDocumentTopElem>;
+  poll_procedure_id: XmlElem<number | null, PollProcedureCatalogDocumentTopElem>;
 }
 
 interface PersonnelReserveDocumentRecommendator extends PersonFillingBase {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
 }
 
 type PersonnelReserveDocumentTopElem = XmlTopElem &
@@ -29,27 +32,40 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: PersonnelReserveDocument;
-  id: XmlElem<number>;
-  name: XmlElem<string>;
-  start_date: XmlElem<Date>;
-  include_reserve_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
+  id: XmlElem<number | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  start_date: XmlElem<Date | null>;
+  include_reserve_date: XmlElem<Date | null>;
+  /** Дата исключения из резерва */
+  finish_date: XmlElem<Date | null>;
+  /** Статус */
   status: XmlElem<string, typeof common.personnel_reserve_status_types>;
-  career_reserve_type_id: XmlElem<number, CareerReserveTypeCatalogDocumentTopElem>;
-  exclusion_reason_id: XmlElem<number, ExclusionReasonCatalogDocumentTopElem>;
-  nomination_id: XmlElem<number, TalentPoolNominationCatalogDocumentTopElem>;
-  development_potential_id: XmlElem<number, DevelopmentPotentialCatalogDocumentTopElem>;
-  efficiency_estimation_id: XmlElem<number, EfficiencyEstimationCatalogDocumentTopElem>;
-  tasks: XmlMultiElem<PersonnelReserveDocumentTask>;
-  recommendators: XmlMultiElem<PersonnelReserveDocumentRecommendator>;
-  overall_comment: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Тип кадрового резерва */
+  career_reserve_type_id: XmlElem<number | null, CareerReserveTypeCatalogDocumentTopElem>;
+  /** Основание для исключения */
+  exclusion_reason_id: XmlElem<number | null, ExclusionReasonCatalogDocumentTopElem>;
+  /** Способ выдвижения в резерв */
+  nomination_id: XmlElem<number | null, TalentPoolNominationCatalogDocumentTopElem>;
+  /** Потенциал развития */
+  development_potential_id: XmlElem<number | null, DevelopmentPotentialCatalogDocumentTopElem>;
+  /** Оценка эффективности */
+  efficiency_estimation_id: XmlElem<number | null, EfficiencyEstimationCatalogDocumentTopElem>;
+  tasks: XmlMultiElem<PersonnelReserveDocumentTask | null>;
+  recommendators: XmlMultiElem<PersonnelReserveDocumentRecommendator | null>;
+  overall_comment: XmlElem<string | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
   set_task(task: unknown): string | void;
   change_func_managers_list(): unknown;
-  role_id: XmlMultiElemObject<number>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type PersonnelReserveDocument = XmlDocument & {

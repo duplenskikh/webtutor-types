@@ -1,16 +1,28 @@
 type AcquaintAssignCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  object_id: XmlElem<number>;
-  object_type: XmlElem<string, typeof common.exchange_object_types>;
-  object_name: XmlElem<string>;
-  normative_date: XmlElem<Date>;
-  finish_date: XmlElem<Date>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Тип объекта */
+  object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Название объекта */
+  object_name: XmlElem<string | null>;
+  /** Требуемая дата ознакомления */
+  normative_date: XmlElem<Date | null>;
+  /** Дата ознакомления */
+  finish_date: XmlElem<Date | null>;
+  /** Периодичность повторного обновления в днях */
   reacquaintance_period: XmlElem<number>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  acquaint_id: XmlElem<number, AcquaintCatalogDocumentTopElem>;
-  state_id: XmlElem<string, typeof common.acquaint_states>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Ознакомление */
+  acquaint_id: XmlElem<number | null, AcquaintCatalogDocumentTopElem>;
+  /** Состояние */
+  state_id: XmlElem<string | null, typeof common.acquaint_states>;
+  /** Количество попыток */
   attempt_num: XmlElem<number>;
-  modification_date: XmlElem<Date>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
   OnBuild(): void;
 };

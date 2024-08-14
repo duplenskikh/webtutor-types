@@ -3,13 +3,20 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DevelopmentPotentialDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
-  is_std: XmlElem<boolean>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Является системным */
+  is_std: XmlElem<boolean | null>;
+  /** Измененный */
   changed: XmlElem<boolean>;
 };
 

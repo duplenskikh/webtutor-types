@@ -1,14 +1,21 @@
 type CredentialDocumentTopElem = XmlTopElem & {
   Doc: CredentialDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string>;
-  login: XmlElem<string>;
-  password: XmlElem<string>;
-  remote_security_profile_id: XmlElem<number, RemoteSecurityProfileCatalogDocumentTopElem>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Логин */
+  login: XmlElem<string | null>;
+  /** Пароль */
+  password: XmlElem<string | null>;
+  remote_security_profile_id: XmlElem<number | null, RemoteSecurityProfileCatalogDocumentTopElem>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type CredentialDocument = XmlDocument & {

@@ -1,17 +1,23 @@
 interface EducationProgramDocumentEducationMethod {
-  education_method_id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
+  education_method_id: XmlElem<number | null, EducationMethodCatalogDocumentTopElem>;
 }
 
 type EducationProgramDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase &
 AdminAccessBase & {
   Doc: EducationProgramDocument;
-  desc: XmlElem<string>;
-  education_methods: XmlMultiElem<EducationProgramDocumentEducationMethod>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
-  role_id: XmlMultiElemObject<number>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Учебные программы */
+  education_methods: XmlMultiElem<EducationProgramDocumentEducationMethod | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type EducationProgramDocument = XmlDocument & {

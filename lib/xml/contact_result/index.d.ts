@@ -1,11 +1,17 @@
 type ContactResultDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
   Doc: ContactResultDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Измененный */
   changed: XmlElem<boolean>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
 };
 

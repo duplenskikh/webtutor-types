@@ -1,13 +1,20 @@
 type LibrarySectionCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  parent_object_id: XmlElem<number, LibrarySectionCatalogDocumentTopElem>;
-  position: XmlElem<number>;
-  link: XmlElem<string>;
-  external_id: XmlElem<string>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Официальное название */
+  name: XmlElem<string | null>;
+  /** Родительский раздел */
+  parent_object_id: XmlElem<number | null, LibrarySectionCatalogDocumentTopElem>;
+  /** Позиция */
+  position: XmlElem<number | null>;
+  /** Ссылка */
+  link: XmlElem<string | null>;
+  external_id: XmlElem<string | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

@@ -1,13 +1,20 @@
 type BossTypeCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  operations: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Операции */
+  operations: XmlElem<string | null>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
-  object_type: XmlMultiElemObject<string, typeof common.exchange_object_types>;
-  operation_id: XmlMultiElemObject<string, OperationCatalogDocumentTopElem>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
+  object_type: XmlMultiElemObject<string | null, typeof common.exchange_object_types>;
+  operation_id: XmlMultiElemObject<string | null, OperationCatalogDocumentTopElem>;
   OnBuild(): void;
 };

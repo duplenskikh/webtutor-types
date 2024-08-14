@@ -1,12 +1,20 @@
 type SelectedVacancyCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  name: XmlElem<string>;
-  vacancy_id: XmlElem<number, VacancyCatalogDocumentTopElem>;
-  vacancy_name: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  creation_date: XmlElem<Date>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Вакансия */
+  vacancy_id: XmlElem<number | null, VacancyCatalogDocumentTopElem>;
+  /** Название вакансии */
+  vacancy_name: XmlElem<string | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
+  person_fullname: XmlElem<string | null>;
+  /** Дата создания */
+  creation_date: XmlElem<Date | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

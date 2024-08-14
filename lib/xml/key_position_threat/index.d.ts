@@ -3,13 +3,19 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: KeyPositionThreatDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  color: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Цвет */
+  color: XmlElem<string | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type KeyPositionThreatDocument = XmlDocument & {

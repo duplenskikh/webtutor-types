@@ -1,16 +1,19 @@
 interface DnDisciplineBlockDocumentDiscipline {
-  discipline_id: XmlElem<number, DnDisciplineCatalogDocumentTopElem>;
+  discipline_id: XmlElem<number | null, DnDisciplineCatalogDocumentTopElem>;
 }
 
 type DnDisciplineBlockDocumentTopElem = XmlTopElem &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnDisciplineBlockDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  disciplines: XmlMultiElem<DnDisciplineBlockDocumentDiscipline>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  disciplines: XmlMultiElem<DnDisciplineBlockDocumentDiscipline | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type DnDisciplineBlockDocument = XmlDocument & {

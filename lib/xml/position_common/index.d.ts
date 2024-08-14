@@ -1,87 +1,115 @@
 interface PositionCommonDocumentParentPositionCommon {
-  position_common_id: XmlElem<number, PositionCommonCatalogDocumentTopElem>;
-  career_transition_direction: XmlElem<string, typeof common.career_transition_direction_types>;
+  /** Типовая должность */
+  position_common_id: XmlElem<number | null, PositionCommonCatalogDocumentTopElem>;
+  career_transition_direction: XmlElem<string | null, typeof common.career_transition_direction_types>;
 }
 
 interface PositionCommonDocumentPositionFamily {
-  position_family_id: XmlElem<number, PositionFamilyCatalogDocumentTopElem>;
+  position_family_id: XmlElem<number | null, PositionFamilyCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentPositionName {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
 }
 
 interface PositionCommonDocumentBonusType {
-  id: XmlElem<string>;
+  id: XmlElem<string | null>;
+  /** Активно */
   checked: XmlElem<boolean>;
-  name: XmlElem<string>;
-  min_value: XmlElem<number>;
-  max_value: XmlElem<number>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Мин. премия */
+  min_value: XmlElem<number | null>;
+  /** Макс. премия */
+  max_value: XmlElem<number | null>;
+  /** Тип расчета */
   value_type: XmlElem<string>;
-  comment: XmlElem<string>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
 }
 
 interface PositionCommonDocumentGrade {
-  grade_id: XmlElem<number, GradeCatalogDocumentTopElem>;
-  name: XmlElem<string>;
-  min_grade: XmlElem<number>;
-  max_grade: XmlElem<number>;
+  /** ID грейда */
+  grade_id: XmlElem<number | null, GradeCatalogDocumentTopElem>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Минимальная зарплата */
+  min_grade: XmlElem<number | null>;
+  /** Максимальная зарплата */
+  max_grade: XmlElem<number | null>;
 }
 
 interface PositionCommonDocumentBenefit {
-  id: XmlElem<number, BenefitCatalogDocumentTopElem>;
+  /** Привилегии */
+  id: XmlElem<number | null, BenefitCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentCompetenceProfile {
-  id: XmlElem<number, CompetenceProfileCatalogDocumentTopElem>;
+  /** Профиль компетенций */
+  id: XmlElem<number | null, CompetenceProfileCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentKpiProfile {
-  id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  period_type_id: XmlElem<string, typeof common.perioditys>;
+  /** Профиль KPI */
+  id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  /** Период */
+  period_type_id: XmlElem<string | null, typeof common.perioditys>;
+  /** Обязательный */
   obligatory: XmlElem<boolean>;
 }
 
 interface PositionCommonDocumentSubdivision {
-  id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
+  /** Подразделения */
+  id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentOrg {
-  id: XmlElem<number, OrgCatalogDocumentTopElem>;
+  /** Организации */
+  id: XmlElem<number | null, OrgCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentLevelCertificateType {
-  certificate_type_id: XmlElem<number, CertificateTypeCatalogDocumentTopElem>;
+  certificate_type_id: XmlElem<number | null, CertificateTypeCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentLevelCompoundProgram {
-  compound_program_id: XmlElem<number, CompoundProgramCatalogDocumentTopElem>;
+  compound_program_id: XmlElem<number | null, CompoundProgramCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentLevelEducationMethod {
-  education_method_id: XmlElem<number, EducationMethodCatalogDocumentTopElem>;
+  education_method_id: XmlElem<number | null, EducationMethodCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentLevelTypicalDevelopmentProgram {
-  typical_development_program_id: XmlElem<number, TypicalDevelopmentProgramCatalogDocumentTopElem>;
+  typical_development_program_id: XmlElem<number | null, TypicalDevelopmentProgramCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentLevelQualification {
-  qualification_id: XmlElem<number, QualificationCatalogDocumentTopElem>;
+  qualification_id: XmlElem<number | null, QualificationCatalogDocumentTopElem>;
 }
 
 interface PositionCommonDocumentLevel {
-  level_id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  competence_profile_id: XmlElem<number, CompetenceProfileCatalogDocumentTopElem>;
-  kpi_profile_id: XmlElem<number, KpiProfileCatalogDocumentTopElem>;
-  certificate_types: XmlMultiElem<PositionCommonDocumentLevelCertificateType>;
-  compound_programs: XmlMultiElem<PositionCommonDocumentLevelCompoundProgram>;
-  education_methods: XmlMultiElem<PositionCommonDocumentLevelEducationMethod>;
-  typical_development_programs: XmlMultiElem<PositionCommonDocumentLevelTypicalDevelopmentProgram>;
-  qualifications: XmlMultiElem<PositionCommonDocumentLevelQualification>;
+  level_id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Профиль компетенций */
+  competence_profile_id: XmlElem<number | null, CompetenceProfileCatalogDocumentTopElem>;
+  /** Профиль KPI */
+  kpi_profile_id: XmlElem<number | null, KpiProfileCatalogDocumentTopElem>;
+  /** Требуемые типы сертификатов */
+  certificate_types: XmlMultiElem<PositionCommonDocumentLevelCertificateType | null>;
+  /** Требуемые модульные программы */
+  compound_programs: XmlMultiElem<PositionCommonDocumentLevelCompoundProgram | null>;
+  /** Требуемые учебные программы */
+  education_methods: XmlMultiElem<PositionCommonDocumentLevelEducationMethod | null>;
+  /** Требуемые типовые программы развития */
+  typical_development_programs: XmlMultiElem<PositionCommonDocumentLevelTypicalDevelopmentProgram | null>;
+  /** Требуемые квалификации */
+  qualifications: XmlMultiElem<PositionCommonDocumentLevelQualification | null>;
 }
 
 type PositionCommonDocumentTopElem = XmlTopElem &
@@ -93,35 +121,61 @@ KnowledgePartsBaseOld &
 CustomElemsBase &
 AdminAccessBase & {
   Doc: PositionCommonDocument;
-  min_grade: XmlElem<number>;
-  max_grade: XmlElem<number>;
-  benefit_sum: XmlElem<number>;
-  status: XmlElem<string, typeof common.position_common_statuss>;
-  parent_position_commons: XmlMultiElem<PositionCommonDocumentParentPositionCommon>;
-  position_familys: XmlMultiElem<PositionCommonDocumentPositionFamily>;
-  position_names: XmlMultiElem<PositionCommonDocumentPositionName>;
-  min_salary: XmlElem<number>;
-  max_salary: XmlElem<number>;
-  currency: XmlElem<string, typeof lists.currency_types>;
+  /** Минимальный грейд */
+  min_grade: XmlElem<number | null>;
+  /** Максимальный грейд */
+  max_grade: XmlElem<number | null>;
+  /** Сумма весов привилегий */
+  benefit_sum: XmlElem<number | null>;
+  /** Статус */
+  status: XmlElem<string | null, typeof common.position_common_statuss>;
+  parent_position_commons: XmlMultiElem<PositionCommonDocumentParentPositionCommon | null>;
+  /** Семействa должностей */
+  position_familys: XmlMultiElem<PositionCommonDocumentPositionFamily | null>;
+  /** Названия должностей */
+  position_names: XmlMultiElem<PositionCommonDocumentPositionName | null>;
+  /** Минимальная зарплата */
+  min_salary: XmlElem<number | null>;
+  /** Максимальная зарплата */
+  max_salary: XmlElem<number | null>;
+  /** Валюта */
+  currency: XmlElem<string | null, typeof lists.currency_types>;
+  /** Можно привлекать временный персонал */
   allow_outstaff: XmlElem<boolean>;
-  bonus_types: XmlMultiElem<PositionCommonDocumentBonusType>;
-  grades: XmlMultiElem<PositionCommonDocumentGrade>;
-  benefits: XmlMultiElem<PositionCommonDocumentBenefit>;
-  competence_profile_id: XmlElem<number, CompetenceProfileCatalogDocumentTopElem>;
-  competence_profiles: XmlMultiElem<PositionCommonDocumentCompetenceProfile>;
-  kpi_profile_id: XmlElem<number>;
-  kpi_profiles: XmlMultiElem<PositionCommonDocumentKpiProfile>;
-  bonus_profile_id: XmlElem<number, BonusProfileCatalogDocumentTopElem>;
-  knowledge_profile_id: XmlElem<number, KnowledgeProfileCatalogDocumentTopElem>;
-  subdivisions: XmlMultiElem<PositionCommonDocumentSubdivision>;
-  orgs: XmlMultiElem<PositionCommonDocumentOrg>;
-  cur_level_id: XmlElem<number>;
-  levels: XmlMultiElem<PositionCommonDocumentLevel>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  access: XmlElem<AccessDocBase>;
-  role_id: XmlMultiElemObject<number>;
+  /** Способы премирования */
+  bonus_types: XmlMultiElem<PositionCommonDocumentBonusType | null>;
+  /** Грейды */
+  grades: XmlMultiElem<PositionCommonDocumentGrade | null>;
+  /** Привилегии */
+  benefits: XmlMultiElem<PositionCommonDocumentBenefit | null>;
+  /** Профиль компетенций */
+  competence_profile_id: XmlElem<number | null, CompetenceProfileCatalogDocumentTopElem>;
+  /** Профили компетенций */
+  competence_profiles: XmlMultiElem<PositionCommonDocumentCompetenceProfile | null>;
+  /** Профиль KPI */
+  kpi_profile_id: XmlElem<number | null>;
+  kpi_profiles: XmlMultiElem<PositionCommonDocumentKpiProfile | null>;
+  /** Профиль премирования */
+  bonus_profile_id: XmlElem<number | null, BonusProfileCatalogDocumentTopElem>;
+  /** Профиль знаний */
+  knowledge_profile_id: XmlElem<number | null, KnowledgeProfileCatalogDocumentTopElem>;
+  /** Подразделения */
+  subdivisions: XmlMultiElem<PositionCommonDocumentSubdivision | null>;
+  /** Организации */
+  orgs: XmlMultiElem<PositionCommonDocumentOrg | null>;
+  cur_level_id: XmlElem<number | null>;
+  /** Ступени */
+  levels: XmlMultiElem<PositionCommonDocumentLevel | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type PositionCommonDocument = XmlDocument & {

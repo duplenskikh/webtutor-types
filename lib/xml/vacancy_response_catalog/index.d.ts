@@ -1,23 +1,41 @@
 type VacancyResponseCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  vacancy_id: XmlElem<number, VacancyCatalogDocumentTopElem>;
-  vacancy_name: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  recruiter_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  recruiter_person_fullname: XmlElem<string>;
-  response_author_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  response_author_fullname: XmlElem<string>;
-  resume_id: XmlElem<number, ResumeCatalogDocumentTopElem>;
-  career_reserve_id: XmlElem<number, CareerReserveCatalogDocumentTopElem>;
-  date: XmlElem<Date>;
-  date_invitation: XmlElem<Date>;
-  status: XmlElem<string, typeof common.vacancy_response_status_types>;
-  creation_date: XmlElem<Date>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Вакансия */
+  vacancy_id: XmlElem<number | null, VacancyCatalogDocumentTopElem>;
+  /** Название вакансии */
+  vacancy_name: XmlElem<string | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
+  person_fullname: XmlElem<string | null>;
+  /** Рекрутер */
+  recruiter_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО рекрутера */
+  recruiter_person_fullname: XmlElem<string | null>;
+  /** Автор отклика */
+  response_author_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО автора отклика */
+  response_author_fullname: XmlElem<string | null>;
+  /** Резюме */
+  resume_id: XmlElem<number | null, ResumeCatalogDocumentTopElem>;
+  /** Адаптация */
+  career_reserve_id: XmlElem<number | null, CareerReserveCatalogDocumentTopElem>;
+  /** Дата отклика */
+  date: XmlElem<Date | null>;
+  /** Дата приглашения */
+  date_invitation: XmlElem<Date | null>;
+  /** Статус */
+  status: XmlElem<string | null, typeof common.vacancy_response_status_types>;
+  /** Дата создания */
+  creation_date: XmlElem<Date | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

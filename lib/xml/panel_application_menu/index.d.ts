@@ -1,13 +1,13 @@
 interface PanelApplicationMenuDocumentApplicationMenu {
-  id: XmlElem<string>;
-  name: XmlElem<string>;
-  type: XmlElem<string>;
-  color: XmlElem<string>;
+  id: XmlElem<string | null>;
+  name: XmlElem<string | null>;
+  type: XmlElem<string | null>;
+  color: XmlElem<string | null>;
 }
 
 type PanelApplicationMenuDocumentTopElem = XmlTopElem & {
   Doc: PanelApplicationMenuDocument;
-  application_menus: XmlMultiElem<PanelApplicationMenuDocumentApplicationMenu>;
+  application_menus: XmlMultiElem<PanelApplicationMenuDocumentApplicationMenu | null>;
 };
 
 type PanelApplicationMenuDocument = XmlDocument & {

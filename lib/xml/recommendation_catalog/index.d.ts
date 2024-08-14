@@ -1,18 +1,30 @@
 type RecommendationCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  fullname: XmlElem<string>;
-  phone: XmlElem<string>;
-  email: XmlElem<string>;
-  work_phone: XmlElem<string>;
-  mobile_phone: XmlElem<string>;
-  status: XmlElem<string, typeof common.vacancy_response_status_types>;
-  vacancy_id: XmlElem<number, VacancyCatalogDocumentTopElem>;
-  vacancy_name: XmlElem<string>;
-  src_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  src_person_fullname: XmlElem<string>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** ФИО */
+  fullname: XmlElem<string | null>;
+  /** Телефон */
+  phone: XmlElem<string | null>;
+  email: XmlElem<string | null>;
+  /** Рабочий телефон */
+  work_phone: XmlElem<string | null>;
+  /** Мобильный телефон */
+  mobile_phone: XmlElem<string | null>;
+  /** Статус */
+  status: XmlElem<string | null, typeof common.vacancy_response_status_types>;
+  /** ID вакансии */
+  vacancy_id: XmlElem<number | null, VacancyCatalogDocumentTopElem>;
+  /** Название вакансии */
+  vacancy_name: XmlElem<string | null>;
+  /** Сотрудник, отправивший рекомендацию */
+  src_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
+  src_person_fullname: XmlElem<string | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

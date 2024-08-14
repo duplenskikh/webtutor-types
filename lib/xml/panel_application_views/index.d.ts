@@ -1,6 +1,6 @@
 type PanelApplicationViewsDocumentTopElem = XmlTopElem & {
   Doc: PanelApplicationViewsDocument;
-  view_configuration_id: XmlElem<number, ViewConfigurationCatalogDocumentTopElem>;
+  view_configuration_id: XmlElem<number | null, ViewConfigurationCatalogDocumentTopElem>;
 };
 
 type PanelApplicationViewsDocument = XmlDocument & {

@@ -1,14 +1,24 @@
 type ActionReportCatalogDocumentTopElem = XmlTopElem & {
-  id: XmlElem<number>;
-  type: XmlElem<string, typeof common.action_report_types>;
-  status: XmlElem<string, typeof common.action_status_types>;
+  id: XmlElem<number | null>;
+  /** Тип */
+  type: XmlElem<string | null, typeof common.action_report_types>;
+  /** Статус */
+  status: XmlElem<string | null, typeof common.action_status_types>;
+  /** Признак завершения */
   completed: XmlElem<boolean>;
-  exchange_server_id: XmlElem<number, ExchangeServerCatalogDocumentTopElem>;
-  object_id: XmlElem<number>;
-  data_file_url: XmlElem<string>;
-  last_upload_date: XmlElem<Date>;
-  create_date: XmlElem<Date>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  /** Сервер */
+  exchange_server_id: XmlElem<number | null, ExchangeServerCatalogDocumentTopElem>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Файл */
+  data_file_url: XmlElem<string | null>;
+  /** Дата загрузки */
+  last_upload_date: XmlElem<Date | null>;
+  /** Дата */
+  create_date: XmlElem<Date | null>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

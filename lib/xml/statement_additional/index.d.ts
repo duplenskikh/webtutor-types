@@ -1,11 +1,12 @@
 type StatementAdditionalDocumentTopElem = XmlTopElem & {
   Doc: StatementAdditionalDocument;
-  id: XmlElem<number>;
-  path: XmlElem<string>;
-  name: XmlElem<string>;
-  value: XmlElem<string>;
-  statement_id: XmlElem<number, StatementCatalogDocumentTopElem>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  path: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  value: XmlElem<string | null>;
+  statement_id: XmlElem<number | null, StatementCatalogDocumentTopElem>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type StatementAdditionalDocument = XmlDocument & {

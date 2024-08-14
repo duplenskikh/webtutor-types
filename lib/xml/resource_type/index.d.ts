@@ -1,10 +1,14 @@
 type ResourceTypeDocumentTopElem = XmlTopElem &
 ObjectCodeNameBase & {
   Doc: ResourceTypeDocument;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  role_id: XmlMultiElemObject<number>;
-  access: XmlElem<AccessDocBase>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
 };
 
 type ResourceTypeDocument = XmlDocument & {

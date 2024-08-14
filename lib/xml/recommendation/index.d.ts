@@ -3,25 +3,41 @@ FileListBase &
 CustomElemsBase &
 AdminAccessBase & {
   Doc: RecommendationDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  lastname: XmlElem<string>;
-  firstname: XmlElem<string>;
-  middlename: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Фамилия */
+  lastname: XmlElem<string | null>;
+  /** Имя */
+  firstname: XmlElem<string | null>;
+  /** Отчество */
+  middlename: XmlElem<string | null>;
   fullname(): string;
-  phone: XmlElem<string>;
-  email: XmlElem<string>;
-  work_phone: XmlElem<string>;
-  mobile_phone: XmlElem<string>;
-  status: XmlElem<string, typeof common.vacancy_response_status_types>;
-  desc: XmlElem<string>;
-  vacancy_id: XmlElem<number, VacancyCatalogDocumentTopElem>;
-  vacancy_name: XmlElem<string>;
-  src_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  src_person_fullname: XmlElem<string>;
-  letter_text: XmlElem<string>;
-  comment_recruiter: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Телефон */
+  phone: XmlElem<string | null>;
+  email: XmlElem<string | null>;
+  /** Рабочий телефон */
+  work_phone: XmlElem<string | null>;
+  /** Мобильный телефон */
+  mobile_phone: XmlElem<string | null>;
+  /** Статус */
+  status: XmlElem<string | null, typeof common.vacancy_response_status_types>;
+  /** HTML-описание резюме */
+  desc: XmlElem<string | null>;
+  /** ID вакансии */
+  vacancy_id: XmlElem<number | null, VacancyCatalogDocumentTopElem>;
+  /** Название вакансии */
+  vacancy_name: XmlElem<string | null>;
+  /** Сотрудник, отправивший рекомендацию */
+  src_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
+  src_person_fullname: XmlElem<string | null>;
+  /** Рекомендательное письмо */
+  letter_text: XmlElem<string | null>;
+  /** Комментарий рекрутера */
+  comment_recruiter: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
   set_status(newStatus: string, sendNotifications: boolean): void;
 };
 

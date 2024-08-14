@@ -1,9 +1,10 @@
 interface EstaffEventDocumentObject {
-  object_id: XmlElem<number>;
+  object_id: XmlElem<number | null>;
 }
 
 interface EstaffEventDocumentMember extends PersonFillingBase {
-  collaborator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  /** Ответственный за проведение */
+  collaborator_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
 }
 
 type EstaffEventDocumentTopElem = XmlTopElem &
@@ -14,26 +15,41 @@ DocumentPersonsBase &
 CustomElemsBase &
 AdminAccessBase & {
   Doc: EstaffEventDocument;
-  id: XmlElem<number>;
-  vacancy_id: XmlElem<number, VacancyCatalogDocumentTopElem>;
-  vacancy_name: XmlElem<string>;
-  vacancy_code: XmlElem<string>;
-  request_id: XmlElem<number, RequestCatalogDocumentTopElem>;
-  code_event: XmlElem<string>;
-  event_name: XmlElem<string>;
-  start_date: XmlElem<Date>;
-  estaff_event_type_id: XmlElem<number, EstaffEventTypeCatalogDocumentTopElem>;
-  estaff_event_type_name: XmlElem<string>;
-  desc: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Вакансия */
+  vacancy_id: XmlElem<number | null, VacancyCatalogDocumentTopElem>;
+  /** Название вакансии */
+  vacancy_name: XmlElem<string | null>;
+  /** Код вакансии */
+  vacancy_code: XmlElem<string | null>;
+  /** Заявка */
+  request_id: XmlElem<number | null, RequestCatalogDocumentTopElem>;
+  /** Код события */
+  code_event: XmlElem<string | null>;
+  event_name: XmlElem<string | null>;
+  /** Дата начала */
+  start_date: XmlElem<Date | null>;
+  /** Тип события E-Staff */
+  estaff_event_type_id: XmlElem<number | null, EstaffEventTypeCatalogDocumentTopElem>;
+  /** Тип события E-Staff */
+  estaff_event_type_name: XmlElem<string | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Тип объекта */
   object_type: XmlElem<string, typeof common.exchange_object_types>;
-  objects: XmlMultiElem<EstaffEventDocumentObject>;
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
-  linked_object_url: XmlElem<string>;
-  event_status_id: XmlElem<string, typeof common.estaff_event_status_types>;
-  estaff_event_eid: XmlElem<number>;
-  members: XmlMultiElem<EstaffEventDocumentMember>;
-  doc_info: XmlElem<DocInfoBase>;
+  objects: XmlMultiElem<EstaffEventDocumentObject | null>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Название объекта */
+  object_name: XmlElem<string | null>;
+  linked_object_url: XmlElem<string | null>;
+  /** Статус */
+  event_status_id: XmlElem<string | null, typeof common.estaff_event_status_types>;
+  estaff_event_eid: XmlElem<number | null>;
+  /** Ответственные за проведение */
+  members: XmlMultiElem<EstaffEventDocumentMember | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type EstaffEventDocument = XmlDocument & {

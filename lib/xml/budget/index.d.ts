@@ -1,11 +1,17 @@
 interface BudgetDocumentTransfer {
-  id: XmlElem<string>;
-  budget_id: XmlElem<number, BudgetCatalogDocumentTopElem>;
-  date: XmlElem<Date>;
-  login: XmlElem<string>;
-  sum: XmlElem<number>;
+  id: XmlElem<string | null>;
+  /** Целевой бюджет */
+  budget_id: XmlElem<number | null, BudgetCatalogDocumentTopElem>;
+  /** Дата */
+  date: XmlElem<Date | null>;
+  /** Пользователь */
+  login: XmlElem<string | null>;
+  /** Сумма */
+  sum: XmlElem<number | null>;
+  /** Приход или расход */
   direction: XmlElem<boolean>;
-  comment: XmlElem<string>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
 }
 
 type BudgetDocumentTopElem = XmlTopElem &
@@ -14,19 +20,32 @@ CatalogListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: BudgetDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Статус */
   state: XmlElem<string, typeof common.budget_state_types>;
-  type_id: XmlElem<number, BudgetTypeCatalogDocumentTopElem>;
-  cost_center_id: XmlElem<number, CostCenterCatalogDocumentTopElem>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  expense_item_id: XmlElem<number, ExpenseItemCatalogDocumentTopElem>;
+  /** Тип бюджета */
+  type_id: XmlElem<number | null, BudgetTypeCatalogDocumentTopElem>;
+  /** Центр затрат */
+  cost_center_id: XmlElem<number | null, CostCenterCatalogDocumentTopElem>;
+  /** Бюджетный период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Статья затрат */
+  expense_item_id: XmlElem<number | null, ExpenseItemCatalogDocumentTopElem>;
+  /** Утвержден */
   is_approved: XmlElem<boolean>;
-  create_date: XmlElem<Date>;
-  transfers: XmlMultiElem<BudgetDocumentTransfer>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Дата создания */
+  create_date: XmlElem<Date | null>;
+  /** Перераспределение средств */
+  transfers: XmlMultiElem<BudgetDocumentTransfer | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type BudgetDocument = XmlDocument & {

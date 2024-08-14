@@ -1,16 +1,23 @@
 type SocialEntryCatalogDocumentTopElem = XmlTopElem &
 AccessDocBase & {
-  id: XmlElem<number>;
-  name: XmlElem<string>;
-  catalog_name: XmlElem<string, typeof common.exchange_object_types>;
-  create_date: XmlElem<Date>;
-  parent_id: XmlElem<number>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  object_type: XmlElem<string, typeof common.exchange_object_types>;
-  object_id: XmlElem<number>;
-  object_name: XmlElem<string>;
-  like_id: XmlElem<number, LikeCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  name: XmlElem<string | null>;
+  /** Тип объекта */
+  catalog_name: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Дата создания */
+  create_date: XmlElem<Date | null>;
+  parent_id: XmlElem<number | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
+  person_fullname: XmlElem<string | null>;
+  /** Тип объекта */
+  object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Сообщение блога */
+  object_id: XmlElem<number | null>;
+  /** Название объекта */
+  object_name: XmlElem<string | null>;
+  like_id: XmlElem<number | null, LikeCatalogDocumentTopElem>;
   OnBuild(): void;
   MatchDocType(): boolean;
 };

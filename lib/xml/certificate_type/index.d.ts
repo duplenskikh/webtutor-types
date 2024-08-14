@@ -1,9 +1,9 @@
 interface CertificateTypeDocumentQualification {
-  qualification_id: XmlElem<number, QualificationCatalogDocumentTopElem>;
+  qualification_id: XmlElem<number | null, QualificationCatalogDocumentTopElem>;
 }
 
 interface CertificateTypeDocumentCertificateType {
-  certificate_type_id: XmlElem<number, CertificateTypeCatalogDocumentTopElem>;
+  certificate_type_id: XmlElem<number | null, CertificateTypeCatalogDocumentTopElem>;
 }
 
 type CertificateTypeDocumentTopElem = XmlTopElem &
@@ -11,16 +11,26 @@ CostCurrencyBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: CertificateTypeDocument;
-  name: XmlElem<string>;
-  code: XmlElem<string>;
-  education_org_id: XmlElem<number, EducationOrgCatalogDocumentTopElem>;
-  duration: XmlElem<number>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Обучающая организация */
+  education_org_id: XmlElem<number | null, EducationOrgCatalogDocumentTopElem>;
+  /** Нормативный срок */
+  duration: XmlElem<number | null>;
+  /** Бессрочный */
   forever: XmlElem<boolean>;
-  required_quantity: XmlElem<number>;
-  qualifications: XmlMultiElem<CertificateTypeDocumentQualification>;
-  certificate_types: XmlMultiElem<CertificateTypeDocumentCertificateType>;
-  desc: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Необходимое количество */
+  required_quantity: XmlElem<number | null>;
+  /** Требуемые квалификации */
+  qualifications: XmlMultiElem<CertificateTypeDocumentQualification | null>;
+  /** Типы сертификатов */
+  certificate_types: XmlMultiElem<CertificateTypeDocumentCertificateType | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type CertificateTypeDocument = XmlDocument & {

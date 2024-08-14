@@ -1,6 +1,6 @@
 interface VendorStateDocumentCertificateType {
-  certificate_type_id: XmlElem<number, CertificateTypeCatalogDocumentTopElem>;
-  required_quantity: XmlElem<number>;
+  certificate_type_id: XmlElem<number | null, CertificateTypeCatalogDocumentTopElem>;
+  required_quantity: XmlElem<number | null>;
 }
 
 type VendorStateDocumentTopElem = XmlTopElem &
@@ -8,13 +8,19 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: VendorStateDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  education_org_id: XmlElem<number, EducationOrgCatalogDocumentTopElem>;
-  certificate_types: XmlMultiElem<VendorStateDocumentCertificateType>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Организация */
+  education_org_id: XmlElem<number | null, EducationOrgCatalogDocumentTopElem>;
+  certificate_types: XmlMultiElem<VendorStateDocumentCertificateType | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type VendorStateDocument = XmlDocument & {

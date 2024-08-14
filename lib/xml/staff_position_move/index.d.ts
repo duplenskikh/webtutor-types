@@ -3,23 +3,34 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: StaffPositionMoveDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  subdivision_name: XmlElem<string>;
-  move_subdivision_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
-  position_name: XmlElem<string>;
-  move_position_id: XmlElem<number, PositionCatalogDocumentTopElem>;
-  staff_position_id: XmlElem<number, StaffPositionCatalogDocumentTopElem>;
-  move_staff_position_id: XmlElem<number, StaffPositionCatalogDocumentTopElem>;
-  move_date: XmlElem<Date>;
-  document: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
+  person_fullname: XmlElem<string | null>;
+  /** Подразделение */
+  subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  /** Название подразделения */
+  subdivision_name: XmlElem<string | null>;
+  /** Подразделение */
+  move_subdivision_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  /** Должность */
+  position_id: XmlElem<number | null, PositionCatalogDocumentTopElem>;
+  /** Название должности */
+  position_name: XmlElem<string | null>;
+  /** Должность */
+  move_position_id: XmlElem<number | null, PositionCatalogDocumentTopElem>;
+  staff_position_id: XmlElem<number | null, StaffPositionCatalogDocumentTopElem>;
+  move_staff_position_id: XmlElem<number | null, StaffPositionCatalogDocumentTopElem>;
+  move_date: XmlElem<Date | null>;
+  document: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type StaffPositionMoveDocument = XmlDocument & {

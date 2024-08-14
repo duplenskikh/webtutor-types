@@ -1,5 +1,5 @@
 interface LibrarySectionDocumentAdministrator extends PersonFillingBase {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
 }
 
 type LibrarySectionDocumentTopElem = XmlTopElem &
@@ -7,16 +7,21 @@ ObjectCodeNameBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: LibrarySectionDocument;
-  parent_object_id: XmlElem<number, LibrarySectionCatalogDocumentTopElem>;
-  position: XmlElem<number>;
-  link: XmlElem<string>;
-  web_view: XmlElem<string, typeof common.library_section_web_templates>;
-  administrators: XmlMultiElem<LibrarySectionDocumentAdministrator>;
-  external_id: XmlElem<string>;
-  comment: XmlElem<string>;
-  desc: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Родительский раздел */
+  parent_object_id: XmlElem<number | null, LibrarySectionCatalogDocumentTopElem>;
+  /** Позиция */
+  position: XmlElem<number | null>;
+  /** Ссылка */
+  link: XmlElem<string | null>;
+  web_view: XmlElem<string | null, typeof common.library_section_web_templates>;
+  administrators: XmlMultiElem<LibrarySectionDocumentAdministrator | null>;
+  external_id: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
+  access: XmlElem<AccessDocBase | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type LibrarySectionDocument = XmlDocument & {

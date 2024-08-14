@@ -1,19 +1,27 @@
 type DnWorkCurriculumCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  status_id: XmlElem<string, typeof common.prog_discipl_states>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Статус договора */
+  status_id: XmlElem<string | null, typeof common.prog_discipl_states>;
+  /** Тип */
   type: XmlElem<string, typeof common.curriculum_types>;
-  student_id: XmlElem<number, DnStudentCatalogDocumentTopElem>;
-  academ_year_id: XmlElem<number, DnAcademYearCatalogDocumentTopElem>;
-  faculty_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  chair_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  special_id: XmlElem<number, DnSpecialCatalogDocumentTopElem>;
-  specialization_id: XmlElem<number, DnSpecializationCatalogDocumentTopElem>;
-  qualification_id: XmlElem<number, QualificationCatalogDocumentTopElem>;
-  educat_form_id: XmlElem<number, DnEducatFormCatalogDocumentTopElem>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  student_id: XmlElem<number | null, DnStudentCatalogDocumentTopElem>;
+  academ_year_id: XmlElem<number | null, DnAcademYearCatalogDocumentTopElem>;
+  /** Факультет */
+  faculty_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  chair_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  special_id: XmlElem<number | null, DnSpecialCatalogDocumentTopElem>;
+  specialization_id: XmlElem<number | null, DnSpecializationCatalogDocumentTopElem>;
+  /** Квалификация */
+  qualification_id: XmlElem<number | null, QualificationCatalogDocumentTopElem>;
+  educat_form_id: XmlElem<number | null, DnEducatFormCatalogDocumentTopElem>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

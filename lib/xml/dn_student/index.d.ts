@@ -1,5 +1,6 @@
 interface DnStudentDocumentEducatGroup {
-  edu_group_id: XmlElem<number, DnStudGroupCatalogDocumentTopElem>;
+  /** Учебная группа */
+  edu_group_id: XmlElem<number | null, DnStudGroupCatalogDocumentTopElem>;
 }
 
 type DnStudentDocumentTopElem = XmlTopElem &
@@ -9,40 +10,59 @@ InsertFileBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: DnStudentDocument;
-  code: XmlElem<string>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string, typeof common.stud_types>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  mod_name: XmlElem<PersonNameBase>;
-  region: XmlElem<string>;
-  adress_fact_live: XmlElem<string>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** ФИО сотрудника */
+  person_fullname: XmlElem<string | null>;
+  /** ФИО в родительном падеже */
+  mod_name: XmlElem<PersonNameBase | null>;
+  /** Регион */
+  region: XmlElem<string | null>;
+  adress_fact_live: XmlElem<string | null>;
   need_conduct: XmlElem<boolean>;
   is_conduct: XmlElem<boolean>;
   is_benefits: XmlElem<boolean>;
-  special_id: XmlElem<number, DnSpecialCatalogDocumentTopElem>;
-  specialization_id: XmlElem<number, DnSpecializationCatalogDocumentTopElem>;
-  educat_form_id: XmlElem<string, DnEducatFormCatalogDocumentTopElem>;
-  edu_condition_id: XmlElem<string, DnEduConditionCatalogDocumentTopElem>;
-  qualification_id: XmlElem<number, QualificationCatalogDocumentTopElem>;
-  status_id: XmlElem<string, typeof common.student_states>;
-  main_group_id: XmlElem<number, DnStudGroupCatalogDocumentTopElem>;
-  educat_groups: XmlMultiElem<DnStudentDocumentEducatGroup>;
-  stud_dt_id: XmlElem<string, typeof common.stud_doc_types>;
-  educat_institution: XmlElem<string>;
-  doc_series: XmlElem<string>;
-  doc_number: XmlElem<string>;
-  doc_year: XmlElem<string>;
+  special_id: XmlElem<number | null, DnSpecialCatalogDocumentTopElem>;
+  specialization_id: XmlElem<number | null, DnSpecializationCatalogDocumentTopElem>;
+  educat_form_id: XmlElem<string | null, DnEducatFormCatalogDocumentTopElem>;
+  edu_condition_id: XmlElem<string | null, DnEduConditionCatalogDocumentTopElem>;
+  /** Квалификация */
+  qualification_id: XmlElem<number | null, QualificationCatalogDocumentTopElem>;
+  /** Статус договора */
+  status_id: XmlElem<string | null, typeof common.student_states>;
+  main_group_id: XmlElem<number | null, DnStudGroupCatalogDocumentTopElem>;
+  /** Учебные группы */
+  educat_groups: XmlMultiElem<DnStudentDocumentEducatGroup | null>;
+  /** Тип документа */
+  stud_dt_id: XmlElem<string | null, typeof common.stud_doc_types>;
+  educat_institution: XmlElem<string | null>;
+  /** Серия */
+  doc_series: XmlElem<string | null>;
+  /** Номер */
+  doc_number: XmlElem<string | null>;
+  doc_year: XmlElem<string | null>;
   is_excellent: XmlElem<boolean>;
-  lng_id: XmlElem<string>;
-  location_id: XmlElem<string, typeof lists.locations>;
-  web_design_id: XmlElem<string>;
-  pict_url: XmlElem<string>;
-  web_enter_date: XmlElem<Date>;
-  faculty_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  chair_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  scient_adviser_id: XmlElem<number, LectorCatalogDocumentTopElem>;
-  subject: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Язык веб интерфейса */
+  lng_id: XmlElem<string | null>;
+  /** Расположение файлов учебных материалов */
+  location_id: XmlElem<string | null, typeof lists.locations>;
+  /** Дизайн портала */
+  web_design_id: XmlElem<string | null>;
+  /** URL к файлу фотографии */
+  pict_url: XmlElem<string | null>;
+  /** Дата первого входа на портал */
+  web_enter_date: XmlElem<Date | null>;
+  /** Факультет */
+  faculty_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  chair_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  scient_adviser_id: XmlElem<number | null, LectorCatalogDocumentTopElem>;
+  subject: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
   dn_student_fullname(): string;
 };
 

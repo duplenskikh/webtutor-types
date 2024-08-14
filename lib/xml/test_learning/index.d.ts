@@ -1,7 +1,9 @@
 interface TestLearningDocumentSection {
-  id: XmlElem<string>;
-  title: XmlElem<string>;
-  score: XmlElem<number>;
+  id: XmlElem<string | null>;
+  /** Раздел */
+  title: XmlElem<string | null>;
+  /** Балл */
+  score: XmlElem<number | null>;
 }
 
 type TestLearningDocumentTopElem = XmlTopElem &
@@ -14,41 +16,69 @@ FileListBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: TestLearningDocument;
-  code: XmlElem<string>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
   name(): string;
-  assessment_id: XmlElem<number, AssessmentCatalogDocumentTopElem>;
-  assessment_name: XmlElem<string>;
-  assessment_code: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_current_state: XmlElem<string>;
-  event_id: XmlElem<number, EventCatalogDocumentTopElem>;
-  event_name: XmlElem<string>;
-  event_start_date: XmlElem<Date>;
-  education_plan_id: XmlElem<number, EducationPlanCatalogDocumentTopElem>;
-  group_id: XmlElem<number, GroupCatalogDocumentTopElem>;
+  /** Тест */
+  assessment_id: XmlElem<number | null, AssessmentCatalogDocumentTopElem>;
+  /** Название теста */
+  assessment_name: XmlElem<string | null>;
+  /** Код теста */
+  assessment_code: XmlElem<string | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Текущее состояние сотрудника */
+  person_current_state: XmlElem<string | null>;
+  /** Мероприятие */
+  event_id: XmlElem<number | null, EventCatalogDocumentTopElem>;
+  /** Название мероприятия */
+  event_name: XmlElem<string | null>;
+  /** Дата начала мероприятия */
+  event_start_date: XmlElem<Date | null>;
+  /** План обучения */
+  education_plan_id: XmlElem<number | null, EducationPlanCatalogDocumentTopElem>;
+  /** Группа */
+  group_id: XmlElem<number | null, GroupCatalogDocumentTopElem>;
+  /** Статус */
   state_id: XmlElem<number, typeof common.learning_states>;
+  /** Баллы */
   score: XmlElem<number>;
-  text_result: XmlElem<string>;
-  core_lesson: XmlElem<string>;
-  lesson_report: XmlElem<string>;
-  start_usage_date: XmlElem<Date>;
-  start_learning_date: XmlElem<Date>;
-  last_usage_date: XmlElem<Date>;
-  max_end_date: XmlElem<Date>;
-  time: XmlElem<number>;
-  max_score: XmlElem<number>;
-  qti_text: XmlElem<string>;
-  qti_date: XmlElem<Date>;
-  sections: XmlMultiElem<TestLearningDocumentSection>;
-  assessment_appraise_id: XmlElem<number, AssessmentAppraiseCatalogDocumentTopElem>;
-  learning_record_id: XmlElem<number, LearningRecordCatalogDocumentTopElem>;
-  active_test_learning_id: XmlElem<number>;
-  active_test_learning_deleted: XmlElem<boolean>;
-  is_self_enrolled: XmlElem<boolean>;
+  text_result: XmlElem<string | null>;
+  /** Служебная информация */
+  core_lesson: XmlElem<string | null>;
+  /** Отчет по результатам */
+  lesson_report: XmlElem<string | null>;
+  /** Дата активации */
+  start_usage_date: XmlElem<Date | null>;
+  /** Дата начала обучения */
+  start_learning_date: XmlElem<Date | null>;
+  /** Дата последнего посещ. */
+  last_usage_date: XmlElem<Date | null>;
+  /** Дата планир. завершения */
+  max_end_date: XmlElem<Date | null>;
+  /** Время модуля */
+  time: XmlElem<number | null>;
+  /** Максимальный балл */
+  max_score: XmlElem<number | null>;
+  qti_text: XmlElem<string | null>;
+  qti_date: XmlElem<Date | null>;
+  /** Результаты по разделам */
+  sections: XmlMultiElem<TestLearningDocumentSection | null>;
+  /** Процедура */
+  assessment_appraise_id: XmlElem<number | null, AssessmentAppraiseCatalogDocumentTopElem>;
+  learning_record_id: XmlElem<number | null, LearningRecordCatalogDocumentTopElem>;
+  /** Активный тест */
+  active_test_learning_id: XmlElem<number | null>;
+  active_test_learning_deleted: XmlElem<boolean | null>;
+  /** Назначен самостоятельно */
+  is_self_enrolled: XmlElem<boolean | null>;
   use_proctoring: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  link_report: XmlElem<string>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  link_report: XmlElem<string | null>;
 };
 
 type TestLearningDocument = XmlDocument & {

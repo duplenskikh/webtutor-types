@@ -2,20 +2,28 @@ type WikiArticleCommunicationDocumentTopElem = XmlTopElem &
 FileListBase &
 CustomElemsBase & {
   Doc: WikiArticleCommunicationDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
   name(): string;
-  name_value: XmlElem<string>;
-  resource_id: XmlElem<number, ResourceCatalogDocumentTopElem>;
-  wiki_article_communication_type_id: XmlElem<number, WikiArticleCommunicationTypeCatalogDocumentTopElem>;
-  wiki_article_comm_type_id: XmlElem<number, WikiArticleCommunicationTypeCatalogDocumentTopElem>;
-  base_wiki_article_id: XmlElem<number, WikiArticleCatalogDocumentTopElem>;
-  child_wiki_article_id: XmlElem<number, WikiArticleCatalogDocumentTopElem>;
-  position: XmlElem<number>;
-  text_area: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
-  doc_info: XmlElem<DocInfoBase>;
-  comment: XmlElem<string>;
+  /** Название */
+  name_value: XmlElem<string | null>;
+  /** Ресурс базы */
+  resource_id: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
+  wiki_article_communication_type_id: XmlElem<number | null, WikiArticleCommunicationTypeCatalogDocumentTopElem>;
+  wiki_article_comm_type_id: XmlElem<number | null, WikiArticleCommunicationTypeCatalogDocumentTopElem>;
+  base_wiki_article_id: XmlElem<number | null, WikiArticleCatalogDocumentTopElem>;
+  child_wiki_article_id: XmlElem<number | null, WikiArticleCatalogDocumentTopElem>;
+  /** Позиция в списке */
+  position: XmlElem<number | null>;
+  /** Описание */
+  text_area: XmlElem<string | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
 };
 
 type WikiArticleCommunicationDocument = XmlDocument & {

@@ -1,23 +1,31 @@
 interface ScheduleTypeDocumentScheduleDay {
-  id: XmlElem<string, typeof common.day_types>;
-  start_time: XmlElem<string>;
-  finish_time: XmlElem<string>;
+  /** Тип */
+  id: XmlElem<string | null, typeof common.day_types>;
+  /** Время начала */
+  start_time: XmlElem<string | null>;
+  /** Время окончания */
+  finish_time: XmlElem<string | null>;
 }
 
 interface ScheduleTypeDocumentSchedule extends MsWeekScheduleBase {
-  days: XmlMultiElem<ScheduleTypeDocumentScheduleDay>;
+  days: XmlMultiElem<ScheduleTypeDocumentScheduleDay | null>;
 }
 
 type ScheduleTypeDocumentTopElem = XmlTopElem & {
   Doc: ScheduleTypeDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Тип объекта */
   object_type: XmlElem<string, typeof common.exchange_object_types>;
-  is_shedule: XmlElem<boolean>;
-  library_url: XmlElem<string>;
-  schedule: XmlElem<ScheduleTypeDocumentSchedule>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Расписание */
+  is_shedule: XmlElem<boolean | null>;
+  library_url: XmlElem<string | null>;
+  /** Расписание прохождения */
+  schedule: XmlElem<ScheduleTypeDocumentSchedule | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ScheduleTypeDocument = XmlDocument & {

@@ -1,28 +1,28 @@
 interface ObjectInnerBaseSettingsAuxAuxParam {
-  id: XmlElem<string>;
-  value: XmlElem<string>;
-  tag: XmlElem<string>;
+  id: XmlElem<string | null>;
+  value: XmlElem<string | null>;
+  tag: XmlElem<string | null>;
 }
 
 interface ObjectInnerBaseSettingsAux {
-  aux_param: XmlElem<ObjectInnerBaseSettingsAuxAuxParam>;
+  aux_param: XmlElem<ObjectInnerBaseSettingsAuxAuxParam | null>;
 }
 
 interface ObjectInnerBaseSettings extends WebVariablesBase {
-  aux: XmlElem<ObjectInnerBaseSettingsAux>;
+  aux: XmlElem<ObjectInnerBaseSettingsAux | null>;
 }
 
 interface ObjectInnerBase {
-  id: XmlElem<number>;
-  catalog: XmlElem<string>;
-  uid: XmlElem<number>;
-  title: XmlElem<string>;
-  parent_section_id: XmlElem<number>;
+  id: XmlElem<number | null>;
+  catalog: XmlElem<string | null>;
+  uid: XmlElem<number | null>;
+  title: XmlElem<string | null>;
+  parent_section_id: XmlElem<number | null>;
   is_default: XmlElem<boolean>;
   is_menu: XmlElem<boolean>;
   is_offline: XmlElem<boolean>;
   hidden: XmlElem<boolean>;
-  settings: XmlElem<ObjectInnerBaseSettings>;
+  settings: XmlElem<ObjectInnerBaseSettings | null>;
 }
 
 interface MobileAppConfigDocumentMenu {
@@ -31,23 +31,23 @@ interface MobileAppConfigDocumentMenu {
 }
 
 interface MobileAppConfigDocumentDocumentSubchild {
-  id: XmlElem<number, DocumentCatalogDocumentTopElem>;
-  included: XmlElem<boolean>;
+  id: XmlElem<number | null, DocumentCatalogDocumentTopElem>;
+  included: XmlElem<boolean | null>;
   cf: XmlElem<number>;
 }
 
 interface MobileAppConfigDocumentDocument {
-  id: XmlElem<number, DocumentCatalogDocumentTopElem>;
+  id: XmlElem<number | null, DocumentCatalogDocumentTopElem>;
   is_default: XmlElem<boolean>;
   is_menu: XmlElem<boolean>;
   partial: XmlElem<boolean>;
   cf: XmlElem<number>;
   hidden: XmlElem<boolean>;
-  subchildren: XmlMultiElem<MobileAppConfigDocumentDocumentSubchild>;
+  subchildren: XmlMultiElem<MobileAppConfigDocumentDocumentSubchild | null>;
 }
 
 interface MobileAppConfigDocumentInfoDoc {
-  id: XmlElem<number, DocumentCatalogDocumentTopElem>;
+  id: XmlElem<number | null, DocumentCatalogDocumentTopElem>;
 }
 
 interface MobileAppConfigDocumentDisplayFineTuning {
@@ -55,14 +55,14 @@ interface MobileAppConfigDocumentDisplayFineTuning {
 }
 
 interface MobileAppConfigDocumentHtmlInjection {
-  zone: XmlElem<string>;
-  html: XmlElem<string>;
+  zone: XmlElem<string | null>;
+  html: XmlElem<string | null>;
 }
 
 interface MobileAppConfigDocumentCustom {
-  css_template: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
-  js_template: XmlElem<number, CustomWebTemplateCatalogDocumentTopElem>;
-  logo: XmlElem<number, ResourceCatalogDocumentTopElem>;
+  css_template: XmlElem<number | null, CustomWebTemplateCatalogDocumentTopElem>;
+  js_template: XmlElem<number | null, CustomWebTemplateCatalogDocumentTopElem>;
+  logo: XmlElem<number | null, ResourceCatalogDocumentTopElem>;
 }
 
 interface MobileAppConfigDocumentScheduleSettings {
@@ -79,50 +79,56 @@ interface MobileAppConfigDocumentScheduleSettings {
 }
 
 interface MobileAppConfigDocumentMessagingConfigElem {
-  id: XmlElem<string>;
-  value: XmlElem<string>;
-  data: XmlElem<Binary>;
+  id: XmlElem<string | null>;
+  value: XmlElem<string | null>;
+  data: XmlElem<Binary | null>;
 }
 
 interface MobileAppConfigDocumentMessagingConfig {
-  elem: XmlElem<MobileAppConfigDocumentMessagingConfigElem>;
+  elem: XmlElem<MobileAppConfigDocumentMessagingConfigElem | null>;
 }
 
 interface MobileAppConfigDocumentMessaging {
   engine: XmlElem<number>;
-  config: XmlElem<MobileAppConfigDocumentMessagingConfig>;
+  config: XmlElem<MobileAppConfigDocumentMessagingConfig | null>;
 }
 
 type MobileAppConfigDocumentTopElem = XmlTopElem &
 CustomElemsBase & {
   Doc: MobileAppConfigDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Тип */
   type: XmlElem<string>;
   typeSet(key: unknown, yes: unknown): unknown;
-  menu: XmlElem<MobileAppConfigDocumentMenu>;
-  documents: XmlMultiElem<MobileAppConfigDocumentDocument>;
-  objects: XmlMultiElem<ObjectInnerBase>;
-  virtobjs: XmlMultiElem<ObjectInnerBase>;
-  info_docs: XmlMultiElem<MobileAppConfigDocumentInfoDoc>;
+  menu: XmlElem<MobileAppConfigDocumentMenu | null>;
+  documents: XmlMultiElem<MobileAppConfigDocumentDocument | null>;
+  objects: XmlMultiElem<ObjectInnerBase | null>;
+  virtobjs: XmlMultiElem<ObjectInnerBase | null>;
+  info_docs: XmlMultiElem<MobileAppConfigDocumentInfoDoc | null>;
   display_mode: XmlElem<number>;
-  display_fine_tuning: XmlElem<MobileAppConfigDocumentDisplayFineTuning>;
-  html_injections: XmlMultiElem<MobileAppConfigDocumentHtmlInjection>;
+  display_fine_tuning: XmlElem<MobileAppConfigDocumentDisplayFineTuning | null>;
+  html_injections: XmlMultiElem<MobileAppConfigDocumentHtmlInjection | null>;
   show_header: XmlElem<boolean>;
   use_update_stamp: XmlElem<boolean>;
   use_offline_scorm: XmlElem<boolean>;
   display_scorm_in_menu: XmlElem<boolean>;
   use_chat: XmlElem<boolean>;
-  login_question: XmlElem<string>;
-  days_credentials_update: XmlElem<number>;
-  custom: XmlElem<MobileAppConfigDocumentCustom>;
-  schedule_settings: XmlElem<MobileAppConfigDocumentScheduleSettings>;
-  messaging: XmlElem<MobileAppConfigDocumentMessaging>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  login_question: XmlElem<string | null>;
+  days_credentials_update: XmlElem<number | null>;
+  custom: XmlElem<MobileAppConfigDocumentCustom | null>;
+  schedule_settings: XmlElem<MobileAppConfigDocumentScheduleSettings | null>;
+  messaging: XmlElem<MobileAppConfigDocumentMessaging | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
   show_messaging: XmlElem<boolean>;
-  access: XmlElem<AccessDocBase>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
 };
 
 type MobileAppConfigDocument = XmlDocument & {

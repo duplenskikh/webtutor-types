@@ -3,9 +3,12 @@ ObjectCodeNameBase &
 QaTestParamBase &
 QaTestAssertBase & {
   Doc: QaTestParamsetDocument;
+  /** Статус */
   status: XmlElem<string, typeof common.qa_test_states>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type QaTestParamsetDocument = XmlDocument & {

@@ -1,18 +1,22 @@
 type LibraryMaterialCommentDocumentTopElem = XmlTopElem &
 FileListBase & {
   Doc: LibraryMaterialCommentDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
   is_admin_approved: XmlElem<boolean>;
-  material_id: XmlElem<number, LibraryMaterialCatalogDocumentTopElem>;
-  user_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  create_date: XmlElem<Date>;
-  parent_object_id: XmlElem<number, LibraryMaterialCommentCatalogDocumentTopElem>;
-  how2show: XmlElem<string>;
-  last_create_date: XmlElem<Date>;
+  material_id: XmlElem<number | null, LibraryMaterialCatalogDocumentTopElem>;
+  user_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  create_date: XmlElem<Date | null>;
+  parent_object_id: XmlElem<number | null, LibraryMaterialCommentCatalogDocumentTopElem>;
+  how2show: XmlElem<string | null>;
+  last_create_date: XmlElem<Date | null>;
   is_closed: XmlElem<boolean>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type LibraryMaterialCommentDocument = XmlDocument & {

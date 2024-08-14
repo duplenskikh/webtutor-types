@@ -1,21 +1,37 @@
 type SuccessorCatalogDocumentTopElem = XmlTopElem &
 AdminAccessBase & {
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  key_position_id: XmlElem<number, KeyPositionCatalogDocumentTopElem>;
-  key_person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  key_person_fullname: XmlElem<string>;
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  person_fullname: XmlElem<string>;
-  person_position_name: XmlElem<string>;
-  budget_period_id: XmlElem<number, BudgetPeriodCatalogDocumentTopElem>;
-  readiness_level_id: XmlElem<number, ReadinessLevelCatalogDocumentTopElem>;
-  development_potential_id: XmlElem<number, DevelopmentPotentialCatalogDocumentTopElem>;
-  efficiency_estimation_id: XmlElem<number, EfficiencyEstimationCatalogDocumentTopElem>;
-  request_id: XmlElem<number, RequestCatalogDocumentTopElem>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Ключевая должность */
+  key_position_id: XmlElem<number | null, KeyPositionCatalogDocumentTopElem>;
+  /** Сотрудник */
+  key_person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Сотрудник на ключевой должности */
+  key_person_fullname: XmlElem<string | null>;
+  /** Сотрудник */
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Преемник */
+  person_fullname: XmlElem<string | null>;
+  /** Должность сотрудника */
+  person_position_name: XmlElem<string | null>;
+  /** Бюджетный период */
+  budget_period_id: XmlElem<number | null, BudgetPeriodCatalogDocumentTopElem>;
+  /** Уровень готовности */
+  readiness_level_id: XmlElem<number | null, ReadinessLevelCatalogDocumentTopElem>;
+  /** Потенциал развития */
+  development_potential_id: XmlElem<number | null, DevelopmentPotentialCatalogDocumentTopElem>;
+  /** Оценка эффективности */
+  efficiency_estimation_id: XmlElem<number | null, EfficiencyEstimationCatalogDocumentTopElem>;
+  /** Заявка */
+  request_id: XmlElem<number | null, RequestCatalogDocumentTopElem>;
+  /** Статус */
   status: XmlElem<string, typeof common.successor_status_types>;
-  modification_date: XmlElem<Date>;
-  app_instance_id: XmlElem<string>;
+  /** Дата модификации */
+  modification_date: XmlElem<Date | null>;
+  /** Код сервера */
+  app_instance_id: XmlElem<string | null>;
   OnBuild(): void;
 };

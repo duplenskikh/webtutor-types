@@ -1,7 +1,9 @@
 interface VacancySubscriptionDocumentSuitableVacancy {
-  id: XmlElem<number, VacancyCatalogDocumentTopElem>;
-  name: XmlElem<string>;
-  code: XmlElem<string>;
+  id: XmlElem<number | null, VacancyCatalogDocumentTopElem>;
+  /** Название теста */
+  name: XmlElem<string | null>;
+  /** Код теста */
+  code: XmlElem<string | null>;
 }
 
 type VacancySubscriptionDocumentTopElem = XmlTopElem &
@@ -9,15 +11,22 @@ MsPersonSdBase &
 ViewConditionsBase &
 AdminAccessBase & {
   Doc: VacancySubscriptionDocument;
-  id: XmlElem<number>;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  is_active: XmlElem<boolean>;
-  full_text_search_str: XmlElem<string>;
-  site_id: XmlElem<number, SiteCatalogDocumentTopElem>;
-  suitable_vacancys: XmlMultiElem<VacancySubscriptionDocumentSuitableVacancy>;
-  send_vacancy_date: XmlElem<Date>;
-  doc_info: XmlElem<DocInfoBase>;
+  id: XmlElem<number | null>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Активная */
+  is_active: XmlElem<boolean | null>;
+  /** Ключевые слова в тексте вакансии */
+  full_text_search_str: XmlElem<string | null>;
+  /** Сайт */
+  site_id: XmlElem<number | null, SiteCatalogDocumentTopElem>;
+  suitable_vacancys: XmlMultiElem<VacancySubscriptionDocumentSuitableVacancy | null>;
+  /** Дата последней отправки вакансий */
+  send_vacancy_date: XmlElem<Date | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
   refresh_suitable_vacancys(): VacancyCatalogDocumentTopElem;
 };
 

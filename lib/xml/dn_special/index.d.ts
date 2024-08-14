@@ -2,11 +2,15 @@ type DnSpecialDocumentTopElem = XmlTopElem &
 FileListBase &
 CustomElemsBase & {
   Doc: DnSpecialDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  facult_id: XmlElem<number, SubdivisionCatalogDocumentTopElem>;
-  desc: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Факультет */
+  facult_id: XmlElem<number | null, SubdivisionCatalogDocumentTopElem>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type DnSpecialDocument = XmlDocument & {

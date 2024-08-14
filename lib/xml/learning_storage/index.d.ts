@@ -1,21 +1,28 @@
 type LearningStorageDocumentTopElem = XmlTopElem & {
   Doc: LearningStorageDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
   std_auth: XmlElem<boolean>;
-  auth_eval: XmlElem<string>;
+  auth_eval: XmlElem<string | null>;
   auth_person_type: XmlElem<string>;
-  auth_person_eval: XmlElem<string>;
-  external_url: XmlElem<string>;
-  login: XmlElem<string>;
-  password: XmlElem<string>;
+  auth_person_eval: XmlElem<string | null>;
+  external_url: XmlElem<string | null>;
+  login: XmlElem<string | null>;
+  password: XmlElem<string | null>;
   create_activity: XmlElem<boolean>;
   use_extended_analytics: XmlElem<boolean>;
+  /** Является системным */
   is_std: XmlElem<boolean>;
+  /** Измененный */
   changed: XmlElem<boolean>;
-  access: XmlElem<AccessDocBase>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type LearningStorageDocument = XmlDocument & {

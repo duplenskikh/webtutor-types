@@ -1,10 +1,14 @@
 type EventResultTypeDocumentTopElem = XmlTopElem & {
   Doc: EventResultTypeDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
-  comment: XmlElem<string>;
-  role_id: XmlMultiElemObject<number>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
+  comment: XmlElem<string | null>;
+  /** Категория */
+  role_id: XmlMultiElemObject<number | null>;
 };
 
 type EventResultTypeDocument = XmlDocument & {

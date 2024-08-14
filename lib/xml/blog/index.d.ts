@@ -1,6 +1,6 @@
 interface BlogDocumentAuthor extends PersonFillingBase {
-  person_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  is_full_moderator: XmlElem<boolean>;
+  person_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  is_full_moderator: XmlElem<boolean | null>;
 }
 
 type BlogDocumentTopElem = XmlTopElem &
@@ -11,22 +11,35 @@ KnowledgePartsBase &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: BlogDocument;
-  create_date: XmlElem<Date>;
+  /** Дата */
+  create_date: XmlElem<Date | null>;
   type: XmlElem<string, typeof common.blog_types>;
-  channel_provider_id: XmlElem<number, ChannelProviderCatalogDocumentTopElem>;
+  channel_provider_id: XmlElem<number | null, ChannelProviderCatalogDocumentTopElem>;
+  /** Возможна подписка */
   permit_subscription: XmlElem<boolean>;
+  /** Разрешить оставлять анонимные комментарии */
   allow_anonymous_comment: XmlElem<boolean>;
-  creator_id: XmlElem<number, CollaboratorCatalogDocumentTopElem>;
-  object_id: XmlElem<number>;
-  object_type: XmlElem<string, typeof common.exchange_object_types>;
-  object_name: XmlElem<string>;
-  authors: XmlMultiElem<BlogDocumentAuthor>;
+  creator_id: XmlElem<number | null, CollaboratorCatalogDocumentTopElem>;
+  /** Объект */
+  object_id: XmlElem<number | null>;
+  /** Тип объекта */
+  object_type: XmlElem<string | null, typeof common.exchange_object_types>;
+  /** Имя объекта */
+  object_name: XmlElem<string | null>;
+  /** Авторы */
+  authors: XmlMultiElem<BlogDocumentAuthor | null>;
+  /** Количество авторов */
   authors_num(): number;
-  num_message_in_list: XmlElem<number>;
-  access: XmlElem<AccessDocBase>;
-  desc: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Количество сообщений на странице */
+  num_message_in_list: XmlElem<number | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Описание */
+  desc: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
   creator_full_info(): string;
 };
 

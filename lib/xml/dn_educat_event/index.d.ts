@@ -2,10 +2,14 @@ type DnEducatEventDocumentTopElem = XmlTopElem &
 CustomElemsBase &
 AdminAccessBase & {
   Doc: DnEducatEventDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  comment: XmlElem<string>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type DnEducatEventDocument = XmlDocument & {

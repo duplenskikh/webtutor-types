@@ -6,16 +6,25 @@ KnowledgePartsBaseOld &
 AdminAccessBase &
 CustomElemsBase & {
   Doc: ArticleDocument;
-  code: XmlElem<string>;
-  name: XmlElem<string>;
-  parent_object_id: XmlElem<number, ArticleCatalogDocumentTopElem>;
-  book_id: XmlElem<number, BookCatalogDocumentTopElem>;
-  library_material_id: XmlElem<number, LibraryMaterialCatalogDocumentTopElem>;
-  weight: XmlElem<number>;
-  comment: XmlElem<string>;
-  desc: XmlElem<string>;
-  access: XmlElem<AccessDocBase>;
-  doc_info: XmlElem<DocInfoBase>;
+  /** Код */
+  code: XmlElem<string | null>;
+  /** Название */
+  name: XmlElem<string | null>;
+  /** Родительская статья */
+  parent_object_id: XmlElem<number | null, ArticleCatalogDocumentTopElem>;
+  /** Справка */
+  book_id: XmlElem<number | null, BookCatalogDocumentTopElem>;
+  /** Материал библиотеки */
+  library_material_id: XmlElem<number | null, LibraryMaterialCatalogDocumentTopElem>;
+  /** Вес */
+  weight: XmlElem<number | null>;
+  /** Комментарий */
+  comment: XmlElem<string | null>;
+  desc: XmlElem<string | null>;
+  /** Доступ */
+  access: XmlElem<AccessDocBase | null>;
+  /** Информация об объекте */
+  doc_info: XmlElem<DocInfoBase | null>;
 };
 
 type ArticleDocument = XmlDocument & {
