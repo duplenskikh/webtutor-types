@@ -620,7 +620,7 @@ interface XmElem<T, ForeignElem = never> {
    * @param {string} name - Имя элемента, являющегося ключом. Необязательный аргумент.
    * Если имя ключа не указано, используется первичный ключ.
    */
-  GetChildByKey<K>(value: K, name?: string): XmlElem<unknown>;
+  GetChildByKey<K>(value: K, name?: string): XmlElem<T>;
 
   /**
    * Находит дочерний элемент с заданным значением и возвращает его порядковый индекс.
@@ -773,7 +773,7 @@ interface XmElem<T, ForeignElem = never> {
    * @param {K} value - Значение ключа.
    * @param {string} name - Имя элемента, являющегося ключом. Если имя ключа не указано, используется первичный ключ.
    */
-  ObtainChildByKey<K>(value: K, name?: string): XmlElem<unknown>;
+  ObtainChildByKey<K>(value: K, name?: string): XmlElem<T>;
 
   /**
    * Метод пытается найти среди дочерних элементов элемент с заданным значением
