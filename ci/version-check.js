@@ -1,4 +1,4 @@
-const { execSync } = require('child_process');
+const { execFileSync } = require('child_process');
 const { readFileSync, existsSync, mkdirSync, rmSync } = require('fs');
 const { resolve } = require('path');
 const semver = require("semver");
@@ -16,7 +16,7 @@ if (existsSync(masterTempPackagePath)) {
   rmSync(masterTempPackagePath);
 }
 
-execSync(`git show origin/main:package.json > ${masterTempPackagePath}`);
+execFileSync('git', ['show', `origin/main:package.json > ${masterTempPackagePath}`]);
 
 const packageJSON = JSON.parse(readFileSync(resolve(rootPath, "package.json")));
 const masterPackageJSON = JSON.parse(readFileSync(masterTempPackagePath));
